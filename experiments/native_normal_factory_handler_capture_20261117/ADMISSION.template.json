@@ -1,0 +1,71 @@
+{
+  "format": "has_session_B_resource_diagnostic_admission_2",
+  "profile": "SESSION_B_READONLY_RESOURCE_DIAGNOSTIC_AFTER_FAILED_FULL",
+  "root_native_lane_exclusive": false,
+  "loader_readonly_dependency_resolution_authorized": true,
+  "claims": {
+    "preload_IO_confinement": false,
+    "historical_generation": false,
+    "export_equivalence": false,
+    "normal_repair": false,
+    "native_fidelity": false,
+    "artifact_adoption": false,
+    "legacy_strict_survey_native_pass": false
+  },
+  "expected_metadata_head": null,
+  "functional_commit": "52f63c944ded7a651da871524d23a345b606424d",
+  "candidate_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "functional_count": 1019,
+  "issued_utc": null,
+  "expires_utc": null,
+  "sourceio_copy": null,
+  "output": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-normal-B-factory-handler-capture-20261117-attempt1",
+  "proofs": {
+    "full_release": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-replay2-20261117T155709412051\\graphics-lease-closed.json",
+      "bytes": null,
+      "mtime_ns": null,
+      "sha256": null
+    },
+    "functional_snapshot": {
+      "path": null,
+      "bytes": null,
+      "mtime_ns": null,
+      "sha256": null
+    },
+    "review_functional_snapshot": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-replay2-20261117T155709412051\\source-after.json",
+      "bytes": null,
+      "mtime_ns": null,
+      "sha256": null
+    },
+    "cold187_not_started_root_record": {
+      "path": null,
+      "bytes": null,
+      "mtime_ns": null,
+      "sha256": null
+    }
+  },
+  "protected_originals": {
+    "blend": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\editable.blend",
+      "bytes": 2423175,
+      "mtime_ns": null,
+      "sha256": "ead1f1913812593abd69e353fed375944a15f280738784886fcef7fda3ee65c6"
+    },
+    "glb": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\scene.glb",
+      "bytes": 2322644,
+      "mtime_ns": null,
+      "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d"
+    },
+    "parameters": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\parameters.json",
+      "bytes": 159684,
+      "mtime_ns": null,
+      "sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed"
+    }
+  },
+  "candidate_functional_count": 1029,
+  "cold187_disposition": "NOT_STARTED_AFTER_FAILED_FULL"
+}

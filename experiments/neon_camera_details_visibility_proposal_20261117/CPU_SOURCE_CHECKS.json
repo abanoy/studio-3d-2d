@@ -1,0 +1,42 @@
+{
+  "format": "has_camera_visibility_proposal_CPU_source_checks_1",
+  "passed": true,
+  "product_one_line_raw_inverse": true,
+  "critical_function_bodies_byte_exact": [
+    "refresh_camera_controls",
+    "change_camera_range",
+    "camera_preview_hint",
+    "change_mode",
+    "set_advanced",
+    "build_lens_block",
+    "build_camera_inspector",
+    "refresh_camera_inspector"
+  ],
+  "bounded_app_hash_updates": [
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "existing_rows": 25,
+      "changed_app_rows": 1,
+      "changed_fields": [
+        "sha256",
+        "lf_sha256"
+      ],
+      "all_other_rows_and_bytes_exact": true
+    },
+    {
+      "path": "tests/wind_review_port_files.json",
+      "existing_rows": 16,
+      "changed_app_rows": 1,
+      "changed_fields": [
+        "sha256",
+        "lf_sha256"
+      ],
+      "all_other_rows_and_bytes_exact": true
+    }
+  ],
+  "negative_unsealed_source_checks": 8,
+  "camera_range_test_unchanged_sha256": "e8b8287451874d26fed4f6ed7d91e463322ed08af179fc80b330150cde841bef",
+  "actual_post_fix_GPU_result": "UNRUN",
+  "product_or_manifest_writes": false,
+  "engine_CIM_Git_executed": false
+}

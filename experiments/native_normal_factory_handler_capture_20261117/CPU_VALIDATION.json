@@ -1,0 +1,49 @@
+{
+  "format": "has_before_model_factory_handler_capture_source_CPU_audit_1",
+  "status": "SOURCE_GO_ACTUAL_CAPTURE_UNRUN_NOT_RESOURCE_PASS",
+  "observed_utc": "2026-11-17T16:56:53.240815+00:00",
+  "methods": 5,
+  "failures": 0,
+  "errors": 0,
+  "author_seconds": 0.012,
+  "author_tool_chunk": "6330d7",
+  "independent_peer_methods": 5,
+  "independent_peer_failures": 0,
+  "independent_peer_seconds": 0.004,
+  "peer_tool_chunk": "22bd82",
+  "local_python_sources": {
+    "diagnostic_host.py": {
+      "bytes": 6721,
+      "sha256": "185ea08b23d79309aa6596986b67a1442d661d87150753f304e722fd138c49c9"
+    },
+    "diagnostic_support.py": {
+      "bytes": 12400,
+      "sha256": "490d70028734f72a758c30ee32eb399afd3915359059cb2f6d308a64c4c9af09"
+    },
+    "handler_metadata.py": {
+      "bytes": 3796,
+      "sha256": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc"
+    },
+    "root_runner.py": {
+      "bytes": 12541,
+      "sha256": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7"
+    },
+    "source_capture.py": {
+      "bytes": 1942,
+      "sha256": "fb7da838ab5afec2993cd6626f49e76b343814186658c922fb6810ceba2aa171"
+    },
+    "test_handler_metadata.py": {
+      "bytes": 4939,
+      "sha256": "7659c47e74b00076248b605bc7d33a73174824eb3fc8162b4d1faa20ac2b2a2a"
+    }
+  },
+  "all_source_AST_parse_passed": true,
+  "predecessor49c9_all_members_verified_unchanged": true,
+  "support_driver_byte_identical": true,
+  "exact_host_raw_inverse_and_early_return_before_sentinel_B_open_collector": true,
+  "synthetic_callbacks_called": false,
+  "synthetic_code_or_discovered_paths_opened": false,
+  "opaque_custom_getters_or_callables_executed": false,
+  "root_actual_diag3_details_read_from_private_output": false,
+  "actual_native_host_inputchecker_process_CIM_Git_network_or_currentReview_output_access": false
+}

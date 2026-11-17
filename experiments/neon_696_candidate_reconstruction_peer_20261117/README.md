@@ -1,0 +1,13 @@
+# Independent696 public text reconstruction audit
+
+Candidate696ca7f1491a43b1a2267a53f8ca0f62b7c211a9 and root treef297da2ff696c656654f85cb191e5cfb7bb78455 are independently reconstructed in RAM from00bf plus exactly five retained public blobs. All nine packet payloads, exact commit bytes/local objects, regular modes, unified patch and working-EOL identities match. The original packet is unchanged and this peer folder is outside it.
+
+The313,646byte app Git blob itself contains5,686 CRLF lines. Its exact recipe retains those bytes and the same working hash; it is never normalized to LF. The four other Git blobs are LF with explicit selected-CRLF working recipes. The strict patch keeps LF structural headers and seven CRLF payload lines, matches old context including EOL and binds the actual old/new Git blob prefixes.
+
+Source delta checks independently prove exactly one existing camera-inspector refresh insertion, and only the app raw/LF digest fields in each of two existing manifest rows. All remaining app bytes and manifest fields/memberships are exact. The two note appendices preserve commit-time UNRUN wording; later focused results in packet README are not tests performed by this audit.
+
+The00bf andfe9 packets match their exact bytes in retained maina41a204bffb98614abfa80e0e6340078b1d719f1. The parent tree/patch/recipes and older375/e8/4ed recovery chain are independently rebuilt in RAM. This checks retained local commit publication evidence, not current remote availability. The prior parent wording and rejected review-branch upload remain historical; no new upload or Git object is created.
+
+Five synthetic rejection groups pass. The real audit used57 bounded local typed cat-file reads through the pinned Git executable, with no optional locks or fsmonitor. No current working source, active full output, native asset/array/media, engine, process/CIM or network was read or executed. No original/owner file changed. An additional child review could not start because the thread limit was reached; this is an independent packet-author peer audit using pinned earlier helper definitions, not a second new review.
+
+Text recoverability does not establish current test correctness, a full PASS, merge, fidelity or adoption. Root reports the new696 full RUNNING1029 and maina41 runtime1019 unchanged; neither active condition was re-observed here. The auditor writes AUDIT.json exclusively and must not be rerun into this sealed folder. First preparer LF-only refusal and its correction belong to the packet author's preserved preparation history; this audit verifies the corrected final exactCRLF format.

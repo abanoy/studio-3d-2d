@@ -1,0 +1,20 @@
+{
+  "format": "has_B_diagnostic_import_fix_source_peer_1",
+  "status": "SOURCE_GO_NO_FINDINGS",
+  "reviewed_sha256": {
+    "diagnostic_host.py": "1b289ed174b0235c30903375f6bbe195b4bad6cfe0b2e507db4bb4dc255e32da",
+    "source_import_fix.py": "ee8e0de6af11133f7b1c7d89efbf0bee68ec0c792395ccb3f6c17c1e95006ef6",
+    "test_entry_import.py": "27dcadff2da1600c3a597243258d87828378e0631252b0f0dba4ab47ad509867"
+  },
+  "independent_methods": 5,
+  "failures": 0,
+  "seconds": 0.015,
+  "test_tool_chunk": "bfed4b",
+  "patch_tool_chunk": "8e07da",
+  "sealed7273_all_members_verified": true,
+  "support_driver_unchanged": true,
+  "one_line_host_inverse_and_patch_verified": true,
+  "isolated_predecessor_failure_and_fixed_own_support_import_observed": true,
+  "bpy_and_inputchecker_tripwire_calls": 0,
+  "actual_native_stage_Review_output_process_inputchecker_Git_network_reads_or_execution": false
+}

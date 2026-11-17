@@ -1,0 +1,55 @@
+{
+  "format": "has_failed_full_B_diagnostic_exact_successor_CPU_audit_1",
+  "status": "SOURCE_CPU_GO_NATIVE_UNRUN",
+  "observed_utc": "2026-11-17T16:39:21.604387+00:00",
+  "methods": 18,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 0.008,
+  "author_test_tool_chunk": "130032",
+  "independent_peer_methods": 18,
+  "independent_peer_failures": 0,
+  "independent_peer_reported_seconds": 0.008,
+  "independent_peer_test_tool_chunk": "828f48",
+  "independent_exact_patch_regeneration_tool_chunk": "5315ee",
+  "local_python_sources": {
+    "diagnostic_host.py": {
+      "bytes": 5714,
+      "sha256": "f35fde033beb9cfd0aefd7edcedfca3b16aa778bea88c9273014bbd578a8dfcd"
+    },
+    "diagnostic_support.py": {
+      "bytes": 12400,
+      "sha256": "490d70028734f72a758c30ee32eb399afd3915359059cb2f6d308a64c4c9af09"
+    },
+    "root_runner.py": {
+      "bytes": 12541,
+      "sha256": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7"
+    },
+    "source_successor.py": {
+      "bytes": 8621,
+      "sha256": "f46b969dda9d8f50ae82c1d6432e0356b4a2c6a03877889275f9b9a18b37e0f0"
+    },
+    "test_diagnostic.py": {
+      "bytes": 6181,
+      "sha256": "a32d609f4ea7e801e7bc31cd89f054229a3a577fede418e686ac15630a8277b8"
+    },
+    "test_failed_full_successor.py": {
+      "bytes": 5344,
+      "sha256": "783dbd387b23791c88e2960005a588ea55f3d26d132b5dc9010807d9b501cb54"
+    }
+  },
+  "source_AST_parse_all_passed": true,
+  "predecessor_all10_and_original_strict_all21_payloads_rechecked_exact": true,
+  "host_driver_exact_predecessor_bytes": true,
+  "support_test_derivation_exact_raw_inverses": true,
+  "ROOT_runtime_functional_commit": "52f63c944ded7a651da871524d23a345b606424d",
+  "ROOT_runtime_functional_count": 1019,
+  "ROOT_metadata_HEAD_is_separate_actual_future_admission": true,
+  "REVIEW_failed_functional_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "REVIEW_failed_functional_count": 1029,
+  "cold187_result_or_preservation_fabricated": false,
+  "actual_admission_or_native_B_load_or_resource_profile_or_input_checker_executed": false,
+  "private_native_arrays_original_parameters_runtime_binaries_or_current_Review_outputs_read": false,
+  "engine_CIM_Git_network_or_process_operations": false,
+  "original_strict31_or_predecessor_or_app_source_files_modified": false
+}

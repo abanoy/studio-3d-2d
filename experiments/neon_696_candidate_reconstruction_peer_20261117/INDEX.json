@@ -1,0 +1,42 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "neon_696_candidate_reconstruction_peer_20261117",
+  "status": "SEALED_INDEPENDENT_696_RAM_TEXT_RECONSTRUCTION_GO_NO_FULL_OR_MERGE_CLAIM",
+  "files": [
+    {
+      "path": "AUDIT.json",
+      "bytes": 13836,
+      "sha256": "94697f21e8173fb31f52c12d5c0f0c3f5833a743ab0f7fb3177b4d1faee88353"
+    },
+    {
+      "path": "audit_reconstruction.py",
+      "bytes": 16653,
+      "sha256": "431c7f0ac2a3f60a8e6a85a603f2af13504986f3b5a1999864f231356b8edd90"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 1093,
+      "sha256": "0c5203028a00e342e5091f7b992a5c54179d8f666e4b7d7f0064ab9bb49520c0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2628,
+      "sha256": "510f7a498e036528847728fdd0fe8d1d30412fc5fd970d0cca5f1cb15ce1a48d"
+    },
+    {
+      "path": "SOURCE_ADAPTATION.json",
+      "bytes": 1305,
+      "sha256": "a7f44392d31b6faa63f266904322e1e450bae82540b074e4bdc1d649c2c17ad8"
+    },
+    {
+      "path": "test_reconstruction.py",
+      "bytes": 4234,
+      "sha256": "4519ee6ba7fb9ef2f45f57b7e51de4ef115f8b8a12200e9f6c5aede1338a88b1"
+    }
+  ],
+  "audited_packet_INDEX_sha256": "94a74d55d78f411d3da89a31e838bdbce863b4a682697be988de9d8556bf314d",
+  "candidate_commit": "696ca7f1491a43b1a2267a53f8ca0f62b7c211a9",
+  "CPU_methods": 5,
+  "Git_operations": "Bounded local typed cat-file reads only",
+  "actual_native_or_active_full_or_Git_mutation": false
+}

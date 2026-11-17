@@ -1,0 +1,20 @@
+{
+  "format": "has_before_model_factory_handler_capture_source_peer_1",
+  "status": "SOURCE_GO_NO_FINDINGS",
+  "reviewed_sha256": {
+    "diagnostic_host.py": "185ea08b23d79309aa6596986b67a1442d661d87150753f304e722fd138c49c9",
+    "handler_metadata.py": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc",
+    "source_capture.py": "fb7da838ab5afec2993cd6626f49e76b343814186658c922fb6810ceba2aa171",
+    "test_handler_metadata.py": "7659c47e74b00076248b605bc7d33a73174824eb3fc8162b4d1faa20ac2b2a2a"
+  },
+  "methods": 5,
+  "failures": 0,
+  "seconds": 0.004,
+  "tool_chunk": "22bd82",
+  "predecessor49c9_all_members_verified": true,
+  "support_driver_unchanged": true,
+  "exact_old_guard_inverse_and_return_before_sentinel_B_load_resource_calls": true,
+  "no_callbacks_or_pathopens_or_custom_getters": true,
+  "private_details_public_scalar_summary_only": true,
+  "actual_host_inputchecker_native_process_Git_network_or_output_access": false
+}

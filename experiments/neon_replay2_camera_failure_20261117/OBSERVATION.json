@@ -1,0 +1,45 @@
+{
+  "observed_utc": "2026-11-17T16:36:29.065056+00:00",
+  "state": {
+    "format": "has_owned_canonical_run_1",
+    "pid": 19808,
+    "process_started": "2026-11-17T15:58:55.2656645Z",
+    "started_utc": "2026-11-17T15:58:55.6798223Z",
+    "status": "failed",
+    "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+    "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-replay2-20261117T155709412051",
+    "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+    "python": "C:\\Program Files\\Python313\\python.exe",
+    "command": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-u",
+      "tests/verify.py"
+    ],
+    "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+    "suite_exit": 1,
+    "source_unchanged": true,
+    "finished_utc": "2026-11-17T16:28:42.8760718Z"
+  },
+  "result": "FAILED_CAMERA_ADVANCED_VISIBILITY",
+  "camera_report": {
+    "checks": 60,
+    "failures": 1,
+    "native_models": 5
+  },
+  "failure_label": "Advanced exposes editable view-distance controls in camera mode",
+  "source_only_diagnosis_not_yet_GPU_verified": "refresh_workspace does not synchronously refresh the inner Camera details parent after changing Advanced mode.",
+  "physical_jobs": 92,
+  "normal_exit0": 90,
+  "registered_Krita_cancel_exit2": 1,
+  "failed_partial_nonzero": 1,
+  "inline_exact_matches": 11,
+  "phase_documents": 64,
+  "functional_sources_unchanged": 1029,
+  "released_utc": "2026-11-17T16:29:46.0233172Z",
+  "inventory_sha256": "acd509905aed7330636e0300d6ed48b9453ec1d1ed3a121130dba7509b888328",
+  "raw_report_logs_phase_native_arrays_included": false,
+  "full_pass_claimed": false,
+  "product_merged": false,
+  "new_camera_product_patch_applied": false,
+  "actual_cold187_started": false
+}

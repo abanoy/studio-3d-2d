@@ -1,0 +1,23 @@
+{
+  "format": "has_696_RAM_reconstruction_peer_CPU_validation_1",
+  "observed_utc": "2026-11-17T17:17:08.673528+00:00",
+  "methods": 5,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 0.001,
+  "CPU_tool_chunk": "5d8a05",
+  "actual_RAM_audit_tool_chunk": "568b5d",
+  "actual_RAM_status": "PASS_LOCAL_TEXT_RECONSTRUCTION",
+  "readonly_Git_unique_requests": 57,
+  "test_groups": [
+    "ExactCRLF and mixedLF working recipes; coherent normalization mutation refuses.",
+    "Boolean/duplicate/unsorted/out-of-range LF selections and CR-containing LF recipe refuse.",
+    "Blob/Git/working byte/digest/type mutations refuse.",
+    "LF+CRLF patch positives; EOL/context/count/path/binary/index mutations refuse.",
+    "Tree round-trip/duplicate/truncation and commit-shape negatives."
+  ],
+  "source_sha256": "431c7f0ac2a3f60a8e6a85a603f2af13504986f3b5a1999864f231356b8edd90",
+  "test_sha256": "4519ee6ba7fb9ef2f45f57b7e51de4ef115f8b8a12200e9f6c5aede1338a88b1",
+  "source_and_packet_rechecked_immutable": true,
+  "no_actual_app_tests_or_native_or_current_full_or_current_working_reads": true
+}

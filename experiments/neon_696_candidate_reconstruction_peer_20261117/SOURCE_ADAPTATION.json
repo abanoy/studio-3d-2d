@@ -1,0 +1,16 @@
+{
+  "format": "has_696_independent_reconstruction_source_adaptation_1",
+  "base_source": "experiments/neon_00bf_candidate_reconstruction_peer_20261117/audit_reconstruction.py",
+  "base_source_sha256": "c0e0c2bd9648bcfffb970e32c99caae9d2658f170c8211b14c680e908104850a",
+  "retained_helpers": "Pinned Git object/tree/commit primitives and bounded readonly cat-file wrapper; prior main is never called.",
+  "new_exact_data_profiles": [
+    "Raw CRLF app Git blob uses exact working recipe, with no normalization or conversion fields.",
+    "Four other LF blobs keep original strict selected-CRLF recipe checks.",
+    "Patch structural headers remain LF; CRLF is accepted only in exact hunk payloads, with no lone CR, and abbreviated old/new Git IDs are bound."
+  ],
+  "source_scope": "Five exact changed text paths, original regular modes; one app refresh insertion and only raw/LF app pins in two unchanged manifest schemas.",
+  "parent_chain": "Exact00bf+fe9 packet bytes in retained a41 local commit, RAM00bf/fe9/375 recovery to ultimate4ed; no fresh remote availability claim.",
+  "child_reviewer_unavailable": "Follow-up rejected by agent thread limit; this audit remains independent of the packet author.",
+  "preparer_imported_or_executed": false,
+  "Git_object_or_worktree_or_packet_writes": false
+}

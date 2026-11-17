@@ -1,0 +1,14 @@
+{
+  "format": "has_B_diagnostic_one_line_import_fix_derivation_1",
+  "predecessor_INDEX_sha256": "7273d278b77dc9bb12c5763e7993013be717b177ea19c27b625b0649ca62fc5d",
+  "host_before_sha256": "f35fde033beb9cfd0aefd7edcedfca3b16aa778bea88c9273014bbd578a8dfcd",
+  "host_after_sha256": "1b289ed174b0235c30903375f6bbe195b4bad6cfe0b2e507db4bb4dc255e32da",
+  "patch_sha256": "45077f039d551508b9f4e5ff2a191bdee9fbcde0ecd2e996a29ffe281172c8b2",
+  "exact_raw_inverse": true,
+  "support_driver_unchanged": {
+    "diagnostic_support.py": "490d70028734f72a758c30ee32eb399afd3915359059cb2f6d308a64c4c9af09",
+    "root_runner.py": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7"
+  },
+  "runtime_guard_changes": "Only own script directory is inserted before support import; all input/context/physical/privacy/resource gates remain exact.",
+  "native_execution": false
+}

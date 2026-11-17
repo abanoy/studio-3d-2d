@@ -1,0 +1,54 @@
+{
+  "format": "has_public_Blender_factory_handler_source_policy_1",
+  "scope": "RECORDED_METADATA_AND_PUBLIC_SOURCE_CORRESPONDENCE_ONLY",
+  "sources": {
+    "POSE_LIBRARY_GUI": {
+      "public_relative_source": "addons_core/pose_library/gui.py",
+      "bytes": 7510,
+      "sha256": "abdd0336bd48e66bcd35d6282d5374d3bfa39974c4dbe30090ee0ea0e2670057"
+    },
+    "COPY_GLOBAL_TRANSFORM": {
+      "public_relative_source": "startup/bl_operators/copy_global_transform.py",
+      "bytes": 30603,
+      "sha256": "ea911fd6ba24224a15800409c66843b8f37a4dc6deb8ae256d75e9d184c70552"
+    }
+  },
+  "slots": [
+    {
+      "handler_list": "load_pre",
+      "index": 0,
+      "source_role": "POSE_LIBRARY_GUI",
+      "public_role": "POSE_MESSAGE_BUS_PRE",
+      "metadata_signature": "15396c13c4acba669a4eaa80b461c936f19203deba081de105b5c3ee19e3cbc8"
+    },
+    {
+      "handler_list": "load_post",
+      "index": 0,
+      "source_role": "COPY_GLOBAL_TRANSFORM",
+      "public_role": "TRANSFORM_MESSAGE_BUS_POST",
+      "metadata_signature": "746537657ec8d2843ce1dfcce2d827e8c8142d13befaa92be24527df428598c9"
+    },
+    {
+      "handler_list": "load_post",
+      "index": 1,
+      "source_role": "POSE_LIBRARY_GUI",
+      "public_role": "POSE_MESSAGE_BUS_POST",
+      "metadata_signature": "7de470d1f831e59711fad7a16ffadb8088c8e6508d20404ffd7a392d007acc59"
+    }
+  ],
+  "handler_list_counts": {
+    "load_pre": 1,
+    "load_post": 2,
+    "load_post_fail": 0,
+    "depsgraph_update_pre": 0,
+    "depsgraph_update_post": 0,
+    "frame_change_pre": 0,
+    "frame_change_post": 0,
+    "render_pre": 0,
+    "render_post": 0,
+    "save_pre": 0,
+    "save_post": 0
+  },
+  "runtime_globals_or_callback_behavior_admitted": false,
+  "old_strict31_changed": false
+}

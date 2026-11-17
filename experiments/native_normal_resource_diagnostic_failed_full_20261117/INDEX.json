@@ -1,0 +1,92 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "native_normal_resource_diagnostic_failed_full_20261117",
+  "status": "SEALED_SEPARATE_FAILED_FULL_ROOT_DIAGNOSTIC_SOURCE_CPU_GO_NATIVE_UNRUN",
+  "files": [
+    {
+      "path": "ADMISSION.template.json",
+      "bytes": 2990,
+      "sha256": "0ff8575b3ce221481468c44045d436cafda7b84412b713c292c99ad52eee74a5"
+    },
+    {
+      "path": "COLD187-NOT-STARTED.template.json",
+      "bytes": 615,
+      "sha256": "4fad2c3b42bf7c517ba72fa515423516efc3029dc02960b874346bb910c43c72"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 2300,
+      "sha256": "3e1db8d1e916aacdf83a422a8738336bf578e994d42b96d4a25ccd282e75e922"
+    },
+    {
+      "path": "DERIVATION.json",
+      "bytes": 1702,
+      "sha256": "7284f39bd5b85326727cc81daff756ae90f3051170343013c694901c90e380f6"
+    },
+    {
+      "path": "diagnostic_host.py",
+      "bytes": 5714,
+      "sha256": "f35fde033beb9cfd0aefd7edcedfca3b16aa778bea88c9273014bbd578a8dfcd"
+    },
+    {
+      "path": "diagnostic_support.py",
+      "bytes": 12400,
+      "sha256": "490d70028734f72a758c30ee32eb399afd3915359059cb2f6d308a64c4c9af09"
+    },
+    {
+      "path": "diagnostic_support.py.patch",
+      "bytes": 9249,
+      "sha256": "192491ed17f2e5b9c7f5541d214e3005ecfd2303196b09ed5bec1f1807e841e4"
+    },
+    {
+      "path": "FIELD_MAP.json",
+      "bytes": 2558,
+      "sha256": "268bb86d3fdbd8993b5bf1bb065f3dde5fc65a6b90a8abad800733f3891210e8"
+    },
+    {
+      "path": "PEER_REVIEW.json",
+      "bytes": 938,
+      "sha256": "51eda70f47ccefddb345948e6b151c07ae65b25900a0a354125be60fb951ca43"
+    },
+    {
+      "path": "READINESS.json",
+      "bytes": 817,
+      "sha256": "27c414d16b89d78a6c371fc17c54719beb64a230cf943b5c6312d04c0b0cd9d5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5319,
+      "sha256": "4bda8c935660bd78c62b87dc6ee55127d92e388b646fa8b4da9e0b5280af7142"
+    },
+    {
+      "path": "root_runner.py",
+      "bytes": 12541,
+      "sha256": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7"
+    },
+    {
+      "path": "source_successor.py",
+      "bytes": 8621,
+      "sha256": "f46b969dda9d8f50ae82c1d6432e0356b4a2c6a03877889275f9b9a18b37e0f0"
+    },
+    {
+      "path": "test_diagnostic.py",
+      "bytes": 6181,
+      "sha256": "a32d609f4ea7e801e7bc31cd89f054229a3a577fede418e686ac15630a8277b8"
+    },
+    {
+      "path": "test_diagnostic.py.patch",
+      "bytes": 1227,
+      "sha256": "54cd34e6454fe5dcebf001e820004e9406a5664891a73e4e4437e1ad25b0d481"
+    },
+    {
+      "path": "test_failed_full_successor.py",
+      "bytes": 5344,
+      "sha256": "783dbd387b23791c88e2960005a588ea55f3d26d132b5dc9010807d9b501cb54"
+    }
+  ],
+  "predecessor_INDEX_sha256": "fcda8dbbbfc6ec10c3f8fda283f5e7b04af1be5155bdcb3d3044a774d44a399b",
+  "CPU_methods": 18,
+  "independent_CPU_methods": 18,
+  "host_driver_unchanged": true,
+  "actual_root_admission_or_native_execution": false
+}

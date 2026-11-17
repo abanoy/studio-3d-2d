@@ -1,0 +1,41 @@
+{
+  "format": "has_Blender_factory_callback_public_source_analysis_1",
+  "source_compilation_only_no_execution_or_import": true,
+  "callbacks": [
+    {
+      "public_role": "POSE_MESSAGE_BUS_PRE",
+      "source_role": "POSE_LIBRARY_GUI",
+      "decorator_first_line": 190,
+      "source_compiled_bytecode_sha256": "11d71b5e4dec860ea6d3a1dd92d4f71d7039302e6b40c4c9ffc18d3ba0ede77a",
+      "source_compiled_co_names_sha256": "a0cdc1371d435462fd15a2f2710292b2d451fd304cec2eea2feb93135ef60094",
+      "source_compile_matches_recorded_bytecode": true,
+      "runtime_co_names_or_globals_observed": false
+    },
+    {
+      "public_role": "TRANSFORM_MESSAGE_BUS_POST",
+      "source_role": "COPY_GLOBAL_TRANSFORM",
+      "decorator_first_line": 811,
+      "source_compiled_bytecode_sha256": "11d71b5e4dec860ea6d3a1dd92d4f71d7039302e6b40c4c9ffc18d3ba0ede77a",
+      "source_compiled_co_names_sha256": "666b55fe3268ced5b97014a44184ce076710cb14e45abe01b03e20ea8ae7229e",
+      "source_compile_matches_recorded_bytecode": true,
+      "runtime_co_names_or_globals_observed": false
+    },
+    {
+      "public_role": "POSE_MESSAGE_BUS_POST",
+      "source_role": "POSE_LIBRARY_GUI",
+      "decorator_first_line": 196,
+      "source_compiled_bytecode_sha256": "11d71b5e4dec860ea6d3a1dd92d4f71d7039302e6b40c4c9ffc18d3ba0ede77a",
+      "source_compiled_co_names_sha256": "35c4c5feea8db05c38354b6ec6f1d9bd1ea8c692409c616d53c1ad3b18c6d624",
+      "source_compile_matches_recorded_bytecode": true,
+      "runtime_co_names_or_globals_observed": false
+    }
+  ],
+  "shared_recorded_bytecode_sha256": "11d71b5e4dec860ea6d3a1dd92d4f71d7039302e6b40c4c9ffc18d3ba0ede77a",
+  "bytecode_alone_distinguishes_callbacks": false,
+  "different_global_target_names_are_outside_co_code": true,
+  "runtime_globals_observed": false,
+  "handler_safety_or_future_admission_proved": false,
+  "whole_public_source_files_read_after_capture": true,
+  "whole_source_hashes_recorded_by_native_capture": false,
+  "two_public_startup_sources_are_supplemental_not_original_exporter120": true
+}

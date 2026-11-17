@@ -1,0 +1,42 @@
+{
+  "format": "has_camera_details_visibility_source_proposal_1",
+  "status": "PROPOSED_NOT_APPLIED_ROOT_REVIEW_AND_ACTUAL_FOCUSED_TEST_REQUIRED",
+  "baseline_candidate": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "diagnosis": "Neon Camera details parent visibility is refreshed only during _process; refresh_workspace flips Advanced child visibility synchronously but leaves that parent stale for immediate camera-mode queries.",
+  "change": "Call the existing refresh_camera_inspector once in refresh_workspace after Advanced and camera section visibility updates.",
+  "product_added_lines": 1,
+  "product_removed_lines": 0,
+  "app_raw_byte_inverse": true,
+  "original_CRLF_preserved": true,
+  "classic_empty_inspector_guard_unchanged": true,
+  "camera_values_handlers_signals_modes_and_shortcuts_unchanged": true,
+  "existing_camera_range_assertions_unchanged": true,
+  "camera_range_smoke_sha256": "e8b8287451874d26fed4f6ed7d91e463322ed08af179fc80b330150cde841bef",
+  "manifest_app_rows_changed": 2,
+  "manifest_hash_fields_per_app_row": 2,
+  "all_other_manifest_bytes_members_and_pose_rows_exact": true,
+  "manifest_row_counts": {
+    "tests/helper_preview_port_files.json": 25,
+    "tests/wind_review_port_files.json": 16
+  },
+  "source_hashes": {
+    "src/app.gd": {
+      "before_sha256": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67",
+      "proposed_sha256": "79b34e7d591f433e060edf72888d22443d1a0fc5e22dd2a246eb77c83fcad1b6"
+    },
+    "tests/helper_preview_port_files.json": {
+      "before_sha256": "2c9e483649108b9760aeb96e20c8ac95025a4b595fa0cfbb730308247fb7a8f0",
+      "proposed_sha256": "e4fd9597bbf1f9371cece5379a62c0982f53bbc32e83fafef13e19c361beebba"
+    },
+    "tests/wind_review_port_files.json": {
+      "before_sha256": "4cb3709064b668e63b25cb9576a69992495c5707ed5ec2dba291c0768852e79d",
+      "proposed_sha256": "2db0f61835d9b1918385a31202123b7cbf2e993b047d608a9f0dd1eec4b84de7"
+    }
+  },
+  "app_before_LF_sha256": "0eb4a61fe031652ac70562126114172fe5d1df6559c58156a1aed18b13e89307",
+  "app_proposed_LF_sha256": "79f340cc797738d205a3030f12339b1e74ed765edb557235a98c42282056328a",
+  "product_or_manifest_writes": false,
+  "engine_or_GPU_or_CIM_or_Git_execution": false,
+  "actual_post_fix_result": "UNRUN",
+  "root_native_lane_remains_exclusive": true
+}

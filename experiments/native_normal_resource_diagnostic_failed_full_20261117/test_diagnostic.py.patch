@@ -1,0 +1,17 @@
+--- predecessor/test_diagnostic.py
++++ successor/test_diagnostic.py
+@@ -12,11 +12,11 @@
+ 
+ 
+ def admission():
+-    return {'format': 'has_session_B_resource_diagnostic_admission_1', 'profile': S.PROFILE,
++    return {'format': 'has_session_B_resource_diagnostic_admission_2', 'profile': S.PROFILE,
+             'root_native_lane_exclusive': True, 'loader_readonly_dependency_resolution_authorized': True,
+             'claims': {key: False for key in S.QUALIFICATIONS},
+-            'expected_metadata_head': '1' * 40, 'functional_commit': '2' * 40, 'candidate_commit': S.CANDIDATE,
+-            'functional_count': 1029, 'issued_utc': (NOW - datetime.timedelta(seconds=10)).isoformat(),
++            'expected_metadata_head': '1' * 40, 'functional_commit': S.ROOT_FUNCTIONAL_COMMIT, 'candidate_commit': S.CANDIDATE,
++            'functional_count': 1019, 'candidate_functional_count': 1029, 'cold187_disposition': 'NOT_STARTED_AFTER_FAILED_FULL', 'issued_utc': (NOW - datetime.timedelta(seconds=10)).isoformat(),
+             'expires_utc': (NOW + datetime.timedelta(seconds=290)).isoformat(),
+             'proofs': {key: {} for key in S.PROOFS}, 'protected_originals': {key: {} for key in ('blend', 'glb', 'parameters')}}
+ 

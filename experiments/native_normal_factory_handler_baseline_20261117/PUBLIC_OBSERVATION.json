@@ -1,0 +1,83 @@
+{
+  "format": "has_factory_handler_public_metadata_projection_1",
+  "status": "RECORDED_METADATA_MATCHES_PINNED_PUBLIC_STARTUP_SOURCES_ONLY",
+  "handler_lists": 11,
+  "callbacks": 3,
+  "slots": [
+    {
+      "handler_list": "load_pre",
+      "index": 0,
+      "source_role": "POSE_LIBRARY_GUI",
+      "public_role": "POSE_MESSAGE_BUS_PRE",
+      "metadata_signature": "15396c13c4acba669a4eaa80b461c936f19203deba081de105b5c3ee19e3cbc8"
+    },
+    {
+      "handler_list": "load_post",
+      "index": 0,
+      "source_role": "COPY_GLOBAL_TRANSFORM",
+      "public_role": "TRANSFORM_MESSAGE_BUS_POST",
+      "metadata_signature": "746537657ec8d2843ce1dfcce2d827e8c8142d13befaa92be24527df428598c9"
+    },
+    {
+      "handler_list": "load_post",
+      "index": 1,
+      "source_role": "POSE_LIBRARY_GUI",
+      "public_role": "POSE_MESSAGE_BUS_POST",
+      "metadata_signature": "7de470d1f831e59711fad7a16ffadb8088c8e6508d20404ffd7a392d007acc59"
+    }
+  ],
+  "public_source_identities": {
+    "POSE_LIBRARY_GUI": {
+      "bytes": 7510,
+      "sha256": "abdd0336bd48e66bcd35d6282d5374d3bfa39974c4dbe30090ee0ea0e2670057"
+    },
+    "COPY_GLOBAL_TRANSFORM": {
+      "bytes": 30603,
+      "sha256": "ea911fd6ba24224a15800409c66843b8f37a4dc6deb8ae256d75e9d184c70552"
+    }
+  },
+  "runtime_co_names_or_globals_observed": false,
+  "callbacks_invoked": false,
+  "known_B_opened": false,
+  "resource_inventory_observed": false,
+  "handler_safety_or_future_admission_proved": false,
+  "current_full_context_established": false,
+  "old_strict31_native_PASS": false,
+  "native_fidelity_repair_export_or_adoption": false,
+  "capture_sha256": "bf55509b28438aa532063168a502bd8a4a8c509108d7f0338c6eba37bbd08cef",
+  "capture_bytes": 2005,
+  "context_classification": "HISTORICAL_FAILED_00BF_FACTORY_CAPTURE_NOT_CURRENT_FULL_CONTEXT",
+  "capture_marker_observed": true,
+  "process_exit": 2,
+  "process_reaped": true,
+  "process_timed_out": false,
+  "job_and_desktop_closed": true,
+  "private_window_seen": false,
+  "child_desktop_confirmed": false,
+  "receipt_error_classification": "NO_OWNED_GRAPHICAL_WINDOW_VERIFIED",
+  "resource_diagnostic_completed": false,
+  "source_tool_input_context_preserved": true,
+  "root_scopes_closed": true,
+  "raw_callback_names_or_absolute_paths_included": false,
+  "permitted_private_evidence_pins": {
+    "process.json": {
+      "bytes": 117,
+      "sha256": "aa90986b427ecb862c282091befaf24015fcae703005d07111f4bf9bbb24a7c1"
+    },
+    "private-receipt.json": {
+      "bytes": 507,
+      "sha256": "fadb8cef9ef0977a53aeeaddd98347bcab3d44acac94a0271538c323db872e2a"
+    },
+    "ROOT_RESULT.json": {
+      "bytes": 795,
+      "sha256": "d974b58147aa7e353e1d147add7d88fe903d72039a1f8f8d4a3939ddc977d545"
+    },
+    "PRIVATE_STDOUT.log": {
+      "bytes": 477,
+      "sha256": "70370eb5f71e4263333ac01205ee214411f30cf8b569f411340ac6a2d9442aff"
+    }
+  },
+  "scope_and_preservation_observation_is_historical": true,
+  "public_source_identity_observation_role": "READ_ONLY_SOURCE_ANALYSIS_AFTER_CLOSED_CAPTURE",
+  "whole_source_identity_recorded_during_native_capture": false
+}

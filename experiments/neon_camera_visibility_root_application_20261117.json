@@ -1,0 +1,22 @@
+{
+  "observed_utc": "2026-11-17T17:00:24.147420+00:00",
+  "baseline_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "functional_files": 1029,
+  "sole_functional_changes": {
+    "src/app.gd": {
+      "before": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67",
+      "after": "79b34e7d591f433e060edf72888d22443d1a0fc5e22dd2a246eb77c83fcad1b6"
+    },
+    "tests/helper_preview_port_files.json": {
+      "before": "2c9e483649108b9760aeb96e20c8ac95025a4b595fa0cfbb730308247fb7a8f0",
+      "after": "e4fd9597bbf1f9371cece5379a62c0982f53bbc32e83fafef13e19c361beebba"
+    },
+    "tests/wind_review_port_files.json": {
+      "before": "4cb3709064b668e63b25cb9576a69992495c5707ed5ec2dba291c0768852e79d",
+      "after": "2db0f61835d9b1918385a31202123b7cbf2e993b047d608a9f0dd1eec4b84de7"
+    }
+  },
+  "camera_assertions_unchanged": true,
+  "actual_post_fix_GPU": "UNRUN",
+  "full_PASS_or_merge": false
+}

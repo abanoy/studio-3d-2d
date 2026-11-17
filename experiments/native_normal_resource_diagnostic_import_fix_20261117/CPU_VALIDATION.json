@@ -1,0 +1,46 @@
+{
+  "format": "has_B_diagnostic_import_fix_source_CPU_audit_1",
+  "status": "SOURCE_GO_NATIVE_ATTEMPT3_UNRUN",
+  "observed_utc": "2026-11-17T16:48:26.330409+00:00",
+  "methods": 5,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 0.015,
+  "author_tool_chunk": "645170",
+  "independent_peer_methods": 5,
+  "independent_peer_failures": 0,
+  "independent_peer_seconds": 0.015,
+  "peer_test_tool_chunk": "bfed4b",
+  "peer_exact_patch_check_tool_chunk": "8e07da",
+  "predecessor_ModuleNotFoundError_reproduced_with_workspace_and_CWD_import_paths_absent": true,
+  "fixed_entry_imports_own_support_under_nonmain_namespace": true,
+  "bpy_import_and_actual_input_check_tripwire_calls": 0,
+  "host_one_line_raw_inverse_verified": true,
+  "support_driver_bytes_unchanged": true,
+  "all_three_old_packets_and_members_rechecked_unchanged": true,
+  "local_python_sources": {
+    "diagnostic_host.py": {
+      "bytes": 5771,
+      "sha256": "1b289ed174b0235c30903375f6bbe195b4bad6cfe0b2e507db4bb4dc255e32da"
+    },
+    "diagnostic_support.py": {
+      "bytes": 12400,
+      "sha256": "490d70028734f72a758c30ee32eb399afd3915359059cb2f6d308a64c4c9af09"
+    },
+    "root_runner.py": {
+      "bytes": 12541,
+      "sha256": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7"
+    },
+    "source_import_fix.py": {
+      "bytes": 1034,
+      "sha256": "ee8e0de6af11133f7b1c7d89efbf0bee68ec0c792395ccb3f6c17c1e95006ef6"
+    },
+    "test_entry_import.py": {
+      "bytes": 4381,
+      "sha256": "27dcadff2da1600c3a597243258d87828378e0631252b0f0dba4ab47ad509867"
+    }
+  },
+  "source_AST_parse_passed": true,
+  "actual_stage_native_CurrentReview_process_CIM_inputchecker_Git_network_access": false,
+  "actual_failure_details_source": "Root task message only; no private stage read by this agent."
+}

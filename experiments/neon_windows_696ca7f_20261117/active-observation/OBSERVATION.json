@@ -1,0 +1,75 @@
+{
+  "observed_utc": "2026-11-17T17:09:51.651308+00:00",
+  "result": "RUNNING_NO_RESULT",
+  "state": {
+    "format": "has_owned_canonical_run_1",
+    "pid": 12740,
+    "process_started": "2026-11-17T17:07:54.3896834Z",
+    "started_utc": "2026-11-17T17:07:54.6575974Z",
+    "status": "running",
+    "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+    "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-696ca7f-20261117T170720480423",
+    "source_commit": "696ca7f1491a43b1a2267a53f8ca0f62b7c211a9",
+    "python": "C:\\Program Files\\Python313\\python.exe",
+    "command": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-u",
+      "tests/verify.py"
+    ],
+    "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4"
+  },
+  "functional_sources_unchanged": 1029,
+  "actual_focused": {
+    "camera": 60,
+    "native_models": 5,
+    "neon": 12504,
+    "controls": 48
+  },
+  "focused_sha256": "9a0a959734ae56925af31a63207ba711ff6443fe44b38ef8f14425f64aa6bb4c",
+  "public_metadata_files": [
+    {
+      "path": "launch.json",
+      "bytes": 1187,
+      "sha256": "c4189adba53f3d3ef4c4cd801dbe032c3fc5b5f8a63772582be43bbf57b7644d",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "root-birth-observation.json",
+      "bytes": 365,
+      "sha256": "f08e4616654fffee63bbce9016e62d59a734ea49739631d61fa390b87018867c",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "root-birth-api-detail.json",
+      "bytes": 301,
+      "sha256": "8f570486e782087122c29d2524c4c39a265e41964af4a22dd5014e8f7b0a328d",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "source-before.json",
+      "bytes": 108131,
+      "sha256": "594cf0dfc7c28c402e5ddd01a81f42c6764761a969e1758df0ae37757b061eab",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "preflight-source.json",
+      "bytes": 104958,
+      "sha256": "101eb489cb0f071fb11f26716ece566cde3bf80a80a7962baf84d6066adb08b1",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "state.json",
+      "bytes": 724,
+      "sha256": "367176d87f955dd8222f61d8b8f9b2a79adee1adb3d385d233994a8c2b3cccc8",
+      "dated_snapshot_only": true
+    }
+  ],
+  "expected_not_pass": {
+    "groups": 158,
+    "core": 36,
+    "movies": 21
+  },
+  "root_native_lane": "exclusive",
+  "raw_native_report_or_logs_included": false,
+  "product_merged": false
+}

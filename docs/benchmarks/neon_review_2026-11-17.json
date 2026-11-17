@@ -91,17 +91,17 @@
   "next_full_inventory_sha256": "2c334aab837768ee17b2c13be0ad6ac26fa203a9e8815cd991b24a2de3386704",
   "old_regex_overescape_inference": "RETRACTED_PATTERN_VALID",
   "latest_observation": {
-    "observed_utc": "2026-11-17T16:01:00.667636+00:00",
+    "observed_utc": "2026-11-17T17:09:51.651308+00:00",
     "result": "RUNNING_NO_RESULT",
     "state": {
       "format": "has_owned_canonical_run_1",
-      "pid": 19808,
-      "process_started": "2026-11-17T15:58:55.2656645Z",
-      "started_utc": "2026-11-17T15:58:55.6798223Z",
+      "pid": 12740,
+      "process_started": "2026-11-17T17:07:54.3896834Z",
+      "started_utc": "2026-11-17T17:07:54.6575974Z",
       "status": "running",
       "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
-      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-replay2-20261117T155709412051",
-      "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-696ca7f-20261117T170720480423",
+      "source_commit": "696ca7f1491a43b1a2267a53f8ca0f62b7c211a9",
       "python": "C:\\Program Files\\Python313\\python.exe",
       "command": [
         "C:\\Program Files\\Python313\\python.exe",
@@ -111,52 +111,59 @@
       "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4"
     },
     "functional_sources_unchanged": 1029,
+    "actual_focused": {
+      "camera": 60,
+      "native_models": 5,
+      "neon": 12504,
+      "controls": 48
+    },
+    "focused_sha256": "9a0a959734ae56925af31a63207ba711ff6443fe44b38ef8f14425f64aa6bb4c",
     "public_metadata_files": [
       {
         "path": "launch.json",
-        "bytes": 1203,
-        "sha256": "a46b3e2537498d34f0625d7adefe25aafb5820cbc0e61cf35b036c21a0dcaaa3",
+        "bytes": 1187,
+        "sha256": "c4189adba53f3d3ef4c4cd801dbe032c3fc5b5f8a63772582be43bbf57b7644d",
         "dated_snapshot_only": false
       },
       {
         "path": "root-birth-observation.json",
         "bytes": 365,
-        "sha256": "407eebd3868bd7332601b2c05880d651c36b8a960becdc2d1f4349e464d00a50",
+        "sha256": "f08e4616654fffee63bbce9016e62d59a734ea49739631d61fa390b87018867c",
         "dated_snapshot_only": false
       },
       {
         "path": "root-birth-api-detail.json",
         "bytes": 301,
-        "sha256": "c50bb07b1d5edcc1164135a5382c90e9165cee6b1e66bec3e910aaeceb4811ba",
+        "sha256": "8f570486e782087122c29d2524c4c39a265e41964af4a22dd5014e8f7b0a328d",
         "dated_snapshot_only": false
       },
       {
         "path": "source-before.json",
         "bytes": 108131,
-        "sha256": "5064dc9e7932cfb05360e3df974dbbeb56cae682bfade6cb286e3040302ab67f",
+        "sha256": "594cf0dfc7c28c402e5ddd01a81f42c6764761a969e1758df0ae37757b061eab",
         "dated_snapshot_only": false
       },
       {
         "path": "preflight-source.json",
         "bytes": 104958,
-        "sha256": "983512ea012340cbab77ed420836df7b01de39cdf7863aab30a1ee55a9a531ee",
+        "sha256": "101eb489cb0f071fb11f26716ece566cde3bf80a80a7962baf84d6066adb08b1",
         "dated_snapshot_only": false
       },
       {
         "path": "state.json",
-        "bytes": 732,
-        "sha256": "5e955ae5493c2aa06ea651b9f1a700d3352b5f8dab0603d6a602348e2d51989d",
+        "bytes": 724,
+        "sha256": "367176d87f955dd8222f61d8b8f9b2a79adee1adb3d385d233994a8c2b3cccc8",
         "dated_snapshot_only": true
       }
     ],
-    "root_native_lane": "exclusive",
     "expected_not_pass": {
       "groups": 158,
       "core": 36,
       "movies": 21
     },
-    "raw_logs_or_native_model_arrays_included": false,
-    "redesign_merged": false
+    "root_native_lane": "exclusive",
+    "raw_native_report_or_logs_included": false,
+    "product_merged": false
   },
   "preceding_4ed_observation": {
     "candidate": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
@@ -463,16 +470,15 @@
     "manual_owner_result": "DEFERRED_NO_RESULT"
   },
   "latest_public_checkpoint": {
-    "observed_utc": "2026-11-17T04:55:36.942651+00:00",
-    "commit": "4ec7b57334ca04aab42d3d4e8a62c12df4858d8c",
-    "independent_remote_exact_files": 694,
-    "git_bytes": 7829487,
-    "working_EOL_recipes": 2,
-    "proof_sha256": "7571c27fafeec4b451675840dd834613932e7aa920ac4e3629b8e084b1ddf202",
-    "main_functional_unchanged": 1019,
+    "observed_utc": "2026-11-17T16:20:22.844546+00:00",
+    "commit": "a41a204bffb98614abfa80e0e6340078b1d719f1",
+    "independent_remote_exact_files": 195,
+    "Git_bytes": 4439113,
+    "working_EOL_recipes": 4,
+    "proof_sha256": "6d17b0c2f3236c7e69a74da91b793ec9362cf1fbf6f487bc77a50cda2b1f3cc9",
     "product_redesign_merged": false,
-    "review_branch_upload_retried": false,
-    "new_cleanup_performed": false
+    "new_cleanup_performed": false,
+    "review_branch_upload_retried": false
   },
   "latest_source_followup": {
     "observed_utc": "2026-11-17T05:07:15.316889+00:00",
@@ -622,5 +628,118 @@
     "original_runtime_stamp_difference_fields": "UNKNOWN_NOT_CAPTURED",
     "replay2_full_started": false,
     "redesign_merged": false
+  },
+  "preceding_replay2_running": {
+    "observed_utc": "2026-11-17T16:01:00.667636+00:00",
+    "result": "RUNNING_NO_RESULT",
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 19808,
+      "process_started": "2026-11-17T15:58:55.2656645Z",
+      "started_utc": "2026-11-17T15:58:55.6798223Z",
+      "status": "running",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-replay2-20261117T155709412051",
+      "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4"
+    },
+    "functional_sources_unchanged": 1029,
+    "public_metadata_files": [
+      {
+        "path": "launch.json",
+        "bytes": 1203,
+        "sha256": "a46b3e2537498d34f0625d7adefe25aafb5820cbc0e61cf35b036c21a0dcaaa3",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "root-birth-observation.json",
+        "bytes": 365,
+        "sha256": "407eebd3868bd7332601b2c05880d651c36b8a960becdc2d1f4349e464d00a50",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "root-birth-api-detail.json",
+        "bytes": 301,
+        "sha256": "c50bb07b1d5edcc1164135a5382c90e9165cee6b1e66bec3e910aaeceb4811ba",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "source-before.json",
+        "bytes": 108131,
+        "sha256": "5064dc9e7932cfb05360e3df974dbbeb56cae682bfade6cb286e3040302ab67f",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "preflight-source.json",
+        "bytes": 104958,
+        "sha256": "983512ea012340cbab77ed420836df7b01de39cdf7863aab30a1ee55a9a531ee",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "state.json",
+        "bytes": 732,
+        "sha256": "5e955ae5493c2aa06ea651b9f1a700d3352b5f8dab0603d6a602348e2d51989d",
+        "dated_snapshot_only": true
+      }
+    ],
+    "root_native_lane": "exclusive",
+    "expected_not_pass": {
+      "groups": 158,
+      "core": 36,
+      "movies": 21
+    },
+    "raw_logs_or_native_model_arrays_included": false,
+    "redesign_merged": false
+  },
+  "preceding_replay2_failed": {
+    "observed_utc": "2026-11-17T16:36:29.065056+00:00",
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 19808,
+      "process_started": "2026-11-17T15:58:55.2656645Z",
+      "started_utc": "2026-11-17T15:58:55.6798223Z",
+      "status": "failed",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-replay2-20261117T155709412051",
+      "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+      "suite_exit": 1,
+      "source_unchanged": true,
+      "finished_utc": "2026-11-17T16:28:42.8760718Z"
+    },
+    "result": "FAILED_CAMERA_ADVANCED_VISIBILITY",
+    "camera_report": {
+      "checks": 60,
+      "failures": 1,
+      "native_models": 5
+    },
+    "failure_label": "Advanced exposes editable view-distance controls in camera mode",
+    "source_only_diagnosis_not_yet_GPU_verified": "refresh_workspace does not synchronously refresh the inner Camera details parent after changing Advanced mode.",
+    "physical_jobs": 92,
+    "normal_exit0": 90,
+    "registered_Krita_cancel_exit2": 1,
+    "failed_partial_nonzero": 1,
+    "inline_exact_matches": 11,
+    "phase_documents": 64,
+    "functional_sources_unchanged": 1029,
+    "released_utc": "2026-11-17T16:29:46.0233172Z",
+    "inventory_sha256": "acd509905aed7330636e0300d6ed48b9453ec1d1ed3a121130dba7509b888328",
+    "raw_report_logs_phase_native_arrays_included": false,
+    "full_pass_claimed": false,
+    "product_merged": false,
+    "new_camera_product_patch_applied": false,
+    "actual_cold187_started": false
   }
 }

@@ -1,0 +1,27 @@
+{
+  "format": "has_neon696_full_preflight_source_seal_1",
+  "source_files": [
+    {
+      "ROOT_relative_path": "experiments/prepare_neon_696_full_actual_20261117.py",
+      "bytes": 9760,
+      "sha256": "4f70c47833011da549259085816552ac3b373ebd26a4838187b5dd42851c5488"
+    },
+    {
+      "ROOT_relative_path": "experiments/check_neon_696_full_source_20261117.py",
+      "bytes": 8172,
+      "sha256": "ead17eb41264dc51fa57e7de8d0e4be4e200fd9e0fdc7d66a5cc9c9bf21ee5d7"
+    }
+  ],
+  "original_preflight_sha256": "da3985153792fa2e60f517b953fb308baaab5634711d51a4f5f34321d1734f2b",
+  "source_inverse_exact": true,
+  "protected_input_block_byte_exact": true,
+  "actual_closed_focused_verification_sha256": "9a0a959734ae56925af31a63207ba711ff6443fe44b38ef8f14425f64aa6bb4c",
+  "focused_before_and_after_sha256": "101eb489cb0f071fb11f26716ece566cde3bf80a80a7962baf84d6066adb08b1",
+  "focused_schema_actual_accepted": true,
+  "negative_gate_checks": 29,
+  "prior_release_gate_tested_in_RAM_only_actual_output_not_read": true,
+  "peer_source_review_passed_with_both_tightenings_incorporated": true,
+  "preflight_executed": false,
+  "reservation_or_runner_or_engine_launched": false,
+  "Main_or_Review_writes": false
+}

@@ -1,0 +1,29 @@
+{
+  "format": "has_root_reported_B_diagnostic_entry_failures_1",
+  "evidence_source": "Root task message; this source-preparation agent did not read actual private stage outputs.",
+  "attempt1": {
+    "result": "FRESH_SCOPE_REFUSAL",
+    "owned_scope_count": 1,
+    "cause_reported": "Parent Root preparer still waiting; root subsequently separated preparation from direct invocation.",
+    "B_opened": false
+  },
+  "attempt2": {
+    "private_stage": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-normal-B-resource-diagnostic-after-failed-full-20261117-attempt2",
+    "result": "BLENDER_ENTRY_IMPORT_FAILED_BEFORE_B_OPEN_OR_SENTINEL",
+    "exception": "ModuleNotFoundError: diagnostic_support",
+    "host_line": 9,
+    "wrapper_pid": 11560,
+    "wrapper_exit": 1,
+    "wrapper_seconds": 1.46985,
+    "wrapper_reaped": true,
+    "private_child_pid": 3688,
+    "job_closed": true,
+    "desktop_closed": true,
+    "private_window_seen": false,
+    "fresh_scope_before": 0,
+    "fresh_scope_after": 0,
+    "sources_tools_and_three_B_companions_preserved": true,
+    "B_opened": false
+  },
+  "actual_attempt3_admission_or_execution_by_this_agent": false
+}

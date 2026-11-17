@@ -1,0 +1,33 @@
+{
+  "format": "has_failed_full_B_diagnostic_exact_source_successor_1",
+  "predecessor_INDEX_sha256": "fcda8dbbbfc6ec10c3f8fda283f5e7b04af1be5155bdcb3d3044a774d44a399b",
+  "changes": {
+    "diagnostic_support.py": {
+      "before_sha256": "55a8ee85a250ac9c0a7fc1b6f1306fd3863ef844c7769df18c07615a68858f57",
+      "after_sha256": "490d70028734f72a758c30ee32eb399afd3915359059cb2f6d308a64c4c9af09",
+      "exact_inverse": true,
+      "patch_sha256": "192491ed17f2e5b9c7f5541d214e3005ecfd2303196b09ed5bec1f1807e841e4"
+    },
+    "test_diagnostic.py": {
+      "before_sha256": "c51b5f46e2c09c6abf78184db75719f0cf2a85fc9cc246f090b1e83349385877",
+      "after_sha256": "a32d609f4ea7e801e7bc31cd89f054229a3a577fede418e686ac15630a8277b8",
+      "exact_inverse": true,
+      "patch_sha256": "54cd34e6454fe5dcebf001e820004e9406a5664891a73e4e4437e1ad25b0d481"
+    },
+    "diagnostic_host.py": {
+      "before_sha256": "f35fde033beb9cfd0aefd7edcedfca3b16aa778bea88c9273014bbd578a8dfcd",
+      "after_sha256": "f35fde033beb9cfd0aefd7edcedfca3b16aa778bea88c9273014bbd578a8dfcd",
+      "unchanged_bytes": true
+    },
+    "root_runner.py": {
+      "before_sha256": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7",
+      "after_sha256": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7",
+      "unchanged_bytes": true
+    }
+  },
+  "main_source_context": "ROOT functional52f/1019, metadata HEAD supplied separately",
+  "review_source_context": "Actual failed Review00bf/1029 R2 release plus exact source-after, no ROOTmerge",
+  "cold187": "NOT_STARTED_AFTER_FAILED_FULL, no fake preservation/result",
+  "host_driver_runtime_and_collector_changes": false,
+  "native_execution": false
+}

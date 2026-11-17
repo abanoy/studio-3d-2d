@@ -1,0 +1,14 @@
+{
+  "format": "has_before_B_factory_handler_capture_exact_source_derivation_1",
+  "predecessor_INDEX_sha256": "49c9c6449c9e4b01ed9de7f12fe549ce60b9e7dc37e939923c20ad917524ce64",
+  "host_before_sha256": "1b289ed174b0235c30903375f6bbe195b4bad6cfe0b2e507db4bb4dc255e32da",
+  "host_after_sha256": "185ea08b23d79309aa6596986b67a1442d661d87150753f304e722fd138c49c9",
+  "patch_sha256": "6eed7e3ff533187579731b8481eadda62fad522e1526efbc1cbc34dc678a6c01",
+  "exact_raw_inverse": true,
+  "support_driver_unchanged": {
+    "diagnostic_support.py": "490d70028734f72a758c30ee32eb399afd3915359059cb2f6d308a64c4c9af09",
+    "root_runner.py": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7"
+  },
+  "intentional_control_flow": "After existing factory/input guards, capture metadata and recheck inputs, write private output and return BEFORE old handler guard/sentinel/B open. Old resource guards/body exact and unreachable in this capture profile.",
+  "native_execution": false
+}

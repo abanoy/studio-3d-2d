@@ -1,0 +1,20 @@
+--- 49c9/diagnostic_host.py
++++ factory-capture/diagnostic_host.py
+@@ -43,6 +43,17 @@
+     S.need(S.safe(bpy.app.binary_path) == S.safe(request['blender_executable']) == S.safe(approved_blender), 'Approved Blender binary path required')
+     S.need(bpy.app.background is True and bpy.app.online_access is False and bpy.app.autoexec_fail is False
+            and bpy.context.preferences.filepaths.use_scripts_auto_execute is False and bpy.data.filepath == '', 'Factory background/offline/no-file/disabled-autoexec required')
++    # Intentional factory metadata capture; old resource guards remain below.
++    from handler_metadata import capture_handlers
++    factory_raw, factory_summary = capture_handlers(bpy.app.handlers)
++    S.need(r.identity(original, single_link=True) == request['original_identity']
++           and r.identity(owned, single_link=True) == request['owned_identity']
++           and S.digest(request_path.read_bytes()) == args.request_sha256, 'Host inputs changed during diagnostic')
++    S.need(S.check_inputs(request['admission_path'], request['admission_sha256'], request['packet_sha256']) == admitted,
++           'Host root/source/tool/original context changed')
++    with (stage / 'PRIVATE_FACTORY_HANDLERS.json').open('xb') as stream: stream.write(factory_raw)
++    print('HAS_B_FACTORY_HANDLERS_CAPTURE ' + json.dumps(factory_summary, sort_keys=True, allow_nan=False))
++    return  # Before handler admission, sentinel, open_mainfile or resource queries.
+     for name in ('load_pre', 'load_post', 'load_post_fail', 'depsgraph_update_pre', 'depsgraph_update_post',
+                  'frame_change_pre', 'frame_change_post', 'render_pre', 'render_post', 'save_pre', 'save_post'):
+         S.need(len(getattr(bpy.app.handlers, name)) == 0, 'Unexpected pre-load handler')

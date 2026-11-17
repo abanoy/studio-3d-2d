@@ -1,0 +1,83 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "native_normal_factory_handler_capture_20261117",
+  "status": "SEALED_INTENTIONAL_BEFORE_MODEL_FACTORY_HANDLER_CAPTURE_SOURCE_CPU_GO_NATIVE_UNRUN",
+  "files": [
+    {
+      "path": "ADMISSION.template.json",
+      "bytes": 2976,
+      "sha256": "9b5f33305fd57457c88bcffcb94a0dd6c65e4fd50ead2ec41655e1db8610a5ec"
+    },
+    {
+      "path": "COLD187-NOT-STARTED.template.json",
+      "bytes": 615,
+      "sha256": "4fad2c3b42bf7c517ba72fa515423516efc3029dc02960b874346bb910c43c72"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 1845,
+      "sha256": "4f2d8bb60e8634c1e60add6d75e3c54d32ce2d67897c6d86c3a152a2b32e0d41"
+    },
+    {
+      "path": "DERIVATION.json",
+      "bytes": 982,
+      "sha256": "2065bc009718785ee3b229c9c78533eebdb71a394b138fe0646504034a050019"
+    },
+    {
+      "path": "diagnostic_host.py",
+      "bytes": 6721,
+      "sha256": "185ea08b23d79309aa6596986b67a1442d661d87150753f304e722fd138c49c9"
+    },
+    {
+      "path": "diagnostic_host.py.patch",
+      "bytes": 1799,
+      "sha256": "6eed7e3ff533187579731b8481eadda62fad522e1526efbc1cbc34dc678a6c01"
+    },
+    {
+      "path": "diagnostic_support.py",
+      "bytes": 12400,
+      "sha256": "490d70028734f72a758c30ee32eb399afd3915359059cb2f6d308a64c4c9af09"
+    },
+    {
+      "path": "handler_metadata.py",
+      "bytes": 3796,
+      "sha256": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc"
+    },
+    {
+      "path": "PEER_REVIEW.json",
+      "bytes": 956,
+      "sha256": "cc256b1d938de4fd1f5f780487e2d8442dd59250d775f20358054dc854d22751"
+    },
+    {
+      "path": "READINESS.json",
+      "bytes": 848,
+      "sha256": "dbe1c62ca5749e89656d40e220db01a5747e19965044a3b68eb636eb2c3cc712"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3109,
+      "sha256": "44425c41a3c713b786d9630eefde9e8edee4eee6232e1538b8f86605f1894092"
+    },
+    {
+      "path": "root_runner.py",
+      "bytes": 12541,
+      "sha256": "6b374ae4ee1f2490fabcb34a096c1c00f345b9ede21a092ed1a4cd79113ca7e7"
+    },
+    {
+      "path": "source_capture.py",
+      "bytes": 1942,
+      "sha256": "fb7da838ab5afec2993cd6626f49e76b343814186658c922fb6810ceba2aa171"
+    },
+    {
+      "path": "test_handler_metadata.py",
+      "bytes": 4939,
+      "sha256": "7659c47e74b00076248b605bc7d33a73174824eb3fc8162b4d1faa20ac2b2a2a"
+    }
+  ],
+  "predecessor_INDEX_sha256": "49c9c6449c9e4b01ed9de7f12fe549ce60b9e7dc37e939923c20ad917524ce64",
+  "author_CPU_methods": 5,
+  "independent_CPU_methods": 5,
+  "actual_B_open_or_resource_or_native_PASS": false,
+  "private_output": "PRIVATE_FACTORY_HANDLERS.json",
+  "stdout_marker": "HAS_B_FACTORY_HANDLERS_CAPTURE "
+}

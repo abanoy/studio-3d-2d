@@ -1,0 +1,248 @@
+{
+  "format": "has_root_B_diagnostic_closed_scalar_observations_1",
+  "observed_utc": "2026-11-17T17:14:24.726385+00:00",
+  "attempts": [
+    {
+      "attempt": 1,
+      "root_result_sha256": "b649ef9c660c7e7add8c33fea564e2a52bdd8114b4d3db5ee531075ad18672b1",
+      "result": {
+        "format": "has_root_session_B_resource_diagnostic_execution_1",
+        "profile": "SESSION_B_READONLY_RESOURCE_DIAGNOSTIC_AFTER_FAILED_FULL",
+        "diagnostic_completed": false,
+        "input_source_tool_context_preserved": true,
+        "root_fresh_scopes_closed": false,
+        "process": {},
+        "resource_status": null,
+        "export_branch": null,
+        "claims": {
+          "preload_IO_confinement": false,
+          "historical_generation": false,
+          "export_equivalence": false,
+          "normal_repair": false,
+          "native_fidelity": false,
+          "artifact_adoption": false,
+          "legacy_strict_survey_native_pass": false
+        },
+        "admission_sha256": "a1209630822030e0991c4876261d44045a511160a9836bce03f81dc052a2e04e",
+        "packet_sha256": "7273d278b77dc9bb12c5763e7993013be717b177ea19c27b625b0649ca62fc5d",
+        "error_type": "ValueError"
+      },
+      "B_model_opened": false,
+      "before-closure": {
+        "main_count": 1,
+        "owned_count": 1,
+        "neon_count": 0,
+        "observed_utc": "2026-11-17T16:41:11.4366742Z",
+        "observer_retained_Popen_reaped": true
+      },
+      "after-closure": {
+        "main_count": 1,
+        "neon_count": 0,
+        "owned_count": 1,
+        "observed_utc": "2026-11-17T16:41:13.8759365Z",
+        "observer_retained_Popen_reaped": true
+      }
+    },
+    {
+      "attempt": 2,
+      "root_result_sha256": "ec855f93589a06cc3010d24d7704d9f01a0986aecc45a861972d283129e65008",
+      "result": {
+        "format": "has_root_session_B_resource_diagnostic_execution_1",
+        "profile": "SESSION_B_READONLY_RESOURCE_DIAGNOSTIC_AFTER_FAILED_FULL",
+        "diagnostic_completed": false,
+        "input_source_tool_context_preserved": true,
+        "root_fresh_scopes_closed": true,
+        "process": {},
+        "resource_status": null,
+        "export_branch": null,
+        "claims": {
+          "preload_IO_confinement": false,
+          "historical_generation": false,
+          "export_equivalence": false,
+          "normal_repair": false,
+          "native_fidelity": false,
+          "artifact_adoption": false,
+          "legacy_strict_survey_native_pass": false
+        },
+        "admission_sha256": "2ea2de4dc02b7c9c6cf5182f608a6aa2acf6ab7008e0de93e297a49a2e61deac",
+        "packet_sha256": "7273d278b77dc9bb12c5763e7993013be717b177ea19c27b625b0649ca62fc5d",
+        "error_type": "ValueError"
+      },
+      "B_model_opened": false,
+      "before-closure": {
+        "neon_count": 0,
+        "observed_utc": "2026-11-17T16:42:30.0325383Z",
+        "main_count": 0,
+        "owned_count": 0,
+        "observer_retained_Popen_reaped": true
+      },
+      "after-closure": {
+        "main_count": 0,
+        "observed_utc": "2026-11-17T16:42:39.2609548Z",
+        "owned_count": 0,
+        "neon_count": 0,
+        "observer_retained_Popen_reaped": true
+      },
+      "process": {
+        "pid": 11560,
+        "exit": 1,
+        "timed_out": false,
+        "retained_Popen_reaped": true,
+        "seconds": 1.4698502999999619
+      },
+      "physical_receipt_fields": {
+        "exit": 1,
+        "child_pid": 3688,
+        "timed_out": null,
+        "cancelled": null,
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "physical_receipt_sha256": "8d6d195ab6325b1d80d9b4f6d2af4889fdfcf0d1cbc03828f29269d7fdcf130e"
+    },
+    {
+      "attempt": 3,
+      "root_result_sha256": "e3bd2b97f74fce7be6315f542945b8406cf9d63207fec8174e6aa0772f39468d",
+      "result": {
+        "format": "has_root_session_B_resource_diagnostic_execution_1",
+        "profile": "SESSION_B_READONLY_RESOURCE_DIAGNOSTIC_AFTER_FAILED_FULL",
+        "diagnostic_completed": false,
+        "input_source_tool_context_preserved": true,
+        "root_fresh_scopes_closed": true,
+        "process": {},
+        "resource_status": null,
+        "export_branch": null,
+        "claims": {
+          "preload_IO_confinement": false,
+          "historical_generation": false,
+          "export_equivalence": false,
+          "normal_repair": false,
+          "native_fidelity": false,
+          "artifact_adoption": false,
+          "legacy_strict_survey_native_pass": false
+        },
+        "admission_sha256": "ea864ae678096e00f3cb4ad11bc2a62b0a82f0a866d31e0be680355065a3c7b2",
+        "packet_sha256": "49c9c6449c9e4b01ed9de7f12fe549ce60b9e7dc37e939923c20ad917524ce64",
+        "error_type": "ValueError"
+      },
+      "B_model_opened": false,
+      "before-closure": {
+        "owned_count": 0,
+        "observed_utc": "2026-11-17T16:49:10.1354770Z",
+        "main_count": 0,
+        "neon_count": 0,
+        "observer_retained_Popen_reaped": true
+      },
+      "after-closure": {
+        "main_count": 0,
+        "observed_utc": "2026-11-17T16:49:23.3232454Z",
+        "neon_count": 0,
+        "owned_count": 0,
+        "observer_retained_Popen_reaped": true
+      },
+      "process": {
+        "pid": 15516,
+        "exit": 1,
+        "timed_out": false,
+        "retained_Popen_reaped": true,
+        "seconds": 5.81083899999976
+      },
+      "physical_receipt_fields": {
+        "exit": 1,
+        "child_pid": 3448,
+        "timed_out": null,
+        "cancelled": null,
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "physical_receipt_sha256": "1e0a6d3e521ed4a7b023e8159f086ea6f72ee72983f94fac826d2f6a62053191"
+    },
+    {
+      "attempt": 4,
+      "root_result_sha256": "d974b58147aa7e353e1d147add7d88fe903d72039a1f8f8d4a3939ddc977d545",
+      "result": {
+        "format": "has_root_session_B_resource_diagnostic_execution_1",
+        "profile": "SESSION_B_READONLY_RESOURCE_DIAGNOSTIC_AFTER_FAILED_FULL",
+        "diagnostic_completed": false,
+        "input_source_tool_context_preserved": true,
+        "root_fresh_scopes_closed": true,
+        "process": {},
+        "resource_status": null,
+        "export_branch": null,
+        "claims": {
+          "preload_IO_confinement": false,
+          "historical_generation": false,
+          "export_equivalence": false,
+          "normal_repair": false,
+          "native_fidelity": false,
+          "artifact_adoption": false,
+          "legacy_strict_survey_native_pass": false
+        },
+        "admission_sha256": "e6bbf069239bc52176cbbbf1c0ea69192e14460d1223bddb8626c98afe2d33a3",
+        "packet_sha256": "34e33b91e5381eca069a5a9133d32e9993d455f85c0a057afee85b68cc815ad1",
+        "error_type": "ValueError"
+      },
+      "B_model_opened": false,
+      "before-closure": {
+        "main_count": 0,
+        "observed_utc": "2026-11-17T16:58:24.1547709Z",
+        "owned_count": 0,
+        "neon_count": 0,
+        "observer_retained_Popen_reaped": true
+      },
+      "after-closure": {
+        "owned_count": 0,
+        "neon_count": 0,
+        "main_count": 0,
+        "observed_utc": "2026-11-17T16:58:39.6449675Z",
+        "observer_retained_Popen_reaped": true
+      },
+      "process": {
+        "pid": 832,
+        "exit": 2,
+        "timed_out": false,
+        "retained_Popen_reaped": true,
+        "seconds": 9.485092099999747
+      },
+      "physical_receipt_fields": {
+        "exit": 2,
+        "child_pid": 24680,
+        "timed_out": null,
+        "cancelled": null,
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "physical_receipt_sha256": "fadb8cef9ef0977a53aeeaddd98347bcab3d44acac94a0271538c323db872e2a"
+    }
+  ],
+  "limitations": [
+    "Attempt1 scope match identity was not captured; preparer parent was still running.",
+    "Attempt2 import failed before B open.",
+    "Attempt3 refused unexpected pre-load handler before B open.",
+    "Attempt4 intentionally captured factory metadata and returned before B open; wrapper/placement/resource PASS not earned."
+  ],
+  "factory_capture": {
+    "bytes": 2005,
+    "sha256": "bf55509b28438aa532063168a502bd8a4a8c509108d7f0338c6eba37bbd08cef",
+    "handler_lists": 11,
+    "callbacks": 3,
+    "callbacks_called": false,
+    "code_paths_opened": false,
+    "B_model_opened": false
+  },
+  "source_model_resource_or_fidelity_PASS_claimed": false,
+  "raw_callback_names_paths_or_model_payload_included": false,
+  "original_normal_tolerance_unchanged": 2e-05
+}

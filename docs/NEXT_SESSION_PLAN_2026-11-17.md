@@ -1,6 +1,40 @@
 # HAS continuation — November 17, 2026
 
-CURRENT dated 2026-11-17T16:01:00.667636+00:00: freshsame00bf replay2 RUNNING, notPASS.
+CURRENT dated 2026-11-17T17:09:51.651308+00:00: candidate696ca7f fullRUNNING, notPASS.
+Run output/windows-neon-696ca7f-20261117T170720480423; coordinator12740 birth
+2026-11-17T17:07:54.3896834Z; Python5384 GetProcessbirth17:07:54.8423868Z,parent
+12740; CIM.8423860 metadataonly. FreezeReview1029files/HEAD696; native lane ROOT
+exclusive, no secondengine/native run or source change. Context-only terminal
+helper sealed eecfb760/CONTEXT2f21bb28,29CPU+peer pass; never use00bf/R2 context.
+Only after ROOT observes real terminal, approvedhost Python -B
+experiments/neon_696_terminal_20261117/close_terminal.py
+--root-terminal-confirmed --release-closed. Expected158/36/21 NOTsuccess.
+Actualfocused camera60/native5,Neon12504,controls48 all0fail with source/scopes
+preserved,9a0a9597; originaltests unchanged. Strict fresh6+574original/copy+120+36
+and currentMima/rawVRM identities pass. Product/sourcefixonecall+2appmanifestrows.
+Five-text-source reconstruction94a74d55 prepared; appGitblobexactCRLF,4LFbridges.
+
+Read-only B before-model factory observation captured3callbacks/11lists without
+openingB; allBresources/export/carrier/repair/fidelity remainUNQUALIFIED. Detailed
+startup metadata staysPRIVATE; no furtherBnative beforethisfull/copywork closes.
+Mainlatestpusheda41a204/runtime1019unchanged; no productmerge/owner-copy/cold187.
+
+
+PRECEDING: replay2 actual full FAILED16:28:42.8760718Z camera_range60/1. Only
+failure: Advanced near/far controls hidden until next inspector refresh. Other
+five-native/projection/portable/movie cases pass. Source1029unchanged; root9a7
+terminal audit closed92private jobs90exit0+Krita2+cameraexit1,11inline/64phases;
+released16:29:46.0233172Z inventoryacd50990. Native lane now free/root-exclusive;
+do not run terminalhelper again on the same attempt. All raw evidence PRIVATE.
+One-call synchronous refresh_camera_inspector proposal9b5cac0b is source-reviewed
+but not applied/GPU-qualified yet. Both manifest app pins need exact refresh.
+Complete actualfocusedcamera and appropriateNeon controls, then newfrozenfull.
+No merge or cold187. A separate authorized read-only B resource diagnostic may
+run after fresh admission while source-only camera work continues; no normals
+repair/carrier/adoption/fidelity or pre-load filesystem confinement follows.
+
+
+HISTORICAL running snapshot dated 2026-11-17T16:01:00.667636+00:00: freshsame00bf replay2 RUNNING, notPASS.
 Run output/windows-neon-00bf0f9-replay2-20261117T155709412051; coordinator19808
 GetProcessbirth15:58:55.2656645Z, Python8888 GetProcessbirth15:58:55.9596269Z,
 parent19808; CIM.9596260 metadataonly. Freeze1029functional files/HEAD00bf.
@@ -53,7 +87,11 @@ Actual terminal audits stay under REVIEW/output, already ignored by output/.
 Only an independently reviewed explicit scalar projection may be selected.
 
 
-Latest retrieval checkpoint: main4ec7b57334ca04aab42d3d4e8a62c12df4858d8c.
+Latest retrieval checkpoint: maina41a204bffb98614abfa80e0e6340078b1d719f1.
+All195 selected public files independently recovered/exact Git blobs
+(4,439,113bytes/4working-EOL recipes). Proof is in the local
+neon_restart_source_checkpoint_remote_20261117 folder for the next increment.
+The earlier main4ec7b57 checkpoint was also independently recovered:
 All694 public files independently fetched/exact Git blobs (7,829,487bytes;
 2working-EOL recipes). Proof experiments/neon_fe9_checkpoint_remote_20261117/
 COMPLETE_READBACK.json is saved locally for the next checkpoint. This preserves

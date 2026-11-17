@@ -1,0 +1,84 @@
+diff --git a/LLM.md b/LLM.md
+index fe7c244..fa630a7 100644
+--- a/LLM.md
++++ b/LLM.md
+@@ -5626,3 +5626,16 @@ matches its own retained descriptor and exact priorMain52 catalogue plan; this
+ does not recover or substitute the different oldb577bundle. Actual focused checks
+ and another complete default are required. Product code/look and merge status
+ remain unchanged; no full PASS or artist fidelity is inferred.
++
++## Windows immediate Camera details visibility — November 17, 2026
++
++The unchanged00bf replay2 full failed camera_range60/1 because Advanced near/far
++controls were checked before the next process frame. Its parent Camera details
++visibility was only refreshed per-frame. One call to the existing guarded
++refresh_camera_inspector in refresh_workspace now synchronizes it with Advanced
++and mode changes. Values, signals, controls and original test predicates remain
++unchanged; classic's empty-inspector guard stays exact. The two reviewed app hash
++rows are refreshed in the existing wind/helper manifests; all other rows and
++memberships remain exact. Root closed92private jobs/source1029 unchanged before
++this patch. Focused graphics and a new complete frozen verifier are still UNRUN.
++No full PASS or product merge is claimed.
+diff --git a/docs/REDESIGN-PORT.md b/docs/REDESIGN-PORT.md
+index 7e5b3e1..24b90ec 100644
+--- a/docs/REDESIGN-PORT.md
++++ b/docs/REDESIGN-PORT.md
+@@ -1195,3 +1195,16 @@ matches its own retained descriptor and exact priorMain52 catalogue plan; this
+ does not recover or substitute the different oldb577bundle. Actual focused checks
+ and another complete default are required. Product code/look and merge status
+ remain unchanged; no full PASS or artist fidelity is inferred.
++
++## Windows immediate Camera details visibility — November 17, 2026
++
++The unchanged00bf replay2 full failed camera_range60/1 because Advanced near/far
++controls were checked before the next process frame. Its parent Camera details
++visibility was only refreshed per-frame. One call to the existing guarded
++refresh_camera_inspector in refresh_workspace now synchronizes it with Advanced
++and mode changes. Values, signals, controls and original test predicates remain
++unchanged; classic's empty-inspector guard stays exact. The two reviewed app hash
++rows are refreshed in the existing wind/helper manifests; all other rows and
++memberships remain exact. Root closed92private jobs/source1029 unchanged before
++this patch. Focused graphics and a new complete frozen verifier are still UNRUN.
++No full PASS or product merge is claimed.
+diff --git a/src/app.gd b/src/app.gd
+index 1d1dd97..4c3384b 100644
+--- a/src/app.gd
++++ b/src/app.gd
+@@ -2950,6 +2950,7 @@ func refresh_workspace() -> void:
+ 	inspector_scroll.scroll_vertical = 0
+ 	if pose_editor:pose_editor.refresh_values()
+ 	if scene_view:scene_view.sync()
++	refresh_camera_inspector()
+ 	refresh_view_row()
+ 	refresh_badges()
+ 	queue_view_fit()
+diff --git a/tests/helper_preview_port_files.json b/tests/helper_preview_port_files.json
+index bfedae1..554448d 100644
+--- a/tests/helper_preview_port_files.json
++++ b/tests/helper_preview_port_files.json
+@@ -12,8 +12,8 @@
+   "files": [
+     {
+       "path": "src/app.gd",
+-      "sha256": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67",
+-      "lf_sha256": "0eb4a61fe031652ac70562126114172fe5d1df6559c58156a1aed18b13e89307",
++      "sha256": "79b34e7d591f433e060edf72888d22443d1a0fc5e22dd2a246eb77c83fcad1b6",
++      "lf_sha256": "79f340cc797738d205a3030f12339b1e74ed765edb557235a98c42282056328a",
+       "category": "runtime"
+     },
+     {
+diff --git a/tests/wind_review_port_files.json b/tests/wind_review_port_files.json
+index 49b2652..0f8ce10 100644
+--- a/tests/wind_review_port_files.json
++++ b/tests/wind_review_port_files.json
+@@ -4,8 +4,8 @@
+   "files": [
+     {
+       "path": "src/app.gd",
+-      "sha256": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67",
+-      "lf_sha256": "0eb4a61fe031652ac70562126114172fe5d1df6559c58156a1aed18b13e89307",
++      "sha256": "79b34e7d591f433e060edf72888d22443d1a0fc5e22dd2a246eb77c83fcad1b6",
++      "lf_sha256": "79f340cc797738d205a3030f12339b1e74ed765edb557235a98c42282056328a",
+       "category": "runtime"
+     },
+     {

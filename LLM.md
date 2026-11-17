@@ -5795,3 +5795,59 @@ The redundant experimental-path ignore rule was removed. Raw successful reports,
 canonical logs and terminal audits stay private; no such payload was uploaded.
 The old interrupted state remains untouched and is not converted into a result.
 No full PASS, merge, fresh owner copy or actual startup187 is claimed.
+
+### November 17, 2026 — restart/source checkpoint recovered from GitHub
+
+Maina41a204bffb98614abfa80e0e6340078b1d719f1 is pushed. Every195 selected
+public file was independently fetched and exactly matched its Git blob:
+4,439,113bytes with4 working-EOL recipes. It preserves the interrupted-run
+source/scalar recovery, actual strict-preflight findings, R2 startup metadata,
+inactive cold187 adapter, PMX integration map and public-projection source.
+The independent selection peer remains outside that checkpoint for the next
+increment. No private full report/log/native model/media was published. No new
+cleanup or review-branch retry occurred. Main functional1019 still equals52f;
+the actual R2 full remains a separate frozen00bf qualification, not a merge.
+
+### November 17, 2026 — replay2 camera control regression and actual closure
+
+The unchanged00bf replay2 full FAILED16:28:42.8760718Z at camera_range60/1:
+Advanced view-distance controls were not visible immediately in camera mode.
+Its five native fixtures, projection/Undo/recovery/portable/render checks otherwise
+passed. Static source diagnosis identifies the hidden Camera details parent:
+refresh_workspace changes Advanced children/outer sections, while its inner
+inspector refresh previously waited for _process. A one-call synchronous refresh
+proposal preserves values/signals and all original test predicates; not applied
+or graphically verified at this observation.
+
+Root executed the context-bound strict terminal audit:92actual private jobs
+(90exit0,one registeredKrita cancel2,one failed camera process),11exact inline
+matches and64phase documents. Source1029unchanged, exact process births/scopes
+closed; release16:29:46.0233172Z, inventoryacd509905aed7330636e0300d6ed48b9453ec1d1ed3a121130dba7509b888328.
+This is an actual closed failed full, unlike the earlier OS-interrupted run.
+All raw logs/reports/phase data stay private. No fullPASS/merge/copy/cold187 claim.
+Acceptance55/62 and implementation52/54 stay unchanged; human review deferred.
+
+### November 17, 2026 — camera fix focused PASS and696 full active
+
+Root applied exactly one existing refresh_camera_inspector call plus two app
+hash rows and committed localcandidate696ca7f1491a43b1a2267a53f8ca0f62b7c211a9.
+Actual original camera60/0 with5native models, Neon12504/0 andcontrols48/0 pass:
+29.1665295s,51.0870301s,14.5917301s. All1029 source bytes and host scopes preserved.
+Focused verification9a0a9597 is retained. No camera assertion or native threshold
+was weakened. Five-public-text reconstruction94a74d55 is prepared for main backup;
+the app Git blob is already CRLF/exact, four other files use explicit EOL recipes.
+
+Fresh full696 started17:07:54Z with coordinator12740 birth.3896834 andPython5384
+birth.8423868,parent12740 (GetProcess); CIM.8423860 is metadata only. Exact8a1c
+runner/2a67PWSH and unchanged strict6runtimes/574SourceIOoriginal+copy/120exporter/
+36fixtures/currentMima/rawVRM pass. Native lane root-exclusive, source1029/HEAD696
+frozen. Expected158/36/21 remains NOT a result. No merge/copy/cold187 is claimed.
+
+Separate read-only B diagnostics remain unqualified: first scope refusal had no
+native launch, second stopped at missing support import, third stopped before B
+at an unexpected factory handler. The final intentional observation captured
+3factory callbacks across11lists to a2005-byte PRIVATE metadata file bf55509b,
+without invoking callbacks/openingB/collecting model resources. Its wrapper is
+not a resource/private-placement PASS; after-scope0 and tool/input preservation
+were observed. No further B native run precedes the UI/full work. All originals
+and prior reviews remain protected; Source normal error/2e-5 threshold unchanged.

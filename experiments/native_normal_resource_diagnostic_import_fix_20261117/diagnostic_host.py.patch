@@ -1,0 +1,10 @@
+--- 7273/diagnostic_host.py
++++ import-fix/diagnostic_host.py
+@@ -6,6 +6,7 @@
+ import sys
+ import tempfile
+ import traceback
++sys.path.insert(0, str(Path(__file__).resolve().parent))
+ import diagnostic_support as S
+ 
+ 
