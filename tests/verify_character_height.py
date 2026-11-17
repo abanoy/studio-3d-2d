@@ -1,5 +1,6 @@
 """Optional neutral character-size review, source integrity and standard placement."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import hashlib,json,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));from run import command
 from native_fixture_plans import catalogue_native_plans
@@ -8,7 +9,7 @@ def main():
     plans=[{'label':'Authored figure','source':str(ROOT/'examples/tutorials/Practice figure.glb'),'metadata':{},'rotation':[0,0,0,1]}]
     native=catalogue_native_plans()
     originals={}
-    raw_plan={};native_manifest=ROOT/'output/native-import-verification.json'
+    raw_plan={};native_manifest=fixture_output()/'native-import-verification.json'
     if native_manifest.is_file():
         for name in json.loads(native_manifest.read_text(encoding='utf-8')).get('bundles',[]):
             bundle=Path(name);report_path=bundle/'parameters.json'

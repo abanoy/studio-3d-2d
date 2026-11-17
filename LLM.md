@@ -5611,3 +5611,18 @@ changes; all79+17predicates/wrapper/timeouts/error policy remain. Source10CPU me
 and independent10 pass; actual Foundation167/separate77+96 and full successor are
 still required. Root closed51private jobs50exit0+Krita2 and separate headless exit1,
 source1029 unchanged, released03:51:37Z. No product change/fullPASS/merge is claimed.
+
+## Windows native fixture-root selectors — 2026-11-17
+
+Thefe9 full passed all earlier corrected stages, then shape catalogue selected a
+stale local Mima descriptor instead of the configured fixture root. Root closed
+68private jobs(67exit0+Krita2), source1029unchanged, released04:29:31Z. Catalogue
+now uses its existing fixture_output helper for that descriptor. Character-height,
+another registered later consumer, imports the same helper for its raw VRM manifest
+instead of silently missing that native case. Both default paths remain identical
+without override; all original native cases/assertions/movie thresholds remain.
+Two independent11-method source/AST CPU runs pass. Root currentMima hash/size
+matches its own retained descriptor and exact priorMain52 catalogue plan; this
+does not recover or substitute the different oldb577bundle. Actual focused checks
+and another complete default are required. Product code/look and merge status
+remain unchanged; no full PASS or artist fidelity is inferred.
