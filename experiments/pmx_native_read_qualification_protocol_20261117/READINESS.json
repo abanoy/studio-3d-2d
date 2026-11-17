@@ -1,0 +1,28 @@
+{
+  "format": "has_pmx_native_read_future_readiness_1",
+  "status": "NOT_EXECUTABLE_SOURCE_PROTOCOL_ONLY",
+  "native_inputs_read": false,
+  "actual_native_qualification_performed": false,
+  "candidate_claims": {
+    "synthetic_source_CPU_pass": true,
+    "native_raw_table_join": false,
+    "decoded_capture_native_join": false,
+    "native_file_preservation_complete": false,
+    "portable_budget_fit": false,
+    "HAS_binding_or_adoption": false,
+    "physics_validity_or_simulation": false
+  },
+  "missing_required_gates": [
+    "exact private native input identity and profile not selected/read",
+    "independent native raw oracle not implemented or independently fixture-qualified",
+    "independent layout-authority/limitation statement unresolved",
+    "strict whole-capsule comparator not implemented or qualified",
+    "read-only stable source-handle wrapper and path/reparse/TOCTOU policy not implemented",
+    "fresh private outputs/ACL and no-public-native-metadata projection not implemented or negatively tested",
+    "exact executable/runtime/import graph and complete wrapper/oracle/comparator code identities not frozen",
+    "owned pureCPU job memory/wall/process enforcement and physical closure receipt contract not implemented or qualified",
+    "root future lane release and execution admission not observed by this protocol"
+  ],
+  "no_native_command_or_stager_provided": true,
+  "allowed_next_action": "SOURCE_REVIEW_AND_CPU_SYNTHETIC_DEVELOPMENT_ONLY"
+}

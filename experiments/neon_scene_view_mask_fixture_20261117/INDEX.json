@@ -1,0 +1,90 @@
+{
+  "format": "has_neon_scene_view_mask_fixture_source_packet_1",
+  "created_utc": "2026-11-17T02:56:12.449536+00:00",
+  "qualification": "SOURCE_CPU_ONLY_NATIVE_UNRUN",
+  "legacy_checks": 102,
+  "added_checks": 4,
+  "expected_checks": 106,
+  "payloads": [
+    {
+      "path": "CPU_TESTS.log",
+      "bytes": 2398,
+      "sha256": "f83b709d3ee8f407bb9a06db2b93aea7a7452d55223d26355f25ef0a5c19575d"
+    },
+    {
+      "path": "encoding-cpu-refusal.log",
+      "bytes": 3212,
+      "sha256": "81d350390fe2a35196c7480fbbdb754f16857fd1ee80f39764e1567a175665c2"
+    },
+    {
+      "path": "encoding-failed-derivative.gd",
+      "bytes": 21173,
+      "sha256": "943fb8dfcd01ecc04b674cf90762a9476451eca1d0a70ed4ef53327cb9ff029d"
+    },
+    {
+      "path": "MASK_SOURCE.txt",
+      "bytes": 995,
+      "sha256": "d5841848646a2c1b2313a7c4d5616039ee401d8ec15759c80da178bbe542b1f0"
+    },
+    {
+      "path": "original-full-failed-scene-view-result.json",
+      "bytes": 595,
+      "sha256": "a2a628514608c2e27764521d381f28862d0b55e1f66f2693ccc1f7674ac754b4"
+    },
+    {
+      "path": "original-scene_view_smoke.gd",
+      "bytes": 15596,
+      "sha256": "afaf0737adeed7143ec011fdcf8a91feb739fcc165a29646fc53cb49c2b0869c"
+    },
+    {
+      "path": "original-verify_scene_view.py",
+      "bytes": 2509,
+      "sha256": "da0fab8e4985f2b398b662532cbe6b71088702df28a411c196bf3aaa5fb811ac"
+    },
+    {
+      "path": "palette_math.py",
+      "bytes": 730,
+      "sha256": "9929c0924c24fa2236e297e20e6c29f1cccd773d21d5bddcb38ab1b1fbf01c00"
+    },
+    {
+      "path": "PEER_REVIEW.json",
+      "bytes": 834,
+      "sha256": "1115b3e9c4f8cee62dc65cb9e72ba3ed261f1c109e04a1a31ea17f0e74b16a2a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3518,
+      "sha256": "d7eab94f43acf50714cfc7ef5a9fe99684982a6f6fff4596c6ae01c7b9c80946"
+    },
+    {
+      "path": "scene_view_smoke.proposed.gd",
+      "bytes": 21359,
+      "sha256": "233fca040dfc0aa9e48b58a366ae98763b61459d2c5fbf7d0890b14003b749aa"
+    },
+    {
+      "path": "SOURCE_PINS.json",
+      "bytes": 467,
+      "sha256": "524f7d95307ab586b5b1c5d6098807fbedad3f6d57c7ccca27210140e1c956ed"
+    },
+    {
+      "path": "SOURCE_PROOF.json",
+      "bytes": 2686,
+      "sha256": "8427e0060bb4be8357f7dd9dd49b2a14e3a76342ce01ad302dd0ee318db59d78"
+    },
+    {
+      "path": "test_source_and_math.py",
+      "bytes": 5992,
+      "sha256": "de6e3512501318e36e2375faded8d35c31103855a51be1378f8e76e22cf2277b"
+    },
+    {
+      "path": "verify_packet.py",
+      "bytes": 592,
+      "sha256": "8fe431e802853a894f689c063e3ceaae94654d48aaffbad708d8553e03d8fc02"
+    },
+    {
+      "path": "verify_scene_view.proposed.py",
+      "bytes": 2963,
+      "sha256": "23a4a68febdd20b1493057c71672f1e514faca0e163fb2db15580cdc5a952b8f"
+    }
+  ]
+}

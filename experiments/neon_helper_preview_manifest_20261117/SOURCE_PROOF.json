@@ -1,0 +1,39 @@
+{
+  "format": "has_neon_helper_preview_manifest_source_successor_1",
+  "candidate_commit": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+  "original_candidate_manifest_sha256": "ce456c5ef5901df933946e68a2e47ee17a81e814bc98d072dce906dc713f9094",
+  "original_main52_manifest_sha256": "a0da8a835125a9e73e2d95f78f002ce30285aa7c8ebe99f00bd14604d51bd260",
+  "candidate_main52_manifest_semantics_exact": true,
+  "candidate_main52_manifest_difference": "CRLF/LF only",
+  "proposed_manifest_sha256": "2c9e483649108b9760aeb96e20c8ac95025a4b595fa0cfbb730308247fb7a8f0",
+  "reviewed_wind_manifest_sha256": "4cb3709064b668e63b25cb9576a69992495c5707ed5ec2dba291c0768852e79d",
+  "membership": 25,
+  "changed_rows": [
+    {
+      "path": "src/app.gd",
+      "old_sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "old_lf_sha256": "817e94f33b9d667d4e1deae7f36ba5212dd0290322140576b7ec6cb5902d770b",
+      "new_sha256": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67",
+      "new_lf_sha256": "0eb4a61fe031652ac70562126114172fe5d1df6559c58156a1aed18b13e89307"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "old_sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "old_lf_sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "new_sha256": "925ae786ad65fd2e34ed9b93cf74829559d102e09c4e7870a6079b4cee20c570",
+      "new_lf_sha256": "293f5d7c8a9b14508227131885deebc3b6fcef3cf7d34ce9650285929b74ed8d"
+    }
+  ],
+  "unchanged_rows": 23,
+  "only_changed_fields": [
+    "sha256",
+    "lf_sha256"
+  ],
+  "driver_sha256": "d92e3e5f7286866cde895bbdef400c59028b5f59650c2d021bc55446b969b878",
+  "driver_or_runtime_changed": false,
+  "source_snapshot_context": "All pinned runtime code is existing reviewed candidate source; this manifest grants no pass or native fidelity.",
+  "original_failure_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\helper-preview\\cpu-1794885569749222100-140852bb\\verification.json",
+  "original_failure_sha256": "bd99d7ef1f260ef04ac7976d011bec6ac8d49536b9713af2f531f6fd849fdb82",
+  "original_failure_checks": 0,
+  "original_failure_graphical_process_attempted": false
+}

@@ -1,0 +1,13 @@
+{
+  "format": "has_375_reconstruction_synthetic_cpu_checks_1",
+  "observed_utc": "2026-11-17T03:33:12.097768+00:00",
+  "tests": 5,
+  "failures": 0,
+  "errors": 0,
+  "stdout": "test_exact_mixed_EOL_and_inverse (test_reconstruction.ReconstructionTests.test_exact_mixed_EOL_and_inverse) ... ok\ntest_patch_positive_and_context_count_binary_path_negatives (test_reconstruction.ReconstructionTests.test_patch_positive_and_context_count_binary_path_negatives) ... ok\ntest_recipe_rejects_boolean_duplicate_unsorted_out_of_range (test_reconstruction.ReconstructionTests.test_recipe_rejects_boolean_duplicate_unsorted_out_of_range) ... ok\ntest_recipe_rejects_tampered_blob_or_working_identity (test_reconstruction.ReconstructionTests.test_recipe_rejects_tampered_blob_or_working_identity) ... ok\ntest_tree_round_trip_and_duplicate_or_truncated_rejections (test_reconstruction.ReconstructionTests.test_tree_round_trip_and_duplicate_or_truncated_rejections) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+  "native_or_Git_calls": false,
+  "sources": {
+    "audit_reconstruction.py": "a1f0928ad95fe5d4e186de496028c71cadfacb1584a310e8498a01c9dc3970dd",
+    "test_reconstruction.py": "b94162d8a9db60744a0574afa7cbf071c11c934d277c89cbd62b007745c627c2"
+  }
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\neon_375_terminal_20261117\bind_context.py", line 108, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\neon_375_terminal_20261117\bind_context.py", line 86, in main
+    validate(*(values[name] for name in INPUTS),registry['verifier_sha256'])
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\neon_375_terminal_20261117\bind_context.py", line 72, in validate
+    require(api.get('format')=='has_root_python_birth_api_observation_1' and type(api.get('pid')) is int and api['pid']==PYTHON['pid'] and api.get('get_process_start_time_utc')==PYTHON['creation_utc'] and api.get('terminal_identity_api')=='Get-Process.StartTime, same as pinned creation_utc','Birth API metadata differs')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\neon_375_terminal_20261117\bind_context.py", line 26, in require
+    if not ok:raise ValueError(message)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Birth API metadata differs

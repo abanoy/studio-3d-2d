@@ -1,0 +1,12 @@
+	if StudioTheme.is_neon():
+		# Neon Pro step 4 (editor only, never rendered): when the scene fills the view, the area
+		# outside the camera frame is dimmed with four bands, like the mock's 2000 px box-shadow.
+		if scene_setup:
+			var dim:=Color(4/255.,5/255.,8/255.,.62);var full:=Rect2(Vector2.ZERO,size)
+			draw_rect(Rect2(full.position,Vector2(full.size.x,maxf(rect.position.y,0))),dim)
+			draw_rect(Rect2(Vector2(0,rect.end.y),Vector2(full.size.x,maxf(full.size.y-rect.end.y,0))),dim)
+			draw_rect(Rect2(Vector2(0,rect.position.y),Vector2(maxf(rect.position.x,0),rect.size.y)),dim)
+			draw_rect(Rect2(Vector2(rect.end.x,rect.position.y),Vector2(maxf(full.size.x-rect.end.x,0),rect.size.y)),dim)
+		# The 8 % hairline always marks the frame; the Frame guide keeps a clearly visible line.
+		draw_rect(rect,Color(1,1,1,.45) if scene_editing and show_camera_frame else Color(1,1,1,.08),false,1)
+	elif not scene_editing or show_camera_frame:draw_rect(rect, Color("dce8f2"), false, 1)

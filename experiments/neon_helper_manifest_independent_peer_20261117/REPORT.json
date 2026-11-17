@@ -1,0 +1,30 @@
+{
+  "status": "SOURCE_CPU_GO_MANIFEST_ONLY",
+  "observed_utc": "2026-11-17T03:25:15.742404+00:00",
+  "proposed_sha256": "2c9e483649108b9760aeb96e20c8ac95025a4b595fa0cfbb730308247fb7a8f0",
+  "driver_sha256": "d92e3e5f7286866cde895bbdef400c59028b5f59650c2d021bc55446b969b878",
+  "test_source_sha256": "b24ef13b2917e7338c47d95f1895d284b761a877bb0d3c09dcd8fd7659a9c7f9",
+  "source_proof_sha256": "cf6eb2d342115ee9f2aacd2cb961a9850aa8031c7c75e752dce4c8f2577a4633",
+  "four_hash_string_exact_inverse": true,
+  "main52_candidate_manifest_semantics_and_LF_bytes_exact": true,
+  "runtime_driver_gate_functions_unmodified": true,
+  "methods": 18,
+  "failures": 0,
+  "raw_cpu_log_sha256": "665ead1058d60a29112c32780ed272a2393d07c6a9aa7fc089c7fd90aa693534",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_helper_preview_manifest_20261117",
+    "-p",
+    "test_manifest_gate.py",
+    "-v"
+  ],
+  "scope": "Owned source-only temporary copies; no main/REVIEW mutations, native files, engine, CIM or Git execution",
+  "native_or_focused_runtime_qualification": false
+}

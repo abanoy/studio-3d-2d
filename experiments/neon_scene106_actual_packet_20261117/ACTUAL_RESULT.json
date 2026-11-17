@@ -1,0 +1,49 @@
+{
+  "format": "has_scene106_compact_actual_summary_1",
+  "qualification": "TWO_SCOPED_COMPLETED_RUNS_ONLY_NO_FULL_SUITE_OR_NATIVE_ASSET_CLAIM",
+  "diagnostic": {
+    "checks": 102,
+    "failures": 4,
+    "process_exit": 1,
+    "reaped": true,
+    "ordered_engine_log_retained": true
+  },
+  "scene106": {
+    "checks": 106,
+    "failures": 0,
+    "unit_checks": 12830,
+    "unit_cases": 144,
+    "wrapper_seconds": 14.1473874,
+    "process_exit": 0,
+    "reaped": true,
+    "source_entries_unchanged": 1029,
+    "wrapper_frozen_sources": 203,
+    "ordered_engine_logs_retained": true
+  },
+  "physical_receipt_files": 3,
+  "unique_physical_jobs": 2,
+  "private_jobs_all_closed_no_switch_no_foreground": true,
+  "unit_headless_without_private_receipt": true,
+  "receipt_phase_metadata_observations": [
+    {
+      "scope": "output/neon-scene-mask-diagnostic-20261117-attempt1",
+      "physical_receipt": "output/private-desktop/scene_view_diagnostic_0ed86dca87e24d778e9be683015de1ad.json",
+      "physical_mtime_ns": 1794884031789945100,
+      "before_observation_ns": 1794884017332204400,
+      "after_observation_ns": 1794884032327055900,
+      "mtime_evidence": "Read-only original-filesystem observation captured during recipe preparation; not embedded in original receipt bytes"
+    },
+    {
+      "scope": "output/neon-scene-view106-20261117-attempt1",
+      "physical_receipt": "output/private-desktop/scene_view_smoke_d2e3009fb20f4ffa816db464d6a477e1.json",
+      "physical_mtime_ns": 1794884339759209500,
+      "before_observation_ns": 1794884325615894600,
+      "after_observation_ns": 1794884341078430800,
+      "mtime_evidence": "Read-only original-filesystem observation captured during recipe preparation; not embedded in original receipt bytes"
+    }
+  ],
+  "full_suite_pass_claimed": false,
+  "main_merged_claimed": false,
+  "native_asset_geometry_media_included": false,
+  "active_full_output_read": false
+}

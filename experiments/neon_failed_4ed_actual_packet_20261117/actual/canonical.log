@@ -1,0 +1,49 @@
+PASS unit: 0.497s
+PASS motion_parts: 1.266s
+PASS motion_helper_edits: 0.302s
+PASS opaque_order: 0.399s
+PASS required_extensions: 0.409s
+PASS contact_bend: 0.217s
+PASS spikes: 6.172s
+PASS editor: 10.434s
+PASS export_failures: 1.548s
+PASS audio_editor: 10.207s
+PASS audio_dummy: 4.777s
+PASS ui: 5.344s
+PASS recovery_write: 8.313s
+PASS recovery: 5.164s
+PASS pose: 11.069s
+PASS autokey: 12.883s
+PASS new_scene: 9.86s
+PASS world_selection: 11.911s
+PASS world_document: 5.304s
+PASS world_runtime: 13.062s
+PASS world_edit: 26.59s
+PASS world_workflow: 13.204s
+PASS object_timing: 20.953s
+PASS bone_labels: 5.374s
+PASS animation_clips_unit: 0.496s
+PASS animation_clips: 25.197s
+PASS visibility: 20.207s
+PASS animated_channels: 18.755s
+PASS limb_ik: 27.198s
+PASS secondary_motion: 10.403s
+PASS fan_motion: 19.594s
+PASS physics: 41.698s
+PASS physics_contacts: 83.626s
+PASS physics_props: 22.442s
+PASS physics_recording_unit: 0.606s
+PASS physics_recording: 43.455s
+PASS neon workspace: inset rays, compact row input, rail arrangements and live behavior
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify.py", line 619, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify.py", line 204, in main
+    pending_log = run(helper_args, timeout=750)
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify.py", line 24, in run
+    raise RuntimeError(f"Exit {result.returncode}: {args}\n{result.stdout}\n{result.stderr}")
+RuntimeError: Exit 1: ['C:\\Program Files\\Python313\\python.exe', '-u', 'tests/verify_helper_preview.py', '--mode', 'cpu', '--allow-checkout-eol']
+HELPER_PREVIEW_MAIN {"folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\helper-preview\\cpu-1794885569749222100-140852bb", "verification": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\helper-preview\\cpu-1794885569749222100-140852bb\\verification.json", "passed": false, "source_context": "main_source_snapshot", "mode": "cpu", "native_requested": false, "checks": 0}
+
+

@@ -1,0 +1,3 @@
+# Independent 4ed3 terminal source review
+
+The current full remains terminal-unread by this source audit. Helper/legacy/terminal tests match the prior sealed source exactly; the registry changes only its source_commit metadata, and binder/test changes have exact literal-only inverses. Independently rehashed only the four immutable allowed launch inputs and current verifier source. All25 CPU tests passed. No observers, engines, CIM, Git or active state/report/log reads occurred. CPU_REPORT.json records the corrected preliminary filename typo and exact reviewed hashes. Native terminal observation and closure remain root-owned and unrun by this packet.

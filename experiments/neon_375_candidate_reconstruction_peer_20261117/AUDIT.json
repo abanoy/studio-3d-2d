@@ -1,0 +1,64 @@
+{
+  "format": "has_375_public_text_reconstruction_peer_audit_1",
+  "observed_utc": "2026-11-17T03:32:15.589302+00:00",
+  "status": "PASS_LOCAL_TEXT_RECONSTRUCTION",
+  "packet_index_sha256": "ef5b48263fbeec32fc7c5197fdd59508a3a2b258397470de9930b17cf0cb332f",
+  "payload_files": 7,
+  "payload_bytes": 243159,
+  "builder_sha256": "aabfc74e75a8e72364db0fc2d08a305f7a51b0bb59f6d9c59f2379b5e2f1f4fd",
+  "candidate_commit": "375ec05e925159850ff3b0abf2e8f98f9d2ce129",
+  "sole_parent_commit": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+  "candidate_tree": "3dcc80fa95c6e385f455b04614cbc2c59eda4737",
+  "parent_tree": "9aad177c9621c793fee466ddb1b6623a08eb5a59",
+  "three_blobs_match_local_Git_objects": true,
+  "independent_parent_plus_three_blob_tree_reconstruction": true,
+  "changed_tree_objects": 3,
+  "patch_applied_in_RAM_exactly": true,
+  "working_EOL_recipes_reconstruct_exactly": true,
+  "manifest_changes_only_four_hash_strings_in_two_rows": true,
+  "manifest_membership": 25,
+  "text_files": [
+    {
+      "path": "LLM.md",
+      "git_blob": "cddf182bce4c5173eebccd3d3a191ae3247f504d",
+      "blob_bytes": 507351,
+      "blob_sha256": "af01d4584adff56cd51119b9c5d7b714216dc3b6b37aef448028af0be72b841b",
+      "working_bytes": 512829,
+      "working_sha256": "1e601fe0d3b18db752df1eebddc00502dc1b558b9bb597ca8d79e3c7ac4c2852",
+      "selected_CRLF_lines": 5478,
+      "current_readonly_working_bytes_match_retained_recipe": true
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "git_blob": "065060c4d72b900539ccee012dea80e37904107e",
+      "blob_bytes": 102123,
+      "blob_sha256": "d73ab7ed8d1121c7c8fd81234c480a739b46d5f6a10689f305167a681b59d41e",
+      "working_bytes": 103170,
+      "working_sha256": "cba2fcdfee4291b15ee8a9e7331f68c11736cabd62ad01a86bdded68c3c9c6f3",
+      "selected_CRLF_lines": 1047,
+      "current_readonly_working_bytes_match_retained_recipe": true
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "git_blob": "bfedae19dd5e992e085636d43d7132f7f7773363",
+      "blob_bytes": 8522,
+      "blob_sha256": "b00762e6a83a4351494df593100a6123177d4bfc9c411ab2dd523a392f110899",
+      "working_bytes": 8697,
+      "working_sha256": "2c9e483649108b9760aeb96e20c8ac95025a4b595fa0cfbb730308247fb7a8f0",
+      "selected_CRLF_lines": 175,
+      "current_readonly_working_bytes_match_retained_recipe": true
+    }
+  ],
+  "packet_immutable": true,
+  "Git_operations": "Local cat-file commit/tree/blob reads only",
+  "remote_access_or_push_or_Git_mutation": false,
+  "checkout_or_native_process_or_CIM_mutation": false,
+  "media_private_native_array_or_original_asset_payloads_included": false,
+  "limits": [
+    "Known parent and candidate objects are present locally; no independent remote availability observation.",
+    "This is a delta reconstruction from the specified parent, not a standalone full repository backup.",
+    "Working EOL recipes are separate from Git blob bytes; reproducing a working-byte hash requires applying the recipe after reconstructing the Git tree.",
+    "Publication authorization and automatic approval rejection are not overridden or tested by this audit.",
+    "No native/full test, feature correctness, merge or redesign adoption qualification follows from text reconstruction."
+  ]
+}

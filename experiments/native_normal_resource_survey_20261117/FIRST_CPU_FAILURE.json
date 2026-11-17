@@ -1,0 +1,15 @@
+{
+  "format": "has_survey_first_synthetic_cpu_failure_1",
+  "tests": 28,
+  "failures": 1,
+  "errors": 0,
+  "status": "SYNTHETIC_PREPARATION_FAILURE_PRESERVED",
+  "case": "test_raw_filepath_equivalence_and_basename_are_separate",
+  "expected_distinct_nonempty_basenames": 1,
+  "actual": 0,
+  "cause": "ntpath.basename treated Blender //a/name.png as a Windows UNC share; strip Blender relative prefix before taking basename",
+  "native_assets_read": false,
+  "engines_run": false,
+  "source_sha256": "b5f184dcc7f7177c36a7aedbaf36a8382af1e1390e99a42a3de40c854f9259e7",
+  "test_sha256": "1fdb28265a495369d9a9734d52273eee3584219de8883096b53c73e63f545a1a"
+}

@@ -1,0 +1,18 @@
+{
+  "format": "has_scene_view_mask_fixture_source_peer_review_1",
+  "reviewer": "/root/review_build_audit/admission_gate_review",
+  "scope": "independent source/API and CPU only",
+  "fixture_sha256": "233fca040dfc0aa9e48b58a366ae98763b61459d2c5fbf7d0890b14003b749aa",
+  "wrapper_sha256": "23a4a68febdd20b1493057c71672f1e514faca0e163fb2db15580cdc5a952b8f",
+  "cpu_tests": 20,
+  "cpu_failures": 0,
+  "reported_seconds": 0.007,
+  "legacy_dynamic_checks": 102,
+  "added_dynamic_checks": 4,
+  "api_findings_resolved": [
+    "explicit Vector2(root.size) comparison",
+    "guard helper screen read before get_pixelv",
+    "scripted Node2D properties accessed through get()"
+  ],
+  "conclusion": "No remaining concrete source/API blocker; actual GDScript parse and GPU execution remain root-owned and unrun by reviewers."
+}

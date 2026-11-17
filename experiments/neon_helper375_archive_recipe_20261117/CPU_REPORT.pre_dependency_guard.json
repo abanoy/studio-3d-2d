@@ -1,0 +1,23 @@
+{
+  "scope": "Closed safe scalar/source metadata; all tamper mutations only in RAM, no original/source/runtime writes",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_helper375_archive_recipe_20261117",
+    "-p",
+    "test_metadata_admission.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "test_methods": 17,
+  "checks_source_sha256": "29565d51ee424c7a7764355e88256b8b1a559e86f2eb1e9aa587c1b675ee78cc",
+  "test_source_sha256": "d46d5c110d1099f8d544cb08f00e7f45f70462df89f364772594417a3d9a7d36",
+  "raw_log_sha256": "e134095a45e7f7f0644aaa0462c3b73bd9a35bbd50d7ed9682039c2a2a463875",
+  "no_engines_CIM_Git_or_active_output_reads": true
+}

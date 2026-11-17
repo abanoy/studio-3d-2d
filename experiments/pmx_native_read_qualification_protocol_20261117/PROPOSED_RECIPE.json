@@ -1,0 +1,51 @@
+{
+  "format": "has_pmx_native_read_future_bounded_recipe_proposal_1",
+  "execution_status": "UNRUN_PLAN_ONLY",
+  "executable_commands": null,
+  "stager_or_native_wrapper_implemented": false,
+  "candidate_code_packet_index_sha256": "9946bf2bccbe5e289fea013ec702c97775b33b9a64dc3bce7979d21d08e92487",
+  "proposed_fresh_private_output_relative_to_main": "output/pmx-native-read-qualification-20261117-attempt1",
+  "must_refuse_existing_output": true,
+  "root_owned_lane": "AFTER_EXACT_ACTIVE_FULL_TERMINAL_AND_PHYSICAL_CLOSURE_ONLY",
+  "scope": {
+    "native_sources": "READ_ONLY_EXACT_PRIVATE_MANIFEST",
+    "source_authoring": false,
+    "import_or_conversion": false,
+    "simulation": false,
+    "HAS_binding_or_adoption": false,
+    "main_or_REVIEW_edits": false,
+    "tool_install_download_or_preference_change": false,
+    "native_engines": false
+  },
+  "pilot_profile_proposal": {
+    "native_inputs": 1,
+    "source_bytes_upper_bound": 134217728,
+    "metadata_bytes_upper_bound": 2097152,
+    "read_wrapper_wall_seconds": 30,
+    "oracle_wall_seconds": 30,
+    "compare_wall_seconds": 15,
+    "aggregate_wall_seconds": 90,
+    "owned_job_memory_bytes": 536870912,
+    "budgets_status": "PROPOSED_ONLY_OS_ENFORCEMENT_UNIMPLEMENTED_UNQUALIFIED",
+    "reader_limits": "EXACT_SEALED_DEFAULTS_OR_STRICTLY_LOWER_PRIVATE_ADMISSION_OVERRIDES",
+    "no_automatic_cap_increase_or_retries": true,
+    "private_output_aggregate_bytes": 33554432,
+    "private_stdout_bytes": 4194304,
+    "private_stderr_bytes": 4194304,
+    "oracle_witness_bytes": 8388608,
+    "private_comparison_bytes": 8388608,
+    "public_projection_bytes": 32768
+  },
+  "steps": [
+    "Root verifies current full terminal, complete physical closure and unchanged frozen runtime; no input read before that release.",
+    "Root reviews missing independent oracle/fixtures, comparator, wrapper, tool/import identities, OS wall/memory/process constraints and strict public projection. All must be implemented, sealed, reviewed and privately admitted before any native run.",
+    "Root privately selects one existing original PMX2.0 file. Bind exact canonical path, file identity, byte length and sourceSHA privately; refuse archives, devices, network/reparse paths, unselected directories and identity changes. No extraction, authoring or dependency loading.",
+    "Create a fresh fixed private output directory with a source-pinned ACL/output policy. Freeze exact private admission manifests before launch; never copy them to a public evidence packet.",
+    "Acquire read-only source handles denying concurrent writes/deletes, verify canonical handle identity/regular-file scope, bounded size, bytes read and SHA before/after. Keep a stable admitted byte snapshot; any identity/size/hash mutation refuses. Wrapper/source-handle code is currently missing.",
+    "Run the independently qualified oracle first, with no candidate output present or available. It must independently locate every prefix/table boundary and capture ordered exact native fields from the same admitted bytes. Seal private witness and source/tool identities before candidate processing.",
+    "Run unchanged sealed candidate reader on the exact admitted immutable bytes under separate bounded ownership. Preserve its output including all unqualified flags unchanged. No authoring/import/renderer or simulation call.",
+    "Run separately reviewed strict private comparator: exact original table order/indices/counts, all stored names/rawname bytes/encoding, signed references/rawwidth words, unsigned masks, all bone optional payloads and all raw physicsF32words/offsets/end boundaries must match the independent witness. No tolerance, normalization or None substitution. Missing/extra data or any mismatch refuses.",
+    "Root independently verifies receipts, source/handle stability, process reaping/job closure, output allowlist/bounds, no original/main/REVIEW changes and exact private evidence bindings. Keep failures and refused attempts in their original fresh paths.",
+    "Only root-approved scalar procedural projection may be published. Private source IDs, arrays, counts/names/offsets/values, raw logs and private artifact hashes remain private. Native-table witness qualification, if earned, is per exact private inputs/profile and separate from unchanged candidate flags. No general PMX, decoded-object join, portable format, HAS or solver support claim."
+  ]
+}

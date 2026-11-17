@@ -1,0 +1,7 @@
+# Independent candidate text reconstruction audit
+
+AUDIT.json records a source/CPU audit of immutable packet ef5b48263fbeec32fc7c5197fdd59508a3a2b258397470de9930b17cf0cb332f. All seven payloads, three decompressed public text blobs, Git commit/tree/sole parent and selected-CRLF working recipes match exactly. The parent tree plus only these three blob replacements reconstructs the candidate tree in RAM. The retained unified patch independently reconstructs the same blobs. No Git object, checkout, packet or source was changed; only local cat-file reads were used.
+
+Five synthetic methods independently test normal reconstruction and rejection of changed digests, invalid CRLF indexes, malformed patch context/count/path/binary profiles and duplicate/truncated trees. They make no Git or native calls. Reviewers may use approved Python with `-B -X utf8 -m unittest -v test_reconstruction`. The preparation auditor writes AUDIT.json and must not overwrite this sealed result if independently rerun.
+
+The reconstruction requires the specified parent tree; it is not a standalone full repository backup. Remote availability was not observed. Tested working line endings require the separate recipes rather than assuming a Git checkout reproduces the exact working bytes. Publication authority, automatic approval review, full Windows verification, redesign correctness and merge/adoption remain outside this audit. The blocked branch push was not retried. This source/evidence packet contains no native arrays, media, artwork or original asset bodies.

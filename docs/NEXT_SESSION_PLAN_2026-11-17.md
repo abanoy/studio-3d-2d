@@ -1,63 +1,91 @@
 # HAS continuation — November 17, 2026
 
-Continue independently without manual questions. Latest pushed main1ce433bd has
-completed public source/evidence; all565 files independently retrieved/exact
-(4,982,585 bytes,6 working-byte recipes). Main functional1019 remains52f.
-
+Continue independently without manual questions. Main09fb70ed keeps52f functional
+1019 source files; all837 checkpoint files independently match GitHub blobs
+(6,516,391 bytes,4 working-byte recipes). Candidate4ed3a63 is backed up on
+codex/neon-windows-review-20261116; all4 changed remote files independently match.
 Review checkout: C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff.
-Candidateffcf4c54ab9ab7af7cb01329a5b3b5b6f4589865 is backed up on
-codex/neon-windows-review-20261116; all9 changed remote files match. Source1029.
-No main merge, installed replacement or owner observation has occurred.
+No redesign merge, installed replacement or owner observation has occurred.
 
-Actual focused checks PASS: controls48, Neon12504 (12384/32/14/45/29), resize,
-docking, nested, separate32 withheld-control transaction. Original thresholds,
-predicates and diagnostic refusal remain. Fonts are cached with original profiles;
-World commits presentation mode only after acceptance and refreshes once after
-floating. Original font/lifecycle48 failures, rail45/1, parser warnings and JSON
-precision mismatch remain retained with successful successors.
+CURRENT RUN at 2026-11-17T03:32:05.512704+00:00:375ec05 complete Windows verification is RUNNING,
+not PASS. Run output/windows-neon-375ec05-20261117T033037 started03:31:04Z.
+Coordinator3032 GetProcessbirth03:31:03.8129380Z; Python26304
+GetProcessbirth03:31:04.3344666Z,parent3032. CIM's rounded.3344660 is not the
+identity timestamp. Root owns the native lane; freeze REVIEW1029 functional files
+and HEAD375ec05, no second native/engine launch. Context-only terminal helper is sealed (INDEXa58a36d5),29CPU methods pass;
+root must independently observe terminal before using
+experiments/neon_375_terminal_20261117/close_terminal.py with
+--root-terminal-confirmed --release-closed in the approved host context.
+Exact helperc39e/legacy gates unchanged; rawGetProcess identity remains authoritative.
+Expected158groups/36core/21movies are not observed successful totals.
 
-The ffcf full FAILED at scene-view102/4 after all36 core groups and the workspace
-stages above. Run output/windows-neon-ffcf4c5-20261117T021833,02:22:31–02:34:45Z.
-All4 failures are the off-frame displayed-color threshold; the approved Neon
-mask dims outside the camera frame62percent. Alignment/selection/pose/Undo/native
-output checks pass. Parent is preparing a source-pinned analytical mask/composite
-fixture; product colors/look, guide bounds and numeric thresholds must not weaken.
-Keep the old102/4 result; a fixture draft is not a successful full run.
+The minimal helper-manifest successor is committed locally375ec05: only4hash
+values in app/pose rows,25members/23otherrows/driver/assertions unchanged. Actual
+focused original208CPU+266graphical PASS, source1029 same/no overlays, exact main
+snapshot context, all native/coordinator+worker scope observations zero; private
+graphical jobs closed. CPU41.7605826s/GPU102.8179396s. Read-only source18tamper
+methods and independent18 pass. The review-branch upload was rejected by automatic
+approval review and was not retried. The project explicitly requires main source/
+evidence checkpoints; a complete375 reconstruction packet (three public text blobs,
+patch, commit/tree/EOL recipe) is being published there without merging the product.
+Do not claim375 is on the review remote until that is independently established.
 
-Root terminal audit closed48 unique jobs (46exit0,1Krita cancel2,1scene assert1)
-and source1029 unchanged; inline physical joins exact, no stale final report.
-Lease released02:36:25.0277413Z, inventory2c334aab837768ee17b2c13be0ad6ac26fa203a9e8815cd991b24a2de3386704.
-Coordinator27512 born02:22:31.2361797Z; Python27124 born02:22:31.8526561Z,
-parent27512, both GetProcess times. Four immutable metadata inputs/API precision
-detail are pinned by terminal packet22e0c12e4a1ee55b079571a4befa01f7c3d75902a151d2a0c918dee5986e7317.
-Current lane is free; root alone may launch the next reviewed native test.
 
-After focused scene qualification, commit/back up candidate and run the whole
-158-group/36core/21movie default again. Derive fresh physical counts, source and
-birth closure; never reuse stale reports or assume192 jobs. Merge only a qualified
-reviewed redesign, reconcile LLM append histories and retain Neon in app.gd.
-Build a fresh owner review without replacing older reviews/installed Studio.
+PRECEDING FULL FAILED: output/windows-neon-4ed3a63-20261117T030209 ran
+03:02:32.7909825–03:19:31.3363666Z. Source1029 unchanged; all36core,Neon12504,
+workspace controls/resize/docking/nested, rotation, scene106+unit12830, native
+readback lifecycle, World teardown, fan flutter and wind stages reached/pass
+before helper-preview CPU refused its stale app.gd manifest. Helper ran0checks,
+attempted no graphical process; do not call this a helper behavior test failure.
+The underlying explicit review gate worked. Its minimal reviewed refresh and
+actual208CPU/266graphical successor now pass, as recorded in the current375
+run above; keep this failed predecessor. Expected totals are not a full PASS. Root alone owns native execution.
 
-Completed sequence archivee8a7f25e:305payloads/417 exact bindings/23 jobs.
-Standalone32 appenddb32fd93:36payloads/33 bindings/1 job. Root exact audits pass.
-The earlier after-free timing inference is retracted by ordered engine output;
-the old regex-overescape suspicion is also retracted by exact AST decoding.
-Neither correction changes actual receipts or independently observed closure.
+Root audited49 actual physical jobs (48exit0+Krita cancel2); all exact inline joins,
+private desktops and process scopes closed. Released03:19:55.1591793Z, inventory
+6b8c57667a3c553152396711a6b755faf7f923714ad6724eddba06bf123ad87d.
+Coordinator22224 birth03:02:32.4796950Z; Python1820 birth03:02:33.0241444Z,
+parent22224 (GetProcess100ns). Both original births absent; no termination issued.
+That preceding lane was released; current375 lane is active. No stale full report used. Compact failure packet
+experiments/neon_failed_4ed_actual_packet_20261117 preserves71 exact originals.
+Earlier active observations/UNRUN preparation are historical, not current status.
 
-Normal fidelity remains FAILED_UNQUALIFIED (original8364/9661 above2e-5).
-Setter input is exact, immediate Blender readback differs, validation unchanged,
-untouched replay equals saved B. Keep original B and private15MB arrays. Carrier
-16, semantic26 and boundary7 CPU checks are not native qualification. Agent is
-preparing a bounded carrier probe/independent ID mapping/resource survey protocol;
-packed/file image inventory and exact original export branch remain prerequisites.
-No guessed options, normal-nearest mapping, original overwrite or automatic adoption.
-New GLB needs source69-bone/five-joint/HAS/cold/render qualification.
+Focused UI passes retain all predicates/thresholds. Scene106 keeps original102,
+analytically handles the approved62percent off-frame mask and adds4 independent
+forward-composite checks under explicit raster guards/fixed2/255 bound. Product
+code/look unchanged. Compact Scene106 archive retains both old102/4 diagnostic
+and106/0 successor with12830 headless unit checks;2 real private jobs, no invented
+headless receipt. Original c2,381,f387,ffcf and4ed full failures remain preserved.
+Fonts cache original profiles; World commits mode only after styling acceptance.
+Ordered-log/regex source corrections are documented; do not repeat retracted
+after-free attribution or escaped-regex suspicion. Strict diagnostics stay enabled.
 
-PMX decoded capture22+peer6 synthetic pass, native join UNQUALIFIED/no solver or
-portable table. Direct bounded PMX reader is source-only future work. Six-foot
-480+21 pass as inactive prototypes; normalization/classification/schema9/PMX
-reconstruction/rebasing unfinished. Master roadmap retains prior owner requests.
+Only after a successful fresh complete default and terminal/source/ownership
+audit, merge the reviewed redesign, preserve both LLM append histories and Neon
+styling in app.gd, then make a fresh owner review. Preserve old reviews/installed
+Studio. A source-only successor review builder is being prepared; no build yet.
 
-Push compact completed work and verify remote before exact owned cleanup. Native
-originals, private deliverables, prior reviews and installed tools are protected.
-Manual observations DEFERRED; ledger55/62 acceptance and52/54 implementation unchanged.
+PMX2.0 reader prototype INDEX9946bf2b passes33 CPU methods including720 prefix
+layouts, independent339-byte oracle, mixed index roles and exhaustive truncation.
+It preserves raw physics refs/words/offsets on synthetic streams, classifies
+opaque nonfinite words, and uses128MiB source/2MiB metadata caps. It is bounded
+layout traversal, not complete PMX validity or native/decoded/HAS/portable/solver
+qualification. Future native recipe INDEXc36c2992 is explicitly NOT_EXECUTABLE
+until its witness/comparator/stable reader/resource/context gates exist. No actual
+PMX asset read. Decoded22+peer6 separate; six-foot480+21 prototypes inactive.
+Normalization/classification/schema9/PMX reconstruction/rebasing remain unfinished.
+
+Normal fidelity remains FAILED_UNQUALIFIED (8364/9661 above2e-5). Native input
+to Blender setter is exact; immediate readback differs; untouched replay equals
+savedB. Protect original material-preservingB and private15MB arrays. Carrier16,
+semantic26,boundary7,probe20 CPU checks do not qualify a native repair. Read-only
+resource survey is in preparation; original image resources, exact export branch,
+independent ID binding/input domain and bounded current-context native runner
+remain gates. No guessed defaults/nearest-normal mapping/overwrite/adoption.
+Any changedGLB requires69bone/fivejoint/HAS/cold/render/export requalification.
+
+Publish compact completed public evidence and verify remote before exact owned
+cleanup. Native originals, art, private arrays/deliverables, old reviews and tools
+remain protected. No cleanup yet. Manual observations DEFERRED; formal ledger
+55/62 acceptance and52/54 implementation unchanged. Master roadmap retains all
+owner lighting/discovery/standardization/200check/six-foot and earlier requests.

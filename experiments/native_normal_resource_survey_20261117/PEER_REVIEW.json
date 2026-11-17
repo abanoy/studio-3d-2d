@@ -1,0 +1,20 @@
+{
+  "format": "has_survey_received_peer_review_transcription_1",
+  "recorded_utc": "2026-11-17T03:28:23.648773+00:00",
+  "reviewer": "/root/review_build_audit",
+  "report_kind": "Received source/CPU observation message; not raw peer stdout",
+  "source_sha256": {
+    "survey_core.py": "44dfd8efae147bc5591d2137001138c690bc09b6d2dd3e1113fa11b70d2dcd93",
+    "loaded_survey.py": "66f1f33e67ff8d7abb8214484d6fbc9fc43304a58069bdb4bc1848a360638f98"
+  },
+  "independent_tests": 31,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 0.021,
+  "finding": "No concrete collector side-effect/privacy false acceptance found in declared post-load metadata-only scope. Staging remains refused. Collector counts/output caps are not independent peak-memory/wall-time/load-IO proof because Blender list and data copies allocate before/around checks. Tie to future owned OS job and pre-load admission.",
+  "documentation_qualification_recorded": [
+    "README.md",
+    "NATIVE_CONTRACT.md"
+  ],
+  "native_qualification": false
+}

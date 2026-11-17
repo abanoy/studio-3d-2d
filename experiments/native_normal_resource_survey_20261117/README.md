@@ -1,0 +1,29 @@
+# Original-B resource survey preparation
+
+This is a **source-only, unstageable preparation** for a read-only Blender resource survey. It contains a bounded metadata collector, a loaded-scene observation helper, a conservative hash-only export-provenance classifier, the unchanged approved hidden-placement helper and unchanged 26-role source/runtime support. The probe and stager deliberately refuse before reading a lease, native asset or environment. They emit no valid native command and create no stage directory.
+
+The missing pieces are a concrete current-context/latest-lane adapter, independent known-B **pre-load** dependency admission, and a bounded root-owned stage/driver/host joining those proofs to this collector. Post-load `bpy.data.libraries` and handler checks cannot establish that loading the file caused no earlier dependency IO. No caller flag or invented empty inventory substitutes for those proofs. See NATIVE_CONTRACT.md.
+
+No owner model, blend, GLB, private capture, original parameters body or texture was read during preparation. No Blender, graphics job, process inventory, Git command, review checkout edit or functional source change occurred. Tests use synthetic stand-ins and the exact approved fake-Win32 source. Packed test payloads are short synthetic text, never original encoded art.
+
+## Implemented scope
+
+`survey_core.py` inventories all image datablocks, including unsupported/default/unreferenced images. It records private image names, stored path strings, lexical path candidates against the **original** blend directory, raw-path equivalence classes, basenames, packed entry metadata/hashes, material/node-tree image references and external path references. Unsupported profiles are retained as inventory with explicit issues, never deleted to make the profile pass. Linked libraries are refused after load; linked images/materials/trees, cyclic trees, invalid identities, changing packed data, invalid types and budget overruns raise explicit refusals.
+
+The public summary is counts, statuses, byte totals and metadata hashes. Detailed image, material, node and pathname data stay in a future private output. Packed bytes are hashed in memory after all packed sizes have passed limits, then omitted from output. No discovered pathname is opened, statted, copied, reloaded, unpacked or modified. External-file content identity therefore remains **UNOBSERVED_NOT_OPENED**. Empty packed-image paths remain empty. Same nonempty raw paths with conflicting packed bytes are disclosed; empty paths are independent packed-resource cases.
+
+Raw-path classes use exact stored Image.filepath strings in first-seen order, with no case folding or path normalization; filepath_raw is retained separately and a mismatch is disclosed. RNA pointer identities are session metadata, not persistent native source IDs. Packed-entry paths receive their own lexical classification even if blend_paths does not enumerate that entry.
+
+`loaded_survey.py` checks background/offline/disabled-autoexec/owned-file context and the explicitly listed event handlers, then repeats the metadata observation exactly. It neither opens a blend nor writes output. It cannot supply the missing pre-load or known-original-file proofs. `export_provenance.py` accepts only the known original B blend/GLB/parameters public hash/size references. That retained public document has no historical export invocation/options record, so the branch stays **UNKNOWN**. A newly inserted branch label is not evidence. Unknown options do not invalidate an otherwise honest resource inventory; they still block export-equivalence qualification.
+
+No pixels, image dimensions/resolution/channels/depth, evaluated geometry, matrices, poses, vertex arrays, UV arrays or weights are requested. In Blender's tagged 5.1 source, several apparently descriptive image getters can acquire an image buffer. Those properties are explicitly unobserved. The source review and its limits are in PRIMARY_SOURCE_NOTES.md.
+
+## CPU verification
+
+From this folder, use approved Python with `-B -X utf8 -m unittest -v test_resources`. CPU_VALIDATION.json records the final source hashes, methods, cases and exact result. The first 28-test run failed one basename check because Python's Windows path parser treated Blender's `//directory/file` prefix as a UNC share. FIRST_CPU_FAILURE.json preserves that observation; the collector now handles Blender's relative prefix explicitly. No assertion or budget was relaxed.
+
+The first failing collector and test source are retained as gzip bodies reconstructed from the documented small edits and verified against the hashes recorded by that first run; INITIAL_FAILURE_SOURCE_BINDINGS.json records the exact decompressed identities. They contain source and synthetic tests only. The preparation auditor writes CPU_VALIDATION.json and must not be rerun into the sealed folder; independent reviewers can run the test command above without changing the packet.
+
+These are collector counts, retained-string and final-output caps, not a stand-alone peak-memory or wall-time proof. Blender allocates the list returned by blend_paths before its length is inspected; packed-data copies, list copies and JSON buffers also coexist. The future owned OS job must enforce the separate memory/time limits, and the independent pre-load admission remains mandatory. No collector result proves load-time IO confinement.
+
+The source-only native entries are intentionally unusable. The fact that synthetic collector and fake-API tests pass does not make a native stage, actual resource profile, original-content preservation, native point relation, export, semantic comparison, corrected-normal transport or fidelity claim true. All those native gates remain unrun. Original failed normal results and source assets remain unchanged.

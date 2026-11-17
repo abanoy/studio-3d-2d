@@ -1,0 +1,180 @@
+{
+  "format": "has_B_resource_survey_preparation_cpu_audit_1",
+  "observed_utc": "2026-11-17T03:26:26.098006+00:00",
+  "tests": 31,
+  "failures": 0,
+  "errors": 0,
+  "status": "SOURCE_CPU_PASS_NATIVE_UNSTAGEABLE",
+  "test_methods": [
+    "test_all_packed_sizes_admitted_before_any_data_getter",
+    "test_collection_and_path_enumeration_bounds",
+    "test_conflicting_nonempty_path_packed_bytes_disclosed_but_empty_paths_independent",
+    "test_duplicate_identity_and_visible_mesh_profile",
+    "test_empty_path_packed_invariants_and_payload_hash_only",
+    "test_exact_original_core_support_and_hidden_sentinel_sources",
+    "test_exact_sentinel_fake_api_placement_finally_and_failure_guards",
+    "test_external_script_and_ies_nodes_are_refused_with_inventory",
+    "test_hash_only_export_provenance_never_guesses_branch",
+    "test_hash_only_public_reference_rejects_changed_identity_types",
+    "test_image_profile_issues_are_inventory_not_deletion",
+    "test_image_reference_identity_and_reference_budget",
+    "test_linked_image_and_material_and_tree_refused",
+    "test_linked_library_refused_before_image_or_data_traversal",
+    "test_loaded_helper_detects_resource_change_without_normalizing",
+    "test_loaded_helper_refuses_context_and_monitored_handler_mismatches",
+    "test_loaded_helper_repeated_snapshot_allows_unknown_export_branch",
+    "test_minimal_metadata_private_paths_public_scalars_no_forbidden_getters",
+    "test_multiple_packed_payloads_are_disclosed_not_silently_dropped",
+    "test_no_budget_widening_and_bool_is_not_int",
+    "test_node_tree_cycle_depth_and_total_node_bounds",
+    "test_packed_entry_path_is_inventoried_without_open_even_when_not_in_blend_paths",
+    "test_packed_pointer_count_and_first_identity",
+    "test_packed_single_size_count_and_payload_stability",
+    "test_path_classification_is_lexical_not_search_or_exists",
+    "test_probe_and_stager_always_refuse_before_any_native_operation",
+    "test_raw_filepath_equivalence_and_basename_are_separate",
+    "test_recursive_shared_tree_and_all_image_nodes_inventory",
+    "test_string_utf8_nul_per_item_total_and_final_metadata_caps",
+    "test_unknown_external_ref_and_network_path_inventory_are_preserved",
+    "test_unused_default_generated_image_is_retained_and_refused"
+  ],
+  "synthetic_stdout": "test_all_packed_sizes_admitted_before_any_data_getter (test_resources.ResourceTests.test_all_packed_sizes_admitted_before_any_data_getter) ... ok\ntest_collection_and_path_enumeration_bounds (test_resources.ResourceTests.test_collection_and_path_enumeration_bounds) ... ok\ntest_conflicting_nonempty_path_packed_bytes_disclosed_but_empty_paths_independent (test_resources.ResourceTests.test_conflicting_nonempty_path_packed_bytes_disclosed_but_empty_paths_independent) ... ok\ntest_duplicate_identity_and_visible_mesh_profile (test_resources.ResourceTests.test_duplicate_identity_and_visible_mesh_profile) ... ok\ntest_empty_path_packed_invariants_and_payload_hash_only (test_resources.ResourceTests.test_empty_path_packed_invariants_and_payload_hash_only) ... ok\ntest_exact_original_core_support_and_hidden_sentinel_sources (test_resources.ResourceTests.test_exact_original_core_support_and_hidden_sentinel_sources) ... ok\ntest_exact_sentinel_fake_api_placement_finally_and_failure_guards (test_resources.ResourceTests.test_exact_sentinel_fake_api_placement_finally_and_failure_guards) ... ok\ntest_external_script_and_ies_nodes_are_refused_with_inventory (test_resources.ResourceTests.test_external_script_and_ies_nodes_are_refused_with_inventory) ... ok\ntest_hash_only_export_provenance_never_guesses_branch (test_resources.ResourceTests.test_hash_only_export_provenance_never_guesses_branch) ... ok\ntest_hash_only_public_reference_rejects_changed_identity_types (test_resources.ResourceTests.test_hash_only_public_reference_rejects_changed_identity_types) ... ok\ntest_image_profile_issues_are_inventory_not_deletion (test_resources.ResourceTests.test_image_profile_issues_are_inventory_not_deletion) ... ok\ntest_image_reference_identity_and_reference_budget (test_resources.ResourceTests.test_image_reference_identity_and_reference_budget) ... ok\ntest_linked_image_and_material_and_tree_refused (test_resources.ResourceTests.test_linked_image_and_material_and_tree_refused) ... ok\ntest_linked_library_refused_before_image_or_data_traversal (test_resources.ResourceTests.test_linked_library_refused_before_image_or_data_traversal) ... ok\ntest_loaded_helper_detects_resource_change_without_normalizing (test_resources.ResourceTests.test_loaded_helper_detects_resource_change_without_normalizing) ... ok\ntest_loaded_helper_refuses_context_and_monitored_handler_mismatches (test_resources.ResourceTests.test_loaded_helper_refuses_context_and_monitored_handler_mismatches) ... ok\ntest_loaded_helper_repeated_snapshot_allows_unknown_export_branch (test_resources.ResourceTests.test_loaded_helper_repeated_snapshot_allows_unknown_export_branch) ... ok\ntest_minimal_metadata_private_paths_public_scalars_no_forbidden_getters (test_resources.ResourceTests.test_minimal_metadata_private_paths_public_scalars_no_forbidden_getters) ... ok\ntest_multiple_packed_payloads_are_disclosed_not_silently_dropped (test_resources.ResourceTests.test_multiple_packed_payloads_are_disclosed_not_silently_dropped) ... ok\ntest_no_budget_widening_and_bool_is_not_int (test_resources.ResourceTests.test_no_budget_widening_and_bool_is_not_int) ... ok\ntest_node_tree_cycle_depth_and_total_node_bounds (test_resources.ResourceTests.test_node_tree_cycle_depth_and_total_node_bounds) ... ok\ntest_packed_entry_path_is_inventoried_without_open_even_when_not_in_blend_paths (test_resources.ResourceTests.test_packed_entry_path_is_inventoried_without_open_even_when_not_in_blend_paths) ... ok\ntest_packed_pointer_count_and_first_identity (test_resources.ResourceTests.test_packed_pointer_count_and_first_identity) ... ok\ntest_packed_single_size_count_and_payload_stability (test_resources.ResourceTests.test_packed_single_size_count_and_payload_stability) ... ok\ntest_path_classification_is_lexical_not_search_or_exists (test_resources.ResourceTests.test_path_classification_is_lexical_not_search_or_exists) ... ok\ntest_probe_and_stager_always_refuse_before_any_native_operation (test_resources.ResourceTests.test_probe_and_stager_always_refuse_before_any_native_operation) ... ok\ntest_raw_filepath_equivalence_and_basename_are_separate (test_resources.ResourceTests.test_raw_filepath_equivalence_and_basename_are_separate) ... ok\ntest_recursive_shared_tree_and_all_image_nodes_inventory (test_resources.ResourceTests.test_recursive_shared_tree_and_all_image_nodes_inventory) ... ok\ntest_string_utf8_nul_per_item_total_and_final_metadata_caps (test_resources.ResourceTests.test_string_utf8_nul_per_item_total_and_final_metadata_caps) ... ok\ntest_unknown_external_ref_and_network_path_inventory_are_preserved (test_resources.ResourceTests.test_unknown_external_ref_and_network_path_inventory_are_preserved) ... ok\ntest_unused_default_generated_image_is_retained_and_refused (test_resources.ResourceTests.test_unused_default_generated_image_is_retained_and_refused) ... ok\n\n----------------------------------------------------------------------\nRan 31 tests in 0.026s\n\nOK\n",
+  "local_python_sources": {
+    "audit_preparation.py": {
+      "bytes": 6518,
+      "sha256": "f315dddfba23c0df772e54e1abf9ed965f439027eee22fcda4ac3913fd266d18"
+    },
+    "export_provenance.py": {
+      "bytes": 1773,
+      "sha256": "ae2125ab6083de1bf5487fda2ca328c9f06e2c1ace36af97646da39c96e3212e"
+    },
+    "loaded_survey.py": {
+      "bytes": 2331,
+      "sha256": "66f1f33e67ff8d7abb8214484d6fbc9fc43304a58069bdb4bc1848a360638f98"
+    },
+    "placement_sentinel.py": {
+      "bytes": 4387,
+      "sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2"
+    },
+    "probe_resources.py": {
+      "bytes": 556,
+      "sha256": "37b577852b0353b259a6fc1b9b2116f2163447dbe07bb425171140a426b35be9"
+    },
+    "setter_support.py": {
+      "bytes": 6019,
+      "sha256": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9"
+    },
+    "stager.py": {
+      "bytes": 321,
+      "sha256": "07c9792758f07cbd3bfeee65f9f3707db8d08e5f7468281540b6276ffbc4bac4"
+    },
+    "survey_admission.py": {
+      "bytes": 527,
+      "sha256": "572f2f29fa8d22489637a6cf9ef3ba58d7f2d0576931e286fa064c1f647c66e1"
+    },
+    "survey_core.py": {
+      "bytes": 13755,
+      "sha256": "44dfd8efae147bc5591d2137001138c690bc09b6d2dd3e1113fa11b70d2dcd93"
+    },
+    "test_resources.py": {
+      "bytes": 22694,
+      "sha256": "fd5d5e0f5e3d13a71acf96e2a819b41b62774fbcf367225c2b7edb7d5594ffc4"
+    }
+  },
+  "public_source_bindings": {
+    "carrier_recipe_index": {
+      "path": "experiments/native_normal_carrier_probe_20261117/INDEX.json",
+      "bytes": 2468,
+      "sha256": "a800398fa46c506c339aa81b4bc3db098bc6dc1c0d03b30274899debac61e8e6"
+    },
+    "carrier_recipe": {
+      "path": "experiments/native_normal_carrier_probe_20261117/NEXT_NATIVE_RECIPE.md",
+      "bytes": 12872,
+      "sha256": "f565fdd73c8868863d2d29dd56f1bae598dde426544b0425be39b4a6df2c9aac"
+    },
+    "original_B_public_hashmetadata": {
+      "path": "experiments/source_normal_followup_plan_20261115/INPUT_METADATA.json",
+      "bytes": 2799,
+      "sha256": "080cfbcea375c18fa21f29b51d9afbd30bfc4862524974b8900cfd67541d4914"
+    },
+    "original_setter_support": {
+      "path": "experiments/normal_setter_boundary_sentinel_20261117/setter_support.py",
+      "bytes": 6019,
+      "sha256": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9"
+    },
+    "original_placement_source": {
+      "path": "experiments/native_normal_carrier_probe_20261117/placement_sentinel.py",
+      "bytes": 4387,
+      "sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2"
+    },
+    "approved_sentinel_fake_tests": {
+      "path": "experiments/normal_setter_boundary_sentinel_20261117/test_sentinel.py",
+      "bytes": 23241,
+      "sha256": "c070508aea3face5986b491f25bd06ba5b7bd0627853bedbdda34c01d98d6ae2"
+    },
+    "approved_input_lock_metadata": {
+      "path": "experiments/replay_audio_fix_20261115/builder/input-lock.json",
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    "approved_identity_reader_source": {
+      "path": "experiments/resume_root_20261115/audit_protected_inputs_before_cleanup.py",
+      "bytes": 9505,
+      "sha256": "5be1d34aa6aced8fc112bee3ecadd489be9b7f38ab710553385bfd77ca500d83"
+    },
+    "retained_normal_context_support": {
+      "path": "experiments/normal_boundary_probe_20261116/probe_support.py",
+      "bytes": 10223,
+      "sha256": "71fc6b8ddd270fc40a42212dad3e1a7fd64d24b8e7c401ee32d1744c8b00adf0"
+    },
+    "non_NORMAL_semantic_packet_index": {
+      "path": "experiments/carrier_semantic_preservation_20261117/INDEX.json",
+      "bytes": 1065,
+      "sha256": "edab37a065d3c29a316b7a1c1cab3a4263f5d4e716f97fa4192f541b391ea4fd"
+    },
+    "semantic_qualification_addendum_index": {
+      "path": "experiments/carrier_semantic_qualification_boundary_20261117/INDEX.json",
+      "bytes": 947,
+      "sha256": "2bf04bdbad8623e7b2004ab001ed582276b6a3bde608fa60a94c84067d2e00cc"
+    }
+  },
+  "public_sources_unchanged": true,
+  "limits": {
+    "images": 128,
+    "materials": 128,
+    "objects": 256,
+    "trees": 256,
+    "nodes": 2048,
+    "tree_depth": 16,
+    "image_references": 2048,
+    "external_paths": 2048,
+    "packed_per_image": 8,
+    "packed_bytes_each": 67108864,
+    "packed_bytes_total": 268435456,
+    "string_bytes_each": 4096,
+    "string_bytes_total": 131072,
+    "metadata_bytes": 524288
+  },
+  "locked_reference_catalogue_counts": {
+    "runtime_executable_references": 6,
+    "sourceio_file_references": 574,
+    "exporter_source_references": 120
+  },
+  "runtime_or_694_source_identities_observed_current": false,
+  "public_hashmetadata_provenance": {
+    "format": "has_original_B_export_provenance_survey_1",
+    "original_B_hash_references_match": true,
+    "export_branch": "UNKNOWN",
+    "reason": "Allowlisted hash-only metadata does not bind an original export invocation/options record",
+    "unqualified_explicit_branch_label_present": false,
+    "plain_branch_assumed": false,
+    "bone_collector_branch_assumed": false,
+    "parameters_body_decoded": false,
+    "native_profile_or_export_equivalence_qualified": false
+  },
+  "native_assets_or_private_arrays_or_media_read": false,
+  "native_stage_or_engine_or_CIM_or_Git_invoked": false,
+  "native_stage_ready": false,
+  "actual_resource_inventory_observed": false,
+  "native_input_validity_ID_semantics_NORMAL_or_fidelity_qualified": false
+}

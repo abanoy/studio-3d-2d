@@ -89,5 +89,131 @@
   },
   "next_full_closed_jobs": 48,
   "next_full_inventory_sha256": "2c334aab837768ee17b2c13be0ad6ac26fa203a9e8815cd991b24a2de3386704",
-  "old_regex_overescape_inference": "RETRACTED_PATTERN_VALID"
+  "old_regex_overescape_inference": "RETRACTED_PATTERN_VALID",
+  "latest_observation": {
+    "format": "has_root_neon_375_active_observation_1",
+    "observed_utc": "2026-11-17T03:32:05.512704+00:00",
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 3032,
+      "process_started": "2026-11-17T03:31:03.8129380Z",
+      "started_utc": "2026-11-17T03:31:04.1329319Z",
+      "status": "running",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-375ec05-20261117T033037",
+      "source_commit": "375ec05e925159850ff3b0abf2e8f98f9d2ce129",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4"
+    },
+    "files": [
+      {
+        "path": "launch.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-375ec05-20261117T033037\\launch.json",
+        "bytes": 1174,
+        "sha256": "eb4d8cd21894c37b4c1b923f57d8568db86fa2efd43f8d96e7c716c239dc4655",
+        "snapshot_only": false
+      },
+      {
+        "path": "root-birth-observation.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-375ec05-20261117T033037\\root-birth-observation.json",
+        "bytes": 415,
+        "sha256": "fb84fd77f49147efc1f091c326dada6ebf54346a06fbc2637029c08979f40d38",
+        "snapshot_only": false
+      },
+      {
+        "path": "root-birth-api-detail.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-375ec05-20261117T033037\\root-birth-api-detail.json",
+        "bytes": 302,
+        "sha256": "e0d2d472949f29f0318bbbbf0749e937e1f91d1f83e58510f950cc338c6fe4cc",
+        "snapshot_only": false
+      },
+      {
+        "path": "source-before.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-375ec05-20261117T033037\\source-before.json",
+        "bytes": 108131,
+        "sha256": "02cd4a80ba4f4e5870dc87e70e6ff7ceb32dcfe6f2904e0d428a65aa55559e5d",
+        "snapshot_only": false
+      },
+      {
+        "path": "preflight-source.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-375ec05-20261117T033037\\preflight-source.json",
+        "bytes": 104958,
+        "sha256": "9584c97e87004c438b04f17ba1e2474b10c1d87f28170fc57afae0801f6a77c5",
+        "snapshot_only": false
+      },
+      {
+        "path": "state.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-375ec05-20261117T033037\\state.json",
+        "bytes": 717,
+        "sha256": "1924a6788f6ad7423e9e2bf0eeaa1a47fffbe9b7abe37e56a3196cbeb6df820f",
+        "snapshot_only": true
+      },
+      {
+        "path": "canonical.log",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-375ec05-20261117T033037\\canonical.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot_only": true
+      }
+    ],
+    "functional_sources_unchanged": 1029,
+    "helper_focused": {
+      "cpu": 208,
+      "graphical": 266,
+      "passed": true
+    },
+    "expected_not_pass": {
+      "groups": 158,
+      "core": 36,
+      "movies": 21
+    },
+    "full_result": "RUNNING_NO_RESULT",
+    "main_merged": false,
+    "review_branch_375_upload": "AUTO_REVIEW_REJECTED_NOT_RETRIED",
+    "main_reconstruction_publication": "PENDING"
+  },
+  "preceding_4ed_observation": {
+    "candidate": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+    "full": "FAILED_HELPER_PREVIEW_STALE_REVIEW_MANIFEST",
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 22224,
+      "process_started": "2026-11-17T03:02:32.4796950Z",
+      "started_utc": "2026-11-17T03:02:32.7909825Z",
+      "status": "failed",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-4ed3a63-20261117T030209",
+      "source_commit": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+      "suite_exit": 1,
+      "source_unchanged": true,
+      "finished_utc": "2026-11-17T03:19:31.3363666Z"
+    },
+    "source_files_unchanged": 1029,
+    "helper_checks": 0,
+    "helper_graphical_attempt": false,
+    "helper_error": "RuntimeError: Unreviewed helper main bytes: src/app.gd",
+    "closed_physical_jobs": 49,
+    "normal_exit0": 48,
+    "Krita_cancel_exit2": 1,
+    "inventory_sha256": "6b8c57667a3c553152396711a6b755faf7f923714ad6724eddba06bf123ad87d",
+    "released_utc": "2026-11-17T03:19:55.1591793Z",
+    "focused_scene": "106/0_AND_UNIT12830/0",
+    "standard_neon_group": "12504/0",
+    "independent_remote_candidate_files": 4,
+    "independent_remote_main09fb_files": 837,
+    "main_merged": false,
+    "manual_owner_result": "DEFERRED_NO_RESULT"
+  }
 }

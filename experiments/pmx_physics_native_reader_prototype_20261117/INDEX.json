@@ -1,0 +1,82 @@
+{
+  "format": "has_pmx20_native_physics_reader_source_prototype_packet_1",
+  "created_utc": "2026-11-17T03:08:52.617406+00:00",
+  "qualification": "SOURCE_CPU_SYNTHETIC_ONLY_NATIVE_AND_HAS_INTEGRATION_UNQUALIFIED",
+  "parser_sha256": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426",
+  "primary_source_sha256": "fb9aafe369025f221bc5a1c952d868260b1a4bb950dc33bca62645b4da454e5a",
+  "source_design_parent_index_sha256": "d36d64477be854e9ae1808f2d67a55ac2e26fd8ad4c7395e5050aa1fca196b4b",
+  "cpu_methods": 33,
+  "cpu_failures": 0,
+  "payloads": [
+    {
+      "path": "CPU_REPORT.json",
+      "bytes": 1220,
+      "sha256": "55e931757e7fc57944ed67e8c26f9307d54569f23386bad5777512fda96d35b2"
+    },
+    {
+      "path": "CPU_TESTS.log",
+      "bytes": 4624,
+      "sha256": "f705fdf039c8a5ae906403b82c751984732d8e5484de6beffc07c8fa9ff3d084"
+    },
+    {
+      "path": "CURRENT_CONTRACT.md",
+      "bytes": 4345,
+      "sha256": "677837818ab9e0e11465a136c8ed4f0876966f46d2652be7750d970ceb0cf124"
+    },
+    {
+      "path": "LAYOUT.md",
+      "bytes": 11455,
+      "sha256": "d516af51783e6769005b375cc1677728952b0511887d2bac985b7c9b023df5a4"
+    },
+    {
+      "path": "MANUAL_FIXTURE_EXPECTATIONS.json",
+      "bytes": 3444,
+      "sha256": "323129acee5355b6cc6d99b3068e07253e17d87cd01cbcbc572f3a25eed45b59"
+    },
+    {
+      "path": "PEER_REVIEW.json",
+      "bytes": 911,
+      "sha256": "f1822199407bddcc8d611f52510a21f65157e192e5a7bee7ac8659376c0ac5b0"
+    },
+    {
+      "path": "pmx_native_physics.py",
+      "bytes": 16124,
+      "sha256": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1897,
+      "sha256": "78629370bfc8e8554ae10adedbc1412b1e83a267bfd52965d1db8c45897d2262"
+    },
+    {
+      "path": "SOURCE_BINDING.json",
+      "bytes": 2170,
+      "sha256": "8d7e76ecf170dea90f07132931753392cecaf5accd6b5ccf1991102f7406f1b7"
+    },
+    {
+      "path": "SYNTHETIC_FIXTURE_DESIGN.md",
+      "bytes": 3790,
+      "sha256": "fc450de6af5fdde2b41c9d027cd77ce7e708df7ca45dc724be9d4e63726c4f9e"
+    },
+    {
+      "path": "synthetic_pmx.py",
+      "bytes": 16301,
+      "sha256": "4700bbf8c167680af292b5ea427eebb84425819d24ac4c0e4eb8aad222913414"
+    },
+    {
+      "path": "test_full_prefix.py",
+      "bytes": 9085,
+      "sha256": "855f82084a5e4fa90c40ec2685fd48f3edc59ee42c767b793c1cc31bebd77128"
+    },
+    {
+      "path": "test_native_reader.py",
+      "bytes": 6817,
+      "sha256": "c27be381a3001d62e5edafa0df6837961d888be3a4d67a46ed8933dcd768cdc2"
+    },
+    {
+      "path": "verify_packet.py",
+      "bytes": 606,
+      "sha256": "429ab850a7d7ff9bc0a9d222827b098542bce05935ce58ed933a2dc1cee6cfb1"
+    }
+  ]
+}

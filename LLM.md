@@ -5574,3 +5574,47 @@ Next qualify the exact scene-presentation fixture, back up the resulting candida
 and rerun the complete Windows default before merge. Preserve all failures,
 approved Neon, concurrent main history, installed Studio and prior owner reviews.
 Manual owner observations remain DEFERRED. Formal55/62 and52/54 are unchanged.
+
+### November17 2026 —4ed active Windows successor and PMX reader prototype
+
+At 2026-11-17T03:12:58.043381+00:00, candidate4ed3a63 is running the complete Windows default in
+output/windows-neon-4ed3a63-20261117T030209, started03:02:32.7909825Z.
+Root rechecked1029 candidate files and1019 main functional files unchanged.
+Expected158groups/36core/21movies are not PASS totals. Root owns the native lane;
+no functional/HEAD mutation or concurrent engine is allowed until terminal audit.
+Focused Scene106 passes with all original102 predicates/thresholds preserved and
+four independent forward-composite checks. The approved Neon mask/look and product
+source are unchanged; old102/4 failure is retained. Candidate4changed remote files
+and all837 files of main09fb independently match Git blobs. PMX2.0 source-only
+reader33 CPU methods pass; actual native reads, joins, portable save and solver
+remain unqualified. Main merge, owner review replacement and cleanup not done.
+Manual observations DEFERRED; formal55/62 and52/54 unchanged. See current pickup.
+
+### November17 2026 —4ed full closed at helper source admission
+
+The frozen4ed full stopped03:19:31.3363666Z with1029 source files unchanged.
+All36core,Neon12504,scene106+unit12830 and subsequent native readback/teardown/
+fan/wind stages reached/pass; helper-preview CPU refused stale reviewed app.gd
+before0checks/no graphical attempt. Exact review gating remains enabled; its
+minimal reviewed manifest successor is being prepared, not yet executed. Root
+audited49physical jobs48exit0+registeredKrita cancel2, exact inline receipts and
+both original births/scopes absent, then released03:19:55.1591793Z. Inventory
+6b8c57667a3c553152396711a6b755faf7f923714ad6724eddba06bf123ad87d.
+All failed/full/scoped evidence remains distinct. No complete PASS, merge, owner
+observation or native-normal/PMX/scale qualification. Manual DEFERRED,55/62 and
+52/54 unchanged. Current pickup supersedes the earlier dated running observation.
+
+### November17 2026 —375 helper qualification and active full successor
+
+At 2026-11-17T03:32:05.512704+00:00, frozen375ec05 complete Windows run is active from03:31:04Z,
+output/windows-neon-375ec05-20261117T033037. Coordinator3032 birth03:31:03.8129380Z,
+Python26304 birth03:31:04.3344666Z,parent3032, exactGetProcess100ns. Source1029
+unchanged. Only functional change from4ed is the reviewed helper manifest's four
+app/pose hash strings;25members/23otherrows/driver/assertions unchanged. Actual
+focused208CPU(41.7605826s)+266graphical(102.8179396s) pass on exact committed
+snapshot with no overlay, sources unchanged and native/worker scopes zero/private
+jobs closed. Branch upload375 was auto-review rejected and not retried. Explicit
+goal main source/evidence checkpoint will carry a reconstructable text-only375
+packet without product merge. No full PASS or cleanup claimed. Native normals,
+PMX solver and six-foot activation remain unqualified/inactive. ManualDEFERRED,
+55/62 and52/54 unchanged; current pickup records exact active lane.

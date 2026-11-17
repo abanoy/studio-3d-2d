@@ -1,0 +1,15 @@
+{
+  "format": "has_pmx20_native_reader_independent_source_peer_1",
+  "reviewer": "/root/normal_probe_audit",
+  "parser_sha256": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426",
+  "cpu_methods": 33,
+  "failures": 0,
+  "reported_seconds": 0.686,
+  "source_conclusion": "No concrete byte-layout/bounds/provenance mutation false-accept found within declared opaque-word/layout scope.",
+  "documentation_findings": [
+    "Historical design says parser unimplemented,128KiB and finite-only; current implementation uses2MiB and opaque nonfinite rawword capture.",
+    "Need explicit field-specific signed -1 allowance, including prefix weight/grant/IK absence without semantic qualification."
+  ],
+  "resolution": "README and CURRENT_CONTRACT explicitly override historical suggestions and enumerate exact -1 and scope policy.",
+  "native_inputs_engines_CIM_Git_REVIEW_used": false
+}

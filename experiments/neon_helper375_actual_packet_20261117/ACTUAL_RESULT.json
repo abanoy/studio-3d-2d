@@ -1,0 +1,71 @@
+{
+  "format": "has_helper375_compact_actual_summary_1",
+  "qualification": "SCOPED_ORIGINAL_HELPER_CPU_AND_GRAPHICAL_NO_FULL_SUITE_OR_NATIVE_ASSET_FIDELITY",
+  "revision": "375ec05e925159850ff3b0abf2e8f98f9d2ce129",
+  "cpu_checks": 208,
+  "graphical_checks": 266,
+  "cases": [
+    {
+      "mode": "cpu",
+      "label": "transport",
+      "checks": 11,
+      "raw_result_path": "output/helper-preview/cpu-1794885999021022800-b18114fc/Studio/output/helper-preview-qa/transport/result.json"
+    },
+    {
+      "mode": "cpu",
+      "label": "adapter",
+      "checks": 128,
+      "raw_result_path": "output/helper-preview/cpu-1794885999021022800-b18114fc/Studio/output/helper-preview-qa/adapter/result.json"
+    },
+    {
+      "mode": "cpu",
+      "label": "host",
+      "checks": 69,
+      "raw_result_path": "output/helper-preview/cpu-1794885999021022800-b18114fc/Studio/output/helper-preview-qa/host/result.json"
+    },
+    {
+      "mode": "graphical",
+      "label": "focused",
+      "checks": 221,
+      "raw_result_path": "output/helper-preview/graphical-1794886042030702100-141c1a40/Studio/output/helper-preview-qa/focused/result.json"
+    },
+    {
+      "mode": "graphical",
+      "label": "peers",
+      "checks": 45,
+      "raw_result_path": "output/helper-preview/graphical-1794886042030702100-141c1a40/Studio/output/helper-preview-qa/peers/result.json"
+    }
+  ],
+  "root_seconds": {
+    "cpu": 41.7605826,
+    "graphical": 102.8179396
+  },
+  "functional_source_entries_unchanged": 1029,
+  "snapshot_identity_entries_each": [
+    1030,
+    1030
+  ],
+  "real_private_desktop_jobs": 2,
+  "private_desktops_closed_no_foreground_or_switch": true,
+  "headless_CPU_desktop_receipts_fabricated": false,
+  "worker_launch_records": 21,
+  "worker_completed_outcome_records": 17,
+  "worker_launch_only_records": [
+    "REVIEW:output/helper-preview/graphical-1794886042030702100-141c1a40/Studio/output/helper-preview-qa/focused/worker-close-helper-work/24891d62b401c58b5cce20679800209f/222d70b6aea24cd78ede28960ca23991/owned-launch.json",
+    "REVIEW:output/helper-preview/graphical-1794886042030702100-141c1a40/Studio/output/helper-preview-qa/focused/worker-off-helper-work/4776a7277fb9b991eaa218cc59bbf1c2/2d6ace92f4d04ebf9ec04e478a64f343/owned-launch.json",
+    "REVIEW:output/helper-preview/graphical-1794886042030702100-141c1a40/Studio/output/helper-preview-qa/focused/worker-save-helper-work/e98fa447b5a54581e5d6cca12887aac4/621b159b1ea74df0a7f5290afb2e3b1c/owned-launch.json",
+    "REVIEW:output/helper-preview/graphical-1794886042030702100-141c1a40/Studio/output/helper-preview-qa/focused/worker-seek-helper-work/ec0ec1c4183cc373adb72032d62853fb/8543e6269d8f4affbf3893cd30fe9816/owned-launch.json"
+  ],
+  "retained_zero_base_and_worker_scope_pairs": [
+    "before",
+    "cpu-after",
+    "graphical-after",
+    "after"
+  ],
+  "launch_only_scope": "Four focused cancellation/seek/save/off/close scenarios have launch metadata without owned-outcome; retain passing test/source/log evidence and later zero-worker observations, never fabricate outcome receipts.",
+  "full_suite_pass_claimed": false,
+  "native_fidelity_claimed": false,
+  "main_merged_claimed": false,
+  "media_models_or_native_configuration_arrays_included": false,
+  "active_full_output_read": false
+}

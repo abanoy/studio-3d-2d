@@ -1,0 +1,27 @@
+{
+  "format": "has_neon_4ed3_terminal_independent_source_peer_1",
+  "status": "PASS_SOURCE_CPU_ONLY",
+  "reviewed_sources": {
+    "close_terminal.py": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+    "legacy_result_gates.py": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+    "test_terminal.py": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c",
+    "bind_context.py": "305a3d442885c32feccb515ea5de7a6a938dcdca133cf3e58c568411c070829b",
+    "test_bind_context.py": "d17ebf06d170aa21e13a09a292510589307b91de0aed5318cc0da53012d542a7",
+    "RESULT_REGISTRY.json": "e1fa41d78a1333f1fbfed1f03c8b0fb4be5eb65813f5cfb38f6b0eab6069de42",
+    "CONTEXT.json": "41f6ed03372111454ccb5000f5e24206d1b2dd0880eef511fe5862fce3936bec"
+  },
+  "immutable_inputs_verified": {
+    "source-before.json": "09ebf6875dba0495b0d2d44b83480e3702ae6542a2f25642ce577017ee336472",
+    "launch.json": "67fe40771aee58229bbe5d201eb141bac2c059aaff33fc5d542c6f8f517459aa",
+    "root-birth-observation.json": "dcdc2662bc91475ff47594f2b40810a30b1bd1edf977b48a267d9b19cfc160c6",
+    "root-birth-api-detail.json": "20ad09ab67810e029f52e72d2c53d39c0c5f312b9c017dd5db2cafa8a83b67a1"
+  },
+  "all_other_active_run_reads": false,
+  "source_only_exact_inverses": true,
+  "test_methods": 25,
+  "test_failures": 0,
+  "cpu_log_sha256": "798d29d4d1c2dc6d24adfda17ee852303c417766dbb88dc2e52eb5619a41ab50",
+  "helper_output_labels_inherited_ffcf_no_weakening": true,
+  "process_observers_CIM_engines_Git_run": false,
+  "preliminary_audit_correction": "First ad hoc read used nonexistent test_bind.py and stopped before context checks. Corrected actual name test_bind_context.py, reran complete independent proof; no terminal/runtime or false closure conclusion occurred."
+}

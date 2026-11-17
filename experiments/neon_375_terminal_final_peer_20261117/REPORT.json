@@ -1,0 +1,43 @@
+{
+  "status": "FINAL_PASS_SOURCE_CPU_ONLY_TERMINAL_UNREAD",
+  "reviewed_sources": {
+    "close_terminal.py": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+    "legacy_result_gates.py": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+    "test_terminal.py": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c",
+    "bind_context.py": "4dc1a45348e83f92394c6739715961bf49635fb0c9577236a4445d053e61d31e",
+    "test_bind_context.py": "2344e21ba25e84032aeca8ed1fdc75b297ebecc5d2577e7c75cc213d3a2cc877",
+    "test_api_detail.py": "4f05d674b381f039c15fafcbca2aabb8f2fb2f82a2cca9d83de5efa0e2cded51",
+    "RESULT_REGISTRY.json": "07f25193d138d58516b9a1f50f4abe791a56cbaef5769d22ff91e670a8178352",
+    "CONTEXT.json": "96b09eb8314aeb1dd83d931f0a805988d5a7b5cb31ffa8afe780a4f44848a2a4"
+  },
+  "immutable_inputs_verified": {
+    "source-before.json": "02cd4a80ba4f4e5870dc87e70e6ff7ceb32dcfe6f2904e0d428a65aa55559e5d",
+    "launch.json": "eb4d8cd21894c37b4c1b923f57d8568db86fa2efd43f8d96e7c716c239dc4655",
+    "root-birth-observation.json": "fb84fd77f49147efc1f091c326dada6ebf54346a06fbc2637029c08979f40d38",
+    "root-birth-api-detail.json": "e0d2d472949f29f0318bbbbf0749e937e1f91d1f83e58510f950cc338c6fe4cc"
+  },
+  "helper_legacy_terminaltests_byte_exact": true,
+  "binder_adapter_call_plusliteral_byte_inverse_exact": true,
+  "bindingtests_timestamp_only_raw_inverse": true,
+  "registry_solecommit_rawbyte_inverse_now_exact_no_EOL_transform": true,
+  "prior_CRLF_peer_packet_preserved": "neon_375_terminal_independent_peer_20261117/INDEX.json 18ff47446f1c4791191b51a0e92aac7681674bb5df8a73ec0306952dd3f5b967",
+  "methods": 29,
+  "failures": 0,
+  "raw_cpu_log_sha256": "54b6dd0af98dc561a4dea627c80733240c1611766f2a621400f0df19a781d4df",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_375_terminal_20261117",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "observer_engine_CIM_Git_executed": false,
+  "active_state_report_log_source_after_read": false
+}

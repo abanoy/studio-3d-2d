@@ -1,0 +1,13 @@
+{
+  "status": "PREWRITE_CAPTURE_REFUSAL_NO_ARCHIVE_OR_INPUTS_WRITTEN",
+  "failure": "Diagnostic physical receipt copy differs",
+  "cause": "Original global receipt has13CRLF lines and no final newline; root copy has LF lines and a final LF. Exact CRLF-to-LF plus final-LF byte inverse verified. Both raw files remain separate objects; job identity compares exact typed JSON.",
+  "global_sha256": "8a09e3b71578e73f27a208a1da985250d7a84a4ffb6e1b975174050df30f8ced",
+  "global_bytes": 388,
+  "copy_sha256": "38cb5b0be103749e29a34627c213ce62cb2ac30fd29586da763c0795d35aa340",
+  "copy_bytes": 376,
+  "exact_CRLF_to_LF_plus_final_LF": true,
+  "preliminary_normalization_check": "CRLF-to-LF-only assertion failed before writing evidence; final LF was then identified explicitly.",
+  "originals_changed": false,
+  "native_or_observer_execution": false
+}

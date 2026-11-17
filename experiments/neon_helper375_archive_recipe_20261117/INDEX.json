@@ -1,0 +1,129 @@
+{
+  "format": "has_helper375_compact_archive_recipe_packet_1",
+  "sealed_utc": "2026-11-17T03:43:06.208137+00:00",
+  "qualification": "COMPLETED_SCOPED_ORIGINAL_HELPER_SOURCE_CPU_ARCHIVAL_ONLY",
+  "files": [
+    {
+      "path": "archive_checks.pre_dependency_guard.py",
+      "bytes": 9503,
+      "sha256": "29565d51ee424c7a7764355e88256b8b1a559e86f2eb1e9aa587c1b675ee78cc"
+    },
+    {
+      "path": "archive_checks.py",
+      "bytes": 9716,
+      "sha256": "c9c7fc1a12a9b1ca1153d9df0777c73ed99aeaf964635f3bf5180c5be70c439c"
+    },
+    {
+      "path": "BUILD.log",
+      "bytes": 318,
+      "sha256": "f515ef91c0b49865acfc381977ec77d78a849583d2d92d5bf373cc5ae5bcdbeb"
+    },
+    {
+      "path": "build_packet.py",
+      "bytes": 4091,
+      "sha256": "3c97c30e739961fbf77b9dc5e2930f53e38a8038b8a311b370e0d8f14f122f56"
+    },
+    {
+      "path": "BUILD_RESULT.json",
+      "bytes": 884,
+      "sha256": "8b3f0a98593e047b8248d399e4ebf130d003ed287431fdfc88a69a39129df1c8"
+    },
+    {
+      "path": "capture_inputs.py",
+      "bytes": 4409,
+      "sha256": "a54d1c28b3748f15ff772f90ef368e8e606fee204f59b86f80dd43a5472fa14d"
+    },
+    {
+      "path": "CPU_REPORT.json",
+      "bytes": 1060,
+      "sha256": "931507dbe65074598c07e13caff4765878f0a645292cd191f58d8a8dd7505d7c"
+    },
+    {
+      "path": "CPU_REPORT.pre_dependency_guard.json",
+      "bytes": 817,
+      "sha256": "5d940f9f19c7e0f3188bae20d9c66cdf358f2e3e2dd1b9d6202d62c008f71653"
+    },
+    {
+      "path": "CPU_TESTS.log",
+      "bytes": 2766,
+      "sha256": "6df5184e532dc499f0088a03786b72f10d683a030b81088a50a3653d84b4df4c"
+    },
+    {
+      "path": "CPU_TESTS.pre_dependency_guard.log",
+      "bytes": 2418,
+      "sha256": "e134095a45e7f7f0644aaa0462c3b73bd9a35bbd50d7ed9682039c2a2a463875"
+    },
+    {
+      "path": "INPUTS.json",
+      "bytes": 56728,
+      "sha256": "f793f505db95097a27e2f9dac845e5bec6d012b7a4ae4610140ad4f64e927af1"
+    },
+    {
+      "path": "PACKET_README.md",
+      "bytes": 2690,
+      "sha256": "7325e54dea8b1a837c9cf9ea61b967d25c61304ff8033327c90916f00ca742c4"
+    },
+    {
+      "path": "PEER_REVIEW.md",
+      "bytes": 1686,
+      "sha256": "07c30ddc6fc361e59c07be8d466ee1b485bc08da00cb355456c6ab19d89db31f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1483,
+      "sha256": "57710edef03ec5e0cc66a05d0ea724da3107b81a71dfe9486fe0b173f3e51b3c"
+    },
+    {
+      "path": "test_metadata_admission.pre_dependency_guard.py",
+      "bytes": 4207,
+      "sha256": "d46d5c110d1099f8d544cb08f00e7f45f70462df89f364772594417a3d9a7d36"
+    },
+    {
+      "path": "test_metadata_admission.py",
+      "bytes": 5349,
+      "sha256": "f3f582fce31565ff0733353ebe245c5fee17f48bdc413a0fc135504a0fab3130"
+    },
+    {
+      "path": "VERIFY.log",
+      "bytes": 481,
+      "sha256": "203ba70b575fda1eb85a8843e639a6ec60011ee934665a7c5536cd2dcf48a900"
+    },
+    {
+      "path": "verify_packet.pre_dependency_guard.py",
+      "bytes": 11879,
+      "sha256": "850ab08c63b09f4ee60c9bde7957be95d501f796303e7c650c8a2a6085888536"
+    },
+    {
+      "path": "verify_packet.py",
+      "bytes": 12084,
+      "sha256": "8648b4e523c142fc5ca314980dd19e960779dbcfbcc5c263200a523c85af55b6"
+    },
+    {
+      "path": "VERIFY_RESULT.json",
+      "bytes": 1055,
+      "sha256": "221f0fbe963774642c76c0446e5ff2c964200f3d1d7fdbcbc4d3a0e51b4c4b02"
+    }
+  ],
+  "file_count": 20,
+  "archive_index_sha256": "d3ca844a675537f34a2ffd1153256ced70fb287e6885a0fbce97b34723f13063",
+  "original_bindings": 177,
+  "unique_original_objects": 151,
+  "CPU_checks": 208,
+  "graphical_checks": 266,
+  "private_desktop_jobs": 2,
+  "worker_launches": 21,
+  "completed_worker_outcomes": 17,
+  "launch_only_records_disclosed": 4,
+  "retained_base_worker_scope_pairs": 4,
+  "source1029_and_snapshot1030_exact_dependency_membership_and_body_join": true,
+  "metadata_admission_methods": 19,
+  "old_guard_gap_and_regression_evidence_preserved": true,
+  "independent_source_peer_GO": true,
+  "artifact_only_verifier_PASS": true,
+  "full_suite_or_native_fidelity_claimed": false,
+  "active_full_output_read": false,
+  "engines_CIM_Git_or_process_observers_run": false,
+  "excludes": [
+    "INDEX.json"
+  ]
+}

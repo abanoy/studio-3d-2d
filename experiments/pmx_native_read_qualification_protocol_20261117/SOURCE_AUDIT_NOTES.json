@@ -1,0 +1,14 @@
+{
+  "format": "has_pmx_native_read_protocol_source_findings_1",
+  "reviewer": "/root/review_build_audit/admission_gate_review",
+  "review_scope": "sealed reader/current contract/layout, not native files or execution",
+  "findings": [
+    "Candidate sourceSHA and its returned offsets do not independently qualify native table discovery. Re-reading/slicing/roundtripping candidate output is self-confirming.",
+    "Pinned tolerant MMD reader is a shared layout authority and cannot recover raw-name/negative-ref/truncation losses.",
+    "Qualification must remain per exact private input/profile; no general PMX/solver/HAS join follows.",
+    "Parser count/operation/output limits do not prove peak heap or elapsed time; a future read wrapper requires separately enforced wall/memory/process ownership."
+  ],
+  "resolution_in_proposal": "Explicit independent oracle-first witness admission and unimplemented readiness gates, separate private identity/strict comparison/resource runner, no native commands/stager, per-input table scope and strict public scalar projection.",
+  "protocol_peer_execution": false,
+  "native_inputs_or_active_full_reads": false
+}

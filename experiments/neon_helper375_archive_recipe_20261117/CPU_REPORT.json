@@ -1,0 +1,28 @@
+{
+  "scope": "Closed safe scalar/source metadata; valid JSON tamper mutations only in RAM, no originals/source/runtime writes",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_helper375_archive_recipe_20261117",
+    "-p",
+    "test_metadata_admission.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "test_methods": 19,
+  "checks_source_sha256": "c9c7fc1a12a9b1ca1153d9df0777c73ed99aeaf964635f3bf5180c5be70c439c",
+  "test_source_sha256": "f3f582fce31565ff0733353ebe245c5fee17f48bdc413a0fc135504a0fab3130",
+  "raw_log_sha256": "6df5184e532dc499f0088a03786b72f10d683a030b81088a50a3653d84b4df4c",
+  "prior_guard_accepts_two_coherent_tampers_reproduced": [
+    "test_dependency_source_body_must_match_snapshot_identity",
+    "test_coherent_unreviewed_extra_identity_key_substitution_refuses"
+  ],
+  "fresh_guard_refuses_both": true,
+  "no_engines_CIM_Git_or_active_output_reads": true
+}

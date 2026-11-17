@@ -1,0 +1,31 @@
+{
+  "format": "has_helper_preview_main_verification_1",
+  "source_context": "main_source_snapshot",
+  "source_state": {
+    "revision": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+    "working_status": [],
+    "ignored_generated_status": [],
+    "source_context": "main_source_snapshot"
+  },
+  "main_root": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+  "actual_res_root": null,
+  "overlay_files": 0,
+  "mode": "cpu",
+  "native_requested": false,
+  "native_inputs_checked": false,
+  "native_fidelity": false,
+  "graphical_process_attempted": false,
+  "gpu_used": false,
+  "checks": 0,
+  "results": [],
+  "error": "RuntimeError: Unreviewed helper main bytes: src/app.gd",
+  "preservation": {
+    "main_sources": true,
+    "runtimes": true,
+    "head": true,
+    "native_originals": true,
+    "staged_native_inputs": true,
+    "published_requests": true
+  },
+  "passed": false
+}

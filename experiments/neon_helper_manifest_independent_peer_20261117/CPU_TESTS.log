@@ -1,0 +1,23 @@
+test_LF_variants_admit_only_with_existing_explicit_policy (test_manifest_gate.ManifestGate.test_LF_variants_admit_only_with_existing_explicit_policy) ... ok
+test_changed_app_content_refuses_even_with_EOL (test_manifest_gate.ManifestGate.test_changed_app_content_refuses_even_with_EOL) ... ok
+test_changed_pose_content_refuses_even_with_EOL (test_manifest_gate.ManifestGate.test_changed_pose_content_refuses_even_with_EOL) ... ok
+test_duplicate_manifest_member_refuses (test_manifest_gate.ManifestGate.test_duplicate_manifest_member_refuses) ... ok
+test_exact_four_hash_string_changes_have_byte_exact_inverse (test_manifest_gate.ManifestGate.test_exact_four_hash_string_changes_have_byte_exact_inverse) ... ok
+test_false_LF_pin_refuses_when_LF_branch_is_exercised (test_manifest_gate.ManifestGate.test_false_LF_pin_refuses_when_LF_branch_is_exercised) ... ok
+test_lone_CR_is_not_normalized_away (test_manifest_gate.ManifestGate.test_lone_CR_is_not_normalized_away) ... ok
+test_manifest_metadata_membership_and23rows_are_exact (test_manifest_gate.ManifestGate.test_manifest_metadata_membership_and23rows_are_exact) ... ok
+test_missing_required_manifest_member_refuses (test_manifest_gate.ManifestGate.test_missing_required_manifest_member_refuses) ... ok
+test_missing_source_file_refuses (test_manifest_gate.ManifestGate.test_missing_source_file_refuses) ... ok
+test_no_EOLOptIn_remains_required_for_other23rows (test_manifest_gate.ManifestGate.test_no_EOLOptIn_remains_required_for_other23rows) ... ok
+test_original_manifest_reproduces_closed_stale_pin_refusal (test_manifest_gate.ManifestGate.test_original_manifest_reproduces_closed_stale_pin_refusal) ... ok
+test_proposed_25_sources_admit_only_reviewed_bytes_with_explicit_EOL (test_manifest_gate.ManifestGate.test_proposed_25_sources_admit_only_reviewed_bytes_with_explicit_EOL) ... ok
+test_unknown_manifest_format_refuses (test_manifest_gate.ManifestGate.test_unknown_manifest_format_refuses) ... ok
+test_unsafe_manifest_path_refuses (test_manifest_gate.ManifestGate.test_unsafe_manifest_path_refuses) ... ok
+test_untouched_runtime_row_content_refuses (test_manifest_gate.ManifestGate.test_untouched_runtime_row_content_refuses) ... ok
+test_untouched_test_driver_row_content_refuses (test_manifest_gate.ManifestGate.test_untouched_test_driver_row_content_refuses) ... ok
+test_wrong_raw_and_LF_pins_refuse (test_manifest_gate.ManifestGate.test_wrong_raw_and_LF_pins_refuse) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 3.128s
+
+OK

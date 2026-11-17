@@ -1,0 +1,48 @@
+{
+  "format": "has_closed4ed_independent_archive_audit_1",
+  "sealed_utc": "2026-11-17T03:27:38.886118+00:00",
+  "qualification": "SOURCE_SCALAR_CLOSED_ARTIFACT_AUDIT_ONLY_NO_FULL_PASS",
+  "files": [
+    {
+      "path": "audit.attempt1.py",
+      "bytes": 8539,
+      "sha256": "e2d6b0b0e3b5ecc767dc855c7247b9ff5c71475883d67135ef0440e2b1c2b80f"
+    },
+    {
+      "path": "audit.py",
+      "bytes": 9354,
+      "sha256": "e873ef34ce933cbb5912aa645a7d754bc6dccb889c9ab39346982e1e39cad765"
+    },
+    {
+      "path": "CORRECTION.md",
+      "bytes": 1596,
+      "sha256": "c34ffbf362947853ec0f90fb0afd7739be0b3b5da1a41bbb753409d2e475dcff"
+    },
+    {
+      "path": "PRECHECK_SOURCE_CHANGE.json",
+      "bytes": 541,
+      "sha256": "d684f562676c5876ad59d8096d098ecdaea046ab683a1a6876de1d7709fc8fe8"
+    },
+    {
+      "path": "REPORT.json",
+      "bytes": 1962,
+      "sha256": "098125f9420ed52d63091685ddd948a6a2dfc108bffc002fed0512cb0fccfa09"
+    },
+    {
+      "path": "SOURCE_MANIFEST_JOIN.json",
+      "bytes": 364,
+      "sha256": "3f197c40714ba35ef04641475bec860cc5ec392e20d2b85314d466af321b3943"
+    }
+  ],
+  "file_count": 6,
+  "reviewed_archive_index_sha256": "765247e3ad96b440b5b856dfcd2878b79e98d14bb015d577d558fa8f99c7a854",
+  "payloads_verified": 74,
+  "original_bindings": 71,
+  "current_original_matches": 70,
+  "one_authorized_source_successor_joined_to_preserved_original": true,
+  "raw_receipt_jobs": 49,
+  "inline_exact_typed_joins": 11,
+  "wording_correction_retained_separately": true,
+  "strict_precheck_refusal_preserved": true,
+  "native_engine_CIM_Git_or_active_reads": false
+}

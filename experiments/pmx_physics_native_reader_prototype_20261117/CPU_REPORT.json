@@ -1,0 +1,34 @@
+{
+  "format": "has_pmx20_native_reader_source_cpu_result_1",
+  "qualification": "SYNTHETIC_SOURCE_CPU_ONLY_NATIVE_UNQUALIFIED",
+  "test_methods": 33,
+  "failures": 0,
+  "positive_full_prefix_matrix_cases": 720,
+  "mixed_index_role_profiles": 6,
+  "unsigned_vertex_test_index": 129,
+  "exhaustive_proper_prefix_truncations": {
+    "manual_fixture": 339,
+    "full_prefix_fixture": 1875
+  },
+  "deterministic_mutations": 1000,
+  "raw_nonfinite_words_preserved_and_classified": true,
+  "primary_source_sha256": "fb9aafe369025f221bc5a1c952d868260b1a4bb950dc33bca62645b4da454e5a",
+  "parser_sha256": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426",
+  "fixture_builder_sha256": "4700bbf8c167680af292b5ea427eebb84425819d24ac4c0e4eb8aad222913414",
+  "test_command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "experiments\\pmx_physics_native_reader_prototype_20261117",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cpu_log_sha256": "f705fdf039c8a5ae906403b82c751984732d8e5484de6beffc07c8fa9ff3d084",
+  "reader_file_IO": false,
+  "native_asset_reads": false,
+  "engine_CIM_Git_REVIEW_mutations": false
+}

@@ -1,0 +1,28 @@
+{
+  "format": "has_scene106_archive_independent_verification_execution_1",
+  "observed_utc": "2026-11-17T03:20:28.737908+00:00",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_scene106_archive_recipe_20261117\\verify_packet.py"
+  ],
+  "exit_code": 0,
+  "verifier_sha256": "e43154b034a7548ba73ccfbf757b39b4a27bab27d2a86ce37e474dfdf190c241",
+  "raw_log_sha256": "69330e98e11df9d6bcb19ec5f39d172f1925f66e90089e48adf4a41dfd936b59",
+  "artifact_and_frozen_recipe_only": true,
+  "builders_originals_native_observers_active_full_reads": false,
+  "result": {
+    "passed": true,
+    "original_bindings": 74,
+    "unique_objects": 62,
+    "unique_physical_jobs": 2,
+    "diagnostic": "102/4 exit1 retained",
+    "scene106": "106/0 plus unit12830/0",
+    "legacy102_ordered_messages_exact": true,
+    "source1029_unchanged": true,
+    "originals_or_active_full_read": false,
+    "INDEX_sha256": "a0e9328c29fa8590a1ece117dedbea66a3ecc478192a8991b975b9566476aa59"
+  }
+}
