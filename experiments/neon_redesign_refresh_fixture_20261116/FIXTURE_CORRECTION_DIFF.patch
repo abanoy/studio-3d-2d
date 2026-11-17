@@ -1,0 +1,35 @@
+--- neon_behavior_diagnostic.gd
++++ neon_behavior_regression.gd
+@@ -2,7 +2,7 @@
+ # UNPARSED/UNRUN. Root stages under this same experiment path in an isolated project.
+ # Real UI/input and world lifecycle; only Save/fullscreen actions are counted so a
+ # broken dispatch cannot touch an external save location or change desktop mode.
+-const SCRIPT := "res://experiments/neon_redesign_refresh_fixture_20261116/neon_behavior_diagnostic.gd"
++const SCRIPT := "res://experiments/neon_redesign_refresh_fixture_20261116/neon_behavior_regression.gd"
+ const Model = preload("res://src/model.gd")
+ const Airflow = preload("res://src/airflow.gd")
+ const StudioTheme = preload("res://src/studio_theme.gd")
+@@ -164,13 +164,22 @@
+ 	trace_toast("after_first_faded_click",point)
+ 	print("NEON_FIRST_CLICK_CONTEXT "+JSON.stringify({"before_serial":first_click_serial,"after_serial":app.status_serial,"new_message":app.status_serial != first_click_serial}))
+ 	check("faded_toast_allows_real_canvas_click",pointer_presses == observed+1)
++	# A successful empty-scene selection can publish a NEW camera hint through change_mode.
++	# Let that new message finish its own normal fade BEFORE testing refresh on faded state.
++	if app.status_serial != first_click_serial:
++		trace_toast("new_context_message_after_first_click",app.toast.get_global_rect().get_center())
++		await create_timer(6.3).timeout
++		await settled()
++	var before_refresh_serial: int = app.status_serial
++	var before_refresh_text: String = app.status.text
++	var before_refresh_faded: bool = app.status_faded and app.toast.modulate.a == 0.0
+ 	trace_toast("before_workspace_refresh",app.toast.get_global_rect().get_center())
+ 	app.refresh_workspace(); await settled()
+ 	trace_toast("after_workspace_refresh",app.toast.get_global_rect().get_center())
+ 	observed = pointer_presses
+ 	await click_point(app.toast.get_global_rect().get_center())
+ 	trace_toast("after_second_click",app.toast.get_global_rect().get_center())
+-	check("workspace_refresh_keeps_canvas_clickthrough",pointer_presses == observed+1)
++	check("workspace_refresh_keeps_canvas_clickthrough",before_refresh_faded and app.status_faded and app.toast.modulate.a == 0.0 and app.status_serial == before_refresh_serial and app.status.text == before_refresh_text and pointer_presses == observed+1)
+ 	check("included_source_unchanged",FileAccess.get_sha256(fixture) == fixture_sha)
+ 	app.release_mouse(false)
+ 	app.queue_free(); await settled()

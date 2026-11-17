@@ -1,0 +1,77 @@
+{
+  "format": "has_root_six_foot_domain_execution_1",
+  "passed": true,
+  "results": [
+    {
+      "label": "domain-parse",
+      "process": {
+        "pid": 4976,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.16181169999981648
+      },
+      "passed": true,
+      "error_markers": []
+    },
+    {
+      "label": "domain-run",
+      "process": {
+        "pid": 784,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.7161089999999604
+      },
+      "passed": true,
+      "error_markers": [],
+      "assertion_set_passed": true,
+      "checks": 480,
+      "expected_checks": 480,
+      "result_format": "has_six_foot_gd_domain_result_1",
+      "result_sha256": "382c55c8943f6b73c352d15fa39a6bb0908e87edcb6c0a898859e3db4018a926"
+    },
+    {
+      "label": "boundary-parse",
+      "process": {
+        "pid": 20952,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.5380285000001095
+      },
+      "passed": true,
+      "error_markers": []
+    },
+    {
+      "label": "boundary-run",
+      "process": {
+        "pid": 22172,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.3544325000002573
+      },
+      "passed": true,
+      "error_markers": [],
+      "assertion_set_passed": true,
+      "checks": 21,
+      "expected_checks": 21,
+      "result_format": "has_six_foot_boundary_result_1",
+      "result_sha256": "9fc98c457e45363e4a48e8b82091973dc139a0a7fe35c0b8fd9e3919ca3b4433"
+    }
+  ],
+  "frozen_sources_preserved": true,
+  "original_sources_preserved": true,
+  "runtime_lease_released": true,
+  "headless_no_graphical_window_requested": true,
+  "actual_import_activation": false,
+  "main_source_modified": false,
+  "successor_packet_sha256": "efa55eb23cd69ee7410059c9e01da8414b1b50a454db7bc6ba40a40984120147",
+  "boundary_packet_sha256": "921579101eb9e97feeb62e8f7b0f22a392fe6536fa8fa9006ecb58650ead7125",
+  "error": null
+}

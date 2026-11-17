@@ -1,0 +1,9 @@
+# Refresh boundary fixture v3
+
+Actual v2 evidence establishes that the product preserves the faded toast during workspace refresh: status serial 13, the same text, `status_faded=true`, zero alpha and IGNORE filter remain unchanged immediately after refresh. The second real click reaches Canvas (`pointer_presses` increases from 1 to 2), and legitimately posts another Camera hint with serial 14. V2 incorrectly evaluates its preserved-message assertions after that second click. This is a test boundary error; no product change is needed to explain it.
+
+The v3 script captures `refresh_preserved_faded_context` immediately after the workspace refresh and before the second click. It retains every v2 refresh invariant in that captured Boolean: faded state, zero alpha, exact prior serial and exact prior text. The final predicate still requires the pre-refresh faded state, the captured invariants, and the same actual Canvas press increment. No delay is inserted after refresh. The other 31 predicates, all 32 names, and the existing pre-refresh fade wait remain unchanged.
+
+The original review, diagnostic-only and v2 packets are untouched. Exact copies of the actual v2 32/1 failure, diagnostics and closure receipts remain under `failed_v2`. `SOURCE_PROOF.json` checks their observed refresh invariants and successful input boundary before preparing the successor; that evidence is not claimed as a v3 execution.
+
+Root stages `neon_behavior_regression.gd` under this new experiment's same relative path, parses it, then executes through its existing approved private graphical runner. Job/result format, phase, 32-check count and fresh-output controls remain unchanged. Use the new script SHA, candidate app SHA and a fresh not-yet-created output child. V3 is **unparsed and unrun** until root executes it. No engine, CIM, product-source or main-source operation occurred during this preparation.

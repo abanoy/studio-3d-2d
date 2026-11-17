@@ -1,0 +1,115 @@
+--- predecessor/setter_probe.py
++++ sentinel/setter_probe.py
+@@ -119,4 +119,111 @@
+     status='SETTER_BOUNDARIES_MEASURED' if error is None else 'SETTER_IMPORT_REPLAY_FAILED'
+     public={'format':'has_sourceio_setter_boundary_probe_1','status':status,'coordinate_space':'SourceIO/Blender mesh-local, before armature/object/Y-up transport','models':summaries,'private_sha256':sha(raw),'private_bytes':len(raw),'ast_observer_inverse':ast_proof,'error_type':error['type'] if error else None,'files_unchanged':True,'SourceIO_import_executed':True,'original_importer_patched_on_disk':False,'GLB_exported':False,'blend_saved':False,'material_resources_read':False,'normal_fidelity':'FAILED_UNQUALIFIED; this observer does not repair original rawGLB2e-5 failure','causal_limit':'Actual source input, immediate API read-back, later validate read-back and unobserved replay control are separate. This does not prove a particular Blender encoder implementation caused a difference.'}
+     write(target/'PUBLIC_SETTER.json',public);print('HAS_SETTER_PROBE '+json.dumps(public));return 0 if error is None else 1
+-if __name__=='__main__':raise SystemExit(main())
++from contextlib import contextmanager
++import ctypes as C
++from ctypes import wintypes as W
++
++@contextmanager
++def _hidden_placement_sentinel():
++    """Own a hidden zero-size HWND; unchanged outer monitor proves its desktop.
++
++    This is placement evidence for a background process, not Blender GUI or
++    rendering evidence. Never shows/activates a window or changes a desktop.
++    """
++    if sys.platform != 'win32':
++        raise RuntimeError('Hidden placement sentinel requires Windows')
++    user=C.WinDLL('user32',use_last_error=True)
++    kernel=C.WinDLL('kernel32',use_last_error=True)
++    def api(lib,name,result,*arguments):
++        value=getattr(lib,name);value.restype=result;value.argtypes=arguments;return value
++    create=api(user,'CreateWindowExW',W.HWND,W.DWORD,W.LPCWSTR,W.LPCWSTR,W.DWORD,C.c_int,C.c_int,C.c_int,C.c_int,W.HWND,W.HMENU,W.HINSTANCE,C.c_void_p)
++    destroy=api(user,'DestroyWindow',W.BOOL,W.HWND)
++    is_window=api(user,'IsWindow',W.BOOL,W.HWND)
++    visible=api(user,'IsWindowVisible',W.BOOL,W.HWND)
++    enabled=api(user,'IsWindowEnabled',W.BOOL,W.HWND)
++    owner=api(user,'GetWindowThreadProcessId',W.DWORD,W.HWND,C.POINTER(W.DWORD))
++    get_style=api(user,'GetWindowLongW',W.LONG,W.HWND,C.c_int)
++    get_rect=api(user,'GetWindowRect',W.BOOL,W.HWND,C.POINTER(W.RECT))
++    current_pid=api(kernel,'GetCurrentProcessId',W.DWORD)
++    current_tid=api(kernel,'GetCurrentThreadId',W.DWORD)
++    pid=int(current_pid());tid=int(current_tid())
++    WS_POPUP=0x80000000;WS_DISABLED=0x08000000;WS_VISIBLE=0x10000000;WS_CHILD=0x40000000
++    WS_EX_NOACTIVATE=0x08000000;WS_EX_TOOLWINDOW=0x00000080
++    hwnd=None
++    policy={'format':'has_hidden_background_desktop_placement_sentinel_1',
++        'purpose':'Owned background-process desktop placement only; no Blender GUI or render assertion.',
++        'class':'STATIC','requested_size_pixels':[0,0],'disabled':False,'noactivate_style':False,
++        'toolwindow_style':False,'visible_at_creation':None,'visible_before_destruction':None,
++        'owned_pid_and_thread_verified':False,'destroyed_in_finally':False,
++        'show_or_activation_calls':False,'thread_desktop_switch_calls':False}
++    def checked_owned():
++        if not hwnd or not is_window(hwnd):raise RuntimeError('Owned placement HWND is unavailable')
++        found=W.DWORD();thread=int(owner(hwnd,C.byref(found)))
++        if int(found.value)!=pid or thread!=tid or int(current_tid())!=tid:
++            raise RuntimeError('Placement HWND process/thread ownership differs')
++    try:
++        # A top-level system class; no parent, menu, WS_VISIBLE, message-only
++        # parent or desktop-switch API. Startup lpDesktop remains authoritative.
++        hwnd=create(WS_EX_NOACTIVATE|WS_EX_TOOLWINDOW,'STATIC','HAS background capture placement',WS_POPUP|WS_DISABLED,0,0,0,0,None,None,None,None)
++        if not hwnd:raise OSError(C.get_last_error(),'Create hidden placement HWND')
++        checked_owned()
++        style=int(get_style(hwnd,-16))&0xffffffff
++        extended=int(get_style(hwnd,-20))&0xffffffff
++        area=W.RECT()
++        if not get_rect(hwnd,C.byref(area)):raise OSError(C.get_last_error(),'Read hidden placement rectangle')
++        if style&(WS_POPUP|WS_DISABLED)!=(WS_POPUP|WS_DISABLED) or style&(WS_VISIBLE|WS_CHILD):
++            raise RuntimeError('Placement HWND is not hidden disabled top-level popup')
++        if extended&(WS_EX_NOACTIVATE|WS_EX_TOOLWINDOW)!=(WS_EX_NOACTIVATE|WS_EX_TOOLWINDOW):
++            raise RuntimeError('Placement HWND activation/tool policy differs')
++        if area.right!=area.left or area.bottom!=area.top or visible(hwnd) or enabled(hwnd):
++            raise RuntimeError('Placement HWND must remain zero-size, hidden and disabled')
++        policy.update(disabled=True,noactivate_style=True,toolwindow_style=True,
++                      visible_at_creation=False,owned_pid_and_thread_verified=True)
++        yield policy
++    finally:
++        if hwnd:
++            checked_owned()
++            policy['visible_before_destruction']=bool(visible(hwnd))
++            if not destroy(hwnd):raise OSError(C.get_last_error(),'Destroy owned placement HWND')
++            policy['destroyed_in_finally']=True
++            if policy['visible_before_destruction']:
++                raise RuntimeError('Placement HWND unexpectedly became visible')
++
++
++ISOLATION_POLICY_SHA = '8dc902af4b7b8970634593e516d75228308112220f000b1cf22ca4914d4062ba'
++
++def _verified_isolation_policy(lease):
++    row=lease.get('additional_metadata_policy',{})
++    path=Path(row.get('path',''))
++    require(path==HERE/'ISOLATION_POLICY.json' and row.get('sha256')==ISOLATION_POLICY_SHA,'Pinned sentinel metadata policy required')
++    raw=path.read_bytes();require(sha(raw)==ISOLATION_POLICY_SHA,'Sentinel metadata policy changed')
++    policy=json.loads(raw)
++    require(policy['format']=='has_setter_background_isolation_policy_1' and policy['original_lease_roles']==26,'Wrong sentinel metadata policy')
++    return policy
++
++
++def _main_with_placement_sentinel():
++    require(getattr(bpy.app,'background',None) is True,'Actual Blender background mode required')
++    arguments=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
++    parser=argparse.ArgumentParser();parser.add_argument('--lease',type=Path,required=True)
++    lease_path=parser.parse_args(arguments).lease
++    lease,files=check_lease(lease_path,__file__)
++    metadata_policy=_verified_isolation_policy(lease)
++    with _hidden_placement_sentinel() as policy:
++        code=main()
++    if code!=0:return code
++    policy['blender_background_verified']=True
++    lease,files=check_lease(lease_path,__file__)
++    require(_verified_isolation_policy(lease)==metadata_policy,'Sentinel metadata policy changed after capture')
++    target=Path(lease['private_output'])
++    public_raw=(target/'PUBLIC_SETTER.json').read_bytes();public=json.loads(public_raw)
++    require(public['status']==metadata_policy['success_public_setter_status'],'Successful original setter result required before isolation qualification')
++    require(policy['destroyed_in_finally'] is True and all(policy.get(name)==value and type(policy.get(name)) is type(value) for name,value in metadata_policy['public_field_required_values'].items()),'Exact successful hidden-placement policy required')
++    private_path=target/'PRIVATE_SETTER.json'
++    require(sha(private_path.read_bytes())==public['private_sha256'],'Original private setter output differs')
++    sidecar={'format':metadata_policy['public_sidecar_format'],'public_setter_sha256':sha(public_raw),'private_setter_sha256':public['private_sha256'],'background_isolation_sentinel':policy,'metadata_policy_sha256':ISOLATION_POLICY_SHA,'numeric_public_and_private_outputs_unchanged':True}
++    write(target/metadata_policy['public_sidecar'],sidecar)
++    print(metadata_policy['additional_stdout_marker']+json.dumps(sidecar))
++    return code
++
++if __name__=='__main__':raise SystemExit(_main_with_placement_sentinel())

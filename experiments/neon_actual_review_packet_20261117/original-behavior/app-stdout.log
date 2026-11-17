@@ -1,0 +1,35 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS neon_behavior.default_neon
+PASS neon_behavior.idle_simple_pose
+FAIL neon_behavior.actual_physics_visible
+FAIL neon_behavior.actual_hair_visible
+FAIL neon_behavior.fan_entry_visible
+FAIL neon_behavior.loose_parts_entry_visible
+FAIL neon_behavior.wind_review_entry_visible
+FAIL neon_behavior.record_scope_visible
+FAIL neon_behavior.record_entry_visible
+FAIL neon_behavior.simple_add_fan_real_click
+PASS neon_behavior.included_model_import
+PASS neon_behavior.cache_contains_current_model
+PASS neon_behavior.cache_current_identity
+PASS neon_behavior.cache_updates_after_authored_key
+PASS neon_behavior.deleted_object_cache_evicted
+PASS neon_behavior.remaining_model_cache_retained
+PASS neon_behavior.cache_bounded_to_live_rows
+FAIL neon_behavior.no_runtime_cache_cleared
+PASS neon_behavior.cache_repopulates_current_world
+PASS neon_behavior.new_project_succeeds
+FAIL neon_behavior.new_project_cache_bounded
+PASS neon_behavior.F11_assignment_accepted
+PASS neon_behavior.F11_assignment_persisted
+FAIL neon_behavior.bound_F11_routes_save
+PASS neon_behavior.unbound_F11_routes_fullscreen
+PASS neon_behavior.modified_F11_binding_preserved
+PASS neon_behavior.toast_displayed_with_tooltip
+PASS neon_behavior.toast_fades_without_erasing_status
+PASS neon_behavior.old_toast_rect_inside_scene
+FAIL neon_behavior.faded_toast_allows_real_canvas_click
+FAIL neon_behavior.workspace_refresh_keeps_canvas_clickthrough
+PASS neon_behavior.included_source_unchanged

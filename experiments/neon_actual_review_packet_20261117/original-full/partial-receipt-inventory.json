@@ -1,0 +1,451 @@
+{
+  "format": "has_neon_original_partial_receipt_audit_1",
+  "suite_status": "FAILED_OBJECT_TIMING_28_CHECKS_2_FAILURES",
+  "functional_sources": 1023,
+  "source_unchanged": true,
+  "physical_jobs": 24,
+  "physical_exit0": 22,
+  "failed_product_job_exit1": 1,
+  "Krita_cancel_exit2_pending_exact_phase_join": 1,
+  "all_jobs_and_desktops_closed": true,
+  "receipts": [
+    {
+      "path": "output/krita-imports/22316-30105185/prepared/private-desktop.json",
+      "sha256": "1545dfdfef90b4f98e2d3879c420860816bc102fd949886092597f60a464a02f",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_967f192a3749406bbf2ed78a0f7b98d5",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 3,
+        "foreground_child_observed": false,
+        "exit": 2,
+        "job_memory_limit_bytes": 3221225472,
+        "child_pid": 15576,
+        "cancelled": true,
+        "error": "Owned converter cancelled",
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.01
+      }
+    },
+    {
+      "path": "output/krita-imports/22316-4143374/prepared/private-desktop.json",
+      "sha256": "01ff71a45b41d5d6fed2c9d8ccf522c80c87142873c8741fc7c406d056e68a56",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_71dcb74b3eac47ada772b83e984d4611",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 3,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "job_memory_limit_bytes": 3221225472,
+        "child_pid": 13080,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.628
+      }
+    },
+    {
+      "path": "output/private-desktop/autokey_smoke_0cee1e18959b48ec9f96ad7d32b71ea4.json",
+      "sha256": "f68e171835fb9f688065728ff39e069c00a2c63475dacd4bea4c01787b996da8",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_d00a16367d814bbfb55d330a5462d9c7",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19100,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.359
+      }
+    },
+    {
+      "path": "output/private-desktop/export_failures_b439e950adaa410f8fe7962fdebed90d.json",
+      "sha256": "505c7dcc12518891b0853cb6c8b9e7549468e06316e244f0f1ea05f8d9755519",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c8b2985785644dd1af69513222552f7b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 4076,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 1.215
+      }
+    },
+    {
+      "path": "output/private-desktop/krita_import_smoke_4ae62d8282784534a17d399f61d2ccc7.json",
+      "sha256": "3ad228623ece69205ea6b3fcd8aca4082cb35b28bc84ebd7108573b26c6c86fc",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_718dea0e46234890a98d16b8971e1b4d",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22316,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 34.728
+      }
+    },
+    {
+      "path": "output/private-desktop/krita_import_smoke_8c7f078c05f842778f8cf14c88a34df3.json",
+      "sha256": "2a655f09f544d404bb57320f40def3f1fbe02c0a9e9fc2ff259f28774a12d06f",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_387cf25a967141159ce823467ccf122f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 18692,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.348
+      }
+    },
+    {
+      "path": "output/private-desktop/new_scene_smoke_f26a98035a6e42a097e67e6535f46e95.json",
+      "sha256": "a61b915a518514235c4a03d0a472f8298c5d030d880a66b4f706806c77f761ba",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f61a1fcf347948cbbd44547fac8fb018",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 23612,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.996
+      }
+    },
+    {
+      "path": "output/private-desktop/object_timing_smoke_d0a8d9d9642e48efa092a2c2a33fe812.json",
+      "sha256": "eced7eb4e3c6b536e78bb8e59d5ae7815c93e8dc68f0af208e3f96f9458a68c7",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_115e7836381246fb9b65e9b2e10d55e6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 21944,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.366
+      }
+    },
+    {
+      "path": "output/private-desktop/pose_library_native_d5bb612ed3714645b056b549efa1852c.json",
+      "sha256": "5a4940bdff7cf67b1e8fb369b461ed06eee4986125b56e64ce692d89d52ab298",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c3eedd4cb2444767b0dd6e61f6507be6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24748,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.035
+      }
+    },
+    {
+      "path": "output/private-desktop/pose_library_smoke_813b1a914f8f4ad4a737fece0c730a41.json",
+      "sha256": "f0382cab8adfae78705b4e5710123e26f78b3af4878c5339e624cd13b29aecab",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_cb9eccb3a5ce4e70b879cb0d2a33f79a",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 18936,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.209
+      }
+    },
+    {
+      "path": "output/private-desktop/pose_library_smoke_b8afde3517744681a914072c373486ff.json",
+      "sha256": "b0c133b88107e7634492b58128b168a7126529b0e224ff144f341cc078230505",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2cf712d37c8f423abab65b22b4851bb6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 21088,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.283
+      }
+    },
+    {
+      "path": "output/private-desktop/spikes_a7fb3bcb6ea7462382e572e022e19379.json",
+      "sha256": "a050b1e2b57dc54a3f2d094e50eb811066750c48ae6d56a8ba1dfec2f6333226",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2eac6a09354c4e18b0d0e9575381030b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25084,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.624
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_6f99dd3894404159b67d77d6ed43195b.json",
+      "sha256": "99623761b7a82bfbbe7c4d9fde77ace2133a50f1238d4e253b206ed9f53b39ed",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_62142b1557fe4b9fbd4ef33cbe4fd2e2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19876,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.274
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_814cfdef1c1f48eca28b5915452516d3.json",
+      "sha256": "42685f8bc37b8e9ec006592dee67bbfca86aca8261b500d3bcc2d4618f66b372",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8d206a02552842bc9ed320418b110640",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22884,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.597
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_9fcafdd03e504375bc878e12ef5e3269.json",
+      "sha256": "79c85cb9c6d7df098308009c28028e782982361029da2cacf92fc4ef1b8f425c",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a200c68ea357449a8c15bf74153581b0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8748,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.048
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_b2028fb2ec1441558b00e27745346445.json",
+      "sha256": "6a85d8b349ccd5fc79a1415eeab757bf4f3263195d7c6d14285c07eb44ce2466",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8ffe398e92b14f5295ad15506c35fe9e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 4448,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.875
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_b884768855e243cbb746e68147ddd6a4.json",
+      "sha256": "44b30e64eeacd56799723a43f3f2cbb4922b290335c727d72ec49347a18e83b0",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_d365a57c8b3c42368a8eee7dbbd14237",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 15084,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.556
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_d68e7fdb888145d1bbe8d9f872c0358f.json",
+      "sha256": "d65340e2b62889d840788da061bc4393b4a5729d1077903d020bdad8a82e1d9b",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_52c452559d88409d90c73e30c5d7cc19",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 2152,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.964
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_ee0c537dbea74716a33bd1a1956bc594.json",
+      "sha256": "a513448a6dbb79659e70630cf0a22edf20e25e0ef8a554801b6cc484de63d129",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_91fab94ef90c44abbbcce0e722aa913f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 1392,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.605
+      }
+    },
+    {
+      "path": "output/private-desktop/world_document_smoke_29951f0519d14682bf4a11bd4f5e78ea.json",
+      "sha256": "af9251a7b8a42dba845cc208898ce7809afdca5cf462d24bc27ef4150dfc6988",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8944a8c3d9c8498d88f1361b63874075",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24340,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.55
+      }
+    },
+    {
+      "path": "output/private-desktop/world_edit_smoke_b5b0503dd4214bd990cbba6f36427476.json",
+      "sha256": "fa58cc86edee63a5b3ba3c7b08f48ffcb9049740fc3a3d048ec0ed13e1e0464a",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_bcda23adad024882885c203d29566f6a",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 1016,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 20.326
+      }
+    },
+    {
+      "path": "output/private-desktop/world_runtime_smoke_ff7ee7e102564327a4032d6d62e3c12d.json",
+      "sha256": "23cc3964c342a8cd97931990398cc6faf0d7cd9e6e2f9a4bef9ef849e51d58f1",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_73c7fe25ea2941d3956f5664c721b76d",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8872,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.703
+      }
+    },
+    {
+      "path": "output/private-desktop/world_selection_smoke_ac21a886fbab467e9f8a3f2b1e6dfffe.json",
+      "sha256": "538289c5babf61d7e25c7453bd152f48853d271a62a78f801bdb6baa4c54faa4",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a24a66d824124ca4967c9f6121046e28",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20492,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.505
+      }
+    },
+    {
+      "path": "output/private-desktop/world_workflow_smoke_a4db68927a25434780be9f225bd56ab0.json",
+      "sha256": "c7ce0f30f56ac1d822db82fcb4dfc5595c2e3948b21ebfe58267c5d33037cdbf",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_6887fb016c574d51a47f63b2b37b07e1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12116,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.887
+      }
+    }
+  ],
+  "failed_full_not_pass": true,
+  "graphics_lease_release_requires_fresh_host_inventory": true
+}

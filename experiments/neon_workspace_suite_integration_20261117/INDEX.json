@@ -1,0 +1,80 @@
+{
+  "format": "has_neon_workspace_suite_integration_source_packet_1",
+  "status": "SEALED_SOURCE_READY_FOR_ROOT_REVIEW_AND_FRESH_RUNTIME",
+  "functional_checkouts_modified_by_agent": false,
+  "engines_executed_by_agent": false,
+  "focused_experiment_runtime_evidence_reused_as_production_pass": false,
+  "new_result_group": "neon_workspace",
+  "original_core36_unchanged": true,
+  "expected_full_result_entries": 158,
+  "files": {
+    "ALIASES_PROOF.json": {
+      "bytes": 10612,
+      "sha256": "def3686541ce0e93740c599ab4fe3a4bbc1af23aa7acc13eb412626084bb4072"
+    },
+    "CPU_ATTEMPT1.json": {
+      "bytes": 861,
+      "sha256": "51c87793cf42272c4a8c5c4d0a8b65ac5cf35cd37dc4584b07b6381a2e71b5d2"
+    },
+    "cpu_tests/test_verify_neon_workspace.py": {
+      "bytes": 12389,
+      "sha256": "f8901be8720a73a7dfebff01fa38d22e163bd7d59b104e3871238dcda69e3cfd"
+    },
+    "CPU_VALIDATION.json": {
+      "bytes": 1348,
+      "sha256": "ba406b65accd1885f66b42e192ffb01c820380560f6ba9424088a733253042bd"
+    },
+    "README.md": {
+      "bytes": 6681,
+      "sha256": "8b60b7dc94f2c70ca4637b19ccbf1739d3933378d7130e4651ff924d239cc840"
+    },
+    "superseded-v2/ALIASES_PROOF.json": {
+      "bytes": 9073,
+      "sha256": "05622236e70387a3671711ab7a538ead6d24bd1bdad54d93daad484a240eabf2"
+    },
+    "superseded-v2/SUPERSEDED.json": {
+      "bytes": 509,
+      "sha256": "8b65e8cca23409b0b67f8c5376c9e636725b32768a670f63ff92680ff7bc200c"
+    },
+    "superseded-v2/tests/neon_behavior_regression.gd": {
+      "bytes": 11806,
+      "sha256": "90394b0fd268c5f5cab8ff4658171eedaf2cb1cbefdd3cb6e8f1a312365a6e9b"
+    },
+    "tests/neon_behavior_regression.gd": {
+      "bytes": 12041,
+      "sha256": "cc4318240c311b6d63d98123a7fc8d60387244b8a5ed844bc41039afa1f58a43"
+    },
+    "tests/neon_compact_timeline_reveal_smoke.gd": {
+      "bytes": 6571,
+      "sha256": "bb7d14c88129ccfcc092eec5d7e1c0f73592b0f69d806f29a87aad374f05bd8c"
+    },
+    "tests/neon_inset_scene_regression.gd": {
+      "bytes": 4794,
+      "sha256": "1c7647a9f6b2a675759c54e8da902ccae2b642e522a087876514f448998c11dd"
+    },
+    "tests/neon_rail_placement_smoke.gd": {
+      "bytes": 7383,
+      "sha256": "01ef0e1de244e7dfd91c9bf83b7e7c805f053b55ecc22b261317bc8c85890bb0"
+    },
+    "tests/verify.proposed.py": {
+      "bytes": 54204,
+      "sha256": "14e6fc7b7e8c914b301e8e5d4d590ca0b2398a7abbd65cac0f6159f99de96048"
+    },
+    "tests/verify_neon_workspace.py": {
+      "bytes": 16630,
+      "sha256": "45dbea477bf9445290fe6a5f52ad254f9dfb0178214037560570072cfe677cdb"
+    },
+    "verify_insertion.patch": {
+      "bytes": 1786,
+      "sha256": "d3946b31675e3c906bc335d8902a7c2ad41bb1b071afec256e35f34229f3d616"
+    },
+    "VERIFY_INSERTION_PROOF.json": {
+      "bytes": 592,
+      "sha256": "55fd1dd0836d5f896bda8d56d48bb391fdc9b3acf2c6df046f8254c8fb3cd59b"
+    },
+    "verify_packet.py": {
+      "bytes": 1199,
+      "sha256": "93420fb0ca2224aca0f3818a11fb4dd47ab9032c7c669c66ee20dd2fe3576fce"
+    }
+  }
+}

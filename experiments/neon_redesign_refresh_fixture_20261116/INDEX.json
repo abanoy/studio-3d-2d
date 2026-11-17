@@ -1,0 +1,84 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "neon_redesign_refresh_fixture_20261116",
+  "files": [
+    {
+      "path": "DIAGNOSTIC_ONLY_DIFF.patch",
+      "bytes": 4227,
+      "sha256": "a255059313fb83ce5dd64aa8fc758a52d7b7a2c3ac7545ab4763386ea4e710d3"
+    },
+    {
+      "path": "failed_predecessor/after-closure.json",
+      "bytes": 73,
+      "sha256": "2e7c165d854d7c7fcd9ac3584b837dd6ddec7ee55116f22313d38fa0c8af9888"
+    },
+    {
+      "path": "failed_predecessor/app-process.json",
+      "bytes": 157,
+      "sha256": "6742178819f77885324d54f1c3a2efeb24408a903baf267c05136eb44731a2a9"
+    },
+    {
+      "path": "failed_predecessor/app-stdout.log",
+      "bytes": 1665,
+      "sha256": "bd58d893564a5fa7d51c2f081147ddd4356c45785256430081b69720bfddc48b"
+    },
+    {
+      "path": "failed_predecessor/parse-process.json",
+      "bytes": 156,
+      "sha256": "e64f673a33305ddd2aa3317396b541e9cdc98092d0613b6da7f7d64478b5eb93"
+    },
+    {
+      "path": "failed_predecessor/result.json",
+      "bytes": 1457,
+      "sha256": "d3eaa8d333542660c74d9cf87ab4338334b1abdae6a55fc40e2e386f97570d8a"
+    },
+    {
+      "path": "failed_predecessor/verification.json",
+      "bytes": 2579,
+      "sha256": "5b1e68a94cfcdce7587b0472ef106938b34fa6dfd9172e3eb171e5210f0bdd98"
+    },
+    {
+      "path": "FIXTURE_CORRECTION_DIFF.patch",
+      "bytes": 2444,
+      "sha256": "93e5480725ff37251b6a54821dc441cc0ae70874dfe59af79f8dabb3cde7fee0"
+    },
+    {
+      "path": "neon_behavior_diagnostic.gd",
+      "bytes": 11125,
+      "sha256": "cb98532eebc4c250e1aaf24cd43c30bdfab6f33ea727b6a9419ed7ba6fbbe4d5"
+    },
+    {
+      "path": "neon_behavior_regression.gd",
+      "bytes": 11851,
+      "sha256": "8ee51d41d0719f5a5a29281d50c9be594d35c1c1534d0790b855fe16cbc0fc1c"
+    },
+    {
+      "path": "prepare_successor.py",
+      "bytes": 8038,
+      "sha256": "9a7f925dfbb2c3e5b08499e3559ef836816252496dd56b85d6ccb62742aa4f71"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3805,
+      "sha256": "c15dfbc13a4e9cf1a146e614e6c23a449d64597f88094f3667b846fa1ccf084d"
+    },
+    {
+      "path": "seal_source.py",
+      "bytes": 1963,
+      "sha256": "64d08f6d1dfafaa7de1234ca22686da0a7b7fd11427f2baabf19021626796b59"
+    },
+    {
+      "path": "SOURCE_PROOF.json",
+      "bytes": 1022,
+      "sha256": "3af722405c6e7586058ff7157420b4c3e4d343fd338cc7123808ea86dd58eebc"
+    }
+  ],
+  "file_count": 14,
+  "bytes": 50562,
+  "excludes": [
+    "INDEX.json"
+  ],
+  "new_engine_execution_claimed": false,
+  "main_or_candidate_source_edits": false,
+  "owner_art_or_native_assets_included": false
+}

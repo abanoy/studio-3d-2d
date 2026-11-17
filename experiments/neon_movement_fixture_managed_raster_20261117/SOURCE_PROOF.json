@@ -1,0 +1,31 @@
+{
+  "format": "has_neon_movement_managed_raster_fixture_successor_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN",
+  "original_source_sha256": "d53d556fffe5eff0e8d97ddb7d565ffa0a7b2f0b5d0b309ea6859c9698aba8e2",
+  "sealed_reveal_predecessor_INDEX_sha256": "ec30d30b95ead4c481a2026184adeab9b4ccdffc0c13ecafd786372193ee66aa",
+  "reveal_predecessor_sha256": "0450da0c1f02c18d9ef0541366b2b9a6e0fdded607a75fe8c99becf38aa87ded",
+  "proposed_sha256": "b2c7d1131d291df99290f1ad5bd2327ff6716c8cbbeb903041fcd32544676ae4",
+  "one_additional_API_call_change_only": true,
+  "all_original_assertion_source_lines_preserved": true,
+  "managed_API_inverse_restores_exact_reveal_bytes": true,
+  "line_endings_preserved": true,
+  "source_baseline": {
+    "src/drawing.gd": {
+      "sha256": "947914fad9f1b1bf005ffc43df8cfcee3b36bdf1e4829560400615b15686648d",
+      "matches_completed_full52_catalogue": true
+    },
+    "src/cel_raster_owner.gd": {
+      "sha256": "be86e2e6d9a83c361018bee12728c773990bc6956c98084c8aad4f625885ddf9",
+      "matches_completed_full52_catalogue": true
+    },
+    "tests/movement_path_smoke.gd": {
+      "sha256": "d53d556fffe5eff0e8d97ddb7d565ffa0a7b2f0b5d0b309ea6859c9698aba8e2",
+      "matches_completed_full52_catalogue": true
+    }
+  },
+  "full52_source_catalogue_sha256": "4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7",
+  "original_stale_dictionary_image_API_is_unchanged_from_full52": true,
+  "original_failure_classification": "Preexisting standalone test fixture API use; not a Neon production Drawing API change",
+  "engines_CIM_Git_executed_by_agent": false,
+  "frozen_source_modified_by_agent": false
+}

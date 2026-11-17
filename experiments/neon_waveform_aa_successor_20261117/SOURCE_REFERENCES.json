@@ -1,0 +1,64 @@
+{
+  "format": "has_waveform_aa_source_references_1",
+  "candidate_dependency_sha256": {
+    "src/timeline_view.gd": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+    "src/studio_theme.gd": "dcbf0b9cb079ba552c7d02f447a7a5d33db19509a54bd6e14a1468b486061dc2",
+    "src/timeline_picture.gd": "8bc3353f2537524d10f47206404ccf1ce81ac0dab80a9afcf139f83d65fc29e1",
+    "src/app.gd": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67",
+    "project.godot": "4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30",
+    "tests/verify_waveform_levels.py": "e6af1d232437f0152ceb9c22bf70193e97ea30cffa86ffb4c2bfd364a7571000"
+  },
+  "official_primary": [
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6-stable/scene/resources/style_box_flat.cpp",
+      "lines": [
+        289,
+        348,
+        355,
+        416,
+        429,
+        451,
+        461,
+        464,
+        467,
+        550,
+        573,
+        587
+      ]
+    },
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6-stable/scene/resources/style_box_flat.h",
+      "lines": [
+        43,
+        50
+      ]
+    },
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6-stable/drivers/gles3/shaders/canvas.glsl",
+      "lines": [
+        110,
+        111,
+        168,
+        245,
+        259,
+        523,
+        799
+      ]
+    },
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6-stable/drivers/gles3/rasterizer_canvas_gles3.cpp",
+      "lines": [
+        686,
+        692
+      ]
+    },
+    {
+      "url": "https://github.com/KhronosGroup/OpenGL-Refpages/blob/main/gl4/gl_FragCoord.xml",
+      "lines": [
+        26,
+        46
+      ]
+    }
+  ],
+  "fetch_caveat": "Official fixed 4.6 tag sources read through web tool. Direct full-commit URLs cache-missed; no downloaded source SHA claimed."
+}

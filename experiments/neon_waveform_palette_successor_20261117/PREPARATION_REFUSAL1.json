@@ -1,0 +1,8 @@
+{
+  "format": "has_waveform_preparation_provenance_refusal_1",
+  "preserved_first_refusal": "Expected historical original28b9 at checkout path; observed root-staged input-only2333. No files were written by the refused preparation.",
+  "observed_checkout_sha256": "2333fb6e213e2d74d7aa71fb845d6bb23e2038f034b6dd98ee94958d18964b2f",
+  "historical_original_expected_sha256": "28b9be24ede2068f562458584830df2a65d8ff6db0c1f863e1f97f3606f59621",
+  "resolution": "Reconstructed only by removing the exact sealed input-reveal block, required resulting raw SHA28b9; current checkout was never redefined as the historical original.",
+  "engine_executed": false
+}

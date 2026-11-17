@@ -1,0 +1,14 @@
+{
+  "format": "has_root_setter_pre_native_setup_refusal_1",
+  "expected_head": "592fe4f82ec0284adaa328228da83feb9abc7814",
+  "expected_full_commit": "52f63c944ded7a651da871524d23a345b606424d",
+  "intended_output": "output/normal-setter-boundary-20261116-attempt1",
+  "phase": "approved runtime identity read before output staging",
+  "exit": 1,
+  "observed_error": "RuntimeError: Protected file changed during read: C:\\Program Files\\ffmpeg\\bin\\ffprobe.exe",
+  "predicate": "all(stamp(value) == stamp(before) for value in (opened, after, final))",
+  "diagnosis": "Unknown; strict read refused. No identity gate was changed.",
+  "staged_output_created": false,
+  "engines_launched": false,
+  "record_kind": "Root transcription of the actual tool result; not a raw stderr file or product test result."
+}

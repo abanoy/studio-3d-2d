@@ -1,0 +1,52 @@
+{
+  "format": "has_waveform_aa_diagnostic_comparison_1",
+  "status": "POSTHOC_COMPARISON_NOT_A_NEW_NATIVE_PASS",
+  "diagnostic_log": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\neon-waveform-diagnostic-20261117-attempt1\\app-stdout.log",
+  "diagnostic_log_sha256": "44ae2c2db63d0daeeead18b66e0a2bfb3892b08422c37feaf7e95ad2b74cade0",
+  "candidate_reads_diagnostic_log": false,
+  "formula_inputs": {
+    "clip_left": 559.333374023438,
+    "pixel_x": 559,
+    "AA_size_from_source": 1,
+    "BAR_RGB8": [
+      12,
+      13,
+      17
+    ],
+    "SAVED_RGB8": [
+      61,
+      220,
+      151
+    ],
+    "wave_RGBA": [
+      0.239,
+      0.863,
+      0.592,
+      0.85
+    ]
+  },
+  "computed_alpha": 0.6666259765620453,
+  "predicted_RGB": [
+    0.22942333697149425,
+    0.8223685747931431,
+    0.5657458122701847
+  ],
+  "observed_RGB": [
+    0.227450981736183,
+    0.823529422283173,
+    0.564705908298492
+  ],
+  "absolute_RGB_error": [
+    0.0019723552353112517,
+    0.0011608474900299814,
+    0.001039903971692735
+  ],
+  "unchanged_tolerance": 0.02,
+  "comparison_within_unchanged_tolerance": true,
+  "earlier_9775_native_result": {
+    "checks": 14,
+    "failures": 1,
+    "drawn_transients": 3,
+    "preserved": true
+  }
+}

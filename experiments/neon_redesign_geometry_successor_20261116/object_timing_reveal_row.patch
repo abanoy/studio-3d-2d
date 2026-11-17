@@ -1,0 +1,12 @@
+--- a/tests/object_timing_smoke.gd
++++ b/tests/object_timing_smoke.gd
+@@ -121,7 +121,8 @@
+ 	# viewport before routing a click; scrolling only the rows leaves it clipped.
+ 	var dock_scroll: ScrollContainer=app.workspace_layout.panels.timeline.get_node("TimelineContentScroll")
+ 	dock_scroll.ensure_control_visible(scroll);await settled()
+-	scroll.scroll_vertical=2000;await settled()
++	# Reveal the requested model row, not the content end: compact layouts keep drawing/audio lanes below it.
++	scroll.scroll_vertical=int(timeline.row_y(timeline.object_rows.size()-1));await settled()
+ 	check(dock_scroll.get_global_rect().encloses(scroll.get_global_rect()),"compressed Timeline exposes the complete track viewport before row input")
+ 	check(timeline.object_rows.size()==64 and scroll.size.y<230 and scroll.get_v_scroll_bar().visible and app.canvas.size.y>100,"64rows scroll inside a bounded timeline without consuming the viewport")
+ 	check(app.timeline_ruler.is_visible_in_tree() and app.timeline_ruler.global_position.y<scroll.global_position.y and absf(app.timeline_ruler.size.x-timeline.size.x)<0.1,"frame ruler/camera lane remain pinned and column-aligned after row scrolling")

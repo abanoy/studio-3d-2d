@@ -1,0 +1,11 @@
+{
+  "format": "has_neon_successor_preparation_refusal_1",
+  "attempt": 1,
+  "status": "REFUSED_CURRENT_SOURCE_AS_HISTORICAL_ORIGINAL",
+  "guard": "inverse source equality against reread original path",
+  "error_type": "AssertionError",
+  "historical_original_source_sha256": "469e6de4b0f4c26719c2ec9185cc8ba6311377219261b81041e8eb5633c1deb8",
+  "current_review_source_sha256": "d8cd3048e23db2c5f94798fb8aac0df66a26262fb5d10c367baba3e3ff8eb267",
+  "reason": "Parent staged the reviewed successor after the original runtime; current path no longer holds historical original bytes. Agent remained read-only.",
+  "recovery": "Exact inverse reconstructs original bytes matching previously observed SHA and completed full52 source catalogue; historical/runtime claims remain separate."
+}

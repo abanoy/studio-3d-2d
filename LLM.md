@@ -5333,3 +5333,171 @@ access before engines or source staging, leaving attempt2 reserved. Keep the
 444/7 actual failure and this setup refusal distinct; later execution needs a
 fresh attempt under the approved host context. No normalization is activated.
 No manual result or acceptance-score change is inferred.
+
+## 2026-11-17 — Neon review corrections qualified; complete Windows run active
+
+Reviewed owner-approved claude/studio-redesign atc2d52ff in an isolated checkout.
+Original Windows default stopped at object_timing28/2;1023sources stayed exact.
+All24physical jobs closed (22exit0, one intentional Krita cancellation exit2,
+one failed object-timing exit1). Root verified retired native identities absent;
+two old PIDs were reused by unrelated Firefox/conhost processes and were not touched.
+The original verifier Python birth was not captured before it ended; the exact
+coordinator birth, synchronous terminal exit, source-after and physical receipts
+remain distinct evidence. No invented child-birth observation or full PASS.
+
+The old timing input scrolled to all-lane content end, putting Actor63 above
+the compact track viewport. The successor reveals the requested model's row;
+all original assertion-call source lines remain unchanged. A separate62px
+viewport regression routes real first/middle/last clicks with actual drawing
+and generated audio lanes below them:14/0. New inset geometry passes12384/0
+over576configurations; rail right/nested/tab/floating/persisted placement45/0.
+
+Original real-input behavior32/13 confirms hidden Simple simulation controls,
+F11 shortcut precedence, faded-toast interception and unbounded timeline-cache
+retention. Exact narrow fixes restore existing Simple fan/loose-parts/wind/
+recording controls, preserve assigned F11, disable faded-toast hit testing and
+evict stale cache entries. World rail now folds only in its solitary left dock.
+The corrected original UI smoke passes23checks with source preserved; Windows
+screenshots were inspected separately from owner/human acceptance.
+
+First corrected behavior32/1, diagnostic32/1 and fixture-v2 32/1 are kept.
+Actual diagnostic shows a successful empty-scene click creates a NEW Camera hint,
+serial12→13, and the next valid click creates serial14. V3 measures faded state
+after refresh BEFORE the click, then independently requires the real event.
+It passes32/0;31 other original predicates remain exact. No wait after refresh.
+Compact archive228payloads/217exactoriginals INDEX
+c9dc2b154bc4c2c44193e34b2f6226637bf8de74f6a3c20a7de7e3da8fe82832
+passes independent root hash/member/text checks. No art/media/projects/native
+arrays were archived. Earlier failures remain recoverable.
+
+The standard suite adds one guarded neon_workspace group (12475checks) with
+four aliases and exact counts; original36core entries are unchanged.20CPU
+orchestration checks pass. The strict wind manifest changes only app/pose hash
+rows after source review, preserving16scope/14otherrows/all94/845predicates.
+Candidate381d5a974d34eb4dc10208a44c1a54d178c72fbb is committed and backed up on
+codex/neon-windows-review-20261116, NOT merged to main. Its first staging check
+refused CRLF as whitespace; command-local cr-at-eol recognition preserved the
+intended line endings and all other whitespace checks. No product gate changed.
+
+The corrected full Windows run is RUNNING, not passed:
+output/windows-neon-381d5a9-20261117T003337 under has-neon-review-20261116-c2d52ff.
+Coordinator6012 birth2026-11-17T00:34:20.7906987Z; Python8148 birth
+00:34:21.4146310Z, parent6012, both measured by root. Exact1028functional files,
+158expectedgroups and36core.36retained MMD/GMod/SFM fixture files31,109,803bytes
+were copied with exact SHA/size/mtime; originals unchanged, so hard-coded native
+cases can run instead of silently skipping. Six approved runtimes,574SourceIO
+original/copy and120exporter sources pass unchanged strict preflight. No other
+native/graphics job may overlap. Finish and audit before merging the redesign.
+
+Separate six-foot synthetic transport successor actually passes480domain+21
+boundary checks; encoder01561ce and corpus0eb90d remain exact. Raw comparisons
+still reproduce precisely the original seven int9/float9 transport mismatches.
+The first444/7failure and CIM-before-engine setup refusal remain historical.
+All four new headless processes exit/reap and source/closure gates pass. This
+does NOT activate normalization, classification, schema9 in production, PMX
+reconstruction or native helper rebasing.
+
+Native normal fidelity remains FAILED. Setter staging refused a transient strict
+ffprobe identity read BEFORE writes/engines; later unchanged whole preflight
+passes all runtime fields. Cause unknown. Source review also identified missing
+background-Blender placement evidence in the first setter recipe. A new hidden
+sentinel successor is being prepared without touching its numeric observation
+body or installed files. Main retains1019old functional files for its exact52f
+completed-full context; run that independent diagnostic from this protected
+context before replacing it, or preserve it as an explicit isolated reference.
+Never apply stale app.gd changes over the reviewed Neon source.
+
+Formal55/62 and implementation52/54 remain unchanged. Manual owner checks are
+DEFERRED/no result. Keep originals/shared tools/earlier reviews protected. Push
+completed metadata, verify remote copies, and clean only exact backed-up owned
+artifacts no remaining case needs. Corrected full, merge and new owner-review
+delivery remain separate gates; do not call this overall product completion.
+
+## 2026-11-17 — Second Neon full failure closed; setter boundary measured
+
+The381 full verifier failed at animated_channels47/1 after316seconds, with
+all1028functional files unchanged. All three retained MMD/GMod/SFM native
+fixtures executed. Root's strict failed-terminal helper derived27physical jobs:
+25exit0, one source-registered Krita cancellation2 and one animated assertion1.
+Both exact coordinator6012/Python8148 identities were absent; all nested jobs
+and desktops closed. Failed-only lease released2026-11-17T00:46:22.2853317Z.
+Inventorybfc025aaf492ee5eb8b7b19c8cd0a581134773fa111a3c89ef452c30fdca0d92.
+No stale final report or full PASS was used. Raw47/1 report8b611de2 is retained.
+
+The remaining content-end input scrolled the requested native channel above
+the compact viewport. Revealing that channel and adding a pre-click visibility
+assertion passes48/0 across all three native fixtures. The414-GD source audit
+found two additional older focused cases, neither directly registered in the
+default verifier. Original movement shows3offscreen-channel failures and then
+a stale Dictionary.image API error; its existing watchdog exits and all jobs
+close. The Drawing/raster-owner code AND stale test are exactfull52sources, so
+that API error is preexisting standalone fixture code, not a Neon Drawing change.
+Revealed channels plus current edit_image API pass both legacy/component movement
+profiles. No original predicate was removed; original failures stay preserved.
+
+Original waveform samples were outside the image/track viewports. After reveal,
+the unchanged Classic467d45 predicate passes13/0, fourbars. Approved Neon uses
+another RGBA palette. A source-derived theme/bounds successor preserves13old
+checks and adds one: Classic14/0, Neon14/1 withthreebars and validbounds. Keep
+this failure; diagnose the unmatched sample without wideningRGB.02 tolerance,
+reducing fourbars or taking expected colors from observed pixels. It is not a
+new normal/physics result. Current third full run has NOT started yet.
+
+The native setter diagnostic actually completes in24.1789978seconds, wrapper
+exit0/reaped, private placement and hidden sentinel cleanup verified. All26
+roles, full52source1019, original inputs and runtime/source catalogues recheck;
+both owned scopes are closed. PUBLIC_SETTER SHA
+86126f272e52b60323e9a49443df7d320472c61cfae2eada3f88b90c57dd262b;
+placement723d2cb834c28e8602c0c5b5ca67943f4d75a257b02bdf5f52997243667ad9ed.
+The15,172,535-byte private arrays remain output-only and were not published.
+
+Incoming native setter words are exact. Immediate Blender readback differs above
+2e-5 on6846/34332hair corners (max.0007408270) and2130/8370Hat corners
+(max.0012586271). Before/after validate normal hashes are unchanged. Untouched
+unobserved replay is bit-exact, and its saved-fixture corner comparison is zero.
+Thus the first observed discrepancy is between correct setter input and immediate
+API readback, before later validation/export. This does not identify a particular
+C++ encoder routine. Original GLB normal fidelity remainsFAILED_UNQUALIFIED.
+An isolated exact-ID carrier correction is being CPU/source-reviewed; no native
+normal repair, derivative GLB, requalification or production change is claimed.
+
+Keep main's1019functional reference and candidate worktree separate. No redesign
+merge yet. Current candidate test input successors remain under focused review;
+commit the final reviewed fixture state and run the complete default again.
+All formal statuses/denominators remain55/62 and52/54; no owner result inferred.
+
+## 2026-11-17 — Focused Windows successors pass; f387 full run started
+
+The reviewed fixture follow-up is committed and backed up on the separate
+codex/neon-windows-review-20261116 branch at
+f387d0e9ddfb099140c0699d9f7ed430f5d7b949. Production app/workspace code and the
+approved Neon palette are unchanged from the reviewed381 candidate. The native
+channel successor passes48/0 across MMD, GMod and SFM; both movement profiles
+pass34 UI and13 unit checks each. All old predicates and failed observations stay.
+
+The final waveform fixture passes15/0 in both Neon and Classic, with four bars
+and the original RGB tolerance.02. Its fractional-edge expectation is derived
+from the pinned Godot4.6 StyleBoxFlat AA geometry and source theme; no observed
+pixel is used as its own oracle. Earlier13/1,14/1 and stale movement API/watchdog
+results remain retained. Product geometry, colors and waveform data did not change.
+
+Root started a fresh full Windows verifier at2026-11-17T01:27:36.5856364Z in
+output/windows-neon-f387d0e-20261117T012410. Coordinator25388 was born
+01:27:36.0890696Z; Python23904 was born01:27:37.1616850Z, parent25388. Their
+births were observed immediately. Source1028 and all approved input/runtime
+identities were checked before launch. Expected158 groups,36 core and21 movie
+checks are not a PASS claim. The native/graphics lane remains root-exclusive.
+Do not edit that checkout or launch another engine until terminal closure.
+
+Independent root audits checked all35 setter-archive payloads/25 original
+bindings and52 failed381 payloads/42 original bindings, including decompressed
+bytes against actual originals. No private normal arrays, art or media are copied.
+Exact-ID normal repair has16 synthetic CPU checks, but no native correction,
+new GLB, fidelity PASS or live-model adoption. The original normal failure remains.
+The actual setter diagnostic and six-foot transport results remain scoped as
+documented; production normalization/PMX reconstruction is still inactive.
+
+No redesign merge or installed-app replacement has occurred. Owner checks remain
+DEFERRED. Formal ledger denominators/statuses remain55/62 and52/54. After fresh
+full verification, audit actual receipts and process births, then merge only the
+qualified redesign while preserving main history. Continue other independent work.

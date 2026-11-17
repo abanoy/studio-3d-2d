@@ -1,0 +1,32 @@
+{
+  "format": "has_neon_preserved_object_timing_failure_1",
+  "original_review_commit": "c2d52ff",
+  "status": "FAILED_ORIGINAL_REPORT_PRESERVED",
+  "checks": 28,
+  "failures": 2,
+  "failure_labels": [
+    "last object row click lies inside the visible scrolled track viewport",
+    "routed click selects the scrolled last object's row and pose target"
+  ],
+  "retiming_pixel_changed_channels": 0,
+  "mean_pixel_error": 0.0,
+  "report_sha256": "df40715344819ab69260e7909c8189010e636d8db1447903ffe0b6dc7bb5ec0a",
+  "engine_log_sha256": "932d062497f2710452be9031a7ad89a8083bc267e0217fa68f3c5cd328f40e40",
+  "screenshot_sha256": "7f2b7b3fcb3c389a7c2426f469cdbccd494ac9a7d2391acd9c5b61e1f5f6cbfc",
+  "historical_source_test_sha256": "469e6de4b0f4c26719c2ec9185cc8ba6311377219261b81041e8eb5633c1deb8",
+  "historical_source_reconstructed_by_exact_inverse_matches_full52_catalogue": true,
+  "current_review_source_sha256": "d8cd3048e23db2c5f94798fb8aac0df66a26262fb5d10c367baba3e3ff8eb267",
+  "current_source_is_parent_staged_successor": true,
+  "source_backed_fixture_geometry": {
+    "object_count": 64,
+    "object_row_height": 26,
+    "drawing_layer_count": 2,
+    "trailing_audio_rows": 1,
+    "content_height": 1765,
+    "last_model_click_center": 1650,
+    "minimum_viewport_height_to_show_last_center_at_content_end": 115
+  },
+  "review_checkout_modified_by_this_agent": false,
+  "runtime_rerun_performed_by_this_agent": false,
+  "assets_or_images_copied": false
+}

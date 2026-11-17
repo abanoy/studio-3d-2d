@@ -1,5 +1,7 @@
 # HAS continuation — November 16, 2026
 
+Current pickup: [November17 continuation](NEXT_SESSION_PLAN_2026-11-17.md).
+
 Current priority: review the owner-approved Neon Pro branch before merge and
 run its Windows verifier. See the appended history and
 `experiments/neon_windows_original_20261116/PREPARATION.json`.

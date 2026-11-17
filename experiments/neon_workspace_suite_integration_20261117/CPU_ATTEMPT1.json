@@ -1,0 +1,14 @@
+{
+  "format": "has_neon_workspace_cpu_attempt_1",
+  "status": "FAILED_SYNTHETIC_FIXTURE",
+  "tests": 20,
+  "errors": 1,
+  "failures": 0,
+  "test": "PhysicalReceipts.test_actual_receipt_shape_and_hash",
+  "error_type": "ValueError",
+  "message": "Fresh physical receipt required",
+  "cause": "Positive synthetic fixture compared a just-written NTFS mtime to time.time_ns from immediately before write; system timestamp granularity can put mtime before that instant. No native process ran.",
+  "resolution": "Set positive fixture lower boundary to its actual observed mtime; retain separate stale-mtime negative test. Production freshness gate unchanged.",
+  "wrapper_sha256": "45dbea477bf9445290fe6a5f52ad254f9dfb0178214037560570072cfe677cdb",
+  "CPU_test_source_before_sha256": "2ad069929f0a55d16c936bab664bcbd1a32fcb45882cb711db05b13ede16f4de"
+}

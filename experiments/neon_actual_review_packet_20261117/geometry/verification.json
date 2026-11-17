@@ -1,0 +1,150 @@
+{
+  "format": "has_root_neon_geometry_execution_1",
+  "passed": true,
+  "rows": [
+    {
+      "label": "inset",
+      "source_sha256": "1c7647a9f6b2a675759c54e8da902ccae2b642e522a087876514f448998c11dd",
+      "parse": {
+        "pid": 6608,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.16125120000015158
+      },
+      "parsed": true,
+      "process": {
+        "pid": 20560,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.2577459000003728
+      },
+      "result": {
+        "checks": 12384,
+        "configurations": 576,
+        "failures": 0,
+        "maximum_projection_error_pixels": 0.0007905710372142494,
+        "maximum_ray_error": 2.250025943340006e-07,
+        "native_assets_used": false,
+        "status": "PASS"
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "label": "compact",
+      "source_sha256": "bb7d14c88129ccfcc092eec5d7e1c0f73592b0f69d806f29a87aad374f05bd8c",
+      "parse": {
+        "pid": 13492,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.3486462999999276
+      },
+      "parsed": true,
+      "process": {
+        "pid": 10564,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 6.495760199999495
+      },
+      "result": {
+        "checks": 14,
+        "compact_timeline_preserved": true,
+        "failures": 0,
+        "native_owner_assets_used": false,
+        "samples": [
+          {
+            "row": 0,
+            "scroll_vertical": 0,
+            "selected_after_route": true,
+            "viewport_height": 62.0,
+            "visible_before_route": true
+          },
+          {
+            "row": 32,
+            "scroll_vertical": 832,
+            "selected_after_route": true,
+            "viewport_height": 62.0,
+            "visible_before_route": true
+          },
+          {
+            "row": 63,
+            "scroll_vertical": 1638,
+            "selected_after_route": true,
+            "viewport_height": 62.0,
+            "visible_before_route": true
+          }
+        ]
+      },
+      "errors": [],
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e78e8b6aaee446f6a12f1c8d18112fe6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 5748,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.428
+      },
+      "passed": true
+    },
+    {
+      "label": "rail",
+      "source_sha256": "01ef0e1de244e7dfd91c9bf83b7e7c805f053b55ecc22b261317bc8c85890bb0",
+      "parse": {
+        "pid": 12228,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.2570970999995552
+      },
+      "parsed": true,
+      "process": {
+        "pid": 17984,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 14.431472099999155
+      },
+      "result": {
+        "checks": 45,
+        "failures": 0,
+        "format": "has_neon_rail_placement_regression_1",
+        "screenshots_written": false,
+        "synthetic_fixture_only": true
+      },
+      "errors": [],
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_04110dfbbe5b4cf0948c2373627ec076",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 10,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 3856,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.371
+      },
+      "passed": true
+    }
+  ],
+  "functional_source_unchanged_during_tests": true,
+  "main_source_modified": false
+}

@@ -1,0 +1,16 @@
+{
+  "format": "has_six_foot_transport_actual_checkpoint_1",
+  "domain_checks": 480,
+  "boundary_checks": 21,
+  "failures": 0,
+  "encoder_sha256": "01561ce443c64f47aad723a7acb033954ff1d126d8044fa6f52ae4e98f9ae663",
+  "corpus_sha256": "0eb90d1d5e24fe3b9fc79bacb01108df330cdcdd74af72402ca248ac195da735",
+  "historical_raw_failures_reproduced": 7,
+  "historical_difference": "$.document.schema_version int9 vs JSON float9 only",
+  "run": "output/six-foot-domain-20261116-attempt3",
+  "domain_result_sha256": "382c55c8943f6b73c352d15fa39a6bb0908e87edcb6c0a898859e3db4018a926",
+  "boundary_result_sha256": "9fc98c457e45363e4a48e8b82091973dc139a0a7fe35c0b8fd9e3919ca3b4433",
+  "all_owned_processes_reaped": true,
+  "sources_preserved": true,
+  "production_import_activation": false
+}

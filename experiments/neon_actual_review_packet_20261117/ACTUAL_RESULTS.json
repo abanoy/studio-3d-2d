@@ -1,0 +1,156 @@
+{
+  "format": "has_neon_actual_review_archive_1",
+  "original_redesign_full_suite": "FAILED_28_CHECKS_2_FAILURES_RAW_RETAINED",
+  "original_private_jobs": 24,
+  "original_jobs_and_desktops_closed": true,
+  "original_behavior": "32/13",
+  "first_corrected_behavior": "32/1",
+  "diagnostic_only": "32/1",
+  "fixture_v2": "32/1",
+  "boundary_v3": "32/0",
+  "geometry_inset": "12384/0",
+  "geometry_compact": "14/0",
+  "geometry_rail": "45/0",
+  "separate_main_six_foot_domain": "480/0",
+  "separate_main_six_foot_boundary": "21/0",
+  "six_foot_qualifies_neon_full_suite": false,
+  "corrected_full_suite": "PENDING_SEPARATE_EXECUTION",
+  "manual_owner_result": "DEFERRED_NO_RESULT",
+  "merge_or_product_completion_claimed": false,
+  "cases": [
+    {
+      "name": "original-full",
+      "status": "FAILED",
+      "checks_in_failed_fixture": 28,
+      "fixture_failures": 2,
+      "physical_jobs": 24,
+      "physical_exit0": 22,
+      "physical_cancel_exit2": 1,
+      "closed": true,
+      "closure": "original-full/authoritative-host-closure.json",
+      "raw_failure_log": "original-full/canonical.log.gz"
+    },
+    {
+      "name": "original-behavior",
+      "checks": 32,
+      "failures": 13,
+      "status": "FAILED_ASSERTIONS_RETAINED",
+      "result_sha256": "8139abbc702ea861f20135d597d04e6306d30af1403091a24b3e843bb0be16f1",
+      "result": "original-behavior/result.json",
+      "verification": "original-behavior/verification.json"
+    },
+    {
+      "name": "candidate-v1",
+      "checks": 32,
+      "failures": 1,
+      "status": "FAILED_ASSERTIONS_RETAINED",
+      "result_sha256": "d3eaa8d333542660c74d9cf87ab4338334b1abdae6a55fc40e2e386f97570d8a",
+      "result": "candidate-v1/result.json",
+      "verification": "candidate-v1/verification.json"
+    },
+    {
+      "name": "diagnostic-only",
+      "checks": 32,
+      "failures": 1,
+      "status": "FAILED_ASSERTIONS_RETAINED",
+      "result_sha256": "f9fd96e8f958ebfe6d20dd64f69e75d59b320ec3afa7026d49e9b9567b4174da",
+      "result": "diagnostic-only/result.json",
+      "verification": "diagnostic-only/verification.json"
+    },
+    {
+      "name": "fixture-v2",
+      "checks": 32,
+      "failures": 1,
+      "status": "FAILED_ASSERTIONS_RETAINED",
+      "result_sha256": "300ddea69424593d96fad285e4956b473c1830c38dc3b5793deae13ec656c120",
+      "result": "fixture-v2/result.json",
+      "verification": "fixture-v2/verification.json"
+    },
+    {
+      "name": "boundary-v3",
+      "checks": 32,
+      "failures": 0,
+      "status": "FOCUSED_PASS",
+      "result_sha256": "92952165b90778b27f9d7b5c75356569cae92130a18a25f95d599aa5aebb0464",
+      "result": "boundary-v3/result.json",
+      "verification": "boundary-v3/verification.json"
+    },
+    {
+      "name": "geometry-inset",
+      "checks": 12384,
+      "failures": 0,
+      "status": "PASSED",
+      "result": "geometry/inset/result.json"
+    },
+    {
+      "name": "geometry-compact",
+      "checks": 14,
+      "failures": 0,
+      "status": "PASSED",
+      "result": "geometry/compact/result.json"
+    },
+    {
+      "name": "geometry-rail",
+      "checks": 45,
+      "failures": 0,
+      "status": "PASSED",
+      "result": "geometry/rail/result.json"
+    },
+    {
+      "name": "separate-six-foot-domain",
+      "checks": 480,
+      "failures": 0,
+      "status": "PASSED",
+      "result": "separate-six-foot/domain-result.json",
+      "qualifies_neon_full_suite": false
+    },
+    {
+      "name": "separate-six-foot-boundary",
+      "checks": 21,
+      "failures": 0,
+      "status": "PASSED",
+      "result": "separate-six-foot/boundary-result.json",
+      "qualifies_neon_full_suite": false
+    },
+    {
+      "name": "synthetic-ui",
+      "status": "AUTOMATED_REVIEW_ONLY",
+      "manual_owner_result": "DEFERRED_NO_RESULT",
+      "verification": "synthetic-ui/verification.json"
+    }
+  ],
+  "candidate_context_at_recipe_preparation": {
+    "src/app.gd": {
+      "sha256": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67",
+      "bytes": 313617,
+      "lf_sha256": "0eb4a61fe031652ac70562126114172fe5d1df6559c58156a1aed18b13e89307"
+    },
+    "src/pose_editor.gd": {
+      "sha256": "925ae786ad65fd2e34ed9b93cf74829559d102e09c4e7870a6079b4cee20c570",
+      "bytes": 67239,
+      "lf_sha256": "293f5d7c8a9b14508227131885deebc3b6fcef3cf7d34ce9650285929b74ed8d"
+    },
+    "src/studio_theme.gd": {
+      "sha256": "dcbf0b9cb079ba552c7d02f447a7a5d33db19509a54bd6e14a1468b486061dc2",
+      "bytes": 54722,
+      "lf_sha256": "902a1973749ca1ddd5d586148a855c62b08002d4c1f53e64578514d2d717135b"
+    },
+    "src/workspace_layout.gd": {
+      "sha256": "7d194eaf03d03b909fa0caaf84c197f91e8fb29af95f2978ae5f8d798e3dfe8b",
+      "bytes": 34196,
+      "lf_sha256": "9109127f800bd13bacdbaa417f02d9a136267f325887e1ca6b56966e632d518f"
+    },
+    "tests/object_timing_smoke.gd": {
+      "sha256": "d8cd3048e23db2c5f94798fb8aac0df66a26262fb5d10c367baba3e3ff8eb267",
+      "bytes": 15326,
+      "lf_sha256": "48220bb5db4732f2bdd099d56a62ebb8719e436a6eecb46d2aee57121849c1c7"
+    },
+    "tests/wind_review_port_files.json": {
+      "sha256": "4cb3709064b668e63b25cb9576a69992495c5707ed5ec2dba291c0768852e79d",
+      "bytes": 6153,
+      "lf_sha256": "9f26e0009eac6864f2447d9cae19b189ce0d201360774bedb80df9a9a0720e4e"
+    }
+  },
+  "selected_exact_files": 217,
+  "owner_art_media_projects_or_native_arrays_included": false
+}

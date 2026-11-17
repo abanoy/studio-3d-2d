@@ -1,0 +1,11 @@
+--- reveal/tests/movement_path_smoke.gd
++++ managed/tests/movement_path_smoke.gd
+@@ -110,7 +110,7 @@
+ 	app.undo();app.undo();await settled();check(rig.data==draft,"Undo of frame-zero edits restores the complete prior path")
+ 	editor.close();app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,60)]
+ 	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false)
+-	var ink=preload("res://src/drawing.gd");ink.stroke(ink.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.CYAN,false);app.changed();app.set_frame(24)
++	var ink=preload("res://src/drawing.gd");ink.stroke(ink.edit_image(ink.cel_at(app.layers[1],0)).image,Vector2(80,80),Vector2(180,80),5,Color.CYAN,false);app.changed();app.set_frame(24)
+ 	var picture: Image=await app.renderer.capture(app.keys,app.layers,24,true);picture.save_png(folder.path_join("reference.png"))
+ 	var packed:=folder.path_join("path.has");app.has_project.cache_root=folder.path_join("cache");app.has_project.save_file(packed,"packed");await wait_job();check(app.has_project.path==packed,"ordinary packed HAS saves movement controls")
+ 	app.new_project();app.has_project.open_file(packed);await wait_job();app.world_selection.select_entity(draft.id);rig=app.renderer.active_model()

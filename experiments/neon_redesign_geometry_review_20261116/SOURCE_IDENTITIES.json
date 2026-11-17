@@ -1,0 +1,99 @@
+{
+  "format": "has_neon_geometry_source_review_1",
+  "baseline_full_commit": "52f63c944ded7a651da871524d23a345b606424d",
+  "review_requested_commit": "c2d52ff",
+  "review_checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+  "commit_labels_supplied_by_parent_Git_not_queried": true,
+  "doc_full_read": true,
+  "doc_lines": 1047,
+  "doc_sha256": "6bee21f92eaab5dbdb8ee401ff835f5a3a5c0e7ab32cebe69e860649ba3b7f31",
+  "files": {
+    "src/canvas_view.gd": {
+      "baseline_sha256": "296aba09440ad481b18930296d217a3d092bccf7bb8b49b8a2592d8057a1d244",
+      "review_sha256": "dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459",
+      "review_bytes": 10467,
+      "review_lines": 202,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/scene_view.gd": {
+      "baseline_sha256": "1a32b42ac5cad1ee816b50717e07f78071e266cbce3284b9e1418b143f56716a",
+      "review_sha256": "9771833fab4b2daaafd804c349a89c719b9775e44d9ed52d26b7a6ad8992bb20",
+      "review_bytes": 7625,
+      "review_lines": 115,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/timeline_view.gd": {
+      "baseline_sha256": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c",
+      "review_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "review_bytes": 55010,
+      "review_lines": 854,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/timeline_navigation.gd": {
+      "baseline_sha256": "72cb3266abd8df5b3b58014ea6039b9e00de53f7f9e4a688f6587085756d179f",
+      "review_sha256": "abfc06edb255ef8ca670dfa45bce2a4b6f9d6cf53b2cbf5798a8c19dd3a46372",
+      "review_bytes": 5451,
+      "review_lines": 92,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/sequence_timeline.gd": {
+      "baseline_sha256": "9f669b1bdaac6ea63e29b8b33c4e590493f56560aaf167fc7dbdaced977f0672",
+      "review_sha256": "b016b2a287a8771c88354011e90fb9850b94ebb19f4ad3dce52be0a162a3ad65",
+      "review_bytes": 5025,
+      "review_lines": 81,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/sequence_editor.gd": {
+      "baseline_sha256": "5d08627ad149a6dabe992a86579b98e245ab3ab83d9e67427d0018fb1ab912d4",
+      "review_sha256": "3d97eacaaaee20476519b99e246c0a6c0a3bd1244f7c89bda2fcd2365474d57a",
+      "review_bytes": 37086,
+      "review_lines": 581,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/workspace_layout.gd": {
+      "baseline_sha256": "b22da597ad6b396eddc7ed8ec25ba12ed3ef21a04099d958b5fb5ea99c94f397",
+      "review_sha256": "81e905a8c1bb7c25ae2ef7e9b84b3c8ab3043cfb226db4a50e772622922371bf",
+      "review_bytes": 34098,
+      "review_lines": 539,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/dock_tree.gd": {
+      "baseline_sha256": "354d850050b490d96bb18b8914d751e887bbb7a7091b7441bf086d70856d704d",
+      "review_sha256": "8b933a57aedcaf8e54e02b49eae7fef7fdf2cb6ade1c5aa6c6e2e3dcb00aa90a",
+      "review_bytes": 11529,
+      "review_lines": 179,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/world_selection.gd": {
+      "baseline_sha256": "7c36ec46c6ba7a9e52eada2d08f5356c23e6312c47a05330cdb37ecbde3161c3",
+      "review_sha256": "f37ef0081de1637025a129ab3e4d651bbb9915658555bc98837be3c6bea193d5",
+      "review_bytes": 31049,
+      "review_lines": 545,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/app.gd": {
+      "baseline_sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "review_sha256": "4081b9b53a34b14da951eee03c1dd9aa3edb6680f55896dcbcd4605a159dc282",
+      "review_bytes": 313386,
+      "review_lines": 5681,
+      "baseline_matches_full_catalogue": true
+    },
+    "src/model.gd": {
+      "baseline_sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678",
+      "review_sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678",
+      "review_bytes": 28593,
+      "review_lines": 483,
+      "baseline_matches_full_catalogue": true
+    },
+    "tests/scene_view_unit.gd": {
+      "baseline_sha256": "78639224a5f9be51bb177e87a8889c79c69a2202ecee2db3c86fc6b11f793185",
+      "review_sha256": "78639224a5f9be51bb177e87a8889c79c69a2202ecee2db3c86fc6b11f793185",
+      "review_bytes": 5278,
+      "review_lines": 66,
+      "baseline_matches_full_catalogue": true
+    }
+  },
+  "engine_CIM_Git_executed": false,
+  "functional_files_modified": false,
+  "runtime_draft_unexecuted": true
+}

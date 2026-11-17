@@ -1,0 +1,36 @@
+{
+  "format": "has_neon_workspace_integration_cpu_validation_1",
+  "status": "SOURCE_CPU_READY_RUNTIME_UNRUN_BY_AGENT",
+  "observed_utc": "2026-11-17T00:30:46.721779+00:00",
+  "unit_tests": {
+    "command": "python -B -m unittest discover -s experiments/neon_workspace_suite_integration_20261117/cpu_tests -p test_*.py",
+    "run": 20,
+    "failures": 0,
+    "errors": 0,
+    "observed_runner_seconds": 0.113,
+    "synthetic_only": true,
+    "first_failed_synthetic_attempt_preserved": "CPU_ATTEMPT1.json"
+  },
+  "python_AST_parsed": [
+    "cpu_tests/test_verify_neon_workspace.py",
+    "tests/verify.proposed.py",
+    "tests/verify_neon_workspace.py",
+    "verify_packet.py"
+  ],
+  "four_alias_byte_proofs_rechecked": true,
+  "behavior_source_version": "v3",
+  "behavior_only_SCRIPT_constant_changes": true,
+  "production_wrapper_sha256": "45dbea477bf9445290fe6a5f52ad254f9dfb0178214037560570072cfe677cdb",
+  "expected_fresh_production_checks": {
+    "inset": 12384,
+    "behavior": 32,
+    "compact": 14,
+    "rail": 45
+  },
+  "expected_total_checks": 12475,
+  "original_core36_AST_unchanged": true,
+  "expected_default_full_result_entries": 158,
+  "engines_CIM_Git_executed_by_agent": false,
+  "functional_checkouts_modified_by_agent": false,
+  "new_production_wrapper_engine_run_performed_by_agent": false
+}

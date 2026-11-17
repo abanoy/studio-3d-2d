@@ -1,0 +1,15 @@
+{
+  "format": "has_neon_waveform_fixture_input_successor_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN_NOT_FULL_FIX",
+  "file": "tests/waveform_levels_smoke.gd",
+  "original_sha256": "28b9be24ede2068f562458584830df2a65d8ff6db0c1f863e1f97f3606f59621",
+  "proposed_sha256": "2333fb6e213e2d74d7aa71fb845d6bb23e2038f034b6dd98ee94958d18964b2f",
+  "changes": "Reveal actual Audio row before capturing its pixels; all original check source/color predicates remain unchanged",
+  "all_assertion_source_lines_preserved": true,
+  "exact_raw_inverse_preserves_original": true,
+  "line_endings_preserved": true,
+  "production_size_or_behavior_changes": false,
+  "known_independent_unfixed_theme_expectation": "Test requires classic waveform green467d45, while neon draws another color. Input-only successor does not claim a pass.",
+  "default_verify_py_directly_registers_waveform_levels": false,
+  "real_runtime_result_claimed": false
+}

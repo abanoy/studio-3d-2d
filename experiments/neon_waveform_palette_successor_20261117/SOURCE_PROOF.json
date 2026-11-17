@@ -1,0 +1,110 @@
+{
+  "format": "has_neon_waveform_palette_source_successor_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN_ROOT_REVIEW_REQUIRED",
+  "historical_original_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\tests\\waveform_levels_smoke.gd",
+  "historical_original_sha256": "28b9be24ede2068f562458584830df2a65d8ff6db0c1f863e1f97f3606f59621",
+  "historical_original_reconstructed_by_exact_inverse": true,
+  "checkout_current_sha256_at_preparation": "2333fb6e213e2d74d7aa71fb845d6bb23e2038f034b6dd98ee94958d18964b2f",
+  "input_only_predecessor": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_timeline_fixture_audit_20261117\\waveform_levels_smoke.proposed.gd",
+  "input_only_sha256": "2333fb6e213e2d74d7aa71fb845d6bb23e2038f034b6dd98ee94958d18964b2f",
+  "proposed_sha256": "9775d5a497b64025fc93d958aa1a900316288b5fb2fb7fb34f77f3340ec3aa66",
+  "proposed_bytes": 6164,
+  "line_endings_preserved": true,
+  "raw_inverse_to_input_only_exact": true,
+  "raw_inverse_to_historical_original_exact": true,
+  "all_13_original_check_source_lines_preserved": true,
+  "original_RGB_tolerance_predicate_byte_exact": true,
+  "original_four_transient_predicate_byte_exact": true,
+  "original_classic_Color467d45_binding_byte_exact": true,
+  "original_check_calls": 13,
+  "successor_check_calls": 14,
+  "new_check": "All 3x3 sample neighborhoods must fit the image, track viewport and outer Timeline viewport; invalid neighborhoods skip every pixel read and force the new check to fail.",
+  "expected_palette_is_derived_from_pixels": false,
+  "product_source_or_palette_edited": false,
+  "engines_CIM_Git_executed": false,
+  "installed_sources_or_native_arrays_read": false,
+  "formula": {
+    "wave_RGBA": [
+      0.239,
+      0.863,
+      0.592,
+      0.85
+    ],
+    "body_fill_RGBA": [
+      0.239,
+      0.863,
+      0.592,
+      0.12
+    ],
+    "opaque_BAR_RGB8": [
+      12,
+      13,
+      17
+    ],
+    "opaque_selected_border_RGB8": [
+      61,
+      220,
+      151
+    ],
+    "interior_equation": "waveRGB*.85 + (waveRGB*.12 + BAR_RGB*.88)*.15",
+    "interior_expected_RGB": [
+      0.21366376470588236,
+      0.7558134117647058,
+      0.522656
+    ],
+    "interior_nearest_RGB8": [
+      54,
+      193,
+      133
+    ],
+    "selected_border_equation": "waveRGB*.85 + SAVED_RGB*.15",
+    "selected_border_expected_RGB": [
+      0.23903235294117647,
+      0.8629617647058824,
+      0.5920235294117647
+    ],
+    "selected_border_nearest_RGB8": [
+      61,
+      220,
+      151
+    ],
+    "border_selection": "audio_selected==0 AND source bucket-left coordinate <= audio_rect(0).position.x, matching renderer left-clamp geometry; no pixel-value-dependent branch"
+  },
+  "source_refs": {
+    "src/timeline_view.gd": [
+      463,
+      464,
+      523,
+      716,
+      722,
+      726,
+      727,
+      729
+    ],
+    "src/studio_theme.gd": [
+      17,
+      44,
+      114,
+      117,
+      129
+    ],
+    "project.godot": [
+      27,
+      28
+    ]
+  },
+  "source_pins": {
+    "src/timeline_view.gd": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+    "src/studio_theme.gd": "dcbf0b9cb079ba552c7d02f447a7a5d33db19509a54bd6e14a1468b486061dc2",
+    "src/timeline_picture.gd": "8bc3353f2537524d10f47206404ccf1ce81ac0dab80a9afcf139f83d65fc29e1",
+    "src/app.gd": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67",
+    "project.godot": "4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30",
+    "tests/verify_waveform_levels.py": "e6af1d232437f0152ceb9c22bf70193e97ea30cffa86ffb4c2bfd364a7571000"
+  },
+  "official_renderer_source": {
+    "Godot_commit": "89cea143987d564363e15d207438530651d943ac",
+    "blend": "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/drivers/gles3/rasterizer_canvas_gles3.cpp#L686-L692",
+    "draw_color": "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/drivers/gles3/shaders/canvas.glsl#L522-L524"
+  },
+  "runtime_risk": "Source RGBA mix is deterministic for fully covered interior/border pixels; thin-line rasterization and StyleBoxFlat antialiasing at the first left border still need the root-owned native run. Preserve failure if no pixel in the unchanged 3x3 neighborhood matches the source-derived branch within unchanged .02 tolerance. Do not widen tolerance, choose colors from observed pixels, or reduce four-bar count."
+}

@@ -1,0 +1,27 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS window title uses studio identity
+PASS default Godot boot image is disabled
+PASS new launch defaults to Simple
+PASS Simple Draw shows contextual drawing controls
+PASS Simple hides technical controls and diagnostics
+PASS basic brush and layer controls remain available
+PASS captured simple.png
+PASS Simple Scene shows camera controls
+PASS actual toggle click reveals advanced camera controls
+PASS Advanced exposes all panels and diagnostics
+PASS mode toggle preserves frame, temporary camera and undo
+PASS captured advanced.png
+PASS actual toggle click returns to Simple
+PASS hidden advanced FOV and hold interpolation remain active
+PASS switching preserves independent drawing and scene asset bytes
+PASS Simple and Advanced render identical project pixels
+PASS WAV import works in Simple
+PASS Simple reveals audio timing when a clip exists
+PASS Simple audio edits preserve hidden gain and trim
+PASS revealing details does not restart or stop playback
+PASS layout minimum fits a 1200px workspace
+PASS captured simple-1200.png
+PASS 1200px layout retains usable canvas and accessible Advanced toggle
+UI_SMOKE {"checks":23,"failures":0}

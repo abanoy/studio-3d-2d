@@ -1,0 +1,60 @@
+{
+  "format": "has_neon_review_actual_checkpoint_1",
+  "original_branch": "c2d52ff5fd0f9aeffae6a343f6d4b71698ed9ff2",
+  "candidate": "f387d0e9ddfb099140c0699d9f7ed430f5d7b949",
+  "original_full": "FAILED_OBJECT_TIMING28_2",
+  "original_full_physical_jobs_closed": 24,
+  "original_behavior": "32/13",
+  "corrected_behavior_v3": "32/0",
+  "geometry_checks": {
+    "inset": 12384,
+    "compact": 14,
+    "rail": 45
+  },
+  "existing_ui_checks": 23,
+  "standard_neon_group_checks": 12475,
+  "corrected_full": "FAILED_381_ANIMATED_CHANNELS47_1",
+  "main_merged": false,
+  "archive_index_sha256": "c9dc2b154bc4c2c44193e34b2f6226637bf8de74f6a3c20a7de7e3da8fe82832",
+  "manual_owner_result": "DEFERRED_NO_RESULT",
+  "native_fidelity_qualified_by_these_synthetic_checks": false,
+  "corrected_full_private_jobs_closed": 27,
+  "corrected_full_sources_unchanged": 1028,
+  "third_full": "ACTIVE_ROOT_OBSERVED",
+  "native_channel_fixture_successor": "48/0_all3native",
+  "movement_legacy_and_component_successors": "PASSED",
+  "waveform_palette_successor": {
+    "classic": "14/0",
+    "neon": "14/1_PENDING_DIAGNOSIS"
+  },
+  "third_full_context": {
+    "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-f387d0e-20261117T012410",
+    "started_utc": "2026-11-17T01:27:36.5856364Z",
+    "source_files": 1028,
+    "expected_groups": 158,
+    "core_groups": 36,
+    "movie_checks": 21,
+    "birth_observation": {
+      "format": "has_root_neon_corrected_birth_observation_1",
+      "coordinator": {
+        "pid": 25388,
+        "creation_utc": "2026-11-17T01:27:36.0890696Z"
+      },
+      "python": {
+        "creation_utc": "2026-11-17T01:27:37.1616850Z",
+        "pid": 23904,
+        "parent_pid": 25388,
+        "command_line": "\"C:\\Program Files\\Python313\\python.exe\" -u tests/verify.py"
+      },
+      "observed_utc": "2026-11-17T01:27:37.4709571Z"
+    }
+  },
+  "waveform_final": {
+    "classic": "15/0",
+    "neon": "15/0",
+    "bars_each": 4,
+    "rgb_tolerance": 0.02,
+    "oracle": "source-derived StyleBoxFlat AA",
+    "old_failures_retained": true
+  }
+}

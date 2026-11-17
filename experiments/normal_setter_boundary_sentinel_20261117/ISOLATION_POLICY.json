@@ -1,0 +1,33 @@
+{
+  "format": "has_setter_background_isolation_policy_1",
+  "meaning": "Owned hidden HWND proves only background-process desktop placement; no Blender GUI or render claim.",
+  "public_sidecar": "PUBLIC_PLACEMENT.json",
+  "public_sidecar_format": "has_setter_background_placement_result_1",
+  "public_capture_field": "background_isolation_sentinel",
+  "public_field_required_values": {
+    "format": "has_hidden_background_desktop_placement_sentinel_1",
+    "class": "STATIC",
+    "requested_size_pixels": [
+      0,
+      0
+    ],
+    "disabled": true,
+    "noactivate_style": true,
+    "toolwindow_style": true,
+    "visible_at_creation": false,
+    "visible_before_destruction": false,
+    "owned_pid_and_thread_verified": true,
+    "destroyed_in_finally": true,
+    "show_or_activation_calls": false,
+    "thread_desktop_switch_calls": false,
+    "blender_background_verified": true
+  },
+  "public_setter_sha256_field": "public_setter_sha256",
+  "private_setter_sha256_field": "private_setter_sha256",
+  "additional_stdout_marker": "HAS_SETTER_ISOLATION_SENTINEL ",
+  "private_receipt_required_addition": {
+    "private_window_seen": true
+  },
+  "success_public_setter_status": "SETTER_BOUNDARIES_MEASURED",
+  "original_lease_roles": 26
+}

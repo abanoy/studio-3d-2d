@@ -1,0 +1,192 @@
+{
+  "format": "has_neon_standard_test_aliases_proof_1",
+  "status": "SOURCE_ONLY_ALIASES_PREPARED_UNRUN",
+  "parent_review_required": true,
+  "engine_CIM_Git_executed": false,
+  "checkout_functional_files_edited": false,
+  "sealed_or_indexed": false,
+  "index_verification": {
+    "neon_redesign_refresh_fixture_20261116": {
+      "index_sha256": "1cb0ad92edf90d414354943c9790311d0c31261bf733c7725caae25b2d540711",
+      "verified_enumerated_files": 14
+    },
+    "neon_redesign_geometry_review_20261116": {
+      "index_sha256": "1ab607cd271edab0c8fda4a876dd26b3f68f8abf6ca4680c80e3b7f17c0ddce1",
+      "verified_enumerated_files": 4
+    },
+    "neon_redesign_geometry_successor_20261116": {
+      "index_sha256": "d0a10648ab690371ac4dbb1d390d864d86f4caf224b86322e34c3c8540e4e338",
+      "verified_enumerated_files": 14
+    }
+  },
+  "aliases": {
+    "behavior": {
+      "source_path": "experiments/neon_redesign_refresh_fixture_20261116/neon_behavior_regression.gd",
+      "source_index": "experiments/neon_redesign_refresh_fixture_20261116/INDEX.json",
+      "source_bytes": 11851,
+      "source_sha256": "8ee51d41d0719f5a5a29281d50c9be594d35c1c1534d0790b855fe16cbc0fc1c",
+      "alias_path": "tests/neon_behavior_regression.gd",
+      "prepared_path": "experiments/neon_workspace_suite_integration_20261117/tests/neon_behavior_regression.gd",
+      "alias_bytes": 11806,
+      "alias_sha256": "90394b0fd268c5f5cab8ff4658171eedaf2cb1cbefdd3cb6e8f1a312365a6e9b",
+      "source_byte_identical": false,
+      "allowed_changes": [
+        {
+          "kind": "SCRIPT_constant_resource_path_only",
+          "old": "res://experiments/neon_redesign_refresh_fixture_20261116/neon_behavior_regression.gd",
+          "new": "res://tests/neon_behavior_regression.gd",
+          "occurrences": 1,
+          "inverse_restores_exact_source_bytes": true
+        }
+      ],
+      "other_bytes_and_assertion_predicates_preserved": true
+    },
+    "inset": {
+      "source_path": "experiments/neon_redesign_geometry_review_20261116/inset_scene_regression.gd",
+      "source_index": "experiments/neon_redesign_geometry_review_20261116/INDEX.json",
+      "source_bytes": 4794,
+      "source_sha256": "1c7647a9f6b2a675759c54e8da902ccae2b642e522a087876514f448998c11dd",
+      "alias_path": "tests/neon_inset_scene_regression.gd",
+      "prepared_path": "experiments/neon_workspace_suite_integration_20261117/tests/neon_inset_scene_regression.gd",
+      "alias_bytes": 4794,
+      "alias_sha256": "1c7647a9f6b2a675759c54e8da902ccae2b642e522a087876514f448998c11dd",
+      "source_byte_identical": true,
+      "allowed_changes": [],
+      "other_bytes_and_assertion_predicates_preserved": true
+    },
+    "compact": {
+      "source_path": "experiments/neon_redesign_geometry_successor_20261116/compact_timeline_reveal_regression.gd",
+      "source_index": "experiments/neon_redesign_geometry_successor_20261116/INDEX.json",
+      "source_bytes": 6571,
+      "source_sha256": "bb7d14c88129ccfcc092eec5d7e1c0f73592b0f69d806f29a87aad374f05bd8c",
+      "alias_path": "tests/neon_compact_timeline_reveal_smoke.gd",
+      "prepared_path": "experiments/neon_workspace_suite_integration_20261117/tests/neon_compact_timeline_reveal_smoke.gd",
+      "alias_bytes": 6571,
+      "alias_sha256": "bb7d14c88129ccfcc092eec5d7e1c0f73592b0f69d806f29a87aad374f05bd8c",
+      "source_byte_identical": true,
+      "allowed_changes": [],
+      "other_bytes_and_assertion_predicates_preserved": true
+    },
+    "rail": {
+      "source_path": "experiments/neon_redesign_geometry_successor_20261116/rail/rail_placement_smoke.gd",
+      "source_index": "experiments/neon_redesign_geometry_successor_20261116/INDEX.json",
+      "source_bytes": 7383,
+      "source_sha256": "01ef0e1de244e7dfd91c9bf83b7e7c805f053b55ecc22b261317bc8c85890bb0",
+      "alias_path": "tests/neon_rail_placement_smoke.gd",
+      "prepared_path": "experiments/neon_workspace_suite_integration_20261117/tests/neon_rail_placement_smoke.gd",
+      "alias_bytes": 7383,
+      "alias_sha256": "01ef0e1de244e7dfd91c9bf83b7e7c805f053b55ecc22b261317bc8c85890bb0",
+      "source_byte_identical": true,
+      "allowed_changes": [],
+      "other_bytes_and_assertion_predicates_preserved": true
+    }
+  },
+  "required_runtime_gate_plan": {
+    "counts_are": "Static source derivations only. No runtime count or pass is claimed; require the actual complete receipt to equal these counts.",
+    "all": {
+      "process_exit": 0,
+      "private_desktop_receipt_required": true,
+      "job_and_desktop_closed_required": true,
+      "fresh_output_receipt_required": true,
+      "failures": 0,
+      "result_and_stdout_marker_must_agree_when_script_emits_one": true
+    },
+    "behavior": {
+      "expected_checks": 32,
+      "derivation": "32 unique literal check names, matching sealed EXPECTED_CHECKS=32; no check calls occur in loops.",
+      "named_check_keys": [
+        "default_neon",
+        "idle_simple_pose",
+        "actual_physics_visible",
+        "actual_hair_visible",
+        "fan_entry_visible",
+        "loose_parts_entry_visible",
+        "wind_review_entry_visible",
+        "record_scope_visible",
+        "record_entry_visible",
+        "simple_add_fan_real_click",
+        "included_model_import",
+        "cache_contains_current_model",
+        "cache_current_identity",
+        "cache_updates_after_authored_key",
+        "deleted_object_cache_evicted",
+        "remaining_model_cache_retained",
+        "cache_bounded_to_live_rows",
+        "no_runtime_cache_cleared",
+        "cache_repopulates_current_world",
+        "new_project_succeeds",
+        "new_project_cache_bounded",
+        "F11_assignment_accepted",
+        "F11_assignment_persisted",
+        "bound_F11_routes_save",
+        "unbound_F11_routes_fullscreen",
+        "modified_F11_binding_preserved",
+        "toast_displayed_with_tooltip",
+        "toast_fades_without_erasing_status",
+        "old_toast_rect_inside_scene",
+        "faded_toast_allows_real_canvas_click",
+        "workspace_refresh_keeps_canvas_clickthrough",
+        "included_source_unchanged"
+      ],
+      "required_result": {
+        "format": "has_neon_behavior_regression_result_1",
+        "checks": 32,
+        "expected_checks": 32,
+        "complete_assertion_set": true,
+        "all_exact_named_checks_true": true,
+        "synthetic_included_assets_only": true,
+        "save_and_fullscreen_actions_instrumented": true
+      },
+      "script_hash_gate": "job.script_sha256 and result.script_sha256 must equal behavior alias SHA256; job.app_sha256 and result.app_sha256 must equal exact tested app source.",
+      "input_kind": "One root-approved job JSON with the existing closure, expiry, app and script hash fields.",
+      "stdout_gate": "This script has no final JSON result marker. Require exactly one PASS neon_behavior.<name> line per expected named check, no FAIL neon_behavior line, plus the fresh result.json gates and process exit0."
+    },
+    "inset": {
+      "expected_checks": 12384,
+      "expected_configurations": 576,
+      "derivation": "48 dimension/extent/inset cases: 2 frame checks + 12 camera configurations*(5 samples*4 checks + 1 native-shot check) + 2 accepted-edge + 2 rejected-edge checks = 48*258 = 12384. Camera configurations = 48*12 = 576.",
+      "required_result": {
+        "status": "PASS",
+        "checks": 12384,
+        "configurations": 576,
+        "native_assets_used": false,
+        "maximum_projection_error_pixels_less_than": 0.01,
+        "maximum_ray_error_less_than": 3e-06
+      },
+      "input_kind": "One fresh owned JSON output filename; wrapper supplies bounded timeout because this script has no internal watchdog.",
+      "stdout_marker": "INSET_SCENE_REGRESSION "
+    },
+    "compact": {
+      "expected_checks": 14,
+      "derivation": "8 direct run checks + 3 requested model rows (0,32,63)*2 checks = 14.",
+      "required_result": {
+        "checks": 14,
+        "native_owner_assets_used": false,
+        "compact_timeline_preserved": true,
+        "sample_rows": [
+          0,
+          32,
+          63
+        ],
+        "all_samples_visible_before_route": true,
+        "all_samples_selected_after_route": true,
+        "each_viewport_height_at_least": 26,
+        "each_viewport_height_less_than": 115
+      },
+      "input_kind": "One fresh owned output directory; result.json and COMPACT_TIMELINE_REVEAL marker.",
+      "stdout_marker": "COMPACT_TIMELINE_REVEAL "
+    },
+    "rail": {
+      "expected_checks": 45,
+      "derivation": "15 direct run checks + 3 direct retained() calls*2 checks + 6 list_mode() calls*(2 direct checks + retained()*2 checks) = 45. Completed path exits early on fixture import failure; any early exit must fail the wrapper gate.",
+      "required_result": {
+        "format": "has_neon_rail_placement_regression_1",
+        "checks": 45,
+        "synthetic_fixture_only": true,
+        "screenshots_written": false
+      },
+      "input_kind": "One fresh owned output directory; result.json and NEON_RAIL_PLACEMENT marker.",
+      "stdout_marker": "NEON_RAIL_PLACEMENT "
+    }
+  }
+}

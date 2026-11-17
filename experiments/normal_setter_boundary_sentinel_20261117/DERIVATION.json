@@ -1,0 +1,63 @@
+{
+  "format": "has_setter_sentinel_source_derivation_1",
+  "status": "SOURCE_ONLY_NATIVE_UNRUN",
+  "predecessor_index_sha256": "d6c4520ae2a78bc779cb227bb028c5cf2a3b166706da154bc85a1343736e0350",
+  "sentinel_helper_predecessor_index_sha256": "a2475b28c03c6b87cc0d98d537433204b9553122a97f1197321455a491e2ef64",
+  "original_probe_sha256": "96be93bd4068be8ea1c80a3cf551f241f54fb73f6d62c4ff9907d00dee67fb90",
+  "new_probe_sha256": "034122697e8fa0e7a855ea42b51eddc351b647ae5f7641cad8d02994a51fc3c3",
+  "all_original_function_ASTs_exact": true,
+  "original_main_raw_bytes_exact": true,
+  "original_main_sha256": "62897c9411d72f10ffb0e9e79ccc37fb8aabd3aacfe2c19b0b8501c07c37479b",
+  "original_function_names": [
+    "array_hash",
+    "mesh_arrays",
+    "corner_array",
+    "distances",
+    "write",
+    "main"
+  ],
+  "exact_approved_decorated_helper_sha256": "809e4f01bf5236e716df558f5ac03ab5960c2b81c4ac7d50bd369a97c1c409f6",
+  "helper_AST_exact": true,
+  "copied_core": [
+    {
+      "path": "setter_support.py",
+      "sha256": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9",
+      "predecessor_byte_exact": true
+    },
+    {
+      "path": "instrumentation.py",
+      "sha256": "361fcad3dbff79bfd5367cd71ac5a769fc8155d6f38a1b061d5ce6e631f5a895",
+      "predecessor_byte_exact": true
+    },
+    {
+      "path": "vvd_normals.py",
+      "sha256": "f3a959cc8dff0bd03528b20886984857b16a21944d2f5ef627cf4c4c05ebcdfb",
+      "predecessor_byte_exact": true
+    },
+    {
+      "path": "test_instrumentation.py",
+      "sha256": "4da8acbdf8ee2d6542bb038779ec6c6fa70deab8ef892cc74f84ac95bda56817",
+      "predecessor_byte_exact": true
+    },
+    {
+      "path": "test_vvd_normals.py",
+      "sha256": "820dd0bc8d7e311f6523015cd6bc4a719dbff45d4dd7cb3469a5d035cc867090",
+      "predecessor_byte_exact": true
+    },
+    {
+      "path": "test_setter_support.py",
+      "sha256": "39c6d8dcffceae5e14cd3d2ccb2373d1c845af096ba6207ebe7168659f829043",
+      "predecessor_byte_exact": true
+    }
+  ],
+  "original_primary_roles_26_retained": true,
+  "metadata_policy_pinned_separately": true,
+  "private_and_original_public_output_code_unchanged": true,
+  "runtime_identity_refusal_preserved_as_transcription": {
+    "sha256": "04c1559e14f4fd8b7d84b32613c1db66b384a213c6f9f4932ed5d5970854376f",
+    "raw_stderr_claimed": false,
+    "original_gate_weakened": false
+  },
+  "engines_CIM_Git_executed_by_agent": false,
+  "functional_checkouts_modified_by_agent": false
+}

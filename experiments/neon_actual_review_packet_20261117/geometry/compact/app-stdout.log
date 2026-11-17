@@ -1,0 +1,18 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS 64 generated model objects install
+PASS generated PCM clip installs an actual Audio lane
+PASS object rows have drawing and actual audio lanes below them
+PASS approved compact viewport is smaller than the trailing-lane distance
+PASS outer Timeline scroll exposes the complete compact track viewport
+PASS negative case: scrolling to all content end leaves last model above compact viewport
+PASS requested first/middle/last row is inside both actual scroll viewports: 0
+PASS actual routed click selects model and pose target: 0
+PASS requested first/middle/last row is inside both actual scroll viewports: 32
+PASS actual routed click selects model and pose target: 32
+PASS requested first/middle/last row is inside both actual scroll viewports: 63
+PASS actual routed click selects model and pose target: 63
+PASS row reveal and selection preserve world/audio/drawing pixels and Undo
+PASS selection leaves generated source geometry unchanged
+COMPACT_TIMELINE_REVEAL {"checks":14,"compact_timeline_preserved":true,"failures":0,"native_owner_assets_used":false,"samples":[{"row":0,"scroll_vertical":0,"selected_after_route":true,"viewport_height":62.0,"visible_before_route":true},{"row":32,"scroll_vertical":832,"selected_after_route":true,"viewport_height":62.0,"visible_before_route":true},{"row":63,"scroll_vertical":1638,"selected_after_route":true,"viewport_height":62.0,"visible_before_route":true}]}

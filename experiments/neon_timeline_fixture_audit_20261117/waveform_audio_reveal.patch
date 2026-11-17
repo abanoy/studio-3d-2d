@@ -1,0 +1,14 @@
+--- a/tests/waveform_levels_smoke.gd
++++ b/tests/waveform_levels_smoke.gd
+@@ -24,6 +24,11 @@
+ 	nav.scrollbar.value=1290;await settled()
+ 	check(is_same(mixed,app.audio_mix) and pcm==signature(app.audio_mix.pcm) and peaks_sha==signature(view.visible_waveform(0).to_byte_array()),"zoom and pan reuse identical mix/cache without source-file access")
+ 	check(app.history.size()==history and app.recovery_revision==revision,"waveform navigation leaves content/history unchanged")
++	# Reveal the actual sampled Audio row in the compact viewport; drawing rows precede it.
++	var tracks_scroll: ScrollContainer=view.get_parent()
++	var dock_scroll: ScrollContainer=app.workspace_layout.panels.timeline.get_node("TimelineContentScroll")
++	dock_scroll.ensure_control_visible(tracks_scroll);await settled()
++	tracks_scroll.scroll_vertical=int(view.audio_y());await settled()
+ 	var screen: Image=app.get_viewport().get_texture().get_image();screen.save_png(folder.path_join("fine-waveform.png"))
+ 	var green:=Color("467d45");var bars:=0
+ 	for i in range(fine.size()):

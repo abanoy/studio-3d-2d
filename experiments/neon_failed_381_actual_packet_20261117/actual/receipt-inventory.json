@@ -1,0 +1,780 @@
+{
+  "format": "has_neon_failed_381_receipt_inventory_1",
+  "source_commit": "381d5a974d34eb4dc10208a44c1a54d178c72fbb",
+  "functional_sources": 1028,
+  "run_directory": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337",
+  "state_sha256": "09db4e79b10c30e26994dcf7cc5cce706de8ca4378f3d35887c0591ec80215fc",
+  "source_before_sha256": "21d2678369a17e3067eb1a6d4bc597c9103c25243637f125868f7ee698f5ffd3",
+  "source_after_sha256": "21d2678369a17e3067eb1a6d4bc597c9103c25243637f125868f7ee698f5ffd3",
+  "suite_status": "failed",
+  "suite_exit": 1,
+  "full_suite_passed": false,
+  "final_full_report_used": false,
+  "failed_phase": {
+    "checks": 47,
+    "failures": 1,
+    "native_samples": [
+      "pose-smoke/miku-project",
+      "source-smoke/source-project",
+      "sfm-smoke/project"
+    ],
+    "raw_sha256": "8b611de208a2de85e72cd11611643a55a4bfec21bda406bea4edda1b8290e14d"
+  },
+  "physical_receipts": 27,
+  "unique_desktops": 27,
+  "normal_exit0": 25,
+  "registered_cancel_exit2": 1,
+  "registered_assertion_failure_exit1": 1,
+  "all_collected_jobs_desktops_closed_private": true,
+  "observation_window_end_utc": "2026-11-17T00:46:21.5167790Z",
+  "late_receipts": [],
+  "rows": [
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\krita-imports\\20184-30700486\\prepared\\private-desktop.json",
+      "source_sha256": "c5e24989d4022d9bf6730c0488f75d528bca42bec9c17b224c42a61fb6e2e3ee",
+      "classification": "registered_Krita_cancel_exit2",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_fdc20e4dbd6c4deb9d903cae194e86c7",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 2,
+        "foreground_child_observed": false,
+        "exit": 2,
+        "job_memory_limit_bytes": 3221225472,
+        "child_pid": 24624,
+        "cancelled": true,
+        "error": "Owned converter cancelled",
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.18
+      },
+      "references": [
+        "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\krita-import-verification.json.cancelled_receipt",
+        "source_registered_Krita_cancel"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-000-private-desktop.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\animated_channels_smoke_e0362a0c27ff4a7ab9fed6ed3312815f.json",
+      "source_sha256": "dc72425abe32f8a4b0072f4b43661c66b0c9dbadb66d7abf849c05b390a62a42",
+      "classification": "registered_animated_assertion_exit1",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a794172c44064976aa46c15c45180af4",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 17308,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 17.813
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-001-animated_channels_smoke_e0362a0c27ff4a7ab9fed6ed3312815f.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\animation_clips_smoke_c4dbff53e1ff4b6baf0948e8fac553af.json",
+      "source_sha256": "d31579397e5b8970e10a65db7003d7d760ed5d971833095a068a1c03602fb528",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_787669a4b53b42f1b5aacc623a6901b5",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 23612,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 22.727
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-002-animation_clips_smoke_c4dbff53e1ff4b6baf0948e8fac553af.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\autokey_smoke_49457f7ee6e546e9bc636227a3bd10d2.json",
+      "source_sha256": "6000b875b4e330e19d2e9fe1541c8dfb2bc41d52248b9993e34b705d0d3f63ee",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_535d1d7d025749b1ac545bbba32ea997",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24656,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 12.016
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-003-autokey_smoke_49457f7ee6e546e9bc636227a3bd10d2.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\bone_labels_smoke_175be386f3674006bb007d52d74c6064.json",
+      "source_sha256": "3e11b835aa28acf3d5e2ffdfdca0244d97305942add5d505f4e09a1454d4a08f",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_cd15bb09c3bb4e469f9300a1b5befb57",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 21132,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.36
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-004-bone_labels_smoke_175be386f3674006bb007d52d74c6064.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\export_failures_3746ac57326e41fb887cb39dcc6d51f2.json",
+      "source_sha256": "2ee415f2ea71c0f43638f05d8ea657be07d63e6d4dad3451cfaac525a2a1b6af",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e3ffbbcaad954aa09719ccceba828091",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 14380,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 0.891
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-005-export_failures_3746ac57326e41fb887cb39dcc6d51f2.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\krita_import_smoke_382f7caa0d554dc3b0654b34175e676e.json",
+      "source_sha256": "b242c23621b8acb97be16703253f060180705e1e70a3a46b24af33a80c21c5a3",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_88582deaeb174756806a6aa959ee002e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20184,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 35.78
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-006-krita_import_smoke_382f7caa0d554dc3b0654b34175e676e.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\krita_import_smoke_8e74d9844bc6405ead1af6753a8d4e85.json",
+      "source_sha256": "8ff4ca61a837f3f8bdcf65ecc5d340bf64096c3247d375d21137c6643fdf3463",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_9693adfc5d6841a6a3eebaffa473b20d",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12532,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.38
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-007-krita_import_smoke_8e74d9844bc6405ead1af6753a8d4e85.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\new_scene_smoke_b9b35336a8224659abdf1576e968c5d6.json",
+      "source_sha256": "04dafdb95aa9f6436ab10465023a7026e7263077c7a5a72263ad6f5de37de561",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_64076b7f32d04398b425436ddc3ddbe8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 14432,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.161
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-008-new_scene_smoke_b9b35336a8224659abdf1576e968c5d6.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\object_timing_smoke_427d9b5c1d5b42638372c7258c661c4c.json",
+      "source_sha256": "3ff1f6ab025ccd0de0126b11e7f89e14cf0784cf91185088ddfb2f3d1f960b85",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_741c3ea13d934a56b28748ee95ab84c9",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 5236,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 19.917
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-009-object_timing_smoke_427d9b5c1d5b42638372c7258c661c4c.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\pose_library_native_8f66e7d6f2c947db90f0d1d77123f5ed.json",
+      "source_sha256": "3e04aa4844d351c92dc154d07ff87653e1defe72e62bc775dfef547a2a038248",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_24d50183d3d14ee8982db0a7110c3f69",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 13136,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.058
+      },
+      "references": [
+        "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\body-pose-native-verification.json.private_receipt",
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-010-pose_library_native_8f66e7d6f2c947db90f0d1d77123f5ed.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\pose_library_smoke_1c073c55913547e4a7f0ab47582aef52.json",
+      "source_sha256": "efcc2ef67efb744653169f5aeeeefc2738caa77a81e6a4547a37aacaf1f33dd5",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8d30b2baec0d4893ac4c1502f60740fe",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19336,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.134
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-011-pose_library_smoke_1c073c55913547e4a7f0ab47582aef52.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\pose_library_smoke_a3c3c3af3f4249069150b2faa737e51b.json",
+      "source_sha256": "0a54d95b836841fee13cf3bd2122d354b5a2d6971bac778292e81d7f6d8b5113",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1cecc62fd37f41678d3e2056f7e37737",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12032,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.641
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-012-pose_library_smoke_a3c3c3af3f4249069150b2faa737e51b.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\spikes_d3e50759906a442093ac63706ef4ad29.json",
+      "source_sha256": "35be2cbfcd12330657e38b85951ab524522d8079d0116bdedb9638b024361f3f",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a526e287abd44d97918eef41f4aa1895",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 11488,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.845
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-013-spikes_d3e50759906a442093ac63706ef4ad29.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\studio_2f648bb2d48c419da10ef5e05207b71f.json",
+      "source_sha256": "81b59e5360d7d473601600c33d7d74c81658d0577ed3d97ad7c7e767aa581e78",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_7e46de70516848ef805a90b8fb212523",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 10608,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.222
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-014-studio_2f648bb2d48c419da10ef5e05207b71f.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\studio_494527b53e71454898f38987f9849603.json",
+      "source_sha256": "06abc5c8a2ab60b41e167b99d4824d5a536de3efb313bde787e6c9a4419ebf2f",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_04144ab1646c407abfa48c60b2fc5a83",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20400,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.675
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-015-studio_494527b53e71454898f38987f9849603.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\studio_50a790300cad400a9eca550e5c5a3a9c.json",
+      "source_sha256": "dd4f565b847f65686ebaf27a6222baf37b1c481d61106dac8c090a2287dd8b28",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_eb4d3c6d082649afb9fd223fe78b6d49",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22092,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.581
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-016-studio_50a790300cad400a9eca550e5c5a3a9c.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\studio_5e90920527264debb1c6834719b58ebb.json",
+      "source_sha256": "6742a5cf43d38cf214b7be26f21c32931d0fb17794560aa9ee7b0ee5437e8063",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_6d18972a89d04c65b293726999ffd6f8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19620,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.686
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-017-studio_5e90920527264debb1c6834719b58ebb.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\studio_77599b3bb83840d2b146c45bf5141aff.json",
+      "source_sha256": "0ecdc8c03a2beff8e73d1a9b3166d532da1e79637c7a2358d8b72c816cc353ee",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_d9052842ced7471cb74ce9ae8f82a885",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 13444,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.091
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-018-studio_77599b3bb83840d2b146c45bf5141aff.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\studio_8059d8190744461d932280740bba63ad.json",
+      "source_sha256": "56dce715f5b58fd7688aa358389ac5ff5d87158e579fd454f1f6cc248d43ff16",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_65ea2995fc3a408d83ffc080a5ee27ef",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12716,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.459
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-019-studio_8059d8190744461d932280740bba63ad.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\studio_d6282f8ba3dd46d3a77875027a74e64f.json",
+      "source_sha256": "94771f2710d8bed567dcfc225d47ea4bbb29a1127e4fdbea5be696e8d2ae6304",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0b6063f9020144e398ffacfcf34133f1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22428,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.115
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-020-studio_d6282f8ba3dd46d3a77875027a74e64f.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\visibility_smoke_654ed96cded042f48e7003f4a3da91c3.json",
+      "source_sha256": "e728906a1ade70296551b37da9dac7c3a778b4e44f9abae658569274ef7dbbc0",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2900ca0998c64e47807e6d21ec95168d",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8648,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 18.895
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-021-visibility_smoke_654ed96cded042f48e7003f4a3da91c3.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\world_document_smoke_d26241bd186349eeb158f45d1615abc6.json",
+      "source_sha256": "c4be225767f695b859d289d86fce39b068318a5a89f08acc0f599a58fd1659f0",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e946d2f0f3ed4d0888dd2ad5474110cd",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24500,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.109
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-022-world_document_smoke_d26241bd186349eeb158f45d1615abc6.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\world_edit_smoke_c5c8ed167ba04dd890c7c5a625151f63.json",
+      "source_sha256": "dfd7f58de3034bad77589292cc2907bff35970670cd4caeb49bd3ff7f1fb99d0",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0d2aa47f89094498aef01c1c5348f5aa",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20584,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 24.933
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-023-world_edit_smoke_c5c8ed167ba04dd890c7c5a625151f63.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\world_runtime_smoke_cd1c1c73dc184779adc5ef4aff6ee16f.json",
+      "source_sha256": "2689c3d53fcd25f06040ec8586bcaea4e1462c75536a6ff6e8dc5fa025bcecf8",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1e580545f8bf41ca887a36849931d8a0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 21764,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.03
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-024-world_runtime_smoke_cd1c1c73dc184779adc5ef4aff6ee16f.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\world_selection_smoke_7eca5f6842c242aeb5eba615da9e38e0.json",
+      "source_sha256": "a3d994aa16c228ed1aa816d04c16d4485cdba5a3d5e3e12335bd5bfb678b2937",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_7d5686745ce6418ba57b5a3954ef7256",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19576,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.993
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-025-world_selection_smoke_7eca5f6842c242aeb5eba615da9e38e0.json"
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\world_workflow_smoke_29866faf0f5f4c27a3ead9b8ed048a94.json",
+      "source_sha256": "391c5e88b74aba2d850be1ac818f30572ea1f57af262aee393e1be3e446bcecb",
+      "classification": "normal_exit0",
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2a5c38a15272459aac566f5953850241",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22360,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.663
+      },
+      "references": [
+        "fresh_root_actual_interval"
+      ],
+      "preserved_raw_copy": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-381d5a9-20261117T003337\\failed-terminal-audit-attempt1\\receipt-026-world_workflow_smoke_29866faf0f5f4c27a3ead9b8ed048a94.json"
+    }
+  ],
+  "inline_receipts": [],
+  "fresh_phase_document_hashes": {
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\body-pose-library-verification.json": {
+      "sha256": "c2443ba46bced326f6ce251271bad930cb516065ae766e2c0723eff51a84b4b4",
+      "mtime_ns": 1794875734121614900
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\body-pose-native-verification.json": {
+      "sha256": "f4c22e18ce6121a7c04139612afccb4db4237bb7c45e95bfd53d24f03e39742f",
+      "mtime_ns": 1794875744568149800
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\krita-import-verification.json": {
+      "sha256": "349ab47664f7697887715bcc11942ef75c45f01e42d02f200f947afe47760c23",
+      "mtime_ns": 1794875713496060100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-metadata-windows-verification.json": {
+      "sha256": "3810d3a54a9d9ae64d2b31427d51dc6243d26915ee472f531ac282512f1ab247",
+      "mtime_ns": 1794875666768163600
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\animated-channels-result.json": {
+      "sha256": "8b611de208a2de85e72cd11611643a55a4bfec21bda406bea4edda1b8290e14d",
+      "mtime_ns": 1794875976203820300
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\animation-clips-result.json": {
+      "sha256": "43c63cc121b534a501223b8fe4b7774f561eae70ff1dc756ef4c07a0e2df762d",
+      "mtime_ns": 1794875939178056700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\autokey-result.json": {
+      "sha256": "c27bdf307ae560b79df951e54ea1f08cabdacaec480105d39d7c1976bcccb7cc",
+      "mtime_ns": 1794875816725666600
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\bone-labels-result.json": {
+      "sha256": "16c7bcae78f7d9e24c07070b71eab972ea87fd17f87d3cd13b1bf0ec8f345097",
+      "mtime_ns": 1794875915842108500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\new-scene-result.json": {
+      "sha256": "e21ad67cafabc6f5a7a1a824b925e5107645b96f288c206d29ca4ad845a9086c",
+      "mtime_ns": 1794875826133395700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\object-timing-result.json": {
+      "sha256": "cf27f760998a99041620125c614cfd173226ec4bbb60c815d5edfd9ec5033814",
+      "mtime_ns": 1794875910274847400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\visibility-result.json": {
+      "sha256": "8b85a54dd8dc6405e9e89f0a3072cd2aa6b2ad3b753cee4581a57699bfa58823",
+      "mtime_ns": 1794875958304244900
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\world-document-result.json": {
+      "sha256": "e8d3289be64886de61c32c26e85cfb22c15a9395586810fa9161d1198778de28",
+      "mtime_ns": 1794875842151795600
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\world-edit-result.json": {
+      "sha256": "e137a9e2823f9352bea7a44205cb6fda5e4edec44e9f273b63d729b8dca3f7c3",
+      "mtime_ns": 1794875878539167900
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\world-runtime-result.json": {
+      "sha256": "87f2c735f0a099c06026a2c64195ab99c87b9682b100324d23901eebb770c2fc",
+      "mtime_ns": 1794875853599474400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\world-selection-result.json": {
+      "sha256": "c0e27617b405777fa1e0c309a92847bcb0db5a48f3975e55e59b0286796a07be",
+      "mtime_ns": 1794875837172923900
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\world-workflow-result.json": {
+      "sha256": "59702c7d649c118f239db18b23cf6bc5a9bca1a481a9fbb93e5e047fe1602d72",
+      "mtime_ns": 1794875890416197200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\body-pose-library\\1794875714389641400\\verification.json": {
+      "sha256": "bedf3d21650a9d0ac952d8f94099ffa6db0d58cac87e846ac73ab534f4ae14f9",
+      "mtime_ns": 1794875734118620500
+    }
+  },
+  "process_observation": {
+    "observed_utc": "2026-11-17T00:46:21.5167790Z",
+    "root_observer_issued_no_termination": true,
+    "owned_runtime_matches": [],
+    "coordinator": {
+      "pid": 6012,
+      "expected_creation_utc": "2026-11-17T00:34:20.7906987Z",
+      "current_creation_utc": null,
+      "original_absent": true,
+      "pid_present": false
+    },
+    "owned_runtime_command_matches_absent": true,
+    "python": {
+      "pid": 8148,
+      "expected_creation_utc": "2026-11-17T00:34:21.4146310Z",
+      "current_creation_utc": null,
+      "original_absent": true,
+      "pid_present": false
+    },
+    "observer_retained_Popen_reaped": true
+  },
+  "root_observer_issued_no_termination": true,
+  "graphics_lease_released": false
+}

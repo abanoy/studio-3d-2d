@@ -1,0 +1,28 @@
+{
+  "prior_inventory_refusals": [
+    "Observer matched its own literal-path command",
+    "Two retired Godot PIDs were reused by firefox.exe/conhost.exe; those unrelated processes were left untouched"
+  ],
+  "root_terminated_processes": false,
+  "unrelated_reused_pids": [
+    {
+      "creation_utc": "2026-11-17T00:10:52.5463200Z",
+      "image": "firefox.exe",
+      "pid": 18936
+    }
+  ],
+  "suite_passed": false,
+  "coordinator_pid": 21008,
+  "python_birth_observation": "NOT_CAPTURED_BEFORE_TERMINATION; synchronous runner records terminal exit and identical after-source snapshot",
+  "source_unchanged": true,
+  "receipt_native_child_identities_absent": true,
+  "exclusive_graphics_lease_released": true,
+  "observer_excluded_by_actual_pid": 16616,
+  "physical_jobs": 24,
+  "coordinator_creation_utc": "2026-11-17T00:09:13.8701953Z",
+  "checkout_scoped_owned_processes_absent": true,
+  "coordinator_absent": true,
+  "observed_utc": "2026-11-17T00:15:38.9295497Z",
+  "all_jobs_and_desktops_closed": true,
+  "format": "has_root_neon_original_closed_1"
+}

@@ -1,0 +1,25 @@
+{
+  "format": "has_waveform_aa_cpu_validation_1",
+  "utc": "2026-11-17T01:21:38.991129+00:00",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_waveform_aa_successor_20261117",
+    "-p",
+    "test_aa_derivation.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "tests": 7,
+  "failures": 0,
+  "errors": 0,
+  "stdout": "",
+  "stderr": "test_closed_form_matches_triangle_interpolation (test_aa_derivation.DerivationTests.test_closed_form_matches_triangle_interpolation) ... ok\ntest_half_pixel_center_matters (test_aa_derivation.DerivationTests.test_half_pixel_center_matters) ... ok\ntest_integer_translation_invariant (test_aa_derivation.DerivationTests.test_integer_translation_invariant) ... ok\ntest_missing_edge_transient_does_not_match (test_aa_derivation.DerivationTests.test_missing_edge_transient_does_not_match) ... ok\ntest_missing_interior_transient_does_not_match (test_aa_derivation.DerivationTests.test_missing_interior_transient_does_not_match) ... ok\ntest_opaque_border_prediction_is_not_aa_prediction (test_aa_derivation.DerivationTests.test_opaque_border_prediction_is_not_aa_prediction) ... ok\ntest_outside_feather_is_not_silently_clamped (test_aa_derivation.DerivationTests.test_outside_feather_is_not_silently_clamped) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n",
+  "scope": "Pure CPU triangle/interpolation/color proof; no engine/CIM/Git; native qualification pending"
+}

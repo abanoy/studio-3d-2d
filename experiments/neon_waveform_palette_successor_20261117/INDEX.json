@@ -1,0 +1,53 @@
+{
+  "format": "has_neon_waveform_palette_source_packet_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN_ROOT_REVIEW_REQUIRED",
+  "historical_original_checks": 13,
+  "successor_checks": 14,
+  "original_predicates_preserved": true,
+  "bounds_check_strengthened": true,
+  "theme_expected_values_from_source_not_pixels": true,
+  "native_runtime_result_claimed": false,
+  "functional_checkout_or_product_palette_modified_by_preparer": false,
+  "files": [
+    {
+      "path": "HISTORICAL_ORIGINAL.gd",
+      "bytes": 4361,
+      "sha256": "28b9be24ede2068f562458584830df2a65d8ff6db0c1f863e1f97f3606f59621"
+    },
+    {
+      "path": "PREPARATION_REFUSAL1.json",
+      "bytes": 653,
+      "sha256": "e3178bbaa5db81264c147f9bed081ee0248063e113fde275f70be289d18449b9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6175,
+      "sha256": "4fb4c133cace2bdfff962c99deb203ad21244c1302997dc283f05e9b6ba529cd"
+    },
+    {
+      "path": "SOURCE_PROOF.json",
+      "bytes": 4416,
+      "sha256": "0a10ed465f4d70862ba6f0a4da3b12074cebf95009ef9da182a0766293347cf6"
+    },
+    {
+      "path": "palette_bounds_from_input_only.patch",
+      "bytes": 2540,
+      "sha256": "fa925a18a36e6e4d237550e4f5675800c9ed2ccf508d6ef0fbb9fcb3f72f5703"
+    },
+    {
+      "path": "waveform_levels_smoke.proposed.gd",
+      "bytes": 6164,
+      "sha256": "9775d5a497b64025fc93d958aa1a900316288b5fb2fb7fb34f77f3340ec3aa66"
+    },
+    {
+      "path": "waveform_reveal_bounds_palette.patch",
+      "bytes": 3248,
+      "sha256": "f464c95251143803f86ff8ed4cb8d20eef683eb9577aaa22c2484aa247d01e0a"
+    }
+  ],
+  "file_count": 7,
+  "bytes": 27557,
+  "excludes": [
+    "INDEX.json"
+  ]
+}

@@ -1,0 +1,37 @@
+--- a/tests/waveform_levels_smoke.gd
++++ b/tests/waveform_levels_smoke.gd
+@@ -31,15 +31,34 @@
+ 	tracks_scroll.scroll_vertical=int(view.audio_y());await settled()
+ 	var screen: Image=app.get_viewport().get_texture().get_image();screen.save_png(folder.path_join("fine-waveform.png"))
+ 	var green:=Color("467d45");var bars:=0
++	# Approved Neon palette, derived from source RGBA layers, never from captured pixels.
++	var neon_style: bool=preload("res://src/studio_theme.gd").is_neon()
++	var neon_wave:=Color(0.239,0.863,0.592,0.85)
++	var neon_body:=Color("0c0d11").blend(Color(0.239,0.863,0.592,0.12)).blend(neon_wave)
++	var neon_border:=Color("3ddc97").blend(neon_wave)
++	var sample_bounds_valid:=true
++	var image_bounds:=Rect2i(Vector2i.ZERO,screen.get_size())
+ 	for i in range(fine.size()):
+ 		if fine[i]<=0:continue
+ 		var point: Vector2=view.global_position+Vector2(maxf(view.x(float(i)/fine.size()*view.duration),view.audio_rect(0).position.x),view.audio_y()+14)
++		# Check all nine pixels before reading any, and prove they belong to the visible tracks.
++		var sample_pixels:=Rect2i(Vector2i(point)-Vector2i.ONE,Vector2i(3,3))
++		var sample_region:=Rect2(Vector2(sample_pixels.position),Vector2(sample_pixels.size))
++		if not image_bounds.encloses(sample_pixels) or not tracks_scroll.get_global_rect().encloses(sample_region) or not dock_scroll.get_global_rect().encloses(sample_region):
++			sample_bounds_valid=false
++			continue
++		if neon_style:
++			# The sample-zero transient clamps to the selected clip's one-pixel left border.
++			# The other transients are in its translucent fill. Select by draw geometry only.
++			var on_selected_left_border: bool=view.audio_selected==0 and view.x(float(i)/fine.size()*view.duration)<=view.audio_rect(0).position.x
++			green=neon_border if on_selected_left_border else neon_body
+ 		var found:=false
+ 		for dx in range(-1,2):
+ 			for dy in range(-1,2):
+ 				var pixel:=screen.get_pixelv(Vector2i(point)+Vector2i(dx,dy))
+ 				if absf(pixel.r-green.r)<.02 and absf(pixel.g-green.g)<.02 and absf(pixel.b-green.b)<.02:found=true
+ 		if found:bars+=1
++	check(sample_bounds_valid,"all waveform sample neighborhoods lie inside the image and both visible track viewports")
+ 	check(bars==4,"actual zoomed viewport displays all four independent transient bars")
+ 	var old: Dictionary=app.audio_document().duplicate(true);app.audio_clip.muted=true;app.commit_audio(old);await settled()
+ 	check(view.visible_waveform(0).count(0.0)==8192,"mute rebuilds zero cached detail")

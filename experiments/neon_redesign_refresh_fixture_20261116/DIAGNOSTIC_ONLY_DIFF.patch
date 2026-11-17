@@ -1,0 +1,57 @@
+--- original/neon_behavior_regression.gd
++++ neon_behavior_diagnostic.gd
+@@ -2,7 +2,7 @@
+ # UNPARSED/UNRUN. Root stages under this same experiment path in an isolated project.
+ # Real UI/input and world lifecycle; only Save/fullscreen actions are counted so a
+ # broken dispatch cannot touch an external save location or change desktop mode.
+-const SCRIPT := "res://experiments/neon_redesign_review_20261116/neon_behavior_regression.gd"
++const SCRIPT := "res://experiments/neon_redesign_refresh_fixture_20261116/neon_behavior_diagnostic.gd"
+ const Model = preload("res://src/model.gd")
+ const Airflow = preload("res://src/airflow.gd")
+ const StudioTheme = preload("res://src/studio_theme.gd")
+@@ -16,6 +16,7 @@
+ var named: Dictionary = {}
+ var failures := 0
+ var pointer_presses := 0
++var toast_diagnostics: Array = []
+ const EXPECTED_CHECKS := 32
+ 
+ func _initialize() -> void:
+@@ -56,6 +57,12 @@
+ 	var event := InputEventKey.new()
+ 	event.pressed = true; event.keycode = KEY_F11; event.ctrl_pressed = ctrl
+ 	app._unhandled_key_input(event)
++
++func trace_toast(label: String, point: Vector2) -> void:
++	var hovered := root.gui_get_hovered_control()
++	var row := {"label":label,"status_text":app.status.text,"status_serial":app.status_serial,"status_faded":app.status_faded,"toast_alpha":app.toast.modulate.a,"toast_mouse_filter":app.toast.mouse_filter,"toast_visible":app.toast.is_visible_in_tree(),"toast_rect":str(app.toast.get_global_rect()),"canvas_rect":str(app.canvas.get_global_rect()),"scene_rect":str(app.canvas.scene_rect()),"sample_point":str(point),"point_inside_toast":app.toast.get_global_rect().has_point(point),"point_inside_canvas":app.canvas.get_global_rect().has_point(point),"hovered_control":str(hovered.get_path()) if hovered else "","pointer_presses":pointer_presses}
++	toast_diagnostics.append(row)
++	print("NEON_TOAST_DIAGNOSTIC "+JSON.stringify(row))
+ 
+ func run() -> void:
+ 	var args := OS.get_cmdline_user_args()
+@@ -151,16 +158,23 @@
+ 	var point: Vector2 = app.toast.get_global_rect().get_center()
+ 	check("old_toast_rect_inside_scene",app.canvas.get_global_rect().has_point(point) and app.canvas.scene_setup)
+ 	var observed := pointer_presses
++	var first_click_serial: int = app.status_serial
++	trace_toast("before_first_faded_click",point)
+ 	await click_point(point)
++	trace_toast("after_first_faded_click",point)
++	print("NEON_FIRST_CLICK_CONTEXT "+JSON.stringify({"before_serial":first_click_serial,"after_serial":app.status_serial,"new_message":app.status_serial != first_click_serial}))
+ 	check("faded_toast_allows_real_canvas_click",pointer_presses == observed+1)
++	trace_toast("before_workspace_refresh",app.toast.get_global_rect().get_center())
+ 	app.refresh_workspace(); await settled()
++	trace_toast("after_workspace_refresh",app.toast.get_global_rect().get_center())
+ 	observed = pointer_presses
+ 	await click_point(app.toast.get_global_rect().get_center())
++	trace_toast("after_second_click",app.toast.get_global_rect().get_center())
+ 	check("workspace_refresh_keeps_canvas_clickthrough",pointer_presses == observed+1)
+ 	check("included_source_unchanged",FileAccess.get_sha256(fixture) == fixture_sha)
+ 	app.release_mouse(false)
+ 	app.queue_free(); await settled()
+-	var result := {"format":"has_neon_behavior_regression_result_1","checks":named.size(),"expected_checks":EXPECTED_CHECKS,"failures":failures,"complete_assertion_set":named.size()==EXPECTED_CHECKS,"named_checks":named,"synthetic_included_assets_only":true,"save_and_fullscreen_actions_instrumented":true,"script_sha256":FileAccess.get_sha256(SCRIPT),"app_sha256":job.app_sha256}
++	var result := {"format":"has_neon_behavior_regression_result_1","checks":named.size(),"expected_checks":EXPECTED_CHECKS,"failures":failures,"complete_assertion_set":named.size()==EXPECTED_CHECKS,"named_checks":named,"synthetic_included_assets_only":true,"save_and_fullscreen_actions_instrumented":true,"toast_diagnostics":toast_diagnostics,"script_sha256":FileAccess.get_sha256(SCRIPT),"app_sha256":job.app_sha256}
+ 	var file := FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE)
+ 	if not file: push_error("Cannot write fresh result"); quit(2); return
+ 	file.store_string(JSON.stringify(result,"",true,true)); file.close()

@@ -1,0 +1,16 @@
+{
+  "format": "has_neon_timeline_scroll_fixture_successor_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN",
+  "file": "tests/movement_path_smoke.gd",
+  "original_sha256": "d53d556fffe5eff0e8d97ddb7d565ffa0a7b2f0b5d0b309ea6859c9698aba8e2",
+  "proposed_sha256": "0450da0c1f02c18d9ef0541366b2b9a6e0fdded607a75fe8c99becf38aa87ded",
+  "only_changes": "one new reveal helper and five pre-click reveal calls; no changes to event_at/click/click_at/drag/wait_job helpers or assertions",
+  "pre_click_reveal_calls": 5,
+  "all_assertion_source_lines_preserved": true,
+  "shared_existing_helpers_unchanged": true,
+  "exact_raw_inverse_preserves_original": true,
+  "line_endings_preserved": true,
+  "production_size_or_behavior_changes": false,
+  "default_verify_py_directly_registers_movement_path": false,
+  "real_runtime_result_claimed": false
+}

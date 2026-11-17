@@ -1,0 +1,41 @@
+{
+  "format": "has_setter_sentinel_source_cpu_validation_1",
+  "status": "PASS_SOURCE_READY_NATIVE_UNRUN",
+  "observed_utc": "2026-11-17T00:37:53.088646+00:00",
+  "seconds": 0.7004140999997617,
+  "tests": 73,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "log": ".........................................................................\n----------------------------------------------------------------------\nRan 73 tests in 0.640s\n\nOK\n",
+  "all_tests_synthetic_CPU_only": true,
+  "python_AST_parsed": [
+    "instrumentation.py",
+    "setter_probe.py",
+    "setter_support.py",
+    "stage_after_full.py",
+    "test_instrumentation.py",
+    "test_sentinel.py",
+    "test_setter_support.py",
+    "test_vvd_normals.py",
+    "verify_packet.py",
+    "vvd_normals.py"
+  ],
+  "source_sha256": {
+    "instrumentation.py": "361fcad3dbff79bfd5367cd71ac5a769fc8155d6f38a1b061d5ce6e631f5a895",
+    "setter_probe.py": "034122697e8fa0e7a855ea42b51eddc351b647ae5f7641cad8d02994a51fc3c3",
+    "setter_support.py": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9",
+    "stage_after_full.py": "002506ee93650797b5dd6646fa557dbbe8d8e716980754c31d179c1e073e47a4",
+    "test_instrumentation.py": "4da8acbdf8ee2d6542bb038779ec6c6fa70deab8ef892cc74f84ac95bda56817",
+    "test_sentinel.py": "c070508aea3face5986b491f25bd06ba5b7bd0627853bedbdda34c01d98d6ae2",
+    "test_setter_support.py": "39c6d8dcffceae5e14cd3d2ccb2373d1c845af096ba6207ebe7168659f829043",
+    "test_vvd_normals.py": "820dd0bc8d7e311f6523015cd6bc4a719dbff45d4dd7cb3469a5d035cc867090",
+    "verify_packet.py": "e05c77ba63bd058d41155f87990482b8b95321d8c859ef348f0d4276d8aa0435",
+    "vvd_normals.py": "f3a959cc8dff0bd03528b20886984857b16a21944d2f5ef627cf4c4c05ebcdfb"
+  },
+  "real_Win32_Blender_SourceIO_CIM_Git_executed": false,
+  "approved_runtime_guard_queried_or_bypassed": false,
+  "original_setup_refusal_transcription_preserved": true,
+  "functional_checkouts_modified": false,
+  "numeric_fidelity": "Original raw normal failure remains FAILED_UNQUALIFIED; this is no numeric correction."
+}

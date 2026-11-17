@@ -1,0 +1,19 @@
+--- a/tests/verify.py
++++ b/tests/verify.py
+@@ -146,6 +146,16 @@
+     workspace_log = run([sys.executable, '-u', 'tests/verify_workspace_controls.py'], timeout=310)
+     (output / 'workspace-controls-suite.log').write_text(workspace_log, encoding='utf-8')
+     results['workspace_controls'] = json.loads((output / 'workspace-controls-verification.json').read_text(encoding='utf-8'))
++    neon_started = time.time_ns()
++    neon_log = run([sys.executable, '-u', 'tests/verify_neon_workspace.py', '--lease-confirmed', '--parse-scripts'], timeout=960)
++    (output / 'neon-workspace-suite.log').write_text(neon_log, encoding='utf-8')
++    neon_path = output / 'neon-workspace-verification.json'
++    neon_result = json.loads(neon_path.read_bytes())
++    assert neon_path.stat().st_mtime_ns >= neon_started and neon_result['format'] == 'has_neon_workspace_verification_1' and neon_result['passed'] is True, neon_result
++    assert neon_result['expected_checks'] == {'inset':12384, 'behavior':32, 'compact':14, 'rail':45} and neon_result['checks'] == 12475 and neon_result['failures'] == 0, neon_result
++    assert set(neon_result['reports']) == {'inset', 'behavior', 'compact', 'rail'} and neon_result['all_functional_sources_hash_size_mtime_unchanged'] is True and neon_result['all_private_jobs_and_desktops_closed'] is True, neon_result
++    results['neon_workspace'] = neon_result
++    print('PASS neon workspace: inset rays, compact row input, rail arrangements and live behavior')
+     run([sys.executable, '-u', 'tests/verify_workspace_resize.py'], timeout=310)
+     results['workspace_resize'] = json.loads((output / 'workspace-resize-verification.json').read_text(encoding='utf-8'))
+     run([sys.executable, '-u', 'tests/verify_workspace_docking.py'], timeout=350)

@@ -1,0 +1,43 @@
+{
+  "format": "has_native_normal_carrier_readonly_profile_1",
+  "status": "AGGREGATE_READ_ONLY_NO_CONVERSION",
+  "public_setter_sha256": "86126f272e52b60323e9a49443df7d320472c61cfae2eada3f88b90c57dd262b",
+  "private_setter_sha256": "e3c99ef2a51ea6058b9d243255ec6c49fdd658435bfb764e225d289f70275a38",
+  "original_saved_capture_sha256": "0ef144f3ffe093d6c01f31e5e6fadf98e87a5c7de2b4013c27d42809dabd6921",
+  "source_vvd_sha256": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0",
+  "source_checksum": 804168914,
+  "native_normal_rows": 9661,
+  "captured_source_id_rows": 9661,
+  "captured_unique_source_ids": 9661,
+  "captured_ids_cover_complete_LOD0": true,
+  "one_based_ids_exact_F32_within_bound": true,
+  "maximum_native_unit_length_deviation": 2.1082098933256077e-07,
+  "models": {
+    "hair.smd": {
+      "vertices": 8011,
+      "unique_source_ids": 8011,
+      "setter_normal_words_reconfirmed_exact": true,
+      "saved_export_normal_transform_positive_uniform_identity": true
+    },
+    "Hat.smd": {
+      "vertices": 1650,
+      "unique_source_ids": 1650,
+      "setter_normal_words_reconfirmed_exact": true,
+      "saved_export_normal_transform_positive_uniform_identity": true
+    }
+  },
+  "native_arrays_published_or_copied": false,
+  "carrier_export_or_native_correction_executed": false,
+  "Win32_Blender_SourceIO_CIM_Git_executed": false,
+  "retained_B_GLB_profile": {
+    "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "meshes": 2,
+    "primitives": 4,
+    "normal_accessor_occurrences": 4,
+    "tangent_primitive_count": 0,
+    "morph_normal_or_tangent_primitive_count": 0,
+    "preexisting_reserved_carrier_count": 0,
+    "quantized_or_compressed_profile": false,
+    "geometry_arrays_published": false
+  }
+}

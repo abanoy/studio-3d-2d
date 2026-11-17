@@ -1,0 +1,31 @@
+--- v2/neon_behavior_regression.gd
++++ v3/neon_behavior_regression.gd
+@@ -2,7 +2,7 @@
+ # UNPARSED/UNRUN. Root stages under this same experiment path in an isolated project.
+ # Real UI/input and world lifecycle; only Save/fullscreen actions are counted so a
+ # broken dispatch cannot touch an external save location or change desktop mode.
+-const SCRIPT := "res://experiments/neon_redesign_refresh_fixture_20261116/neon_behavior_regression.gd"
++const SCRIPT := "res://experiments/neon_redesign_refresh_boundary_v3_20261116/neon_behavior_regression.gd"
+ const Model = preload("res://src/model.gd")
+ const Airflow = preload("res://src/airflow.gd")
+ const StudioTheme = preload("res://src/studio_theme.gd")
+@@ -175,15 +175,17 @@
+ 	var before_refresh_faded: bool = app.status_faded and app.toast.modulate.a == 0.0
+ 	trace_toast("before_workspace_refresh",app.toast.get_global_rect().get_center())
+ 	app.refresh_workspace(); await settled()
++	# Snapshot refresh invariants BEFORE another real click legitimately publishes a new hint.
++	var refresh_preserved_faded_context: bool = app.status_faded and app.toast.modulate.a == 0.0 and app.status_serial == before_refresh_serial and app.status.text == before_refresh_text
+ 	trace_toast("after_workspace_refresh",app.toast.get_global_rect().get_center())
+ 	observed = pointer_presses
+ 	await click_point(app.toast.get_global_rect().get_center())
+ 	trace_toast("after_second_click",app.toast.get_global_rect().get_center())
+-	check("workspace_refresh_keeps_canvas_clickthrough",before_refresh_faded and app.status_faded and app.toast.modulate.a == 0.0 and app.status_serial == before_refresh_serial and app.status.text == before_refresh_text and pointer_presses == observed+1)
++	check("workspace_refresh_keeps_canvas_clickthrough",before_refresh_faded and refresh_preserved_faded_context and pointer_presses == observed+1)
+ 	check("included_source_unchanged",FileAccess.get_sha256(fixture) == fixture_sha)
+ 	app.release_mouse(false)
+ 	app.queue_free(); await settled()
+-	var result := {"format":"has_neon_behavior_regression_result_1","checks":named.size(),"expected_checks":EXPECTED_CHECKS,"failures":failures,"complete_assertion_set":named.size()==EXPECTED_CHECKS,"named_checks":named,"synthetic_included_assets_only":true,"save_and_fullscreen_actions_instrumented":true,"toast_diagnostics":toast_diagnostics,"script_sha256":FileAccess.get_sha256(SCRIPT),"app_sha256":job.app_sha256}
++	var result := {"format":"has_neon_behavior_regression_result_1","checks":named.size(),"expected_checks":EXPECTED_CHECKS,"failures":failures,"complete_assertion_set":named.size()==EXPECTED_CHECKS,"named_checks":named,"synthetic_included_assets_only":true,"save_and_fullscreen_actions_instrumented":true,"toast_diagnostics":toast_diagnostics,"refresh_preserved_faded_context":refresh_preserved_faded_context,"script_sha256":FileAccess.get_sha256(SCRIPT),"app_sha256":job.app_sha256}
+ 	var file := FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE)
+ 	if not file: push_error("Cannot write fresh result"); quit(2); return
+ 	file.store_string(JSON.stringify(result,"",true,true)); file.close()

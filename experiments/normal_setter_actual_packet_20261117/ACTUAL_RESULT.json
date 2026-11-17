@@ -1,0 +1,31 @@
+{
+  "format": "has_actual_setter_scalar_archive_1",
+  "measurement_completed": true,
+  "measurement": "Exact native payload differs at first immediate setter readback; later validate readbacks and unobserved control match.",
+  "models": {
+    "hair.smd": {
+      "vertices": 8011,
+      "corners": 34332,
+      "count": 34332,
+      "min": 3.332000937312528e-08,
+      "max": 0.000740827002863817,
+      "mean": 1.5518537628003636e-05,
+      "above_2e_5": 6846
+    },
+    "Hat.smd": {
+      "vertices": 1650,
+      "corners": 8370,
+      "count": 8370,
+      "min": 6.409231772305538e-08,
+      "max": 0.0012586271468933944,
+      "mean": 1.7835244821915658e-05,
+      "above_2e_5": 2130
+    }
+  },
+  "normal_fidelity": "FAILED_UNQUALIFIED",
+  "normal_reconstruction_implemented": false,
+  "specific_Cpp_implementation_cause_proven": false,
+  "native_arrays_or_private_logs_included": false,
+  "private_result_hash_reference_only": "e3c99ef2a51ea6058b9d243255ec6c49fdd658435bfb764e225d289f70275a38",
+  "private_result_bytes_reference_only": 15172535
+}
