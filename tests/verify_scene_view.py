@@ -19,6 +19,13 @@ def main():
         assert result.returncode==0 and ('SCENE_VIEW_UNIT ' if headless else 'SCENE_VIEW ') in log and not any(x in log for x in ['SCRIPT ERROR','SHADER ERROR','FAIL ','ObjectDB instances leaked','_set_transient_exclusive_child']),log
         report=json.loads((folder/('unit.json' if headless else 'result.json')).read_bytes())
         assert report['failures']==0,report
+        if not headless:
+            assert type(report['checks']) is int and report['checks']==106,report
+            assert len(report['cases'])==4,report
+            for case in report['cases']:
+                composition=case['display_composition']
+                assert composition['supported'] is True and composition['composite_ok'] is True,composition
+                assert composition['profile'] in ('neon','light','dark'),composition
         if not headless and os.name=='nt':
             receipt_path=Path(args[args.index('--receipt')+1]);receipt=json.loads(receipt_path.read_bytes())
             assert receipt['exit']==0 and receipt['child_desktop_confirmed'] and not receipt['foreground_child_observed'] and receipt['job_closed'] and receipt['desktop_closed'],receipt

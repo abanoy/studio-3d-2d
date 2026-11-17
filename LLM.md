@@ -5572,3 +5572,17 @@ The complete Windows default still needs a fresh successful run before merge.
 Prior f387 full passed36 core groups then failed strict workspace diagnostics.
 No owner observation, native-normal repair, PMX solver or new scale basis follows
 from these UI checks. All earlier owner reviews and installed Studio are preserved.
+
+
+## Windows scene-presentation fixture — 2026-11-17
+
+The unchanged fullffcf run stopped at scene-view102/4 because the approved Neon
+mask dims off-frame colors62percent. The source-pinned successor preserves all
+102 original semantic predicates and their thresholds, recovers underlying color
+analytically, and adds four independent raw-viewport/composited-screen checks
+under an explicit Compatibility/LDR/opaque/identity-transform profile. The fixed
+2/255 bound follows two8-bit writes; no expected value is fitted to observed
+pixels. Product code and the approved look are unchanged. Actual Windows wrapper
+now passes106/0 plus its headless unit case, all4 profiles/composites valid, source
+1029 preserved and private jobs/scopes closed. Original102/4 evidence is retained.
+The next complete default run remains unrun; no full PASS or merge is claimed.
