@@ -1,0 +1,45 @@
+{
+  "format": "has_neon_mmd_remote_readback_retrieval_history_1",
+  "recorded_utc": "2026-11-17T20:25:59Z",
+  "commit": "f21b9ec85ae63006d036ca7a21c5c82e53fda019",
+  "first_guard_refusal_tool_chunk": "d68112",
+  "first_refusal_record": "FIRST_READBACK_REFUSAL.json",
+  "original_empty_fallback_cache_preserved": {
+    "path": "output/f21b-all-remote-batch-000-empty-fallback-original.json",
+    "bytes": 1326077,
+    "sha256": "42f33702ec122057cd84564978fa9ee468af6076aead8de6a9d9fd9805110036"
+  },
+  "corrected_cache": {
+    "path": "output/f21b-all-remote-batch-000.json",
+    "bytes": 2730464,
+    "sha256": "8a8fa5f136eaa7d5f8cececbea7c3829dbb81a1f474b643973990a1f8b9a0dcb"
+  },
+  "sole_logical_cache_change": "docs/progress_memo.md fallback_utf8: empty -> actual separately retrieved public body",
+  "all_other_response_fields_and_rows_unchanged": true,
+  "nonempty_fallback_bytes": 1385648,
+  "nonempty_fallback_sha256": "2ca191e741a155edc69e06a3a6d86fee0021fb753403db766acd974c52f5dc42",
+  "nonempty_fallback_git_blob": "818ace4391c92e8c1314a14ee1eea0bfa57d3669",
+  "actual_retrieval_origin": {
+    "authority": "Root reported actual GitHub-app service retrieval and stored response; network not reobserved by verifier author",
+    "endpoint_kind": "Git blob endpoint",
+    "response_path": "output/f21b-progress-blob-remote-response.json",
+    "local_Git_or_working_content_used_for_fallback": false
+  },
+  "inherited_COMPLETE_method_label": "blob_sha_utf8_contents_api_oversize_fallback",
+  "method_label_is_legacy_name_actual_origin_is_Git_blob_endpoint": true,
+  "verifier_unchanged_sha256": "8f82b58e7713bd3a1bc7943863e14959ed656ad50ba46b142a5ed864ed314bd5",
+  "successful_verification_tool_chunk": "a7a6c1",
+  "COMPLETE": {
+    "path": "experiments/neon_mmd_source_checkpoint_remote_20261117/COMPLETE_READBACK.json",
+    "bytes": 400912,
+    "sha256": "ca28ba8c8d9cf121f854c18d627c0975e474aca7ed5babcd628218cc497e57ec",
+    "files": 113,
+    "Git_remote_bytes": 3213295,
+    "working_bytes": 3234655,
+    "base64_rows": 112,
+    "UTF8_fallback_rows": 1
+  },
+  "comparison_guard_changed": false,
+  "new_network_native_private_current_full_or_process_queries_by_verifier_author": false,
+  "full_PASS_merge_owner_copy_or_cold187_claimed": false
+}

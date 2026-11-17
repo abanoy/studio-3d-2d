@@ -16063,3 +16063,44 @@ Scalar evidence: experiments/neon_mmd_fixture_recovery_actual_20261117 (INDEXe9f
 Main remains52f functional/1019; stable implementation52/54 and acceptance55/62
 remain unchanged. Human checks deferred; no owner interruption, installed-tool
 replacement, artwork upload, review overwrite or additional cleanup.
+
+## 2026-11-17 — complete native Windows Neon PASS and qualified merge
+
+The restored-MMD full finished21:00:57.9135725Z, verifier exit0, with all158 result
+groups,36 core groups,21 movies, actualMMD45, Neon12504, camera60 and color44.
+Root's unchanged strictf223 audit PASSED;196 physical private jobs closed
+(195 exit0, one registered Krita cancellation). Source1029 remained exact.
+Inventory a4b47b3b; public scalar packet941e9aea. Original157-group run stays
+UNQUALIFIED. Runtimes6, SourceIO574 original+copy, exporter120, original36fixtures
+and41 additional pinned inputs were unchanged in the post-run audit.
+
+Before merging, corrected B runtime8272/eacc completed7.527s exit0/reaped with
+source/input/tool preservation and zero scopes. Its resource profile correctly
+remains refused: two unused internal Viewer images account for four issues and
+one repeated unclassified reference accounts for two. Reference owner/type/content
+remain unobserved. Export branch UNKNOWN; no normal repair/fidelity/adoption.
+Future inspection needs the tested1029 Main bridge after this merge, not old52.
+
+Root reviewed the supplied mock/app images and39 canonical source changes, then
+prepared the nonfastforward merge of3a3701a into Mainf21b9ec. All31 new ancestral
+commits/152 novel blobs were inspected by path scope: no private/native/media
+payload; seven PNG versions are the already approved mock/app screenshots.
+Only LLM conflicted; both conflict additions were retained, and both complete
+parent versions remain available through merge ancestry. Exact tested raw1029
+bytes were restored under the explicit Git/EOL bridge (113 text files); originals,
+old output/cache dirt and all Git shell-script LF blobs were preserved.
+
+Build admission needs a narrow source-only EOL successor: three declared Linux
+scripts are testedCRLF on Windows and committedLF for Linux. Add only those three
+text paths, rederive only their canonical delta hashes, retain all39 raw changes
+and reasons, strictfull gates and binary/content refusals. Studio source/tests
+are unchanged. Qualified owner copy and actual cold187 remain UNRUN; preserve
+the final merged HEAD unchanged through activation/copy/cold validation.
+
+Mainf21b9ec was independently retrieved:113 exact public files,3,213,295 Git bytes,
+3,234,655 working bytes, three EOL recipes; COMPLETE proofca28ba8c. The initial
+empty oversize progress response was refused; actual Git-blob endpoint retrieval
+corrected only that cached fallback. Raw native reports/counts/art remain private.
+Source-only copy/validator preparation607c/8fc4 and proposals e717/dabd/b2df are
+ready for the next checkpoint. Human acceptance remains deferred; stable52/54
+implementation and55/62 acceptance stay unchanged. No new cleanup or installation.

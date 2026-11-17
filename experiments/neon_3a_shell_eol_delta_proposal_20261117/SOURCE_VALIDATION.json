@@ -1,0 +1,26 @@
+{
+  "format": "has_three_shell_EOL_delta_source_validation_1",
+  "status": "SOURCE_REPRODUCTION_AND_PARENT_INVERSE_PASS_ROOT_REVIEW_PENDING",
+  "exact_reproduction_tool_chunk": "803088",
+  "parent_semantic_inverse_exact": true,
+  "changed_row_fields": {
+    "tools/linux/liveness_shim.sh": [
+      "new_content_sha256"
+    ],
+    "tools/linux/run_test.sh": [
+      "new_content_sha256"
+    ],
+    "tools/linux/shoot.sh": [
+      "new_content_sha256"
+    ]
+  },
+  "rows": 39,
+  "all_reasons_counts_raw_hashes107_EOL_old52_native_bridge_exact": true,
+  "new_core_INDEX_sha256": "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42",
+  "new_core_sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76",
+  "new_content_source_map_sha256": "8bd2bf19ddfc4d51644924e60ca6446db252c6928ba91427653652d0508cf7ea",
+  "A_check_reviewed_delta_passed": true,
+  "Root_approval_supplied": false,
+  "functional_working_or_Git_bytes_changed": false,
+  "private_full_native_process_Git_or_network_access": false
+}

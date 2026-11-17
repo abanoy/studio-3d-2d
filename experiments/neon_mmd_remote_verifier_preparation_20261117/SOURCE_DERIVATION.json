@@ -1,0 +1,58 @@
+{
+  "format": "has_neon_mmd_remote_verifier_literal_source_derivation_1",
+  "parent_sha256": "4fd7af60703026aee2c1fe6e2a57f154e35e640da3cb25e9f0318785ee64ff6d",
+  "verifier_sha256": "8f82b58e7713bd3a1bc7943863e14959ed656ad50ba46b142a5ed864ed314bd5",
+  "Root_supplied_published_commit": "f21b9ec85ae63006d036ca7a21c5c82e53fda019",
+  "cache_prefix": "f21b-all-remote-batch-",
+  "literal_rules": [
+    [
+      "public27-file",
+      "public113-file",
+      1
+    ],
+    [
+      "265d3030b848b37f01036dd356840269fca9475b",
+      "f21b9ec85ae63006d036ca7a21c5c82e53fda019",
+      1
+    ],
+    [
+      "output/neon-cleanup85-source-checkpoint-20261117-manifest.json",
+      "output/neon-mmd-source-checkpoint-20261117-manifest.json",
+      1
+    ],
+    [
+      "experiments/neon_cleanup85_source_checkpoint_catalogue_20261117/PUBLIC_MANIFEST.json",
+      "experiments/neon_mmd_source_checkpoint_catalogue_20261117/PUBLIC_MANIFEST.json",
+      2
+    ],
+    [
+      "assert len(paths) == len(set(paths)) == 27",
+      "assert len(paths) == len(set(paths)) == 113",
+      1
+    ],
+    [
+      "for start in range(0, 27, 20):",
+      "for start in range(0, 113, 20):",
+      1
+    ],
+    [
+      "output/265d-all-remote-batch-",
+      "output/f21b-all-remote-batch-",
+      1
+    ],
+    [
+      "4e992d08568e4da3cb8a54fbbcc6e767867bf184dbe4c1cac06ae0553de1bd72",
+      "a39af42de3ef8ff5a76bc1c23ce4c6b01cd60d44d9afb599c793351cabf4cb88",
+      1
+    ],
+    [
+      "experiments/neon_cleanup85_source_checkpoint_remote_20261117/COMPLETE_READBACK.json",
+      "experiments/neon_mmd_source_checkpoint_remote_20261117/COMPLETE_READBACK.json",
+      1
+    ]
+  ],
+  "whole_source_inverse_exact": true,
+  "Git_blob_byte_base64_fallback_and_EOL_guards_unchanged": true,
+  "verifier_executed_or_remote_proof_claimed": false,
+  "Git_network_native_private_or_current_run_access": false
+}

@@ -1,0 +1,51 @@
+{
+  "format": "has_root_attested_B_resource_refusal_followup_1",
+  "evidence_authority": "Root message after private inspection; not independently reobserved by this packet author",
+  "runtime_INDEX_sha256": "82727caa443cc58d623463e195fc6220d08c2d878cb93461eb481c722098b6e0",
+  "binder_INDEX_sha256": "eacc7b33245e33fd7e4826f17dda6cd95917bb7034537d1145c88a4320a7bfa4",
+  "diagnostic_completed": true,
+  "resource_status": "RESOURCE_PROFILE_REFUSED",
+  "profile_issue_count": 6,
+  "issue_counts": {
+    "UNSUPPORTED_IMAGE_SOURCE_OR_TYPE": 2,
+    "EMPTY_FILE_IMAGE_WITHOUT_PACKED_DATA": 2,
+    "UNCLASSIFIED_EXTERNAL_REFERENCE_REFUSED": 2
+  },
+  "images": {
+    "total": 4,
+    "packed_FILE_IMAGE": 2,
+    "unused_internal_VIEWER": 2,
+    "Root_reported_internal_viewer_type_labels": ["RENDER_RESULT", "COMPOSITING"],
+    "internal_viewer_material_references": 0
+  },
+  "material_image_references": 4,
+  "visible_meshes": 2,
+  "visible_mesh_profile_refusal_present": false,
+  "unclassified_reference": {
+    "unique_references": 1,
+    "all_and_unpacked_enumeration_occurrences": 2,
+    "path_kind": "blend-relative",
+    "public_installed_asset_basename": "essentials_brushes-gp_draw.blend",
+    "owner_and_weak_reference_type_observed": false,
+    "brush_role_proved": false
+  },
+  "external_dependency_content_opened_or_statted": false,
+  "source_and_input_preservation_Root_reported": true,
+  "private_job_desktop_and_scopes_closed_Root_reported": true,
+  "export_branch": "UNKNOWN",
+  "old_strict31_native_qualification": false,
+  "resource_export_carrier_normal_fidelity_repair_or_adoption_qualified": false,
+  "full_and_ordering_context": {
+    "strict_full_f223_Root_reported_passed": true,
+    "full_result_groups": 158,
+    "core_groups": 36,
+    "movie_groups": 21,
+    "native_MMD_Root_reported_passed": true,
+    "B_diagnostic_ran_after_full_closure_before_functional_Main_merge": true,
+    "Main_functional_role_at_B_run": "qualified52/1019",
+    "future_postmerge_B_context_requires_tested1029_f223_and_reviewed39_delta_bridge": true,
+    "future_context_fork_implemented": false
+  },
+  "proposal_only_no_classifier_driver_or_runtime_implemented": true,
+  "private_native_current_full_process_Git_or_network_access_by_author": false
+}

@@ -1,0 +1,74 @@
+{
+  "format": "has_shell_EOL_preparation_binding_1",
+  "parent_folder": "neon_owner_executor_preparation_glue_20261117",
+  "parent_INDEX_sha256": "607c890490f8b69f30b098ec765ebd19b432da37597309c81e8d9d7a840611c6",
+  "code_changes": {
+    "prepare_executor.py": {
+      "literal_rules_with_counts": [
+        [
+          "neon_owner_review_executor_20261117",
+          "neon_owner_executor_shell_eol_20261117",
+          1
+        ],
+        [
+          "6b5e6c8a04760e44632967d9e700120cf8958c6a53a74fc3904fb09765054372",
+          "3ea125a3c043688c2bf5f2dbe5ce4c41501ea41b7f831575eefbe5bdfffbdcf4",
+          1
+        ],
+        [
+          "neon_owner_review_after_qualified_merge_20261117",
+          "neon_owner_admission_shell_eol_20261117",
+          1
+        ],
+        [
+          "5479aeea2485e6221589e874053e37197d66bc3dc8dd4acb86c8d53ec144715d",
+          "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42",
+          1
+        ],
+        [
+          "neon_owner_activation_successor_source_20261117",
+          "neon_owner_activation_shell_eol_20261117",
+          1
+        ],
+        [
+          "c9277f65a2ccc8af36a2d0c4a91799907167b1bf04264ed0f01ab245b637d080",
+          "1f42a221ad7de5094675d29888c51e5ddc60cb52a44e3ceecaa6b1866e57a367",
+          1
+        ],
+        [
+          "950a7939998a06502440b416d59f8022e4951f836eedcdc9852f34c6ad0c2ae4",
+          "954a5f26664d9fe087343491652ca53311cea7607c465ad06491a27d2640634c",
+          1
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "48253538345e475cea042a5df91cfc75a42d4e42c6876a7165331d4ba04df12b",
+      "after_sha256": "4ce6fc3c619c87d16c407306443325c30d10e8234655ee16309b8d979b668a2e"
+    },
+    "check_source.py": {
+      "literal_rules_with_counts": [
+        [
+          "neon_owner_review_executor_20261117",
+          "neon_owner_executor_shell_eol_20261117",
+          2
+        ],
+        [
+          "neon_owner_review_after_qualified_merge_20261117",
+          "neon_owner_admission_shell_eol_20261117",
+          1
+        ],
+        [
+          "neon_owner_activation_successor_source_20261117",
+          "neon_owner_activation_shell_eol_20261117",
+          1
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "12a4a8ec68f36eec6dbaab0115050d3662ea139708f6df17ff10d392f9b3fe31",
+      "after_sha256": "16cb800b88bd939db8f0df3c9017a5ec3e60912cc6baf2a8b93a34e40da25d90"
+    }
+  },
+  "all_preparation_functions_AST_unchanged": true,
+  "terminal_f223_RAM_d90b_historical_and_native_gates_unchanged": true,
+  "actual_target_helpers_private_native_full_or_Git_access": false
+}

@@ -1,0 +1,41 @@
+{
+  "format": "has_three_shell_EOL_delta_proposal_derivation_1",
+  "parent_INDEX_sha256": "a91e9f9656238c2df60492dfa024ebcca7f46b7380da643b9a30b0f48d9fee15",
+  "parent_delta_sha256": "9cbb7d3be7745eafff9e5417d455230a811c9ebfb1f3a78cb5cbd34f0822c817",
+  "new_core_INDEX_sha256": "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42",
+  "new_core_sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76",
+  "source_observations": {
+    "tools/linux/liveness_shim.sh": {
+      "working_bytes": 318,
+      "tested_raw_sha256": "91b4a0af59028a38db26ad5c22a45b99b2b5c83d762a3c0100d6c923029c5f84",
+      "CRLF_lines": 4,
+      "old_content_sha256": "91b4a0af59028a38db26ad5c22a45b99b2b5c83d762a3c0100d6c923029c5f84",
+      "new_content_sha256": "2acee5b7723c2d41a6737f9126e430420bbcd9a579f79c6dc285424f16e0bf4f",
+      "working_bytes_changed": false
+    },
+    "tools/linux/run_test.sh": {
+      "working_bytes": 2496,
+      "tested_raw_sha256": "f846823f7542a24f0ea86495417c30d1041d42d82eb66494453384d3d626ffae",
+      "CRLF_lines": 39,
+      "old_content_sha256": "f846823f7542a24f0ea86495417c30d1041d42d82eb66494453384d3d626ffae",
+      "new_content_sha256": "8404f49519dedbe5aeba02841b65c1abdaac242d3119042ad0e8fb13da4033cf",
+      "working_bytes_changed": false
+    },
+    "tools/linux/shoot.sh": {
+      "working_bytes": 1673,
+      "tested_raw_sha256": "75521d7af3ec5acc418b72a44997c0fadbc6a20a1d87b75d82c55f27eecd0e29",
+      "CRLF_lines": 25,
+      "old_content_sha256": "75521d7af3ec5acc418b72a44997c0fadbc6a20a1d87b75d82c55f27eecd0e29",
+      "new_content_sha256": "94e8b52e4f91776d3c5a4a25ee87e1690b13124020b49db4f47c73466c531357",
+      "working_bytes_changed": false
+    }
+  },
+  "original39_rows_reasons_and_all_other_raw_and_content_identities_preserved": true,
+  "new_content_source_map_sha256": "8bd2bf19ddfc4d51644924e60ca6446db252c6928ba91427653652d0508cf7ea",
+  "old52_file_entries_and_canonical_aggregate_unchanged": true,
+  "original107_EOL_list_exact": true,
+  "raw1029_source_map_aggregate_unchanged": true,
+  "A_check_reviewed_delta_passed": true,
+  "Root_approval_or_actual_activation_claimed": false,
+  "native_private_full_process_Git_network_access": false
+}

@@ -1,0 +1,35 @@
+{
+  "format": "has_shell_EOL_source_binding_1",
+  "parent_folder": "neon_owner_cold187_after_qualified_copy_20261117",
+  "parent_INDEX_sha256": "7b12445a5c7f49076c5510f7d998c9d285b8d1297c56912a8488786d57f31888",
+  "executor_folder": "neon_owner_executor_shell_eol_20261117",
+  "executor_INDEX_sha256": "3ea125a3c043688c2bf5f2dbe5ce4c41501ea41b7f831575eefbe5bdfffbdcf4",
+  "code_changes": {
+    "validation_admission.py": {
+      "literal_rules": [
+        [
+          "15fcdbe33334476957f0ed7bd88a3161a35363d673bf6eb9e520455ec232ec26",
+          "4ec96ec0aac53813600fa9807a7bfa065a542b2cd07e9413c031f0e7677f3a73"
+        ],
+        [
+          "cdad5359f6fe6bf63d93bd95845680dec7f6eb2d041b265d05b05efe3ce1096f",
+          "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76"
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "7c203314018aa5396e12e26cccbb3a5b09d7fa6855f5cbd54d84b5d164a25b0b",
+      "after_sha256": "1c4d2026accaf22292f43dba338058f5c4d38346a557aee057e1b30eaabe26ff"
+    },
+    "reference_qualified_inputs.py": {
+      "exact_executor_Q_copy": true,
+      "sha256": "4ec96ec0aac53813600fa9807a7bfa065a542b2cd07e9413c031f0e7677f3a73"
+    }
+  },
+  "template_provenance_only_prefix_rule": [
+    "15fcdbe3",
+    "4ec96ec0"
+  ],
+  "replay_runtime_and_original29_tests_byte_exact": true,
+  "actual_activation_copier_validator_native_or_Git_executed": false,
+  "inherited_source_READINESS_proofs_are_historical": true
+}

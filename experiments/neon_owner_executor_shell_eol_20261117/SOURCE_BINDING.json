@@ -1,0 +1,37 @@
+{
+  "format": "has_shell_EOL_source_binding_1",
+  "parent_folder": "neon_owner_review_executor_20261117",
+  "parent_INDEX_sha256": "6b5e6c8a04760e44632967d9e700120cf8958c6a53a74fc3904fb09765054372",
+  "core_folder": "neon_owner_admission_shell_eol_20261117",
+  "core_INDEX_sha256": "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42",
+  "core_sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76",
+  "code_changes": {
+    "qualified_inputs.py": {
+      "literal_rules": [
+        [
+          "cdad5359f6fe6bf63d93bd95845680dec7f6eb2d041b265d05b05efe3ce1096f",
+          "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76"
+        ],
+        [
+          "5479aeea2485e6221589e874053e37197d66bc3dc8dd4acb86c8d53ec144715d",
+          "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42"
+        ],
+        [
+          "neon_owner_review_after_qualified_merge_20261117",
+          "neon_owner_admission_shell_eol_20261117"
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "15fcdbe33334476957f0ed7bd88a3161a35363d673bf6eb9e520455ec232ec26",
+      "after_sha256": "4ec96ec0aac53813600fa9807a7bfa065a542b2cd07e9413c031f0e7677f3a73"
+    },
+    "admission_core.py": {
+      "exact_upstream_copy": true,
+      "sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76"
+    }
+  },
+  "copy_executor_and_original_tests_byte_exact": true,
+  "runtime_guards_and_inactive_activation_preserved": true,
+  "actual_activation_copy_validator_native_or_Git_executed": false,
+  "inherited_READINESS_SOURCE_PROOF_and_README_template_are_historical": true
+}

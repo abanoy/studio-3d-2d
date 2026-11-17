@@ -1,0 +1,808 @@
+{
+  "format": "has_root_neon_merge_new_history_blob_scope_1",
+  "main": "f21b9ec85ae63006d036ca7a21c5c82e53fda019",
+  "candidate": "3a3701ab6edfa81dc883759403c170b8555aab07",
+  "new_commits": 31,
+  "novel_blobs": 152,
+  "novel_blob_bytes": 21316157,
+  "unsafe_private_native_media_paths": [],
+  "approved_mock_pngs": [
+    {
+      "path": "docs/redesign-mock/app-advanced.png",
+      "oid": "8ccd17d08f51ed3bdebf9123181e99779b854828",
+      "bytes": 161020
+    },
+    {
+      "path": "docs/redesign-mock/app-camera.png",
+      "oid": "13ef08241b3d9c65b238aaab134a5787740dc900",
+      "bytes": 149457
+    },
+    {
+      "path": "docs/redesign-mock/app-draw.png",
+      "oid": "f003f66766db11db0b8b6268ddac9ba4f1f95654",
+      "bytes": 139722
+    },
+    {
+      "path": "docs/redesign-mock/app-pose.png",
+      "oid": "59f2c6e8d56c9945ab082d219b72db8a30d8c41e",
+      "bytes": 169663
+    },
+    {
+      "path": "docs/redesign-mock/mock-camera.png",
+      "oid": "e780f92757734cea240a9e8e358f103e240a0c26",
+      "bytes": 323848
+    },
+    {
+      "path": "docs/redesign-mock/mock-draw.png",
+      "oid": "03279604fd9c97acde1a56573fd1c30e32336e96",
+      "bytes": 299673
+    },
+    {
+      "path": "docs/redesign-mock/mock-pose.png",
+      "oid": "3d94e8f1312689eb1abdda8db0e82a6430014e38",
+      "bytes": 309860
+    }
+  ],
+  "blobs": [
+    {
+      "path": "LLM.md",
+      "oid": "e87b36026da89709d21d159b800551cbf294d729",
+      "bytes": 510948
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "163f62211d236b6de131f6acba0a50e4816b13db",
+      "bytes": 105720
+    },
+    {
+      "path": "docs/redesign-mock/app-advanced.png",
+      "oid": "8ccd17d08f51ed3bdebf9123181e99779b854828",
+      "bytes": 161020
+    },
+    {
+      "path": "docs/redesign-mock/app-camera.png",
+      "oid": "13ef08241b3d9c65b238aaab134a5787740dc900",
+      "bytes": 149457
+    },
+    {
+      "path": "docs/redesign-mock/app-draw.png",
+      "oid": "f003f66766db11db0b8b6268ddac9ba4f1f95654",
+      "bytes": 139722
+    },
+    {
+      "path": "docs/redesign-mock/app-pose.png",
+      "oid": "59f2c6e8d56c9945ab082d219b72db8a30d8c41e",
+      "bytes": 169663
+    },
+    {
+      "path": "docs/redesign-mock/mock-camera.png",
+      "oid": "e780f92757734cea240a9e8e358f103e240a0c26",
+      "bytes": 323848
+    },
+    {
+      "path": "docs/redesign-mock/mock-draw.png",
+      "oid": "03279604fd9c97acde1a56573fd1c30e32336e96",
+      "bytes": 299673
+    },
+    {
+      "path": "docs/redesign-mock/mock-pose.png",
+      "oid": "3d94e8f1312689eb1abdda8db0e82a6430014e38",
+      "bytes": 309860
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "4c3384b6282326b53b452c1de338c8478ee7cc8b",
+      "bytes": 313646
+    },
+    {
+      "path": "src/canvas_view.gd",
+      "oid": "b40e163cab3ee681c131b8c9a0d70518405c02b7",
+      "bytes": 10467
+    },
+    {
+      "path": "src/dock_tree.gd",
+      "oid": "cba54e0ecbbf3b2fde75cd5b5cbc12fe32cd4029",
+      "bytes": 11350
+    },
+    {
+      "path": "src/home_screen.gd",
+      "oid": "b6fac4da7b1eab358cb7533b5eb1b216bc8419ae",
+      "bytes": 6686
+    },
+    {
+      "path": "src/movement_path_editor.gd",
+      "oid": "52359fb70b88f7578f90cb1f501d166583cbc925",
+      "bytes": 14542
+    },
+    {
+      "path": "src/movement_path_view.gd",
+      "oid": "b8be519e34b251bbbcdd5f3b715231fefd04f6c6",
+      "bytes": 3214
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "oid": "7c58a22c6e4be1369cb51bd253cb34c36951606a",
+      "bytes": 66080
+    },
+    {
+      "path": "src/reference_sheet_view.gd",
+      "oid": "3f180002c6fafe310ee295fd9e7679ad6ac6713a",
+      "bytes": 2535
+    },
+    {
+      "path": "src/scene_view.gd",
+      "oid": "8f421185beb41bdcb60193d1ff37dd43cd0b3d2c",
+      "bytes": 7510
+    },
+    {
+      "path": "src/sequence_editor.gd",
+      "oid": "f9ef88e6d824016427565d09fb7b25005371838c",
+      "bytes": 36505
+    },
+    {
+      "path": "src/sequence_timeline.gd",
+      "oid": "6090ec949a9b6ccb2a3556202efe59ed69b24ee3",
+      "bytes": 4944
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "c89c06554d46266c094adb726241601a3aff39d3",
+      "bytes": 53946
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "oid": "8183fe83904ff300a1906ffb399abe68aac6b87d",
+      "bytes": 5359
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "oid": "d2b9785374dab16dfed4c2f2a536a296f9dc3812",
+      "bytes": 55010
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "oid": "c44c1262b14fb103ce4575d03f8aaba32c39bc0b",
+      "bytes": 34983
+    },
+    {
+      "path": "src/world_selection.gd",
+      "oid": "bd48111e7a053d705b0a3d87f95c17ccda09fb3f",
+      "bytes": 32037
+    },
+    {
+      "path": "tests/animated_channels_smoke.gd",
+      "oid": "d79d9e2301ed93d1c108f0035753bd17b7838b79",
+      "bytes": 17202
+    },
+    {
+      "path": "tests/color_sampler_smoke.gd",
+      "oid": "193f4518c6ae3d825b8415d743b412a122de2a9e",
+      "bytes": 14768
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "oid": "554448d0dcd65f126db5e3fd3e264afe9e5f381d",
+      "bytes": 8522
+    },
+    {
+      "path": "tests/movement_path_smoke.gd",
+      "oid": "76059249f8ef8c93d121bb7775bec2ae455356df",
+      "bytes": 12627
+    },
+    {
+      "path": "tests/neon_behavior_regression.gd",
+      "oid": "63cad378e55bc70c9a00b184b1f19f3615838743",
+      "bytes": 12041
+    },
+    {
+      "path": "tests/neon_compact_timeline_reveal_smoke.gd",
+      "oid": "ff6ac0de21d196906089e18c0c0202880453a0fd",
+      "bytes": 6580
+    },
+    {
+      "path": "tests/neon_inset_scene_regression.gd",
+      "oid": "7f2708dc492eaf463c152040c958719ee029da60",
+      "bytes": 4803
+    },
+    {
+      "path": "tests/neon_rail_placement_smoke.gd",
+      "oid": "eb89fb87c2ca80ae3f7e2f12ead6fe4169409785",
+      "bytes": 7383
+    },
+    {
+      "path": "tests/neon_world_rail_lifecycle.gd",
+      "oid": "a35c43f62d7b31f193f39c74da0917038b338c99",
+      "bytes": 7118
+    },
+    {
+      "path": "tests/object_timing_smoke.gd",
+      "oid": "6fba92189dee8c464f610ef4b7207ebb335b6cf0",
+      "bytes": 15326
+    },
+    {
+      "path": "tests/scene_view_smoke.gd",
+      "oid": "62cf936df11bb4d2343dcf1334a9059232a419b8",
+      "bytes": 21142
+    },
+    {
+      "path": "tests/source_bone_bindings_unit.gd",
+      "oid": "c3ca9db4c3b134bb6b4ab7b5be15a80da6f95291",
+      "bytes": 27828
+    },
+    {
+      "path": "tests/verify.py",
+      "oid": "ee8713b1f07637a3dc63b454de1d15d7f83c981f",
+      "bytes": 54234
+    },
+    {
+      "path": "tests/verify_character_height.py",
+      "oid": "f7d086ca58b4a5bd0b85c04083efb24ab131fd37",
+      "bytes": 5647
+    },
+    {
+      "path": "tests/verify_neon_workspace.py",
+      "oid": "3a7a1f34c79b199bdd21564b50c6361d0b505997",
+      "bytes": 17700
+    },
+    {
+      "path": "tests/verify_scene_view.py",
+      "oid": "85d9e60b3256090faab2f20d365bb1ac9a5a4c8a",
+      "bytes": 2924
+    },
+    {
+      "path": "tests/verify_shape_catalog.py",
+      "oid": "4da7c460af4d59096f51d3eba06aa0a1489a59bd",
+      "bytes": 3811
+    },
+    {
+      "path": "tests/waveform_levels_smoke.gd",
+      "oid": "c4485b7bfab3e832471fa8692a7929cad1fe7fcf",
+      "bytes": 8450
+    },
+    {
+      "path": "tests/wind_review_port_files.json",
+      "oid": "0f8ce10ad3fdd68824e02abaf20b8e9da6526065",
+      "bytes": 6026
+    },
+    {
+      "path": "tools/linux/liveness_shim.sh",
+      "oid": "3f844e1cb5d633f598a7d09ab8153ac739cdb34d",
+      "bytes": 314
+    },
+    {
+      "path": "tools/linux/run_test.sh",
+      "oid": "c72a9ac8ec9cc02fae4d9e4f2073bc2a6fd7cae6",
+      "bytes": 2457
+    },
+    {
+      "path": "tools/linux/shoot.gd",
+      "oid": "df98f565d7c552b813791ba9fba1e830490803fc",
+      "bytes": 2488
+    },
+    {
+      "path": "tools/linux/shoot.sh",
+      "oid": "ec80b85dd8953fcc1586ea040a9307f6bd8ec91c",
+      "bytes": 1648
+    },
+    {
+      "path": "LLM.md",
+      "oid": "fa630a76ac0acf3542effaee0a42c7009de052c6",
+      "bytes": 510007
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "24b90ec003d940908edc9e6130cbc8ec24ec2ed5",
+      "bytes": 104779
+    },
+    {
+      "path": "LLM.md",
+      "oid": "fe7c24452c1125a5c49563e127b967bc769b7f01",
+      "bytes": 509180
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "7e5b3e1f72852896723ce1e12ae6827891da4001",
+      "bytes": 103952
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "1d1dd973d37600ffdac87ea6987db947b6cfd69e",
+      "bytes": 313617
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "oid": "bfedae19dd5e992e085636d43d7132f7f7773363",
+      "bytes": 8522
+    },
+    {
+      "path": "tests/wind_review_port_files.json",
+      "oid": "49b26524309f1349e1cb9f8b3b3e7ead92db2b70",
+      "bytes": 6026
+    },
+    {
+      "path": "LLM.md",
+      "oid": "efb589500369b87d7e0db1fbbbab951666d13360",
+      "bytes": 508170
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "6246fd70a311c39bb3ce1a08f3a961846062e98c",
+      "bytes": 102942
+    },
+    {
+      "path": "LLM.md",
+      "oid": "cddf182bce4c5173eebccd3d3a191ae3247f504d",
+      "bytes": 507351
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "065060c4d72b900539ccee012dea80e37904107e",
+      "bytes": 102123
+    },
+    {
+      "path": "LLM.md",
+      "oid": "ac338c4a9843775a9ce6d733b81da90557e87d17",
+      "bytes": 506497
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "aee281e736d0cf285db6d6103fdb332d639cfd4c",
+      "bytes": 101269
+    },
+    {
+      "path": "LLM.md",
+      "oid": "aaab4316906076ca0596e7b59bf7fa79b75fdb51",
+      "bytes": 505638
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "902dad0cfa1a03b3faaaa3e273600b567f0bd1b1",
+      "bytes": 100410
+    },
+    {
+      "path": "LLM.md",
+      "oid": "2b30a9b13a1774b987fe8bb24a7f8e6b6552f942",
+      "bytes": 504078
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "893a7d794c5575d34f74dbc054ba6bd3caf9b69a",
+      "bytes": 98850
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "oid": "650a8248d2c32748daa1dc174985c50f2c0b0d6b",
+      "bytes": 33654
+    },
+    {
+      "path": "src/world_selection.gd",
+      "oid": "928333410895098e8b969bf18cfeb1720420c11d",
+      "bytes": 31049
+    },
+    {
+      "path": "tests/neon_compact_timeline_reveal_smoke.gd",
+      "oid": "aa5fc423cb893293291b3e6666fe90441588b353",
+      "bytes": 6571
+    },
+    {
+      "path": "tests/neon_inset_scene_regression.gd",
+      "oid": "e36d20d7debe4b0f8d14867e9d74d63497b9cdcb",
+      "bytes": 4794
+    },
+    {
+      "path": "tests/verify.py",
+      "oid": "e239975f0e12d7be0445e9d90355e7d04bd11831",
+      "bytes": 54204
+    },
+    {
+      "path": "tests/verify_neon_workspace.py",
+      "oid": "91cd27f42e5ba622d72a7a3a26c33e02acaa9626",
+      "bytes": 16630
+    },
+    {
+      "path": "LLM.md",
+      "oid": "468cabe94ba127d15b027c3547c905a8e0144ba1",
+      "bytes": 502246
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "b8846ab5c04c1ff0e250d3f8bad9ced5909e12d6",
+      "bytes": 97018
+    },
+    {
+      "path": "LLM.md",
+      "oid": "6c4a3010ceeda7a62684e785679a23e1d6a43a4b",
+      "bytes": 499555
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "387edb0a800d10d96a3ad657817ed15035cafa77",
+      "bytes": 94327
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "c00b40d0e5a2bea89bb1f4031ed835fe41e270ef",
+      "bytes": 313386
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "oid": "09374b59b9048bd2b39e5dfb2acddac6f1d6a674",
+      "bytes": 33559
+    },
+    {
+      "path": "LLM.md",
+      "oid": "ba637c5a6bd1acd98eacdf93a0112c5f128fc514",
+      "bytes": 472660
+    },
+    {
+      "path": "LLM.md",
+      "oid": "6414fa08ee68597323492881d1eb7acfb1ca216f",
+      "bytes": 471800
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "77ea3ca0bfafc9febc6e1cde9a42bac33fa8c893",
+      "bytes": 81382
+    },
+    {
+      "path": "LLM.md",
+      "oid": "1407c343bdcf9f467028406472b50f57d42daca7",
+      "bytes": 470303
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "50af1a7bddd4e79508d170788da9c8eb3a8918c5",
+      "bytes": 77544
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "ad127434c30b7bb25a2cb6435100d8e9049af8ba",
+      "bytes": 303531
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "oid": "3a84ddf1141269c187060562d96f3eda526a6aa7",
+      "bytes": 65630
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "0ac3cd05c0d5689b44a588fbc11a85e382f1402a",
+      "bytes": 53841
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "oid": "9f5a3f8e1c941fe1215e962324aa5d2f446ac046",
+      "bytes": 54902
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "oid": "86788ddaef50edc928bc7d12420ec0c5dd081f12",
+      "bytes": 31351
+    },
+    {
+      "path": "LLM.md",
+      "oid": "630a79c44b482163f519a988259183380a087ebe",
+      "bytes": 469057
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "a0fab0c0ba5fe721f219ce56f1ba65fc589b5e29",
+      "bytes": 72177
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "45c5e7e73d095062199b4ae968bac4fe96efff47",
+      "bytes": 296601
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "oid": "e1bcd72d6a5cab38cbb66763f0e4552dac7d51c1",
+      "bytes": 65226
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "6e916da7aefcfbaceeac16a5274e8892279814d8",
+      "bytes": 53502
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "oid": "07d3ef45100e55f6bd806b4bf52f76c6336769bb",
+      "bytes": 5094
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "oid": "a6db5cf93398553d623c3171f7462c90b9ceab0c",
+      "bytes": 53423
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "oid": "6ae4e8f452fefcfb60283628c9802d205c3e1924",
+      "bytes": 28890
+    },
+    {
+      "path": "src/world_selection.gd",
+      "oid": "f7131fe5713468e17d3c7cb39ed691d92afcfe1f",
+      "bytes": 30371
+    },
+    {
+      "path": "LLM.md",
+      "oid": "b3a73ac483efc4384b2288adbf4e498ce8e283e7",
+      "bytes": 467474
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "5021f62fbe48e706cb3248d4312702e6a20e6669",
+      "bytes": 67050
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "404400e3099cc33f63d8146d2cd89ee04ea4115c",
+      "bytes": 281721
+    },
+    {
+      "path": "src/canvas_view.gd",
+      "oid": "828b5b2dc18f6fe722310389f14606e9bc2e54f2",
+      "bytes": 9822
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "oid": "bb1deb97db122ad486734dc7829fbdf9265d8a60",
+      "bytes": 63459
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "c690823a6a384d823603005d987a3456fafef4ac",
+      "bytes": 50834
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "oid": "fbb8c2e254e50592ced6eda9c4bc0ec2eab03849",
+      "bytes": 4863
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "oid": "a46b2d5235cb36e45c99cb59bce19a4e7d62c2dd",
+      "bytes": 50670
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "oid": "71150d2b9250a1a67cfb73d2ffcdd50bd864f37c",
+      "bytes": 26916
+    },
+    {
+      "path": "src/world_selection.gd",
+      "oid": "5e19a6e426574550ba3aed982cb2c2027a75a16c",
+      "bytes": 30068
+    },
+    {
+      "path": "LLM.md",
+      "oid": "f4cfa5b93758c024be32d127f8c6ca8e9de440ab",
+      "bytes": 465175
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "3628c3ca3f3a3aca0ffd00da0eb3008ae21ab430",
+      "bytes": 59260
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "f00f757a9a7146b98bc12b0be5dcea2ba3ad6b0e",
+      "bytes": 279662
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "oid": "86d0b64b704868984b0dfb24adc681f2c23dc8aa",
+      "bytes": 25840
+    },
+    {
+      "path": "LLM.md",
+      "oid": "b6377d672b5e108f8b9280be618d2b96a179bfaa",
+      "bytes": 463175
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "faa974fdd596400a3a81ab33011c120f7887d64a",
+      "bytes": 51471
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "574456d2863a35e08fb55a4885c57a916a888d5b",
+      "bytes": 279560
+    },
+    {
+      "path": "LLM.md",
+      "oid": "1c3c4a1f44a485d25e3ef2a112b103e45941c1fc",
+      "bytes": 461412
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "49b47db7e04dbd92b54e87e3fb93850f9da23aee",
+      "bytes": 44287
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "0e82e6b51700efe3ff4de1e8120a433f194159e4",
+      "bytes": 261148
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "79ab8138c051bf5222e27f93191ed7fd67c1ca32",
+      "bytes": 49892
+    },
+    {
+      "path": "LLM.md",
+      "oid": "8bd51fba7c966c04774323b31ea370efa1524d80",
+      "bytes": 459646
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "4759417799e4ef9b19d4c8415e88a109a2fade8e",
+      "bytes": 36721
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "66a1da53d3a0bf0b9555ab70204749dcd4348856",
+      "bytes": 250795
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "7d9d1fa0ba2f08bd109cea8cb1bfc3d9a5f60558",
+      "bytes": 48826
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "oid": "b4a4b3abd7611bfe33f8f95ae36c1c08169ceac9",
+      "bytes": 25579
+    },
+    {
+      "path": "LLM.md",
+      "oid": "1ef2865f8a72a8c68a97f4994a16e35ee6878bba",
+      "bytes": 457824
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "39c0559e02831f0a33e1036615573275795cb21c",
+      "bytes": 30074
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "1b5891a0903831243348ae10b2b72b6e41d2b541",
+      "bytes": 221810
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "4346818fcc87489489b2ef8cc323c5bdd6cc9aa4",
+      "bytes": 48194
+    },
+    {
+      "path": "LLM.md",
+      "oid": "5ebe87d0c4297f08621d9fa6a0c2682424faa569",
+      "bytes": 456200
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "fd688ce9e3a2f37bb3dc2326656f867142a01b88",
+      "bytes": 21648
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "428d540356d857e740d663b7848e6dc895a6f821",
+      "bytes": 182527
+    },
+    {
+      "path": "src/canvas_view.gd",
+      "oid": "8516b5369d46d16c9e721ed8f9558b30a2abcb0d",
+      "bytes": 8469
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "0117018f5afbfee5c82cdad2827188c451ff7f92",
+      "bytes": 45670
+    },
+    {
+      "path": "LLM.md",
+      "oid": "9d3534fd46e2d5b2f41779ca2a9e569021e62613",
+      "bytes": 455000
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "cd29d4b599bc46049f08511194b3080d73e0e8b8",
+      "bytes": 16304
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "934a7ba5cb4273ca5ce2ebe950663bb2356f21a5",
+      "bytes": 182158
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "d6efb2b75cef50537c03ec5553bd04c53d25cd45",
+      "bytes": 45053
+    },
+    {
+      "path": "LLM.md",
+      "oid": "a428c18a9ac9cd5474b8d2320f76674144d3e701",
+      "bytes": 453974
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "a942d47462f3e7dbaff8a8e1e0d776920a46a0eb",
+      "bytes": 12119
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "d344f55e7d25b2dfcca635b5a7229841e0b5b625",
+      "bytes": 162825
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "ad32883c34a3c264fb7228112a04892cff81e810",
+      "bytes": 44142
+    },
+    {
+      "path": "LLM.md",
+      "oid": "ebc3be2e53eaf91930017bdf11ca261b129aab70",
+      "bytes": 452841
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "8507d8d8eae5742bf74676ea24aad2ada68c388c",
+      "bytes": 7504
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "c9d4e04fd4c6f1cfd63ae91b43c254e01cd003d5",
+      "bytes": 161188
+    },
+    {
+      "path": "src/canvas_view.gd",
+      "oid": "5b904063ca38c40118847415c228975bd56bc01d",
+      "bytes": 8134
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "e21f8627edd003672fc16bd441aef4e30bc4b47b",
+      "bytes": 10236
+    },
+    {
+      "path": "LLM.md",
+      "oid": "f9b5a1b9527b0528184439e46433d87a979af513",
+      "bytes": 217405
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "oid": "9ce9713122849bae539478c9465c4308374c48f3",
+      "bytes": 6327
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "cc583ba9d4fc75dcdcc6dea7438b7d1ed0da5195",
+      "bytes": 155565
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "d859cc7d914667700e387fc6173c93c3e2784357",
+      "bytes": 154676
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "e5e234ce56fe38c74d195d93adac1a1265463da5",
+      "bytes": 151534
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "oid": "ccd20622229d61629b835ba25d9aa0ec9b9d9287",
+      "bytes": 9549
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "2c5c9aa1c887f6e49c419f59f00fa0d07f188076",
+      "bytes": 147385
+    },
+    {
+      "path": "src/app.gd",
+      "oid": "92800621e4ad4fe89329d2abb4f27af3e23d1ba9",
+      "bytes": 147043
+    }
+  ]
+}

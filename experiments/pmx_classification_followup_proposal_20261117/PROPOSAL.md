@@ -1,0 +1,18 @@
+# Proposed unqualified PMX classification observation
+
+Status: source proposal only. No implementation, driver, actual classification, private input access or native protocol qualification exists in this packet. The original four-positive-witness acceptance gate and every original cap remain unchanged. Its four-case positive qualification remains false.
+
+Use a separate classification manifest. The original `common.frozen_manifest` correctly requires four completed, preserved positive witnesses and must not accept this narrower record.
+
+1. Before any candidate import, Root freezes all four exact source/copy identities, original oracle outcomes, passive count results, and the single complete witness's byte length and hash. Preserve the three refusals explicitly; do not synthesize missing witnesses, replace cases or change old completion flags. Bind the same four-case provenance and pinned source packets throughout.
+2. Each negative case requires the exact candidate `Refusal('count budget joints')`. A separately reviewed passive event immediately before the unchanged candidate count guard records the fixed table, count, ceiling and count-token offset. Match that private tuple against the independently frozen oracle joint event. Both original joint ceilings remain 1024. A different or earlier refusal is unresolved, even if both parsers refused. Tuple agreement describes bounded refusal concordance; it does not prove prefix correctness or the validity of an unsupported model.
+3. Only the independently completed case proceeds through the unchanged candidate reader and typed declaration comparator. Use the authored empty GLB carrier and unchanged archive assemble/extract APIs, requiring exact canonical capsule roundtrip. Select this case from the frozen oracle outcome before observing candidate results.
+4. Root later records all four classifications and actual source/input preservation and retained-child closure. Public projection contains only fixed case classifications, preservation/closure states and proof hashes. Native names, counts, offsets, witnesses, words and capsules remain private.
+
+The candidate has a 2 MiB conservative retained-metadata cap; the oracle has an 8 MiB retained-output cap, and its witness also has an 8 MiB observation bound. Earlier reference checks and other unchanged guards can make the candidate refuse before the joint boundary or prevent the positive comparison. Record the outcome without widening limits, bypassing guards, fitting witnesses or substituting friendlier cases. Retain the existing source-byte, work, output, archive and retained-host time/closure bounds.
+
+This observation could establish one bounded declaration correspondence and archive self-consistency result. Geometry, actual model GLTF or HAS retention, solver behavior, physical fidelity, production adoption and four-case native protocol qualification remain unproved. Expected negative classifications are not positive qualification. The old comparator/archive source-only labels remain intact.
+
+Execution ordering remains Root-owned. Close and release the active full lane before any native follow-up. Root must run corrected B resource runtime `82727caa` through binder `eacc7b33` before functional Main merge: that unchanged binder requires qualified52 Main/1019, while merged Neon Main would have 1029. This PMX proposal authorizes no native launch or change to either sealed B packet.
+
+Independent source-risk review agreed with this scope. SOURCE_BINDINGS.json identifies the public source basis; no private observations were read to prepare this proposal.

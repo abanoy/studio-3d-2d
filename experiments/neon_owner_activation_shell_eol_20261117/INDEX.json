@@ -1,0 +1,53 @@
+{
+  "format": "has_source_experiment_index_1",
+  "qualification": "SOURCE_SYNTHETIC_ONLY_EXACT_PARENT_BINDINGS_NO_ACTUAL_ACTIVATION",
+  "parent_INDEX_sha256": "c9277f65a2ccc8af36a2d0c4a91799907167b1bf04264ed0f01ab245b637d080",
+  "CPU_methods": 12,
+  "actual_activation": false,
+  "executor_parent_INDEX_sha256": "3ea125a3c043688c2bf5f2dbe5ce4c41501ea41b7f831575eefbe5bdfffbdcf4",
+  "validator_parent_INDEX_sha256": "a38e4866df7f8810d73e616b05b728b4e088dd4c84015b2ff65c6a8f1cbb3e64",
+  "payload_files": 8,
+  "payload_bytes": 23940,
+  "files": [
+    {
+      "path": "CPU_REPORT.json",
+      "bytes": 704,
+      "sha256": "074e58ee3ee765b550609fddbde99d1c13d1db35211eb8a814bab3f7246cd805"
+    },
+    {
+      "path": "CPU_TESTS.log",
+      "bytes": 1999,
+      "sha256": "4d9bb88af08f78ed2a5d23bb05296bc7a0da663d1c5b8a3fa742e51885f2d840"
+    },
+    {
+      "path": "EXECUTOR_ACTIVATION.template.json",
+      "bytes": 3751,
+      "sha256": "c89d701978a6bd40dd68a9ccf397b337ade0b85f7ffbb50ea7e5fc46237ae891"
+    },
+    {
+      "path": "README.md",
+      "bytes": 963,
+      "sha256": "b7ef65c7c71d1c19aa79310422f57ace0d102cc4e956b4c0dd55a5355b90f95c"
+    },
+    {
+      "path": "render_successor.py",
+      "bytes": 6310,
+      "sha256": "954a5f26664d9fe087343491652ca53311cea7607c465ad06491a27d2640634c"
+    },
+    {
+      "path": "SOURCE_BINDING.json",
+      "bytes": 1981,
+      "sha256": "44b5c1636eb4cafaeb11c75d3f60b97035555dcb63fa8c7bc3558f710bb8c32c"
+    },
+    {
+      "path": "test_render_successor.py",
+      "bytes": 6948,
+      "sha256": "647a1d8415aa0a1a3de4ec57afb661b4ea104b55f7df9ada42e3ef1f85fe0401"
+    },
+    {
+      "path": "VALIDATOR_ACTIVATION.template.json",
+      "bytes": 1284,
+      "sha256": "1cd083eea8641075f46df41f1d79e08363f9534d6136fbd6a3aa4b8e1a74c7d2"
+    }
+  ]
+}

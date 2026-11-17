@@ -1,0 +1,764 @@
+{
+  "format": "has_public_neon_qualified_merge_source_checkpoint_catalogue_1",
+  "files": [
+    {
+      "path": "LLM.md",
+      "bytes": 575382,
+      "sha256": "b79b0c0a6c3ce0345dc2a85dc86342b801cf43607e5d40a6d399d870063037fb"
+    },
+    {
+      "path": "docs/RESUME_MASTER_PLAN.md",
+      "bytes": 111833,
+      "sha256": "70b9294aeb7afe9efc4371e8fe3bef0cbcc7ea7d27c1c7b88ab733cdb8e2638b"
+    },
+    {
+      "path": "docs/benchmarks/neon_review_2026-11-17.json",
+      "bytes": 54887,
+      "sha256": "5d6b8d1da9232ae4492cb4edcc1dbd1bd1bc06d402b9a6f2a6ceb9aae3d7b299"
+    },
+    {
+      "path": "docs/completion_checklist.json",
+      "bytes": 205370,
+      "sha256": "60b839862baf2395707a466087a9304a44e49de65f44ce7eb8f7c070ba0352e7"
+    },
+    {
+      "path": "docs/progress_memo.md",
+      "bytes": 1403294,
+      "sha256": "47313e3a1e02228b8e434606a84428697b8422c69d0cfccd3af0ae948361e524"
+    },
+    {
+      "path": "experiments/native_B_resource_refusal_followup_20261117/INDEX.json",
+      "bytes": 1424,
+      "sha256": "b2dffa81b4d9f0b04a066001d6131131a0c5a3195af122976d76d5e6dee64bb6"
+    },
+    {
+      "path": "experiments/native_B_resource_refusal_followup_20261117/PROPOSED_CLASSIFIERS.md",
+      "bytes": 3456,
+      "sha256": "7a6defb4aa7b048b38928046b208568b0f8d951ee20d0342a32e68217c80e68d"
+    },
+    {
+      "path": "experiments/native_B_resource_refusal_followup_20261117/ROOT_ATTESTED_SCALARS.json",
+      "bytes": 2248,
+      "sha256": "530b125bbc03ba533796fb3f388514c0c25a78850dd68b5361b700650bf3f4fd"
+    },
+    {
+      "path": "experiments/native_normal_carrier_adapter_readiness_20261117/INDEX.json",
+      "bytes": 801,
+      "sha256": "dabd9d3af832ae59dce03fb5783b7ae8df3cd8cd88ef61279dc5d9875900238e"
+    },
+    {
+      "path": "experiments/native_normal_carrier_adapter_readiness_20261117/PROPOSED_ADAPTERS.md",
+      "bytes": 5722,
+      "sha256": "901ecde5070cb062c4546f0a6c43de7c333114c2209c9f24b6ac5781e83000fd"
+    },
+    {
+      "path": "experiments/native_normal_carrier_adapter_readiness_20261117/SOURCE_BINDINGS.json",
+      "bytes": 3590,
+      "sha256": "8b5831a3d22fb78f0067643fdb8b02662ed51e4b3169385fffd7a4529dc86ed0"
+    },
+    {
+      "path": "experiments/neon_3a_mmd_full_pass_actual_20261117/INDEX.json",
+      "bytes": 721,
+      "sha256": "941e9aeab6d788fd7e92603a0a8f9e7c2fde0f48e2f5c9193b37c8a931dc851a"
+    },
+    {
+      "path": "experiments/neon_3a_mmd_full_pass_actual_20261117/PROTECTED_INPUTS_AFTER.json",
+      "bytes": 327,
+      "sha256": "4122cb12b5bbd70df5a9e1df7a26ac48c8ae2ffbf1892fe9ca09c782c7e6ab10"
+    },
+    {
+      "path": "experiments/neon_3a_mmd_full_pass_actual_20261117/RELEASE.json",
+      "bytes": 1547,
+      "sha256": "85fd7c7ab1cd4ae6029781253c357a91f5662a23070c390f1858e9553b81d1a7"
+    },
+    {
+      "path": "experiments/neon_3a_mmd_full_pass_actual_20261117/RESULT.json",
+      "bytes": 3066,
+      "sha256": "e0c423c65d3ed11af8bd3f6aa7ac4a14dbd3c1d80df2baf1e84ed0671a408672"
+    },
+    {
+      "path": "experiments/neon_3a_mmd_full_pass_actual_20261117/STATE.json",
+      "bytes": 827,
+      "sha256": "4cfa1060cab129aade1bb749111d6b5792cb07ee8e8b2f27c3d32171807068c1"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_delta_proposal_20261117/CANDIDATE3A_RAW_CANONICAL_MAP.json",
+      "bytes": 230841,
+      "sha256": "f2b775a0cecdd6d1aae1d27dee33fff3f1196f56abd1331193195c8964c191df"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_delta_proposal_20261117/DERIVATION.json",
+      "bytes": 2214,
+      "sha256": "93b48573db232e62560928b4e31525e6c69119fc5e3d5193123cbbe5b1e437b8"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_delta_proposal_20261117/INDEX.json",
+      "bytes": 1802,
+      "sha256": "36b5c4c6ccee9a3f783864b7648a2dba708f6d91189ee996228748392125ffd8"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_delta_proposal_20261117/OLD52_RAW_CANONICAL_MAP.json",
+      "bytes": 228580,
+      "sha256": "2952ea86c7511e3761c53f8907019b8c72cdd19ea308b23f101235a689b31b30"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_delta_proposal_20261117/PROPOSED52_TO_CANDIDATE_DELTA.json",
+      "bytes": 67657,
+      "sha256": "38f9cf4ffd3b82e64cf8f26c6f83c75f02aedf28c204fba826db18311f34798d"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_delta_proposal_20261117/README.md",
+      "bytes": 1552,
+      "sha256": "6e375b35d84c91242610a25768f0fbdb9bd851bded6ae9e25e4b2a54f8242403"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_delta_proposal_20261117/SOURCE_VALIDATION.json",
+      "bytes": 1027,
+      "sha256": "442a5db9ecdb91cf37c93ca796a05f5aaa96e341e7d28d01e52cb4206ade2408"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_delta_proposal_20261117/derive_proposal.py",
+      "bytes": 7902,
+      "sha256": "12face0b217b2d7fa525539ae364aa305b207c7b1a2c796ab6ba408c2484a039"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_root_review_20261117/INDEX.json",
+      "bytes": 349,
+      "sha256": "c3cac0b610b632d6bd519700e6066c87852d2447fff56c39b6bfc22f3a24834c"
+    },
+    {
+      "path": "experiments/neon_3a_shell_eol_root_review_20261117/REVIEWED52_TO_CANDIDATE_DELTA.json",
+      "bytes": 68546,
+      "sha256": "129beeac3bf394774d26c603063b63813ebc84070444987cce51dacd361affdb"
+    },
+    {
+      "path": "experiments/neon_mmd_remote_verifier_preparation_20261117/FIRST_READBACK_REFUSAL.json",
+      "bytes": 1105,
+      "sha256": "fe16cd149dc89c8cd00e7b7e5b3c844055ebf2e9cc6420b5781aacf9693586ea"
+    },
+    {
+      "path": "experiments/neon_mmd_remote_verifier_preparation_20261117/READBACK_HISTORY.json",
+      "bytes": 2257,
+      "sha256": "834e1506e12e3d15679e53816552c9a60ddf02f4a036b72413993efc9eac51de"
+    },
+    {
+      "path": "experiments/neon_mmd_remote_verifier_preparation_20261117/SOURCE_DERIVATION.json",
+      "bytes": 1867,
+      "sha256": "39528f80a179603a020da8cfa0f322797ae6b069eead320e59a3e11e105b84be"
+    },
+    {
+      "path": "experiments/neon_mmd_remote_verifier_preparation_20261117/prepare_verifier.py",
+      "bytes": 3709,
+      "sha256": "734a51c16ab15b6829d92449dc9f9793fd7baf64243011652b646eb10fd09f9a"
+    },
+    {
+      "path": "experiments/neon_mmd_source_checkpoint_remote_20261117/COMPLETE_READBACK.json",
+      "bytes": 400912,
+      "sha256": "ca28ba8c8d9cf121f854c18d627c0975e474aca7ed5babcd628218cc497e57ec"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/CPU_REPORT.json",
+      "bytes": 704,
+      "sha256": "074e58ee3ee765b550609fddbde99d1c13d1db35211eb8a814bab3f7246cd805"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/CPU_TESTS.log",
+      "bytes": 1999,
+      "sha256": "4d9bb88af08f78ed2a5d23bb05296bc7a0da663d1c5b8a3fa742e51885f2d840"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/EXECUTOR_ACTIVATION.template.json",
+      "bytes": 3751,
+      "sha256": "c89d701978a6bd40dd68a9ccf397b337ade0b85f7ffbb50ea7e5fc46237ae891"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/INDEX.json",
+      "bytes": 1793,
+      "sha256": "1f42a221ad7de5094675d29888c51e5ddc60cb52a44e3ceecaa6b1866e57a367"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/README.md",
+      "bytes": 963,
+      "sha256": "b7ef65c7c71d1c19aa79310422f57ace0d102cc4e956b4c0dd55a5355b90f95c"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/SOURCE_BINDING.json",
+      "bytes": 1981,
+      "sha256": "44b5c1636eb4cafaeb11c75d3f60b97035555dcb63fa8c7bc3558f710bb8c32c"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/VALIDATOR_ACTIVATION.template.json",
+      "bytes": 1284,
+      "sha256": "1cd083eea8641075f46df41f1d79e08363f9534d6136fbd6a3aa4b8e1a74c7d2"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/render_successor.py",
+      "bytes": 6310,
+      "sha256": "954a5f26664d9fe087343491652ca53311cea7607c465ad06491a27d2640634c"
+    },
+    {
+      "path": "experiments/neon_owner_activation_shell_eol_20261117/test_render_successor.py",
+      "bytes": 6948,
+      "sha256": "647a1d8415aa0a1a3de4ec57afb661b4ea104b55f7df9ada42e3ef1f85fe0401"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/CPU_RESULT.json",
+      "bytes": 6017,
+      "sha256": "0726ce3d2372d3cd9144b941cbaf5d78a89407132f43f342d5dc7f4730aa2608"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/DERIVATION.json",
+      "bytes": 2509,
+      "sha256": "b7e439556e6233c20fabc1a7f12c0f6f0be4ab71b4f3e2f50cf82e121e777f45"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/INDEX.json",
+      "bytes": 2794,
+      "sha256": "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/PREDECESSOR_SOURCE_PINS.json",
+      "bytes": 1634,
+      "sha256": "9ea490d256bd151cc39d703ad1eae28f7699616f4a21df3074ba386f6f7203f3"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/README.md",
+      "bytes": 1631,
+      "sha256": "e5be24ceb49c9aea0dd820cb8b68c54b6b0c85d6464d5f49b239a3857eef55ed"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/admission_core.py",
+      "bytes": 18051,
+      "sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/derive_source.py",
+      "bytes": 3152,
+      "sha256": "8513ff9f7140a92a31ad96843185ec21755de0d9f5e1fa1d4b9312b735c31ca4"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/legacy_result_gates.py",
+      "bytes": 19506,
+      "sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/reference_close_terminal.py",
+      "bytes": 21900,
+      "sha256": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/reference_registry.json",
+      "bytes": 5955,
+      "sha256": "07f25193d138d58516b9a1f50f4abe791a56cbaef5769d22ff91e670a8178352"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/reference_test_terminal.py",
+      "bytes": 13044,
+      "sha256": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/test_admission_core.py",
+      "bytes": 17235,
+      "sha256": "799431e4acb958034f8101fb608f24fadca19f518a56e68a4dad54334799b191"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/test_shell_eol.py",
+      "bytes": 4641,
+      "sha256": "f14f728bdd3d786cdbca97c3cfc5b060596855c08e6c56b35b0565e2bde3c2cd"
+    },
+    {
+      "path": "experiments/neon_owner_admission_shell_eol_20261117/validate_and_seal.py",
+      "bytes": 3491,
+      "sha256": "bb23c6dd9bad5972bc0ee1f2feef17c530ef2da1ae3d06d4fa24279ba2901de7"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/ACTIVATION.template.json",
+      "bytes": 1284,
+      "sha256": "1cd083eea8641075f46df41f1d79e08363f9534d6136fbd6a3aa4b8e1a74c7d2"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/CPU_RESULT.json",
+      "bytes": 1715,
+      "sha256": "01edcdbae44a0299505254c8b6b1918c5f84b8b9823294952c245600baecd457"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/CPU_TESTS.log",
+      "bytes": 4788,
+      "sha256": "da60c61b616c3fba81cb264b518ff733a6b123734ae6d04f40c54f46d5a29f94"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/INDEX.json",
+      "bytes": 3594,
+      "sha256": "a38e4866df7f8810d73e616b05b728b4e088dd4c84015b2ff65c6a8f1cbb3e64"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/PEER_REVIEW.json",
+      "bytes": 3018,
+      "sha256": "294f4b4098511acb388fb23fc3aa7c0757f56712f7ed9114601ef0030d114a11"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/READINESS.json",
+      "bytes": 1276,
+      "sha256": "d5dea48c63cbdf816c78d0e0b8a467bc7d306bcc888dd586b35aab6d70337acb"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/README.md",
+      "bytes": 874,
+      "sha256": "ac2816b36efe2917a0e2b42c8055c92fbb7e9fd95ad65eca82780b773c111bd4"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/SOURCE_BINDING.json",
+      "bytes": 1468,
+      "sha256": "c5542b3e34ca1ae3910c7580ea150934bd26d36743c35108860c5e6872c3433b"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/SOURCE_DERIVATION.json",
+      "bytes": 2930,
+      "sha256": "8f7a163daf4d8c1efe59a92d63a32b9eaf80566ab7a9e4386e148fef5760c06d"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/audio_contract.py",
+      "bytes": 2561,
+      "sha256": "4e4351d82293fd6156712c1c81bd532c35cd7a13e0a091f3dca26628a1d0ec93"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/input-lock.json",
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/reference-lock.json",
+      "bytes": 7704,
+      "sha256": "e5dbbbd1cc21d143fc9c6d56996b6aec97b1b0f9167f334c274a77d246ab9413"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/reference_qualified_inputs.py",
+      "bytes": 31851,
+      "sha256": "4ec96ec0aac53813600fa9807a7bfa065a542b2cd07e9413c031f0e7677f3a73"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/reference_validator.py",
+      "bytes": 24841,
+      "sha256": "f6e87e8eb239bc08843ef1b3f369b449509bae98128db770b3835639185f8514"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/replay.gd",
+      "bytes": 24430,
+      "sha256": "d9259db293e1abc9809636ec461b9d2888778b5d57b1faa78a76026aea746450"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/replay_runtime.py",
+      "bytes": 16740,
+      "sha256": "57c9959c395cd5e4a45880e17f3a2a93d64fb4bb9e855aa747ef84fc87789366"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/test_replay_runtime.py",
+      "bytes": 7417,
+      "sha256": "250ab1c5b300a03419522245d723606044c4741e6f773cb1d70b688851ac4580"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/test_validation_admission.py",
+      "bytes": 8437,
+      "sha256": "248cf450542d32b70feee9a037b9a532e09cd0b16cd37b6755cfafce14f9feac"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/validation_admission.py",
+      "bytes": 15644,
+      "sha256": "1c4d2026accaf22292f43dba338058f5c4d38346a557aee057e1b30eaabe26ff"
+    },
+    {
+      "path": "experiments/neon_owner_cold187_shell_eol_20261117/verify_packet.py",
+      "bytes": 2309,
+      "sha256": "098773ec03ebb544c10c88708ea98981a6c02d30065ec71672ccfdc585804dd5"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_glue_20261117/INDEX.json",
+      "bytes": 1232,
+      "sha256": "607c890490f8b69f30b098ec765ebd19b432da37597309c81e8d9d7a840611c6"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_glue_20261117/README.md",
+      "bytes": 3201,
+      "sha256": "5ef07c12d846fadf13f619e8ebedf19ca40fd8aee567a21a49a7a0711551172a"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_glue_20261117/SOURCE_VALIDATION.json",
+      "bytes": 987,
+      "sha256": "9b20ef60c8eb556c5f25d95c223645c8427416bca941eeabe15f9c0484be908f"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_glue_20261117/check_source.py",
+      "bytes": 3739,
+      "sha256": "12a4a8ec68f36eec6dbaab0115050d3662ea139708f6df17ff10d392f9b3fe31"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_glue_20261117/prepare_executor.py",
+      "bytes": 18150,
+      "sha256": "48253538345e475cea042a5df91cfc75a42d4e42c6876a7165331d4ba04df12b"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_shell_eol_20261117/INDEX.json",
+      "bytes": 1549,
+      "sha256": "21980dfe510f8ad4edafd1a97101e9251a81ca526365cb8177fc32255c30d883"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_shell_eol_20261117/README.md",
+      "bytes": 3486,
+      "sha256": "91fb50844747d23ff5b132aa22569860f3fef561df6d09563ad969553351686d"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_shell_eol_20261117/SOURCE_BINDING.json",
+      "bytes": 2632,
+      "sha256": "8f62b2ab380319fa71158462130ed087d5df79872a6526f4d0391c8ebcd43fb9"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_shell_eol_20261117/SOURCE_VALIDATION.json",
+      "bytes": 668,
+      "sha256": "6371734b4597ce2c74f45f84b6956ddb09ef3b6cfba0f71f7b9a3e2db62629f4"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_shell_eol_20261117/check_source.py",
+      "bytes": 3729,
+      "sha256": "16cb800b88bd939db8f0df3c9017a5ec3e60912cc6baf2a8b93a34e40da25d90"
+    },
+    {
+      "path": "experiments/neon_owner_executor_preparation_shell_eol_20261117/prepare_executor.py",
+      "bytes": 18137,
+      "sha256": "4ce6fc3c619c87d16c407306443325c30d10e8234655ee16309b8d979b668a2e"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/ACTIVATION.template.json",
+      "bytes": 3751,
+      "sha256": "c89d701978a6bd40dd68a9ccf397b337ade0b85f7ffbb50ea7e5fc46237ae891"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/CPU_RESULT.json",
+      "bytes": 1028,
+      "sha256": "ccf8c32a82544bf45be7b57dc5d3608b3ac455a9f16cbdd4c530780d7e755c66"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/CPU_TESTS.log",
+      "bytes": 5621,
+      "sha256": "1b82a4be08a8357095f64a96105dacb0076a171d664710ebf18c83f3c0352922"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/INDEX.json",
+      "bytes": 3605,
+      "sha256": "3ea125a3c043688c2bf5f2dbe5ce4c41501ea41b7f831575eefbe5bdfffbdcf4"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/READINESS.json",
+      "bytes": 1566,
+      "sha256": "e6f38c2813fede6c5e77fb39d056bbd7a66cf2a682b8e9ef171964fa20fc0fa4"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/README.md",
+      "bytes": 800,
+      "sha256": "43052514717527f88cf3f05fb2eb4adf3fc98ee334747d8a26eec5b33ab7a28a"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/README.template.md",
+      "bytes": 2290,
+      "sha256": "e704c4f9f69c10953bf3097eb107cdada1a7a33e79629978c9c14d5407f5b2a8"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/SOURCE_BINDING.json",
+      "bytes": 1644,
+      "sha256": "5c867885343774adb0a59160bc9006a0a8ac150aedfda1980ac8a5b624f52264"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/SOURCE_PROOF.json",
+      "bytes": 3798,
+      "sha256": "4fb376a5fb3a149c66120610384f0a3abf6fbeec3663e08a807518c606decfe7"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/admission_core.py",
+      "bytes": 18051,
+      "sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/copy_executor.py",
+      "bytes": 15364,
+      "sha256": "0d966a3c229fe21aed6a27c425ca1c6704cdb28d57e52a39c00098f88332bcf2"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/legacy_result_gates.py",
+      "bytes": 19506,
+      "sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/qualified_inputs.py",
+      "bytes": 31851,
+      "sha256": "4ec96ec0aac53813600fa9807a7bfa065a542b2cd07e9413c031f0e7677f3a73"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/reference_builder.py",
+      "bytes": 20164,
+      "sha256": "a09361bf71593cc7ddc38af31e096abe97338a0437077b1cbff2e6558eca6f1e"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/reference_close_terminal.py",
+      "bytes": 21900,
+      "sha256": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/reference_registry.json",
+      "bytes": 5955,
+      "sha256": "07f25193d138d58516b9a1f50f4abe791a56cbaef5769d22ff91e670a8178352"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/test_copy_executor.py",
+      "bytes": 9913,
+      "sha256": "19de5733c5acd328fbb0410cfc0436c0440db0d88479f6aed9295aa92b6090ec"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/test_qualified_inputs.py",
+      "bytes": 9183,
+      "sha256": "9c3433871280897c16b75abde3fd0afdf35f35767aa87bb27dd16ce50417a33f"
+    },
+    {
+      "path": "experiments/neon_owner_executor_shell_eol_20261117/verify_packet.py",
+      "bytes": 2580,
+      "sha256": "045def1c469092c8d0f4e20d44615f2942ec748bbcde961c6c38f0094c8e9bc1"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_glue_20261117/INDEX.json",
+      "bytes": 1336,
+      "sha256": "8fc4c53bc0920b9912a66e4a94de018495ae598fee9feaacf2e022c4d4b08a7a"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_glue_20261117/README.md",
+      "bytes": 2677,
+      "sha256": "3e17ac63cfa05eb094241df485e409b7ac52e0c6e17b6665260e3e96d0dcc2ea"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_glue_20261117/ROOT_LAUNCH.md",
+      "bytes": 4892,
+      "sha256": "9effc8ca00c933a2af69c5874f7bdb8dde28620bb046817e5063be7515f0eefd"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_glue_20261117/SOURCE_VALIDATION.json",
+      "bytes": 1026,
+      "sha256": "78a2ce551b296a5718c3bf7863cfe3b884c887a3f835558e9c75f0269d47f7f0"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_glue_20261117/check_source.py",
+      "bytes": 4053,
+      "sha256": "da0e2ab9f671f27e465af719ec32e0f6511731c571875cfff81c04d57be1f537"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_glue_20261117/prepare_validator.py",
+      "bytes": 8701,
+      "sha256": "b4cffb8d8f34b78d47cd101207adb0a37c2a8e2f49dfa5424c7c059bb118baa1"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_shell_eol_20261117/INDEX.json",
+      "bytes": 1699,
+      "sha256": "efd83e68fc08fcb98175f23b9618135c84699d472ef8672036cf33a4e697c623"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_shell_eol_20261117/README.md",
+      "bytes": 2965,
+      "sha256": "77b13d9d134bc2a43741d30891fec59d4becd6eceda41f63e1db49b7b1230cbf"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_shell_eol_20261117/ROOT_LAUNCH.md",
+      "bytes": 4892,
+      "sha256": "9effc8ca00c933a2af69c5874f7bdb8dde28620bb046817e5063be7515f0eefd"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_shell_eol_20261117/SOURCE_BINDING.json",
+      "bytes": 2393,
+      "sha256": "8f24a97ef36df0d284ae79c5bc6f40bd19dfb65f6bc3ad6473d3f4d45d9142d9"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_shell_eol_20261117/SOURCE_VALIDATION.json",
+      "bytes": 861,
+      "sha256": "82f7c22651c48a69dd0f2ccbea2a04b16512767a641b2c27abffcb4ef540f15c"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_shell_eol_20261117/check_source.py",
+      "bytes": 4024,
+      "sha256": "f60e913a9c6ddea5bce3c31c5b4c41e0b95a519851aaf98436b76e2876586db8"
+    },
+    {
+      "path": "experiments/neon_owner_validator_preparation_shell_eol_20261117/prepare_validator.py",
+      "bytes": 8683,
+      "sha256": "fb97ff83ad6b3d620bd86dc29ca0c16884031f171deb8cfbafa4ec75d5621d3a"
+    },
+    {
+      "path": "experiments/neon_qualified_merge_preparation_actual_20261117/HISTORY_RESOLUTION.json",
+      "bytes": 745,
+      "sha256": "993a1daf30112fe79e98a5897f827b9eb84ae600a7e160824164672876e6e4a9"
+    },
+    {
+      "path": "experiments/neon_qualified_merge_preparation_actual_20261117/HISTORY_SCOPE.json",
+      "bytes": 21669,
+      "sha256": "59937871c9943476d1bac572f98b9d49a5b5544549896491c8b282cccceb5ad4"
+    },
+    {
+      "path": "experiments/neon_qualified_merge_preparation_actual_20261117/INDEX.json",
+      "bytes": 713,
+      "sha256": "3caf3ef76eac87c9cdacda0f5037506b1ee3e5b9b278cfafb7e066cf3a3ec68b"
+    },
+    {
+      "path": "experiments/neon_qualified_merge_preparation_actual_20261117/RAW_RESTORATION.json",
+      "bytes": 35855,
+      "sha256": "14eaee28788845a10c3114f460e46f1ab4098bd5e380e52736e3ecb3657e16bd"
+    },
+    {
+      "path": "experiments/neon_qualified_merge_preparation_actual_20261117/RESULT.json",
+      "bytes": 1226,
+      "sha256": "dd08f9a854d1bf228c8aaeac1cad9e0eab269db7e9a7f72cc075d528e7087ad6"
+    },
+    {
+      "path": "experiments/pmx_classification_followup_proposal_20261117/INDEX.json",
+      "bytes": 723,
+      "sha256": "e7171e6833d7c45f27d24fed39ad84919262230550b31d38e90b6c25d9493061"
+    },
+    {
+      "path": "experiments/pmx_classification_followup_proposal_20261117/PROPOSAL.md",
+      "bytes": 3604,
+      "sha256": "1739714106b9ad43ade89b55f8bca2d61e31bf63fe22350b76497ede58feb49c"
+    },
+    {
+      "path": "experiments/pmx_classification_followup_proposal_20261117/SOURCE_BINDINGS.json",
+      "bytes": 3228,
+      "sha256": "4609f0abd9b3d0f7ad8cf6d4f9d7dc6d462125ea43e2d763a906b90f8dd1c8b8"
+    },
+    {
+      "path": "experiments/prepare_neon_qualified_merge_checkpoint_20261117.py",
+      "bytes": 12836,
+      "sha256": "f438abbbbebce2fbc946f102e1d5e0fe507f3a4baf45b65c6db7e0de6c18994c"
+    },
+    {
+      "path": "experiments/record_neon_3a_mmd_full_pass_20261117.py",
+      "bytes": 6275,
+      "sha256": "0fc2cafa1606b84a7eea02f2b2dfc20d515cb745afec45fca36389d61987f40b"
+    },
+    {
+      "path": "experiments/restore_qualified_neon_merge_raw_20261117.py",
+      "bytes": 6109,
+      "sha256": "dbcc63fda1083dedc3aea436cc80724ec30420932fdc14a4694e67186be92fae"
+    },
+    {
+      "path": "experiments/review_neon_shell_eol_delta_20261117.py",
+      "bytes": 4611,
+      "sha256": "cdbc387a09d7ca9acb2acd9c652a07402b5b824d303e8af14b2d972b57156ff9"
+    },
+    {
+      "path": "experiments/update_neon_qualified_merge_docs_20261117.py",
+      "bytes": 5363,
+      "sha256": "391ab6eff201052bee68e0b87e4bb0e0ebd32d3393bf74acb2cb20acc65b001f"
+    },
+    {
+      "path": "experiments/verify_neon_mmd_source_checkpoint_remote_20261117.py",
+      "bytes": 4109,
+      "sha256": "8f82b58e7713bd3a1bc7943863e14959ed656ad50ba46b142a5ed864ed314bd5"
+    }
+  ],
+  "source_indexes": [
+    {
+      "packet": "neon_3a_mmd_full_pass_actual_20261117",
+      "index_sha256": "941e9aeab6d788fd7e92603a0a8f9e7c2fde0f48e2f5c9193b37c8a931dc851a",
+      "checked_payloads": 4
+    },
+    {
+      "packet": "neon_owner_executor_preparation_glue_20261117",
+      "index_sha256": "607c890490f8b69f30b098ec765ebd19b432da37597309c81e8d9d7a840611c6",
+      "checked_payloads": 4
+    },
+    {
+      "packet": "neon_owner_validator_preparation_glue_20261117",
+      "index_sha256": "8fc4c53bc0920b9912a66e4a94de018495ae598fee9feaacf2e022c4d4b08a7a",
+      "checked_payloads": 5
+    },
+    {
+      "packet": "pmx_classification_followup_proposal_20261117",
+      "index_sha256": "e7171e6833d7c45f27d24fed39ad84919262230550b31d38e90b6c25d9493061",
+      "checked_payloads": 2
+    },
+    {
+      "packet": "native_normal_carrier_adapter_readiness_20261117",
+      "index_sha256": "dabd9d3af832ae59dce03fb5783b7ae8df3cd8cd88ef61279dc5d9875900238e",
+      "checked_payloads": 2
+    },
+    {
+      "packet": "native_B_resource_refusal_followup_20261117",
+      "index_sha256": "b2dffa81b4d9f0b04a066001d6131131a0c5a3195af122976d76d5e6dee64bb6",
+      "checked_payloads": 2
+    },
+    {
+      "packet": "neon_owner_admission_shell_eol_20261117",
+      "index_sha256": "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42",
+      "checked_payloads": 13
+    },
+    {
+      "packet": "neon_3a_shell_eol_delta_proposal_20261117",
+      "index_sha256": "36b5c4c6ccee9a3f783864b7648a2dba708f6d91189ee996228748392125ffd8",
+      "checked_payloads": 7
+    },
+    {
+      "packet": "neon_3a_shell_eol_root_review_20261117",
+      "index_sha256": "c3cac0b610b632d6bd519700e6066c87852d2447fff56c39b6bfc22f3a24834c",
+      "checked_payloads": 1
+    },
+    {
+      "packet": "neon_owner_executor_shell_eol_20261117",
+      "index_sha256": "3ea125a3c043688c2bf5f2dbe5ce4c41501ea41b7f831575eefbe5bdfffbdcf4",
+      "checked_payloads": 18
+    },
+    {
+      "packet": "neon_owner_cold187_shell_eol_20261117",
+      "index_sha256": "a38e4866df7f8810d73e616b05b728b4e088dd4c84015b2ff65c6a8f1cbb3e64",
+      "checked_payloads": 19
+    },
+    {
+      "packet": "neon_owner_activation_shell_eol_20261117",
+      "index_sha256": "1f42a221ad7de5094675d29888c51e5ddc60cb52a44e3ceecaa6b1866e57a367",
+      "checked_payloads": 8
+    },
+    {
+      "packet": "neon_owner_executor_preparation_shell_eol_20261117",
+      "index_sha256": "21980dfe510f8ad4edafd1a97101e9251a81ca526365cb8177fc32255c30d883",
+      "checked_payloads": 5
+    },
+    {
+      "packet": "neon_owner_validator_preparation_shell_eol_20261117",
+      "index_sha256": "efd83e68fc08fcb98175f23b9618135c84699d472ef8672036cf33a4e697c623",
+      "checked_payloads": 6
+    },
+    {
+      "packet": "neon_qualified_merge_preparation_actual_20261117",
+      "index_sha256": "3caf3ef76eac87c9cdacda0f5037506b1ee3e5b9b278cfafb7e066cf3a3ec68b",
+      "checked_payloads": 4
+    }
+  ],
+  "main_functional_matches_qualified_candidate": 1029,
+  "qualified_functional_source_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+  "qualified_functional_raw_map_sha256": "566119637a9dd390798172824fa0b7d7d5b2e60440d50352085557c720cb705b",
+  "public_functional_guard": {
+    "path": "experiments/neon_windows_3a3701a_20261117/active-observation/source-before.json",
+    "sha256": "3ef2e7d8bed6e063afef59c8caccba914663752998761350c882fd4efbc78e9d"
+  },
+  "prior_Main1019_guard_replaced_for_actual_tested1029": true,
+  "metadata_HEAD_at_preparation_Root_reported": "f21b9ec85ae63006d036ca7a21c5c82e53fda019",
+  "MERGE_HEAD_at_preparation_Root_reported": "3a3701ab6edfa81dc883759403c170b8555aab07",
+  "merge_commit_created_at_preparation": false,
+  "Git_state_observed_by_selector": false,
+  "actual_full_PASS_public_scalar_projection_included": true,
+  "full_PASS_result_groups": 158,
+  "full_PASS_core_groups": 36,
+  "full_PASS_movie_groups": 21,
+  "actual_MMD_and_strict_terminal_closure_projected_by_Root": true,
+  "prior157_group_run_remains_unqualified": true,
+  "Root_reviewed_exact39_delta_and_three_shell_EOL_policy_included": true,
+  "owner_copy_builder_or_cold187_activated": false,
+  "human_acceptance": "DEFERRED",
+  "native_normal_fidelity": "FAILED_UNQUALIFIED",
+  "B_metadata_completed_with_six_issue_profile_refusal_and_UNKNOWN_export": true,
+  "old_source_CPU_and_preparation_status_records_are_historical": true,
+  "raw_full_reports_logs_receipts_native_counts_and_callbacks_excluded": true,
+  "private_native_art_arrays_media_excluded": true,
+  "native_normal_repair_adoption_or_simulation_claimed": false
+}

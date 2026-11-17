@@ -1,0 +1,35 @@
+{
+  "format": "has_owner_cold187_adapter_CPU_result_1",
+  "methods": 29,
+  "runtime_methods": 13,
+  "admission_methods": 16,
+  "failures": 0,
+  "errors": 0,
+  "syntax_checked_without_import": [
+    "audio_contract.py",
+    "reference_qualified_inputs.py",
+    "reference_validator.py",
+    "replay_runtime.py",
+    "test_replay_runtime.py",
+    "test_validation_admission.py",
+    "validation_admission.py",
+    "verify_packet.py"
+  ],
+  "source_hashes": {
+    "replay_runtime.py": "57c9959c395cd5e4a45880e17f3a2a93d64fb4bb9e855aa747ef84fc87789366",
+    "validation_admission.py": "1c4d2026accaf22292f43dba338058f5c4d38346a557aee057e1b30eaabe26ff",
+    "test_replay_runtime.py": "250ab1c5b300a03419522245d723606044c4741e6f773cb1d70b688851ac4580",
+    "test_validation_admission.py": "248cf450542d32b70feee9a037b9a532e09cd0b16cd37b6755cfafce14f9feac",
+    "reference_qualified_inputs.py": "4ec96ec0aac53813600fa9807a7bfa065a542b2cd07e9413c031f0e7677f3a73",
+    "reference_validator.py": "f6e87e8eb239bc08843ef1b3f369b449509bae98128db770b3835639185f8514",
+    "replay.gd": "d9259db293e1abc9809636ec461b9d2888778b5d57b1faa78a76026aea746450",
+    "audio_contract.py": "4e4351d82293fd6156712c1c81bd532c35cd7a13e0a091f3dca26628a1d0ec93",
+    "input-lock.json": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6",
+    "reference-lock.json": "e5dbbbd1cc21d143fc9c6d56996b6aec97b1b0f9167f334c274a77d246ab9413"
+  },
+  "CPU_log_sha256": "da60c61b616c3fba81cb264b518ff733a6b123734ae6d04f40c54f46d5a29f94",
+  "actual_positive_qualification_or_engine_run": false,
+  "actual_review_native_assets_or_original_reference_arrays_read": false,
+  "current_full_output_or_CIM_or_Git_read_or_run": false,
+  "skipped": 0
+}

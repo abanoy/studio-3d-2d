@@ -1,0 +1,87 @@
+{
+  "format": "has_pmx_classification_followup_proposal_source_basis_1",
+  "status": "PROPOSED_SOURCE_ONLY_NOT_IMPLEMENTED",
+  "source_packets": {
+    "pmx_physics_independent_oracle_20261117": {
+      "INDEX_sha256": "d27d9873bc08ec2bc37f8939ae09f9b071f9f4e6fda8b112a2626fef7fabbb45",
+      "sources": {
+        "oracle.py": {
+          "bytes": 14055,
+          "sha256": "f1dfc3a37c32c1c8b57537b1500b701792df13e4e8b87abe13b0ce49be2c4cec"
+        },
+        "compare_tables.py": {
+          "bytes": 17481,
+          "sha256": "e36739292d90a63e695a1731642bedc02ef0eb65bf07152e85bd0f48dadd3acf"
+        }
+      }
+    },
+    "pmx_physics_native_reader_prototype_20261117": {
+      "INDEX_sha256": "9946bf2bccbe5e289fea013ec702c97775b33b9a64dc3bce7979d21d08e92487",
+      "sources": {
+        "pmx_native_physics.py": {
+          "bytes": 16124,
+          "sha256": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426"
+        }
+      }
+    },
+    "pmx_physics_archive_prototype_20261117": {
+      "INDEX_sha256": "97e7c5a6085de7e0eb67b87584a49d7401a9f42553373f85ddf81108873346d1",
+      "sources": {
+        "pmx_archive.py": {
+          "bytes": 12791,
+          "sha256": "ac226df5fe56d4781cfa952170fe6d75f9054c6c5cb834aa307e7cb2807e8e50"
+        }
+      }
+    },
+    "pmx_physics_native_observation_harness_20261117": {
+      "INDEX_sha256": "4258db09011aab285d00889cda1ada279f511f4553828cb69b6b07975bdaf8ec",
+      "sources": {
+        "common.py": {
+          "bytes": 10715,
+          "sha256": "f1972557534e1346ee24930a59026a8fb9d813199bb6f1016bb666ff894d870e"
+        },
+        "worker.py": {
+          "bytes": 7461,
+          "sha256": "d63cee343b79ac95b72aa79b50187b928b62cd9890651e0efbd1004abfa29d6f"
+        }
+      }
+    },
+    "pmx_physics_oracle_count_diagnostic_20261117": {
+      "INDEX_sha256": "c21bac607f5772817455dc50f7db95580601545009fb8ba4b944a1ccd4b2b7d8",
+      "sources": {
+        "source_patch.py": {
+          "bytes": 1430,
+          "sha256": "5112d5dde49bdb7c4fe99ebb32a753f53a34c89d8dfc0779477d676385f6fd69"
+        },
+        "diagnostic.py": {
+          "bytes": 3371,
+          "sha256": "1f3d66a8ff65a55d94cc003bb259bdacf009cac0074cf15d0312e56e07358c8d"
+        }
+      }
+    },
+    "native_normal_known_factory_blender51_resource_20261117": {
+      "INDEX_sha256": "82727caa443cc58d623463e195fc6220d08c2d878cb93461eb481c722098b6e0",
+      "sources": {}
+    },
+    "native_normal_known_factory_blender51_binding_20261117": {
+      "INDEX_sha256": "eacc7b33245e33fd7e4826f17dda6cd95917bb7034537d1145c88a4320a7bfa4",
+      "sources": {}
+    }
+  },
+  "all_four_positive_witness_gate_unchanged": true,
+  "all_caps_unchanged": true,
+  "candidate_metadata_cap_bytes": 2097152,
+  "oracle_output_and_witness_cap_bytes": 8388608,
+  "joint_ceiling_each_parser": 1024,
+  "passive_candidate_preguard_tuple_required": [
+    "table",
+    "count",
+    "ceiling",
+    "count_token_offset"
+  ],
+  "source_risk_peer_scope_agreed": true,
+  "actual_classification_driver_implemented": false,
+  "private_counts_names_offsets_native_inputs_or_current_full_read": false,
+  "native_geometry_HAS_solver_or_protocol_qualification": false,
+  "B_before_functional_Main_merge_ordering_preserved": true
+}
