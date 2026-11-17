@@ -1208,3 +1208,18 @@ rows are refreshed in the existing wind/helper manifests; all other rows and
 memberships remain exact. Root closed92private jobs/source1029 unchanged before
 this patch. Focused graphics and a new complete frozen verifier are still UNRUN.
 No full PASS or product merge is claimed.
+
+### November 17, 2026 — native color fixture targets pixel centers
+
+The 696 full passed camera60/0 then failed color44/1. Root closed93 private jobs,
+source1029 unchanged, release17:42:05Z. An unchanged-assertion diagnostic reproduced
+the color failure: all capture/view/world/source operands passed, while float
+mapping put the intended integer-boundary click one row above the expected pixel.
+The picked color exactly matched that actual neighboring pixel. The Source case
+also shifted one row, hidden by matching neighbor color; the third case was exact.
+
+Only the native fixture click now aims half a pixel inside the SAME expected
+pixel. Expected image indices, all44 runtime assertions, thresholds, three native
+cases and application source remain unchanged. The source inverse and independent
+peer review pass. Actual corrected focus and a new frozen full remain required;
+no full PASS, product merge or new owner copy is claimed.
