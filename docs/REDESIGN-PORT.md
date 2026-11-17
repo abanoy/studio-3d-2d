@@ -1168,3 +1168,15 @@ changes only app/pose exact+LF hash strings to the reviewed Neon bytes, already
 pinned in the wind manifest. Membership25,23other rows and driver/208CPU/266GPU
 predicates are unchanged. Source-only18tamper tests and independent peer18 pass;
 fresh actual helper profiles and another complete default are still required.
+
+## Windows authored bone fixture line endings — 2026-11-17
+
+The375 complete default passed helper208CPU/266graphical and later snapshot/editing
+stages, then failed the authored bone fixture40/40 at base64 decoding. Its canonical
+Git/main52 source was identical, but the working CRLF literal retained103CRs after
+LF-only stripping. The fixture-only successor removes CR andLF before decoding;
+9360-byte golden39637fa3 and9364-byte malformed95e0c878 remain exact. One expression
+changes; all79+17predicates/wrapper/timeouts/error policy remain. Source10CPU methods
+and independent10 pass; actual Foundation167/separate77+96 and full successor are
+still required. Root closed51private jobs50exit0+Krita2 and separate headless exit1,
+source1029 unchanged, released03:51:37Z. No product change/fullPASS/merge is claimed.
