@@ -1155,3 +1155,16 @@ pixels. Product code and the approved look are unchanged. Actual Windows wrapper
 now passes106/0 plus its headless unit case, all4 profiles/composites valid, source
 1029 preserved and private jobs/scopes closed. Original102/4 evidence is retained.
 The next complete default run remains unrun; no full PASS or merge is claimed.
+
+## Windows helper preview source manifest — 2026-11-17
+
+The4ed complete Windows run passed36core,Neon12504,scene106+unit12830 and
+subsequent readback/fan/wind stages, then stopped03:19:31Z at the helper-preview
+CPU source gate. Its old manifest rejected reviewed app.gd before snapshot or
+helper engine/worker/graphical launch, with0checks. Root closed49physical jobs
+(48exit0+registeredKrita cancel2), exact inline/source1029/birth/scope checks and
+released03:19:55Z. No full PASS or merge is claimed. The minimal manifest refresh
+changes only app/pose exact+LF hash strings to the reviewed Neon bytes, already
+pinned in the wind manifest. Membership25,23other rows and driver/208CPU/266GPU
+predicates are unchanged. Source-only18tamper tests and independent peer18 pass;
+fresh actual helper profiles and another complete default are still required.
