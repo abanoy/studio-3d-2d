@@ -1,0 +1,21 @@
+{
+  "format": "has_neon_review_applied_corrections_1",
+  "base": "c2d52ff5fd0f9aeffae6a343f6d4b71698ed9ff2",
+  "branch": "codex/neon-windows-review-20261116",
+  "changed": {
+    "src/app.gd": {
+      "old_sha256": "4081b9b53a34b14da951eee03c1dd9aa3edb6680f55896dcbcd4605a159dc282",
+      "new_sha256": "88871ebd831d5a466b31336282a9bb53f264653dd5ff299fb10dc90a3080dd67"
+    },
+    "tests/wind_review_port_files.json": {
+      "old_sha256": "069f88b2b8174fba6c170ebc65dce55bc15e48a0acb3cda12a97a07c9056bdff",
+      "new_sha256": "4cb3709064b668e63b25cb9576a69992495c5707ed5ec2dba291c0768852e79d"
+    },
+    "tests/object_timing_smoke.gd": {
+      "old_sha256": "469e6de4b0f4c26719c2ec9185cc8ba6311377219261b81041e8eb5633c1deb8",
+      "new_sha256": "d8cd3048e23db2c5f94798fb8aac0df66a26262fb5d10c367baba3e3ff8eb267"
+    }
+  },
+  "original_28_2_and_behavior32_13_failures_preserved": true,
+  "product_full_pass_claimed": false
+}

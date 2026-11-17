@@ -1,0 +1,7 @@
+# Standalone32 completed append recipe
+
+The root passed the separate typed 32-check transaction lifecycle fixture: headless parse exit 0 and private GUI exit 0, both retained/reaped, with all 1029 functional sources unchanged. All four cases passed, including three new withheld-control transaction assertions. The root's strict scoped host observations are closed, and the one actual GUI job has matching original/copied physical receipts. The formal five-case Neon group stays at 12504; this standalone scope does not change it or qualify the currently active complete canonical run.
+
+This is a separate append to the already sealed fix-sequence recipe `eda61664e18d73d630820d44a3d7a63cb9d5e9710772f5516fc4e4e06d74621b`. Neither that recipe nor any failed attempt is modified. The source packet, exact result/process/closure metadata, safe synthetic UI logs and compressed exact source maps are pinned. Native assets, images, audio and projects are excluded.
+
+`build_append.py` reuses only the SHA-pinned prior recipe's pure metadata admission function. Root must supply this recipe's exact INDEX SHA and a new output below main `experiments` whose name begins `neon_world_lifecycle32_actual_packet_`. Every input and privacy/physical-closure gate passes before the first archive write. Its archive entry point has not been run by this agent. No engine, CIM, Git, active full state/report, REVIEW mutation or native payload was used during preparation.

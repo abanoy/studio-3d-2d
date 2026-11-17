@@ -1,0 +1,31 @@
+{
+  "scope": "Synthetic source/binding/receipt metadata only; no observer, active terminal, engine, CIM or Git",
+  "started_utc": "2026-11-17T02:26:36.491943+00:00",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    ".",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "test_methods": 25,
+  "failures": 0,
+  "tested_files": {
+    "close_terminal.py": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+    "bind_context.py": "d771101029ac1bf7367bb90947a71062ad5c769ea2d7464aa5b57c3925246882",
+    "legacy_result_gates.py": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+    "RESULT_REGISTRY.json": "3ffae0d4d19d051a3e46c061b46b813f2fabc38662cb32635d6145a5ea4553b9",
+    "CONTEXT.json": "11a35c40f7fff472cc1eb99370bfaa34cb962dd2b30bee1dfc7e81f7b60cd1e0",
+    "test_terminal.py": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c",
+    "test_bind_context.py": "53146b2225b99af5ababb3661ac3c4bdce47dcddd35b13dc3825051bdb6de95a"
+  },
+  "raw_log_sha256": "6883b2b5d78d46290f85d5d273a01d76f0a6e789bd6820f944eca98f4e9123e8"
+}

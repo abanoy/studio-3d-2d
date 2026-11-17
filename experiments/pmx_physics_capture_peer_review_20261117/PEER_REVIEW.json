@@ -1,0 +1,95 @@
+{
+  "format": "has_pmx_decoded_capture_independent_peer_review_1",
+  "utc": "2026-11-17T01:54:01.175297+00:00",
+  "source_scope_GO": true,
+  "findings": [],
+  "reviewed_INDEX_SHA256": "544208654bebc2b74909afae6391dadc32d27f3374291406b7923c12abfe2f56",
+  "reviewed_capture_SHA256": "6a0af8e9209ce0e782f140da37405fda9d3bd82d02b241c432dbac32c83ad78e",
+  "closed_payload_set_verified": true,
+  "payload_files": 11,
+  "payload_bytes": 82384,
+  "all_original_payloads_unchanged": true,
+  "source_bindings_verified": [
+    {
+      "path": "C:\\Users\\noble\\AppData\\Roaming\\Blender Foundation\\Blender\\5.1\\extensions\\user_default\\mmd_tools\\core\\pmx\\__init__.py",
+      "bytes": 51956,
+      "sha256": "fb9aafe369025f221bc5a1c952d868260b1a4bb950dc33bca62645b4da454e5a",
+      "executed": false
+    },
+    {
+      "path": "C:\\Users\\noble\\AppData\\Roaming\\Blender Foundation\\Blender\\5.1\\extensions\\user_default\\mmd_tools\\blender_manifest.toml",
+      "bytes": 1613,
+      "sha256": "e4b9f71523a9aeb1ed8bb327e4b3cdef7fe5a4e92b4505782ce3e5b0f009f324",
+      "executed": false
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\mmd_ik.py",
+      "bytes": 5151,
+      "sha256": "2a1872ebf8a790e510f52638d64978ac2a841cbc5aa21a7beec4938867f496aa",
+      "executed": false
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\blender_mmd_bridge.py",
+      "bytes": 11922,
+      "sha256": "c2abd3dd75677bebc91d0ff153dd8822bb32ca0132c70bbbc085b9944e5bc08a",
+      "executed": false
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\pose_editor.gd",
+      "bytes": 48374,
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "executed": false
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\has_project.py",
+      "bytes": 36736,
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+      "executed": false
+    }
+  ],
+  "source_AST_parsed_only": true,
+  "native_file_join": "UNQUALIFIED",
+  "native_file_preservation_complete": false,
+  "runtime_or_portable_qualification": false,
+  "native_assets_read": false,
+  "engines_CIM_Git_or_main_review_edits": false,
+  "installed_reader_executed": false,
+  "runs": [
+    {
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\pmx_physics_capture_prototype_20261117\\test_capture_decoded.py"
+      ],
+      "returncode": 0,
+      "tests": 22,
+      "stdout": "",
+      "stderr": "test_all_known_shapes_and_modes_retained (__main__.CaptureTests.test_all_known_shapes_and_modes_retained) ... ok\ntest_bad_header_and_decoded_version_mismatch_refuse (__main__.CaptureTests.test_bad_header_and_decoded_version_mismatch_refuse) ... ok\ntest_bad_sentinels_and_references_refuse_without_partial_result (__main__.CaptureTests.test_bad_sentinels_and_references_refuse_without_partial_result) ... ok\ntest_count_byte_and_limit_budgets_refuse_no_truncation (__main__.CaptureTests.test_count_byte_and_limit_budgets_refuse_no_truncation) ... ok\ntest_decoded_none_sentinels_preserved (__main__.CaptureTests.test_decoded_none_sentinels_preserved) ... ok\ntest_exact_pinned_field_contract_without_executing_reader (__main__.CaptureTests.test_exact_pinned_field_contract_without_executing_reader) ... ok\ntest_exact_version_word_and_source_sha (__main__.CaptureTests.test_exact_version_word_and_source_sha) ... ok\ntest_fingerprint_is_explicitly_not_a_native_join (__main__.CaptureTests.test_fingerprint_is_explicitly_not_a_native_join) ... ok\ntest_float_type_nonfinite_and_non_binary32_refuse (__main__.CaptureTests.test_float_type_nonfinite_and_non_binary32_refuse) ... ok\ntest_inputs_unchanged_and_output_detached (__main__.CaptureTests.test_inputs_unchanged_and_output_detached) ... ok\ntest_name_and_attribute_budgets_refuse (__main__.CaptureTests.test_name_and_attribute_budgets_refuse) ... ok\ntest_names_not_fuzzy_matched_or_normalized (__main__.CaptureTests.test_names_not_fuzzy_matched_or_normalized) ... ok\ntest_original_indices_and_duplicate_names_stay_unresolved (__main__.CaptureTests.test_original_indices_and_duplicate_names_stay_unresolved) ... ok\ntest_parser_source_mismatch_refuses (__main__.CaptureTests.test_parser_source_mismatch_refuses) ... ok\ntest_pmx21_soft_body_count_unknown_even_without_attribute (__main__.CaptureTests.test_pmx21_soft_body_count_unknown_even_without_attribute) ... ok\ntest_roundtrip_every_rigid_and_joint_field_without_coercion (__main__.CaptureTests.test_roundtrip_every_rigid_and_joint_field_without_coercion) ... ok\ntest_signed_zero_and_extreme_binary32_values_survive_json (__main__.CaptureTests.test_signed_zero_and_extreme_binary32_values_survive_json) ... ok\ntest_unknown_body_joint_fields_cannot_claim_complete (__main__.CaptureTests.test_unknown_body_joint_fields_cannot_claim_complete) ... ok\ntest_unknown_soft_table_attributes_report_values_not_captured (__main__.CaptureTests.test_unknown_soft_table_attributes_report_values_not_captured) ... ok\ntest_unknown_types_explicitly_incomplete_not_silently_dropped (__main__.CaptureTests.test_unknown_types_explicitly_incomplete_not_silently_dropped) ... ok\ntest_unsigned_mask_and_group_domains (__main__.CaptureTests.test_unsigned_mask_and_group_domains) ... ok\ntest_vector_missing_field_and_collection_types_refuse (__main__.CaptureTests.test_vector_missing_field_and_collection_types_refuse) ... ok\n\n----------------------------------------------------------------------\nRan 22 tests in 0.020s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\pmx_physics_capture_peer_review_20261117",
+        "-p",
+        "test_peer_boundaries.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "tests": 6,
+      "stdout": "",
+      "stderr": "test_all_supported_float_fields_preserve_negative_zero (test_peer_boundaries.PeerBoundaryTests.test_all_supported_float_fields_preserve_negative_zero) ... ok\ntest_changed_supplied_bytes_never_create_a_join (test_peer_boundaries.PeerBoundaryTests.test_changed_supplied_bytes_never_create_a_join) ... ok\ntest_empty_tables_and_header_only_bytes_never_qualify_native_join (test_peer_boundaries.PeerBoundaryTests.test_empty_tables_and_header_only_bytes_never_qualify_native_join) ... ok\ntest_every_limit_rejects_boolean_without_coercion (test_peer_boundaries.PeerBoundaryTests.test_every_limit_rejects_boolean_without_coercion) ... ok\ntest_exact_capsule_boundary_accepts_and_one_less_refuses (test_peer_boundaries.PeerBoundaryTests.test_exact_capsule_boundary_accepts_and_one_less_refuses) ... ok\ntest_unknown_values_only_described_and_never_qualify_native_join (test_peer_boundaries.PeerBoundaryTests.test_unknown_values_only_described_and_never_qualify_native_join) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n"
+    }
+  ],
+  "total_synthetic_tests": 28,
+  "failures": 0,
+  "errors": 0
+}

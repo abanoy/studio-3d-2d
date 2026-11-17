@@ -1,0 +1,106 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fresh personal preferences default to one full-area scene with optional guides off
+PASS create an original standard rig without private native assets
+PASS ordinary import installs the standard rig
+PASS Setup fills the exact wide/tall texture extent while retaining native frame aspect
+PASS the test model lies genuinely beyond native output and inside the editable scene
+FAIL actual shared-world scene pixels show the off-frame model at its native-projected location
+PASS Setup camera excludes colored selection-ID geometry
+PASS actual canvas click selects the visible off-frame model
+PASS selection outline and ID mask agree with the full-area scene
+PASS off-frame model retains the camera-facing rotation ring
+PASS off-frame ring starts an actual pose gesture in Setup
+PASS cancelling the off-frame pose restores exact authored data
+PASS a release outside the canvas completes the active gesture safely
+PASS Undo restores the completed off-frame edit
+PASS Setup Pose middle drag navigates the 3D view without changing drawing paper pan
+PASS Setup navigation release safely restores ordinary cursor control
+PASS white frame and 3×3 guides appear only inside the output frame
+PASS guides and display aspect never change native captured output pixels or dimensions
+PASS the independent raster cel remains in native output coordinates
+PASS Camera focus rejects the same off-frame scene target
+PASS focused margin click cannot select or pose invisible scene geometry
+PASS Focused and Setup views produce exactly the same native render
+PASS view options do not edit shot keys, world, video, Undo, dirty state or temporary camera
+PASS resize invalidates a queued old-view selection readback
+PASS changing view mode invalidates a queued selection readback
+PASS Setup fills the exact wide/tall texture extent while retaining native frame aspect
+PASS the test model lies genuinely beyond native output and inside the editable scene
+FAIL actual shared-world scene pixels show the off-frame model at its native-projected location
+PASS Setup camera excludes colored selection-ID geometry
+PASS actual canvas click selects the visible off-frame model
+PASS selection outline and ID mask agree with the full-area scene
+PASS off-frame model retains the camera-facing rotation ring
+PASS off-frame ring starts an actual pose gesture in Setup
+PASS cancelling the off-frame pose restores exact authored data
+PASS a release outside the canvas completes the active gesture safely
+PASS Undo restores the completed off-frame edit
+PASS Setup Pose middle drag navigates the 3D view without changing drawing paper pan
+PASS Setup navigation release safely restores ordinary cursor control
+PASS white frame and 3×3 guides appear only inside the output frame
+PASS guides and display aspect never change native captured output pixels or dimensions
+PASS the independent raster cel remains in native output coordinates
+PASS Camera focus rejects the same off-frame scene target
+PASS focused margin click cannot select or pose invisible scene geometry
+PASS Focused and Setup views produce exactly the same native render
+PASS view options do not edit shot keys, world, video, Undo, dirty state or temporary camera
+PASS resize invalidates a queued old-view selection readback
+PASS changing view mode invalidates a queued selection readback
+PASS Setup fills the exact wide/tall texture extent while retaining native frame aspect
+PASS the test model lies genuinely beyond native output and inside the editable scene
+FAIL actual shared-world scene pixels show the off-frame model at its native-projected location
+PASS Setup camera excludes colored selection-ID geometry
+PASS actual canvas click selects the visible off-frame model
+PASS selection outline and ID mask agree with the full-area scene
+PASS off-frame model retains the camera-facing rotation ring
+PASS off-frame ring starts an actual pose gesture in Setup
+PASS cancelling the off-frame pose restores exact authored data
+PASS a release outside the canvas completes the active gesture safely
+PASS Undo restores the completed off-frame edit
+PASS Setup Pose middle drag navigates the 3D view without changing drawing paper pan
+PASS Setup navigation release safely restores ordinary cursor control
+PASS white frame and 3×3 guides appear only inside the output frame
+PASS guides and display aspect never change native captured output pixels or dimensions
+PASS the independent raster cel remains in native output coordinates
+PASS Camera focus rejects the same off-frame scene target
+PASS focused margin click cannot select or pose invisible scene geometry
+PASS Focused and Setup views produce exactly the same native render
+PASS view options do not edit shot keys, world, video, Undo, dirty state or temporary camera
+PASS resize invalidates a queued old-view selection readback
+PASS changing view mode invalidates a queued selection readback
+PASS Setup fills the exact wide/tall texture extent while retaining native frame aspect
+PASS the test model lies genuinely beyond native output and inside the editable scene
+FAIL actual shared-world scene pixels show the off-frame model at its native-projected location
+PASS Setup camera excludes colored selection-ID geometry
+PASS actual canvas click selects the visible off-frame model
+PASS selection outline and ID mask agree with the full-area scene
+PASS off-frame model retains the camera-facing rotation ring
+PASS off-frame ring starts an actual pose gesture in Setup
+PASS cancelling the off-frame pose restores exact authored data
+PASS a release outside the canvas completes the active gesture safely
+PASS Undo restores the completed off-frame edit
+PASS Setup Pose middle drag navigates the 3D view without changing drawing paper pan
+PASS Setup navigation release safely restores ordinary cursor control
+PASS white frame and 3×3 guides appear only inside the output frame
+PASS guides and display aspect never change native captured output pixels or dimensions
+PASS the independent raster cel remains in native output coordinates
+PASS Camera focus rejects the same off-frame scene target
+PASS focused margin click cannot select or pose invisible scene geometry
+PASS Focused and Setup views produce exactly the same native render
+PASS view options do not edit shot keys, world, video, Undo, dirty state or temporary camera
+PASS resize invalidates a queued old-view selection readback
+PASS changing view mode invalidates a queued selection readback
+PASS queued native pick survives a pure frame translation with unchanged size and camera
+PASS Setup suspends the unused native scene pass
+PASS recovery receives fresh native pixels after Setup camera movement and releases its readback scope
+PASS returning to Draw restores the unchanged paper zoom and pan
+PASS Draw still refuses edits beyond native output bounds
+PASS color sampling still refuses native-exterior pixels
+PASS actual Draw input still maps zoomed/panned canvas pixels to the native cel
+PASS drawing Undo restores exact independent cel pixels
+PASS view preferences persist outside project data
+PASS source geometry and native render viewport remain unchanged
+PASS a fresh application restores personal focus and guide preferences
+SCENE_VIEW {"cases":[{"extent":"(1200.0, 360.0)","green_outline_pixels":350,"guide_pixels":3664,"outside_guide_pixels":0,"roll":0.0},{"extent":"(1200.0, 360.0)","green_outline_pixels":429,"guide_pixels":3664,"outside_guide_pixels":0,"roll":0.4},{"extent":"(480.0, 760.0)","green_outline_pixels":468,"guide_pixels":5846,"outside_guide_pixels":0,"roll":0.0},{"extent":"(480.0, 760.0)","green_outline_pixels":584,"guide_pixels":5846,"outside_guide_pixels":0,"roll":0.4}],"checks":102,"failures":4,"native_size":"(1920, 1080)","source_sha256":"62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac"}

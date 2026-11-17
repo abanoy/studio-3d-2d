@@ -1,0 +1,59 @@
+--- a/tests/verify_neon_workspace.py
++++ b/tests/verify_neon_workspace.py
+@@ -1,6 +1,6 @@
+ """Sequential actual Windows neon regressions; explicit graphics lease attestation required.
+ 
+-Source-only integration draft until staged/reviewed by the root. The four standard
++Source-only integration draft until staged/reviewed by the root. The five standard
+ test aliases are independent of the focused experiment receipts. No host inventory
+ is inferred here: --lease-confirmed attests the caller already owns the lease;
+ actual graphical job/desktop closure is checked from physical launcher receipts.
+@@ -24,9 +24,10 @@
+     ('behavior', 'tests/neon_behavior_regression.gd', False, 32, 150),
+     ('compact', 'tests/neon_compact_timeline_reveal_smoke.gd', False, 14, 150),
+     ('rail', 'tests/neon_rail_placement_smoke.gd', False, 45, 150),
++    ('lifecycle', 'tests/neon_world_rail_lifecycle.gd', False, 29, 130),
+ )
+ MARKERS = {'inset': 'INSET_SCENE_REGRESSION ', 'compact': 'COMPACT_TIMELINE_REVEAL ',
+-           'rail': 'NEON_RAIL_PLACEMENT '}
++           'rail': 'NEON_RAIL_PLACEMENT ', 'lifecycle': 'NEON_WORLD_RAIL_LIFECYCLE '}
+ BAD_LOG = ('SCRIPT ERROR', 'SHADER ERROR', 'ERROR:', 'FAIL ', 'ObjectDB instances leaked',
+            'Shader compilation failed', '_set_transient_exclusive_child')
+ FUNCTIONAL_DIRS = ('src', 'tests', 'tools', 'data', 'examples')
+@@ -188,6 +189,18 @@
+         require(report.get('format')=='has_neon_rail_placement_regression_1' and
+                 report.get('synthetic_fixture_only') is True and report.get('screenshots_written') is False,
+                 'Rail fixture/output scope differs')
++    elif name=='lifecycle':
++        required_cases=['theme-detach-reentry-reparent-free','queued-owner','immediate-free-resize']
++        required_keys={'format','checks','failures','cases','source_only_fixture_uses_native_models'}
++        # Validate both physical JSON and stdout independently: ordinary dict equality aliases bool/int.
++        for observed in (report,json.loads(lines[0])):
++            require(type(observed) is dict and set(observed)==required_keys and
++                    observed['format']=='has_neon_world_rail_lifecycle_1' and
++                    type(observed['checks']) is int and observed['checks']==29 and
++                    type(observed['failures']) is int and observed['failures']==0 and
++                    type(observed['cases']) is list and observed['cases']==required_cases and
++                    observed['source_only_fixture_uses_native_models'] is False,
++                    'Lifecycle format/case/native/result scope differs')
+ 
+ 
+ def main(argv=None):
+@@ -262,7 +275,7 @@
+                  'functional_sources_unchanged':True,'product_suite_executed':False}
+         write_json(folder/'parse-only.json',value)
+         print(json.dumps(value,indent=2));return 0
+-    require(set(reports)=={'inset','behavior','compact','rail'}, 'Incomplete workspace suite')
++    require(set(reports)=={row[0] for row in CASES}, 'Incomplete workspace suite')
+     value = {'format':'has_neon_workspace_verification_1','passed':True,'folder':str(folder),
+              'reports':reports,'parses':parses,'checks':sum(row[3] for row in CASES),'failures':0,
+              'expected_checks':{row[0]:row[3] for row in CASES},'functional_source_count':len(before),
+@@ -271,7 +284,7 @@
+              'source_before':{'path':str(folder/'source-before.json'),'sha256':sha((folder/'source-before.json').read_bytes())},
+              'source_after':{'path':str(folder/'source-after.json'),'sha256':sha((folder/'source-after.json').read_bytes())}}
+     write_json(folder/'verification.json',value)
+-    # Standard suite entry point; written only after all four actual results and physical closure gates pass.
++    # Standard suite entry point; written only after all five actual results and physical closure gates pass.
+     target = ROOT/'output/neon-workspace-verification.json'
+     temporary = target.with_name(target.name+'.'+uuid.uuid4().hex+'.tmp')
+     write_json(temporary,value)

@@ -1,0 +1,23 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS every cached level preserves exact per-clip maxima: [24, 1] disjoint
+PASS every cached level preserves exact per-clip maxima: [24, 1] overlap
+PASS every cached level preserves exact per-clip maxima: [24, 1] muted
+PASS every cached level preserves exact per-clip maxima: [24, 1] fades
+PASS every cached level preserves exact per-clip maxima: [30000, 1001] disjoint
+PASS every cached level preserves exact per-clip maxima: [30000, 1001] overlap
+PASS every cached level preserves exact per-clip maxima: [30000, 1001] muted
+PASS every cached level preserves exact per-clip maxima: [30000, 1001] fades
+PASS single-clip quantized overview has the same exact max pyramid
+PASS four short late transients retain independent exact times and amplitudes
+PASS same four transients occupied only two original overview bins
+PASS cached peak payload stays bounded near1MiB for16clips
+PASS muted single clip has zero peaks at every resolution
+PASS empty scene does not own unnecessary clip waveform levels
+PASS Fit retains original waveform overview
+PASS short visible range chooses detailed cached peaks
+PASS intermediate zoom chooses bounded intermediate detail
+PASS missing optional cache falls back to existing overview
+PASS nested parent retains its own independent waveform cache
+PASS child keeps its local waveform levels for entering its timeline
+WAVEFORM_LEVELS_UNIT {"checks":20,"failures":0}

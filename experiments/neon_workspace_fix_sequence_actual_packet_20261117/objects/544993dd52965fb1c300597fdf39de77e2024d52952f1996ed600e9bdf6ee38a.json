@@ -1,0 +1,23 @@
+{
+  "format": "has_neon_f387_failed_actual_1",
+  "full_suite_passed": false,
+  "candidate": "f387d0e9ddfb099140c0699d9f7ed430f5d7b949",
+  "main_redesign_merged": false,
+  "functional_sources_unchanged": 1028,
+  "failure": "workspace_controls wrapper refuses teardown font errors",
+  "workspace_predicates": {
+    "checks": 48,
+    "failures": 0
+  },
+  "font_error_after_app_free": "Parameter fd is null; WorldSelection.set_rail -> WorkspaceLayout.refresh_world_mode",
+  "core_groups_passed_before_workspace": 36,
+  "physical_jobs": 36,
+  "normal_exit0": 35,
+  "registered_Krita_cancel_exit2": 1,
+  "all_jobs_desktops_closed": true,
+  "release_utc": "2026-11-17T01:41:37.6900079Z",
+  "stale_final_report_used": false,
+  "private_art_arrays_or_media_copied": false,
+  "original_failure_retained": true,
+  "repair_qualified_by_this_archive": false
+}

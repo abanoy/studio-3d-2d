@@ -1,0 +1,1 @@
+Closed failed full ffcf run: source1029 unchanged, all36 core and12504 Neon checks pass, then scene-view102/4 stops the strict verifier. Original mask-sensitive failures and all48 physical receipts are retained. No full PASS, merge, analytical-fixture qualification or native model fidelity is claimed. Images/GLB/native arrays remain private.

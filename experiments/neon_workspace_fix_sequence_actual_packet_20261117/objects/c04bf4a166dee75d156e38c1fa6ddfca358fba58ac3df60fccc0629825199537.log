@@ -1,0 +1,42 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS neon_behavior.default_neon
+PASS neon_behavior.idle_simple_pose
+PASS neon_behavior.actual_physics_visible
+PASS neon_behavior.actual_hair_visible
+PASS neon_behavior.fan_entry_visible
+PASS neon_behavior.loose_parts_entry_visible
+PASS neon_behavior.wind_review_entry_visible
+PASS neon_behavior.record_scope_visible
+PASS neon_behavior.record_entry_visible
+PASS neon_behavior.simple_add_fan_real_click
+PASS neon_behavior.included_model_import
+PASS neon_behavior.cache_contains_current_model
+PASS neon_behavior.cache_current_identity
+PASS neon_behavior.cache_updates_after_authored_key
+PASS neon_behavior.deleted_object_cache_evicted
+PASS neon_behavior.remaining_model_cache_retained
+PASS neon_behavior.cache_bounded_to_live_rows
+PASS neon_behavior.no_runtime_cache_cleared
+PASS neon_behavior.cache_repopulates_current_world
+PASS neon_behavior.new_project_succeeds
+PASS neon_behavior.new_project_cache_bounded
+PASS neon_behavior.F11_assignment_accepted
+PASS neon_behavior.F11_assignment_persisted
+PASS neon_behavior.bound_F11_routes_save
+PASS neon_behavior.unbound_F11_routes_fullscreen
+PASS neon_behavior.modified_F11_binding_preserved
+PASS neon_behavior.toast_displayed_with_tooltip
+PASS neon_behavior.toast_fades_without_erasing_status
+PASS neon_behavior.old_toast_rect_inside_scene
+NEON_TOAST_DIAGNOSTIC {"canvas_rect":"[P: (64.0, 56.0), S: (1088.0, 678.0)]","hovered_control":"/root/NeonRegressionStudio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@927/WorkspaceVertical/@VSplitContainer@925/@HSplitContainer@929/Stage/@VBoxContainer@113/StageCanvas/StageOverlay/StageTop/PhysicsControlsScroll/@MarginContainer@200/@HBoxContainer@201/@PanelContainer@202/@HBoxContainer@203/@Button@217","label":"before_first_faded_click","point_inside_canvas":true,"point_inside_toast":true,"pointer_presses":0,"sample_point":"(612.0, 706.0)","scene_rect":"[P: (0.0, 0.0), S: (1088.0, 678.0)]","status_faded":true,"status_serial":12,"status_text":"A short transient message.","toast_alpha":0.0,"toast_mouse_filter":2,"toast_rect":"[P: (499.0, 686.0), S: (226.0, 40.0)]","toast_visible":true}
+NEON_TOAST_DIAGNOSTIC {"canvas_rect":"[P: (64.0, 56.0), S: (1088.0, 678.0)]","hovered_control":"/root/NeonRegressionStudio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@927/WorkspaceVertical/@VSplitContainer@925/@HSplitContainer@929/Stage/@VBoxContainer@113/StageCanvas/@Control@232","label":"after_first_faded_click","point_inside_canvas":true,"point_inside_toast":true,"pointer_presses":1,"sample_point":"(612.0, 706.0)","scene_rect":"[P: (0.0, 0.0), S: (1088.0, 678.0)]","status_faded":false,"status_serial":13,"status_text":"Move the view, then save a key. Press Save camera key [K] to keep it.","toast_alpha":1.0,"toast_mouse_filter":1,"toast_rect":"[P: (375.0, 686.0), S: (465.0, 40.0)]","toast_visible":true}
+NEON_FIRST_CLICK_CONTEXT {"after_serial":13,"before_serial":12,"new_message":true}
+PASS neon_behavior.faded_toast_allows_real_canvas_click
+NEON_TOAST_DIAGNOSTIC {"canvas_rect":"[P: (64.0, 56.0), S: (1088.0, 678.0)]","hovered_control":"/root/NeonRegressionStudio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@927/WorkspaceVertical/@VSplitContainer@925/@HSplitContainer@929/Stage/@VBoxContainer@113/StageCanvas/@Control@232","label":"new_context_message_after_first_click","point_inside_canvas":true,"point_inside_toast":true,"pointer_presses":1,"sample_point":"(607.5, 706.0)","scene_rect":"[P: (0.0, 0.0), S: (1088.0, 678.0)]","status_faded":false,"status_serial":13,"status_text":"Move the view, then save a key. Press Save camera key [K] to keep it.","toast_alpha":1.0,"toast_mouse_filter":1,"toast_rect":"[P: (375.0, 686.0), S: (465.0, 40.0)]","toast_visible":true}
+NEON_TOAST_DIAGNOSTIC {"canvas_rect":"[P: (64.0, 56.0), S: (1088.0, 678.0)]","hovered_control":"/root/NeonRegressionStudio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@927/WorkspaceVertical/@VSplitContainer@925/@HSplitContainer@929/Stage/@VBoxContainer@113/StageCanvas/@Control@232","label":"before_workspace_refresh","point_inside_canvas":true,"point_inside_toast":true,"pointer_presses":1,"sample_point":"(607.5, 706.0)","scene_rect":"[P: (0.0, 0.0), S: (1088.0, 678.0)]","status_faded":true,"status_serial":13,"status_text":"Move the view, then save a key. Press Save camera key [K] to keep it.","toast_alpha":0.0,"toast_mouse_filter":2,"toast_rect":"[P: (375.0, 686.0), S: (465.0, 40.0)]","toast_visible":true}
+NEON_TOAST_DIAGNOSTIC {"canvas_rect":"[P: (64.0, 56.0), S: (1088.0, 678.0)]","hovered_control":"/root/NeonRegressionStudio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@927/WorkspaceVertical/@VSplitContainer@925/@HSplitContainer@929/Stage/@VBoxContainer@113/StageCanvas/@Control@232","label":"after_workspace_refresh","point_inside_canvas":true,"point_inside_toast":true,"pointer_presses":1,"sample_point":"(607.5, 706.0)","scene_rect":"[P: (0.0, 0.0), S: (1088.0, 678.0)]","status_faded":true,"status_serial":13,"status_text":"Move the view, then save a key. Press Save camera key [K] to keep it.","toast_alpha":0.0,"toast_mouse_filter":2,"toast_rect":"[P: (375.0, 686.0), S: (465.0, 40.0)]","toast_visible":true}
+NEON_TOAST_DIAGNOSTIC {"canvas_rect":"[P: (64.0, 56.0), S: (1088.0, 678.0)]","hovered_control":"/root/NeonRegressionStudio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@927/WorkspaceVertical/@VSplitContainer@925/@HSplitContainer@929/Stage/@VBoxContainer@113/StageCanvas/@Control@232","label":"after_second_click","point_inside_canvas":true,"point_inside_toast":true,"pointer_presses":2,"sample_point":"(607.5, 706.0)","scene_rect":"[P: (0.0, 0.0), S: (1088.0, 678.0)]","status_faded":false,"status_serial":14,"status_text":"Move the view, then save a key. Press Save camera key [K] to keep it.","toast_alpha":1.0,"toast_mouse_filter":1,"toast_rect":"[P: (375.0, 686.0), S: (465.0, 40.0)]","toast_visible":true}
+PASS neon_behavior.workspace_refresh_keeps_canvas_clickthrough
+PASS neon_behavior.included_source_unchanged

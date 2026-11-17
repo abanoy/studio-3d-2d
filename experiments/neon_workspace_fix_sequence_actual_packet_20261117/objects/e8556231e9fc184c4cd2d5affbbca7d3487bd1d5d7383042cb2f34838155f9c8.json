@@ -1,0 +1,41 @@
+{
+  "status": "SOURCE_ONLY_NOT_RUNTIME_QUALIFIED",
+  "files": {
+    "world_selection.gd": {
+      "before_sha256": "f5b877745a63cb4d1aa2ff8d40a05f456c4979664efc70d275599410dab07637",
+      "after_sha256": "da1b36461976a521b27592bec818600937057522c783d3500c293448735be4cf",
+      "bytes": 32037,
+      "exact_inverse": true,
+      "all_other_functions_byte_exact": true,
+      "CRLF": 563,
+      "CRCRLF": 0
+    },
+    "workspace_layout.gd": {
+      "before_sha256": "7da378b1147266fbecdabf63422e19b1ee06024c40083d6fcf4ed8e93540bcfd",
+      "after_sha256": "17b7a2684ccd301a1f73f1abcc4eccafe91f6feb63a4be288b549ed4c66f3d82",
+      "bytes": 35538,
+      "exact_inverse": true,
+      "all_other_functions_byte_exact": true,
+      "CRLF": 555,
+      "CRCRLF": 0
+    }
+  },
+  "no_engines_cim_native_git": true,
+  "review_modified": false,
+  "new_tests_run": false,
+  "runtime_tests_required": [
+    "rail45",
+    "lifecycle29",
+    "controls48",
+    "standard12504"
+  ],
+  "changed_functions": {
+    "world_selection.gd": [
+      "set_rail"
+    ],
+    "workspace_layout.gd": [
+      "refresh_world_mode",
+      "float_panel"
+    ]
+  }
+}

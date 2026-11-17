@@ -1,0 +1,72 @@
+{
+  "format": "has_neon_f387_terminal_source_packet_1",
+  "status": "SOURCE_ONLY_ROOT_EXECUTION_PENDING_TERMINAL",
+  "source_commit": "f387d0e9ddfb099140c0699d9f7ed430f5d7b949",
+  "files": [
+    {
+      "path": "close_terminal.py",
+      "bytes": 21856,
+      "sha256": "9b17e69f888e7866b8b4de03087de8cb76d14d56eeb29d006716508e8d7b19d5"
+    },
+    {
+      "path": "CONTEXT.json",
+      "bytes": 1769,
+      "sha256": "a7bb4dd14d019b9f44aaf84762e0f7ae4990cf70d65d7cfcf68813b72713781b"
+    },
+    {
+      "path": "CPU_PREPARATION_REFUSAL1.json",
+      "bytes": 3502,
+      "sha256": "551adbc4f2122d24aa965434a9808c6be2c253d77711f5e5223bb1c44b0aabdd"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 2188,
+      "sha256": "b0bc862701e9f5cce9cfdb1fa68a70f4b9e2b3d8f24d7a8ec96e27494b2c51c2"
+    },
+    {
+      "path": "legacy_result_gates.py",
+      "bytes": 19506,
+      "sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460"
+    },
+    {
+      "path": "PEER_REVIEW.md",
+      "bytes": 1028,
+      "sha256": "c45f7787dc0fe161c488cee1e705439e41230200c53bf3ecf09e647e8859e8d3"
+    },
+    {
+      "path": "prepare_source.py",
+      "bytes": 5664,
+      "sha256": "36891c936ad993ba03f232d5be260cbe423bfb7d4b436301721a0017a0c50316"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4042,
+      "sha256": "87e42261d8ba92e2b708de28c2da5a0c1854b66802e40c5c60451b75e8e84817"
+    },
+    {
+      "path": "RESULT_REGISTRY.json",
+      "bytes": 6010,
+      "sha256": "35251e0f98cd87ba36f83025783a988e9668d3594e27d7b5e42ce1094a3250ad"
+    },
+    {
+      "path": "SOURCE_DERIVATION.json",
+      "bytes": 773,
+      "sha256": "f0713538c23403c60eab59f19760d7772e15f4eba8dee3a0fd70e4445b2c295c"
+    },
+    {
+      "path": "test_terminal.py",
+      "bytes": 13014,
+      "sha256": "eb78c56a04199b847f0e608b2a50d0ed7fbff8c03459130167fe7e9597e7ff5d"
+    }
+  ],
+  "file_count": 11,
+  "bytes": 79352,
+  "expected_groups": 158,
+  "core_groups": 36,
+  "movie_groups": 21,
+  "functional_sources": 1028,
+  "private_job_count": "DERIVE_FROM_ACTUAL_FRESH_PHYSICAL_AND_INLINE_OWNERSHIP",
+  "excludes": [
+    "INDEX.json"
+  ]
+}

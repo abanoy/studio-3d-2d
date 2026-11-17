@@ -1,7 +1,7 @@
 {
   "format": "has_neon_review_actual_checkpoint_1",
   "original_branch": "c2d52ff5fd0f9aeffae6a343f6d4b71698ed9ff2",
-  "candidate": "f387d0e9ddfb099140c0699d9f7ed430f5d7b949",
+  "candidate": "ffcf4c54ab9ab7af7cb01329a5b3b5b6f4589865",
   "original_full": "FAILED_OBJECT_TIMING28_2",
   "original_full_physical_jobs_closed": 24,
   "original_behavior": "32/13",
@@ -20,7 +20,7 @@
   "native_fidelity_qualified_by_these_synthetic_checks": false,
   "corrected_full_private_jobs_closed": 27,
   "corrected_full_sources_unchanged": 1028,
-  "third_full": "ACTIVE_ROOT_OBSERVED",
+  "third_full": "FAILED_F387_WORKSPACE_FONT_DIAGNOSTICS",
   "native_channel_fixture_successor": "48/0_all3native",
   "movement_legacy_and_component_successors": "PASSED",
   "waveform_palette_successor": {
@@ -56,5 +56,38 @@
     "rgb_tolerance": 0.02,
     "oracle": "source-derived StyleBoxFlat AA",
     "old_failures_retained": true
-  }
+  },
+  "third_full_core_groups_passed": 36,
+  "third_full_physical_jobs_closed": 36,
+  "font_fix_actual_controls": "48/0_STRICT_NO_ENGINE_ERRORS",
+  "lifecycle_actual": "29/0_PARSE_AND_PRIVATE_GUI",
+  "other_workspace_wrappers": "RESIZE_DOCKING_NESTED_PASS",
+  "standard_Neon_12504": "PASS_ALL5_CASES",
+  "next_full": "FAILED_FFCF_SCENE_VIEW102_4",
+  "concatenation_timing_interpretation": "RETRACTED_ORDERED_LOG_SHOWS_LIVE_DOCKING",
+  "all5_workspace_wrappers": "PASS",
+  "transaction_standalone32": "PASS",
+  "next_full_state": {
+    "format": "has_owned_canonical_run_1",
+    "pid": 27512,
+    "process_started": "2026-11-17T02:22:31.2361797Z",
+    "started_utc": "2026-11-17T02:22:31.5782448Z",
+    "status": "failed",
+    "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+    "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-ffcf4c5-20261117T021833",
+    "source_commit": "ffcf4c54ab9ab7af7cb01329a5b3b5b6f4589865",
+    "python": "C:\\Program Files\\Python313\\python.exe",
+    "command": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-u",
+      "tests/verify.py"
+    ],
+    "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+    "suite_exit": 1,
+    "source_unchanged": true,
+    "finished_utc": "2026-11-17T02:34:45.1241655Z"
+  },
+  "next_full_closed_jobs": 48,
+  "next_full_inventory_sha256": "2c334aab837768ee17b2c13be0ad6ac26fa203a9e8815cd991b24a2de3386704",
+  "old_regex_overescape_inference": "RETRACTED_PATTERN_VALID"
 }

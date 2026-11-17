@@ -1,0 +1,36 @@
+{
+  "scope": "Synthetic CPU-only decoded-model capture; pinned installed reader source hash/AST inspection only",
+  "started_utc": "2026-11-17T01:43:00.253814+00:00",
+  "finished_utc": "2026-11-17T01:43:00.387986+00:00",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "test_capture_decoded.py"
+  ],
+  "exit_code": 0,
+  "test_count": 22,
+  "failures": 0,
+  "native_inputs": false,
+  "engines": false,
+  "upstream_reader_executed": false,
+  "native_file_join": "UNQUALIFIED",
+  "artifacts": [
+    {
+      "path": "capture_decoded.py",
+      "bytes": 12932,
+      "sha256": "6a0af8e9209ce0e782f140da37405fda9d3bd82d02b241c432dbac32c83ad78e"
+    },
+    {
+      "path": "test_capture_decoded.py",
+      "bytes": 15055,
+      "sha256": "74fb5a9d524df091be3f7e8723150b8323a2e19f4b67b09d700884330069f44b"
+    },
+    {
+      "path": "unittest.log",
+      "bytes": 2997,
+      "sha256": "ef9db7ed6e421a6338b48b8af055de6386eb57f2017f1fefb2bac3eb0dda315f"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "format": "has_root_neon_f387_graphics_lease_release_1",
+  "released": true,
+  "release_kind": "closed_failed_partial_run",
+  "released_utc": "2026-11-17T01:41:37.6900079Z",
+  "source_commit": "f387d0e9ddfb099140c0699d9f7ed430f5d7b949",
+  "canonical_run": "windows-neon-f387d0e-20261117T012410",
+  "coordinator_pid": 25388,
+  "python_pid": 23904,
+  "functional_sources": 1028,
+  "full_suite_passed": false,
+  "suite_exit": 1,
+  "final_full_report_used": false,
+  "physical_jobs": 36,
+  "physical_receipt_files": 36,
+  "all_collected_jobs_desktops_closed_private": true,
+  "all_inline_exact_physical_matches": true,
+  "root_observer_issued_no_termination": true,
+  "receipt_inventory_sha256": "c00553b7f303f7047e4b46beeceb439312e9139896532fe38583e65fd8c6cb03",
+  "terminal_state_sha256": "05660c9dda2bb6827272c5fc2b1cd1d332501e7534909d6e7b9f625c2a737921",
+  "second_identity_and_scope_observation": {
+    "python": {
+      "expected_creation_utc": "2026-11-17T01:27:37.1616850Z",
+      "pid": 23904,
+      "current_creation_utc": null,
+      "original_absent": true,
+      "pid_present": false
+    },
+    "owned_runtime_command_matches_absent": true,
+    "observed_utc": "2026-11-17T01:41:37.6900079Z",
+    "coordinator": {
+      "expected_creation_utc": "2026-11-17T01:27:36.0890696Z",
+      "pid": 25388,
+      "current_creation_utc": null,
+      "original_absent": true,
+      "pid_present": false
+    },
+    "owned_runtime_matches": [],
+    "root_observer_issued_no_termination": true,
+    "observer_retained_Popen_reaped": true
+  }
+}

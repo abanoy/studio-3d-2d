@@ -1,0 +1,22 @@
+{
+  "format": "has_carrier_semantic_source_references_1",
+  "sealed_carrier_packet_unchanged": {
+    "path": "experiments/native_normal_carrier_strategy_20261117/INDEX.json",
+    "sha256": "1987162fe6d7a7e055c4d532959346daf88ae05a45ed4d89a335d65fbd7665ea"
+  },
+  "official_primary_schemas": [
+    {
+      "url": "https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/schema/accessor.schema.json",
+      "used_for": "Component types/count/normalization/typed data reference; prototype narrows support."
+    },
+    {
+      "url": "https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/schema/bufferView.schema.json",
+      "used_for": "Buffer offsets, lengths, stride and GPU target hints."
+    },
+    {
+      "url": "https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/schema/mesh.primitive.schema.json",
+      "used_for": "Attribute/index/morph-target references and triangle topology."
+    }
+  ],
+  "source_native_arrays_included": false
+}

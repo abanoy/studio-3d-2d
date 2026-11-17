@@ -1,0 +1,21 @@
+--- a/src/world_selection.gd
++++ b/src/world_selection.gd
+@@ -79,10 +79,17 @@
+ 
+ func tree_font() -> Font:
+ 	# Neon: the interface font, with Yu Gothic UI kept as the fallback for Japanese object names.
++	# Retain both original profiles so docking reuses the same Font resources.
++	var neon := StudioTheme.is_neon()
++	var key := "world_tree_neon" if neon else "world_tree_classic"
++	if StudioTheme.fonts.has(key): return StudioTheme.fonts[key]
+ 	var japanese := SystemFont.new(); japanese.font_names = PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"])
+-	if not StudioTheme.is_neon(): return japanese
++	if not neon:
++		StudioTheme.fonts[key] = japanese
++		return japanese
+ 	var font := SystemFont.new(); font.font_names = PackedStringArray(StudioTheme.UI_FONTS); font.font_weight = 500
+ 	font.fallbacks = [japanese]
++	StudioTheme.fonts[key] = font
+ 	return font
+ 
+ func style_tile(control: Button, kind: String, tile: bool) -> void:

@@ -1,0 +1,55 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS included synthetic rig opens for rail checks
+PASS solitary narrow left World uses its icon rail
+PASS supported left rail exposes its unfold button
+PASS left rail retains the selected model
+PASS left rail retains the live Tree and world document
+PASS left unfold button reveals a 232 px list
+PASS left fold button returns to the supported rail
+PASS left fold and unfold retains the selected model
+PASS left fold and unfold retains the live Tree and world document
+PASS narrow-right fixture gives World a solitary dock
+RAIL_STATE {"floating":false,"help_inside":true,"holder_inside":true,"label":"World moved to the right","layout_active":true,"panel_inside":true,"rail_inside":true,"selection_active":true,"selection_mode":false,"tree_inside":true,"tree_visible":true,"workspace_mode":false}
+PASS World moved to the right uses the full hierarchy list
+PASS World moved to the right does not offer an unsupported left-dock fold action
+PASS World moved to the right retains the selected model
+PASS World moved to the right retains the live Tree and world document
+PASS right-dock regression reaches a sub-140 px World panel
+RAIL_STATE {"floating":false,"help_inside":true,"holder_inside":true,"label":"narrow right World","layout_active":true,"panel_inside":true,"rail_inside":true,"selection_active":true,"selection_mode":false,"tree_inside":true,"tree_visible":true,"workspace_mode":false}
+PASS narrow right World uses the full hierarchy list
+PASS narrow right World does not offer an unsupported left-dock fold action
+PASS narrow right World retains the selected model
+PASS narrow right World retains the live Tree and world document
+PASS nested regression places World beside Timeline inside the left edge
+PASS nested regression reaches a sub-140 px World leaf
+RAIL_STATE {"floating":false,"help_inside":true,"holder_inside":true,"label":"narrow nested World","layout_active":true,"panel_inside":true,"rail_inside":true,"selection_active":true,"selection_mode":false,"tree_inside":true,"tree_visible":true,"workspace_mode":false}
+PASS narrow nested World uses the full hierarchy list
+PASS narrow nested World does not offer an unsupported left-dock fold action
+PASS narrow nested World retains the selected model
+PASS narrow nested World retains the live Tree and world document
+PASS unsupported nested fold call leaves every dock offset unchanged
+PASS nested World layout reloads from disk
+PASS nested layout restoration preserves exact serialized state
+RAIL_STATE {"floating":false,"help_inside":true,"holder_inside":true,"label":"restored nested World","layout_active":true,"panel_inside":true,"rail_inside":true,"selection_active":true,"selection_mode":false,"tree_inside":true,"tree_visible":true,"workspace_mode":false}
+PASS restored nested World uses the full hierarchy list
+PASS restored nested World does not offer an unsupported left-dock fold action
+PASS restored nested World retains the selected model
+PASS restored nested World retains the live Tree and world document
+PASS tab regression shares World with Properties
+RAIL_STATE {"floating":false,"help_inside":true,"holder_inside":true,"label":"tabbed left World","layout_active":true,"panel_inside":true,"rail_inside":true,"selection_active":true,"selection_mode":false,"tree_inside":true,"tree_visible":true,"workspace_mode":false}
+PASS tabbed left World uses the full hierarchy list
+PASS tabbed left World does not offer an unsupported left-dock fold action
+PASS tabbed left World retains the selected model
+PASS tabbed left World retains the live Tree and world document
+PASS World detaches into its own window
+RAIL_STATE {"floating":true,"help_inside":true,"holder_inside":true,"label":"floating World","layout_active":true,"panel_inside":true,"rail_inside":true,"selection_active":true,"selection_mode":true,"tree_inside":true,"tree_visible":false,"workspace_mode":false}
+FAIL floating World uses the full hierarchy list
+PASS floating World does not offer an unsupported left-dock fold action
+PASS floating World retains the selected model
+PASS floating World retains the live Tree and world document
+PASS returning from a floating window restores the supported left rail
+PASS redocked left rail retains the selected model
+PASS redocked left rail retains the live Tree and world document
+NEON_RAIL_PLACEMENT {"checks":45,"failures":1,"format":"has_neon_rail_placement_regression_1","screenshots_written":false,"synthetic_fixture_only":true}

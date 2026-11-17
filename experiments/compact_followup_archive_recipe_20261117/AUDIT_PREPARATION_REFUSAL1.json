@@ -1,0 +1,9 @@
+{
+  "format": "has_audit_preparation_refusal_1",
+  "status": "INITIAL_AUDITOR_ASSERTION_FAILED",
+  "cause": "Closed-set inventory excluded every basename INDEX.json, including the packet payload recipe/INDEX.json. Fix is to exclude only the packet root INDEX.json. Archive bytes unchanged; this is an audit implementation error, not a proved packet defect.",
+  "observed_difference": [
+    "recipe/INDEX.json"
+  ],
+  "engines_CIM_Git_or_functional_edits": false
+}

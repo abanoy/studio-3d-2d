@@ -1,0 +1,80 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "native_normal_carrier_probe_20261117",
+  "status": "SEALED_MINIMAL_SOURCE_CPU_NATIVE_PREPARATION_NOT_STAGE_READY",
+  "files": [
+    {
+      "path": "audit_source_only.py",
+      "bytes": 5521,
+      "sha256": "19257c46c4fff9c74b3aa1c2e4f9814be00e02b500b4b1d0523d28ef92610c39"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 5139,
+      "sha256": "3968ec87b7098a7733a4aa1ccdb5fb8c39a8b97db32f4a71520c3dddf24c4648"
+    },
+    {
+      "path": "exact_point_join.py",
+      "bytes": 8826,
+      "sha256": "c3a5ac1acc6b6a2988020d924313f27fedaa371281bfeae5f6871a545d54d85d"
+    },
+    {
+      "path": "identity_manifest.py",
+      "bytes": 3810,
+      "sha256": "109a4e7016ad80d81d64758b485396d232e1e3d2f0742d42280df5b084bf6f03"
+    },
+    {
+      "path": "NEXT_NATIVE_RECIPE.md",
+      "bytes": 12872,
+      "sha256": "f565fdd73c8868863d2d29dd56f1bae598dde426544b0425be39b4a6df2c9aac"
+    },
+    {
+      "path": "observer_instrumentation.py",
+      "bytes": 7829,
+      "sha256": "15145030fab5b662be490e519ff59f870c4e9c0352766ff59bf3da3f12198f7b"
+    },
+    {
+      "path": "placement_sentinel.py",
+      "bytes": 4387,
+      "sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2"
+    },
+    {
+      "path": "READINESS.json",
+      "bytes": 8070,
+      "sha256": "6942f465fa3078b580666b6771542f85ffe9abf5a8ebd9ccb06e1eaa14e2e0df"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2551,
+      "sha256": "6efac4150b7cc7836ec415199f271d6a8a7bae53c3812026a7b262746bf4f9bc"
+    },
+    {
+      "path": "SENTINEL_DERIVATION.json",
+      "bytes": 592,
+      "sha256": "43c8188388fa2f708ac7b18f8be762885260b7b6169088e067d9cef678465005"
+    },
+    {
+      "path": "SOURCE_AUDIT.json",
+      "bytes": 6663,
+      "sha256": "edd3cc188a429374f3c8ee0176f7dd750098111f60f5d83cd1e113f1be9b82fb"
+    },
+    {
+      "path": "test_observer_and_joins.py",
+      "bytes": 11621,
+      "sha256": "dea561f37c5ad37cf6f2168733ae1740021df3d3784d95e808f86311d3a8f3ba"
+    },
+    {
+      "path": "test_placement_sentinel.py",
+      "bytes": 2607,
+      "sha256": "c3a94697d917fc55024d68ef780dee98ca328ec1f7201d87e829ec75481e05d5"
+    }
+  ],
+  "file_count": 13,
+  "bytes": 80488,
+  "excludes": [
+    "INDEX.json"
+  ],
+  "synthetic_tests": 20,
+  "native_stage_ready": false,
+  "no_native_arrays_assets_or_media": true
+}

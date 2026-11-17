@@ -1,0 +1,37 @@
+{
+  "format": "has_neon_archives_independent_audit_packet_1",
+  "status": "PASS_INDEPENDENT_SOURCE_METADATA_ARCHIVE_AUDIT",
+  "files": [
+    {
+      "path": "audit_archives.py",
+      "bytes": 17088,
+      "sha256": "f6a542c97f1d89fcd78a1c96dc7cd42e73cbadab69425f45d8b7f21a67335bc2"
+    },
+    {
+      "path": "CPU_REPORT.json",
+      "bytes": 4269,
+      "sha256": "608f446be79bd3e6b4773f1c2adcba0996ecf55e7dd82e5ba715addf2b264c1c"
+    },
+    {
+      "path": "PEER_REVIEW.md",
+      "bytes": 4878,
+      "sha256": "ad209a87cfb0d5851d111d1b39bdc0a72d8f11f36e5d72191cfb0dac1a8ec4d3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3003,
+      "sha256": "3b1833db8efe9acfc05cdb6ecf01c4709fa3420a9e31d9ca02330cd354a99208"
+    }
+  ],
+  "file_count": 4,
+  "bytes": 29238,
+  "payloads_audited": 341,
+  "exact_original_bindings": 450,
+  "distinct_physical_jobs": 24,
+  "archive_builders_imported_or_executed": false,
+  "archives_or_REVIEW_modified": false,
+  "engines_CIM_Git_executed": false,
+  "excludes": [
+    "INDEX.json"
+  ]
+}

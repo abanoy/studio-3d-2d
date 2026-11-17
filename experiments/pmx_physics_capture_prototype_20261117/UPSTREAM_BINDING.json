@@ -1,0 +1,165 @@
+{
+  "scope": "Read-only exact source field binding; no installed reader execution or native-table join",
+  "snapshot_utc": "2026-11-17T01:44:25.531052+00:00",
+  "installed_manifest_version": "4.5.11",
+  "native_file_join": "UNQUALIFIED",
+  "files": [
+    {
+      "path": "C:\\Users\\noble\\AppData\\Roaming\\Blender Foundation\\Blender\\5.1\\extensions\\user_default\\mmd_tools\\core\\pmx\\__init__.py",
+      "bytes": 51956,
+      "sha256": "fb9aafe369025f221bc5a1c952d868260b1a4bb950dc33bca62645b4da454e5a",
+      "executed": false
+    },
+    {
+      "path": "C:\\Users\\noble\\AppData\\Roaming\\Blender Foundation\\Blender\\5.1\\extensions\\user_default\\mmd_tools\\blender_manifest.toml",
+      "bytes": 1613,
+      "sha256": "e4b9f71523a9aeb1ed8bb327e4b3cdef7fe5a4e92b4505782ce3e5b0f009f324",
+      "executed": false
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\mmd_ik.py",
+      "bytes": 5151,
+      "sha256": "2a1872ebf8a790e510f52638d64978ac2a841cbc5aa21a7beec4938867f496aa",
+      "executed": false
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\blender_mmd_bridge.py",
+      "bytes": 11922,
+      "sha256": "c2abd3dd75677bebc91d0ff153dd8822bb32ca0132c70bbbc085b9944e5bc08a",
+      "executed": false
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\pose_editor.gd",
+      "bytes": 48374,
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "executed": false
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\has_project.py",
+      "bytes": 36736,
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+      "executed": false
+    }
+  ],
+  "reader_anchors": [
+    {
+      "name": "FileReadStream.__init__",
+      "line": 48,
+      "end_line": 50
+    },
+    {
+      "name": "FileReadStream.readStr",
+      "line": 98,
+      "end_line": 101
+    },
+    {
+      "name": "Header.__init__",
+      "line": 226,
+      "end_line": 241
+    },
+    {
+      "name": "Header.load",
+      "line": 262,
+      "end_line": 298
+    },
+    {
+      "name": "Header.save",
+      "line": 300,
+      "end_line": 311
+    },
+    {
+      "name": "Model.__init__",
+      "line": 318,
+      "end_line": 347
+    },
+    {
+      "name": "Model.load",
+      "line": 349,
+      "end_line": 560
+    },
+    {
+      "name": "Model.save",
+      "line": 562,
+      "end_line": 639
+    },
+    {
+      "name": "Rigid.__init__",
+      "line": 1412,
+      "end_line": 1432
+    },
+    {
+      "name": "Rigid.load",
+      "line": 1437,
+      "end_line": 1462
+    },
+    {
+      "name": "Rigid.save",
+      "line": 1464,
+      "end_line": 1488
+    },
+    {
+      "name": "Joint.__init__",
+      "line": 1494,
+      "end_line": 1512
+    },
+    {
+      "name": "Joint.load",
+      "line": 1514,
+      "end_line": 1527
+    },
+    {
+      "name": "Joint._load",
+      "line": 1529,
+      "end_line": 1551
+    },
+    {
+      "name": "Joint.save",
+      "line": 1553,
+      "end_line": 1577
+    },
+    {
+      "name": "load",
+      "line": 1580,
+      "end_line": 1603
+    }
+  ],
+  "rigid_fields": [
+    "name",
+    "name_e",
+    "bone",
+    "collision_group_number",
+    "collision_group_mask",
+    "type",
+    "size",
+    "location",
+    "rotation",
+    "mass",
+    "velocity_attenuation",
+    "rotation_attenuation",
+    "bounce",
+    "friction",
+    "mode"
+  ],
+  "joint_fields": [
+    "name",
+    "name_e",
+    "mode",
+    "src_rigid",
+    "dest_rigid",
+    "location",
+    "rotation",
+    "maximum_location",
+    "minimum_location",
+    "maximum_rotation",
+    "minimum_rotation",
+    "spring_constant",
+    "spring_rotation_constant"
+  ],
+  "losses": [
+    "Header.load rejects 2.1",
+    "Rigid.load normalizes all negative bone words to None",
+    "Joint.load can fill truncated fields",
+    "load catches struct.error without raising",
+    "readStr uses errors=replace"
+  ]
+}

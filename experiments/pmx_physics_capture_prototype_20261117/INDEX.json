@@ -1,0 +1,188 @@
+{
+  "format": "has_inactive_pmx_decoded_capture_experiment_seal_1",
+  "sealed_utc": "2026-11-17T01:45:05.060998+00:00",
+  "status": "22 synthetic CPU tests passed; decoded-model fallback only",
+  "native_file_join": "UNQUALIFIED",
+  "native_file_preservation_complete": false,
+  "runtime_or_portable_integration": false,
+  "main_or_review_runtime_changes": false,
+  "engines_cim_native_inputs_git": false,
+  "upstream_reader_executed": false,
+  "preserved_failure": "history/attempt1/receipt.json",
+  "checks": [
+    "Passing CPU receipt source/artifact hashes match",
+    "Six source bindings match including untouched main files",
+    "Raw unittest log confirms 22 tests/OK",
+    "Synthetic example retains all inactive/unqualified flags",
+    "11 packet artifacts hashed; no native media or geometry"
+  ],
+  "entry_points": [
+    {
+      "file": "capture_decoded.py",
+      "name": "CaptureError",
+      "line": 38
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "Limits",
+      "line": 43
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_limits",
+      "line": 51
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_integer",
+      "line": 58
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_name",
+      "line": 64
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_fields",
+      "line": 76
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_sequence",
+      "line": 92
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_float",
+      "line": 98
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_vector",
+      "line": 109
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_reference",
+      "line": 116
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "_unknown",
+      "line": 126
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "source_fingerprint",
+      "line": 137
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "canonical_bytes",
+      "line": 153
+    },
+    {
+      "file": "capture_decoded.py",
+      "name": "capture_decoded",
+      "line": 159
+    },
+    {
+      "file": "test_capture_decoded.py",
+      "name": "f32",
+      "line": 21
+    },
+    {
+      "file": "test_capture_decoded.py",
+      "name": "vector",
+      "line": 25
+    },
+    {
+      "file": "test_capture_decoded.py",
+      "name": "header",
+      "line": 29
+    },
+    {
+      "file": "test_capture_decoded.py",
+      "name": "body",
+      "line": 33
+    },
+    {
+      "file": "test_capture_decoded.py",
+      "name": "joint",
+      "line": 41
+    },
+    {
+      "file": "test_capture_decoded.py",
+      "name": "model",
+      "line": 49
+    },
+    {
+      "file": "test_capture_decoded.py",
+      "name": "normalized",
+      "line": 55
+    },
+    {
+      "file": "test_capture_decoded.py",
+      "name": "CaptureTests",
+      "line": 65
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "capture_decoded.py",
+      "bytes": 12932,
+      "sha256": "6a0af8e9209ce0e782f140da37405fda9d3bd82d02b241c432dbac32c83ad78e"
+    },
+    {
+      "path": "CPU_RESULT.json",
+      "bytes": 1044,
+      "sha256": "c3f85c27afa372b34fee81633c11a3ca73d436a76b08de50805bbda57cad1e8b"
+    },
+    {
+      "path": "EXAMPLE_CAPTURE.json",
+      "bytes": 4895,
+      "sha256": "6c520227d0fdc7516ba8b704288748b68a1a8ed9c005d1c3516a378b3ebf8d3b"
+    },
+    {
+      "path": "history/attempt1/capture_decoded.py",
+      "bytes": 12932,
+      "sha256": "f358772b11ae535727779bb1ce8aa6c713f0fd0c1d7395aeb53f108ef2b1631e"
+    },
+    {
+      "path": "history/attempt1/receipt.json",
+      "bytes": 988,
+      "sha256": "b6286cd9ce79209a955403156ff2b0ce604ea50e6b8b84d85648937701bbcf99"
+    },
+    {
+      "path": "history/attempt1/test_capture_decoded.py",
+      "bytes": 15055,
+      "sha256": "74fb5a9d524df091be3f7e8723150b8323a2e19f4b67b09d700884330069f44b"
+    },
+    {
+      "path": "history/attempt1/unittest.log",
+      "bytes": 4239,
+      "sha256": "ffcec49f843a66afd7c8cfad0158914e11821399bcfd7fd667e81e8b69498a3d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8067,
+      "sha256": "beb83d9b5e5b369516c4c844bde82b1445456d58369a47a23908d7a72ec427cb"
+    },
+    {
+      "path": "test_capture_decoded.py",
+      "bytes": 15055,
+      "sha256": "74fb5a9d524df091be3f7e8723150b8323a2e19f4b67b09d700884330069f44b"
+    },
+    {
+      "path": "unittest.log",
+      "bytes": 2997,
+      "sha256": "ef9db7ed6e421a6338b48b8af055de6386eb57f2017f1fefb2bac3eb0dda315f"
+    },
+    {
+      "path": "UPSTREAM_BINDING.json",
+      "bytes": 4180,
+      "sha256": "c6c4f4640cd4b8d8d502aa05922b18db0058661d7b1d103ff4d6b61019c9b1be"
+    }
+  ]
+}

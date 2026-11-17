@@ -1,0 +1,40 @@
+{
+  "format": "has_carrier_semantic_qualification_boundary_cpu_1",
+  "utc": "2026-11-17T01:50:25.603892+00:00",
+  "original_packet_INDEX_sha256": "edab37a065d3c29a316b7a1c1cab3a4263f5d4e716f97fa4192f541b391ea4fd",
+  "all_original_packet_payloads_unchanged": true,
+  "tests": 7,
+  "failures": 0,
+  "errors": 0,
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\carrier_semantic_qualification_boundary_20261117",
+    "-p",
+    "test_boundary.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_VEC3_rotation_output_is_preserved_but_not_validated (test_boundary.QualificationBoundaryTests.test_VEC3_rotation_output_is_preserved_but_not_validated) ... ok\ntest_changed_joint_component_still_refuses (test_boundary.QualificationBoundaryTests.test_changed_joint_component_still_refuses) ... ok\ntest_changed_position_component_still_refuses (test_boundary.QualificationBoundaryTests.test_changed_position_component_still_refuses) ... ok\ntest_duplicate_joint_list_is_preserved_but_not_validated (test_boundary.QualificationBoundaryTests.test_duplicate_joint_list_is_preserved_but_not_validated) ... ok\ntest_node_cycle_is_preserved_but_not_validated (test_boundary.QualificationBoundaryTests.test_node_cycle_is_preserved_but_not_validated) ... ok\ntest_out_of_skin_domain_joint_is_preserved_but_not_validated (test_boundary.QualificationBoundaryTests.test_out_of_skin_domain_joint_is_preserved_but_not_validated) ... ok\ntest_valid_synthetic_reference_preservation (test_boundary.QualificationBoundaryTests.test_valid_synthetic_reference_preservation) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.015s\n\nOK\n",
+  "boundary_witnesses": [
+    "JOINTS_0 byte255 outside one-joint skin domain",
+    "duplicate skin.joints with matching inverse-bind count",
+    "VEC3 animation output targeting rotation",
+    "node children cycle"
+  ],
+  "preservation_negative_checks": [
+    "changed joint component refused",
+    "changed position component refused"
+  ],
+  "native_assets_read": false,
+  "GLB_files_generated": false,
+  "engines_CIM_Git_or_functional_edits": false,
+  "qualification": "EQUALITY_AND_BOUNDED_STORAGE_ONLY; independent input-domain validity, per-primitive native-ID relation and exact NORMAL gate required before native use"
+}

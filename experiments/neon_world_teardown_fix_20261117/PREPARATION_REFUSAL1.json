@@ -1,0 +1,11 @@
+{
+  "format": "has_neon_teardown_preparation_refusal_transcription_1",
+  "raw_subprocess_log": false,
+  "source_only": true,
+  "operation": "prepare.py source inverse audit",
+  "exception": "AssertionError at inverse.count(after)==1",
+  "cause": "Removing a declaration left a common one-line string that appeared in other functions; the audit required unique text rather than the exact recorded position.",
+  "resolution": "Record the replacement position and verify the exact inverse slice while undoing replacements in reverse order.",
+  "runtime_file_or_acceptance_gate_changed": false,
+  "engine_parser_CIM_Git_executed": false
+}

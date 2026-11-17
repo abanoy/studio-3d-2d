@@ -1,0 +1,38 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS Neon startup keeps the real SystemFont override
+PASS Neon startup keeps the approved font family order
+PASS Neon startup preserves the Neon weight500 and Japanese fallback
+PASS Classic switch keeps the real SystemFont override
+PASS Classic switch keeps the approved font family order
+PASS Classic switch preserves the Neon weight500 and Japanese fallback
+PASS Neon return keeps the real SystemFont override
+PASS Neon return keeps the approved font family order
+PASS Neon return preserves the Neon weight500 and Japanese fallback
+PASS live World resize has exactly one owner callback
+PASS layout exit disconnects World before sibling controls are removed
+PASS layout exit still flushes its pending preference save
+PASS off-tree layout and resize cannot replace a live sibling Tree font
+PASS layout reentry reconnects its World callback exactly once
+PASS real docking after reentry still updates the World list
+PASS off-tree selection rejects a direct rail restyle
+PASS selection reentry permits a genuine live rail update
+PASS whole-application reparent keeps exactly one World resize callback
+PASS real docking after application reparent still reaches the live hierarchy
+PASS Reparented Neon keeps the real SystemFont override
+PASS Reparented Neon keeps the approved font family order
+PASS Reparented Neon preserves the Neon weight500 and Japanese fallback
+PASS direct free releases the reparented owner and both presentation managers
+PASS queue-free case reaches an actual pending deletion
+PASS queued owner blocks direct World selection restyling before the next frame
+PASS queued owner blocks resize-triggered font replacement
+PASS queued owner is actually freed on the following frame
+PASS immediate-free control has a real styled Tree with pending layout work
+PASS immediate free after real resize/restyle releases owner and selection
+PASS withheld help control makes the different-mode setter refuse explicitly
+PASS refused right-dock transition preserves both accepted mode caches
+NEON_WORLD_RAIL_TRANSACTION_STATE {"help_inside":false,"layout_rail":true,"phase":"withheld","requested_rail":false,"selection_rail":true,"setter_accepted":false}
+PASS same help control and index restored: one explicit refresh reaches the full World list
+NEON_WORLD_RAIL_TRANSACTION_STATE {"help_inside":true,"layout_rail":false,"phase":"restored","requested_rail":false,"selection_rail":false,"tree_visible":true}
+NEON_WORLD_RAIL_TRANSACTION_LIFECYCLE {"cases":["theme-detach-reentry-reparent-free","queued-owner","immediate-free-resize","withheld-control-transaction"],"checks":32,"failures":0,"format":"has_neon_world_rail_transaction_lifecycle_1","source_only_fixture_uses_native_models":false}

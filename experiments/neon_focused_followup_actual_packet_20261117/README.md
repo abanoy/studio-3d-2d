@@ -1,0 +1,1 @@
+Public scalar/source/receipt follow-up evidence only. Earlier failures, script watchdog and successful successors remain distinct; no full-suite PASS is claimed. Media, native arrays and original art are excluded. See ACTUAL_RESULT.json and recipe/README.md.

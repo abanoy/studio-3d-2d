@@ -1,0 +1,9 @@
+# Reuse World Tree font profiles — separate successor
+
+Chronological engine output places the `fd is null` errors during live docking, between successful splitter and docking assertions. The earlier teardown attribution came from concatenating stdout and stderr and was wrong. The earlier sealed lifecycle proposal and both failed 48/0-plus-engine-error runs remain preserved; they do not establish a successful fix or a particular C++ mechanism.
+
+This successor changes only `WorldSelection.tree_font()` on the exact lifecycle-guard candidate `fb2cfa70ab94dbf4d9a57c3f041cb10916aed7e828c94af14feee6ade0b790de`. It retains the two original font profiles in the existing static `StudioTheme.fonts` dictionary and returns the same resource on later rail/style changes. It preserves the Neon family order, weight 500, Japanese fallback, and classic Japanese family order. The cache stores only Font resources; it does not hold application Nodes. Existing lifecycle guards remain unchanged.
+
+The goal is to prevent repeated replacement from discarding the previous font profile while Tree shaping may still refer to it. The root must establish actual improvement using the unchanged strict 48-check workspace wrapper and chronological engine log. No error filtering, threshold change, font-family substitution or new cache eviction policy is included. This source preparation is not a runtime result and does not prove the engine's internal failure mechanism.
+
+Apply only the `world_selection.gd.proposed` hash recorded in `SOURCE_PROOF.json`. The workspace file remains the previously staged lifecycle version. `prepare.py` proves that replacing this one function back recovers the previous file exactly, including CRLF bytes. No engines, parser, CIM, Git or review-file edits were performed by the preparer.

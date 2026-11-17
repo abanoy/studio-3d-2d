@@ -1,0 +1,17 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS long waveform scene opens
+PASS original four-transient source imports at54seconds
+PASS Fit keeps original overview with bounded detailed levels cached
+PASS zoom uses fine cached detail for short sound
+PASS zoom and pan reuse identical mix/cache without source-file access
+PASS waveform navigation leaves content/history unchanged
+PASS actual zoomed viewport displays all four independent transient bars
+PASS mute rebuilds zero cached detail
+PASS mute Undo restores exact PCM and detailed peaks
+PASS gain edit updates actual quantized waveform amplitude
+PASS gain Undo restores original detail and PCM
+PASS Fit restores existing overview resolution
+PASS source WAV remains byte-identical
+WAVEFORM_LEVELS_SMOKE {"checks":13,"drawn_transients":4,"failures":0,"fine_payload_bytes":32768}

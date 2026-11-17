@@ -1,0 +1,23 @@
+{
+  "format": "has_root_live_font_failure_diagnosis_1",
+  "first_lifecycle_fix_qualified": false,
+  "workspace_assertions": {
+    "checks": 48,
+    "failures": 0
+  },
+  "strict_wrapper_exit": 1,
+  "source_preserved": true,
+  "host_scopes_closed": true,
+  "first_ordered_error_line": 28,
+  "phase": "live resize/docking, before docking-swaps assertion",
+  "error": "TextServer _shape_run fd null while replacing Tree font",
+  "concatenated_stdout_stderr_is_not_chronological": true,
+  "prior_after_app_free_interpretation": "RETRACTED_NOT_PROVEN_BY_CONCATENATED_STREAMS",
+  "prior_failure_archive_index": "a96f39ab1962d819ec3396c50f9c539385938255eb8dc8a7d3c154566fd0a6ab",
+  "runtime_sha256": {
+    "src/world_selection.gd": "fb2cfa70ab94dbf4d9a57c3f041cb10916aed7e828c94af14feee6ade0b790de",
+    "src/workspace_layout.gd": "7da378b1147266fbecdabf63422e19b1ee06024c40083d6fcf4ed8e93540bcfd"
+  },
+  "production_error_filter_changed": false,
+  "font_cache_successor": "UNRUN"
+}

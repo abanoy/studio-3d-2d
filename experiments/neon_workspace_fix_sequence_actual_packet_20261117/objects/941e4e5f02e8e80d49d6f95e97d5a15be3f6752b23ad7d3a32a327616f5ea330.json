@@ -1,0 +1,45 @@
+{
+  "format": "has_root_workspace_followup_1",
+  "rows": [
+    {
+      "label": "resize",
+      "pid": 5372,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "seconds": 14.4612567,
+      "timed_out": false,
+      "report": {
+        "checks": 31,
+        "failures": 0,
+        "measurements": [
+          {
+            "bottom_minimum": 96.0,
+            "canvas_after": 1288.0,
+            "canvas_before": 1218.0,
+            "window": "(3440, 1440)"
+          },
+          {
+            "bottom_minimum": 96.0,
+            "canvas_after": 748.0,
+            "canvas_before": 678.0,
+            "window": "(1400, 900)"
+          },
+          {
+            "bottom_minimum": 96.0,
+            "canvas_after": 608.0,
+            "canvas_before": 538.0,
+            "window": "(1200, 760)"
+          }
+        ],
+        "folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\workspace-resize\\1794880949316365200",
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\workspace_resize_smoke_4ec37c0e4f6544c69ea0c5cbecb6e038.json",
+        "functional_unchanged": true
+      }
+    }
+  ],
+  "all_functional_source_unchanged": true,
+  "functional_source_files": 1028,
+  "host_scopes_closed": true,
+  "passed": true,
+  "full_suite_pass_claimed": false
+}

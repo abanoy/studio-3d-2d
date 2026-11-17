@@ -1,0 +1,26 @@
+{
+  "format": "has_root_neon_world_lifecycle_actual_1",
+  "passed": true,
+  "processes": [
+    {
+      "label": "parse",
+      "pid": 20328,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "seconds": 0.1608417
+    },
+    {
+      "label": "app",
+      "pid": 22016,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "seconds": 8.0214168
+    }
+  ],
+  "functional_source_files": 1028,
+  "source_unchanged": true,
+  "full_suite_pass_claimed": false,
+  "native_artist_assets_used": false
+}

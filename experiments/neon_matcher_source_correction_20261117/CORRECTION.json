@@ -1,0 +1,15 @@
+{
+  "format": "has_root_matcher_source_inference_correction_1",
+  "old_helper_sha256": "9f60406025cdae56a80c7876ba74248e61a3b2871ec96e7d9c9364b11a3bfc5b",
+  "decoded_native_regex": "^(Godot.*|blender|ffmpeg|ffprobe)\\.exe$",
+  "python_AST_decoded": true,
+  "ASCII_positive_cases": 4,
+  "old_overescape_inference": "RETRACTED_RAW_ESCAPE_DISPLAY_WAS_MISREAD",
+  "old_regex_invalidated": false,
+  "old_scope": "native engine images in main/review scopes",
+  "new_scope": "native images plus selected helpers/coordinators; independently host-tested",
+  "driver_comment_only_change_AST_exact": true,
+  "before_driver_sha256": "1ffd784ad6be5c0704a72f6116ac2a15a20e3e30811634ef27c2ebdcffe640ec",
+  "after_driver_sha256": "234a3f6aa3f76ee65ce1c6fd35a410326c4f01068f3a0bf81667481e4ec2af89",
+  "actual_runtime_receipt_or_closure_results_changed": false
+}

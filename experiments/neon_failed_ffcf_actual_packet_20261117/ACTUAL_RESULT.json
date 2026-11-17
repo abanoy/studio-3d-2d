@@ -1,0 +1,56 @@
+{
+  "format": "has_neon_ffcf_closed_failed_full_1",
+  "candidate": "ffcf4c54ab9ab7af7cb01329a5b3b5b6f4589865",
+  "full_suite_passed": false,
+  "main_merged": false,
+  "functional_sources_unchanged": 1029,
+  "core_groups_passed": 36,
+  "integrated_neon_checks_passed": 12504,
+  "failure": "scene_view_smoke four off-frame displayed-color predicates",
+  "scene_view_actual": {
+    "cases": [
+      {
+        "extent": "(1200.0, 360.0)",
+        "green_outline_pixels": 350,
+        "guide_pixels": 3664,
+        "outside_guide_pixels": 0,
+        "roll": 0.0
+      },
+      {
+        "extent": "(1200.0, 360.0)",
+        "green_outline_pixels": 429,
+        "guide_pixels": 3664,
+        "outside_guide_pixels": 0,
+        "roll": 0.4
+      },
+      {
+        "extent": "(480.0, 760.0)",
+        "green_outline_pixels": 468,
+        "guide_pixels": 5846,
+        "outside_guide_pixels": 0,
+        "roll": 0.0
+      },
+      {
+        "extent": "(480.0, 760.0)",
+        "green_outline_pixels": 584,
+        "guide_pixels": 5846,
+        "outside_guide_pixels": 0,
+        "roll": 0.4
+      }
+    ],
+    "checks": 102,
+    "failures": 4,
+    "native_size": "(1920, 1080)",
+    "source_sha256": "62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac"
+  },
+  "source_style_observation": "Neon CanvasView draws 62 percent dim bands outside camera frame",
+  "analytical_fixture_successor": "UNRUN_NOT_QUALIFIED_BY_THIS_ARCHIVE",
+  "physical_jobs": 48,
+  "normal_exit0": 46,
+  "Krita_cancel_exit2": 1,
+  "scene_assertion_exit1": 1,
+  "all_jobs_desktops_closed": true,
+  "released_utc": "2026-11-17T02:36:25.0277413Z",
+  "stale_final_report_used": false,
+  "private_arrays_original_art_or_media_copied": false
+}

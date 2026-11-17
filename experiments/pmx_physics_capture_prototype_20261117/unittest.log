@@ -1,0 +1,27 @@
+test_all_known_shapes_and_modes_retained (__main__.CaptureTests.test_all_known_shapes_and_modes_retained) ... ok
+test_bad_header_and_decoded_version_mismatch_refuse (__main__.CaptureTests.test_bad_header_and_decoded_version_mismatch_refuse) ... ok
+test_bad_sentinels_and_references_refuse_without_partial_result (__main__.CaptureTests.test_bad_sentinels_and_references_refuse_without_partial_result) ... ok
+test_count_byte_and_limit_budgets_refuse_no_truncation (__main__.CaptureTests.test_count_byte_and_limit_budgets_refuse_no_truncation) ... ok
+test_decoded_none_sentinels_preserved (__main__.CaptureTests.test_decoded_none_sentinels_preserved) ... ok
+test_exact_pinned_field_contract_without_executing_reader (__main__.CaptureTests.test_exact_pinned_field_contract_without_executing_reader) ... ok
+test_exact_version_word_and_source_sha (__main__.CaptureTests.test_exact_version_word_and_source_sha) ... ok
+test_fingerprint_is_explicitly_not_a_native_join (__main__.CaptureTests.test_fingerprint_is_explicitly_not_a_native_join) ... ok
+test_float_type_nonfinite_and_non_binary32_refuse (__main__.CaptureTests.test_float_type_nonfinite_and_non_binary32_refuse) ... ok
+test_inputs_unchanged_and_output_detached (__main__.CaptureTests.test_inputs_unchanged_and_output_detached) ... ok
+test_name_and_attribute_budgets_refuse (__main__.CaptureTests.test_name_and_attribute_budgets_refuse) ... ok
+test_names_not_fuzzy_matched_or_normalized (__main__.CaptureTests.test_names_not_fuzzy_matched_or_normalized) ... ok
+test_original_indices_and_duplicate_names_stay_unresolved (__main__.CaptureTests.test_original_indices_and_duplicate_names_stay_unresolved) ... ok
+test_parser_source_mismatch_refuses (__main__.CaptureTests.test_parser_source_mismatch_refuses) ... ok
+test_pmx21_soft_body_count_unknown_even_without_attribute (__main__.CaptureTests.test_pmx21_soft_body_count_unknown_even_without_attribute) ... ok
+test_roundtrip_every_rigid_and_joint_field_without_coercion (__main__.CaptureTests.test_roundtrip_every_rigid_and_joint_field_without_coercion) ... ok
+test_signed_zero_and_extreme_binary32_values_survive_json (__main__.CaptureTests.test_signed_zero_and_extreme_binary32_values_survive_json) ... ok
+test_unknown_body_joint_fields_cannot_claim_complete (__main__.CaptureTests.test_unknown_body_joint_fields_cannot_claim_complete) ... ok
+test_unknown_soft_table_attributes_report_values_not_captured (__main__.CaptureTests.test_unknown_soft_table_attributes_report_values_not_captured) ... ok
+test_unknown_types_explicitly_incomplete_not_silently_dropped (__main__.CaptureTests.test_unknown_types_explicitly_incomplete_not_silently_dropped) ... ok
+test_unsigned_mask_and_group_domains (__main__.CaptureTests.test_unsigned_mask_and_group_domains) ... ok
+test_vector_missing_field_and_collection_types_refuse (__main__.CaptureTests.test_vector_missing_field_and_collection_types_refuse) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.017s
+
+OK

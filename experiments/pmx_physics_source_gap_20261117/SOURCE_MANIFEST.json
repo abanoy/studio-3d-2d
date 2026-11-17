@@ -1,0 +1,1191 @@
+{
+  "format": "has_pmx_physics_source_audit_inputs_1",
+  "snapshot_utc": "2026-11-17T01:37:00.639157+00:00",
+  "source_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+  "revision_binding": "Exact working-tree file bytes only; no Git revision inferred or Git command run.",
+  "scope": "Source and recorded historical documentation only. Function indices locate source; this is not qualification of every indexed function.",
+  "execution": {
+    "engines_run": false,
+    "native_assets_opened": false,
+    "tests_run": false,
+    "cim_or_process_inventory_run": false,
+    "git_run": false,
+    "native_fidelity_qualified": false
+  },
+  "files": [
+    {
+      "path": "tools/prepare_mmd.py",
+      "bytes": 7646,
+      "sha256": "ea336c886e5155b61cd98aad75744e7257b444767d7672ed4a0c1c81916d95df",
+      "function_index": [
+        {
+          "name": "main",
+          "line": 14
+        },
+        {
+          "name": "prepare",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "tools/blender_mmd_bridge.py",
+      "bytes": 11922,
+      "sha256": "c2abd3dd75677bebc91d0ff153dd8822bb32ca0132c70bbbc085b9944e5bc08a",
+      "function_index": [
+        {
+          "name": "run",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "tools/asset_audit.py",
+      "bytes": 10171,
+      "sha256": "f91daebf1a7f7351b04d1018fd87f629a85460c4a67c540db7e7f7697a0eebeb",
+      "function_index": [
+        {
+          "name": "safe_member",
+          "line": 41
+        },
+        {
+          "name": "digest",
+          "line": 49
+        },
+        {
+          "name": "gma_index",
+          "line": 54
+        },
+        {
+          "name": "legacy_prefix",
+          "line": 104
+        },
+        {
+          "name": "pmd_summary",
+          "line": 124
+        },
+        {
+          "name": "pmx_summary",
+          "line": 150
+        },
+        {
+          "name": "inspect",
+          "line": 188
+        },
+        {
+          "name": "main",
+          "line": 218
+        }
+      ]
+    },
+    {
+      "path": "tools/mmd_ik.py",
+      "bytes": 5151,
+      "sha256": "2a1872ebf8a790e510f52638d64978ac2a841cbc5aa21a7beec4938867f496aa",
+      "function_index": [
+        {
+          "name": "capture",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "src/source_import.gd",
+      "bytes": 18620,
+      "sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d",
+      "function_index": [
+        {
+          "name": "_ready",
+          "line": 27
+        },
+        {
+          "name": "load_paths",
+          "line": 30
+        },
+        {
+          "name": "save_paths",
+          "line": 42
+        },
+        {
+          "name": "default_browse_dir",
+          "line": 51
+        },
+        {
+          "name": "path_field",
+          "line": 56
+        },
+        {
+          "name": "python",
+          "line": 76
+        },
+        {
+          "name": "inspect_source_members",
+          "line": 80
+        },
+        {
+          "name": "make_appearance_ui",
+          "line": 86
+        },
+        {
+          "name": "_spawn_preparation",
+          "line": 89
+        },
+        {
+          "name": "_release_preparation_map_entry",
+          "line": 98
+        },
+        {
+          "name": "_release_completed_preparation",
+          "line": 101
+        },
+        {
+          "name": "_exit_tree",
+          "line": 111
+        },
+        {
+          "name": "start",
+          "line": 115
+        },
+        {
+          "name": "generic_dialog",
+          "line": 192
+        },
+        {
+          "name": "launch",
+          "line": 207
+        },
+        {
+          "name": "cancel",
+          "line": 270
+        },
+        {
+          "name": "_process",
+          "line": 278
+        },
+        {
+          "name": "apply_view",
+          "line": 317
+        }
+      ]
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "bytes": 48374,
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "function_index": [
+        {
+          "name": "active_rig",
+          "line": 61
+        },
+        {
+          "name": "setup",
+          "line": 64
+        },
+        {
+          "name": "sync_enabled",
+          "line": 177
+        },
+        {
+          "name": "import_dialog",
+          "line": 184
+        },
+        {
+          "name": "remove_dialog",
+          "line": 187
+        },
+        {
+          "name": "add_model",
+          "line": 194
+        },
+        {
+          "name": "definition",
+          "line": 200
+        },
+        {
+          "name": "restore_state",
+          "line": 215
+        },
+        {
+          "name": "commit",
+          "line": 249
+        },
+        {
+          "name": "same_transform",
+          "line": 299
+        },
+        {
+          "name": "rebuild_tree",
+          "line": 307
+        },
+        {
+          "name": "refresh_labels",
+          "line": 336
+        },
+        {
+          "name": "make_tree_item",
+          "line": 346
+        },
+        {
+          "name": "refresh_values",
+          "line": 357
+        },
+        {
+          "name": "apply_frame",
+          "line": 383
+        },
+        {
+          "name": "begin_draft",
+          "line": 389
+        },
+        {
+          "name": "set_delta",
+          "line": 404
+        },
+        {
+          "name": "apply_numeric",
+          "line": 413
+        },
+        {
+          "name": "joint_plan",
+          "line": 444
+        },
+        {
+          "name": "apply_scale",
+          "line": 457
+        },
+        {
+          "name": "prepare_feet",
+          "line": 466
+        },
+        {
+          "name": "reset_selected",
+          "line": 476
+        },
+        {
+          "name": "reverse_limb_bend",
+          "line": 491
+        },
+        {
+          "name": "set_flag",
+          "line": 503
+        },
+        {
+          "name": "set_reference_opacity",
+          "line": 509
+        },
+        {
+          "name": "set_source_shape",
+          "line": 519
+        },
+        {
+          "name": "set_visibility_key",
+          "line": 529
+        },
+        {
+          "name": "open_shapes",
+          "line": 538
+        },
+        {
+          "name": "set_shape_amounts",
+          "line": 547
+        },
+        {
+          "name": "remove_shape_key",
+          "line": 589
+        },
+        {
+          "name": "remove_visibility_key",
+          "line": 597
+        },
+        {
+          "name": "record_dialog",
+          "line": 605
+        },
+        {
+          "name": "record_key",
+          "line": 614
+        },
+        {
+          "name": "delete_key",
+          "line": 627
+        },
+        {
+          "name": "frame_model",
+          "line": 634
+        },
+        {
+          "name": "update_gizmo",
+          "line": 642
+        },
+        {
+          "name": "input",
+          "line": 702
+        },
+        {
+          "name": "ring_vector",
+          "line": 809
+        },
+        {
+          "name": "ring_angle",
+          "line": 818
+        },
+        {
+          "name": "finish_drag",
+          "line": 828
+        },
+        {
+          "name": "contact_live_edit_error",
+          "line": 841
+        },
+        {
+          "name": "contact_edit_error",
+          "line": 846
+        }
+      ]
+    },
+    {
+      "path": "src/scene3d.gd",
+      "bytes": 11042,
+      "sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1",
+      "function_index": [
+        {
+          "name": "make_empty",
+          "line": 3
+        },
+        {
+          "name": "box",
+          "line": 19
+        },
+        {
+          "name": "make_fixture",
+          "line": 33
+        },
+        {
+          "name": "stable_opaque_order",
+          "line": 51
+        },
+        {
+          "name": "required_extensions_error",
+          "line": 66
+        },
+        {
+          "name": "load_glb",
+          "line": 79
+        },
+        {
+          "name": "make_pose_fixture",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "path": "src/secondary_rig.gd",
+      "bytes": 12243,
+      "sha256": "7495b202ede057cf73cce43f839917f9f88d60d0d31b71317e2655b352be0d7c",
+      "function_index": [
+        {
+          "name": "fail",
+          "line": 14
+        },
+        {
+          "name": "array",
+          "line": 17
+        },
+        {
+          "name": "object",
+          "line": 21
+        },
+        {
+          "name": "number",
+          "line": 25
+        },
+        {
+          "name": "index",
+          "line": 29
+        },
+        {
+          "name": "vector",
+          "line": 34
+        },
+        {
+          "name": "ref",
+          "line": 46
+        },
+        {
+          "name": "settings",
+          "line": 51
+        },
+        {
+          "name": "selected_colliders",
+          "line": 57
+        },
+        {
+          "name": "add_chain",
+          "line": 66
+        },
+        {
+          "name": "parse_v1",
+          "line": 92
+        },
+        {
+          "name": "parse_v0",
+          "line": 111
+        },
+        {
+          "name": "from_gltf",
+          "line": 146
+        },
+        {
+          "name": "binding_transform",
+          "line": 203
+        }
+      ]
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "bytes": 9592,
+      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "function_index": [
+        {
+          "name": "construct",
+          "line": 13
+        },
+        {
+          "name": "create",
+          "line": 76
+        },
+        {
+          "name": "update_colliders",
+          "line": 88
+        },
+        {
+          "name": "step",
+          "line": 99
+        },
+        {
+          "name": "dispose",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "bytes": 6551,
+      "sha256": "2613b19ce53b3a50fd001fe4e5b39bca2814165148b036993549490aa96c33a9",
+      "function_index": [
+        {
+          "name": "create",
+          "line": 25
+        },
+        {
+          "name": "start",
+          "line": 47
+        },
+        {
+          "name": "advance",
+          "line": 50
+        },
+        {
+          "name": "sync_visual",
+          "line": 99
+        },
+        {
+          "name": "root_transform",
+          "line": 104
+        },
+        {
+          "name": "capture_pose",
+          "line": 109
+        },
+        {
+          "name": "pose",
+          "line": 110
+        },
+        {
+          "name": "detach_primary",
+          "line": 111
+        },
+        {
+          "name": "stop",
+          "line": 115
+        },
+        {
+          "name": "dispose",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "path": "src/physics_rig.gd",
+      "bytes": 16790,
+      "sha256": "a7b21ba736d3645469b16e72b0864caef8305127133be9fd38966b0876442e3e",
+      "function_index": [
+        {
+          "name": "body_weight_helper",
+          "line": 18
+        },
+        {
+          "name": "profiles",
+          "line": 30
+        },
+        {
+          "name": "configure_joint",
+          "line": 68
+        },
+        {
+          "name": "weighted_bounds",
+          "line": 92
+        },
+        {
+          "name": "create",
+          "line": 141
+        },
+        {
+          "name": "capture",
+          "line": 242
+        },
+        {
+          "name": "start",
+          "line": 252
+        },
+        {
+          "name": "root_transform",
+          "line": 256
+        },
+        {
+          "name": "capture_pose",
+          "line": 261
+        },
+        {
+          "name": "pose",
+          "line": 276
+        },
+        {
+          "name": "stop",
+          "line": 287
+        },
+        {
+          "name": "dispose",
+          "line": 294
+        }
+      ]
+    },
+    {
+      "path": "src/physics_self_collision.gd",
+      "bytes": 4336,
+      "sha256": "1f44c726ac809115f82d01fc4754fde8b90df5058617a2dfdfaa147f46121e84",
+      "function_index": [
+        {
+          "name": "nearby",
+          "line": 5
+        },
+        {
+          "name": "overlapping_boxes",
+          "line": 17
+        },
+        {
+          "name": "segment",
+          "line": 36
+        },
+        {
+          "name": "point_box_distance",
+          "line": 40
+        },
+        {
+          "name": "round_box",
+          "line": 43
+        },
+        {
+          "name": "overlapping",
+          "line": 67
+        },
+        {
+          "name": "apply",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "src/physics_prop.gd",
+      "bytes": 6843,
+      "sha256": "499ad7521da193346f928c4acf8cfed25da798770c3aa50b222db7bea92598df",
+      "function_index": [
+        {
+          "name": "solid",
+          "line": 12
+        },
+        {
+          "name": "create",
+          "line": 29
+        },
+        {
+          "name": "start",
+          "line": 94
+        },
+        {
+          "name": "sync_visual",
+          "line": 97
+        },
+        {
+          "name": "root_transform",
+          "line": 102
+        },
+        {
+          "name": "pose",
+          "line": 108
+        },
+        {
+          "name": "stop",
+          "line": 110
+        },
+        {
+          "name": "dispose",
+          "line": 114
+        }
+      ]
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "bytes": 23446,
+      "sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "function_index": [
+        {
+          "name": "setup",
+          "line": 34
+        },
+        {
+          "name": "active",
+          "line": 46
+        },
+        {
+          "name": "is_running",
+          "line": 47
+        },
+        {
+          "name": "body_active",
+          "line": 48
+        },
+        {
+          "name": "grabbing",
+          "line": 49
+        },
+        {
+          "name": "pointer",
+          "line": 51
+        },
+        {
+          "name": "begin_grab",
+          "line": 70
+        },
+        {
+          "name": "_physics_process",
+          "line": 94
+        },
+        {
+          "name": "release_grab",
+          "line": 120
+        },
+        {
+          "name": "sync",
+          "line": 125
+        },
+        {
+          "name": "_process",
+          "line": 143
+        },
+        {
+          "name": "change",
+          "line": 149
+        },
+        {
+          "name": "enable_body",
+          "line": 157
+        },
+        {
+          "name": "change_hair",
+          "line": 183
+        },
+        {
+          "name": "disable_hair",
+          "line": 192
+        },
+        {
+          "name": "enable_hair",
+          "line": 208
+        },
+        {
+          "name": "build_colliders",
+          "line": 244
+        },
+        {
+          "name": "freeze",
+          "line": 269
+        },
+        {
+          "name": "freeze_all",
+          "line": 311
+        },
+        {
+          "name": "clear_previews",
+          "line": 322
+        },
+        {
+          "name": "clear_colliders",
+          "line": 327
+        },
+        {
+          "name": "clear",
+          "line": 331
+        },
+        {
+          "name": "_exit_tree",
+          "line": 339
+        },
+        {
+          "name": "import_intents",
+          "line": 342
+        },
+        {
+          "name": "restore_import_intents",
+          "line": 351
+        },
+        {
+          "name": "queue_import_start",
+          "line": 354
+        },
+        {
+          "name": "process_import_starts",
+          "line": 362
+        }
+      ]
+    },
+    {
+      "path": "src/airflow.gd",
+      "bytes": 6276,
+      "sha256": "d6bb934440095553f70300609da70eb198c7ca1d45aae0403f0a6e749ad2b7b7",
+      "function_index": [
+        {
+          "name": "defaults",
+          "line": 5
+        },
+        {
+          "name": "is_fan",
+          "line": 6
+        },
+        {
+          "name": "validate",
+          "line": 7
+        },
+        {
+          "name": "field",
+          "line": 13
+        },
+        {
+          "name": "world_transform",
+          "line": 25
+        },
+        {
+          "name": "collect",
+          "line": 31
+        },
+        {
+          "name": "force",
+          "line": 45
+        },
+        {
+          "name": "unsteady_force",
+          "line": 49
+        },
+        {
+          "name": "create_asset",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "tools/secondary_helpers.py",
+      "bytes": 49822,
+      "sha256": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+      "function_index": [
+        {
+          "name": "finite",
+          "line": 25
+        },
+        {
+          "name": "integer",
+          "line": 31
+        },
+        {
+          "name": "unique",
+          "line": 37
+        },
+        {
+          "name": "shape_requested",
+          "line": 45
+        },
+        {
+          "name": "point",
+          "line": 49
+        },
+        {
+          "name": "translation",
+          "line": 53
+        },
+        {
+          "name": "multiply",
+          "line": 58
+        },
+        {
+          "name": "distance",
+          "line": 62
+        },
+        {
+          "name": "mix",
+          "line": 63
+        },
+        {
+          "name": "bind_origin",
+          "line": 66
+        },
+        {
+          "name": "components",
+          "line": 303
+        },
+        {
+          "name": "existing_chain",
+          "line": 327
+        },
+        {
+          "name": "existing_affected",
+          "line": 361
+        },
+        {
+          "name": "region",
+          "line": 394
+        },
+        {
+          "name": "inspect",
+          "line": 484
+        },
+        {
+          "name": "control_points",
+          "line": 508
+        },
+        {
+          "name": "preview",
+          "line": 517
+        },
+        {
+          "name": "build",
+          "line": 564
+        },
+        {
+          "name": "build_existing",
+          "line": 648
+        }
+      ]
+    },
+    {
+      "path": "src/character_height.gd",
+      "bytes": 5394,
+      "sha256": "be18fa34108a45a126f76a42e7b4c1a569c1ee8332855af40f2ef25a77725ce8",
+      "function_index": [
+        {
+          "name": "head",
+          "line": 11
+        },
+        {
+          "name": "regions",
+          "line": 19
+        },
+        {
+          "name": "query",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "src/import_height_review.gd",
+      "bytes": 6692,
+      "sha256": "393da8ee3a1f9e68f95f5b16e3d70e6777fb71a78d0a33dbfaa388b1306573a9",
+      "function_index": [
+        {
+          "name": "decimal",
+          "line": 22
+        },
+        {
+          "name": "current_world_id",
+          "line": 24
+        },
+        {
+          "name": "valid",
+          "line": 25
+        },
+        {
+          "name": "start",
+          "line": 28
+        },
+        {
+          "name": "prepare",
+          "line": 47
+        },
+        {
+          "name": "apply",
+          "line": 63
+        },
+        {
+          "name": "release_scratch",
+          "line": 80
+        },
+        {
+          "name": "close",
+          "line": 84
+        },
+        {
+          "name": "cancel",
+          "line": 89
+        },
+        {
+          "name": "_process",
+          "line": 92
+        },
+        {
+          "name": "_exit_tree",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "path": "tools/has_project.py",
+      "bytes": 36736,
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+      "function_index": [
+        {
+          "name": "local_reference",
+          "line": 37
+        },
+        {
+          "name": "sha",
+          "line": 43
+        },
+        {
+          "name": "safe",
+          "line": 50
+        },
+        {
+          "name": "preflight_archive",
+          "line": 59
+        },
+        {
+          "name": "json_bytes",
+          "line": 74
+        },
+        {
+          "name": "read_json",
+          "line": 77
+        },
+        {
+          "name": "members",
+          "line": 84
+        },
+        {
+          "name": "check_cancel",
+          "line": 243
+        },
+        {
+          "name": "asset_limit",
+          "line": 247
+        },
+        {
+          "name": "checked_copy",
+          "line": 255
+        },
+        {
+          "name": "verify_written_archive",
+          "line": 270
+        },
+        {
+          "name": "save_lock",
+          "line": 298
+        },
+        {
+          "name": "await_snapshot",
+          "line": 324
+        },
+        {
+          "name": "asset_package",
+          "line": 356
+        },
+        {
+          "name": "pack",
+          "line": 368
+        },
+        {
+          "name": "_pack_locked",
+          "line": 382
+        },
+        {
+          "name": "unpack",
+          "line": 478
+        },
+        {
+          "name": "main",
+          "line": 538
+        }
+      ]
+    },
+    {
+      "path": "project.godot",
+      "bytes": 1000,
+      "sha256": "4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30",
+      "function_index": []
+    },
+    {
+      "path": "tests/secondary_motion_smoke.gd",
+      "bytes": 18842,
+      "sha256": "ede527617ba9440aaab551687fa9189d5b3f0d51c94f564e7ee57eb294e83bb4",
+      "function_index": [
+        {
+          "name": "_initialize",
+          "line": 15
+        },
+        {
+          "name": "check",
+          "line": 18
+        },
+        {
+          "name": "pose_distance",
+          "line": 21
+        },
+        {
+          "name": "pose_difference",
+          "line": 25
+        },
+        {
+          "name": "tick",
+          "line": 31
+        },
+        {
+          "name": "wait_job",
+          "line": 37
+        },
+        {
+          "name": "baked",
+          "line": 41
+        },
+        {
+          "name": "sample",
+          "line": 76
+        },
+        {
+          "name": "corruption",
+          "line": 129
+        },
+        {
+          "name": "contact_control",
+          "line": 181
+        },
+        {
+          "name": "scale_controls",
+          "line": 193
+        },
+        {
+          "name": "run",
+          "line": 219
+        }
+      ]
+    },
+    {
+      "path": "tests/verify_secondary_helpers.py",
+      "bytes": 10234,
+      "sha256": "b7c663c8608169876554eaa34c86b25f5d58bb04a1f38764dc687bb67d8d8590",
+      "function_index": [
+        {
+          "name": "native_checks",
+          "line": 19
+        },
+        {
+          "name": "main",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": "tests/mmd_ik_fixture.py",
+      "bytes": 2225,
+      "sha256": "16f93cc04bac9d2103c70dae4f5baf248a1f462ac64e85b4261b0a3956d439c2",
+      "function_index": [
+        {
+          "name": "create",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "tests/verify_mmd_ik.py",
+      "bytes": 5581,
+      "sha256": "0f334c78c9615427db90a6843f05d32ad6309d1b3a14399767cd76b232a173e8",
+      "function_index": [
+        {
+          "name": "run",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "tests/mmd_expression_fixture.py",
+      "bytes": 1909,
+      "sha256": "2a1a5e452b7a10509ae0ac9f271bf0b757392d726adddc1b7424056624a6a879",
+      "function_index": [
+        {
+          "name": "create",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "tests/verify_mmd_groups.py",
+      "bytes": 3202,
+      "sha256": "725859f095c67d37fe6586f6bdf6b0abc7062c287295a1d4c2823f5b5279d4c9",
+      "function_index": [
+        {
+          "name": "main",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "tests/verify_native_import.py",
+      "bytes": 4928,
+      "sha256": "eb9e4db75e4961b72267b5f0c3401259203b6a5eed48a8eebcba3b55821850c5",
+      "function_index": [
+        {
+          "name": "private_vrm",
+          "line": 16
+        },
+        {
+          "name": "main",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "docs/RESUME_MASTER_PLAN.md",
+      "bytes": 105135,
+      "sha256": "0e2fe8c82cf5d67b77ae0a8cbf14742a81f9b5284fcd2e71715c668426c38616",
+      "function_index": []
+    },
+    {
+      "path": "docs/native_mmd_runtime.md",
+      "bytes": 2684,
+      "sha256": "dfaecfbb2acb29918a8a35ea99611c30090da8e1a96bf160e0cdd4a4f5c65167",
+      "function_index": []
+    },
+    {
+      "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+      "bytes": 33073,
+      "sha256": "8216210b7a53e8b2eab53ed5e080fbed255c2852001b6016533b42549239d2e0",
+      "function_index": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_neon_workspace.py", line 295, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ~~~~^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_neon_workspace.py", line 251, in main
+    log,process = execute(args,ROOT,folder,name,seconds+20)
+                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_neon_workspace.py", line 131, in execute
+    require(not timed_out and record['reaped'] and record['exit']==0, 'Owned process failed; inspect '+label+'.log')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_neon_workspace.py", line 38, in require
+    if not ok: raise ValueError(message)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Owned process failed; inspect rail.log

@@ -1,0 +1,14 @@
+--- a/tests/neon_compact_timeline_reveal_smoke.gd
++++ b/tests/neon_compact_timeline_reveal_smoke.gd
+@@ -109,8 +109,9 @@
+ 	check(app.current_world()==before and app.audio_document()==audio_before and Drawing.image(cel).get_data()==paint and app.history.size()==history,"row reveal and selection preserve world/audio/drawing pixels and Undo")
+ 	check(FileAccess.get_sha256(asset)==asset_sha,"selection leaves generated source geometry unchanged")
+ 	var result := {"checks":checks,"failures":failures,"samples":samples,"native_owner_assets_used":false,"compact_timeline_preserved":true}
++	var encoded := JSON.stringify(result,"",true,true)
+ 	var file := FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE)
+-	file.store_string(JSON.stringify(result,"",true,true));file.close()
+-	print("COMPACT_TIMELINE_REVEAL " + JSON.stringify(result))
++	file.store_string(encoded);file.close()
++	print("COMPACT_TIMELINE_REVEAL " + encoded)
+ 	app.free()
+ 	quit(0 if failures==0 else 1)

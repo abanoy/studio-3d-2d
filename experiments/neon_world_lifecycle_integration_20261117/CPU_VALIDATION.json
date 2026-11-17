@@ -1,0 +1,21 @@
+{
+  "format": "has_neon_lifecycle_case_CPU_validation_1",
+  "status": "PASS_SYNTHETIC_ONLY",
+  "tests": 32,
+  "original_unchanged_tests": 20,
+  "added_test_methods": 12,
+  "failures": 0,
+  "errors": 0,
+  "observed_seconds": 0.113,
+  "observation_basis": "Direct unittest discover tool output, structured observation rather than raw subprocess log.",
+  "source_sha256": {
+    "cpu_tests/test_lifecycle_integration.py": "2083b12367317be15ddf0e0a3947414b40fcdb807077aff595811970b1a98053",
+    "cpu_tests/test_verify_neon_workspace.py": "f8901be8720a73a7dfebff01fa38d22e163bd7d59b104e3871238dcda69e3cfd",
+    "prepare.py": "c58b312426efca665c59979f95fc68f4dbfb88bd34ea2ace9dcff45e027fda0e",
+    "tests/verify.py": "192aa4b889a367787f2368f58c95de5813628dbff80b01a5f7e640efdf1f2f0f",
+    "tests/verify_neon_workspace.py": "9d1cf0304c79a8f16ea743e45abeac1c3a61732c867093d043b558ff680d1782"
+  },
+  "engines_Win32_CIM_Git_executed_by_preparer": false,
+  "REVIEW_modified_by_preparer": false,
+  "standard_Neon_or_full_PASS_claimed": false
+}

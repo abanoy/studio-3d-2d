@@ -1,0 +1,40 @@
+--- a/src/world_selection.gd
++++ b/src/world_selection.gd
+@@ -40,6 +40,10 @@
+ var help_label: Label
+ var rail_divider: Control
+ var rail_end: Control
++var rail_ui_active := false
++
++func _enter_tree() -> void:
++	rail_ui_active = true
+ 
+ func setup(parent: Node) -> void:
+ 	app.label(parent,"World")
+@@ -220,12 +224,17 @@
+ 		tile.add_theme_color_override("font_color",Color.WHITE if on else StudioTheme.TEXT2)
+ 
+ func set_rail(on: bool, force := false) -> void:
++	# A dock resize may be delivered while its owner or Tree is leaving the scene.
++	if not rail_ui_active or not is_inside_tree() or is_queued_for_deletion() or not is_instance_valid(app) or not app.is_inside_tree() or app.is_queued_for_deletion(): return
++	if not is_instance_valid(tree) or not tree.is_inside_tree() or tree.is_queued_for_deletion(): return
++	var holder: Control = tree.get_parent()
++	for control in [holder,rail,rail_divider,rail_end,help_label] + actions:
++		if not is_instance_valid(control) or not control.is_inside_tree() or control.is_queued_for_deletion(): return
+ 	# Rail: tiles + spacer + divider + Frame / Save asset / Size map tiles, help text as the rail tooltip.
+ 	# List: full-width Tree, full-width buttons and the help label. Visibility and texts only.
+ 	if on == rail_mode and not force: return
+ 	rail_mode = on
+ 	var neon := StudioTheme.is_neon()
+-	var holder: Control = tree.get_parent()
+ 	holder.custom_minimum_size.x = 64 if neon else 156
+ 	holder.add_theme_constant_override("separation",6 if on else 7)
+ 	tree.custom_minimum_size.x = 0 if neon else 156
+@@ -527,6 +536,7 @@
+ 		menu.popup()
+ 
+ func _exit_tree() -> void:
++	rail_ui_active = false
+ 	serial+=1
+ 	for pending in pick_requests.values():
+ 		if RenderingServer.frame_post_draw.is_connected(pending.complete):RenderingServer.frame_post_draw.disconnect(pending.complete)

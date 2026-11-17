@@ -1,0 +1,211 @@
+{
+  "prototype_only": true,
+  "applied": false,
+  "source_fingerprint": {
+    "sha256": "de101cdad4d5307d59a532de83f36083b6fda163d73562e3cd1eae13905a6336",
+    "bytes": 75,
+    "version_label": "2.0",
+    "version_word_le_hex": "00000040",
+    "fixed_header_hex": "504d582000000040080100010101010101",
+    "validation_scope": "FIXED_HEADER_ONLY_NOT_A_NATIVE_FILE_DECODER"
+  },
+  "upstream_field_contract": {
+    "module": "mmd_tools/core/pmx/__init__.py",
+    "sha256": "fb9aafe369025f221bc5a1c952d868260b1a4bb950dc33bca62645b4da454e5a",
+    "bytes": 51956
+  },
+  "capture_scope": "Exact supported decoded Rigid/Joint fields; bone index/name catalogue only",
+  "value_policy": "Unchanged native decoded values; no units, basis, scale or solver conversion",
+  "native_file_join": "UNQUALIFIED",
+  "native_file_preservation_complete": false,
+  "runtime_support": "NONE",
+  "decoded_supported_fields_complete": true,
+  "issues": [],
+  "limitations": [
+    "Supplied source fingerprint is not proof that decoded tables came from those bytes",
+    "Pinned upstream reader rejects PMX 2.1 and has no soft-body table",
+    "Pinned Rigid.load maps all negative bone indices to None; original sentinel is not recoverable here",
+    "Pinned Joint.load can fill truncated fields and load() can swallow struct.error",
+    "Decoded names can contain upstream replacement characters; original encoded bytes are not reconstructed",
+    "No native file, portable HAS, live preview, Off, recording or render integration qualification"
+  ],
+  "bones": [
+    {
+      "index": 0,
+      "name": "\u9aea",
+      "name_e": "Hair"
+    },
+    {
+      "index": 1,
+      "name": "\u9aea",
+      "name_e": "Hair duplicate"
+    },
+    {
+      "index": 2,
+      "name": "HEAD",
+      "name_e": "Head"
+    }
+  ],
+  "rigids": [
+    {
+      "index": 0,
+      "name": "\u9aea Body 0",
+      "name_e": "Hair 0",
+      "bone": 0,
+      "collision_group_number": 15,
+      "collision_group_mask": 32769,
+      "type": 0,
+      "size": [
+        1.0,
+        1.25,
+        1.5
+      ],
+      "location": [
+        2.0,
+        2.25,
+        2.5
+      ],
+      "rotation": [
+        -1.0,
+        -0.75,
+        -0.5
+      ],
+      "mass": 1.25,
+      "velocity_attenuation": 0.25,
+      "rotation_attenuation": 0.5,
+      "bounce": 0.75,
+      "friction": 0.125,
+      "mode": 0
+    },
+    {
+      "index": 1,
+      "name": "\u9aea Body 1",
+      "name_e": "Hair 1",
+      "bone": 1,
+      "collision_group_number": 15,
+      "collision_group_mask": 32769,
+      "type": 1,
+      "size": [
+        1.0,
+        1.25,
+        1.5
+      ],
+      "location": [
+        2.0,
+        2.25,
+        2.5
+      ],
+      "rotation": [
+        -1.0,
+        -0.75,
+        -0.5
+      ],
+      "mass": 1.25,
+      "velocity_attenuation": 0.25,
+      "rotation_attenuation": 0.5,
+      "bounce": 0.75,
+      "friction": 0.125,
+      "mode": 1
+    },
+    {
+      "index": 2,
+      "name": "\u9aea Body 2",
+      "name_e": "Hair 2",
+      "bone": 2,
+      "collision_group_number": 15,
+      "collision_group_mask": 32769,
+      "type": 2,
+      "size": [
+        1.0,
+        1.25,
+        1.5
+      ],
+      "location": [
+        2.0,
+        2.25,
+        2.5
+      ],
+      "rotation": [
+        -1.0,
+        -0.75,
+        -0.5
+      ],
+      "mass": 1.25,
+      "velocity_attenuation": 0.25,
+      "rotation_attenuation": 0.5,
+      "bounce": 0.75,
+      "friction": 0.125,
+      "mode": 2
+    }
+  ],
+  "joints": [
+    {
+      "index": 0,
+      "name": "\u63a5\u7d9a Joint",
+      "name_e": "Spring",
+      "mode": 0,
+      "src_rigid": 0,
+      "dest_rigid": 1,
+      "location": [
+        3.0,
+        3.25,
+        3.5
+      ],
+      "rotation": [
+        4.0,
+        4.25,
+        4.5
+      ],
+      "maximum_location": [
+        5.0,
+        5.25,
+        5.5
+      ],
+      "minimum_location": [
+        -5.0,
+        -4.75,
+        -4.5
+      ],
+      "maximum_rotation": [
+        6.0,
+        6.25,
+        6.5
+      ],
+      "minimum_rotation": [
+        -6.0,
+        -5.75,
+        -5.5
+      ],
+      "spring_constant": [
+        7.0,
+        7.25,
+        7.5
+      ],
+      "spring_rotation_constant": [
+        8.0,
+        8.25,
+        8.5
+      ]
+    }
+  ],
+  "bone_bindings": [
+    {
+      "native_bone_index": 0,
+      "native_name": "\u9aea",
+      "status": "UNRESOLVED",
+      "reason": "DUPLICATE_NATIVE_NAME"
+    },
+    {
+      "native_bone_index": 1,
+      "native_name": "\u9aea",
+      "status": "UNRESOLVED",
+      "reason": "DUPLICATE_NATIVE_NAME"
+    },
+    {
+      "native_bone_index": 2,
+      "native_name": "HEAD",
+      "status": "UNRESOLVED",
+      "reason": "NO_HAS_CROSSWALK"
+    }
+  ]
+}

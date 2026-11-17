@@ -1,0 +1,18 @@
+--- a/tests/neon_inset_scene_regression.gd
++++ b/tests/neon_inset_scene_regression.gd
+@@ -80,12 +80,13 @@
+ 	var report := {"status":"PASS" if failures==0 else "FAIL", "checks":checks,"failures":failures,
+ 		"configurations":configurations,"maximum_projection_error_pixels":maximum_projection_error,
+ 		"maximum_ray_error":maximum_ray_error,"native_assets_used":false}
++	var encoded := JSON.stringify(report,"",true,true)
+ 	var args := OS.get_cmdline_user_args()
+ 	if not args.is_empty():
+ 		var file := FileAccess.open(args[0],FileAccess.WRITE)
+-		if file: file.store_string(JSON.stringify(report,"",true,true)); file.close()
++		if file: file.store_string(encoded); file.close()
+ 		else: failures += 1; print("FAIL cannot create requested result")
+-	print("INSET_SCENE_REGRESSION " + JSON.stringify(report))
++	print("INSET_SCENE_REGRESSION " + encoded)
+ 	canvas.free()
+ 	preview.free()
+ 	native.free()

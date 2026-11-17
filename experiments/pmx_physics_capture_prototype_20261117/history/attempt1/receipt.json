@@ -1,0 +1,33 @@
+{
+  "attempt": 1,
+  "purpose": "Preserve and reproduce initial CPU failure before correction",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "test_capture_decoded.py"
+  ],
+  "started_utc": "2026-11-17T01:42:34.438597+00:00",
+  "exit_code": 1,
+  "test_count": 22,
+  "failures": 1,
+  "error": "Joint field tuple ordering differed from pinned upstream __init__; values retained but exact field-contract AST check refused",
+  "artifacts": [
+    {
+      "path": "capture_decoded.py",
+      "bytes": 12932,
+      "sha256": "f358772b11ae535727779bb1ce8aa6c713f0fd0c1d7395aeb53f108ef2b1631e"
+    },
+    {
+      "path": "test_capture_decoded.py",
+      "bytes": 15055,
+      "sha256": "74fb5a9d524df091be3f7e8723150b8323a2e19f4b67b09d700884330069f44b"
+    },
+    {
+      "path": "unittest.log",
+      "bytes": 4239,
+      "sha256": "ffcec49f843a66afd7c8cfad0158914e11821399bcfd7fd667e81e8b69498a3d"
+    }
+  ]
+}

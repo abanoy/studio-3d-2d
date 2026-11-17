@@ -15516,3 +15516,76 @@ No redesign merge or installed-app replacement has occurred. Owner checks remain
 DEFERRED. Formal ledger denominators/statuses remain55/62 and52/54. After fresh
 full verification, audit actual receipts and process births, then merge only the
 qualified redesign while preserving main history. Continue other independent work.
+
+## 2026-11-17 — Font/dock fixes qualify; ffcf full reaches scene-view check
+
+Candidateffcf4c54ab9ab7af7cb01329a5b3b5b6f4589865 is committed and backed up on
+the separate review branch. All9 changed files were independently retrieved and
+matched byte-for-byte and by Git blob. Main1ce433bd's565-file checkpoint was also
+fully read back (4,982,585 bytes,6 working-byte recipes). Main functional1019
+remains the completed52f reference; no redesign merge or installation occurred.
+
+Actual focused Windows verification passes controls48, integratedNeon12504
+(inset12384,behavior32,compact14,rail45,lifecycle29), resize, docking and nested
+wrappers. Source1029 is unchanged and all private jobs/scopes close. The separate
+32-check transaction extension also passes: an unavailable held control refuses,
+both caches remain unchanged, and restoring the same control/index permits one
+refresh to the correct full list. It does not inflate the formal12504 group.
+
+The fix retains original Neon/classic Tree fonts to avoid invalidating resources
+during live restyling. Font families/weight/Japanese fallback remain unchanged.
+Lifecycle guards alone were insufficient; their48/0-plus-diagnostics failure is
+kept. Guards then exposed a floating World45/1 mismatch: the setter now returns
+acceptance, the layout commits only after success and a single deferred refresh
+finishes detachment. All45 original rail assertions pass. Inset/Compact use one
+full-precision JSON string for file and log, preserving every numeric threshold
+and strict equality. Six explicit WeakRef types resolve the original fixture's
+parser warnings while preserving its29 predicates. Failed observations remain.
+
+Two interpretation corrections are explicit. Ordered engine output puts the font
+error during live resize/docking; concatenated stdout/stderr did not establish
+after-free timing. Also, AST decoding of exact9f604060 old helper source proves
+the same valid native regex: the suspected overescape was a source-display
+misreading. No earlier native zero count is invalidated by a nonexistent regex
+defect. New root observations additionally cover selected helpers/coordinators
+and execute4positive/3negative matcher cases; physical receipts are independent.
+
+The complete ffcf run started02:22:31.5782448Z and FAILED02:34:45.1241655Z at
+scene-view102/4. It passed all36 core groups, controls, Neon12504, resizing,
+docking, nested layout and rotation before stopping. All4 failures are the same
+off-frame screen-color threshold across wide/tall and rolled/unrolled cases.
+Selection, pose, Undo, projection/unit and unchanged native-output checks pass.
+The approved Neon presentation draws a source-declared62percent dim mask outside
+the camera frame; saved images show the model correctly aligned but dimmed.
+An exact source-pinned mask/composite fixture is being prepared; no threshold,
+guide bound, product look or render output has been changed or qualified by it.
+
+Root's strict ffcf terminal helper audited48 unique physical jobs:46 exit0,
+1registered Krita cancel2 and1scene assertion exit1. Sources1029 remain exact,
+all inline receipts join physical receipts, both original process identities and
+owned runtime scopes are absent, and the failed-only lease released
+02:36:25.0277413Z. Inventory2c334aab837768ee17b2c13be0ad6ac26fa203a9e8815cd991b24a2de3386704.
+No stale final full report was read. Root observed both births at launch using
+the same GetProcess API used at closure; CIM precision detail is retained.
+
+Compact completed fix archivee8a7f25e has305payloads/417 exact original bindings
+and23 private jobs. Standalone32 appenddb32fd93 has36payloads/33 bindings and
+1 closed job. Root independently checked every exact payload/decompressed source.
+These24 jobs are separate from the48 failed-full jobs. Private arrays/art/media
+are excluded. The earlier failedf387 archive remains immutable with its timing
+interpretation explicitly retracted in the later correction packet.
+
+Source-only model progress remains scoped: decoded PMX field preservation passes
+22 synthetic checks plus6 independent boundaries, but native-file joining stays
+UNQUALIFIED and no PMX solver or portable table is active. The installed reader's
+negative-reference collapse, truncation fallback, string replacement and2.1 limits
+are disclosed. Exact-ID carrier16, non-NORMAL semantic comparison26 and boundary7
+CPU checks do not qualify native correspondence, input validity or NORMAL output.
+Original normal fidelity remains FAILED_UNQUALIFIED; private B/15MB arrays stay
+protected. Six-foot normalization/classification/schema9/PMX reconstruction and
+rebasing remain inactive. Future source preparation does not imply deployment.
+
+Next qualify the exact scene-presentation fixture, back up the resulting candidate
+and rerun the complete Windows default before merge. Preserve all failures,
+approved Neon, concurrent main history, installed Studio and prior owner reviews.
+Manual owner observations remain DEFERRED. Formal55/62 and52/54 are unchanged.

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_neon_workspace.py", line 282, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ~~~~^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_neon_workspace.py", line 241, in main
+    validate_report(name,report,log,script_sha,app_sha,expected_names)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_neon_workspace.py", line 158, in validate_report
+    require(len(lines)==1 and json.loads(lines[0])==report, 'Actual marker/result mismatch: '+name)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_neon_workspace.py", line 37, in require
+    if not ok: raise ValueError(message)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Actual marker/result mismatch: inset

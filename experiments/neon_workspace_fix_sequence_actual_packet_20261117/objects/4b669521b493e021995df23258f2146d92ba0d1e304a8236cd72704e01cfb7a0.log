@@ -1,0 +1,122 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_workspace_controls.py", line 18, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_workspace_controls.py", line 12, in main
+    assert process.returncode==0 and 'WORKSPACE_CONTROLS 'in log and '"failures":0'in log and not any(text in log for text in ['ERROR:','FAIL ','ObjectDB instances leaked']),log
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS default workspace has World left, Properties right, Timeline below
+PASS actual included rig imports into shared world
+PASS actual canvas coordinates still paint an independent visible Ink cel
+PASS middle click cycles Rotate/Move without deselecting the model
+PASS repeated middle click cycles back
+PASS tool cycling changes no pose/key/shot/view or Undo history
+PASS middle drag still pans in Pose and does not cycle tools
+PASS middle drag still dollies in Scene mode
+PASS middle click from Scene reveals the pose tool without moving the camera
+PASS Draw keeps its own middle-button navigation
+PASS Escape/focus cancellation cannot create a late tool switch
+PASS Layers is a resizable non-blocking editing panel
+PASS actual main-window button remains clickable while Layers stays open
+PASS open modeless Layers follows a selection changed in the main inspector
+PASS selected field text is dark against pale blue in the child panel
+PASS native/embedded child windows and multiline selection inherit readable text colors
+PASS Project options permits main-window interaction too
+PASS actual decision confirmation still blocks conflicting shortcuts
+PASS installed content browser no longer disables the main window
+PASS main toolbar still responds with installed browser open
+PASS content-location settings also permit main-window interaction
+PASS tutorial browsing remains non-blocking; starting a lesson still has its separate discard check
+PASS recovery history browsing permits main-window interaction without restoring anything
+PASS real workspace splitters resize the live view and panels
+PASS docking swaps panels instead of losing an occupied panel
+AFTER_HEADING_DRAG {"floating":{},"format":"studio_workspace_3","groups":{"bottom":[],"left":["properties","timeline"],"right":["world"],"top":[]},"selected":{"left":"Timeline","right":"World"},"slots":{"bottom":"","left":"properties","right":"world","top":""},"split":[-236,35,-25,180],"trees":{"bottom":{"key":"bottom","selected":"","tabs":[]},"left":{"key":"left","selected":"Timeline","tabs":["properties","timeline"]},"right":{"key":"right","selected":"World","tabs":["world"]},"top":{"key":"top","selected":"","tabs":[]}}}
+PASS dragging a panel heading onto another panel creates selectable tabs
+PASS floating Properties is a movable, non-blocking tool window
+PASS floating gadget can resize and reposition
+PASS closing a floating panel docks it back rather than removing controls
+PASS layout operations preserve exact live canvas, timeline and inspector nodes
+PASS layout moves leave scene, authored keys, view and Undo history unchanged
+PASS layout operations preserve exact final 3D/2D output pixels
+PASS Reset workspace restores familiar Simple layout
+PASS saved docking preferences reload without a project-format change
+WORKSPACE_BOUNDS {"canvas":"[P: (64.0, 56.0), S: (848.0, 538.0)]","footer":"[P: (344.0, 546.0), S: (189.0, 40.0)]","timeline":"[P: (64.0, 698.0), S: (1136.0, 62.0)]","visible":"[P: (0.0, 0.0), S: (1200.0, 760.0)]","window":"(1200, 760)"}
+PASS default resizable layout remains accessible in logical and physical bounds at1200x760
+PASS resized workspace routes viewport pointer to Ink pixel (960, 540)
+PASS resized workspace routes viewport pointer to Ink pixel (480, 810)
+PASS resized workspace routes viewport pointer to Ink pixel (1440, 270)
+PASS same-aspect resize and125percent interface keep camera timeline and footer reachable: { "size": (1120, 720), "scale": 1.0 }
+PASS compressed Timeline scrolls its complete interactive ruler into view
+PASS compact World retains asset action inside a scrollable dock
+PASS World action can be brought into the visible dock without changing layout
+PASS responsive dock and interface scale preserve exact final3D/2D output
+PASS same-aspect resize and125percent interface keep camera timeline and footer reachable: { "size": (1400, 900), "scale": 1.25 }
+PASS compressed Timeline scrolls its complete interactive ruler into view
+PASS compact World retains asset action inside a scrollable dock
+PASS World action can be brought into the visible dock without changing layout
+PASS responsive dock and interface scale preserve exact final3D/2D output
+WORKSPACE_CONTROLS {"checks":48,"failures":0}
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+ERROR: Parameter "fd" is null.
+   at: _shape_run (modules/text_server_adv/text_server_adv.cpp:6897)
+   GDScript backtrace (most recent call first):
+       [0] set_rail (res://src/world_selection.gd:252)
+       [1] refresh_world_mode (res://src/workspace_layout.gd:292)
+

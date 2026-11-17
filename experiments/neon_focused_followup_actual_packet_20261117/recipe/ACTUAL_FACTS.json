@@ -1,0 +1,568 @@
+{
+  "format": "has_neon_focused_followup_actual_facts_1",
+  "full_suite_passed": false,
+  "cases": [
+    {
+      "folder": "neon-auxiliary-original-20261117-attempt1",
+      "actual_format": "has_neon_original_auxiliary_fixtures_1",
+      "verification_sha256": "6d4f1aaec4630fce7d78b13a63c5829545305ea0d0c6fc5286222536635b8f41",
+      "full_suite_pass_claimed": false,
+      "rows": [
+        {
+          "label": "movement",
+          "outer_process": {
+            "pid": 12684,
+            "exit": 1,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 93.84299800000008
+          },
+          "result": null,
+          "complete_result_available": false,
+          "partial_PASS_lines": 25,
+          "partial_FAIL_lines": 3,
+          "script_error": true,
+          "script_watchdog": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/movement_path_smoke_6c3833a8c1364c20bf9a3ba2fe4fadac.json",
+              "association": "temporal/stem association only; original wrapper did not retain its --receipt command",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_12496332f26f4aca9ac9b19c8076f7ef",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 2,
+                "child_pid": 3872,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 93.096
+              }
+            }
+          ]
+        },
+        {
+          "label": "waveform",
+          "outer_process": {
+            "pid": 19896,
+            "exit": 1,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 7.0902327000003424
+          },
+          "result": {
+            "checks": 13,
+            "drawn_transients": 0,
+            "failures": 1,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/waveform_levels_smoke_2fda3e07e5da4e8ebc1e817230159a71.json",
+              "association": "temporal/stem association only; original wrapper did not retain its --receipt command",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_3b5df65ec3564deda0169bbfe78c564e",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 1,
+                "child_pid": 18252,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 4.552
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "neon-timeline-successors-20261117-attempt2",
+      "actual_format": "has_neon_focused_timeline_successors_1",
+      "verification_sha256": "330dac66fbb3753d6f834932117b40ce3a87d892062880a394f71ebbfe390967",
+      "full_suite_pass_claimed": false,
+      "rows": [
+        {
+          "label": "animated",
+          "outer_process": {
+            "pid": 16788,
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 18.626065699999344
+          },
+          "result": {
+            "checks": 48,
+            "failures": 0,
+            "folder": "C:/a/Programming/cloudflare/has-neon-review-20261116-c2d52ff/output/animated-channels/run_725624",
+            "movie": "C:/a/Programming/cloudflare/has-neon-review-20261116-c2d52ff/output/animated-channels/run_725624/render_1794877049_8489625_0/movie.mp4",
+            "native_samples": [
+              "pose-smoke/miku-project",
+              "source-smoke/source-project",
+              "sfm-smoke/project"
+            ],
+            "project": "C:/a/Programming/cloudflare/has-neon-review-20261116-c2d52ff/output/animated-channels/run_725624/channels.has",
+            "recovery_pixels": {
+              "channels": 0,
+              "close": true,
+              "mean": 0.0
+            }
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/animated_channels_smoke_80433aa2deba450eb04ad960b741f4a0.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_ab7dc1d323114136a3d5d2102638ff05",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 0,
+                "child_pid": 6344,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 18.571
+              }
+            }
+          ]
+        },
+        {
+          "label": "movement",
+          "outer_process": {
+            "pid": 13304,
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 20.493910299999698
+          },
+          "result": {
+            "checks": 34,
+            "failures": 0,
+            "unit_checks": 13,
+            "component_model": false,
+            "functional_unchanged": true
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/movement_path_smoke_b96e34dd948a4a84b1443b4add7f86ca.json",
+              "association": "result.private_receipts explicit path",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_99304e9b81ca4a5186fc5cd1e2a44202",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 0,
+                "child_pid": 12532,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 19.439
+              }
+            }
+          ]
+        },
+        {
+          "label": "components",
+          "outer_process": {
+            "pid": 24216,
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 20.0743992000007
+          },
+          "result": {
+            "checks": 34,
+            "failures": 0,
+            "unit_checks": 13,
+            "component_model": true,
+            "functional_unchanged": true
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/movement_path_smoke_9e789f81fa6446e3bfc02a497e94bccb.json",
+              "association": "result.private_receipts explicit path",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_489313eb63454cb68f601029db401bb7",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 0,
+                "child_pid": 5108,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 19.086
+              }
+            }
+          ]
+        },
+        {
+          "label": "classic-original",
+          "outer_process": {
+            "pid": 13480,
+            "exit": 1,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 4.3787468000000445
+          },
+          "result": {
+            "checks": 13,
+            "drawn_transients": 0,
+            "failures": 1,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/original_waveform_e761b48e6f6f4d53ad5a36a4c0a994a7.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_1db18d75285348e492e954fe709eaf15",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 1,
+                "child_pid": 8012,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 4.315
+              }
+            }
+          ]
+        },
+        {
+          "label": "neon-reveal-only",
+          "outer_process": {
+            "pid": 24436,
+            "exit": 1,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 5.023332200000368
+          },
+          "result": {
+            "checks": 13,
+            "drawn_transients": 0,
+            "failures": 1,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/waveform_levels_smoke_dce965c51cba470cacd61340b1e5e971.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_7babb6167c96404d9319f7b08fa6a1f3",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 1,
+                "child_pid": 4048,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 4.96
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "neon-waveform-classic-reveal-20261117-attempt1",
+      "actual_format": "has_classic_waveform_reveal_counterfactual_1",
+      "verification_sha256": "3a73ae6f34b020445321daaf0a46a824bbec3ec2e9e239859323de271c731f84",
+      "full_suite_pass_claimed": false,
+      "rows": [
+        {
+          "label": "app",
+          "outer_process": {
+            "pid": 10344,
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 4.654840300000615
+          },
+          "result": {
+            "checks": 13,
+            "drawn_transients": 4,
+            "failures": 0,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/waveform_levels_smoke_54d1a618d74141d199a9bf53b795f107.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_22f33a3291f547c097d721d4069a8a4e",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 0,
+                "child_pid": 19296,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 4.604
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "neon-waveform-palette-profiles-20261117-attempt1",
+      "actual_format": "has_waveform_palette_profile_execution_1",
+      "verification_sha256": "e4bf28c3559e22ceb59603cf5c23a02de85afb52a6a125ef13c640e8db8f9202",
+      "full_suite_pass_claimed": false,
+      "rows": [
+        {
+          "label": "neon",
+          "outer_process": {
+            "pid": 14900,
+            "exit": 1,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 5.168244499998764
+          },
+          "result": {
+            "checks": 14,
+            "drawn_transients": 3,
+            "failures": 1,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/waveform_levels_smoke_7edbf352d7394f4185c8eada5c2b2dcd.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_08f7a21ef117495b93b89ec8b78f2845",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 1,
+                "child_pid": 14856,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 5.113
+              }
+            }
+          ]
+        },
+        {
+          "label": "classic",
+          "outer_process": {
+            "pid": 1588,
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 4.768092900001648
+          },
+          "result": {
+            "checks": 14,
+            "drawn_transients": 4,
+            "failures": 0,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/waveform_levels_smoke_cc74909f45ff4d388d7531df8b69f083.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_c13e3d1aac1643b3b5926de92d83f03f",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 0,
+                "child_pid": 17560,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 4.708
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "neon-waveform-diagnostic-20261117-attempt1",
+      "actual_format": "has_neon_waveform_diagnostic_execution_1",
+      "verification_sha256": "a9e5524529be244b166f1359955a46059a4f19e459e5e28851c69480d0985925",
+      "full_suite_pass_claimed": false,
+      "rows": [
+        {
+          "label": "app",
+          "outer_process": {
+            "pid": 5776,
+            "exit": 1,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 5.740009299999656
+          },
+          "result": {
+            "checks": 14,
+            "drawn_transients": 3,
+            "failures": 1,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/diagnostic_4d49ebb6640646309f665c20888ac77a.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_0d738de186d646d0ba14d44b29d49732",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 1,
+                "child_pid": 2212,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 5.368
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "neon-waveform-aa-profiles-20261117-attempt1",
+      "actual_format": "has_waveform_aa_profile_execution_1",
+      "verification_sha256": "1138945acf11628f167714d22798fe5971cf42793cd2f873f5d3484c71fed49e",
+      "full_suite_pass_claimed": false,
+      "rows": [
+        {
+          "label": "neon",
+          "outer_process": {
+            "pid": 796,
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 6.0060950000006414
+          },
+          "result": {
+            "checks": 15,
+            "drawn_transients": 4,
+            "failures": 0,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/waveform_levels_smoke_8000cd24ea844d2d9b4485a6021e24e8.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_4ae1e585f6b240d0a3b58e02bf2163fc",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 0,
+                "child_pid": 10224,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 5.942
+              }
+            }
+          ]
+        },
+        {
+          "label": "classic",
+          "outer_process": {
+            "pid": 16612,
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "timed_out": false,
+            "owned_wrapper_terminated": false,
+            "seconds": 5.10026039999866
+          },
+          "result": {
+            "checks": 15,
+            "drawn_transients": 4,
+            "failures": 0,
+            "fine_payload_bytes": 32768
+          },
+          "complete_result_available": true,
+          "physical_receipts": [
+            {
+              "path": "output/private-desktop/waveform_levels_smoke_64bc6f718d274a8fba09ac6cd3157968.json",
+              "association": "retained exact command --receipt argument",
+              "body": {
+                "format": "studio_private_desktop_1",
+                "desktop": "HAS_Test_273835546c9e4a71a4c2dc83ceb60df3",
+                "desktop_switch_requested": false,
+                "private_window_seen": true,
+                "child_desktop_confirmed": true,
+                "maximum_owned_windows": 9,
+                "foreground_child_observed": false,
+                "exit": 0,
+                "child_pid": 11032,
+                "job_closed": true,
+                "desktop_closed": true,
+                "seconds": 5.043
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "physical_receipt_files_selected": 13,
+  "explicit_command_or_result_receipt_bindings": 11,
+  "temporal_stem_only_receipt_associations": 2,
+  "old_failures_replaced": false,
+  "media_native_arrays_or_original_art_included": false,
+  "builder_executed": false,
+  "outer_timeout_and_internal_script_watchdog_are_distinct": true,
+  "runner_reference_provenance_limit": "Retained runner reference bytes are pinned for this archive; do not infer an original launch source SHA absent from original launch metadata."
+}

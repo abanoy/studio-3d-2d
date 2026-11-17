@@ -1,0 +1,1 @@
+Closed failed f387 Windows run. All36 core groups and48 workspace assertions pass, but font errors during explicit app teardown make the strict wrapper/full suite fail. No assertion or error filter is relaxed. No full PASS, merge, native-normal repair or owner result is claimed. Exact public originals and all36 physical receipts are retained; images/native arrays stay private.

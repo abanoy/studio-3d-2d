@@ -1,0 +1,33 @@
+{
+  "format": "has_root_workspace_followup_1",
+  "rows": [
+    {
+      "label": "controls",
+      "pid": 25636,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "seconds": 14.4921797,
+      "timed_out": false,
+      "report": {
+        "checks": 48,
+        "failures": 0,
+        "folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\workspace-controls\\1794880601233539200",
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\workspace_controls_smoke_3f2c1f0ab32a4329b4da771e8545cc76.json",
+        "functional_unchanged": true
+      }
+    },
+    {
+      "label": "neon",
+      "pid": 27400,
+      "exit": 1,
+      "retained_Popen_reaped": true,
+      "seconds": 3.6862869,
+      "timed_out": false
+    }
+  ],
+  "all_functional_source_unchanged": true,
+  "functional_source_files": 1028,
+  "host_scopes_closed": true,
+  "passed": false,
+  "full_suite_pass_claimed": false
+}

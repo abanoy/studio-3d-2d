@@ -1,0 +1,11 @@
+{
+  "format": "has_peer_scope_review_summary_1",
+  "source": "Message from /root/review_build_audit/admission_gate_review to /root/normal_probe_audit",
+  "reviewed_source_sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00",
+  "independent_original_synthetic_tests": 26,
+  "failures": 0,
+  "finding": "No non-NORMAL mutation acceptance found within declared normalized-storage/unused-gap rules. Four unchanged malformed-input validity omissions reproduced by this addendum. These are admission/validity limitations, not preservation mutations.",
+  "full_glTF_validity_qualified": false,
+  "normal_or_carrier_identity_qualified": false,
+  "peer_packet_writes": false
+}

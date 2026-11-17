@@ -1,0 +1,12 @@
+{
+  "recorded_utc": "2026-11-17T02:28:36.980843+00:00",
+  "scope": "Preparation evidence storage only; no code/context/gate/test-result change",
+  "failed_seal_check": "CPU_VALIDATION.raw_log_sha256 compared LF stream bytes with CRLF disk log",
+  "original_receipt_preserved": "CPU_VALIDATION_BEFORE_LOG_HASH_CORRECTION.json",
+  "original_receipt_sha256": "0f6ebcd4d030f9a498cd33aceaff6ec3f042a1ddebeda14d8ce0565019424957",
+  "actual_disk_log_sha256": "3b0949208f75297de220a24de23363b18cc4714e49c753da0922f3bff662e421",
+  "LF_stream_sha256": "6883b2b5d78d46290f85d5d273a01d76f0a6e789bd6820f944eca98f4e9123e8",
+  "proof": "Disk CRLF-to-LF normalization equals original stream hash exactly",
+  "tests_remain_25_PASS": true,
+  "new_runtime_or_observer_run": false
+}

@@ -1,0 +1,41 @@
+{
+  "format": "has_independent_actual_archive_audit_1",
+  "status": "PASS_SOURCE_AND_CPU_ONLY",
+  "reports": [
+    {
+      "packet": "normal_setter_actual_packet_20261117",
+      "expected_index_sha256": "c47b56629c65159decb44bab975c52ea1f65b01754f44370cecab2e8b9b20df2",
+      "index_sha256_verified": true,
+      "closed_payload_set": true,
+      "payload_files": 35,
+      "payload_bytes": 154977,
+      "gzip_payloads": 4,
+      "JSON_payloads_structurally_screened": 22,
+      "exact_original_bindings": 25,
+      "exact_gzip_original_bindings": 4,
+      "bound_original_bytes": 165154,
+      "all_original_and_compressed_SHA_bytes_and_body_equal": true,
+      "no_media_or_PRIVATE_payload_paths": true,
+      "no_forbidden_native_array_JSON_keys_or_large_numeric_arrays_found": true,
+      "source_code_reference_to_private_paths_is_not_a_private_payload": true
+    },
+    {
+      "packet": "neon_failed_381_actual_packet_20261117",
+      "expected_index_sha256": "2bf3b9a947ede52cb7a8e64dab46580f16abb426ab345923b14631403e86c644",
+      "index_sha256_verified": true,
+      "closed_payload_set": true,
+      "payload_files": 52,
+      "payload_bytes": 250539,
+      "gzip_payloads": 3,
+      "JSON_payloads_structurally_screened": 44,
+      "exact_original_bindings": 42,
+      "exact_gzip_original_bindings": 3,
+      "bound_original_bytes": 295547,
+      "all_original_and_compressed_SHA_bytes_and_body_equal": true,
+      "no_media_or_PRIVATE_payload_paths": true,
+      "no_forbidden_native_array_JSON_keys_or_large_numeric_arrays_found": true,
+      "source_code_reference_to_private_paths_is_not_a_private_payload": true
+    }
+  ],
+  "limitations": "Public structured payloads and text formats screened; no original private native output or media read. Hash-only private references remain permitted. No engines, CIM, Git or functional-source mutation."
+}

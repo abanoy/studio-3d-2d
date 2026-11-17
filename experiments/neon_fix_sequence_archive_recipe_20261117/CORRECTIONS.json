@@ -1,0 +1,52 @@
+{
+  "format": "has_neon_fix_sequence_corrections_1",
+  "old_f387_archive_index_sha256": "a96f39ab1962d819ec3396c50f9c539385938255eb8dc8a7d3c154566fd0a6ab",
+  "old_archive_unchanged": true,
+  "timing": {
+    "old_fields": [
+      "ACTUAL_RESULT.json.failure",
+      "ACTUAL_RESULT.json.font_error_after_app_free",
+      "README.md"
+    ],
+    "old_after_app_free_attribution": "RETRACTED",
+    "reason": "Concatenated stdout/stderr does not preserve cross-stream chronology.",
+    "decisive_source": "experiments/neon_workspace_font_diagnosis_20261117/first-lifecycle-fix-ordered-engine.log",
+    "observation": "Line27 splitter assertion passes; line28 fd-null error occurs; docking-swaps assertion is later.",
+    "corrected_phase": "live resize/docking",
+    "specific_internal_TextServer_mechanism_proven": false
+  },
+  "matcher": {
+    "earlier_overescape_suspicion": "RETRACTED_FOR_CURRENT_EXACT_SOURCE",
+    "current_old_source": "experiments/run_neon_behavior_original_20261116.py",
+    "current_old_source_sha256": "9f60406025cdae56a80c7876ba74248e61a3b2871ec96e7d9c9364b11a3bfc5b",
+    "old_decoded_pattern": "^(Godot.*|blender|ffmpeg|ffprobe)\\.exe$",
+    "old_pattern_backslashes": 1,
+    "old_current_pattern_is_valid_for_native_name_cases": true,
+    "different_historical_bad_hash_found": false,
+    "independent_peer_confirmed_same_source_decode": true,
+    "new_source": "experiments/run_neon_workspace_followup_20261117.py",
+    "current_new_source_sha256": "234a3f6aa3f76ee65ce1c6fd35a410326c4f01068f3a0bf81667481e4ec2af89",
+    "new_decoded_pattern": "^(Godot.*|blender|ffmpeg|ffprobe)\\.exe$",
+    "source_only_ASCII_test_names": {
+      "positive": [
+        "Godot_v4.6-stable_win64.exe",
+        "blender.exe",
+        "ffmpeg.exe",
+        "ffprobe.exe"
+      ],
+      "negative": [
+        "notblender.exe",
+        "blenderXexe",
+        "ffmpeg.exe.bak"
+      ]
+    },
+    "native_or_CIM_execution_by_preparer": false,
+    "scope_difference": "Old closed() selects scoped native executable images. New observer additionally selects scoped helper/coordinator commands and actually checks4positive/3negative native-name cases on host.",
+    "old_zero_counts_invalidated_by_regex": false,
+    "actual_new_scope_observations": "Preserved root metadata independently records4positive/3negative cases, matching scoped count0 and no termination.",
+    "private_receipts_and_Popen_reaping": "Separate retained physical/ownership evidence.",
+    "old_observed_strong_driver_sha_before_comment_correction": "1ffd784ad6be5c0704a72f6116ac2a15a20e3e30811634ef27c2ebdcffe640ec",
+    "current_strong_source_is_post_comment_correction": true
+  },
+  "scope": "Correct interpretations without erasing failures or invalidating independently recorded physical closure. Full canonical PASS and merge remain unclaimed."
+}

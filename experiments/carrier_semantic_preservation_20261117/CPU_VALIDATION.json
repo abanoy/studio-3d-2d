@@ -1,0 +1,41 @@
+{
+  "format": "has_carrier_semantic_cpu_validation_1",
+  "utc": "2026-11-17T01:45:47.585308+00:00",
+  "source_sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00",
+  "tests_sha256": "7bd47a8cc6fd03c38f8ce3092326a7205b61c39e06a6b88619576b9543354266",
+  "tests": 26,
+  "failures": 0,
+  "errors": 0,
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\carrier_semantic_preservation_20261117",
+    "-p",
+    "test_semantic_compare.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_allowed_custom_attribute_and_tangent_are_preserved (test_semantic_compare.SemanticTests.test_allowed_custom_attribute_and_tangent_are_preserved) ... ok\ntest_allowed_unlit_and_texture_transform_preserved (test_semantic_compare.SemanticTests.test_allowed_unlit_and_texture_transform_preserved) ... ok\ntest_bind_and_animation_bytes_refuse (test_semantic_compare.SemanticTests.test_bind_and_animation_bytes_refuse) ... ok\ntest_bool_and_float_accessor_view_and_other_indexes_refuse (test_semantic_compare.SemanticTests.test_bool_and_float_accessor_view_and_other_indexes_refuse) ... ok\ntest_encoded_image_byte_mutation_refuses (test_semantic_compare.SemanticTests.test_encoded_image_byte_mutation_refuses) ... ok\ntest_full_carrier_permutation_is_not_a_correspondence_proof (test_semantic_compare.SemanticTests.test_full_carrier_permutation_is_not_a_correspondence_proof) ... ok\ntest_interleaved_to_packed_components_accept (test_semantic_compare.SemanticTests.test_interleaved_to_packed_components_accept) ... ok\ntest_malformed_core_lists_sampler_and_matrix_profile_refuse (test_semantic_compare.SemanticTests.test_malformed_core_lists_sampler_and_matrix_profile_refuse) ... ok\ntest_metadata_types_and_signed_zero_refuse (test_semantic_compare.SemanticTests.test_metadata_types_and_signed_zero_refuse) ... ok\ntest_minmax_or_accessor_metadata_change_refuses (test_semantic_compare.SemanticTests.test_minmax_or_accessor_metadata_change_refuses) ... ok\ntest_missing_or_case_colliding_carrier_refuses (test_semantic_compare.SemanticTests.test_missing_or_case_colliding_carrier_refuses) ... ok\ntest_node_material_skin_animation_metadata_change_refuses (test_semantic_compare.SemanticTests.test_node_material_skin_animation_metadata_change_refuses) ... ok\ntest_nonfinite_JSON_and_F32_refuse (test_semantic_compare.SemanticTests.test_nonfinite_JSON_and_F32_refuse) ... ok\ntest_normal_minmax_is_explicit_separate_gate (test_semantic_compare.SemanticTests.test_normal_minmax_is_explicit_separate_gate) ... ok\ntest_normal_words_change_is_explicitly_unqualified (test_semantic_compare.SemanticTests.test_normal_words_change_is_explicitly_unqualified) ... ok\ntest_position_UV_color_joints_weights_component_mutations_refuse (test_semantic_compare.SemanticTests.test_position_UV_color_joints_weights_component_mutations_refuse) ... ok\ntest_position_morph_mutation_refuses (test_semantic_compare.SemanticTests.test_position_morph_mutation_refuses) ... ok\ntest_position_signed_zero_word_mutation_refuses (test_semantic_compare.SemanticTests.test_position_signed_zero_word_mutation_refuses) ... ok\ntest_range_stride_and_component_types_refuse (test_semantic_compare.SemanticTests.test_range_stride_and_component_types_refuse) ... ok\ntest_relayout_accepts_exact_channels_and_preserves_inputs (test_semantic_compare.SemanticTests.test_relayout_accepts_exact_channels_and_preserves_inputs) ... ok\ntest_strict_JSON_reader_rejects_duplicate_nonfinite_and_integer_negative_zero (test_semantic_compare.SemanticTests.test_strict_JSON_reader_rejects_duplicate_nonfinite_and_integer_negative_zero) ... ok\ntest_topology_order_mutation_refuses (test_semantic_compare.SemanticTests.test_topology_order_mutation_refuses) ... ok\ntest_unknown_accessor_view_fields_refuse (test_semantic_compare.SemanticTests.test_unknown_accessor_view_fields_refuse) ... ok\ntest_unknown_extensions_sparse_and_compression_refuse (test_semantic_compare.SemanticTests.test_unknown_extensions_sparse_and_compression_refuse) ... ok\ntest_unreferenced_accessor_view_or_external_image_refuses (test_semantic_compare.SemanticTests.test_unreferenced_accessor_view_or_external_image_refuses) ... ok\ntest_view_buffer_and_image_metadata_are_typed_and_exact (test_semantic_compare.SemanticTests.test_view_buffer_and_image_metadata_are_typed_and_exact) ... ok\n\n----------------------------------------------------------------------\nRan 26 tests in 0.075s\n\nOK\n",
+  "module_imports_standard_CPU_only": [
+    "copy",
+    "hashlib",
+    "json",
+    "math",
+    "re",
+    "struct"
+  ],
+  "source_AST_has_no_file_reader_writer_native_launcher_or_GLB_packer": true,
+  "native_files_read": false,
+  "GLB_files_generated": false,
+  "engines_CIM_Git_or_functional_edits": false,
+  "normal_fidelity_qualified": false,
+  "native_carrier_correspondence_qualified": false,
+  "independent_peer_source_review": "Requested; unavailable while peer prioritizes root f387 teardown fix. Not claimed."
+}

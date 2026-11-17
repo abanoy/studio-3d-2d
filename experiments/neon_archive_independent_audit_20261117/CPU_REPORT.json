@@ -1,0 +1,75 @@
+{
+  "format": "has_neon_archives_independent_CPU_audit_1",
+  "status": "PASS_INDEPENDENT_ARCHIVE_AUDIT",
+  "packets": [
+    {
+      "packet": "neon_workspace_fix_sequence_actual_packet_20261117",
+      "INDEX_sha256": "e8a7f25ed780eaac2b6d0611fcbc7c7d388945fd82e7f23df6979cf0147060c9",
+      "payload_files_verified": 305,
+      "exact_original_bindings": 417,
+      "unique_payload_objects": 294,
+      "gzip_objects_exactly_reversed": 8,
+      "physical_receipt_files": 25,
+      "unique_physical_jobs": 23,
+      "normal_exit0_jobs": 21,
+      "assertion_exit1_jobs": 2,
+      "nested_inline_receipt_occurrences_joined": 12,
+      "membership_root_alias_privacy_and_outcome_gates": "PASS",
+      "archive_unchanged": true
+    },
+    {
+      "packet": "neon_world_lifecycle32_actual_packet_20261117",
+      "INDEX_sha256": "db32fd9398c358a74b455d26e074482c717c456b812b17fd43a3d5233e41618e",
+      "payload_files_verified": 36,
+      "exact_original_bindings": 33,
+      "unique_payload_objects": 27,
+      "gzip_objects_exactly_reversed": 1,
+      "physical_receipt_files": 2,
+      "unique_physical_jobs": 1,
+      "normal_exit0_jobs": 1,
+      "assertion_exit1_jobs": 0,
+      "nested_inline_receipt_occurrences_joined": 0,
+      "membership_root_alias_privacy_and_outcome_gates": "PASS",
+      "archive_unchanged": true
+    }
+  ],
+  "total_exact_original_bindings": 450,
+  "unique_actual_jobs_across_both": 24,
+  "matcher_source_correction": {
+    "old_source_sha256": "9f60406025cdae56a80c7876ba74248e61a3b2871ec96e7d9c9364b11a3bfc5b",
+    "preserved_before_comment_sha256": "1ffd784ad6be5c0704a72f6116ac2a15a20e3e30811634ef27c2ebdcffe640ec",
+    "current_after_comment_sha256": "234a3f6aa3f76ee65ce1c6fd35a410326c4f01068f3a0bf81667481e4ec2af89",
+    "comment_only_AST_exact": true,
+    "old_native_pattern_valid_for_all4_positive_names": true,
+    "host_query_executed": false
+  },
+  "privacy_negative_controls": 6,
+  "archive_builders_imported_or_executed": false,
+  "archives_or_REVIEW_mutated": false,
+  "engines_CIM_Git_or_active_full_state_report_log_accessed": false,
+  "full_Windows_PASS_claimed": false,
+  "attribution_limit": "Two failed-control wrappers emit no receipt path. Their archive selection labels and closed receipt bytes do not independently prove phase assignment; original mtime was not included in those archive bindings. Other jobs have command/report references. No incorrect assignment was observed.",
+  "supplemental_original_filesystem_attribution": [
+    {
+      "phase": "neon-workspace-f387-baseline-20261117-attempt1",
+      "receipt_source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\workspace_controls_smoke_dfe4f265026a40d88ad8a813a24aad0a.json",
+      "receipt_sha256": "9689c4444d620a968f45be8979b16ad50b27e3d7d4fe4f47b49e4d609b21b41e",
+      "original_current_mtime_ns": 1794880139668276800,
+      "phase_started_utc": "2026-11-17T01:48:44.772972+00:00",
+      "phase_closed_observed_utc": "2026-11-17T01:49:00.1913614Z",
+      "mtime_within_phase_interval": true,
+      "basis": "Additional current original-filesystem metadata, not information encoded in receipt JSON or the existing archive."
+    },
+    {
+      "phase": "neon-workspace-teardown-fixed-20261117-attempt1",
+      "receipt_source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\private-desktop\\workspace_controls_smoke_77671800f00448538ba348b51cea2950.json",
+      "receipt_sha256": "b464f16ebbee92c05fe3cc9c2aa2cb59d67e39455b1a22d0efd653e05c55f1da",
+      "original_current_mtime_ns": 1794880390898942600,
+      "phase_started_utc": "2026-11-17T01:52:55.869424+00:00",
+      "phase_closed_observed_utc": "2026-11-17T01:53:11.5432427Z",
+      "mtime_within_phase_interval": true,
+      "basis": "Additional current original-filesystem metadata, not information encoded in receipt JSON or the existing archive."
+    }
+  ],
+  "receipt_occurrence_count_definition": "Nested inline receipt bodies exclude top-level physical receipt JSONs. Earlier unsealed37/2 occurrence counts included25/2 top-level physical bodies; this classification correction changes no payload/job/outcome validation."
+}
