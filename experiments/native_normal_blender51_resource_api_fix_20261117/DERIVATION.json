@@ -1,0 +1,84 @@
+{
+  "format": "has_B_resource_Blender51_API_source_derivation_1",
+  "parent_INDEX_sha256": "b6069eb8c87d7599d10165de987ab2d9924fb377890e12a4cb2f0bdaf9ab735c",
+  "sources": {
+    "export_provenance.py": {
+      "parent_sha256": "ae2125ab6083de1bf5487fda2ca328c9f06e2c1ace36af97646da39c96e3212e",
+      "derived_sha256": "ae2125ab6083de1bf5487fda2ca328c9f06e2c1ace36af97646da39c96e3212e",
+      "bytes": 1773,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 0
+    },
+    "loaded_survey.py": {
+      "parent_sha256": "66f1f33e67ff8d7abb8214484d6fbc9fc43304a58069bdb4bc1848a360638f98",
+      "derived_sha256": "66f1f33e67ff8d7abb8214484d6fbc9fc43304a58069bdb4bc1848a360638f98",
+      "bytes": 2331,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 0
+    },
+    "probe_resources.py": {
+      "parent_sha256": "37b577852b0353b259a6fc1b9b2116f2163447dbe07bb425171140a426b35be9",
+      "derived_sha256": "37b577852b0353b259a6fc1b9b2116f2163447dbe07bb425171140a426b35be9",
+      "bytes": 556,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 0
+    },
+    "stager.py": {
+      "parent_sha256": "07c9792758f07cbd3bfeee65f9f3707db8d08e5f7468281540b6276ffbc4bac4",
+      "derived_sha256": "07c9792758f07cbd3bfeee65f9f3707db8d08e5f7468281540b6276ffbc4bac4",
+      "bytes": 321,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 0
+    },
+    "survey_admission.py": {
+      "parent_sha256": "572f2f29fa8d22489637a6cf9ef3ba58d7f2d0576931e286fa064c1f647c66e1",
+      "derived_sha256": "572f2f29fa8d22489637a6cf9ef3ba58d7f2d0576931e286fa064c1f647c66e1",
+      "bytes": 527,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 0
+    },
+    "setter_support.py": {
+      "parent_sha256": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9",
+      "derived_sha256": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9",
+      "bytes": 6019,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 0
+    },
+    "placement_sentinel.py": {
+      "parent_sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2",
+      "derived_sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2",
+      "bytes": 4387,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 0
+    },
+    "survey_core.py": {
+      "parent_sha256": "44dfd8efae147bc5591d2137001138c690bc09b6d2dd3e1113fa11b70d2dcd93",
+      "derived_sha256": "39a417bfe8e024704f4d400f824293640370074c28446e40613aa401247a4e28",
+      "bytes": 13761,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 1
+    },
+    "test_resources.py": {
+      "parent_sha256": "fd5d5e0f5e3d13a71acf96e2a819b41b62774fbcf367225c2b7edb7d5594ffc4",
+      "derived_sha256": "f83351ca0e7a46db18ceffc8c8d458f0e5307882fe8c6a142e1373573710dd09",
+      "bytes": 22716,
+      "whole_source_inverse_exact": true,
+      "literal_changes": 3
+    }
+  },
+  "public_Blender_source": {
+    "role": "installed_public_Blender_5_1_bpy_utils_source",
+    "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\modules\\bpy\\utils\\__init__.py",
+    "bytes": 48911,
+    "sha256": "fa23455db24e816626c1fed2db529e2b016c0707dfafb1bd0d193827b729a133",
+    "blend_paths_in_utils_all": true,
+    "utils_imports_blend_paths_from_bpy_extension": true,
+    "module_imported_or_executed": false
+  },
+  "original_31_assertion_bodies_changed": false,
+  "collector_change": "bpy.blend_paths -> bpy.utils.blend_paths at the sole path enumeration call",
+  "test_changes": "Namespace the fixture callable and its existing mutation hook; retain every assertion",
+  "native_input_or_private_output_read": false,
+  "bpy_imported": false,
+  "native_or_process_or_CIM_or_Git_action": false
+}

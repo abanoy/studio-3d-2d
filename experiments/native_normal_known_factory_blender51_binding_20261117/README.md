@@ -1,0 +1,7 @@
+# Blender 5.1 resource Git only binder binding
+
+Concrete source successor of Git-only binder3917792c. prepare_root.py changes only the runtime folder and INDEX literals, binding concrete runtime82727caa and its API-correct survey9f8e24d0. Its entire function ASTs are unchanged. Both installed-Git identity calls retain single_link=False; generic source/model descriptors retain single_link=True and exact stamps/hashes.
+
+Eight CPU methods comprise the original five synthetic closure/receipt methods with only their expected runtime INDEX literal rebound, the original two synthetic Git identity/readonly-policy methods, and one new exact two-binding inverse/companion check. Original tests and old derivation/CPU receipts remain untouched; the new derivation is explicit. Recheck with approved Python -B -m unittest -v test_bindings from this folder. No preparer main, actual admission, installed tool/input read, RootCmd execution, engine or native process occurs in these tests.
+
+Root must first finish the active full and establish fresh actual closed-lane/source/tool/input/B preservation, then perform the existing expiring admission preparation as a completed separate command. That preparer still exits without launching the owned driver. All original metadata-only/factory-handler/privacy/normal-fidelity limitations remain. This source packet grants no current runtime or native qualification.

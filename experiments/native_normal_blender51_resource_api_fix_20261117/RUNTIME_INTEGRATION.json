@@ -1,0 +1,144 @@
+{
+  "format": "has_B_resource_Blender51_API_runtime_integration_plan_1",
+  "status": "SOURCE_PLAN_ONLY_NO_RUNTIME_BINDER_OR_ADMISSION_CREATED",
+  "collector_packet": "experiments/native_normal_blender51_resource_api_fix_20261117",
+  "collector_INDEX_pin": "Use this final sealed INDEX SHA256 supplied and reviewed by Root; no self-hash is embedded",
+  "runtime_parent": {
+    "path": "experiments/native_normal_known_factory_resource_successor_20261117",
+    "INDEX_sha256": "1eeca1e85d93c834c52c1208ed68d18aaa2b00bc1b62987cf0b89d5561ab6f90",
+    "files": {
+      "ADMISSION.template.json": {
+        "path": "ADMISSION.template.json",
+        "bytes": 2990,
+        "sha256": "31841130627bbcc8f803d9077a1d8b5f74f3c9a63cd5ec7fd79db95fce1ba719"
+      },
+      "CURRENT-CLOSED-LANE.template.json": {
+        "path": "CURRENT-CLOSED-LANE.template.json",
+        "bytes": 723,
+        "sha256": "1f27bb93cda883b537f85cedc7d59497d68299df53143f5c52de3a2ddf3a1283"
+      },
+      "baseline_predicate.py": {
+        "path": "baseline_predicate.py",
+        "bytes": 5704,
+        "sha256": "3fdc78893ca8f9403d22a479eaba2e29c5a6b615b59fe9092d9691b679c1bd7b"
+      },
+      "current_context.py": {
+        "path": "current_context.py",
+        "bytes": 4926,
+        "sha256": "f0f0d21051c4aaf73fd933f3910c815a2e5a5e1707d511fbb994c1d0fa7ba494"
+      },
+      "diagnostic_host.py": {
+        "path": "diagnostic_host.py",
+        "bytes": 6500,
+        "sha256": "838bfb752426a86babf7de3bc60510c7069ae7f244d892095edba09b12e4d8fa"
+      },
+      "diagnostic_support.py": {
+        "path": "diagnostic_support.py",
+        "bytes": 7655,
+        "sha256": "2587a5168735ecf6b38dabe8ca00415d3fa35a167f3ed508aded87db5ff0ed1a"
+      },
+      "handler_metadata.py": {
+        "path": "handler_metadata.py",
+        "bytes": 3796,
+        "sha256": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc"
+      },
+      "known_handler_policy.py": {
+        "path": "known_handler_policy.py",
+        "bytes": 5839,
+        "sha256": "0054d55049d170d109ab2018acce9ffcd08f4c93c437014cd072176842f51d25"
+      },
+      "known_loaded_survey.py": {
+        "path": "known_loaded_survey.py",
+        "bytes": 2154,
+        "sha256": "1a45fa4fc812882c77c9a160c1f772ff8b32c88bc0478bfc4a9fe395e32a2c29"
+      },
+      "root_runner.py": {
+        "path": "root_runner.py",
+        "bytes": 13476,
+        "sha256": "012bef27696dd2752362426b162bfbd7afe9205febe76c489cd5ccab527648f6"
+      }
+    }
+  },
+  "future_runtime_packet": "experiments/native_normal_known_factory_blender51_resource_20261117",
+  "runtime_exact_derivation": {
+    "copy_byte_exact": [
+      "ADMISSION.template.json",
+      "CURRENT-CLOSED-LANE.template.json",
+      "baseline_predicate.py",
+      "current_context.py",
+      "diagnostic_host.py",
+      "handler_metadata.py",
+      "known_handler_policy.py",
+      "known_loaded_survey.py",
+      "root_runner.py"
+    ],
+    "diagnostic_support.py": [
+      {
+        "before": "SURVEY = ROOT / 'experiments/native_normal_resource_survey_20261117'",
+        "after": "SURVEY = ROOT / 'experiments/native_normal_blender51_resource_api_fix_20261117'",
+        "occurrences": 1
+      },
+      {
+        "before": "SURVEY_SHA = 'b6069eb8c87d7599d10165de987ab2d9924fb377890e12a4cb2f0bdaf9ab735c'",
+        "after": "SURVEY_SHA = '<EXACT_FINAL_CORRECTED_COLLECTOR_INDEX_SHA256>'",
+        "occurrences": 1
+      }
+    ],
+    "require_whole_source_inverse": true,
+    "new_INDEX_must_include_all_runtime_members_and_new_derivation_evidence": true,
+    "old_source_successor_and_test_harness_must_not_be_relabelled_as_deriving_the_new_support": true
+  },
+  "binder_parent": {
+    "path": "experiments/native_normal_known_factory_binding_git_tool_20261117",
+    "INDEX_sha256": "3917792c091fe776cdd49b7f3e015b5655b104798c8a605e340967e870801235",
+    "files": {
+      "prepare_root.py": {
+        "path": "prepare_root.py",
+        "bytes": 17989,
+        "sha256": "972a470717032c32df24194cde81deb7580b6722442114f7c00edcd48a0c01e0"
+      }
+    }
+  },
+  "future_binder_packet": "experiments/native_normal_known_factory_blender51_binding_20261117",
+  "binder_exact_derivation": {
+    "prepare_root.py_literal_changes": [
+      {
+        "before": "SUCCESSOR = ROOT / 'experiments/native_normal_known_factory_resource_successor_20261117'",
+        "after": "SUCCESSOR = ROOT / 'experiments/native_normal_known_factory_blender51_resource_20261117'",
+        "occurrences": 1
+      },
+      {
+        "before": "SUCCESSOR_SHA = '1eeca1e85d93c834c52c1208ed68d18aaa2b00bc1b62987cf0b89d5561ab6f90'",
+        "after": "SUCCESSOR_SHA = '<EXACT_FINAL_NEW_RUNTIME_INDEX_SHA256>'",
+        "occurrences": 1
+      }
+    ],
+    "require_whole_source_inverse": true,
+    "keep_initial_and_final_installed_Git_single_link_false": true,
+    "keep_original_source_model_and_generic_single_link_guards": true
+  },
+  "source_CPU_before_Root_execution": [
+    "Verify this packet INDEX and all payload identities",
+    "Render each runtime/binder clone from the pinned parent and require complete byte inverse",
+    "Compile all cloned source without calling any runtime entry",
+    "Check corrected namespace imports resolve from the selected corrected survey folder",
+    "Run pure synthetic known-handler/current-context/binder guards with explicitly rebound source pins"
+  ],
+  "Root_execution_preconditions": [
+    "Actual current full and every native/targeted lane closed and released; never infer closure from this plan",
+    "Fresh actual scope observations plus separate current ROOT1019/qualified52 and Review1029/3a maps",
+    "Exact original six tools, SourceIO574 original and copy, exporter120, known B three identities preserved",
+    "Fresh expiring Root admission and newly owned private output; keep factory baseline/source bindings",
+    "Run preparation as a completed separate command, then invoke the direct owned driver; no waiting Python parent"
+  ],
+  "unchanged_claim_boundaries": [
+    "No preload IO confinement",
+    "No handler behavior or globals proof",
+    "No historical generation or export-equivalence proof",
+    "No old strict31 native PASS",
+    "No normal repair, fidelity, carrier enablement, or adoption"
+  ],
+  "runtime_or_binder_written": false,
+  "native_private_or_current_full_read": false,
+  "native_execution_authorized_by_this_plan": false
+}

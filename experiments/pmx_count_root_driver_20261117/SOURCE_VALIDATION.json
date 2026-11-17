@@ -1,0 +1,25 @@
+{
+  "format": "has_source_only_private_count_driver_check_1",
+  "source_files_compiled_only": [
+    "support.py",
+    "worker.py",
+    "run_counts.py"
+  ],
+  "parent_packets_checked": [
+    {
+      "folder": "pmx_physics_native_observation_harness_20261117",
+      "INDEX_sha256": "4258db09011aab285d00889cda1ada279f511f4553828cb69b6b07975bdaf8ec",
+      "payloads_checked": 13
+    },
+    {
+      "folder": "pmx_physics_oracle_count_diagnostic_20261117",
+      "INDEX_sha256": "c21bac607f5772817455dc50f7db95580601545009fb8ba4b944a1ccd4b2b7d8",
+      "payloads_checked": 10
+    }
+  ],
+  "retained_host_definitions_compiled_only": 3,
+  "actual_wrapper_or_worker_executed": false,
+  "private_closure_provenance_native_input_or_live_run_access": false,
+  "candidate_archive_or_witness_API_imported": false,
+  "native_protocol_qualified": false
+}

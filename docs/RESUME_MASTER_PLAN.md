@@ -1600,3 +1600,16 @@ The all-four freeze gate blocks candidate comparison. Table/count diagnostics
 remain necessary; no capacity limit has been widened. No native-protocol,
 physical-validity, simulation, production import or HAS-retention qualification
 is claimed by this partial observation. Native witnesses and raw words stay private.
+
+
+2026-11-17 pickup: the passive PMX count diagnostic has now completed for all four
+stable source/copy pairs; the three original refusals are at the joint table
+limit. Counts stay private; unchanged limits do not yet prove prefix parsing
+or native protocol correctness. Candidate comparison/archive/simulation remain
+unqualified. Source B finally loaded; its resource collector then hit the
+wrong Blender API namespace. Sealed API9f8 fixes that one call with38 CPU
+checks; actual integrated rerun remains pending. Neon first3a software exit0
+was unqualified for missing nativeMMD; exact18 fixture restoration and
+canonical45/two movies passed. Fresh frozen3a full at20:07 UTC is RUNNING,
+Root-exclusive. Use strict contextf223 and actual eventual closure; never
+activate merge/copy/cold187 from the old incomplete157-group result.

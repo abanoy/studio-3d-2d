@@ -1,0 +1,68 @@
+{
+  "format": "has_B_resource_Blender51_API_cpu_validation_1",
+  "observed_utc": "2026-11-17T20:07:08.428721+00:00",
+  "tests": 38,
+  "original_test_methods": 31,
+  "API_boundary_test_methods": 7,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "status": "SOURCE_CPU_PASS",
+  "stdout": "test_all_packed_sizes_admitted_before_any_data_getter (test_resources.ResourceTests.test_all_packed_sizes_admitted_before_any_data_getter) ... ok\ntest_collection_and_path_enumeration_bounds (test_resources.ResourceTests.test_collection_and_path_enumeration_bounds) ... ok\ntest_conflicting_nonempty_path_packed_bytes_disclosed_but_empty_paths_independent (test_resources.ResourceTests.test_conflicting_nonempty_path_packed_bytes_disclosed_but_empty_paths_independent) ... ok\ntest_duplicate_identity_and_visible_mesh_profile (test_resources.ResourceTests.test_duplicate_identity_and_visible_mesh_profile) ... ok\ntest_empty_path_packed_invariants_and_payload_hash_only (test_resources.ResourceTests.test_empty_path_packed_invariants_and_payload_hash_only) ... ok\ntest_exact_original_core_support_and_hidden_sentinel_sources (test_resources.ResourceTests.test_exact_original_core_support_and_hidden_sentinel_sources) ... ok\ntest_exact_sentinel_fake_api_placement_finally_and_failure_guards (test_resources.ResourceTests.test_exact_sentinel_fake_api_placement_finally_and_failure_guards) ... ok\ntest_external_script_and_ies_nodes_are_refused_with_inventory (test_resources.ResourceTests.test_external_script_and_ies_nodes_are_refused_with_inventory) ... ok\ntest_hash_only_export_provenance_never_guesses_branch (test_resources.ResourceTests.test_hash_only_export_provenance_never_guesses_branch) ... ok\ntest_hash_only_public_reference_rejects_changed_identity_types (test_resources.ResourceTests.test_hash_only_public_reference_rejects_changed_identity_types) ... ok\ntest_image_profile_issues_are_inventory_not_deletion (test_resources.ResourceTests.test_image_profile_issues_are_inventory_not_deletion) ... ok\ntest_image_reference_identity_and_reference_budget (test_resources.ResourceTests.test_image_reference_identity_and_reference_budget) ... ok\ntest_linked_image_and_material_and_tree_refused (test_resources.ResourceTests.test_linked_image_and_material_and_tree_refused) ... ok\ntest_linked_library_refused_before_image_or_data_traversal (test_resources.ResourceTests.test_linked_library_refused_before_image_or_data_traversal) ... ok\ntest_loaded_helper_detects_resource_change_without_normalizing (test_resources.ResourceTests.test_loaded_helper_detects_resource_change_without_normalizing) ... ok\ntest_loaded_helper_refuses_context_and_monitored_handler_mismatches (test_resources.ResourceTests.test_loaded_helper_refuses_context_and_monitored_handler_mismatches) ... ok\ntest_loaded_helper_repeated_snapshot_allows_unknown_export_branch (test_resources.ResourceTests.test_loaded_helper_repeated_snapshot_allows_unknown_export_branch) ... ok\ntest_minimal_metadata_private_paths_public_scalars_no_forbidden_getters (test_resources.ResourceTests.test_minimal_metadata_private_paths_public_scalars_no_forbidden_getters) ... ok\ntest_multiple_packed_payloads_are_disclosed_not_silently_dropped (test_resources.ResourceTests.test_multiple_packed_payloads_are_disclosed_not_silently_dropped) ... ok\ntest_no_budget_widening_and_bool_is_not_int (test_resources.ResourceTests.test_no_budget_widening_and_bool_is_not_int) ... ok\ntest_node_tree_cycle_depth_and_total_node_bounds (test_resources.ResourceTests.test_node_tree_cycle_depth_and_total_node_bounds) ... ok\ntest_packed_entry_path_is_inventoried_without_open_even_when_not_in_blend_paths (test_resources.ResourceTests.test_packed_entry_path_is_inventoried_without_open_even_when_not_in_blend_paths) ... ok\ntest_packed_pointer_count_and_first_identity (test_resources.ResourceTests.test_packed_pointer_count_and_first_identity) ... ok\ntest_packed_single_size_count_and_payload_stability (test_resources.ResourceTests.test_packed_single_size_count_and_payload_stability) ... ok\ntest_path_classification_is_lexical_not_search_or_exists (test_resources.ResourceTests.test_path_classification_is_lexical_not_search_or_exists) ... ok\ntest_probe_and_stager_always_refuse_before_any_native_operation (test_resources.ResourceTests.test_probe_and_stager_always_refuse_before_any_native_operation) ... ok\ntest_raw_filepath_equivalence_and_basename_are_separate (test_resources.ResourceTests.test_raw_filepath_equivalence_and_basename_are_separate) ... ok\ntest_recursive_shared_tree_and_all_image_nodes_inventory (test_resources.ResourceTests.test_recursive_shared_tree_and_all_image_nodes_inventory) ... ok\ntest_string_utf8_nul_per_item_total_and_final_metadata_caps (test_resources.ResourceTests.test_string_utf8_nul_per_item_total_and_final_metadata_caps) ... ok\ntest_unknown_external_ref_and_network_path_inventory_are_preserved (test_resources.ResourceTests.test_unknown_external_ref_and_network_path_inventory_are_preserved) ... ok\ntest_unused_default_generated_image_is_retained_and_refused (test_resources.ResourceTests.test_unused_default_generated_image_is_retained_and_refused) ... ok\ntest_collector_capabilities_and_original_test_assertions_unchanged (test_api_fix.APIFixTests.test_collector_capabilities_and_original_test_assertions_unchanged) ... ok\ntest_entire_source_inverses_and_companion_bytes (test_api_fix.APIFixTests.test_entire_source_inverses_and_companion_bytes) ... ok\ntest_missing_correct_api_does_not_fall_back (test_api_fix.APIFixTests.test_missing_correct_api_does_not_fall_back) ... ok\ntest_namespaced_only_mock_reproduces_old_failure_and_new_success (test_api_fix.APIFixTests.test_namespaced_only_mock_reproduces_old_failure_and_new_success) ... ok\ntest_path_type_count_and_api_exception_guards_remain (test_api_fix.APIFixTests.test_path_type_count_and_api_exception_guards_remain) ... ok\ntest_public_source_exports_utils_api_without_importing_it (test_api_fix.APIFixTests.test_public_source_exports_utils_api_without_importing_it) ... ok\ntest_top_level_callable_is_never_used (test_api_fix.APIFixTests.test_top_level_callable_is_never_used) ... ok\n\n----------------------------------------------------------------------\nRan 38 tests in 0.070s\n\nOK\n",
+  "source_identities": {
+    "derive_api_fix.py": {
+      "bytes": 4505,
+      "sha256": "1c6b22af8c966a902cb13aa55706935536cc56f4cf4e19ef6975127363f798ab"
+    },
+    "test_api_fix.py": {
+      "bytes": 4690,
+      "sha256": "52ac6c79595374beb206b5bf461ecd3366edd72ef2948e9a872f2e69c4066551"
+    },
+    "validate_cpu.py": {
+      "bytes": 2237,
+      "sha256": "2463eaf7c222021dfd72d553f737007197585686f6531c08cd013e98806a3019"
+    },
+    "export_provenance.py": {
+      "bytes": 1773,
+      "sha256": "ae2125ab6083de1bf5487fda2ca328c9f06e2c1ace36af97646da39c96e3212e"
+    },
+    "loaded_survey.py": {
+      "bytes": 2331,
+      "sha256": "66f1f33e67ff8d7abb8214484d6fbc9fc43304a58069bdb4bc1848a360638f98"
+    },
+    "probe_resources.py": {
+      "bytes": 556,
+      "sha256": "37b577852b0353b259a6fc1b9b2116f2163447dbe07bb425171140a426b35be9"
+    },
+    "stager.py": {
+      "bytes": 321,
+      "sha256": "07c9792758f07cbd3bfeee65f9f3707db8d08e5f7468281540b6276ffbc4bac4"
+    },
+    "survey_admission.py": {
+      "bytes": 527,
+      "sha256": "572f2f29fa8d22489637a6cf9ef3ba58d7f2d0576931e286fa064c1f647c66e1"
+    },
+    "setter_support.py": {
+      "bytes": 6019,
+      "sha256": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9"
+    },
+    "placement_sentinel.py": {
+      "bytes": 4387,
+      "sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2"
+    },
+    "survey_core.py": {
+      "bytes": 13761,
+      "sha256": "39a417bfe8e024704f4d400f824293640370074c28446e40613aa401247a4e28"
+    },
+    "test_resources.py": {
+      "bytes": 22716,
+      "sha256": "f83351ca0e7a46db18ceffc8c8d458f0e5307882fe8c6a142e1373573710dd09"
+    }
+  },
+  "source_unchanged": true,
+  "original_sealed_packet_changed": false,
+  "native_assets_or_private_outputs_read": false,
+  "bpy_imported_or_native_process_launched": false,
+  "process_CIM_Git_or_network_invoked": false,
+  "actual_resource_discovery_or_native_fidelity_qualified": false
+}

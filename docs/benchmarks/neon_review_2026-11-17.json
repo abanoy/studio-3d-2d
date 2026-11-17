@@ -1326,5 +1326,114 @@
     "product_merged": false,
     "new_owner_copy_or187": false,
     "raw_native_reports_arrays_pixels_included": false
+  },
+  "restored_MMD_20261117": {
+    "format": "has_root_neon_mmd_fixture_recovery_public_1",
+    "observed_utc": "2026-11-17T20:11:03.236957+00:00",
+    "candidate_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+    "functional_files": 1029,
+    "prior_full": {
+      "software_exit": 0,
+      "qualification": "UNQUALIFIED_MMD_POSED_FIXTURE_MISSING",
+      "result_groups": 157,
+      "core_groups": 36,
+      "movie_groups": 20,
+      "missing_key": "posed_model_video_1",
+      "actual_mmd_tested": false,
+      "pose_checks": 37,
+      "neon_checks": 12504,
+      "physical_jobs": 196,
+      "normal_exit0": 195,
+      "registered_Krita_cancel_exit2": 1,
+      "all_owned_jobs_desktops_closed": true,
+      "all_functional_source_unchanged": true,
+      "full_suite_passed": false,
+      "raw_inventory": {
+        "bytes": 378070,
+        "sha256": "c3eb67c3e0e07d16e21325905773c28233a10a0d4bddc2c34c889bdaa88f28de"
+      }
+    },
+    "fixture_stage": {
+      "files": 18,
+      "bytes": 2648542,
+      "originals_preserved": true,
+      "copies_equal": true,
+      "private_provenance": {
+        "bytes": 14465,
+        "sha256": "8341dfd6cdebde1d47d5a24c0e3c5f4a1f517803cc09a43f66b19c8d307e853d"
+      }
+    },
+    "focused_pose": {
+      "checks": 45,
+      "failures": 0,
+      "actual_mmd_tested": true,
+      "independently_probed_48_frame_movies": 2,
+      "seconds": 16.5217218,
+      "retained_child_reaped": true,
+      "source_unchanged": true,
+      "scopes_closed": true,
+      "raw_verification": {
+        "bytes": 787,
+        "sha256": "702761e0e1ce153a680376ee03d8f36c04f22250ff70398ecf1e30a8d011e67a"
+      }
+    },
+    "preflight_first_refusal_preserved": "canonical pose regenerated exactly two owned project metadata outputs; all36 Root originals and other34 Review copies remained exact",
+    "preflight_second": "passed; precisely those two generated outputs declared and preserved privately with dated canonical source provenance",
+    "source_B_attempt": {
+      "model_load_reached": true,
+      "after_load_factory_handler_gate_passed": true,
+      "resource_diagnostic_completed": false,
+      "failure": "collector used bpy.blend_paths; installed API is bpy.utils.blend_paths",
+      "process_exit": 1,
+      "retained_process_reaped": true,
+      "private_job_desktop_closed": true,
+      "inputs_sources_tools_preserved": true,
+      "scopes_closed": true,
+      "native_normal_fidelity": false,
+      "raw_result": {
+        "bytes": 791,
+        "sha256": "a1d4afe02c0794bac494baef2a1af9f08e661e5c342be65fa37329ab0acde822"
+      },
+      "raw_process": {
+        "bytes": 119,
+        "sha256": "ff1511153e372e3eebdec8a4f78ed13a655f9ecef2558fc9f444c0c537afa4f3"
+      },
+      "raw_stderr": {
+        "bytes": 2988,
+        "sha256": "fac80aa8cb9f5ac4a346b710fdbe382bfc614fba47738b71ba8c6485db99e7f7"
+      }
+    },
+    "PMX_passive_count_diagnostic": {
+      "all_original_copy_and_source_preserved": true,
+      "cases": 4,
+      "completed_cases": 4,
+      "preserved_cases": 4,
+      "started_cases": 4,
+      "timed_out_cases": 0,
+      "unconfirmed_closure_cases": 0,
+      "refused_joint_table_cases": 3,
+      "complete_original_oracle_traversals": 1,
+      "numeric_counts_remain_private": true,
+      "unchanged_limits_and_traversal": true,
+      "prefix_correctness_not_proved": true,
+      "candidate_comparison_archive_simulation_or_production_adoption": false,
+      "raw_batch": {
+        "bytes": 1688,
+        "sha256": "05ba6ed9a2dbf0fd315f97db363d557e4513d1c55249729fca1a978b7a99df76"
+      }
+    },
+    "fresh_full": {
+      "run": "windows-neon-3a3701a-mmd-20261117T200622956559",
+      "status_at_observation": "RUNNING",
+      "coordinator_pid": 21536,
+      "python_pid": 2976,
+      "expected_result_groups": 158,
+      "expected_core_groups": 36,
+      "expected_movie_groups": 21,
+      "restored_native_pose_precondition_passed": true,
+      "pass_claimed": false
+    },
+    "main_merge_owner_copy_cold187_or_human_acceptance_claimed": false,
+    "raw_full_native_models_counts_callbacks_and_logs_uploaded": false
   }
 }

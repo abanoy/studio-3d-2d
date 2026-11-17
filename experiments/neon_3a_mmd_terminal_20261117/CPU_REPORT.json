@@ -1,0 +1,95 @@
+{
+  "format": "has_3a_mmd_strict_terminal_source_cpu_1",
+  "observed_utc": "2026-11-17T20:10:01.098682+00:00",
+  "tests": 29,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "status": "SOURCE_CPU_PASS",
+  "methods": [
+    "test_terminal.TerminalTests.test_Neon_count_type_bool_case_source_and_closure_mutations_refused",
+    "test_terminal.TerminalTests.test_child_birth_parent_command_and_after_source_refused",
+    "test_terminal.TerminalTests.test_conflicting_copy_or_inline_only_or_typed_mismatch_refused",
+    "test_terminal.TerminalTests.test_exact_nanosecond_birth_order",
+    "test_terminal.TerminalTests.test_exact_pass_and_failure_metadata",
+    "test_terminal.TerminalTests.test_failed_partial_exit_is_not_a_PASS",
+    "test_terminal.TerminalTests.test_failure_branch_never_loads_final_full_report",
+    "test_terminal.TerminalTests.test_host_observer_has_no_termination_and_preserves_PID_reuse_rule",
+    "test_terminal.TerminalTests.test_identical_physical_copies_count_as_one_job",
+    "test_terminal.TerminalTests.test_missing_extra_native_skip_core_and_movie_mutations_refused",
+    "test_terminal.TerminalTests.test_nonterminal_exit_source_and_birth_mutations_refused",
+    "test_terminal.TerminalTests.test_original_158_36_21_and_Neon_scope_accept",
+    "test_terminal.TerminalTests.test_phase_recheck_precedes_first_audit_write",
+    "test_terminal.TerminalTests.test_placement_foreground_monitor_enumeration_and_error_refused",
+    "test_terminal.TerminalTests.test_registered_cancel_identity_is_required_and_deduplicated",
+    "test_terminal.TerminalTests.test_strict_private_receipt_and_registered_cancel",
+    "test_terminal.TerminalTests.test_typed_inline_equality_preserves_JSON_types",
+    "test_bind_context.BindTests.test_API_pid_type_or_identity_source_mutation_refuses",
+    "test_bind_context.BindTests.test_GetProcess_identity_not_CIM_precision_alias",
+    "test_bind_context.BindTests.test_birth_parent_command_and_numeric_alias_refuse",
+    "test_bind_context.BindTests.test_exact_four_input_policy_and_numeric_types",
+    "test_bind_context.BindTests.test_exact_synthetic_bindings_accept",
+    "test_bind_context.BindTests.test_nonimmutable_names_refuse_before_any_path_access",
+    "test_bind_context.BindTests.test_run_scope_runner_lease_and_exact_count_refuse",
+    "test_bind_context.BindTests.test_wrong_commit_count_digest_or_traversal_refuses",
+    "test_api_detail.ActualSchema.test_CIM_metadata_cannot_claim_identity_or_invalid_timestamp",
+    "test_api_detail.ActualSchema.test_exact_new_raw_schema_projection_preserves_GetProcess_and_CIM_separation",
+    "test_api_detail.ActualSchema.test_missing_extra_or_old_schema_is_refused",
+    "test_api_detail.ActualSchema.test_wrong_schema_API_precision_and_identity_types_refuse"
+  ],
+  "source_and_context_identities": {
+    "prepare_successor.py": {
+      "bytes": 5468,
+      "sha256": "f97990857a25cba585a06f83bc71020db1b84abe150d66d257cb376c14e91d4f"
+    },
+    "audit_source.py": {
+      "bytes": 2663,
+      "sha256": "9f5180edfdd265ad16019a37c88ee28fdc348b7174d607dc9c90d8224b3b20b6"
+    },
+    "close_terminal.py": {
+      "bytes": 21900,
+      "sha256": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21"
+    },
+    "legacy_result_gates.py": {
+      "bytes": 19506,
+      "sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460"
+    },
+    "bind_context.py": {
+      "bytes": 8741,
+      "sha256": "997b27505ecfccd397d31d1f5a9225552dde439d3752fb813eaa82e217e19b14"
+    },
+    "bind_immutable_only.py": {
+      "bytes": 3941,
+      "sha256": "1ecbb23fc216e1a044106e13ed7a23a77e1e106f597d20bddeb04f80007273ad"
+    },
+    "test_terminal.py": {
+      "bytes": 13044,
+      "sha256": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c"
+    },
+    "test_bind_context.py": {
+      "bytes": 4658,
+      "sha256": "cc1dfea0d9c3072e072376d3a081ceb13f28930c468dafa70a288a0ce6bf1e55"
+    },
+    "test_api_detail.py": {
+      "bytes": 2044,
+      "sha256": "4504409d84cd1756c6f98a3b1a0e8fe314968c53c33db0d914e0037f44a32fc3"
+    },
+    "RESULT_REGISTRY.json": {
+      "bytes": 5955,
+      "sha256": "f81ef04a67b7a152fd3c97c806682d20efd07a7c2d380f9d502e07cf62915a11"
+    },
+    "CONTEXT.json": {
+      "bytes": 1927,
+      "sha256": "5424628e28385ce331b55be404384039a3d54262033cbbc96a12445c8dfeb8ba"
+    }
+  },
+  "source_unchanged": true,
+  "original_terminal_methods": 17,
+  "binding_methods": 8,
+  "strict_actual_API_methods": 4,
+  "counts_are_expectations_not_actual_results": true,
+  "actual_terminal_or_PASS_observed": false,
+  "unqualified_closure_code_used": false,
+  "current_state_log_report_source_after_functional_or_native_read": false,
+  "actual_process_CIM_Git_or_engine_invoked": false
+}

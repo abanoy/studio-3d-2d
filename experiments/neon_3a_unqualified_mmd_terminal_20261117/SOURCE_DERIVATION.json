@@ -1,0 +1,99 @@
+{
+  "format": "has_3a_closure_only_unqualified_MMD_source_derivation_1",
+  "parent_INDEX_sha256": "7ed937daaf6b2b1c39b6c0d877243f2e6fdec0215bb86a34bfbf897baaf0fd62",
+  "original_observer_sha256": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+  "full_PASS_reference_entire_file_exact": true,
+  "legacy_full_PASS_gates_entire_file_exact": true,
+  "original158_registry_and_context_entire_files_exact": true,
+  "unchanged_function_ASTs": [
+    "validate_terminal",
+    "validate_result",
+    "validate_current_sources",
+    "observe",
+    "classify_receipt",
+    "validate_ownership",
+    "inventory"
+  ],
+  "source_inverse_restores_original_complete_bytes": true,
+  "explicit_closure_policy_and_output_changes": [
+    {
+      "before": "import legacy_result_gates as Legacy\n",
+      "after": "import legacy_result_gates as Legacy\nfrom unqualified_result import validate_unqualified_result, UNQUALIFIED_SUMMARY\n",
+      "count": 1
+    },
+    {
+      "before": "    validate_current_sources(before)\n",
+      "after": "    require(passed, 'This closure-only profile requires software passed/exit0; it never qualifies a full PASS')\n    validate_current_sources(before)\n",
+      "count": 1
+    },
+    {
+      "before": "result=load(path);validate_result(result,CONTEXT,load(HERE/'RESULT_REGISTRY.json'))",
+      "after": "result=load(path);validate_unqualified_result(result,CONTEXT,load(HERE/'RESULT_REGISTRY.json'))",
+      "count": 1
+    },
+    {
+      "before": "out=RUN/'terminal-audit-attempt1'",
+      "after": "out=RUN/'terminal-audit-unqualified-mmd-attempt1'",
+      "count": 1
+    },
+    {
+      "before": "    passed=state['status']=='passed'\n    classes=",
+      "after": "    passed=False  # Qualification is always false for this exact closure-only profile.\n    classes=",
+      "count": 1
+    },
+    {
+      "before": "'format':'has_neon_ffcf_terminal_receipt_inventory_1'",
+      "after": "'format':'has_neon_3a_unqualified_mmd_terminal_receipt_inventory_1'",
+      "count": 1
+    },
+    {
+      "before": "'final_full_report_used':passed",
+      "after": "'final_full_report_used':True",
+      "count": 2
+    },
+    {
+      "before": "'result_groups':158 if passed else None,'core_groups':36 if passed else None,'movie_groups':21 if passed else None",
+      "after": "'result_groups':157,'core_groups':36,'movie_groups':20",
+      "count": 1
+    },
+    {
+      "before": "'graphics_lease_released':False,**found}",
+      "after": "'graphics_lease_released':False,**UNQUALIFIED_SUMMARY,**found}",
+      "count": 1
+    },
+    {
+      "before": "'release_kind':'closed_passed_full_run' if passed else 'closed_failed_partial_run'",
+      "after": "'release_kind':'closed_unqualified_MMD_fixture_missing_run'",
+      "count": 1
+    },
+    {
+      "before": "'second_identity_and_scope_observation':second}",
+      "after": "'second_identity_and_scope_observation':second,**UNQUALIFIED_SUMMARY}",
+      "count": 1
+    },
+    {
+      "before": "save(RUN/'graphics-lease-closed.json',release)",
+      "after": "save(RUN/'graphics-lease-unqualified-closed.json',release)",
+      "count": 1
+    },
+    {
+      "before": "'graphics_lease_released':args.release_closed}))",
+      "after": "'graphics_lease_released':args.release_closed,**UNQUALIFIED_SUMMARY}))",
+      "count": 1
+    }
+  ],
+  "expected_qualified_counts": {
+    "groups": 158,
+    "core": 36,
+    "movies": 21
+  },
+  "observed_refusal_signature_not_qualification": {
+    "groups": 157,
+    "missing_key": "posed_model_video_1",
+    "actual_mmd_tested": false,
+    "pose_checks": 37,
+    "movies": 20
+  },
+  "actual_state_or_report_log_source_after_process_native_reads": false,
+  "actual_closure_executed": false
+}

@@ -1,0 +1,34 @@
+{
+  "format": "has_public_cleanup85_commit_state_accounting_1",
+  "commit": "265d3030b848b37f01036dd356840269fca9475b",
+  "sole_parent": "86dfd40609d814c4d8e4cde64f17f1f642258a35",
+  "selected_commit_state_files": 27,
+  "changed_files": 24,
+  "all_changed_files_within_frozen_selection": true,
+  "unexpected_changed_files": [],
+  "unchanged_selected_files": [
+    {
+      "path": "docs/RESUME_MASTER_PLAN.md",
+      "unchanged_parent_and_target_git_blob": "64721c06353bede3ed60bea0b39cb5d26484c459",
+      "bytes": 106579,
+      "sha256": "8f1b04b4b61669f239df898ae5ebf4e418af8ec5afe40a040aa2c17ea510fc7e"
+    },
+    {
+      "path": "docs/benchmarks/neon_review_2026-11-17.json",
+      "unchanged_parent_and_target_git_blob": "856acfb85cfd12f60087d16297c31f11ab802664",
+      "bytes": 47561,
+      "sha256": "90b3e2af3a5d249a54278af8465a431bc6fdb4d1781c1b210bae3519ea466fc4"
+    },
+    {
+      "path": "docs/completion_checklist.json",
+      "unchanged_parent_and_target_git_blob": "6fc5b112b595146347c20465aae0a8cada03f839",
+      "bytes": 204427,
+      "sha256": "58ccb533d09509415b70db3995da6ee53cc8ef6b194135b51aef71934762b728"
+    }
+  ],
+  "Root_reported_precommit_bookkeeping_refusal": "The changed-file count check expected27; actual24 changed while3 selected files already had exact parent blobs.",
+  "precommit_bookkeeping_failure_independently_reexecuted": false,
+  "immutable_postcommit_state_independently_checked": true,
+  "all27_cached_remote_Git_and_working_byte_comparisons_passed": true,
+  "Git_mutation_or_native_or_network_or_current_full_reads": false
+}

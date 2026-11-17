@@ -6010,3 +6010,41 @@ Root still reports the separate 3a full RUNNING with its native/graphics lane
 Root-exclusive. Main functional source remains qualified52/1019. Actual full
 PASS, terminal audit/release, qualified merge, fresh owner copy and cold187 remain
 required; this cleanup supplies none of those results. Human review stays deferred.
+
+## 2026-11-17 — restored native MMD coverage; fresh Neon full running
+
+The first3a full completed with verifier exit0 and1029 unchanged functional files,
+but strict qualification correctly refused:157 groups/20 movies, actual MMD false,
+and missing posed_model_video_1. Its196 private jobs closed (195 exit0, one registered
+Krita cancellation). Separate closure-only evidence always labels it UNQUALIFIED.
+The original158/36/21/MMD acceptance gates remain unchanged.
+
+Root restored the exact18-file prepared MMD bundle (2,648,542 bytes), preserving
+originals. The unchanged canonical pose command then passed45 checks, actual MMD,
+save/reopen and two independently probed48-frame movies; source and process scopes
+closed. Preflight first refused the two project metadata files intentionally saved
+by that test. Those exact owned outputs were preserved and explicitly declared;
+all36 Root originals, other34 Review copies and18 prepared originals/copies stay
+checked. No general pin refresh or content threshold change was introduced.
+
+Freshfull windows-neon-3a3701a-mmd-20261117T200622956559 started20:07:58 UTC at
+frozen3a3701a/1029. Coordinator21536/Python2976 use actual GetProcess births;
+CIM is separate metadata. It is RUNNING, Root-exclusive, not a PASS or merge.
+Strict terminal source INDEXf223587f retains original observer/legacy/158 gates.
+After actual PASS/closure: preserve both histories in the qualified merge, copy
+the exact tested bytes, then execute the fresh owner-copy and cold187 route.
+
+The independent B inspection loaded the real model and passed known-factory
+handler metadata, then failed the helper's incorrect bpy.blend_paths call. Its
+private job closed and all inputs/tools/source stayed unchanged. API9f8e24d0
+corrects the namespace to bpy.utils.blend_paths;38 CPU checks and source peer pass.
+Native rerun/integration remain separate; native-normal fidelity is still failed.
+PMX passive diagnostics completed4/4 with originals/copies/source unchanged and
+children reaped. Three original oracle refusals are at the joint table limit;
+one traversed fully. Counts remain private, limits unchanged, prefix correctness
+and candidate/archive/simulation/production adoption unqualified.
+
+Scalar evidence: experiments/neon_mmd_fixture_recovery_actual_20261117 (INDEXe9fc98b5).
+Main remains52f functional/1019; stable implementation52/54 and acceptance55/62
+remain unchanged. Human checks deferred; no owner interruption, installed-tool
+replacement, artwork upload, review overwrite or additional cleanup.

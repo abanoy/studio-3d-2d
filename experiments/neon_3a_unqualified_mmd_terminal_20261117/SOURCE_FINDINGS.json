@@ -1,0 +1,23 @@
+{
+  "format": "has_independent_source_missing_MMD_qualification_finding_1",
+  "verifier_source_sha256": "192aa4b889a367787f2368f58c95de5813628dbff80b01a5f7e640efdf1f2f0f",
+  "pose_smoke_source_sha256": "f2f84fa89a1700d7bd2aa0cd585931b317fba8cd8f351a6df9e5e9a6d8d452d5",
+  "complete_registry_sha256": "f81ef04a67b7a152fd3c97c806682d20efd07a7c2d380f9d502e07cf62915a11",
+  "registry_contains_posed_model_video_1_in_result_and_movie_sets": true,
+  "registry_incomplete_hypothesis_refuted": true,
+  "canonical_media_source_enumerates_pose_report_movies_then_emits_actual_mmd_flag_without_requiring_true": true,
+  "pose_source_literal_prerequisite": "res://output/compatibility/miku-tested/scene.glb",
+  "pose_source_optional_clean_CI_mandatory_owner_comment_present": true,
+  "HYBRID_NATIVE_INPUTS_does_not_select_that_literal_pose_fixture": true,
+  "source_branch_explains_variable_movie_key_count_without_overwriting_or_omitting_registry_entries": true,
+  "Root_reported_actual_signature": {
+    "software_state": "passed",
+    "suite_exit": 0,
+    "groups": 157,
+    "missing_key": "posed_model_video_1",
+    "actual_mmd_tested": false,
+    "pose_checks": 37
+  },
+  "actual_result_state_log_fixture_contents_or_existence_independently_read_here": false,
+  "conclusion": "Keep original158/21/actualMMDtrue full qualification. Close this known software-completed run only as UNQUALIFIED; Root stages exact fixture and reruns focused/native/full gates."
+}

@@ -1,0 +1,269 @@
+{
+  "format": "has_neon_3a3701a_full_windows_preparation_1",
+  "revision": "3a3701ab6edfa81dc883759403c170b8555aab07",
+  "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+  "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-3a3701a-mmd-20261117T200622956559",
+  "runner": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_windows_original_20261116\\run_canonical_owned.ps1",
+  "runner_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+  "powershell": "C:\\Users\\noble\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+  "powershell_sha256": "2a6769a3330dc1084d0154bfde7d164ab750ca7f700f313f9d417c1be78b2233",
+  "functional_source_files": 1029,
+  "approved_runtime_executables": 6,
+  "SourceIO_original_and_owned_copy574_preserved": true,
+  "exporter120_preserved": true,
+  "retained_native_fixture_files": 36,
+  "actual_focused_checks": {
+    "color": 44,
+    "native_projects": 3,
+    "late_wrappers": 44
+  },
+  "ancestor696_focused_checks_not_fresh3a": {
+    "camera": 60,
+    "camera_native_models": 5,
+    "neon": 12504,
+    "controls": 48
+  },
+  "tail_verification_sha256": "e366426598261c13674aafdd4c8fedc9cb5a350ebfcf8be08bd10906d4011167",
+  "tail_completion_sha256": "2ed5edd7bed4a83b2a3245ff73da41d52d7cf5c78ba55d83eba88e5b54e0408a",
+  "main_metadata_checkpoint": "855d67fe44868793a29d6c6c75c61c0ba86236d2",
+  "main_functional_source_commit": "52f63c944ded7a651da871524d23a345b606424d",
+  "main_functional_sources": 1019,
+  "focused_verification_sha256": "84569db064d65d35e6fa8f4087bbcd21f18b9a5d8db14a8e0ad29152ea0920b2",
+  "additional_input_identities": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-face-pilot.json": {
+      "bytes": 64327,
+      "mtime_ns": 1794450164934616600,
+      "sha256": "05bd6d4ba63e481cf3488f9bf0082d662812d3bf8bb861796860f42fcb3e2310"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-mima-repro\\prepared-head\\scene.glb": {
+      "bytes": 7830992,
+      "mtime_ns": 1794450163876527000,
+      "sha256": "e9b21ab5f1171b21d0a7d3e3f83e5341f6b297516d09582e49c0283dfe10d8da"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-import-verification.json": {
+      "bytes": 1460,
+      "mtime_ns": 1794448107099861800,
+      "sha256": "b6a632eb086d77a9003c4998e91d2d880d694b0f6533ce18ab202176b8cc3ca9"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448091-467-21644406\\native\\AvatarSample_A.vrm": {
+      "bytes": 18633112,
+      "mtime_ns": 1794448091616561600,
+      "sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448093-218-23395070\\native\\AvatarSample_Avrm0.vrm": {
+      "bytes": 18630608,
+      "mtime_ns": 1794448093346887100,
+      "sha256": "f7b4573b241b3e91c7c5f58bed342133a4e5f7e0c1125e1cedc49723ace9b288"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\conversion-request.json": {
+      "bytes": 2248,
+      "mtime_ns": 1794448074888856300,
+      "sha256": "8ccce60b22d8ff27707164971a41f3c2424501d8f7f9af36f94455120cd642c5"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\conversion-request.json": {
+      "bytes": 2248,
+      "mtime_ns": 1794448074888856300,
+      "sha256": "8ccce60b22d8ff27707164971a41f3c2424501d8f7f9af36f94455120cd642c5"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\conversion.log": {
+      "bytes": 37797,
+      "mtime_ns": 1794448084319380300,
+      "sha256": "1cf88a025c387864de87bac5fbf891a83990648f428b7e472436fda83fc2f0e7"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\conversion.log": {
+      "bytes": 37797,
+      "mtime_ns": 1794448084319380300,
+      "sha256": "1cf88a025c387864de87bac5fbf891a83990648f428b7e472436fda83fc2f0e7"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\editable.blend": {
+      "bytes": 828948,
+      "mtime_ns": 1794448082226504700,
+      "sha256": "a27acefca05963436316270a87b69c507a9eaea271a934c6878355ab9676e521"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\editable.blend": {
+      "bytes": 828948,
+      "mtime_ns": 1794448082226504700,
+      "sha256": "a27acefca05963436316270a87b69c507a9eaea271a934c6878355ab9676e521"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\native\\eye2.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074876004900,
+      "sha256": "db8291235415160f8a523a104827340056a5f3215d63cb020e4ca1ed380e5b4b"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\native\\eye2.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074876004900,
+      "sha256": "db8291235415160f8a523a104827340056a5f3215d63cb020e4ca1ed380e5b4b"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\native\\Miku_Hatsune.pmd": {
+      "bytes": 474665,
+      "mtime_ns": 1794448074876004900,
+      "sha256": "2bf8a0790d427630a49c3af2eaa83015d16efa26de8d4838e4434c32ef7559a1"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\native\\Miku_Hatsune.pmd": {
+      "bytes": 474665,
+      "mtime_ns": 1794448074876004900,
+      "sha256": "2bf8a0790d427630a49c3af2eaa83015d16efa26de8d4838e4434c32ef7559a1"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\parameters.json": {
+      "bytes": 26544,
+      "mtime_ns": 1794448084062436100,
+      "sha256": "cfe628f5a8c5134df94448b72597146975707dbec938ada7efe3d04305514fc8"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\parameters.json": {
+      "bytes": 26544,
+      "mtime_ns": 1794448084062436100,
+      "sha256": "cfe628f5a8c5134df94448b72597146975707dbec938ada7efe3d04305514fc8"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\scene.glb": {
+      "bytes": 1243888,
+      "mtime_ns": 1794448084046391200,
+      "sha256": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\scene.glb": {
+      "bytes": 1243888,
+      "mtime_ns": 1794448084046391200,
+      "sha256": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon01.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074878005900,
+      "sha256": "5e2da47c174dbbd0befb547346bdbeed36fa5daa74898ad261bd6720dce31302"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon01.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074878005900,
+      "sha256": "5e2da47c174dbbd0befb547346bdbeed36fa5daa74898ad261bd6720dce31302"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon02.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074879514600,
+      "sha256": "af1246cd9cf57d833f0eccc1fadbe7c7f88baddf3173bc103d373c2e3e82aed1"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon02.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074879514600,
+      "sha256": "af1246cd9cf57d833f0eccc1fadbe7c7f88baddf3173bc103d373c2e3e82aed1"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon03.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074880614400,
+      "sha256": "4268976ada66f2a7c3b5fd84c29d1183fd6069c2fdf2ce5c424f815a2680f25c"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon03.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074880614400,
+      "sha256": "4268976ada66f2a7c3b5fd84c29d1183fd6069c2fdf2ce5c424f815a2680f25c"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon04.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074881856500,
+      "sha256": "3e30ab164bc574241f2ac6c12172b6c75799afe5a03d4eb5cdb43c223f23de6e"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon04.bmp": {
+      "bytes": 3128,
+      "mtime_ns": 1794448074881856500,
+      "sha256": "3e30ab164bc574241f2ac6c12172b6c75799afe5a03d4eb5cdb43c223f23de6e"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon05.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074882856900,
+      "sha256": "ef1b687f0e5bbc6cd32909f8ebf890fd72cb1b704ebdf366fb7a4e3f8b1fae08"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon05.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074882856900,
+      "sha256": "ef1b687f0e5bbc6cd32909f8ebf890fd72cb1b704ebdf366fb7a4e3f8b1fae08"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon06.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074884888800,
+      "sha256": "a8811f63ecd91f8ff5cc7347011b2cc74c9ff028b1b08bd6438dab03ae9bf8f8"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon06.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074884888800,
+      "sha256": "a8811f63ecd91f8ff5cc7347011b2cc74c9ff028b1b08bd6438dab03ae9bf8f8"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon07.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074885856200,
+      "sha256": "b03c8464c66f7359f303a0d3f00e7d5570159fb3b8fe3c712095e59ef75ff4a0"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon07.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074885856200,
+      "sha256": "b03c8464c66f7359f303a0d3f00e7d5570159fb3b8fe3c712095e59ef75ff4a0"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon08.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074886855900,
+      "sha256": "b03c8464c66f7359f303a0d3f00e7d5570159fb3b8fe3c712095e59ef75ff4a0"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon08.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074886855900,
+      "sha256": "b03c8464c66f7359f303a0d3f00e7d5570159fb3b8fe3c712095e59ef75ff4a0"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon09.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074887855700,
+      "sha256": "b03c8464c66f7359f303a0d3f00e7d5570159fb3b8fe3c712095e59ef75ff4a0"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon09.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074887855700,
+      "sha256": "b03c8464c66f7359f303a0d3f00e7d5570159fb3b8fe3c712095e59ef75ff4a0"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\toon10.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074887855700,
+      "sha256": "b03c8464c66f7359f303a0d3f00e7d5570159fb3b8fe3c712095e59ef75ff4a0"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\toon10.bmp": {
+      "bytes": 3126,
+      "mtime_ns": 1794448074887855700,
+      "sha256": "b03c8464c66f7359f303a0d3f00e7d5570159fb3b8fe3c712095e59ef75ff4a0"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested\\worker.json": {
+      "bytes": 56,
+      "mtime_ns": 1794448084357932100,
+      "sha256": "cc419cd00044b1dae9207182d7a7e1499a72abd36c5405da0066bbccada93cb7"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\compatibility\\miku-tested\\worker.json": {
+      "bytes": 56,
+      "mtime_ns": 1794448084357932100,
+      "sha256": "cc419cd00044b1dae9207182d7a7e1499a72abd36c5405da0066bbccada93cb7"
+    }
+  },
+  "expected_groups": 158,
+  "core_groups": 36,
+  "movie_groups": 21,
+  "preceding_failed_full_closed": true,
+  "sole_functional_delta": "one native fixture click targets the same expected pixel center; all assertions/thresholds/cases and app/helper/wind bytes unchanged",
+  "dirt_check_ignores_only_declared_pycache_and_pyc_scope_exclusions": true,
+  "cache_reset_or_deleted": false,
+  "main_merged": false,
+  "review_branch_upload": "NOT_ATTEMPTED_AFTER_PRIOR_REJECTION_MAIN_RECONSTRUCTION_PENDING",
+  "result": "UNRUN",
+  "restored_owner_mmd_fixture_files": 18,
+  "focused_native_mmd_checks": 45,
+  "focused_native_mmd_movies": 2,
+  "preceding_incomplete_full_qualification": "UNQUALIFIED_MISSING_OWNER_MMD_FIXTURE",
+  "preceding_incomplete_closure_sha256": "69d6c06989a12c2291014fe31a0744f76e5e2bb7a87fc8da1e8b22d50785843e",
+  "focused_native_mmd_verification_sha256": "702761e0e1ce153a680376ee03d8f36c04f22250ff70398ecf1e30a8d011e67a",
+  "declared_generated_pose_project_metadata": {
+    "pose-smoke/miku-project/project.backup.json": {
+      "bytes": 21119,
+      "mtime_ns": 1794945587824089100,
+      "sha256": "fb2f1f78822e86f42d3ae4a36e5d7c7a71f91cc897b74674b45db0f2451f9bf1"
+    },
+    "pose-smoke/miku-project/project.json": {
+      "bytes": 21126,
+      "mtime_ns": 1794945587729671800,
+      "sha256": "20578f690c729ead18670cf29409abd4dc162482570549f813f494505ab8f8ec"
+    }
+  },
+  "all36_original_fixture_inputs_preserved": true,
+  "other34_review_fixture_copies_unchanged": true
+}

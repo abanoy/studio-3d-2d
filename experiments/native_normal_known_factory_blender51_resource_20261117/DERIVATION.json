@@ -1,0 +1,80 @@
+{
+  "format": "has_concrete_Blender51_known_factory_runtime_source_derivation_1",
+  "parent_INDEX_sha256": "1eeca1e85d93c834c52c1208ed68d18aaa2b00bc1b62987cf0b89d5561ab6f90",
+  "corrected_survey_INDEX_sha256": "9f8e24d0053d920dcdb7a5f5560a37ee0b493aa63351dc95e478435e95685369",
+  "sources": {
+    "ADMISSION.template.json": {
+      "parent_sha256": "31841130627bbcc8f803d9077a1d8b5f74f3c9a63cd5ec7fd79db95fce1ba719",
+      "derived_sha256": "31841130627bbcc8f803d9077a1d8b5f74f3c9a63cd5ec7fd79db95fce1ba719",
+      "bytes": 2990,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    },
+    "CURRENT-CLOSED-LANE.template.json": {
+      "parent_sha256": "1f27bb93cda883b537f85cedc7d59497d68299df53143f5c52de3a2ddf3a1283",
+      "derived_sha256": "1f27bb93cda883b537f85cedc7d59497d68299df53143f5c52de3a2ddf3a1283",
+      "bytes": 723,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    },
+    "baseline_predicate.py": {
+      "parent_sha256": "3fdc78893ca8f9403d22a479eaba2e29c5a6b615b59fe9092d9691b679c1bd7b",
+      "derived_sha256": "3fdc78893ca8f9403d22a479eaba2e29c5a6b615b59fe9092d9691b679c1bd7b",
+      "bytes": 5704,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    },
+    "current_context.py": {
+      "parent_sha256": "f0f0d21051c4aaf73fd933f3910c815a2e5a5e1707d511fbb994c1d0fa7ba494",
+      "derived_sha256": "f0f0d21051c4aaf73fd933f3910c815a2e5a5e1707d511fbb994c1d0fa7ba494",
+      "bytes": 4926,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    },
+    "diagnostic_host.py": {
+      "parent_sha256": "838bfb752426a86babf7de3bc60510c7069ae7f244d892095edba09b12e4d8fa",
+      "derived_sha256": "838bfb752426a86babf7de3bc60510c7069ae7f244d892095edba09b12e4d8fa",
+      "bytes": 6500,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    },
+    "diagnostic_support.py": {
+      "parent_sha256": "2587a5168735ecf6b38dabe8ca00415d3fa35a167f3ed508aded87db5ff0ed1a",
+      "derived_sha256": "7e34bf9534449926b23df3ac2cd9cfa7be74c50cd1bce71ebf3c524b1a8a27e9",
+      "bytes": 7666,
+      "literal_changes": 2,
+      "whole_source_inverse_exact": true
+    },
+    "handler_metadata.py": {
+      "parent_sha256": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc",
+      "derived_sha256": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc",
+      "bytes": 3796,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    },
+    "known_handler_policy.py": {
+      "parent_sha256": "0054d55049d170d109ab2018acce9ffcd08f4c93c437014cd072176842f51d25",
+      "derived_sha256": "0054d55049d170d109ab2018acce9ffcd08f4c93c437014cd072176842f51d25",
+      "bytes": 5839,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    },
+    "known_loaded_survey.py": {
+      "parent_sha256": "1a45fa4fc812882c77c9a160c1f772ff8b32c88bc0478bfc4a9fe395e32a2c29",
+      "derived_sha256": "1a45fa4fc812882c77c9a160c1f772ff8b32c88bc0478bfc4a9fe395e32a2c29",
+      "bytes": 2154,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    },
+    "root_runner.py": {
+      "parent_sha256": "012bef27696dd2752362426b162bfbd7afe9205febe76c489cd5ccab527648f6",
+      "derived_sha256": "012bef27696dd2752362426b162bfbd7afe9205febe76c489cd5ccab527648f6",
+      "bytes": 13476,
+      "literal_changes": 0,
+      "whole_source_inverse_exact": true
+    }
+  },
+  "runtime_code_change": "survey path and INDEX literal only",
+  "old_derivation_and_CPU_receipts_not_relabelled": true,
+  "actual_admission_or_private_or_native_or_current_full_access": false
+}

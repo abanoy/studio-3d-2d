@@ -1,0 +1,49 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "native_normal_known_factory_blender51_binding_20261117",
+  "status": "CONCRETE_SOURCE_CPU_GO_BINDING_AND_NATIVE_UNRUN",
+  "parent_INDEX_sha256": "3917792c091fe776cdd49b7f3e015b5655b104798c8a605e340967e870801235",
+  "runtime_INDEX_sha256": "82727caa443cc58d623463e195fc6220d08c2d878cb93461eb481c722098b6e0",
+  "prepare_root_literal_changes": 2,
+  "Git_tool_single_link_false_calls_retained": 2,
+  "generic_source_model_single_link_true_retained": true,
+  "synthetic_CPU_tests": 8,
+  "actual_preparer_admission_RootCmd_or_native_created": false,
+  "files": [
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 466,
+      "sha256": "a624033f9f78a7aa12237cc2248946318c864075907b4102f536bfd72802ef9c"
+    },
+    {
+      "path": "DERIVATION.json",
+      "bytes": 1064,
+      "sha256": "c86f15db087617dba5e9a0335c9a2a380d906e7fa8bee79dae29b1626734722d"
+    },
+    {
+      "path": "derive_bindings.py",
+      "bytes": 1347,
+      "sha256": "581df389bd3fc8f0c2616d3aae2228bef9ba6017a3ba27e38519b0d4a5a52fe4"
+    },
+    {
+      "path": "prepare_root.py",
+      "bytes": 17989,
+      "sha256": "a78924fd18809b67e4a54792e17ac8ab6858f599719b836618ee095ec6b48bdf"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1405,
+      "sha256": "361a0177c6cc50b1bde7cc37f95088c6fc9e28174408d604a7b630cf9633eb18"
+    },
+    {
+      "path": "test_bindings.py",
+      "bytes": 2639,
+      "sha256": "9ec9398668388550c125c574b55e3191ae5afd1810504499c3bcab4d01cb960e"
+    },
+    {
+      "path": "test_source.py",
+      "bytes": 6147,
+      "sha256": "8102881b69a0c0a2d36c04914808a9a327aac098e53aa0f9ed37ae96f8be8f28"
+    }
+  ]
+}

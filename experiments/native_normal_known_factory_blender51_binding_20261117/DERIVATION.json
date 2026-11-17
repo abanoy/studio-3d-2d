@@ -1,0 +1,21 @@
+{
+  "format": "has_concrete_Blender51_Git_only_binder_source_derivation_1",
+  "parent_INDEX_sha256": "3917792c091fe776cdd49b7f3e015b5655b104798c8a605e340967e870801235",
+  "runtime_INDEX_sha256": "82727caa443cc58d623463e195fc6220d08c2d878cb93461eb481c722098b6e0",
+  "prepare_root.py": {
+    "parent_sha256": "972a470717032c32df24194cde81deb7580b6722442114f7c00edcd48a0c01e0",
+    "derived_sha256": "a78924fd18809b67e4a54792e17ac8ab6858f599719b836618ee095ec6b48bdf",
+    "literal_changes": 2,
+    "whole_source_inverse_exact": true,
+    "all_function_ASTs_exact": true
+  },
+  "test_source.py": {
+    "parent_sha256": "201ddcc4328683cc0bcfdb94e2f876cbda763e8e2758f564b8b6a162464a1c9f",
+    "derived_sha256": "8102881b69a0c0a2d36c04914808a9a327aac098e53aa0f9ed37ae96f8be8f28",
+    "changes": "one expected runtime INDEX assertion literal only",
+    "whole_source_inverse_exact": true
+  },
+  "Git_tool_single_link_false_calls_retained": 2,
+  "source_model_single_link_true_retained": true,
+  "actual_preparer_admission_RootCmd_native_or_current_full_executed": false
+}
