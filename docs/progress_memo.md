@@ -16002,3 +16002,26 @@ old traversal or budgets; it has not inspected native inputs.
 Main functional source remains qualified52/1019. Review3a is still RUNNING with
 1029 frozen source files; expected158/core36/movie21 is not a result. No new
 full PASS, merge, owner copy, cold187 or native qualification is claimed.
+
+### November 17, 2026 — exact 85 public response caches removed
+
+After independent source review and default verification, Root executed the sealed
+literal nonrecursive cleanup at 19:32 UTC. Exactly 85 old public GitHub response
+cache files were deleted, totaling 33,228,774 logical bytes. The 173-row journal
+contains started/preflight, 85 before-delete/deleted pairs and complete; all
+identities and cumulative totals join the pinned inventory. Every candidate is
+currently absent, seven candidate/helper source files remain exact, and all ten
+current86df caches remain present by metadata-only checks.
+
+Public evidence is sealed in experiments/public_remote_cache_cleanup85_actual_20261117
+(INDEX 5d17a897; RESULT df767030). Its exact 77,825-byte journal has SHA
+e13a1d7288eb658948f84e86e9e7cee2fe0d287d29284eef015609e25c370a71.
+The earlier 71-file cleanup remains separate history. Current86df, native/private
+assets, reviews and tools were outside the 85 admitted deletion paths; no fresh
+protected-tree content audit is claimed. Logical bytes are not measured free
+space. No further deletion was performed while recording this evidence.
+
+Root still reports the separate 3a full RUNNING with its native/graphics lane
+Root-exclusive. Main functional source remains qualified52/1019. Actual full
+PASS, terminal audit/release, qualified merge, fresh owner copy and cold187 remain
+required; this cleanup supplies none of those results. Human review stays deferred.

@@ -1,5 +1,13 @@
 # HAS continuation — November 17, 2026
 
+LATEST CLEANUP at 19:32 UTC: Root removed exactly85 old public e8cf/4ec7/a41a/
+4fd0/855d response caches,33,228,774logicalB. Exact173-row journal,85absent paths,
+unchanged candidate/helper pins and ten retained86df caches are verified in
+experiments/public_remote_cache_cleanup85_actual_20261117 (INDEX5d17a897).
+No disk-free change is claimed; prior71cleanup remains history. Current86df and
+native/private/review/tool paths were excluded. Full3a remains Root-reported
+RUNNING/native-exclusive; actual fullPASS/release still precedes merge/copy/187.
+
 LATEST CURRENT:3a fullRUNNING from18:59UTC. RUN=Review/output/windows-neon-3a3701a-20261117T185401541257.
 Coordinator19500 birth2026-11-17T18:59:01.8851457Z; Python3592 birth2026-11-17T18:59:02.3970713Z,parent19500;
 CIM.3970710 metadataonly. Freeze1029/HEAD3a. Native/graphicslaneRoot-exclusive:

@@ -1,0 +1,229 @@
+{
+  "format": "has_actual_exact85_public_cache_cleanup_1",
+  "status": "COMPLETE_EXACT85_JOURNAL_AND_CURRENT_ABSENCE_VERIFIED",
+  "root_reported_authorized_execution": true,
+  "execution_started_utc": "2026-11-17T19:32:09.0090670Z",
+  "execution_completed_utc": "2026-11-17T19:32:11.6100041Z",
+  "deleted_files": 85,
+  "deleted_logical_bytes": 33228774,
+  "logical_bytes_not_measured_free_space": true,
+  "original_public_execution_journal": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\public-cache85-cleanup-20261117T1932089955831Z-5c1b26171ad24da9a52a392890f100a4.jsonl",
+    "bytes": 77825,
+    "mtime_ns": 1794943931609569100,
+    "sha256": "e13a1d7288eb658948f84e86e9e7cee2fe0d287d29284eef015609e25c370a71"
+  },
+  "preserved_journal_file": "JOURNAL.jsonl",
+  "journal_rows": 173,
+  "journal_actions": {
+    "started": 1,
+    "preflight_complete": 1,
+    "before_delete": 85,
+    "deleted_and_absent": 85,
+    "complete": 1
+  },
+  "exact_before_after_identity_and_cumulative_joins_verified": true,
+  "candidate_paths_currently_absent": [
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-000.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-020.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-040.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-060.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-080.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-100.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-120.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-140.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-160.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-180.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-200.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-220.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-240.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-260.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-280.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-300.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-320.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-340.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-360.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-380.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-400.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-420.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-440.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-460.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-480.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-500.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\e8cf-all-remote-batch-520.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-000.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-020.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-040.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-060.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-080.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-100.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-120.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-140.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-160.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-180.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-200.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-220.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-240.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-260.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-280.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-300.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-320.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-340.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-360.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-380.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-400.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-420.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-440.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-460.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-480.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-500.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-520.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-540.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-560.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-580.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-600.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-620.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-640.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-660.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4ec7-all-remote-batch-680.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-000.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-020.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-040.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-060.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-080.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-100.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-120.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-140.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-160.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\a41a-all-remote-batch-180.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-000.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-020.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-040.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-060.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-080.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-100.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-120.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-140.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\4fd0-all-remote-batch-160.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\855d-all-remote-batch-000.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\855d-all-remote-batch-020.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\855d-all-remote-batch-040.json",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\855d-all-remote-batch-060.json"
+  ],
+  "source_candidate_and_helper_files_unchanged": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\public_remote_cache_candidates_20261117\\INDEX.json",
+      "bytes": 929,
+      "mtime_ns": 1794943541982755400,
+      "sha256": "f9be18b1accd813d18f941c20978f3d0e9828394160d87fe561cc333796f340f"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\public_remote_cache_candidates_20261117\\CANDIDATES.json",
+      "bytes": 87982,
+      "mtime_ns": 1794943490901085000,
+      "sha256": "2814fd89078398168c718e1c22fb487085863e3592d1bfb8bab8c2d084ab7cf1"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\public_remote_cache_cleanup85_source_20261117\\INDEX.json",
+      "bytes": 1060,
+      "mtime_ns": 1794943853868086900,
+      "sha256": "bd2cdddf549f7da6840bbc85ca7724b79e3c07ff69910ffb6d7f48f7a6741aa8"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\public_remote_cache_cleanup85_source_20261117\\cleanup_public_caches.ps1",
+      "bytes": 9148,
+      "mtime_ns": 1794943773811600900,
+      "sha256": "86615e65f4743e3881d5c4d154c61e4fc6a2e299e50432ddf8678318343966ad"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\public_remote_cache_candidates_20261117\\README.md",
+      "bytes": 2370,
+      "mtime_ns": 1794943515638490500,
+      "sha256": "30ca17fd94404f4525dfcad9ccb55a9e96ae067c2551a49ff35fa00ecf61e396"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\public_remote_cache_cleanup85_source_20261117\\README.md",
+      "bytes": 2173,
+      "mtime_ns": 1794943834542598400,
+      "sha256": "190aa47c4a223f6857d113dee8f4899acb9a53ae06782a497bf73fd95f3a0c55"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\public_remote_cache_cleanup85_source_20261117\\VALIDATION.json",
+      "bytes": 941,
+      "mtime_ns": 1794943805172749000,
+      "sha256": "0f7063d48dfca571568598e6a46fd162cdb6450e30c401e92548d25264f517dd"
+    }
+  ],
+  "current86df_response_caches_retained_metadata_only": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-000.json",
+      "bytes": 2772241,
+      "mtime_ns": 1794942951296111300
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-020.json",
+      "bytes": 139647,
+      "mtime_ns": 1794942953049096400
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-040.json",
+      "bytes": 550665,
+      "mtime_ns": 1794942954719357300
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-060.json",
+      "bytes": 152231,
+      "mtime_ns": 1794942955721706700
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-080.json",
+      "bytes": 81030,
+      "mtime_ns": 1794942956893373300
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-100.json",
+      "bytes": 1467660,
+      "mtime_ns": 1794942958440525400
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-120.json",
+      "bytes": 269416,
+      "mtime_ns": 1794942959736439500
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-140.json",
+      "bytes": 210029,
+      "mtime_ns": 1794942961400591200
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-160.json",
+      "bytes": 131125,
+      "mtime_ns": 1794942962543882700
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\86df-all-remote-batch-180.json",
+      "bytes": 67966,
+      "mtime_ns": 1794942963171788000
+    }
+  ],
+  "current86df_payloads_opened": false,
+  "protected_scope": {
+    "admitted_deletion_paths_are_only_exact85_old_public_cache_files": true,
+    "original_native_reviews_tools_outside_admitted_paths": true,
+    "fresh_native_review_tool_tree_inventory_claimed": false,
+    "historical_removed71_paths_not_relisted": true
+  },
+  "independent_peer_check": {
+    "passed": true,
+    "journal_sha256": "e13a1d7288eb658948f84e86e9e7cee2fe0d287d29284eef015609e25c370a71",
+    "rows": 173,
+    "absent_candidates": 85,
+    "retained_current86df_files": 10,
+    "candidate_helper_pins_unchanged": true
+  },
+  "full3a_status": "RUNNING_as_Root_reported_no_live_full_read",
+  "native_graphics_lane": "ROOT_EXCLUSIVE",
+  "new_full_PASS_merge_owner_copy_cold187_claimed": false,
+  "additional_deletion_by_recorder": false,
+  "Git_process_native_engine_or_live_full_access_by_recorder": false
+}
