@@ -13,7 +13,7 @@ var tutorials_button: Button
 
 func _ready() -> void:
 	name="StudioHome";set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);mouse_filter=Control.MOUSE_FILTER_STOP;z_index=100
-	var background:=ColorRect.new();background.color=Color(0.86,0.91,0.96,0.97);background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);background.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(background)
+	var background:=ColorRect.new();background.color=Color(ThemeArt.BG,0.97) if ThemeArt.is_neon() else Color(0.86,0.91,0.96,0.97);background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);background.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(background)
 	var outer:=ScrollContainer.new();outer.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);add_child(outer)
 	var center:=CenterContainer.new();center.size_flags_horizontal=Control.SIZE_EXPAND_FILL;center.size_flags_vertical=Control.SIZE_EXPAND_FILL;outer.add_child(center)
 	panel=PanelContainer.new();panel.custom_minimum_size=Vector2(720,520);panel.add_theme_stylebox_override("panel",ThemeArt.surface("f7fcff","dce8f4","7899b7",18));center.add_child(panel)

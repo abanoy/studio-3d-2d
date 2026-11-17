@@ -30,6 +30,11 @@ func drag(plot: Control,point: Vector2,delta: Vector2) -> void:
 	var press:=InputEventMouseButton.new();press.button_index=MOUSE_BUTTON_LEFT;press.pressed=true;event_at(plot,point,press);await process_frame
 	var motion:=InputEventMouseMotion.new();motion.button_mask=MOUSE_BUTTON_MASK_LEFT;motion.relative=delta;event_at(plot,point+delta,motion);await process_frame
 	var release:=InputEventMouseButton.new();release.button_index=MOUSE_BUTTON_LEFT;event_at(plot,point+delta,release);await settled()
+func reveal_timeline_row(y: float) -> void:
+	var scroll: ScrollContainer=app.timeline.get_parent()
+	var dock_scroll: ScrollContainer=app.workspace_layout.panels.timeline.get_node("TimelineContentScroll")
+	dock_scroll.ensure_control_visible(scroll);await settled()
+	scroll.scroll_vertical=maxi(0,int(y));await settled()
 func wait_job() -> void:
 	while app.has_project.pid>0:await process_frame
 	await settled()
@@ -69,20 +74,25 @@ func run() -> void:
 		var a:=prior.sample_authored_transform(float(half)/2.);var b: Dictionary=rig.sample_authored_transform(float(half)/2.);exact=exact and a.rotation_xyzw==b.rotation_xyzw and a.scale==b.scale
 	check(exact and rig.data.format=="studio_model_9","ordinary component path edits preserve animated turn/scale")
 	var timeline=app.timeline
+	await reveal_timeline_row(timeline.row_y(0))
 	await click_at(timeline,Vector2(9,timeline.row_y(0)+12))
 	check(timeline.visual_rows.size()==2 and timeline.channel_y(rig.data.id,"@root")>=0,"Simple shows a single combined movement row")
 	app.set_advanced(true);await settled()
 	check(timeline.visual_rows.size()==4 and timeline.channel_y(rig.data.id,"@root/position")>=0 and timeline.channel_y(rig.data.id,"@root/rotation_xyzw")>=0 and timeline.channel_y(rig.data.id,"@root/scale")>=0,"Advanced reveals independent position rotation and scale rows")
 	app.pose_editor.operation.select(0)
+	await reveal_timeline_row(timeline.channel_y(rig.data.id,"@root/position"))
 	await click_at(timeline,Vector2(timeline.x(24),timeline.channel_y(rig.data.id,"@root/position")+12))
 	check(app.pose_editor.selected=="@root" and app.pose_editor.operation.selected==1 and timeline.selected_channel=="@root/position" and app.frame==24,"position row selects Move and its exact frame")
 	app.pose_editor.operation.select(1)
+	await reveal_timeline_row(timeline.channel_y(rig.data.id,"@root/rotation_xyzw"))
 	await click_at(timeline,Vector2(timeline.x(0),timeline.channel_y(rig.data.id,"@root/rotation_xyzw")+12))
 	check(app.pose_editor.operation.selected==0 and timeline.selected_channel=="@root/rotation_xyzw","rotation row selects Rotate")
+	await reveal_timeline_row(timeline.channel_y(rig.data.id,"@root/scale"))
 	await click_at(timeline,Vector2(timeline.x(0),timeline.channel_y(rig.data.id,"@root/scale")+12))
 	check(timeline.selected_channel=="@root/scale" and app.inspector_scroll.get_global_rect().encloses(app.pose_editor.scale_field.get_global_rect()),"scale row exposes its numeric control")
 	app.set_advanced(false);await settled()
 	check(timeline.visual_rows.size()==2 and timeline.selected_channel=="@root" and rig.data==draft and app.history.size()==history+1 and app.keys==shots,"Simple Advanced inspection preserves model keys camera and history")
+	await reveal_timeline_row(timeline.row_y(0))
 	await click_at(timeline,Vector2(9,timeline.row_y(0)+12))
 	app.set_frame(24);app.inspector_scroll.ensure_control_visible(editor.button);await settled()
 	app.undo();await settled();check(rig.data==before,"Undo restores exact previous model")
@@ -100,7 +110,7 @@ func run() -> void:
 	app.undo();app.undo();await settled();check(rig.data==draft,"Undo of frame-zero edits restores the complete prior path")
 	editor.close();app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,60)]
 	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false)
-	var ink=preload("res://src/drawing.gd");ink.stroke(ink.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.CYAN,false);app.changed();app.set_frame(24)
+	var ink=preload("res://src/drawing.gd");ink.stroke(ink.edit_image(ink.cel_at(app.layers[1],0)).image,Vector2(80,80),Vector2(180,80),5,Color.CYAN,false);app.changed();app.set_frame(24)
 	var picture: Image=await app.renderer.capture(app.keys,app.layers,24,true);picture.save_png(folder.path_join("reference.png"))
 	var packed:=folder.path_join("path.has");app.has_project.cache_root=folder.path_join("cache");app.has_project.save_file(packed,"packed");await wait_job();check(app.has_project.path==packed,"ordinary packed HAS saves movement controls")
 	app.new_project();app.has_project.open_file(packed);await wait_job();app.world_selection.select_entity(draft.id);rig=app.renderer.active_model()

@@ -1,4 +1,5 @@
 extends Control
+const StudioTheme=preload("res://src/studio_theme.gd")
 var editor
 var dragging:=""
 var original:=0
@@ -19,14 +20,25 @@ func _process(_dt: float) -> void:
 func _draw() -> void:
 	if not editor:return
 	var rows: Array=editor.clips()
+	# Neon Pro step 9: neon rows match the timeline lanes (#0C0D11 / #111318 with #22252E
+	# hairlines, #B4BAC7 labels), clips are #1D2029 with a #363B48 edge (selected: #2E8CFF edge,
+	# translucent blue fill), names #F4F6FA (13:1 or more) and the playhead is #FF3D9A. Classic
+	# keeps the pale rows, lilac clips and red playhead.
+	var neon:=StudioTheme.is_neon()
+	var font: Font=StudioTheme.font(500) if neon else ThemeDB.fallback_font
 	for i in range(rows.size()):
-		var clip: Dictionary=rows[i];draw_rect(Rect2(0,i*26,size.x,26),Color("edf0f8"))
-		draw_string(ThemeDB.fallback_font,Vector2(8,i*26+18),"Sequence %d" % (i+1),HORIZONTAL_ALIGNMENT_LEFT,172,12,Color("283c51"))
-		var rect:=row_rect(clip,i)
-		draw_rect(rect,Color("b8d7ed") if clip.id==editor.selected_clip else Color("d5c8ee"))
-		draw_rect(rect,Color("557a9a"),false,1)
-		draw_string(ThemeDB.fallback_font,rect.position+Vector2(4,16),str(editor.asset(clip.asset_id).get("name","Sequence"))+(" ↻" if clip.loop else ""),HORIZONTAL_ALIGNMENT_LEFT,maxf(1,rect.size.x-8),12,Color("283c51"))
-	var x: float=editor.app.timeline.x(editor.app.frame);draw_line(Vector2(x,0),Vector2(x,size.y),Color("d34545"),2)
+		var clip: Dictionary=rows[i];draw_rect(Rect2(0,i*26,size.x,26),(StudioTheme.PANEL if i%2 else StudioTheme.BAR) if neon else Color("edf0f8"))
+		if neon:draw_rect(Rect2(0,i*26+25,size.x,1),StudioTheme.LINE)
+		draw_string(font,Vector2(8,i*26+18),"Sequence %d" % (i+1),HORIZONTAL_ALIGNMENT_LEFT,172,12,StudioTheme.TEXT2 if neon else Color("283c51"))
+		var rect:=row_rect(clip,i);var chosen: bool=clip.id==editor.selected_clip
+		if neon:
+			draw_rect(rect,Color("1c2a44") if chosen else StudioTheme.HOVER)
+			draw_rect(rect,StudioTheme.BLUE if chosen else StudioTheme.LINE3,false,1)
+		else:
+			draw_rect(rect,Color("b8d7ed") if chosen else Color("d5c8ee"))
+			draw_rect(rect,Color("557a9a"),false,1)
+		draw_string(font,rect.position+Vector2(4,16),str(editor.asset(clip.asset_id).get("name","Sequence"))+(" ↻" if clip.loop else ""),HORIZONTAL_ALIGNMENT_LEFT,maxf(1,rect.size.x-8),12,StudioTheme.TEXT if neon else Color("283c51"))
+	var x: float=editor.app.timeline.x(editor.app.frame);draw_line(Vector2(x,0),Vector2(x,size.y),StudioTheme.PINK if neon else Color("d34545"),2)
 func _gui_input(event: InputEvent) -> void:
 	if editor.app.exporting:return
 	if event is InputEventMouseButton:

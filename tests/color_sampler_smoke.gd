@@ -117,7 +117,7 @@ func run() -> void:
 		if native_point.x<0:continue
 		var native_view: Dictionary=app.renderer.view_state();var native_world: Dictionary=World.portable(app.current_world());var original_hash:=FileAccess.get_sha256(rig.data.source)
 		var reference_pixel: Image=app.renderer.viewport.get_texture().get_image();reference_pixel.convert(Image.FORMAT_RGBA8);reference_pixel.blend_rect(Drawing.composite(app.layers,app.frame,1920,1080),Rect2i(0,0,1920,1080),Vector2i.ZERO)
-		var wanted:=reference_pixel.get_pixel(int(native_point.x),int(native_point.y));var count: int=picker.captures;picker.arm();click(native_point);await settled()
+		var wanted:=reference_pixel.get_pixel(int(native_point.x),int(native_point.y));var count: int=picker.captures;picker.arm();click(native_point+Vector2(.5,.5));await settled()
 		check(picker.captures==count+1 and app.color.color==wanted and equal(native_view,app.renderer.view_state()) and equal(native_world,World.portable(app.current_world())) and FileAccess.get_sha256(rig.data.source)==original_hash,"native color excludes selection helpers while preserving rig/source/view: "+name)
 		root.get_texture().get_image().save_png(folder.path_join("native-pick-"+str(native_models.size())+".png"))
 		if native_models.is_empty():

@@ -172,9 +172,11 @@ func run() -> void:
 			var values: Dictionary=rig.sample(8);var source_frame:=int(piece.source_in)+8-int(piece.start)
 			for part in rig.order:piece.body_controls[part]=[{"frame":source_frame,"value":values.get(part,Model.identity()).duplicate(true),"interpolation":"ease"}]
 			editor.restore_state(dense);app.refresh_timeline();await settled()
-			var scroll: ScrollContainer=timeline.get_parent();scroll.scroll_vertical=100000;await settled()
 			var dense_rows:=Channels.describe(rig.data);var last: String=dense_rows[-1].id
+			# Reveal this native channel; compact tracks can keep drawing/audio lanes below it.
+			var scroll: ScrollContainer=timeline.get_parent();scroll.scroll_vertical=int(timeline.channel_y(row.id,last));await settled()
 			check(dense_rows.size()==rig.order.size() and scroll.size.y<230 and app.canvas.size.y>100 and app.timeline_ruler.global_position.y<scroll.global_position.y,"many explicitly keyed native parts scroll inside a bounded timeline with pinned ruler")
+			check(scroll.get_global_rect().has_point(timeline.get_global_transform()*Vector2(45,timeline.channel_y(row.id,last)+12)),"requested native channel lies inside the scrolled track viewport before input")
 			await click(app,Vector2(45,timeline.channel_y(row.id,last)+12),MOUSE_BUTTON_LEFT,true)
 			check(editor.selected==last and timeline.selected_channel==last,"routed click selects the last scrolled native channel by its original binding")
 			app.undo();await settled();check(Channels.describe(rig.data).size()==1,"Undo invalidates expanded channel cache and removes obsolete rows")

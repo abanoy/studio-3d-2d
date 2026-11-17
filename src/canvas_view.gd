@@ -3,13 +3,20 @@ extends Control
 # Helpers keep native projection coordinates. Their clip is the full rendered
 # scene in Setup, or the fitted image in Focus, independently of drawing pixels.
 class FrameOverlay extends Control:
+	const NeonTheme = preload("res://src/studio_theme.gd")
 	var canvas_view
 	func _draw() -> void:
 		var scale_factor: Vector2=size/canvas_view.resolution
 		for line in canvas_view.pose_lines:
 			draw_line(line.a*scale_factor,line.b*scale_factor,line.color,2,true)
+		var neon: bool=NeonTheme.is_neon()
 		for joint in canvas_view.pose_joints:
-			draw_circle(joint.point*scale_factor,4 if joint.selected else 2,Color("ffe086") if joint.selected else Color("a0e5f5"))
+			if neon:
+				# Neon Pro step 4: joints are white 2 px rings on the stage colour; selected ones a #FF5FAE ring.
+				var radius:=5.5 if joint.selected else 4.0
+				draw_circle(joint.point*scale_factor,radius,NeonTheme.STAGE)
+				draw_arc(joint.point*scale_factor,radius,0,TAU,24,NeonTheme.CAMERA if joint.selected else Color.WHITE,2,true)
+			else:draw_circle(joint.point*scale_factor,4 if joint.selected else 2,Color("ffe086") if joint.selected else Color("a0e5f5"))
 		if not canvas_view.review_lines.is_empty():
 			var points:=PackedVector2Array()
 			for p in canvas_view.review_lines:points.append(p*scale_factor)
@@ -56,23 +63,42 @@ var review_pointer:=Callable()
 var review_box:=Rect2()
 var review_box_visible:=false
 var resolution := Vector2(1920, 1080)
+# Neon Pro: per-side inset (x left/right, y top/bottom) that keeps the fitted frame clear of the
+# stage overlays. Zero (classic styles, unit tests) keeps the original fit exactly.
+var fit_inset := Vector2.ZERO
+var surround_rect: ColorRect
+const StudioTheme = preload("res://src/studio_theme.gd")
+
+func refresh_surround() -> void:
+	# Letterbox around the film: neon stage #05060A, classic grey-blue otherwise (editor only).
+	if surround_rect: surround_rect.color = StudioTheme.STAGE if StudioTheme.is_neon() else Color("7e8f9e")
 
 func _ready() -> void:
 	clip_contents = true
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	focus_mode = Control.FOCUS_ALL
 	resized.connect(queue_redraw)
-	var surround:=ColorRect.new();surround.color=Color("7e8f9e");surround.mouse_filter=Control.MOUSE_FILTER_IGNORE;surround.show_behind_parent=true;add_child(surround);surround.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var surround:=ColorRect.new();surround_rect=surround;refresh_surround();surround.mouse_filter=Control.MOUSE_FILTER_IGNORE;surround.show_behind_parent=true;add_child(surround);surround.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	scene_background=preload("res://src/canvas_raster.gd").new();scene_background.show_behind_parent=true;add_child(scene_background)
 	frame_clip=Control.new();frame_clip.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.clip_contents=true;add_child(frame_clip)
 	frame_overlay=FrameOverlay.new();frame_overlay.canvas_view=self;frame_overlay.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.add_child(frame_overlay)
 
+func fit_area(extent: Vector2) -> Vector2:
+	return (extent-fit_inset*2.).max(Vector2.ONE) if fit_inset!=Vector2.ZERO else extent
+
+func setup_frame_size() -> Vector2:
+	# Film frame inside the Setup scene area (the extended camera overscans by area/frame).
+	var area:=fit_area(Vector2(setup_size()))
+	return resolution*minf(area.x/resolution.x,area.y/resolution.y)
+
 func image_rect() -> Rect2:
 	if scene_setup:
 		var area:=scene_rect()
-		var factor:=minf(area.size.x/resolution.x,area.size.y/resolution.y)
+		var fit:=fit_area(area.size)
+		var factor:=minf(fit.x/resolution.x,fit.y/resolution.y)
 		return Rect2(area.position+(area.size-resolution*factor)/2.,resolution*factor)
-	var scale_factor := minf(size.x / resolution.x, size.y / resolution.y) * zoom
+	var fit_size:=fit_area(size)
+	var scale_factor := minf(fit_size.x / resolution.x, fit_size.y / resolution.y) * zoom
 	var extent := resolution * scale_factor
 	return Rect2((size - extent) / 2 + pan, extent)
 
@@ -90,7 +116,9 @@ func scene_contains(point: Vector2) -> bool:
 	if not point.is_finite():return false
 	var frame:=image_rect()
 	var screen:=frame.position+point/resolution*frame.size
-	return Rect2(Vector2.ZERO,size).has_point(screen) and scene_rect().has_point(screen)
+	# Vector2 is 32-bit: a pointer at the control's exact edge can round-trip to -0.00001 px.
+	# A 0.01 px tolerance keeps that edge editable; real off-scene clicks stay rejected.
+	return Rect2(Vector2.ZERO,size).grow(.01).has_point(screen) and scene_rect().grow(.01).has_point(screen)
 
 func scene_uv(point: Vector2) -> Vector2:
 	var frame:=image_rect();var area:=scene_rect()
@@ -108,7 +136,18 @@ func _draw() -> void:
 	if drawing_selection.has_area():
 		var selected:=Rect2(rect.position+Vector2(drawing_selection.position)/resolution*rect.size,Vector2(drawing_selection.size)/resolution*rect.size)
 		draw_rect(selected,Color.BLACK,false,3);draw_rect(selected,Color.WHITE,false,1)
-	if not scene_editing or show_camera_frame:draw_rect(rect, Color("dce8f2"), false, 1)
+	if StudioTheme.is_neon():
+		# Neon Pro step 4 (editor only, never rendered): when the scene fills the view, the area
+		# outside the camera frame is dimmed with four bands, like the mock's 2000 px box-shadow.
+		if scene_setup:
+			var dim:=Color(4/255.,5/255.,8/255.,.62);var full:=Rect2(Vector2.ZERO,size)
+			draw_rect(Rect2(full.position,Vector2(full.size.x,maxf(rect.position.y,0))),dim)
+			draw_rect(Rect2(Vector2(0,rect.end.y),Vector2(full.size.x,maxf(full.size.y-rect.end.y,0))),dim)
+			draw_rect(Rect2(Vector2(0,rect.position.y),Vector2(maxf(rect.position.x,0),rect.size.y)),dim)
+			draw_rect(Rect2(Vector2(rect.end.x,rect.position.y),Vector2(maxf(full.size.x-rect.end.x,0),rect.size.y)),dim)
+		# The 8 % hairline always marks the frame; the Frame guide keeps a clearly visible line.
+		draw_rect(rect,Color(1,1,1,.45) if scene_editing and show_camera_frame else Color(1,1,1,.08),false,1)
+	elif not scene_editing or show_camera_frame:draw_rect(rect, Color("dce8f2"), false, 1)
 	if scene_editing and show_thirds:
 		for i in [1,2]:
 			var portion:=float(i)/3.

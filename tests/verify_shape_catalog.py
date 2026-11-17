@@ -21,7 +21,7 @@ def main():
         for name in json.loads(native.read_text(encoding='utf-8')).get('bundles',[]):
             bundle=Path(name);report=json.loads((bundle/'parameters.json').read_text(encoding='utf-8'))
             if report.get('kind')=='vrm_preparation':plans.append({'label':'VRM'+report['vrm_version'],'source':str(bundle/'scene.glb')})
-    face=ROOT/'output/sfm-face-pilot.json'
+    face=fixture_output()/'sfm-face-pilot.json'
     if face.is_file():
         report=json.loads(face.read_text(encoding='utf-8'))
         if report.get('preparation_complete'):plans.append({'label':'Supplied Mima','source':str(Path(report['bundle'])/'scene.glb')})

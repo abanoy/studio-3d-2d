@@ -7,6 +7,8 @@ var camera: Camera3D
 var choice: OptionButton
 var frame_button: CheckButton
 var grid_button: CheckButton
+var guides_button: MenuButton # neon Simple: Frame + 3×3 as one icon menu (compact)
+var compact:=false
 var setup_enabled:=true
 var frame_enabled:=false
 var grid_enabled:=false
@@ -33,6 +35,10 @@ func setup(owner_app,parent: Control) -> void:
 	grid_button=CheckButton.new();grid_button.text="3×3";parent.add_child(grid_button)
 	grid_button.tooltip_text="Show a rule-of-thirds composition grid inside the camera frame. This guide stays out of renders."
 	grid_button.toggled.connect(func(value):set_guides(frame_enabled,value))
+	guides_button=MenuButton.new();guides_button.flat=false;guides_button.focus_mode=Control.FOCUS_NONE;guides_button.visible=false;parent.add_child(guides_button)
+	guides_button.tooltip_text="Guides: the camera output boundary and a rule-of-thirds grid. They stay out of renders."
+	var guides:=guides_button.get_popup();guides.add_check_item("Camera frame",0);guides.add_check_item("3×3 grid",1)
+	guides.id_pressed.connect(func(id):set_guides(not frame_enabled if id==0 else frame_enabled,not grid_enabled if id==1 else grid_enabled))
 	sync()
 
 func set_setup(value: bool,persist:=true) -> void:
@@ -49,7 +55,7 @@ func set_guides(frame: bool,grid: bool,persist:=true) -> void:
 		app.save_display_preference("scene_view","thirds",grid)
 	sync()
 
-static func copy_camera(source: Camera3D,target: Camera3D,native_size: Vector2i,display_size: Vector2i,extended: bool) -> void:
+static func copy_camera(source: Camera3D,target: Camera3D,native_size: Vector2i,display_size: Vector2i,extended: bool,frame_size:=Vector2.ZERO) -> void:
 	target.global_transform=source.global_transform;target.projection=source.projection
 	target.near=source.near;target.far=source.far;target.keep_aspect=source.keep_aspect
 	target.fov=source.fov;target.size=source.size
@@ -61,7 +67,10 @@ static func copy_camera(source: Camera3D,target: Camera3D,native_size: Vector2i,
 		var vertical:=deg_to_rad(source.fov)
 		if source.keep_aspect==Camera3D.KEEP_WIDTH:vertical=2.*atan(tan(vertical/2.)/native_aspect)
 		target.keep_aspect=Camera3D.KEEP_HEIGHT
-		target.fov=rad_to_deg(2.*atan(tan(vertical/2.)*maxf(1.,native_aspect/display_aspect)))
+		# frame_size (neon stage inset): the film frame is smaller than the display on both axes, so the
+		# render overscans vertically by display/frame as well; without it the frame fills one axis.
+		var overscan:=maxf(1.,native_aspect/display_aspect) if frame_size.y<=0. else float(display_size.y)/frame_size.y
+		target.fov=rad_to_deg(2.*atan(tan(vertical/2.)*overscan))
 
 func _process(_delta: float) -> void:sync()
 
@@ -77,14 +86,19 @@ func sync() -> void:
 	app.canvas.scene_navigation=app.mode.selected==1 or app.mode.selected==2 and app.canvas.scene_setup
 	var extent: Vector2i=app.canvas.setup_size()
 	if viewport.size!=extent:viewport.size=extent
-	copy_camera(native,camera,app.renderer.viewport.size,extent,true)
+	copy_camera(native,camera,app.renderer.viewport.size,extent,true,app.canvas.setup_frame_size() if app.canvas.fit_inset!=Vector2.ZERO else Vector2.ZERO)
 	app.canvas.setup_background=viewport.get_texture()
 	var capture: bool=app.renderer.native_readbacks>0
 	viewport.render_target_update_mode=SubViewport.UPDATE_ALWAYS if app.canvas.scene_setup and not capture and not app.exporting else SubViewport.UPDATE_DISABLED
 	app.renderer.viewport.render_target_update_mode=SubViewport.UPDATE_ALWAYS if not app.canvas.scene_setup or capture else SubViewport.UPDATE_DISABLED
-	choice.visible=editing;frame_button.visible=editing;grid_button.visible=editing
+	choice.visible=editing;frame_button.visible=editing and not compact;grid_button.visible=editing and not compact
+	if guides_button:
+		guides_button.visible=editing and compact
+		var guides:=guides_button.get_popup()
+		if guides.is_item_checked(0)!=frame_enabled:guides.set_item_checked(0,frame_enabled)
+		if guides.is_item_checked(1)!=grid_enabled:guides.set_item_checked(1,grid_enabled)
 	choice.select(0 if setup_enabled else 1);frame_button.set_pressed_no_signal(frame_enabled);grid_button.set_pressed_no_signal(grid_enabled)
-	var layout: Array=[editing,app.canvas.scene_setup,app.canvas.size,app.canvas.resolution,frame_enabled,grid_enabled]
+	var layout: Array=[editing,app.canvas.scene_setup,app.canvas.size,app.canvas.resolution,app.canvas.fit_inset,frame_enabled,grid_enabled]
 	if layout!=last_layout:last_layout=layout;app.canvas.queue_redraw()
 
 func display_camera() -> Camera3D:

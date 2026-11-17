@@ -1,4 +1,5 @@
 extends RefCounted
+const StudioTheme=preload("res://src/studio_theme.gd")
 # Recursive split/tab layout. Editors are reparented, never copied or reconstructed.
 var owner
 var books: Dictionary={}
@@ -8,9 +9,7 @@ func _init(manager) -> void:owner=manager
 func make_book(edge: String,key: String) -> TabContainer:
 	var book:=TabContainer.new();book.name="DockGroup"+key;book.set_meta("dock_key",key);book.set_meta("dock_edge",edge);book.size_flags_horizontal=Control.SIZE_EXPAND_FILL;book.size_flags_vertical=Control.SIZE_EXPAND_FILL;book.all_tabs_in_front=true;book.use_hidden_tabs_for_min_size=true
 	book.add_theme_stylebox_override("panel",StyleBoxEmpty.new())
-	for styled in [book,book.get_tab_bar()]:
-		for state in ["tab_selected","tab_unselected","tab_hovered","tab_disabled"]:styled.add_theme_stylebox_override(state,owner.app.theme.get_stylebox("pressed" if state=="tab_selected" else "normal","Button"))
-		for color in ["font_selected_color","font_unselected_color","font_hovered_color"]:styled.add_theme_color_override(color,Color("163854"))
+	style_book(book)
 	book.tab_changed.connect(func(_index):owner.save_later())
 	book.get_tab_bar().gui_input.connect(func(event):
 		if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed:
@@ -21,6 +20,21 @@ func make_book(edge: String,key: String) -> TabContainer:
 					if owner.panels[id]==panel:owner.header_input(id,event);break)
 	books[key]=book
 	return book
+func style_book(book: TabContainer) -> void:
+	# Neon Pro step 9: neon docked tabs use the theme's tabs (selected = #171A21 RAISE with a 2 px
+	# neon underline, others #8C93A3 text) on a #0C0D11 bar with a hairline. Classic keeps the
+	# button-shaped tabs with #163854 text.
+	var neon:=StudioTheme.is_neon()
+	for styled in [book,book.get_tab_bar()]:
+		for state in ["tab_selected","tab_unselected","tab_hovered","tab_disabled"]:
+			if neon:styled.remove_theme_stylebox_override(state)
+			else:styled.add_theme_stylebox_override(state,owner.app.theme.get_stylebox("pressed" if state=="tab_selected" else "normal","Button"))
+		for color in ["font_selected_color","font_unselected_color","font_hovered_color"]:
+			if neon:styled.remove_theme_color_override(color)
+			else:styled.add_theme_color_override(color,Color("163854"))
+	if not neon:book.remove_theme_stylebox_override("tabbar_background");return
+	var bar:=StudioTheme.flat(StudioTheme.BAR,StudioTheme.LINE,0,0,Vector4(6,4,6,4));bar.border_width_bottom=1
+	book.add_theme_stylebox_override("tabbar_background",bar)
 func seed(edge: String,ids: Array) -> void:
 	members[edge]=ids.duplicate();var book:=make_book(edge,edge);owner.slots[edge].add_child(book);owner.tabs[edge]=book
 func key_for(id: String) -> String:

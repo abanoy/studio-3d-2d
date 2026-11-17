@@ -33,6 +33,59 @@ func motion(point: Vector2) -> void:
 	app.canvas._gui_input(event)
 func view_image() -> Image:
 	return root.get_texture().get_image().get_region(Rect2i(Vector2i(app.canvas.global_position),Vector2i(app.canvas.size)))
+# The unchanged model-color predicate below refers to the base scene. Neon adds
+# the source-pinned editor-only mask after that scene is rendered. This separate
+# oracle reads the independent SubViewport and checks the displayed composition.
+const ScenePalette=preload("res://src/studio_theme.gd")
+const SETUP_MASK=Color(4/255.,5/255.,8/255.,.62)
+# Two UNORM8 writes: conservative truncation error <= ((1-a)+1)/255 < 2/255.
+const COMPOSITE_TOLERANCE=2./255.
+const DISPLAY_SOURCE_PINS={"src/canvas_view.gd":"dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459","src/canvas_raster.gd":"21dcb27b0c607fbb82897736a97a7969409fcb3ef10b22a987a271d5b41180bb","src/scene_view.gd":"9771833fab4b2daaafd804c349a89c719b9775e44d9ed52d26b7a6ad8992bb20","src/studio_theme.gd":"dcbf0b9cb079ba552c7d02f447a7a5d33db19509a54bd6e14a1468b486061dc2","project.godot":"4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30"}
+func display_modulator(node: Node) -> bool:
+	if node is CanvasModulate or node is CanvasGroup:return true
+	for child in node.get_children():
+		if display_modulator(child):return true
+	return false
+func setup_sample(image: Image,screen: Vector2,scene: Rect2,frame: Rect2) -> Dictionary:
+	var result:={"supported":false,"reason":"","composite_ok":false,"pixel":Color.BLACK,"profile":ScenePalette.style}
+	var reason:=""
+	for path in DISPLAY_SOURCE_PINS:
+		if FileAccess.get_sha256("res://"+path)!=DISPLAY_SOURCE_PINS[path]:reason="display source pin changed: "+path
+	if not ScenePalette.style in ["neon","light","dark"]:reason="unsupported palette"
+	if ProjectSettings.get_setting("rendering/renderer/rendering_method","")!="gl_compatibility" or root.use_hdr_2d or app.scene_view.viewport.use_hdr_2d:reason="unsupported renderer or HDR2D"
+	var transform: Transform2D=app.canvas.get_global_transform_with_canvas()
+	if transform.x!=Vector2.RIGHT or transform.y!=Vector2.DOWN or transform.origin!=app.canvas.global_position or transform.origin!=transform.origin.floor():reason="unsupported screen scaling or fractional translation"
+	if root.get_final_transform()!=Transform2D.IDENTITY or root.get_texture().get_size()!=Vector2(root.size):reason="unsupported root viewport scaling"
+	if app.canvas.get_parent()!=root or app.canvas.modulate!=Color.WHITE or app.canvas.self_modulate!=Color.WHITE or app.canvas.material!=null or app.canvas.use_parent_material or display_modulator(root):reason="unsupported canvas modulation"
+	var background: Node2D=app.canvas.scene_background
+	if background.get_transform()!=Transform2D.IDENTITY or background.modulate!=Color.WHITE or background.self_modulate!=Color.WHITE or background.material!=null or background.use_parent_material:reason="unsupported scene texture modulation"
+	if not app.world_selection.selected.is_empty() or app.canvas.review_box_visible or not app.canvas.review_lines.is_empty() or not app.canvas.review_chain.is_empty() or not app.canvas.pose_lines.is_empty() or not app.canvas.pose_joints.is_empty():reason="unsupported scene overlays at source sampling boundary"
+	if not app.canvas.scene_setup or scene!=Rect2(Vector2.ZERO,app.canvas.size) or scene.size!=Vector2(app.scene_view.viewport.size) or background.get("rect")!=scene or background.get("texture")!=app.scene_view.viewport.get_texture():reason="unsupported scene texture mapping"
+	var sample:=Vector2i(screen)
+	var center:=Vector2(sample)+Vector2(.5,.5)
+	if image.get_size()!=Vector2i(app.canvas.size) or not Rect2i(Vector2i.ZERO,image.get_size()).has_point(sample):reason="unsupported cropped screen extent or sample bounds"
+	if not scene.grow(-2.).has_point(center) or frame.grow(2.).has_point(center):reason="sample touches a scene or mask boundary"
+	# Use the displayed screen texel center, not a separately rounded projection.
+	var texel:=Vector2i(center-scene.position)
+	var raw: Image=app.scene_view.viewport.get_texture().get_image()
+	if raw.get_size()!=app.scene_view.viewport.size or not raw.get_format() in [Image.FORMAT_RGB8,Image.FORMAT_RGBA8] or not image.get_format() in [Image.FORMAT_RGB8,Image.FORMAT_RGBA8]:reason="unsupported readback extent or pixel format"
+	if not Rect2i(Vector2i.ZERO,raw.get_size()).has_point(texel):reason="source texel outside independent viewport"
+	if not reason.is_empty():
+		result.reason=reason;return result
+	var base:=raw.get_pixelv(texel)
+	var observed:=image.get_pixelv(sample)
+	result.pixel=observed
+	if base.a!=1. or observed.a!=1.:
+		result.reason="unsupported translucent scene or screen sample";return result
+	var expected:=base
+	if ScenePalette.is_neon():
+		expected=Color(base.r*(1.-SETUP_MASK.a)+SETUP_MASK.r*SETUP_MASK.a,base.g*(1.-SETUP_MASK.a)+SETUP_MASK.g*SETUP_MASK.a,base.b*(1.-SETUP_MASK.a)+SETUP_MASK.b*SETUP_MASK.a,1.)
+		# No clamping, normalization, fitted alpha or threshold relaxation.
+		result.pixel=Color((observed.r-SETUP_MASK.r*SETUP_MASK.a)/(1.-SETUP_MASK.a),(observed.g-SETUP_MASK.g*SETUP_MASK.a)/(1.-SETUP_MASK.a),(observed.b-SETUP_MASK.b*SETUP_MASK.a)/(1.-SETUP_MASK.a),1.)
+	var error:=maxf(absf(observed.r-expected.r),maxf(absf(observed.g-expected.g),absf(observed.b-expected.b)))
+	result.supported=true;result.reason="supported";result.composite_ok=base.g>.45 and base.b>.3 and error<=COMPOSITE_TOLERANCE
+	result.source_texel=[texel.x,texel.y];result.base_rgb=[base.r,base.g,base.b];result.observed_rgb=[observed.r,observed.g,observed.b];result.expected_rgb=[expected.r,expected.g,expected.b];result.maximum_error=error
+	return result
 func native_pixels() -> Image:
 	if not app.renderer.begin_native_readback():return null
 	await app.renderer.native_frame_ready
@@ -69,6 +122,9 @@ func run() -> void:
 			check(app.canvas.scene_setup and scene.size==Vector2(app.scene_view.viewport.size) and frame.size.x/frame.size.y>1.77,"Setup fills the exact wide/tall texture extent while retaining native frame aspect")
 			check(app.canvas.scene_contains(point) and not Rect2(Vector2.ZERO,app.canvas.resolution).has_point(point),"the test model lies genuinely beyond native output and inside the editable scene")
 			var image:=view_image();var pixel:=image.get_pixelv(Vector2i(screen))
+			var sample: Dictionary=setup_sample(image,screen,scene,frame)
+			pixel=sample.pixel
+			check(sample.supported and sample.composite_ok,"independent raw scene texel matches the source-pinned display composition: "+sample.reason)
 			check(pixel.g>.45 and pixel.b>.3,"actual shared-world scene pixels show the off-frame model at its native-projected location")
 			check(not app.scene_view.camera.get_cull_mask_value(20),"Setup camera excludes colored selection-ID geometry")
 			pointer(point,true);pointer(point,false);await settled()
@@ -126,7 +182,7 @@ func run() -> void:
 			check(app.world_selection.selected.is_empty(),"changing view mode invalidates a queued selection readback")
 			app.scene_view.set_setup(true,false);app.scene_view.set_guides(false,false,false);await settled()
 			image.save_png(folder.path_join("setup-%dx%d-roll%d.png"%[int(extent.x),int(extent.y),roundi(roll*100)]));selected.save_png(folder.path_join("selected-%dx%d-roll%d.png"%[int(extent.x),int(extent.y),roundi(roll*100)]))
-			cases.append({"extent":str(extent),"roll":roll,"green_outline_pixels":green,"guide_pixels":inside_changes,"outside_guide_pixels":outside_changes})
+			cases.append({"extent":str(extent),"roll":roll,"green_outline_pixels":green,"guide_pixels":inside_changes,"outside_guide_pixels":outside_changes,"display_composition":sample})
 	# A recovery thumbnail requests a current native frame even while Setup has
 	# suspended ordinary native drawing. Capture the real caller's detached input.
 	rig.data.position=[-.2,0,0];app.renderer.evaluate(app.keys,0);app.scene_view.sync();await settled()

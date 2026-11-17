@@ -3,6 +3,10 @@ extends Node
 const FORMAT := "studio_workspace_3"
 const DEFAULT := {"left":"world","right":"properties","bottom":"timeline","top":""}
 const DEFAULT_VERTICAL_OFFSET := -234
+# Neon Pro: the Timeline dock opens about 166 px tall (52 transport + 52 ruler and Camera lane + lanes;
+# the grab strip overlays the transport's top padding), like the mock's 160 px timeline; classic keeps -234.
+const NEON_VERTICAL_OFFSET := -166
+const STRIP_HEIGHT := 10.0 # neon Simple grab zone, overlaid on the panel content's top padding
 const EDGES := ["left","right","bottom","top"]
 var app
 var vertical: VSplitContainer
@@ -25,6 +29,21 @@ var preview: Panel
 var preview_label: Label
 var last_window_geometry := {}
 var dock_tree: RefCounted
+# Neon Pro step 3: the World dock is a 64 px icon rail while it is narrow, and the full list
+# (Tree + buttons + help) once wider than RAIL_LIMIT, floating or tabbed elsewhere.
+const StudioTheme = preload("res://src/studio_theme.gd")
+const RAIL_LIMIT := 140.0
+const LIST_WIDTH := 232.0
+var world_rail := false
+var world_mode_active := false
+var world_unfold: Button
+var strip_hot := "" # neon Simple: the panel whose overlaid grab strip is under the mouse
+# Neon: while World is docked alone on the left, the left dock spans the full height (mock grid:
+# the 64 px rail runs from the header to the bottom and the timeline starts beside it). The splits
+# are nested horizontal[left, vertical[top_split[top, right_split], bottom]] then; otherwise (classic,
+# World floating or sharing / leaving the left dock) Codex's vertical[top_split[top, horizontal[left,
+# right_split]], bottom]. The same four splits keep their roles and offsets (state() is unchanged).
+var full_left := false
 
 func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarchy: Control, inspector: Control, transport: Control, ruler: Control, tracks: Control) -> void:
 	app=owner_app
@@ -54,17 +73,41 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 	old_middle.queue_free()
 	for split in [vertical,top_split,horizontal,right_split]:
 		split.add_theme_constant_override("separation",10)
+		split.add_theme_constant_override("minimum_grab_thickness",8)
 		split.get_drag_area_control().tooltip_text="Drag to resize these panels. Drag a panel title to dock, tab or detach it."
 		split.dragged.connect(func(_offset):save_later())
 	preview=Panel.new();preview.mouse_filter=Control.MOUSE_FILTER_IGNORE;preview.z_index=100;preview.hide();app.add_child(preview)
-	var style:=StyleBoxFlat.new();style.bg_color=Color(.15,.48,.8,.18);style.border_color=Color(.15,.48,.8,.9);style.set_border_width_all(2);style.set_corner_radius_all(6);preview.add_theme_stylebox_override("panel",style)
 	preview_label=Label.new();preview_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;preview_label.position=Vector2(12,8);preview.add_child(preview_label)
 	timer=Timer.new();timer.one_shot=true;timer.wait_time=.35;timer.timeout.connect(save);add_child(timer)
 	refresh_slots()
+	panels.world.resized.connect(refresh_world_mode)
+	apply_style()
 	if not load_layout():call_deferred("apply_default_split")
+	apply_nesting()
+
+func want_full_left() -> bool:
+	return StudioTheme.is_neon() and groups.left==["world"] and not floating.has("world")
+
+func apply_nesting() -> void:
+	# Only on docking or theme changes (checked in _process while no heading drag runs), never on a
+	# divider drag: the World rail/list switch by width does not change the nesting.
+	var want:=want_full_left()
+	if want==full_left:return
+	var root: Control=horizontal if full_left else vertical
+	var column: Node=root.get_parent();var index:=root.get_index()
+	full_left=want
+	if want:
+		horizontal.remove_child(right_split);top_split.remove_child(horizontal);top_split.add_child(right_split)
+		column.remove_child(vertical);column.add_child(horizontal);column.move_child(horizontal,index);horizontal.add_child(vertical)
+	else:
+		horizontal.remove_child(vertical);column.remove_child(horizontal);column.add_child(vertical);column.move_child(vertical,index)
+		top_split.remove_child(right_split);top_split.add_child(horizontal);horizontal.add_child(right_split)
+	right_split.size_flags_vertical=Control.SIZE_EXPAND_FILL;vertical.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	# A same-width dock move must update the rail even when no resized signal fires.
+	refresh_world_mode()
 
 func apply_default_split() -> void:
-	vertical.split_offset=DEFAULT_VERTICAL_OFFSET
+	vertical.split_offset=NEON_VERTICAL_OFFSET if StudioTheme.is_neon() else DEFAULT_VERTICAL_OFFSET
 	top_split.split_offset=180
 
 func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
@@ -73,6 +116,11 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 	var handle:=Button.new();handle.text="⋮⋮  "+title;handle.alignment=HORIZONTAL_ALIGNMENT_LEFT;handle.size_flags_horizontal=Control.SIZE_EXPAND_FILL;handle.mouse_default_cursor_shape=Control.CURSOR_DRAG;handle.tooltip_text="Drag near a panel edge to split beside it, into its center for tabs, or into open space for a window. Esc cancels.";header.add_child(handle)
 	handle.gui_input.connect(func(event):header_input(id,event))
 	var menu:=MenuButton.new();menu.text="▾";menu.tooltip_text="Dock, tab, detach or reset this panel";header.add_child(menu)
+	header.draw.connect(func():draw_header(id,header))
+	panel.draw.connect(func():draw_panel(id,panel))
+	if id=="world":
+		world_unfold=Button.new();world_unfold.name="WorldUnfold";world_unfold.focus_mode=Control.FOCUS_NONE;world_unfold.visible=false
+		world_unfold.pressed.connect(unfold_world);handle.add_child(world_unfold);handle.resized.connect(place_world_unfold)
 	var popup:=menu.get_popup()
 	for text in ["Dock left","Dock right","Dock below","Dock above","Float panel","Reset workspace","Tab with World","Tab with Properties","Tab with Timeline"]:popup.add_item(text)
 	popup.about_to_popup.connect(func():
@@ -86,7 +134,7 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 	var body: Control=panel
 	if id=="world" or id=="timeline":
 		var scroll:=ScrollContainer.new();scroll.name="WorldContentScroll" if id=="world" else "TimelineContentScroll";scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-		scroll.custom_minimum_size=Vector2(120,120) if id=="world" else Vector2(0,96);scroll.follow_focus=true
+		scroll.custom_minimum_size=Vector2(64 if StudioTheme.is_neon() else 120,120) if id=="world" else Vector2(0,96);scroll.follow_focus=true
 		scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 		panel.add_child(scroll);body=scroll
 	if content.get_parent():content.reparent(body,false)
@@ -94,6 +142,185 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 	if id=="properties":content.custom_minimum_size.y=maxf(content.custom_minimum_size.y,96)
 	content.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
+
+func apply_style() -> void:
+	# Neon Pro step 3: flat 28 px #0C0D11 dock headers (11/600 uppercase #8C93A3 title, ghost chevron
+	# menu), flush panels; classic styles keep the "⋮⋮ Title ▾" button row. Node structure is kept:
+	# panels[id].get_child(0).get_child(0) is still the drag handle, child(1) the docking menu.
+	var neon:=StudioTheme.is_neon()
+	for split in [vertical,top_split,horizontal,right_split]:
+		# Left/right docks sit flush against the stage (the drag area keeps an 8 px grab band).
+		# Neon: the timeline's top hairline meets the stage and inspector directly too (mock).
+		split.add_theme_constant_override("separation",0 if neon else 10)
+	for id in panels:style_header(id)
+	refresh_world_mode(true)
+	style_preview()
+	# Neon Pro step 9: docked tab groups and floating panel windows follow a theme switch too.
+	if dock_tree:
+		for key in dock_tree.books:
+			if is_instance_valid(dock_tree.books[key]):dock_tree.style_book(dock_tree.books[key])
+	for id in floating:
+		if is_instance_valid(floating[id]):floating[id].theme=app.theme
+
+func style_preview() -> void:
+	# Drop preview: neon rgba(46,140,255,.18) fill, 2 px #2E8CFF border, r8, #F4F6FA label
+	# (16.6:1 on the stage); classic keeps its blue rgba(38,122,204) box with default text.
+	if not is_instance_valid(preview):return
+	var neon:=StudioTheme.is_neon()
+	var style:=StyleBoxFlat.new()
+	style.bg_color=Color(StudioTheme.BLUE,.18) if neon else Color(.15,.48,.8,.18)
+	style.border_color=StudioTheme.BLUE if neon else Color(.15,.48,.8,.9)
+	style.set_border_width_all(2);style.set_corner_radius_all(8 if neon else 6);preview.add_theme_stylebox_override("panel",style)
+	if neon:
+		preview_label.add_theme_color_override("font_color",StudioTheme.TEXT);preview_label.add_theme_font_override("font",StudioTheme.font(600))
+	else:
+		preview_label.remove_theme_color_override("font_color");preview_label.remove_theme_font_override("font")
+
+func ghost_boxes(control: Button,pad: Vector4,hover:=Color.TRANSPARENT) -> void:
+	var clear:=StudioTheme.flat(Color.TRANSPARENT,Color.TRANSPARENT,6,0,pad);var lit:=StudioTheme.flat(hover,Color.TRANSPARENT,6,0,pad)
+	for suffix in ["","_mirrored"]:
+		for state in ["normal","disabled"]:control.add_theme_stylebox_override(state+suffix,clear)
+		for state in ["hover","pressed","hover_pressed"]:control.add_theme_stylebox_override(state+suffix,lit)
+	control.add_theme_stylebox_override("focus",StyleBoxEmpty.new())
+
+func ghost_colors(control: Button,normal: Color,hover: Color) -> void:
+	for prefix in ["font_","icon_"]:
+		control.add_theme_color_override(prefix+("normal_color" if prefix=="icon_" else "color"),normal)
+		for state in ["focus_color","disabled_color"]:control.add_theme_color_override(prefix+state,normal)
+		for state in ["hover_color","pressed_color","hover_pressed_color"]:control.add_theme_color_override(prefix+state,hover)
+
+func clear_style(control: Control) -> void:
+	for suffix in ["","_mirrored"]:
+		for state in ["normal","disabled","hover","pressed","hover_pressed"]:control.remove_theme_stylebox_override(state+suffix)
+	control.remove_theme_stylebox_override("focus")
+	for prefix in ["font_","icon_"]:
+		for state in ["color","normal_color","focus_color","disabled_color","hover_color","pressed_color","hover_pressed_color"]:control.remove_theme_color_override(prefix+state)
+	control.remove_theme_font_override("font");control.remove_theme_font_size_override("font_size");control.remove_theme_constant_override("icon_max_width")
+
+func style_header(id: String) -> void:
+	var panel: Control=panels[id];var header: HBoxContainer=panel.get_child(0);var handle: Button=header.get_child(0);var menu: MenuButton=header.get_child(1)
+	var neon:=StudioTheme.is_neon()
+	header.queue_redraw();panel.queue_redraw()
+	if not neon:
+		for control in [handle,menu]:clear_style(control)
+		handle.text="⋮⋮  "+str(panel.name);handle.clip_text=false;handle.alignment=HORIZONTAL_ALIGNMENT_LEFT;menu.text="▾";menu.icon=null;menu.custom_minimum_size=Vector2.ZERO
+		menu.visible=true;menu.modulate.a=1.0;handle.custom_minimum_size.y=0
+		header.custom_minimum_size.y=0;header.add_theme_constant_override("separation",2);panel.remove_theme_constant_override("separation")
+		header.z_index=0
+		return
+	handle.text=str(panel.name).to_upper();handle.clip_text=true
+	handle.add_theme_font_override("font",StudioTheme.label_variation());handle.add_theme_font_size_override("font_size",11)
+	ghost_colors(handle,StudioTheme.TEXT3,StudioTheme.TEXT)
+	menu.text="";menu.icon=StudioTheme.icon("chevron",Color.WHITE,12);menu.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	menu.add_theme_constant_override("icon_max_width",12);ghost_colors(menu,StudioTheme.TEXT3,StudioTheme.TEXT)
+	header.add_theme_constant_override("separation",0);panel.add_theme_constant_override("separation",0)
+	header.z_index=0
+	if strip_hot==id:strip_hot=""
+	var rail:=id=="world" and world_rail
+	handle.alignment=HORIZONTAL_ALIGNMENT_CENTER if rail else HORIZONTAL_ALIGNMENT_LEFT
+	handle.size_flags_vertical=Control.SIZE_SHRINK_END if rail else Control.SIZE_FILL
+	menu.size_flags_vertical=Control.SIZE_SHRINK_BEGIN if rail else Control.SIZE_FILL
+	if rail:
+		# Rail: [unfold 40x40] above a centred "WORLD" (mock: padding-top 8, gap 6, label margin 2 0,
+		# gap 6). The docking menu becomes a 12 px chevron beside the unfold button: the header's
+		# negative separation lets the handle span the whole rail so the label stays centred.
+		header.custom_minimum_size.y=78;header.add_theme_constant_override("separation",-12)
+		ghost_boxes(handle,Vector4(0,8,0,8));ghost_boxes(menu,Vector4(0,8,0,0),StudioTheme.HOVER);menu.custom_minimum_size=Vector2(12,48)
+	elif strip_header(id):
+		# Neon Simple, docked: no PROPERTIES / TIMELINE title bar (the mock has none). A 10 px grab strip
+		# keeps the drag handle (panels[id].get_child(0).get_child(0)) visible and clickable; its
+		# tooltip still explains docking, and Advanced / floating panels get the full header back.
+		handle.text="";handle.custom_minimum_size.y=STRIP_HEIGHT;handle.add_theme_font_size_override("font_size",1)
+		header.custom_minimum_size.y=STRIP_HEIGHT
+		ghost_boxes(handle,Vector4(0,0,0,0),StudioTheme.HOVER);ghost_boxes(menu,Vector4(0,0,0,0),StudioTheme.HOVER)
+		menu.visible=false
+		# The strip overlays the top 10 px (padding) of the content instead of pushing it down (mock alignment:
+		# the inspector and the timeline start right under the bar). Godot picks controls by tree
+		# order, not z_index, so strip_input() routes presses and hover there to the handle.
+		panel.add_theme_constant_override("separation",-int(STRIP_HEIGHT));header.z_index=1
+	else:
+		header.custom_minimum_size.y=28
+		ghost_boxes(handle,Vector4(12,0,4,0));ghost_boxes(menu,Vector4(6,0,6,0),StudioTheme.HOVER);menu.custom_minimum_size=Vector2(28,0)
+	if not strip_header(id):
+		menu.visible=true;handle.custom_minimum_size.y=0
+		if not rail:handle.add_theme_font_size_override("font_size",11)
+	if rail:
+		# Mock: only the unfold button above WORLD; the docking chevron shows while the header is hovered.
+		menu.modulate.a=1.0 if header.get_global_rect().has_point(header.get_global_mouse_position()) else 0.0
+		if not header.has_meta("hover_hooked"):
+			header.set_meta("hover_hooked",true)
+			for control in [handle,menu]:
+				control.mouse_entered.connect(func():if id=="world" and world_rail:menu.modulate.a=1.0)
+				control.mouse_exited.connect(func():if id=="world" and world_rail and not header.get_global_rect().has_point(header.get_global_mouse_position()):menu.modulate.a=0.0)
+	else:menu.modulate.a=1.0
+	if id=="world":style_world_unfold()
+
+func strip_header(id: String) -> bool:
+	return StudioTheme.is_neon() and id!="world" and app and not app.advanced_mode and not floating.has(id)
+
+func style_world_unfold() -> void:
+	if not world_unfold:return
+	var docked:=want_full_left()
+	world_unfold.visible=StudioTheme.is_neon() and docked
+	world_unfold.tooltip_text="Unfold World list" if world_rail else "Fold World into the icon rail"
+	world_unfold.icon=StudioTheme.icon("panel-unfold" if world_rail else "panel-fold",Color.WHITE,18 if world_rail else 16)
+	world_unfold.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER;world_unfold.add_theme_constant_override("icon_max_width",18 if world_rail else 16)
+	ghost_boxes(world_unfold,Vector4(0,0,0,0),StudioTheme.HOVER);ghost_colors(world_unfold,StudioTheme.TEXT3,StudioTheme.TEXT)
+	for suffix in ["","_mirrored"]:
+		for state in ["hover","pressed","hover_pressed"]:(world_unfold.get_theme_stylebox(state+suffix) as StyleBoxFlat).set_corner_radius_all(8)
+	place_world_unfold()
+
+func place_world_unfold() -> void:
+	# The unfold button is a child of the drag handle (outside the handle's own rect in rail mode), so
+	# the handle stays panels.world.get_child(0).get_child(0) and its centre stays a drag target.
+	if not world_unfold or not world_unfold.visible:return
+	var handle: Control=world_unfold.get_parent();var header: Control=handle.get_parent()
+	if world_rail:
+		world_unfold.size=Vector2(40,40);world_unfold.position=Vector2(minf(roundf((header.size.x-40)*.5),header.size.x-52)-handle.position.x,8-handle.position.y)
+	else:
+		world_unfold.size=Vector2(24,24);world_unfold.position=Vector2(handle.size.x-26,roundf((handle.size.y-24)*.5))
+
+func refresh_world_mode(force:=false) -> void:
+	# Sibling controls can still emit resized while their application is being dismantled.
+	if not world_mode_active or not is_inside_tree() or is_queued_for_deletion() or not is_instance_valid(app) or not app.is_inside_tree() or app.is_queued_for_deletion():return
+	if not panels.has("world") or not is_instance_valid(panels.world) or not panels.world.is_inside_tree() or panels.world.is_queued_for_deletion() or not is_instance_valid(app.world_selection) or not app.world_selection.is_inside_tree() or app.world_selection.is_queued_for_deletion():return
+	# The fold/unfold action resizes the solitary left dock, so other placements keep the list.
+	var rail: bool=want_full_left() and panels.world.size.x<RAIL_LIMIT
+	if rail==world_rail and app.world_selection.rail_mode==rail and not force:
+		style_world_unfold();return
+	if not app.world_selection.set_rail(rail,force):return
+	world_rail=rail
+	# List mode keeps 8 px between the dock edges and the Tree / buttons; the rail is edge to edge.
+	var scroll: ScrollContainer=panels.world.get_node_or_null("WorldContentScroll")
+	if scroll:
+		if StudioTheme.is_neon() and not rail:scroll.add_theme_stylebox_override("panel",StudioTheme.flat(Color.TRANSPARENT,Color.TRANSPARENT,0,0,Vector4(8,6,8,8)))
+		else:scroll.remove_theme_stylebox_override("panel")
+	style_header("world")
+
+func unfold_world() -> void:
+	# Widen the left dock to the World list (or back to the rail) like a divider drag, saved the same way.
+	if not want_full_left():return
+	# Folding aims at the 64 px rail without clamping again: the list's own minimum can be a little
+	# wider than the rail's, and the dock settles at the rail width once it switches to the rail.
+	horizontal.clamp_split_offset()
+	horizontal.split_offset+=int(roundf((LIST_WIDTH if world_rail else 64.0)-slots.left.size.x))
+	if world_rail:horizontal.clamp_split_offset()
+	save_later()
+
+func draw_header(id: String,header: Control) -> void:
+	if not StudioTheme.is_neon():return
+	if not strip_header(id):header.draw_rect(Rect2(Vector2.ZERO,header.size),StudioTheme.BAR)
+	if not (id=="world" and world_rail) and not strip_header(id):header.draw_rect(Rect2(0,header.size.y-1,header.size.x,1),StudioTheme.LINE)
+	if id=="timeline":header.draw_rect(Rect2(0,0,header.size.x,1),StudioTheme.LINE2) # Neon Pro step 6: mock top edge
+
+func draw_panel(id: String,panel: Control) -> void:
+	# The World dock is a #0C0D11 column with a 1 px #22252E right edge (mock rail).
+	# Neon Pro step 6: the Timeline panel is #0C0D11 too (its 1 px #2C303B top edge is in draw_header).
+	# Neon Pro step 9: a floating panel window gets the #0C0D11 chrome behind every panel.
+	if not StudioTheme.is_neon() or not (id in ["world","timeline"] or floating.has(id)):return
+	panel.draw_rect(Rect2(Vector2.ZERO,panel.size),StudioTheme.BAR)
+	if id=="timeline":return
+	if panel.get_window()==app.get_window():panel.draw_rect(Rect2(panel.size.x-1,0,1,panel.size.y),StudioTheme.LINE)
 
 func root_point(event: InputEventMouse,window: Window,in_gui:=false) -> Vector2:
 	var point:=event.global_position if in_gui else event.position
@@ -106,7 +333,42 @@ func header_input(id: String,event: InputEvent) -> void:
 	elif event is InputEventMouse and panels[id].get_window()!=app.get_window():route_drag(event,panels[id].get_window(),true)
 
 func _input(event: InputEvent) -> void:
-	if not drag_id.is_empty():route_drag(event,app.get_window())
+	if not drag_id.is_empty():route_drag(event,app.get_window());return
+	if event is InputEventMouse:strip_input(event)
+
+func strip_input(event: InputEventMouse) -> void:
+	# Neon Simple: a docked panel's 10 px grab strip lies over its content's top edge, where the content
+	# would get the mouse first. Hovering lights the strip; a left press there starts the same heading
+	# drag as header_input(). Nothing changes for Advanced, classic styles or floating panels.
+	var hot:=""
+	# The Home screen is an overlay Control inside app (not a Window), so has_dialog() misses it.
+	var blocked: bool=not app or app.exporting or (app.home!=null and is_instance_valid(app.home) and app.home.visible)
+	if not blocked:
+		# Cheap rect tests first; the dialog check walks the whole app tree, so only on a hit.
+		for id in panels:
+			if not strip_header(id):continue
+			var handle: Control=panels[id].get_child(0).get_child(0)
+			if handle.is_visible_in_tree() and handle.get_global_rect().has_point(event.position):hot=id;break
+		if not hot.is_empty() and app.has_dialog(app):hot=""
+	# A splitter's drag area wins where it overlaps the strip (it reaches a few px into the panel).
+	# The nested dock splits are looked up only for a left press, not on every hover.
+	var press: bool=event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed
+	if not hot.is_empty():
+		var splits: Array=[vertical,top_split,horizontal,right_split]
+		if press:splits+=vertical.find_children("DockSplit*","SplitContainer",true,false)
+		for split in splits:
+			if is_instance_valid(split) and split.is_visible_in_tree() and split.get_drag_area_control().get_global_rect().has_point(event.position):hot="";break
+	if hot!=strip_hot:
+		for id in [strip_hot,hot]:
+			if id.is_empty() or not panels.has(id):continue
+			# Hover: a 2 px line along the panel's top edge (the strip itself stays see-through).
+			var lit:=StudioTheme.flat(Color.TRANSPARENT,StudioTheme.LINE3 if id==hot else Color.TRANSPARENT,0,0,Vector4.ZERO)
+			lit.border_width_top=2 if id==hot else 0
+			for suffix in ["","_mirrored"]:(panels[id].get_child(0).get_child(0) as Button).add_theme_stylebox_override("normal"+suffix,lit)
+		strip_hot=hot
+	if not hot.is_empty() and press:
+		drag_id=hot;drag_start=event.position;dragged=false
+		get_viewport().set_input_as_handled()
 
 func route_drag(event: InputEvent,window: Window,in_gui:=false) -> void:
 	if drag_id.is_empty():return
@@ -170,7 +432,7 @@ func refresh_slots() -> void:dock_tree.refresh()
 func restore_to_book(id: String,book: TabContainer) -> void:
 	if floating.has(id):
 		panels[id].set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
-		var window: Window=floating[id];floating.erase(id);panels[id].reparent(book,false);window.hide();window.queue_free()
+		var window: Window=floating[id];floating.erase(id);panels[id].reparent(book,false);window.hide();window.queue_free();style_header(id)
 	elif panels[id].get_parent()!=book:
 		panels[id].set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);panels[id].reparent(book,false)
 func dock(id: String,slot: String) -> void:dock_tree.dock_edge(id,slot)
@@ -183,7 +445,7 @@ func float_panel(id: String,point:=Vector2i(-100000,-100000)) -> void:
 		if point.x!=-100000:floating[id].position=point
 		return
 	var window:=Window.new();window.visible=false;window.title=panels[id].name;window.theme=app.theme;window.exclusive=false;window.transient=true;window.force_native=not OS.has_feature("web");window.keep_title_visible=true;window.content_scale_factor=app.get_window().content_scale_factor
-	app.add_child(window);floating[id]=window;panels[id].reparent(window,false);panels[id].set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	app.add_child(window);floating[id]=window;panels[id].reparent(window,false);panels[id].set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);style_header(id)
 	window.min_size=Vector2i(panels[id].get_combined_minimum_size()).max(Vector2i(220,160))
 	window.close_requested.connect(func():dock(id,slot_of(id)))
 	window.size=Vector2i(900,380) if id=="timeline" else Vector2i(340,600)
@@ -194,6 +456,7 @@ func float_panel(id: String,point:=Vector2i(-100000,-100000)) -> void:
 		if not drag_id.is_empty():route_drag(event,window)
 		elif event is InputEventKey and not (window.gui_get_focus_owner() is LineEdit or window.gui_get_focus_owner() is TextEdit):app._input(event))
 	refresh_slots();save_later()
+	if id=="world":call_deferred("refresh_world_mode",true)
 
 func reset() -> void:
 	loading=true;cancel_drag();dock_tree.replace(dock_tree.defaults())
@@ -213,6 +476,7 @@ func save_later() -> void:
 	if not loading and timer:timer.start()
 
 func _process(_delta: float) -> void:
+	if drag_id.is_empty() and horizontal and want_full_left()!=full_left:apply_nesting()
 	var geometry:={}
 	for id in floating:
 		var window: Window=floating[id];geometry[id]=[window.position,window.size]
@@ -278,5 +542,14 @@ func load_layout() -> bool:
 func _notification(what: int) -> void:
 	if what==NOTIFICATION_APPLICATION_FOCUS_OUT:cancel_drag()
 
+func _enter_tree() -> void:
+	world_mode_active = true
+	# Reparenting a live application/layout restores its presentation signal exactly once.
+	if panels.has("world") and is_instance_valid(panels.world) and not panels.world.is_queued_for_deletion() and not panels.world.resized.is_connected(refresh_world_mode):panels.world.resized.connect(refresh_world_mode)
+	if panels.has("world"):call_deferred("refresh_world_mode",true)
+
 func _exit_tree() -> void:
+	world_mode_active = false
+	# Disconnect before save() or later sibling removal can resize the old World panel.
+	if panels.has("world") and is_instance_valid(panels.world) and panels.world.resized.is_connected(refresh_world_mode):panels.world.resized.disconnect(refresh_world_mode)
 	if timer and not timer.is_stopped():save()

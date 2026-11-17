@@ -220,7 +220,7 @@ func run() -> void:
 	DirAccess.make_dir_recursive_absolute(folder)
 	fixture = folder.path_join("authored69.glb")
 	bad_chunks = folder.path_join("authored-bad-chunks.glb")
-	var raw := Marshalls.base64_to_raw(GOLDEN_GLB.replace("\n", ""))
+	var raw := Marshalls.base64_to_raw(GOLDEN_GLB.replace("\r", "").replace("\n", ""))
 	var file := FileAccess.open(fixture, FileAccess.WRITE)
 	file.store_buffer(raw)
 	file.close()

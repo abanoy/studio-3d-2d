@@ -3242,7 +3242,6 @@ Automation repetition was stopped using goal control per saved goal; owner
 explicitly requested continue working, so resumed actual verification/documentation.
 Next initialOpen responsiveness with transactional main-thread adoption.
 
-
 ## 2026-11-07 UTC — private CPU loading for ordinary HAS Open
 
 Open now joins private low-priority manifest/dependency/PNG/audio loading before
@@ -6048,3 +6047,484 @@ Scalar evidence: experiments/neon_mmd_fixture_recovery_actual_20261117 (INDEXe9f
 Main remains52f functional/1019; stable implementation52/54 and acceptance55/62
 remain unchanged. Human checks deferred; no owner interruption, installed-tool
 replacement, artwork upload, review overwrite or additional cleanup.
+
+## Imported redesign and Windows review history through 3a3701a
+
+## 2026-11-07 UTC — Simple/Advanced redesign port (Claude, branch claude/studio-redesign)
+
+Re-applied the separate "Simplicity is key" redesign onto main in six small commits:
+Simple top bar (New/Open/Save/Add/Export/More), Draw/Camera/Pose tabs and tool strip
+driving the existing dropdowns, new StudioTheme icons, F11 fullscreen beside the
+existing Settings scale, Simple empty-state hints, fading status toast (status.text is
+kept) and plain wording, opt-in dark theme and keyboard navigation in Settings, header
+title with unsaved dot. Presentation only; tests/ untouched. Linux xvfb: ui, editor,
+pose, world_selection, recovery_write, recovery pass (same as baseline). Windows
+verify.py not run. Details, dropped items and runner: docs/REDESIGN-PORT.md.
+
+## 2026-11-15 UTC — redesign branch merged with main f0dd57a (Claude, claude/studio-redesign)
+
+Merge commit (no history rewrite) brought claude/studio-redesign up to main f0dd57a
+(164 commits). src/app.gd conflicts resolved keeping main's behaviour: Add scene
+uses main's import_actions.add path and filters (pick_scene_file now calls it, so the
+Simple Add menu matches); view and physics rows keep main's ScrollContainers
+(ViewControlsScroll/PhysicsControlsScroll, physics_bar is the scroll strip); empty-state
+hint added beside main's scene_view. canvas_view.scene_contains() got a 0.01 px edge
+tolerance (32-bit round trip rejected an exact-edge camera drag at the redesign's canvas
+size). Linux xvfb: main and merged branch both pass ui, editor, pose, world_selection,
+recovery_write, recovery; scene_view_unit passes. Windows verify.py not run.
+
+## 2026-11-15 UTC — Neon Pro port step 1: Midnight Neon theme foundation (Claude, claude/studio-redesign)
+
+The owner approved a new look: the Iridescent Pro layout with the Midnight Neon theme. Step 1 of 9:
+StudioTheme gains `style` (neon default; light = the classic skin unchanged; dark = the classic
+re-tone), neon tokens, a precomputed oklch gradient, SVG neon rings, fills and switches rendered at
+2x with a size override, a neon make_theme() branch with type variations for later steps, and
+24-unit line icons from the mock's paths (classic styles keep the glossy icons). Settings (Advanced)
+"Interface theme" dropdown saved as [display] theme only when changed (an old dark=true still opens
+in classic dark). The canvas letterbox and header use neon colours. Layout, visibility and texts
+are unchanged. Geist is not bundled: SystemFont fallbacks (Inter on Linux). The selection colour is
+pale blue because workspace_controls requires #163854 selected text. Linux xvfb: ui, editor, pose,
+world_selection, recovery_write and recovery pass, plus the extra UI smokes (see
+docs/REDESIGN-PORT.md). Windows verify.py was not run.
+
+## 2026-11-15 UTC — Neon Pro port step 2: header bar (Claude, claude/studio-redesign)
+
+The header is now one 56 px neon bar, following the mock. It holds the brand mark, the project
+name over a real save line (Saved, Unsaved changes, Not saved yet, or "Saved N min ago" only after
+a save seen in this session), ghost New / Open / Save, an Add menu, the Draw / Camera / Pose tabs
+centred in an overlay group (still the same `mode_tabs` driving `pick_mode`), the Advanced switch
+(a CheckButton with the same pressed wiring), More, a Settings gear and the neon Export movie button
+with its MP4 chip. Advanced adds a wrapping row with all its extra buttons. `fit_header()` measures
+the groups and makes buttons icon-only, drops the chip and makes the tabs icon-only only as far as a
+narrow window needs, so the bar fits 1200 px without horizontal scrolling. The window title, menu
+items, shortcut decoration and Advanced button set are unchanged. Linux xvfb results are in
+docs/REDESIGN-PORT.md. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 3: World rail and dock headers (Claude, claude/studio-redesign)
+
+The World dock now opens as the mock's 64 px icon rail: an unfold button, the WORLD drag handle, one
+labelled tile per World row and effect (building, runner, sparkle or box icon), a neon bar on the
+selected tile, and Frame / Save asset .has... / Size map… tiles at the bottom. The tiles mirror the
+Tree. Clicking one calls the same `select_entity()`, which now also syncs the rail, and building
+never selects anything. When the dock is wider than 140 px, floating or tabbed elsewhere, it shows
+the list: the restyled Tree, full-width buttons and the help text. The unfold/fold button changes
+the left split like a divider drag. All dock headers are flat 28 px bars with uppercase titles and a
+chevron menu, and the handle/menu node structure is unchanged. The left and right docks are flush
+with the stage. Classic styles keep the old list and headers. Details and deviations are in
+docs/REDESIGN-PORT.md. Linux xvfb: ui, editor, pose, world_selection, recovery_write and recovery
+pass, and workspace_docking, workspace_controls and asset_package_smoke pass. Windows verify.py was
+not run.
+
+## 2026-11-16 UTC — Neon Pro port step 4: viewport overlays (Claude, claude/studio-redesign)
+
+The centre column is now the mock's `#05060A` stage. Above the canvas, the view row has the
+labelled tool pill with keycaps (Simple Draw), a Save key / Mouse and keys / hint strip (Simple
+Camera) or a new Pose joints / Move model / Mouse and keys strip (Simple Pose, driving
+`pose_editor.operation`). Codex's view controls sit in a second chip pill. On the right are the
+"Frame N · S.SS s" badge and a mode badge (layer, camera key at the playhead, or model and bone). The
+canvas sits in a 12 px margin with gradient viewfinder corners drawn by a mouse-ignoring overlay.
+In Scene setup, the area outside the frame is dimmed (editor only). Pose joints are white rings,
+and selected ones pink. Under the canvas, the stage footer shows "Camera view · 16:9" (+ lens in
+Camera), the status toast and the onion / handle legend. The toast has a neon check ring (coral for
+problems), a bold first sentence, a grey rest and a 6 s neon strip. `status` moved into the toast:
+it is still the source of truth and is never cleared, hidden in Simple and a plain line in Advanced.
+The footer under the timeline keeps its buttons and only takes space in Simple when one shows
+(`recovery_status` is Advanced-only in neon). Canvas maths, input routing, visibility of Codex
+controls and status semantics are unchanged. Classic styles keep the old view. Deviations (Codex
+pill on a second line at 1440, no Turn model, Frame guide line) are in docs/REDESIGN-PORT.md.
+Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 5: inspector Draw panel (Claude, claude/studio-redesign)
+
+The Properties inspector is 288 px on `#0C0D11` with a left hairline, and `section()` is flat in neon
+(padding 18 16, bottom hairline, 12/600 heading, optional meta via `section_meta()`). At start-up,
+`build_draw_inspector()` rearranges `drawing_section` into the mock's cards by moving Codex's
+controls. It does not replace any: a tool card (neon tile, title, hint, keycap; follows
+`tool.selected`) with the fill / sampler / selection panels under it. A Colour row: the real
+ColorPickerButton drawn as the ringed current swatch, plus four session-only recent colours seeded
+coral / sun yellow / sky blue / ink. Brush size: `radius` as a flat "6 px" value with a preview dot and
+a bound neon slider; `brush_opacity` gets the same row. Layer: the picker with a chip and chevron,
+Layers…, and Show / Onion switch rows with "● 1 before ● 1 after". A Next card that uses
+`refresh_empty_hint()`'s conditions and is hidden when there is nothing to do. A 44 px New drawing
+PrimaryButton with the visible "Copy drawing here" under it (there is no copy-drawing shortcut, so
+there is no keycap hint). Then "More drawing options": project colours, tablet pressure, the tool
+dropdown, the Krita and video imports and Reference sheet. Advanced controls stay in their cards and
+are visible in Advanced only. Unknown future children fall through to "More". Drawing logic, palette
+and layer data, defaults and control types are unchanged. Classic styles keep the old card.
+Deviations (dock header kept, tool dropdown still visible in Simple, extra opacity row, kept Codex
+texts, 2 px ring) are in docs/REDESIGN-PORT.md. Linux xvfb: ui, editor, pose, world_selection,
+recovery_write and recovery pass. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 6: timeline (Claude, claude/studio-redesign)
+
+The Timeline dock is `#0C0D11` with a `#2C303B` top edge and flush rows. Transport (52 px): a 190 px
+block over the lane labels with Codex's first / previous / next buttons as 40 px ghost icons around a
+40 px neon-ring Play (`StudioTheme.play_ring()`, icon swaps play/pause; `play_button` keeps its action
+and tooltip), a mono readout (`transport_time` "1.50" + `transport_info` "/ 4.00 s · 24 fps", which
+still holds the fps text; Advanced appends Codex's frame range, the full sentence is the tooltip), the
+Frame SpinBox as a compact mono field and the Drawings / Camera keys / Model keys legend. Codex's
+sequence toolbar and the zoom/pan bar share one compact row (`compact_timeline_rows()`,
+`timeline_navigation.apply_neon_style()`), so the ruler sits on the lanes. TimelineView draws neon in
+`neon_draw()` / `neon_content()`: a seconds ruler in Simple (frames in Advanced), the Camera lane in the
+ruler with pink diamonds, lane labels with colour bars and counts, the active-lane gradient (active
+layer in Draw, Camera in Camera, selected object), blue drawing blocks with the held one glowing,
+violet model diamonds (body rigs use the app's cached authored key frames, `timeline_row_keys()`),
+mint audio and a neon playhead with a frame tag. Geometry, hit tests, gestures, signals and
+`DEFAULT_VERTICAL_OFFSET` are unchanged; classic styles use Codex's drawing untouched (new Codex
+drawing needs mirroring in the neon pair). Deviations (lane order kept, extra toolbar row, dock header,
+four buttons + Frame field, frame 0 at the label edge, no fake clip names) are in
+docs/REDESIGN-PORT.md. Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 7: inspector Camera panel (Claude, claude/studio-redesign)
+
+In neon, `build_camera_inspector()` rearranges `camera_section` at start-up (after
+`camera_transform_editor` adds its panel) into the mock's cards by moving Codex's controls; none is
+replaced. A "Movie camera" header card. "Camera keys" with one 44 px row per key: diamond, placeholder
+tile, "Frame N" and "S.SS s · start/end". The row at the playhead is raised, and a "Just saved" chip
+marks the key `insert_key()` stored last (`last_saved_key`, session-only, never saved). A click runs
+`stop(); set_frame()`. Lens: Wide / Normal / Close presets of 24 / 35 / 60 mm, applied through
+`fov.value` with `lens_fov()`, the inverse of step 4's `lens_mm()`, so the caption, the meta and the
+presets agree. In Advanced only, a Field of view slider is bound to `fov`. A Framing guides switch
+calls `scene_view.set_guides(on, on)`. Save camera key [K] is a PrimaryButton with Codex's hint, and
+Delete key is Advanced. Next comes a "How camera keys work" help card, then "Camera details"
+(Advanced: mouse-controls text, Numeric camera view…, near/far, interpolation). In neon the
+mouse-controls text is Advanced-only inline; Simple reads it in the "Mouse and keys" popover. Shared
+helpers `neon_tile()`, `inspector_header()`, `inspector_card()` and `style_primary()` were factored
+out (the Draw panel is pixel-identical), plus `StudioTheme.key_glow()`. Key storage, interpolation,
+fov semantics and `scene_view.gd` are unchanged, and classic styles keep the old card. Deviations
+(Advanced-only FOV slider, mm-based presets, placeholder thumbnails, Save key and hint kept in the
+panel) and Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 8: inspector Pose panel (Claude, claude/studio-redesign)
+
+In neon, `pose_editor.build_neon_inspector()` rearranges the Pose panel at start-up (app.gd calls it
+after the MMD importer adds its two buttons) into the mock's cards by moving Codex's controls; none is
+replaced. A header card shows the selected joint's display name (or the model name, or "No model
+yet") with "Joint on <model>" / "Whole model", plus a violet "◆ Keyed" chip when the model has an
+authored pose key at the current frame (the diamond the timeline shows). "Pose tool" has Rotate/Move
+and Local/World segmented controls that only drive the existing `operation` / `space` OptionButtons
+(Rotate/Move through `app.pick_pose_operation`), which stay visible under "More pose options".
+"Motion · Whole model" holds `limb_ik` and `hold_feet` as switch rows with sub-lines, Planted feet…
+and the Advanced Reverse limb bend. A Next card ("Next: add a scene or a model" / "pick a model to
+pose" / "pose frame N"; Simple Pose only, hidden when the model has keys). Reset selected (a
+PrimaryButton, now also shown in Simple in neon, as in the mock) and Frame model (outline) have the
+hint "Reset returns this joint to its rest pose." (model wording when the root is selected). Below:
+"Keys and helpers" (Record pose key, Auto-key [Advanced], Body poses…, Motion feeling…, Movement
+path…, Shapes / expressions…, MMD imports), "Bones" (summary, search, tree, Codex's Alt/drag help),
+"Visibility" and "More pose options" (everything else in Codex's order, including base shapes, which
+stay Advanced-only). `refresh_neon_inspector()` runs from `_process` and writes only on change. Pose
+maths, gizmo, auto-key, IK, contacts and the sub-editor files are unchanged; classic styles keep the
+old card. The mock's Bend/Twist sliders and Physics follow-through switch are not implemented (owner
+decisions, see docs/REDESIGN-PORT.md, with the Linux xvfb results). Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 9: Advanced restyle, secondary surfaces, final pass (Claude, claude/studio-redesign)
+
+This is the last neon pass. Every change is neon-only, so Classic light and Classic dark draw exactly
+as before; a pixel comparison of every surface found no difference apart from the live overlay timing.
+The Advanced debug line is mono 11 `#8C93A3` on a `#0C0D11` band with a `#22252E` hairline
+(`style_app_footer()`). The footer row (recovery status, export buttons) draws the same band to the
+window edges (`draw_app_footer()`), and only when it has content, so Simple is unchanged. Docked tab
+groups (`dock_tree.style_book()`) use the theme's neon tabs: RAISE plus a neon underline, `#8C93A3`
+for the others, on a `#0C0D11` strip. The old `#163854` text, dark on dark, is gone. Theme switches
+restyle every book and floating window. The drop preview is rgba(46,140,255,.18) with a 2 px
+`#2E8CFF` border and a `#F4F6FA` label. A floating Properties window draws the `#0C0D11` chrome. Also
+neon now: the Home backdrop (`#08090C` at 97 %), the movement-path plot (stage card, violet key dots,
+light mono frame numbers; the help text says "Violet dots" in neon), the sequence strip (timeline-lane
+colours) and the reference-sheet backdrop. Dialogs, Advanced inspector sections, the Advanced header
+row and the plain status line were already neon from steps 1-8 and were checked. The colour sweep
+(`Color("`, `surface(`) found nothing else light in neon.
+Remaining deviations from the mock are recorded in docs/REDESIGN-PORT.md:
+- System fonts stand in for Geist / Geist Mono: Inter and JetBrains Mono on Linux, Segoe UI and
+  Cascadia / Consolas on Windows.
+- Codex controls stay visible in Simple: lighting, Frame scene, Undo/Redo, scene setup/guides, the
+  physics row and More drawing options.
+- Sample-data items in the mock are not faked.
+- Owner decisions: the Bend / Twist sliders (and Physics follow-through), a Simple FOV slider, and
+  Turn model.
+Linux xvfb: ui, editor, pose, world_selection, recovery_write and recovery pass. Full extra.sh is at
+baseline (color_sampler has its 3 known failures). sequence_editor, reference_sheet, home and
+tutorial_catalog smokes pass. movement_path_smoke fails the same way without this step. Windows
+verify.py was not run.
+
+## Neon Pro port: review 1 fixes (claude/studio-redesign)
+Implemented and checked on Linux xvfb (ui, editor, pose, world_selection, recovery_write and recovery
+pass; workspace_controls, workspace_docking, asset_package, brush_opacity, onion, palette, layers,
+first_movie and scene_view_unit pass; color_sampler keeps its 3 baseline failures;
+timeline_navigation_smoke fails the same way on the previous commit). Windows verify.py was not run.
+- Neon stage: the canvas fills the stage and the pill rows, simulation row and footer float over it.
+  `CanvasView.fit_inset` keeps the frame clear (zero in classic and in unit tests), and
+  `scene_view.copy_camera(..., frame_size)` overscans vertically in Scene setup.
+- Neon Simple: Codex's view controls are compact (icon dropdowns, Guides menu) or move to the stage
+  footer, so there is one pill row. The simulation row shows only while a simulation or recording
+  runs, and Pose's Motion block mirrors Physics / Hair & clothes. Turn model = Rotate on the model root.
+- Timeline: about 166 px. Docked dock headers are 6 px grab strips in Simple (handle node kept). The
+  sequence toolbar and zoom bar are in the transport row. Content is padded 12 px (x/frame_at
+  inverse kept). Camera lane pink, posed model lane violet with an Auto key chip.
+- Fixes: toast re-show after fade, theme switch for early windows, classic icon aliases and the
+  Settings label, camera key row restyle and view-row refit only on change, keycaps after rebinding.
+- Details, declined items and remaining deviations: docs/REDESIGN-PORT.md "Review 1 fixes".
+
+## Neon Pro port: review 2 fixes (claude/studio-redesign)
+Implemented and checked on Linux xvfb (ui, editor, pose, world_selection, recovery_write and recovery
+pass; workspace_controls 48/0, workspace_docking, workspace_nested, asset_package, brush_opacity,
+palette, layers, onion and stroke_stabilizer pass; color_sampler keeps its 3 baseline failures;
+timeline_navigation_smoke has the same single fixture failure as the previous commit). Windows
+verify.py was not run.
+- Simple grab strips overlay the content top (10 px, input routed in workspace_layout.strip_input);
+  zero-size splitter grabber (no seams); softer Export glow; gear Advanced-only in neon.
+- Stage footer reserves left/right separately, wraps a long toast to two lines, drops the legend
+  title before the legend; compact Codex chips; filled Save key icon.
+- Timeline: opaque held block, violet model boxes, no one-frame stubs, bare Camera count, ruler label
+  under the tag skipped; Simple transport row hides the range caption, empty pan bar and root crumb.
+- Header save time resets per project; neon <-> classic theme switch applies after restart.
+- Details, declined items (8/18, 15, 17) and the kept simulation-row deviation: docs/REDESIGN-PORT.md
+  "Review 2 fixes".
+
+## Neon Pro port: review 3 fixes (claude/studio-redesign)
+Implemented and checked on Linux xvfb (ui, editor, pose, world_selection, recovery_write and recovery
+pass; workspace_controls 48/0, workspace_docking 18/0, workspace_nested 13/0, workspace_resize 31/0,
+asset_package, brush_opacity, palette, layers and onion pass; color_sampler keeps its 3 baseline
+failures; timeline_navigation_unit/smoke and cel_timing_smoke give the same PASS/FAIL lines as before
+the change). Windows verify.py was not run.
+- Full-height World rail beside the timeline while World is docked alone on the left (neon nesting
+  switch in workspace_layout.apply_nesting; offsets and saved layout unchanged).
+- Inspector: single hairlines, thin scrollbar with right-pad compensation, 20 px headings, wider card
+  text column, trimmed switch labels (Pose inspector back to 288 px), aligned Advanced Brush sliders.
+- Stage footer: one-line Simple Camera toast, full lens caption, compact footer pill (Handles title).
+- Timeline: 12 px right pad, lane-boundary focus scroll, "N keys" Camera lane, fainter Camera band,
+  single scrollbar in Advanced. Scrollbar thumbs 3:1; softer tab underline glow.
+- Fixes: strip_input vs Home overlay, FOV slider sync, Fit view back in Simple, Turn model selects the
+  tree root, I/M arm path from the tool pill, live tool tooltips, cheaper camera key refresh, live
+  physics mirror tooltips.
+- Declined: LEFT 200 and asymmetric fit_inset. Details: docs/REDESIGN-PORT.md "Review 3 fixes".
+
+## Neon Pro port: finish-up (claude/studio-redesign)
+Docs and tooling only; no app code changed. Linux xvfb: ui, editor, pose, world_selection,
+recovery_write and recovery pass. Windows verify.py was not run.
+- `docs/redesign-mock/`: the approved mock images (`mock-draw.png` is the main reference,
+  `mock-camera.png`, `mock-pose.png`) and the matching app screenshots at 1440x900 (`app-draw.png`,
+  `app-camera.png`, `app-pose.png`, `app-advanced.png`).
+- `tools/linux/shoot.sh` + `tools/linux/shoot.gd`: the screenshot tool used for those images (xvfb,
+  opengl3, isolated `user://`, prefs and recovery under git-ignored `output/neon-shoot/`).
+- docs/REDESIGN-PORT.md "Neon pro theme": summary for Codex covering what changed, the file /
+  function map, theme tokens, Godot equivalents of the mock's CSS, known deviations, tests and the
+  screenshot tool.
+
+## Windows review — November 16, 2026
+
+The owner requested this review before merging. Original branch commit
+`c2d52ff5fd0f9aeffae6a343f6d4b71698ed9ff2` was tested on Windows with the approved
+Godot4.6/private-desktop runner. The first complete verifier stopped at object
+timing:28 checks,2 failures. Its old input scrolled to the end of all lanes,
+putting the last model above the new62px track viewport. The successor reveals
+the requested model row by its geometry; every original assertion remains.
+The failed run, unchanged source map and24 physically closed jobs are retained.
+
+Source review and real input checks found and corrected four regressions:
+idle Simple simulation tools were hidden; unmodified F11 overrode a saved user
+shortcut; a faded toast intercepted canvas clicks; the timeline cache retained
+deleted/prior-project model dictionaries. The original focused probe executed
+32 checks with13 failures. Corrections preserve the neon look and restore the
+existing Simple simulation strip, including fan/loose-parts/wind/recording access.
+Assigned F11 has priority; unassigned F11 still toggles fullscreen. Faded toast
+input is ignored without clearing status text. Cache entries are bounded to live rows.
+
+World's icon rail is now limited to its supported solitary left placement.
+Right, nested, tabbed and floating placements retain the full hierarchy list.
+The narrow-right/nested/floating/persisted-layout regression passes45 checks.
+Inset camera mapping passes12384 checks across576 configurations, with maximum
+projection error0.000790571px and ray error2.25e-7. Compact first/middle/last model
+clicks with drawing/audio lanes below them pass14 checks. The corrected existing
+Windows UI smoke passes23 checks and preserves Simple/Advanced render identity.
+
+The final32-check behavior probe passes. Two intermediate32/1 fixture results
+and a diagnostic are preserved: a successful empty-scene click publishes a NEW
+Camera hint, and a later click can publish another. The final test measures
+refresh's faded-message state before the click, then independently requires the
+actual canvas event; it never waits after refresh to mask a resurrection.
+
+The strict wind manifest updates only the reviewed app/pose hash rows. Its
+16-file scope,14 other rows and original94/845 predicates remain unchanged.
+The standard verifier gains one guarded `neon_workspace` group with all four
+regressions (12475 checks). Existing36 core entries remain unchanged.
+
+This is a reviewed candidate, not yet merged. The fresh complete corrected
+Windows verifier remains the final gate. Original native fixtures and earlier
+review builds are protected; no human acceptance result is inferred.
+
+### Windows focused fixture follow-up (November17UTC)
+
+The381 complete verifier stopped at animated native channels47/1; all1028
+functional files stayed unchanged. Root audited27 closed private jobs and the
+exact coordinator/Python birth identities, then released only the failed lease.
+Its raw failure and all three executed MMD/GMod/SFM fixtures remain recorded.
+
+The native-channel successor scrolls the requested channel into view and adds
+a pre-click visibility assertion. All original assertions remain;48/0 passes
+with all three native rigs. Older standalone movement fixtures also assumed
+lower channels were already visible and used a stale eager cel.image field.
+Those original errors are retained. Revealing each channel and using the current
+mutable drawing accessor passes both legacy/component profiles:34UI+13unit each.
+The Drawing API and original test were already identical in main52f; this was
+preexisting focused fixture code, not a new production Drawing change.
+
+Waveform checks reveal Audio before pixel capture and keep Classic467d45,
+four transients and RGB tolerance.02. A first Neon palette expectation failed
+14/1 because a fractional clip border is antialiased, rather than opaque.
+Diagnostic-only output preserved every predicate and identified the unmatched
+first transient. The source-derived Godot4.6 straight-edge feather expectation
+uses live geometry, with explicit unscaled/non-HDR/non-MSAA/raster guards.
+Both Neon and Classic now pass15/0, four visible bars; all13 original checks
+remain and bounds/raster guards add2. No expected color was taken from pixels,
+no tolerance/count was widened, and production colors/layout did not change.
+
+These focused results do not replace a complete default. The next frozen commit
+must run all158groups before merge; manual owner review remains deferred.
+
+
+## Windows review follow-up — 2026-11-17
+
+The strict Windows workspace checks exposed a live Tree font replacement error.
+Retaining the original Neon/classic SystemFont profiles in StudioTheme.fonts
+fixes it without changing font family, weight or Japanese fallback. Lifecycle
+guards reject styling detached/queued controls and reconnect World resize once
+on reentry. A separate mode-acceptance fix commits the layout cache only after
+the World presentation applies; one deferred refresh finishes World detachment.
+This preserves full lists in floating/right/nested/tabbed World arrangements.
+
+Actual private Windows verification now passes workspace controls48, integrated
+Neon12504 (inset12384, behavior32, compact14, rail45, lifecycle29), resize, docking
+and nested layouts. Source1029 is unchanged within the run; physical desktops
+close and root scope observations are empty. The new lifecycle fixture preserves
+all29 predicates; six explicit WeakRef types resolve parser warnings. Inset and
+Compact reuse the same full-precision JSON string for file and log, preserving
+all numeric checks and strict equality. Original failures and the incorrect
+concat-stream teardown attribution are retained and corrected in main evidence.
+
+The complete Windows default still needs a fresh successful run before merge.
+Prior f387 full passed36 core groups then failed strict workspace diagnostics.
+No owner observation, native-normal repair, PMX solver or new scale basis follows
+from these UI checks. All earlier owner reviews and installed Studio are preserved.
+
+
+## Windows scene-presentation fixture — 2026-11-17
+
+The unchanged fullffcf run stopped at scene-view102/4 because the approved Neon
+mask dims off-frame colors62percent. The source-pinned successor preserves all
+102 original semantic predicates and their thresholds, recovers underlying color
+analytically, and adds four independent raw-viewport/composited-screen checks
+under an explicit Compatibility/LDR/opaque/identity-transform profile. The fixed
+2/255 bound follows two8-bit writes; no expected value is fitted to observed
+pixels. Product code and the approved look are unchanged. Actual Windows wrapper
+now passes106/0 plus its headless unit case, all4 profiles/composites valid, source
+1029 preserved and private jobs/scopes closed. Original102/4 evidence is retained.
+The next complete default run remains unrun; no full PASS or merge is claimed.
+
+## Windows helper preview source manifest — 2026-11-17
+
+The4ed complete Windows run passed36core,Neon12504,scene106+unit12830 and
+subsequent readback/fan/wind stages, then stopped03:19:31Z at the helper-preview
+CPU source gate. Its old manifest rejected reviewed app.gd before snapshot or
+helper engine/worker/graphical launch, with0checks. Root closed49physical jobs
+(48exit0+registeredKrita cancel2), exact inline/source1029/birth/scope checks and
+released03:19:55Z. No full PASS or merge is claimed. The minimal manifest refresh
+changes only app/pose exact+LF hash strings to the reviewed Neon bytes, already
+pinned in the wind manifest. Membership25,23other rows and driver/208CPU/266GPU
+predicates are unchanged. Source-only18tamper tests and independent peer18 pass;
+fresh actual helper profiles and another complete default are still required.
+
+## Windows authored bone fixture line endings — 2026-11-17
+
+The375 complete default passed helper208CPU/266graphical and later snapshot/editing
+stages, then failed the authored bone fixture40/40 at base64 decoding. Its canonical
+Git/main52 source was identical, but the working CRLF literal retained103CRs after
+LF-only stripping. The fixture-only successor removes CR andLF before decoding;
+9360-byte golden39637fa3 and9364-byte malformed95e0c878 remain exact. One expression
+changes; all79+17predicates/wrapper/timeouts/error policy remain. Source10CPU methods
+and independent10 pass; actual Foundation167/separate77+96 and full successor are
+still required. Root closed51private jobs50exit0+Krita2 and separate headless exit1,
+source1029 unchanged, released03:51:37Z. No product change/fullPASS/merge is claimed.
+
+## Windows native fixture-root selectors — 2026-11-17
+
+Thefe9 full passed all earlier corrected stages, then shape catalogue selected a
+stale local Mima descriptor instead of the configured fixture root. Root closed
+68private jobs(67exit0+Krita2), source1029unchanged, released04:29:31Z. Catalogue
+now uses its existing fixture_output helper for that descriptor. Character-height,
+another registered later consumer, imports the same helper for its raw VRM manifest
+instead of silently missing that native case. Both default paths remain identical
+without override; all original native cases/assertions/movie thresholds remain.
+Two independent11-method source/AST CPU runs pass. Root currentMima hash/size
+matches its own retained descriptor and exact priorMain52 catalogue plan; this
+does not recover or substitute the different oldb577bundle. Actual focused checks
+and another complete default are required. Product code/look and merge status
+remain unchanged; no full PASS or artist fidelity is inferred.
+
+## Windows immediate Camera details visibility — November 17, 2026
+
+The unchanged00bf replay2 full failed camera_range60/1 because Advanced near/far
+controls were checked before the next process frame. Its parent Camera details
+visibility was only refreshed per-frame. One call to the existing guarded
+refresh_camera_inspector in refresh_workspace now synchronizes it with Advanced
+and mode changes. Values, signals, controls and original test predicates remain
+unchanged; classic's empty-inspector guard stays exact. The two reviewed app hash
+rows are refreshed in the existing wind/helper manifests; all other rows and
+memberships remain exact. Root closed92private jobs/source1029 unchanged before
+this patch. Focused graphics and a new complete frozen verifier are still UNRUN.
+No full PASS or product merge is claimed.
+
+### November 17, 2026 — native color fixture targets pixel centers
+
+The 696 full passed camera60/0 then failed color44/1. Root closed93 private jobs,
+source1029 unchanged, release17:42:05Z. An unchanged-assertion diagnostic reproduced
+the color failure: all capture/view/world/source operands passed, while float
+mapping put the intended integer-boundary click one row above the expected pixel.
+The picked color exactly matched that actual neighboring pixel. The Source case
+also shifted one row, hidden by matching neighbor color; the third case was exact.
+
+Only the native fixture click now aims half a pixel inside the SAME expected
+pixel. Expected image indices, all44 runtime assertions, thresholds, three native
+cases and application source remain unchanged. The source inverse and independent
+peer review pass. Actual corrected focus and a new frozen full remain required;
+no full PASS, product merge or new owner copy is claimed.
+
+## 2026-11-17 — complete native Windows Neon PASS and qualified merge
+
+The restored-MMD full finished21:00:57.9135725Z, verifier exit0, with all158 result
+groups,36 core groups,21 movies, actualMMD45, Neon12504, camera60 and color44.
+Root's unchanged strictf223 audit PASSED;196 physical private jobs closed
+(195 exit0, one registered Krita cancellation). Source1029 remained exact.
+Inventory a4b47b3b; public scalar packet941e9aea. Original157-group run stays
+UNQUALIFIED. Runtimes6, SourceIO574 original+copy, exporter120, original36fixtures
+and41 additional pinned inputs were unchanged in the post-run audit.
+
+Before merging, corrected B runtime8272/eacc completed7.527s exit0/reaped with
+source/input/tool preservation and zero scopes. Its resource profile correctly
+remains refused: two unused internal Viewer images account for four issues and
+one repeated unclassified reference accounts for two. Reference owner/type/content
+remain unobserved. Export branch UNKNOWN; no normal repair/fidelity/adoption.
+Future inspection needs the tested1029 Main bridge after this merge, not old52.
+
+Root reviewed the supplied mock/app images and39 canonical source changes, then
+prepared the nonfastforward merge of3a3701a into Mainf21b9ec. All31 new ancestral
+commits/152 novel blobs were inspected by path scope: no private/native/media
+payload; seven PNG versions are the already approved mock/app screenshots.
+Only LLM conflicted; both conflict additions were retained, and both complete
+parent versions remain available through merge ancestry. Exact tested raw1029
+bytes were restored under the explicit Git/EOL bridge (113 text files); originals,
+old output/cache dirt and all Git shell-script LF blobs were preserved.
+
+Build admission needs a narrow source-only EOL successor: three declared Linux
+scripts are testedCRLF on Windows and committedLF for Linux. Add only those three
+text paths, rederive only their canonical delta hashes, retain all39 raw changes
+and reasons, strictfull gates and binary/content refusals. Studio source/tests
+are unchanged. Qualified owner copy and actual cold187 remain UNRUN; preserve
+the final merged HEAD unchanged through activation/copy/cold validation.
+
+Mainf21b9ec was independently retrieved:113 exact public files,3,213,295 Git bytes,
+3,234,655 working bytes, three EOL recipes; COMPLETE proofca28ba8c. The initial
+empty oversize progress response was refused; actual Git-blob endpoint retrieval
+corrected only that cached fallback. Raw native reports/counts/art remain private.
+Source-only copy/validator preparation607c/8fc4 and proposals e717/dabd/b2df are
+ready for the next checkpoint. Human acceptance remains deferred; stable52/54
+implementation and55/62 acceptance stay unchanged. No new cleanup or installation.

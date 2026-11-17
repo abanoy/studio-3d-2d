@@ -438,6 +438,7 @@ func refresh() -> void:
 	if not is_instance_valid(toolbar):return
 	back.visible=not active_owner.is_empty()
 	breadcrumb.text="Main scene" if active_owner.is_empty() else "Editing sequence: "+str(asset(active_owner).get("name","Sequence"))
+	breadcrumb.visible=not preload("res://src/studio_theme.gd").is_neon() or app.advanced_mode or not active_owner.is_empty() # neon Simple: no crumb at the root
 	strip_scroll.visible=not clips().is_empty();strip.custom_minimum_size.y=maxi(26,clips().size()*26);strip.queue_redraw()
 func _process(_delta: float) -> void:
 	if not is_instance_valid(toolbar):return

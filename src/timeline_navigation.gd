@@ -25,6 +25,26 @@ func setup(parent: Control,body,header) -> void:
 	scrollbar.value_changed.connect(func(value):if not busy():start=value;publish())
 	caption=Label.new();caption.custom_minimum_size.x=140;bar.add_child(caption)
 	for view in [tracks,ruler]:view.navigation_requested.connect(func(action,at):navigate(action,at))
+func apply_neon_style() -> void:
+	# Neon Pro step 6 (row style only): 28 px ghost zoom buttons (− / + icons, "Fit"), 12/500
+	# #B4BAC7, and a mono 11 px #8C93A3 range caption. Same controls, same signals.
+	var S:=preload("res://src/studio_theme.gd")
+	bar.add_theme_constant_override("separation",4)
+	var pad:=Vector4(8,0,8,0)
+	var clear:=S.flat(Color.TRANSPARENT,Color.TRANSPARENT,6,0,pad)
+	for control in [zoom_out,zoom_in,fit]:
+		control.size_flags_vertical=Control.SIZE_SHRINK_CENTER;control.custom_minimum_size.y=28
+		app.override_button_boxes(control,clear,S.flat(S.HOVER,Color.TRANSPARENT,6,0,pad),S.flat(S.RAISE,Color.TRANSPARENT,6,0,pad),clear)
+		app.override_button_colors(control,S.TEXT2,S.TEXT,Color.WHITE)
+		control.add_theme_font_override("font",S.font(500));control.add_theme_font_size_override("font_size",12)
+	for pair in [[zoom_out,"minus"],[zoom_in,"add"]]:
+		var control: Button=pair[0]
+		# 16 px icons tinted #B4BAC7 when enabled; disabled stays a dim #8C93A3 so the states differ.
+		control.text="";control.icon=S.icon(pair[1],Color.WHITE,16);control.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER;control.custom_minimum_size.x=28
+		control.add_theme_constant_override("icon_max_width",16);control.add_theme_color_override("icon_disabled_color",Color(S.TEXT3,0.45))
+	scrollbar.size_flags_vertical=Control.SIZE_SHRINK_CENTER
+	caption.custom_minimum_size.x=96;caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;caption.size_flags_vertical=Control.SIZE_SHRINK_CENTER
+	caption.add_theme_font_override("font",S.mono(400));caption.add_theme_font_size_override("font_size",11);caption.add_theme_color_override("font_color",S.TEXT3)
 func busy() -> bool:
 	return app.exporting or tracks.dragging or ruler.dragging or not tracks.moving_id.is_empty() or tracks.audio_gesture_active() or tracks.cel_gesture_active()
 func length() -> float:return float(maxi(1,int(app.video.duration_frames)))
@@ -42,6 +62,9 @@ func update_controls() -> void:
 	zoom_out.disabled=controls_busy or span<=0
 	fit.disabled=controls_busy or span<=0
 	scrollbar.mouse_filter=Control.MOUSE_FILTER_IGNORE if controls_busy else Control.MOUSE_FILTER_STOP
+	# Neon Simple: the pan track appears once there is something to pan (zoomed in); Advanced keeps it.
+	var pan_shown: bool=span>0 or app.advanced_mode or not preload("res://src/studio_theme.gd").is_neon()
+	if scrollbar.visible!=pan_shown:scrollbar.visible=pan_shown
 func _process(_delta: float) -> void:
 	if scrollbar and busy()!=controls_busy:update_controls()
 func sync() -> void:
