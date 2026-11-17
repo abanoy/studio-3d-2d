@@ -1,0 +1,176 @@
+{
+  "format": "has_sourceio_setter_probe_cpu_validation_1",
+  "status": "CPU_SOURCE_READY_NATIVE_UNRUN",
+  "observed_utc": "2026-11-17T00:07:11.640962+00:00",
+  "seconds": 4.1800272000000405,
+  "python": "C:\\Program Files\\Python313\\python.exe",
+  "unit_tests": {
+    "run": 38,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "synthetic_only": true,
+    "log": "......................................\n----------------------------------------------------------------------\nRan 38 tests in 0.430s\n\nOK\n"
+  },
+  "python_sources_parsed": [
+    "audit_packet.py",
+    "instrumentation.py",
+    "setter_probe.py",
+    "setter_support.py",
+    "stage_after_full.py",
+    "test_instrumentation.py",
+    "test_setter_support.py",
+    "test_vvd_normals.py",
+    "verify_packet.py",
+    "vvd_normals.py"
+  ],
+  "source_files": {
+    "audit_packet.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\audit_packet.py",
+      "bytes": 5766,
+      "sha256": "dbc1f401417a6236d81dc3ddfe20e8496fb7691cd4df91a0c0cd74cedbc33e83"
+    },
+    "instrumentation.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\instrumentation.py",
+      "bytes": 3306,
+      "sha256": "361fcad3dbff79bfd5367cd71ac5a769fc8155d6f38a1b061d5ce6e631f5a895"
+    },
+    "setter_probe.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\setter_probe.py",
+      "bytes": 11125,
+      "sha256": "96be93bd4068be8ea1c80a3cf551f241f54fb73f6d62c4ff9907d00dee67fb90"
+    },
+    "setter_support.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\setter_support.py",
+      "bytes": 6019,
+      "sha256": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9"
+    },
+    "stage_after_full.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\stage_after_full.py",
+      "bytes": 5873,
+      "sha256": "ea4d7f7caf322fdaf410e5f3183daba40f46a476669b8e698f62d31e2673d5ec"
+    },
+    "test_instrumentation.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\test_instrumentation.py",
+      "bytes": 3327,
+      "sha256": "4da8acbdf8ee2d6542bb038779ec6c6fa70deab8ef892cc74f84ac95bda56817"
+    },
+    "test_setter_support.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\test_setter_support.py",
+      "bytes": 5126,
+      "sha256": "39c6d8dcffceae5e14cd3d2ccb2373d1c845af096ba6207ebe7168659f829043"
+    },
+    "test_vvd_normals.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\test_vvd_normals.py",
+      "bytes": 6598,
+      "sha256": "820dd0bc8d7e311f6523015cd6bc4a719dbff45d4dd7cb3469a5d035cc867090"
+    },
+    "verify_packet.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\verify_packet.py",
+      "bytes": 1200,
+      "sha256": "9737ae84d7f1bdfc376b18dd7e8bbedc2d39fac76de39f650baddcdf82823979"
+    },
+    "vvd_normals.py": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_setter_boundary_probe_20261116\\vvd_normals.py",
+      "bytes": 4184,
+      "sha256": "f3a959cc8dff0bd03528b20886984857b16a21944d2f5ef627cf4c4c05ebcdfb"
+    }
+  },
+  "actual_input_pins": {
+    "mdl": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\native\\junko hair.mdl",
+      "bytes": 37644,
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+    },
+    "vvd": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\native\\junko hair.vvd",
+      "bytes": 618368,
+      "sha256": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0"
+    },
+    "vtx": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\native\\junko hair.dx90.vtx",
+      "bytes": 173309,
+      "sha256": "924954f27574fc83945934a13e6b4e90049b5d46356053dc4b41ec43d3ce364a"
+    },
+    "saved_capture": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\normal-boundary-20261116-attempt2\\capture\\PRIVATE_NORMALS.json",
+      "bytes": 17627667,
+      "sha256": "0ef144f3ffe093d6c01f31e5e6fadf98e87a5c7de2b4013c27d42809dabd6921"
+    },
+    "importer": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647\\blender_bindings\\models\\mdl49\\import_mdl.py",
+      "bytes": 12880,
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+    }
+  },
+  "approved_catalogues_unchanged": {
+    "runtime_executables": 6,
+    "SourceIO_files": 574,
+    "exporter_sources": 120
+  },
+  "actual_VVD_profile": {
+    "checksum": 804168914,
+    "lod0_vertex_count": 9661,
+    "raw_lod0_identity_map": true,
+    "normal_arrays_published": false
+  },
+  "actual_importer_AST": {
+    "setter_sites": 1,
+    "validate_sites": 1,
+    "observer_calls": 4,
+    "original_function_AST_restored": true
+  },
+  "prior_closed_normal_context": {
+    "private_capture_sha256": "0ef144f3ffe093d6c01f31e5e6fadf98e87a5c7de2b4013c27d42809dabd6921",
+    "comparison_sha256": "7548b23cfcad071c167695ef09c747626f9d6e308403ec41d67000df04d5246f",
+    "prior_closed": true
+  },
+  "actual_full_source_context": {
+    "commit": "52f63c944ded7a651da871524d23a345b606424d",
+    "functional_source_count": 1019,
+    "files": {
+      "state": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\state.json",
+        "sha256": "01a5ddb0ef974b270dd600965077daafdb9b60d64163b129fe36acdf62bc757c"
+      },
+      "launch": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\launch.json",
+        "sha256": "7623acd4cd9d4e7a2623412437363e3da4acb1c121ad87e71fff87e887de93dd"
+      },
+      "birth": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\root-birth-observation.json",
+        "sha256": "ce9b8c1197b02b3d575083635419b7309160ea70ab08896d819f5d112c2da6df"
+      },
+      "source_before": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\source-before.json",
+        "sha256": "4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7"
+      },
+      "source_after": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\source-after.json",
+        "sha256": "4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7"
+      },
+      "host": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\authoritative-host-termination.json",
+        "sha256": "855751b98107c4f44f21f44e0637ede87c5ac777aad1bc397d33d5e684d61d5a"
+      },
+      "raw_host": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\authoritative-host-terminal.json",
+        "sha256": "7990c6c85985a6962671f3738bbb05faf6a26691a4d4670f8333cdd85016cb7f"
+      },
+      "release": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\graphics-lease-released.json",
+        "sha256": "1129b5d8a7d387d546453ff7c9f30b9470bee99840a4da0c2d4eee51a44eafbe"
+      },
+      "report": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\verification.json",
+        "sha256": "78b1f773d91ecc75a9984940afabc0fe28f06e2f1676e8c6ae0137011e9a89f0"
+      }
+    }
+  },
+  "Blender_executed": false,
+  "SourceIO_import_executed": false,
+  "Git_executed": false,
+  "CIM_executed": false,
+  "main_functional_files_modified": false,
+  "normal_fidelity": "FAILED_UNQUALIFIED; previous original raw-GLB failure remains unchanged"
+}

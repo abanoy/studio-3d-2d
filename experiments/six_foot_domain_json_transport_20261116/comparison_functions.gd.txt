@@ -1,0 +1,91 @@
+# Test-only transport comparison. Never use float tolerance or stringify/parse
+# to compare the encoder: that can conceal lost integer precision or NaN/null.
+const MAX_EXACT_CROSS_TYPE_INTEGER := 9007199254740992
+
+func exact_json_number(actual, expected) -> bool:
+	var a_type := typeof(actual)
+	var e_type := typeof(expected)
+	if not a_type in [TYPE_INT,TYPE_FLOAT] or not e_type in [TYPE_INT,TYPE_FLOAT]: return false
+	if a_type == TYPE_FLOAT and not is_finite(actual): return false
+	if e_type == TYPE_FLOAT and not is_finite(expected): return false
+	if a_type == e_type: return actual == expected
+	var integer: int = actual if a_type == TYPE_INT else expected
+	if integer < -MAX_EXACT_CROSS_TYPE_INTEGER or integer > MAX_EXACT_CROSS_TYPE_INTEGER: return false
+	return float(actual) == float(expected)
+
+func json_differences(actual, expected, path: String="$", depth: int=0, allow_number_representation: bool=true) -> Array:
+	var a_type := typeof(actual)
+	var e_type := typeof(expected)
+	var delta := {"path":path,"actual_type":type_string(a_type),"expected_type":type_string(e_type)}
+	if depth > 64:
+		delta["reason"] = "depth_limit"; return [delta]
+	if a_type in [TYPE_INT,TYPE_FLOAT] and e_type in [TYPE_INT,TYPE_FLOAT]:
+		var number_equal := exact_json_number(actual,expected)
+		if number_equal and (allow_number_representation or a_type == e_type): return []
+		delta["reason"] = "number_representation" if number_equal else "number_value_or_nonfinite"
+		delta["exact_numeric_equal"] = number_equal
+		if is_finite(float(actual)) and is_finite(float(expected)):
+			delta["actual_number"] = actual; delta["expected_number"] = expected
+		return [delta]
+	if a_type != e_type:
+		delta["reason"] = "type"; return [delta]
+	if a_type == TYPE_DICTIONARY:
+		var differences: Array = []
+		if actual.size() != expected.size():
+			delta["reason"] = "object_key_count"; differences.append(delta)
+		for key in actual:
+			if typeof(key) != TYPE_STRING or not expected.has(key):
+				differences.append({"path":path,"reason":"unexpected_or_nonstring_key"})
+		for key in expected:
+			if typeof(key) != TYPE_STRING or not actual.has(key):
+				differences.append({"path":path,"reason":"missing_or_nonstring_key"})
+			else:
+				differences.append_array(json_differences(actual[key],expected[key],path+"."+key,depth+1,allow_number_representation))
+		return differences
+	if a_type == TYPE_ARRAY:
+		if actual.size() != expected.size():
+			delta["reason"] = "array_length"; return [delta]
+		var differences: Array = []
+		for index in range(actual.size()):
+			differences.append_array(json_differences(actual[index],expected[index],path+"["+str(index)+"]",depth+1,allow_number_representation))
+		return differences
+	if not a_type in [TYPE_NIL,TYPE_BOOL,TYPE_STRING]:
+		delta["reason"] = "non_json_type"; return [delta]
+	if actual != expected:
+		delta["reason"] = "value"; return [delta]
+	return []
+
+func compare_contract(name: String, actual, expected, equal: bool) -> void:
+	mark("transport.comparator."+name,json_differences(actual,expected).is_empty() == equal)
+
+func run_comparator_contracts() -> void:
+	compare_contract("int_float_exact",9,9.0,true)
+	compare_contract("float_int_exact",9.0,9,true)
+	compare_contract("nested_number_exact",{"a":[{"b":9}]},{"a":[{"b":9.0}]},true)
+	compare_contract("largest_safe_positive",9007199254740992,9007199254740992.0,true)
+	compare_contract("largest_safe_negative",-9007199254740992,-9007199254740992.0,true)
+	compare_contract("unsafe_integer_alias",9007199254740993,9007199254740992.0,false)
+	compare_contract("unsafe_negative_alias",-9007199254740993,-9007199254740992.0,false)
+	compare_contract("same_large_integer",9007199254740993,9007199254740993,true)
+	compare_contract("true_is_not_one",true,1,false)
+	compare_contract("false_is_not_zero",false,0.0,false)
+	compare_contract("string_is_not_number","9",9,false)
+	compare_contract("different_integer",9,10.0,false)
+	compare_contract("different_fraction",9,9.000000000000002,false)
+	compare_contract("nan_refused",NAN,NAN,false)
+	compare_contract("infinity_refused",INF,INF,false)
+	compare_contract("negative_infinity_refused",-INF,-INF,false)
+	compare_contract("null_exact",null,null,true)
+	compare_contract("null_is_not_false",null,false,false)
+	compare_contract("case_sensitive_strings","Model","model",false)
+	compare_contract("ordered_arrays",[1,2],[2.0,1.0],false)
+	compare_contract("array_length",[1],[1.0,2.0],false)
+	compare_contract("missing_null_key",{}, {"a":null},false)
+	compare_contract("extra_key",{"a":null},{},false)
+	compare_contract("object_order_irrelevant",{"a":1,"b":2},{"b":2.0,"a":1.0},true)
+	compare_contract("integer_object_key_refused",{1:9},{"1":9.0},false)
+	compare_contract("native_vector_refused",Vector3.ZERO,Vector3.ZERO,false)
+	var nested = null
+	for unused in range(66): nested = [nested]
+	compare_contract("depth_limit",nested,nested,false)
+	mark("transport.comparator.raw_variant_type_mismatch_is_reproduced",{"schema_version":9} != {"schema_version":9.0} and 9 == 9.0)

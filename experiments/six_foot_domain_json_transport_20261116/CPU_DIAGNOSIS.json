@@ -1,0 +1,207 @@
+{
+  "format": "has_six_foot_json_transport_cpu_diagnosis_1",
+  "passed": true,
+  "checks": 59,
+  "named_checks": {
+    "corpus434": true,
+    "schema_encode_0.exact_json_value_equal": true,
+    "schema_encode_0.only_new_int9": true,
+    "schema_encode_1.exact_json_value_equal": true,
+    "schema_encode_1.only_new_int9": true,
+    "schema_encode_2.exact_json_value_equal": true,
+    "schema_encode_2.only_new_int9": true,
+    "schema_encode_3.exact_json_value_equal": true,
+    "schema_encode_3.only_new_int9": true,
+    "schema_encode_4.exact_json_value_equal": true,
+    "schema_encode_4.only_new_int9": true,
+    "schema_encode_5.exact_json_value_equal": true,
+    "schema_encode_5.only_new_int9": true,
+    "schema_encode_6.exact_json_value_equal": true,
+    "schema_encode_6.only_new_int9": true,
+    "legacy_identity_encode_0.exact_json_value_equal": true,
+    "legacy_identity_encode_0.legacy_no_type_delta": true,
+    "legacy_identity_encode_1.exact_json_value_equal": true,
+    "legacy_identity_encode_1.legacy_no_type_delta": true,
+    "legacy_identity_encode_2.exact_json_value_equal": true,
+    "legacy_identity_encode_2.legacy_no_type_delta": true,
+    "legacy_identity_encode_3.exact_json_value_equal": true,
+    "legacy_identity_encode_3.legacy_no_type_delta": true,
+    "legacy_identity_encode_4.exact_json_value_equal": true,
+    "legacy_identity_encode_4.legacy_no_type_delta": true,
+    "predicted_strict_failures_match_recorded_seven": true,
+    "mirror_comparator.int_float": true,
+    "mirror_comparator.float_int": true,
+    "mirror_comparator.nested": true,
+    "mirror_comparator.safe_positive": true,
+    "mirror_comparator.safe_negative": true,
+    "mirror_comparator.unsafe_alias": true,
+    "mirror_comparator.unsafe_negative": true,
+    "mirror_comparator.large_int_exact": true,
+    "mirror_comparator.true_one": true,
+    "mirror_comparator.false_zero": true,
+    "mirror_comparator.string_number": true,
+    "mirror_comparator.changed_number": true,
+    "mirror_comparator.changed_fraction": true,
+    "mirror_comparator.nan": true,
+    "mirror_comparator.inf": true,
+    "mirror_comparator.negative_inf": true,
+    "mirror_comparator.null": true,
+    "mirror_comparator.null_false": true,
+    "mirror_comparator.case": true,
+    "mirror_comparator.array_order": true,
+    "mirror_comparator.array_length": true,
+    "mirror_comparator.missing_null": true,
+    "mirror_comparator.extra_key": true,
+    "mirror_comparator.object_order": true,
+    "mirror_comparator.nonstring_key": true,
+    "mirror_comparator.native_type": true,
+    "mirror_comparator.depth_limit": true,
+    "all_ten_transform_checks_byte_text_unchanged": true,
+    "encoder_entire_file_byte_unchanged": true,
+    "corpus_entire_file_byte_unchanged": true,
+    "gd28_contracts_present": true,
+    "gd444_plus28_plus8_is480": true,
+    "domain_no_tolerance_edit": true
+  },
+  "predicted_encode_outcomes": {
+    "schema_encode_0": {
+      "old_strict_comparison_would_pass": false,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": [
+        {
+          "path": "$.document.schema_version",
+          "actual_type": "int",
+          "expected_type": "float",
+          "reason": "number_representation",
+          "exact_numeric_equal": true,
+          "actual_number": 9,
+          "expected_number": 9.0
+        }
+      ]
+    },
+    "schema_encode_1": {
+      "old_strict_comparison_would_pass": false,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": [
+        {
+          "path": "$.document.schema_version",
+          "actual_type": "int",
+          "expected_type": "float",
+          "reason": "number_representation",
+          "exact_numeric_equal": true,
+          "actual_number": 9,
+          "expected_number": 9.0
+        }
+      ]
+    },
+    "schema_encode_2": {
+      "old_strict_comparison_would_pass": false,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": [
+        {
+          "path": "$.document.schema_version",
+          "actual_type": "int",
+          "expected_type": "float",
+          "reason": "number_representation",
+          "exact_numeric_equal": true,
+          "actual_number": 9,
+          "expected_number": 9.0
+        }
+      ]
+    },
+    "schema_encode_3": {
+      "old_strict_comparison_would_pass": false,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": [
+        {
+          "path": "$.document.schema_version",
+          "actual_type": "int",
+          "expected_type": "float",
+          "reason": "number_representation",
+          "exact_numeric_equal": true,
+          "actual_number": 9,
+          "expected_number": 9.0
+        }
+      ]
+    },
+    "schema_encode_4": {
+      "old_strict_comparison_would_pass": false,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": [
+        {
+          "path": "$.document.schema_version",
+          "actual_type": "int",
+          "expected_type": "float",
+          "reason": "number_representation",
+          "exact_numeric_equal": true,
+          "actual_number": 9,
+          "expected_number": 9.0
+        }
+      ]
+    },
+    "schema_encode_5": {
+      "old_strict_comparison_would_pass": false,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": [
+        {
+          "path": "$.document.schema_version",
+          "actual_type": "int",
+          "expected_type": "float",
+          "reason": "number_representation",
+          "exact_numeric_equal": true,
+          "actual_number": 9,
+          "expected_number": 9.0
+        }
+      ]
+    },
+    "schema_encode_6": {
+      "old_strict_comparison_would_pass": false,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": [
+        {
+          "path": "$.document.schema_version",
+          "actual_type": "int",
+          "expected_type": "float",
+          "reason": "number_representation",
+          "exact_numeric_equal": true,
+          "actual_number": 9,
+          "expected_number": 9.0
+        }
+      ]
+    },
+    "legacy_identity_encode_0": {
+      "old_strict_comparison_would_pass": true,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": []
+    },
+    "legacy_identity_encode_1": {
+      "old_strict_comparison_would_pass": true,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": []
+    },
+    "legacy_identity_encode_2": {
+      "old_strict_comparison_would_pass": true,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": []
+    },
+    "legacy_identity_encode_3": {
+      "old_strict_comparison_would_pass": true,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": []
+    },
+    "legacy_identity_encode_4": {
+      "old_strict_comparison_would_pass": true,
+      "exact_json_value_comparison_would_pass": true,
+      "strict_differences": []
+    }
+  },
+  "actual_old_godot_run": {
+    "checks": 444,
+    "failures": 7,
+    "result_sha256": "9a0e01df46b18e00446b5e4e1290925cb53ec14760346313af0b74ef1823cf98"
+  },
+  "gd_successor_executed": false,
+  "gd_successor_parsed": false,
+  "python_oracle_cpu_only": true,
+  "prediction_is_actual_gd_payload_evidence": false
+}

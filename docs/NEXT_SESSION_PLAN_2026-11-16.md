@@ -1,5 +1,9 @@
 # HAS continuation — November 16, 2026
 
+Current priority: review the owner-approved Neon Pro branch before merge and
+run its Windows verifier. See the appended history and
+`experiments/neon_windows_original_20261116/PREPARATION.json`.
+
 Continue independent work. The owner deferred manual review because busy and
 explicitly resumed this task. Ask no further manual questions; record no human
 result. Keep all original assets, installed tools and earlier reviews protected.

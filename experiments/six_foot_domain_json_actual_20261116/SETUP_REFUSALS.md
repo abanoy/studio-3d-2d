@@ -1,0 +1,1 @@
+The first source audit refused at `all_execution_in_main` because it classified the module docstring as executable work. The audit was corrected to allow a constant string expression while still refusing a top-level process expression, loop, try or context block. No root-driver import, engine, CIM inventory, or Git command was executed.

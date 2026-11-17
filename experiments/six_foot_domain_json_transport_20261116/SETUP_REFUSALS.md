@@ -1,0 +1,3 @@
+The first CPU source preflight refused at `gd28_contracts_present`. Its regex counted the shared `compare_contract` helper's own `mark` statement as an additional test registration, outside `run_comparator_contracts`. No GDScript process ran. The source-count assertion was restricted to the actual contract-registration function; the GDScript tests and planned count were not changed.
+
+An attempted independent review dispatch was unavailable because the collaboration thread limit had been reached. The source, adversarial CPU comparison mirror and explicit runtime diagnosis gates remain reviewable; no independent runtime result is claimed.

@@ -5301,3 +5301,35 @@ Keep the sealed source-only predecessor and failed actual run. Diagnose the
 encoder/oracle transport before a successor; no assertion/tolerance is waived.
 Formal55/62 and52/54 unchanged. Publish completed evidence, verify remote,
 then review exact disposable cleanup; continue independent implementation.
+
+## 2026-11-16 — Owner-requested Neon Pro review in progress
+
+Owner identified claude/studio-redesign and approved the Midnight Neon / Iridescent
+Pro mock, asking for review and Windows verify.py before merge. Fetched exact
+c2d52ff5fd0f9aeffae6a343f6d4b71698ed9ff2 into a separate detached checkout:
+C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff.
+Its29-file delta against52f contains no test edits. Do not modify frozen source
+while the current full verifier runs. Preserve the theme when fixing behaviour.
+
+Original-branch full Windows run started2026-11-17T00:09:14.2629655Z in
+output/windows-neon-c2d52ff-20261117T000859 under that checkout; root coordinator
+21008 was born00:09:13.8701953Z. Prior owned graphics workers were absent. Graphics
+remain exclusively on private desktops. This is RUNNING, not a Windows pass.
+Source review has identified hidden Simple simulation entry points, F11 shortcut
+precedence and an invisible fading-toast mouse target; these are under review,
+not fixes applied to the running candidate. The unchanged wind manifest also
+pins pre-redesign app/pose bytes; any successor requires explicit source review
+and keeps all original predicates. Do not bypass it to manufacture a pass.
+
+Completed native-five full/review/normal evidence was published as
+2ca4b663edf17eb7837c7166a8f3db602df58ec6. Independently fetched three critical
+progress files match raw bytes and Git blob hashes. No cleanup yet; original
+assets, shared tools and both previous owner reviews remain protected.
+
+The next normal setter probe is sealed/source-audited (38 CPU methods), but
+Blender execution waits behind this redesign run. Six-foot corrected JSON
+transport is likewise source-only: root's first successor setup refused CIM
+access before engines or source staging, leaving attempt2 reserved. Keep the
+444/7 actual failure and this setup refusal distinct; later execution needs a
+fresh attempt under the approved host context. No normalization is activated.
+No manual result or acceptance-score change is inferred.

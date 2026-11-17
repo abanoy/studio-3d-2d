@@ -1,0 +1,64 @@
+{
+  "format": "has_sourceio_setter_boundary_source_packet_1",
+  "status": "SOURCE_RECIPE_SEALED_NATIVE_UNRUN",
+  "normal_fidelity": "FAILED_UNQUALIFIED",
+  "CPU_test_methods": 38,
+  "CPU_validation_sha256": "fe3a78440a3a0182a6ef57cc6e3f6712aadb711284e67e51286b26a0fdda62e2",
+  "completed_full_source_commit": "52f63c944ded7a651da871524d23a345b606424d",
+  "current_HEAD_separate_root_argument": true,
+  "functional_source_files_unchanged": 1019,
+  "lease_file_roles": 26,
+  "native_engines_executed": false,
+  "SourceIO_import_executed": false,
+  "private_native_arrays_in_packet": false,
+  "files": {
+    "audit_packet.py": {
+      "bytes": 5766,
+      "sha256": "dbc1f401417a6236d81dc3ddfe20e8496fb7691cd4df91a0c0cd74cedbc33e83"
+    },
+    "CPU_VALIDATION.json": {
+      "bytes": 9229,
+      "sha256": "fe3a78440a3a0182a6ef57cc6e3f6712aadb711284e67e51286b26a0fdda62e2"
+    },
+    "instrumentation.py": {
+      "bytes": 3306,
+      "sha256": "361fcad3dbff79bfd5367cd71ac5a769fc8155d6f38a1b061d5ce6e631f5a895"
+    },
+    "README.md": {
+      "bytes": 8828,
+      "sha256": "4d5334892860385d6f834d64c0e4e1f772ca31c6ddacce7fec522cf16f17fac9"
+    },
+    "setter_probe.py": {
+      "bytes": 11125,
+      "sha256": "96be93bd4068be8ea1c80a3cf551f241f54fb73f6d62c4ff9907d00dee67fb90"
+    },
+    "setter_support.py": {
+      "bytes": 6019,
+      "sha256": "fda14a49be8fb57908524aad7869a851ea234036a7c30892ef3e01777ba73bb9"
+    },
+    "stage_after_full.py": {
+      "bytes": 5873,
+      "sha256": "ea4d7f7caf322fdaf410e5f3183daba40f46a476669b8e698f62d31e2673d5ec"
+    },
+    "test_instrumentation.py": {
+      "bytes": 3327,
+      "sha256": "4da8acbdf8ee2d6542bb038779ec6c6fa70deab8ef892cc74f84ac95bda56817"
+    },
+    "test_setter_support.py": {
+      "bytes": 5126,
+      "sha256": "39c6d8dcffceae5e14cd3d2ccb2373d1c845af096ba6207ebe7168659f829043"
+    },
+    "test_vvd_normals.py": {
+      "bytes": 6598,
+      "sha256": "820dd0bc8d7e311f6523015cd6bc4a719dbff45d4dd7cb3469a5d035cc867090"
+    },
+    "verify_packet.py": {
+      "bytes": 1200,
+      "sha256": "9737ae84d7f1bdfc376b18dd7e8bbedc2d39fac76de39f650baddcdf82823979"
+    },
+    "vvd_normals.py": {
+      "bytes": 4184,
+      "sha256": "f3a959cc8dff0bd03528b20886984857b16a21944d2f5ef627cf4c4c05ebcdfb"
+    }
+  }
+}
