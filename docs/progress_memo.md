@@ -15712,3 +15712,101 @@ pass.00bf reconstructionpacket is prepared for main publication; no review-branc
 push attempted, full expected158/36/21 not success. Installed/oldreviews/assets
 preserved, no merge. Cleanup71complete; source witness/copyexecutor remain scoped
 and inactive. ManualDEFERRED;55/62 and52/54 unchanged.
+
+### November 17, 2026 — Windows source and evidence recovered from GitHub
+
+Checkpoint 4ec7b57334ca04aab42d3d4e8a62c12df4858d8c is pushed to main.
+All 694 public files were independently fetched through the GitHub connector
+and matched their exact Git blobs: 7,829,487 bytes, with two recorded working
+line-ending recipes. This saves the fe9 and 00bf test fixes/reconstruction,
+closed failures, focused foundation results, historical 52f source witness,
+inactive owner-copy executor and exact 71-cache cleanup record. Private native
+models, geometry, artwork and media are excluded. The independent final selection
+audit remains outside that checkpoint and will be saved in the next increment.
+Main's 1019 functional files still match the qualified 52f baseline. The neon
+redesign is not merged, the optional review-branch upload was not retried, and
+this publication is not a full Windows pass. The 00bf native lane remains under
+root ownership until its actual terminal audit. No further cleanup occurred.
+Acceptance 55/62 and implementation 52/54 remain unchanged; human checks deferred.
+
+### November 17, 2026 — focused archive and inactive follow-up adapters
+
+The closed 00bf catalogue/comparison/height results now have a compact exact
+archive: 69 original bindings, 61 compressed text objects and eight real private
+receipts. All 32 source/artifact CPU checks pass; root independently verified
+the archive and every current original hash, size and timestamp. This preserves
+the previously observed native results; it adds no new native case or full pass.
+
+The fresh-owner startup/cold187 adapter is implemented but inactive. Its source
+verifier and 29 CPU methods pass, preserving the original helpers, fixtures,
+four cases and nine protection gates. Actual successful full verification,
+closure, qualified merge, new copy and separately reviewed activation are still
+required before any startup or 187 result. No owner model was opened by it.
+
+The PMX integration map pins the current importer loss boundary and proposes
+inert asset-owned preservation before simulation. The reader's 33 synthetic
+CPU methods pass again; native PMX qualification and production integration
+remain unrun. The master plan links the concrete map and its independent helper
+JSON-budget addendum. No new native physics, solver, reconstruction or scale
+normalization is claimed.
+
+Source review confirms that a successful full verifier prints its complete
+nested report into canonical.log. That raw report/log and the terminal-audit
+directory must stay private because they can contain model data. An exact
+ignore rule prevents accidental staging of this run's raw terminal directory;
+publish only a separately reviewed explicit scalar projection. The active 00bf
+full remains root-owned; this preparation claims no terminal outcome or merge.
+Acceptance55/62 and implementation52/54 are unchanged; human checks deferred.
+
+### November 17, 2026 — Windows restarts interrupted the unchanged00bf run
+
+Windows booted at13:29:40.5000000Z and again15:44:12.5000000Z. Root observed
+the original coordinator/Python absent and later strict ROOT/REVIEW test scopes
+empty. The old run still says running, with no suite exit or source-after.
+It is INTERRUPTED_NO_TERMINAL_RESULT, not a software failure or full pass. Root
+did not edit that state or run a terminal helper with fabricated facts. All1029
+current functional bytes still match the frozen candidate. No process was killed.
+
+A bounded private snapshot preserves215 metadata files/52 phase documents,
+80 individually completed private receipts(79exit0 and one registered Krita
+cancel2) and11 exact inline matches. Every215 object/80 receipt and12 closure
+negative checks passed. Overall interrupted/unwritten jobs and graceful closure
+remain unknown. Native models, report internals and logs stay private; public
+source/scalar evidence references the exact private manifest6ea95acc.
+
+The same-candidate replay2 preparation preserves all original source/input/Git
+guards. Source inverse and64 proof negatives pass. Two actual preflights refused
+before reservation or engine launch at an in-read Pythonw/FFmpeg file-stamp
+check. The original differing fields were not captured; cause remains unknown.
+Four subsequent Pythonw reads matched the original approved identity exactly.
+The checks are unchanged; runtime diagnosis and strict fresh preparation remain.
+No fresh full, product merge, owner-copy or startup187 result is claimed.
+
+Source-only public-full projection and certificate successor are sealed:14 and
+18 CPU methods pass. They expose explicit scalar results and an opaque root
+private-certificate hash; they do not verify omitted private evidence or authorize
+an archive. Raw successful reports/canonical logs remain private. Human checks
+stay deferred;55/62 acceptance and52/54 implementation remain unchanged.
+
+### November 17, 2026 — unchanged strict host preflight and fresh replay2 active
+
+The identical strict preparation passed in the approved Windows host context:
+6runtimes,574SourceIO originals and matching owned copy,120exporter sources,
+36native fixtures and additional currentMima/rawVRM identities. No predicate or
+lock was relaxed. Separate default-context diagnostics captured one ffprobe
+attribute transition0x40020→0x20, with every other stamp field and locked content
+identity equal; all6 tools passed the second diagnostic round. This does not
+identify the cause of the earlier uncaptured Pythonw/FFmpeg refusals.
+
+Fresh replay2 started using the exact8a1c canonical runner and pinned2a67 PWSH.
+Coordinator19808 birth15:58:55.2656645Z; Python8888 birth15:58:55.9596269Z,parent
+19808, original tests/verify.py command. CIM.9596260 is metadata, not identity.
+All1029 functional bytes remain frozen at00bf; expected158/36/21 is not success.
+The new native lane is root-exclusive; no second engine or source/HEAD change.
+
+Correction to the earlier backup-rule note: the actual terminal helper writes
+under REVIEW/output/<run>/terminal-audit-attempt1, already excluded by output/.
+The redundant experimental-path ignore rule was removed. Raw successful reports,
+canonical logs and terminal audits stay private; no such payload was uploaded.
+The old interrupted state remains untouched and is not converted into a result.
+No full PASS, merge, fresh owner copy or actual startup187 is claimed.

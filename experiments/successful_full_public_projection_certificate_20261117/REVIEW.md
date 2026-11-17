@@ -1,0 +1,11 @@
+# Source-only scalar projection and private validation commitment
+
+The predecessor packet remains sealed and unchanged. Its fourteen CPU tests exercise authored in-memory reports and refuse activation. Its exact scalar projection is reused here, with a source-frozen registry and an opaque private validation certificate SHA256 commitment. The successor adds four authored CPU tests; none supplies an actual successful run or an actual root certificate.
+
+The public projection retains exactly158 source-authored result names,36 core scalar process rows,21 scalar movie rows and the explicitly selected Neon12504 summary. The source-derived32 behavior predicate names are frozen with the result registry. Callers cannot substitute a different registry. Unknown nested reports, model arrays, diagnostics, paths and source snapshots are never copied or stringified by either projection.
+
+The certificate hash is a commitment supplied by the future root admission step. This pure module checks lowercase SHA256 syntax only. It neither opens a certificate nor validates its contents, authority or omitted private evidence. Output says this explicitly. Producing a projection with an authored or arbitrary syntactically valid hash cannot establish a full-suite PASS. The omitted-private-failure test deliberately retains this distinction.
+
+The current source verifier writes and prints its complete nested report. Raw verification JSON, canonical logs, terminal audits and any copies therefore remain PRIVATE. A later independently reviewed builder must first admit the exact future root terminal/release proof, private full-validator certificate and immutable closed input inventory. It must verify the supplied certificate bytes against this commitment before any publication. This source packet provides no actual reader, archive builder, publication call or activation route; activation always refuses.
+
+This successor's source binding and CPU receipt concern public source files and authored RAM fixtures only. The original fifty-two public scalar proof may inform the predecessor plan, but no historical pass is promoted to the unfinished current run. No actual run report, current REVIEW output, native input, engine, process query, Git or network is read or executed.

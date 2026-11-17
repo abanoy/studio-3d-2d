@@ -1,0 +1,12 @@
+{
+  "format": "has_fe9_checkpoint_audit_helper_cpu_1",
+  "tests": 4,
+  "failures": 0,
+  "errors": 0,
+  "stdout": "test_array_scan_reports_location_count_without_publishing_values (test_catalogue_helpers.CatalogueHelperTests.test_array_scan_reports_location_count_without_publishing_values) ... ok\ntest_literal_lists_extracted_without_executing_preparer (test_catalogue_helpers.CatalogueHelperTests.test_literal_lists_extracted_without_executing_preparer) ... ok\ntest_packet_roles_and_duplicate_payload_rejections (test_catalogue_helpers.CatalogueHelperTests.test_packet_roles_and_duplicate_payload_rejections) ... ok\ntest_selection_rejects_dynamic_or_missing_roles (test_catalogue_helpers.CatalogueHelperTests.test_selection_rejects_dynamic_or_missing_roles) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+  "source_hashes": {
+    "audit_catalogue_source.py": "861318b69d29461cfd46e42b0cb734665400188bb3d76d9466704ac6a306f02e",
+    "test_catalogue_helpers.py": "da09c1f94ec41b9d41c676388eb83f8bfdc5731f0b7bde57d11253465d49000a"
+  },
+  "manifest_native_Git_or_process_reads_by_synthetic_tests": false
+}

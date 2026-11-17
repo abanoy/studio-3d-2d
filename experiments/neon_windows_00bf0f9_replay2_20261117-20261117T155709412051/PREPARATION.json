@@ -1,0 +1,67 @@
+{
+  "format": "has_neon_00bf_full_windows_replay2_preparation_1",
+  "revision": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+  "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-replay2-20261117T155709412051",
+  "runner": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_windows_original_20261116\\run_canonical_owned.ps1",
+  "runner_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+  "functional_source_files": 1029,
+  "approved_runtime_executables": 6,
+  "SourceIO_original_and_owned_copy574_preserved": true,
+  "exporter120_preserved": true,
+  "retained_native_fixture_files": 36,
+  "actual_focused_checks": {
+    "catalogue": 130,
+    "catalogue_unit": 34,
+    "comparison": 94,
+    "height": 105,
+    "raw_VRM": 9
+  },
+  "focused_verification_sha256": "0688d1a88aae44ac4e17fe1713b88e9c66626224bdaaf88b86c8e0a94633d2e9",
+  "additional_input_identities": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-face-pilot.json": {
+      "bytes": 64327,
+      "mtime_ns": 1794450164934616600,
+      "sha256": "05bd6d4ba63e481cf3488f9bf0082d662812d3bf8bb861796860f42fcb3e2310"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-mima-repro\\prepared-head\\scene.glb": {
+      "bytes": 7830992,
+      "mtime_ns": 1794450163876527000,
+      "sha256": "e9b21ab5f1171b21d0a7d3e3f83e5341f6b297516d09582e49c0283dfe10d8da"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-import-verification.json": {
+      "bytes": 1460,
+      "mtime_ns": 1794448107099861800,
+      "sha256": "b6a632eb086d77a9003c4998e91d2d880d694b0f6533ce18ab202176b8cc3ca9"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448091-467-21644406\\native\\AvatarSample_A.vrm": {
+      "bytes": 18633112,
+      "mtime_ns": 1794448091616561600,
+      "sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448093-218-23395070\\native\\AvatarSample_Avrm0.vrm": {
+      "bytes": 18630608,
+      "mtime_ns": 1794448093346887100,
+      "sha256": "f7b4573b241b3e91c7c5f58bed342133a4e5f7e0c1125e1cedc49723ace9b288"
+    }
+  },
+  "expected_groups": 158,
+  "core_groups": 36,
+  "movie_groups": 21,
+  "historical_fe9aace_failed_full_closed": true,
+  "replay": 2,
+  "previous_same_candidate_full_result": "INTERRUPTED_NO_TERMINAL_RESULT",
+  "previous_same_candidate_full_pass_claimed": false,
+  "root_restart_authority": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_00bf_OS_interruptions_20261117\\RESTART_AUTHORITY.json",
+    "sha256": "a69367aa1a317da33ac62fc4005c93f1cbac86df4fe6d92df72bd1b45071c3b0",
+    "private_freeze_manifest_sha256": "6ea95acc9b13af6bec50781eb705a414e8640282c4b3aa09f67db28cc385fefa",
+    "old_state_status": "running",
+    "old_suite_exit": null,
+    "all_old_jobs_gracefully_closed": "unknown"
+  },
+  "sole_functional_delta": "two test fixture selectors; product source unchanged",
+  "main_merged": false,
+  "review_branch_upload": "NOT_ATTEMPTED_AFTER_PRIOR_REJECTION_MAIN_RECONSTRUCTION_PENDING",
+  "result": "UNRUN"
+}

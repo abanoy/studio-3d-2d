@@ -1,0 +1,15 @@
+{
+  "format": "has_catalogue_00bf_recipe_source_cpu_admission_1",
+  "tests": 15,
+  "failures": 0,
+  "errors": 0,
+  "stdout": "test_Mima_draft_recovery_not_omitted (test_admission.Admission.test_Mima_draft_recovery_not_omitted) ... ok\ntest_Mima_scalar_provenance_tamper_refused (test_admission.Admission.test_Mima_scalar_provenance_tamper_refused) ... ok\ntest_actual_raw_VRM_nine_checks_not_omitted (test_admission.Admission.test_actual_raw_VRM_nine_checks_not_omitted) ... ok\ntest_coherent_catalogue_check_count_change_refused (test_admission.Admission.test_coherent_catalogue_check_count_change_refused) ... ok\ntest_comparison_native_count_not_waived (test_admission.Admission.test_comparison_native_count_not_waived) ... ok\ntest_duplicate_physical_receipt_not_counted_twice (test_admission.Admission.test_duplicate_physical_receipt_not_counted_twice) ... ok\ntest_exact_closed69_corpus_is_admitted (test_admission.Admission.test_exact_closed69_corpus_is_admitted) ... ok\ntest_false_root_or_full_pass_claim_refused (test_admission.Admission.test_false_root_or_full_pass_claim_refused) ... ok\ntest_headless_unit_marker_count_refused_without_private_job_invention (test_admission.Admission.test_headless_unit_marker_count_refused_without_private_job_invention) ... ok\ntest_height_saved_receipt_argv_staleness_refused (test_admission.Admission.test_height_saved_receipt_argv_staleness_refused) ... ok\ntest_nonzero_recorded_scope_refused (test_admission.Admission.test_nonzero_recorded_scope_refused) ... ok\ntest_private_foreground_or_unclosed_job_refused (test_admission.Admission.test_private_foreground_or_unclosed_job_refused) ... ok\ntest_source_after_change_refused (test_admission.Admission.test_source_after_change_refused) ... ok\ntest_supplied_Mima_cannot_be_omitted_from_catalogue (test_admission.Admission.test_supplied_Mima_cannot_be_omitted_from_catalogue) ... ok\ntest_typed_metadata_and_duplicate_JSON_refused (test_admission.Admission.test_typed_metadata_and_duplicate_JSON_refused) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.030s\n\nOK\n",
+  "source_hashes": {
+    "archive_checks.py": "9537e5cce84fef1d5b0c88be16cfae795ba9c6a8fa09b966e6c8196221907aeb",
+    "build_packet.py": "0424a3f96f21611b3f05cfc7b69e584889008459d1c01cbd7410f2bb269a9788",
+    "capture_inputs.py": "0818083cbf69956bfdc66551d0e76a549f313b22db959468d4c49e64ac2063f4",
+    "test_admission.py": "52d2408189c3ebdd23afa7396d00786ddc8962be22e69b9fe2a037cb4047802e"
+  },
+  "closed_whitelisted_originals_read": 69,
+  "engine_CIM_Git_or_upcoming_full_reads": false
+}

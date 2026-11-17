@@ -91,16 +91,16 @@
   "next_full_inventory_sha256": "2c334aab837768ee17b2c13be0ad6ac26fa203a9e8815cd991b24a2de3386704",
   "old_regex_overescape_inference": "RETRACTED_PATTERN_VALID",
   "latest_observation": {
-    "format": "has_root_neon_00bf_active_observation_1",
-    "observed_utc": "2026-11-17T04:44:03.096097+00:00",
+    "observed_utc": "2026-11-17T16:01:00.667636+00:00",
+    "result": "RUNNING_NO_RESULT",
     "state": {
       "format": "has_owned_canonical_run_1",
-      "pid": 21216,
-      "process_started": "2026-11-17T04:42:33.4387679Z",
-      "started_utc": "2026-11-17T04:42:33.7353904Z",
+      "pid": 19808,
+      "process_started": "2026-11-17T15:58:55.2656645Z",
+      "started_utc": "2026-11-17T15:58:55.6798223Z",
       "status": "running",
       "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
-      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-replay2-20261117T155709412051",
       "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
       "python": "C:\\Program Files\\Python313\\python.exe",
       "command": [
@@ -110,74 +110,53 @@
       ],
       "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4"
     },
-    "files": [
+    "functional_sources_unchanged": 1029,
+    "public_metadata_files": [
       {
         "path": "launch.json",
-        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\launch.json",
-        "bytes": 1175,
-        "sha256": "f20dc2d6b2463e0479a949b8911bee5122e9294dd26df253ad9d0b7b5b833ff5",
-        "snapshot_only": false
+        "bytes": 1203,
+        "sha256": "a46b3e2537498d34f0625d7adefe25aafb5820cbc0e61cf35b036c21a0dcaaa3",
+        "dated_snapshot_only": false
       },
       {
         "path": "root-birth-observation.json",
-        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\root-birth-observation.json",
-        "bytes": 417,
-        "sha256": "7e9713cb3078473ee2ad5335e9508da687b71c7adf6f7cc2cfc5e7f9a492ce90",
-        "snapshot_only": false
+        "bytes": 365,
+        "sha256": "407eebd3868bd7332601b2c05880d651c36b8a960becdc2d1f4349e464d00a50",
+        "dated_snapshot_only": false
       },
       {
         "path": "root-birth-api-detail.json",
-        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\root-birth-api-detail.json",
-        "bytes": 302,
-        "sha256": "466ce8c3461aa74f4c52d6b9394818af4f8b20b4f7d0fe1b8c61a3d63bc60e4c",
-        "snapshot_only": false
+        "bytes": 301,
+        "sha256": "c50bb07b1d5edcc1164135a5382c90e9165cee6b1e66bec3e910aaeceb4811ba",
+        "dated_snapshot_only": false
       },
       {
         "path": "source-before.json",
-        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\source-before.json",
         "bytes": 108131,
         "sha256": "5064dc9e7932cfb05360e3df974dbbeb56cae682bfade6cb286e3040302ab67f",
-        "snapshot_only": false
+        "dated_snapshot_only": false
       },
       {
         "path": "preflight-source.json",
-        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\preflight-source.json",
         "bytes": 104958,
         "sha256": "983512ea012340cbab77ed420836df7b01de39cdf7863aab30a1ee55a9a531ee",
-        "snapshot_only": false
+        "dated_snapshot_only": false
       },
       {
         "path": "state.json",
-        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\state.json",
-        "bytes": 718,
-        "sha256": "a6bc8238f81ddd02c3556941e61500ac7b3babfc3ef33764f703671c8c9172a7",
-        "snapshot_only": true
-      },
-      {
-        "path": "canonical.log",
-        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\canonical.log",
-        "bytes": 168,
-        "sha256": "06e1191dcfcc5a276bd8feb9bd80b73d10356759bca284912c23ce2a0ea5937c",
-        "snapshot_only": true
+        "bytes": 732,
+        "sha256": "5e955ae5493c2aa06ea651b9f1a700d3352b5f8dab0603d6a602348e2d51989d",
+        "dated_snapshot_only": true
       }
     ],
-    "functional_sources_unchanged": 1029,
-    "actual_focused_checks": {
-      "catalogue": 130,
-      "unit": 34,
-      "comparison": 94,
-      "height": 105,
-      "raw_VRM": 9
-    },
+    "root_native_lane": "exclusive",
     "expected_not_pass": {
       "groups": 158,
       "core": 36,
       "movies": 21
     },
-    "full_result": "RUNNING_NO_RESULT",
-    "main_merged": false,
-    "review_branch_upload": "NOT_ATTEMPTED_AFTER_PRIOR_REJECTION",
-    "main_reconstruction_publication": "PENDING"
+    "raw_logs_or_native_model_arrays_included": false,
+    "redesign_merged": false
   },
   "preceding_4ed_observation": {
     "candidate": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
@@ -482,5 +461,166 @@
     "product_source_changed": false,
     "main_merged": false,
     "manual_owner_result": "DEFERRED_NO_RESULT"
+  },
+  "latest_public_checkpoint": {
+    "observed_utc": "2026-11-17T04:55:36.942651+00:00",
+    "commit": "4ec7b57334ca04aab42d3d4e8a62c12df4858d8c",
+    "independent_remote_exact_files": 694,
+    "git_bytes": 7829487,
+    "working_EOL_recipes": 2,
+    "proof_sha256": "7571c27fafeec4b451675840dd834613932e7aa920ac4e3629b8e084b1ddf202",
+    "main_functional_unchanged": 1019,
+    "product_redesign_merged": false,
+    "review_branch_upload_retried": false,
+    "new_cleanup_performed": false
+  },
+  "latest_source_followup": {
+    "observed_utc": "2026-11-17T05:07:15.316889+00:00",
+    "sealed_indexes": {
+      "neon_catalogue_00bf_actual_packet_20261117": "5f8ea1352707c02a914c51dd15c984a86c69e16e3199798ae0a988ecd61b34d7",
+      "neon_catalogue_00bf_archive_recipe_20261117": "9678b1901a845e7a3612509530ad4d987b37a8ce498b448a89eb61b70a2db112",
+      "neon_owner_cold187_after_qualified_copy_20261117": "7b12445a5c7f49076c5510f7d998c9d285b8d1297c56912a8488786d57f31888",
+      "pmx_import_metadata_integration_map_20261117": "474b6bc933c41d869bb32f1cdbf101800f81c5634e886822aff9ba72005c9470",
+      "pmx_import_metadata_helper_boundary_20261117": "49ffc77ff5a39f80ae187918f845a4734877fc075212de80c03827c1a9d1c3ae"
+    },
+    "closed_focused_archive": {
+      "bindings": 69,
+      "objects": 61,
+      "private_jobs": 8
+    },
+    "source_CPU_only": {
+      "archive": 32,
+      "cold187_adapter": 29,
+      "PMX_reader_regression": 33
+    },
+    "actual_cold187_run": false,
+    "PMX_native_qualification": false,
+    "PMX_importer_integration": false,
+    "full_result_claimed": false,
+    "redesign_merged": false,
+    "raw_successful_full_report_publication_permitted": false
+  },
+  "interrupted00bf_prior_running_observation": {
+    "format": "has_root_neon_00bf_active_observation_1",
+    "observed_utc": "2026-11-17T04:44:03.096097+00:00",
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 21216,
+      "process_started": "2026-11-17T04:42:33.4387679Z",
+      "started_utc": "2026-11-17T04:42:33.7353904Z",
+      "status": "running",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200",
+      "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4"
+    },
+    "files": [
+      {
+        "path": "launch.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\launch.json",
+        "bytes": 1175,
+        "sha256": "f20dc2d6b2463e0479a949b8911bee5122e9294dd26df253ad9d0b7b5b833ff5",
+        "snapshot_only": false
+      },
+      {
+        "path": "root-birth-observation.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\root-birth-observation.json",
+        "bytes": 417,
+        "sha256": "7e9713cb3078473ee2ad5335e9508da687b71c7adf6f7cc2cfc5e7f9a492ce90",
+        "snapshot_only": false
+      },
+      {
+        "path": "root-birth-api-detail.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\root-birth-api-detail.json",
+        "bytes": 302,
+        "sha256": "466ce8c3461aa74f4c52d6b9394818af4f8b20b4f7d0fe1b8c61a3d63bc60e4c",
+        "snapshot_only": false
+      },
+      {
+        "path": "source-before.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\source-before.json",
+        "bytes": 108131,
+        "sha256": "5064dc9e7932cfb05360e3df974dbbeb56cae682bfade6cb286e3040302ab67f",
+        "snapshot_only": false
+      },
+      {
+        "path": "preflight-source.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\preflight-source.json",
+        "bytes": 104958,
+        "sha256": "983512ea012340cbab77ed420836df7b01de39cdf7863aab30a1ee55a9a531ee",
+        "snapshot_only": false
+      },
+      {
+        "path": "state.json",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\state.json",
+        "bytes": 718,
+        "sha256": "a6bc8238f81ddd02c3556941e61500ac7b3babfc3ef33764f703671c8c9172a7",
+        "snapshot_only": true
+      },
+      {
+        "path": "canonical.log",
+        "source_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200\\canonical.log",
+        "bytes": 168,
+        "sha256": "06e1191dcfcc5a276bd8feb9bd80b73d10356759bca284912c23ce2a0ea5937c",
+        "snapshot_only": true
+      }
+    ],
+    "functional_sources_unchanged": 1029,
+    "actual_focused_checks": {
+      "catalogue": 130,
+      "unit": 34,
+      "comparison": 94,
+      "height": 105,
+      "raw_VRM": 9
+    },
+    "expected_not_pass": {
+      "groups": 158,
+      "core": 36,
+      "movies": 21
+    },
+    "full_result": "RUNNING_NO_RESULT",
+    "main_merged": false,
+    "review_branch_upload": "NOT_ATTEMPTED_AFTER_PRIOR_REJECTION",
+    "main_reconstruction_publication": "PENDING"
+  },
+  "preceding_interrupted00bf": {
+    "observed_utc": "2026-11-17T15:55:57.650989+00:00",
+    "result": "INTERRUPTED_NO_TERMINAL_RESULT",
+    "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+    "old_state_unchanged": true,
+    "suite_exit": null,
+    "functional_sources_unchanged": 1029,
+    "root_restart_authority_sha256": "a69367aa1a317da33ac62fc4005c93f1cbac86df4fe6d92df72bd1b45071c3b0",
+    "known_boot_observations": [
+      {
+        "observed_utc": "2026-11-17T13:33:41.2525668Z",
+        "last_boot_utc": "2026-11-17T13:29:40.5000000Z"
+      },
+      {
+        "observed_utc": "2026-11-17T15:46:49.6912177Z",
+        "last_boot_utc": "2026-11-17T15:44:12.5000000Z"
+      }
+    ],
+    "private_metadata_files": 215,
+    "phase_documents": 52,
+    "completed_receipts": 80,
+    "normal_exit0": 79,
+    "registered_Krita_cancel_exit2": 1,
+    "inline_exact_matches": 11,
+    "all_old_jobs_gracefully_closed": "unknown",
+    "full_pass_claimed": false,
+    "replay2_preflight_refusals_before_reservation": [
+      "pythonw.exe",
+      "ffmpeg.exe"
+    ],
+    "original_runtime_stamp_difference_fields": "UNKNOWN_NOT_CAPTURED",
+    "replay2_full_started": false,
+    "redesign_merged": false
   }
 }

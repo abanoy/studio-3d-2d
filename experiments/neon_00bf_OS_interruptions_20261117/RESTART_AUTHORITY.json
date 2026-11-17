@@ -1,0 +1,57 @@
+{
+  "format": "has_root_same_candidate_restart_authority_1",
+  "observed_utc": "2026-11-17T15:51:14.062827+00:00",
+  "revision": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+  "interrupted_run": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-00bf0f9-20261117T044200",
+  "interrupted_state_sha256": "a6bc8238f81ddd02c3556941e61500ac7b3babfc3ef33764f703671c8c9172a7",
+  "interrupted_state_status": "running",
+  "suite_exit": null,
+  "terminal_result_fabricated": false,
+  "known_boot_observations": [
+    {
+      "observed_utc": "2026-11-17T13:33:41.2525668Z",
+      "last_boot_utc": "2026-11-17T13:29:40.5000000Z"
+    },
+    {
+      "observed_utc": "2026-11-17T15:46:49.6912177Z",
+      "last_boot_utc": "2026-11-17T15:44:12.5000000Z"
+    }
+  ],
+  "latest_boot_observation": {
+    "last_boot_utc": "2026-11-17T15:44:12.5000000Z",
+    "observed_utc": "2026-11-17T15:51:12.8044951Z"
+  },
+  "current_scope_observation": {
+    "owned_runtime_command_matches_absent": true,
+    "root_observer_issued_no_termination": true,
+    "observed_utc": "2026-11-17T15:51:12.4756525Z",
+    "owned_runtime_matches": [],
+    "coordinator": {
+      "expected_creation_utc": "2026-11-17T04:42:33.4387679Z",
+      "pid": 21216,
+      "pid_present": false,
+      "original_absent": true,
+      "current_creation_utc": null
+    },
+    "python": {
+      "expected_creation_utc": "2026-11-17T04:42:33.9446445Z",
+      "pid": 16808,
+      "pid_present": false,
+      "original_absent": true,
+      "current_creation_utc": null
+    },
+    "observer_retained_Popen_reaped": true
+  },
+  "source_files": 1029,
+  "source_hashes_current_unchanged": true,
+  "source_before_sha256": "5064dc9e7932cfb05360e3df974dbbeb56cae682bfade6cb286e3040302ab67f",
+  "private_freeze_manifest_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\PRIVATE-neon-00bf-interrupted-bounded-20261117T154921\\INTERRUPTED-INVENTORY.json",
+  "private_freeze_manifest_sha256": "6ea95acc9b13af6bec50781eb705a414e8640282c4b3aa09f67db28cc385fefa",
+  "metadata_frozen": true,
+  "native_lane_available_after_OS_restart": true,
+  "all_old_jobs_gracefully_closed": "unknown",
+  "full_pass_claimed": false,
+  "root_issued_termination": false,
+  "observer_script_sha256": "8c9917fc2a056874c072c61e92480c03a341058dde7304c65e9a1a1ef8c3e4d8"
+}

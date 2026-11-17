@@ -1554,3 +1554,35 @@ normalized as complete humans. Keep matched component scales consistent and
 preserve existing scenes, authored animation and contact anchors. Detailed code
 gap and future fixture gates are in the current pickup and height_import.md.
 No runtime changes or new verification occurred; development remains paused.
+
+## 17. Resumed work and PMX preservation preparation — November 17
+
+The owner has resumed the Windows continuation. Earlier dated pause statements
+describe their original checkpoints; they do not override the later resume.
+Human review remains deferred while the owner is busy. Continue independent
+software work without repeated requests for manual checks.
+
+A PMX 2.0 physics-data reader prototype now passes 33 synthetic CPU test methods.
+It preserves source-indexed body/joint declarations and exact floating-point
+words within its restricted profile. It has not read and independently qualified
+an artist's native PMX, entered the production importer, or enabled PMX physics.
+The native qualification protocol remains inactive pending its independent
+oracle, bounded runner and actual input-specific evidence.
+
+The concrete next integration map is
+[PMX preservation map](../experiments/pmx_import_metadata_integration_map_20261117/IMPLEMENTATION_MAP.md).
+Its first runnable increment is a synthetic assembler/extractor for an inert,
+versioned archive in the GLB asset, with a small status descriptor in the import
+report. This would preserve declarations without turning them into simulated
+HAS bodies. Native qualification must precede production adoption. Portability,
+older-reader behavior and resource capacity still require actual tests.
+
+Keep the 2 MiB capsule, 256 KiB import report, 1 MiB project metadata, 128 MiB GLB
+and secondary-helper 16 MiB whole-JSON budgets separate. The helper boundary is
+recorded in
+[the source addendum](../experiments/pmx_import_metadata_helper_boundary_20261117/SUPPLEMENT.md).
+Preserve unsupported-profile, integrity and capacity failures explicitly; do not
+truncate data, claim empty physics tables, or silently change existing imports.
+An eventual preservation result should explain that native simulation remains
+unsupported. Reconstruction, six-foot normalization and solver work remain
+separate later increments.

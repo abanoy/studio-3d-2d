@@ -1,0 +1,117 @@
+{
+  "format": "has_pmx_import_metadata_source_map_1",
+  "passed": true,
+  "scope": "SOURCE_REVIEW_AND_EXISTING_SYNTHETIC_CPU_ONLY",
+  "source_identities_before_after_equal": {
+    "tools/prepare_mmd.py": {
+      "bytes": 7646,
+      "sha256": "ea336c886e5155b61cd98aad75744e7257b444767d7672ed4a0c1c81916d95df"
+    },
+    "tools/blender_mmd_bridge.py": {
+      "bytes": 11922,
+      "sha256": "c2abd3dd75677bebc91d0ff153dd8822bb32ca0132c70bbbc085b9944e5bc08a"
+    },
+    "tools/mmd_ik.py": {
+      "bytes": 5151,
+      "sha256": "2a1872ebf8a790e510f52638d64978ac2a841cbc5aa21a7beec4938867f496aa"
+    },
+    "tools/asset_audit.py": {
+      "bytes": 10171,
+      "sha256": "f91daebf1a7f7351b04d1018fd87f629a85460c4a67c540db7e7f7697a0eebeb"
+    },
+    "tools/has_project.py": {
+      "bytes": 36736,
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073"
+    },
+    "src/pose_editor.gd": {
+      "bytes": 48374,
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+    },
+    "src/model.gd": {
+      "bytes": 28593,
+      "sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678"
+    },
+    "src/secondary_rig.gd": {
+      "bytes": 12243,
+      "sha256": "7495b202ede057cf73cce43f839917f9f88d60d0d31b71317e2655b352be0d7c"
+    },
+    "src/physics_rig.gd": {
+      "bytes": 16790,
+      "sha256": "a7b21ba736d3645469b16e72b0864caef8305127133be9fd38966b0876442e3e"
+    },
+    "src/source_secondary.gd": {
+      "bytes": 28707,
+      "sha256": "d7a85800e2c295c3288b61b9f2da362a93afe8a721ff61105b8858d9fbff07c1"
+    },
+    "src/scene3d.gd": {
+      "bytes": 11042,
+      "sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1"
+    },
+    "src/source_shape.gd": {
+      "bytes": 15601,
+      "sha256": "de6e040ecd2ad6d8b139cdd24b97b69c5922a5e4394508d0114dc71b9f979a47"
+    },
+    "src/expression_presets.gd": {
+      "bytes": 11793,
+      "sha256": "c68207974ef4d90f69f163c935c30c18c44c050dfe660869c159b7bb70618d34"
+    },
+    "src/world_document.gd": {
+      "bytes": 5704,
+      "sha256": "6d921495a0366f30724e5945abe79bcc678d193be40cc77d4dd198ee8c3455cf"
+    },
+    "src/world_runtime.gd": {
+      "bytes": 8012,
+      "sha256": "d2c0bb7fece396066cc4bdae34e1f7172d9a90519dae05d3e33c2b87edb32d46"
+    },
+    "src/storage.gd": {
+      "bytes": 35631,
+      "sha256": "f90769be7f736abae6dc7e44a378330c9eb4308358d29598a6da53e2e405578e"
+    },
+    "src/asset_package.gd": {
+      "bytes": 3772,
+      "sha256": "5cbdfdbdfa7691717fb5ec2209a177fd51b010029cea8af3fcb1692b2ed9257c"
+    },
+    "src/has_project.gd": {
+      "bytes": 15268,
+      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032"
+    },
+    "src/has_project_loader.gd": {
+      "bytes": 1458,
+      "sha256": "cdb97409b2d7b202bd8ba7cb44c93d7c1198fe41901f3a080e40546b48e3c673"
+    },
+    "src/source_import.gd": {
+      "bytes": 18620,
+      "sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d"
+    },
+    "docs/RESUME_MASTER_PLAN.md": {
+      "bytes": 105135,
+      "sha256": "0e2fe8c82cf5d67b77ae0a8cbf14742a81f9b5284fcd2e71715c668426c38616"
+    },
+    "docs/standard_model.md": {
+      "bytes": 19067,
+      "sha256": "7371c526c3ab58a400686295610ac057587f2ed15cd485317ed9104403cd6b87"
+    },
+    "docs/import_physics.md": {
+      "bytes": 3242,
+      "sha256": "04645749564219b04af32bfd0baba52015b7d32d4a28098c50cc0dfeb8d4d12f"
+    }
+  },
+  "sealed_dependencies": [
+    {
+      "path": "experiments/pmx_physics_native_reader_prototype_20261117",
+      "INDEX_sha256": "9946bf2bccbe5e289fea013ec702c97775b33b9a64dc3bce7979d21d08e92487",
+      "payloads_verified": 14
+    },
+    {
+      "path": "experiments/pmx_native_read_qualification_protocol_20261117",
+      "INDEX_sha256": "c36c29928185bd9ce8cf521caf43bb873a0ca171bff847e0a9c5f6772cd099a8",
+      "payloads_verified": 10
+    }
+  ],
+  "proposed_capsule_location": "asset.extras.has_native_physics_archive",
+  "location_is_design_only": true,
+  "production_integration_implemented": false,
+  "native_qualification_performed": false,
+  "native_assets_engines_CIM_remote_Git_or_active_review_read_or_modified": false,
+  "portable_capacity_compatibility_or_solver_claimed": false
+}

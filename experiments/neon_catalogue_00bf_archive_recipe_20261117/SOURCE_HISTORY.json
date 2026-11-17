@@ -1,0 +1,14 @@
+{
+  "format": "has_artifact_ancestor_guard_source_history_1",
+  "before": {
+    "verify_packet.pre_ancestor.py": "8bad5a81b3c56891c5f000540b1a65b8646f1afbbedbffe3808ed874425d0a89",
+    "test_artifact.pre_ancestor.py": "6721dad0dfc70a9303364051734c6119bdbac7ef3dbdcf53c37deec9c219c0f4"
+  },
+  "after": {
+    "verify_packet.py": "12067d629f952b7d4becb3971ab21df845a50f62e9ae3c81235a36d3ee17e37b",
+    "test_artifact.py": "c824a133a8b6bd0d69c1dc3baeb5b4e769c001731f9df29381f98e5c18520c79"
+  },
+  "exact_inverse": "Replace regular leaf+ancestor loop with original leaf-only line; remove only SimpleNamespace import and the one new mocked-ancestor method. Every other source byte and all16 old CPU methods remain exact.",
+  "prior_source_build_or_native_execution": false,
+  "source_history_reconstructed_by_verified_raw_inverse": true
+}

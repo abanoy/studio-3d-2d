@@ -1,0 +1,32 @@
+{
+  "format": "has_neon_00bf_terminal_source_context_1",
+  "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+  "run_name": "windows-neon-00bf0f9-replay2-20261117T155709412051",
+  "commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "functional_sources": 1029,
+  "coordinator_pid": 19808,
+  "coordinator_birth": "2026-11-17T15:58:55.2656645Z",
+  "python_pid": 8888,
+  "python_birth": "2026-11-17T15:58:55.9596269Z",
+  "python_executable": "C:\\Program Files\\Python313\\python.exe",
+  "python_command": "\"C:\\Program Files\\Python313\\python.exe\" -u tests/verify.py",
+  "runner": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_windows_original_20261116\\run_canonical_owned.ps1",
+  "runner_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+  "powershell": "C:\\Users\\noble\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+  "powershell_sha256": "2a6769a3330dc1084d0154bfde7d164ab750ca7f700f313f9d417c1be78b2233",
+  "registry_sha256": "b03dc3bf06baf6044a034d17b0c9a430f2cfb364bac762f399fcc53c6a9013eb",
+  "legacy_result_gates_sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+  "immutable_run_inputs": {
+    "source-before.json": "5064dc9e7932cfb05360e3df974dbbeb56cae682bfade6cb286e3040302ab67f",
+    "launch.json": "a46b3e2537498d34f0625d7adefe25aafb5820cbc0e61cf35b036c21a0dcaaa3",
+    "root-birth-observation.json": "407eebd3868bd7332601b2c05880d651c36b8a960becdc2d1f4349e464d00a50",
+    "root-birth-api-detail.json": "c50bb07b1d5edcc1164135a5382c90e9165cee6b1e66bec3e910aaeceb4811ba"
+  },
+  "result_groups": 158,
+  "core_groups": 36,
+  "movie_groups": 21,
+  "private_job_count": "DERIVE_ACTUAL_NO_ASSUMPTION",
+  "birth_identity_api": "Get-Process.StartTime",
+  "terminal_state_or_full_report_read_by_preparation": false,
+  "engines_CIM_Git_executed": false
+}

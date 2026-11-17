@@ -1,0 +1,48 @@
+{
+  "format": "has_catalogue_00bf_source_CPU_artifact_peer_1",
+  "status": "SCOPED_SOURCE_CPU_AND_ARTIFACT_GO",
+  "source_hashes": {
+    "INPUTS.json": "1d4278e2655f11bd63a001cdfaa72baa2f1196959afdde61782e01a68fb5d927",
+    "archive_checks.py": "9537e5cce84fef1d5b0c88be16cfae795ba9c6a8fa09b966e6c8196221907aeb",
+    "build_packet.py": "0424a3f96f21611b3f05cfc7b69e584889008459d1c01cbd7410f2bb269a9788",
+    "verify_packet.py": "12067d629f952b7d4becb3971ab21df845a50f62e9ae3c81235a36d3ee17e37b",
+    "test_admission.py": "52d2408189c3ebdd23afa7396d00786ddc8962be22e69b9fe2a037cb4047802e",
+    "test_artifact.py": "c824a133a8b6bd0d69c1dc3baeb5b4e769c001731f9df29381f98e5c18520c79"
+  },
+  "admission_CPU_methods": 15,
+  "admission_failures": 0,
+  "admission_seconds": 0.036,
+  "admission_tool_chunk": "964f6b",
+  "artifact_RAM_methods": 17,
+  "artifact_RAM_failures": 0,
+  "artifact_RAM_seconds": 0.073,
+  "artifact_RAM_tool_chunk": "ebe673",
+  "actual_artifact_tool_chunk": "9c4356",
+  "artifact_INDEX_sha256": "5f8ea1352707c02a914c51dd15c984a86c69e16e3199798ae0a988ecd61b34d7",
+  "actual_artifact_verified": true,
+  "original_bindings": 69,
+  "unique_objects": 61,
+  "retained_constituents": {
+    "catalogue": 130,
+    "headless_unit": 34,
+    "catalogue_cases": 7,
+    "comparison": 94,
+    "comparison_native": 6,
+    "height": 105,
+    "height_native": 6,
+    "raw_VRM": 9,
+    "physical_private_jobs": 8,
+    "available_height_argv_joins": 3,
+    "functional_source_entries": 1029
+  },
+  "comparison_teardown_actual_readback_pending_retained": true,
+  "all_original_code_predicates_retained_after_ancestor_guard": true,
+  "artifact_verifier_opens_original_paths": false,
+  "current_full_state_log_report_source_after_or_native_or_CIM_or_Git_or_engine_reads": false,
+  "scope_limits": [
+    "Source admission tests read only the frozen completed public metadata; artifact verification opens only source recipe and new compact artifact.",
+    "No catalogue/comparison private argv were fabricated; only the three actually saved height argv are joined.",
+    "No complete full suite, native fidelity, merge or owner acceptance is inferred.",
+    "Test/verification observations are recorded from tool chunks; this peer did not capture a separate raw stdout file."
+  ]
+}

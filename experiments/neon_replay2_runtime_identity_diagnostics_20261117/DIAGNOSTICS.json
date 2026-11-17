@@ -1,0 +1,486 @@
+{
+  "format": "has_original_six_runtime_identity_diagnostics_1",
+  "observed_utc": "2026-11-17T15:55:36.646064+00:00",
+  "execution_context": "default_tool_context_no_escalation",
+  "python_executable": "C:\\Program Files\\Python313\\python.exe",
+  "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\audit_protected_inputs_before_cleanup.py",
+  "source_sha256_before_and_after": "5be1d34aa6aced8fc112bee3ecadd489be9b7f38ab710553385bfd77ca500d83",
+  "lock_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\replay_audio_fix_20261115\\builder\\input-lock.json",
+  "lock_sha256_before_and_after": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6",
+  "diagnostic_source_sha256": "82981e68d1ca8598621cd0418c78ed6a7557ff1416c5aee6c9044b43023410a4",
+  "runtime_files": 6,
+  "rounds": 2,
+  "identity_calls": 12,
+  "original_identity_exceptions": 1,
+  "all_successful_returns_match_lock": true,
+  "original_two_preflight_refusal_causes": "UNKNOWN_NOT_CAPTURED",
+  "guard_monkeypatch_or_relaxation": false,
+  "runtime_binaries_executed": false,
+  "CIM_or_process_queries": false,
+  "artist_inputs_opened": false,
+  "preflight_or_run_reservation_or_engine_launch": false,
+  "rows": [
+    {
+      "round": 1,
+      "path": "C:\\Program Files\\Python313\\python.exe",
+      "expected": {
+        "bytes": 105840,
+        "mtime_ns": 1733277492000000000,
+        "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+      },
+      "started_utc": "2026-11-17T15:55:36.217709+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 105840,
+        "mtime_ns": 1733277492000000000,
+        "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 838300,
+      "finished_utc": "2026-11-17T15:55:36.218564+00:00"
+    },
+    {
+      "round": 1,
+      "path": "C:\\Program Files\\Python313\\pythonw.exe",
+      "expected": {
+        "bytes": 104304,
+        "mtime_ns": 1733277492000000000,
+        "sha256": "2bea4fc941b7d9436afa1be8cb46551c0694deed23b3fec87b969054238be099"
+      },
+      "started_utc": "2026-11-17T15:55:36.218574+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 104304,
+        "mtime_ns": 1733277492000000000,
+        "sha256": "2bea4fc941b7d9436afa1be8cb46551c0694deed23b3fec87b969054238be099"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 803400,
+      "finished_utc": "2026-11-17T15:55:36.219383+00:00"
+    },
+    {
+      "round": 1,
+      "path": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+      "expected": {
+        "bytes": 171924488,
+        "mtime_ns": 1769365853000000000,
+        "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf"
+      },
+      "started_utc": "2026-11-17T15:55:36.219399+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 171924488,
+        "mtime_ns": 1769365853000000000,
+        "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 94481500,
+      "finished_utc": "2026-11-17T15:55:36.313889+00:00"
+    },
+    {
+      "round": 1,
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+      "expected": {
+        "bytes": 108687824,
+        "mtime_ns": 1779176446000000000,
+        "sha256": "1e6624af112b3c936f4b038b025ebd2bf00ae72c4b62881a6787166d71c58fa5"
+      },
+      "started_utc": "2026-11-17T15:55:36.313901+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 108687824,
+        "mtime_ns": 1779176446000000000,
+        "sha256": "1e6624af112b3c936f4b038b025ebd2bf00ae72c4b62881a6787166d71c58fa5"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 57224800,
+      "finished_utc": "2026-11-17T15:55:36.371131+00:00"
+    },
+    {
+      "round": 1,
+      "path": "C:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe",
+      "expected": {
+        "bytes": 431104,
+        "mtime_ns": 1739026277000000000,
+        "sha256": "8d334ffec552898aed0f095f507cd994c4f2825d4b88c352e7a37cd26b7f5b70"
+      },
+      "started_utc": "2026-11-17T15:55:36.371144+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 431104,
+        "mtime_ns": 1739026277000000000,
+        "sha256": "8d334ffec552898aed0f095f507cd994c4f2825d4b88c352e7a37cd26b7f5b70"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 116146700,
+      "finished_utc": "2026-11-17T15:55:36.487297+00:00"
+    },
+    {
+      "round": 1,
+      "path": "C:\\Program Files\\ffmpeg\\bin\\ffprobe.exe",
+      "expected": {
+        "bytes": 221696,
+        "mtime_ns": 1739026277000000000,
+        "sha256": "6080217dc842c5850c1ab58988074ef11012423d594c0c942f075563a483fd19"
+      },
+      "started_utc": "2026-11-17T15:55:36.487307+00:00",
+      "status": "ORIGINAL_IDENTITY_EXCEPTION",
+      "exception_type": "RuntimeError",
+      "exception": "Protected file changed during read: C:\\Program Files\\ffmpeg\\bin\\ffprobe.exe",
+      "original_identity_frames": 1,
+      "original_frame_path": "C:\\Program Files\\ffmpeg\\bin\\ffprobe.exe",
+      "original_frame_single_link": false,
+      "all_stat_fields": {
+        "before": {
+          "st_atime": 1794892115.3321993,
+          "st_atime_ns": 1794892115332199400,
+          "st_birthtime": 1739062475.3575318,
+          "st_birthtime_ns": 1739062475357531900,
+          "st_ctime": 1739062475.3575318,
+          "st_ctime_ns": 1739062475357531900,
+          "st_dev": 14290083805553457215,
+          "st_file_attributes": 262176,
+          "st_gid": 0,
+          "st_ino": 562949954402497,
+          "st_mode": 33279,
+          "st_mtime": 1739026277.0,
+          "st_mtime_ns": 1739026277000000000,
+          "st_nlink": 1,
+          "st_reparse_tag": 0,
+          "st_size": 221696,
+          "st_uid": 0
+        },
+        "opened": {
+          "st_atime": 1794892115.3321993,
+          "st_atime_ns": 1794892115332199400,
+          "st_birthtime": 1739062475.3575318,
+          "st_birthtime_ns": 1739062475357531900,
+          "st_ctime": 1739118986.7387278,
+          "st_ctime_ns": 1739118986738727900,
+          "st_dev": 14290083805553457215,
+          "st_file_attributes": 32,
+          "st_gid": 0,
+          "st_ino": 562949954402497,
+          "st_mode": 33206,
+          "st_mtime": 1739026277.0,
+          "st_mtime_ns": 1739026277000000000,
+          "st_nlink": 1,
+          "st_reparse_tag": 0,
+          "st_size": 221696,
+          "st_uid": 0
+        },
+        "after": {
+          "st_atime": 1794930936.5127702,
+          "st_atime_ns": 1794930936512770100,
+          "st_birthtime": 1739062475.3575318,
+          "st_birthtime_ns": 1739062475357531900,
+          "st_ctime": 1739118986.7387278,
+          "st_ctime_ns": 1739118986738727900,
+          "st_dev": 14290083805553457215,
+          "st_file_attributes": 32,
+          "st_gid": 0,
+          "st_ino": 562949954402497,
+          "st_mode": 33206,
+          "st_mtime": 1739026277.0,
+          "st_mtime_ns": 1739026277000000000,
+          "st_nlink": 1,
+          "st_reparse_tag": 0,
+          "st_size": 221696,
+          "st_uid": 0
+        },
+        "final": {
+          "st_atime": 1794930936.5127702,
+          "st_atime_ns": 1794930936512770100,
+          "st_birthtime": 1739062475.3575318,
+          "st_birthtime_ns": 1739062475357531900,
+          "st_ctime": 1739062475.3575318,
+          "st_ctime_ns": 1739062475357531900,
+          "st_dev": 14290083805553457215,
+          "st_file_attributes": 32,
+          "st_gid": 0,
+          "st_ino": 562949954402497,
+          "st_mode": 33279,
+          "st_mtime": 1739026277.0,
+          "st_mtime_ns": 1739026277000000000,
+          "st_nlink": 1,
+          "st_reparse_tag": 0,
+          "st_size": 221696,
+          "st_uid": 0
+        }
+      },
+      "original_guard_stamp_fields": [
+        "st_dev",
+        "st_ino",
+        "st_size",
+        "st_mtime_ns",
+        "st_nlink",
+        "st_file_attributes"
+      ],
+      "original_guard_stamps": {
+        "before": [
+          14290083805553457215,
+          562949954402497,
+          221696,
+          1739026277000000000,
+          1,
+          262176
+        ],
+        "opened": [
+          14290083805553457215,
+          562949954402497,
+          221696,
+          1739026277000000000,
+          1,
+          32
+        ],
+        "after": [
+          14290083805553457215,
+          562949954402497,
+          221696,
+          1739026277000000000,
+          1,
+          32
+        ],
+        "final": [
+          14290083805553457215,
+          562949954402497,
+          221696,
+          1739026277000000000,
+          1,
+          32
+        ]
+      },
+      "deltas_from_before_all_stat_fields": {
+        "opened": {
+          "st_ctime": {
+            "before": 1739062475.3575318,
+            "actual": 1739118986.7387278,
+            "delta": 56511.381196022034
+          },
+          "st_ctime_ns": {
+            "before": 1739062475357531900,
+            "actual": 1739118986738727900,
+            "delta": 56511381196000
+          },
+          "st_file_attributes": {
+            "before": 262176,
+            "actual": 32,
+            "delta": -262144
+          },
+          "st_mode": {
+            "before": 33279,
+            "actual": 33206,
+            "delta": -73
+          }
+        },
+        "after": {
+          "st_atime": {
+            "before": 1794892115.3321993,
+            "actual": 1794930936.5127702,
+            "delta": 38821.180570840836
+          },
+          "st_atime_ns": {
+            "before": 1794892115332199400,
+            "actual": 1794930936512770100,
+            "delta": 38821180570700
+          },
+          "st_ctime": {
+            "before": 1739062475.3575318,
+            "actual": 1739118986.7387278,
+            "delta": 56511.381196022034
+          },
+          "st_ctime_ns": {
+            "before": 1739062475357531900,
+            "actual": 1739118986738727900,
+            "delta": 56511381196000
+          },
+          "st_file_attributes": {
+            "before": 262176,
+            "actual": 32,
+            "delta": -262144
+          },
+          "st_mode": {
+            "before": 33279,
+            "actual": 33206,
+            "delta": -73
+          }
+        },
+        "final": {
+          "st_atime": {
+            "before": 1794892115.3321993,
+            "actual": 1794930936.5127702,
+            "delta": 38821.180570840836
+          },
+          "st_atime_ns": {
+            "before": 1794892115332199400,
+            "actual": 1794930936512770100,
+            "delta": 38821180570700
+          },
+          "st_file_attributes": {
+            "before": 262176,
+            "actual": 32,
+            "delta": -262144
+          }
+        }
+      },
+      "guard_mismatches": {
+        "opened": {
+          "st_file_attributes": {
+            "before": 262176,
+            "actual": 32,
+            "delta": -262144
+          }
+        },
+        "after": {
+          "st_file_attributes": {
+            "before": 262176,
+            "actual": 32,
+            "delta": -262144
+          }
+        },
+        "final": {
+          "st_file_attributes": {
+            "before": 262176,
+            "actual": 32,
+            "delta": -262144
+          }
+        }
+      },
+      "digest_captured": true,
+      "digest": "6080217dc842c5850c1ab58988074ef11012423d594c0c942f075563a483fd19",
+      "captured_content_identity": {
+        "bytes": 221696,
+        "mtime_ns": 1739026277000000000,
+        "sha256": "6080217dc842c5850c1ab58988074ef11012423d594c0c942f075563a483fd19"
+      },
+      "captured_content_identity_matches_lock": true,
+      "elapsed_ns": 26792000,
+      "finished_utc": "2026-11-17T15:55:36.514104+00:00"
+    },
+    {
+      "round": 2,
+      "path": "C:\\Program Files\\Python313\\python.exe",
+      "expected": {
+        "bytes": 105840,
+        "mtime_ns": 1733277492000000000,
+        "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+      },
+      "started_utc": "2026-11-17T15:55:36.514138+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 105840,
+        "mtime_ns": 1733277492000000000,
+        "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 1196000,
+      "finished_utc": "2026-11-17T15:55:36.515359+00:00"
+    },
+    {
+      "round": 2,
+      "path": "C:\\Program Files\\Python313\\pythonw.exe",
+      "expected": {
+        "bytes": 104304,
+        "mtime_ns": 1733277492000000000,
+        "sha256": "2bea4fc941b7d9436afa1be8cb46551c0694deed23b3fec87b969054238be099"
+      },
+      "started_utc": "2026-11-17T15:55:36.515370+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 104304,
+        "mtime_ns": 1733277492000000000,
+        "sha256": "2bea4fc941b7d9436afa1be8cb46551c0694deed23b3fec87b969054238be099"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 681900,
+      "finished_utc": "2026-11-17T15:55:36.516056+00:00"
+    },
+    {
+      "round": 2,
+      "path": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+      "expected": {
+        "bytes": 171924488,
+        "mtime_ns": 1769365853000000000,
+        "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf"
+      },
+      "started_utc": "2026-11-17T15:55:36.516062+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 171924488,
+        "mtime_ns": 1769365853000000000,
+        "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 76009400,
+      "finished_utc": "2026-11-17T15:55:36.592076+00:00"
+    },
+    {
+      "round": 2,
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+      "expected": {
+        "bytes": 108687824,
+        "mtime_ns": 1779176446000000000,
+        "sha256": "1e6624af112b3c936f4b038b025ebd2bf00ae72c4b62881a6787166d71c58fa5"
+      },
+      "started_utc": "2026-11-17T15:55:36.592088+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 108687824,
+        "mtime_ns": 1779176446000000000,
+        "sha256": "1e6624af112b3c936f4b038b025ebd2bf00ae72c4b62881a6787166d71c58fa5"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 50774100,
+      "finished_utc": "2026-11-17T15:55:36.642867+00:00"
+    },
+    {
+      "round": 2,
+      "path": "C:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe",
+      "expected": {
+        "bytes": 431104,
+        "mtime_ns": 1739026277000000000,
+        "sha256": "8d334ffec552898aed0f095f507cd994c4f2825d4b88c352e7a37cd26b7f5b70"
+      },
+      "started_utc": "2026-11-17T15:55:36.642879+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 431104,
+        "mtime_ns": 1739026277000000000,
+        "sha256": "8d334ffec552898aed0f095f507cd994c4f2825d4b88c352e7a37cd26b7f5b70"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 900400,
+      "finished_utc": "2026-11-17T15:55:36.643783+00:00"
+    },
+    {
+      "round": 2,
+      "path": "C:\\Program Files\\ffmpeg\\bin\\ffprobe.exe",
+      "expected": {
+        "bytes": 221696,
+        "mtime_ns": 1739026277000000000,
+        "sha256": "6080217dc842c5850c1ab58988074ef11012423d594c0c942f075563a483fd19"
+      },
+      "started_utc": "2026-11-17T15:55:36.643790+00:00",
+      "status": "ORIGINAL_IDENTITY_RETURNED",
+      "observed": {
+        "bytes": 221696,
+        "mtime_ns": 1739026277000000000,
+        "sha256": "6080217dc842c5850c1ab58988074ef11012423d594c0c942f075563a483fd19"
+      },
+      "identity_matches_lock": true,
+      "identity_differences": {},
+      "elapsed_ns": 919400,
+      "finished_utc": "2026-11-17T15:55:36.644764+00:00"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "format": "has_interrupted_freeze_source_scalar_seal_1",
+  "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "files": [
+    {
+      "path": "freeze_neon_00bf_interrupted_20261117.py",
+      "sha256": "cf652ef7c82b19ead13e8e59d21ab90dd294de1673af9bb9b6763d2a2202dd5c"
+    },
+    {
+      "path": "test_neon_00bf_interrupted_freeze_20261117.py",
+      "sha256": "3f9de28e1ff70f5ed32cb64bb014cdf6a1ba500493c0eaff3d14a05cb1d5f7b8"
+    },
+    {
+      "path": "neon_00bf_interrupted_freeze_20261117_summary.json",
+      "sha256": "ee64dde193b9d3201a92e6553af938efc8fd195b9ace90c019abf337fba99fb1"
+    }
+  ],
+  "private_inventory_sha256": "6ea95acc9b13af6bec50781eb705a414e8640282c4b3aa09f67db28cc385fefa",
+  "cpu_verification_passed": true,
+  "verified_compressed_bindings": 215,
+  "verified_individual_receipts": 80,
+  "negative_closure_or_cancellation_cases": 12,
+  "root_restart_authority_sha256": "a69367aa1a317da33ac62fc4005c93f1cbac86df4fe6d92df72bd1b45071c3b0",
+  "root_restart_authority_basis": "Root separately observed strict current scope empty after OS restart; this freeze makes no process observation or old-run terminal claim",
+  "all_old_jobs_gracefully_closed": "unknown",
+  "suite_exit": null,
+  "full_suite_passed": false,
+  "raw_phase_receipts_and_logs_private_only": true
+}

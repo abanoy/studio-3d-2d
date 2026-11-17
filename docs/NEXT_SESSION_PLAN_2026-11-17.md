@@ -1,6 +1,68 @@
 # HAS continuation — November 17, 2026
 
-CURRENT at 2026-11-17T04:44:03.096097+00:00:00bf0f9 complete Windows run is RUNNING, not PASS.
+CURRENT dated 2026-11-17T16:01:00.667636+00:00: freshsame00bf replay2 RUNNING, notPASS.
+Run output/windows-neon-00bf0f9-replay2-20261117T155709412051; coordinator19808
+GetProcessbirth15:58:55.2656645Z, Python8888 GetProcessbirth15:58:55.9596269Z,
+parent19808; CIM.9596260 metadataonly. Freeze1029functional files/HEAD00bf.
+Rootnative lane exclusive; no secondnative/engine. Newcontext-only terminalhelper
+is sealed INDEX9a7ae20b/c6ecc921 context,29CPU+sourcepeer pass. Never reuse the
+interrupted predecessor context. Exactunchanged
+strict host preflight6+574original/copy+120+36 and currentMima/rawVRM passed.
+Expected158/36/21 are not observedPASS totals. Rawlogs/fullreport/audits private
+under REVIEW/output; existing output/ ignore applies. Oldexperimental-path
+ignore rule was redundant and removed, without publishing private data.
+
+Only after root independently observes this NEW run's real terminal state:
+approved host Python -B experiments/neon_00bf_replay2_terminal_20261117/
+close_terminal.py --root-terminal-confirmed --release-closed. Audit fresh158/36/21,
+12504Neon/source1029/birth/actualphysical+inline ownership/closure; expectedcounts
+are not results. If Windows interrupts again, preserve the running state instead
+of inventing a terminal exit. All raw audit outputs remain private under output/.
+
+
+PRECEDING: old00bf full is INTERRUPTED_NO_TERMINAL_RESULT after Windows reboots
+13:29:40.5000000Z and15:44:12.5000000Z. State remainsrunning/noexit/nosource-after;
+do NOT patch it or invoke its strict terminalhelper as though terminal existed.
+Root exact oldprocess absence/current strictscope0 and1029source equality are
+recorded in experiments/neon_00bf_OS_interruptions_20261117/RESTART_AUTHORITY.json
+SHAa69367aa. Bounded PRIVATE snapshot215files/52phases/80completedreceipts/11inline
+is6ea95acc; oldunwrittenjobs/overallgracefulclosure UNKNOWN. No root termination.
+
+Same00bf replay2 source6bb62e6d retains ALL preflight/Git/input predicates; inverse
+and64negative proof cases pass. Actualpreflight refused beforeanyreservation or
+engine at in-readPythonw thenFFmpeg stamps; originaldifferingfield/cause UNKNOWN.
+Four subsequentPythonw reads/originalidentity match; guards unchanged. Diagnose
+all6approvedruntimes then retry strictpreflight/newprivate run with fresh births.
+No replay2 full started at this dated observation. Root exclusive native lane.
+
+Completedcold187 adapter remains INACTIVE; source29CPU is not startup187. Public
+successful-full projection14/certificate18CPU is source-only; omittedprivate
+data is not validated byprojection and archiveactivation still refuses.
+
+
+Completed follow-up source work: closed00bf focused archive5f8ea135 has69bindings/
+61objects/8privatejobs,32CPU and root exact-original joins pass. Inactive cold187
+adapter7b12445a preserves original187 predicates/fourcases/ninegates;29CPU pass,
+actual startup/187 remains UNRUN. PMX map474b6bc9 and helper-budget49ffc77f remain
+source-only; native qualification/importer integration/solver remain UNRUN.
+Master plan section17 links the concrete next PMX increment.
+
+PRIVATE: the full successful report, canonical.log and this run's raw terminal
+audit directory can contain native model data. Do not publish them wholesale.
+Actual terminal audits stay under REVIEW/output, already ignored by output/.
+Only an independently reviewed explicit scalar projection may be selected.
+
+
+Latest retrieval checkpoint: main4ec7b57334ca04aab42d3d4e8a62c12df4858d8c.
+All694 public files independently fetched/exact Git blobs (7,829,487bytes;
+2working-EOL recipes). Proof experiments/neon_fe9_checkpoint_remote_20261117/
+COMPLETE_READBACK.json is saved locally for the next checkpoint. This preserves
+fe9/00bf source, failure archives, historical52witness, inactive copy executor
+and the completed71public-cache cleanup. Main1019 still equals qualified52f;
+redesign remains UNMERGED. No additional cleanup or review-branch push occurred.
+
+
+HISTORICAL running observation at 2026-11-17T04:44:03.096097+00:00:00bf0f9 complete Windows run is RUNNING, not PASS.
 Run output/windows-neon-00bf0f9-20261117T044200 started04:42:33Z. Coordinator21216
 GetProcessbirth04:42:33.4387679Z; Python16808 GetProcessbirth04:42:33.9446445Z,
 parent21216; CIMrounded.9446440 is metadata only. Freeze Review1029 functional
@@ -22,7 +84,7 @@ CurrentMima7,830,992B/e9b21 matches retaineddescriptor and exact priorMain52 pla
 the missing different historicalb577 bundle is not substituted. Strict fresh6
 runtimes/574SourceIOoriginal+copy/120exporter/36fixtures pass; extra currentMima,
 descriptors/rawVRM identities are pinned. Review-branch upload not attempted;
-00bf four-text-file reconstructione6837fe4 and parentfe9packet awaitmaincheckpoint.
+00bf four-text-file reconstructione6837fe4 and parentfe9packet are recovered frommain4ec7b57.
 
 
 PRECEDING: fe9 complete default FAILED04:27:26.4771603Z, source1029 unchanged.
@@ -48,7 +110,7 @@ Continue independently without manual questions. Full owner scope/backlog:
 [RESUME_MASTER_PLAN.md](RESUME_MASTER_PLAN.md). Later explicit resume overrides
 historical pause notes. Do not ask for lost backups or owner checks while busy.
 
-Main e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a is pushed; all534 public files
+Earlier checkpoint e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a is pushed; all534 public files
 independently retrieved/exactGitblobs (5,857,844bytes,2working-EOL recipes).
 Main functional1019 still equals qualified52f; redesign is UNMERGED. The optional
 review-branch375 upload was auto-review rejected and NOT retried. Explicit goal
