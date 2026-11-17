@@ -1,0 +1,582 @@
+{
+  "format": "has_current_full_safe_result_extract_1",
+  "source_commit": "52f63c944ded7a651da871524d23a345b606424d",
+  "raw_private_report_sha256": "78b1f773d91ecc75a9984940afabc0fe28f06e2f1676e8c6ae0137011e9a89f0",
+  "raw_private_report_bytes": 2332936,
+  "result_keys": [
+    "actual_mmd_tested",
+    "animated_channels",
+    "animated_channels_video",
+    "animation_clips",
+    "animation_clips_unit",
+    "animation_clips_video",
+    "audio_dummy",
+    "audio_editor",
+    "autokey",
+    "autokey_video",
+    "base_shapes",
+    "body_animation",
+    "body_curves",
+    "body_pose_library",
+    "body_pose_native",
+    "bone_labels",
+    "brush_opacity",
+    "brush_pressure",
+    "camera_range",
+    "character_height",
+    "color_sampler",
+    "component_contact_clipboard",
+    "component_contact_physics",
+    "contact_animation",
+    "contact_bend",
+    "contact_bindings",
+    "contact_clipboard",
+    "contact_correction",
+    "contact_editor",
+    "contact_identity",
+    "contact_parent",
+    "contact_persistence",
+    "contact_physics",
+    "contact_selection",
+    "contact_transform",
+    "contact_viewport",
+    "drawing_history",
+    "drawing_origin",
+    "drawing_selection",
+    "drawing_transform",
+    "editor",
+    "editor_audio",
+    "editor_audio_video",
+    "export_failures",
+    "expression_presets",
+    "fan_flutter",
+    "fan_motion",
+    "fan_motion_video",
+    "fill",
+    "fill_connections",
+    "fill_expand",
+    "fill_gaps",
+    "first_movie",
+    "foot_contacts_experiment",
+    "foot_hold",
+    "has_background_save",
+    "helper_morphs",
+    "helper_preview_cpu",
+    "helper_preview_driver",
+    "helper_preview_graphical",
+    "home",
+    "import_physics",
+    "import_placement",
+    "krita_import",
+    "krita_inventory",
+    "krita_preparation",
+    "layers",
+    "lighting",
+    "limb_ik",
+    "limb_ik_video",
+    "live_appearance",
+    "map_calibration",
+    "mmd_groups",
+    "motion_assist",
+    "motion_editor",
+    "motion_helper_edits",
+    "motion_model",
+    "motion_native_preview",
+    "motion_parts",
+    "motion_tracks",
+    "multi_audio",
+    "native_fixture_plans",
+    "native_readback_lifecycle",
+    "new_scene",
+    "new_scene_video",
+    "numeric_camera",
+    "object_timing",
+    "object_timing_video",
+    "onion",
+    "opacity",
+    "opaque_order",
+    "owner_review_snapshot",
+    "palette",
+    "physics",
+    "physics_contacts",
+    "physics_props",
+    "physics_props_video",
+    "physics_recording",
+    "physics_recording_unit",
+    "physics_recording_video",
+    "physics_video",
+    "pose",
+    "pose_bounds",
+    "pose_checks",
+    "posed_model_video_0",
+    "posed_model_video_1",
+    "private_metadata_windows",
+    "project_duration",
+    "recovery",
+    "recovery_history",
+    "recovery_identity",
+    "recovery_preview",
+    "recovery_schedule",
+    "recovery_startup",
+    "recovery_write",
+    "representative_png_sha256",
+    "required_extensions",
+    "rotation_gizmo",
+    "scene_view",
+    "secondary_batch",
+    "secondary_helpers",
+    "secondary_motion",
+    "secondary_motion_video",
+    "secondary_picking",
+    "shape_animation",
+    "shape_catalogue",
+    "shape_comparison",
+    "shape_study",
+    "shortcuts",
+    "silent_video",
+    "source_choice_foundation",
+    "source_import_owner",
+    "source_shapes",
+    "spike_fixture",
+    "spike_silent_video",
+    "spikes",
+    "tone_onset_seconds",
+    "tone_video",
+    "tutorials",
+    "ui",
+    "unit",
+    "visibility",
+    "visibility_video",
+    "wind_review",
+    "workspace_controls",
+    "workspace_docking",
+    "workspace_nested",
+    "workspace_resize",
+    "world_document",
+    "world_edit",
+    "world_edit_video",
+    "world_runtime",
+    "world_runtime_video",
+    "world_selection",
+    "world_selection_teardown",
+    "world_workflow",
+    "world_workflow_video"
+  ],
+  "core_process_groups": {
+    "unit": {
+      "exit": 0,
+      "seconds": 0.589
+    },
+    "motion_parts": {
+      "exit": 0,
+      "seconds": 1.149
+    },
+    "motion_helper_edits": {
+      "exit": 0,
+      "seconds": 0.316
+    },
+    "opaque_order": {
+      "exit": 0,
+      "seconds": 0.407
+    },
+    "required_extensions": {
+      "exit": 0,
+      "seconds": 0.404
+    },
+    "contact_bend": {
+      "exit": 0,
+      "seconds": 0.216
+    },
+    "spikes": {
+      "exit": 0,
+      "seconds": 5.718
+    },
+    "editor": {
+      "exit": 0,
+      "seconds": 9.043
+    },
+    "export_failures": {
+      "exit": 0,
+      "seconds": 0.978
+    },
+    "audio_editor": {
+      "exit": 0,
+      "seconds": 9.759
+    },
+    "audio_dummy": {
+      "exit": 0,
+      "seconds": 5.07
+    },
+    "ui": {
+      "exit": 0,
+      "seconds": 4.979
+    },
+    "recovery_write": {
+      "exit": 0,
+      "seconds": 7.967
+    },
+    "recovery": {
+      "exit": 0,
+      "seconds": 5.207
+    },
+    "pose": {
+      "exit": 0,
+      "seconds": 16.246
+    },
+    "autokey": {
+      "exit": 0,
+      "seconds": 11.134
+    },
+    "new_scene": {
+      "exit": 0,
+      "seconds": 8.385
+    },
+    "world_selection": {
+      "exit": 0,
+      "seconds": 9.98
+    },
+    "world_document": {
+      "exit": 0,
+      "seconds": 4.333
+    },
+    "world_runtime": {
+      "exit": 0,
+      "seconds": 11.043
+    },
+    "world_edit": {
+      "exit": 0,
+      "seconds": 23.572
+    },
+    "world_workflow": {
+      "exit": 0,
+      "seconds": 11.773
+    },
+    "object_timing": {
+      "exit": 0,
+      "seconds": 21.722
+    },
+    "bone_labels": {
+      "exit": 0,
+      "seconds": 5.131
+    },
+    "animation_clips_unit": {
+      "exit": 0,
+      "seconds": 0.515
+    },
+    "animation_clips": {
+      "exit": 0,
+      "seconds": 26.448
+    },
+    "visibility": {
+      "exit": 0,
+      "seconds": 21.779
+    },
+    "animated_channels": {
+      "exit": 0,
+      "seconds": 18.891
+    },
+    "limb_ik": {
+      "exit": 0,
+      "seconds": 28.565
+    },
+    "secondary_motion": {
+      "exit": 0,
+      "seconds": 10.341
+    },
+    "fan_motion": {
+      "exit": 0,
+      "seconds": 21.277
+    },
+    "physics": {
+      "exit": 0,
+      "seconds": 45.855
+    },
+    "physics_contacts": {
+      "exit": 0,
+      "seconds": 90.858
+    },
+    "physics_props": {
+      "exit": 0,
+      "seconds": 24.169
+    },
+    "physics_recording_unit": {
+      "exit": 0,
+      "seconds": 0.615
+    },
+    "physics_recording": {
+      "exit": 0,
+      "seconds": 43.484
+    }
+  },
+  "movie_groups": {
+    "silent_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "3b6de4e33c6cb4f80043d6493719529863b082e01f395d2f408c28479f0cf751",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "spike_silent_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "9b946c0cbc56019f75c6ed3a9e1174b8c2d8d263958826707af8456c05f23c47",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "tone_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "522d0de0ddb9710c1d5781e3859db13562641b74c24b56ffceee087b35a496c8",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "editor_audio_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "98c37f0d7c21e001e3fd1d10567ad200f3a0ce6338d592ebf7c4f6f16c851c39",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "autokey_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "58af56db7523d1889d3d4bc35c6c7cf7af877f07e998821f4cf2fd3914901308",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "new_scene_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "4a055582f97a11eae3798663ced06c99f69091c3a873fb93d93152b74acbbc80",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "world_runtime_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "c06fd6b75136903466c0a7af6ff3e5a8c90fa0be92495e63ef4e9a52ed7e5cdb",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "world_edit_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "6f85c21295ed560db5d77b18d7e80220e5aa39371d5769da7fdbc200054eff72",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "world_workflow_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "d40d7461d9e3fd069ea84a674481cd95c732aa7b2da8c180763ec91540de701d",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "object_timing_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "fcf41eef271e6adee0161a428e32b7bc9653adf38113ff32329c13eca7a11b83",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "animation_clips_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "1d46ff727a44b37488b31d339a8583c7c266c99abf48ce0fc18a80c26c4aae67",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "visibility_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "485adfafa3a42e5139ace739ca764d6a0b967a2ba3fe8f67711c4cb7d0693d54",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "animated_channels_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "dd8779a54a0ba9b7edd0ca065690a9b662acad953e952b1202b137e25d778b89",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "limb_ik_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "fb9c94b5947e1ffa1156b33d568719668db2d4db6eb6dcabab687e68e09adf47",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "physics_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "6994739842a67e808683ad93fd09d5fe997b738f38227f0cd3f5b05ca7f5801a",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "secondary_motion_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "c4c8ea07b8dd0f76aee48d89b93dbb8915affef686275af07c426cc46407f1c2",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "fan_motion_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [],
+      "metadata_file_sha256": "cb1346859c2cfb42fc448048b529b384d43f432f8e78dc6019e09a89242fa220",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "physics_props_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "d3c41191a595a22af7ffb60ba5e1a1735796d16b070ee6e121637e7d752449e4",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "physics_recording_video": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "audio_codecs": [
+        "aac"
+      ],
+      "metadata_file_sha256": "0fc4a3269079eb2993edd592a66cb644b806f5b4914e7a0d7bbcad35dcd0aa41",
+      "codec_evidence": "Exact saved ffprobe scalar extraction; full metadata body not copied."
+    },
+    "posed_model_video_0": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "codec_evidence": "Explicit assertions in pinned verify_media source and actual complete PASS; no saved separate ffprobe JSON for these two rows."
+    },
+    "posed_model_video_1": {
+      "frames": 48,
+      "fps": "24/1",
+      "duration": "2.000000",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "codec_evidence": "Explicit assertions in pinned verify_media source and actual complete PASS; no saved separate ffprobe JSON for these two rows."
+    }
+  },
+  "actual_mmd_tested": true,
+  "source_choice_foundation_checks": 167,
+  "source_import_owner_checks": 53,
+  "raw_full_report_copied": false,
+  "private_native_or_pose_or_media_payloads_copied": false
+}

@@ -1,5 +1,8 @@
 # HAS continuation — November 15, 2026
 
+Superseded by [November16 pickup](NEXT_SESSION_PLAN_2026-11-16.md). The full52f
+run now passes; paragraphs below preserve earlier stages and failures.
+
 The owner explicitly resumed independent work. Continue implementation without
 making the parked manual exercises a prerequisite. The owner deferred the
 volunteered Junko hair-click exercise because busy and explicitly asked continued

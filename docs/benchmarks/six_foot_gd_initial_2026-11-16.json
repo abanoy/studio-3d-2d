@@ -1,0 +1,29 @@
+{
+  "format": "has_six_foot_initial_engine_probe_1",
+  "status": "FAILED_ISOLATED_DOMAIN_MAIN_UNCHANGED",
+  "checks": 444,
+  "failures": 7,
+  "failed_names": [
+    "corpus.schema_encode_0",
+    "corpus.schema_encode_1",
+    "corpus.schema_encode_2",
+    "corpus.schema_encode_3",
+    "corpus.schema_encode_4",
+    "corpus.schema_encode_5",
+    "corpus.schema_encode_6"
+  ],
+  "execution": {
+    "path": "output/six-foot-domain-20261116-attempt1/verification.json",
+    "sha256": "e6b517ed3ac7887880f42f42aed44b11c1d40da63481577e5ff1dfa5c7056ecf"
+  },
+  "result": {
+    "path": "output/six-foot-domain-20261116-attempt1/Studio/output/domain/result.json",
+    "sha256": "9a0e01df46b18e00446b5e4e1290925cb53ec14760346313af0b74ef1823cf98"
+  },
+  "boundary": "UNRUN_AFTER_DOMAIN_FAILURE",
+  "parser_passed": true,
+  "root_lease_released": true,
+  "actual_import_normalization_active": false,
+  "application_source_modified": false,
+  "next": "Diagnose schema encode discrepancy against transported oracle; preserve first failure and all exact numeric checks."
+}

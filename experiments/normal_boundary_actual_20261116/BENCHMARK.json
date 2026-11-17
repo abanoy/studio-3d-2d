@@ -1,0 +1,67 @@
+{
+  "format": "has_normal_boundary_actual_benchmark_1",
+  "source_commit": "52f63c944ded7a651da871524d23a345b606424d",
+  "diagnostic_status": "COHERENT_BOUNDARY_MEASUREMENT",
+  "normal_fidelity": "FAILED_UNQUALIFIED",
+  "original_threshold": 2e-05,
+  "original_failures": 8364,
+  "original_count": 9661,
+  "original_max_distance": 0.00121654672362075,
+  "original_mean_distance": 4.544684541611846e-05,
+  "captured_meshes": 2,
+  "captured_corners": 42702,
+  "matched_exported_vertices": 9661,
+  "unmatched_exported_vertices": 0,
+  "exporter_prediction_max_error": 0.0,
+  "native_to_saved_blender_best_above_threshold": 2108,
+  "saved_blender_to_glb_above_threshold": 8249,
+  "attempt1": {
+    "capture": {
+      "pid": 23056,
+      "exit": 2,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "owned_wrapper_terminated": false,
+      "seconds": 8.750480300000163
+    },
+    "comparison": "UNRUN",
+    "diagnostic_completed": false,
+    "physical_job_and_desktop_closed": true,
+    "window_seen": false,
+    "desktop_confirmed": false,
+    "root_closure_owned_count": 0,
+    "placement_qualification": "FAILED"
+  },
+  "attempt2": {
+    "capture": {
+      "pid": 1420,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "owned_wrapper_terminated": false,
+      "seconds": 7.942197100000158
+    },
+    "comparison": {
+      "pid": 17740,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "owned_wrapper_terminated": false,
+      "seconds": 3.488256299999648
+    },
+    "diagnostic_completed": true,
+    "physical_job_and_desktop_closed": true,
+    "window_seen": true,
+    "desktop_confirmed": true,
+    "root_closure_owned_count": 0,
+    "strict_sentinel_policy_satisfied": true
+  },
+  "identical_private_capture_sha256": "0ef144f3ffe093d6c01f31e5e6fadf98e87a5c7de2b4013c27d42809dabd6921",
+  "interpretation": "The saved corner-normal/exporter boundary is measured coherently; original native fidelity still fails. Normalization does not repair it. Corner ambiguity prevents unique setter/encoder causal attribution.",
+  "hidden_window_scope": "Background process desktop placement only; no Blender GUI or rendering assertion.",
+  "product_source_changed_by_probe": false,
+  "installed_sources_modified": false,
+  "private_arrays_published": false,
+  "new_acceptance_checks_claimed": 0,
+  "human_review": "DEFERRED_NO_RESULT"
+}

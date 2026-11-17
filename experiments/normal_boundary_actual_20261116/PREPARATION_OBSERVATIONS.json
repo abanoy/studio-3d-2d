@@ -1,0 +1,26 @@
+{
+  "format": "has_normal_preparation_observation_1",
+  "artifact_observations": [
+    {
+      "artifact": "preflight/normal-preflight-runtime-stamps-20261116.json",
+      "meaning": "Initial ffmpeg strict file-stamp refusal; no stage created. Three subsequent four-stamp observations all agree with the approved hash. Cause remains UNDETERMINED."
+    },
+    {
+      "artifact": "preflight/normal-runtime-stage-trace-1794872690018354700.json",
+      "meaning": "All six unchanged strict identities passed. Instrumented runpy setup then refused missing probe_support before staging."
+    },
+    {
+      "artifact": "preflight/normal-runtime-stage-trace-1794872697847387300.json",
+      "meaning": "After adding the packet script directory to sys.path, all six unchanged strict identities and the unchanged stager passed."
+    }
+  ],
+  "root_reported_tool_trace_only_observations": [
+    "An initial attempt2 stager refused a pythonw file-stamp mismatch before writes; initial failing stamps were not retained, so cause remains UNDETERMINED.",
+    "A nested-quote temporary Python runner generator had SyntaxError, followed by a missing-runner launch; no native process started.",
+    "The first attempt2 coordinator preparation assumed dict INDEX rows but received a list, refusing before an output directory or native process. The retained coordinator handles either exact schema."
+  ],
+  "reported_observation_provenance": "Root task handoff and tool trace; no separate raw log is asserted for these three observations.",
+  "strict_identity_gate_changed": false,
+  "invented_logs_or_stamps": false,
+  "historical_preparation_statuses_preserved": true
+}

@@ -1,0 +1,87 @@
+@contextmanager
+def _hidden_placement_sentinel():
+    """Own a hidden zero-size HWND; unchanged outer monitor proves its desktop.
+
+    This is placement evidence for a background process, not Blender GUI or
+    rendering evidence. Never shows/activates a window or changes a desktop.
+    """
+    if sys.platform != 'win32':
+        raise RuntimeError('Hidden placement sentinel requires Windows')
+    user=C.WinDLL('user32',use_last_error=True)
+    kernel=C.WinDLL('kernel32',use_last_error=True)
+    def api(lib,name,result,*arguments):
+        value=getattr(lib,name);value.restype=result;value.argtypes=arguments;return value
+    create=api(user,'CreateWindowExW',W.HWND,W.DWORD,W.LPCWSTR,W.LPCWSTR,W.DWORD,C.c_int,C.c_int,C.c_int,C.c_int,W.HWND,W.HMENU,W.HINSTANCE,C.c_void_p)
+    destroy=api(user,'DestroyWindow',W.BOOL,W.HWND)
+    is_window=api(user,'IsWindow',W.BOOL,W.HWND)
+    visible=api(user,'IsWindowVisible',W.BOOL,W.HWND)
+    enabled=api(user,'IsWindowEnabled',W.BOOL,W.HWND)
+    owner=api(user,'GetWindowThreadProcessId',W.DWORD,W.HWND,C.POINTER(W.DWORD))
+    get_style=api(user,'GetWindowLongW',W.LONG,W.HWND,C.c_int)
+    get_rect=api(user,'GetWindowRect',W.BOOL,W.HWND,C.POINTER(W.RECT))
+    current_pid=api(kernel,'GetCurrentProcessId',W.DWORD)
+    current_tid=api(kernel,'GetCurrentThreadId',W.DWORD)
+    pid=int(current_pid());tid=int(current_tid())
+    WS_POPUP=0x80000000;WS_DISABLED=0x08000000;WS_VISIBLE=0x10000000;WS_CHILD=0x40000000
+    WS_EX_NOACTIVATE=0x08000000;WS_EX_TOOLWINDOW=0x00000080
+    hwnd=None
+    policy={'format':'has_hidden_background_desktop_placement_sentinel_1',
+        'purpose':'Owned background-process desktop placement only; no Blender GUI or render assertion.',
+        'class':'STATIC','requested_size_pixels':[0,0],'disabled':False,'noactivate_style':False,
+        'toolwindow_style':False,'visible_at_creation':None,'visible_before_destruction':None,
+        'owned_pid_and_thread_verified':False,'destroyed_in_finally':False,
+        'show_or_activation_calls':False,'thread_desktop_switch_calls':False}
+    def checked_owned():
+        if not hwnd or not is_window(hwnd):raise RuntimeError('Owned placement HWND is unavailable')
+        found=W.DWORD();thread=int(owner(hwnd,C.byref(found)))
+        if int(found.value)!=pid or thread!=tid or int(current_tid())!=tid:
+            raise RuntimeError('Placement HWND process/thread ownership differs')
+    try:
+        # A top-level system class; no parent, menu, WS_VISIBLE, message-only
+        # parent or desktop-switch API. Startup lpDesktop remains authoritative.
+        hwnd=create(WS_EX_NOACTIVATE|WS_EX_TOOLWINDOW,'STATIC','HAS background capture placement',WS_POPUP|WS_DISABLED,0,0,0,0,None,None,None,None)
+        if not hwnd:raise OSError(C.get_last_error(),'Create hidden placement HWND')
+        checked_owned()
+        style=int(get_style(hwnd,-16))&0xffffffff
+        extended=int(get_style(hwnd,-20))&0xffffffff
+        area=W.RECT()
+        if not get_rect(hwnd,C.byref(area)):raise OSError(C.get_last_error(),'Read hidden placement rectangle')
+        if style&(WS_POPUP|WS_DISABLED)!=(WS_POPUP|WS_DISABLED) or style&(WS_VISIBLE|WS_CHILD):
+            raise RuntimeError('Placement HWND is not hidden disabled top-level popup')
+        if extended&(WS_EX_NOACTIVATE|WS_EX_TOOLWINDOW)!=(WS_EX_NOACTIVATE|WS_EX_TOOLWINDOW):
+            raise RuntimeError('Placement HWND activation/tool policy differs')
+        if area.right!=area.left or area.bottom!=area.top or visible(hwnd) or enabled(hwnd):
+            raise RuntimeError('Placement HWND must remain zero-size, hidden and disabled')
+        policy.update(disabled=True,noactivate_style=True,toolwindow_style=True,
+                      visible_at_creation=False,owned_pid_and_thread_verified=True)
+        yield policy
+    finally:
+        if hwnd:
+            checked_owned()
+            policy['visible_before_destruction']=bool(visible(hwnd))
+            if not destroy(hwnd):raise OSError(C.get_last_error(),'Destroy owned placement HWND')
+            policy['destroyed_in_finally']=True
+            if policy['visible_before_destruction']:
+                raise RuntimeError('Placement HWND unexpectedly became visible')
+
+
+def _main_with_placement_sentinel():
+    # The original main remains byte-exact. Its numeric/private capture and
+    # original public fields are unchanged; append placement policy only after
+    # successful cleanup. A cleanup failure exits nonzero and remains a failure.
+    require(getattr(bpy.app,'background',None) is True,'Actual Blender background mode required')
+    with _hidden_placement_sentinel() as policy:
+        main()
+    policy['blender_background_verified']=True
+    arguments=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
+    parser=argparse.ArgumentParser();parser.add_argument('--lease',type=Path,required=True)
+    lease_path=safe_path(parser.parse_args(arguments).lease)
+    lease,files=check_lease(lease_path,__file__)
+    target=safe_path(lease['private_output_directory'])
+    public_path=target/'PUBLIC_CAPTURE.json'
+    public=json.loads(public_path.read_bytes())
+    require('background_isolation_sentinel' not in public and policy['destroyed_in_finally'] is True,'Fresh cleaned sentinel metadata required')
+    public['background_isolation_sentinel']=policy
+    with public_path.open('w',encoding='utf-8',newline='\n') as handle:
+        json.dump(public,handle,indent=2);handle.write('\n')
+    print('HAS_NORMAL_ISOLATION_SENTINEL '+json.dumps(policy))

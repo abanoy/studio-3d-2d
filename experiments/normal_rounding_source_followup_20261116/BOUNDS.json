@@ -1,0 +1,56 @@
+{
+  "format": "has_normal_rounding_source_bounds_1",
+  "status": "SOURCE_ONLY_EXISTING_NORMAL_GATE_STILL_FAILED",
+  "approved_shared_lock_sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6",
+  "source_reads": [
+    {
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\primitive_extract.py",
+      "sha256": "455a3566d833481b230141b457452b5bf4ff4a1661d4dd6765a568488e0a2769",
+      "bytes": 88128,
+      "approved_lock_hash_matches": true,
+      "line_anchors": [
+        1447
+      ]
+    },
+    {
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\io\\com\\constants.py",
+      "sha256": "be59f961a8f6d08068a7aaae4b91a72c5fadd832ca9b228276732b40f0f68a38",
+      "bytes": 4344,
+      "approved_lock_hash_matches": true,
+      "line_anchors": [
+        159
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647\\blender_bindings\\models\\mdl49\\import_mdl.py",
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b",
+      "bytes": 12880,
+      "approved_lock_hash_matches": true,
+      "line_anchors": [
+        90
+      ]
+    }
+  ],
+  "original_diagnosis_sha256": "d74d600df4e311558cc31f723de2092f3cb02bee61a1ae7576cbbfdf89e6c675",
+  "original_gate": 2e-05,
+  "matched_vertices": 9661,
+  "recorded_max_raw_error": 0.00121654672362075,
+  "recorded_failures_above_gate": 8364,
+  "round4_component_max_error": 5e-05,
+  "round4_vector_error_delta": 8.660254037844386e-05,
+  "simple_normalized_distance_upper_bound": 0.00017320508075688773,
+  "tight_unit_input_normalized_chord_bound": 8.660254045963373e-05,
+  "bound_including_recorded_native_radial_error_to_raw_reference": 8.702418243889324e-05,
+  "observed_max_over_simple_bound": 7.023735783641972,
+  "assumptions": [
+    "Unit or recorded-near-unit input.",
+    "Ideal component rounding then normalization; NumPy/exporter floating-point arithmetic is not executed or independently bounded here.",
+    "Excludes any extra matrix conditioning, Blender normal encoding/evaluation, rematching or other pipeline stage.",
+    "Axis-only orthogonal conversion preserves the bound."
+  ],
+  "conclusion": "Four-decimal rounding alone is insufficient for the recorded maximum. This does not identify the missing factor or reproduce any Blender/SourceIO cause.",
+  "actual_Blender_Godot_converter_or_private_geometry_probe_run": false,
+  "normal_fidelity": "FAILED_UNQUALIFIED;2e-5 unchanged",
+  "next_probe_gate": "Fresh complete default full PASS plus authoritative root process/receipt closure, then separately approved exact probe/source/input pins and fresh private output. Existing prepared Blender/corner capture remains unrun.",
+  "installed_sources_modified": false
+}

@@ -1,0 +1,25 @@
+{
+  "format": "has_current_full_audit_source_review_1",
+  "unchanged_gate_functions": [
+    "load",
+    "read",
+    "registry",
+    "reject_native_payload",
+    "require",
+    "sha",
+    "utc_ns",
+    "validate_result",
+    "validate_reviewed_delta",
+    "validate_scoped"
+  ],
+  "changed_gate_functions": [
+    "validate_live",
+    "validate_raw_host"
+  ],
+  "validate_result_AST_exact_historical": true,
+  "registry_names_exact_historical": true,
+  "birth_schema_adaptation": "Uses actual root-birth-observation.json flat schema and exact observed SHA; no old-schema alias fabricated.",
+  "additional_guards": "Actual full report/log suffix, PASS-only prefix, current1019 membership and source bytes checked before audit output.",
+  "private_output_rule": "Auditor OUT is a fresh direct child of ROOT/output; full-verification/raw receipt copies are not source packet payloads.",
+  "unused_archival_functions": "validate_scoped and validate_reviewed_delta are retained historical source helpers and are not called by this current receipt audit. No current native-profile parity is inferred."
+}

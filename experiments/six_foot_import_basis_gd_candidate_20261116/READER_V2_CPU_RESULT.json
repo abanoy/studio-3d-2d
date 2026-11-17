@@ -1,0 +1,22 @@
+{
+  "format": "has_six_foot_v2_reader_cpu_1",
+  "passed": true,
+  "test_methods": 9,
+  "named_tests": [
+    "test_active_worker_refuses_before_old_resource_reader",
+    "test_internal_contract_only_ready_path_preserves_child_recursion",
+    "test_internal_contract_only_ready_path_preserves_timing_recursion",
+    "test_legacy_worker_inventory_is_exact",
+    "test_parent_cannot_lend_permission_to_child",
+    "test_prior_original_ast_is_still_exact",
+    "test_resource_path_gate_remains_under_internal_ready_path",
+    "test_source_and_basis_remain_exact_after_refusal",
+    "test_ungated_legacy_basis_also_refuses"
+  ],
+  "failures": [],
+  "errors": [],
+  "default_worker_active_basis_admission": false,
+  "internal_ready_positive_paths": "Synthetic contract-only explicit boolean, never a worker request switch",
+  "model_or_media_file_io": 0,
+  "engines_CIM_Git_network": 0
+}

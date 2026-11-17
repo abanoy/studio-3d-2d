@@ -1,0 +1,50 @@
+{
+  "format": "has_native5_review_source_admission_CPU_1",
+  "passed": true,
+  "current_read_only_delta_admission": {
+    "format": "has_explicit_native_DATA_current_runtime_delta_1",
+    "old_native_functional_files": 1008,
+    "current_functional_files": 1019,
+    "unchanged_content_files": 999,
+    "explicit_changed_or_added_files": [
+      "src/fan_editor.gd",
+      "src/physics_editor.gd",
+      "src/secondary_live.gd",
+      "src/source_chain_math.gd",
+      "src/source_jiggle_math.gd",
+      "src/source_secondary.gd",
+      "tests/helper_preview_port_files.json",
+      "tests/source_native_five_capture.gd",
+      "tests/source_native_five_live_ui.gd",
+      "tests/source_native_five_state_unit.gd",
+      "tests/source_native_live_capture.gd",
+      "tests/source_native_live_ui.gd",
+      "tests/source_native_state_unit.gd",
+      "tests/test_owner_review_snapshot.py",
+      "tests/verify_helper_preview.py",
+      "tests/verify_source_native_five_live.py",
+      "tests/verify_source_native_live.py",
+      "tests/verify_world_selection_teardown.py",
+      "tests/wind_review_port_files.json",
+      "tools/build_owner_review_snapshot.py"
+    ],
+    "unchanged_core": [
+      "src/model.gd",
+      "src/source_bone_bindings.gd",
+      "src/scene3d.gd"
+    ],
+    "source_delta_sha256": "b6d060e07d4a5956ce82b8a608eeb75d23a0f913acded28cba2c71adc8e29e0c",
+    "native_verification_sha256": "10ee4a984c9e54b1acf37d79d5013a10780abe98416b8350f3edf3ee37277c4b",
+    "current_full_source_sha256": "4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7",
+    "native5_prior_state_GUI_checks": [
+      266,
+      102
+    ],
+    "native_conversion_performed": false,
+    "final_current_four_example_replay": "REQUIRED_SEPARATE_EXECUTION"
+  },
+  "Python_AST_parsed": true,
+  "builder_replay_full_gate_or_GDScript_executed": false,
+  "engine_CIM_Git_calls": 0,
+  "new_review_target_created": false
+}

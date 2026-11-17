@@ -1,0 +1,108 @@
+{
+  "format": "has_native5_owner_review_successor_source_audit_1",
+  "status": "SOURCE_ONLY_NO_BUILD_OR_ENGINE_EXECUTION",
+  "Python_AST_parse": true,
+  "GDScript": "UNPARSED_UNRUN",
+  "unchanged_functions": {
+    "builder": [
+      "need",
+      "no_links",
+      "guarded",
+      "identity",
+      "tree",
+      "exporter_sources",
+      "source_map",
+      "load",
+      "git_blobs",
+      "write_new",
+      "copy_new",
+      "package_readback",
+      "canonical_gate"
+    ],
+    "replay": [
+      "need",
+      "no_links",
+      "identity",
+      "tree",
+      "shipped_tree",
+      "exporter_tree",
+      "load",
+      "save",
+      "module",
+      "execute"
+    ],
+    "GDScript": [
+      "_ready",
+      "startup_completed",
+      "normalized_path",
+      "check",
+      "settled",
+      "write_json",
+      "audio_rows",
+      "portable_audio",
+      "check_audio_cache",
+      "state",
+      "camera_state",
+      "image_info",
+      "canvas_image",
+      "finish",
+      "run",
+      "redirect_existing_paths",
+      "extra_check",
+      "extra_snapshot",
+      "target",
+      "chooser_review"
+    ]
+  },
+  "changed_functions": {
+    "builder": [
+      "main"
+    ],
+    "replay": [
+      "extra_names",
+      "main"
+    ],
+    "GDScript": [
+      "final_extras"
+    ]
+  },
+  "original_file_identities": {
+    "builder/build_after_full.py": {
+      "bytes": 19808,
+      "sha256": "99d9fdadd4b4d72d02c1de9b56a1ec52c7c716e3f8928c2a8aad91e62bf2c8bf"
+    },
+    "builder/input-lock.json": {
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    "builder/README.template.md": {
+      "bytes": 3345,
+      "sha256": "d89ff18ddc0804b3c7a57cdc26991486c853ef809aed3bcffb17eb23fbfead21"
+    },
+    "replay/validate_after_full.py": {
+      "bytes": 25192,
+      "sha256": "d29c83cea34dfb19cafb6b4d2261e6e55533ccb05e97127a2627f4fa68977398"
+    },
+    "replay/replay.gd": {
+      "bytes": 20818,
+      "sha256": "11d26d8ce00d0b4314ea18ef27b54c63d377929df6139a393b63e36c005ea271"
+    },
+    "replay/audio_contract.py": {
+      "bytes": 2561,
+      "sha256": "4e4351d82293fd6156712c1c81bd532c35cd7a13e0a091f3dca26628a1d0ec93"
+    },
+    "replay/reference-lock.json": {
+      "bytes": 7704,
+      "sha256": "e5dbbbd1cc21d143fc9c6d56996b6aec97b1b0f9167f334c274a77d246ab9413"
+    }
+  },
+  "new_GDScript_functions": [
+    "relocated_native5"
+  ],
+  "old_predicates_retained": 180,
+  "new_hint_gates": 3,
+  "new_relocated_runtime_gates": 4,
+  "proposed_total": 187,
+  "observed_replay_checks": 0,
+  "no_source_native_conversion": true
+}

@@ -1,0 +1,9 @@
+{
+  "format": "has_native5_review_source_audit_setup_refusal_1",
+  "phase": "Independent source-only audit; no builder, replay or runtime",
+  "failure": "First regex method audit grouped the appended top-level observer comment into preceding chooser_review and refused its raw-text comparison.",
+  "correction": "Compare executable method lines after excluding standalone comments and blank lines. Removed or commented-out old predicates still change the executable comparison and refuse.",
+  "product_or_builder_code_changed": false,
+  "runtime_or_Git_or_CIM_run": false,
+  "source_assertion_weakened": false
+}

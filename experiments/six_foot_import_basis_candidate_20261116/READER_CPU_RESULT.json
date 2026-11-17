@@ -1,0 +1,23 @@
+{
+  "format": "has_basis_reader_draft_cpu_1",
+  "passed": true,
+  "test_methods": 10,
+  "named_tests": [
+    "test_active_capability_resource_inventory_matches_original_asset",
+    "test_all_original_python_ast_is_preserved_after_exact_facade_recipe",
+    "test_derivative_and_unknown_basis_data_refuse_before_resource_resolution",
+    "test_invalid_sequence_duration_stays_refused_by_old_gate",
+    "test_json_round_trip_keeps_factor_artist_scale_and_source_identity",
+    "test_legacy_metadata_resource_inventory_matches_original",
+    "test_missing_capability_is_rejected_even_when_old_reader_ignores_it",
+    "test_nested_child_and_parent_capabilities_inventory_same_native_asset",
+    "test_resource_path_and_duplicate_identity_gates_remain",
+    "test_timing_recursion_remains_inside_private_unchanged_body"
+  ],
+  "failures": [],
+  "errors": [],
+  "actual_original_reader_used_on_synthetic_metadata": true,
+  "actual_isolated_successor_reader_used_on_synthetic_metadata": true,
+  "file_unpack_model_geometry_or_engine_runs": 0,
+  "main_changes": false
+}

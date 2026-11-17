@@ -1,0 +1,15 @@
+{
+  "format": "has_sentinel_source_preparation_setup_refusals_1",
+  "runtime_or_Win32_executed": false,
+  "observations": [
+    {
+      "phase": "Source-only update command",
+      "result": "PowerShell parser refused a nested quote before Python ran; corrected with an explicit patch."
+    },
+    {
+      "phase": "First synthetic14-test invocation",
+      "result": "13 lifecycle/source tests passed; the wrapper hash check refused an incorrect copied expectation. No wrapper change occurred.",
+      "correction": "Read the expected wrapper hash from the exact4b1eb25e full-source manifest instead of an unverified literal. All original source checks remain."
+    }
+  ]
+}

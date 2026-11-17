@@ -1,0 +1,140 @@
+{
+  "format": "has_native_five_owner_review_preparation_index_1",
+  "status": "SEALED_SOURCE_ONLY_UNPARSED_UNRUN",
+  "files_count": 26,
+  "bytes": 436086,
+  "proposed_replay_checks": 187,
+  "product_runtime_tests_executed": 0,
+  "files": [
+    {
+      "path": "admission.py",
+      "bytes": 9539,
+      "sha256": "0abb7f558e84f5af694a1a66e32fe15992767a0fe6ad63f0d0369b45f7804e71"
+    },
+    {
+      "path": "AUDIT_SETUP_REFUSAL.json",
+      "bytes": 612,
+      "sha256": "ccf68f0b0c1b94fc65bf140a28f2dc4ee547742b6a3c9f8d357e05ea00070fb7"
+    },
+    {
+      "path": "builder/build_after_full.diff",
+      "bytes": 6853,
+      "sha256": "7d2aa2319edb101591c0a5677ad69ee50b33e5836037be021bae2c129874e40a"
+    },
+    {
+      "path": "builder/build_after_full.py",
+      "bytes": 20164,
+      "sha256": "a09361bf71593cc7ddc38af31e096abe97338a0437077b1cbff2e6558eca6f1e"
+    },
+    {
+      "path": "builder/command.json",
+      "bytes": 885,
+      "sha256": "5b1c1bf0f341bf70fa257e426e28f17b89e45667cd267797853a1f4226c5594b"
+    },
+    {
+      "path": "builder/input-lock.json",
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    {
+      "path": "builder/README.template.md",
+      "bytes": 3619,
+      "sha256": "968662e4b2b4f44a8a3b641d669c6329b4b93b60dfea0d6c163fe88811ed958f"
+    },
+    {
+      "path": "CPU_SOURCE_ADMISSION.json",
+      "bytes": 1919,
+      "sha256": "ec4acd6d110c39276b805e9158de14397575ffc2a9962baed656293b86846514"
+    },
+    {
+      "path": "PREPARATION.json",
+      "bytes": 835,
+      "sha256": "e97c635c08f530c816eadebe792b0b4abdc5472a10c1757c3fb808b2c2b819f4"
+    },
+    {
+      "path": "prepare_successor.py",
+      "bytes": 16600,
+      "sha256": "945cc08f57a8d6f172cd64fd5020ede2691f979b9ff1a7d014561678c80ef694"
+    },
+    {
+      "path": "READINESS_AUDIT.json",
+      "bytes": 5419,
+      "sha256": "4f9695f0aa7a819ca8d9010db2bafd8939421cc69c06ebe36ee6e5c5bbf05de1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5988,
+      "sha256": "34402cb818c515fa6e6ff96a50fb3d1ba4681d5dd6da1cd629389dc147edc24b"
+    },
+    {
+      "path": "relocated_native5_fragment.gd",
+      "bytes": 3133,
+      "sha256": "2fd67b9d17187ab358f078d0c24c49b71183853979d8dfe2923792a3bbbe5ac8"
+    },
+    {
+      "path": "replay/audio_contract.py",
+      "bytes": 2561,
+      "sha256": "4e4351d82293fd6156712c1c81bd532c35cd7a13e0a091f3dca26628a1d0ec93"
+    },
+    {
+      "path": "replay/command.json",
+      "bytes": 684,
+      "sha256": "8571bb1664b8c30570ae9abd758e19ed332d3b0ed89413f6b83bd5bb8b8b4acc"
+    },
+    {
+      "path": "replay/reference-lock.json",
+      "bytes": 7704,
+      "sha256": "e5dbbbd1cc21d143fc9c6d56996b6aec97b1b0f9167f334c274a77d246ab9413"
+    },
+    {
+      "path": "replay/release-context.json",
+      "bytes": 765,
+      "sha256": "79938075d7467f09824fbaaaefd04f869ff956f4e67dc0da405edb490c980484"
+    },
+    {
+      "path": "replay/replay.diff",
+      "bytes": 4433,
+      "sha256": "f44bfc6fcdf346bc3b0a57f77f8311b63fc7cb33d6cc109bc42aa12c1b3923e7"
+    },
+    {
+      "path": "replay/replay.gd",
+      "bytes": 24430,
+      "sha256": "d9259db293e1abc9809636ec461b9d2888778b5d57b1faa78a76026aea746450"
+    },
+    {
+      "path": "replay/validate_after_full.diff",
+      "bytes": 8593,
+      "sha256": "4c65b1ef817239ca16e57b8960ffb49ed201a25b0b77c27004d2661c3ca9bfbf"
+    },
+    {
+      "path": "replay/validate_after_full.py",
+      "bytes": 24841,
+      "sha256": "f6e87e8eb239bc08843ef1b3f369b449509bae98128db770b3835639185f8514"
+    },
+    {
+      "path": "REVIEW_GATE_PEER.json",
+      "bytes": 1017,
+      "sha256": "3af7cb7f56b5367f8fef9283a269601cfc2b744bf32ff5a856637c081a9aea37"
+    },
+    {
+      "path": "REVIEW_GATE_PEER.md",
+      "bytes": 2252,
+      "sha256": "b332f4183af3e556a753661e8adae6e1d421ec825585fd68669b01c877627e0a"
+    },
+    {
+      "path": "source-delta.json",
+      "bytes": 11551,
+      "sha256": "b6d060e07d4a5956ce82b8a608eeb75d23a0f913acded28cba2c71adc8e29e0c"
+    },
+    {
+      "path": "SOURCE_AUDIT.json",
+      "bytes": 2593,
+      "sha256": "b2d447829ea54c5e3b5d56328bd7a47b0ad82d6b6fb8e1586e2f3295dd5ed2c5"
+    },
+    {
+      "path": "verify_preparation.py",
+      "bytes": 5648,
+      "sha256": "42faefcc53bf27fe73557a881753338629f77842922dcf9bc83bc4d7e8ca3a61"
+    }
+  ]
+}

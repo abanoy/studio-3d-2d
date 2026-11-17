@@ -1,0 +1,30 @@
+{
+  "format": "has_hidden_background_capture_additional_root_requirements_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "use_existing_copied_stage_after_full_pass": true,
+  "primary_locks": 12,
+  "analysis_source_pins": 4,
+  "no_separate_unpinned_sentinel_module": true,
+  "private_receipt_required_addition": {"private_window_seen": true},
+  "retain_all_existing_receipt_requirements": true,
+  "public_capture_field": "background_isolation_sentinel",
+  "public_field_required_values": {
+    "format": "has_hidden_background_desktop_placement_sentinel_1",
+    "class": "STATIC",
+    "requested_size_pixels": [0, 0],
+    "disabled": true,
+    "noactivate_style": true,
+    "toolwindow_style": true,
+    "visible_at_creation": false,
+    "visible_before_destruction": false,
+    "owned_pid_and_thread_verified": true,
+    "destroyed_in_finally": true,
+    "show_or_activation_calls": false,
+    "thread_desktop_switch_calls": false,
+    "blender_background_verified": true
+  },
+  "additional_stdout_marker": "HAS_NORMAL_ISOLATION_SENTINEL ",
+  "meaning": "A real hidden owned HWND proves only background-process desktop placement through the unchanged outer monitor. It is not a Blender GUI or rendering observation.",
+  "first_capture_attempt": "Retain its isolation failure and private data. Do not compare or promote it as a successful isolated probe.",
+  "actual_runtime_and_placement_qualification": "Required in a fresh root-owned attempt before comparison."
+}

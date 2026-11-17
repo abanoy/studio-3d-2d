@@ -1,0 +1,52 @@
+{
+  "format": "has_root_six_foot_domain_execution_1",
+  "passed": false,
+  "results": [
+    {
+      "label": "domain-parse",
+      "process": {
+        "pid": 16552,
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.25824669999974503
+      },
+      "passed": true,
+      "error_markers": []
+    },
+    {
+      "label": "domain-run",
+      "process": {
+        "pid": 13552,
+        "exit": 1,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "owned_wrapper_terminated": false,
+        "seconds": 0.7153773999998521
+      },
+      "passed": false,
+      "error_markers": [
+        "FAIL basis_domain.corpus.schema_encode_0",
+        "FAIL basis_domain.corpus.schema_encode_1",
+        "FAIL basis_domain.corpus.schema_encode_2",
+        "FAIL basis_domain.corpus.schema_encode_3",
+        "FAIL basis_domain.corpus.schema_encode_4",
+        "FAIL basis_domain.corpus.schema_encode_5",
+        "FAIL basis_domain.corpus.schema_encode_6",
+        "FAIL basis_domain.corpus.schema_encode_0",
+        "FAIL basis_domain.corpus.schema_encode_1",
+        "FAIL basis_domain.corpus.schema_encode_2",
+        "FAIL basis_domain.corpus.schema_encode_3",
+        "FAIL basis_domain.corpus.schema_encode_4",
+        "FAIL basis_domain.corpus.schema_encode_5",
+        "FAIL basis_domain.corpus.schema_encode_6"
+      ]
+    }
+  ],
+  "frozen_sources_preserved": true,
+  "runtime_lease_released": true,
+  "headless_no_graphical_window_requested": true,
+  "actual_import_activation": false,
+  "main_source_modified": false
+}

@@ -1,0 +1,341 @@
+{
+  "format": "has_owner_review_replay_1",
+  "failures": 0,
+  "checks": [
+    {
+      "label": "replay uses ordinary scene startup without testing flags",
+      "ok": true
+    },
+    {
+      "label": "ordinary automatic recovery completes without restoring or cancelling the fresh scene",
+      "ok": true
+    },
+    {
+      "label": "fresh process starts empty at Home",
+      "ok": true
+    },
+    {
+      "label": "per-project recent/display paths start absent",
+      "ok": true
+    },
+    {
+      "label": "normal .has open started its Python worker",
+      "ok": true
+    },
+    {
+      "label": "normal open operation completed successfully",
+      "ok": true
+    },
+    {
+      "label": "worker and project loader finished before replay",
+      "ok": true
+    },
+    {
+      "label": "normal open retains packed package identity",
+      "ok": true
+    },
+    {
+      "label": "unpacked runtime assets stay in the fresh owned cache",
+      "ok": true
+    },
+    {
+      "label": "open installs an unedited project with empty Undo history",
+      "ok": true
+    },
+    {
+      "label": "audio.cache.before",
+      "ok": true
+    },
+    {
+      "label": "saved drawing pixels decode with their original checksum",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object Practice figure.glb",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object kawashiro nitori tanktop glove.mdl",
+      "ok": true
+    },
+    {
+      "label": "normal load starts in Scene / camera mode",
+      "ok": true
+    },
+    {
+      "label": "Setup uses the full available scene area",
+      "ok": true
+    },
+    {
+      "label": "Setup canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup captures and saves the actual native output size",
+      "ok": true
+    },
+    {
+      "label": "native saved camera capture contains nonuniform nonblack scene pixels",
+      "ok": true
+    },
+    {
+      "label": "Focus restores the output-shaped scene area",
+      "ok": true
+    },
+    {
+      "label": "Focus canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup and Focus preserve and save identical native render pixels",
+      "ok": true
+    },
+    {
+      "label": "audio.cache.after",
+      "ok": true
+    },
+    {
+      "label": "view toggles and captures preserve all project state and shot camera",
+      "ok": true
+    },
+    {
+      "label": "replay ends unedited with no retained readback",
+      "ok": true
+    },
+    {
+      "label": "extras.target_available",
+      "ok": true
+    },
+    {
+      "label": "render.frame_0",
+      "ok": true
+    },
+    {
+      "label": "render.frame_24",
+      "ok": true
+    },
+    {
+      "label": "source_binding.relocated.report_identity",
+      "ok": true
+    },
+    {
+      "label": "source_binding.relocated.runtime_bindings",
+      "ok": true
+    },
+    {
+      "label": "source_binding.relocated.no_mutation",
+      "ok": true
+    },
+    {
+      "label": "source_binding.relocated.no_simulation",
+      "ok": true
+    },
+    {
+      "label": "chooser.file_picker",
+      "ok": true
+    },
+    {
+      "label": "chooser.dialog",
+      "ok": true
+    },
+    {
+      "label": "chooser.metadata",
+      "ok": true
+    },
+    {
+      "label": "chooser.native_catalogue",
+      "ok": true
+    },
+    {
+      "label": "chooser.default_request",
+      "ok": true
+    },
+    {
+      "label": "chooser.cancel",
+      "ok": true
+    },
+    {
+      "label": "chooser.unchanged",
+      "ok": true
+    },
+    {
+      "label": "extras.unchanged",
+      "ok": true
+    },
+    {
+      "label": "audio.cache.extra",
+      "ok": true
+    }
+  ],
+  "extra_checks": {
+    "chooser.cancel": true,
+    "chooser.default_request": true,
+    "chooser.dialog": true,
+    "chooser.file_picker": true,
+    "chooser.metadata": true,
+    "chooser.native_catalogue": true,
+    "chooser.unchanged": true,
+    "extras.target_available": true,
+    "extras.unchanged": true,
+    "render.frame_0": true,
+    "render.frame_24": true,
+    "source_binding.relocated.no_mutation": true,
+    "source_binding.relocated.no_simulation": true,
+    "source_binding.relocated.report_identity": true,
+    "source_binding.relocated.runtime_bindings": true
+  },
+  "native_readbacks_at_finish": 0,
+  "normal_startup": {
+    "empty": true,
+    "home_visible": true,
+    "result": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "signal_seen": true,
+    "simple": true
+  },
+  "audio_cache_proofs": {
+    "after": {
+      "clips": [
+        {
+          "cache_confined": true,
+          "channels": 1,
+          "file_sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+          "frames": 24000,
+          "id": "5967038384561509117",
+          "passed": true,
+          "pcm_bytes": 48000,
+          "pcm_sha256": "ac9d77efcea152df2090dacb61dcfd66c279587e90fba7700e5cb43c90f4ccaf",
+          "rate": 48000,
+          "source_fields_exact": true
+        }
+      ],
+      "expected_clips": 1,
+      "passed": true
+    },
+    "before": {
+      "clips": [
+        {
+          "cache_confined": true,
+          "channels": 1,
+          "file_sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+          "frames": 24000,
+          "id": "5967038384561509117",
+          "passed": true,
+          "pcm_bytes": 48000,
+          "pcm_sha256": "ac9d77efcea152df2090dacb61dcfd66c279587e90fba7700e5cb43c90f4ccaf",
+          "rate": 48000,
+          "source_fields_exact": true
+        }
+      ],
+      "expected_clips": 1,
+      "passed": true
+    },
+    "extra": {
+      "clips": [
+        {
+          "cache_confined": true,
+          "channels": 1,
+          "file_sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+          "frames": 24000,
+          "id": "5967038384561509117",
+          "passed": true,
+          "pcm_bytes": 48000,
+          "pcm_sha256": "ac9d77efcea152df2090dacb61dcfd66c279587e90fba7700e5cb43c90f4ccaf",
+          "rate": 48000,
+          "source_fields_exact": true
+        }
+      ],
+      "expected_clips": 1,
+      "passed": true
+    }
+  },
+  "open_ms": 353,
+  "load_worker_ms": 52.817,
+  "install_ms": 83.123,
+  "configured_paths": {
+    "HAS_cache": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/has-cache",
+    "display": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/display.cfg",
+    "recent": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/recent.json",
+    "recovery": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/recovery",
+    "reference_cache": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/reference-cache",
+    "source_paths": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/source-paths.cfg",
+    "workspace": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/workspace-layout.json"
+  },
+  "normalized_cache_root": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/has-cache",
+  "normalized_project_folder": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/has-cache/open_21364_2546512",
+  "project_root": "C:/a/Programming/cloudflare/HAS-Review-20261115-Native-Hair-52f63c9/Studio/",
+  "project_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-hair-final-validation-52f63c9-20261116-attempt1\\04-multi_skin_glove-default-no-appearance\\has-cache\\open_21364_2546512",
+  "profile": "C:/Users/noble/AppData/Roaming/HAS Native Hair Review 52f63c9 1794872244329333100",
+  "package": "C:/a/Programming/cloudflare/HAS-Review-20261115-Native-Hair-52f63c9/Examples/Nitori source choices.has",
+  "process_id": 21364,
+  "worker_pid": 20404,
+  "request_sha256": "7bec3b41c8101e14c33b702c3a2bf93b58737755765b7e511389ecb6afd9c581",
+  "source_manifest_sha256": "8ac59bc09c892958913cf7ed1ebfeee00beaa49f91d1d92c494537f59e7b8523",
+  "focus_image": {
+    "distinct_sampled_colors": 221,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 11916,
+    "pixel_sha256": "2da8b8b7a5edcb19a83efbb9cdd602596f4ca05a704250ba135d171989019092",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/focus.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "setup_image": {
+    "distinct_sampled_colors": 183,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 648,
+    "pixel_sha256": "76b3c590cc84466486cbe2a17305adf331a2e7d6c144bd845c2fca005751474e",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/setup.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "native_focus": {
+    "distinct_sampled_colors": 179,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 611,
+    "pixel_sha256": "97793299b6fe506f54a5486c761e40e3142311a16e1187dcd5c97def50fcdd66",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/native-focus.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "native_setup": {
+    "distinct_sampled_colors": 179,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 611,
+    "pixel_sha256": "97793299b6fe506f54a5486c761e40e3142311a16e1187dcd5c97def50fcdd66",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-hair-final-validation-52f63c9-20261116-attempt1/04-multi_skin_glove-default-no-appearance/native-setup.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "archive_format": "has_final_review_safe_result_projection_1",
+  "source_result": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-hair-final-validation-52f63c9-20261116-attempt1\\04-multi_skin_glove-default-no-appearance\\result.json",
+    "bytes": 12673,
+    "sha256": "a459106fdff3096b8dfe10e54273e56b3c12d8756a7458859c5a11655d46454c"
+  },
+  "source_request_hash_only": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-hair-final-validation-52f63c9-20261116-attempt1\\04-multi_skin_glove-default-no-appearance\\request.json",
+    "bytes": 17332,
+    "sha256": "7bec3b41c8101e14c33b702c3a2bf93b58737755765b7e511389ecb6afd9c581"
+  },
+  "omitted_private_fields": [
+    "camera_before",
+    "camera_after",
+    "runtime_objects",
+    "rasters",
+    "canvas_extent",
+    "setup_extent"
+  ],
+  "raw_expected_observed_project_or_image_not_copied": true
+}

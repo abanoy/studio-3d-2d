@@ -1,0 +1,46 @@
+--- historical/publication_gates.py
++++ current/publication_gates.py
+@@ -134,17 +134,19 @@
+ 
+ 
+ def validate_live(run, context):
+-    raw = read(run / 'coordinator-children-observed.json')
+-    require(sha(raw) == context['children_observation_sha256'], 'Live identity observation changed')
++    """Validate the actual new flat root-birth observation, never a fake old alias."""
++    raw = read(run / 'root-birth-observation.json')
++    require(sha(raw) == context['birth_observation_sha256'], 'Root birth identity observation changed')
+     value = json.loads(raw)
+-    require(value['format'] == context['children_observation_format'] and value['source_commit'] == context['source_commit']
+-            and value['coordinator']['pid'] == context['coordinator_pid']
+-            and value['coordinator']['creation_utc'] == context['coordinator_creation_utc']
+-            and value['python']['pid'] == context['python_pid'] and value['python']['parent_pid'] == context['coordinator_pid']
+-            and value['python']['creation_utc'] == context['python_creation_utc']
+-            and value['python']['command_line'] == context['suite_python_command']
+-            and value['checked_utc'] == context['children_observation_checked_utc']
+-            and Path(value['canonical_run']) == run, 'Exact coordinator/Python observation differs')
++    require(value['format'] == context['birth_observation_format'] == 'has_root_full_child_birth_observation_1'
++            and value['source_commit'] == context['source_commit']
++            and value['coordinator_pid'] == context['coordinator_pid']
++            and value['coordinator_birth'] == context['coordinator_creation_utc']
++            and value['python_pid'] == context['python_pid'] and value['python_parent'] == context['coordinator_pid']
++            and value['python_birth'] == context['python_creation_utc']
++            and value['python_command'] == context['suite_python_command']
++            and value['observed_utc'] == context['birth_observation_checked_utc']
++            and Path(value['run_folder']) == run, 'Exact current coordinator/Python birth observation differs')
+ 
+ 
+ def validate_raw_host(run, context, state, flat):
+@@ -165,6 +167,13 @@
+         require((row['pid_present'] is False and row['current_creation_utc'] is None)
+                 or (row['pid_present'] is True and utc_ns(row['current_creation_utc']) != utc_ns(row['expected_creation_utc'])),
+                 'Live original identity or unsupported PID observation: ' + role)
++    require(value['root_birth_observation_sha256'] == context['birth_observation_sha256']
++            and value['functional_source_entries'] == context['functional_source_entries']
++            and value['source_before_after_and_current_exact'] is True
++            and value['root_observer_issued_no_termination'] is True, 'Current raw host/source/birth binding differs')
++    require(flat['functional_source_entries'] == context['functional_source_entries']
++            and flat['source_before_after_and_current_exact'] is True
++            and flat['root_observer_issued_no_termination'] is True, 'Current flat host/source binding differs')
+     validate_live(run, context)
+     return value
+ 

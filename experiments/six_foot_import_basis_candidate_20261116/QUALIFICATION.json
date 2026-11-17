@@ -1,0 +1,52 @@
+{
+  "format": "has_six_foot_basis_candidate_qualification_1",
+  "status": "ISOLATED_CPU_ONLY_NOT_PRODUCTION_QUALIFIED",
+  "passed_cpu_contract": true,
+  "contract_test_methods": 26,
+  "height_rational_cases": 271,
+  "reader_test_methods": 10,
+  "result_sources": [
+    {
+      "path": "CPU_RESULT_v2.json",
+      "bytes": 1945,
+      "sha256": "857b8cc6451a5619d19b31c4326c587ee1c8d069a56fd1a126cd56058010c9ea"
+    },
+    {
+      "path": "READER_CPU_RESULT.json",
+      "bytes": 1084,
+      "sha256": "73ac88785bcb4b7dd1b2e541dcee2b6f134a59affc98fb30e8a594c4a38624b9"
+    }
+  ],
+  "candidate_code_sources": [
+    {
+      "path": "import_basis_candidate.py",
+      "bytes": 14889,
+      "sha256": "8eaffa26073699f3d7b9b108c0570ab4f761a8dc3a33d0aae61d629d0d9352a3"
+    },
+    {
+      "path": "draft/tools/import_basis.py",
+      "bytes": 14889,
+      "sha256": "8eaffa26073699f3d7b9b108c0570ab4f761a8dc3a33d0aae61d629d0d9352a3"
+    },
+    {
+      "path": "draft/tools/has_project.py",
+      "bytes": 37114,
+      "sha256": "35308d695f2be5ca9871fbeab30834abc81366af3420a07dca5a006792be9d72"
+    }
+  ],
+  "unchanged_source_lock_files": 22,
+  "no_native_or_owner_asset_reads": true,
+  "engines_CIM_Git_network_runs": 0,
+  "main_edits": false,
+  "gds_parser_or_runtime_qualification": false,
+  "classifier_implemented": false,
+  "first_safe_port": "Contract and schema capability, with runtime/import activation disabled until GDScript parity and all constructor/helper boundaries qualify",
+  "reproduction_commands": [
+    "python -B -m unittest discover -s experiments/six_foot_import_basis_candidate_20261116 -p test_import_basis_candidate.py",
+    "python -B -m unittest discover -s experiments/six_foot_import_basis_candidate_20261116 -p test_reader_draft.py"
+  ],
+  "actual_CPU_commands": [
+    "python -B experiments/six_foot_import_basis_candidate_20261116/test_import_basis_candidate.py",
+    "python -B experiments/six_foot_import_basis_candidate_20261116/test_reader_draft.py"
+  ]
+}

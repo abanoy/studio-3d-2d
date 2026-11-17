@@ -1,0 +1,134 @@
+{
+  "format": "has_six_foot_gd_candidate_preregistration_1",
+  "status": "GDSCRIPT_UNPARSED_UNRUN_NO_MAIN_ACTIVATION",
+  "actual_cpu": {
+    "contract_methods": 29,
+    "reader_methods": 9,
+    "rational_height_cases": 271,
+    "independent_direct_ratio_cases": 72,
+    "gd_corpus_expected_rows": 434
+  },
+  "proposed_unrun": {
+    "domain_checks": 444,
+    "boundary_checks": 21,
+    "domain_breakdown": {
+      "corpus": 434,
+      "root_cases": 10
+    },
+    "boundary_breakdown": {
+      "synthetic_glb_created": 1,
+      "guarded_operations": 7,
+      "legacy_sceneio_model": 2,
+      "legacy_schema_guard_carriers": 6,
+      "other_project_and_sha_checks": 5
+    }
+  },
+  "main_edits": false,
+  "engines_CIM_Git_network": 0,
+  "native_or_owner_assets_read": false,
+  "runtime_readiness_default": false,
+  "internal_true_paths": "Contract fixtures only; worker facade does not supply true",
+  "source_files": [
+    {
+      "path": "src/model.gd",
+      "bytes": 28593,
+      "sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678"
+    },
+    {
+      "path": "src/storage.gd",
+      "bytes": 35631,
+      "sha256": "f90769be7f736abae6dc7e44a378330c9eb4308358d29598a6da53e2e405578e"
+    },
+    {
+      "path": "src/renderer.gd",
+      "bytes": 15232,
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3"
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "bytes": 8012,
+      "sha256": "d2c0bb7fece396066cc4bdae34e1f7172d9a90519dae05d3e33c2b87edb32d46"
+    },
+    {
+      "path": "src/app.gd",
+      "bytes": 147447,
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+    },
+    {
+      "path": "src/shape_comparison.gd",
+      "bytes": 11899,
+      "sha256": "17b35b93661b0452711379375c80421f30412159607d31d5565ab68679ee4889"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "bytes": 17923,
+      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+    },
+    {
+      "path": "src/wind_helper_candidate.gd",
+      "bytes": 25396,
+      "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+    },
+    {
+      "path": "src/secondary_helper_editor.gd",
+      "bytes": 45029,
+      "sha256": "3d63e9ee8bf96c60b234a9cfb0c14bc73f90a34bc601f0fd3e7373d373ef5c63"
+    },
+    {
+      "path": "src/scene3d.gd",
+      "bytes": 11042,
+      "sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1"
+    },
+    {
+      "path": "src/has_project.gd",
+      "bytes": 15268,
+      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032"
+    },
+    {
+      "path": "src/has_project_loader.gd",
+      "bytes": 1458,
+      "sha256": "cdb97409b2d7b202bd8ba7cb44c93d7c1198fe41901f3a080e40546b48e3c673"
+    },
+    {
+      "path": "tools/has_project.py",
+      "bytes": 36736,
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073"
+    },
+    {
+      "path": "src/import_placement.gd",
+      "bytes": 8534,
+      "sha256": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad"
+    },
+    {
+      "path": "src/extended_timing.gd",
+      "bytes": 3333,
+      "sha256": "7bce72af46d5dc8b2ef9fb0674b0e1dc39bf0be6f540c9c3915e1b81ec9b9858"
+    },
+    {
+      "path": "tools/extended_timing.py",
+      "bytes": 2693,
+      "sha256": "dd8492d97820705889ab1dda7264e0fa536de7eac0cae5badb43047131367061"
+    }
+  ],
+  "peer_predecessor_bridge_packet": {
+    "path": "experiments/six_foot_boundary_review_20261116/INDEX.json",
+    "sha256": "b9cc057f09c810ada2c455e4e236e7fa270482f442cefbcbecd8124cb1f7a07d"
+  },
+  "cpu_results": [
+    {
+      "path": "PYTHON_CPU_RESULT.json",
+      "bytes": 2163,
+      "sha256": "007a96c22314000f3ffb72c7d0b18c01fb556a6e39c499ccceb40e1c2bbf7e11"
+    },
+    {
+      "path": "READER_V2_CPU_RESULT.json",
+      "bytes": 903,
+      "sha256": "cdc07eba6a684d905e16681930500ee6ce9639a506dec3ee99f46b65fd848490"
+    },
+    {
+      "path": "PARITY_CPU_RESULT_v3.json",
+      "bytes": 277,
+      "sha256": "abef0030a46a8f5a02b0dfc9193792bd20dd635f15468f80014f68af5b17b974"
+    }
+  ]
+}

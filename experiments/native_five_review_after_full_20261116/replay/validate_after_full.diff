@@ -1,0 +1,91 @@
+--- unchanged_old/validate_after_full.py
++++ UNRUN_current_native5/validate_after_full.py
+@@ -21,6 +21,8 @@
+ WORKSPACE = ROOT.parent
+ NATIVE = ROOT/"output/sfm-bone-bindings-native-launch-20261114T033026205/run"
+ BUILDER = HERE.parent/"builder"
++sys.path.insert(0,str(HERE.parent))
++import admission as Admission
+ BAD = ("ERROR:", "WARNING:", "SCRIPT ERROR", "SHADER ERROR", "FAIL ", "ObjectDB instances leaked",
+        "unclaimed string names", "Pages in use exist at exit", "resources still in use", "_set_transient_exclusive_child")
+ 
+@@ -92,6 +94,8 @@
+     names += ["chooser."+name for name in ("file_picker", "dialog", "metadata", "native_catalogue", "default_request", "cancel", "unchanged")]
+     if native.get("native_helper_preview"):
+         names += ["native_helper."+name for name in ("available", "native_current", "suggested", "existing_mode", "weights_unchanged", "cancelled", "protected_state", "no_simulation")]
++        names += ["native5.capability","native5.five_anchors","native5.no_autoactivation"]
++        names += ["native5.relocated_on","native5.relocated_fixed_tick","native5.relocated_off_exact","native5.relocated_protected_state"]
+     if "shape_ui" in native:
+         names += ["shapes.available", "shapes.unchanged"]
+         names += ["shapes.binding_"+str(i) for i in range(len(native["shape_ui"]["controls"]))]
+@@ -189,14 +193,17 @@
+     release_context = load(HERE/"release-context.json")
+     need(args.expected_revision == release_context["source_commit"], "Use the newly declared post-manifest-fix full revision")
+     review = args.review.resolve(strict=True); output = args.output.absolute(); no_links(review); no_links(output)
+-    need(review.parent == WORKSPACE and review.name == "HAS-Review-20261115-SFM-Joints-"+args.expected_revision[:7]+"-replay2", "Exact new review boundary required")
++    need(review.parent == WORKSPACE and review.name == "HAS-Review-20261115-Native-Hair-"+args.expected_revision[:7], "Exact new review boundary required")
+     need(output.resolve().is_relative_to((ROOT/"output").resolve()) and output != ROOT/"output" and not output.exists(), "New owned evidence boundary required")
+     studio = review/"Studio"; built = load(review/"BUILD-VERIFICATION.json"); lock = load(BUILDER/"input-lock.json")
+     need(built.get("passed") is True and built.get("source_commit") == args.expected_revision and built.get("native_sources_included") is True,
+          "New exact source build with copied native sources required")
+     preparation = {str(BUILDER/name): identity(BUILDER/name) for name in ("build_after_full.py", "input-lock.json", "README.template.md")}
++    preparation.update({str(HERE.parent/name):identity(HERE.parent/name) for name in ("admission.py","source-delta.json")})
+     need(built.get("builder_preparation") == preparation, "Reviewed successor builder/template/input identities differ")
++    current_release_gate = Admission.require_full_release(identity)
+     full_gate = built.get("full_run_gate", {})
++    need(all(full_gate.get(path)==row for path,row in current_release_gate.items()), "Builder current full-release artifacts differ")
+     need(full_gate and all(identity(Path(path)) == expected for path, expected in full_gate.items()), "Builder full-run gate files changed")
+     full_states = [Path(path) for path in full_gate if Path(path).name == "state.json"]
+     need(len(full_states) == 1, "Exactly one passed full-run state required")
+@@ -217,26 +224,10 @@
+     need(identity(native_path) == lock["native_verification"] and native.get("passed") is True and
+          all(value is True for value in native.get("preservation", {}).values()) and native.get("preservation"),
+          "Current exact four-case native verification/preservation required")
+-    admitted_changes = set(release_context["test_only_followup_files"])
+-    production_context = []
+-    def functional(name):
+-        return name.split("/", 1)[0] in ("src", "tests", "tools", "data", "examples") or name in ("main.tscn", "project.godot", "run.py", "launch.pyw")
+-    native_members = {name for name in native["source_before"]["files"] if functional(name)}
+-    final_members = {name for name in built["source_hashes"] if functional(name)}
+-    need(native_members == final_members, "Production/native-harness functional source membership differs")
+-    text_suffixes = {".py", ".pyw", ".gd", ".gdshader", ".tscn", ".tres", ".json", ".godot", ".cfg", ".uid", ".txt", ".md", ".svg"}
+-    text_paths = {"tests/blank", "tests/krita_fixture/has_fixture.desktop", "tools/docker/sourceio_metadata.Dockerfile",
+-                  "tools/docker/sourceio_worker.Dockerfile", "tools/krita-runtime.Dockerfile"}
+-    for name, row in native["source_before"]["files"].items():
+-        if name in admitted_changes or not functional(name):
+-            continue
+-        original = NATIVE/"Studio"/name; final = studio/name
+-        need(identity(original)["sha256"] == row["sha256"], "Retained actual native source snapshot changed")
+-        original_bytes = original.read_bytes(); final_bytes = final.read_bytes()
+-        need(original_bytes == final_bytes or (original.suffix in text_suffixes or name in text_paths) and
+-             original_bytes.replace(b"\r\n", b"\n") == final_bytes.replace(b"\r\n", b"\n"),
+-             "Final production/native-harness content differs from actual four-case source: "+name)
+-        production_context.append(name)
++    source_delta_admission = Admission.admit_source_delta(native,studio,built["source_hashes"])
++    need(source_delta_admission==built["source_delta_admission"],"Explicit builder/replay source delta admission differs")
++    admitted_changes=set(source_delta_admission["explicit_changed_or_added_files"])
++    production_context=[n for n in native["source_before"]["files"] if Admission.functional(n) and n not in admitted_changes]
+     native_cases = {row["name"]: row for row in native["writer"]["result"]["cases"]}
+     original_families = {folder: tree(Path(folder)) for folder in lock["native_families"]}
+     need(original_families == lock["native_families"], "Original source family changed")
+@@ -256,6 +247,7 @@
+     reference_before = {str(path): identity(path) for path in references}
+     need(reference_before == load(HERE/"reference-lock.json")["files"], "Frozen native reference metadata/pixels changed")
+     output.mkdir(exist_ok=False); save(output/"shipped-before.json", ship_before)
++    save(output/"source-delta-admission.json",source_delta_admission)
+     save(output/"runtime-generated-before.json", {"output": {}, ".godot": {}})
+     save(output/"harness-before.json", harness_before)
+     save(output/"reference-inputs-before.json", reference_before)
+@@ -316,9 +308,9 @@
+                   "runtime_generated_files_retained": {name: len(rows) if rows is not None else None for name, rows in generated.items()},
+                   "runtime_generated_before_empty": True, "automatic_cleanup": False,
+                   "owner_changes_policy": "Retain every output if any shipped/owner change is detected; root reviews exact new generated paths before any later cleanup.",
+-                  "native_solver": "not_implemented", "no_mock_or_controller_replacement": True,
+-                  "unchanged_production_and_native_harness_files": len(production_context), "test_only_followup_files_admitted": sorted(admitted_changes),
+-                  "scope": "Exactly four newly copied examples: ordinary Home/Simple/Open/render, strict saved state, Junko69binding/helpercancel, Keiki/Mima shape availability, real four-MDL chooser metadata/cancel. No conversion or clean-install/artist claim."}
++                  "native_solver": "bounded_five_of49_runtime; actual_relocated_on_fixed_tick_off_here; prior266state102UI_qualified_separately", "no_mock_or_controller_replacement": True,
++                  "unchanged_production_and_native_harness_files": len(production_context), "explicit_native_DATA_current_runtime_changes_admitted": sorted(admitted_changes), "source_delta_admission":source_delta_admission,
++                  "scope": "Exactly four newly copied examples: ordinary Home/Simple/Open/render, strict saved state, Junko69binding/helpercancel/real_native5OnTickOff, Keiki/Mima shape availability, real four-MDL chooser metadata/cancel. No conversion or clean-install/artist claim."}
+         save(output/"verification.json", result)
+     need(result["passed"], "Final-location validation failed; retain "+str(output))
+     print(json.dumps({"passed": True, "verification": str(output/"verification.json"), "automatic_cleanup": False}))

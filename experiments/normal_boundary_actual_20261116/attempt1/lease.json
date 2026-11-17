@@ -1,0 +1,128 @@
+{
+  "format": "has_blender_normal_probe_lease_1",
+  "phase": "ROOT_APPROVED_AFTER_FULL_PASS",
+  "HEAD": "52f63c944ded7a651da871524d23a345b606424d",
+  "full_terminal_status": "PASS",
+  "root_authoritative_closure": true,
+  "publish_private_arrays": false,
+  "created_utc": "2026-11-16T23:30:23.967227+00:00",
+  "expires_utc": "2026-11-17T00:00:23.967227+00:00",
+  "files": {
+    "blend": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\normal-boundary-20261116-attempt1\\inputs\\editable.blend",
+      "sha256": "ead1f1913812593abd69e353fed375944a15f280738784886fcef7fda3ee65c6"
+    },
+    "mdl": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\native\\junko hair.mdl",
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+    },
+    "vvd": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\native\\junko hair.vvd",
+      "sha256": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0"
+    },
+    "glb": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\scene.glb",
+      "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d"
+    },
+    "parameters": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\parameters.json",
+      "sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed"
+    },
+    "blender_exe": {
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+      "sha256": "1e6624af112b3c936f4b038b025ebd2bf00ae72c4b62881a6787166d71c58fa5"
+    },
+    "exporter_extract": {
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\primitive_extract.py",
+      "sha256": "455a3566d833481b230141b457452b5bf4ff4a1661d4dd6765a568488e0a2769"
+    },
+    "exporter_constants": {
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\io\\com\\constants.py",
+      "sha256": "be59f961a8f6d08068a7aaae4b91a72c5fadd832ca9b228276732b40f0f68a38"
+    },
+    "sourceio_import": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647\\blender_bindings\\models\\mdl49\\import_mdl.py",
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+    },
+    "probe": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_boundary_probe_20261116\\capture_blender_normals.py",
+      "sha256": "c6002553a74e5dca4fd097d84a6392aa08c9736ccbaa3756f42fb3ddf68069b4"
+    },
+    "full_receipt": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\state.json",
+      "sha256": "01a5ddb0ef974b270dd600965077daafdb9b60d64163b129fe36acdf62bc757c"
+    },
+    "closure_receipt": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\graphics-lease-released.json",
+      "sha256": "1129b5d8a7d387d546453ff7c9f30b9470bee99840a4da0c2d4eee51a44eafbe"
+    }
+  },
+  "analysis_files": {
+    "support": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_boundary_probe_20261116\\probe_support.py",
+      "sha256": "71fc6b8ddd270fc40a42212dad3e1a7fd64d24b8e7c401ee32d1744c8b00adf0"
+    },
+    "metrics": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_boundary_probe_20261116\\normal_metrics.py",
+      "sha256": "d6b3bafd3085f1bfe2860c13079505c683ea961bb799f0a1f3ea0583bf0ee96d"
+    },
+    "comparator": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\normal_boundary_probe_20261116\\compare_private_normals.py",
+      "sha256": "e488ae3f48cf469c60420cb5d555c55b1e43f78030e8cb4c289396d5346f12c3"
+    },
+    "matcher": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\native_coordinates_20261114\\prove_coordinates_stdlib.py",
+      "sha256": "f9afff684c82d601029f3a6a32d187a7df476d94b96bc39eff3abe2814c2723f"
+    }
+  },
+  "original_blend": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\editable.blend",
+    "sha256": "ead1f1913812593abd69e353fed375944a15f280738784886fcef7fda3ee65c6"
+  },
+  "full_context": {
+    "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335",
+    "expected_commit": "52f63c944ded7a651da871524d23a345b606424d",
+    "functional_count": 1019,
+    "files": {
+      "state": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\state.json",
+        "sha256": "01a5ddb0ef974b270dd600965077daafdb9b60d64163b129fe36acdf62bc757c"
+      },
+      "launch": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\launch.json",
+        "sha256": "7623acd4cd9d4e7a2623412437363e3da4acb1c121ad87e71fff87e887de93dd"
+      },
+      "birth": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\root-birth-observation.json",
+        "sha256": "ce9b8c1197b02b3d575083635419b7309160ea70ab08896d819f5d112c2da6df"
+      },
+      "source_before": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\source-before.json",
+        "sha256": "4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7"
+      },
+      "source_after": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\source-after.json",
+        "sha256": "4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7"
+      },
+      "host": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\authoritative-host-termination.json",
+        "sha256": "855751b98107c4f44f21f44e0637ede87c5ac777aad1bc397d33d5e684d61d5a"
+      },
+      "raw_host": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\authoritative-host-terminal.json",
+        "sha256": "7990c6c85985a6962671f3738bbb05faf6a26691a4d4670f8333cdd85016cb7f"
+      },
+      "release": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T041518335\\graphics-lease-released.json",
+        "sha256": "1129b5d8a7d387d546453ff7c9f30b9470bee99840a4da0c2d4eee51a44eafbe"
+      },
+      "report": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\verification.json",
+        "sha256": "78b1f773d91ecc75a9984940afabc0fe28f06e2f1676e8c6ae0137011e9a89f0"
+      }
+    }
+  },
+  "private_output_directory": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\normal-boundary-20261116-attempt1\\capture",
+  "staging_runtime_executed": false,
+  "approved_shared_input_lock_sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+}

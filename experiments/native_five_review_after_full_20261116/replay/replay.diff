@@ -1,0 +1,56 @@
+--- unchanged_old/replay.gd
++++ UNRUN_current_native5/replay.gd
+@@ -272,7 +272,12 @@
+ 	observer.app=app;observer.record=extra_check
+ 	observer.observe(request.native.source_binding,actor,request.native.parameters,"relocated")
+ 	if request.native.get("native_helper_preview",false):
++		var native_motion=load("res://src/source_secondary.gd")
++		extra_check(native_motion.offered(actor),"native5.capability")
++		extra_check(native_motion.anchors(actor).size()==5,"native5.five_anchors")
++		extra_check(not app.physics_editor.is_running() and not app.physics_editor.hair_toggle.button_pressed and not app.physics_editor.toggle.button_pressed and actor.live_pose==null and actor.live_world_transform==null,"native5.no_autoactivation")
+ 		await observer.helper(request.native.object_id,extra_snapshot)
++		await relocated_native5(actor)
+ 	if request.native.has("shape_ui"):
+ 		var shape_before:=extra_snapshot()
+ 		app.world_selection.select_entity(request.native.object_id);await settled()
+@@ -331,3 +336,40 @@
+ 	extra_check(drained and not is_instance_valid(choice) and app.source_import.pid<0 and
+ 		app.source_import.folder==old_folder and app.current_world().objects.size()==old_count,"chooser.cancel")
+ 	extra_check(extra_snapshot()==before,"chooser.unchanged")
++
++# Observer fragment, source-only UNPARSED/UNRUN; appended to the new replay.
++func relocated_native5(actor: RefCounted) -> void:
++	app.world_selection.select_entity(request.native.object_id);await settled()
++	var editor=app.physics_editor
++	var id: String=actor.data.id
++	var protected_before:=extra_snapshot()
++	var authored_before: Dictionary=actor.data.duplicate(true)
++	var raw_before:=var_to_bytes(actor.data.metadata.get("native_parameters",{}))
++	var source_before: String=FileAccess.get_sha256(actor.data.source)
++	var bones_before: Array=[]
++	for bone_id in actor.order:bones_before.append([bone_id,actor.bone_transform(bone_id)])
++	var world_before:=var_to_bytes([actor.root.global_transform,bones_before])
++	# The ordinary connected checkbox invokes the real create/start transaction.
++	editor.hair_toggle.button_pressed=true
++	var deadline:=Time.get_ticks_msec()+10000
++	while editor.pending.has(id) and Time.get_ticks_msec()<deadline:await get_tree().process_frame
++	var simulation: RefCounted=editor.simulations.get(id)
++	var motion: Script=load("res://src/source_secondary.gd")
++	var secondary: Script=load("res://src/secondary_live.gd")
++	var enabled: bool=simulation!=null and simulation.get_script()==secondary and simulation.native_backend and simulation.runner!=null and simulation.runner.get_script()==motion and simulation.runner.active() and simulation.runner.chains.size()==5 and simulation.runner._chain.snapshot().states.size()==5
++	extra_check(enabled,"native5.relocated_on")
++	var runner: RefCounted=simulation.runner if enabled else null
++	# Observe real _physics_process clock progress; never call advance/step here.
++	deadline=Time.get_ticks_msec()+10000
++	while runner!=null and runner.active() and editor.simulations.get(id)==simulation and runner._tick<1 and Time.get_ticks_msec()<deadline:await get_tree().process_frame
++	var completed: int=runner._tick if runner!=null else 0
++	var ticked: bool=runner!=null and runner.active() and editor.simulations.get(id)==simulation and completed>=1 and runner._chain.snapshot().tick==completed and runner._chain.snapshot().states.size()==5
++	extra_check(ticked,"native5.relocated_fixed_tick")
++	editor.hair_toggle.button_pressed=false
++	await settled()
++	var bones_after: Array=[]
++	for bone_id in actor.order:bones_after.append([bone_id,actor.bone_transform(bone_id)])
++	var restored: bool=not editor.simulations.has(id) and not editor.pending.has(id) and not editor.hair_toggle.button_pressed and actor.live_pose==null and actor.live_world_transform==null and actor.data==authored_before and var_to_bytes([actor.root.global_transform,bones_after])==world_before and (runner==null or not runner.active())
++	extra_check(restored,"native5.relocated_off_exact")
++	extra_check(extra_snapshot()==protected_before and var_to_bytes(actor.data.metadata.get("native_parameters",{}))==raw_before and FileAccess.get_sha256(actor.data.source)==source_before,"native5.relocated_protected_state")
++	report["relocated_native5"]={"on_created_five_rule_backend":enabled,"completed_fixed_ticks":completed,"off_exact":restored,"ordinary_checkbox_and_physics_clock":true,"Record_or_fan_pipeline_repeated":false}

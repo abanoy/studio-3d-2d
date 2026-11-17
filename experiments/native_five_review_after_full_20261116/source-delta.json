@@ -1,0 +1,198 @@
+{
+  "format": "has_explicit_native_DATA_to_current_runtime_delta_1",
+  "old_native_verification_sha256": "10ee4a984c9e54b1acf37d79d5013a10780abe98416b8350f3edf3ee37277c4b",
+  "current_revision": "52f63c944ded7a651da871524d23a345b606424d",
+  "current_source_before_sha256": "4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7",
+  "old_functional_files": 1008,
+  "new_functional_files": 1019,
+  "removed": [],
+  "unchanged_core": [
+    "src/model.gd",
+    "src/source_bone_bindings.gd",
+    "src/scene3d.gd"
+  ],
+  "changed_or_added": [
+    {
+      "path": "src/fan_editor.gd",
+      "classification": "modified",
+      "old_native_sha256": "b6d13d58d71c2b846926260f844135210e711822e562a69dc19657df20f93297",
+      "new_working_sha256": "85a575881cc13b9acb3f266dcbe401266a80bf424667e2984a3ff3c093fcb614",
+      "old_content_sha256": "e2b4800130369aa167a5dc4efd97eacf72c3f06f8f2a9bfdb23f56e428e7a7b3",
+      "new_content_sha256": "d01af152dbfa656516af8f2675c6d8c96597d65afa3384bb257722743ee5614e",
+      "reason": "Bounded native fan target/aim support; old native assets remain data, prior isolated96/102 controls qualify the new path."
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "classification": "modified",
+      "old_native_sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "new_working_sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "old_content_sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "new_content_sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "reason": "Bounded imported five-rule controls and truthful three-strand user text; reviewed hash-manifest successor."
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "classification": "modified",
+      "old_native_sha256": "a68115d26b62c6e0211aaef3bedc9ba2330742e23dd63092d303330eb944523e",
+      "new_working_sha256": "2613b19ce53b3a50fd001fe4e5b39bca2814165148b036993549490aa96c33a9",
+      "old_content_sha256": "539628e983dd3d4cce9414df1db0012425ddefd665927564918c59bcbd0e647b",
+      "new_content_sha256": "600f30f9801f50b2e58e8d09ad8f758e62f6a8418723497bba1baeadaa4b1eac",
+      "reason": "Explicit native backend branch with generic path retained; exact qualified five-rule wrapper."
+    },
+    {
+      "path": "src/source_chain_math.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "3245868060893b020c6caaf253bac9263d103fb299ac4dec81b9b62f8f7a0461",
+      "old_content_sha256": null,
+      "new_content_sha256": "3245868060893b020c6caaf253bac9263d103fb299ac4dec81b9b62f8f7a0461",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "src/source_jiggle_math.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90",
+      "old_content_sha256": null,
+      "new_content_sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "src/source_secondary.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "d7a85800e2c295c3288b61b9f2da362a93afe8a721ff61105b8858d9fbff07c1",
+      "old_content_sha256": null,
+      "new_content_sha256": "d7a85800e2c295c3288b61b9f2da362a93afe8a721ff61105b8858d9fbff07c1",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "classification": "modified",
+      "old_native_sha256": "ce051baaef5ed7600a93269869f3075ecec88cbf922399abb08bb542e094bd3c",
+      "new_working_sha256": "a0da8a835125a9e73e2d95f78f002ce30285aa7c8ebe99f00bd14604d51bd260",
+      "old_content_sha256": "bb063020810fb6fc0b278d1820e579aa44ca1f6edb7047652d3a20877ccc38bb",
+      "new_content_sha256": "a0da8a835125a9e73e2d95f78f002ce30285aa7c8ebe99f00bd14604d51bd260",
+      "reason": "Explicit reviewed physics-editor hash successor; no manifest verification gate removed."
+    },
+    {
+      "path": "tests/source_native_five_capture.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "b1dc120815f9e56b79ca4406dd3a04ddd5b0978510c6e5ca8234b11ae88ff58b",
+      "old_content_sha256": null,
+      "new_content_sha256": "b1dc120815f9e56b79ca4406dd3a04ddd5b0978510c6e5ca8234b11ae88ff58b",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/source_native_five_live_ui.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "bea7c6b9d512583f05fe88f63f3113c34e3bc9dbf05ac31ce0961402ed704a12",
+      "old_content_sha256": null,
+      "new_content_sha256": "bea7c6b9d512583f05fe88f63f3113c34e3bc9dbf05ac31ce0961402ed704a12",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/source_native_five_state_unit.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "ab40f406e7b2ececc719761f0f0246ecb347bf853d711c3901671c8b8d6d7174",
+      "old_content_sha256": null,
+      "new_content_sha256": "ab40f406e7b2ececc719761f0f0246ecb347bf853d711c3901671c8b8d6d7174",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/source_native_live_capture.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb",
+      "old_content_sha256": null,
+      "new_content_sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/source_native_live_ui.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "d5b10f2c06937296e597dae8fdac7e74cdff90c1d2b6b16d38865a80236663b7",
+      "old_content_sha256": null,
+      "new_content_sha256": "d5b10f2c06937296e597dae8fdac7e74cdff90c1d2b6b16d38865a80236663b7",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/source_native_state_unit.gd",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "008e694dfc3947e9ca3054e6dff14b64e22ee0d1dea3aaf8147df6c9ec0e74fc",
+      "old_content_sha256": null,
+      "new_content_sha256": "008e694dfc3947e9ca3054e6dff14b64e22ee0d1dea3aaf8147df6c9ec0e74fc",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/test_owner_review_snapshot.py",
+      "classification": "modified",
+      "old_native_sha256": "46ba929e1e3efc3891e091a383edb69fb86c7606c8016f19ca0103d5a0f3adcb",
+      "new_working_sha256": "d771929e26202724a0c70918be1a90320d156e724eaa1a3b2e8f63ca22f268b8",
+      "old_content_sha256": "46ba929e1e3efc3891e091a383edb69fb86c7606c8016f19ca0103d5a0f3adcb",
+      "new_content_sha256": "d771929e26202724a0c70918be1a90320d156e724eaa1a3b2e8f63ca22f268b8",
+      "reason": "Reviewed27CPU bounded-runtime snapshot tests; owner archive default preserved."
+    },
+    {
+      "path": "tests/verify_helper_preview.py",
+      "classification": "modified",
+      "old_native_sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+      "new_working_sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50",
+      "old_content_sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+      "new_content_sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50",
+      "reason": "Previously qualified test-only source/EOL provenance followup; current full remains required."
+    },
+    {
+      "path": "tests/verify_source_native_five_live.py",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "543da7be754ef8e748215ff6e39eaa897de458c3ea1eeeb8b51bf1c375bfc96e",
+      "old_content_sha256": null,
+      "new_content_sha256": "543da7be754ef8e748215ff6e39eaa897de458c3ea1eeeb8b51bf1c375bfc96e",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/verify_source_native_live.py",
+      "classification": "added",
+      "old_native_sha256": null,
+      "new_working_sha256": "c4568f0d505a58125ceddd88aa1056cfea98fb0c70513d3a220d38ea1d0aaf6a",
+      "old_content_sha256": null,
+      "new_content_sha256": "c4568f0d505a58125ceddd88aa1056cfea98fb0c70513d3a220d38ea1d0aaf6a",
+      "reason": "Qualified bounded native5 mathematics/runtime or its explicit retained state/UI/cold/export test successor; no new conversion inferred."
+    },
+    {
+      "path": "tests/verify_world_selection_teardown.py",
+      "classification": "modified",
+      "old_native_sha256": "bcd1f87c18eff70af0e5d59b1f9ea1dac5e586911082d3d8a4f4fcef6123adbb",
+      "new_working_sha256": "137322921a83fcbb6cee558cb951ede5f3691c4c96e5b1ab7abdb735680f0bfb",
+      "old_content_sha256": "bcd1f87c18eff70af0e5d59b1f9ea1dac5e586911082d3d8a4f4fcef6123adbb",
+      "new_content_sha256": "137322921a83fcbb6cee558cb951ede5f3691c4c96e5b1ab7abdb735680f0bfb",
+      "reason": "Opt-in bounded runtime snapshot; same28shutdown predicates/timeouts."
+    },
+    {
+      "path": "tests/wind_review_port_files.json",
+      "classification": "modified",
+      "old_native_sha256": "c9e8a9443b49617d53d3a70dc9c2ef286a81c1aedf4af850bf70eb5c4aeb6ca8",
+      "new_working_sha256": "069f88b2b8174fba6c170ebc65dce55bc15e48a0acb3cda12a97a07c9056bdff",
+      "old_content_sha256": "44e3074a5b75dbf600c6d7967c5e8a32ce2e6339d41caf7e9912388f4fc3135c",
+      "new_content_sha256": "fc0134973d130102221ebeecf49d006d82371125b49aaef609d41da19cc7cc2e",
+      "reason": "Explicit reviewed physics-editor hash successor; no wind gate removed."
+    },
+    {
+      "path": "tools/build_owner_review_snapshot.py",
+      "classification": "modified",
+      "old_native_sha256": "7c9487ad1d3c5a6c31f66df9f5b7b73effe9c4668e2a6601dff8196dd87a21f9",
+      "new_working_sha256": "48d6fc852ae16c946431addd39ec152e5db45c7f887bc1ddc941fc332911a0ce",
+      "old_content_sha256": "0944c7801fe39f2009d48b54882dcc8782d90aa0652ce14d08dc6873840d4d85",
+      "new_content_sha256": "48d6fc852ae16c946431addd39ec152e5db45c7f887bc1ddc941fc332911a0ce",
+      "reason": "Reviewed bounded runtime snapshot option; explicit revision owner archive behavior retained."
+    }
+  ],
+  "new_conversion_performed": false,
+  "final_current_four_example_replay": "REQUIRED_NOT_OBSERVED"
+}

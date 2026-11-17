@@ -1,0 +1,339 @@
+{
+  "format": "has_actual_source_normal_boundary_1",
+  "status": "COHERENT_MEASUREMENT_ORIGINAL_FIDELITY_FAILED",
+  "execution": {
+    "path": "output/normal-boundary-20261116-attempt2/root-execution/verification.json",
+    "sha256": "2c915e186d0675eb63ae817a99940417c14d14581df8b8ec617461714af8fe04"
+  },
+  "public_packet": {
+    "path": "experiments/normal_boundary_actual_20261116/INDEX.json",
+    "sha256": "240f3d33ff7e2a156731b3f637f18d6139d2bb6c31147723a4ed760d3c86fabd"
+  },
+  "original_raw_gate": {
+    "threshold": 2e-05,
+    "historical_failure_reproduced": true,
+    "raw_metrics": {
+      "count": 9661,
+      "undefined": 0,
+      "min": 8.971687092477304e-08,
+      "max": 0.00121654672362075,
+      "mean": 4.544684541611846e-05,
+      "p50": 4.128163866724287e-05,
+      "p99": 0.00016039737377055674,
+      "diagnostic_above_2e_5": 8364
+    }
+  },
+  "metrics": {
+    "native_raw_to_glb_raw": {
+      "raw_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 8.971687092477304e-08,
+        "max": 0.00121654672362075,
+        "mean": 4.544684541611846e-05,
+        "p50": 4.128163866724287e-05,
+        "p99": 0.00016039737377055674,
+        "diagnostic_above_2e_5": 8364
+      },
+      "unit_direction_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 1.4901161193847655e-08,
+        "max": 0.0012165467561489922,
+        "mean": 4.5446538387026155e-05,
+        "p50": 4.1281377894915406e-05,
+        "p99": 0.00016039736943591977,
+        "diagnostic_above_2e_5": 8364
+      },
+      "left_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 1.557078910252585e-10,
+        "max": 2.1082098933256077e-07,
+        "mean": 8.542063977297043e-08,
+        "p50": 8.507818372027742e-08,
+        "p99": 1.713768504885138e-07,
+        "diagnostic_above_2e_5": 0
+      },
+      "right_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 1.0510732950663737e-07,
+        "mean": 3.1603769267481416e-08,
+        "p50": 2.842084567689085e-08,
+        "p99": 8.660323502773792e-08,
+        "diagnostic_above_2e_5": 0
+      }
+    },
+    "native_raw_to_blender_transported_raw": {
+      "raw_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 3.332000937312528e-08,
+        "max": 0.0012586271468933944,
+        "mean": 1.672435754976085e-05,
+        "p50": 4.4346666857392e-06,
+        "p99": 0.0001509838625947664,
+        "diagnostic_above_2e_5": 2108
+      },
+      "unit_direction_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 4.9245574110576965e-09,
+        "max": 0.0012586272212025892,
+        "mean": 1.672124690848121e-05,
+        "p50": 4.434095665136413e-06,
+        "p99": 0.00015098382959497365,
+        "diagnostic_above_2e_5": 2108
+      },
+      "left_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 1.557078910252585e-10,
+        "max": 2.1082098933256077e-07,
+        "mean": 8.542063977297043e-08,
+        "p50": 8.507818372027742e-08,
+        "p99": 1.713768504885138e-07,
+        "diagnostic_above_2e_5": 0
+      },
+      "right_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 2.139501720233028e-07,
+        "mean": 3.810755055394384e-08,
+        "p50": 3.267728621025867e-08,
+        "p99": 1.1917301989683438e-07,
+        "diagnostic_above_2e_5": 0
+      }
+    },
+    "native_raw_to_blender_transport_unit": {
+      "raw_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 1.3706615709864087e-08,
+        "max": 0.0012586271741297677,
+        "mean": 1.6723871862311963e-05,
+        "p50": 4.435340868293893e-06,
+        "p99": 0.00015098384350673138,
+        "diagnostic_above_2e_5": 2108
+      },
+      "unit_direction_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 4.9245574110576965e-09,
+        "max": 0.0012586272212025892,
+        "mean": 1.672124690848127e-05,
+        "p50": 4.434095665136413e-06,
+        "p99": 0.00015098382959498116,
+        "diagnostic_above_2e_5": 2108
+      },
+      "left_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 1.557078910252585e-10,
+        "max": 2.1082098933256077e-07,
+        "mean": 8.542063977297043e-08,
+        "p50": 8.507818372027742e-08,
+        "p99": 1.713768504885138e-07,
+        "diagnostic_above_2e_5": 0
+      },
+      "right_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 2.220446049250313e-16,
+        "mean": 3.513043977102892e-17,
+        "p50": 0.0,
+        "p99": 1.1102230246251565e-16,
+        "diagnostic_above_2e_5": 0
+      }
+    },
+    "blender_transported_raw_to_glb_raw": {
+      "raw_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 8.288923306350106e-05,
+        "mean": 3.7909932106963756e-05,
+        "p50": 3.852410146044457e-05,
+        "p99": 7.101900572704203e-05,
+        "diagnostic_above_2e_5": 8249
+      },
+      "unit_direction_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 8.288919439085431e-05,
+        "mean": 3.790986192784353e-05,
+        "p50": 3.852409366247541e-05,
+        "p99": 7.10190044427545e-05,
+        "diagnostic_above_2e_5": 8249
+      },
+      "left_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 2.139501720233028e-07,
+        "mean": 3.810755055394384e-08,
+        "p50": 3.267728621025867e-08,
+        "p99": 1.1917301989683438e-07,
+        "diagnostic_above_2e_5": 0
+      },
+      "right_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 1.0510732950663737e-07,
+        "mean": 3.1603769267481416e-08,
+        "p50": 2.842084567689085e-08,
+        "p99": 8.660323502773792e-08,
+        "diagnostic_above_2e_5": 0
+      }
+    },
+    "blender_transport_unit_to_glb_raw": {
+      "raw_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 8.288919961848716e-05,
+        "mean": 3.7909890746950665e-05,
+        "p50": 3.8524094802961236e-05,
+        "p99": 7.101900439939429e-05,
+        "diagnostic_above_2e_5": 8249
+      },
+      "unit_direction_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 8.288919439085431e-05,
+        "mean": 3.790986192784348e-05,
+        "p50": 3.85240936624604e-05,
+        "p99": 7.10190044427545e-05,
+        "diagnostic_above_2e_5": 8249
+      },
+      "left_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 2.220446049250313e-16,
+        "mean": 3.513043977102892e-17,
+        "p50": 0.0,
+        "p99": 1.1102230246251565e-16,
+        "diagnostic_above_2e_5": 0
+      },
+      "right_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 1.0510732950663737e-07,
+        "mean": 3.1603769267481416e-08,
+        "p50": 2.842084567689085e-08,
+        "p99": 8.660323502773792e-08,
+        "diagnostic_above_2e_5": 0
+      }
+    },
+    "predicted_exporter_to_glb_raw": {
+      "raw_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0,
+        "diagnostic_above_2e_5": 0
+      },
+      "unit_direction_distance": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0,
+        "diagnostic_above_2e_5": 0
+      },
+      "left_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 1.0510732950663737e-07,
+        "mean": 3.1603769267481416e-08,
+        "p50": 2.842084567689085e-08,
+        "p99": 8.660323502773792e-08,
+        "diagnostic_above_2e_5": 0
+      },
+      "right_length_deviation": {
+        "count": 9661,
+        "undefined": 0,
+        "min": 0.0,
+        "max": 1.0510732950663737e-07,
+        "mean": 3.1603769267481416e-08,
+        "p50": 2.842084567689085e-08,
+        "p99": 8.660323502773792e-08,
+        "diagnostic_above_2e_5": 0
+      }
+    }
+  },
+  "exporter_prediction_error": {
+    "count": 9661,
+    "undefined": 0,
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "p50": 0.0,
+    "p99": 0.0,
+    "diagnostic_above_2e_5": 0
+  },
+  "all_candidate_bounds": {
+    "raw_best": {
+      "count": 9661,
+      "undefined": 0,
+      "min": 3.332000937312528e-08,
+      "max": 0.0012586271468933944,
+      "mean": 1.672435754976085e-05,
+      "p50": 4.4346666857392e-06,
+      "p99": 0.0001509838625947664,
+      "diagnostic_above_2e_5": 2108
+    },
+    "raw_worst": {
+      "count": 9661,
+      "undefined": 0,
+      "min": 3.332000937312528e-08,
+      "max": 1.7954913590159336,
+      "mean": 0.0012565452160131917,
+      "p50": 4.436068429530917e-06,
+      "p99": 0.00015481292049550064,
+      "diagnostic_above_2e_5": 2113
+    },
+    "unit_best": {
+      "count": 9661,
+      "undefined": 0,
+      "min": 4.9245574110576965e-09,
+      "max": 0.0012586272212025892,
+      "mean": 1.672124690848121e-05,
+      "p50": 4.434095665136413e-06,
+      "p99": 0.00015098382959497365,
+      "diagnostic_above_2e_5": 2108
+    },
+    "unit_worst": {
+      "count": 9661,
+      "undefined": 0,
+      "min": 4.9245574110576965e-09,
+      "max": 1.7954914970446145,
+      "mean": 0.001256542165120783,
+      "p50": 4.435718331651458e-06,
+      "p99": 0.00015481292790875013,
+      "diagnostic_above_2e_5": 2113
+    }
+  },
+  "multiple_normal_classes": 8,
+  "matched_vertices": 9661,
+  "unmatched_vertices": 0,
+  "private_capture_identical_across_attempts": true,
+  "prior_attempt": "FAILED_DESKTOP_CONFIRMATION_COMPARISON_UNRUN",
+  "causal_limit": "Saved mesh corner-normal read localizes a boundary, not the original SourceIO setter call or a proved custom-normal encoder cause.",
+  "next": "Observe exact SourceIO setter inputs and immediate/later Blender normal readback; preserve unambiguous source vertex identity. No normal correction or tolerance change implemented."
+}

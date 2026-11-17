@@ -1,0 +1,53 @@
+--- historical/audit_receipts.py
++++ current/audit_receipts.py
+@@ -10,11 +10,11 @@
+ parser.add_argument('--terminal-permission',action='store_true',required=True)
+ parser.add_argument('--host-proof-sha256',required=True)
+ parser.add_argument('--host-raw-sha256',required=True)
+-parser.add_argument('--output',type=Path,default=TASK/'receipt-audit')
++parser.add_argument('--output',type=Path,default=ROOT/'output/current-full-receipts-20261116-attempt1')
+ OPTIONS=parser.parse_args()
+ assert all(re.fullmatch(r'[0-9a-f]{64}',value) for value in [OPTIONS.host_proof_sha256,OPTIONS.host_raw_sha256])
+ RUN=ROOT/'output'/CONTEXT['run_name']; EXPECT=CONTEXT['source_commit']; OUT=OPTIONS.output.resolve()
+-assert OUT.parent==TASK and not OUT.exists()
++assert OUT.parent==(ROOT/'output').resolve() and not OUT.exists()
+ 
+ def load(p): return Gates.load(Path(p))
+ def sha(p): return hashlib.sha256(Gates.read(Path(p))).hexdigest()
+@@ -32,7 +32,7 @@
+ if state.get('status')!='passed' or state.get('suite_exit')!=0 or state.get('source_unchanged') is not True or not state.get('finished_utc'):
+  raise RuntimeError('Root-confirmed terminal PASS required before any audit output or final report read')
+ assert state['source_commit']==EXPECT and state['pid']==CONTEXT['coordinator_pid'] and state['process_started']==CONTEXT['coordinator_creation_utc']
+-assert sha(RUN/'source-before.json')==CONTEXT['source_before_sha256'] and sha(RUN/'launch.json')==CONTEXT['launch_sha256'] and sha(RUN/'coordinator-children-observed.json')==CONTEXT['children_observation_sha256']
++assert sha(RUN/'source-before.json')==CONTEXT['source_before_sha256'] and sha(RUN/'launch.json')==CONTEXT['launch_sha256'] and sha(RUN/'root-birth-observation.json')==CONTEXT['birth_observation_sha256']
+ a=utc_ns(state['started_utc']);b=utc_ns(state['finished_utc'])
+ host=load(RUN/'authoritative-host-termination.json')
+ host_raw=RUN/'authoritative-host-terminal.json'
+@@ -45,6 +45,15 @@
+ resultpath=ROOT/'output/verification.json'
+ assert a<=resultpath.stat().st_mtime_ns<=b, 'Final canonical verification is stale/outside this run'
+ result=load(resultpath);Gates.validate_result(result,CONTEXT,REGISTRY)
++normalized=Gates.read(resultpath).decode('utf-8-sig').replace('\r\n','\n').rstrip()
++canonical_log=Gates.read(RUN/'canonical.log').decode('utf-8-sig').replace('\r\n','\n').rstrip()
++assert canonical_log.endswith(normalized),'Exact normalized canonical log/report suffix required'
++assert all(not line.strip() or line.startswith('PASS ') for line in canonical_log[:-len(normalized)].splitlines()),'Unexpected canonical log prefix'
++current={p.relative_to(ROOT).as_posix() for name in ('src','tests','tools','data','examples') for p in (ROOT/name).rglob('*') if p.is_file() and p.suffix!='.pyc' and '__pycache__' not in p.parts}
++current.update(('project.godot','main.tscn','run.py','launch.pyw'))
++assert current==set(before['source_sha256']),'Current functional source membership differs'
++for name,digest in before['source_sha256'].items():
++ p=(ROOT/name).resolve();assert p.is_relative_to(ROOT.resolve()) and hashlib.sha256(p.read_bytes()).hexdigest()==digest,'Current functional source bytes differ: '+name
+ OUT.mkdir(exist_ok=False)
+ failures=[]
+ if not(source_equal and host_bound and a<=resultpath.stat().st_mtime_ns<=b and state['status']=='passed' and state['suite_exit']==0 and state['source_unchanged']): failures.append({'kind':'canonical_state_or_source'})
+@@ -121,9 +130,9 @@
+ summary={'format':'has_canonical_metadata_receipt_audit_1','source_commit':EXPECT,'run_directory':str(RUN),'state':state,'interval_start_ns':a,'interval_end_ns':b,'elapsed_seconds':(b-a)/10**9,'source_before_after_equal':source_equal,'functional_source_entries':len(before['source_sha256']),'full_result_top_level_entries':len(result),'fresh_root_receipt_files':len(root_rows),'fresh_root_all_exit_0':all(r['receipt']['exit']==0 for r in root_rows),'fresh_root_all_private_closed':all(r['isolation_and_closure_passed'] for r in root_rows),'unique_receipt_files':len(rows),'unique_desktops':len(bydesktop),'nested_receipt_files_outside_root':len(nested),'success_exit_0_files':sum(r['classification']=='success_exit_0' for r in rows),'expected_krita_cancel_exit_2_files':sum(r['classification']=='expected_krita_cancel_exit_2' for r in rows),'all_receipts_private_closed':all(r['isolation_and_closure_passed'] for r in rows),'all_receipts_fresh_for_run':all(r['within_run_interval'] for r in rows),'inline_occurrences':len(inline),'inline_unique_desktops':len(inline_unique),'all_inline_exact_physical_matches':all(x['strict_identity_closure_match'] for x in inline),'actual_report_documents_read':len(docs),'non_receipt_filename_matches':len(ignored_named),'missing_referenced_receipts':len(missing),'unexpected_failures':failures,'passed':not failures,'release_file_created':False,'authoritative_host_context_bound':host_bound,'coordinator_pid':CONTEXT['coordinator_pid'],'suite_python_pid':CONTEXT['python_pid']}
+ write('receipt-inventory.json',{'summary':summary,'receipts':rows,'inline_receipts':inline,'non_receipt_filename_matches':ignored_named,'missing_references':missing,'report_documents':list(docs.values()),'expected_cancellation_support':{'file':meta(assertion),'explicit_exit2_assertion_found':assertion_support,'source_line':next(i for i,line in enumerate(text.splitlines(),1) if "assert r['exit']==2 and r['cancelled'] and r['child_desktop_confirmed']" in line),'full_result_binding':'$.krita_import.cancelled_receipt','receipt_path':str(expected_cancel)}})
+ write('receipt-ready-final.json',summary)
+-for p in [resultpath,RUN/'state.json',RUN/'source-before.json',RUN/'source-after.json',RUN/'authoritative-host-termination.json',RUN/'authoritative-host-terminal.json',RUN/'coordinator-children-observed.json',RUN/'desktop-enumeration.json']:
++for p in [resultpath,RUN/'state.json',RUN/'source-before.json',RUN/'source-after.json',RUN/'authoritative-host-termination.json',RUN/'authoritative-host-terminal.json',RUN/'root-birth-observation.json',RUN/'desktop-enumeration.json']:
+  if p.is_file():shutil.copyfile(p,OUT/('full-verification.json' if p==resultpath else p.name))
+-write('input-hashes.json',[meta(p) for p in [resultpath,RUN/'state.json',RUN/'source-before.json',RUN/'source-after.json',RUN/'authoritative-host-termination.json',RUN/'authoritative-host-terminal.json',RUN/'coordinator-children-observed.json',RUN/'desktop-enumeration.json',assertion] if p.is_file()])
++write('input-hashes.json',[meta(p) for p in [resultpath,RUN/'state.json',RUN/'source-before.json',RUN/'source-after.json',RUN/'authoritative-host-termination.json',RUN/'authoritative-host-terminal.json',RUN/'root-birth-observation.json',RUN/'desktop-enumeration.json',assertion] if p.is_file()])
+ shutil.copy2(Path(__file__),OUT/'audit_receipts.py')
+ shutil.copy2(TASK/'RUN_EXPECTATIONS.json',OUT/'RUN_EXPECTATIONS.json')
+ shutil.copy2(TASK/'RESULT_REGISTRY.json',OUT/'RESULT_REGISTRY.json')

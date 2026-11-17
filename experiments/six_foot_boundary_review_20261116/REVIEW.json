@@ -1,0 +1,239 @@
+{
+  "format": "has_six_foot_boundary_source_review_1",
+  "recorded_utc": "2026-11-16T04:31:06.107426+00:00",
+  "main_commit_context": "52f63c944ded7a651da871524d23a345b606424d",
+  "main_functional_source_files": 1019,
+  "main_source_modified": false,
+  "candidate_index_sha256": "024b4a890003789bd251649eaddee9cbf7034f602ce54340135d62929f188c5e",
+  "candidate_payloads_exact": 15,
+  "verdict": "V1_RESOURCE_READER_ONLY_MUST_NOT_BE_SHIPPED_AS_RUNTIME_CAPABILITY",
+  "normal_HAS_bridge_downgrades_original9": false,
+  "actual_bridge_test_methods": 8,
+  "actual_subprocess_attempts": 0,
+  "Godot_geometry_or_activation_run": false,
+  "source_files": {
+    "tools/has_project.py": {
+      "bytes": 36736,
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+      "anchors": {
+        "def members(": [
+          84
+        ],
+        "def _pack_locked(": [
+          382
+        ],
+        "project_blob =": [
+          393
+        ],
+        "def unpack(": [
+          478
+        ],
+        "assets,cels = members(manifest)": [
+          493
+        ],
+        "with archive.open(entry)": [
+          526
+        ]
+      }
+    },
+    "tools/directory_commit.py": {
+      "bytes": 5505,
+      "sha256": "24aa177e810190dc2404dc9f9db3f0fb856ad91665d400fbeb3e1e5ae374f809",
+      "anchors": {
+        "def read_manifest(": [
+          28
+        ],
+        "not in range(1, 9)": [
+          35
+        ]
+      }
+    },
+    "src/has_project.gd": {
+      "bytes": 15268,
+      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032",
+      "anchors": {
+        "func import_asset(": [
+          88
+        ],
+        "if pending.get(\"import_asset\",false):": [
+          175
+        ],
+        "project_loader.start": [
+          205
+        ],
+        "app.install_project_data": [
+          180
+        ]
+      }
+    },
+    "src/has_project_loader.gd": {
+      "bytes": 1458,
+      "sha256": "cdb97409b2d7b202bd8ba7cb44c93d7c1198fe41901f3a080e40546b48e3c673",
+      "anchors": {
+        "func decode(": [
+          16
+        ],
+        "Storage.load_project": [
+          17
+        ]
+      }
+    },
+    "src/storage.gd": {
+      "bytes": 35631,
+      "sha256": "f90769be7f736abae6dc7e44a378330c9eb4308358d29598a6da53e2e405578e",
+      "anchors": {
+        "static func readable_manifest": [
+          57
+        ],
+        "static func save_project": [
+          107
+        ],
+        "manifest.schema_version=4": [
+          255
+        ],
+        "manifest.schema_version=7": [
+          278
+        ],
+        "manifest.schema_version=8": [
+          280
+        ],
+        "if _manifest_out is Dictionary": [
+          287
+        ],
+        "static func decode_project": [
+          351
+        ],
+        "integer(data.get(\"schema_version\"),1,6)": [
+          78,
+          374
+        ]
+      }
+    },
+    "src/model.gd": {
+      "bytes": 28593,
+      "sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678",
+      "anchors": {
+        "static func validate(": [
+          94
+        ],
+        "studio_model_9": [
+          43,
+          44,
+          58,
+          100,
+          319,
+          327,
+          373,
+          386,
+          421
+        ],
+        "func apply(": [
+          444
+        ],
+        "* base_root": [
+          451
+        ]
+      }
+    },
+    "src/world_document.gd": {
+      "bytes": 5704,
+      "sha256": "6d921495a0366f30724e5945abe79bcc678d193be40cc77d4dd198ee8c3455cf",
+      "anchors": {
+        "static func portable(": [
+          72
+        ],
+        "var result := world.duplicate(true)": [
+          73,
+          83
+        ],
+        "static func resolve(": [
+          82
+        ]
+      }
+    },
+    "src/asset_package.gd": {
+      "bytes": 3772,
+      "sha256": "5cbdfdbdfa7691717fb5ec2209a177fd51b010029cea8af3fcb1692b2ed9257c",
+      "anchors": {
+        "static func import_into(": [
+          16
+        ],
+        "Model.validate(row": [
+          28
+        ]
+      }
+    },
+    "src/renderer.gd": {
+      "bytes": 15232,
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "anchors": {
+        "func prepare_model(": [
+          203
+        ],
+        "candidate.base_root = candidate.root.transform": [
+          209
+        ]
+      }
+    },
+    "src/world_runtime.gd": {
+      "bytes": 8012,
+      "sha256": "d2c0bb7fece396066cc4bdae34e1f7172d9a90519dae05d3e33c2b87edb32d46",
+      "anchors": {
+        "static func prepare(": [
+          18
+        ],
+        "instance.base_root=instance.root.transform": [
+          47
+        ]
+      }
+    },
+    "src/root_component_document.gd": {
+      "bytes": 19847,
+      "sha256": "b1cdc6183738494271b4906f5ff436a8bd5b6e31990e58de0f8905fc3d169bfe",
+      "anchors": {
+        "static func legacy_view(": [
+          245
+        ],
+        "var old:=legacy_view(data);var error:=Model.validate(old,duration)": [
+          253
+        ]
+      }
+    },
+    "src/extended_timing.gd": {
+      "bytes": 3333,
+      "sha256": "7bce72af46d5dc8b2ef9fb0674b0e1dc39bf0be6f540c9c3915e1b81ec9b9858",
+      "anchors": {
+        "static func required(": [
+          32
+        ],
+        "scene.get(\"schema_version\")==8": [
+          44,
+          54
+        ],
+        "static func child_schema(": [
+          53
+        ]
+      }
+    },
+    "src/has_snapshot_writer.gd": {
+      "bytes": 5630,
+      "sha256": "61400dfcf743cf4bd1e0d99e3aec7e1c74f05d61108cfa64cf7afe3f7613111f",
+      "anchors": {
+        "func persist(": [
+          38
+        ],
+        "Storage.save_project": [
+          39
+        ]
+      }
+    }
+  },
+  "concrete_fix_sequence": [
+    "Keep active normalization disabled and make worker facade default runtime_basis_ready=False; no request or CLI enable switch.",
+    "Use one fail-closed asset_basis/wrapper-marker admission guard in Model before model9 delegation, Storage readable/decode/save, and direct renderer/world/placement/helper entrypoints.",
+    "Keep directory_commit schema9 refused until full GDScript reader/writer/runtime capability is implemented; do not strip wrappers in bridge output.",
+    "After full source lease, execute the isolated current Storage counterexample and successor boundary tests, then integrate only reviewed contract/refusal code in a fresh runnable increment.",
+    "Only later implement real positive uniform intrinsic basis composition/persistence, scene-local schema9 stacks, placement/native scale/helper lineage and fresh native Off/Record/HAS/export cases before activation."
+  ],
+  "candidate_author_successor": "Separate v2 Python/GDScript draft is addressing default false readiness; not included or treated as main here."
+}

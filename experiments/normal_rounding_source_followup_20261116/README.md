@@ -1,0 +1,11 @@
+# Normal rounding source followup
+
+The existing native normal gate remains **FAILED / UNQUALIFIED at2e-5**:9,661 matched vertices,8,364 above the gate, maximum0.00121654672362075. These are preserved earlier observations, not a new conversion or engine run. Four repeated-attribute ambiguities and the matcher limits remain as recorded in the original diagnosis.
+
+Read-only inspection reconfirms the approved installed exporter rounds normals to four decimal places (`primitive_extract.py:1447`, `constants.py:159`), then normalizes. SourceIO's pinned `mdl49/import_mdl.py:90` supplies the source vertex normals to Blender's custom-normal setter. The three file hashes match the immutable shared-input lock3bb7c2…; no installed source or setting was changed.
+
+For a unit input normal, rounding each component to four decimals gives component error at most5e-5 and vector error δ≤√3·5e-5≈8.660254e-5. Normalizing gives the conservative chord bound2δ≈0.0001732051. The tighter unit-input bound is `2sin(arcsin(δ)/2)`≈0.00008660254. Even allowing the recorded native length residual, the rounding-only bound stays far below0.0012165. This rejects four-decimal rounding **alone** as an explanation of that maximum; it does not reproduce or identify the additional stage.
+
+These are ideal rounding/normalization bounds; NumPy/exporter floating-point arithmetic was not executed or independently bounded here. Further transforms/conditioning, Blender custom-normal encoding/evaluation, matching and exporter stages need their own measured joins. The old saved-Blender/corner/exporter intermediate capture at `experiments/resume_coordinates_20261115/capture_blender_normals_UNRUN.py` remains a prepared candidate. A saved snapshot alone does not observe the original SourceIO setter call or prove the C++ encoder caused an error.
+
+Actual capture still requires a **fresh complete default full PASS and authoritative root closure**, followed by its own exact source/input/runtime pins, separately approved lease and fresh private output. No Blender, Godot, converter, process query, Git command or native-coordinate probe ran here. `BOUNDS.json` stores only counts/scalars/source hashes; the original failures and tolerances are unchanged.

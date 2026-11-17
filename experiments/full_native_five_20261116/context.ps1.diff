@@ -1,0 +1,55 @@
+--- historical_dbf_template/context.ps1
++++ UNRUN_current_full/context.ps1
+@@ -1,14 +1,14 @@
+ $ErrorActionPreference='Stop'
+ $Checkout='C:\a\Programming\cloudflare\has-acceptance-session-20261111'
+-$RunRoot=Join-Path $Checkout 'output\windows-canonical-bone-binding-20261116T022132132'
+-$ExpectedCommit='dbf0bc1145f74b5bbff814ec6a417ccd23ce0885'
+-$CoordinatorPid=87384
+-$CoordinatorBirth='2026-11-16T02:21:32.1707585Z'
+-$PythonPid=86984
+-$PythonBirth='2026-11-16T02:21:32.8684050Z'
+-$ExpectedLaunchSha='47412de501bd7de69e702a14e06d603d259feeff20e3a668eaca4228ced940fd'
+-$ExpectedSourceSha='a9bd3f994cb815c961c2f337e23252738522917553bca06358a92f20c85add80'
+-$ExpectedBirthSha='14c6a6703d300adc076c160c4a7ec9d0c013ecc7ea897369e45074ba4b2ea7cb'
++$RunRoot=Join-Path $Checkout 'output\windows-canonical-bone-binding-20261116T041518335'
++$ExpectedCommit='52f63c944ded7a651da871524d23a345b606424d'
++$CoordinatorPid=79488
++$CoordinatorBirth='2026-11-16T04:15:18.3655401Z'
++$PythonPid=91024
++$PythonBirth='2026-11-16T04:15:18.9615298Z'
++$ExpectedLaunchSha='7623acd4cd9d4e7a2623412437363e3da4acb1c121ad87e71fff87e887de93dd'
++$ExpectedSourceSha='4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7'
++$ExpectedBirthSha='ce9b8c1197b02b3d575083635419b7309160ea70ab08896d819f5d112c2da6df'
+ $ExpectedRunnerSha='6856faad316cc7188abb46a558aea3e0c08e2d409fedf173bf3b55a9a89c6bfa'
+ 
+ function Read-Json([string]$Path){
+@@ -40,17 +40,17 @@
+     $launch=Read-Json (Join-Path $RunRoot 'launch.json')
+     $birth=Read-Json (Join-Path $RunRoot 'root-birth-observation.json')
+     if($launch.source_commit -ne $ExpectedCommit -or $launch.pid -ne $CoordinatorPid -or $launch.creation_utc -cne $CoordinatorBirth -or $launch.run_folder -cne $RunRoot -or $launch.runner_sha256 -ne $ExpectedRunnerSha){throw 'Actual launch fields differ'}
+-    if($birth.format -ne 'has_native_leaf_full_birth_observation_1' -or $birth.source_commit -ne $ExpectedCommit -or $birth.coordinator_pid -ne $CoordinatorPid -or $birth.coordinator_creation_utc -cne $CoordinatorBirth -or $birth.python_pid -ne $PythonPid -or $birth.python_creation_utc -cne $PythonBirth -or $birth.python_parent_pid -ne $CoordinatorPid -or $birth.python_command -cne '"C:\Program Files\Python313\python.exe" -u tests/verify.py' -or $birth.process_terminated -ne $false){throw 'Actual child birth proof differs'}
++    if($birth.format -ne 'has_root_full_child_birth_observation_1' -or $birth.source_commit -ne $ExpectedCommit -or $birth.coordinator_pid -ne $CoordinatorPid -or $birth.coordinator_birth -cne $CoordinatorBirth -or $birth.python_pid -ne $PythonPid -or $birth.python_birth -cne $PythonBirth -or $birth.python_parent -ne $CoordinatorPid -or $birth.python_command -cne '"C:\Program Files\Python313\python.exe" -u tests/verify.py' -or $birth.run_folder -cne $RunRoot){throw 'Actual child birth proof differs'}
+     $beforePath=Join-Path $RunRoot 'source-before.json';$afterPath=Join-Path $RunRoot 'source-after.json'
+     if((File-Sha $beforePath) -ne $ExpectedSourceSha -or (File-Sha $afterPath) -ne $ExpectedSourceSha){throw 'Exact before/after source bytes differ'}
+     $before=Read-Json $beforePath;$after=Read-Json $afterPath
+-    if($before.commit -ne $ExpectedCommit -or $after.commit -ne $ExpectedCommit -or $before.source_sha256.Count -ne 1014 -or $after.source_sha256.Count -ne 1014 -or $state.source_unchanged -ne $true){throw 'Exact current1014 source gate differs'}
++    if($before.commit -ne $ExpectedCommit -or $after.commit -ne $ExpectedCommit -or $before.source_sha256.Count -ne 1019 -or $after.source_sha256.Count -ne 1019 -or $state.source_unchanged -ne $true){throw 'Exact current1019 source gate differs'}
+     $paths=@()
+     foreach($part in @('src','tests','tools','data','examples')){
+         $paths+=@(Get-ChildItem -LiteralPath (Join-Path $Checkout $part) -Recurse -File -Force|Where-Object {$_.Extension -cne '.pyc' -and $_.FullName -cnotmatch '\\__pycache__\\'})
+     }
+     foreach($name in @('project.godot','main.tscn','run.py','launch.pyw')){$paths+=Get-Item -LiteralPath (Join-Path $Checkout $name)}
+-    if($paths.Count -ne 1014){throw 'Current functional membership count differs'}
++    if($paths.Count -ne 1019){throw 'Current functional membership count differs'}
+     foreach($file in $paths){
+         No-Reparse $file.FullName
+         $name=$file.FullName.Substring($Checkout.Length+1).Replace('\','/')
+@@ -60,6 +60,7 @@
+     if($LASTEXITCODE -ne 0 -or $head -ne $ExpectedCommit){throw 'Actual HEAD changed before terminal admission'}
+     return @{state=$state;source=$before}
+ }
++# Observation only: neither helper calls Stop-Process, taskkill or a kill API.
+ function Observe-Owned-Absence{
+     $identities=@()
+     foreach($pin in @(@{pid=$CoordinatorPid;birth=$CoordinatorBirth},@{pid=$PythonPid;birth=$PythonBirth})){

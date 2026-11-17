@@ -1,0 +1,63 @@
+{
+  "format": "has_six_foot_closed_v2_actual_container_cpu_1",
+  "passed": true,
+  "test_methods": 8,
+  "named_tests": [
+    "test_active9_pack_refuses_before_new_container_for4_and7",
+    "test_active9_unpack_refuses_before_extraction_for4_and7",
+    "test_active_asset_package_refuses_on_both_worker_sides",
+    "test_legacy4_and7_active_fields_refuse_before_extraction",
+    "test_legacy4_and7_active_fields_refuse_before_target_replace",
+    "test_ordinary4_and7_packed_and_linked_preserve_manifest_bytes",
+    "test_ordinary_asset_package_remains_supported",
+    "test_request_ready_field_cannot_enable_worker"
+  ],
+  "legacy_positive_cases": [
+    {
+      "underlying_version": 4,
+      "storage": "packed",
+      "legacy_manifest_bytes_preserved": true
+    },
+    {
+      "underlying_version": 4,
+      "storage": "linked",
+      "legacy_manifest_bytes_preserved": true
+    },
+    {
+      "underlying_version": 7,
+      "storage": "packed",
+      "legacy_manifest_bytes_preserved": true
+    },
+    {
+      "underlying_version": 7,
+      "storage": "linked",
+      "legacy_manifest_bytes_preserved": true
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "subprocess_attempts": 0,
+  "source_identity_before": {
+    "tools/has_project.py": {
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+      "mtime_ns": 1794447912627061700
+    },
+    "tools/directory_commit.py": {
+      "sha256": "24aa177e810190dc2404dc9f9db3f0fb856ad91665d400fbeb3e1e5ae374f809",
+      "mtime_ns": 1794447912623058800
+    },
+    "experiments/six_foot_import_basis_gd_candidate_20261116/draft/tools/has_project.py": {
+      "sha256": "35308d695f2be5ca9871fbeab30834abc81366af3420a07dca5a006792be9d72",
+      "mtime_ns": 1794803216375438900
+    },
+    "experiments/six_foot_import_basis_gd_candidate_20261116/draft/tools/import_basis.py": {
+      "sha256": "c23ede860b685e77eb5734cbba60e66fd612e791e6b998f0b6fc4482ff2c15cf",
+      "mtime_ns": 1794803216374433700
+    }
+  },
+  "source_identity_preserved": true,
+  "actual_container_workers_used": true,
+  "synthetic_assets_only": true,
+  "Godot_classifier_Model_or_activation_runs": 0,
+  "sealed_candidates_modified": false
+}

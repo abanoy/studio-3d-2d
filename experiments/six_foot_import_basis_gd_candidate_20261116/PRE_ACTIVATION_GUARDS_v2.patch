@@ -1,0 +1,110 @@
+--- a/src/model.gd
++++ b/src/model.gd
+@@ -93,6 +93,8 @@
+ 
+ static func validate(value, duration: int) -> String:
+ 	if not value is Dictionary: return "Invalid model record."
++	var import_basis_error: String=preload("res://src/import_basis_boundary.gd").model_error(value)
++	if not import_basis_error.is_empty():return import_basis_error
+ 	if value.is_empty(): return ""
+ 	if value.has("reference_opacity"):
+ 		var opacity=value.reference_opacity
+--- a/src/storage.gd
++++ b/src/storage.gd
+@@ -60,6 +60,7 @@
+ 	var parser := JSON.new()
+ 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
+ 	var data: Dictionary=parser.data
++	if not preload("res://src/import_basis_boundary.gd").project_error(data).is_empty():return false
+ 	if not DrawingLimits.error(data.get("layers"),data.get("sequence_graph",{})).is_empty():return false
+ 	if not preload("res://src/canvas_size.gd").error(data.get("video")).is_empty():return false
+ 	if data.get("video") is Dictionary and not preload("res://src/output_size.gd").project_error(data.video).is_empty():return false
+@@ -106,6 +107,8 @@
+ 
+ static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={},cancel_path: String="") -> String:
+ 	if not cancel_path.is_empty() and FileAccess.file_exists(cancel_path):return "Project saving cancelled. Previous save preserved."
++	var import_basis_error: String=preload("res://src/import_basis_boundary.gd").project_error({"model":model,"world":world,"sequence_graph":sequence_graph})
++	if not import_basis_error.is_empty():return import_basis_error
+ 	var count_error:=DrawingLimits.error(layers,sequence_graph)
+ 	if not count_error.is_empty():return count_error
+ 	var sync_boundary:=preload("res://src/save_worker.gd").existing_boundary(folder)
+@@ -349,6 +352,8 @@
+ 	return loaded
+ 
+ static func decode_project(data,folder: String,extended:=false,rasters=null) -> Dictionary:
++	var import_basis_error: String=preload("res://src/import_basis_boundary.gd").project_error(data)
++	if not import_basis_error.is_empty():return {"error":import_basis_error}
+ 	if rasters==null:rasters=RasterReader.new()
+ 	if not rasters.cancel_path.is_empty() and FileAccess.file_exists(rasters.cancel_path):return {"error":"Project opening cancelled. Previous project preserved."}
+ 	if data is Dictionary:
+--- a/src/renderer.gd
++++ b/src/renderer.gd
+@@ -201,6 +201,8 @@
+ 	return true
+ 
+ func prepare_model(data: Dictionary,incoming_video: Dictionary={}) -> Dictionary:
++	var import_basis_error: String=preload("res://src/import_basis_boundary.gd").model_error(data)
++	if not import_basis_error.is_empty():return {"error":import_basis_error}
+ 	if data.is_empty(): return {"model": null}
+ 	var result := SceneIO.load_glb(data.source)
+ 	if result.has("error"): return result
+--- a/src/app.gd
++++ b/src/app.gd
+@@ -1753,6 +1753,8 @@
+ 	return error
+ 
+ func append_object_data(data: Dictionary, kind: String, start_frame := 0, placement := {}) -> String:
++	var import_basis_error: String=preload("res://src/import_basis_boundary.gd").model_error(data)
++	if not import_basis_error.is_empty():return import_basis_error
+ 	if sequence_editor and sequence_editor.used("objects")>=64:return "This project and its sequences already contain64 world objects."
+ 	if exporting:return "Wait for the current operation to finish."
+ 	if not physics_editor.freeze_all():return status.text
+--- a/src/shape_comparison.gd
++++ b/src/shape_comparison.gd
+@@ -85,6 +85,8 @@
+ func prepare() -> void:
+ 	if not valid():close();return
+ 	var actor: RefCounted=editor.actor()
++	var import_basis_error: String=preload("res://src/import_basis_boundary.gd").model_error(actor.data)
++	if not import_basis_error.is_empty():fail(import_basis_error);return
+ 	if FileAccess.get_sha256(actor.data.source)!=source_sha:fail("The source changed. Import it again before comparing.");return
+ 	renderer=Renderer.new();add_child(renderer);renderer.setup(420,320);renderer.empty_environment=false;renderer.editor_grid.visible=false;renderer.video_settings={"lighting_mode":"unshaded"}
+ 	var definition:=Model.definition(actor.data.source)
+--- a/src/wind_review.gd
++++ b/src/wind_review.gd
+@@ -168,7 +168,10 @@
+ 
+ func begin_preview() -> void:
+ 	if not context_valid() or wind_ids.is_empty():stop_preview("Review no longer matches this model");return
+-	var source: RefCounted=actor();var filtered:=Groups.filter(catalog,wind_ids.keys())
++	var source: RefCounted=actor()
++	var import_basis_error: String=preload("res://src/import_basis_boundary.gd").model_error(source.data)
++	if not import_basis_error.is_empty():fail(import_basis_error);return
++	var filtered:=Groups.filter(catalog,wind_ids.keys())
+ 	if not filtered.get("error","").is_empty():fail(filtered.error);return
+ 	var driven:=body_ids(source)
+ 	for chain in filtered.chains:
+--- a/src/wind_helper_candidate.gd
++++ b/src/wind_helper_candidate.gd
+@@ -300,6 +300,8 @@
+ 	return {"catalog":result,"selected_group_ids":checked,"operation_group_ids":by_operation,"notice":notice}
+ 
+ static func prepare(source: RefCounted,candidate_path: String,shape_snapshot: Dictionary,baseline_pose: Dictionary,video: Dictionary,operations: Array,candidate_sha256: String) -> Dictionary:
++	var import_basis_error: String=preload("res://src/import_basis_boundary.gd").model_error(source.data if source else {})
++	if not import_basis_error.is_empty():return error(import_basis_error)
+ 	shape_snapshot=shape_snapshot.duplicate(true);baseline_pose=baseline_pose.duplicate(true);video=video.duplicate(true);operations=operations.duplicate(true)
+ 	var before:=live_state(source)
+ 	if before.is_empty() or not shape_matches(source,shape_snapshot):return error("The paused model or its shapes changed. Review the part again.")
+--- a/src/secondary_helper_editor.gd
++++ b/src/secondary_helper_editor.gd
+@@ -626,6 +626,10 @@
+ 	request["reviewed"]=true;launch("build")
+ 
+ func install(value: Dictionary) -> void:
++	var import_basis_actor: RefCounted=actor()
++	if import_basis_actor:
++		var import_basis_error: String=preload("res://src/import_basis_boundary.gd").model_error(import_basis_actor.data)
++		if not import_basis_error.is_empty():info.text=import_basis_error;return
+ 	stop_pending_preview("Apply")
+ 	if not can_install():info.text="Live motion started while preparing. Pause it before applying; current edits were kept.";return
+ 	app.pose_editor.finish_drag();app.finish_stroke()

@@ -1,0 +1,10 @@
+{
+  "format": "has_full_archive_packaging_refusal_1",
+  "product_or_receipt_audit_failure": false,
+  "builder_sha256": "66dea23a535ed0136e777524bd794be6bb1849d3250e953a34c28e0320a2cf71",
+  "error_type": "AssertionError",
+  "error_key": "$.core_process_groups.pose",
+  "cause": "Generic privacy key guard treated a verified core process result named pose as a pose payload. Actual object has only exit and seconds. No native pose arrays were allowed.",
+  "writes_before_refusal": "Explicit copied metadata and physical receipts retained; RESULT_EXTRACT/BENCHMARK/INDEX not yet created.",
+  "source_evidence": "Observed exec_command exit1 traceback in root/normal_probe_audit turn; no process birth or timestamp fabricated."
+}

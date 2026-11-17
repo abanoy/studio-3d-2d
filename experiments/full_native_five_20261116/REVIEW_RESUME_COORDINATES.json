@@ -1,0 +1,38 @@
+{
+  "format": "has_current_full_helpers_independent_source_review_1",
+  "reviewed_utc": "2026-11-16T04:22:58.888205+00:00",
+  "source_review_passed": true,
+  "blockers": [],
+  "reviewed_helper_sha256": {
+    "context.ps1": "9ee93c430c76c9ebeb20f19858595339f3837e57ac701c214ed0d6c08e88148c",
+    "close_full_owned.ps1": "998f7af043fed0dbdf6d990a2b8a5f81012be289829ec8737ed6165a703e8f00",
+    "release_full_graphics.ps1": "90c5f95840a8c6f0d7e565e9948e157f8548035463f025325b5436b0fa3afa85",
+    "release_failed_graphics.ps1": "c7e597b2450c5954c7034b1418a8d93faee6d19ddfeae3fb968d72f41698e5c5"
+  },
+  "actual_launch_birth_source_hashes_independently_matched": {
+    "launch.json": "7623acd4cd9d4e7a2623412437363e3da4acb1c121ad87e71fff87e887de93dd",
+    "root-birth-observation.json": "ce9b8c1197b02b3d575083635419b7309160ea70ab08896d819f5d112c2da6df",
+    "source-before.json": "4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7"
+  },
+  "actual_functional_count": 1019,
+  "coordinator_pid": 79488,
+  "coordinator_birth": "2026-11-16T04:15:18.3655401Z",
+  "python_pid": 91024,
+  "python_birth": "2026-11-16T04:15:18.9615298Z",
+  "actual_state_status_read_only_at_review": "running",
+  "source_findings": [
+    "Terminal state/source gate precedes all process queries, final report reads and proof writes in every top-level helper.",
+    "Actual52f63c commit, new birth schema, launch/birth/source pins and current1019 membership are bound.",
+    "PASS rehashes exact reviewed report documents, physical receipts, retained copies and inline joins, checks actual run interval and derives dynamic job counts.",
+    "The one deliberate Krita exit2 is tied to current pinned source assertion and exact fresh report receipt; fresh root GUI wrappers must still exit0.",
+    "Failure helper uses a separate unexecuted future inventory contract, keeps failed status and rejects unregistered/implicit late/cancel jobs.",
+    "Raw/flat process birth and absent-command fields are cross-bound; observation-only helpers provide no termination path.",
+    "No192job/46job/oldlate-child totals are transplanted;157resultkeys are bound to unchanged current verifier SHA."
+  ],
+  "limits": [
+    "Review is source/metadata only; I did not execute a helper, PowerShell parser, CIM query, engine or Git command.",
+    "Peer syntax-only audit0errors is independently hash-joined, not represented as my execution.",
+    "No actual terminal result, host closure, receipt inventory or graphics lease release is claimed by this review.",
+    "Full or partial inventory completeness remains a separate actual root audit; old evidence cannot satisfy the current contract."
+  ]
+}

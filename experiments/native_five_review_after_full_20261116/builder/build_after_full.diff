@@ -1,0 +1,81 @@
+--- unchanged_old/build_after_full.py
++++ UNRUN_current_native5/build_after_full.py
+@@ -21,14 +21,16 @@
+ HERE = Path(__file__).resolve().parent
+ ROOT = HERE.parents[2]  # experiments/resume_full_20261115/builder
+ WORKSPACE = ROOT.parent
+-OLD_REVIEW = WORKSPACE/"HAS-Review-20261113-12071fe"
++OLD_REVIEW = WORKSPACE/"HAS-Review-20261115-SFM-Joints-f0dd57a-replay2"
+ PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
+ SOURCEIO = ROOT/"output/dependencies"/("sourceio-"+PIN)
+ NATIVE_RUN = ROOT/"output/sfm-bone-bindings-native-launch-20261114T033026205/run"
+ FUNCTIONAL = ("src", "tests", "tools", "data", "examples")
+ ENTRY = ("project.godot", "main.tscn", "run.py", "launch.pyw")
+-QUALIFIED_REVISION = "f0dd57a2e568089d396fecba819ab987da658bf0"
+-QUALIFIED_FULL = ROOT/"output/windows-canonical-bone-binding-20261115T225514304"
++QUALIFIED_REVISION = "52f63c944ded7a651da871524d23a345b606424d"
++QUALIFIED_FULL = ROOT/"output/windows-canonical-bone-binding-20261116T041518335"
++sys.path.insert(0,str(HERE.parent))
++import admission as Admission
+ TEXT_SUFFIXES = {".py", ".pyw", ".gd", ".gdshader", ".tscn", ".tres", ".json", ".godot", ".cfg", ".uid", ".txt", ".md", ".svg"}
+ TEXT_PATHS = {"tests/blank", "tests/krita_fixture/has_fixture.desktop", "tools/docker/sourceio_metadata.Dockerfile",
+               "tools/docker/sourceio_worker.Dockerfile", "tools/krita-runtime.Dockerfile"}
+@@ -179,15 +181,17 @@
+     parser.add_argument("--no-native-sources", action="store_true")
+     args = parser.parse_args()
+     need(os.name == "nt" and re.fullmatch("[0-9a-f]{40}", args.revision), "Approved Windows/full commit required")
++    need(not args.no_native_sources,"This exact review requires all four complete native families; no partial source build.")
+     need(args.revision == QUALIFIED_REVISION and args.canonical_run.absolute() == QUALIFIED_FULL and
+          args.canonical_host_proof.absolute() == QUALIFIED_FULL/"authoritative-host-termination.json",
+-         "Only the reviewed f0dd57a revision and exact225514304 full run are admitted")
++         "Only reviewed52f63c9 and exact041518335 complete full run are admitted")
+     final = guarded(args.final, WORKSPACE)
+-    need(final.parent == WORKSPACE and final.name == "HAS-Review-20261115-SFM-Joints-"+args.revision[:7]+"-replay2" and not final.exists(), "Exact NEW review target required")
+-    need(final != OLD_REVIEW and OLD_REVIEW.is_dir(), "Preserve the existing12071fe review")
++    need(final.parent == WORKSPACE and final.name == "HAS-Review-20261115-Native-Hair-"+args.revision[:7] and not final.exists(), "Exact NEW review target required")
++    need(final != OLD_REVIEW and OLD_REVIEW.is_dir(), "Preserve the owner f0dd57a replay2 review")
+     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+     need(revision == args.revision, "Current HEAD differs from requested source")
+     full_gate = canonical_gate(args.canonical_run, args.canonical_host_proof, revision)
++    full_gate.update(Admission.require_full_release(identity))
+     lock = load(HERE/"input-lock.json")
+     native_path = NATIVE_RUN/"verification.json"
+     need(identity(native_path) == lock["native_verification"], "Fresh native verification identity differs")
+@@ -195,6 +199,7 @@
+     need(identity(native_path) == lock["native_verification"], "Fresh native verification changed while read")
+     need(native["passed"] is True and all(native["preservation"].values()), "Fresh4case native verification required")
+     preparation = {str(HERE/name): identity(HERE/name) for name in ("build_after_full.py", "input-lock.json", "README.template.md")}
++    preparation.update({str(HERE.parent/name):identity(HERE.parent/name) for name in ("admission.py","source-delta.json")})
+     need(tree(SOURCEIO) == lock["sourceio_files"] and (SOURCEIO/"LICENSE").is_file(), "Approved local SourceIO differs")
+     need(all(identity(Path(path)) == expected for path, expected in lock["runtime_executables"].items()), "Approved runtime file differs")
+     exporter = Path(lock["exporter_root"])
+@@ -209,10 +214,7 @@
+     reviews = sorted(p for p in WORKSPACE.glob("HAS-Review-*") if p.is_dir())
+     protected_reviews = {str(path): tree(path) for path in reviews}
+     source_before = source_map(); sourceio_before = tree(SOURCEIO)
+-    for name, digest in source_before.items():
+-        if name.split("/", 1)[0] in ("src", "tools", "data", "examples") or name in ENTRY:
+-            need(native["source_before"]["files"].get(name, {}).get("sha256") == digest,
+-                 "Current app code differs from the actual4case native source context: "+name)
++    source_delta_admission = Admission.admit_source_delta(native,ROOT,source_before)
+     scope = [*FUNCTIONAL, *ENTRY]
+     changed = subprocess.check_output(["git", "diff", "HEAD", "--name-only", "--", *scope], cwd=ROOT, text=True).splitlines()
+     untracked = subprocess.check_output(["git", "ls-files", "--others", "--exclude-standard", "--", *scope], cwd=ROOT, text=True).splitlines()
+@@ -236,7 +238,7 @@
+     final.mkdir(exist_ok=False); write_new(final/"BUILD-STARTED.json", {"source_commit": revision, "graphics_launched": False})
+     studio = final/"Studio"; actual_revision, frozen = snapshot.freeze_source(ROOT, studio, revision)
+     need(actual_revision == revision and not (studio/"output").exists() and not (studio/".godot").exists(), "Exact clean source snapshot required")
+-    profile = "HAS SFM Joints Review "+revision[:7]+" "+str(time.time_ns())
++    profile = "HAS Native Hair Review "+revision[:7]+" "+str(time.time_ns())
+     need(not (studio/"override.cfg").exists(), "Snapshot unexpectedly contains a committed profile override")
+     (studio/"override.cfg").write_text('[application]\nconfig/use_custom_user_dir=true\nconfig/custom_user_dir_name='+json.dumps(profile)+'\n', encoding="utf-8", newline="\n")
+     dependency = final/"Dependencies"/("sourceio-"+PIN)
+@@ -285,7 +287,7 @@
+               "previous_reviews_preserved": list(protected_reviews), "original_native_families_preserved": True,
+               "shared_runtimes_preserved": True, "installed_Studio_not_written": True,
+               "write_boundaries": [str(final)], "graphics_launched": False, "startup_or_final_replay": "UNRUN_root_private_validation_next",
+-              "native_Source_solver": "not_implemented", "owner_participation_requested": False}
++              "native_Source_solver": {"implementation":"bounded_five_rule_0x31","solved_rules":5,"retained_rules":49,"strands":3,"copy_only_builder_no_runtime_launch":True,"SDK_artist_or_full49_parity":False}, "source_delta_admission":source_delta_admission, "owner_participation_requested": False}
+     write_new(final/"BUILD-VERIFICATION.json", report)
+     print(json.dumps({"final": str(final), "source_commit": revision, "passed": True, "graphics_launched": False}))
+ 

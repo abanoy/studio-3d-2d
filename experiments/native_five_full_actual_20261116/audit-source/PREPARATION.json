@@ -1,0 +1,16 @@
+{
+  "format": "has_current_full_receipt_audit_preparation_1",
+  "source_only": true,
+  "historical_audit_sha256": "93f0e12555627a4d82ed7b64a912a585023232659511f441ea442fffb5a53056",
+  "historical_gates_sha256": "c763ca66ace6c0b05a9f77164560d0bdd1d807c8103bd39d938349a1f1498b31",
+  "audit_sha256": "064c9c05b1be23ffbeca013de3b8f9373dc97ecd79899226095246ccf70f11df",
+  "gates_sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+  "registry_named_sets_unchanged": {
+    "expected_result_keys": true,
+    "expected_core_process_keys": true,
+    "expected_movie_keys": true
+  },
+  "adaptation": "Bind actual flat root-birth schema and observed current context; keep all original result/receipt/isolation/Krita checks. Add log suffix/current membership+byte gates; write output only inside owned output.",
+  "actual_runtime_or_CIM_or_Git_performed": false,
+  "CPU_audit_executed_by_preparation": false
+}

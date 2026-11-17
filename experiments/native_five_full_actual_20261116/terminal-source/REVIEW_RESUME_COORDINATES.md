@@ -1,0 +1,11 @@
+# Independent source review
+
+Source review passes with **no blocker found**. The four helper hashes are bound in the adjacent JSON. I independently checked the actual new launch, child-birth and source-before hashes, coordinator79488/Python91024 birth strings,52f63c… commit,1019source entries and unchanged default-verifier SHA. The birth fields use the measured new schema. The state was read only as active metadata; no terminal outcome is inferred.
+
+All top-level helpers enter the terminal source gate before process queries, final report reads or proof writes. Running/incomplete/source-changing states refuse. The gate binds exact launch/birth/before/after bytes, current source membership/hashes and HEAD. Closure observes exact owned PID births and checkout-scoped runtime commands without terminating anything or touching the owner's sibling review. Legacy no-process-killed labels are explicitly scoped to the observer.
+
+PASS release revalidates the exact separately reviewed inventory and normalized fresh report/log suffix, every referenced report/receipt/raw alias, strict isolation/closure flags, source/run interval and inline physical joins. It derives job/desktop counts rather than reusing192 or46. One deliberate Krita cancellation is source-registered by the current pinned test and exact fresh report path; its native receipt is nested, while current root GUI wrapper receipts still require exit0.
+
+The failure release is a distinct future contract, not an observed failure inventory. It requires a real nonzero terminal result, current source/host bindings, physical receipt/copy equality, explicit actual late-child pins and separately registered cancellation. Missing or unexpected evidence refuses; it never reads the final full report to manufacture PASS. It preserves failed status and only closes the explicitly reviewed partial scope.
+
+The peer's syntax-only0-error record matches these exact helper hashes. I did **not** execute the helpers, PowerShell parser, CIM, an engine or Git. No actual closure, completed receipt inventory, terminal PASS or lease release is claimed here. Root must still collect and review the actual current terminal evidence before executing any release path.

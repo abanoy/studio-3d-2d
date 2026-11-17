@@ -1,0 +1,70 @@
+{
+  "format": "has_six_foot_actual_container_bridge_diagnostic_1",
+  "passed": true,
+  "test_methods": 8,
+  "named_tests": [
+    "test_actual_asset_package_worker_also_keeps9",
+    "test_actual_directory_commit_reader_accepts_legacy7_extra_basis",
+    "test_actual_directory_commit_reader_rejects9",
+    "test_actual_old_pack_and_unpack_accept_legacy4_and7_extra_basis",
+    "test_actual_old_pack_refusal_preserves_prior_valid_container",
+    "test_actual_original_unpack_rejects9_before_extraction",
+    "test_v1_packed_and_linked_keep_original9_for_world4_and_reference7",
+    "test_v1_rejects_unwrapped_active4_and7_before_creating_container"
+  ],
+  "actual_container_boundary_cases": [
+    {
+      "storage": "packed",
+      "underlying_version": 4,
+      "original_manifest_bytes_preserved": true,
+      "extracted_schema": 9,
+      "Godot_executed": false
+    },
+    {
+      "storage": "packed",
+      "underlying_version": 7,
+      "original_manifest_bytes_preserved": true,
+      "extracted_schema": 9,
+      "Godot_executed": false
+    },
+    {
+      "storage": "linked",
+      "underlying_version": 4,
+      "original_manifest_bytes_preserved": true,
+      "extracted_schema": 9,
+      "Godot_executed": false
+    },
+    {
+      "storage": "linked",
+      "underlying_version": 7,
+      "original_manifest_bytes_preserved": true,
+      "extracted_schema": 9,
+      "Godot_executed": false
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "subprocess_attempts": 0,
+  "source_identity_before": {
+    "tools/has_project.py": {
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+      "mtime_ns": 1794447912627061700
+    },
+    "tools/directory_commit.py": {
+      "sha256": "24aa177e810190dc2404dc9f9db3f0fb856ad91665d400fbeb3e1e5ae374f809",
+      "mtime_ns": 1794447912623058800
+    },
+    "experiments/six_foot_import_basis_candidate_20261116/draft/tools/has_project.py": {
+      "sha256": "35308d695f2be5ca9871fbeab30834abc81366af3420a07dca5a006792be9d72",
+      "mtime_ns": 1794802782304214300
+    },
+    "experiments/six_foot_import_basis_candidate_20261116/draft/tools/import_basis.py": {
+      "sha256": "8eaffa26073699f3d7b9b108c0570ab4f761a8dc3a33d0aae61d629d0d9352a3",
+      "mtime_ns": 1794802782316921300
+    }
+  },
+  "source_identity_preserved": true,
+  "diagnostic_not_product_acceptance": true,
+  "Godot_model_render_or_activation_runs": 0,
+  "finding": "V1 accepts/writes original schema9 bytes, not an unversioned bridge. Current Godot reader must still refuse9. Production default needs fail-closed readiness policy."
+}

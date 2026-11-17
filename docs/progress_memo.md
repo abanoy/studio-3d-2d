@@ -15233,3 +15233,86 @@ failure or a relaxed gate. Detailed benchmark:
 docs/benchmarks/native_five_qualified_2026-11-15.json. Commit/push/read back,
 then run fresh full Windows verification. The earlier dbf complete run remains
 FAILED; manual exercise DEFERRED/no result;55/62 and52/54 unchanged.
+
+
+## 2026-11-16 — Complete Windows regression passes on five-joint main
+
+Source52f63c944ded7a651da871524d23a345b606424d passes the complete default:
+157result groups,36core groups and21movie groups in3122.8353009seconds.
+All1019functional sources and HEAD remain exact. The earlier dbf timeout stays
+failed; the bounded snapshot fix passes its unchanged28checks inside this full.
+Exact owned coordinator79488 and Python91024 births are observed absent by root
+at23:24:54Z. Actual receipt audit derives192unique private jobs:191exit0 and one
+exact source-registered Krita cancellation exit2. Every job/desktop is closed;
+all inline receipts match. Root strict graphics release passes23:28:46Z.
+The observer issued no termination; controlled test cancellation is separate.
+
+Compact public archive experiments/native_five_full_actual_20261116 is sealed
+with INDEX757146330ae801d5a2bd11d2f9b594babd665c64291f61f33b0115f048cedd1e.
+It contains192physical receipts and safe157/36/21 extracts; raw full report,
+models/media and native arrays remain in private output. Root separately passes
+690archive checks plus4privacy negative controls; these are not product tests.
+All757changed checkpoint files have already been read back from GitHub exactly.
+
+On resumption, normal-probe preflight first refuses a transient ffmpeg file-stamp
+change before creating a stage. Cause remains UNDETERMINED. Three subsequent
+before/open/after/final observations match every stamp and approved SHA; the
+unchanged complete preflight then passes. No identity gate or runtime changed.
+The first background Blender capture completes2meshes/9661vertices/42702corners,
+but its private wrapper exits2 for unverified desktop placement (no GUI window).
+The job/desktop are physically closed and root-owned native processes absent.
+That probe remains failed and comparison unrun. An isolated hidden placement
+sentinel is being source-reviewed; original capture/math and wrapper gates stay
+unchanged. No normal-fidelity improvement or causal attribution is claimed.
+
+New owner review preparation proposes187 checks and a fresh sibling folder;
+its copy-only builder is in progress, not yet a qualified deliverable. Old review
+and owner work remain protected. Six-foot contract/GDScript/boundary prototypes
+and their independent reviews remain isolated and inactive. Formal55/62 and
+implementation52/54 stay unchanged; owner manual review remains DEFERRED/noresult.
+
+
+## 2026-11-16 — Updated review187 passes; normal boundary measured
+
+Built the fresh sibling HAS-Review-20261115-Native-Hair-52f63c9 from exactGit52f,
+approveddependencies and retained four-example DATA. Final-location private
+replay passes187checks(44+46+56+41),4closedjobs and9preservationgates. Junko's
+ordinary Hair&clothes checkbox creates5states, advances7natural fixedticks,
+then Off restoresall69worldbones/root/authoreddata/source/history exactly.
+The old review remains unchanged; manual acceptance is DEFERRED/no result.
+Publicpacket experiments/native_five_review_actual_packet_20261116 INDEX
+766d30601f902ef7485a2cbd9827c1d52066a6aea7da9251666f9d12cf7a0043.
+
+Background Blender attempt1 completes its read but fails wrapper placement.
+Attempt2 adds a zero-size hidden disabled nonactivating STATIC placement HWND;
+the unchanged outer monitor confirms the real owned private window. Sentinel
+is destroyed finally. No desktop switch/show/activation or numeric body change.
+Capture exits0/reaped7.942s; comparison0/reaped3.488s; job/desktop close and root
+observes0ownednativecommands. The17MB privatecapture hashes EXACTLYmatch across
+attempts. Originalfirst failure stays failed; raw arrays stay PRIVATEoutput.
+Stage preflights refuse transient ffmpeg/pythonw stamps before
+writes. Strict repeat observations and unchanged whole preflight pass; cause
+remainsunknown. Roottrace wrapper first misses probe_support module searchpath;
+corrected path then passes without touching reader/gates. Coordinator preparation
+also had shell-quoting and index-list/dict setup errors before native launch;
+corrected source is retained, not represented as a product failure or pass.
+
+All9661exported vertices match42,702capturedcorners; predicted exporter output
+is EXACT (maxerror0). The raw normal gate is reproduced:8364/9661fail above2e-5,
+maximum.0012165467. Native→savedBlenderbest compatiblecorners has2108failures,
+max.0012586271; Blender→GLB has8249above, max8.2889e-5. Unit-length deviations
+are below2.2e-7; normalization does not resolve direction error. Eight normal
+classes have ambiguous compatiblecorners; allcandidatebounds are preserved.
+This localizes measured differences before export plus export-rounding loss;
+it does not prove the original setter/encoder cause. Next probe instruments
+exact setter inputs/immediate read/validate timing, without nearest-normal repair.
+Publicpacket normal_boundary_actual_20261116 INDEX240f3d33ff7e2a156731b3f637f18d6139d2bb6c31147723a4ed760d3c86fabd.
+
+The isolated six-foot GDScript prototype now parses, but its actual444check
+domain run fails7schema_encode rows (437pass). Boundary21 remains UNRUN.
+Both owned headlesschildren exit/reap, sourcespreserved and nativeclosure0.
+Main1019functional files stay untouched; no active normalization or score change.
+Keep the sealed source-only predecessor and failed actual run. Diagnose the
+encoder/oracle transport before a successor; no assertion/tolerance is waived.
+Formal55/62 and52/54 unchanged. Publish completed evidence, verify remote,
+then review exact disposable cleanup; continue independent implementation.

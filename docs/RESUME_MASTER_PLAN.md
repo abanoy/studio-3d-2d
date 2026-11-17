@@ -5,7 +5,16 @@ work without requesting the deferred manual observations. The historical pause
 and November 14 documentation-only entries below remain evidence of their own
 scope. See [current continuation](NEXT_SESSION_PLAN_2026-11-15.md).
 
-**Current verification:** dbf0bc1 is pushed, but its new complete-default run
+**Current verification:** source52f63c9 passes the complete Windows default:
+157groups/36core/21movies, all1019sources unchanged,192closed private jobs.
+See [November16 pickup](NEXT_SESSION_PLAN_2026-11-16.md) and
+`docs/benchmarks/native_five_full_2026-11-16.json`. Normal-fidelity and the new
+owner review are separate: the new review now passes187 software checks; the
+normal diagnostic is coherent but retains the original fidelity failure. No
+manual result is inferred. The six-foot domain prototype parses but has7actual
+schema-encode failures and remains inactive.
+
+**Earlier failed verification:** dbf0bc1 is pushed, but its complete-default run
 FAILED on an outer test timeout caused by archive snapshot/hash overhead. All
 36core groups passed and the late actual shutdown child passed28checks; neither
 is a full PASS. The failed run's46private jobs are closed and its test slot is
