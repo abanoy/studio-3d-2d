@@ -15901,3 +15901,104 @@ and 33 retained reader methods), with source-peer review. It preserves an inert,
 versioned physics-declaration capsule and small descriptor through a GLB in RAM,
 with integrity, provenance, unsupported-profile and capacity checks. It has not
 qualified native artist PMX input, changed importing, or enabled PMX simulation.
+
+### November 17, 2026 — exact native color checks pass after input correction
+
+The passive diagnostic reproduced the Miku color failure while the other four
+preservation operands passed. Canvas floating-point mapping put the integer-edge
+test click one row above its intended pixel; the picker returned the exact color
+at that actual pixel. A second fixture had the same shift masked by equal neighbor
+colors. Application sampling code is unchanged.
+
+Candidate 3a3701ab6edfa81dc883759403c170b8555aab07 changes only the native test
+click to the center of the SAME expected pixel. All original expected colors,
+44 assertions, thresholds and three native cases remain. The original verifier
+now passes 44/0 in 19.8323144 seconds. A separate passive diagnostic also passes:
+all three intended pixels, exact colors and five preservation operands match.
+All private jobs/host scopes closed; source 1029 and 36 native files unchanged.
+This is focused evidence; later-stage preflight and a new full run remain required.
+
+Main 855d67fe44868793a29d6c6c75c61c0ba86236d2 is pushed and independently
+retrieved: 67 exact files, 3,170,298 Git bytes, three EOL recipes preserving
+3,191,634 working bytes. Proof 1b109da3 is retained for the next checkpoint.
+No cleanup, full PASS, merge, fresh review copy or cold187 is claimed.
+
+### November 17, 2026 — all 44 later-stage verifiers pass on 3a
+
+Actual targeted attempt2 completed with all44 canonical wrappers passing, including
+contact/component recording, persistence/readers, multi-audio, duration, motion,
+all drawing/fill tools, recovery, Home, tutorials and first-movie completion.
+Canonical extra report checks were retained; source1029 remained exact and all
+per-wrapper Popen handles/host scopes closed. Tool session20079 returned0 at
+18:32:59UTC; its raw terminal witness is retained privately (no outer Python
+Popen/birth claim). Tail report e3664265 is private because it includes native
+arrays. Only source-authored labels, scalar counts and outcomes are published.
+
+Attempt1 is retained as a closed setup failure: Root omitted the canonical raw
+VRM input directory; the eighth wrapper correctly refused missing native coverage.
+Attempt2 mirrors the canonical input settings, with VRM1 hash14d2 confirmed.
+It does not replace the required new full158/core36/movie21 qualification.
+No merge, new review or cold187 is claimed; acceptance55/62 and implementation
+52/54 remain unchanged. Human observations stay deferred.
+
+The independent PMX raw-table oracle now passes18 authored CPU methods, including
+720 layouts and two manual fixtures, with source-peer review. Four owner PMX2.0
+UTF16LE originals have stable read-only metadata and byte-equal owned copies
+(20,781,686B). Their body/joint tables have not yet been observed. The independent
+oracle/candidate harness is source-only work; no native/production/simulation
+qualification follows from staging or synthetic tests.
+
+### November 17, 2026 — first native PMX oracle observations
+
+Root ran the sealed two-phase harness's oracle phase on four exact owner originals
+and staged byte-equal copies. All four pairs were preserved, all owned children
+closed, with no timeouts or ownership intervention. One independent witness
+completed: 277 bones, 107 body declarations and 92 joints. The other three stopped
+at the oracle table-count budget. Which table/count caused those refusals remains
+to be measured; no limit has been widened or expected witness fitted.
+
+The all-four freeze gate correctly prevents the candidate/comparison phase.
+No candidate reader, archive roundtrip, native-protocol/physical/simulation/
+production qualification is claimed. Maximum measured Python allocation peak
+was 16,467,425 bytes; Windows RSS/hard-memory/I/O enforcement remain unmeasured
+or unclaimed. All native words, names, witnesses and raw logs stay private.
+
+### November 17, 2026 — 3a full Windows verification active
+
+Fresh3a preflight passed the original6runtimes,574SourceIO original+copy,
+120exporter,36nativefixture,currentMima/rawVRM and unchanged8a1c/Pwsh guards.
+Focused color44/0 and the exact44 later wrappers/canonical extra checks passed;
+ancestor696camera/neon/controls remain separately labeled historical evidence.
+
+Root launched the pinned hidden coordinator at18:59:01UTC. Run is
+windows-neon-3a3701a-20261117T185401541257: coordinator19500 GetProcessbirth
+2026-11-17T18:59:01.8851457Z; Python3592 GetProcessbirth18:59:02.3970713Z,
+parent19500. CIM birth.3970710 is metadata only. Source1029/HEAD3a are frozen;
+the native/graphics lane is Root-exclusive. Expected158/core36/movie21 is not
+a result. Root terminal audit/actual closure still precedes merge/copy/cold187.
+
+B inspection was deferred: its preparation refused the installed Git tool's
+existing2links despite exact approved46480B/mtime/SHA5445 identity. No B engine
+or admission was started. A narrow Git-only source successor is in preparation;
+do not change installed tools or model-file link checks. PMX oracle phase closed
+with1/4 witnesses and3 table-budget refusals; no candidate phase ran. Source-only
+diagnostics continue while this full runs. All private/native data stay out of Git.
+
+### November 17, 2026 — source helpers sealed during the active 3a full
+
+The new 3a terminal-helper packet is sealed with all 29 synthetic terminal,
+binder and API tests passing. Its observer, legacy gates and original 17 tests
+remain exact; only the approved launch context and registry commit changed.
+GetProcess births remain authoritative; CIM precision is metadata only. Root
+alone runs the terminal audit after the exact 3a run actually closes.
+
+The separate Git-only B binder successor passes eight synthetic source tests.
+Only its two installed-Git identity calls permit the tool's existing links;
+original/model/source guards and exact size, time, hash and stability checks
+remain unchanged. The helper has not launched B or changed any installed tool.
+The passive PMX count diagnostic also passes nine authored tests without changing
+old traversal or budgets; it has not inspected native inputs.
+
+Main functional source remains qualified52/1019. Review3a is still RUNNING with
+1029 frozen source files; expected158/core36/movie21 is not a result. No new
+full PASS, merge, owner copy, cold187 or native qualification is claimed.

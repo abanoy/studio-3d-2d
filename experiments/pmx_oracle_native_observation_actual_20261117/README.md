@@ -1,0 +1,1 @@
+One of four native inputs completed the independent oracle; three refused a table-size budget. All original/copy pairs were preserved and children closed. No candidate comparison, native-protocol qualification, model conversion or simulation is claimed. Native witnesses remain private.

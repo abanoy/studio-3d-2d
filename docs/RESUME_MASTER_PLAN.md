@@ -1589,3 +1589,14 @@ truncate data, claim empty physics tables, or silently change existing imports.
 An eventual preservation result should explain that native simulation remains
 unsupported. Reconstruction, six-foot normalization and solver work remain
 separate later increments.
+
+An independent raw-table oracle now passes 18 authored CPU methods, including
+720 layouts and two manual fixtures. Its separate two-phase observation harness
+passes 23 authored methods; one hardlink-creation test is explicitly skipped by
+the environment. Actual oracle-only observation of four supplied PMX files has
+produced one witness (277 bones, 107 bodies, 92 joints); three cases refused a
+table-count budget. Originals and copies remained unchanged and children closed.
+The all-four freeze gate blocks candidate comparison. Table/count diagnostics
+remain necessary; no capacity limit has been widened. No native-protocol,
+physical-validity, simulation, production import or HAS-retention qualification
+is claimed by this partial observation. Native witnesses and raw words stay private.

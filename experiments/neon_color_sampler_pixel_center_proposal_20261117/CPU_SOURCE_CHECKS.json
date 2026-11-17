@@ -1,0 +1,27 @@
+{
+  "format": "has_sampler_pixel_center_source_and_algebra_checks_1",
+  "original_test_sha256": "7c2150ad2a5221bf3e81cad758cea609f46d414e8e2761c9b50cfb82598bf141",
+  "proposed_test_sha256": "102ec02e262644a641f6ecc43020940c33834a59b695cfdc0d2d889cc8cae781",
+  "producer_sha256": "b07dd0b25866df4cb5c80fe14d9158013a2b3860ef8e98083c4a56f2e2713992",
+  "instrumented_RAM_sha256": "ca4db7040a38140ec0b1db1e89e18191137eb1ef05c08f29a012bc3712917993",
+  "test_change": "one first native click: native_point to native_point+Vector2(.5,.5)",
+  "wanted_image_index_unchanged": true,
+  "original_check_source_lines": 40,
+  "original_runtime_checks_retained": 44,
+  "original_check_lines_and_all_three_cases_byte_exact": true,
+  "complete_original_test_raw_byte_inverse": true,
+  "CRLF_preserved": 130,
+  "producer_only_original_SHA_literal_changed": true,
+  "producer_complete_raw_byte_inverse": true,
+  "exact_rational_center_floor_checks": 9600,
+  "conditional_error_bound_per_axis": "abs(error)<0.000123",
+  "center_offset_interval": [
+    "0.499877",
+    "0.500123"
+  ],
+  "boundary_failure_algebra_reproduced": true,
+  "source_guard_refusals": 2,
+  "Review_or_product_or_test_writes": false,
+  "native_or_engine_execution": false,
+  "actual_corrected_three_case_result": "UNRUN_ROOT_OWNS_FOCUSED_DIAGNOSTIC"
+}

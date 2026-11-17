@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-11-17T17:57:08.476815+00:00",
+  "candidate_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+  "fixture_test_sha256": "102ec02e262644a641f6ecc43020940c33834a59b695cfdc0d2d889cc8cae781",
+  "application_code_changed": false,
+  "original_verifier": {
+    "checks": 44,
+    "failures": 0,
+    "native_cases": 3,
+    "seconds": 19.8323144,
+    "reaped": true,
+    "scope_closed": true,
+    "functional_sources_unchanged": 1029
+  },
+  "before_diagnostic": {
+    "native_cases": 3,
+    "exact_color_failures": 1,
+    "other_four_operands_all_passed": true,
+    "sample_matches_actual_neighbor_pixel": true,
+    "closed": true,
+    "source_and_36_native_files_unchanged": true
+  },
+  "corrected_diagnostic": {
+    "native_cases": 3,
+    "all_five_operands_passed": true,
+    "all_intended_pixels_sampled": true,
+    "all_exact_reference_colors": true,
+    "closed": true,
+    "source_and_36_native_files_unchanged": true
+  },
+  "correction": "Aim half a pixel inside the same expected output pixel; preserve all expected colors/checks/thresholds/cases.",
+  "full_suite_passed": false,
+  "merged": false,
+  "new_owner_copy_or187": false,
+  "raw_native_coordinates_colors_and_reports_included": false
+}

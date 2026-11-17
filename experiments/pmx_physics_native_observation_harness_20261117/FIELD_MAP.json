@@ -1,0 +1,23 @@
+{
+  "format": "has_pmx_CPU_observation_field_map_1",
+  "scope": "SOURCE_AND_AUTHORED_SYNTHETIC_FILES_ONLY",
+  "original_and_staged_copy": "Root fixed original root, copy root, exact four copy leaves, six strict-int identity fields, pinned provenance SHA, sizes/hash/actual byte equality observed before and after each case",
+  "oracle_phase": "Only pinned independent oracle module imported; PRIVATE_ORACLE.json plus bytes/SHA in PRIVATE_ORACLE_PHASE.json; candidate/archive not imported",
+  "freeze_boundary": "Root separately freezes complete successful oracle manifest SHA; phase two checks that exact manifest and all case witness hashes before candidate import",
+  "candidate_phase": "Pinned candidate capsule compared by pinned typed comparator to independent witness; inert archive roundtrip uses authored empty GLB carrier",
+  "closure": "Single retained ordinary Popen per case, 60-second deadline then two 5-second termination/kill waits, with one possible final 5-second exceptional cleanup attempt; reaped child required; no PID inventory or arbitrary process kill",
+  "unconfirmed_closure": "Stop batch, mark remaining cases unstarted, retain exact Popen for API callers, private ownership record, explicit CLI failure; Root must resolve ownership before any further activity; no lane closure or arbitrary-PID-kill authority",
+  "measurement": "parent wall, child worker-main wall and tracemalloc allocation peak through preservation; missing samples null; Windows peak RSS unmeasured",
+  "public_projection": "fixed scalar counts/max measurements/false qualification flags only; no artist identifiers, paths, input hashes or tables",
+  "private_outputs": "provenance-derived request/command, witnesses, candidate capsules, GLB/report, comparator result, receipts, logs, failure traces and complete manifests",
+  "not_established": [
+    "denied-write/delete source handles",
+    "hard memory/disk/IO enforcement or confinement",
+    "actual model GLTF or HAS retention",
+    "secondary independent normative PMX layout authority",
+    "physical validity, simulation or production adoption",
+    "whole native protocol qualification"
+  ],
+  "native_inputs_opened_during_preparation": false,
+  "native_protocol_qualified": false
+}

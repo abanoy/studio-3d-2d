@@ -1,0 +1,1 @@
+All 44 canonical late-stage wrappers pass with their additional report assertions. This targeted run excludes early/core and media-aggregate qualification; a fresh full run remains required. Raw reports and native arrays remain private.

@@ -1,0 +1,27 @@
+{
+  "format": "has_independent_oracle_first_synthetic_test_error_1",
+  "tool_chunk": "db1e17",
+  "methods": 16,
+  "failures": 0,
+  "errors": 1,
+  "reported_seconds": 1.49,
+  "cause": "New negative-count test named display.count, but authored fixture publishes displays.count. All720 comparisons and both manual fixtures passed. Correct fixture label only; no parser/comparator guard is relaxed.",
+  "source_snapshots": [
+    {
+      "path": "oracle.py",
+      "bytes": 14055,
+      "sha256": "f1dfc3a37c32c1c8b57537b1500b701792df13e4e8b87abe13b0ce49be2c4cec"
+    },
+    {
+      "path": "compare_tables.py",
+      "bytes": 17457,
+      "sha256": "a5d5b0e01cc816c1dab4fa0b150cc72d11bd2df04516fd966146609b3b6705e1"
+    },
+    {
+      "path": "test_oracle.py",
+      "bytes": 15149,
+      "sha256": "d423ea3268838cfedda8d3cb793ff4c17d38bf85830b5eb908a919b95f3ddc15"
+    }
+  ],
+  "native_or_engine_execution": false
+}

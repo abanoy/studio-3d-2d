@@ -1,0 +1,427 @@
+{
+  "format": "has_3a3701a_independent_RAM_reconstruction_1",
+  "observed_utc": "2026-11-17T17:58:34.431596+00:00",
+  "status": "PASS_LOCAL_TEXT_RECOVERY",
+  "candidate": "3a3701ab6edfa81dc883759403c170b8555aab07",
+  "tree": "3859f12986638a7f3559c1177ff9c102eff7f87e",
+  "sole_parent": "696ca7f1491a43b1a2267a53f8ca0f62b7c211a9",
+  "packet_INDEX_sha256": "69d8f2eef22aa3ad1c0d2576cf4bba04977a4320fed9ff1dcec9afe81f8bcc28",
+  "changed_text_files": 3,
+  "exact_raw_changed_trees": 3,
+  "commit_tree_patch_blobs_and_EOL_recipes_exact": true,
+  "one_pixel_center_click_expression_only_in_test": true,
+  "app_helper_wind_and_all_other_committed_paths_unchanged": true,
+  "main_functional_unchanged": 1019,
+  "retained_parent_publication": "4fd0052f52a594e86ca77df0e50e12e8d026a874",
+  "deep_parent_RAM_chain": {
+    "retained_main_commit": "a41a204bffb98614abfa80e0e6340078b1d719f1",
+    "published00bf_packet_entries": 9,
+    "published_fe9_packet_entries": 8,
+    "00bf_RAM_reconstruction": true,
+    "deep_chain": {
+      "main_checkpoint": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a",
+      "retained_main_readback_sha256": "efb5fb94aee5e143deb0cb4dff17141ba1d35c29079694fdc830f92ac5a6157c",
+      "published375_packet_files_verified": 8,
+      "375_packet_INDEX_sha256": "ef5b48263fbeec32fc7c5197fdd59508a3a2b258397470de9930b17cf0cb332f",
+      "ultimate_base_commit": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+      "375_rebuilt_root_tree": "3dcc80fa95c6e385f455b04614cbc2c59eda4737",
+      "fe9_rebuilt_root_tree": "f94e9045e77e1a5594eecf17b9104755251bf27c",
+      "both_recovery_steps_in_RAM": true,
+      "Git_objects_written": false,
+      "wording_limit": "Fe9 scope string says known remote parent; its direct375 parent is instead recovered through the explicit e8-published packet. README and parent_reconstruction correctly describe that chain."
+    }
+  },
+  "text_files": [
+    {
+      "path": "LLM.md",
+      "git_blob": "e87b36026da89709d21d159b800551cbf294d729",
+      "blob_bytes": 510948,
+      "blob_sha256": "dcec863a3e3dcf9030107b2c764fd1f2df662aa534224983351b25d9ba7e98b4",
+      "working_bytes": 516426,
+      "working_sha256": "8813837e245fbea29ebaaab52b94d59294488dd9f9c12533cb6dc8b5daeff22c",
+      "working_recipe_kind": "LF_blob_with_selected_CRLF_lines",
+      "Git_CRLF_lines": 0,
+      "selected_CRLF_lines": 5478
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "git_blob": "163f62211d236b6de131f6acba0a50e4816b13db",
+      "blob_bytes": 105720,
+      "blob_sha256": "0018123adb4579670bc53de1c55941b3458491a44976e18cebe31ad0f4832563",
+      "working_bytes": 106767,
+      "working_sha256": "ac86deb32043c098fe2858d44564267a9cb23ba11c62be14004e940a1c00e214",
+      "working_recipe_kind": "LF_blob_with_selected_CRLF_lines",
+      "Git_CRLF_lines": 0,
+      "selected_CRLF_lines": 1047
+    },
+    {
+      "path": "tests/color_sampler_smoke.gd",
+      "git_blob": "193f4518c6ae3d825b8415d743b412a122de2a9e",
+      "blob_bytes": 14768,
+      "blob_sha256": "64a1f1007a2b2c4f8a383cf1f5d201dc51ffc5ad58d2eee95098720244ffe224",
+      "working_bytes": 14898,
+      "working_sha256": "102ec02e262644a641f6ecc43020940c33834a59b695cfdc0d2d889cc8cae781",
+      "working_recipe_kind": "LF_blob_with_selected_CRLF_lines",
+      "Git_CRLF_lines": 0,
+      "selected_CRLF_lines": 130
+    }
+  ],
+  "typed_ReadOnlyGit_unique_requests": 61,
+  "typed_ReadOnlyGit_requests": [
+    {
+      "kind": "commit",
+      "object": "3a3701ab6edfa81dc883759403c170b8555aab07",
+      "bytes": 290
+    },
+    {
+      "kind": "commit",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1",
+      "bytes": 302
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/INDEX.json",
+      "bytes": 1279
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/candidate.patch",
+      "bytes": 4993
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/COMMIT.txt",
+      "bytes": 311
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/git-blobs/00.txt.gz",
+      "bytes": 180740
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/git-blobs/01.txt.gz",
+      "bytes": 39047
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/git-blobs/02.txt.gz",
+      "bytes": 1838
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/git-blobs/03.txt.gz",
+      "bytes": 1633
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/README.md",
+      "bytes": 695
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_00bf_candidate_reconstruction_20261117/RECONSTRUCTION.json.gz",
+      "bytes": 17601
+    },
+    {
+      "kind": "commit",
+      "object": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+      "bytes": 311
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_fe9_candidate_reconstruction_20261117/INDEX.json",
+      "bytes": 1125
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_fe9_candidate_reconstruction_20261117/candidate.patch",
+      "bytes": 3222
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_fe9_candidate_reconstruction_20261117/COMMIT.txt",
+      "bytes": 301
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_fe9_candidate_reconstruction_20261117/git-blobs/00.txt.gz",
+      "bytes": 180385
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_fe9_candidate_reconstruction_20261117/git-blobs/01.txt.gz",
+      "bytes": 38699
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_fe9_candidate_reconstruction_20261117/git-blobs/02.txt.gz",
+      "bytes": 7647
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_fe9_candidate_reconstruction_20261117/README.md",
+      "bytes": 713
+    },
+    {
+      "kind": "blob",
+      "object": "a41a204bffb98614abfa80e0e6340078b1d719f1:experiments/neon_fe9_candidate_reconstruction_20261117/RECONSTRUCTION.json.gz",
+      "bytes": 17488
+    },
+    {
+      "kind": "blob",
+      "object": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a:experiments/neon_375_candidate_reconstruction_20261117/INDEX.json",
+      "bytes": 1125
+    },
+    {
+      "kind": "blob",
+      "object": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a:experiments/neon_375_candidate_reconstruction_20261117/candidate.patch",
+      "bytes": 3793
+    },
+    {
+      "kind": "blob",
+      "object": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a:experiments/neon_375_candidate_reconstruction_20261117/COMMIT.txt",
+      "bytes": 297
+    },
+    {
+      "kind": "blob",
+      "object": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a:experiments/neon_375_candidate_reconstruction_20261117/git-blobs/00.txt.gz",
+      "bytes": 180064
+    },
+    {
+      "kind": "blob",
+      "object": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a:experiments/neon_375_candidate_reconstruction_20261117/git-blobs/01.txt.gz",
+      "bytes": 38368
+    },
+    {
+      "kind": "blob",
+      "object": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a:experiments/neon_375_candidate_reconstruction_20261117/git-blobs/02.txt.gz",
+      "bytes": 2715
+    },
+    {
+      "kind": "blob",
+      "object": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a:experiments/neon_375_candidate_reconstruction_20261117/README.md",
+      "bytes": 600
+    },
+    {
+      "kind": "blob",
+      "object": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a:experiments/neon_375_candidate_reconstruction_20261117/RECONSTRUCTION.json.gz",
+      "bytes": 17322
+    },
+    {
+      "kind": "commit",
+      "object": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+      "bytes": 305
+    },
+    {
+      "kind": "tree",
+      "object": "9aad177c9621c793fee466ddb1b6623a08eb5a59",
+      "bytes": 958
+    },
+    {
+      "kind": "tree",
+      "object": "acf8c11332e246ebe331a15e4f64879172b5e572",
+      "bytes": 10786
+    },
+    {
+      "kind": "tree",
+      "object": "9de5b476a8a8d33f7a7b139599556ecb07415318",
+      "bytes": 37599
+    },
+    {
+      "kind": "tree",
+      "object": "f94e9045e77e1a5594eecf17b9104755251bf27c",
+      "bytes": 958
+    },
+    {
+      "kind": "blob",
+      "object": "efb589500369b87d7e0db1fbbbab951666d13360",
+      "bytes": 508170
+    },
+    {
+      "kind": "tree",
+      "object": "e8d2dc2d2071bcb53da3e011dd8e3e942b851219",
+      "bytes": 10786
+    },
+    {
+      "kind": "blob",
+      "object": "6246fd70a311c39bb3ce1a08f3a961846062e98c",
+      "bytes": 102942
+    },
+    {
+      "kind": "tree",
+      "object": "b789c80babd084230993099a031bfc7fe1cc04b9",
+      "bytes": 37599
+    },
+    {
+      "kind": "blob",
+      "object": "b9f23ba032f2b5c3842b494df7fcfa18a28c62ff",
+      "bytes": 5595
+    },
+    {
+      "kind": "blob",
+      "object": "3f3ec33e0f2e78b5e39d51147bbebbb91f51be23",
+      "bytes": 3806
+    },
+    {
+      "kind": "tree",
+      "object": "33945fad4c171f144dc23977f21cd363f29e898e",
+      "bytes": 10786
+    },
+    {
+      "kind": "tree",
+      "object": "77787e507199dd60ff3b1ba495474288c5613955",
+      "bytes": 37599
+    },
+    {
+      "kind": "tree",
+      "object": "ebf8b50a1b67da424da6a50498d56f3ca0636283",
+      "bytes": 958
+    },
+    {
+      "kind": "blob",
+      "object": "fe7c24452c1125a5c49563e127b967bc769b7f01",
+      "bytes": 509180
+    },
+    {
+      "kind": "blob",
+      "object": "7e5b3e1f72852896723ce1e12ae6827891da4001",
+      "bytes": 103952
+    },
+    {
+      "kind": "tree",
+      "object": "65979004c13f35cecc50552128da616fd1fef49a",
+      "bytes": 9237
+    },
+    {
+      "kind": "blob",
+      "object": "1d1dd973d37600ffdac87ea6987db947b6cfd69e",
+      "bytes": 313617
+    },
+    {
+      "kind": "blob",
+      "object": "bfedae19dd5e992e085636d43d7132f7f7773363",
+      "bytes": 8522
+    },
+    {
+      "kind": "blob",
+      "object": "49b26524309f1349e1cb9f8b3b3e7ead92db2b70",
+      "bytes": 6026
+    },
+    {
+      "kind": "tree",
+      "object": "d40cf2af013624652e4019b264c67e70924bd10a",
+      "bytes": 10786
+    },
+    {
+      "kind": "tree",
+      "object": "8414b12464425b8f127612720b2739441c473497",
+      "bytes": 9237
+    },
+    {
+      "kind": "tree",
+      "object": "f636cbe17d356ff8a3b8dbf0faf0484d4fb62881",
+      "bytes": 37599
+    },
+    {
+      "kind": "tree",
+      "object": "f297da2ff696c656654f85cb191e5cfb7bb78455",
+      "bytes": 958
+    },
+    {
+      "kind": "blob",
+      "object": "e87b36026da89709d21d159b800551cbf294d729",
+      "bytes": 510948
+    },
+    {
+      "kind": "blob",
+      "object": "fa630a76ac0acf3542effaee0a42c7009de052c6",
+      "bytes": 510007
+    },
+    {
+      "kind": "blob",
+      "object": "163f62211d236b6de131f6acba0a50e4816b13db",
+      "bytes": 105720
+    },
+    {
+      "kind": "blob",
+      "object": "24b90ec003d940908edc9e6130cbc8ec24ec2ed5",
+      "bytes": 104779
+    },
+    {
+      "kind": "blob",
+      "object": "193f4518c6ae3d825b8415d743b412a122de2a9e",
+      "bytes": 14768
+    },
+    {
+      "kind": "blob",
+      "object": "e43c1ca82569f3ada91fdf8bf23d8f62cbbd0dd3",
+      "bytes": 14753
+    },
+    {
+      "kind": "tree",
+      "object": "ee6b26b024ee525be8c15ba7612397444ed26d64",
+      "bytes": 10786
+    },
+    {
+      "kind": "tree",
+      "object": "8d31b373827aa6a7854eb09482505f560cd0da27",
+      "bytes": 37599
+    },
+    {
+      "kind": "tree",
+      "object": "3859f12986638a7f3559c1177ff9c102eff7f87e",
+      "bytes": 958
+    }
+  ],
+  "main_publication_reads": [
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/INDEX.json",
+      "bytes": 1434
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/candidate.patch",
+      "bytes": 4249
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/COMMIT.txt",
+      "bytes": 304
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/git-blobs/00.txt.gz",
+      "bytes": 180996
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/git-blobs/01.txt.gz",
+      "bytes": 39316
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/git-blobs/02.txt.gz",
+      "bytes": 79981
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/git-blobs/03.txt.gz",
+      "bytes": 2716
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/git-blobs/04.txt.gz",
+      "bytes": 2071
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/README.md",
+      "bytes": 684
+    },
+    {
+      "object": "4fd0052f52a594e86ca77df0e50e12e8d026a874:experiments/neon_696_candidate_reconstruction_20261117/RECONSTRUCTION.json.gz",
+      "bytes": 17824
+    }
+  ],
+  "actual_focused_or_full_native_result_observed": false,
+  "Git_mutations_network_process_or_current_outputs_accessed": false,
+  "product_merge_copy_cold187_or_branch_upload_claimed": false,
+  "limits": [
+    "Text recoverability and source scope only; no actual focused/full or native fidelity qualification.",
+    "Published parent bytes checked against retained local main4fd; no fresh network availability claim.",
+    "Exact working recipes were reconstructed from archived blobs; this audit did not reread Review working files."
+  ]
+}

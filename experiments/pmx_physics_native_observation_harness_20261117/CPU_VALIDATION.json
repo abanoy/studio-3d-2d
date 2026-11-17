@@ -1,0 +1,30 @@
+{
+  "format": "has_pmx_CPU_observation_harness_synthetic_validation_1",
+  "command": "python -B -m unittest -v test_harness.py",
+  "tool_chunk_id": "6e05c7",
+  "exit_code": 0,
+  "methods_run": 24,
+  "passed": 23,
+  "skipped": 1,
+  "skipped_reason": "Authored hardlink creation was refused with PermissionError; no escalation requested, actual hardlink rejection unobserved.",
+  "unittest_seconds": 5.888,
+  "source_hashes": {
+    "common.py": "f1972557534e1346ee24930a59026a8fb9d813199bb6f1016bb666ff894d870e",
+    "worker.py": "d63cee343b79ac95b72aa79b50187b928b62cd9890651e0efbd1004abfa29d6f",
+    "run_observation.py": "348913a5c8c1666d46b73f463295fa877491ec6c71e4190ffba94a0d857231d4",
+    "test_harness.py": "416e66c62a32f807501bda2fd95748fbfa1a53bf6b4f7d7e7403938d4c5432df"
+  },
+  "scope": "AUTHORED_SYNTHETIC_FILES_AND_PINNED_PUBLIC_SOURCE_ONLY",
+  "successful_children": "4 independent-oracle children then4 separately frozen candidate/comparator/archive children",
+  "unsupported_input_batch": "4 children; first deliberately unsupported, completed false and preservation true, remaining3 complete",
+  "timeout_and_failure_tests": "Retained Popen mocks only; ordinary timeout, unreaped ownership, no later launch, record/poll/log-stat failures; no real timeout process",
+  "freeze_and_disagreement": "No freeze, wrong manifest SHA, altered witness and boolean case index refuse; deliberate candidate source disagreement refuses before archive import/write",
+  "privacy": "Canary names, paths, input and witness-manifest hashes omitted by fixed scalar projection; missing metrics null and synthetic inputs explicitly true",
+  "history": "PRE_CLOSURE_CPU files preserve the prior19-method run; final source includes the peer-requested exceptional closure fixes",
+  "native_provenance_or_native_inputs_opened": false,
+  "engines_or_graphics_invoked": false,
+  "hard_memory_or_IO_confinement_established": false,
+  "actual_model_GLTF_or_HAS_retention_observed": false,
+  "native_protocol_qualified": false,
+  "simulation_or_production_adoption": false
+}

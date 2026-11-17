@@ -1,0 +1,179 @@
+{
+  "format": "has_neon_late_stage_static_source_pins_1",
+  "qualification": "SOURCE_ONLY_TARGETED_RUN_UNRUN_NO_FULL_PASS_OR_ACTIVATION",
+  "canonical_verify_raw_sha256": "192aa4b889a367787f2368f58c95de5813628dbff80b01a5f7e640efdf1f2f0f",
+  "canonical_verify_lf_sha256": "004a368bb77147c40cf67e640a7070b30b00418b05148b20959f601fea0b0856",
+  "root_host_path": "experiments/run_neon_scene_followup_20261117.py",
+  "root_host_sha256": "07e37aa4ddba05e31658f2fe14bda53a25ce0f7646f2c966961a635ef6b85255",
+  "cases": 44,
+  "wrappers": {
+    "verify_brush_opacity.py": {
+      "bytes": 3053,
+      "sha256": "1423fc61805fadb30653b62dbce55b41d0edec27f85a1e35178b94cb3d4b027b"
+    },
+    "verify_brush_pressure.py": {
+      "bytes": 4051,
+      "sha256": "4615b42f568f3eebaae323fb3660c226b0a2348bdad1c2dd5083620d9a9a0aad"
+    },
+    "verify_contact_animation.py": {
+      "bytes": 1842,
+      "sha256": "dae7286cb7bd87b191ec8209d845d722f8c5bd65f1eb207d109da41997f70b95"
+    },
+    "verify_contact_bindings.py": {
+      "bytes": 1459,
+      "sha256": "29fe60fd65927aacda1820fdd66ab78ef453106192ddde92a05be76130d947b0"
+    },
+    "verify_contact_clipboard.py": {
+      "bytes": 1888,
+      "sha256": "062fc4e91d7fec972547d7560258c14ac3839d6fb1cae87891d44b8acc3f8ca6"
+    },
+    "verify_contact_correction.py": {
+      "bytes": 1739,
+      "sha256": "d0217b3e448496ac4cab5978f4c835b42d0b278380af1c361ad7fbd83ba510a7"
+    },
+    "verify_contact_editor.py": {
+      "bytes": 1717,
+      "sha256": "b5885c961dacd662c4905523e64634dcc63c93ab0815f41b9f1533fbc82ac951"
+    },
+    "verify_contact_identity.py": {
+      "bytes": 2712,
+      "sha256": "942a25e1203136d3b3348f83850bc3ecd2b06ae4fa79618291c4a414d1b5e7c6"
+    },
+    "verify_contact_parent.py": {
+      "bytes": 1754,
+      "sha256": "72ff302f0ab490cd19b82f90e5ce6ca21c11954cfed77f431cc75e4a2eac7d45"
+    },
+    "verify_contact_persistence.py": {
+      "bytes": 6122,
+      "sha256": "74d22913f56f1081d7b61081b2f06578865d98b5eafd775dbc6113cfd3d58ba3"
+    },
+    "verify_contact_physics.py": {
+      "bytes": 2136,
+      "sha256": "b53e3d77dfb01152e7ece8dadeb47d8f8c9b12d20626e8dd12088788bf46519e"
+    },
+    "verify_contact_selection.py": {
+      "bytes": 1673,
+      "sha256": "63b4225441bb67e062c965880ad9f9eeb9278cb3f16f013018ab1dd7726ddf8b"
+    },
+    "verify_contact_transform.py": {
+      "bytes": 1894,
+      "sha256": "1d5676ba25f4bf686e21da971d32fc24c4d1fd8d87ce047a4d08eb79150e25f4"
+    },
+    "verify_contact_viewport.py": {
+      "bytes": 2997,
+      "sha256": "c919eaf82d73162f75e3ed9b712d36bdb2d8ed8d3825d65a556bcd5a63df7911"
+    },
+    "verify_drawing_history.py": {
+      "bytes": 2079,
+      "sha256": "86d04e1e42d26a453013026422b15e26db5c298fe61c24ac33c0dd9433b66e51"
+    },
+    "verify_drawing_selection.py": {
+      "bytes": 4122,
+      "sha256": "141de44278c9c02c4db6a67114aaba2cd257e4262047ebf0722b61a85a710e87"
+    },
+    "verify_drawing_transform.py": {
+      "bytes": 5250,
+      "sha256": "50218500177b5312b63564fa398a2dea72df54420f33d112f45c1d44f2295146"
+    },
+    "verify_fill.py": {
+      "bytes": 2863,
+      "sha256": "3999c206b3b17596aa0e5cadc9188b42c6d9344c609edf9cd651ff650ca4eb3f"
+    },
+    "verify_fill_connections.py": {
+      "bytes": 6377,
+      "sha256": "086975a9a3aa235ba124b6a8d6735a0e5f8cbe82427cf783c82f4109b2f1e02c"
+    },
+    "verify_fill_expand.py": {
+      "bytes": 5282,
+      "sha256": "295696924b052e22182187ee3ab71a3b129c8d767b32d86324e379e1f1c43c1e"
+    },
+    "verify_fill_gaps.py": {
+      "bytes": 4359,
+      "sha256": "5af5e43b213fbd1631478e3763e58cda3889767cb2aee98d2d263bf6bc8e6f07"
+    },
+    "verify_first_movie.py": {
+      "bytes": 3335,
+      "sha256": "9437f9ef5d90cd130069a765979bbea7b8affbaead2886bfae1f61f07d69e463"
+    },
+    "verify_foot_contacts.py": {
+      "bytes": 1322,
+      "sha256": "75401a7665dddce495f67c29fe5ce9de28a5db050358dddb18b9352865d2ad24"
+    },
+    "verify_foot_hold.py": {
+      "bytes": 1622,
+      "sha256": "2a5a91248246b5ce4f00f90720d373f2ed22a114edd61ddf594ec72e0b1a1f3d"
+    },
+    "verify_home.py": {
+      "bytes": 3294,
+      "sha256": "e5d07aef28ba5ebf1ec040e331ab8a8c35fdebe7b2369e138faa9087fcfa25d1"
+    },
+    "verify_layers.py": {
+      "bytes": 1561,
+      "sha256": "559e158d7829eb228b874e2b428e1a20744952077a26d9c23b6ae6a92d13f1cd"
+    },
+    "verify_motion_animation.py": {
+      "bytes": 1116,
+      "sha256": "058323657052d3c89acc4b98232c538161cf6e09751f41963dc8f7a389b99481"
+    },
+    "verify_motion_animation_app.py": {
+      "bytes": 2333,
+      "sha256": "2cdc4b8035e87dc3264804907ba91f0bf0c5b7e9cf533910719e2173e01f906d"
+    },
+    "verify_motion_assist.py": {
+      "bytes": 1131,
+      "sha256": "56f2f388518d2e7572d08692823bc9c5dfadb16daac165c7033b0c682ab085cf"
+    },
+    "verify_motion_assist_native.py": {
+      "bytes": 2076,
+      "sha256": "88b5c4cbfe756f0c3b5eadb35463ab05a5bf497702b71877be88a7bc41dbf579"
+    },
+    "verify_motion_assist_tracks.py": {
+      "bytes": 1147,
+      "sha256": "0591ea9e9ef33d9f47fc3750e75f6e709ffea14fa2aacf710e8ba8c7318716cc"
+    },
+    "verify_multi_audio.py": {
+      "bytes": 5829,
+      "sha256": "f93f94fe4d5bcfced0572499fd8c5aa21c9c4a479f6b04442278753ad20dfdb7"
+    },
+    "verify_onion.py": {
+      "bytes": 2560,
+      "sha256": "ec9ef216b78e646862a0a33404769946caa1a761818eaa70d66f996e25aa0694"
+    },
+    "verify_opacity.py": {
+      "bytes": 2075,
+      "sha256": "f31395e313bc2e53c01b9194557514fe69a48db44797b8ebf4a9dcc8b849513c"
+    },
+    "verify_palette.py": {
+      "bytes": 4049,
+      "sha256": "9fe07e87c2e0b4ae555ffd112b9d199b8f8aebe1fbffa174b35ca8bdf62d611b"
+    },
+    "verify_project_duration.py": {
+      "bytes": 3522,
+      "sha256": "d6edd6402548a286a5c66dd6d2d6e8611e32033aa62e6c536e1b40e8cf5013b2"
+    },
+    "verify_recovery_history.py": {
+      "bytes": 8925,
+      "sha256": "51d2acce3be6a1db97027dec968f7b7bc314001e6c046f4c921c3aad2fd6f82d"
+    },
+    "verify_recovery_identity.py": {
+      "bytes": 1406,
+      "sha256": "50be937dc99863a5968ae867a9f5a27b4ce3724cf092dea8c53d199c0f6e97b0"
+    },
+    "verify_recovery_preview.py": {
+      "bytes": 1379,
+      "sha256": "4e49ab2fcd7196d930951f3a1f73c9c39456b1cb9a812a02efac0a7184589b23"
+    },
+    "verify_recovery_schedule.py": {
+      "bytes": 2266,
+      "sha256": "dbfc048f455c4bc199262c178c5766ed11bbaa16d98b202f6074473b5a488d06"
+    },
+    "verify_recovery_startup.py": {
+      "bytes": 12429,
+      "sha256": "8338acf3cc9d18fce7e587f0a1d1bea05f21fc2ec128b9d4db1027bbcd598adc"
+    },
+    "verify_tutorials.py": {
+      "bytes": 3466,
+      "sha256": "9c27c8a9a75f040552e6daa8c8faff8ae3918255baecd3a64e3b5f427f117e67"
+    }
+  }
+}

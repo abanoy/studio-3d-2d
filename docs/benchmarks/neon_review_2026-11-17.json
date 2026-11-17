@@ -91,53 +91,90 @@
   "next_full_inventory_sha256": "2c334aab837768ee17b2c13be0ad6ac26fa203a9e8815cd991b24a2de3386704",
   "old_regex_overescape_inference": "RETRACTED_PATTERN_VALID",
   "latest_observation": {
-    "observed_utc": "2026-11-17T17:44:09.339540+00:00",
+    "observed_utc": "2026-11-17T19:00:45.008009+00:00",
+    "result": "RUNNING_NO_RESULT",
     "state": {
       "format": "has_owned_canonical_run_1",
-      "pid": 12740,
-      "process_started": "2026-11-17T17:07:54.3896834Z",
-      "started_utc": "2026-11-17T17:07:54.6575974Z",
-      "status": "failed",
+      "pid": 19500,
+      "process_started": "2026-11-17T18:59:01.8851457Z",
+      "started_utc": "2026-11-17T18:59:02.1756114Z",
+      "status": "running",
       "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
-      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-696ca7f-20261117T170720480423",
-      "source_commit": "696ca7f1491a43b1a2267a53f8ca0f62b7c211a9",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-3a3701a-20261117T185401541257",
+      "source_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
       "python": "C:\\Program Files\\Python313\\python.exe",
       "command": [
         "C:\\Program Files\\Python313\\python.exe",
         "-u",
         "tests/verify.py"
       ],
-      "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
-      "suite_exit": 1,
-      "source_unchanged": true,
-      "finished_utc": "2026-11-17T17:41:03.6301734Z"
+      "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4"
     },
-    "result": "FAILED_NATIVE_COLOR_SAMPLER_CONJUNCTION",
-    "camera": {
-      "checks": 60,
-      "failures": 0,
-      "native_fixtures": 5
-    },
-    "color_sampler": {
-      "checks": 44,
-      "failures": 1,
-      "native_fixtures": 3
-    },
-    "failure_label": "native color excludes selection helpers while preserving rig/source/view: pose-smoke/miku-project",
-    "cause": "NOT_YET_DIAGNOSED",
-    "physical_jobs": 93,
-    "normal_exit0": 91,
-    "registered_Krita_cancel_exit2": 1,
-    "failed_partial_nonzero": 1,
-    "inline_exact_matches": 11,
-    "phase_documents": 66,
     "functional_sources_unchanged": 1029,
-    "released_utc": "2026-11-17T17:42:05.1961829Z",
-    "inventory_sha256": "c11d074afa51f2144cce34eb4605280aea39f789904cf327e4fc30cbcfa96e97",
-    "raw_report_logs_phase_native_arrays_included": false,
-    "full_pass_claimed": false,
-    "product_merged": false,
-    "actual_cold187_started": false
+    "actual_focused": {
+      "color_checks": 44,
+      "color_failures": 0,
+      "late_wrappers": 44,
+      "late_failed_wrappers": 0
+    },
+    "ancestor696_not_fresh3a": {
+      "camera": 60,
+      "native_models": 5,
+      "neon": 12504,
+      "controls": 48
+    },
+    "public_metadata_files": [
+      {
+        "path": "launch.json",
+        "bytes": 1187,
+        "sha256": "a35a4d10130116ccfadb294851bc4c45faf0931392fc93440c3aa0d9cb4ce409",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "root-birth-observation.json",
+        "bytes": 365,
+        "sha256": "1ba1fb9eae97c0e247570a81e0abb7d43e9fbafee9bf75a7802e60e0e3cf8fd6",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "root-birth-api-detail.json",
+        "bytes": 301,
+        "sha256": "e38a1d27a7cc30eb59176b4c9366a3cf346394f84a5903e185fe3aeb60c00209",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "source-before.json",
+        "bytes": 108131,
+        "sha256": "3ef2e7d8bed6e063afef59c8caccba914663752998761350c882fd4efbc78e9d",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "preflight-source.json",
+        "bytes": 104958,
+        "sha256": "5561ab5a3bca4aeffb839cd1c88913a2857f6f2cd49544c70ff05253a171a2fc",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "prelaunch-owned-scope.json",
+        "bytes": 188,
+        "sha256": "bde0a0783ba77451a468d724f562624ac74c8a5753e351e6d005ac805dfcaf9b",
+        "dated_snapshot_only": false
+      },
+      {
+        "path": "state.json",
+        "bytes": 724,
+        "sha256": "3987c60012d80846b04caff116fc89e5dc817dd4a907c4fcc7cb2cedfee69829",
+        "dated_snapshot_only": true
+      }
+    ],
+    "expected_not_pass": {
+      "groups": 158,
+      "core": 36,
+      "movies": 21
+    },
+    "root_native_lane": "exclusive",
+    "raw_native_report_or_logs_included": false,
+    "product_merged": false
   },
   "preceding_4ed_observation": {
     "candidate": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
@@ -790,5 +827,504 @@
     "root_native_lane": "exclusive",
     "raw_native_report_or_logs_included": false,
     "product_merged": false
+  },
+  "preceding_696_closed_failure": {
+    "observed_utc": "2026-11-17T17:44:09.339540+00:00",
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 12740,
+      "process_started": "2026-11-17T17:07:54.3896834Z",
+      "started_utc": "2026-11-17T17:07:54.6575974Z",
+      "status": "failed",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-696ca7f-20261117T170720480423",
+      "source_commit": "696ca7f1491a43b1a2267a53f8ca0f62b7c211a9",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+      "suite_exit": 1,
+      "source_unchanged": true,
+      "finished_utc": "2026-11-17T17:41:03.6301734Z"
+    },
+    "result": "FAILED_NATIVE_COLOR_SAMPLER_CONJUNCTION",
+    "camera": {
+      "checks": 60,
+      "failures": 0,
+      "native_fixtures": 5
+    },
+    "color_sampler": {
+      "checks": 44,
+      "failures": 1,
+      "native_fixtures": 3
+    },
+    "failure_label": "native color excludes selection helpers while preserving rig/source/view: pose-smoke/miku-project",
+    "cause": "NOT_YET_DIAGNOSED",
+    "physical_jobs": 93,
+    "normal_exit0": 91,
+    "registered_Krita_cancel_exit2": 1,
+    "failed_partial_nonzero": 1,
+    "inline_exact_matches": 11,
+    "phase_documents": 66,
+    "functional_sources_unchanged": 1029,
+    "released_utc": "2026-11-17T17:42:05.1961829Z",
+    "inventory_sha256": "c11d074afa51f2144cce34eb4605280aea39f789904cf327e4fc30cbcfa96e97",
+    "raw_report_logs_phase_native_arrays_included": false,
+    "full_pass_claimed": false,
+    "product_merged": false,
+    "actual_cold187_started": false
+  },
+  "preceding_color_focus": {
+    "observed_utc": "2026-11-17T17:57:08.476815+00:00",
+    "candidate_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+    "fixture_test_sha256": "102ec02e262644a641f6ecc43020940c33834a59b695cfdc0d2d889cc8cae781",
+    "application_code_changed": false,
+    "original_verifier": {
+      "checks": 44,
+      "failures": 0,
+      "native_cases": 3,
+      "seconds": 19.8323144,
+      "reaped": true,
+      "scope_closed": true,
+      "functional_sources_unchanged": 1029
+    },
+    "before_diagnostic": {
+      "native_cases": 3,
+      "exact_color_failures": 1,
+      "other_four_operands_all_passed": true,
+      "sample_matches_actual_neighbor_pixel": true,
+      "closed": true,
+      "source_and_36_native_files_unchanged": true
+    },
+    "corrected_diagnostic": {
+      "native_cases": 3,
+      "all_five_operands_passed": true,
+      "all_intended_pixels_sampled": true,
+      "all_exact_reference_colors": true,
+      "closed": true,
+      "source_and_36_native_files_unchanged": true
+    },
+    "correction": "Aim half a pixel inside the same expected output pixel; preserve all expected colors/checks/thresholds/cases.",
+    "full_suite_passed": false,
+    "merged": false,
+    "new_owner_copy_or187": false,
+    "raw_native_coordinates_colors_and_reports_included": false
+  },
+  "preceding_tail44_pass": {
+    "observed_utc": "2026-11-17T18:35:37.617665+00:00",
+    "candidate_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+    "format": "has_selected_targeted_late_stage_outcomes_1",
+    "result": "ALL44_TARGETED_WRAPPERS_PASS",
+    "rows": [
+      {
+        "label": "foot_hold",
+        "exit": 0,
+        "seconds": 16.0967598,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 44,
+        "failures": 0
+      },
+      {
+        "label": "foot_contacts_experiment",
+        "exit": 0,
+        "seconds": 9.9420166,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 74,
+        "failures": 0
+      },
+      {
+        "label": "contact_animation",
+        "exit": 0,
+        "seconds": 20.0310108,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 44,
+        "failures": 0
+      },
+      {
+        "label": "contact_editor",
+        "exit": 0,
+        "seconds": 13.2489548,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 34,
+        "failures": 0
+      },
+      {
+        "label": "contact_clipboard",
+        "exit": 0,
+        "seconds": 12.8423768,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 27,
+        "failures": 0
+      },
+      {
+        "label": "component_contact_clipboard",
+        "exit": 0,
+        "seconds": 13.4310005,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 30,
+        "failures": 0
+      },
+      {
+        "label": "contact_physics",
+        "exit": 0,
+        "seconds": 24.0437839,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 51,
+        "failures": 0,
+        "native_tested": true
+      },
+      {
+        "label": "component_contact_physics",
+        "exit": 0,
+        "seconds": 29.190284,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 53,
+        "failures": 0,
+        "native_tested": true
+      },
+      {
+        "label": "contact_parent",
+        "exit": 0,
+        "seconds": 12.4944008,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 20,
+        "failures": 0
+      },
+      {
+        "label": "contact_correction",
+        "exit": 0,
+        "seconds": 22.9170683,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 36,
+        "failures": 0
+      },
+      {
+        "label": "contact_persistence",
+        "exit": 0,
+        "seconds": 87.5391006,
+        "retained_Popen_reaped": true,
+        "timed_out": false
+      },
+      {
+        "label": "contact_bindings",
+        "exit": 0,
+        "seconds": 24.9357612,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 36,
+        "failures": 0
+      },
+      {
+        "label": "contact_identity",
+        "exit": 0,
+        "seconds": 61.9737849,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 76,
+        "failures": 0
+      },
+      {
+        "label": "contact_selection",
+        "exit": 0,
+        "seconds": 57.5487876,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 67,
+        "failures": 0
+      },
+      {
+        "label": "contact_transform",
+        "exit": 0,
+        "seconds": 72.35031,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 129,
+        "failures": 0
+      },
+      {
+        "label": "contact_viewport",
+        "exit": 0,
+        "seconds": 89.0898435,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 174,
+        "failures": 0
+      },
+      {
+        "label": "multi_audio",
+        "exit": 0,
+        "seconds": 112.8220239,
+        "retained_Popen_reaped": true,
+        "timed_out": false
+      },
+      {
+        "label": "project_duration",
+        "exit": 0,
+        "seconds": 47.4092974,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 40,
+        "failures": 0
+      },
+      {
+        "label": "motion_assist",
+        "exit": 0,
+        "seconds": 0.6267189,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 28,
+        "failures": 0
+      },
+      {
+        "label": "motion_tracks",
+        "exit": 0,
+        "seconds": 0.8142589,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 34,
+        "failures": 0
+      },
+      {
+        "label": "motion_native_preview",
+        "exit": 0,
+        "seconds": 46.9283317,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 163,
+        "failures": 0
+      },
+      {
+        "label": "motion_model",
+        "exit": 0,
+        "seconds": 0.7391728,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 23,
+        "failures": 0
+      },
+      {
+        "label": "motion_editor",
+        "exit": 0,
+        "seconds": 54.7664318,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 129,
+        "failures": 0
+      },
+      {
+        "label": "opacity",
+        "exit": 0,
+        "seconds": 20.2789561,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 34,
+        "failures": 0
+      },
+      {
+        "label": "brush_opacity",
+        "exit": 0,
+        "seconds": 17.0065701,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 18,
+        "failures": 0
+      },
+      {
+        "label": "brush_pressure",
+        "exit": 0,
+        "seconds": 16.7144205,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 27,
+        "failures": 0
+      },
+      {
+        "label": "layers",
+        "exit": 0,
+        "seconds": 18.9257202,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 40,
+        "failures": 0
+      },
+      {
+        "label": "onion",
+        "exit": 0,
+        "seconds": 20.1745963,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 37,
+        "failures": 0
+      },
+      {
+        "label": "fill",
+        "exit": 0,
+        "seconds": 39.8681583,
+        "retained_Popen_reaped": true,
+        "timed_out": false
+      },
+      {
+        "label": "fill_gaps",
+        "exit": 0,
+        "seconds": 46.336022,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 24,
+        "failures": 0
+      },
+      {
+        "label": "fill_expand",
+        "exit": 0,
+        "seconds": 29.3572902,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 23,
+        "failures": 0
+      },
+      {
+        "label": "fill_connections",
+        "exit": 0,
+        "seconds": 29.9751379,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 27,
+        "failures": 0
+      },
+      {
+        "label": "palette",
+        "exit": 0,
+        "seconds": 51.4452612,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 23,
+        "failures": 0
+      },
+      {
+        "label": "drawing_history",
+        "exit": 0,
+        "seconds": 25.7041551,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 36,
+        "failures": 0
+      },
+      {
+        "label": "drawing_selection",
+        "exit": 0,
+        "seconds": 35.568595,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 35,
+        "failures": 0
+      },
+      {
+        "label": "drawing_transform",
+        "exit": 0,
+        "seconds": 48.6414217,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 34,
+        "failures": 0
+      },
+      {
+        "label": "recovery_identity",
+        "exit": 0,
+        "seconds": 2.9443979,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 47,
+        "failures": 0
+      },
+      {
+        "label": "recovery_startup",
+        "exit": 0,
+        "seconds": 146.7252774,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 147,
+        "failures": 0
+      },
+      {
+        "label": "recovery_history",
+        "exit": 0,
+        "seconds": 115.102628,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 27,
+        "failures": 0
+      },
+      {
+        "label": "recovery_schedule",
+        "exit": 0,
+        "seconds": 19.4518345,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 41,
+        "failures": 0
+      },
+      {
+        "label": "recovery_preview",
+        "exit": 0,
+        "seconds": 10.3932019,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 25,
+        "failures": 0
+      },
+      {
+        "label": "home",
+        "exit": 0,
+        "seconds": 20.1867197,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "checks": 34,
+        "failures": 0
+      },
+      {
+        "label": "tutorials",
+        "exit": 0,
+        "seconds": 26.005443,
+        "retained_Popen_reaped": true,
+        "timed_out": false
+      },
+      {
+        "label": "first_movie",
+        "exit": 0,
+        "seconds": 43.7383529,
+        "retained_Popen_reaped": true,
+        "timed_out": false
+      }
+    ],
+    "source_files_unchanged": 1029,
+    "all_wrapper_processes_reaped": true,
+    "host_scopes_closed": true,
+    "private_report_sha256": "e366426598261c13674aafdd4c8fedc9cb5a350ebfcf8be08bd10906d4011167",
+    "private_tool_terminal_sha256": "d3baf201994a70bb62f4bbcf99ed2e7afd97b66ebe40ddb04eb30614b29801b5",
+    "before_after_map_sha256": "5561ab5a3bca4aeffb839cd1c88913a2857f6f2cd49544c70ff05253a171a2fc",
+    "canonical_additional_report_assertions_preserved": true,
+    "prior_attempt": {
+      "closed": true,
+      "wrappers": 8,
+      "last_exit": 1,
+      "cause": "Root targeted runner omitted canonical HYBRID_NATIVE_INPUTS; component wrapper correctly refused absent native coverage.",
+      "native_acceptance_pass": false
+    },
+    "full_suite_passed": false,
+    "product_merged": false,
+    "new_owner_copy_or187": false,
+    "raw_native_reports_arrays_pixels_included": false
   }
 }

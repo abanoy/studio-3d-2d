@@ -1,0 +1,13 @@
+{
+  "format": "has_passive_count_diagnostic_CPU_tool_record_1",
+  "tool_result": {
+    "chunk_id": "0cee5e",
+    "wall_time_seconds": 0.5916047,
+    "exit_code": 0,
+    "original_token_count": 378,
+    "output": "Attempting to perform the InitializeDefaultDrives operation on the 'FileSystem' provider failed.\r\ntest_01_source_exact_inverse_one_call_only (test_diagnostic.DiagnosticTests.test_01_source_exact_inverse_one_call_only) ... ok\r\ntest_02_complete_empty_tables_exact_names_limits_offsets (test_diagnostic.DiagnosticTests.test_02_complete_empty_tables_exact_names_limits_offsets) ... ok\r\ntest_03_body_capacity_observed_before_original_guard (test_diagnostic.DiagnosticTests.test_03_body_capacity_observed_before_original_guard) ... ok\r\ntest_04_joint_capacity_and_negative_count_observed (test_diagnostic.DiagnosticTests.test_04_joint_capacity_and_negative_count_observed) ... ok\r\ntest_05_truncation_after_valid_count_and_before_count (test_diagnostic.DiagnosticTests.test_05_truncation_after_valid_count_and_before_count) ... ok\r\ntest_06_witness_byte_identity_and_module_cleanup (test_diagnostic.DiagnosticTests.test_06_witness_byte_identity_and_module_cleanup) ... ok\r\ntest_07_no_candidate_and_no_witness_payload_returned (test_diagnostic.DiagnosticTests.test_07_no_candidate_and_no_witness_payload_returned) ... ok\r\ntest_08_explicit_file_import_without_own_search_path (test_diagnostic.DiagnosticTests.test_08_explicit_file_import_without_own_search_path) ... ok\r\ntest_09_unsupported_header_remains_original_refusal (test_diagnostic.DiagnosticTests.test_09_unsupported_header_remains_original_refusal) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 9 tests in 0.054s\r\n\r\nOK\r\n"
+  },
+  "interpretation": "Combined tool-captured display output includes PowerShell InitializeDefaultDrives warning; not claimed to be raw Python stdout.",
+  "native_input_access": false,
+  "native_protocol_qualified": false
+}

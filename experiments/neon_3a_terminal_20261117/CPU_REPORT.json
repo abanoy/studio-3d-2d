@@ -1,0 +1,32 @@
+{
+  "format": "has_3a_terminal_source_CPU_report_1",
+  "status": "PASS_SOURCE_SYNTHETIC_ONLY_NO_TERMINAL_OBSERVATION",
+  "tests": 29,
+  "original_terminal_methods": 17,
+  "binder_methods": 8,
+  "strict_actual_API_methods": 4,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 0.126,
+  "tool_chunk": "633095",
+  "four_document_binding_tool_chunk": "f1144f",
+  "source_preparation_tool_chunk": "4b9381",
+  "CPU_log_sha256": "dbc3b2f6bec846d471aad9b155bf5b04d1d3d695d7e9a5d430ff4c77fbaef337",
+  "source_hashes": {
+    "close_terminal.py": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+    "legacy_result_gates.py": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+    "bind_context.py": "f795528e29b522473bc5542a5dc686ddef39ab666d26e7101977228f8d7cf865",
+    "RESULT_REGISTRY.json": "f81ef04a67b7a152fd3c97c806682d20efd07a7c2d380f9d502e07cf62915a11",
+    "test_terminal.py": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c",
+    "test_bind_context.py": "e6843cfd0b96c9ca9007c5e1311f7e13a522b6813ca128ed528af460cefd4e28",
+    "test_api_detail.py": "8c17b282a010bc9b4597dbfe827c2727e6164daa6217d7ac59bce42459f0d6e7",
+    "bind_immutable_only.py": "a433481b438271e0636c0cd7ca6ebd7ac708731b4cd78a16f07edfec04e7f810"
+  },
+  "whole_binder_and_test_context_inverses_exact": true,
+  "observer_legacy_original17_entire_files_exact": true,
+  "registry_only_source_commit_changed_raw_inverse_exact": true,
+  "actual_terminal_observer_or_binder_main_executed": false,
+  "live_state_source_after_logs_or_results_read": false,
+  "current_verifier_runner_Pwsh_native_inputs_read": false,
+  "process_CIM_Git_or_engine_queries_launched": false
+}

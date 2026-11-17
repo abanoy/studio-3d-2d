@@ -1,6 +1,70 @@
 # HAS continuation — November 17, 2026
 
-CURRENT at 2026-11-17 17:42 UTC: candidate 696 full FAILED at color sampler
+LATEST CURRENT:3a fullRUNNING from18:59UTC. RUN=Review/output/windows-neon-3a3701a-20261117T185401541257.
+Coordinator19500 birth2026-11-17T18:59:01.8851457Z; Python3592 birth2026-11-17T18:59:02.3970713Z,parent19500;
+CIM.3970710 metadataonly. Freeze1029/HEAD3a. Native/graphicslaneRoot-exclusive:
+NOotherengine/nativejob orReviewfunctional/HEAD mutation until actualterminal.
+Fullpreflightpassed; color44/0 andTail44 actualPASS; expected158/36/21 NOTresult.
+Newcontext-only terminalhelper beingprepared fromeecf. OnlyRootobservesactual
+terminal/closesreceipts/releases; do not reuse696/00bf context. No merge/copy/187.
+NativePMXoracle1/4,3table-budgetrefusals,preserved4/4,allchildrenclosed; candidate
+comparisonblocked. Bneverlaunched: preparerGit-onlysingle-linkpolicyrefusal
+(tool2links/exactapprovedidentity). Sourcefix/diagnostics maycontinue, noactual
+nativeobservations until fullclosed. Main855retrievable67files; functionalMain52.
+
+Everything below is dated historical context superseded by this active snapshot.
+
+
+LATEST CURRENT: candidate 3a3701ab6edfa81dc883759403c170b8555aab07 remains
+frozen. Tail attempt2 ALL44 passed; tool20079 returned0 at18:32:59UTC, source1029
+unchanged, every wrapper reaped, canonical extra reports/host scopes closed.
+No active full or targeted run. Native lane is free and Root-owned. Source packet
+8b1b7813 records scalar results; raw1.1MB report e3664265 stays PRIVATE. Exact outer
+completion2ed5edd7 and actual tool-terminal witnessd3baf201 are retained. The outer
+runner is tool-retained, not a claimed PythonPopen/birth witness.
+
+Before the new full, Root is preparing ordinary read-only Bmetadata and PMX-input
+observations. Bbinder097e refused BEFOREengine/admission: it incorrectly demanded
+single-link for the installed Git tool. Actual Git is stable2links and exactly the
+approved46480B/mtime1760720930000000000/SHA544548de; no tool changed. A narrow
+Git-only predicate successor is pending. Do not reset/delete tools or caches.
+Bknown-factory source1eeca remains unexecuted; no strict31/normalfidelity/adoption
+is claimed. PMX oracle d27 and two-phase observation harness remain source-only;
+actual native body/joint tables have not been parsed yet.
+
+New3a full preflight is concrete/sealed but UNRUN: entryd1b6cc69 at
+experiments/prepare_neon_3a3701a_full_actual_20261117.py, checkerf6f22803,
+packetINDEX8e60d6ca/SOURCE_SEAL53c11bd3. It binds actualcolor44/Tail44, retains
+ancestor696camera/neon/controls and exact6runtime/574+copy/120/36/Mima/VRM/8a1c
+guards. Its authorized cache filtering matches the declared functional scope;
+all real source dirt/additions still refuse. Original696 remains failed/released93.
+After independent observations close, run actualpreflight, then new8a1c canonical
+full with retained coordinator and fresh exact birth/API records. Expected158/
+36/21 is NOT a result. No merge/newreview/cold187 until actual qualification.
+
+Only tests/color_sampler_smoke.gd changed from 696: the synthetic click now aims
+at the center of the SAME expected output pixel (raw102ec02e). Original color
+verifier44/0 and a separate passive three-native-case diagnostic pass; all five
+conditions and actual intended pixel identities match. App code/44assertions/
+thresholds/threecases unchanged. New source and36nativefiles preserved, jobs and
+scopes closed. Actual scalar packet0d99bc3c remains unpushed pending nextcheckpoint.
+
+Tail attempt1 closed after eight wrappers because Root omitted the canonical
+HYBRID_NATIVE_INPUTS environment: component-native coverage correctly refused.
+That is a preflight-setup failure, not a product or native-acceptance pass. Attempt2
+matches canonical C:\a\dump plus hecatia/Python settings; raw VRM1 hash14d2 is
+confirmed. Preserve both attempts. No full PASS/merge/newreview/cold187 is claimed.
+
+Main855d67fe is independently retrieved: all67 files, proof1b109da3. Main still
+has1019 qualified52 functional files. Source-only3a reconstruction69d8f2ee,
+corrected focus/diagnostics, late-source790277ef and pending full-preflight source
+must be backed up in the next checkpoint. PMX oracle remains source-only work.
+Four owner PMX2.0/UTF16LE originals were metadata-checked and copied read-only to
+ROOT/output/PRIVATE-pmx-oracle-inputs-20261117-attempt1 (20,781,686B), provenance
+339752b3; no body/joint tables have been parsed or natively qualified. Raw models,
+capsules, pixels and private reports must stay out of Git.
+
+HISTORICAL at 2026-11-17 17:42 UTC: candidate 696 full FAILED at color sampler
 44/1 after the original camera check passed 60/0 with five native fixtures.
 One Miku native-pick conjunction failed; the other two Source cases passed.
 Cause is undiagnosed. Split the five conditions and measure the intended/mapped
@@ -275,3 +339,22 @@ Publish new compact completed evidence and verify remote before exact owned
 cleanup. Oldpublic download-cache cleanup71files is COMPLETE and journaled above.
 Originals/models/art/native arrays/oldreviews/tools/current e8cache remain excluded.
 Manual observations DEFERRED; stable55/62 acceptance,52/54 implementation unchanged.
+
+### November 17, 2026 — source helpers sealed during the active 3a full
+
+The new 3a terminal-helper packet is sealed with all 29 synthetic terminal,
+binder and API tests passing. Its observer, legacy gates and original 17 tests
+remain exact; only the approved launch context and registry commit changed.
+GetProcess births remain authoritative; CIM precision is metadata only. Root
+alone runs the terminal audit after the exact 3a run actually closes.
+
+The separate Git-only B binder successor passes eight synthetic source tests.
+Only its two installed-Git identity calls permit the tool's existing links;
+original/model/source guards and exact size, time, hash and stability checks
+remain unchanged. The helper has not launched B or changed any installed tool.
+The passive PMX count diagnostic also passes nine authored tests without changing
+old traversal or budgets; it has not inspected native inputs.
+
+Main functional source remains qualified52/1019. Review3a is still RUNNING with
+1029 frozen source files; expected158/core36/movie21 is not a result. No new
+full PASS, merge, owner copy, cold187 or native qualification is claimed.

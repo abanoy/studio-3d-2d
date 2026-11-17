@@ -1,0 +1,35 @@
+{
+  "format": "has_independent_pmx_oracle_source_bindings_1",
+  "candidate_test_only_source": {
+    "path": "experiments/pmx_physics_native_reader_prototype_20261117/pmx_native_physics.py",
+    "sha256": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426",
+    "INDEX_sha256": "9946bf2bccbe5e289fea013ec702c97775b33b9a64dc3bce7979d21d08e92487"
+  },
+  "fixture_copies": [
+    {
+      "path": "synthetic_pmx.py",
+      "bytes": 16301,
+      "sha256": "4700bbf8c167680af292b5ea427eebb84425819d24ac4c0e4eb8aad222913414",
+      "role": "PREEXISTING_AUTHORED_SYNTHETIC_FIXTURE_NOT_CANDIDATE_IMPLEMENTATION"
+    },
+    {
+      "path": "MANUAL_FIXTURE_EXPECTATIONS.json",
+      "bytes": 3444,
+      "sha256": "323129acee5355b6cc6d99b3068e07253e17d87cd01cbcbc572f3a25eed45b59",
+      "role": "PREEXISTING_AUTHORED_SYNTHETIC_FIXTURE_NOT_CANDIDATE_IMPLEMENTATION"
+    }
+  ],
+  "layout_authority": {
+    "document": "experiments/pmx_physics_native_reader_prototype_20261117/LAYOUT.md",
+    "sha256": "d516af51783e6769005b375cc1677728952b0511887d2bac985b7c9b023df5a4",
+    "shared_installed_source_sha256": "fb9aafe369025f221bc5a1c952d868260b1a4bb950dc33bca62645b4da454e5a",
+    "independent_secondary_normative_authority": "UNRESOLVED"
+  },
+  "protocol": {
+    "path": "experiments/pmx_native_read_qualification_protocol_20261117/PROTOCOL.md",
+    "sha256": "82308fe746598ff6042039b5b25e30af795db38803b4b97e13d61177d6e01385"
+  },
+  "oracle_candidate_implementation_import_or_copy": false,
+  "native_assets_read": false,
+  "existing_or_production_files_changed": false
+}

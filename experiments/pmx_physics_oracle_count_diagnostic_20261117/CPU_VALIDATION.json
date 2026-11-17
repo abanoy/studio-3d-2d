@@ -1,0 +1,31 @@
+{
+  "format": "has_passive_count_diagnostic_synthetic_CPU_validation_1",
+  "command": "python -B -m unittest -v test_diagnostic.py",
+  "tool_chunk_id": "0cee5e",
+  "exit_code": 0,
+  "tests_run": 9,
+  "passed": 9,
+  "skipped": 0,
+  "unittest_seconds": 0.054,
+  "source_hashes": {
+    "source_patch.py": "5112d5dde49bdb7c4fe99ebb32a753f53a34c89d8dfc0779477d676385f6fd69",
+    "diagnostic.py": "1f3d66a8ff65a55d94cc003bb259bdacf009cac0074cf15d0312e56e07358c8d",
+    "test_diagnostic.py": "2296755a3567794a05c778e28b5392967c457b73ff41cd857c52deed2d6f735e"
+  },
+  "scope": "PUBLIC_PINNED_SOURCE_AND_AUTHORED_RAM_FIXTURES_ONLY",
+  "checks": [
+    "Exact97-byte one-call insertion and inverse restoring full14055-byte oracle source",
+    "Nine fixed table names/default ceilings and independent manual token offsets",
+    "Body513/joint1025/negative count observed before unchanged refusal",
+    "Count-field truncation has no fabricated row; valid-count extent truncation keeps original refusal",
+    "Original and instrumented canonical witnesses byte-identical for empty69-byte and populated339-byte authored fixtures",
+    "Temporary module cleanup, explicit file import without own directory in search path",
+    "Unsupported header retains original refusal; candidate/comparator/archive imports blocked and no witness returned"
+  ],
+  "native_input_or_private_provenance_access": false,
+  "candidate_imported_or_run": false,
+  "original_budgets_or_traversal_changed": false,
+  "prefix_correctness_established": false,
+  "native_protocol_qualified": false,
+  "simulation_or_production_adoption": false
+}

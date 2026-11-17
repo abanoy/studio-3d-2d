@@ -1,0 +1,52 @@
+{
+  "format": "has_independent_pmx_oracle_authored_scalar_observation_1",
+  "scope": "AUTHORED_SYNTHETIC_SOURCE_CPU_ONLY",
+  "manual_fixtures": [
+    {
+      "label": "existing_fixed339",
+      "bytes": 339,
+      "source_sha256": "9d5c7506a3c5706dd088db6a9cbf1485f795fb05e605c143fb94e6e1396529d3",
+      "bone_records": 2,
+      "body_records": 1,
+      "joint_records": 1
+    },
+    {
+      "label": "new_manual_mixed_UTF16_531",
+      "bytes": 531,
+      "source_sha256": "1d54d7476e40a5f91edeca186af1c4f0dc4899555455720fb155ca523c8b069e",
+      "bone_records": 2,
+      "body_records": 2,
+      "joint_records": 2,
+      "body_spans": [
+        [
+          151,
+          224
+        ],
+        [
+          224,
+          297
+        ]
+      ],
+      "joint_spans": [
+        [
+          301,
+          416
+        ],
+        [
+          416,
+          531
+        ]
+      ]
+    }
+  ],
+  "matrix_cases_passed": 720,
+  "exhaustive_truncation_of_both_manual_and_full_optional_fixture": true,
+  "strict_tamper_type_and_privacy_negatives_passed": true,
+  "oracle_input_is_immutable_bytes_only": true,
+  "oracle_candidate_imports_or_offsets": false,
+  "same_layout_authority_as_candidate": true,
+  "independent_secondary_normative_authority": "UNRESOLVED",
+  "native_artist_file_read": false,
+  "native_qualified": false,
+  "simulation_portability_or_production_adoption": false
+}

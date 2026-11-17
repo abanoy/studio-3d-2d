@@ -1,0 +1,1 @@
+The original 44-check verifier and passive three-case diagnostic pass after a one-line test-input correction. Application sampling code is unchanged. Full qualification and merge remain outstanding. Raw native pixels, coordinates and reports are private.

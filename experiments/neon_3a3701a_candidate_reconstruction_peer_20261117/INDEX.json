@@ -1,0 +1,43 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "neon_3a3701a_candidate_reconstruction_peer_20261117",
+  "status": "SEALED_RAM_3A_TEXT_RECOVERY_NO_NATIVE_FULL_OR_ACTIVATION_CLAIM",
+  "files": [
+    {
+      "path": "AUDIT.json",
+      "bytes": 14476,
+      "sha256": "49cd5cb4da76f142efefd54a1f6a491998f6e40eb4cf7ad8a242d4d41cec6200"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 558,
+      "sha256": "bec91fd03ec63ec177449c3f82ef51df85bc1efbd139f1c37f7b01471827cef9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1175,
+      "sha256": "4531b2cc7668ef65e7f894268982a0b70cf5f091b097c9c0b9f1cdf32138acc5"
+    },
+    {
+      "path": "SOURCE_BINDINGS.json",
+      "bytes": 669,
+      "sha256": "0570aa291dedd6663f91bbdd5602d7861e1cc50c3a9e0ac2cd96cc06e24a33e5"
+    },
+    {
+      "path": "audit_reconstruction.py",
+      "bytes": 9404,
+      "sha256": "e2eed09235a54df80a279a8fda918960293eda4558c933744ba4659d694a41f7"
+    },
+    {
+      "path": "test_reconstruction.py",
+      "bytes": 4234,
+      "sha256": "4519ee6ba7fb9ef2f45f57b7e51de4ef115f8b8a12200e9f6c5aede1338a88b1"
+    }
+  ],
+  "audited_packet_INDEX_sha256": "69d8f2eef22aa3ad1c0d2576cf4bba04977a4320fed9ff1dcec9afe81f8bcc28",
+  "candidate_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+  "CPU_methods": 5,
+  "RAM_tree_commit_patch_and_EOL_verified": true,
+  "separate_sibling_review_claimed": false,
+  "actual_focused_full_native_or_Git_mutation": false
+}

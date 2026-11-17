@@ -1,0 +1,17 @@
+{
+  "format": "has_passive_oracle_count_source_bindings_1",
+  "oracle_packet": "pmx_physics_independent_oracle_20261117",
+  "oracle_INDEX_sha256": "d27d9873bc08ec2bc37f8939ae09f9b071f9f4e6fda8b112a2626fef7fabbb45",
+  "oracle_source": "oracle.py",
+  "oracle_source_bytes": 14055,
+  "oracle_source_sha256": "f1dfc3a37c32c1c8b57537b1500b701792df13e4e8b87abe13b0ce49be2c4cec",
+  "authored_test_fixture": "MANUAL_FIXTURE_EXPECTATIONS.json",
+  "authored_test_fixture_sha256": "323129acee5355b6cc6d99b3068e07253e17d87cd01cbcbc572f3a25eed45b59",
+  "observer": "One passive call before unchanged table-count guard, exact inverse restores original source",
+  "actual_input_worker": "Root separately supplies stable readonly input/copy checks and retained worker/deadline after exclusive full lane closure; no native runner added here",
+  "native_input_expectations_or_observed_values_used_to_change_logic": false,
+  "old_packets_edited": false,
+  "native_inputs_opened": false,
+  "candidate_imported_or_run": false,
+  "native_protocol_qualified": false
+}

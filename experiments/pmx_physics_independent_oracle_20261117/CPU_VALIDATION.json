@@ -1,0 +1,28 @@
+{
+  "format": "has_independent_pmx_oracle_final_synthetic_CPU_1",
+  "observed_utc": "2026-11-17T18:11:56.115218+00:00",
+  "command": "python -B -m unittest -v test_oracle",
+  "methods": 18,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 1.573,
+  "tool_chunk": "b95853",
+  "full_prefix_cases": 720,
+  "manual_fixture_bytes": [
+    339,
+    531
+  ],
+  "source_sha256": {
+    "oracle.py": "f1dfc3a37c32c1c8b57537b1500b701792df13e4e8b87abe13b0ce49be2c4cec",
+    "compare_tables.py": "e36739292d90a63e695a1731642bedc02ef0eb65bf07152e85bd0f48dadd3acf",
+    "manual_wide_fixture.py": "393d9a9feb062a4226652bf479f5643a0bb247c84bb5a60a1908df8d87d8ca9c",
+    "test_oracle.py": "c7750d4f44b31415c6e13bd16553a9d1f86178b58e98162d6fc7f2a034326a3f",
+    "synthetic_pmx.py": "4700bbf8c167680af292b5ea427eebb84425819d24ac4c0e4eb8aad222913414",
+    "MANUAL_FIXTURE_EXPECTATIONS.json": "323129acee5355b6cc6d99b3068e07253e17d87cd01cbcbc572f3a25eed45b59"
+  },
+  "tool_display_output_path": "CPU_TOOL_OUTPUT.json",
+  "raw_Python_stdout_separately_captured": false,
+  "first_fixture_label_error_retained": "history/attempt1/RECEIPT.json",
+  "actual_native_artist_input_or_engine_or_process_query_or_current_full_or_Git_or_network_access": false,
+  "production_Review_or_old_sealed_file_mutations": false
+}

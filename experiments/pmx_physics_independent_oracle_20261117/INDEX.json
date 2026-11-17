@@ -1,0 +1,103 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "pmx_physics_independent_oracle_20261117",
+  "status": "SEALED_WORKING_INDEPENDENT_RAW_TABLE_ORACLE_SYNTHETIC_ONLY_NATIVE_UNQUALIFIED",
+  "files": [
+    {
+      "path": "CPU_TOOL_OUTPUT.json",
+      "bytes": 3512,
+      "sha256": "46660ced338a59152313e829c518aa13a05630aab4324eafe61b5a44f8343779"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 1290,
+      "sha256": "0af6ea2d366a06169ad09a869e06c15f1fb503466f4cbe411ae30edb82bb5baf"
+    },
+    {
+      "path": "MANUAL_FIXTURE_EXPECTATIONS.json",
+      "bytes": 3444,
+      "sha256": "323129acee5355b6cc6d99b3068e07253e17d87cd01cbcbc572f3a25eed45b59"
+    },
+    {
+      "path": "PEER_REVIEW.json",
+      "bytes": 1366,
+      "sha256": "6d4e6a471d4d4bc642027a7c4db2eb292e75b4ed1ea9dbdab6285a4cb5e66a37"
+    },
+    {
+      "path": "READINESS.json",
+      "bytes": 913,
+      "sha256": "220fe58c51c4e13824108f660441dfb3b6bf5cdbb19057e724e4ab40b78edc62"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6906,
+      "sha256": "5dc4a4bad574adf406d9ff45a6568e4b36f5ee734f76a2de781888a3a73ed85a"
+    },
+    {
+      "path": "SOURCE_BINDINGS.json",
+      "bytes": 1573,
+      "sha256": "1b7e0420cbe744e9c73b477eadbc569d1d8b7c4be2cda5c61fd07621c60773c5"
+    },
+    {
+      "path": "SYNTHETIC_RESULT.json",
+      "bytes": 1380,
+      "sha256": "8dd69804df0965cf14ff0078f7f01f2dc2b96ead25eaf1d9c8a0157380d08618"
+    },
+    {
+      "path": "compare_tables.py",
+      "bytes": 17481,
+      "sha256": "e36739292d90a63e695a1731642bedc02ef0eb65bf07152e85bd0f48dadd3acf"
+    },
+    {
+      "path": "history/attempt1/RECEIPT.json",
+      "bytes": 913,
+      "sha256": "3480a001ee67894511d66d7fb660d242cc670424b3ce92b48e9d924d15d2dd33"
+    },
+    {
+      "path": "history/attempt1/TOOL_OUTPUT.json",
+      "bytes": 4181,
+      "sha256": "312b3c879749b9209baccdcf57ddfd2865f1546b78ec7f1cfc445ed95d054400"
+    },
+    {
+      "path": "history/attempt1/compare_tables.py",
+      "bytes": 17457,
+      "sha256": "a5d5b0e01cc816c1dab4fa0b150cc72d11bd2df04516fd966146609b3b6705e1"
+    },
+    {
+      "path": "history/attempt1/oracle.py",
+      "bytes": 14055,
+      "sha256": "f1dfc3a37c32c1c8b57537b1500b701792df13e4e8b87abe13b0ce49be2c4cec"
+    },
+    {
+      "path": "history/attempt1/test_oracle.py",
+      "bytes": 15149,
+      "sha256": "d423ea3268838cfedda8d3cb793ff4c17d38bf85830b5eb908a919b95f3ddc15"
+    },
+    {
+      "path": "manual_wide_fixture.py",
+      "bytes": 1856,
+      "sha256": "393d9a9feb062a4226652bf479f5643a0bb247c84bb5a60a1908df8d87d8ca9c"
+    },
+    {
+      "path": "oracle.py",
+      "bytes": 14055,
+      "sha256": "f1dfc3a37c32c1c8b57537b1500b701792df13e4e8b87abe13b0ce49be2c4cec"
+    },
+    {
+      "path": "synthetic_pmx.py",
+      "bytes": 16301,
+      "sha256": "4700bbf8c167680af292b5ea427eebb84425819d24ac4c0e4eb8aad222913414"
+    },
+    {
+      "path": "test_oracle.py",
+      "bytes": 15890,
+      "sha256": "c7750d4f44b31415c6e13bd16553a9d1f86178b58e98162d6fc7f2a034326a3f"
+    }
+  ],
+  "methods": 18,
+  "failures": 0,
+  "synthetic_prefix_cases": 720,
+  "source_peer_review": "GO",
+  "actual_native_or_production_adoption": false,
+  "existing_source_packets_unchanged": true
+}

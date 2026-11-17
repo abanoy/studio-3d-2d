@@ -1,0 +1,19 @@
+{
+  "format": "has_exact_passive_oracle_count_source_proof_1",
+  "original_bytes": 14055,
+  "original_sha256": "f1dfc3a37c32c1c8b57537b1500b701792df13e4e8b87abe13b0ce49be2c4cec",
+  "original_INDEX_sha256": "d27d9873bc08ec2bc37f8939ae09f9b071f9f4e6fda8b112a2626fef7fabbb45",
+  "instrumented_bytes": 14152,
+  "instrumented_sha256": "39029f8d8c9ff2c824727cbfc0b6171f38ce72b898dcc0ceecfe5c23ea699a07",
+  "inserted_bytes": 97,
+  "inserted_calls": 1,
+  "insertion_location": "_Walk.table, immediately before original table-count budget guard",
+  "inserted_source_line": "        _observe_table_count(name, count, getattr(self.limits, name + '_count'), token['start'])",
+  "restored_bytes": 14055,
+  "restored_sha256": "f1dfc3a37c32c1c8b57537b1500b701792df13e4e8b87abe13b0ce49be2c4cec",
+  "restored_equal_original": true,
+  "original_limits_traversal_and_witness_logic_edited": false,
+  "candidate_imported_or_run": false,
+  "native_inputs_opened": false,
+  "native_protocol_qualified": false
+}

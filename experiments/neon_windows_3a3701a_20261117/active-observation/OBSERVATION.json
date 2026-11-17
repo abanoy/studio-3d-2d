@@ -1,0 +1,86 @@
+{
+  "observed_utc": "2026-11-17T19:00:45.008009+00:00",
+  "result": "RUNNING_NO_RESULT",
+  "state": {
+    "format": "has_owned_canonical_run_1",
+    "pid": 19500,
+    "process_started": "2026-11-17T18:59:01.8851457Z",
+    "started_utc": "2026-11-17T18:59:02.1756114Z",
+    "status": "running",
+    "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+    "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-3a3701a-20261117T185401541257",
+    "source_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+    "python": "C:\\Program Files\\Python313\\python.exe",
+    "command": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-u",
+      "tests/verify.py"
+    ],
+    "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4"
+  },
+  "functional_sources_unchanged": 1029,
+  "actual_focused": {
+    "color_checks": 44,
+    "color_failures": 0,
+    "late_wrappers": 44,
+    "late_failed_wrappers": 0
+  },
+  "ancestor696_not_fresh3a": {
+    "camera": 60,
+    "native_models": 5,
+    "neon": 12504,
+    "controls": 48
+  },
+  "public_metadata_files": [
+    {
+      "path": "launch.json",
+      "bytes": 1187,
+      "sha256": "a35a4d10130116ccfadb294851bc4c45faf0931392fc93440c3aa0d9cb4ce409",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "root-birth-observation.json",
+      "bytes": 365,
+      "sha256": "1ba1fb9eae97c0e247570a81e0abb7d43e9fbafee9bf75a7802e60e0e3cf8fd6",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "root-birth-api-detail.json",
+      "bytes": 301,
+      "sha256": "e38a1d27a7cc30eb59176b4c9366a3cf346394f84a5903e185fe3aeb60c00209",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "source-before.json",
+      "bytes": 108131,
+      "sha256": "3ef2e7d8bed6e063afef59c8caccba914663752998761350c882fd4efbc78e9d",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "preflight-source.json",
+      "bytes": 104958,
+      "sha256": "5561ab5a3bca4aeffb839cd1c88913a2857f6f2cd49544c70ff05253a171a2fc",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "prelaunch-owned-scope.json",
+      "bytes": 188,
+      "sha256": "bde0a0783ba77451a468d724f562624ac74c8a5753e351e6d005ac805dfcaf9b",
+      "dated_snapshot_only": false
+    },
+    {
+      "path": "state.json",
+      "bytes": 724,
+      "sha256": "3987c60012d80846b04caff116fc89e5dc817dd4a907c4fcc7cb2cedfee69829",
+      "dated_snapshot_only": true
+    }
+  ],
+  "expected_not_pass": {
+    "groups": 158,
+    "core": 36,
+    "movies": 21
+  },
+  "root_native_lane": "exclusive",
+  "raw_native_report_or_logs_included": false,
+  "product_merged": false
+}

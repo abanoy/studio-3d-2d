@@ -1,0 +1,5 @@
+Independent RAM recovery of candidate3a3701a from the exact696 packet retained in published main4fd. The existing sealed parser/patch helpers reconstruct the older public375/fe9/00bf chain, then696 and finally3a. Commit, trees, three blobs, unified patch and all working EOL recipes match exact retained Git objects. Three changed raw tree objects are public Git metadata encoded as hex; they contain no native model arrays.
+
+The test differs only at one click expression: native_point becomes native_point+Vector2(.5,.5). All other test bytes, assertions, thresholds and fixtures remain exact. App/helper/wind and all other committed paths remain unchanged. Main1019 still matches the public qualified52 source map. Five unchanged synthetic rejection groups pass.
+
+The audit used61 bounded typed Git requests plus10 typed public-parent blob reads. It did not read current outputs, focused/full reports, native assets or Review working files, query processes, mutate Git or launch engines. Working recipes were reconstructed from archived blobs. This is recoverability proof only; no full/focused/native result, merge, owner copy, cold187 or review-branch upload is claimed.

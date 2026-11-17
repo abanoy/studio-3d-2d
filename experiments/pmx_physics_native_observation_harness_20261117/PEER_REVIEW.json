@@ -1,0 +1,19 @@
+{
+  "format": "has_PMX_observation_harness_independent_source_review_1",
+  "reviewer": "/root/source_checkpoint_peer",
+  "verdict": "SCOPED_SOURCE_GO",
+  "reviewed_source": {
+    "common.py": "f1972557534e1346ee24930a59026a8fb9d813199bb6f1016bb666ff894d870e",
+    "worker.py": "d63cee343b79ac95b72aa79b50187b928b62cd9890651e0efbd1004abfa29d6f",
+    "run_observation.py": "348913a5c8c1666d46b73f463295fa877491ec6c71e4190ffba94a0d857231d4",
+    "test_harness.py": "416e66c62a32f807501bda2fd95748fbfa1a53bf6b4f7d7e7403938d4c5432df"
+  },
+  "fixed_findings": [
+    "Exceptional cleanup formerly could drop an unreaped child and continue; dedicated retained ownership now stops batch and leaves later cases unstarted",
+    "Log stat failure formerly preceded unconfirmed ownership retention; unreaped branch now retains ownership before fallible file observations/writes"
+  ],
+  "reviewer_summary": "Oracle first, frozen witness before candidate input/import, stable source/copy/provenance pins, private payload boundaries and scalar false-qualification projection correct within documented ordinary-read scope.",
+  "reviewer_executed_modules_or_tests": false,
+  "reviewer_accessed_native_provenance_inputs_process_or_current_outputs": false,
+  "native_protocol_qualified": false
+}
