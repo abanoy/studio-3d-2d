@@ -1,0 +1,65 @@
+{
+  "format": "has_neon_owner_copy_checkpoint_source_derivation_1",
+  "predecessor_selector_sha256": "f438abbbbebce2fbc946f102e1d5e0fe507f3a4baf45b65c6db7e0de6c18994c",
+  "selector_sha256": "ec8e7e8999f6d020b070f3b66b687080ff24744dca8e4998cac1078c4d32eab4",
+  "predecessor_remote_verifier_sha256": "099e537bf52d539318f775ac70944393f89ed181aba9341582a163be70379f99",
+  "remote_verifier_sha256": "1180af6dc9570f7f8725ad4b4303bfb0366dd144500f397bbb6ff97a4c20bd99",
+  "selector_retained_sections": [
+    {
+      "section": "checked_path",
+      "bytes": 550,
+      "sha256": "eaea789474c7539550e93da10643efc39a4661b222c72f8596ccda71e6cd4bba",
+      "exact_bytes_unchanged": true
+    },
+    {
+      "section": "selection_safety",
+      "bytes": 780,
+      "sha256": "09ab51db853c82a03b864d7a185c4f0d2f323513f1d5b310575f76f5c9100a86",
+      "exact_bytes_unchanged": true
+    },
+    {
+      "section": "raw_tested1029_guard",
+      "bytes": 1273,
+      "sha256": "469905911125d80fd62072100206c5c87cab3899baa10291a1cc0b6ec0f1e4ec",
+      "exact_bytes_unchanged": true
+    },
+    {
+      "section": "historical_full_and39_review_predicates",
+      "bytes": 1220,
+      "sha256": "3e713b1b76ae0f1e327dfca27e9c4cb1e5656b5c27a553ea50c781fbbf0ca7a3",
+      "exact_bytes_unchanged": true
+    },
+    {
+      "section": "closed_INDEX_payload_loop",
+      "only_changed_source": "comment removes obsolete fifteen count",
+      "all_executable_bytes_unchanged": true
+    }
+  ],
+  "remote_verifier_retained_sections": [
+    {
+      "section": "Git_blob_framing",
+      "bytes": 568,
+      "sha256": "ac4aae987b98f7ab298b1a7d911ab7bf8ae542eb553c4e3c7b3cba540326dfea",
+      "exact_bytes_unchanged": true
+    },
+    {
+      "section": "remote_base64_fallback_and_Git_blob_equality",
+      "bytes": 581,
+      "sha256": "ad91132b3d5d60ccdf5c3e3b2a53dd14abb86483f71cd9ffcbbc41ea59d609a1",
+      "exact_bytes_unchanged": true
+    },
+    {
+      "section": "reversible_working_EOL_recipe",
+      "bytes": 907,
+      "sha256": "fbbb39710f8f271d6f46de0eba08fcc206bc82ab93fb85a291d1f9752c6f4bda",
+      "exact_bytes_unchanged": true
+    }
+  ],
+  "selection_delta": "ten closed final/source-history/result packets plus pinned previous179 proof/derivation and explicit Root docs/source helpers",
+  "current_copy_and_incomplete_attempt_predicates_added": true,
+  "remote_verifier_change": "commit+manifest-pin CLI, sole parent973, exact metadata selection changed scope, dynamic selected count, no historical47merge extras; exact manifest bytes asserted separately",
+  "raw_native_runtime_reports_or_private_outputs_read": false,
+  "parser_checks_passed": 3,
+  "actual_selector_or_remote_readback_executed": false,
+  "source_comparison_history": "Two prewrite derivation checks refused an overbroad framing span that included the new manifest-byte assertion. Original framing and narrow new assertion boundary now verified independently; no runtime execution occurred."
+}

@@ -1,0 +1,64 @@
+{
+  "format": "has_core_INDEX_API_preparation_binding_1",
+  "parent_folder": "neon_owner_validator_preparation_shell_eol_20261117",
+  "parent_INDEX_sha256": "efd83e68fc08fcb98175f23b9618135c84699d472ef8672036cf33a4e697c623",
+  "code_changes": {
+    "prepare_validator.py": {
+      "literal_rules_with_counts": [
+        [
+          "neon_owner_cold187_shell_eol_20261117",
+          "neon_owner_cold187_index_api_20261117",
+          1
+        ],
+        [
+          "neon_owner_activation_shell_eol_20261117",
+          "neon_owner_activation_index_api_20261117",
+          1
+        ],
+        [
+          "a38e4866df7f8810d73e616b05b728b4e088dd4c84015b2ff65c6a8f1cbb3e64",
+          "1d622b70d155441f4f07edf38be962d4ffc7ed0ecaf61ab6af13cf575ac1baac",
+          1
+        ],
+        [
+          "1c4d2026accaf22292f43dba338058f5c4d38346a557aee057e1b30eaabe26ff",
+          "87995d9226077ac012fbd41bce12e7ed168e6ee78a31159a916bddd7dffb6649",
+          1
+        ],
+        [
+          "1f42a221ad7de5094675d29888c51e5ddc60cb52a44e3ceecaa6b1866e57a367",
+          "36fe7f94d9e519050ffac503a5c69be831563ce5ca8da8ac2bfec2d5216e7e4b",
+          1
+        ],
+        [
+          "954a5f26664d9fe087343491652ca53311cea7607c465ad06491a27d2640634c",
+          "5acfa3635a8baf4a969bf3c6bb44151f08a1c46dd2a4936f41ca837541e75f1d",
+          1
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "fb97ff83ad6b3d620bd86dc29ca0c16884031f171deb8cfbafa4ec75d5621d3a",
+      "after_sha256": "a3b8367eb4349e47a8a78abca446b4f72ef03e9946f5b548daf1c289deed0ac1"
+    },
+    "check_source.py": {
+      "literal_rules_with_counts": [
+        [
+          "neon_owner_cold187_shell_eol_20261117",
+          "neon_owner_cold187_index_api_20261117",
+          2
+        ],
+        [
+          "neon_owner_activation_shell_eol_20261117",
+          "neon_owner_activation_index_api_20261117",
+          1
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "f60e913a9c6ddea5bce3c31c5b4c41e0b95a519851aaf98436b76e2876586db8",
+      "after_sha256": "2aabd1d5c170b0a77e582aa86725042475175af160f94f8ecfa2a5ca5647d8c3"
+    }
+  },
+  "all_preparation_functions_AST_unchanged": true,
+  "direct_core_payloads_API_static_check": true,
+  "actual_target_preparation_helpers_or_admission_executed": false
+}

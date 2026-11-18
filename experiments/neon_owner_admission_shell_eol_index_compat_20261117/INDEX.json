@@ -1,0 +1,101 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "neon_owner_admission_shell_eol_index_compat_20261117",
+  "status": "SEALED_INDEX_API_COMPATIBILITY_SOURCE_ONLY_INACTIVE",
+  "payloads": [
+    {
+      "path": "CPU_RESULT.json",
+      "bytes": 6017,
+      "sha256": "0726ce3d2372d3cd9144b941cbaf5d78a89407132f43f342d5dc7f4730aa2608"
+    },
+    {
+      "path": "DERIVATION.json",
+      "bytes": 2509,
+      "sha256": "b7e439556e6233c20fabc1a7f12c0f6f0be4ab71b4f3e2f50cf82e121e777f45"
+    },
+    {
+      "path": "INDEX_COMPATIBILITY.json",
+      "bytes": 1000,
+      "sha256": "29a7d69f392cbdc93ba626237474db696ee365e678d2fec6e1278292425be539"
+    },
+    {
+      "path": "INDEX_COMPATIBILITY.md",
+      "bytes": 1132,
+      "sha256": "cde0db151eb40c49c8a3a902343e79c83c07f153b7a484d6c9a3193dd854c07b"
+    },
+    {
+      "path": "INDEX_COMPATIBILITY_CPU.json",
+      "bytes": 1114,
+      "sha256": "2d2bfac21915d2dbc63b00cd37f6f05bf89896e15a53a6142577dae894cfe196"
+    },
+    {
+      "path": "PREDECESSOR_SOURCE_PINS.json",
+      "bytes": 1634,
+      "sha256": "9ea490d256bd151cc39d703ad1eae28f7699616f4a21df3074ba386f6f7203f3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1631,
+      "sha256": "e5be24ceb49c9aea0dd820cb8b68c54b6b0c85d6464d5f49b239a3857eef55ed"
+    },
+    {
+      "path": "admission_core.py",
+      "bytes": 18051,
+      "sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76"
+    },
+    {
+      "path": "derive_source.py",
+      "bytes": 3152,
+      "sha256": "8513ff9f7140a92a31ad96843185ec21755de0d9f5e1fa1d4b9312b735c31ca4"
+    },
+    {
+      "path": "legacy_result_gates.py",
+      "bytes": 19506,
+      "sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460"
+    },
+    {
+      "path": "reference_close_terminal.py",
+      "bytes": 21900,
+      "sha256": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21"
+    },
+    {
+      "path": "reference_registry.json",
+      "bytes": 5955,
+      "sha256": "07f25193d138d58516b9a1f50f4abe791a56cbaef5769d22ff91e670a8178352"
+    },
+    {
+      "path": "reference_test_terminal.py",
+      "bytes": 13044,
+      "sha256": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c"
+    },
+    {
+      "path": "test_admission_core.py",
+      "bytes": 17235,
+      "sha256": "799431e4acb958034f8101fb608f24fadca19f518a56e68a4dad54334799b191"
+    },
+    {
+      "path": "test_index_compatibility.py",
+      "bytes": 2731,
+      "sha256": "a37ebdbcb7cfd38c3e65b9be6e344fe9e36fb1c1d7d00f1bca133fa9a56d879a"
+    },
+    {
+      "path": "test_shell_eol.py",
+      "bytes": 4641,
+      "sha256": "f14f728bdd3d786cdbca97c3cfc5b060596855c08e6c56b35b0565e2bde3c2cd"
+    },
+    {
+      "path": "validate_and_seal.py",
+      "bytes": 3491,
+      "sha256": "bb23c6dd9bad5972bc0ee1f2feef17c530ef2da1ae3d06d4fa24279ba2901de7"
+    }
+  ],
+  "payload_files": 17,
+  "payload_bytes": 124743,
+  "parent_INDEX_sha256": "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42",
+  "admission_core_sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76",
+  "all13_parent_payloads_byte_exact": true,
+  "membership_API": "payloads only, matching original5479 direct consumer",
+  "focused_CPU_tests": 4,
+  "runtime_code_guard_or_reviewed_delta_changed": false,
+  "actual_activation_copy_native_or_Git_mutated": false
+}

@@ -1,0 +1,52 @@
+{
+  "format": "has_cold187_admission_peer_and_runtime_author_CPU_1",
+  "status": "SOURCE_CPU_GO_INACTIVE_ONLY",
+  "source_hashes": {
+    "validation_admission.py": "7c203314018aa5396e12e26cccbb3a5b09d7fa6855f5cbd54d84b5d164a25b0b",
+    "test_validation_admission.py": "248cf450542d32b70feee9a037b9a532e09cd0b16cd37b6755cfafce14f9feac",
+    "replay_runtime.py": "57c9959c395cd5e4a45880e17f3a2a93d64fb4bb9e855aa747ef84fc87789366",
+    "test_replay_runtime.py": "250ab1c5b300a03419522245d723606044c4741e6f773cb1d70b688851ac4580",
+    "reference_qualified_inputs.py": "15fcdbe33334476957f0ed7bd88a3161a35363d673bf6eb9e520455ec232ec26"
+  },
+  "observations": [
+    {
+      "suite": "test_replay_runtime",
+      "methods": 13,
+      "failures": 0,
+      "errors": 0,
+      "seconds_observed": 0.019,
+      "evidence": "Observed tool stdout in peer turn; no separate raw stdout file captured by peer.",
+      "role": "runtime author validation"
+    },
+    {
+      "suite": "test_validation_admission",
+      "methods": 16,
+      "failures": 0,
+      "errors": 0,
+      "seconds_observed": 0.341,
+      "evidence": "Observed tool stdout in peer turn; no separate raw stdout file captured by peer.",
+      "role": "independent admission peer"
+    }
+  ],
+  "source_findings": [
+    "Activated Q whole AST equals exact pinned inactive reference after replacing only the approved activation hash literal.",
+    "After-copy qualification factory has exactly one reviewed lifecycle predicate change, absent final sibling to existing exact directory.",
+    "Copy receipt joins candidate versus merged commits, full/source/support/EOL/preparation and separate source-admission bridges.",
+    "Validation token snapshot, exact Q token recheck and protected identity checks remain ahead of runtime access.",
+    "Runtime begins with validation assertion; all11 inherited replay helpers preserve exact AST, five public references preserve exact bytes.",
+    "Original four-case request/execute path and all nine finally preservation gates have exact raw source inverse after removing only new recheck/count metadata.",
+    "Software187 aggregate is an additional required expected/observed count; human and portable acceptance remain deferred."
+  ],
+  "actual_validation_activation_missing": true,
+  "actual_qualified_copy_or_cold187_positive_path": "UNRUN",
+  "native_media_or_original_private_reference_arrays_read": false,
+  "current_full_state_log_report_source_after_read": false,
+  "engines_CIM_Git_or_native_execution": false,
+  "qualification_limit": "Source and CPU evidence only; no actual startup/renderer/audio/state/native solver/owner or portable qualification.",
+  "review_roles": {
+    "validation_admission": "Independent source/CPU peer of parent-authored adapter",
+    "replay_runtime": "Runtime author source/CPU validation; independent runtime peer GO was supplied separately by parent"
+  },
+  "runtime_and_test_authored_by_this_agent": true,
+  "parent_admission_or_other_parent_owned_files_edited_by_peer": false
+}

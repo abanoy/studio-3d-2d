@@ -1,0 +1,127 @@
+{
+  "format": "has_qualified_merge179_remote_verifier_source_derivation_1",
+  "parent_verifier_sha256": "8f82b58e7713bd3a1bc7943863e14959ed656ad50ba46b142a5ed864ed314bd5",
+  "verifier_sha256": "099e537bf52d539318f775ac70944393f89ed181aba9341582a163be70379f99",
+  "published_commit": "973039e40622ac20600e6d297d712de419877eda",
+  "immutable_merge": "c4126dec6083e52fb856e5cad5442227133b3c05",
+  "merge_parents": [
+    "f21b9ec85ae63006d036ca7a21c5c82e53fda019",
+    "3a3701ab6edfa81dc883759403c170b8555aab07"
+  ],
+  "literal_rules": [
+    [
+      "public113-file",
+      "public179-file",
+      1
+    ],
+    [
+      "f21b9ec85ae63006d036ca7a21c5c82e53fda019",
+      "973039e40622ac20600e6d297d712de419877eda",
+      1
+    ],
+    [
+      "output/neon-mmd-source-checkpoint-20261117-manifest.json",
+      "output/neon-qualified-merge-source-checkpoint-20261117-manifest.json",
+      1
+    ],
+    [
+      "experiments/neon_mmd_source_checkpoint_catalogue_20261117/PUBLIC_MANIFEST.json",
+      "experiments/neon_qualified_merge_source_checkpoint_catalogue_20261117/PUBLIC_MANIFEST.json",
+      2
+    ],
+    [
+      "assert len(paths) == len(set(paths)) == 113",
+      "assert len(paths) == len(set(paths)) == 132",
+      1
+    ],
+    [
+      "for start in range(0, 113, 20):",
+      "for start in range(0, 179, 20):",
+      1
+    ],
+    [
+      "output/f21b-all-remote-batch-",
+      "output/9730-all-remote-batch-",
+      1
+    ],
+    [
+      "a39af42de3ef8ff5a76bc1c23ce4c6b01cd60d44d9afb599c793351cabf4cb88",
+      "3659c0b73f22100f9eb1fd458e07afcd150cd1cfdf1f7051d34881044567c3d9",
+      1
+    ],
+    [
+      "experiments/neon_mmd_source_checkpoint_remote_20261117/COMPLETE_READBACK.json",
+      "experiments/neon_qualified_merge_source_checkpoint_remote_20261117/COMPLETE_READBACK.json",
+      1
+    ],
+    [
+      "'redesign_merge_claimed': False",
+      "'redesign_merge_claimed': True",
+      1
+    ],
+    [
+      "'redesign_merged': False",
+      "'redesign_merged': True",
+      1
+    ]
+  ],
+  "added_merge_path_block_sha256": "dc8f1b35dafd9516cdc19454bead2c4fee30a2cee2d193dcfed4df41c78a8454",
+  "added_PNG_binary_guard_sha256": "7d5b2627b8e2aa3912166d922b53b1b3ce67da66a3221efd2f6187a66676659d",
+  "added_proof_scope_metadata_sha256": "af0e5e4d7b82643f66fe3b6f0bf320fe2c230e8015bfa22c4468e31e9c7c11f0",
+  "whole_source_inverse_exact_after_removing_three_declared_blocks": true,
+  "all_original_Git_blob_framing_base64_fallback_text_EOL_guards_unchanged": true,
+  "frozen_checkpoint_paths": 132,
+  "merged_source_art_extras": [
+    "docs/REDESIGN-PORT.md",
+    "docs/redesign-mock/app-advanced.png",
+    "docs/redesign-mock/app-camera.png",
+    "docs/redesign-mock/app-draw.png",
+    "docs/redesign-mock/app-pose.png",
+    "docs/redesign-mock/mock-camera.png",
+    "docs/redesign-mock/mock-draw.png",
+    "docs/redesign-mock/mock-pose.png",
+    "src/app.gd",
+    "src/canvas_view.gd",
+    "src/dock_tree.gd",
+    "src/home_screen.gd",
+    "src/movement_path_editor.gd",
+    "src/movement_path_view.gd",
+    "src/pose_editor.gd",
+    "src/reference_sheet_view.gd",
+    "src/scene_view.gd",
+    "src/sequence_editor.gd",
+    "src/sequence_timeline.gd",
+    "src/studio_theme.gd",
+    "src/timeline_navigation.gd",
+    "src/timeline_view.gd",
+    "src/workspace_layout.gd",
+    "src/world_selection.gd",
+    "tests/animated_channels_smoke.gd",
+    "tests/color_sampler_smoke.gd",
+    "tests/helper_preview_port_files.json",
+    "tests/movement_path_smoke.gd",
+    "tests/neon_behavior_regression.gd",
+    "tests/neon_compact_timeline_reveal_smoke.gd",
+    "tests/neon_inset_scene_regression.gd",
+    "tests/neon_rail_placement_smoke.gd",
+    "tests/neon_world_rail_lifecycle.gd",
+    "tests/object_timing_smoke.gd",
+    "tests/scene_view_smoke.gd",
+    "tests/source_bone_bindings_unit.gd",
+    "tests/verify.py",
+    "tests/verify_character_height.py",
+    "tests/verify_neon_workspace.py",
+    "tests/verify_scene_view.py",
+    "tests/verify_shape_catalog.py",
+    "tests/waveform_levels_smoke.gd",
+    "tests/wind_review_port_files.json",
+    "tools/linux/liveness_shim.sh",
+    "tools/linux/run_test.sh",
+    "tools/linux/shoot.gd",
+    "tools/linux/shoot.sh"
+  ],
+  "total_remote_paths": 179,
+  "remote_cache_or_proof_read_or_created": false,
+  "Git_queries_only_immutable_public_source_objects": true,
+  "native_private_full_or_process_queries": false
+}

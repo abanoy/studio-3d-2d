@@ -1503,5 +1503,83 @@
     "human_acceptance": "DEFERRED",
     "native_normal_fidelity": "FAILED_UNQUALIFIED",
     "raw_native_arrays_art_callback_metadata_and_logs_included": false
+  },
+  "owner_copy_and_incomplete_cold_20261117": {
+    "format": "has_neon_owner_copy_and_incomplete_cold_summary_1",
+    "qualified_merge_commit": "c4126dec6083e52fb856e5cad5442227133b3c05",
+    "review_source_checkpoint": "973039e40622ac20600e6d297d712de419877eda",
+    "prior_checkpoint_independently_read_back_files": 179,
+    "prior_COMPLETE_sha256": "bf2400bc8b230d1cf785a8bbb5a619b86703fe216b5487f892f8e698cfe3750c",
+    "projection_INDEX": "experiments/neon_owner_973039e_closed_attempts_projection_20261118/INDEX.json",
+    "projection_INDEX_sha256": "4bcfc1f4819e7369cbac63be2b08ec45d904c7fa7a22eb6745e8ed9a03c09e27",
+    "copy": {
+      "status": "PASSED",
+      "directory": "HAS-Review-Neon-973039e-native",
+      "source_files": 10819,
+      "functional_files": 1029,
+      "native_files": 495,
+      "native_bytes": 451266730,
+      "private_BUILD_sha256": "23131d6ef73cc57146b514436755cdfb62447ccc02bfecb944c7389b91981c9e",
+      "original_inputs_tools_and_prior_reviews_preserved_at_copy": true
+    },
+    "cold_attempts": [
+      {
+        "name": "attempt1",
+        "status": "INCOMPLETE_NOT_PASS",
+        "cases": 4,
+        "observed_checks": 187,
+        "all_four_case_processes_exit0_reaped_not_timed_out": true,
+        "all_four_physical_private_jobs_and_desktops_closed": true,
+        "foreground_or_desktop_switch_observed": false,
+        "coordinator_terminal_receipt_present": false,
+        "final_verification_present": false,
+        "original_after_scope_report_present": false,
+        "independent_recovery_scope_counts": {
+          "owned": 0,
+          "main": 0,
+          "neon": 0
+        },
+        "private_recovery_audit_sha256": "ac5130c09499d7cb55b7e4e40c9a8779d6ab0f2d8760b3e7cd66a6efa24d6123"
+      },
+      {
+        "name": "attempt2",
+        "status": "INCOMPLETE_NOT_PASS",
+        "cases": 4,
+        "observed_checks": 187,
+        "all_four_case_processes_exit0_reaped_not_timed_out": true,
+        "all_four_physical_private_jobs_and_desktops_closed": true,
+        "foreground_or_desktop_switch_observed": false,
+        "coordinator_terminal_receipt_present": false,
+        "final_verification_present": false,
+        "original_after_scope_report_present": false,
+        "independent_recovery_scope_counts": {
+          "owned": 0,
+          "main": 0,
+          "neon": 0
+        },
+        "private_recovery_audit_sha256": "5d55335d4f23354e067f501194da54af4daa2518008b73a15aec911842c22178"
+      }
+    ],
+    "archive_between_attempts": {
+      "status": "PASSED",
+      "generated_files": 10,
+      "logical_bytes": 215197,
+      "file_identities_preserved": true,
+      "source_absent_immediately_after_move": true,
+      "script_sha256": "5d2728da62f30b58d4bc6f1a86b0d92ab10dae93d78c7286b68f0f4939f7169d",
+      "plan_sha256": "dd861256a348a2fd79b0c42d63ad1ad477771256650e1d2beb0377ca00469724"
+    },
+    "current_review_generated_output": {
+      "files": 10,
+      "retained_private": true,
+      "godot_cache_present": false
+    },
+    "overall_cold_validation": "INCOMPLETE_NOT_PASS",
+    "external_interruption_cause": "UNOBSERVED",
+    "third_cold_attempt_launched": false,
+    "native_normal_fidelity": "FAILED_UNQUALIFIED",
+    "human_acceptance": "DEFERRED",
+    "raw_BUILD_runtime_reports_receipts_native_arrays_logs_and_media_included": false,
+    "cleanup_performed": false
   }
 }

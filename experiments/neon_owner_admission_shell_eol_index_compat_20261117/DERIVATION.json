@@ -1,0 +1,59 @@
+{
+  "format": "has_exact_three_shell_text_path_admission_derivation_1",
+  "parent_INDEX_sha256": "5479aeea2485e6221589e874053e37197d66bc3dc8dd4acb86c8d53ec144715d",
+  "sources": {
+    "admission_core.py": {
+      "parent_sha256": "cdad5359f6fe6bf63d93bd95845680dec7f6eb2d041b265d05b05efe3ce1096f",
+      "derived_sha256": "c6ebc4b6e3999fbdecf13697a2ccb0ca9f0cafe3368beaf9767bd5f247247f76",
+      "bytes": 18051,
+      "literal_changes": 1
+    },
+    "legacy_result_gates.py": {
+      "parent_sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+      "derived_sha256": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+      "bytes": 19506,
+      "literal_changes": 0
+    },
+    "reference_close_terminal.py": {
+      "parent_sha256": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+      "derived_sha256": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+      "bytes": 21900,
+      "literal_changes": 0
+    },
+    "reference_registry.json": {
+      "parent_sha256": "07f25193d138d58516b9a1f50f4abe791a56cbaef5769d22ff91e670a8178352",
+      "derived_sha256": "07f25193d138d58516b9a1f50f4abe791a56cbaef5769d22ff91e670a8178352",
+      "bytes": 5955,
+      "literal_changes": 0
+    },
+    "reference_test_terminal.py": {
+      "parent_sha256": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c",
+      "derived_sha256": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c",
+      "bytes": 13044,
+      "literal_changes": 0
+    },
+    "test_admission_core.py": {
+      "parent_sha256": "799431e4acb958034f8101fb608f24fadca19f518a56e68a4dad54334799b191",
+      "derived_sha256": "799431e4acb958034f8101fb608f24fadca19f518a56e68a4dad54334799b191",
+      "bytes": 17235,
+      "literal_changes": 0
+    },
+    "PREDECESSOR_SOURCE_PINS.json": {
+      "parent_sha256": "9ea490d256bd151cc39d703ad1eae28f7699616f4a21df3074ba386f6f7203f3",
+      "derived_sha256": "9ea490d256bd151cc39d703ad1eae28f7699616f4a21df3074ba386f6f7203f3",
+      "bytes": 1634,
+      "literal_changes": 0
+    }
+  },
+  "added_TEXT_PATHS": [
+    "tools/linux/liveness_shim.sh",
+    "tools/linux/run_test.sh",
+    "tools/linux/shoot.sh"
+  ],
+  "TEXT_suffixes_unchanged": true,
+  "whole_core_byte_inverse_exact": true,
+  "all_core_function_ASTs_exact": true,
+  "original27_tests_entire_source_exact": true,
+  "strict_reference_legacy_registry_and_native_receipt_gates_unchanged": true,
+  "functional_working_or_Git_bytes_changed": false
+}

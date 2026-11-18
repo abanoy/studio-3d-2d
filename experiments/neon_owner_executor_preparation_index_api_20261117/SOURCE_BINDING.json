@@ -1,0 +1,74 @@
+{
+  "format": "has_core_INDEX_API_preparation_binding_1",
+  "parent_folder": "neon_owner_executor_preparation_shell_eol_20261117",
+  "parent_INDEX_sha256": "21980dfe510f8ad4edafd1a97101e9251a81ca526365cb8177fc32255c30d883",
+  "code_changes": {
+    "prepare_executor.py": {
+      "literal_rules_with_counts": [
+        [
+          "neon_owner_executor_shell_eol_20261117",
+          "neon_owner_executor_index_api_20261117",
+          1
+        ],
+        [
+          "neon_owner_admission_shell_eol_20261117",
+          "neon_owner_admission_shell_eol_index_compat_20261117",
+          1
+        ],
+        [
+          "neon_owner_activation_shell_eol_20261117",
+          "neon_owner_activation_index_api_20261117",
+          1
+        ],
+        [
+          "3ea125a3c043688c2bf5f2dbe5ce4c41501ea41b7f831575eefbe5bdfffbdcf4",
+          "ced9e3943f24263b2399d14e77cc943e39371edacf7716e5fdbb9d336dcc447c",
+          1
+        ],
+        [
+          "8ab1c8eb9f576a9c8a315ebf4df433fc4e4b8b4767ac44cdf64a2403467a2d42",
+          "f8da4f783958b918a35b53116fa6182fcddc9cd3cf485959f8bb088ce8147ee5",
+          1
+        ],
+        [
+          "1f42a221ad7de5094675d29888c51e5ddc60cb52a44e3ceecaa6b1866e57a367",
+          "36fe7f94d9e519050ffac503a5c69be831563ce5ca8da8ac2bfec2d5216e7e4b",
+          1
+        ],
+        [
+          "954a5f26664d9fe087343491652ca53311cea7607c465ad06491a27d2640634c",
+          "5acfa3635a8baf4a969bf3c6bb44151f08a1c46dd2a4936f41ca837541e75f1d",
+          1
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "4ce6fc3c619c87d16c407306443325c30d10e8234655ee16309b8d979b668a2e",
+      "after_sha256": "af7d6f27fa9462ff27f5403a5285bfaa3c71fd0aa44bee229efda4faceb9a124"
+    },
+    "check_source.py": {
+      "literal_rules_with_counts": [
+        [
+          "neon_owner_executor_shell_eol_20261117",
+          "neon_owner_executor_index_api_20261117",
+          2
+        ],
+        [
+          "neon_owner_admission_shell_eol_20261117",
+          "neon_owner_admission_shell_eol_index_compat_20261117",
+          1
+        ],
+        [
+          "neon_owner_activation_shell_eol_20261117",
+          "neon_owner_activation_index_api_20261117",
+          1
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "16cb800b88bd939db8f0df3c9017a5ec3e60912cc6baf2a8b93a34e40da25d90",
+      "after_sha256": "4d9fad673db3d9984c97bb82783314dbee0d269efdcba4d82968845f81f80854"
+    }
+  },
+  "all_preparation_functions_AST_unchanged": true,
+  "direct_core_payloads_API_static_check": true,
+  "actual_target_preparation_helpers_or_admission_executed": false
+}

@@ -1,0 +1,3 @@
+# Compatible core INDEX RAM renderer successor
+
+Pure RAM source successor of1f42/954a. Only four inactive-parent INDEX/source hashes and two synthetic fixture folder literals change. All renderer functions, original12 test methods, exact approved activation/literal inverse/membership/capacity guards and INDEX construction stay unchanged. Parents are compatible executor ced9 and cold1d62; templates retain the same schemas, with validator provenance following the new Q. SOURCE_BINDING.json records complete inverses. Actual12-method synthetic CPU rerun only; no actual activation, proof, copy or runtime is supplied.

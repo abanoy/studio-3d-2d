@@ -1,0 +1,10 @@
+{
+  "format": "has_core_index_compatibility_CPU_1",
+  "tests": 4,
+  "failures": 0,
+  "errors": 0,
+  "stdout": "test_all_thirteen_predecessor_payload_bytes_are_exact (test_index_compatibility.CompatibilityTests.test_all_thirteen_predecessor_payload_bytes_are_exact) ... ok\ntest_generic_consumer_and_single_membership_field_remain_compatible (test_index_compatibility.CompatibilityTests.test_generic_consumer_and_single_membership_field_remain_compatible) ... ok\ntest_original_failure_is_reproduced_before_any_external_admission (test_index_compatibility.CompatibilityTests.test_original_failure_is_reproduced_before_any_external_admission) ... ok\ntest_payloads_only_schema_satisfies_exact_original_consumer (test_index_compatibility.CompatibilityTests.test_payloads_only_schema_satisfies_exact_original_consumer) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.115s\n\nOK\n",
+  "target_factory_or_admission_executed": false,
+  "only_exact_core_rows_assignment_executed_with_RAM_metadata": true,
+  "original34_methods_source_and_prior_record_byte_exact": true
+}

@@ -1,0 +1,3 @@
+# Compatible core INDEX executor successor
+
+Inactive source successor of3ea125a3. Q changes only its core packet INDEX hash and folder to the payloads-only f8da compatibility packet; A c6eb, copier C0d966, all guards and original36 test methods remain unchanged. SOURCE_BINDING.json records the complete inverse and direct original payloads API check. CPU_RESULT/CPU_TESTS are this successor synthetic rerun; inherited predecessor documentation is historical. No activation or copy is supplied. Use the corresponding INDEX-API renderer/preparation successors and preserve frozen Main HEAD through actual copy/cold187.

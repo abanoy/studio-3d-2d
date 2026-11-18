@@ -1,0 +1,48 @@
+{
+  "format": "has_core_INDEX_API_renderer_binding_1",
+  "parent_folder": "neon_owner_activation_shell_eol_20261117",
+  "parent_INDEX_sha256": "1f42a221ad7de5094675d29888c51e5ddc60cb52a44e3ceecaa6b1866e57a367",
+  "code_changes": {
+    "render_successor.py": {
+      "literal_rules": [
+        [
+          "3ea125a3c043688c2bf5f2dbe5ce4c41501ea41b7f831575eefbe5bdfffbdcf4",
+          "ced9e3943f24263b2399d14e77cc943e39371edacf7716e5fdbb9d336dcc447c"
+        ],
+        [
+          "4ec96ec0aac53813600fa9807a7bfa065a542b2cd07e9413c031f0e7677f3a73",
+          "a7c9f5c69849f42eb08b49879deeb2fc1b6b25cc94b1d2a26aa486248e39b0b5"
+        ],
+        [
+          "a38e4866df7f8810d73e616b05b728b4e088dd4c84015b2ff65c6a8f1cbb3e64",
+          "1d622b70d155441f4f07edf38be962d4ffc7ed0ecaf61ab6af13cf575ac1baac"
+        ],
+        [
+          "1c4d2026accaf22292f43dba338058f5c4d38346a557aee057e1b30eaabe26ff",
+          "87995d9226077ac012fbd41bce12e7ed168e6ee78a31159a916bddd7dffb6649"
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "954a5f26664d9fe087343491652ca53311cea7607c465ad06491a27d2640634c",
+      "after_sha256": "5acfa3635a8baf4a969bf3c6bb44151f08a1c46dd2a4936f41ca837541e75f1d"
+    },
+    "test_render_successor.py": {
+      "literal_rules": [
+        [
+          "neon_owner_executor_shell_eol_20261117",
+          "neon_owner_executor_index_api_20261117"
+        ],
+        [
+          "neon_owner_cold187_shell_eol_20261117",
+          "neon_owner_cold187_index_api_20261117"
+        ]
+      ],
+      "whole_byte_inverse": true,
+      "before_sha256": "647a1d8415aa0a1a3de4ec57afb661b4ea104b55f7df9ada42e3ef1f85fe0401",
+      "after_sha256": "a5834e9f9522f1cfce495c53d1093c1ea6ac7c3b761f0dfc011a3d514099b5e3"
+    }
+  },
+  "all_renderer_test_functions_AST_unchanged": true,
+  "validator_template_exact_new_cold_template": true,
+  "actual_activation_copy_validator_or_native_executed": false
+}
