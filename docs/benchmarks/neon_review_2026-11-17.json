@@ -1657,5 +1657,231 @@
       "native_B_ownership_execution": "UNRUN",
       "human_acceptance": "DEFERRED"
     }
+  },
+  "native_B_ownership_observed_20261118": {
+    "actual_projection": {
+      "format": "has_B_ownership_actual_public_projection_1",
+      "source_context": {
+        "expected_metadata_head": "dcbeb9dddb4326d80ad1f24ae135fd7bda7be152",
+        "functional_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+        "functional_count": 1029,
+        "candidate_commit": "3a3701ab6edfa81dc883759403c170b8555aab07",
+        "candidate_functional_count": 1029
+      },
+      "runtime_packet_INDEX_sha256": "505da02ceed7dfb705dfb9d22d3b054053c4c32279053fd8d9743336be33f99f",
+      "preparation_history": [
+        {
+          "attempt": 1,
+          "binding_folder": "PRIVATE-B-ownership-binding-20261118T205929649281",
+          "admission_sha256": "4cfe3f864365d78e7e922157c45011df78d5d4d217dd4fe6aa079dfb98038a68",
+          "issued_utc": "2026-11-18T20:59:30.933290+00:00",
+          "expires_utc": "2026-11-18T21:09:30.933290+00:00",
+          "prepared_only_record_exists": false,
+          "root_command_exists": false,
+          "native_output_exists": false,
+          "status": "PREPARATION_REFUSED_BEFORE_NATIVE",
+          "failed_runtime": "ffmpeg.exe",
+          "reason": "ORIGINAL_READER_PROTECTED_FILE_CHANGED_DURING_READ",
+          "reason_source": "ROOT_ATTESTED_TOOL_TERMINAL_RESULT_NOT_RECONSTRUCTED",
+          "earlier_differing_stamp_field": "UNOBSERVED_NOT_RECORDED",
+          "native_or_model_opened": false
+        },
+        {
+          "attempt": 2,
+          "binding_folder": "PRIVATE-B-ownership-binding-20261118T210147903783",
+          "admission_sha256": "94522c1c7808626bae734fd1e820a084446d13fe27c13613928bb3b806289d4d",
+          "issued_utc": "2026-11-18T21:01:48.744037+00:00",
+          "expires_utc": "2026-11-18T21:11:48.744037+00:00",
+          "prepared_only_record_exists": false,
+          "root_command_exists": false,
+          "native_output_exists": false,
+          "status": "PREPARATION_REFUSED_BEFORE_NATIVE",
+          "failed_runtime": "ffprobe.exe",
+          "reason": "ORIGINAL_READER_PROTECTED_FILE_CHANGED_DURING_READ",
+          "reason_source": "ROOT_ATTESTED_TOOL_TERMINAL_RESULT_NOT_RECONSTRUCTED",
+          "earlier_differing_stamp_field": "UNOBSERVED_NOT_RECORDED",
+          "native_or_model_opened": false
+        },
+        {
+          "attempt": 3,
+          "binding_folder": "PRIVATE-B-ownership-binding-20261118T210730526733",
+          "admission_sha256": "284dea2106f2d1ba80e6fb65543b9c4e974be7b854e5fd8cf658f6ba01d8ed54",
+          "issued_utc": "2026-11-18T21:07:31.375284+00:00",
+          "expires_utc": "2026-11-18T21:17:31.375284+00:00",
+          "prepared_only_record_exists": true,
+          "root_command_exists": true,
+          "native_output_exists": true,
+          "status": "PREPARED_THEN_METADATA_DIAGNOSTIC_COMPLETED",
+          "native_or_model_opened": true
+        }
+      ],
+      "runtime_stamp_probe": {
+        "original_source_packet_INDEX_sha256": "a166b92ff19d48c2e4cb594d45e5beab40b339b1218732c953b6ae27b5b46563",
+        "original_source_executed": false,
+        "v2_source_packet_INDEX_sha256": "b34a10387208b1d14d9586c0e1a0d5b2698abf1ec5554ac6553b3eb56ed86053",
+        "executed_source_sha256": "03336234ffb89ef78d15287ab760e7dfa1b8dd3dc12bd0dc7917c110432ef0dd",
+        "actual_metadata_sha256": "3413020fc84fa08bda364c8380d3889c5dbd3040fd74a4c3d9805fbf5abc698d",
+        "runtime_count": 6,
+        "exact_approved_identity_and_stable_original_guard_rows": 6,
+        "rows_with_observed_stamp_differences": 0,
+        "started_utc": "2026-11-18T21:07:09.015822+00:00",
+        "finished_utc": "2026-11-18T21:07:09.190927+00:00",
+        "admission_authority": false,
+        "earlier_preparation_stamp_difference_explained": false
+      },
+      "native_metadata_diagnostic": {
+        "run": "native-normal-B-ownership-20261118T210730526733",
+        "root_result_sha256": "27b7ad781fd6d228fccdd7909083e05203cefabd9ffb4a62b56b594798d6e41f",
+        "diagnostic_completed": true,
+        "ownership_metadata_collected": true,
+        "input_source_tool_context_preserved": true,
+        "root_fresh_scopes_closed": true,
+        "launcher_process": {
+          "pid": 5192,
+          "exit": 0,
+          "timed_out": false,
+          "retained_Popen_reaped": true,
+          "seconds": 20.9926174000002
+        },
+        "physical_receipt": {
+          "format": "studio_private_desktop_1",
+          "child_pid": 2872,
+          "exit": 0,
+          "seconds": 20.603,
+          "job_memory_limit_bytes": 4294967296,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "desktop_switch_requested": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        "before_scope": {
+          "owned_count": 0,
+          "main_count": 0,
+          "observed_utc": "2026-11-18T21:08:11.3797630Z",
+          "neon_count": 0,
+          "observer_retained_Popen_reaped": true
+        },
+        "after_scope": {
+          "neon_count": 0,
+          "owned_count": 0,
+          "observed_utc": "2026-11-18T21:08:40.4260331Z",
+          "main_count": 0,
+          "observer_retained_Popen_reaped": true
+        },
+        "native_lease_release_after_actual_return": {
+          "value": true,
+          "source": "ROOT_ATTESTED_NOT_REOBSERVED_BY_PROJECTION_AUTHOR"
+        }
+      },
+      "resource_decision": {
+        "status": "RESOURCE_PROFILE_REFUSED",
+        "profile_issues": 6,
+        "export_branch": "UNKNOWN",
+        "original_resource_summary_retained_exactly": true,
+        "resource_profile_decision_changed": false,
+        "blend_saved": false,
+        "export_invoked": false
+      },
+      "public_ownership_counts": {
+        "owners": 46,
+        "weak_path_observations": 1,
+        "ID_library_weak_references": 1,
+        "viewer_images": 2,
+        "image_editor_references": 2
+      },
+      "private_metadata_hashes_from_public_bindings_only": {
+        "resource": {
+          "bytes": 5977,
+          "sha256": "d47ed4cc9f38dae6852c622b8fe6594e182d3398dff8cd63022ba007a9849659"
+        },
+        "ownership": {
+          "bytes": 10833,
+          "sha256": "6ccecbbf0838bb25a4d7044e13680a6247c927af36d1bc22756789ec481b93b9"
+        },
+        "raw_private_bodies_read_or_included": false
+      },
+      "claims": {
+        "preload_IO_confinement": false,
+        "historical_generation": false,
+        "export_equivalence": false,
+        "normal_repair": false,
+        "native_fidelity": false,
+        "artifact_adoption": false,
+        "legacy_strict_survey_native_pass": false
+      },
+      "additional_qualifications": {
+        "strict31_native_qualified": false,
+        "normal_tolerance_or_fidelity_qualified": false,
+        "export_repair_carrier_or_adoption_qualified": false
+      },
+      "source_findings": [
+        "The same505 source packet was retained through both refused preparations, the exact six-runtime probe, and the completed third preparation/native metadata diagnostic. No runtime pin or original identity guard was changed.",
+        "The later once-only probe found six exact approved identities with stable original guard fields and zero observed field differences. It does not identify the uncaptured differing field in either earlier refused preparation.",
+        "The completed native metadata diagnostic retains RESOURCE_PROFILE_REFUSED with six issues and UNKNOWN export branch. Ownership metadata changes no resource admission or fidelity/export/repair/adoption decision.",
+        "Only public summary counts are projected. Actual private owning IDs, names, RNA paths, descriptors and Viewer ownership interpretation are reserved for Root private inspection and are not inferred here."
+      ],
+      "raw_private_reports_models_arrays_callback_metadata_or_logs_included": false,
+      "Git_app_project_docs_or_original_inputs_modified": false
+    },
+    "root_typed_classification": {
+      "format": "has_root_attested_B_ownership_classification_1",
+      "private_payload_sha256": "6ccecbbf0838bb25a4d7044e13680a6247c927af36d1bc22756789ec481b93b9",
+      "private_payload_bytes": 10833,
+      "actual_native_observed": true,
+      "exact_reference_joins": {
+        "categories": [
+          "all",
+          "unpacked"
+        ],
+        "same_owner_and_weak_reference": true,
+        "owner_RNA_type": "Material",
+        "owner_linked_library_present": false,
+        "general_owner_data_path_status": "UNOBSERVED",
+        "property_RNA_type": "LibraryWeakReference",
+        "property_name": "ID.library_weak_reference",
+        "property_data_path_status": "OBSERVED",
+        "path_contents_opened_or_statted_by_collector": false,
+        "reference_name_path_pointer_and_artist_ID_names_included": false
+      },
+      "viewers": [
+        {
+          "source": "VIEWER",
+          "type": "RENDER_RESULT",
+          "original_users": 1,
+          "direct_ID_users": 0,
+          "material_node_references": 0,
+          "reachable_materials": 0,
+          "reachable_other_ID_owners": 0,
+          "IMAGE_EDITOR_references": 1,
+          "unobserved_owner_scopes": [
+            "non_IMAGE_EDITOR_UI",
+            "implicit_viewer_producer_semantics"
+          ],
+          "resource_excluded_or_accepted": false
+        },
+        {
+          "source": "VIEWER",
+          "type": "COMPOSITING",
+          "original_users": 1,
+          "direct_ID_users": 0,
+          "material_node_references": 0,
+          "reachable_materials": 0,
+          "reachable_other_ID_owners": 0,
+          "IMAGE_EDITOR_references": 1,
+          "unobserved_owner_scopes": [
+            "non_IMAGE_EDITOR_UI",
+            "implicit_viewer_producer_semantics"
+          ],
+          "resource_excluded_or_accepted": false
+        }
+      ],
+      "original_issue_rows_retained": 6,
+      "resource_decision_changed": false,
+      "model_repair_normal_fidelity_export_or_adoption_claimed": false,
+      "filename_role_inference_used": false
+    },
+    "all_normal_fidelity_repair_and_adoption_claims_remain_false": true
   }
 }

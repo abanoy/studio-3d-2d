@@ -16221,3 +16221,56 @@ remain overall INCOMPLETE_NOT_PASS. Do not substitute recovery closure for missi
 coordinator/final preservation reports. Human/physical acceptance is deferred;
 continue independent Source work without owner questions. Formal 52/54 and55/62
 statuses are unchanged; this is not a product-completion or release claim.
+
+## 2026-11-18 — native B ownership observed with original refusals retained
+
+The tested-1029 context successor is implemented and independently reviewed in
+experiments/native_B_resource_ownership_runtime_20261118 (INDEX505da02c).
+It binds both source roles to immutable3a, the qualified158/36/21/f223/196-job
+history and reviewed39 source delta, with exact Main metadata checkpoint dcbeb9d.
+Twenty CPU methods pass independently. Parent survey, factory policy, runtime,
+retained private-launcher and preservation controls remain intact; ownership
+outputs are separate and cannot change the original resource decision.
+
+Root then ran the native diagnostic on an owned B copy:20.9926174seconds,
+launcher5192 exit0/reaped/not timed out, private child2872, closed job+desktop,
+no foreground/switch, before/after scopes0/0/0. Source, inputs and tools were
+preserved. The metadata/binding audit independently passed. Original six issues
+remain RESOURCE_PROFILE_REFUSED; export provenance UNKNOWN. All normal repair,
+strict31, fidelity, export equivalence, carrier and adoption claims remain false.
+This actual metadata pass does not replace any failed native-normal observation.
+
+The repeated path in both all/unpacked lists now joins exactly to one local
+Material ID's library_weak_reference property. The material's linked-library
+field is false; its general owner data path remains UNOBSERVED, while the weak
+property path is OBSERVED. No role was inferred from the asset filename.
+RENDER_RESULT and COMPOSITING Viewer images each have one observed IMAGE_EDITOR
+reference, zero direct ID users, zero material-node references and zero reachable
+material/other-ID owners. Other UI and implicit producer scopes remain unobserved.
+Only these typed findings and private proof hashes are public; names, raw paths,
+pointers, model data and private resource/ownership bodies remain local.
+
+Two preparations had refused file-stamp changes while reading FFmpeg then
+FFprobe, before Blender or a model was opened. Their incomplete admissions remain
+preserved. The same approved runtime bytes/pins were confirmed; the reviewed
+read-only probe0333 (v2 INDEXb34a) observed all six approved identities stable,
+with zero stamp differences. The unchanged preparer then passed fresh and the
+native run completed. No runtime or identity guard was replaced or relaxed; the
+original differing field/cause was not captured and remains unobserved. Initial
+probea166/dd6 was never executed and is preserved exactly; its pre-execution
+output-name finding is fixed in the separate v2 packet.
+
+Actual scalar/source bindings:experiments/native_B_resource_ownership_actual_20261118
+(INDEXd30ddacc). Root's typed private-observation attestation is
+experiments/native_B_ownership_root_classification_20261118/RESULT.json (3481821a).
+Native raw resources, ownership, logs and original art remain protected locally.
+The earlier Neon copy PASS, two INCOMPLETE_NOT_PASS cold attempts and completed
+20-file public-cache cleanup keep their separate scopes.
+
+Next: implement precise resource classification using the observed weak-reference
+property and exported-graph reachability; preserve provenance and all original
+survey rows. Do not discard resources by filename or blanket-ignore Viewer images.
+Then continue native normal identity/carrier adapter work with the original
+2e-5 comparisons and failed baselines. A future rerun needs a freshly reviewed
+metadata context rather than reusing expired dcb admission. Formal implementation
+52/54 and acceptance55/62 remain unchanged; human/device observations stay deferred.

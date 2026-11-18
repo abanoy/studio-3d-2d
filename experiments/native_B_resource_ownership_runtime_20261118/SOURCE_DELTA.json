@@ -1,0 +1,1549 @@
+{
+  "format": "has_exact_source_forward_inverse_delta_1",
+  "changed": [
+    {
+      "path": "ADMISSION.template.json",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/ADMISSION.template.json",
+      "old_sha256": "31841130627bbcc8f803d9077a1d8b5f74f3c9a63cd5ec7fd79db95fce1ba719",
+      "new_sha256": "9b1fc8cdea9099e068ae092fd067eb1ac81a80daba4e750671fa21b912f329cd",
+      "operations": [
+        {
+          "old_start": 523,
+          "new_start": 523,
+          "before": "null",
+          "after": "\"dcbeb9dddb4326d80ad1f24ae135fd7bda7be152\""
+        },
+        {
+          "old_start": 553,
+          "new_start": 591,
+          "before": "52f63c944ded7a651da871524d2",
+          "after": ""
+        },
+        {
+          "old_start": 583,
+          "new_start": 594,
+          "before": "45",
+          "after": "701a"
+        },
+        {
+          "old_start": 587,
+          "new_start": 600,
+          "before": "",
+          "after": "edfa81dc8837594"
+        },
+        {
+          "old_start": 588,
+          "new_start": 616,
+          "before": "6424d",
+          "after": "3c170b8555aab07"
+        },
+        {
+          "old_start": 618,
+          "new_start": 656,
+          "before": "null",
+          "after": "\"3a3701ab6edfa81dc883759403c170b8555aab07\""
+        },
+        {
+          "old_start": 648,
+          "new_start": 724,
+          "before": "1",
+          "after": "2"
+        }
+      ]
+    },
+    {
+      "path": "current_context.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/current_context.py",
+      "old_sha256": "f0f0d21051c4aaf73fd933f3910c815a2e5a5e1707d511fbb994c1d0fa7ba494",
+      "new_sha256": "f10225dbd0e7eac0fea4f1de8abb4c147004bca88554eba200e7cab54a56593d",
+      "operations": [
+        {
+          "old_start": 206,
+          "new_start": 206,
+          "before": "",
+          "after": "3a3701ab6edfa81dc8837"
+        },
+        {
+          "old_start": 207,
+          "new_start": 228,
+          "before": "2f6",
+          "after": "940"
+        },
+        {
+          "old_start": 212,
+          "new_start": 233,
+          "before": "",
+          "after": "170b8555aab07'\nEXPECTED_METADATA_HEAD = 'dcbeb"
+        },
+        {
+          "old_start": 213,
+          "new_start": 280,
+          "before": "",
+          "after": "dddb"
+        },
+        {
+          "old_start": 214,
+          "new_start": 285,
+          "before": "",
+          "after": "326d80ad1f2"
+        },
+        {
+          "old_start": 215,
+          "new_start": 297,
+          "before": "d",
+          "after": "a"
+        },
+        {
+          "old_start": 217,
+          "new_start": 299,
+          "before": "",
+          "after": "135f"
+        },
+        {
+          "old_start": 219,
+          "new_start": 305,
+          "before": "a651",
+          "after": "b"
+        },
+        {
+          "old_start": 225,
+          "new_start": 308,
+          "before": "8",
+          "after": ""
+        },
+        {
+          "old_start": 227,
+          "new_start": 309,
+          "before": "",
+          "after": "be"
+        },
+        {
+          "old_start": 230,
+          "new_start": 314,
+          "before": "4d23a345b606424d",
+          "after": ""
+        },
+        {
+          "old_start": 1741,
+          "new_start": 1809,
+          "before": "Sep",
+          "after": "Ex"
+        },
+        {
+          "old_start": 1745,
+          "new_start": 1812,
+          "before": "ra",
+          "after": "c"
+        },
+        {
+          "old_start": 1748,
+          "new_start": 1814,
+          "before": "e",
+          "after": ""
+        },
+        {
+          "old_start": 1759,
+          "new_start": 1824,
+          "before": "5",
+          "after": " tested10"
+        },
+        {
+          "old_start": 1761,
+          "new_start": 1834,
+          "before": "",
+          "after": "9"
+        },
+        {
+          "old_start": 1762,
+          "new_start": 1836,
+          "before": "ROOT",
+          "after": "Main"
+        },
+        {
+          "old_start": 1772,
+          "new_start": 1846,
+          "before": "orrec",
+          "after": "andida"
+        },
+        {
+          "old_start": 1779,
+          "new_start": 1854,
+          "before": "d3a Review",
+          "after": ""
+        },
+        {
+          "old_start": 1901,
+          "new_start": 1966,
+          "before": "1",
+          "after": "2"
+        },
+        {
+          "old_start": 2035,
+          "new_start": 2100,
+          "before": "ROOT",
+          "after": "tested"
+        },
+        {
+          "old_start": 2041,
+          "new_start": 2108,
+          "before": "1",
+          "after": "2"
+        },
+        {
+          "old_start": 2043,
+          "new_start": 2110,
+          "before": "",
+          "after": " Main"
+        },
+        {
+          "old_start": 2054,
+          "new_start": 2126,
+          "before": "1029",
+          "after": ""
+        },
+        {
+          "old_start": 2065,
+          "new_start": 2133,
+          "before": "",
+          "after": " required')\n    need(value['expected_metadata_head'] == EXPECTED_METADATA_HEAD, 'Exact dcb Main metadata checkpoint"
+        },
+        {
+          "old_start": 4134,
+          "new_start": 4317,
+          "before": "1",
+          "after": "2"
+        }
+      ]
+    },
+    {
+      "path": "diagnostic_host.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/diagnostic_host.py",
+      "old_sha256": "838bfb752426a86babf7de3bc60510c7069ae7f244d892095edba09b12e4d8fa",
+      "new_sha256": "2ee32e1646295389c0c3b39162f92aaa81563f04b3e7ebc34fe2a50d2b2070e2",
+      "operations": [
+        {
+          "old_start": 6317,
+          "new_start": 6317,
+          "before": "",
+          "after": "    # Parent files and markers above exist before any additive ownership query.\n    from ownership_outputs import write_outputs\n    parent_private_sha = S.digest(private_path.read_bytes())\n    parent_public_sha = S.digest(public_path.read_bytes())\n    ownership, ownership_binding = write_outputs(stage, bpy, private, survey, S.QUALIFICATIONS,\n        S.PROFILE, args.request_sha256, S.save)\n    S.H.check_live(bpy.app.handlers, bound, 'AFTER_RESOURCE_COLLECTION')\n    S.need(S.digest(private_path.read_bytes()) == parent_private_sha\n           and S.digest(public_path.read_bytes()) == parent_public_sha, 'Original resource outputs changed')\n    S.need(r.identity(original, single_link=True) == request['original_identity']\n           and r.identity(owned, single_link=True) == request['owned_identity']\n           and S.digest(request_path.read_bytes()) == args.request_sha256\n           and S.check_inputs(request['admission_path'], request['admission_sha256'], request['packet_sha256']) == admitted,\n           'Host context changed during ownership observation')\n    print('HAS_B_RESOURCE_OWNERSHIP ' + json.dumps(ownership, sort_keys=True, allow_nan=False))\n    print('HAS_B_RESOURCE_OWNERSHIP_BINDING ' + json.dumps(ownership_binding, sort_keys=True, allow_nan=False))\n\n"
+        }
+      ]
+    },
+    {
+      "path": "diagnostic_support.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/diagnostic_support.py",
+      "old_sha256": "7e34bf9534449926b23df3ac2cd9cfa7be74c50cd1bce71ebf3c524b1a8a27e9",
+      "new_sha256": "99d5cd67660a1e437a9ea36aa724b884e569b09fd5bdf5c1bb5437bf6433dfcb",
+      "operations": [
+        {
+          "old_start": 1366,
+          "new_start": 1366,
+          "before": "52f63c944ded7a651da871524d2",
+          "after": ""
+        },
+        {
+          "old_start": 1396,
+          "new_start": 1369,
+          "before": "45",
+          "after": "701a"
+        },
+        {
+          "old_start": 1400,
+          "new_start": 1375,
+          "before": "",
+          "after": "edfa81dc8837594"
+        },
+        {
+          "old_start": 1401,
+          "new_start": 1391,
+          "before": "6424d",
+          "after": "3c170b8555aab07"
+        },
+        {
+          "old_start": 4334,
+          "new_start": 4334,
+          "before": "ROOT",
+          "after": "qualified tested"
+        },
+        {
+          "old_start": 4340,
+          "new_start": 4352,
+          "before": "1",
+          "after": "2"
+        },
+        {
+          "old_start": 4342,
+          "new_start": 4354,
+          "before": "",
+          "after": " Main"
+        },
+        {
+          "old_start": 4352,
+          "new_start": 4369,
+          "before": "1029",
+          "after": ""
+        },
+        {
+          "old_start": 7362,
+          "new_start": 7375,
+          "before": "",
+          "after": "from qualified_context import check_qualified_context\n    qualified = check_qualified_context()\n    need(proof_data['functional_snapshot'] == qualified == proof_data['review_functional_snapshot'],\n         'Both current source proofs must equal the immutable independently qualified3a map')\n    "
+        },
+        {
+          "old_start": 7448,
+          "new_start": 7756,
+          "before": "1",
+          "after": "2"
+        }
+      ]
+    },
+    {
+      "path": "root_runner.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/root_runner.py",
+      "old_sha256": "012bef27696dd2752362426b162bfbd7afe9205febe76c489cd5ccab527648f6",
+      "new_sha256": "6c6108432c074806d0d9da3acec3e61bac67ac2a36267ea2fbcbe64fc77d5234",
+      "operations": [
+        {
+          "old_start": 7612,
+          "new_start": 7612,
+          "before": "",
+          "after": "ownership = {}; "
+        },
+        {
+          "old_start": 11922,
+          "new_start": 11938,
+          "before": "",
+          "after": "\n        # Original survey refusal files are validated above without alteration.\n        from ownership_outputs import validate_public\n        ownership = S.read_json(stage / 'PUBLIC_OWNERSHIP_METADATA.json', 64 * 1024)\n        ownership_binding = S.read_json(stage / 'PUBLIC_OWNERSHIP_BINDING.json', 64 * 1024)\n        ownership_private = stage / 'PRIVATE_OWNERSHIP_METADATA.json'\n        validate_public(ownership, sidecar['private_sha256'], sidecar['public_sha256'], S.QUALIFICATIONS, S.PROFILE, public['survey'])\n        summary = ownership['summary']\n        S.need(summary['status'] == public['survey']['status']\n               and type(summary['profile_issues']) is int\n               and summary['profile_issues'] == public['survey']['profile_issues'], 'Original survey status/issue count changed')\n        S.need(type(ownership_binding) is dict and set(ownership_binding) == {\n               'format', 'request_sha256', 'private_bytes', 'private_sha256', 'public_sha256'}\n               and ownership_binding['format'] == 'has_session_B_ownership_output_binding_1'\n               and ownership_binding['request_sha256'] == request_sha\n               and type(ownership_binding['private_bytes']) is int and 0 < ownership_binding['private_bytes'] <= 524288\n               and ownership_private.stat().st_size == ownership_binding['private_bytes']\n               and S.digest(ownership_private.read_bytes()) == ownership_binding['private_sha256']\n               and S.digest((stage / 'PUBLIC_OWNERSHIP_METADATA.json').read_bytes()) == ownership_binding['public_sha256'],\n               'Separate ownership metadata output binding changed')\n        if ownership['ownership_metadata_collected']:\n            S.need(typed_equal(summary['original_resource_summary'], public['survey'])\n                   and summary['ownership_metadata_bytes'] == ownership_binding['private_bytes']\n                   and summary['ownership_metadata_sha256'] == ownership_binding['private_sha256'],\n                   'Ownership baseline summary/private payload binding differs')\n        for marker, expected in (('HAS_B_RESOURCE_OWNERSHIP ', ownership),\n                                 ('HAS_B_RESOURCE_OWNERSHIP_BINDING ', ownership_binding)):\n            lines = [line[len(marker):] for line in stdout.splitlines() if line.startswith(marker)]\n            S.need(len(lines) == 1 and typed_equal(json.loads(lines[0]), expected), 'Exact ownership host marker required')\n"
+        },
+        {
+          "old_start": 11941,
+          "new_start": 14413,
+          "before": "T",
+          "after": "owne"
+        },
+        {
+          "old_start": 11943,
+          "new_start": 14418,
+          "before": "u",
+          "after": "ship['own"
+        },
+        {
+          "old_start": 11945,
+          "new_start": 14428,
+          "before": "",
+          "after": "rship_metadata_collected']"
+        },
+        {
+          "old_start": 13099,
+          "new_start": 15608,
+          "before": "",
+          "after": "\n              'ownership_metadata_collected': ownership.get('ownership_metadata_collected', False),\n              'original_profile_issues': public.get('survey', {}).get('profile_issues'),"
+        }
+      ]
+    },
+    {
+      "path": "prepare_root.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_binding_20261117/prepare_root.py",
+      "old_sha256": "a78924fd18809b67e4a54792e17ac8ab6858f599719b836618ee095ec6b48bdf",
+      "new_sha256": "3205ae05a720a4c259a0651d7f42499d4023b75bcf114b76ce0801e30c3f91ac",
+      "operations": [
+        {
+          "old_start": 20,
+          "new_start": 20,
+          "before": "prepar",
+          "after": "bind th"
+        },
+        {
+          "old_start": 28,
+          "new_start": 29,
+          "before": "p",
+          "after": "fixed tested1029/dcb context, w"
+        },
+        {
+          "old_start": 31,
+          "new_start": 62,
+          "before": "va",
+          "after": ""
+        },
+        {
+          "old_start": 36,
+          "new_start": 65,
+          "before": "B admission/",
+          "after": ""
+        },
+        {
+          "old_start": 57,
+          "new_start": 74,
+          "before": "then ",
+          "after": ""
+        },
+        {
+          "old_start": 66,
+          "new_start": 78,
+          "before": "; never launch it",
+          "after": ""
+        },
+        {
+          "old_start": 152,
+          "new_start": 147,
+          "before": "hashlib\nimport importlib.util\nimport ",
+          "after": ""
+        },
+        {
+          "old_start": 243,
+          "new_start": 201,
+          "before": "",
+          "after": "import diagnostic_support as S"
+        },
+        {
+          "old_start": 244,
+          "new_start": 232,
+          "before": "",
+          "after": "from current_context import EXPECTED_METADATA_HEAD\nfrom qualified_context import TESTED, check_qualified_context, SOU"
+        },
+        {
+          "old_start": 245,
+          "new_start": 350,
+          "before": "OOT",
+          "after": "CE_SHA, FULL_SHA, REVIEWED_SHA\n\nHERE"
+        },
+        {
+          "old_start": 282,
+          "new_start": 420,
+          "before": "s[2]\nREVIEW = ROOT.parent / 'has-neon-review-20261116-c2d52ff'\nSUCCESSOR = ROOT / 'experiments/native_normal_known_factory_blender51_resource_20261117'\nSUCCESSOR_SHA = '82727caa443cc58d623463e195fc6220d08c2d878cb93461eb481c722098b6e0'\nCASES_PACKET = ROOT / 'experiments/neon_late_stage_cases_source_20261117'\nCASES_SHA = '790277ef5e25f78e63d46350dba0304dce6c083c84ad5e010ac478fcea865ea3'\nDRIVER = ROOT / 'experiments/run_neon_late_stage_3a_20261117.py'\nDRIVER_SHA = '2096f28be4ed5898865c48866e1cf2197eebf1df203911677c45c2eebbb925e2'\nREVIEW_COMMIT = '3a3701ab6edfa81dc883759403c170b8555aab07'\nFUNCTIONAL_COMMIT = '52f63c944ded7a651da871524d23a345b606424d'\nOLD52 = ROOT / 'output/windows-canonical-bone-binding-20261116T041518335/source-before.json'\nOLD52_SHA = '4b1eb25e1da8e510106fe3dd01c4b5014c7cc719133f18e1bbccd386ec9deae7'",
+          "after": ""
+        },
+        {
+          "old_start": 1119,
+          "new_start": 431,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 1432,
+          "new_start": 746,
+          "before": "DEFAULT_PINS = {\n    'ROOT-TOOL-TERMINATION.json': 'd3baf201994a70bb62f4bbcf99ed2e7afd97b66ebe40ddb04eb30614b29801b5',\n    'verification.json': 'e366426598261c13674aafdd4c8fedc9cb5a350ebfcf8be08bd10906d4011167',\n    'TARGETED-COMPLETION.json': '2ed5edd7bed4a83b2a3245ff73da41d52d7cf5c78ba55d83eba88e5b54e0408a',\n    'source-before.json': '5561ab5a3bca4aeffb839cd1c88913a2857f6f2cd49544c70ff05253a171a2fc',\n    'source-after.json': '5561ab5a3bca4aeffb839cd1c88913a2857f6f2cd49544c70ff05253a171a2fc',\n}\n\n\ndef need(value, message):\n    if not value: raise ValueError(message)\n\n\ndef utc(value):\n    parsed = datetime.datetime.fromisoformat(value)\n    need(parsed.tzinfo is not None, 'Aware timestamp required')\n    return parsed\n\n\ndef validate_zero_scope(value):\n    need(type(value) is dict and type(value.get('owned_count')) is int and value['owned_count'] == 0,\n         'Actually closed targeted host scope required')\n    need(value.get('termination_issued') is False and value.get('format') == 'has_root_workspace_scope_observation_1',\n         'Read-only original targeted scope witness required')\n    utc(value['observed_utc'])\n\n\ndef validate_terminal(witness, verification, completion, before, after, receipts, cases, driver_path, python_path,\n                      session_id, now, canonical_report):\n    \"\"\"Pure closure join. A closed failed prefix is allowed; no full PASS gate.\"\"\"\n    need(type(witness) is dict and set(witness) == {'format', 'candidate_commit', 'driver_path', 'driver_sha256',\n         'tool_session_id', 'observed_utc', 'tool_result'}, 'Exact outer tool-terminal witness required')\n    need(witness['format'] == 'has_root_targeted_tool_terminal_observation_1'\n         and witness['candidate_commit'] == REVIEW_COMMIT and witness['driver_path'] == driver_path\n         and witness['driver_sha256'] == DRIVER_SHA and type(witness['tool_session_id']) is int\n         and witness['tool_session_id'] == session_id, 'Exact candidate/driver/tool session required')\n    need(utc(witness['observed_utc']) <= now, 'Terminal witness cannot be future-dated')\n    tool = witness['tool_result']\n    need(type(tool) is dict and 'session_id' not in tool and type(tool.get('exit_code')) is int\n         and type(tool.get('output')) is str and type(tool.get('chunk_id')) is str and bool(tool['chunk_id'])\n         and type(tool.get('wall_time_seconds')) in (int, float) and tool['wall_time_seconds'] >= 0,\n         'Actual terminal tool result required; no outer Popen claim is inferred')\n    need(type(before) is dict and before == after and len(before) == 1029, 'Targeted raw source maps differ')\n    need(verification.get('format') == 'has_root_workspace_followup_1'\n         and verification.get('all_functional_source_unchanged') is True\n         and type(verification.get('functional_source_files')) is int and verification['functional_source_files'] == 1029\n         and verification.get('host_scopes_closed') is True and verification.get('full_suite_pass_claimed') is False,\n         'Closed unchanged targeted host verification required')\n    need(completion.get('format') == 'has_targeted_neon_late_stage_completion_1'\n         and completion.get('candidate_commit') == REVIEW_COMMIT\n         and type(completion.get('expected_wrappers')) is int and completion['expected_wrappers'] == len(cases) == 44\n         and completion.get('full_PASS_or_merge_claimed') is False\n         and type(completion.get('all44_completed_and_canonical_reports_passed')) is bool,\n         'Actual targeted terminal marker required')\n    labels = [row[0] for row in cases]\n    need(type(receipts) is dict and 0 < len(receipts) <= len(cases)\n         and list(receipts) == labels[:len(receipts)], 'Executed retained-wrapper receipts must form the canonical prefix')\n    rows = verification.get('rows')\n    need(type(rows) is list and len(rows) in (len(receipts), len(receipts) - 1)\n         and [row.get('label') for row in rows] == labels[:len(rows)], 'Host rows must join all completed receipts or their final assertion-failed predecessor')\n    exits = []\n    for index, (label, item) in enumerate(receipts.items()):\n        process, start, command = item['process'], item['start'], item['command']\n        need(process.get('label') == label and type(process.get('pid')) is int and process['pid'] > 0\n             and type(process.get('exit')) is int and process.get('retained_Popen_reaped') is True\n             and process.get('timed_out') is False, 'Actual retained wrapper must be terminal and reaped')\n        need(type(start.get('pid')) is int and start['pid'] == process['pid'] and start.get('retained_Popen') is True,\n             'Wrapper retained-start/process PID join differs')\n        need(utc(start['started_utc']) <= utc(witness['observed_utc']), 'Wrapper start must precede tool termination')\n        need(command == [python_path, '-B', '-u', str(REVIEW / 'tests' / cases[index][1]), *cases[index][2]],\n             'Exact authored wrapper invocation required')\n        if index < len(rows):\n            for key in ('label', 'pid', 'exit', 'retained_Popen_reaped', 'seconds', 'timed_out'):\n                need(type(rows[index].get(key)) is type(process.get(key)) and rows[index][key] == process[key], 'Per-wrapper/host row join differs')\n            validate_zero_scope(item['closure'])\n        elif 'closure' in item:\n            validate_zero_scope(item['closure'])\n        exits.append(process['exit'])\n    need(all(code == 0 for code in exits[:-1]), 'No wrappers may follow a failed wrapper')\n    expected_host_pass = bool(rows) and all(row['exit'] == 0 for row in rows)\n    need(type(verification.get('passed')) is bool and verification['passed'] == expected_host_pass, 'Host pass scalar differs from its own rows')\n    completed = completion['all44_completed_and_canonical_reports_passed']\n    need((tool['exit_code'] == 0) is completed, 'Tool terminal exit and targeted completion disagree')\n    need(completion.get('host_return') is None or type(completion['host_return']) is int, 'Host return type differs')\n    if completed:\n        need(len(rows) == len(receipts) == 44 and all(code == 0 for code in exits)\n             and type(completion['host_return']) is int and completion['host_return'] == 0, 'Completed targeted marker lacks all original rows')\n        for row in rows: canonical_report(row['label'], row['report'])\n    return {'executed_wrappers': len(receipts), 'reported_rows': len(rows), 'targeted_completed': completed,\n            'outer_tool_exit': tool['exit_code'], 'outer_Popen_or_birth_claimed': False}\n\n\ndef module(name, path):\n    spec = importlib.util.spec_from_file_location(name, path)\n    value = importlib.util.module_from_spec(spec); spec.loader.exec_module(value)\n    return value\n",
+          "after": ""
+        },
+        {
+          "old_start": 8268,
+          "new_start": 846,
+          "before": "r",
+          "after": "ack"
+        },
+        {
+          "old_start": 8270,
+          "new_start": 850,
+          "before": "parer",
+          "after": "t"
+        },
+        {
+          "old_start": 8659,
+          "new_start": 1235,
+          "before": "targeted-run', type=Path, default=REVIEW / 'output/neon-late-3a-attempt2')\n    parser.add_argument('--tool-session-id', type=int, default=20079)\n    parser.add_argument('--closed-pins', type=Path, help='Optional Root-issued exact five metadata pins for another actual closed run')\n    parser.add_argument('--",
+          "after": ""
+        },
+        {
+          "old_start": 9007,
+          "new_start": 1275,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 9066,
+          "new_start": 1336,
+          "before": "need(hashlib.sha256((SUCCESSOR / 'INDEX.json').read_bytes()).hexdigest() == SUCCESSOR_SHA, 'Exact sealed successor required')\n    sys.path.insert(0, str(SUCCESSOR))\n    S = module('diagnostic_support', SUCCESSOR / 'diagnostic_support.py'); sys.modules['diagnostic_support'] = S\n    ",
+          "after": ""
+        },
+        {
+          "old_start": 9357,
+          "new_start": 1345,
+          "before": "SUCC",
+          "after": "H"
+        },
+        {
+          "old_start": 9362,
+          "new_start": 1347,
+          "before": "SSO",
+          "after": ""
+        },
+        {
+          "old_start": 9366,
+          "new_start": 1348,
+          "before": ", SUCC",
+          "after": ""
+        },
+        {
+          "old_start": 9373,
+          "new_start": 1349,
+          "before": "SSOR_SHA); S.packet(Path(__file__).resolve().parent",
+          "after": ""
+        },
+        {
+          "old_start": 9432,
+          "new_start": 1357,
+          "before": "r",
+          "after": "ack"
+        },
+        {
+          "old_start": 9434,
+          "new_start": 1361,
+          "before": "parer",
+          "after": "t"
+        },
+        {
+          "old_start": 9458,
+          "new_start": 1381,
+          "before": "S.packet(CASES_PACKET, CASES_SHA)\n    A = module('known_",
+          "after": ""
+        },
+        {
+          "old_start": 9515,
+          "new_start": 1382,
+          "before": "actory_binding_late_cases', CASES_PACKET / 'late_cases.py')\n    R = module('known_factory_binding_",
+          "after": ""
+        },
+        {
+          "old_start": 9615,
+          "new_start": 1384,
+          "before": "ot_driver',",
+          "after": "m"
+        },
+        {
+          "old_start": 9627,
+          "new_start": 1386,
+          "before": "SUCCESSOR / '",
+          "after": ""
+        },
+        {
+          "old_start": 9651,
+          "new_start": 1397,
+          "before": ".",
+          "after": " im"
+        },
+        {
+          "old_start": 9653,
+          "new_start": 1401,
+          "before": "y')",
+          "after": "ort closure"
+        },
+        {
+          "old_start": 9819,
+          "new_start": 1575,
+          "before": "def read_stable(path, pin=None, maximum=8 * 1024 * 1024):\n        first = descriptor(path); need(first['bytes'] <= maximum and (pin is None or first['sha256'] == pin), 'Bounded exact metadata required')\n        value = ",
+          "after": ""
+        },
+        {
+          "old_start": 10040,
+          "new_start": 1577,
+          "before": "read_json(path, maximum); need(descriptor(path) == first, 'Metadata changed during read')\n        return value\n\n    ",
+          "after": ""
+        },
+        {
+          "old_start": 10297,
+          "new_start": 1718,
+          "before": "r",
+          "after": "valu"
+        },
+        {
+          "old_start": 10299,
+          "new_start": 1723,
+          "before": "sult",
+          "after": ""
+        },
+        {
+          "old_start": 10374,
+          "new_start": 1794,
+          "before": "",
+          "after": "\n                                      "
+        },
+        {
+          "old_start": 10443,
+          "new_start": 1902,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 10477,
+          "new_start": 1938,
+          "before": "r",
+          "after": "valu"
+        },
+        {
+          "old_start": 10479,
+          "new_start": 1943,
+          "before": "sult",
+          "after": ""
+        },
+        {
+          "old_start": 10533,
+          "new_start": 1993,
+          "before": "r",
+          "after": "valu"
+        },
+        {
+          "old_start": 10535,
+          "new_start": 1998,
+          "before": "sult",
+          "after": "\n"
+        },
+        {
+          "old_start": 10544,
+          "new_start": 2004,
+          "before": "head = git_head(ROOT); ",
+          "after": "S."
+        },
+        {
+          "old_start": 10581,
+          "new_start": 2020,
+          "before": "",
+          "after": "S.ROOT) == EXPECTED_METADATA_HEAD and git_head(S."
+        },
+        {
+          "old_start": 10592,
+          "new_start": 2080,
+          "before": "R",
+          "after": "T"
+        },
+        {
+          "old_start": 10594,
+          "new_start": 2082,
+          "before": "VI",
+          "after": "ST"
+        },
+        {
+          "old_start": 10597,
+          "new_start": 2085,
+          "before": "W_COMMIT",
+          "after": "D"
+        },
+        {
+          "old_start": 10606,
+          "new_start": 2087,
+          "before": " 'Current corrected Review HEAD differs')\n    need(S.digest(DRIVER.read_bytes()) == DRIVER_SHA, 'Targeted driver source changed')\n    old = read_stable(OLD52, OLD52_SHA); S.check_snapshot(ROOT, old, FUNCTIONAL_COMMIT, 1019)\n    run = S.safe(args.targeted_run); need(run.parent == REVIEW / 'output', 'Direct closed Review/output run required')\n    pins = DEFAULT_PINS if args.closed_pins is None else read_stable(args.closed_pins, maximum=65536)\n    need(type(pins) is dict and set(pins) == set(DEFAULT_PINS)",
+          "after": ""
+        },
+        {
+          "old_start": 11123,
+          "new_start": 2097,
+          "before": "and",
+          "after": ""
+        },
+        {
+          "old_start": 11127,
+          "new_start": 2098,
+          "before": "all(type(pin) is str and re.fullmatch('[a-f0-9]{64}', pin) for pin in pins.values()),",
+          "after": ""
+        },
+        {
+          "old_start": 11220,
+          "new_start": 2106,
+          "before": "f",
+          "after": "dcb Ma"
+        },
+        {
+          "old_start": 11222,
+          "new_start": 2113,
+          "before": "ve",
+          "after": "n"
+        },
+        {
+          "old_start": 11226,
+          "new_start": 2116,
+          "before": "c",
+          "after": "nd "
+        },
+        {
+          "old_start": 11228,
+          "new_start": 2120,
+          "before": "ual clo",
+          "after": "e"
+        },
+        {
+          "old_start": 11236,
+          "new_start": 2122,
+          "before": "",
+          "after": "t"
+        },
+        {
+          "old_start": 11238,
+          "new_start": 2125,
+          "before": "",
+          "after": "3a Review"
+        },
+        {
+          "old_start": 11248,
+          "new_start": 2144,
+          "before": "",
+          "after": "check"
+        },
+        {
+          "old_start": 11249,
+          "new_start": 2150,
+          "before": "",
+          "after": "o"
+        },
+        {
+          "old_start": 11251,
+          "new_start": 2153,
+          "before": "",
+          "after": "t"
+        },
+        {
+          "old_start": 11268,
+          "new_start": 2171,
+          "before": "data = {name: read_stable(run / name, pin) for name, pin in pins.items()}\n    before, after = data['source-before.json'], data['source-after.json']\n    ",
+          "after": ""
+        },
+        {
+          "old_start": 11431,
+          "new_start": 2182,
+          "before": "{'",
+          "after": "check_qualified_"
+        },
+        {
+          "old_start": 11435,
+          "new_start": 2200,
+          "before": "mmit': REVIEW_COMMIT, 'source_sha256': af",
+          "after": "n"
+        },
+        {
+          "old_start": 11478,
+          "new_start": 2203,
+          "before": "r}",
+          "after": "xt()"
+        },
+        {
+          "old_start": 11502,
+          "new_start": 2229,
+          "before": "",
+          "after": "S.ROOT, snapshot, TESTED, 1029)\n    S.check_snapshot(S."
+        },
+        {
+          "old_start": 11520,
+          "new_start": 2302,
+          "before": "R",
+          "after": "T"
+        },
+        {
+          "old_start": 11522,
+          "new_start": 2304,
+          "before": "VI",
+          "after": "ST"
+        },
+        {
+          "old_start": 11525,
+          "new_start": 2307,
+          "before": "W_COMMIT",
+          "after": "D"
+        },
+        {
+          "old_start": 11539,
+          "new_start": 2314,
+          "before": ")\n    for name in ('before-closure.json', 'after-closure.json'): validate_zero_scope(read_stable(run / name, maximum=65536))\n    receipts = {}; gap = False\n    for label, *_ in A.CASES:\n        if not (run / (label + '-process.json')).exists(): gap = True; continue\n        need(not gap, 'Executed wrapper receipt after a gap refused')\n        item = {role: read_stable(run / (label + suffix), maximum=65536)\n                for role, suffix in (('process', '-process.json'), ('start', '-start.json'), ('command', '-command.json'))}\n        closure = run / (label + '-after-closure.json')\n        if closure.exists(): item['closure'] = read_stable(closure, maximum=65536)\n        receipts[label] = item\n    terminal = validate_terminal(data['ROOT-TOOL-TERMINATION.json'], data['verification.json'],\n        data['TARGETED-COMPLETION.json'], before, after, receipts, A.CASES, str(DRIVER),\n        r'C:\\Program Files\\Python313\\python.exe', args.tool_session_id, datetime.datetime.now(datetime.timezone.utc), A.assert_canonical_report",
+          "after": ""
+        },
+        {
+          "old_start": 12675,
+          "new_start": 2419,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 12781,
+          "new_start": 2527,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 12811,
+          "new_start": 2559,
+          "before": "kn",
+          "after": ""
+        },
+        {
+          "old_start": 12816,
+          "new_start": 2562,
+          "before": "-facto",
+          "after": "e"
+        },
+        {
+          "old_start": 12823,
+          "new_start": 2564,
+          "before": "y",
+          "after": "ship"
+        },
+        {
+          "old_start": 12865,
+          "new_start": 2609,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 12901,
+          "new_start": 2647,
+          "before": "kn",
+          "after": ""
+        },
+        {
+          "old_start": 12906,
+          "new_start": 2650,
+          "before": "-facto",
+          "after": "e"
+        },
+        {
+          "old_start": 12913,
+          "new_start": 2652,
+          "before": "y",
+          "after": "ship"
+        },
+        {
+          "old_start": 12931,
+          "new_start": 2673,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 13075,
+          "new_start": 2819,
+          "before": "SUCC",
+          "after": "H"
+        },
+        {
+          "old_start": 13080,
+          "new_start": 2821,
+          "before": "SSO",
+          "after": ""
+        },
+        {
+          "old_start": 13084,
+          "new_start": 2822,
+          "before": "",
+          "after": "E"
+        },
+        {
+          "old_start": 13168,
+          "new_start": 2907,
+          "before": "expected_metadata_head=head, candidate_commit=REVIEW_COMMIT,\n        ",
+          "after": ""
+        },
+        {
+          "old_start": 13282,
+          "new_start": 2952,
+          "before": "",
+          "after": "\n       "
+        },
+        {
+          "old_start": 13302,
+          "new_start": 2980,
+          "before": "\n       ",
+          "after": ""
+        },
+        {
+          "old_start": 13329,
+          "new_start": 2999,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 13515,
+          "new_start": 3187,
+          "before": ";",
+          "after": "\n"
+        },
+        {
+          "old_start": 13517,
+          "new_start": 3189,
+          "before": "",
+          "after": "       S."
+        },
+        {
+          "old_start": 14015,
+          "new_start": 3696,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 14058,
+          "new_start": 3741,
+          "before": "root_snapshot = {'commit': FUNCTIONAL_COMMIT, 'source_sha256': old['source_sha256']}\n    ",
+          "after": ""
+        },
+        {
+          "old_start": 14155,
+          "new_start": 3749,
+          "before": ", value",
+          "after": ""
+        },
+        {
+          "old_start": 14166,
+          "new_start": 3753,
+          "before": "(",
+          "after": ""
+        },
+        {
+          "old_start": 14209,
+          "new_start": 3795,
+          "before": "root_snapshot), (",
+          "after": ""
+        },
+        {
+          "old_start": 14267,
+          "new_start": 3836,
+          "before": ", snapshot)",
+          "after": ""
+        },
+        {
+          "old_start": 14311,
+          "new_start": 3869,
+          "before": "v",
+          "after": "sn"
+        },
+        {
+          "old_start": 14313,
+          "new_start": 3872,
+          "before": "lue",
+          "after": "pshot"
+        },
+        {
+          "old_start": 14559,
+          "new_start": 4120,
+          "before": "R.",
+          "after": ""
+        },
+        {
+          "old_start": 14600,
+          "new_start": 4159,
+          "before": "  # excludes this helper and its observer PID only.",
+          "after": ""
+        },
+        {
+          "old_start": 14656,
+          "new_start": 4164,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 14670,
+          "new_start": 4180,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 14679,
+          "new_start": 4191,
+          "before": "head",
+          "after": "EXPECTED_METADATA_HEAD"
+        },
+        {
+          "old_start": 14697,
+          "new_start": 4227,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 14708,
+          "new_start": 4240,
+          "before": "R",
+          "after": "T"
+        },
+        {
+          "old_start": 14710,
+          "new_start": 4242,
+          "before": "VI",
+          "after": "ST"
+        },
+        {
+          "old_start": 14713,
+          "new_start": 4245,
+          "before": "W_COMMIT",
+          "after": "D"
+        },
+        {
+          "old_start": 14722,
+          "new_start": 4247,
+          "before": "",
+          "after": "\n          "
+        },
+        {
+          "old_start": 14724,
+          "new_start": 4260,
+          "before": "HEAD",
+          "after": "Metadata checkpoints"
+        },
+        {
+          "old_start": 14783,
+          "new_start": 4335,
+          "before": "SUCC",
+          "after": "H"
+        },
+        {
+          "old_start": 14788,
+          "new_start": 4337,
+          "before": "SSO",
+          "after": ""
+        },
+        {
+          "old_start": 14792,
+          "new_start": 4338,
+          "before": "",
+          "after": "E"
+        },
+        {
+          "old_start": 15202,
+          "new_start": 4749,
+          "before": "head, root_functional_commit=FUN",
+          "after": "EXPE"
+        },
+        {
+          "old_start": 15236,
+          "new_start": 4755,
+          "before": "ION",
+          "after": "ED_MET"
+        },
+        {
+          "old_start": 15240,
+          "new_start": 4762,
+          "before": "L",
+          "after": "DATA"
+        },
+        {
+          "old_start": 15242,
+          "new_start": 4767,
+          "before": "COMMIT",
+          "after": "HEAD"
+        },
+        {
+          "old_start": 15276,
+          "new_start": 4799,
+          "before": "",
+          "after": "mmit=TESTED, root_functional_co"
+        },
+        {
+          "old_start": 15282,
+          "new_start": 4836,
+          "before": "1",
+          "after": "2"
+        },
+        {
+          "old_start": 15300,
+          "new_start": 4854,
+          "before": "R",
+          "after": "T"
+        },
+        {
+          "old_start": 15302,
+          "new_start": 4856,
+          "before": "VI",
+          "after": "ST"
+        },
+        {
+          "old_start": 15305,
+          "new_start": 4859,
+          "before": "W_COMMIT",
+          "after": "D"
+        },
+        {
+          "old_start": 15519,
+          "new_start": 5066,
+          "before": "",
+          "after": "\n       "
+        },
+        {
+          "old_start": 15564,
+          "new_start": 5119,
+          "before": ")\n    record.update(targeted_terminal=terminal, targeted_tool_witness=descriptor(run / 'ROOT-TOOL-TERMINATION.json')",
+          "after": ""
+        },
+        {
+          "old_start": 15690,
+          "new_start": 5129,
+          "before": "",
+          "after": "immu"
+        },
+        {
+          "old_start": 15692,
+          "new_start": 5135,
+          "before": "rg",
+          "after": "bl"
+        },
+        {
+          "old_start": 15695,
+          "new_start": 5138,
+          "before": "",
+          "after": "_tes"
+        },
+        {
+          "old_start": 15698,
+          "new_start": 5145,
+          "before": "",
+          "after": "1029"
+        },
+        {
+          "old_start": 15706,
+          "new_start": 5157,
+          "before": "b",
+          "after": "sha256=SOURCE_SHA, qualifi"
+        },
+        {
+          "old_start": 15708,
+          "new_start": 5184,
+          "before": "",
+          "after": "d_"
+        },
+        {
+          "old_start": 15709,
+          "new_start": 5187,
+          "before": "o",
+          "after": "ull_INDEX_sha256=FULL_SHA,\n        "
+        },
+        {
+          "old_start": 15712,
+          "new_start": 5224,
+          "before": "=",
+          "after": "viewed39_"
+        },
+        {
+          "old_start": 15715,
+          "new_start": 5235,
+          "before": "",
+          "after": "lta_"
+        },
+        {
+          "old_start": 15716,
+          "new_start": 5240,
+          "before": "cr",
+          "after": "ha256=REVIEWED_SHA, h"
+        },
+        {
+          "old_start": 15719,
+          "new_start": 5262,
+          "before": "p",
+          "after": "s"
+        },
+        {
+          "old_start": 15723,
+          "new_start": 5266,
+          "before": "(r",
+          "after": "ical_f"
+        },
+        {
+          "old_start": 15726,
+          "new_start": 5273,
+          "before": "",
+          "after": "ll_qualificatio"
+        },
+        {
+          "old_start": 15727,
+          "new_start": 5289,
+          "before": " / '",
+          "after": "_i"
+        },
+        {
+          "old_start": 15732,
+          "new_start": 5292,
+          "before": "",
+          "after": "_n"
+        },
+        {
+          "old_start": 15733,
+          "new_start": 5295,
+          "before": "urce-be",
+          "after": "t_"
+        },
+        {
+          "old_start": 15741,
+          "new_start": 5298,
+          "before": "o",
+          "after": ""
+        },
+        {
+          "old_start": 15744,
+          "new_start": 5300,
+          "before": ".j",
+          "after": ""
+        },
+        {
+          "old_start": 15747,
+          "new_start": 5301,
+          "before": "on'), targeted",
+          "after": "h"
+        },
+        {
+          "old_start": 15763,
+          "new_start": 5304,
+          "before": "",
+          "after": "c"
+        },
+        {
+          "old_start": 15764,
+          "new_start": 5306,
+          "before": "urc",
+          "after": "p"
+        },
+        {
+          "old_start": 15770,
+          "new_start": 5310,
+          "before": "f",
+          "after": "u"
+        },
+        {
+          "old_start": 15772,
+          "new_start": 5312,
+          "before": "er=desc",
+          "after": "ho"
+        },
+        {
+          "old_start": 15781,
+          "new_start": 5316,
+          "before": "p",
+          "after": ""
+        },
+        {
+          "old_start": 15783,
+          "new_start": 5317,
+          "before": "or(",
+          "after": "y=T"
+        },
+        {
+          "old_start": 15788,
+          "new_start": 5322,
+          "before": "n / 'sourc",
+          "after": ""
+        },
+        {
+          "old_start": 15799,
+          "new_start": 5323,
+          "before": "-after.json')",
+          "after": ""
+        },
+        {
+          "old_start": 15903,
+          "new_start": 5414,
+          "before": "",
+          "after": "\n       "
+        },
+        {
+          "old_start": 16318,
+          "new_start": 5837,
+          "before": ";",
+          "after": "\n   "
+        },
+        {
+          "old_start": 16467,
+          "new_start": 5989,
+          "before": "This ",
+          "after": "Reta"
+        },
+        {
+          "old_start": 16474,
+          "new_start": 5995,
+          "before": "voke",
+          "after": ""
+        },
+        {
+          "old_start": 16483,
+          "new_start": 6000,
+          "before": " unchanged",
+          "after": ""
+        },
+        {
+          "old_start": 16538,
+          "new_start": 6045,
+          "before": "",
+          "after": "admission "
+        },
+        {
+          "old_start": 16542,
+          "new_start": 6059,
+          "before": ";\n    # it performs no Blender load, resource survey or driver launch",
+          "after": ""
+        },
+        {
+          "old_start": 16667,
+          "new_start": 6115,
+          "before": "SUCCESSOR",
+          "after": "args.packet"
+        },
+        {
+          "old_start": 16677,
+          "new_start": 6127,
+          "before": "SHA",
+          "after": "index_sha256"
+        },
+        {
+          "old_start": 16686,
+          "new_start": 6145,
+          "before": "R.",
+          "after": ""
+        },
+        {
+          "old_start": 16731,
+          "new_start": 6188,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 16745,
+          "new_start": 6204,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 16754,
+          "new_start": 6215,
+          "before": "head",
+          "after": "EXPECTED_METADATA_HEAD"
+        },
+        {
+          "old_start": 16772,
+          "new_start": 6251,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 16783,
+          "new_start": 6264,
+          "before": "R",
+          "after": "T"
+        },
+        {
+          "old_start": 16785,
+          "new_start": 6266,
+          "before": "VI",
+          "after": "ST"
+        },
+        {
+          "old_start": 16788,
+          "new_start": 6269,
+          "before": "W_COMMIT",
+          "after": "D"
+        },
+        {
+          "old_start": 16797,
+          "new_start": 6271,
+          "before": "",
+          "after": "\n          "
+        },
+        {
+          "old_start": 16799,
+          "new_start": 6284,
+          "before": "HEAD",
+          "after": "Metadata checkpoints"
+        },
+        {
+          "old_start": 16845,
+          "new_start": 6346,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 16989,
+          "new_start": 6492,
+          "before": "SUCC",
+          "after": "H"
+        },
+        {
+          "old_start": 16994,
+          "new_start": 6494,
+          "before": "SSO",
+          "after": ""
+        },
+        {
+          "old_start": 16998,
+          "new_start": 6495,
+          "before": "",
+          "after": "E"
+        },
+        {
+          "old_start": 17130,
+          "new_start": 6628,
+          "before": "SUCCESSOR",
+          "after": "args.packet"
+        },
+        {
+          "old_start": 17140,
+          "new_start": 6640,
+          "before": "SHA",
+          "after": "index_sha256"
+        },
+        {
+          "old_start": 17144,
+          "new_start": 6653,
+          "before": "",
+          "after": "\n       "
+        },
+        {
+          "old_start": 17174,
+          "new_start": 6691,
+          "before": "",
+          "after": "S."
+        },
+        {
+          "old_start": 17253,
+          "new_start": 6772,
+          "before": "",
+          "after": "  "
+        },
+        {
+          "old_start": 17441,
+          "new_start": 6962,
+          "before": "kn",
+          "after": ""
+        },
+        {
+          "old_start": 17446,
+          "new_start": 6965,
+          "before": "_facto",
+          "after": "e"
+        },
+        {
+          "old_start": 17453,
+          "new_start": 6967,
+          "before": "y",
+          "after": "ship"
+        },
+        {
+          "old_start": 17613,
+          "new_start": 7130,
+          "before": "",
+          "after": "s"
+        },
+        {
+          "old_start": 17615,
+          "new_start": 7133,
+          "before": "",
+          "after": "rce_con"
+        },
+        {
+          "old_start": 17617,
+          "new_start": 7142,
+          "before": "r_",
+          "after": "x"
+        },
+        {
+          "old_start": 17620,
+          "new_start": 7144,
+          "before": "ool_terminal_validated",
+          "after": ""
+        },
+        {
+          "old_start": 17645,
+          "new_start": 7147,
+          "before": "",
+          "after": "'IMMU"
+        },
+        {
+          "old_start": 17646,
+          "new_start": 7153,
+          "before": "rue",
+          "after": "ABLE_TESTED1029_AT_DCB'"
+        },
+        {
+          "old_start": 17652,
+          "new_start": 7179,
+          "before": "o",
+          "after": "f"
+        },
+        {
+          "old_start": 17654,
+          "new_start": 7181,
+          "before": "",
+          "after": "ll_sui"
+        },
+        {
+          "old_start": 17656,
+          "new_start": 7189,
+          "before": "r",
+          "after": ""
+        },
+        {
+          "old_start": 17658,
+          "new_start": 7190,
+          "before": "Po",
+          "after": ""
+        },
+        {
+          "old_start": 17661,
+          "new_start": 7191,
+          "before": "en_or_birth",
+          "after": "ass"
+        },
+        {
+          "old_start": 17699,
+          "new_start": 7221,
+          "before": "targeted_",
+          "after": "ou"
+        },
+        {
+          "old_start": 17711,
+          "new_start": 7226,
+          "before": "m",
+          "after": "_Popen_or_b"
+        },
+        {
+          "old_start": 17713,
+          "new_start": 7238,
+          "before": "nal': ",
+          "after": "r"
+        },
+        {
+          "old_start": 17720,
+          "new_start": 7240,
+          "before": "erminal, 'full_suite_pass",
+          "after": "h"
+        },
+        {
+          "old_start": 17868,
+          "new_start": 7364,
+          "before": "  # No invocation of command, root_runner.main, invoke or Blender.",
+          "after": ""
+        }
+      ]
+    }
+  ],
+  "byte_exact": [
+    {
+      "path": "CURRENT-CLOSED-LANE.template.json",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/CURRENT-CLOSED-LANE.template.json",
+      "old_sha256": "1f27bb93cda883b537f85cedc7d59497d68299df53143f5c52de3a2ddf3a1283",
+      "new_sha256": "1f27bb93cda883b537f85cedc7d59497d68299df53143f5c52de3a2ddf3a1283"
+    },
+    {
+      "path": "baseline_predicate.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/baseline_predicate.py",
+      "old_sha256": "3fdc78893ca8f9403d22a479eaba2e29c5a6b615b59fe9092d9691b679c1bd7b",
+      "new_sha256": "3fdc78893ca8f9403d22a479eaba2e29c5a6b615b59fe9092d9691b679c1bd7b"
+    },
+    {
+      "path": "handler_metadata.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/handler_metadata.py",
+      "old_sha256": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc",
+      "new_sha256": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc"
+    },
+    {
+      "path": "known_handler_policy.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/known_handler_policy.py",
+      "old_sha256": "0054d55049d170d109ab2018acce9ffcd08f4c93c437014cd072176842f51d25",
+      "new_sha256": "0054d55049d170d109ab2018acce9ffcd08f4c93c437014cd072176842f51d25"
+    },
+    {
+      "path": "known_loaded_survey.py",
+      "parent_path": "experiments/native_normal_known_factory_blender51_resource_20261117/known_loaded_survey.py",
+      "old_sha256": "1a45fa4fc812882c77c9a160c1f772ff8b32c88bc0478bfc4a9fe395e32a2c29",
+      "new_sha256": "1a45fa4fc812882c77c9a160c1f772ff8b32c88bc0478bfc4a9fe395e32a2c29"
+    },
+    {
+      "path": "ownership_metadata.py",
+      "parent_path": "experiments/native_B_resource_ownership_metadata_20261118/ownership_metadata.py",
+      "old_sha256": "94feb0279628b1426b2c48cf37dc5526a73901ded9715ecf51fe46064c440e9d",
+      "new_sha256": "94feb0279628b1426b2c48cf37dc5526a73901ded9715ecf51fe46064c440e9d"
+    },
+    {
+      "path": "survey_core.py",
+      "parent_path": "experiments/native_B_resource_ownership_metadata_20261118/survey_core.py",
+      "old_sha256": "39a417bfe8e024704f4d400f824293640370074c28446e40613aa401247a4e28",
+      "new_sha256": "39a417bfe8e024704f4d400f824293640370074c28446e40613aa401247a4e28"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "format": "has_root_attested_B_ownership_classification_1",
+  "private_payload_sha256": "6ccecbbf0838bb25a4d7044e13680a6247c927af36d1bc22756789ec481b93b9",
+  "private_payload_bytes": 10833,
+  "actual_native_observed": true,
+  "exact_reference_joins": {
+    "categories": [
+      "all",
+      "unpacked"
+    ],
+    "same_owner_and_weak_reference": true,
+    "owner_RNA_type": "Material",
+    "owner_linked_library_present": false,
+    "general_owner_data_path_status": "UNOBSERVED",
+    "property_RNA_type": "LibraryWeakReference",
+    "property_name": "ID.library_weak_reference",
+    "property_data_path_status": "OBSERVED",
+    "path_contents_opened_or_statted_by_collector": false,
+    "reference_name_path_pointer_and_artist_ID_names_included": false
+  },
+  "viewers": [
+    {
+      "source": "VIEWER",
+      "type": "RENDER_RESULT",
+      "original_users": 1,
+      "direct_ID_users": 0,
+      "material_node_references": 0,
+      "reachable_materials": 0,
+      "reachable_other_ID_owners": 0,
+      "IMAGE_EDITOR_references": 1,
+      "unobserved_owner_scopes": [
+        "non_IMAGE_EDITOR_UI",
+        "implicit_viewer_producer_semantics"
+      ],
+      "resource_excluded_or_accepted": false
+    },
+    {
+      "source": "VIEWER",
+      "type": "COMPOSITING",
+      "original_users": 1,
+      "direct_ID_users": 0,
+      "material_node_references": 0,
+      "reachable_materials": 0,
+      "reachable_other_ID_owners": 0,
+      "IMAGE_EDITOR_references": 1,
+      "unobserved_owner_scopes": [
+        "non_IMAGE_EDITOR_UI",
+        "implicit_viewer_producer_semantics"
+      ],
+      "resource_excluded_or_accepted": false
+    }
+  ],
+  "original_issue_rows_retained": 6,
+  "resource_decision_changed": false,
+  "model_repair_normal_fidelity_export_or_adoption_claimed": false,
+  "filename_role_inference_used": false
+}

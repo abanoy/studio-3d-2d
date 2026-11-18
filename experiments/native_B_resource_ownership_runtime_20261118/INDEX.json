@@ -1,0 +1,123 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "native_B_resource_ownership_runtime_20261118",
+  "status": "SOURCE_CPU_GO_FIXED_TESTED1029_DCB_NATIVE_UNRUN",
+  "source_context": "IMMUTABLE_QUALIFIED3A_RAW1029_MAIN_DCB",
+  "runtime_parent_INDEX_sha256": "82727caa443cc58d623463e195fc6220d08c2d878cb93461eb481c722098b6e0",
+  "binder_parent_INDEX_sha256": "eacc7b33245e33fd7e4826f17dda6cd95917bb7034537d1145c88a4320a7bfa4",
+  "ownership_parent_INDEX_sha256": "d3346044906201097f86548bcbc2b22ef3031980c80dc7b1dfadb9f3fa77d46a",
+  "CPU_methods_passed": 20,
+  "native_or_current_runtime_admission_created": false,
+  "files": [
+    {
+      "path": "ADMISSION.template.json",
+      "bytes": 3066,
+      "sha256": "9b1fc8cdea9099e068ae092fd067eb1ac81a80daba4e750671fa21b912f329cd"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 684,
+      "sha256": "dfbcb9f6eb3567f4506ac7bb6f99ef1d1d2d22d9c802e96827438c2c4184b7d9"
+    },
+    {
+      "path": "CURRENT-CLOSED-LANE.template.json",
+      "bytes": 723,
+      "sha256": "1f27bb93cda883b537f85cedc7d59497d68299df53143f5c52de3a2ddf3a1283"
+    },
+    {
+      "path": "DERIVATION.json",
+      "bytes": 2171,
+      "sha256": "3d662c87d395edc9f60ecfa5a0e466aa3020dff8dc0238501c252b0b0feedfa9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5124,
+      "sha256": "1ed634c3a3cd5177d19c8e96a37743ca53c91531061bfdc06b3b1592dfbae0e0"
+    },
+    {
+      "path": "SOURCE_CONTEXT.json",
+      "bytes": 1752,
+      "sha256": "24dbb62da684521850fddfa16cf4f12c91a2a77341e2a952e1ba4e52c90b8325"
+    },
+    {
+      "path": "SOURCE_DELTA.json",
+      "bytes": 52676,
+      "sha256": "af8f6eddddfb19ae31718b21b9ea8c011dfb5e2133e8e4eedf9e0739e5281833"
+    },
+    {
+      "path": "baseline_predicate.py",
+      "bytes": 5704,
+      "sha256": "3fdc78893ca8f9403d22a479eaba2e29c5a6b615b59fe9092d9691b679c1bd7b"
+    },
+    {
+      "path": "current_context.py",
+      "bytes": 5109,
+      "sha256": "f10225dbd0e7eac0fea4f1de8abb4c147004bca88554eba200e7cab54a56593d"
+    },
+    {
+      "path": "derive_source.py",
+      "bytes": 1088,
+      "sha256": "90945ee6779278c1b52eb8317dd70a8097b18ba12c3db8d49a175e2033c0958f"
+    },
+    {
+      "path": "diagnostic_host.py",
+      "bytes": 7777,
+      "sha256": "2ee32e1646295389c0c3b39162f92aaa81563f04b3e7ebc34fe2a50d2b2070e2"
+    },
+    {
+      "path": "diagnostic_support.py",
+      "bytes": 7974,
+      "sha256": "99d5cd67660a1e437a9ea36aa724b884e569b09fd5bdf5c1bb5437bf6433dfcb"
+    },
+    {
+      "path": "handler_metadata.py",
+      "bytes": 3796,
+      "sha256": "0ea7cac7b9a4c289188e15b7ee826b5ba28dad76df1a080bec6e7d933a2296cc"
+    },
+    {
+      "path": "known_handler_policy.py",
+      "bytes": 5839,
+      "sha256": "0054d55049d170d109ab2018acce9ffcd08f4c93c437014cd072176842f51d25"
+    },
+    {
+      "path": "known_loaded_survey.py",
+      "bytes": 2154,
+      "sha256": "1a45fa4fc812882c77c9a160c1f772ff8b32c88bc0478bfc4a9fe395e32a2c29"
+    },
+    {
+      "path": "ownership_metadata.py",
+      "bytes": 9884,
+      "sha256": "94feb0279628b1426b2c48cf37dc5526a73901ded9715ecf51fe46064c440e9d"
+    },
+    {
+      "path": "ownership_outputs.py",
+      "bytes": 5996,
+      "sha256": "c06b5ff686098b24d06ecbad1c3cc69b7176239bdec8217794c90d931bfad43b"
+    },
+    {
+      "path": "prepare_root.py",
+      "bytes": 7419,
+      "sha256": "3205ae05a720a4c259a0651d7f42499d4023b75bcf114b76ce0801e30c3f91ac"
+    },
+    {
+      "path": "qualified_context.py",
+      "bytes": 4560,
+      "sha256": "0d25aeae0bfdc0640a54e54cd2beebc79cae89e026907822614ec0b7a4d0793a"
+    },
+    {
+      "path": "root_runner.py",
+      "bytes": 16174,
+      "sha256": "6c6108432c074806d0d9da3acec3e61bac67ac2a36267ea2fbcbe64fc77d5234"
+    },
+    {
+      "path": "survey_core.py",
+      "bytes": 13761,
+      "sha256": "39a417bfe8e024704f4d400f824293640370074c28446e40613aa401247a4e28"
+    },
+    {
+      "path": "test_source.py",
+      "bytes": 10145,
+      "sha256": "8a5f76932b02fa1127edb3e63c31abd58eb8675ae86b749813e32303a078db05"
+    }
+  ]
+}

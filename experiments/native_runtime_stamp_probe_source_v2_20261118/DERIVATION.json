@@ -1,0 +1,36 @@
+{
+  "format": "has_runtime_stamp_probe_source_derivation_1",
+  "source_reader": "experiments/resume_root_20261115/audit_protected_inputs_before_cleanup.py",
+  "source_reader_sha256": "5be1d34aa6aced8fc112bee3ecadd489be9b7f38ab710553385bfd77ca500d83",
+  "approved_lock": "experiments/replay_audio_fix_20261115/builder/input-lock.json",
+  "approved_lock_sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6",
+  "related_failed_preparer_INDEX_sha256": "505da02ceed7dfb705dfb9d22d3b054053c4c32279053fd8d9743336be33f99f",
+  "copied_helpers_AST_exact": [
+    "need",
+    "no_links",
+    "stamp"
+  ],
+  "observe_try_body_AST_exact_original_identity_body_except_final_return": true,
+  "inverse": "Remove observe metadata wrapper; retain exact try-body and restore the original final return statement. The result AST equals original identity().",
+  "read_sequence": "no_links; lstat before; regular/single-link checks; open rb; fstat opened; SHA256 file_digest; fstat after; close; lstat final; exact original all-stamps-equal guard.",
+  "instrumentation": "After the exact sequence or caught error, serialize existing stat objects, digest and exact per-field differences. No additional per-runtime reads before sequence completion.",
+  "stamp_fields": [
+    "st_dev",
+    "st_ino",
+    "st_size",
+    "st_mtime_ns",
+    "st_nlink",
+    "st_file_attributes"
+  ],
+  "original_reader_pins_or_guards_changed": false,
+  "failed_preparation_artifacts_modified_or_reused": false,
+  "new_admission_or_native_qualification": false,
+  "actual_probe_execution": "UNRUN_ROOT_ONLY",
+  "output_name_policy": "PRIVATE-runtime-exact-stamp-probe-[A-Za-z0-9_-]{1,60}.json",
+  "predecessor_packet": "experiments/native_runtime_stamp_probe_source_20261118",
+  "predecessor_INDEX_sha256": "a166b92ff19d48c2e4cb594d45e5beab40b339b1218732c953b6ae27b5b46563",
+  "predecessor_source_sha256": "dd6eb209b57110f93de965ef1b5a02730ee35b7d055ba1a6ce6c3ac702e9ac11",
+  "predecessor_executed": false,
+  "source_review_finding": "Generic .json output basename could name a Windows alternate data stream. v2 restricts the fixed safe prefix plus bounded ASCII label and .json.",
+  "predecessor_read_sequence_guard_change": false
+}
