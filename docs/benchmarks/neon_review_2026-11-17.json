@@ -1611,5 +1611,51 @@
     "source_functional_files_unchanged": 1029,
     "raw_native_runtime_reports_receipts_arrays_logs_and_media_uploaded": false,
     "cleanup_performed_at_this_observation": false
+  },
+  "post_copy_verified_publication_and_cleanup_20261118": {
+    "commit": "05649446a1fc851623a92a82d8ac7d8b8e06834f",
+    "independent_remote_files": 27,
+    "git_bytes": 2907771,
+    "reversible_EOL_recipes": 3,
+    "complete_sha256": "20930aaca71ac115a7d43dee1b98e40a194504978045d9d9de40b7ff49f27e87",
+    "cleanup": {
+      "format": "has_verified_public_response_cache_cleanup_completion_1",
+      "status": "PASSED",
+      "published_proof_commit": "05649446a1fc851623a92a82d8ac7d8b8e06834f",
+      "independent_27_file_readback_sha256": "20930aaca71ac115a7d43dee1b98e40a194504978045d9d9de40b7ff49f27e87",
+      "reviewed_18_file_plan": "experiments/neon_public_cache_cleanup_20261118/PLAN.json",
+      "reviewed_18_file_plan_sha256": "d6e703b179d37c7543ac1bd35c78d5809a62fe13219a49f51d9feab88a326a6f",
+      "reviewed_cache_files_removed": 18,
+      "reviewed_logical_bytes_removed": 20347848,
+      "reviewed_deletion_journal_sha256": "33df4016fdc21ddc41aa237bc208e838dfd89ed6f5c7e5f76762a964057446e7",
+      "followup_verified_cache_pair": [
+        {
+          "path": "output/post-copy-0564944-remote-batch-000.json",
+          "bytes": 3449639,
+          "sha256": "2314cd228706503385412fb32d275b8ca76ea48418d90a739a852f6a3169518a",
+          "mtime_ns": 1795034268585294900,
+          "inode": 23643898043994796
+        },
+        {
+          "path": "output/post-copy-0564944-remote-batch-020.json",
+          "bytes": 58654,
+          "sha256": "d1623d49ef4080a0e84c8ef399ebbafd4dbc0e5e9d1b472c6a411b464a65b363",
+          "mtime_ns": 1795034268932957300,
+          "inode": 192810359047102963
+        }
+      ],
+      "followup_deletion_journal_sha256": "02c1d102d8b5e0cdddf743b5608d532de118f0c0129f45ddf4a92110be597bcd",
+      "total_files_removed": 20,
+      "total_logical_bytes_removed": 23856141,
+      "all_removed_files_are_verified_public_GitHub_response_caches": true,
+      "recursive_operations": false,
+      "originals_reviews_private_native_outputs_or_runtimes_touched": false,
+      "cold_attempts_overall": [
+        "INCOMPLETE_NOT_PASS",
+        "INCOMPLETE_NOT_PASS"
+      ],
+      "native_B_ownership_execution": "UNRUN",
+      "human_acceptance": "DEFERRED"
+    }
   }
 }

@@ -1741,3 +1741,33 @@ reviewed file whitelist and record the per-file journal. Both incomplete native
 attempts, generated-output archive, review deliverable, original artwork and
 installed tools stay protected. Formal 52/54 implementation and 55/62 acceptance
 remain unchanged. Artifact directories marked 20261118 use UTC dates.
+
+## 2026-11-18 — followup remotely verified; public-cache cleanup complete
+
+Followup 05649446a1fc851623a92a82d8ac7d8b8e06834f was pushed without force and
+independently retrieved: all 27 changed source/metadata files, 2,907,771 Git bytes
+and three reversible EOL recipes passed. The proof under
+experiments/neon_post_copy_source_checkpoint_remote_20261118 has SHA256
+20930aaca71ac115a7d43dee1b98e40a194504978045d9d9de40b7ff49f27e87.
+This publishes the earlier 151-file proof, Source ownership prototype and bounded
+cleanup plan. Source ownership remains tested only by 14 synthetic CPU methods;
+actual B metadata execution and production adoption remain unrun.
+
+After that independent retrieval, the reviewed cleanup removed exactly 18 old
+public response caches (20,347,848 bytes). A separately reviewed finisher checked
+the two fresh readback caches against the 27-file proof and removed only those
+two files too. Total: 20 files, 23,856,141 logical bytes. Both per-file journals
+remain local; compact identities, proof bindings and journal hashes are in
+experiments/neon_public_cache_cleanup_completion_20261118/RESULT.json (d8dc7f5b).
+No recursive deletion occurred. Original assets, installed tools/Studio, prior
+reviews, both incomplete native runs, the generated-output archive and the new
+review deliverable were outside the operation and remain protected.
+
+Next: prepare the tested-1029 B context successor and run the read-only ownership
+collector with existing admitted private-desktop controls. Keep all six resource
+refusals, original normal failures and strict thresholds. Diagnose the lost cold
+runner before another startup attempt; the two recorded 187-check case passes
+remain overall INCOMPLETE_NOT_PASS. Do not substitute recovery closure for missing
+coordinator/final preservation reports. Human/physical acceptance is deferred;
+continue independent Source work without owner questions. Formal 52/54 and55/62
+statuses are unchanged; this is not a product-completion or release claim.
