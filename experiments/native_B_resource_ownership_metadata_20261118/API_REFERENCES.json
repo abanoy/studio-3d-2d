@@ -1,0 +1,27 @@
+{
+  "format": "has_B_ownership_metadata_API_references_1",
+  "target": "Blender5.1_NATIVE_UNRUN",
+  "official_API": [
+    {
+      "url": "https://docs.blender.org/api/5.1/bpy.types.BlendData.html",
+      "observed_from": "official_documentation_search_content_and_independent_source_peer",
+      "scope": "file_path_foreach supplies ownerID/path/opaque placeholder; None leaves the path unchanged. user_map maps IDs to their users. Native allocation and execution remain unobserved."
+    },
+    {
+      "url": "https://docs.blender.org/api/5.1/bpy.types.bpy_struct.html",
+      "scope": "path_from_module returns an RNA data path and can raise ValueError; unavailable paths remain UNOBSERVED."
+    },
+    {
+      "url": "https://docs.blender.org/api/5.4/bpy.types.LibraryWeakReference.html",
+      "scope": "Documents filepath and id_name metadata. Target5.1 behavior remains unrun; no descriptor is used to accept a resource."
+    }
+  ],
+  "installed_public_source": {
+    "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\modules\\bpy_extras\\id_map_utils.py",
+    "bytes": 1784,
+    "sha256": "cb37d61f9ea869f60696831a471bb73876d1156ff816c742cea8284ef1687d24",
+    "source_read_only_not_imported": true,
+    "purpose": "Confirms user_map direction by inverting ID-to-users into owner-to-references."
+  },
+  "external_reference_content_opened_or_statted": false
+}

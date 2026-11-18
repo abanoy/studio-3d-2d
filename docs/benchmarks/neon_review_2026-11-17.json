@@ -1581,5 +1581,35 @@
     "human_acceptance": "DEFERRED",
     "raw_BUILD_runtime_reports_receipts_native_arrays_logs_and_media_included": false,
     "cleanup_performed": false
+  },
+  "owner_copy_checkpoint_publication_20261118": {
+    "format": "has_actual_owner_copy_checkpoint_publication_1",
+    "commit": "ddc24d786228c8a66a38a21d4db61e939ca6dee8",
+    "parent": "973039e40622ac20600e6d297d712de419877eda",
+    "pushed_to_main_without_force": true,
+    "independent_remote_main_ref_matched_commit": true,
+    "independent_remote_files": 151,
+    "changed_files": 151,
+    "remote_git_bytes": 8151833,
+    "working_bytes": 8174995,
+    "reversible_document_EOL_recipes": 3,
+    "public_manifest_sha256": "45e1857baa3d75ff4febb6e5eece5ed1ef697fea156919c16683f5c23cafa403",
+    "complete_readback": "experiments/neon_owner_copy_source_checkpoint_remote_20261117/COMPLETE_READBACK.json",
+    "complete_readback_sha256": "7d3a345fb459b9396173906b00955cda5fe433d7447c1af9884e73636b4d3581",
+    "retrieval_observations": {
+      "one_transient_server_disconnect_retried_successfully": true,
+      "oversize_contents_responses_retained_as_empty": 2,
+      "nonempty_independent_git_blob_fallbacks_verified": [
+        "docs/progress_memo.md",
+        "experiments/neon_owner_executor_active_973039e_index_20261117/OWNER_ARCHIVE_CATALOGUE.json"
+      ]
+    },
+    "actual_owner_copy": "PASSED",
+    "both_cold_attempts_overall": "INCOMPLETE_NOT_PASS",
+    "human_acceptance": "DEFERRED",
+    "native_normal_fidelity": "FAILED_UNQUALIFIED",
+    "source_functional_files_unchanged": 1029,
+    "raw_native_runtime_reports_receipts_arrays_logs_and_media_uploaded": false,
+    "cleanup_performed_at_this_observation": false
   }
 }

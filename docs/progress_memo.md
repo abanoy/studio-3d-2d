@@ -16152,3 +16152,42 @@ filename. A native B rerun needs the tested-1029 context successor, not the old
 PMX reconstruction, solver integration, six-foot normalization, lighting and
 Discovery remain separate unfinished work. Formal implementation 52/54 and
 acceptance 55/62 remain unchanged. No tool installation or cleanup occurred.
+
+## 2026-11-17 pickup — verified source save and B ownership prototype
+
+Source checkpoint ddc24d786228c8a66a38a21d4db61e939ca6dee8 was pushed to main
+without force. Independent GitHub readback passed all 151 changed files:
+8,151,833 Git bytes, 8,174,995 working bytes and three reversible document EOL
+recipes. The main reference matched. COMPLETE_READBACK.json under
+experiments/neon_owner_copy_source_checkpoint_remote_20261117 has SHA256
+7d3a345fb459b9396173906b00955cda5fe433d7447c1af9884e73636b4d3581.
+Two empty oversize contents responses were replaced only by verified nonempty
+Git-blob retrievals; one transient disconnect was retried successfully. Copy PASS
+and both cold attempts' INCOMPLETE_NOT_PASS remain separate. Native reports,
+receipts, models, arrays and media remain private.
+
+The new experimental native_B_resource_ownership_metadata_20261118 collector
+passes 14 focused CPU methods, with zero failures, errors or skips. Its parent
+resource collector remains byte-identical (39a417bf). The new module (94feb027)
+adds metadata for path-owning IDs and library weak references, plus Viewer image
+ID/material and explicitly observed IMAGE_EDITOR reachability. Paths are joined
+by exact raw values; the visitor returns None and never replaces a path. Original
+six synthetic refusal rows, resource status and source hashes are preserved.
+Unknown owners remain unobserved. No external reference content is opened or
+statted; no image pixels or geometry are read by this addition.
+
+This is source-only synthetic evidence. Actual B ownership, native API behavior,
+allocation bounds, native protocol, normal fidelity and production adoption are
+unqualified. All original normal tolerances and failed observations remain.
+The next concrete B task is a tested-1029 context successor and admitted read-only
+native metadata run; do not use the old 52f context guard or silently accept
+unused Viewer resources. Continue other Source work without owner questions.
+
+A bounded cleanup preparation covers exactly 18 public GitHub response caches,
+20,347,848 bytes. Verify-only passed; no deletion at this recording. Its source
+and plan are in experiments/neon_public_cache_cleanup_20261118. Root must first
+publish and independently retrieve the exact 7d3a345f proof, then execute only the
+reviewed file whitelist and record the per-file journal. Both incomplete native
+attempts, generated-output archive, review deliverable, original artwork and
+installed tools stay protected. Formal 52/54 implementation and 55/62 acceptance
+remain unchanged. Artifact directories marked 20261118 use UTC dates.

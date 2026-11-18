@@ -1,0 +1,28 @@
+{
+  "parent": "ddc24d786228c8a66a38a21d4db61e939ca6dee8",
+  "files": [
+    "LLM.md",
+    "docs/progress_memo.md",
+    "docs/RESUME_MASTER_PLAN.md",
+    "docs/completion_checklist.json",
+    "docs/benchmarks/neon_review_2026-11-17.json",
+    "experiments/neon_owner_copy_source_checkpoint_remote_20261117/COMPLETE_READBACK.json",
+    "experiments/neon_owner_copy_publication_actual_20261118/RESULT.json",
+    "experiments/prepare_neon_post_copy_checkpoint_20261118.py",
+    "experiments/verify_neon_post_copy_source_checkpoint_remote_20261118.py",
+    "experiments/neon_post_copy_checkpoint_selection_20261118/SELECTION.json"
+  ],
+  "packets": {
+    "native_B_resource_ownership_metadata_20261118": "d3346044906201097f86548bcbc2b22ef3031980c80dc7b1dfadb9f3fa77d46a",
+    "neon_public_cache_cleanup_20261118": "98ca87f2f9b2e19e209ce0523803cb89c8118189a1c47353dcc003e2aa1553b4",
+    "neon_post_copy_remote_verifier_preparation_20261118": "30bbe1e363fdf624c6ec6501105fb28fd489957c9b97c01b1db3a10919d340be"
+  },
+  "source_reviews": {
+    "selector_sha256": "5318a8959376b944d51e087896720dd5f8f2081366b1b5063e216d1e99451023",
+    "selector_raw_1029_guard_byte_exact_to_reviewed_predecessor": true,
+    "remote_verifier_sha256": "d2130bd3c7c8b5f36147ceb4bc8fa1ac2c0a862c9f360bda6cd752bb13ecde91",
+    "remote_verifier_exact_three_literal_inverse_to_1180": true,
+    "B_ownership_native_execution": "UNRUN",
+    "cache_cleanup_execution": "NOT_YET_EXECUTED"
+  }
+}

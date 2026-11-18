@@ -1,0 +1,43 @@
+{
+  "format": "has_three_literal_remote_readback_source_derivation_1",
+  "predecessor_source": "experiments/verify_neon_owner_copy_source_checkpoint_remote_20261117.py",
+  "predecessor_bytes": 7792,
+  "predecessor_sha256": "1180af6dc9570f7f8725ad4b4303bfb0366dd144500f397bbb6ff97a4c20bd99",
+  "successor_source": "experiments/verify_neon_post_copy_source_checkpoint_remote_20261118.py",
+  "successor_bytes": 7790,
+  "successor_sha256": "d2130bd3c7c8b5f36147ceb4bc8fa1ac2c0a862c9f360bda6cd752bb13ecde91",
+  "literal_rules": [
+    {
+      "before": "PARENT = '973039e40622ac20600e6d297d712de419877eda'",
+      "after": "PARENT = 'ddc24d786228c8a66a38a21d4db61e939ca6dee8'",
+      "occurrences": 1
+    },
+    {
+      "before": "PUBLIC_MANIFEST = 'experiments/neon_owner_copy_source_checkpoint_catalogue_20261117/PUBLIC_MANIFEST.json'",
+      "after": "PUBLIC_MANIFEST = 'experiments/neon_post_copy_source_checkpoint_catalogue_20261118/PUBLIC_MANIFEST.json'",
+      "occurrences": 1
+    },
+    {
+      "before": "target = ROOT / 'experiments/neon_owner_copy_source_checkpoint_remote_20261117/COMPLETE_READBACK.json'",
+      "after": "target = ROOT / 'experiments/neon_post_copy_source_checkpoint_remote_20261118/COMPLETE_READBACK.json'",
+      "occurrences": 1
+    }
+  ],
+  "whole_byte_inverse_to_predecessor": true,
+  "inverse_sha256": "1180af6dc9570f7f8725ad4b4303bfb0366dd144500f397bbb6ff97a4c20bd99",
+  "all_other_source_bytes_unchanged": true,
+  "original_manifest_format_fields_Gitblob_base64_fallback_and_EOL_guards_unchanged": true,
+  "actual_source_checks": {
+    "AST_parse_and_compile_exit": 0,
+    "AST_parse_and_compile_tool_chunk": "8c84cb",
+    "help_only_exit": 0,
+    "help_only_tool_chunk": "3eb6e0",
+    "checks_used_python_B_no_bytecode_files": true
+  },
+  "prewrite_history": "First derivation writer refused an assumed predecessor size7793; actual7792 was checked before any packet directory or payload was created. Source/helper checks unchanged.",
+  "actual_verification_target_executed": false,
+  "remote_or_Git_or_current_functional_or_native_reads_performed": false,
+  "future_commit_manifest_pin_and_cache_prefix_not_yet_supplied": true,
+  "actual_COMPLETE_proof_created": false,
+  "native_process_or_source_qualification_claimed": false
+}
