@@ -1,0 +1,86 @@
+{
+  "format": "has_synthetic_weight_storage_probe_source_CPU_audit_1",
+  "utc": "2026-11-19T02:35:08.678207+00:00",
+  "status": "CPU_FAKE_PASS_NATIVE_UNRUN",
+  "tests": 11,
+  "failures": 0,
+  "errors": 0,
+  "source_pins_before_after": {
+    "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/blender_bindings/models/mdl49/import_mdl.py": {
+      "bytes": 12880,
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+    },
+    "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/blender_bindings/models/common.py": {
+      "bytes": 23149,
+      "sha256": "2522f2a451f082edcfcf66c3b445782716e24feb45f8b43d5d6e459f6408f750"
+    },
+    "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/blender_bindings/utils/fast_mesh.py": {
+      "bytes": 2102,
+      "sha256": "ece5c47ac13eb5885bdc7c5b415784a6c7ea3ecc76d13c620bb561ca9c30058a"
+    },
+    "tools/private_desktop.py": {
+      "bytes": 12884,
+      "sha256": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628"
+    },
+    "experiments/replay_audio_fix_20261115/builder/input-lock.json": {
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    "experiments/native_point_expectation_bone_state_fix_20261118/INDEX.json": {
+      "bytes": 1135,
+      "sha256": "4afdadb1fbbbf44216b9c3c0d7736efc293c7717eb8908e7eb219b7af094c7c8"
+    },
+    "experiments/native_point_expectation_bone_state_fix_20261118/native_point_expectation.py": {
+      "bytes": 27615,
+      "sha256": "cbb4eca98a6cf5045211dc10bd8e060b79492ec306d61a4d29679fc0d5cc184d"
+    },
+    "experiments/native_point_expectation_bone_state_actual_20261118/RESULT.json": {
+      "bytes": 1570,
+      "sha256": "36dac1dbc6a9218c0cf291cb38c05342d49f01e46c606961d0218544b63e9612"
+    }
+  },
+  "packet_sources_before_after": {
+    "PEER_REVIEW.md": {
+      "bytes": 5521,
+      "sha256": "1742cb14b9072bdd7b08a99297d13168dfe64bc0d89663f92b3b1ba04721c972"
+    },
+    "README.md": {
+      "bytes": 8185,
+      "sha256": "0afac4c52a2b48b4af6cf896894dc4c374db5a03b95be4d2243336fb5858b17f"
+    },
+    "SOURCE_DERIVATION.json": {
+      "bytes": 5584,
+      "sha256": "29d236063d6abc104524fe2db1474c2c8ebc1be48d636fa807870d7d1501f3a2"
+    },
+    "audit_cpu.py": {
+      "bytes": 5076,
+      "sha256": "1506ceb4150078b2cfd946802e23eb61cbf783e864aad0a327986c90f5433ab0"
+    },
+    "blender_weight_storage_probe.py": {
+      "bytes": 12938,
+      "sha256": "d7f75e11bd8a90d0f652f67ae92843629e5126b965c5e7c4262ab97d901bac95"
+    },
+    "test_weight_storage_probe.py": {
+      "bytes": 15727,
+      "sha256": "c52d6391648fdb7689e6d227298456e827da5320b2d5600d9802eff41a2476e5"
+    },
+    "weight_storage_contract.py": {
+      "bytes": 11972,
+      "sha256": "f71753e3b7183c5fab343bf8af504cd5613879bd95b89d5f338f54123180db18"
+    }
+  },
+  "finite_cases": 21952,
+  "positive_add_calls": 47040,
+  "group_count": 69,
+  "case_catalogue_sha256": "1a1233af2770806aeeef777263e45716f703a3e06ff145c28464a6142a6690d0",
+  "test_output": "test_background_receipt_requires_desktop_without_fabricated_window (test_weight_storage_probe.WeightStorageTests.test_background_receipt_requires_desktop_without_fabricated_window) ... ok\ntest_cleanup_failure_refuses_success (test_weight_storage_probe.WeightStorageTests.test_cleanup_failure_refuses_success) ... ok\ntest_correct_fake_full_API_and_cleanup (test_weight_storage_probe.WeightStorageTests.test_correct_fake_full_API_and_cleanup) ... ok\ntest_failure_cleanup_preserves_only_preexisting_IDs (test_weight_storage_probe.WeightStorageTests.test_failure_cleanup_preserves_only_preexisting_IDs) ... ok\ntest_finite_counts_and_signed_zero_alphabet (test_weight_storage_probe.WeightStorageTests.test_finite_counts_and_signed_zero_alphabet) ... ok\ntest_fresh_owned_request_script_pin_and_path_guards (test_weight_storage_probe.WeightStorageTests.test_fresh_owned_request_script_pin_and_path_guards) ... ok\ntest_independent_event_oracle_agrees_with_existing_generalized_source_ledger (test_weight_storage_probe.WeightStorageTests.test_independent_event_oracle_agrees_with_existing_generalized_source_ledger) ... ok\ntest_missing_extra_and_reordered_readback_rows_refuse (test_weight_storage_probe.WeightStorageTests.test_missing_extra_and_reordered_readback_rows_refuse) ... ok\ntest_public_report_validator_binds_complete_evidence_and_rejects_canned_status (test_weight_storage_probe.WeightStorageTests.test_public_report_validator_binds_complete_evidence_and_rejects_canned_status) ... ok\ntest_validate_order_change_is_distinguished_from_immediate_behavior (test_weight_storage_probe.WeightStorageTests.test_validate_order_change_is_distinguished_from_immediate_behavior) ... ok\ntest_wrong_storage_rules_are_counted_and_subnormal_failure_retained (test_weight_storage_probe.WeightStorageTests.test_wrong_storage_rules_are_counted_and_subnormal_failure_retained) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 4.017s\n\nOK\n",
+  "original_native_arrays_models_or_art_read": false,
+  "native_Blender_SourceIO_or_export_run": false,
+  "Git_network_installs_or_process_queries_used": false,
+  "window_or_desktop_API_called": false,
+  "all_runtime6_SourceIO574_exporter120_or_1029_source_rechecked": false,
+  "Root_native_launcher_or_fresh_request_created": false,
+  "expired_admission_reused": false,
+  "native_storage_or_universal_F32_policy_qualified": false,
+  "native_fidelity_export_repair_adoption_qualified": false
+}

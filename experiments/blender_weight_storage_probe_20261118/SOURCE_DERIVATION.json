@@ -1,0 +1,117 @@
+{
+  "format": "has_synthetic_weight_storage_probe_source_derivation_1",
+  "status": "SOURCE_CPU_ONLY_NATIVE_UNRUN",
+  "source_pins": {
+    "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/blender_bindings/models/mdl49/import_mdl.py": {
+      "bytes": 12880,
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+    },
+    "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/blender_bindings/models/common.py": {
+      "bytes": 23149,
+      "sha256": "2522f2a451f082edcfcf66c3b445782716e24feb45f8b43d5d6e459f6408f750"
+    },
+    "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/blender_bindings/utils/fast_mesh.py": {
+      "bytes": 2102,
+      "sha256": "ece5c47ac13eb5885bdc7c5b415784a6c7ea3ecc76d13c620bb561ca9c30058a"
+    },
+    "tools/private_desktop.py": {
+      "bytes": 12884,
+      "sha256": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628"
+    },
+    "experiments/replay_audio_fix_20261115/builder/input-lock.json": {
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    "experiments/native_point_expectation_bone_state_fix_20261118/INDEX.json": {
+      "bytes": 1135,
+      "sha256": "4afdadb1fbbbf44216b9c3c0d7736efc293c7717eb8908e7eb219b7af094c7c8"
+    },
+    "experiments/native_point_expectation_bone_state_fix_20261118/native_point_expectation.py": {
+      "bytes": 27615,
+      "sha256": "cbb4eca98a6cf5045211dc10bd8e060b79492ec306d61a4d29679fc0d5cc184d"
+    },
+    "experiments/native_point_expectation_bone_state_actual_20261118/RESULT.json": {
+      "bytes": 1570,
+      "sha256": "36dac1dbc6a9218c0cf291cb38c05342d49f01e46c606961d0218544b63e9612"
+    }
+  },
+  "rule": "Pinned SourceIO creates groups in native order; for each vertex all three native slots in order issue REPLACE only when F32 weight > 0; no stored-group order is assumed as fact.",
+  "SourceIO_group_and_write_rule": "blender_bindings/models/mdl49/import_mdl.py weight_groups comprehension and nested enumerate(zip(...))/zip(...)/weight>0/.add([n],weight,REPLACE)",
+  "SourceIO_validate_boundary": "Same importer calls mesh_data.validate() without arguments after assigning weights.",
+  "bounded_fixture": {
+    "groups_created": 69,
+    "group_ID_alphabet": [
+      0,
+      1,
+      2,
+      68
+    ],
+    "weight_F32_word_alphabet": [
+      "00000000",
+      "80000000",
+      "00000001",
+      "3dcccccd",
+      "3e4ccccd",
+      "3e99999a",
+      "3f800000"
+    ],
+    "slots_per_case": 3,
+    "cases": 21952,
+    "positive_calls": 47040,
+    "expected_stored_group_histogram": {
+      "0": 512,
+      "1": 6740,
+      "2": 11700,
+      "3": 3000
+    },
+    "case_catalogue_sha256": "1a1233af2770806aeeef777263e45716f703a3e06ff145c28464a6142a6690d0",
+    "expected_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca"
+  },
+  "independent_oracle": "First positive event per group determines ordering; last positive event per group determines exact word. This is a finite candidate hypothesis, not universal/native behavior.",
+  "raw_source_fact_context_public_result_only": {
+    "result_sha256": "36dac1dbc6a9218c0cf291cb38c05342d49f01e46c606961d0218544b63e9612",
+    "rows": 9661,
+    "corners": 42702,
+    "models": 2,
+    "groups": 69,
+    "actual_arrays_read_here": false,
+    "source_row_storage_policy_qualified": false
+  },
+  "API_scope": {
+    "owned_loose_point_mesh_only": true,
+    "no_scene_link_or_operator_call": true,
+    "before_and_after_no_argument_validate": true,
+    "preserve_direct_ordered_readback_zero_subnormal_words": true,
+    "exact_binary32_readback_required_without_rounding": true,
+    "expected_and_observed_hashes_independent": true,
+    "all_mismatch_counts_and_at_most_12_examples_each_phase": true,
+    "owned_only_object_mesh_cleanup_in_finally": true
+  },
+  "fresh_request_scope": {
+    "exact_two_copied_scripts": true,
+    "Root_external_script_pins_before_import_required": true,
+    "actual_imported_contract_path_checked": true,
+    "request_max_bytes": 32768,
+    "script_max_bytes": 65536,
+    "stable_single_link_regular_nonreparse_reads": true,
+    "fresh_expiry_max_minutes": 15,
+    "owned_workspace_output_temp_TMP_and_public_paths": true,
+    "runtime_binary_hash_verified_inside_probe": false
+  },
+  "Root_host_obligations": [
+    "fresh authoritative closed native/graphics lane",
+    "all approved runtime6 SourceIO574 exporter120 and 1029/current-source/tool identities before and after",
+    "fresh owned request/script/runtime descriptors bound externally before Blender imports scripts",
+    "existing approved private_desktop wrapper with120second internal timeout4096MiB proposed; retained outer135second host wait/reap not implemented here",
+    "require background child_desktop_confirmed, no foreground/switch and clean job/desktop closure; private_window_seen may be false, no fabricated window or headless bypass",
+    "bind public result/request/script/runtime/source/receipt/child command and complete stage hashes",
+    "retain mismatch and failure evidence; no alphabet/threshold calibration to force pass",
+    "actual source-row/fullscene/general storage policy remains separately qualified"
+  ],
+  "Root_native_launcher_or_request_created_here": false,
+  "expired_admission_reused": false,
+  "native_or_Blender_API_executed_here": false,
+  "native_storage_or_universal_F32_group_policy_qualified": false,
+  "normal_fidelity_export_repair_adoption_qualified": false,
+  "current_publication_modified": false
+}

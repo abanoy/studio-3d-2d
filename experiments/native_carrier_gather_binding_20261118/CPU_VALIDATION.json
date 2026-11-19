@@ -1,0 +1,35 @@
+{
+  "format": "has_CPU_gather_binding_validation_1",
+  "methods": 16,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "actual_final_run_tool_chunk": "a63c8b",
+  "actual_command": "python -B -X utf8 -m unittest discover -s experiments/native_carrier_gather_binding_20261118 -p test_gather_binding.py -v",
+  "final_tested_source_sha256": {
+    "gather_binding.py": "617c062b516ecefa5fab0a6ec8f98163a3b13f76896969cb22102f859323b850",
+    "test_gather_binding.py": "52e6dfeda986d304f237551b614b66634d75feee41164a2f8af6d3ae67e1d5fe"
+  },
+  "prior_first_pass_methods": 12,
+  "self_review_followup": "Added cross-object extraction/attribute cache aliases, early/global bounds and authentic cached NumPy scalar compatibility negatives.",
+  "frozen_parents_payload_pins_checked_after_test": true,
+  "synthetic_objects_and_GLB_bytes_only": true,
+  "native_Blender_exporter_or_private_inputs_executed_or_read": false,
+  "actual_hooks_observed": false,
+  "actual_native_GLTF_binding_qualified": false,
+  "normal_fidelity_or_adoption_qualified": false,
+  "prior_pass_history": [
+    {
+      "methods": 12,
+      "tool_chunk": "855f4d"
+    },
+    {
+      "methods": 14,
+      "tool_chunk": "68cba9"
+    }
+  ],
+  "independent_source_peer_review": "GO_AFTER_CORRECTION",
+  "peer_correction": "Authentic cached numpy.uint32 material scalar is now read losslessly using checked scalar metadata and integer protocol; actual dict/scalar/storage references remain unchanged. Added16-method final CPU regression evidence. README narrows instancing claim to repeated Mesh events.",
+  "synthetic_numpy_dependency_version": "2.4.1",
+  "peer_review": "PEER_REVIEW.json"
+}

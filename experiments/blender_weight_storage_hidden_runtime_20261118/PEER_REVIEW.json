@@ -1,0 +1,18 @@
+{
+  "format": "has_independent_hidden_weight_runtime_source_privacy_review_1",
+  "result": "GO_AFTER_CORRECTION",
+  "reviewed_source_sha256": {
+    "placement_sentinel.py": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2",
+    "protocol.py": "c6d703db7ae48f69e7d70a5ddc90fe2472ccdb09bb230e975ad0ddf9906af2f2",
+    "root_runner.py": "24e28a4c24c88cf2f165c68cfe684f5d31c929ce9909a19b7ef558414e2e9984",
+    "test_host.py": "a69b9997e62404e80a50ba3c8f4d9d700c6cec5bb03f6cc29b40c3c4525f5c29",
+    "test_placement_sentinel.py": "c3a94697d917fc55024d68ef780dee98ca328ec1f7201d87e829ec75481e05d5",
+    "test_runtime.py": "ed1b7d9c2bf6a14c39fec55dfdf8268a22d00f49b71b9c45a5151fee7af1ca5c",
+    "weight_storage_host.py": "c384f0210e1dfeb8196714e4381df8b2e8bcc5199d45c691a9e6d8addf4ba421"
+  },
+  "initial_blocker_preserved": "Host initially repeated unchanged probe.read_plan after PUBLIC_WEIGHT_STORAGE was written; its fresh-output preflight would deterministically refuse every completed run.",
+  "correction": "Host post_probe_context now directly checks unchanged source closure/bytes, UTC expiry and owned TEMP/TMP, with unchanged host/request/plan identity rebind; completed output is allowed. Full host-main regression forbids repeated fresh-output preflight and verifies successful post-cleanup hash-bound sidecar.",
+  "final_review": "No remaining source/authority/cleanup/proof/privacy blockers found. Original guards retained.",
+  "peer_source_only_no_execution_process_queries_Git_or_private_reads": true,
+  "actual_native_successor_execution": false
+}

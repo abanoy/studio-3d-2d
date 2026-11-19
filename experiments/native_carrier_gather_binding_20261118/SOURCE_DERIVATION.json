@@ -1,0 +1,161 @@
+{
+  "format": "has_CPU_gather_binding_source_derivation_1",
+  "status": "SOURCE_CPU_ONLY_UNQUALIFIED",
+  "sealed_parent_INDEX_sha256": {
+    "native_normal_carrier_strategy_20261117": "1987162fe6d7a7e055c4d532959346daf88ae05a45ed4d89a335d65fbd7665ea",
+    "carrier_semantic_preservation_20261117": "edab37a065d3c29a316b7a1c1cab3a4263f5d4e716f97fa4192f541b391ea4fd",
+    "carrier_input_domain_20261118": "e7ae7f7011cf5e063f4513c75bf21e704d1c2de18604945e06dda763025a960a",
+    "native_point_expectation_20261118": "482f888349c19617bc540df723ed76104d3d6056cab085ecf6b99a56f42040f6",
+    "native_normal_carrier_probe_20261117": "a800398fa46c506c339aa81b4bc3db098bc6dc1c0d03b30274899debac61e8e6"
+  },
+  "parent_payloads_checked_after_CPU": {
+    "native_normal_carrier_strategy_20261117": 13,
+    "carrier_semantic_preservation_20261117": 5,
+    "carrier_input_domain_20261118": 6,
+    "native_point_expectation_20261118": 7,
+    "native_normal_carrier_probe_20261117": 13
+  },
+  "runtime_dependency": "experiments/carrier_input_domain_20261118/semantic_compare.py",
+  "runtime_dependency_sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00",
+  "installed_public_source_root": "C:/Program Files/Blender Foundation/Blender 5.1/5.1/scripts/addons_core/io_scene_gltf2",
+  "installed_source_read_only_not_imported_or_executed": true,
+  "source_trace": {
+    "blender/exp/nodes.py": {
+      "sha256": "6c77f1ec3f13bd4636ca72f766429abc9cd4353ff218fdb088db1e41f184b7c3",
+      "bytes": 25757,
+      "reviewed_lines": [
+        [
+          257,
+          378
+        ]
+      ]
+    },
+    "blender/exp/obj_data.py": {
+      "sha256": "1d0e3942a5c65dacbba2b51fb89688026a36c3fc81f89da683c9e2eb393203a8",
+      "bytes": 6504,
+      "reviewed_lines": [
+        [
+          21,
+          85
+        ],
+        [
+          136,
+          148
+        ]
+      ]
+    },
+    "blender/exp/primitives.py": {
+      "sha256": "7d7f2c6d9c5e64974f05ee40967d4415a00ee9b4ed91447889cee44d185c68a4",
+      "bytes": 15263,
+      "reviewed_lines": [
+        [
+          19,
+          104
+        ],
+        [
+          107,
+          192
+        ],
+        [
+          195,
+          230
+        ]
+      ]
+    },
+    "blender/exp/primitive_extract.py": {
+      "sha256": "455a3566d833481b230141b457452b5bf4ff4a1661d4dd6765a568488e0a2769",
+      "bytes": 88128,
+      "reviewed_lines": [
+        [
+          19,
+          45
+        ],
+        [
+          90,
+          94
+        ],
+        [
+          400,
+          416
+        ],
+        [
+          900,
+          972
+        ]
+      ]
+    },
+    "blender/exp/cache.py": {
+      "sha256": "12fc08e6403c9dd604f6884fdfdcf787ed5a898a2c6f4e2990f1826d6e265d98",
+      "bytes": 7520,
+      "reviewed_lines": [
+        [
+          8,
+          43
+        ]
+      ]
+    },
+    "blender/exp/exporter.py": {
+      "sha256": "49c1e0174a65efd6d411b906cd154b6b04502c4840c9b31a7bfac87e0888f242",
+      "bytes": 22418,
+      "reviewed_lines": [
+        [
+          397,
+          419
+        ],
+        [
+          443,
+          446
+        ],
+        [
+          488,
+          520
+        ]
+      ]
+    },
+    "io/com/gltf2_io.py": {
+      "sha256": "d0bad0c89e40c0975ed9e435656151e353240134011f69602e473e0a5f1592f4",
+      "bytes": 56366,
+      "reviewed_lines": [
+        [
+          857,
+          929
+        ]
+      ]
+    },
+    "blender/exp/export.py": {
+      "sha256": "d6ae39bf861fc3db7662bc8e7063aadfbe116b8a5de81b40ba027a679f8435a8",
+      "bytes": 16639,
+      "reviewed_lines": [
+        [
+          64,
+          79
+        ]
+      ]
+    }
+  },
+  "full_120_exporter_identity_recheck_claimed": false,
+  "API_contract": [
+    "observe_creator(creator,branch,blender_indices,material_slot,topology_indices,ordinal)",
+    "bind_gather(creator,materials,cached_internal_primitives,gathered_primitives,gltf_mesh)",
+    "record_material_reference(material,index)",
+    "record_mesh_reference(mesh,index)",
+    "finalize(raw_glb,expected_sha256)"
+  ],
+  "consumer_schema": "dict[tuple[int mesh_index,int primitive_index],tuple[int one_based_source_ids]]",
+  "source_material_slot_not_final_GLTF_material_index": true,
+  "extraction_cache_key_omits_materials_skin_UUID_and_groups": true,
+  "outer_primitive_cache_key_includes_material_objects_but_omits_skin_UUID_and_groups": true,
+  "actual_hook_adapter_or_cache_reset_or_exporter_patch_implemented": false,
+  "actual_native_assets_arrays_or_runtime_read": false,
+  "old_packets_or_Main_or_docs_modified": false,
+  "original_normal_failure_preserved": "FAILED_UNQUALIFIED",
+  "actual_GLTF_binding_qualification": false,
+  "limitations": [
+    "Hook/event/admission provenance remains a Root-owned future native gate.",
+    "NumPy normalization requires checked dtype/shape/bounds in future actual hooks.",
+    "This binder uses independent source IDs and never decodes carrier payload values.",
+    "Full input-domain, original/carrier semantic comparison, exact NORMAL and adoption gates remain separate."
+  ],
+  "actual_NumPy_cached_material_field_rewritten": false,
+  "cached_material_scalar_admission": "Exact Python int, or source-profile NumPy uint32 scalar metadata plus lossless operator.index; future hook must qualify exact runtime type provenance."
+}

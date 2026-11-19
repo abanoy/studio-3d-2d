@@ -1,0 +1,54 @@
+{
+  "format": "has_root_synthetic_weight_runtime_source_derivation_1",
+  "status": "SOURCE_CPU_READY_NATIVE_UNRUN",
+  "expected_metadata_HEAD": "795a0af905bfbe49b99ab7335594cd6666ef91e5",
+  "expired_admission_reused": false,
+  "sealed_probe_INDEX_sha256": "31f4a7275e11883a9936b033148d3bae5638d2017fa5147b305ea6a945289adb",
+  "probe_packet_payloads_rechecked_after_CPU": 8,
+  "exact_probe_scripts": {
+    "blender_weight_storage_probe.py": {
+      "bytes": 12938,
+      "sha256": "d7f75e11bd8a90d0f652f67ae92843629e5126b965c5e7c4262ab97d901bac95"
+    },
+    "weight_storage_contract.py": {
+      "bytes": 11972,
+      "sha256": "f71753e3b7183c5fab343bf8af504cd5613879bd95b89d5f338f54123180db18"
+    }
+  },
+  "approved_wrapper_source": "tools/private_desktop.py",
+  "approved_wrapper_sha256": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+  "wrapper_copy_byte_exact_at_future_execution_required": true,
+  "retained_inventory_and_invoke_patterns_from": {
+    "path": "experiments/native_B_resource_ownership_runtime_20261118/root_runner.py",
+    "sha256": "6c6108432c074806d0d9da3acec3e61bac67ac2a36267ea2fbcbe64fc77d5234"
+  },
+  "prior_approved_runtime_lock_sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6",
+  "PWSH_prior_source_pin": "2a6769a3330dc1084d0154bfde7d164ab750ca7f700f313f9d417c1be78b2233",
+  "raw_functional_guard_public_source": "experiments/neon_windows_3a3701a_20261117/active-observation/source-before.json",
+  "raw_functional_guard_public_sha256": "3ef2e7d8bed6e063afef59c8caccba914663752998761350c882fd4efbc78e9d",
+  "raw_functional_guard_execution_required_before_after": 1029,
+  "limits": {
+    "wrapper_timeout_seconds": 120,
+    "parent_wait_seconds": 165,
+    "owned_reap_grace_seconds": 15,
+    "owned_inventory_timeout_seconds": 30,
+    "job_memory_MiB": 2048,
+    "stdout_stderr_postrun_cap_each_bytes": 4194304,
+    "report_bytes": 524288,
+    "request_bytes": 32768,
+    "receipt_bytes": 65536,
+    "authority_max_lifetime_seconds": 900,
+    "authority_initial_freshness_seconds": 120
+  },
+  "synthetic_only": true,
+  "model_scene_native_arrays_or_SourceIO_import_export": false,
+  "private_window_required": false,
+  "actual_child_desktop_confirmation_required": true,
+  "window_sentinel_added": false,
+  "passing_result_uses_sealed_producer_match_and_receipt_validators": true,
+  "bounded_mismatch_preserved_before_exit0_gate": true,
+  "all_native_source_universal_fidelity_adoption_flags_stay_false": true,
+  "Native_process_inventory_or_Git_commands_run_by_this_preparation": false,
+  "Main_docs_or_prior_packets_changed": false,
+  "actual_Root_execute_authority_stage_request_or_native_command_created": false
+}

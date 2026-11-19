@@ -1,0 +1,30 @@
+{
+  "format": "has_root_synthetic_weight_runtime_CPU_validation_1",
+  "status": "CPU_FAKE_PASS_NATIVE_UNRUN",
+  "methods": 14,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "actual_final_test_tool_chunk": "c7f016",
+  "actual_command": "python -B -X utf8 -m unittest discover -s experiments/blender_weight_storage_probe_runtime_20261118 -p test_runtime.py -v",
+  "first_pass_methods": 13,
+  "first_pass_tool_chunk": "9bc148",
+  "final_tested_source_sha256": {
+    "root_runner.py": "3faceb641f797ab42a910379f83b6e12fdabdd5c941fab09d65dca1edb6c4adc",
+    "protocol.py": "8f1cb6a4012adf2b90b1c99b59f37cba9d7187b5e7e30e8c3edc904aeb7b6e9e",
+    "test_runtime.py": "67d81a39ed58bcc933787b1075c8f1be1e6e941c6799818b99fe64967d902517"
+  },
+  "test_inputs": "Exact sealed public contract code plus synthetic request/report/receipt/path and retained-Popen fakes only.",
+  "frozen_probe_INDEX_checked_before_and_after_CPU": true,
+  "approved_wrapper_source_pin_checked_after_CPU": true,
+  "actual_runtime_executable_identities_or_process_scopes_or_full_raw1029_observed": false,
+  "actual_child_or_native_start": false,
+  "sourceIO_import_export_or_private_asset_array_read": false,
+  "Git_commands_network_installs_or_Main_docs_writes": false,
+  "independent_source_privacy_peer": "GO",
+  "qualification_flags": {
+    "native_storage_rule": false,
+    "universal_or_actual_source_policy": false,
+    "native_fidelity_export_repair_adoption": false
+  }
+}

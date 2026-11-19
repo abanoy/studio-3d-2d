@@ -1,0 +1,61 @@
+{
+  "format": "has_additive_hidden_weight_runtime_source_derivation_1",
+  "status": "SOURCE_CPU_READY_ROOT_NATIVE_UNRUN",
+  "frozen_parent_INDEX_sha256": {
+    "blender_weight_storage_probe_runtime_20261118": "e17561614cd2ec4fe5b9210b0d1062371d8c34649184752c088ecfb4ce8a70ab",
+    "blender_weight_storage_probe_20261118": "31f4a7275e11883a9936b033148d3bae5638d2017fa5147b305ea6a945289adb"
+  },
+  "frozen_parent_payloads_verified_after_CPU": {
+    "blender_weight_storage_probe_runtime_20261118": 9,
+    "blender_weight_storage_probe_20261118": 8
+  },
+  "original_preparer_path": "experiments/prepare_weight_authority_20261118.py",
+  "original_preparer_sha256": "7b0abaf896610003bab138cf4c8f11fcca73d16507ca880b8d5111c1d250aead",
+  "original_preparer_changed": false,
+  "separate_successor_preparer_path": "experiments/prepare_weight_hidden_authority_20261118.py",
+  "exact_helper_source": "experiments/native_normal_carrier_probe_20261117/placement_sentinel.py",
+  "exact_helper_bytes": 4387,
+  "exact_helper_sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2",
+  "helper_module_and_body_byte_exact": true,
+  "new_host_directory": "owned stage/host: weight_storage_host.py and placement_sentinel.py only",
+  "unchanged_probe_directory": "owned stage/source: original two sealed scripts only",
+  "source_sha256": {
+    "placement_sentinel.py": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2",
+    "protocol.py": "c6d703db7ae48f69e7d70a5ddc90fe2472ccdb09bb230e975ad0ddf9906af2f2",
+    "root_runner.py": "24e28a4c24c88cf2f165c68cfe684f5d31c929ce9909a19b7ef558414e2e9984",
+    "test_host.py": "a69b9997e62404e80a50ba3c8f4d9d700c6cec5bb03f6cc29b40c3c4525f5c29",
+    "test_placement_sentinel.py": "c3a94697d917fc55024d68ef780dee98ca328ec1f7201d87e829ec75481e05d5",
+    "test_runtime.py": "ed1b7d9c2bf6a14c39fec55dfdf8268a22d00f49b71b9c45a5151fee7af1ca5c",
+    "weight_storage_host.py": "c384f0210e1dfeb8196714e4381df8b2e8bcc5199d45c691a9e6d8addf4ba421"
+  },
+  "required_metadata_HEAD": "795a0af905bfbe49b99ab7335594cd6666ef91e5",
+  "limits": {
+    "hidden_witness_sync_hold_seconds_before": 0.5,
+    "hidden_witness_sync_hold_seconds_after": 0.5,
+    "wrapper_timeout_seconds": 120,
+    "parent_wait_seconds": 165,
+    "job_memory_MiB": 2048,
+    "host_request_bytes": 32768,
+    "host_sidecar_bytes": 65536,
+    "synthetic_report_bytes": 524288
+  },
+  "Root_attested_first_attempt": {
+    "stage": "output/weight-storage-probe-20261118-5c0d69b49541410d8aaeeb6804013b83",
+    "overall": "NOT_PASS",
+    "both_phase_cases": 21952,
+    "both_phase_mismatch_cases": 0,
+    "ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+    "wrapper_exit": 2,
+    "child_desktop_confirmed": false,
+    "private_window_seen": false,
+    "original_evidence_reobserved_or_changed_here": false
+  },
+  "old_runtime_or_probe_or_first_failure_modified": false,
+  "actual_root_authority_stage_or_native_command_issued_here": false,
+  "receipt_required_window_seen_and_child_desktop_confirmed": true,
+  "exact_post_cleanup_host_policy_hash_and_marker_required": true,
+  "host_placement_is_additive_not_probe_field_rewrite": true,
+  "original_probe_no_window_API_field_scope_preserved": true,
+  "raw1029_tool_packet_authority_and_zero_scope_guards_retained": true,
+  "native_storage_universal_fidelity_or_adoption_qualified": false
+}

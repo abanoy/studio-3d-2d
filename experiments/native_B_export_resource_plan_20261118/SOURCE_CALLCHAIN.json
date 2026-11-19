@@ -1,0 +1,228 @@
+{
+  "format": "has_B_export_resource_source_plan_callchain_1",
+  "status": "SOURCE_ANALYSIS_ONLY_NO_RESOURCE_ACCEPTANCE",
+  "approved_lock": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\replay_audio_fix_20261115\\builder\\input-lock.json",
+    "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+  },
+  "selected_source_count": 11,
+  "selected_sources": {
+    "__init__.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\__init__.py",
+      "bytes": 86793,
+      "sha256": "dddd7d2362b937f34a5d4a1978259317720a9bc647bb3b4dc113f9d5c38cbf56"
+    },
+    "blender/exp/export.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\export.py",
+      "bytes": 16639,
+      "sha256": "d6ae39bf861fc3db7662bc8e7063aadfbe116b8a5de81b40ba027a679f8435a8"
+    },
+    "blender/exp/exporter.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\exporter.py",
+      "bytes": 22418,
+      "sha256": "49c1e0174a65efd6d411b906cd154b6b04502c4840c9b31a7bfac87e0888f242"
+    },
+    "blender/exp/primitives.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\primitives.py",
+      "bytes": 15263,
+      "sha256": "7d7f2c6d9c5e64974f05ee40967d4415a00ee9b4ed91447889cee44d185c68a4"
+    },
+    "blender/exp/material/materials.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\material\\materials.py",
+      "bytes": 31500,
+      "sha256": "e9660b8325208928317df15c05ed980c04f275a8afad01e1195a1a3f1859c5f6"
+    },
+    "blender/exp/material/texture_info.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\material\\texture_info.py",
+      "bytes": 11477,
+      "sha256": "962d784eefcd81e1f5bfe7cc7f96bb19b2b7725dfa4a00250ecf87db551d144a"
+    },
+    "blender/exp/material/texture.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\material\\texture.py",
+      "bytes": 9586,
+      "sha256": "9abd202b09a224c2cfe14a1ff596be362e1d7e19e11ce71bad68cd56092a0e20"
+    },
+    "blender/exp/material/search_node_tree.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\material\\search_node_tree.py",
+      "bytes": 46493,
+      "sha256": "2bafe2b2d24bf6d8087c22a6d3a5fddc9f39eb537a2f052e99c1d9dc92136c59"
+    },
+    "blender/exp/material/image.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\material\\image.py",
+      "bytes": 21734,
+      "sha256": "fc1ce104f15d6168ee959742e2313f668aeb0e8526cf0b4122e796a1a241c509"
+    },
+    "blender/exp/material/encode_image.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\material\\encode_image.py",
+      "bytes": 19655,
+      "sha256": "1f59e5a2a3116c21afab6c2baf49f9ea1b4c9d663b268d69ec5123d2bf011de1"
+    },
+    "io/exp/user_extensions.py": {
+      "absolute_path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\io\\exp\\user_extensions.py",
+      "bytes": 715,
+      "sha256": "25d27cebbfce855dd5ac34928582ac5ab7f0e84d9a1d1862492ba3b82f523186"
+    }
+  },
+  "public_observation_pins": {
+    "experiments/native_B_issue_attribution_20261118/RESULT.json": {
+      "bytes": 2043,
+      "sha256": "b81aa1eba8092eee603edc342a2ce4eee5686d4a85c3c72f2a97b646f930870b"
+    },
+    "experiments/native_B_ownership_root_classification_20261118/RESULT.json": {
+      "bytes": 1832,
+      "sha256": "3481821aef0643fdaf75cbfef79d624e1671a5a4243ce9459b5921f9ad1a3dd0"
+    },
+    "experiments/native_B_resource_classification_actual_20261118/PUBLIC_CLASSIFICATION.json": {
+      "bytes": 968,
+      "sha256": "a69348f39200bba09556c05103c2379c229ef98241697e79ac12d281cfa147ce"
+    }
+  },
+  "original_private_resource_sha256_reference_only": "d47ed4cc9f38dae6852c622b8fe6594e182d3398dff8cd63022ba007a9849659",
+  "original_private_ownership_sha256_reference_only": "6ccecbbf0838bb25a4d7044e13680a6247c927af36d1bc22756789ec481b93b9",
+  "callchain": [
+    {
+      "source": "blender/exp/export.py",
+      "line": 21,
+      "call": "save",
+      "role": "Frame selection and pre/post callbacks surround gathering/writing; bind actual gather-boundary state."
+    },
+    {
+      "source": "__init__.py",
+      "line": 1324,
+      "call": "pre_export_callbacks/post_export_callbacks registration",
+      "role": "Freeze both callback registries, not only gltf_user_extensions."
+    },
+    {
+      "source": "blender/exp/primitives.py",
+      "line": 42,
+      "call": "gather_primitives -> get_base_material",
+      "role": "Bind actual primitive material index and admitted material slots."
+    },
+    {
+      "source": "blender/exp/material/materials.py",
+      "line": 651,
+      "call": "get_base_material -> gather_material at50",
+      "role": "Gather shader texture sockets from the actual material; cache uses original material identity."
+    },
+    {
+      "source": "blender/exp/material/texture_info.py",
+      "line": 27,
+      "call": "gather_texture_info -> __gather_index at223",
+      "role": "Pass the actual contributing shader sockets to texture gathering."
+    },
+    {
+      "source": "blender/exp/material/texture.py",
+      "line": 20,
+      "call": "gather_texture -> __gather_source at209 -> image.gather_image",
+      "role": "Gather resource source and sampler through the material path."
+    },
+    {
+      "source": "blender/exp/material/image.py",
+      "line": 19,
+      "call": "gather_image -> __get_image_data at247",
+      "role": "Build image/channel representation from socket-derived texture nodes."
+    },
+    {
+      "source": "blender/exp/material/search_node_tree.py",
+      "line": 130,
+      "call": "get_texture_node_from_socket -> from_socket at64",
+      "role": "Follow linked sockets and nested groups to ShaderNodeTexImage; no Viewer-type exclusion here."
+    },
+    {
+      "source": "blender/exp/material/image.py",
+      "line": 119,
+      "call": "__gather_buffer_view -> ExportImage.encode",
+      "role": "GLB embeds the encoded image bytes."
+    },
+    {
+      "source": "blender/exp/material/encode_image.py",
+      "line": 384,
+      "call": "ExportImage.__encode_from_image",
+      "role": "For clean FILE data prefer packed_file.data; disk-read alternative applies when unpacked; matching format signatures reuse bytes."
+    },
+    {
+      "source": "blender/exp/material/encode_image.py",
+      "line": 441,
+      "call": "_encode_temp_image; make_temp_image_copy at476",
+      "role": "Fallback uses buffers and owned temporary encoding; packed input alone does not prove identical output bytes."
+    }
+  ],
+  "critical_branches": [
+    {
+      "source": "blender/exp/exporter.py",
+      "line": 378,
+      "rule": "Optional unused-image traversal filters source VIEWER; main material route does not."
+    },
+    {
+      "source": "blender/exp/material/image.py",
+      "line": 84,
+      "rule": "keep-original path resolves/tests original URI and may return no image if unavailable even with packed data."
+    },
+    {
+      "source": "blender/exp/material/image.py",
+      "line": 293,
+      "rule": "Image mapping selects original URI when gltf_keep_original_textures is true."
+    },
+    {
+      "source": "blender/exp/material/image.py",
+      "line": 169,
+      "rule": "Composed image naming uses raw filepath equality and basename, otherwise image names."
+    },
+    {
+      "source": "blender/exp/material/image.py",
+      "line": 459,
+      "rule": "JPEG/WebP detection uses raw suffix or packed magic when filepath_raw is empty."
+    },
+    {
+      "source": "__init__.py",
+      "line": 1128,
+      "rule": "export_keep_originals populates gltf_keep_original_textures."
+    },
+    {
+      "source": "__init__.py",
+      "line": 1171,
+      "rule": "Material mode controls unused texture/image options; explicitly freeze actual values."
+    },
+    {
+      "source": "io/exp/user_extensions.py",
+      "line": 5,
+      "rule": "Hooks execute against gathered data; require empty/approved pinned registry."
+    }
+  ],
+  "weak_property_search": {
+    "installed_exporter_Python_library_weak_reference_matches": 0,
+    "interpretation": "This exact local Material weak property is not consumed by this exporter Python flow; no loader/addon-wide no-IO claim."
+  },
+  "minimal_candidate_actions": {
+    "packed_FILE_images_0_1": "KEEP_PACKED_AND_ALL_RELEVANT_PROPERTIES_UNCHANGED",
+    "Viewer_images_2_3": "LEAVE_UNTOUCHED; only separate per-ID exporter-irrelevance proof may admit",
+    "exact_local_Material_weak_property": "LEAVE_UNTOUCHED_APPEND_PROVENANCE_FOR_THIS_EXPORTER_FLOW",
+    "external_copy_requests": "EMPTY_ONLY_IF_COMPLETE_AUTHENTICATED_METADATA_AND_FROZEN_ACTUAL_USE_PROVE_NO_OTHER_DEPENDENCY"
+  },
+  "proof_obligations": [
+    "Retain all original six issue rows/refusal; new scoped disposition separately pinned",
+    "Actual selected object/material/socket/tree/image relation after frame/callback effects, including unused/variant/hook paths",
+    "Exact packed size/hash and raw-path/name/basename/equality/MIME property preservation in owned blend",
+    "Explicit GLB/material/image/quality/keep-original/unused/selection/extras/frame options and equivalence with B; historical branch remains UNKNOWN",
+    "Owned exclusive writes/TEMP/TMP and bounded exact copies only for independently identified unpacked consumed dependencies",
+    "No Viewer enters actual gathered image relation; no blanket-source filter or UI mutation",
+    "Encoded GLB image bytes, materials/textures/samplers and all non-NORMAL bindings preserved by actual comparison",
+    "All separate identity/carrier/normal/domain/native-context/closure gates remain required"
+  ],
+  "suggested_pure_CPU_helper": {
+    "name": "build_export_resource_plan",
+    "implemented": false,
+    "inputs": [
+      "authenticated resource metadata",
+      "authenticated ownership metadata",
+      "frozen export policy",
+      "independent actual exporter-use relation"
+    ],
+    "behavior": "Return retained issue evidence and exact per-ID/property dispositions/copy requests or unresolved refusals; no IO/Blender mutation; cannot manufacture actual-use proof."
+  },
+  "tests_run_for_this_plan": false,
+  "new_native_or_export_run": false,
+  "raw_private_inputs_or_arrays_read": false,
+  "resource_profile_decision_changed": false,
+  "native_fidelity_normal_repair_export_adoption_qualified": false
+}

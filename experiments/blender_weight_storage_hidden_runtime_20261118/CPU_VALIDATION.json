@@ -1,0 +1,29 @@
+{
+  "format": "has_hidden_weight_runtime_CPU_validation_1",
+  "status": "CPU_FAKE_PASS_NATIVE_UNRUN",
+  "methods": 26,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "actual_final_tool_chunk": "396957",
+  "actual_command": "python -B -X utf8 -m unittest discover -s experiments/blender_weight_storage_hidden_runtime_20261118 -p test*.py -v",
+  "first_pass_methods": 24,
+  "first_pass_tool_chunk": "16d038",
+  "final_source_sha256": {
+    "placement_sentinel.py": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2",
+    "protocol.py": "c6d703db7ae48f69e7d70a5ddc90fe2472ccdb09bb230e975ad0ddf9906af2f2",
+    "root_runner.py": "24e28a4c24c88cf2f165c68cfe684f5d31c929ce9909a19b7ef558414e2e9984",
+    "test_host.py": "a69b9997e62404e80a50ba3c8f4d9d700c6cec5bb03f6cc29b40c3c4525f5c29",
+    "test_placement_sentinel.py": "c3a94697d917fc55024d68ef780dee98ca328ec1f7201d87e829ec75481e05d5",
+    "test_runtime.py": "ed1b7d9c2bf6a14c39fec55dfdf8268a22d00f49b71b9c45a5151fee7af1ca5c",
+    "weight_storage_host.py": "c384f0210e1dfeb8196714e4381df8b2e8bcc5199d45c691a9e6d8addf4ba421"
+  },
+  "synthetic_bpy_module_and_WinAPI_fakes_only": true,
+  "actual_bpy_Native_or_process_inventory_or_Git_executed": false,
+  "completed_host_regression_checks_existing_output_and_one_host_fresh_preflight": true,
+  "frozen_parent_packets_and_original_preparer_verified_after_CPU": true,
+  "independent_source_privacy_peer": "GO_AFTER_CORRECTION",
+  "original_native_private_assets_arrays_or_first_attempt_outputs_read": false,
+  "Main_docs_or_prior_packets_written": false,
+  "all_fidelity_universal_source_policy_adoption_flags_false": true
+}

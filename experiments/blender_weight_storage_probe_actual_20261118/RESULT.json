@@ -1,0 +1,243 @@
+{
+  "format": "has_actual_finite_weight_probe_attempts_projection_1",
+  "metadata_head": "795a0af905bfbe49b99ab7335594cd6666ef91e5",
+  "preparation_history": [
+    {
+      "phase": "default_inline_lane_observer",
+      "status": "REFUSED_CIM_ACCESS",
+      "authority_issued": false,
+      "native_started": false
+    },
+    {
+      "phase": "authorized_inline_lane_observer",
+      "status": "REFUSED_SELF_MATCH",
+      "sole_match_proven_exact_current_direct_pwsh_caller": true,
+      "scope_assertion_unchanged": true,
+      "authority_issued": false,
+      "native_started": false
+    },
+    {
+      "phase": "reviewed_file_based_preparer",
+      "status": "FRESH_ZERO_SCOPE_AUTHORITY_ISSUED",
+      "preparer_source_sha256": "7b0abaf896610003bab138cf4c8f11fcca73d16507ca880b8d5111c1d250aead",
+      "no_scope_filter_or_zero_assertion_change": true
+    }
+  ],
+  "attempts": [
+    {
+      "root_result": {
+        "format": "has_root_finite_synthetic_weight_probe_execution_1",
+        "status": "NOT_PASS",
+        "run_id": "5c0d69b49541410d8aaeeb6804013b83",
+        "metadata_head": "795a0af905bfbe49b99ab7335594cd6666ef91e5",
+        "runtime_packet_sha256": "e17561614cd2ec4fe5b9210b0d1062371d8c34649184752c088ecfb4ce8a70ab",
+        "probe_packet_sha256": "31f4a7275e11883a9936b033148d3bae5638d2017fa5147b305ea6a945289adb",
+        "report_sha256": "8a287ecf58437fb001c82dda54a783bf6da5c47eff190548625d0b071b03e02c",
+        "observation": {
+          "observation_status": "BOUNDED_SYNTHETIC_STORAGE_MATCH",
+          "finite_cases": 21952,
+          "phases": {
+            "immediate": {
+              "mismatch_cases": 0,
+              "extra_observed_rows": 0,
+              "mismatch_counts": {
+                "row_missing": 0,
+                "ordered_group_relation": 0,
+                "weight_word": 0
+              },
+              "expected_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+              "observed_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+              "all_cases_match": true
+            },
+            "after_validate": {
+              "mismatch_cases": 0,
+              "extra_observed_rows": 0,
+              "mismatch_counts": {
+                "row_missing": 0,
+                "ordered_group_relation": 0,
+                "weight_word": 0
+              },
+              "expected_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+              "observed_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+              "all_cases_match": true
+            }
+          },
+          "immediate_vs_after_validate_exact": true,
+          "native_storage_rule_qualified": false,
+          "universal_or_actual_source_policy_qualified": false,
+          "native_fidelity_export_repair_adoption_qualified": false
+        },
+        "process": {
+          "pid": 24488,
+          "exit": 2,
+          "timed_out": false,
+          "retained_Popen_reaped": true,
+          "seconds": 7.40243510000073,
+          "streams_within_acceptance_cap": true
+        },
+        "background_receipt": {},
+        "source_tool_authority_preserved": true,
+        "main_review_scopes_zero_before": true,
+        "main_review_scopes_zero_after": true,
+        "error_type": "ValueError",
+        "model_or_native_asset_inputs": false,
+        "SourceIO_import_or_export": false,
+        "native_storage_rule_qualified": false,
+        "universal_group_or_F32_domain_qualified": false,
+        "actual_source_rows_or_saved_scene_qualified": false,
+        "native_fidelity_export_repair_adoption_qualified": false
+      },
+      "root_result_sha256": "4d4d32012fa9f9ab55a60a81e486fbb5b2a4bd425670844087317885048b6a18",
+      "native_public_report_sha256": "8a287ecf58437fb001c82dda54a783bf6da5c47eff190548625d0b071b03e02c",
+      "private_receipt_sha256": "d0cea2b2ad7fd12e2bbe56be622c5f84c1a169d91d25f6374a91dc4ec9559ea5",
+      "receipt_observation": {
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "exit": 2,
+        "job_closed": true,
+        "desktop_closed": true,
+        "error": "No owned graphical window was verified on the private desktop",
+        "child_pid": 26544,
+        "job_memory_limit_bytes": 2147483648
+      },
+      "finite_case_report_independently_validated_readonly": true,
+      "overall_status": "NOT_PASS",
+      "reason": "BACKGROUND_PRIVATE_DESKTOP_PLACEMENT_UNCONFIRMED"
+    },
+    {
+      "root_result": {
+        "format": "has_root_hidden_finite_synthetic_weight_probe_execution_1",
+        "status": "FINITE_SYNTHETIC_MATCH",
+        "run_id": "ff53686b01f5469ba77642f343cceb0b",
+        "metadata_head": "795a0af905bfbe49b99ab7335594cd6666ef91e5",
+        "runtime_packet_sha256": "f8dd89c823215b8bba7e1d74ad2fa119e61aeef2d3f954b0535b57aea5623a34",
+        "probe_packet_sha256": "31f4a7275e11883a9936b033148d3bae5638d2017fa5147b305ea6a945289adb",
+        "report_sha256": "1d786b182a26db0aeb9b1576bf7900fbc0b4f73aaf3509344072ab38f796d8f5",
+        "observation": {
+          "observation_status": "BOUNDED_SYNTHETIC_STORAGE_MATCH",
+          "finite_cases": 21952,
+          "phases": {
+            "immediate": {
+              "mismatch_cases": 0,
+              "extra_observed_rows": 0,
+              "mismatch_counts": {
+                "row_missing": 0,
+                "ordered_group_relation": 0,
+                "weight_word": 0
+              },
+              "expected_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+              "observed_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+              "all_cases_match": true
+            },
+            "after_validate": {
+              "mismatch_cases": 0,
+              "extra_observed_rows": 0,
+              "mismatch_counts": {
+                "row_missing": 0,
+                "ordered_group_relation": 0,
+                "weight_word": 0
+              },
+              "expected_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+              "observed_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+              "all_cases_match": true
+            }
+          },
+          "immediate_vs_after_validate_exact": true,
+          "native_storage_rule_qualified": false,
+          "universal_or_actual_source_policy_qualified": false,
+          "native_fidelity_export_repair_adoption_qualified": false
+        },
+        "process": {
+          "pid": 15476,
+          "exit": 0,
+          "timed_out": false,
+          "retained_Popen_reaped": true,
+          "seconds": 3.5559300999993866,
+          "streams_within_acceptance_cap": true
+        },
+        "background_receipt": {
+          "background_private_desktop_confirmed": true,
+          "private_window_seen": true,
+          "child_exit": 0,
+          "visible_window_required": false,
+          "hidden_owned_window_required": true
+        },
+        "source_tool_authority_preserved": true,
+        "host_placement": {
+          "hidden_host_placement_complete": true,
+          "probe_return_code": 0,
+          "placement": {
+            "format": "has_hidden_background_desktop_placement_sentinel_1",
+            "purpose": "Owned background-process desktop placement only; no Blender GUI or render assertion.",
+            "class": "STATIC",
+            "requested_size_pixels": [
+              0,
+              0
+            ],
+            "disabled": true,
+            "noactivate_style": true,
+            "toolwindow_style": true,
+            "visible_at_creation": false,
+            "visible_before_destruction": false,
+            "owned_pid_and_thread_verified": true,
+            "destroyed_in_finally": true,
+            "show_or_activation_calls": false,
+            "thread_desktop_switch_calls": false
+          },
+          "host_request_sha256": "6bada5c66c7b5138d999242425c199dc5f2f0441f12e9bdab6e48480b5cf67f5",
+          "host_source_identities": {
+            "weight_storage_host.py": {
+              "bytes": 11375,
+              "sha256": "c384f0210e1dfeb8196714e4381df8b2e8bcc5199d45c691a9e6d8addf4ba421"
+            },
+            "placement_sentinel.py": {
+              "bytes": 4387,
+              "sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2"
+            }
+          },
+          "unchanged_probe_window_or_desktop_API_called": false,
+          "host_hidden_window_API_called": true,
+          "native_storage_rule_qualified": false
+        },
+        "host_placement_sha256": "28708df2b249a8aafc7686893975e87358951b1d3b2f47ec6d19d954b68d548b",
+        "main_review_scopes_zero_before": true,
+        "main_review_scopes_zero_after": true,
+        "error_type": null,
+        "model_or_native_asset_inputs": false,
+        "SourceIO_import_or_export": false,
+        "native_storage_rule_qualified": false,
+        "universal_group_or_F32_domain_qualified": false,
+        "actual_source_rows_or_saved_scene_qualified": false,
+        "native_fidelity_export_repair_adoption_qualified": false
+      },
+      "root_result_sha256": "4f695357000136a24641063a4bf3a93848d57db6377b22d0ef2812c3e43e39e4",
+      "native_public_report_sha256": "1d786b182a26db0aeb9b1576bf7900fbc0b4f73aaf3509344072ab38f796d8f5",
+      "private_receipt_sha256": "3349d49c74fdbf8772f355cdcde3d60f3ad9ebe0c8a6d478f06a91c7173a853a",
+      "receipt_observation": {
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_pid": 28300,
+        "job_memory_limit_bytes": 2147483648
+      },
+      "finite_case_report_and_receipt_independently_validated_readonly": true,
+      "overall_status": "FINITE_SYNTHETIC_MATCH",
+      "reason": "ALL_FINITE_CASES_MATCHED_WITH_REAL_HIDDEN_PLACEMENT_AND_CLOSED_OWNED_PROCESS"
+    }
+  ],
+  "native_model_files_opened_or_SourceIO_import_or_export": false,
+  "original_probe_and_runtime_packets_preserved": true,
+  "normal_repair_native_source_policy_fidelity_or_adoption_qualified": false,
+  "overall_status": "FINITE_SYNTHETIC_MATCH_WITH_PRIOR_NOT_PASS_RETAINED",
+  "followup": "Qualify actual source-family NumPy scalar/write/storage and exact saved-current-setter joins, actual gather hooks and exported resource reachability before carrier repair; no universal extrapolation",
+  "attempt_count": 2,
+  "prior_not_pass_attempts_retained": 1,
+  "first_attempt_projection_sha256": "740439b9e14bba7567773176abf453507938341981268edcfb227b55ba2db2bf",
+  "hidden_preparer_source_sha256": "4c0425467ba7c6b3fd6c0b4ee8cd86bd4c9661d8f2237d44284d17fb2ae7dc73"
+}

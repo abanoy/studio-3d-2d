@@ -16366,3 +16366,103 @@ failed native-normal observations. The current publication contains only the
 six sealed source/actual packets, four scalar actual results, these five progress
 documents and its explicit publication helper/manifest. Further adapter/probe
 work belongs to a later checkpoint and is not silently included.
+
+## 2026-11-18 late evening — exact export binding and finite Blender weight observations
+
+Checkpoint795a0af905bfbe49b99ab7335594cd6666ef91e5 was pushed without force
+and independently retrieved:57 changed files,2,859,111 Git bytes and2,882,793
+working bytes. All hashes/blob identities and three lossless EOL recipes pass.
+The mixed-EOL progress memo initially refused a uniform-CRLF recovery recipe;
+exact newline runs then reproduced its bytes without editing it. The temporary
+API response cache was removed after verification. Public proof:
+experiments/native_point_checkpoint_remote_20261118 (INDEX8b529193; receipt8de873de).
+An initial publication auto-review refusal was resolved by new read-only checks
+of the exact source-only payload, public repository and user-invoked main-push
+instruction; the same push was approved. No alternate write route bypassed it.
+
+The new pure gather/cache-to-final-GLB identity binder (INDEXce4e3247) passes16
+synthetic methods and independent review. It binds actual object/cache/primitive/
+material references and final index assignments, checks decoded topology and
+returns the existing correction-map schema. It uses neither carrier values,
+names nor traversal guesses to choose IDs. A real cached NumPy uint32 admission
+problem was fixed and retained as a regression. Actual hooks/native binding and
+normal fidelity are not qualified by these CPU tests.
+
+The synthetic Blender weight-storage probe (INDEX31f4a727) passes11 CPU methods;
+its first guarded runtime (INDEXe1756161) passes14 CPU methods. Root's actual
+attempt5c0d69b49541410d8aaeeb6804013b83 matched every one of21,952 synthetic
+three-slot histories and47,040 positive writes, immediately and after validate.
+Both ordered-row hashes equalbc2fddb6, with zero mismatches and identical phases.
+The four sampled group IDs within69 created groups, repeated REPLACE, signed
+zeros, minimum-positive F32 and .1/.2/.3/1 are finite observed evidence only.
+Actual source-family weights, general storage policy and adoption remain false.
+
+That first run is overall NOT_PASS: the unchanged private launcher could not
+confirm a background process with no windows (window/desktop confirmation false,
+wrapperexit2). It was reaped in7.4024351seconds, with closed job/desktop, source/
+relevant-tool preservation and zero configured Main/Review scopes before/after.
+The independent report validator passed, but it cannot replace placement proof.
+A separate successor host/runtime is being prepared with the exact previously
+approved disabled hidden0x0 HWND witness; old probe/runtime/failure stay intact.
+The witness qualifies placement only, never Blender GUI/render performance.
+
+Root's initial default process observation was denied CIM access. An authorized
+inline form then matched its own direct pwsh caller; a read-only PID/parent check
+proved that sole match. The file-based preparer avoids embedding the filter in
+its caller command. No scope filter, zero-count assertion or ancestor exemption
+was changed. Peer review tightened the preparer's output-directory no-reparse/
+identity checks before it executed. Both guards and failed preparations remain
+recorded; fresh authority was issued only after a real zero count.
+
+The saved resource issue attribution also resolves a misleading code label:
+all four image issue rows belong to the two VIEWER records, each receiving both
+UNSUPPORTED_IMAGE_SOURCE_OR_TYPE and EMPTY_FILE_IMAGE_WITHOUT_PACKED_DATA.
+Both actual packed FILE images have zero original image issue rows. Two further
+rows are the repeated weak-reference path. All six original issues/status remain
+unchanged; classifier UNRESOLVED is not a new failure on the packed textures.
+Source-only resource plan (INDEX3fa5c7dc) verifies11 exporter pins: a zero-external-
+copy path is possible only after actual material/socket/image reachability,
+frozen options/callbacks and exact encoding/preservation proofs. Leave packed
+images, Viewer IDs and weak provenance untouched. Do not blanket-ignore images
+or assume hash renaming/copying is necessary. Keep-original-textures has a path
+resolution/stat/missing-file trap and must be explicitly frozen/qualified.
+
+No application functional source, owner review copy, original assets or installed
+tools were replaced. Formal implementation52/54 and acceptance55/62 stay unchanged.
+Neon158/36/21 and copy PASS remain separate from both cold187 INCOMPLETE_NOT_PASS
+histories. Human/device exercises remain deferred without owner questions.
+
+### Followup — placement-qualified finite weight probe passed
+
+The separate hidden-placement runtime (INDEXf8dd89c8;26 CPU methods and independent
+peer GO) keeps the original31f probe and e175 runtime byte-exact. Its separate
+host uses the exact approved e42fa44e sentinel, held0.5seconds before/after the
+unchanged probe. A completed-output post-check defect was caught and fixed during
+source review, with a regression, before native execution. The separate4c042546
+preparer is an exact three-literal-rule successor to7b0abaf8; no guard changes.
+
+Root's fresh attemptff53686b01f5469ba77642f343cceb0b now passes the complete finite
+protocol:21,952 cases,47,040 positive writes, zero mismatches immediately/after
+validate, and exact identicalbc2fddb6 ordered-row hashes. Real hidden HWND placement
+is observed by the unchanged outer launcher; window-seen/child-desktop true,
+no foreground or switch, exact zero-size/disabled/noactivate policy and destruction.
+Launcher15476/child28300 exited0 and was reaped in3.5559301seconds; job/desktop
+closed, relevant four tool/source/authority identities preserved, configured
+Main/Review scopes0 before/after. This is placement and data-API evidence, not
+GUI/render/performance evidence. Original failure remains NOT_PASS unchanged.
+
+Final two-attempt scalar projection:
+experiments/blender_weight_storage_probe_actual_20261118/RESULT.json (e33d8d24).
+Second Root result4f695357, private receipt3349d49c, host placement28708df2.
+Raw private receipts/logs/requests/owned environments and both stages remain local.
+The synthetic fixture contains no owner model, scene or image inputs. No SourceIO
+import, GLB export/correction, app integration or installed-tool replacement ran.
+All universal/actual-source-policy/native-fidelity/adoption flags remain false.
+
+Next: qualify exact native-family weights with the real SourceIO NumPy scalar/
+positive-filter/call path and independent saved/current/setter joins. Do not
+extrapolate the finite Python-F32 fixture into a universal storage rule. Implement
+actual gather/cache/reference hooks and exact exported material/socket/image
+reachability under frozen options, then a freshly admitted B carrier round-trip
+with unchanged semantic/domain/preservation and2e-5 checks. Original normal failures,
+all62 requirement statuses,52/54 implementation and55/62 acceptance stay unchanged.

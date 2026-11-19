@@ -1,0 +1,62 @@
+{
+  "format": "has_saved_B_resource_issue_attribution_1",
+  "source_private_resource_sha256": "d47ed4cc9f38dae6852c622b8fe6594e182d3398dff8cd63022ba007a9849659",
+  "collector_sha256": "39a417bfe8e024704f4d400f824293640370074c28446e40613aa401247a4e28",
+  "original_resource_status": "RESOURCE_PROFILE_REFUSED",
+  "original_total_issues": 6,
+  "image_issue_rows": [
+    {
+      "issue_code": "UNSUPPORTED_IMAGE_SOURCE_OR_TYPE",
+      "image_index": 2,
+      "source": "VIEWER",
+      "type": "RENDER_RESULT",
+      "packed_parts": 0
+    },
+    {
+      "issue_code": "EMPTY_FILE_IMAGE_WITHOUT_PACKED_DATA",
+      "image_index": 2,
+      "source": "VIEWER",
+      "type": "RENDER_RESULT",
+      "packed_parts": 0
+    },
+    {
+      "issue_code": "UNSUPPORTED_IMAGE_SOURCE_OR_TYPE",
+      "image_index": 3,
+      "source": "VIEWER",
+      "type": "COMPOSITING",
+      "packed_parts": 0
+    },
+    {
+      "issue_code": "EMPTY_FILE_IMAGE_WITHOUT_PACKED_DATA",
+      "image_index": 3,
+      "source": "VIEWER",
+      "type": "COMPOSITING",
+      "packed_parts": 0
+    }
+  ],
+  "non_image_issue_rows": 2,
+  "file_image_metadata": [
+    {
+      "image_index": 0,
+      "source": "FILE",
+      "type": "IMAGE",
+      "packed_parts": 1,
+      "original_image_issue_rows": 0
+    },
+    {
+      "image_index": 1,
+      "source": "FILE",
+      "type": "IMAGE",
+      "packed_parts": 1,
+      "original_image_issue_rows": 0
+    }
+  ],
+  "finding": "EMPTY_FILE_IMAGE_WITHOUT_PACKED_DATA is also emitted for empty-path VIEWER records; both packed FILE images have zero original image issue rows",
+  "source_rule": "The original collector tests not raw and not items without restricting image.source before emitting that code",
+  "original_six_issues_or_resource_decision_changed": false,
+  "new_native_process_or_export": false,
+  "resource_exclusion_or_acceptance_qualified": false,
+  "original_private_body_unchanged": true,
+  "raw_private_paths_names_pointers_images_arrays_included": false,
+  "normal_fidelity_export_repair_or_adoption_qualified": false
+}

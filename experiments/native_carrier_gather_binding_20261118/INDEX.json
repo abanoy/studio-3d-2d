@@ -1,0 +1,41 @@
+{
+  "format": "has_closed_public_source_packet_1",
+  "status": "CPU_ONLY_GATHER_BINDING_CANDIDATE_UNQUALIFIED",
+  "files": [
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 1648,
+      "sha256": "d73d04c5ad2a772754dd5109859f74c0dd659a604ceec0212e2e6ab63d7765fb"
+    },
+    {
+      "path": "gather_binding.py",
+      "bytes": 17534,
+      "sha256": "617c062b516ecefa5fab0a6ec8f98163a3b13f76896969cb22102f859323b850"
+    },
+    {
+      "path": "PEER_REVIEW.json",
+      "bytes": 1015,
+      "sha256": "59fd0212058f79d6506be578ebc00389ef11a33c6f4f9be9bb50233fc93001c1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6363,
+      "sha256": "f4fc44edd705a0bac75b956f67d165078811beb4efa488dab5c47eb83ec256b3"
+    },
+    {
+      "path": "SOURCE_DERIVATION.json",
+      "bytes": 5247,
+      "sha256": "716b48cea3ad7d6cf074c441cb5f92ba76dec5dab095ae33e1c25f93598cc670"
+    },
+    {
+      "path": "test_gather_binding.py",
+      "bytes": 15940,
+      "sha256": "52e6dfeda986d304f237551b614b66634d75feee41164a2f8af6d3ae67e1d5fe"
+    }
+  ],
+  "synthetic_CPU_methods": 16,
+  "independent_source_privacy_peer": "GO_AFTER_CORRECTION",
+  "native_or_private_inputs_read": false,
+  "actual_GLTF_binding_qualified": false,
+  "original_normal_fidelity": "FAILED_UNQUALIFIED"
+}

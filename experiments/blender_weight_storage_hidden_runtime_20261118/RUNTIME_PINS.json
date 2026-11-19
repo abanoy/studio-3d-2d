@@ -1,0 +1,58 @@
+{
+  "format": "has_hidden_synthetic_weight_probe_runtime_source_pins_1",
+  "metadata_head": "795a0af905bfbe49b99ab7335594cd6666ef91e5",
+  "probe_index_sha256": "31f4a7275e11883a9936b033148d3bae5638d2017fa5147b305ea6a945289adb",
+  "scripts": {
+    "blender_weight_storage_probe.py": {
+      "bytes": 12938,
+      "sha256": "d7f75e11bd8a90d0f652f67ae92843629e5126b965c5e7c4262ab97d901bac95"
+    },
+    "weight_storage_contract.py": {
+      "bytes": 11972,
+      "sha256": "f71753e3b7183c5fab343bf8af504cd5613879bd95b89d5f338f54123180db18"
+    }
+  },
+  "executables": {
+    "python": {
+      "path": "C:\\Program Files\\Python313\\python.exe",
+      "bytes": 105840,
+      "mtime_ns": 1733277492000000000,
+      "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+    },
+    "pythonw": {
+      "path": "C:\\Program Files\\Python313\\pythonw.exe",
+      "bytes": 104304,
+      "mtime_ns": 1733277492000000000,
+      "sha256": "2bea4fc941b7d9436afa1be8cb46551c0694deed23b3fec87b969054238be099"
+    },
+    "blender": {
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+      "bytes": 108687824,
+      "mtime_ns": 1779176446000000000,
+      "sha256": "1e6624af112b3c936f4b038b025ebd2bf00ae72c4b62881a6787166d71c58fa5"
+    },
+    "pwsh": {
+      "path": "C:\\Users\\noble\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+      "sha256": "2a6769a3330dc1084d0154bfde7d164ab750ca7f700f313f9d417c1be78b2233"
+    }
+  },
+  "prior_runtime_metadata": {
+    "path": "experiments/replay_audio_fix_20261115/builder/input-lock.json",
+    "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+  },
+  "PWSH_pin_source": "experiments/native_B_resource_ownership_runtime_20261118/diagnostic_support.py",
+  "synthetic_case_catalogue_sha256": "1a1233af2770806aeeef777263e45716f703a3e06ff145c28464a6142a6690d0",
+  "synthetic_expected_ordered_rows_sha256": "bc2fddb6944b1cb6fd4ab3933901fe7eb0bcedf840fbed8cf4e62c10609af0ca",
+  "prior_runtime_index_sha256": "e17561614cd2ec4fe5b9210b0d1062371d8c34649184752c088ecfb4ce8a70ab",
+  "host_sources": {
+    "weight_storage_host.py": {
+      "bytes": 11375,
+      "sha256": "c384f0210e1dfeb8196714e4381df8b2e8bcc5199d45c691a9e6d8addf4ba421"
+    },
+    "placement_sentinel.py": {
+      "bytes": 4387,
+      "sha256": "e42fa44efa599851396c517fa0b4bc90a692efb1f911517fa3d748879d1462c2"
+    }
+  },
+  "approved_placement_helper_source": "experiments/native_normal_carrier_probe_20261117/placement_sentinel.py"
+}
