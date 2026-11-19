@@ -1,0 +1,27 @@
+{
+  "format": "has_carrier_closed_domain_CPU_validation_1",
+  "methods": 18,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "independent_peer_methods_passed": 18,
+  "source_hashes": {
+    "input_domain.py": "c679d873aa45aac4fad553f014e83c8e42a9a458c8189151e9e3695072be8c74",
+    "test_domain.py": "8e618a703c75d02e46c40565d3a9107aa262942596526c9ca82e573b6555f714",
+    "semantic_compare.py": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00",
+    "test_semantic_compare.py": "7bd47a8cc6fd03c38f8ce3092326a7205b61c39e06a6b88619576b9543354266"
+  },
+  "initial_CPU_observation": {
+    "methods": 14,
+    "errors": 2,
+    "cause": "Internal tuples rejected by unchanged JSON-type freeze; corrected to lists before sealing"
+  },
+  "peer_findings_fixed": [
+    "Early decode/reference/primitive/channel preflight",
+    "Unused mesh and sampler target-domain refusal",
+    "Reverse scene membership and set owner deduplication"
+  ],
+  "native_process_export_or_repair_run": false,
+  "retained_native_GLB_readonly_domain_observation": "../carrier_input_domain_actual_20261118/RESULT.json",
+  "full_gltf_native_correspondence_normal_fidelity_or_adoption_qualified": false
+}

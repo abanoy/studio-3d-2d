@@ -1883,5 +1883,88 @@
       "filename_role_inference_used": false
     },
     "all_normal_fidelity_repair_and_adoption_claims_remain_false": true
+  },
+  "saved_B_classification_domain_and_point_source_20261118": {
+    "preceding_checkpoint": {
+      "commit": "c9a4489d1998b19f14c7d0c54e018b6cbfd4db51",
+      "independent_remote_files": 47,
+      "remote_git_bytes": 2622656
+    },
+    "resource_rules": {
+      "INDEX_sha256": "c2cc5476eb03bfc687102c1364ff753e4d941ae5ab90e6b92b78bd86314525ec",
+      "CPU_methods": 16,
+      "actual_INDEX_sha256": "e8e321e473dbd4166d16b015ccc2c014f85f09c65fb8f44e07a4e28c9cc7d0dc",
+      "counts": {
+        "REQUIRED_EXTERNAL_REFERENCE": 0,
+        "LOCAL_APPENDED_ASSET_PROVENANCE": 2,
+        "INTERNAL_VIEWER_EDITOR_OBSERVATION": 2,
+        "UNRESOLVED": 2
+      },
+      "original_issues": 6,
+      "original_status": "RESOURCE_PROFILE_REFUSED",
+      "resources_accepted_or_excluded": false
+    },
+    "input_domain": {
+      "INDEX_sha256": "e7ae7f7011cf5e063f4513c75bf21e704d1c2de18604945e06dda763025a960a",
+      "CPU_methods": 18,
+      "actual_RESULT": "experiments/carrier_input_domain_actual_20261118/RESULT.json",
+      "actual_status": "CLOSED_INPUT_DOMAIN_PASSED",
+      "nodes": 72,
+      "skins": 1,
+      "skinned_owners": 2,
+      "animation_channels": 0,
+      "full_gltf_conformance_or_native_correspondence_qualified": false
+    },
+    "native_point_source": {
+      "original_INDEX_sha256": "482f888349c19617bc540df723ed76104d3d6056cab085ecf6b99a56f42040f6",
+      "original_CPU_methods": 14,
+      "blank_successor_INDEX_sha256": "b7e12bb9655d794fa142ae20ff2175519a860d1aafc6e7be7e5699d6835b9326",
+      "blank_successor_CPU_methods": 16,
+      "actual_attempts": [
+        {
+          "result": "experiments/native_point_expectation_actual_20261118/RESULT.json",
+          "status": "CLOSED_NATIVE_FAMILY_PROFILE_REFUSED",
+          "reason": "Bounded ASCII model name required"
+        },
+        {
+          "result": "experiments/native_point_expectation_blank_actual_20261118/RESULT.json",
+          "status": "CLOSED_NATIVE_FAMILY_PROFILE_REFUSED",
+          "reason": "Closed trilist/no-bone-state-change strip required"
+        }
+      ],
+      "multi_group_Blender_storage_qualified": false,
+      "normal_tolerance_changed": false,
+      "six_foot_normalization_applied": false
+    },
+    "new_native_process_or_export": false,
+    "functional_app_changed": false,
+    "normal_repair_fidelity_carrier_export_or_adoption_qualified": false,
+    "raw_private_arrays_or_metadata_bodies_published": false,
+    "formal_requirement_statuses_changed": false
+  },
+  "native_point_bounded_strip_state_actual_20261118": {
+    "INDEX_sha256": "4afdadb1fbbbf44216b9c3c0d7736efc293c7717eb8908e7eb219b7af094c7c8",
+    "producer_sha256": "cbb4eca98a6cf5045211dc10bd8e060b79492ec306d61a4d29679fc0d5cc184d",
+    "CPU_methods": 19,
+    "actual_RESULT": "experiments/native_point_expectation_bone_state_actual_20261118/RESULT.json",
+    "actual_RESULT_sha256": "36dac1dbc6a9218c0cf291cb38c05342d49f01e46c606961d0218544b63e9612",
+    "actual_status": "CLOSED_NATIVE_SOURCE_ROWS_DERIVED",
+    "raw_and_LOD0_points": 9661,
+    "derived_points": 9661,
+    "derived_corners": 42702,
+    "renderable_models": 2,
+    "bone_groups": 69,
+    "distinct_positive_weight_groups": {
+      "1": 4090,
+      "2": 3191,
+      "3": 2380
+    },
+    "originals_unchanged": true,
+    "earlier_refusals_preserved": 2,
+    "new_native_process_or_export": false,
+    "Blender_stored_weight_setter_exporter_correspondence_normal_or_adoption_qualified": false,
+    "palette_or_render_equivalence_qualified": false,
+    "functional_app_changed": false,
+    "formal_requirement_statuses_changed": false
   }
 }

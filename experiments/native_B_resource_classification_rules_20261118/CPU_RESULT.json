@@ -1,0 +1,40 @@
+{
+  "format": "has_B_resource_classification_CPU_result_1",
+  "status": "PASS_SOURCE_SYNTHETIC_ONLY",
+  "methods": 16,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "python": "3.13.1",
+  "test_log_sha256": "72c41c48398325bfd7fa2890d05d362bb5e984e6b6793d94c4fca2f6ed0f5e2b",
+  "synthetic_baseline_classification_summary": {
+    "format": "has_B_resource_classification_summary_1",
+    "status": "RESOURCE_PROFILE_REFUSED",
+    "profile_issues": 6,
+    "source_resource_private_sha256": "25343a24a83331f64f7f41437e1ce8dd51696870884a950badfc220bb34e75bb",
+    "source_resource_public_sha256": "3380046141bfe0bc1242ae87a6703e3de234b1b879f144fed4d1269cd41e11cf",
+    "source_ownership_sha256": "841066e85b14045f3ecd67e24196ba94df3911d3083f1a4eaa6fa206edb468d8",
+    "classification_rows": 4,
+    "counts": {
+      "REQUIRED_EXTERNAL_REFERENCE": 0,
+      "LOCAL_APPENDED_ASSET_PROVENANCE": 2,
+      "INTERNAL_VIEWER_EDITOR_OBSERVATION": 2,
+      "UNRESOLVED": 0
+    },
+    "original_issue_rows_retained": 6,
+    "classification_bytes": 2287,
+    "classification_sha256": "5273a522d02d71e9cbc7b126a61bb909a8d4b858d4a533b402df92b0e4445140",
+    "resource_profile_decision_changed": false,
+    "resources_excluded_or_accepted": false,
+    "external_content_identity_or_existence_observed": false,
+    "strict31_normal_fidelity_export_repair_carrier_or_adoption_qualified": false,
+    "actual_native_execution_by_classifier": false
+  },
+  "original_synthetic_input_bytes_unchanged": true,
+  "actual_private_native_bodies_read": false,
+  "actual_saved_native_classification_applied": false,
+  "native_API_or_process_observations_performed": false,
+  "external_reference_content_opened_or_statted": false,
+  "old_packets_modified": false,
+  "normal_fidelity_export_repair_carrier_or_adoption_qualified": false
+}

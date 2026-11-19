@@ -1,0 +1,28 @@
+{
+  "format": "has_B_resource_classification_derivation_1",
+  "packet": "native_B_resource_classification_rules_20261118",
+  "scope": "New pure experiment-only classification source and closed synthetic CPU fixtures",
+  "main_metadata_checkpoint_at_task": "c9a4489d1998b19f14c7d0c54e018b6cbfd4db51",
+  "ownership_parent": "experiments/native_B_resource_ownership_metadata_20261118",
+  "ownership_parent_INDEX_sha256": "d3346044906201097f86548bcbc2b22ef3031980c80dc7b1dfadb9f3fa77d46a",
+  "byte_exact_test_dependencies": {
+    "survey_core.py": "39a417bfe8e024704f4d400f824293640370074c28446e40613aa401247a4e28",
+    "ownership_metadata.py": "94feb0279628b1426b2c48cf37dc5526a73901ded9715ecf51fe46064c440e9d"
+  },
+  "runtime_parent": "experiments/native_B_resource_ownership_runtime_20261118",
+  "actual_typed_attestation": "experiments/native_B_ownership_root_classification_20261118/RESULT.json",
+  "actual_typed_attestation_sha256": "3481821aef0643fdaf75cbfef79d624e1671a5a4243ce9459b5921f9ad1a3dd0",
+  "changes": [
+    "New classification.py consumes authenticated saved survey/private ownership metadata, recomputes exact raw joins and returns a separate private/public classification pair.",
+    "Four fixed labels separate observed required external references, local append-reuse provenance, internal Viewer/editor observations and unresolved evidence.",
+    "Every image/path classification row and all original refusal rows remain; no classification changes the original survey decision or supplies an acceptance gate.",
+    "Closed fixture builds actual-shaped dictionaries through byte-exact prior collectors using synthetic RNA only."
+  ],
+  "CPU_methods": 16,
+  "private_native_bodies_read": false,
+  "native_Blender_Godot_process_query_or_launch_performed": false,
+  "external_reference_content_opened_or_statted": false,
+  "app_src_tests_tools_docs_Git_or_old_packets_modified": false,
+  "actual_saved_native_classification_applied": false,
+  "resource_decision_normal_tolerance_fidelity_export_repair_carrier_or_adoption_changed": false
+}

@@ -1,0 +1,39 @@
+{
+  "format": "has_B_resource_classification_API_references_1",
+  "target_runtime": "Existing saved Blender5.1 observations; no native API executed here",
+  "retrieval": "Official documentation search content on 2026-11-18; direct open requests returned access failures. Adjacent/current documentation is semantic context, not proof of installed5.1 behavior.",
+  "official_API": [
+    {
+      "url": "https://docs.blender.org/api/5.0/bpy.types.ID.html",
+      "scope": "ID.library identifies the linked library; ID.library_weak_reference describes append-reuse metadata. Classification of a local observed weak property as stored provenance is a rule inferred from that documented purpose, not a proof of complete dependency closure."
+    },
+    {
+      "url": "https://docs.blender.org/api/5.4/bpy.types.LibraryWeakReference.html",
+      "scope": "The typed descriptor carries library filepath and full target ID name. Exact observed5.1 descriptor metadata remains the actual evidence; the5.4 page does not qualify5.1 behavior."
+    },
+    {
+      "url": "https://docs.blender.org/api/5.4/bpy.types.Library.html",
+      "scope": "Library represents an external blend file from which data is linked. The defensive typed Library fixture does not weaken the old survey's linked-library refusal."
+    },
+    {
+      "url": "https://docs.blender.org/api/5.0/bpy.types.Image.html",
+      "scope": "Image source distinguishes FILE and VIEWER; type distinguishes IMAGE, RENDER_RESULT and COMPOSITING; filepath and filepath_raw are metadata; packed_files records packing. These labels alone do not prove export use, existence or complete internal ownership."
+    },
+    {
+      "url": "https://docs.blender.org/api/current/bpy.types.SpaceImageEditor.html?highlight=spaceimage",
+      "scope": "SpaceImageEditor.image is the image displayed/edited by that space. Saved exact UI witnesses come from the authenticated94feb collector's explicit IMAGE_EDITOR type/image check. An optional unavailable human-readable RNA path does not erase that observation."
+    },
+    {
+      "url": "https://docs.blender.org/api/5.0/bpy.types.BlendData.html",
+      "scope": "file_path_foreach supplies owning ID, raw path and reserved argument; None does not replace a path. The unchanged collector omits SKIP_WEAK_REFERENCES and retains SKIP_PACKED. The classifier itself invokes no Blender API."
+    }
+  ],
+  "installed_public_source_read_only": {
+    "path": "C:/Program Files/Blender Foundation/Blender 5.1/5.1/scripts/modules/bpy_extras/id_map_utils.py",
+    "bytes": 1784,
+    "sha256": "cb37d61f9ea869f60696831a471bb73876d1156ff816c742cea8284ef1687d24",
+    "source_read_not_imported": true,
+    "scope": "Confirms ID-to-users user_map direction and traversal cycle handling. Does not establish complete UI/implicit-producer scope or native allocation bounds."
+  },
+  "external_reference_content_opened_or_statted": false
+}

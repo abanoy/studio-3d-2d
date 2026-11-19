@@ -1,0 +1,152 @@
+{
+  "format": "has_native_point_expectation_source_cpu_audit_1",
+  "utc": "2026-11-19T02:06:36.134947+00:00",
+  "status": "SYNTHETIC_CPU_PASS_NATIVE_UNQUALIFIED",
+  "tests": 14,
+  "failures": 0,
+  "errors": 0,
+  "generalized_replace_ledger_histories": 8000,
+  "source_pins_before_after": {
+    "SourceIO/library/models/mdl/structs/header.py": {
+      "bytes": 29180,
+      "sha256": "03fe4f685c3818785c9b5ff81356f91aa9ab8160d1a17ca27e57520a1c37f57f"
+    },
+    "SourceIO/library/models/mdl/structs/bodygroup.py": {
+      "bytes": 887,
+      "sha256": "34d41c35681550fe4512c0541bcb859c076a960d04054efb633c098ff70c17b8"
+    },
+    "SourceIO/library/models/mdl/structs/model.py": {
+      "bytes": 5674,
+      "sha256": "d11d7e0235e2607f8d4ca2e5e32ca482969035277f274b57f713df8e8ba0c176"
+    },
+    "SourceIO/library/models/mdl/structs/mesh.py": {
+      "bytes": 2210,
+      "sha256": "ea5c9d478b40924e8610c3d4699b894f6b4f56a375b0594ebfb581d80100ef71"
+    },
+    "SourceIO/library/models/mdl/structs/bone.py": {
+      "bytes": 8415,
+      "sha256": "a61a3e0378e7b2d2d070f2b9ef138b78516db4a9830144cd6a6d907295b7d085"
+    },
+    "SourceIO/library/models/vvd/__init__.py": {
+      "bytes": 3743,
+      "sha256": "2dc91e450ed1b32835c5b133360e8f56d923785d20aecce2c39a312b754a17ed"
+    },
+    "SourceIO/library/models/vtx/v7/vtx.py": {
+      "bytes": 1405,
+      "sha256": "b1faa3708c50ded62c912bb76b20e8773686f5bef56bf4740229cef0d98fad5c"
+    },
+    "SourceIO/library/models/vtx/v7/structs/bodypart.py": {
+      "bytes": 611,
+      "sha256": "1c5e4b1a5028ef34c8aed9e5c82802253968d9eee1e702133631534f232cd1b3"
+    },
+    "SourceIO/library/models/vtx/v7/structs/model.py": {
+      "bytes": 676,
+      "sha256": "2d2675645364eb35ae5ea249e1c15a6166edd30700ee59249365eb0ff46d8d5b"
+    },
+    "SourceIO/library/models/vtx/v7/structs/lod.py": {
+      "bytes": 792,
+      "sha256": "189d2d4373472dae06c591db7cc445bd7d62e2abab1c4418dc96f455bb7a4ec6"
+    },
+    "SourceIO/library/models/vtx/v7/structs/mesh.py": {
+      "bytes": 849,
+      "sha256": "efc8ed89687e30cdd2e27f54ca6cf0ac3869e0517df0d6df6484cdb245fc3ba7"
+    },
+    "SourceIO/library/models/vtx/v7/structs/strip_group.py": {
+      "bytes": 2006,
+      "sha256": "018626db3f6bc6a1f436cdd0bb4e9f67a07e42f244b8ccad354a99b01a4f29c2"
+    },
+    "SourceIO/library/models/vtx/v7/structs/strip.py": {
+      "bytes": 1155,
+      "sha256": "51fb7903c7b9e25bde4612757d5e421675c14b49816d6fb09974e9d5eb6f2d8d"
+    },
+    "SourceIO/library/models/vtx/v7/structs/material_replacement_list.py": {
+      "bytes": 984,
+      "sha256": "8aceb79ca4e820c7a4f42a5a0787102aaba4d8d45a7d2b8d2e15c37ca9177a1d"
+    },
+    "SourceIO/library/utils/file_utils.py": {
+      "bytes": 20519,
+      "sha256": "6d91d0eae0ea912aff31dc210f24665bf4303f71c00ebc3b4245aaf775185ba0"
+    },
+    "SourceIO/library/models/vtx/v6/structs/header.py": {
+      "bytes": 1216,
+      "sha256": "90ed3a9cc0d187a579857d1a729d6e31941cae70c675e73766ef9953fb43d03c"
+    },
+    "SourceIO/blender_bindings/models/mdl49/import_mdl.py": {
+      "bytes": 12880,
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+    },
+    "SourceIO/blender_bindings/models/mdl44/import_mdl.py": {
+      "bytes": 17032,
+      "sha256": "080b91589e0fec462e3eea4b55793aec41399ff95f6d9f2d561d5cda9dddada8"
+    },
+    "SourceIO/blender_bindings/models/common.py": {
+      "bytes": 23149,
+      "sha256": "2522f2a451f082edcfcf66c3b445782716e24feb45f8b43d5d6e459f6408f750"
+    },
+    "SourceIO/blender_bindings/utils/fast_mesh.py": {
+      "bytes": 2102,
+      "sha256": "ece5c47ac13eb5885bdc7c5b415784a6c7ea3ecc76d13c620bb561ca9c30058a"
+    },
+    "ROOT/experiments/native_normal_carrier_probe_20261117/exact_point_join.py": {
+      "bytes": 8826,
+      "sha256": "c3a5ac1acc6b6a2988020d924313f27fedaa371281bfeae5f6871a545d54d85d"
+    },
+    "ROOT/experiments/native_normal_carrier_strategy_20261117/vvd_normals.py": {
+      "bytes": 4184,
+      "sha256": "f3a959cc8dff0bd03528b20886984857b16a21944d2f5ef627cf4c4c05ebcdfb"
+    },
+    "ROOT/experiments/native_normal_carrier_strategy_20261117/normal_identity_carrier.py": {
+      "bytes": 17632,
+      "sha256": "37be746c21274e9844a532698078423a0b4f156dcb546135d18b0217daf0fb08"
+    },
+    "ROOT/tools/blender_source_bridge.py": {
+      "bytes": 29255,
+      "sha256": "c794df555f7872e11d4c341b0ffed2507f371f892b67b715e185105d40026dea"
+    },
+    "ROOT/experiments/normal_setter_actual_packet_20261117/ACTUAL_RESULT.json": {
+      "bytes": 1083,
+      "sha256": "344f89738ae5856b088c85495bcbb222e888ca5db401613dd67befcaee50725e"
+    },
+    "ROOT/experiments/normal_boundary_probe_sentinel_20261116/capture_blender_normals.py": {
+      "bytes": 15897,
+      "sha256": "07c5d24538b11da7d8f4464b6a1e48dd3bbd6f15525c60c7e5cc4b9619e83576"
+    }
+  },
+  "packet_sources_before_after": {
+    "PEER_REVIEW.md": {
+      "bytes": 3488,
+      "sha256": "fc8fcf5ab013882ceeb97330d01a1e92d24e000847fe9cf83b7585bf1160bed7"
+    },
+    "README.md": {
+      "bytes": 5516,
+      "sha256": "25e067a1532ba466c6dc7dbca59c592e31e1780986a41a21118720308f42b8e6"
+    },
+    "SOURCE_DERIVATION.json": {
+      "bytes": 9377,
+      "sha256": "1031f4f900872acf9c5018854f3bce380908fbe03c207d066c7ec8b310066095"
+    },
+    "audit_cpu.py": {
+      "bytes": 7068,
+      "sha256": "c3dba95b561dd6a3e05d754490af81ce742b30d771e99b61aceb9167f5507466"
+    },
+    "native_point_expectation.py": {
+      "bytes": 25927,
+      "sha256": "2631269a552a5dcbeb7091f8b1c903ff4f35cbd1713beba7b622a62b3aa1a283"
+    },
+    "test_native_point_expectation.py": {
+      "bytes": 20104,
+      "sha256": "02ffba742e179f2840d8487fea1f7939b4d0c7178d031bb4b65a17b19a6c5a38"
+    }
+  },
+  "test_output": "test_duplicate_point_and_selected_raw_identity_refusals (test_native_point_expectation.NativePointExpectationTests.test_duplicate_point_and_selected_raw_identity_refusals) ... ok\ntest_empty_vtx_traversal_offsets_remain_bounded (test_native_point_expectation.NativePointExpectationTests.test_empty_vtx_traversal_offsets_remain_bounded) ... ok\ntest_exact_scaled_words_signed_zero_uv_and_replace (test_native_point_expectation.NativePointExpectationTests.test_exact_scaled_words_signed_zero_uv_and_replace) ... ok\ntest_existing_exact_join_accepts_independently_authored_snapshot (test_native_point_expectation.NativePointExpectationTests.test_existing_exact_join_accepts_independently_authored_snapshot) ... ok\ntest_family_headers_checksums_and_sizes (test_native_point_expectation.NativePointExpectationTests.test_family_headers_checksums_and_sizes) ... ok\ntest_generalized_ledger_exhaustive_three_slot_sequences (test_native_point_expectation.NativePointExpectationTests.test_generalized_ledger_exhaustive_three_slot_sequences) ... ok\ntest_identity_inputs_pinned_and_immutable (test_native_point_expectation.NativePointExpectationTests.test_identity_inputs_pinned_and_immutable) ... ok\ntest_independent_native_rows_fixups_and_mesh_order (test_native_point_expectation.NativePointExpectationTests.test_independent_native_rows_fixups_and_mesh_order) ... ok\ntest_multi_group_is_explicitly_refused_without_native_storage_policy (test_native_point_expectation.NativePointExpectationTests.test_multi_group_is_explicitly_refused_without_native_storage_policy) ... ok\ntest_native_model_bone_range_and_feature_refusals (test_native_point_expectation.NativePointExpectationTests.test_native_model_bone_range_and_feature_refusals) ... ok\ntest_no_permutation_nearest_or_policy_fallback (test_native_point_expectation.NativePointExpectationTests.test_no_permutation_nearest_or_policy_fallback) ... ok\ntest_structural_table_limit_and_overlap_are_bounded (test_native_point_expectation.NativePointExpectationTests.test_structural_table_limit_and_overlap_are_bounded) ... ok\ntest_vtx_topology_partitions_and_aggregate_budgets (test_native_point_expectation.NativePointExpectationTests.test_vtx_topology_partitions_and_aggregate_budgets) ... ok\ntest_vvd_fixup_overlap_extra_uv_and_value_guards (test_native_point_expectation.NativePointExpectationTests.test_vvd_fixup_overlap_extra_uv_and_value_guards) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.040s\n\nOK\n",
+  "original_native_or_private_arrays_read": false,
+  "native_apps_or_SourceIO_import_executed": false,
+  "native_process_or_Git_network_or_installs_executed": false,
+  "full_SourceIO574_exporter120_catalogue_or_runtime6_rechecked": false,
+  "multi_group_Blender_storage_rule_qualified": false,
+  "actual_B_reader_profile_observed": false,
+  "native_export_or_repair_executed": false,
+  "original_2e_5_failure_unchanged": true,
+  "normal_unit_threshold_2_5e_7_unchanged": true,
+  "native_SDK_fidelity_export_repair_adoption_qualified": false
+}

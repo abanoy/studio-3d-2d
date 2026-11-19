@@ -1824,3 +1824,95 @@ Then continue native normal identity/carrier adapter work with the original
 2e-5 comparisons and failed baselines. A future rerun needs a freshly reviewed
 metadata context rather than reusing expired dcb admission. Formal implementation
 52/54 and acceptance55/62 remain unchanged; human/device observations stay deferred.
+
+## 2026-11-18 evening — saved B classification, closed GLB domain and native point source
+
+The original B metadata checkpoint c9a4489d1998b19f14c7d0c54e018b6cbfd4db51
+was pushed and independently retrieved: 47 changed files, 2,622,656 Git bytes.
+New work below is isolated experimental source, with Main's tested 1029
+functional files and the owner review copy unchanged. No new Blender, Godot,
+import/export or private-desktop process was started for these observations.
+
+Resource classification is implemented in
+experiments/native_B_resource_classification_rules_20261118 (INDEX c2cc5476).
+Sixteen focused CPU methods pass. Root authenticated the three retained private
+resource/ownership bodies and applied the pure rules without reopening a native
+scene. The actual projection (INDEX e8e321e4) records six rows: zero required
+external-reference classifications, two exact local append-provenance records,
+two internal Viewer/editor observations and two unresolved packed FILE images.
+All original six survey issues and RESOURCE_PROFILE_REFUSED remain unchanged.
+These labels do not accept or exclude resources, prove their content/existence,
+or establish complete exported-graph dependency coverage. Raw paths, names,
+pointers and private bodies remain local; no filename or brush-role guess was used.
+
+The closed carrier input-domain bridge is implemented in
+experiments/carrier_input_domain_20261118 (INDEX e7ae7f70). Eighteen new CPU
+methods pass, including strict JSON/GLB identity, owning-skin joint ranges,
+forest/scene/morph/animation domains and early decode/traversal budgets. The
+parent non-NORMAL comparator and fixtures remain exact. Peer findings about
+budget ordering and orphan mesh/animation targets were fixed before sealing;
+the initial internal tuple/hash error remains recorded. A read-only check of
+the exact retained B GLB (4e6ac7c2) passed this closed domain: 72 nodes, one skin,
+two skinned owners and zero animation channels. Full glTF conformance, native
+correspondence, carrier preservation, normal fidelity and adoption are not
+inferred. No raw model arrays were published or altered.
+
+The new MDL49/VVD4/VTX7 point-source producer (INDEX 482f8883) passes fourteen
+CPU methods, including 8,000 synthetic weight-write histories. It independently
+extracts source IDs, topology, F32 positions/normals/UVs and ordered positive
+weight writes from pinned immutable native-family bytes. It retains SourceIO's
+.01905 conversion, strict exact IDs and the original 2e-5 normal comparisons;
+no nearest matching or six-foot normalization is introduced. Multi-group
+Blender stored-weight order remains unqualified and is refused by the final
+expectation builder. Source write facts alone do not prove native storage.
+
+Root's first read-only family attempt refused an entirely empty name on a
+zero-vertex MDL model. A source-reviewed successor (INDEX b7e12bb9; sixteen CPU
+methods pass) admits only the pinned SourceIO all-NUL zero-vertex fallback.
+Renderable/invalid/nonempty malformed names still refuse. The second actual
+attempt passes that field and refuses nonzero strip bone-state-change metadata.
+Both original sealed packets, exact refusal results and all three native inputs
+are preserved unchanged. A separate structural/source investigation is underway;
+no gate is silently removed and no native-family pass is claimed yet.
+
+Next: finish bounded source qualification of the nonconsumed VTX strip-state
+table and record one fresh read-only compatibility observation. Then implement
+the exact actual exporter gather/cache-to-final-primitive identity binding and
+the resource-copy/remap adapter; qualify multi-group native storage separately.
+A real carrier export/correction still needs fresh context admission and original
+preservation checks. Native normal failures and tolerances remain authoritative.
+Neon full158/36/21, copy PASS and both cold187 INCOMPLETE_NOT_PASS histories keep
+their separate scopes; no third cold run was started. All original native data,
+reviews, tools and private deliverables remain protected. Human/device checks
+stay deferred without owner questions. Formal implementation52/54 and
+acceptance55/62 statuses are unchanged; no product-completion claim is made.
+
+### Followup — actual native point-source derivation passed
+
+The separate strip-state successor
+experiments/native_point_expectation_bone_state_fix_20261118 (INDEX 4afdadb1;
+producer cbb4eca9) passes nineteen CPU methods and independent source review.
+It validates signed hardware-slot/global-bone ranges, count/aggregate limits,
+strip-relative table spans and nonoverlap. Pinned SourceIO derives these points
+and weights without consuming that hardware state; the table is validated but
+never substituted for VVD global bone identity. Palette/render equivalence is
+still unqualified. The two original refusal packets remain sealed unchanged.
+
+Root's third read-only attempt now derives all 9,661 raw/LOD0 point rows and
+42,702 corner rows across two renderable logical models with 69 bone groups.
+The positive distinct-group histogram is 4,090 points with one group, 3,191 with
+two and 2,380 with three. Source and all three native inputs are unchanged.
+Scalar result: experiments/native_point_expectation_bone_state_actual_20261118/
+RESULT.json, SHA256 36dac1dbc6a9218c0cf291cb38c05342d49f01e46c606961d0218544b63e9612.
+No native runtime/import/export was started, and all arrays stayed in RAM.
+This is CLOSED_NATIVE_SOURCE_ROWS_DERIVED, not a Blender storage, actual setter
+join, exporter binding, correspondence, normal repair or artist-fidelity pass.
+
+Next: qualify the pinned synthetic Blender multi-group storage API behavior;
+5,571 actual points require that broader profile. The pure actual gather/cache
+identity binder is being developed separately. Resource remapping and a freshly
+admitted real carrier run remain outstanding. Keep all strict comparisons and
+failed native-normal observations. The current publication contains only the
+six sealed source/actual packets, four scalar actual results, these five progress
+documents and its explicit publication helper/manifest. Further adapter/probe
+work belongs to a later checkpoint and is not silently included.

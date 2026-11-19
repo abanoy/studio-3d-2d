@@ -1,0 +1,67 @@
+{
+  "format": "has_B_saved_resource_classification_actual_public_projection_1",
+  "status": "CLASSIFIED_SAVED_ACTUAL_METADATA_ORIGINAL_RESOURCE_REFUSAL_UNCHANGED",
+  "copied_public_summary": {
+    "path": "PUBLIC_CLASSIFICATION.json",
+    "bytes": 968,
+    "sha256": "a69348f39200bba09556c05103c2379c229ef98241697e79ac12d281cfa147ce",
+    "copied_byte_exact": true
+  },
+  "classifier_source": {
+    "packet": "experiments/native_B_resource_classification_rules_20261118",
+    "INDEX_sha256": "c2cc5476eb03bfc687102c1364ff753e4d941ae5ab90e6b92b78bd86314525ec",
+    "classification_py_sha256": "8ac07b85c94ab70147e2e707d8fb4ee16e4ac489f878e47c71161cebab396afa"
+  },
+  "input_hashes": {
+    "resource_private_saved_body": {
+      "bytes": 5977,
+      "sha256": "d47ed4cc9f38dae6852c622b8fe6594e182d3398dff8cd63022ba007a9849659",
+      "source": "ROOT_AUTHENTICATED_AND_PUBLIC_SUMMARY_BOUND"
+    },
+    "resource_public_saved_wrapper": {
+      "bytes": 3938,
+      "sha256": "fc1ea7ccb759c8a45535df3e0d06773a675f90c334a46e6f58fa8e87901a2a8a",
+      "source": "ROOT_ATTESTED_AND_PRIOR_PUBLIC_SOURCES_BINDING"
+    },
+    "resource_public_canonical_nested_survey_summary": {
+      "sha256": "64834d2e82a357cf6ca67439b3496dc8963d94da5a65e3fae9cf04677b11f7c1",
+      "source": "CLASSIFIER_PUBLIC_SUMMARY_BOUND_NOT_WRAPPER_FILE_HASH"
+    },
+    "ownership_private_saved_body": {
+      "bytes": 10833,
+      "sha256": "6ccecbbf0838bb25a4d7044e13680a6247c927af36d1bc22756789ec481b93b9",
+      "source": "ROOT_AUTHENTICATED_AND_PUBLIC_SUMMARY_BOUND"
+    },
+    "prior_public_sources": {
+      "path": "experiments/native_B_resource_ownership_actual_20261118/SOURCES.json",
+      "sha256": "f0825dc53d083fd961913f080f02e4da9fe361f91bd2586ebcb3f67f9f93dbf2"
+    }
+  },
+  "root_application_attestation": {
+    "source": "ROOT_DIRECT_TASK_MESSAGE_NOT_REOBSERVED_BY_PROJECTION_AUTHOR",
+    "tool_exit": 0,
+    "exact_classifier_source_authenticated_before_import": true,
+    "all_three_original_input_byte_identities_checked_before_and_after": true,
+    "all_three_original_input_stamps_checked_before_and_after": true,
+    "original_input_bytes_and_stamps_unchanged": true,
+    "saved_metadata_only": true,
+    "new_native_execution": false,
+    "blend_saved_or_export_invoked": false
+  },
+  "retained_scope": {
+    "original_resource_status": "RESOURCE_PROFILE_REFUSED",
+    "original_issue_rows": 6,
+    "export_provenance": "UNKNOWN_UNCHANGED_NOT_RECOMPUTED",
+    "classification_rows_are_observations_not_acceptance": true,
+    "required_reference_count_zero_is_not_full_dependency_closure": true,
+    "other_UI_and_implicit_viewer_producer_scopes_remain_unobserved": true,
+    "strict31_normal_fidelity_export_repair_carrier_or_adoption_qualified": false
+  },
+  "projection_author_scope": {
+    "public_summary_only_copied": true,
+    "private_resource_ownership_or_classification_bodies_read_or_parsed": false,
+    "raw_resource_names_paths_session_pointers_or_model_arrays_included": false,
+    "native_or_process_queries_performed": false,
+    "original_inputs_old_packets_app_Git_or_docs_modified": false
+  }
+}
