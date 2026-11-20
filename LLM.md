@@ -6954,3 +6954,33 @@ See docs/benchmarks/human_reference_followup_2026-11-19.json and current pickup.
 Fresh final-source full verification and guarded native review remain next.
 Formal62 IDs,52/54 implementation and55/62 acceptance unchanged. Human questions
 stay deferred; originals, installed Studio and earlier reviews remain protected.
+
+### November19 terminal — complete Windows PASS and native review ready
+
+Source08ad583de735393c5baa75ca9960482243dccff1 is pushed and independently read
+back:20changed files/2,545,329bytes, all bytes/SHA256/Git blob/API identities and
+working bytes match; receipt23644fcd. Temporary API cache removed after success.
+Fresh complete default passes in3303.9504248seconds:163result groups/36core/
+20final media entries. All1045 functional files and HEAD remain unchanged;
+retained child exits0/reaped. Audit deduplicates201current receipt paths into200
+actual private jobs (199normal and one intentional Krita cancellation), all
+placement confirmed, job/desktop closed, no foreground/switch. Collector also
+found1125copied old experiment receipts and3non-launcher JSON records; these are
+excluded, not counted as current jobs. Final read-only process scope0.
+
+The full run's optional PMD pose branch was absent, actual_mmd_tested=false.
+Separate exact08ad runtime replay with pinned126-bone PMD GLB/report passes45
+checks and two1080p/24fps/48frame H264 movies, originals/staged/runtime unchanged.
+No relabelling of full163/20 as164/21. Guarded VRM reference passes25 with1054
+runtime files/source identities preserved and closed private job; optional owner
+launcher is output/human-reference-native-review-guarded/Open six-foot VRM review.bat.
+Owner observations remain unrun/deferred without questions.
+
+Terminal scalar/source packet experiments/human_reference_full_20261119 and
+docs/benchmarks/human_reference_full_2026-11-19.json preserve these scopes and
+the failed predecessors. Two source-only next-body-adapter assessments now live
+under docs/design/human_reference_body_adapter_20261119. Direct inverse-scale
+offsets/world-metre geometry/joint frames look smaller than a shadow skeleton;
+neither is implemented/run. Keep the body guard until mechanical/lifecycle/native
+oracles pass. All62formal statuses and52/54,55/62scores stay unchanged. Private
+art, originals, source snapshots and pending owner deliverables remain local.

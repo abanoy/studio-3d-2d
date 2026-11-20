@@ -1,5 +1,55 @@
 # HAS continuation — November 19, 2026
 
+## Final verified checkpoint
+
+Current application source is `08ad583de735393c5baa75ca9960482243dccff1`, pushed
+and independently read back: 20 changed files, 2,545,329 exact Git/working bytes,
+all SHA256/Git blob/API identities matched. Remote receipt SHA256:
+`23644fcd319ed3ce1a5761c55e3e2c742e088c61ca2375f617d8ba95012c5eb8`.
+The temporary API response cache was removed after verification.
+
+The fresh complete Windows default **PASSES** in 3303.9504248 seconds: 163 result
+groups, 36 core groups and 20 final media-summary entries. All 1045 functional
+files and HEAD remain unchanged; the retained child exits0 and is reaped.
+There are 200 unique current private desktop jobs:199 normal exits and one
+intentional Krita cancellation. All have verified private placement, no observed
+foreground/switch and closed job/desktop. The collector's1329 receipt-like JSON
+records include1125 old archive copies, three non-launcher records and one
+duplicate placement receipt; these are not additional jobs. A final read-only
+process inventory finds zero matching owned processes, with no termination issued.
+
+The full result explicitly records `actual_mmd_tested=false`: the old optional
+PMD pose branch requires `output/compatibility/miku-tested/scene.glb`, which was
+absent in that checkout. The exact retained two-file126-bone PMD preparation was
+then staged in a separate committed-runtime snapshot, preserving full-run outputs.
+That supplemental private replay **PASSES45 checks and two1080p/24fps/48-frame
+H264 movies**, with original/staged hashes and ns-mtimes preserved. Do not relabel
+the full result164/21. Other native PMX suites in the full run passed independently.
+
+The guarded native VRM review **PASSES25 checks**, original/staged data and1054
+runtime files unchanged. Qualified review:
+`output/human-reference-native-review-guarded/Open six-foot VRM review.bat`.
+Its private software verification is not an owner review; ask no manual questions.
+The earlier unguarded23-check review remains a protected historical artifact.
+
+Compact terminal evidence: `docs/benchmarks/human_reference_full_2026-11-19.json`
+and `experiments/human_reference_full_20261119`. The latter contains scalar
+results and exact used coordinator/audit/supplement source, with no private art.
+Both failed full attempts and earlier feature failures remain unchanged.
+Formal62 IDs,52/54 implementation and55/62 acceptance remain unchanged.
+
+Next visible addition: implement and qualify Body Physics at the reference size.
+Read `docs/design/human_reference_body_adapter_20261119/audit.md` and `proxy.md`.
+The smaller direct proposal uses unit-world body planning with inverse-scale
+bone/body offsets, coherent metre thresholds and normalized joint frames; the
+shadow skeleton is a fallback. These are source-only designs, **not implemented
+or run**. Keep the current refusal until real tick-zero/collider/joint/writeback,
+live/Freeze/Record/hair/parent/Undo/cold-save/export tests qualify the adapter.
+Continue Source extra-feature/fidelity work independently; no unrelated probe
+should replace this concrete addition. Human/device/clean-install observations
+stay deferred. Private originals, pending review deliverables, installed tools
+and the original dirty acceptance checkout remain protected.
+
 ## Followup after publishing the addition
 
 `5f0a91e208147c4ac938c738c60353c0b77cbe23` is pushed to main. Independent

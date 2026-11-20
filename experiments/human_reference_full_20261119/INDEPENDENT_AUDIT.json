@@ -1,0 +1,74 @@
+{
+  "format": "has_reference_full_independent_audit_1",
+  "reviewer": "height_contract",
+  "status": "GO_WITH_EXPLICIT_SCOPE",
+  "source_commit": "08ad583de735393c5baa75ca9960482243dccff1",
+  "audit_scope": "Independent read-only inspection and pure Python recomputation of saved completion, source identities, report, receipts and verifier definitions. This output records the completed review; it does not rerun the suite.",
+  "bindings": {
+    "terminal_audit_sha256": "90469df53ba6eedb31ef53f79178ecdc04ff78f16d0b82650f35da24cc2ba073",
+    "verification_sha256": "2e4b59157256aea0a46596289dcda3e4d00e7770148ee98e0e34ac984d0fec74",
+    "coordinator_completion_sha256": "155529c84769130f9eef70d800f90569b188499dc2d819680df91fd9439f0fa9",
+    "source_before_sha256": "94750c128f4717bb852f687aef8c638524d66ea137d8cdcf6cfa549852bba45c",
+    "source_after_sha256": "94750c128f4717bb852f687aef8c638524d66ea137d8cdcf6cfa549852bba45c",
+    "launch_sha256": "6e9a08c778970fe36d805af235141cef4674fb4dc14e85574d9ae3f142057e4e",
+    "full_verifier_source_sha256": "c8e4a40e7a939b2631be402ad59f5ec98f097146943c6ea5e9d04131ca45e9ad",
+    "collector_source_sha256": "6bd9c73531b57ef2b7a81f00cd4b55cbe40c47e57d17609f3a53c2698b12e64a",
+    "receipt_auditor_source_sha256": "d17599f0bf6c4aa7f2cb90547dfbb5600562ca4a46a40b20d60829832894e257",
+    "finalizer_source_sha256": "b5d73390d45d4f78664ee0e6fc1bacbbf2bd57efe0423e76fd6db1ecfc174255"
+  },
+  "source_and_report_checks": {
+    "functional_source_hash_size_nsmtime_identities_exact": 1045,
+    "source_before_after_exact": true,
+    "saved_completion_records_unchanged_head_and_sources": true,
+    "fresh_verification_hash_matches_terminal_binding": true,
+    "suite_exit": 0,
+    "retained_child_reaped": true,
+    "full_report_top_level_entries": 163,
+    "actual_mmd_tested": false
+  },
+  "receipt_checks": {
+    "all_collected_receipt_sha256_bindings_verified": 1329,
+    "excluded_archival_receipts": 1125,
+    "all_archival_copies_exact_existing_experiment_originals": true,
+    "all_original_mtime_before_full_launch": true,
+    "archival_desktop_overlap_with_current_jobs": 0,
+    "excluded_intentional_helper_driver_metadata_doubles": 3,
+    "metadata_doubles_lack_launcher_format_and_desktop_identity": true,
+    "intentional_unclean_metadata_double_is_not_a_launcher_job": true,
+    "current_receipt_paths": 201,
+    "duplicate_placement_receipt_pairs": 1,
+    "placement_duplicate_complete_json_identical": true,
+    "unique_current_private_jobs": 200,
+    "normal_exit_zero_jobs": 199,
+    "expected_krita_cancel_exit_two_jobs": 1,
+    "only_nonzero_job_has_cancelled_true_and_owned_converter_cancelled_error": true,
+    "all_200_job_closed_desktop_closed_private_window_seen_child_desktop_confirmed_are_boolean_true": true,
+    "all_200_foreground_observed_and_desktop_switch_requested_are_boolean_false": true,
+    "no_current_job_lost_by_archive_filter_or_duplicate_collapse": true
+  },
+  "verifier_definition_checks": {
+    "core_ast_test_list_entries": 36,
+    "all_core_entries_present_exit_zero": true,
+    "generic_media_ast_definitions": 19,
+    "sample_posed_media_entries": 1,
+    "full_media_entries": 20,
+    "media_names_match_ast_generic_plus_actual_pose_report": true,
+    "all_20_report_48_frames_24fps_two_second_records_match": true,
+    "generic_19_saved_ffprobe_records_h264_1920x1080_48frames_24fps_match": true
+  },
+  "limitations": [
+    "163 counts top-level report entries, not 163 independent test suites.",
+    "The full report keeps actual_mmd_tested=false. The optional native PMD supplement is separate and must not relabel this run as 164 entries or 21 media entries.",
+    "Guarded native VRM25 is a separate qualification, not an extra full-run group.",
+    "This audit reads retained receipts and completion evidence; it makes no fresh global process or device observation.",
+    "No artist, tablet, novice, audible-sync, clean-install or other human acceptance is inferred."
+  ],
+  "operations": {
+    "production_or_test_code_edits": 0,
+    "engine_or_native_runs": 0,
+    "process_queries": 0,
+    "git_queries": 0,
+    "private_receipt_bodies_or_arrays_included": false,
+    "output_only_record": true
+  }
+}

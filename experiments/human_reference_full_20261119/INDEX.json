@@ -1,0 +1,68 @@
+{
+  "format": "has_reference_full_packet_1",
+  "status": "PASS_SCOPED_SOFTWARE_NO_HUMAN_ACCEPTANCE",
+  "source_commit": "08ad583de735393c5baa75ca9960482243dccff1",
+  "full_result_groups": 163,
+  "core_groups": 36,
+  "full_media_entries": 20,
+  "full_actual_mmd_tested": false,
+  "native_pmd_supplement": {
+    "checks": 45,
+    "actual_mmd_tested": true,
+    "movies": 2,
+    "full_result_relabelled": false
+  },
+  "native_reference_checks": 25,
+  "unique_full_private_jobs": 200,
+  "private_art_uploaded": false,
+  "files": {
+    "CLOSED_PROCESS_SCOPE.json": {
+      "bytes": 455,
+      "sha256": "1c1fb86380d45e417efb097bf92bc60f60fb087b72a5caba017deaf009eb6768"
+    },
+    "code_used/audit_reference_full.py": {
+      "bytes": 3075,
+      "sha256": "d17599f0bf6c4aa7f2cb90547dfbb5600562ca4a46a40b20d60829832894e257"
+    },
+    "code_used/check_reference_closed_processes.ps1": {
+      "bytes": 953,
+      "sha256": "cd3fed32ec332d397128013da3617361e33539dc37835760c0bf944aaceaa186"
+    },
+    "code_used/finalize_reference_full_audit.py": {
+      "bytes": 4051,
+      "sha256": "b5d73390d45d4f78664ee0e6fc1bacbbf2bd57efe0423e76fd6db1ecfc174255"
+    },
+    "code_used/run_native_pose_supplement.py": {
+      "bytes": 4699,
+      "sha256": "3cd1ef680307d06cd9004d41200f79476460bf0959de4cb141596f8dd9d03054"
+    },
+    "code_used/run_reference_full.py": {
+      "bytes": 3858,
+      "sha256": "6bd9c73531b57ef2b7a81f00cd4b55cbe40c47e57d17609f3a53c2698b12e64a"
+    },
+    "FULL_RESULT.json": {
+      "bytes": 121962,
+      "sha256": "90469df53ba6eedb31ef53f79178ecdc04ff78f16d0b82650f35da24cc2ba073"
+    },
+    "INDEPENDENT_AUDIT.json": {
+      "bytes": 4272,
+      "sha256": "506332b86a7f09da391aeed16740f9454d984fc0a9ece4de1e15242824850cad"
+    },
+    "NATIVE_REFERENCE_25.json": {
+      "bytes": 1214,
+      "sha256": "d133355f33ecc08f13523f4f30a46abc6ea6b863bddd515adb508b35d93c7929"
+    },
+    "PMD_SUPPLEMENT.json": {
+      "bytes": 1010,
+      "sha256": "75e42cdeda710614810191de9760a12c573ece2a799c1819b972c7b020b273e7"
+    },
+    "README.md": {
+      "bytes": 2595,
+      "sha256": "2505be89efd1c198ea755073ae4efa83e065ac036eb16cae464921db66d607c2"
+    },
+    "REMOTE_08ad583.json": {
+      "bytes": 7093,
+      "sha256": "23644fcd319ed3ce1a5761c55e3e2c742e088c61ca2375f617d8ba95012c5eb8"
+    }
+  }
+}

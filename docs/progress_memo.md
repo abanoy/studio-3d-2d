@@ -16517,3 +16517,26 @@ plus one new assertion; no assertion removed. Full scaled body support remains
 planned, with concrete followup in the pickup. No fresh whole-suite pass claimed.
 New compact evidence: benchmarks/human_reference_followup_2026-11-19.json.
 All62 formal statuses and52/54,55/62 scores remain; manual observations deferred.
+
+### November19 terminal checkpoint
+
+Complete Windows source08ad583 PASSES:163result/36core/20media groups in
+3303.9504248seconds,1045functional files/HEAD unchanged, exit0/reaped. Two hundred
+unique current private jobs close with confirmed placement/no foreground/switch:
+199normal plus one intentional Krita cancellation. The collector's old archived
+copies (1125), non-launcher records (3) and duplicate current receipt (1) are
+separated explicitly. Final read-only owned process scope0; no termination issued.
+
+Optional PMD pose fixture was absent in that complete default; result retains
+actual_mmd_tested=false. A separate frozen08ad replay with the exact126-bone PMD
+preparation passes45checks/two1080p movies with original/staged/runtime identities
+preserved. Do not relabel full result164/21. Guarded native reference review25
+passes,1054runtime files unchanged, private job closed, owner still unrun.
+
+08ad remote readback independently verifies20files/2,545,329bytes and exact working
+bytes (receipt23644fcd), then removes only its API response cache. Public compact
+terminal/source packet: experiments/human_reference_full_20261119; benchmark:
+benchmarks/human_reference_full_2026-11-19.json. Source-only direct/proxy body-scale
+designs are saved; no adapter implemented or simulated. Safe guard remains. No
+private artwork uploaded or installed Studio/tools replaced. All62formal IDs and
+52/54implementation/55/62acceptance remain unchanged; human/device checks deferred.

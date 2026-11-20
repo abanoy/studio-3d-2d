@@ -53,11 +53,18 @@ The checks use authored synthetic figures at two original sizes, measure Scale
 start a separate cold reader, and export a two-second 1080p H264 movie with an
 independent editable drawing. Preview and export input images are compared;
 encoded-video pixel equivalence and native-model fidelity are separate claims.
-The native avatar reference check also passes 23 size/Undo/save/reopen checks on
-the existing VRM0 preparation, with original/staged hashes and mtimes preserved.
+The guarded native avatar reference check passes 25 size/Undo/save/reopen/body-
+boundary checks on the existing VRM0 preparation, with original/staged hashes
+and mtimes preserved. The earlier23-check review remains historical.
 This does not certify the model's appearance against its original application.
 The ordinary height/native regression suite remains separate. Full results and
 failed attempts are recorded in the current benchmark/pickup after execution.
+
+Source08ad583 also passes the complete Windows default:163 result groups,36 core
+groups and20 final media entries, with1045 functional files unchanged and200
+unique private jobs closed. Its optional old PMD pose branch was absent; a
+separate exact-source private replay passes45 checks and two movies. Those scopes
+remain separate. See [terminal evidence](benchmarks/human_reference_full_2026-11-19.json).
 
 Not included: automatic default normalization, assembly of separate parts,
 changing an existing character's reference, broad native-fidelity certification,

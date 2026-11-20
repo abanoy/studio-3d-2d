@@ -1,5 +1,16 @@
 # HAS — consolidated master reference for resuming work
 
+**Latest verified source: `08ad583` (November19).** Six-foot Scale1 addition and
+guarded native review pass; complete Windows default passes163result/36core/
+20media groups with1045functional sources unchanged and200closed private jobs.
+Separate optional native PMD replay passes45checks/two movies; native reference
+review passes25. The full result itself retains its optional-PMD omission and
+is not relabelled164/21. See [current pickup](NEXT_SESSION_PLAN_2026-11-19.md) and
+`docs/benchmarks/human_reference_full_2026-11-19.json`. Actual artist/human/device
+acceptance is not inferred. The body scale adapter remains source-only next work;
+its safe active-reference refusal stays in place. Historical pending/full-failure
+statements below describe their own checkpoints.
+
 **November 19, 2026 addition:** work has shifted to an optional
 six-foot human reference at artist Scale 1, with a separate immutable import
 basis and scene-local save capability. See [the current feature contract](human_reference.md).
