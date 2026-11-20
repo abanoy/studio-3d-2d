@@ -1,0 +1,174 @@
+{
+  "format": "has_B_complete_catalogue_census2_public_contents_1",
+  "status": "ROOT_ACTUAL_BOUNDED_EMPTY_LIBRARY_CENSUS_PASSED_2",
+  "payload_files": 31,
+  "payload_bytes": 390887,
+  "manifest_excludes_itself": true,
+  "current_CPU_methods": 53,
+  "actual_B_catalogue_materials": 5,
+  "actual_catalogue_names": 34,
+  "actual_source_ID_types": 36,
+  "actual_surviving_IDs_before_and_after": 38,
+  "actual_BlendData_collections": 39,
+  "actual_private_job_closed": true,
+  "actual_worker_identity_bindings": 8,
+  "actual_material_append_or_point_normal_resource_export_adoption_qualified": false,
+  "previous_failed_library_packet_preserved": true,
+  "files": [
+    {
+      "path": "BASES.json",
+      "bytes": 1889,
+      "sha256": "8515a83ebf0893275012b8319f132ea8b152cedb0b0a96f73ae616d8d73d3fa4"
+    },
+    {
+      "path": "bases/v1/driver-predecessors/a714b245/run_library.py",
+      "bytes": 26801,
+      "sha256": "a714b245e11d13f085ec0173a3687a1b4b507c9945eb58ddb59b973be22dc82a"
+    },
+    {
+      "path": "bases/v1/driver-predecessors/a714b245/test_library_driver.py",
+      "bytes": 18108,
+      "sha256": "262b7a7f582825c94bf10e4202d1c2782e2dbbea087e4a1fc11310db6ba4ef25"
+    },
+    {
+      "path": "bases/v1/library_worker.py",
+      "bytes": 18242,
+      "sha256": "6258a798b0cb37e14f9d8d478ac5030e36db663e2391675f5de5912feb3c19fc"
+    },
+    {
+      "path": "bases/v1/README_DRIVER.md",
+      "bytes": 6162,
+      "sha256": "acdad5839f286570b987f6d73996c9ac3062e2b2fd33ed179337e1d0b2a8fd8c"
+    },
+    {
+      "path": "bases/v1/README_WORKER.md",
+      "bytes": 6236,
+      "sha256": "c41479d8314c29009edca81307a4ba1a5a304e7e88e315a21c74aa5098c4dc54"
+    },
+    {
+      "path": "bases/v1/run_library_v1_draft.py",
+      "bytes": 17119,
+      "sha256": "2316c062e0989d60aa63420b2cf5a60508697d65d19d70bf721dde2fde36b57f"
+    },
+    {
+      "path": "bases/v1/run_library.py",
+      "bytes": 27256,
+      "sha256": "a3615822952aa3200b093f27dc6e67541188a808262bf1550e6df41192885a6a"
+    },
+    {
+      "path": "bases/v1/test_library_driver.py",
+      "bytes": 18863,
+      "sha256": "3b9145cdf8dad37fb6b3bbbc069fe540d2495f7035b5f28d5b660379785015f4"
+    },
+    {
+      "path": "bases/v1/test_library_worker.py",
+      "bytes": 16316,
+      "sha256": "cbc3fdc2045c253912b5b59a1f1b99f24013abc4b8b4cc031f256d0da24dbf99"
+    },
+    {
+      "path": "bases/v1/worker-predecessors/63292fd5/library_worker.py",
+      "bytes": 18234,
+      "sha256": "63292fd5c67114409bc5ed38fc32811aa9ed6ad0e08e859d3cab64d661f5b225"
+    },
+    {
+      "path": "evidence/actual/graphics-release.json",
+      "bytes": 631,
+      "sha256": "2a38a7e9f3af297a2dcb865d07365f9649342923601ef522aaa68682e720e285"
+    },
+    {
+      "path": "evidence/actual/physical-closure.json",
+      "bytes": 448,
+      "sha256": "9e636efde1d4b3b5d467bf1bc08b802ecbc2b870670a659858a94097288b5039"
+    },
+    {
+      "path": "evidence/actual/PLACEMENT_LIBRARY_CENSUS2.json",
+      "bytes": 688,
+      "sha256": "9ade6871ba5cffa0c570008aee9930a9676e37f9f3f5480ed18b98962bbff669"
+    },
+    {
+      "path": "evidence/actual/private-desktop.json",
+      "bytes": 428,
+      "sha256": "e640d48180a15fa99cbaa7328b682b8b29eb0a09f5d356bbaecdbfb19c4c2e7d"
+    },
+    {
+      "path": "evidence/actual/PUBLIC_LIBRARY_CENSUS2_ROOT_RESULT.json",
+      "bytes": 3052,
+      "sha256": "a30bd6cd1f530201374fd8b13cebeeb7b7c68ab48083ecd9fdd4a8b27854faa0"
+    },
+    {
+      "path": "evidence/actual/PUBLIC_LIBRARY_CENSUS2.json",
+      "bytes": 2580,
+      "sha256": "9420dea58e460eb34a3f155ce16da24a49bd61f6a40c700d616492fa2ddcf600"
+    },
+    {
+      "path": "evidence/cpu-53/RESULT.json",
+      "bytes": 1687,
+      "sha256": "8ba4610d6b63c735902b92376153430071b16c9a5a7cb999a3b7f231c81a1afb"
+    },
+    {
+      "path": "evidence/cpu-53/stderr.log",
+      "bytes": 9069,
+      "sha256": "a47c542d1ee8af581129780fbd0616100ebdd145b2a77468f54d13db233bf3da"
+    },
+    {
+      "path": "evidence/cpu-53/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/source/99fe-remote-readback.json",
+      "bytes": 24821,
+      "sha256": "7c44bf6f5af0a80950f9ce565d58949ce36b47cbc70e9ab660e2f267affd09da"
+    },
+    {
+      "path": "evidence/source/source-export-RNA-identity-review-20261120.md",
+      "bytes": 9404,
+      "sha256": "eea83fc3da4768e6f1a72b3a717f2b6a270684070e3e661fdd76f2b96d8a6e73"
+    },
+    {
+      "path": "library_worker.py",
+      "bytes": 18845,
+      "sha256": "6c3aeff6a56b22a448d3ca093997ca866e76ac6ec2fb3948c811abad9c86f903"
+    },
+    {
+      "path": "README_DRIVER.md",
+      "bytes": 4156,
+      "sha256": "03c7bacff652cd97aa1b3906b1ef2087f8c879e2ade9a350f996a8909a5acf22"
+    },
+    {
+      "path": "README_WORKER.md",
+      "bytes": 3115,
+      "sha256": "f7f3f4ddd45e174835d5b0e32592c59108760d0a5ca2c26595bf93ce6dda1b14"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8117,
+      "sha256": "9be7522d7c8cd5efa80203bcf0db16e7f4e6017a2dcd7e2a81766cb63288e5cc"
+    },
+    {
+      "path": "run_library.py",
+      "bytes": 28658,
+      "sha256": "a6f123fc483528dd5ae2ed070190db05427d94195ac21d24adbec21ccb0ba142"
+    },
+    {
+      "path": "SOURCE_DIFF.json",
+      "bytes": 56401,
+      "sha256": "767d947add2958f9a24193fd83e910eb713716c0a36be59a121fe32e56b5d0d5"
+    },
+    {
+      "path": "SUMMARY.json",
+      "bytes": 3509,
+      "sha256": "2886b687c5918c56782ee081561d93030a072df21edaafd8dfe402a2958faadd"
+    },
+    {
+      "path": "test_library_driver.py",
+      "bytes": 20594,
+      "sha256": "9ddeeb4ada86d558c3f8b3b516c1d3bb8edf6f947c947eb90189d639ec901b3b"
+    },
+    {
+      "path": "test_library_worker.py",
+      "bytes": 19458,
+      "sha256": "646e25b09c04e6e3a269585120cffb34c9138fcfb7ee3a7512beec900200eed6"
+    }
+  ]
+}

@@ -25,6 +25,117 @@
     "remote_exact_files": 24,
     "remote_exact_bytes": 3739119,
     "remote_receipt_sha256": "b1d3d12c318ee5cb6fa482cb4c71886126eae0d3c7024f4c2bcd57376f392b60",
+    "latest_B_resource_progress": {
+      "format": "has_B_catalogue_inspection_progress_20261120_1",
+      "source_context_head": "99fe7f56a77de4ff8faf79678302b8b05dc3b4ab",
+      "CENSUS2": {
+        "status": "ACTUAL_PASS",
+        "CPU_methods": 53,
+        "CPU_seconds": 0.525,
+        "private_seconds": 3.985,
+        "B_materials": 5,
+        "catalogue_names": 34,
+        "source_ID_types": 36,
+        "BlendData_collections": 39,
+        "IDs_before_and_after": 38,
+        "input_identity_bindings": 8,
+        "preservation_checks": 20,
+        "all_preservation_and_private_closure": true,
+        "packet": "experiments/source_material_library_census2_20261120",
+        "packet_files": 32,
+        "packet_bytes": 396868,
+        "CONTENTS_sha256": "8dc5140975c9c20a888c8de33fc7c788e71bb98fe878bf1b0acce1defc7a3128",
+        "SUMMARY_sha256": "2886b687c5918c56782ee081561d93030a072df21edaafd8dfe402a2958faadd",
+        "native_four_is_a_separate_domain": true
+      },
+      "first_material_inspection": {
+        "status": "UNQUALIFIED_FAILED_RUN_UNSUPPORTED_ADDED_LIBRARY_ID",
+        "CPU_helper_methods": 31,
+        "CPU_helper_seconds": 0.028,
+        "CPU_host_methods": 57,
+        "CPU_host_seconds": 0.544,
+        "private_seconds": 4.148,
+        "exit": 1,
+        "error_code": "UNSUPPORTED_ADDED_ID_CATEGORY",
+        "added_materials": 4,
+        "added_images": 2,
+        "added_libraries": 1,
+        "inspected_graphs": 0,
+        "packed_bytes_copied": 0,
+        "diagnostic_only_nodes": 12,
+        "preservation_checks": 35,
+        "input_identity_bindings": 14,
+        "all_preservation_and_private_closure": true,
+        "packet": "experiments/source_material_inspection_20261120",
+        "packet_files": 30,
+        "packet_bytes": 339329,
+        "CONTENTS_sha256": "8037605bf0e9f4a869da691b102b94703d1b09203a1faaa53cc8a8a56a5e56db",
+        "SUMMARY_sha256": "08ab2752df2ae83b4e7d48b1b0002095f00a77a66ba24cc56e1289a73637251a",
+        "resource_equivalence_qualified": false
+      },
+      "resource_RNA_successor": {
+        "status": "CPU_ONLY_PASS",
+        "CPU_methods": 38,
+        "CPU_seconds": 0.025,
+        "previous_30_assertions_included_not_additive": true,
+        "new_methods": 8,
+        "packet": "experiments/source_resource_rna_20261120",
+        "packet_files": 18,
+        "packet_bytes": 253794,
+        "CONTENTS_sha256": "fd74fe80ef48577ab4f0aae4bdd7dc6c53c81d2b2f0efafe72d15ad87419e62c",
+        "SUMMARY_sha256": "0e08190e659651b46d6d779001cdcbe903cb2ae80a9ce32f5d6df60b257191ef",
+        "actual_RNA_B_resources_export_or_fidelity_qualified": false
+      },
+      "inspector2": {
+        "actual_status": "MATERIAL_ONLY_OWNED_LIBRARY_INSPECTION_QUALIFIED_2",
+        "CPU_helper_methods": 42,
+        "CPU_helper_seconds": 0.037,
+        "CPU_host_methods": 59,
+        "CPU_host_seconds": 0.824,
+        "CPU_methods_this_profile": 101,
+        "CPU_old_31_plus_57_added": false,
+        "actual_pass_claimed": true,
+        "private_seconds": 4.091,
+        "exit": 0,
+        "retained_parent_reaped": true,
+        "private_job_and_desktop_closed": true,
+        "foreground_activation": false,
+        "physical_after_owned_processes": 0,
+        "all_35_preservation_checks_passed": true,
+        "input_identity_bindings": 14,
+        "source_folders_untouched": true,
+        "functional_files_unchanged": 1061,
+        "source_context_head": "99fe7f56a77de4ff8faf79678302b8b05dc3b4ab",
+        "whole_B_materials": 5,
+        "native_name_subset": 4,
+        "inspected_graphs": 4,
+        "reached_Images": 2,
+        "shared_image_references": 2,
+        "packed_PNG_bytes_copied_in_RAM": 1709130,
+        "prospective_RGBA_F32_bytes": 83886080,
+        "retained_owned_source_Libraries": 1,
+        "retained_owned_source_Library_exact_fields_verified": true,
+        "packet": "experiments/source_material_inspection2_20261120",
+        "packet_files": 53,
+        "packet_bytes": 625719,
+        "CONTENTS_sha256": "9c9bc8796268c3a86572205d5e2cc75e97038a7ec8120632db395270b44aedbd",
+        "SUMMARY_sha256": "a0b3f5c7a912df0b215e1598d302db2c529271bf9842019cdc5d0334a8497c1e",
+        "worker_result_sha256": "4212f2561147702fb1651595015fa077d4618f2d61e23927ca368302c7a8a597",
+        "image_buffer_getters_used": false,
+        "B_scene_opened_or_point_labels_derived": false,
+        "resource_equivalence_qualified": false,
+        "material_binding_export_normal_or_adoption_qualified": false,
+        "transient_C_read_absence_qualified": false,
+        "source_only_future_plans": [
+          "experiments/source_material_inspection2_20261120/future_plans/CARRIER_INTEGRATION_PLAN.md",
+          "experiments/source_material_inspection2_20261120/future_plans/SHARED_IMAGE_RESOURCE_PLAN.md"
+        ],
+        "new_combined_or_shared_exporter_code_included": false
+      },
+      "strict_normal_threshold": 2E-05,
+      "non_NORMAL_resource_export_and_adoption_gates_unchanged": true,
+      "formal_62_statuses_and_52_of_54_55_of_62_scores_unchanged": true
+    },
     "publication_cleanup_and_material_followup": {
       "source_publication": {
         "commit": "610379aeb672b6f7a585b5d7d3bf7e20f7265c30",
@@ -208,7 +319,7 @@
         "actual_B_catalogue_summary_published": false,
         "actual_failed_run_folder": "output/source-library-enumeration-run-1795212892760261100",
         "actual_library_qualified": false,
-        "CENSUS2_successor_status": "PENDING",
+        "CENSUS2_successor_status": "ACTUAL_PASS_SEPARATE_CENSUS2_PACKET",
         "CENSUS2_complete_B_catalogue_bounds": [
           1,
           256
@@ -223,7 +334,7 @@
       "inspection_scope_document": "docs/SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md",
       "static_DNA_closure_not_prerequisite_for_new_bounded_inspection": true,
       "absence_of_transient_ID_or_C_level_reads_qualified": false,
-      "next": "Retain the failed B4-count attempt and its closed/preserved audit; actual B catalogue count remains UNKNOWN!=4, never infer5. Qualify a separately authored CENSUS2 complete-catalogue1..256 successor, independent of native4; then separate bounded material-only read-only inspection recording actual surviving IDs/graphs/refs. Preserve originals/private caps, derive no native point labels from B, refuse unsupported profiles and do not bind/export before resource qualification and strict non-NORMAL/original2e-5normal gates.",
+      "next": "CENSUS2 whole-B catalogue5 and Inspector2 exact-native-subset4 now pass in separate bounded cold profiles. Inspector2 observes four graphs/two Images/two shared refs,1709130packed PNG bytes,83886080prospective RGBA-F32 bytes and one exact owned-source Library, with all14bindings/35preservation/private closure checks. Retain the first inspection refusal unchanged. Next independently qualify a combined fresh-native material/face/skin-reference binding to inspected B material refs, then the source-only shared-Image/cache and carrier plans. Resource-RNA38CPU includes old30+8new, not actual export. Preserve originals/private caps, no B geometry/point labels and strict resource/non-NORMAL/original2e-5normal gates.",
       "source_publication_9498": {
         "commit": "9498d15e880f9e0df3521d36365100aa42b03956",
         "files": 27,
@@ -1015,7 +1126,7 @@
           "scope": "Actualexactsetterinput/immediatereadback/validate/untouchedreplay/savedcontrol boundaries measured; firstobservedAPIboundaryloss, no normalrepairorfidelitypass. Privatearrayskeptoutputonly."
         }
       ],
-      "remaining": "Continue native standardization independently. Full9e Body/Record stays complete. Latest exact Junko raw material-placeholder/slot/whole-face/skin-property relation passes116CPU and actual7.863s:14234faces/2slots per model/MATERIAL_ID, retained9661points/42702corners/69groups/four stages;592identity bindings and source/runtime/native inputs exact with closed owned job. Native MDL49/default-skin semantics, historical-B causality, resource closure, normals/export/adoption remain unqualified. First B enumeration FAILED exit1/4.046s at EXACT_OWNED_B_MATERIAL_COUNT: actual B catalogue count UNKNOWN!=4, no5inference or retained summary. All20preservation checks pass, owned launcher/job/desktop close/noFG, fresh physical owned0 and exact lock removed. Frozen source_material_library_20261120:25files/218198B, CONTENTS6838f0c8/SUMMARY14dd0d5d. CENSUS2 complete B catalogue1..256 is PENDING, separate from native4; then bounded material-only read-only inspection per docs/SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md. Static DNA proof is not universal prerequisite for that narrower result; do not promise absence of transient IDs/C-level reads. Preserve originals/private caps and record actual surviving IDs/graphs; no point labels from B or export/binding before resource qualification and strict non-NORMAL/original2e-5gates. Keep older stronger plans/failures historical. Remaining44rules/defaults/PMX/capability audit and deferred human observations remain open.",
+      "remaining": "Continue native standardization independently; full9e Body/Record and Source116CPU/actual592bindings/14234face relation remain complete within their scopes. CENSUS2 whole-B catalogue5 passes separately from native4. The first inspection Library-category refusal remains unchanged with zero graphs/packed bytes. Inspector2 now passes101CPU/actual4.091s:four graphs/two Images/two shared refs,1709130packed PNG bytes,83886080prospective RGBA-F32 bytes, one exact owned-source Library, all14bindings/35preservation checks and owned closure. This narrow inspection supplies no B point labels, resource semantic equivalence or exporter result. Next qualify the combined fresh-native material binding and inspected B refs; separately implement/test shared-Image exporter-cache admission and carrier integration. Resource-RNA38CPU includes old30+8new only. Preserve originals/private caps, no B geometry relabeling and strict original2e-5/non-NORMAL/resource gates. Native renderer, resource/fidelity/export/adoption, remaining44rules/defaults/PMX/capability audit and deferred human observations remain open.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -4126,7 +4237,7 @@
     {
       "priority": 0,
       "requirement": "IMPORT-03",
-      "action": "Latest exact-family raw material binding passes116CPU(34core+82host) and actual7.863s/592identity bindings:14234faces(11444/2790),2slots each,bothMATERIAL_ID; IDs/RNA9661points/42702corners/69groups/four stages retained, source1061/runtime6/SDK574/exporter120/HEAD9498 and inputs exact, private job closed/noFG. Frozen experiments/source_material_binding_20261120:27files/333687B. Metadata24/older86profiles are separate, not additive. First B enumeration FAILED exit1/4.046s at EXACT_OWNED_B_MATERIAL_COUNT: actual B catalogue count UNKNOWN!=4, no5inference or retained summary. All20preservation checks pass, owned launcher/job/desktop close/noFG, fresh physical owned0 and exact lock removed. Frozen source_material_library_20261120:25files/218198B, CONTENTS6838f0c8/SUMMARY14dd0d5d. CENSUS2 complete B catalogue1..256 is PENDING, separate from native4; then bounded material-only read-only inspection under docs/SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md. Universal static DNA pre-proof is not required for this new inspection result; transient IDs/C-level reads are not claimed absent. Preserve originals/private caps, record actual surviving ID/dependency changes, derive no point labels from B and refuse unsupported profiles before export/binding. Original2e-5normal and strict non-NORMAL/resource gates stay intact; renderer/default-skin, historical-B, normal/export/adoption and all62statuses/scores remain unchanged/unqualified. Main9498 has exact27file/2637232B remote proof; failed B packet counts/hashes are recorded above; CENSUS2 actual result remains PENDING."
+      "action": "Source raw material binding remains116CPU/actual592bindings/14234faces/MATERIAL_ID PASS. CENSUS2 passes53CPU/actual3.985s:whole B catalogue5, separate native4. First inspection remains FAILED with4Mat/2Image/1Library, zero graphs/packed bytes, all35preservation/closure checks. Inspector2 now passes101CPU (42helper/0.037s+59host/0.824s) and actual4.091s:four exact native-subset graphs, two reached Images/two shared refs,1709130packed PNG bytes,83886080prospective RGBA-F32 bytes, and one exact owned-source Library verified. All14bindings/35preservation checks, private job/desktop closure, retained-parent reap and fresh physical owned0 pass; original/staged/runtime/1061sources/HEAD99fe unchanged. Packet source_material_inspection2_20261120 is53files/625719B, CONTENTS9c9bc879/SUMMARYa0b3f5c7. Connect this separate B observation to newly native-observed material/face/skin refs in a separately qualified combined host; no B geometry/point labels. Resource-RNA38CPU includes old30+8new; shared-Image/cache successor and carrier integration are source-only plans. Preserve docs/SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md, originals/private caps and strict resource/non-NORMAL/original2e-5normal gates. Resource equivalence, native renderer, exporter/fidelity/adoption and all62statuses/scores remain unchanged. Full Windows9e remains complete; main99fe exact60files/3062606B readback7c44bf6f."
     },
     {
       "priority": 1,

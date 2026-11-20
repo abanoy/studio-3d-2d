@@ -25,13 +25,31 @@ runtime6/SDK574/exporter120/HEAD9498 stay exact; launcher/job/desktop close/noFG
 Frozen experiments/source_material_binding_20261120:27files/333,687B,
 CONTENTS8e29d3e7/SUMMARY9d67b881. Metadata24 and older86profiles are separate,
 not additive to116. Main9498 has exact27file/2,637,232B remote proof, d584b907;
-full9e is unchanged. B preparation still passes44CPU, but its first actual4.046s
-private job FAILED exit1 at EXACT_OWNED_B_MATERIAL_COUNT. B catalogue count is
-UNKNOWN!=4, no5inference or retained count/summary. All20preservation checks pass,
-launcher/job/desktop close/noFG, fresh physical owned0 and exact lock removed;
-failure remains unqualified. Frozen source_material_library_20261120 has25files/
-218,198B, CONTENTS6838f0c8/SUMMARY14dd0d5d. CENSUS2 complete B catalogue1..256,
-separate from native4, remains PENDING before bounded material-only inspection. See
+full9e is unchanged. Main99fe has exact60file/3,062,606B readback7c44bf6f.
+CENSUS2 now passes53CPU/0.525s and actual3.985s:5BMaterials/34names/36types,
+38unchanged exposed IDs/39collections,8bindings/all20preservation/private
+closure/noFG. Frozen source_material_library_census2_20261120:32files/396,868B,
+CONTENTS8dc51409/SUMMARY2886b687; native4 is separate and old fixed4 failure stays.
+First material inspection has31helper+57host CPU, but actual4.148s FAILED at
+UNSUPPORTED_ADDED_ID_CATEGORY:4Mat/2Image/1Library, originals unchanged, zero
+inspected graphs/packed bytes; diagnostic12node types do not qualify links.
+All35preservation/14bindings/owned closure pass. Frozen source_material_inspection_20261120:
+30files/339,329B, CONTENTS8037605b/SUMMARY08ab2752. Inspector2 now passes101CPU
+(42helper/0.037s+59host/0.824s) and actual4.091s:four exact native-subset graphs,
+two Images/two shared refs,1709130packed PNG bytes/83886080prospective RGBA-F32
+bytes. One genuine retained owned-source Library has exact identity/owned-path/
+parent/packed/archive checks before and after inspection. All14bindings and35
+preservation checks pass; parent exits0/reaped, private job/desktop close/noFG,
+fresh physical owned0; original/staged/runtime/1061sources/HEAD99fe unchanged.
+Frozen source_material_inspection2_20261120:53files/625,719B, CONTENTS9c9bc879/
+SUMMARYa0b3f5c7. No image-buffer getter, B geometry/point labels, SourceIO model
+import, binding/export or resource-semantic equivalence follows. Its future_plans/
+contains exact source-only combined binding/carrier and shared-Image/cache plans;
+next qualify new native-observed material/face/skin refs bound to these inspected
+B material refs, retaining strict resource/non-NORMAL/original2e-5gates. The two
+old failures remain immutable. Future resource-RNA passes38CPU/0.025s,
+not old30+38:source_resource_rna_20261120,18files/253,794B, CONTENTSfd74fe80/
+SUMMARY0e08190e; actual resources/export/fidelity/adoption remain unqualified. See
 SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md: static DNA closure is not required
 universally for this narrower inspection; no absence of transient IDs/C-level
 reads is promised. Preserve originals/private caps, record actual surviving IDs/
@@ -63,8 +81,9 @@ All590reads, native3, six runtimes,574SDK/120exporter files and1061sources are
 preserved; job/desktop close, parent is reaped, no foreground activation and
 fresh owned process count0. This is the exact Junko profile, not generic storage,
 historical-B causality, normal/fidelity, export or HAS-adoption qualification.
-Next inspect/qualify B resource profiles separately before export binding,
-retaining strict non-NORMAL semantics and the original2e-5normal gate. No full rerun absent
+Next qualify combined fresh-native/B-material binding and shared-Image exporter
+provenance separately, retaining strict non-NORMAL semantics and original2e-5
+normal gate. No full rerun absent
 functional changes. The five frozen experiments/ packets include full/hook10/9,
 failed native8 and clone-cleanup6files. source_current_native_ids_20261120 is
 frozen at148files/1,159,717bytes,86CPU/actual success; CONTENTS dbb470fd and SUMMARY

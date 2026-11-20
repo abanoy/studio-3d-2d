@@ -7317,3 +7317,65 @@ original2e-5normal gates. Never repair unsupported profiles to make them pass.
 All62statuses and52/54implementation,55/62acceptance remain unchanged.
 This exact9498-prefix/all-prior-byte-preserving append supersedes the earlier
 PENDING-first-attempt statement; it does not rewrite historical evidence.
+
+## 2026-11-20 — Complete B census and bounded material/packed-header inspection pass
+
+Main99fe7f56a77de4ff8faf79678302b8b05dc3b4ab has exact independent raw60-file/
+3062606-byte readback (SHA256/GitSHA1/length plus Node crypto), receipt7c44bf6f.
+The full Windows9e170/36/21,1061source Body/Record PASS remains unchanged; no
+new full-suite execution or broad acceptance closure is inferred here.
+
+Root CENSUS2 passes53CPU/0.525s and actual3.985s private:5BMaterials,34names,
+36source/destination types,39BlendData collections,38exposed IDs unchanged,
+all requests empty,8input identity bindings and all20preservation checks. Root
+parent exits0/reaped, private job/desktop close/noFG, final physical owned0.
+Native4materials are a separate domain; the original fixed-four failure stays
+historical/unknown-count in its frozen25-file packet, not relabelled as a pass.
+CENSUS2 packet source_material_library_census2_20261120:32files/396868B,
+CONTENTS8dc51409/SUMMARY2886b687; no append or image getter was used in that run.
+
+The first material-only inspection stays FAILED:31helper/57host CPU precede
+actual4.148s exit1 at UNSUPPORTED_ADDED_ID_CATEGORY. Four exact native names
+were appended from B's five; additions4Materials/2Images/1Library survived with
+originals unchanged. Zero graphs/packed bytes were inspected; separate12node
+type diagnostics do not qualify links. All35preservation checks/14bindings and
+private/physical closure pass; the owned lock was removed. Frozen packet
+source_material_inspection_20261120:30files/339329B, CONTENTS8037605b/SUMMARY08ab2752.
+No unexpected ID was deleted to force acceptance.
+
+A separately versioned inspector2 now PASSES101CPU:42helper/0.037s+59host/
+0.824s, with all11+19source hash/size/nsmtime exact. Root's actual4.091s private
+job exits0; retained parent exits0/reaped, job/desktop close/noFG/no switch,
+fresh physical owned0 and all35preservation checks/14input bindings pass.
+Original/staged B/native3, runtime6/SDK574/exporter120, HEAD99fe and1061sources
+remain exact. The exact native4-name subset of B5 supplies four graphs reaching
+two local Images/two shared refs.1709130packed PNG bytes stay within owned RAM;
+PNG-header budgets imply83886080prospective RGBA-F32 bytes. One genuine retained
+owned-source Library passes exact identity/pointer/owned-path/parent/packed/
+archive checks before and after inspection. No image.size/channels/pixels
+getter, full decoder, external retrieval, SourceIO model import, B geometry/
+point labels, save or exporter ran. Mandatory owned-lock cleanup precedes Root
+success publication. No absence of transient C reads/IDs is claimed.
+
+Frozen source_material_inspection2_20261120:53files/625719B.
+CONTENTS9c9bc8796268c3a86572205d5e2cc75e97038a7ec8120632db395270b44aedbd;
+SUMMARYa0b3f5c7a912df0b215e1598d302db2c529271bf9842019cdc5d0334a8497c1e.
+The packet includes exact30source/predecessor files, both five-file CPU sets,
+six safe actual JSONs and two exact source-only future plans. Native/image
+bytes, arrays, requests, PRIVATE logs and process listings are not published.
+
+Separate future resource-RNA correction passes38CPU/0.025s:the older30method/
+assertion bodies plus8new, not30+38. Its18-file/253794B packet is
+source_resource_rna_20261120, CONTENTSfd74fe80/SUMMARY0e08190e. Non-ID RNA
+canonical identities keep owner/type/pointer/membership checks while cached
+ID and exporter-Python refs remain strict; no actual exporter run is certified.
+
+Next independently qualify the combined fresh-native material/face/skin refs
+bound to these inspected B material refs. Shared-Image exporter-cache and
+carrier integration remain source-only plans under the inspector2 packet's
+future_plans/. Strict resource/non-NORMAL/original2e-5normal gates, native
+renderer, resource semantic equivalence/export/fidelity/adoption remain open.
+SourceBinding27/116CPU/actual592bindings/14234faces remains separate and frozen.
+All62statuses,52/54implementation and55/62acceptance scores are unchanged.
+This append preserves the exact99fe raw prefix and every preexisting byte;
+new packet commit/push/remote proof is not yet claimed. Work continues.

@@ -1,6 +1,6 @@
 # HAS continuation — November 20, 2026
 
-## Body addition complete; full Windows PASS; fresh raw material binding observed
+## Body addition complete; full Windows PASS; material and bounded B inspection observed
 
 Worktree `C:/a/Programming/cloudflare/has-body-addition-20261120`, branch
 `codex/reference-body-20261120`, base `ab62adff5f6961d8605f15c79a01a0215c9c5425`.
@@ -41,17 +41,42 @@ resources, normals/export/adoption remain unqualified. Separate metadata24 and
 older86profiles are not added to116. Main9498 also has exact27file/2,637,232byte
 remote readback, receiptd584b907; full9e test scope remains unchanged.
 
-B empty-enumeration preparation passes44CPU methods in0.575s (22worker/22driver),
-with six source identities unchanged. The first actual4.046s private job FAILED
-exit1 at EXACT_OWNED_B_MATERIAL_COUNT: the actual B catalogue count is UNKNOWN
-and differs from4; no count/summary was published and5must not be assumed. All20
-preservation checks pass, launcher/job/desktop close/noFG, fresh physical owned0
-and exact owned lock removed; failure remains unqualified. Frozen library packet:
-experiments/source_material_library_20261120,25files/218,198B,
-CONTENTS6838f0c8/SUMMARY14dd0d5d. CENSUS2 successor is PENDING: admit the complete
-B catalogue within1..256, independently of the native4-material table. Next use
-that separate empty-request enumeration and narrow material-only read-only
-inspection under `SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md`. A universal
+CENSUS2 now PASSES53CPU/0.525s and actual3.985s:5BMaterials/34catalogue names/
+36types,38unchanged exposed IDs/39collections, all empty requests,8input identity
+bindings, all20preservation checks and private/physical closure/noFG. Packet
+source_material_library_census2_20261120 is32files/396,868B, CONTENTS8dc51409/
+SUMMARY2886b687. The native4-material table is a separate domain. The old fixed4
+count failure remains an unchanged25-file packet; its unknown count was not
+retroactively guessed. Main99fe has exact60file/3,062,606B remote readback7c44bf6f.
+
+First material-only inspection passes31helper+57host CPU, but actual4.148s exits1
+at UNSUPPORTED_ADDED_ID_CATEGORY:4Materials/2Images/1Library survive, originals
+unchanged, zero helper-inspected graphs/packed bytes. Separate diagnostics count
+12nodes (4Principled/4Output/4TexImage), not qualified graph links/resources.
+All35preservation checks/14input bindings pass; launcher/job/desktop close/noFG,
+fresh physical owned0 and exact lock removed. Frozen source_material_inspection_20261120:
+30files/339,329B, CONTENTS8037605b/SUMMARY08ab2752. This failure stays unchanged.
+
+Inspector2 now PASSES101CPU (42helper/0.037s+59host/0.824s) and actual4.091s.
+The exact four-native-name subset of five B Materials supplies four graphs,
+two reached Images/two shared refs,1709130packed PNG bytes and83886080prospective
+RGBA-F32 bytes. One genuine retained owned-source Library passes exact identity,
+owned filepath, parent/packed/archive checks before and after inspection; no ID
+or graph was deleted/edited to pass. All14bindings/35preservation checks pass;
+parent exits0/reaped, private job/desktop close/noFG, final physical owned0.
+Original/staged inputs, runtime and1061sources/HEAD99fe remain exact. Frozen
+source_material_inspection2_20261120:53files/625,719B, CONTENTS9c9bc879/SUMMARYa0b3f5c7.
+This is bounded graph/packed-header inspection; no image.size/channels/pixels,
+full decoder, SourceIO model import, B geometry/point labels, binding or exporter.
+Two exact source-only future plans are under that packet's future_plans/: next
+qualify fresh-native material/face/skin refs bound to these inspected B refs,
+then shared-Image/cache admission and carrier export. Combined/export code and
+normal/resource equivalence/adoption remain unqualified; original2e-5gate stays.
+
+Future resource-RNA correction passes38CPU/0.025s (old30assertions+8new, not
+30+38): source_resource_rna_20261120,18files/253,794B, CONTENTSfd74fe80/
+SUMMARY0e08190e. Actual B resources/export/fidelity/adoption remain unqualified.
+Continue bounded inspection under `SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md`. A universal
 static DNA pre-proof is not required for this new inspection scope; transient
 IDs/C-level reads are not claimed absent. Record actual surviving IDs/graphs,
 keep private caps/originals and derive no native point labels from B. Binding/
@@ -90,7 +115,7 @@ Five publication packets are beneath experiments/: reference_body_full_20261120
 and source_current_native_ids_20261120, now frozen at148files/1,159,717bytes with
 86CPU/current actual success. CONTENTS SHA256 starts dbb470fd; SUMMARY afabcc04;
 exact hashes are recorded in the benchmark. Historical evidence remains retained.
-Next qualify the separate B inspection/resource profile, then bind/export only
+Next qualify combined fresh-native/B-material binding, then shared-resource export only
 under strict non-NORMAL semantics and the original2e-5normal gate.
 
 Implemented the direct reference body plan in `src/reference_body_plan.gd` and
@@ -210,10 +235,16 @@ completed successfully; old expected files lack the new definition metadata.
 4. Exact-family raw placeholder/slot/whole-face/skin-property binding now passes:
    116CPU and actual592bindings/14234faces; native-renderer/default-skin,
    historical-B, resources, normals/export/adoption remain unqualified.
-   First B enumeration failed its4-count assumption with all20preservation/closure
-   checks passing; B count UNKNOWN!=4, no5inference. CENSUS2 complete1..256catalogue
-   remains PENDING and separate from the native4. Keep enumeration separate from material-
-   only read-only inspection. Use `SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md`:
+   CENSUS2 actual complete catalogue5 now passes53CPU/8bindings/unchanged38IDs;
+   old fixed4 failure stays retained. First material inspection refuses its
+   added Library (4Mat/2Image/1Library), zero graphs/packed bytes, all35preservation
+   checks and owned closure pass. Separate inspector2 now passes101CPU and
+   actual4.091s:four graphs/two shared Images/1709130packed PNG bytes and one
+   exact owned-source Library. All35preservation/14bindings/closure pass. Next
+   qualify fresh-native material/face/skin refs bound to inspected B refs, then
+   shared-Image exporter-cache/carrier work under the source-only future plans.
+   Resource-RNA38CPU is future-export-only. Keep enumeration and bounded material
+   inspection separate. Use `SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md`:
    static DNA closure is not a universal prerequisite for this narrower result;
    transient IDs/C-level reads are not promised absent. Record/refuse actual
    unsupported dependencies before binding/export; no point labels from B.
@@ -221,8 +252,9 @@ completed successfully; old expected files lack the new definition metadata.
    context. Preserve originals/private caps, all failures and strict non-NORMAL/
    original2e-5gates. No full rerun without functional changes.
 5. Main610 publication and exact189file/4,639,006byte readback are complete. Root
-   prepares the two new followup packets and this documentation successor, then
-   pushes without force and independently hashes every changed remote file.
+   prepares the four frozen census/inspection/resource packets and seven-document
+   successor (140files), then pushes without force and independently hashes every
+   changed remote file. This successor has no remote-proof claim yet.
    Source9e already has exact24file/3,739,119byte proof.
    Only clean disposable owned artifacts after proof; originals, installation,
    old reviews/shared tools and the earlier dirty checkout remain protected.
