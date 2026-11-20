@@ -7015,3 +7015,22 @@ optional PMD pose. Complete Windows source-commit run, main push/readback and
 owned cleanup are next; no new full-suite PASS claimed. All62formal IDs and
 52/54implementation/55/62acceptance remain. Human questions deferred; private art,
 originals, old reviews, installed Studio and shared approved runtimes protected.
+
+### November20 — exact historical Source weight/point preparation
+
+While the separate full Windows run tests unchanged source0329c4ff, a pure RAM
+check now matches the exact saved Junko hair/hat indexed numeric relation:
+9661points/42702corners/69groups, including5571multigroup hair points, all zero
+mismatch categories. Strict sourcef838e0d8 and19synthetic methods pass; all14
+source/capture/helper/script hash-size-stamps remain. Earlier17aba/18-method
+source/report preserved; exact-int loop guards and19th negative close a peer
+malformed-input gap without changing actual aggregate results. No native process,
+conversion, installed-source mutation, model/image/array publication or current
+Blender/exporter observation. Native normal2e-5 gate remains failed/unqualified;
+current API/storage, hidden ambiguous vertex causality and gather/exporter/resource
+binding flags stay false. Generic multigroup guard is unchanged. This is CPU
+preparation, not a visible Source repair or acceptance closure. Exact source/logs/
+scalar reports and concrete next hooks are in experiments/source_saved_weight_join_20261120.
+All62formal IDs/scores and protected inputs/old reviews remain. Next: actual
+owned fresh-B/ID/gather/resource/export qualification after the full run closes.
+Full0329 subsequently FAILED956.8793264s at the unchanged Wind Review old recording fingerprint, before its GPU work; all36core groups and1059source/driver identities/HEAD passed. Refresh only independently reviewed bindings and rerun; no full PASS claimed. Source archive replay in this isolated source-only checkout passes19methods and reproduces Root report bytes exactly (ed984d5b).

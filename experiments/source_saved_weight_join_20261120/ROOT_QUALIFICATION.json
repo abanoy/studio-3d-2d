@@ -1,0 +1,70 @@
+{
+  "format": "has_source_saved_weight_root_qualification_1",
+  "passed": true,
+  "scope": "Historical exact indexed numeric relation only",
+  "synthetic_methods": 19,
+  "identities_unchanged": {
+    "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-weight-join-20261120\\join_saved_weights.py": {
+      "bytes": 20860,
+      "sha256": "f838e0d893969aa1ad884a1c1d92e28ba019454f313632855f2a33c55fc3415c",
+      "mtime_ns": 1795195065607006200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-weight-join-20261120\\test_saved_weight_join.py": {
+      "bytes": 8305,
+      "sha256": "4ce092b829d0629dafc271f5feda66caefef5770e26a6e340109c8d19418adaf",
+      "mtime_ns": 1795195065820315300
+    },
+    "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-weight-join-20261120\\join_saved_weights_v1_17aba.py": {
+      "bytes": 20278,
+      "sha256": "17aba1957b5670f1ff6f1fdef20235e30afdc880a1035dc82f668bb0edf77cad",
+      "mtime_ns": 1795195143221742500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-weight-join-20261120\\root-result-01.json": {
+      "bytes": 5574,
+      "sha256": "cb271d34bf19d071de581682a982a900d2a17a76282df85c4b16e3ed769d9559",
+      "mtime_ns": 1795194952226396600
+    }
+  },
+  "commands": [
+    {
+      "args": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-weight-join-20261120",
+        "-p",
+        "test_saved_weight_join.py",
+        "-v"
+      ],
+      "exit": 0,
+      "seconds": 0.22810560000107216,
+      "log_sha256": "a35a53df210f1c11a25f45587ec939642fc557cfbc4a91f1f1e1b0a6d56d7bdd"
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-weight-join-20261120\\join_saved_weights.py",
+        "--script-sha256",
+        "f838e0d893969aa1ad884a1c1d92e28ba019454f313632855f2a33c55fc3415c",
+        "--report",
+        "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-weight-join-20261120\\root-result-02.json"
+      ],
+      "exit": 0,
+      "seconds": 1.735193900000013,
+      "log_sha256": "1e00cd8e6341ac91e621d1abff367decd7493e6428a401626cbb985f6b39f53c"
+    }
+  ],
+  "private_arrays_published": false,
+  "new_native_process_launched": false,
+  "actual_join_report_sha256": "ed984d5bbc61ff171ff6756d11fe840738ebea0375f151566753ccdca1e48ff8",
+  "native_normal_fidelity_still_unqualified": true,
+  "current_exporter_or_Blender_state_qualified": false
+}
