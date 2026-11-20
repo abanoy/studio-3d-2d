@@ -14,6 +14,7 @@ import stat
 import uuid
 
 import secondary_helpers_batch as batch
+import import_basis_helper as basis_helper
 
 FORMAT = 'has_wind_helper_preview_1'
 MAX_REQUEST = 1024 * 1024
@@ -236,6 +237,8 @@ def build_candidate(job, owned_root):
     if after.sha != result['batch']['final_sha256']: raise ValueError('Candidate checksum does not match its own complete build')
     proof = retained_bindings(before, after)
     operations = operation_map(plan, result, before, after)
+    basis_proof = (basis_helper.check_existing_derivative(source, candidate_path, before.sha, after.sha)
+                   if all(operation['mode'] == 'existing_joints' for operation in plan['operations']) else {})
     if identity(source) != request['source']['identity'] or digest(request_path.read_bytes()) != digest(raw):
         raise ValueError('Original source or exact draft request changed during preparation')
     proof.update(request_file_sha256=digest(raw), candidate_sha256=after.sha,
@@ -247,6 +250,7 @@ def build_candidate(job, owned_root):
                'source': copy.deepcopy(request['source']), 'shape_settings': copy.deepcopy(request['shape_settings']),
                'candidate': {'path': 'candidate/scene.glb', 'identity': identity(candidate_path)},
                'bindings': {'path': 'bindings.json', 'sha256': proof_sha}, 'operations': operations,
+               'basis_preservation': basis_proof,
                'reports': result['reports'], 'setup_members_built': len(request['items']),
                'managed_asset_created': False, 'authored_edit_created': False, 'render_admitted': False}
     receipt_sha = publish(job / 'preview-receipt.json', receipt, MAX_RECEIPT)
@@ -282,6 +286,11 @@ def check_receipt(job, owned_root, expected_digest, current_context, completed_r
         raise ValueError('Candidate binding proof does not match the exact draft/receipt')
     if receipt.get('managed_asset_created') is not False or receipt.get('authored_edit_created') is not False:
         raise ValueError('Preview is not an authored transaction')
+    if receipt.get('basis_preservation'):
+        expected = basis_helper.check_existing_derivative(request['source']['path'], candidate_path,
+                    request['source']['identity']['sha256'], receipt['candidate']['identity']['sha256'])
+        if encoded(receipt['basis_preservation']) != encoded(expected):
+            raise ValueError('Height-reference preservation proof changed')
     return receipt
 
 

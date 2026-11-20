@@ -334,6 +334,23 @@ def main():
     (output / 'character-height-suite.log').write_text(height_log, encoding='utf-8')
     results['character_height'] = json.loads((output / 'character-height-verification.json').read_text(encoding='utf-8'))
     print('PASS optional height review, partial/proportion guards, native physics, HAS and movie')
+    for name in ('import_basis', 'import_basis_helper', 'import_basis_storage'):
+        log = run([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_' + name + '.py'])
+        (output / (name + '-python.log')).write_text(log, encoding='utf-8')
+        domain_folder = output / (name + '-domain-' + str(time.time_ns()))
+        domain_folder.mkdir()
+        log = run(command('tests/' + name + '_unit.gd', True, extra=['--', str(domain_folder)]))
+        marker = name.upper() + '_UNIT '
+        assert marker in log and not any(bad in log for bad in ('ERROR:', 'FAIL ', 'ObjectDB instances leaked', 'resources still in use')), log
+        domain = json.loads(next(line.split(marker, 1)[1] for line in log.splitlines() if line.startswith(marker)))
+        assert domain['failures'] == 0, domain
+        (output / (name + '-domain.log')).write_text(log, encoding='utf-8')
+        results[name] = domain
+    for theme in ('neon', 'light'):
+        log = run([sys.executable, '-B', '-u', 'tests/verify_human_reference.py', '--theme', theme], timeout=500)
+        (output / ('human-reference-' + theme + '-suite.log')).write_text(log, encoding='utf-8')
+        results['human_reference_' + theme] = json.loads((output / ('human-reference-' + theme + '-verification.json')).read_bytes())
+    print('PASS six-foot Scale 1 reference, relative size, immutable basis, helpers, portable HAS and both themes')
     map_log = run([sys.executable, '-u', 'tests/verify_map_calibration.py'], timeout=380)
     (output / 'map-calibration-suite.log').write_text(map_log, encoding='utf-8')
     results['map_calibration'] = json.loads((output / 'map-calibration-verification.json').read_text(encoding='utf-8'))

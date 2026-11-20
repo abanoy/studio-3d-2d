@@ -1,0 +1,242 @@
+{
+  "format": "has_human_reference_checkpoint_1",
+  "date_local": "2026-11-19",
+  "starting_commit": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+  "status": "SCOPED_PASS",
+  "feature": "Optional six-foot complete-character reference at artist Scale 1; old Fit remains distinct",
+  "source_sha256": {
+    "src/app.gd": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+    "src/extended_timing.gd": "1f1610018b65f7dead4afe029fb9923b6ef9d9b3cf8840d9502da3c3b9dfce68",
+    "src/import_basis.gd": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+    "src/import_basis_helpers.gd": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+    "src/import_basis_project.gd": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+    "src/import_height_review.gd": "eb722a56b6b4ced19d630b502f7d38413abdf287327b2e623ffb6732c629c35b",
+    "src/model.gd": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7",
+    "src/pending_helper_preview.gd": "151d5394a1955361d612d66325b8bd64bdeedeebfb836e2e18b405fac2b1dfdb",
+    "src/pose_editor.gd": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+    "src/project_payload_guard.gd": "cf265bf5ff816e8951af113c10985c1d95e92f6b5feb6ed30f743c8abc47a2f6",
+    "src/renderer.gd": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+    "src/secondary_helper_editor.gd": "5757e86b2f81a14ccd65ca3e91c2eedcecf2c03f653d08c9c5ead18aebe81f71",
+    "src/shape_comparison.gd": "92d35ea266bbf70b75d5c6b24ddbb3aceda0d069855731b0c73d8fb59f6c0acb",
+    "src/storage.gd": "54f503d4960e6bc7c1d7f28464208d9059789467056029a06ca823fe8e90ebfa",
+    "src/wind_helper_candidate.gd": "434063885bc9525b4c5ab4cfe8138b1d255c83820eab97f73eee9a1b766ebc30",
+    "src/wind_review.gd": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+    "src/world_document.gd": "25b1576a850715c06fae7f9abf1ca0b5483dc7ca454775108c0685682e0a749e",
+    "src/world_runtime.gd": "f155b7a2ae7b8a42f6ce14e88b485e14cdc3ac95855d0ab43575c4fe4f89b213",
+    "tests/helper_preview_fixtures.py": "d7e0372cf3cdd96abc9d195aed43e37126f3f7ea7560cbe4b695a143fc85fa36",
+    "tests/helper_preview_port_files.json": "11eb285e13af0d38c26b181f2d91d55c169a3511d9e5c20cd7bf1eb49234081b",
+    "tests/helper_preview_transport_cpu.py": "53f7ec64efe4b0125cdccf1053f6f7ce5d5669b33476dc0f7bfea42baaa73348",
+    "tests/human_reference_smoke.gd": "a7ab93f40f9d389eb98adbd5c6b38653e1a00a499e3c14878c5fb02de1c172a6",
+    "tests/import_basis_helper_unit.gd": "f8cb14cbb57d0230eadcbb4a9a83f07c17c81028159cb3661cc9bf91f04339f6",
+    "tests/import_basis_lineage_parity.json": "1c681a8e354960887bcfddd35e9ab8f9162a69efea0a073f241bc837c51b4228",
+    "tests/import_basis_storage_unit.gd": "e55981fd99bf0bfd58b006933b8200b6abd7fd13b2b1c4ffbf17e208f945b13c",
+    "tests/import_basis_unit.gd": "f8d48d3c95f99c8c9e9975393f03d4df35aea9c0b72e0bc7f7b4f4c691af2384",
+    "tests/test_import_basis.py": "571fcb841322f4b7046c2960e2e231b13edfc8fe022c7b92c07b1f4cbf714567",
+    "tests/test_import_basis_helper.py": "6eb98cc778b0f93a37264b3f189879c17c2d337e699b50991adace9e216f34d4",
+    "tests/test_import_basis_storage.py": "754af44d82e2dd9cd5816a0fcb4a3bf2139821591a878113900eae370e60aee1",
+    "tests/verify.py": "4db21d55371060015cd3e9aad349ea3830a6b76bffa245ae4c92fc541fdf1e4f",
+    "tests/verify_helper_preview.py": "2fc300a695609094baa1d8d5cc0a815ce343c8d5d2c5df202d4152f5e615d723",
+    "tests/verify_human_reference.py": "2adac70a3ed1ecbe909a1b0004042da3f7dcb3890e99d55cfb7ddb200ec6a0af",
+    "tests/verify_wind_review.py": "4aa54a2e54ffd1ab83d3dfdd7f1397eabede05592626a1e826a08e1182409c70",
+    "tests/wind_review_port_files.json": "d6c934a4a9c09736739703d322ced6e16b6799f1bd3af2e0a06f378336884b40",
+    "tools/directory_commit.py": "585495f0ddd74b753d519bc4f6e3960072802e3b02d6e8b430d1b6462d32f730",
+    "tools/extended_timing.py": "e7068a115ac40eb04cb0b314599a3434c0a2b896622917880fc2dd6d3251df28",
+    "tools/has_project.py": "f693de3f83a56651ab15508ec36d2479215251d9c4a43012ec7668c20527e499",
+    "tools/import_basis.py": "fbb9efa1b56b0e50df125107af88b738f68657917f75ccbe0819f9eb5e92960d",
+    "tools/import_basis_helper.py": "819362729f741f08a6e93bc99ff3f10e14bde38f8d7010080688fc93d9604418",
+    "tools/secondary_helper_worker.py": "00bdc955d309a01c62d871b70b985ced8df020b80bcb242d878582f07116e8d3",
+    "tools/wind_helper_preview.py": "11e059c05514bebe74def3e64d9618a2567f022a19a59563c6950a9cd19037fb",
+    "tools/wind_preview_worker.py": "2366ea8a400101292788c14df1e5ff7615cf9d5c7dae60589fb0578830755cb9"
+  },
+  "python": {
+    "methods": 180,
+    "passed": 171,
+    "skipped": [
+      {
+        "test": "test_snapshot_status_symlink_refuses_linked_status (test_has_project.HasTests.test_snapshot_status_symlink_refuses_linked_status)",
+        "reason": "Windows symlink fixture needs SeCreateSymbolicLinkPrivilege or Developer Mode; refusal remains unverified here"
+      },
+      {
+        "test": "test_actual_worker_kill_preserves_a_valid_committed_generation (test_directory_commit.DirectoryCommitTests.test_actual_worker_kill_preserves_a_valid_committed_generation)",
+        "reason": "Actual worker SIGKILL boundaries; native Windows gate remains"
+      },
+      {
+        "test": "test_hardlinked_backup_replacement_preserves_original_inode (test_directory_commit.DirectoryCommitTests.test_hardlinked_backup_replacement_preserves_original_inode)",
+        "reason": "Owned hard-link fixture; native Windows gate remains"
+      },
+      {
+        "test": "test_hardlinked_candidate_refuses (test_directory_commit.DirectoryCommitTests.test_hardlinked_candidate_refuses)",
+        "reason": "Owned hard-link fixture; native Windows gate remains"
+      },
+      {
+        "test": "test_real_competing_process_refuses_then_retries_after_sigkill (test_directory_commit.DirectoryCommitTests.test_real_competing_process_refuses_then_retries_after_sigkill)",
+        "reason": "Actual process overlap and SIGKILL fixture; Windows gate remains"
+      },
+      {
+        "test": "test_symlinked_destinations_never_change_original (test_directory_commit.DirectoryCommitTests.test_symlinked_destinations_never_change_original)",
+        "reason": "Owned link fixture; native Windows gate remains"
+      },
+      {
+        "test": "test_two_real_prepared_writers_commit_only_one_starting_generation (test_directory_commit.DirectoryCommitTests.test_two_real_prepared_writers_commit_only_one_starting_generation)",
+        "reason": "Actual two-worker fixture; native Windows gate remains"
+      },
+      {
+        "test": "test_unsupported_directory_sync_is_explicit_and_does_not_break_save (test_directory_commit.DirectoryCommitTests.test_unsupported_directory_sync_is_explicit_and_does_not_break_save)",
+        "reason": "POSIX directory-sync fixture; native Windows gate remains"
+      },
+      {
+        "test": "test_symlink_parent_escape_refuses_and_preserves_outside_payload (test_source_resource_write.SourceResourceWriteTests.test_symlink_parent_escape_refuses_and_preserves_outside_payload)",
+        "reason": "Directory symbolic links unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\Users\\\\noble\\\\AppData\\\\Local\\\\Packages\\\\OpenAI.Codex_2p2nqsd0c76g0\\\\AC\\\\#!sandbox.{4f9144c7-b57e-4eb5-9204-721a3adbc9d4}\\\\Temp\\\\has-source-resource-2fg3s65w\\\\outside' -> 'C:\\\\Users\\\\noble\\\\AppData\\\\Local\\\\Packages\\\\OpenAI.Codex_2p2nqsd0c76g0\\\\AC\\\\#!sandbox.{4f9144c7-b57e-4eb5-9204-721a3adbc9d4}\\\\Temp\\\\has-source-resource-2fg3s65w\\\\resolved-native\\\\linked'"
+      }
+    ],
+    "failures": 0,
+    "errors": 0,
+    "report_sha256": "74468869fb3258f436d9fccc25c1f9fee4190dc43a47f5e6bd5f92911b94935d"
+  },
+  "headless": {
+    "domain": {
+      "checks": 74,
+      "failures": 0
+    },
+    "helper": {
+      "checks": 18,
+      "failures": 0
+    },
+    "storage": {
+      "checks": 40,
+      "failures": 0
+    }
+  },
+  "interfaces": {
+    "neon": {
+      "report_sha256": "cb587734bf1ca7381cea506f67df524256e65dc1ff20d4db70318fc2a279d0a4",
+      "writer": 43,
+      "cold_reader": 3,
+      "failures": 0,
+      "functional_files_unchanged": 1043,
+      "private_receipts": [
+        {
+          "stage": "writer",
+          "sha256": "04c928abea918ee19ce7f904099f119f985c71a4efb50d95c7f95edde1474a2b",
+          "exit": 0,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "desktop_switch_requested": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "stage": "cold_reader",
+          "sha256": "b886a65e3ad5bffe539f599ffccc33bdf386c0565c41f4dcec5b61d59829c5ae",
+          "exit": 0,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "desktop_switch_requested": false,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      ],
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "24/1",
+        "frames": 48,
+        "duration_seconds": 2
+      }
+    },
+    "light": {
+      "report_sha256": "566ce909ffd7f9bec05067d569d974fe72a2fe4bbce810e34c2b968352ce987d",
+      "writer": 43,
+      "cold_reader": 3,
+      "failures": 0,
+      "functional_files_unchanged": 1043,
+      "private_receipts": [
+        {
+          "stage": "writer",
+          "sha256": "224806769acb2485f6a23b1b59071fbbb123bae467522d04445d11472cd4aa4c",
+          "exit": 0,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "desktop_switch_requested": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "stage": "cold_reader",
+          "sha256": "8a2c1096579f61664ebab58ea2cda3e51008f5916dc84b8e0dde00b50333d7e6",
+          "exit": 0,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "desktop_switch_requested": false,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      ],
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "24/1",
+        "frames": 48,
+        "duration_seconds": 2
+      }
+    }
+  },
+  "source_gate": {
+    "helper_driver_checks": 120,
+    "manifest_ast_checks": 30,
+    "helper_rows": 35,
+    "wind_rows": 21,
+    "manifest_review_sha256": "26986985b52678ff4616b52347f2a4444b2b341351e2205f1b3538529ca8b504"
+  },
+  "native_fixture_staging": {
+    "declared_files": 11,
+    "bytes": 30825558,
+    "originals_unchanged": true,
+    "private": true
+  },
+  "failed_observations": [
+    {
+      "case": "Initial editor scan",
+      "result": "Permission errors and timeout; not qualified; no antivirus setting changed"
+    },
+    {
+      "case": "Initial dependency compilation",
+      "result": "Builtin Basis alias and inferred dictionary parse errors; corrected and strict domain rerun passed"
+    },
+    {
+      "case": "Initial storage saves",
+      "result": "Schema 9 directory commit refused and JSON numeric version guard failed; fixed, strict 40-check repeat passed"
+    },
+    {
+      "case": "Initial Neon GUI runs",
+      "result": "SpinBox grid changed .5/2 to .501/2.001; fixed grid. Test incorrectly expected Open to select an actor; corrected explicit selection without changing height tolerance"
+    },
+    {
+      "case": "First classic GUI run",
+      "result": "43 functional checks passed but missing Neon-only underline metadata emitted errors; fixed has_meta guard and strict repeat passed"
+    }
+  ],
+  "limits": [
+    "Explicit opt-in, not automatic default normalization",
+    "Synthetic new-feature geometry; native-model fidelity remains separate",
+    "Normalized weighted helper generation explicitly refuses; independently proven existing-joint endpoints supported",
+    "No encoded-video pixel-equivalence claim",
+    "Full Windows verifier pending at this scoped checkpoint",
+    "No owner/manual/device/clean-machine result inferred"
+  ],
+  "formal_scores": {
+    "implementation": [
+      52,
+      54
+    ],
+    "acceptance": [
+      55,
+      62
+    ],
+    "all_requirement_ids_preserved": 62
+  },
+  "next": "Run full Windows verifier from committed source, retaining native fixtures; continue native Source fidelity independently from visible additions",
+  "private_art_uploaded": false
+}

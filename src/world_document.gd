@@ -4,6 +4,7 @@ const Model = preload("res://src/model.gd")
 const FORMAT := "studio_world_1"
 const EFFECT_FORMAT := "studio_world_2"
 const Particles=preload("res://src/particle_document.gd")
+const BasisProject=preload("res://src/import_basis_project.gd")
 const MAX_OBJECTS := 64
 
 static func empty() -> Dictionary:
@@ -86,15 +87,15 @@ static func resolve(world: Dictionary, folder: String) -> Dictionary:
 	return result
 
 static func from_project(data: Dictionary) -> Dictionary:
-	var version=data.get("schema_version")
-	if not (version is int or version is float):return {"error":"Unsupported project version."}
-	if version==4 or version==5:
+	var version:=BasisProject.decoded_content_schema(data)
+	if version<1:return {"error":"Unsupported project version or import-size capability."}
+	if version in [4,5,6]:
 		return data.world.duplicate(true) if data.get("world") is Dictionary else {"error":"Missing world record."}
-	if version!=1 and version!=2 and version!=3:return {"error":"Unsupported project version."}
-	return from_legacy(data)
+	var legacy:=data.duplicate(true);legacy.schema_version=version
+	return from_legacy(legacy)
 
 static func from_legacy(data: Dictionary) -> Dictionary:
-	if data.get("schema_version")==4 or data.get("schema_version")==5:return {"error":"Use from_project for an existing multi-object world."}
+	if data.get("schema_version")==4 or data.get("schema_version")==5 or data.get("schema_version")==6 or data.get("schema_version")==9:return {"error":"Use from_project for an existing world or capability-wrapped project."}
 	var result := empty()
 	if not str(data.get("source","")).is_empty():
 		var scene: Dictionary = data.get("scene",{})

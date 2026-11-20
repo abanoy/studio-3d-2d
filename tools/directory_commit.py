@@ -9,11 +9,11 @@ import sys
 import tempfile
 
 try:
-    from .has_project import HasError, MAX_META, save_lock, sha
+    from .has_project import HasError, MAX_META, members, save_lock, sha
     from .directory_payloads import sync_files, parent_directories
     from .save_sync import sync_directory
 except ImportError:
-    from has_project import HasError, MAX_META, save_lock, sha
+    from has_project import HasError, MAX_META, members, save_lock, sha
     from directory_payloads import sync_files, parent_directories
     from save_sync import sync_directory
 
@@ -32,8 +32,15 @@ def read_manifest(path, expected=None):
     if expected is not None and hashlib.sha256(data).hexdigest() != expected:
         raise HasError('Prepared manifest changed; previous save preserved')
     value = json.loads(data, parse_constant=lambda value: (_ for _ in ()).throw(HasError("Nonfinite manifest value; previous save preserved")))
-    if not isinstance(value, dict) or type(value.get('schema_version')) not in (int, float) or value['schema_version'] not in range(1, 9):
+    if not isinstance(value, dict) or type(value.get('schema_version')) not in (int, float) or value['schema_version'] not in range(1, 10):
         raise HasError('Invalid prepared manifest; previous save preserved')
+    if value['schema_version'] == 9:
+        # Preserve the original manifest bytes. Only the capability-aware
+        # resource facade may authorize the new outer schema before promotion.
+        try:
+            members(value)
+        except (ValueError, KeyError, TypeError, AttributeError) as error:
+            raise HasError('Invalid prepared size capability; previous save preserved: ' + str(error)) from error
     return data
 
 

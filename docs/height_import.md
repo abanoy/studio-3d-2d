@@ -1,13 +1,13 @@
 # Optional character height review - development
 
-**November 14, 2026 owner direction — planned:** complete standard-proportion
-human imports should target six feet (1.8288 m) at user-facing HAS scale 1.
-This is a normalized asset reference, separate from source units and the artist's
-relative scale. The opt-in root-scaling implementation below does not yet provide
-that baseline/default. World units remain metres. Preserve proportions and
-originals; partial models, props/maps and uncertain/nonstandard figures require
-appropriate separate handling. See the current pickup's six-foot baseline plan
-and RESUME_MASTER_PLAN.md section 16; no behavior changed with this note.
+**November 19, 2026:** the optional review now also offers **Six-foot reference —
+Scale 1**. It stores a separate immutable import basis, so artist Scale 1 means
+six feet (1.8288 m), .5 means three feet, and 2 means twelve feet. Source bytes and
+proportions are preserved. This is an explicit choice for complete characters;
+the review still starts off each launch, and the existing ordinary Fit route
+remains available. Partial models and maps cannot use the character reference.
+See [the reference contract and limits](human_reference.md). The historical
+verification below describes the earlier ordinary-scale Fit implementation.
 
 Enable **Options > Offer character height matching on model import**. It starts
 off every launch. Off means no extra height analysis or adjustment. The choice

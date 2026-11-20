@@ -202,12 +202,15 @@ func select_instance(id: String) -> bool:
 
 func prepare_model(data: Dictionary,incoming_video: Dictionary={}) -> Dictionary:
 	if data.is_empty(): return {"model": null}
+	var basis_error:=Model.ImportBasis.record_error(data)
+	if not basis_error.is_empty():return {"error":basis_error}
 	var result := SceneIO.load_glb(data.source)
 	if result.has("error"): return result
 	var candidate := Model.new()
 	candidate.root = result.scene
-	candidate.base_root = candidate.root.transform
 	candidate.data = data
+	basis_error=candidate.capture_import_root(candidate.root.transform)
+	if not basis_error.is_empty():candidate.root.free();return {"error":basis_error}
 	candidate.inventory(candidate.root)
 	var timing: Dictionary=incoming_video if not incoming_video.is_empty() else video_settings
 	if load("res://src/walking_animation.gd").active(data):candidate.motion_video=timing.duplicate(true)

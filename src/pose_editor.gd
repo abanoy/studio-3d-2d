@@ -16,6 +16,10 @@ var snap: CheckButton
 var fields: Array[SpinBox] = []
 var locks: Array[CheckBox] = []
 var scale_field: SpinBox
+var human_size_row: HBoxContainer
+var human_size_field: SpinBox
+var human_size_apply: Button
+var human_reference_note: Label
 var interpolation: OptionButton
 var visible_toggle: CheckButton
 var reference_toggle: CheckButton
@@ -147,6 +151,15 @@ func setup(owner_app, parent: Node) -> void:
 	scale_field.step = 0.001
 	scale_apply = app.button(panel, "Apply model scale", apply_scale)
 	app.advanced(scale_apply)
+	human_reference_note=app.label(panel,"Scale 1 = 6 ft reference")
+	human_reference_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	human_reference_note.tooltip_text="Visible neutral extent, including hair, hats and shoes. Parent scale and animation can change the displayed height."
+	human_reference_note.visible=false
+	human_size_row=HBoxContainer.new();panel.add_child(human_size_row);human_size_row.visible=false
+	app.label(human_size_row,"Scale")
+	human_size_field=SpinBox.new();human_size_field.min_value=.001;human_size_field.max_value=10000;human_size_field.step=.001;human_size_field.value=1
+	human_size_field.size_flags_horizontal=Control.SIZE_EXPAND_FILL;human_size_row.add_child(human_size_field)
+	human_size_apply=app.button(human_size_row,"Apply",func():scale_field.set_value_no_signal(human_size_field.value);apply_scale())
 	reset_button=app.button(panel, "Reset selected", reset_selected);app.advanced(reset_button)
 	interpolation = OptionButton.new()
 	for name in ["ease", "linear", "hold"]: interpolation.add_item(name)
@@ -244,6 +257,8 @@ func restore_state(data: Dictionary, history := true) -> String:
 	var error := Model.validate(data, app.video.duration_frames)
 	if not error.is_empty(): app.message(error); return error
 	if active_rig() and not data.is_empty() and active_rig().data.source == data.source and active_rig().data.sha256 == data.sha256:
+		var basis_error: String=active_rig().basis_snapshot_error(data)
+		if not basis_error.is_empty():app.message(basis_error);return basis_error
 		var shape_error:=Model.Shape.check(active_rig().root,Model.Shape.setting(data))
 		if not shape_error.is_empty():app.message(shape_error);return shape_error
 		active_rig().data = data.duplicate(true)
@@ -323,6 +338,8 @@ func rebuild_tree() -> void:
 	if not active_rig():
 		if source_shape:source_shape.visible=false
 		if reference_opacity_row:reference_opacity_row.hide()
+		if human_reference_note:human_reference_note.hide()
+		if human_size_row:human_size_row.hide()
 		info.text = "No model. Add a prepared GLB to pose."
 		return
 	var rig = active_rig()
@@ -375,6 +392,8 @@ func refresh_values() -> void:
 	if shape_button:shape_button.visible=active_rig()!=null and (not active_rig().root.get_meta(Model.Shape.META,{"rows":[]}).rows.is_empty() or preload("res://src/expression_presets.gd").has_data(active_rig().root));shape_button.disabled=app.exporting or app.playing
 	if source_shape:source_shape.visible=app.advanced_mode and active_rig()!=null and not active_rig().root.get_meta(Model.Shape.META,{"rows":[]}).rows.is_empty()
 	if reference_opacity_row:reference_opacity_row.visible=active_rig()!=null and active_rig().data.reference_only
+	if human_reference_note:human_reference_note.visible=active_rig()!=null and active_rig().data.has("asset_basis")
+	if human_size_row:human_size_row.visible=active_rig()!=null and active_rig().data.has("asset_basis") and not app.advanced_mode
 	if not active_rig(): return
 	var rig = active_rig()
 	reference_toggle.set_pressed_no_signal(rig.data.reference_only)
@@ -388,6 +407,7 @@ func refresh_values() -> void:
 		fields[i].step = 0.01 if operation.selected == 1 else 1
 		fields[i].set_value_no_signal(values[i])
 	scale_field.set_value_no_signal(rig.sample_transform(app.frame, true).scale)
+	if human_size_field:human_size_field.set_value_no_signal(rig.sample_transform(app.frame,true).scale);human_size_apply.disabled=app.exporting or app.playing
 	info.text = "%s • %d bones\n%s\n%s" % [rig.data.name, rig.order.size(), "No animation pieces: hidden in movie." if rig.data.has("animation_clips") and rig.data.animation_clips.is_empty() else "Visibility off at this frame." if not rig.visible_at(app.frame) else "Reference only: hidden in movie." if rig.data.reference_only else "Static pose: included in movie." if not rig.has_animation() else "Animation uses recorded keys.", "Auto-key: edits save at this frame." if auto_key.button_pressed else "Auto-key off: record edits explicitly."]
 	if not rig.evaluation_error.is_empty():info.text+="\n"+rig.evaluation_error+" Release feet or correct the body pose."
 	if app.timeline:app.timeline.sync_bone(selected)
@@ -1003,6 +1023,9 @@ func build_neon_inspector() -> void:
 		app.simple_only(hair_mirror)
 		neon_switch(motion_box, hair_mirror, "wave", "Hair and clothes keep swinging")
 	neon_outline(motion_box, flip_bend, "turn")
+	var size_box:=neon_block("Human reference")
+	app.move_to(human_reference_note,size_box);app.move_to(human_size_row,size_box)
+	app.style_outline(human_size_apply)
 	# Next card: same rules as the Simple next-step hints (next_step()).
 	var next: Dictionary = app.inspector_card(panel, "arrow-right")
 	next.holder.visible = false

@@ -22,7 +22,7 @@ def main():
   if Path(module.__file__).resolve()!=(ROOT/'tools'/name).resolve():raise ValueError('Different main transport module loaded')
  context=json.loads((ROOT/'helper-preview-source-context.json').read_bytes())
  if context.get('source_context')not in('main_source_snapshot','main_working_source_snapshot')or Path(context.get('project_root','')).resolve()!=ROOT.resolve()or Path(context.get('main_root','')).resolve()==ROOT.resolve():raise ValueError('Actual main-source snapshot context required')
- sources=[stamp(ROOT/'tools'/name)for name in['wind_helper_preview.py','wind_preview_owned.py','wind_preview_worker.py','wind_preview_controller.py']]+[stamp(PYTHON)]
+ sources=[stamp(ROOT/'tools'/name)for name in['wind_helper_preview.py','wind_preview_owned.py','wind_preview_worker.py','wind_preview_controller.py','import_basis_helper.py']]+[stamp(PYTHON)]
  checks=[];failures=[]
  def need(value,label):
   checks.append(label)

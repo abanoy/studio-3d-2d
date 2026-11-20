@@ -17,6 +17,8 @@ UNITS = [('tests/wind_review_unit.gd', 'WIND_REVIEW_UNIT', 51), ('tests/wind_rev
 COUNTS = {'procedural':62, 'vrm0':47, 'vrm1':47, 'backhair':49, 'lifecycle':549, 'primary':91}
 ERRORS = ['ERROR:', 'SCRIPT ERROR', 'SHADER ERROR', 'FAIL ', 'ObjectDB instances leaked', 'unclaimed string names', 'Object was freed while a signal is being emitted', '_set_transient_exclusive_child', 'Pages in use exist at exit']
 ALLOW_EOL = False
+PORT_RUNTIME_FILES = ['src/'+name+'.gd' for name in ['app', 'has_project', 'physics_editor', 'physics_recording', 'pose_editor', 'renderer', 'secondary_spring', 'wind_review', 'wind_review_groups', 'model', 'import_basis', 'import_basis_helpers', 'import_basis_project']]
+PORT_TEST_FILES = [name for name, _, _ in UNITS]+SCRIPTS+['tests/verify_wind_review.py']
 
 def require(ok, message):
     if not ok: raise RuntimeError(message)
@@ -52,7 +54,9 @@ def source_manifest():
 
 def runtime_hashes():
     proof = json.loads((ROOT/'tests/wind_review_port_files.json').read_bytes())
-    require(proof['format']=='has_wind_review_main_port_files_1' and len(proof['files'])==16,'Wrong reviewed port source manifest')
+    require(proof.get('format')=='has_wind_review_main_port_files_1' and isinstance(proof.get('files'),list),'Wrong reviewed port source manifest')
+    names = [row.get('path') for row in proof['files']]
+    require(all(isinstance(name,str) for name in names) and len(names)==len(set(names)) and set(names)==set(PORT_RUNTIME_FILES+PORT_TEST_FILES),'Wrong reviewed port source membership')
     result = {}
     for row in proof['files']:
         name=row['path']; path=ROOT/name; data=path.read_bytes(); actual=hashlib.sha256(data).hexdigest()

@@ -31,6 +31,7 @@ const RecoveryWriter=preload("res://src/recovery_writer.gd")
 const PoseEditor = preload("res://src/pose_editor.gd")
 const PhysicsEditor=preload("res://src/physics_editor.gd")
 const ImportPlacement = preload("res://src/import_placement.gd")
+const ImportBasis = preload("res://src/import_basis.gd")
 const SourceShape=preload("res://src/source_shape.gd")
 const ImportActions = preload("res://src/import_actions.gd")
 const SourceImport = preload("res://src/source_import.gd")
@@ -743,7 +744,7 @@ func set_tab_compact(tab: Button, compact: bool) -> void:
 	for box in tab.get_meta("boxes", []):
 		box.content_margin_left = side
 		box.content_margin_right = side
-	var underline = tab.get_meta("underline", null)
+	var underline = tab.get_meta("underline") if tab.has_meta("underline") else null
 	if underline:
 		underline.offset_left = 12 if compact else 30
 		underline.offset_right = -12 if compact else -30
@@ -754,7 +755,7 @@ func refresh_mode_tabs() -> void:
 		var on := mode.selected == i
 		var tab := mode_tabs[i]
 		if tab.button_pressed != on: tab.set_pressed_no_signal(on)
-		var underline = tab.get_meta("underline", null)
+		var underline = tab.get_meta("underline") if tab.has_meta("underline") else null
 		if underline and underline.visible != on: underline.visible = on
 		if StudioTheme.is_neon(): tab.add_theme_font_override("font", StudioTheme.font(600 if on else 500))
 
@@ -4745,6 +4746,9 @@ func append_object(data: Dictionary, kind: String, start_frame := 0, placement :
 func append_object_data(data: Dictionary, kind: String, start_frame := 0, placement := {}) -> String:
 	if sequence_editor and sequence_editor.used("objects")>=64:return "This project and its sequences already contain64 world objects."
 	if exporting:return "Wait for the current operation to finish."
+	var basis_error:=ImportBasis.record_error(data)
+	if not basis_error.is_empty():return basis_error
+	if data.has("asset_basis") and kind!="model":return "Human references apply only to character models."
 	if not physics_editor.freeze_all():return status.text
 	pose_editor.finish_drag();finish_stroke()
 	var before:=current_world();var after:=before.duplicate(true);var row:=data.duplicate(true)
@@ -4752,6 +4756,9 @@ func append_object_data(data: Dictionary, kind: String, start_frame := 0, placem
 	if kind=="model" and not placement.is_empty():
 		if renderer.world_runtime:renderer.world_runtime.evaluate(start_frame)
 		var root_transform:=Transform3D(Basis(Timeline.quaternion(row.rotation_xyzw)).scaled(Vector3.ONE*float(row.scale)),Vector3.ZERO)
+		var basis:=ImportBasis.model_admission(row,true,true)
+		if basis.has("error"):return basis.error
+		root_transform=root_transform*Transform3D(Basis.IDENTITY.scaled(Vector3.ONE*float(basis.factor)),Vector3.ZERO)
 		var planned: Dictionary=ImportPlacement.plan(renderer,row.source,placement,SourceShape.setting(row),root_transform)
 		if renderer.world_runtime:renderer.world_runtime.evaluate(frame,false,renderer.active_instance_id if mode.selected==2 else "")
 		if planned.has("error"):message(planned.error);return planned.error
@@ -4912,6 +4919,12 @@ func install_project_data(data: Dictionary,folder: String,report_error := true) 
 		open_project_error=data.error
 		if report_error:message(open_project_error)
 		return false
+	var content_schema: int=preload("res://src/import_basis_project.gd").decoded_content_schema(data)
+	if content_schema<1:
+		open_project_error="Unsupported project size/reference capability. Current project preserved."
+		if report_error:message(open_project_error)
+		return false
+	var world_project:=content_schema>=4
 	var ownership_error:=preload("res://src/project_raster_ownership.gd").adopt(data)
 	if not ownership_error.is_empty():
 		open_project_error=ownership_error
@@ -4922,14 +4935,14 @@ func install_project_data(data: Dictionary,folder: String,report_error := true) 
 		open_project_error=reference_candidate.error
 		if report_error:message(open_project_error)
 		return false
-	var prepared: Dictionary = renderer.prepare_world(data.world,int(data.video.duration_frames),data.video) if data.schema_version>=4 else renderer.prepare_legacy(data.source,data.model,data.video)
+	var prepared: Dictionary = renderer.prepare_world(data.world,int(data.video.duration_frames),data.video) if world_project else renderer.prepare_legacy(data.source,data.model,data.video)
 	if prepared.has("error"):
 		open_project_error=prepared.error
 		if report_error:message(open_project_error)
 		return false
 	var sequence_candidate: Dictionary=sequence_editor.prepare_runtime(data.get("sequence_graph",{}),data)
 	if sequence_candidate.has("error"):
-		if data.schema_version>=4:prepared.runtime.dispose()
+		if world_project:prepared.runtime.dispose()
 		else:
 			prepared.scene.free()
 			if prepared.model:prepared.model.root.free()
@@ -4943,7 +4956,7 @@ func install_project_data(data: Dictionary,folder: String,report_error := true) 
 	pose_editor.finish_drag()
 	release_mouse()
 	world_selection.clear()
-	if data.schema_version>=4:renderer.install_world(prepared)
+	if world_project:renderer.install_world(prepared)
 	else:renderer.install_legacy(prepared)
 	reference_sheet.install_prepared(reference_candidate)
 	pose_editor.selected="@root";pose_editor.rebuild_tree()

@@ -25,6 +25,8 @@ try:from .pose_library import error as pose_library_error
 except ImportError:from pose_library import error as pose_library_error
 try:from .save_sync import existing_boundary, sync_directory, parents as sync_parents
 except ImportError:from save_sync import existing_boundary, sync_directory, parents as sync_parents
+try:from . import import_basis as ImportBasis
+except ImportError:import import_basis as ImportBasis
 
 MAX_TOTAL = 512 * 1024 * 1024
 MAX_META = 1024 * 1024
@@ -81,7 +83,7 @@ def read_json(blob):
     return value
 
 
-def members(manifest,extended_ok=False):
+def _members_without_import_basis(manifest,extended_ok=False):
     """Only declared current playback/editing assets; never glob whole game folders."""
     count_error=drawing_count_error(manifest.get("layers",[]))
     if count_error:raise HasError(count_error)
@@ -92,14 +94,14 @@ def members(manifest,extended_ok=False):
     if manifest.get('schema_version')==8:
         base,why=extended.unwrap(manifest)
         if why:raise HasError(why)
-        return members(base,True)
+        return _members_without_import_basis(base,True)
     if 'timing_content_schema_version' in manifest or not extended_ok and extended.required(manifest):raise HasError('Extended project timing requires schema8')
     if manifest.get('schema_version')==7:
         try:from .reference_sheet import unwrap
         except ImportError:from reference_sheet import unwrap
         base,why=unwrap(manifest)
         if why:raise HasError(why)
-        assets,cels=members(base,extended_ok);reference=manifest['reference_sheet']
+        assets,cels=_members_without_import_basis(base,extended_ok);reference=manifest['reference_sheet']
         assets[reference['path']]={'path':reference['path'],'sha256':reference['sha256']}
         if len(assets)+len(cels)+2>MAX_FILES:raise HasError('Too many project files')
         return assets,cels
@@ -109,9 +111,9 @@ def members(manifest,extended_ok=False):
         if why:raise HasError(why)
         base=dict(manifest);base.pop('sequence_graph')
         base['schema_version']=5 if base.get('world',{}).get('format')=='studio_world_2' else 4
-        assets,cels=members(base,extended_ok)
+        assets,cels=_members_without_import_basis(base,extended_ok)
         for sequence in graph['assets']:
-            child_assets,child_cels=members(sequence['scene'],extended_ok)
+            child_assets,child_cels=_members_without_import_basis(sequence['scene'],extended_ok)
             for name,row in child_assets.items():
                 if name in assets and assets[name]!=row:raise HasError('Conflicting nested sequence asset identity')
                 assets[name]=row
@@ -238,6 +240,16 @@ def members(manifest,extended_ok=False):
             cels.add(name)
     if version==3 and not assets or len(assets) + len(cels) + 2 > MAX_FILES: raise HasError('Missing assets or too many project files')
     return assets, cels
+
+
+
+def members(manifest,extended_ok=False):
+    # The complete original capability tree is checked before any legacy reader
+    # sees a transient unwrapped view. Keep the original manifest for archive IO.
+    try:
+        return ImportBasis.members_with_capability(manifest,lambda view:_members_without_import_basis(view,extended_ok),runtime_basis_ready=True)
+    except ImportBasis.BasisError as error:
+        raise HasError(str(error)) from error
 
 
 def check_cancel(request):

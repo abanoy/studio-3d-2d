@@ -6890,3 +6890,32 @@ actual gather/cache/reference hooks and exact exported material/socket/image
 reachability under frozen options, then a freshly admitted B carrier round-trip
 with unchanged semantic/domain/preservation and2e-5 checks. Original normal failures,
 all62 requirement statuses,52/54 implementation and55/62 acceptance stay unchanged.
+
+### November 19, 2026 — visible addition: six-foot Scale 1 reference
+
+Switched focus from Source diagnostics to the owner's six-foot human convention.
+Optional height review now offers a separate reference choice: artist Scale1 is
+1.8288m, .5 is half-size and2 is double-size. An immutable basis composes once
+around original imported transforms; originals/proportions stay unchanged. Simple
+mode exposes relative size. Project schema9 requires the scene-local capability;
+old projects and ordinary Fit keep existing behavior. Exact existing-joint helper
+preservation proof permits lineage rebinding; normalized weighted derivatives
+explicitly refuse. Neon is preserved. Classic missing-underline metadata errors
+found by the new check are fixed with guarded lookup.
+
+Fresh scoped actual results: Neon43+3 and classic43+3 checks, four closed private
+jobs, two1080p/24fps/48frame H264 movies; domain74, helper18, storage40 strict
+headless checks. Python180 methods:171pass/9skip, no failures/errors; helper-driver
+120 and manifest/AST30 controls pass. Independent source reviews GO. All1043
+functional files stay unchanged through each final interface run. Earlier parse,
+storage, SpinBox-grid and test-selection failures remain documented. This is not
+a native-fidelity or whole-suite pass. Tests/verify.py now includes the new cases;
+fresh complete Windows verification is next from committed source.
+
+See docs/human_reference.md, docs/NEXT_SESSION_PLAN_2026-11-19.md and
+docs/benchmarks/human_reference_2026-11-19.json. Isolated feature worktree preserves
+the original dirty acceptance checkout, installed Studio, native inputs and earlier
+reviews. Eleven declared fixture copies total30,825,558B and match original hashes,
+sizes/mtimes. No private art uploaded. Human questions stay deferred. All62formal
+statuses and52/54 implementation/55/62 acceptance remain unchanged; Source normal
+repair, automatic normalization and broad standardization remain separate work.

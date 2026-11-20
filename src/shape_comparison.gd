@@ -2,6 +2,7 @@ extends Node
 # One disposable standard model, two snapshots, no suspended Node coroutine.
 const Renderer=preload("res://src/renderer.gd")
 const Model=preload("res://src/model.gd")
+const BasisHelpers=preload("res://src/import_basis_helpers.gd")
 const Focus=preload("res://src/shape_comparison_bounds.gd")
 var editor
 var button: Button
@@ -89,6 +90,9 @@ func prepare() -> void:
 	renderer=Renderer.new();add_child(renderer);renderer.setup(420,320);renderer.empty_environment=false;renderer.editor_grid.visible=false;renderer.video_settings={"lighting_mode":"unshaded"}
 	var definition:=Model.definition(actor.data.source)
 	definition.metadata={"source_shape":{"format":"studio_source_shape_2","enabled":false,"overrides":{str(node_index):{str(target_index):0.}}}}
+	var inherited:=BasisHelpers.copy_reference(actor.data,definition)
+	if inherited.has("error"):fail(inherited.error);return
+	definition=inherited.model
 	var prepared: Dictionary=renderer.prepare_model(definition)
 	if prepared.has("error"):fail(prepared.error);return
 	var basis: Basis=actor.root.global_basis.orthonormalized()*prepared.model.base_root.basis.orthonormalized().inverse()

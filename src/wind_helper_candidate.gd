@@ -5,6 +5,8 @@ const SceneIO=preload("res://src/scene3d.gd")
 const Model=preload("res://src/model.gd")
 const Shape=preload("res://src/source_shape.gd")
 const Groups=preload("res://src/wind_review_groups.gd")
+const ImportBasis=preload("res://src/import_basis.gd")
+const BasisHelpers=preload("res://src/import_basis_helpers.gd")
 
 static func error(message: String) -> Dictionary:
 	return {"error":message}
@@ -88,10 +90,16 @@ static func inventory(doc: Dictionary) -> Dictionary:
 	var required:=active.duplicate();required.merge(declared,true)
 	return {"nodes":nodes,"parents":parents,"active":active,"declared":declared,"skin_joints":skin_joints,"required":required}
 
-static func import_actor(path: String,shape: Dictionary,holder: Node3D) -> Dictionary:
+static func import_actor(path: String,shape: Dictionary,holder: Node3D,reference: Dictionary={}) -> Dictionary:
 	var result:=SceneIO.load_glb(path)
 	if result.has("error"):return result
-	var model:=Model.new();model.root=result.scene;model.base_root=model.root.transform;model.data=Model.definition(path)
+	var model:=Model.new();model.root=result.scene;model.data=Model.definition(path)
+	if not reference.is_empty():
+		var inherited:=BasisHelpers.copy_reference(reference,model.data)
+		if inherited.has("error"):model.root.free();return inherited
+		model.data=inherited.model
+	var root_error: String=model.capture_import_root(model.root.transform)
+	if not root_error.is_empty():model.root.free();return error(root_error)
 	quiesce(model.root)
 	model.root.visible=false;holder.add_child(model.root);model.inventory(model.root)
 	var problem:=Shape.check(model.root,shape)
@@ -299,10 +307,12 @@ static func catalogue(candidate: RefCounted,operations: Array,old_count: int,sha
 	if by_operation.size()!=operations.size():return error("A checked helper setup has no actual motion group.")
 	return {"catalog":result,"selected_group_ids":checked,"operation_group_ids":by_operation,"notice":notice}
 
-static func prepare(source: RefCounted,candidate_path: String,shape_snapshot: Dictionary,baseline_pose: Dictionary,video: Dictionary,operations: Array,candidate_sha256: String) -> Dictionary:
+static func prepare(source: RefCounted,candidate_path: String,shape_snapshot: Dictionary,baseline_pose: Dictionary,video: Dictionary,operations: Array,candidate_sha256: String,basis_preservation: Dictionary={}) -> Dictionary:
 	shape_snapshot=shape_snapshot.duplicate(true);baseline_pose=baseline_pose.duplicate(true);video=video.duplicate(true);operations=operations.duplicate(true)
 	var before:=live_state(source)
 	if before.is_empty() or not shape_matches(source,shape_snapshot):return error("The paused model or its shapes changed. Review the part again.")
+	var basis_error: String=ImportBasis.record_error(source.data)
+	if not basis_error.is_empty():return error(basis_error)
 	var source_path: String=source.data.source;var source_sha: String=source.data.sha256
 	if not candidate_path.is_absolute_path() or candidate_sha256.length()!=64 or FileAccess.get_sha256(source_path)!=source_sha or FileAccess.get_sha256(candidate_path)!=candidate_sha256:return error("The reviewed source or candidate changed.")
 	var first:=document(source_path);var second:=document(candidate_path)
@@ -311,13 +321,18 @@ static func prepare(source: RefCounted,candidate_path: String,shape_snapshot: Di
 	var old_inv:=inventory(first.document);var new_inv:=inventory(second.document)
 	if old_inv.has("error"):return old_inv
 	if new_inv.has("error"):return new_inv
+	var candidate_reference: Dictionary={}
+	if ImportBasis.active(source.data):
+		var reference:=BasisHelpers.derivative(source.data,candidate_sha256,basis_preservation)
+		if reference.has("error"):return reference
+		candidate_reference=reference.model
 	# A separate nonrendering world also isolates embedded cameras, lights and
 	# environments while actual BoneAttachments receive their normal updates.
 	var space:=SubViewport.new();space.name="HiddenHelperImportSpace";space.own_world_3d=true;space.render_target_update_mode=SubViewport.UPDATE_DISABLED;space.size=Vector2i(1,1);source.root.get_tree().root.add_child(space)
 	var holder:=Node3D.new();holder.name="HiddenHelperBindingReview";holder.visible=false;space.add_child(holder)
-	var first_import:=import_actor(source_path,shape_snapshot,holder)
+	var first_import:=import_actor(source_path,shape_snapshot,holder,source.data)
 	if first_import.has("error"):space.free();return first_import
-	var second_import:=import_actor(candidate_path,shape_snapshot,holder)
+	var second_import:=import_actor(candidate_path,shape_snapshot,holder,candidate_reference)
 	if second_import.has("error"):space.free();return second_import
 	var neutral: RefCounted=first_import.model;var candidate: RefCounted=second_import.model
 	var tree:=holder.get_tree()
@@ -334,7 +349,7 @@ static func prepare(source: RefCounted,candidate_path: String,shape_snapshot: Di
 			if item.has("error"):result=item;break
 		if result.is_empty():result=transfer(original.rows,derived.rows,current.rows,old_inv,new_inv,baseline_pose)
 		if not result.has("error"):
-			candidate.data.pose=result.pose.duplicate(true);candidate.data.metadata={"source_shape":shape_snapshot.duplicate(true)}
+			candidate.data.pose=result.pose.duplicate(true);candidate.data.metadata["source_shape"]=shape_snapshot.duplicate(true)
 			candidate.live_pose=result.pose.duplicate(true);candidate.live_world_transform=before.transform
 			candidate.apply(0,false,false,video,source.evaluated_opacity)
 			await tree.process_frame

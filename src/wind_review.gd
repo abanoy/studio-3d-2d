@@ -2,6 +2,7 @@ extends Node
 # Session-only local wind. The source actor and its physics remain borrowed,
 # read-only inputs; all simulation state belongs to the disposable candidate.
 const Model=preload("res://src/model.gd")
+const BasisHelpers=preload("res://src/import_basis_helpers.gd")
 const Groups=preload("res://src/wind_review_groups.gd")
 const Spring=preload("res://src/secondary_spring.gd")
 const Secondary=preload("res://src/secondary_live.gd")
@@ -176,6 +177,9 @@ func begin_preview() -> void:
 			if driven.has(joint.binding.id):fail("This group also drives a body joint. Pause this model's body Physics before trying it.");return
 	if FileAccess.get_sha256(source.data.source)!=source_sha:fail("The model source changed. Open wind review again.");return
 	var data:=Model.definition(source.data.source);data.pose=baseline_pose(source);data.draft_frame=app.frame;data.metadata={"source_shape":shape_snapshot(source)}
+	var inherited:=BasisHelpers.copy_reference(source.data,data)
+	if inherited.has("error"):fail(inherited.error);return
+	data=inherited.model
 	if data.sha256!=source_sha:fail("The model source changed. Open wind review again.");return
 	var prepared: Dictionary=app.renderer.prepare_model(data,app.video)
 	if prepared.has("error"):fail(prepared.error);return

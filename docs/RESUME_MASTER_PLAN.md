@@ -1,5 +1,15 @@
 # HAS — consolidated master reference for resuming work
 
+**November 19, 2026 addition:** work has shifted to an optional
+six-foot human reference at artist Scale 1, with a separate immutable import
+basis and scene-local save capability. See [the current feature contract](human_reference.md).
+The source and helper preservation reviews and both interface checks pass.
+See [current pickup](NEXT_SESSION_PLAN_2026-11-19.md) for exact scope and next checks.
+The historical inactive-prototype statements below describe
+their earlier checkpoints. They do not certify or replace this implementation.
+Source normal-fidelity repair remains a separate open task. Human questions stay
+deferred; no original assets, installed tools or earlier owner reviews are replaced.
+
 **The owner resumed work on November 15, 2026.** Continue independent software
 work without requesting the deferred manual observations. The historical pause
 and November 14 documentation-only entries below remain evidence of their own

@@ -1,5 +1,6 @@
 extends RefCounted
 const Timing=preload("res://src/video_timing.gd")
+const ImportBasis=preload("res://src/import_basis.gd")
 const LEGACY_FRAMES=240
 const MAX_FRAMES=7200
 const MAX_SECONDS=60
@@ -41,7 +42,7 @@ static func required(document: Dictionary) -> bool:
 				if not asset is Dictionary:continue
 				if extended_keys(asset.get("clips",[])):return true
 				var scene=asset.get("scene",{})
-				if scene is Dictionary and (scene.get("schema_version")==8 or origin_extended(scene.get("layers",[]))):return true
+				if scene is Dictionary and (scene.get("schema_version")==8 or scene.get("schema_version")==9 and scene.get("basis_content_schema_version")==8 or origin_extended(scene.get("layers",[]))):return true
 	return false
 static func unwrap(value: Dictionary) -> Dictionary:
 	var version=value.get("timing_content_schema_version")
@@ -51,6 +52,9 @@ static func unwrap(value: Dictionary) -> Dictionary:
 	var base:=value.duplicate(true);base.schema_version=int(version);base.erase("timing_content_schema_version")
 	return {"base":base}
 static func child_schema(scene: Dictionary) -> int:
+	if scene.get("schema_version")==9:
+		var admission:=ImportBasis.inspect_capability(scene,true)
+		return -1 if admission.has("error") else int(admission.content_schema)
 	if scene.get("schema_version")==8:
 		var decoded:=unwrap(scene)
 		return int(decoded.base.schema_version) if not decoded.has("error") else -1

@@ -2,6 +2,8 @@ extends Node
 # User-reviewed derived asset revision. Original meshes/weights remain immutable.
 const Model=preload("res://src/model.gd")
 const Storage=preload("res://src/storage.gd")
+const ImportBasis=preload("res://src/import_basis.gd")
+const BasisHelpers=preload("res://src/import_basis_helpers.gd")
 const Labels=preload("res://src/bone_labels.gd")
 const PendingPreview=preload("res://src/pending_helper_preview.gd")
 const NativeBindings=preload("res://src/source_bone_bindings.gd")
@@ -150,7 +152,7 @@ func launch(operation: String,payload: Dictionary={}) -> void:
 	parts.release_focus();parts.focus_mode=Control.FOCUS_NONE
 	for spin in fields:spin.editable=false
 	if operation=="inspect":preview={}
-	info.text="Preparing all checked parts…" if operation=="batch_build" else "Checking the original source…" if operation=="source_check" else "Creating a new weighted asset…" if operation=="build" else "Checking geometry…"
+	info.text="Preparing all checked parts…" if operation=="batch_build" else "Checking the six-foot reference…" if operation=="basis_check" else "Checking the original source…" if operation=="source_check" else "Creating a new weighted asset…" if operation=="build" else "Checking geometry…"
 	folder=ProjectSettings.globalize_path("res://output/helper-authoring/run_"+str(ResourceUID.create_id()))
 	if DirAccess.make_dir_recursive_absolute(folder)!=OK:info.text="Cannot create the authoring folder.";return
 	var f:=FileAccess.open(folder.path_join("request.json"),FileAccess.WRITE)
@@ -256,8 +258,17 @@ func completed(value: Dictionary) -> void:
 	elif stage=="batch_build":
 		pending_install=value
 		launch("source_check",{"source_sha256":request.source_sha256,"source_stamp_ns":value.batch.source_stamp_ns})
-	elif stage=="source_check":install(pending_install)
-	elif stage=="build":install(value)
+	elif stage=="source_check":check_basis_then_install(pending_install)
+	elif stage=="build":check_basis_then_install(value)
+	elif stage=="basis_check":
+		pending_install["basis_preservation"]=value
+		install(pending_install)
+
+func check_basis_then_install(value: Dictionary) -> void:
+	if actor() and ImportBasis.active(actor().data):
+		pending_install=value
+		launch("basis_check",{"source_sha256":actor().data.sha256,"candidate_sha256":FileAccess.get_sha256(str(value.get("glb",""))),"candidate":value.get("glb","")})
+	else:install(value)
 
 func region_priority(row: Dictionary) -> int:
 	var weighted: bool=float(row.get("anchor_min_weight",0))>=0.01
@@ -613,6 +624,11 @@ func apply() -> void:
 	stop_pending_preview("Apply")
 	if not can_install():info.text="Pause all live motion before applying this setup. Preview and current edits were kept.";return
 	if pid>0 or app.exporting or app.navigating:return
+	if actor() and ImportBasis.active(actor().data):
+		var checked: Array=included.values().map(func(item):return item.request) if not included.is_empty() else [request]
+		if checked.any(func(item):return not item.get("use_existing_joints",false)):
+			info.text="This reference-sized model supports enabling its existing joints. Adding new weighted joints still needs a height-preservation check; the current model is kept."
+			return
 	if not included.is_empty():
 		var plans: Array=[]
 		for group in included:
@@ -639,6 +655,15 @@ func install(value: Dictionary) -> void:
 	var sha:=FileAccess.get_sha256(value.glb);var managed:=ProjectSettings.globalize_path("res://output/imports").path_join(sha+".glb")
 	if value.has("batch") and value.batch.get("final_sha256","")!=sha:
 		info.text="The checked candidate changed. Current model kept; review the checked parts again.";refresh_inclusions();return
+	if ImportBasis.active(row):
+		if FileAccess.get_sha256(source)!=row.sha256:
+			info.text="The reference source changed. Current model kept; reopen loose-part review.";return
+		var proof=value.get("basis_preservation",{})
+		if not proof is Dictionary:info.text="The height-reference preservation record is invalid. Current model kept.";return
+		var rebased:=BasisHelpers.derivative(row,sha,proof)
+		if rebased.has("error"):info.text=rebased.error;return
+		row.asset_basis=rebased.model.asset_basis.duplicate(true)
+		row.metadata=rebased.model.metadata.duplicate(true)
 	var error:=Storage.managed_copy(value.glb,managed,sha)
 	if not error.is_empty():info.text=error;return
 	var reports: Array=value.get("reports",[value.report])

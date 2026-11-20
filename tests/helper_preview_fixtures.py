@@ -17,6 +17,7 @@ import sys
 SOURCES = {
     'secondary_helpers': 'tools/secondary_helpers.py',
     'secondary_helpers_batch': 'tools/secondary_helpers_batch.py',
+    'import_basis_helper': 'tools/import_basis_helper.py',
     'wind_helper_preview': 'tools/wind_helper_preview.py',
     'test_secondary_helpers': 'tests/test_secondary_helpers.py',
     'test_secondary_existing_joints': 'tests/test_secondary_existing_joints.py',

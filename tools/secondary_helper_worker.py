@@ -5,10 +5,11 @@ import json
 import os
 import secondary_helpers as helpers
 import secondary_helpers_batch as batch
+import import_basis_helper as basis_helper
 
 
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument('source'); parser.add_argument('operation', choices=['inspect', 'preview', 'review', 'build', 'batch_build', 'source_check']); parser.add_argument('folder'); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument('source'); parser.add_argument('operation', choices=['inspect', 'preview', 'review', 'build', 'batch_build', 'source_check', 'basis_check']); parser.add_argument('folder'); args = parser.parse_args()
     folder = Path(args.folder)
     try:
         request_path = folder / 'request.json'
@@ -21,6 +22,9 @@ def main():
         elif args.operation == 'preview': value = helpers.preview(args.source, request)
         elif args.operation == 'review': value = batch.review(args.source, request)
         elif args.operation == 'batch_build': value = batch.build(args.source, folder / 'derived', request)
+        elif args.operation == 'basis_check':
+            value = basis_helper.check_existing_derivative(args.source, request.get('candidate'),
+                        request.get('source_sha256'), request.get('candidate_sha256'))
         elif args.operation == 'source_check':
             identity = batch._identity(Path(args.source))
             if identity != (request.get('source_sha256'), int(request.get('source_stamp_ns', '-1'))):

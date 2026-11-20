@@ -8,8 +8,13 @@ const Timeline = preload("res://src/timeline.gd")
 const Airflow=preload("res://src/airflow.gd")
 const Shape=preload("res://src/source_shape.gd")
 const ShapeAnimation=preload("res://src/shape_animation.gd")
+const ImportBasis=preload("res://src/import_basis.gd")
 var root: Node3D
 var base_root := Transform3D.IDENTITY
+var raw_import_root := Transform3D.IDENTITY
+var _import_root_captured:=false
+var _asset_basis_snapshot: Dictionary={}
+var _basis_lineage_snapshot: Dictionary={}
 var data := {}
 var bones := {}
 var order: Array[String] = []
@@ -93,6 +98,8 @@ static func scale_valid(value) -> bool:
 
 static func validate(value, duration: int) -> String:
 	if not value is Dictionary: return "Invalid model record."
+	var basis_error:=ImportBasis.record_error(value)
+	if not basis_error.is_empty():return basis_error
 	if value.is_empty(): return ""
 	if value.has("reference_opacity"):
 		var opacity=value.reference_opacity
@@ -164,6 +171,21 @@ static func validate_keys(keys, maximum: int) -> String:
 		last=int(key.frame)
 	return ""
 
+static func configure_import_root(raw_root: Transform3D,definition: Dictionary) -> Dictionary:
+	return ImportBasis.configure_import_root(raw_root,definition,true,true)
+
+func capture_import_root(raw_root: Transform3D) -> String:
+	# Constructors call exactly once with the immutable loaded GLB root, before
+	# inventory or parenting. Never feed an already-normalized base_root here.
+	if _import_root_captured:return "The imported root has already been captured."
+	var configured:=configure_import_root(raw_root,data)
+	if configured.has("error"):return configured.error
+	raw_import_root=configured.raw_root;base_root=configured.base_root
+	root.transform=base_root;_import_root_captured=true
+	_asset_basis_snapshot=data.get("asset_basis",{}).duplicate(true)
+	_basis_lineage_snapshot=data.get("metadata",{}).get("import_basis_lineage",{}).duplicate(true)
+	return ""
+
 func inventory(node: Node) -> void:
 	if node==root:_contact_cache_ready=false
 	if node is Skeleton3D:
@@ -198,7 +220,15 @@ func contact_legs() -> Array:
 				_contact_cache_rows.append({"id":id,"skeleton":info.skeleton,"index":info.index,"name":info.name,"parent":parent_id(id)})
 	return _contact_cache_legs.duplicate(true)
 
+func basis_snapshot_error(value: Dictionary) -> String:
+	if _import_root_captured and (value.get("asset_basis",{})!=_asset_basis_snapshot or value.get("metadata",{}).get("import_basis_lineage",{})!=_basis_lineage_snapshot):return "This edit cannot replace an intrinsic import basis or its lineage."
+	return ""
+
 func check_bindings() -> String:
+	var basis_error:=ImportBasis.record_error(data)
+	if not basis_error.is_empty():return basis_error
+	basis_error=basis_snapshot_error(data)
+	if not basis_error.is_empty():return basis_error
 	if data.metadata.has("body_pose_library"):
 		var library_error: String=load("res://src/pose_library.gd").compatible(data.metadata.body_pose_library,self)
 		if not library_error.is_empty():return library_error

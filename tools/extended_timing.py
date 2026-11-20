@@ -30,7 +30,7 @@ def required(document):
             for asset in graph['assets']:
                 if not isinstance(asset,dict):continue
                 scene=asset.get('scene',{})
-                if extended_keys(asset.get('clips',[])) or isinstance(scene,dict) and (scene.get('schema_version')==8 or origin_extended(scene.get('layers',[]))):return True
+                if extended_keys(asset.get('clips',[])) or isinstance(scene,dict) and (scene.get('schema_version')==8 or scene.get('schema_version')==9 and scene.get('basis_content_schema_version')==8 or origin_extended(scene.get('layers',[]))):return True
     return False
 
 def unwrap(value):
@@ -41,6 +41,13 @@ def unwrap(value):
     base=dict(value);base['schema_version']=int(base.pop('timing_content_schema_version'));return base,''
 
 def child_schema(scene):
+    if scene.get('schema_version')==9:
+        try:
+            try:from . import import_basis as basis
+            except ImportError:import import_basis as basis
+            admission=basis.inspect_capability(scene,_child=True)
+            return admission['content_schema']
+        except basis.BasisError:return -1
     if scene.get('schema_version')==8:
         base,why=unwrap(scene)
         return -1 if why else base['schema_version']

@@ -16466,3 +16466,26 @@ actual gather/cache/reference hooks and exact exported material/socket/image
 reachability under frozen options, then a freshly admitted B carrier round-trip
 with unchanged semantic/domain/preservation and2e-5 checks. Original normal failures,
 all62 requirement statuses,52/54 implementation and55/62 acceptance stay unchanged.
+
+## November 19, 2026 — six-foot human reference addition
+
+Added explicit Six-foot reference — Scale1 in the optional import review and a
+Simple relative-size control. The immutable basis preserves original units/root
+and proportions; old Fit/default-off behavior remains. Scene-local schema9 is
+validated before payload reads. Helper previews inherit the basis once, and exact
+independently checked existing-joint derivatives preserve its measured identity.
+Normalized weighted helper generation safely refuses pending a preservation proof.
+
+Fresh Neon43+3 and classic43+3 actual checks pass, with four private desktop jobs
+closed, no foreground/switch observed and two valid1080p H264 exports. Domain74,
+helper18 and storage40 pass strict headless checks;171Python methods pass with9
+explicit skips. Driver120 and manifest/AST30 controls pass. Each final interface
+run preserves1043functional files. Independent source review GO. Failed parses,
+initial schema writer refusal, JSON-version guard, relative SpinBox grid and
+classic Neon-decoration errors remain documented with corrected repeats. The
+test's normal-Open selection assumption was corrected without relaxing geometry
+tolerances. Full Windows verification is next; earlier whole-suite passes do not
+certify this source. See human_reference.md, NEXT_SESSION_PLAN_2026-11-19.md and
+benchmarks/human_reference_2026-11-19.json. No installed tools/Studio or originals
+changed, private art stays local, all62formal IDs/scores stay unchanged, and manual
+checks remain deferred without interrupting the owner.

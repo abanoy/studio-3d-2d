@@ -44,8 +44,9 @@ static func prepare(document: Dictionary, duration: int,incoming_video: Dictiona
 		var instance := Model.new()
 		instance.world_context=weakref(candidate)
 		instance.root=decoded.scene
-		instance.base_root=instance.root.transform
 		instance.data=row
+		error=instance.capture_import_root(instance.root.transform)
+		if not error.is_empty():instance.root.free();candidate.dispose();return {"error":error}
 		# Inventory before attaching other instances: a parent's rig cannot absorb a child's.
 		instance.inventory(instance.root)
 		# Capture mesh ownership before parent/child instances are attached.
@@ -127,10 +128,12 @@ func restore_instances(values: Dictionary) -> String:
 		if not validation.is_empty():return validation
 		if not instances.has(id) or value.get("id")!=id:return "World edit refers to a missing instance."
 		var target: RefCounted=instances[id]
-		for field in ["source","sha256","kind","parent_id"]:
+		for field in ["source","sha256","kind","parent_id","asset_basis"]:
 			if target.data.get(field)!=value.get(field):return "This edit cannot replace an asset or reparent an instance."
+		if target.data.get("metadata",{}).get("import_basis_lineage")!=value.get("metadata",{}).get("import_basis_lineage"):return "This edit cannot replace intrinsic import-basis lineage."
 		var probe:=Model.new();probe.data=value;probe.order=target.order;probe.bones=target.bones;probe.root=target.root
-		probe.base_root=target.base_root;probe.world_context=target.world_context;probe.motion_video=target.motion_video.duplicate(true);probe.motion_video.duration_frames=duration
+		probe.base_root=target.base_root;probe.raw_import_root=target.raw_import_root;probe._import_root_captured=target._import_root_captured;probe._asset_basis_snapshot=target._asset_basis_snapshot.duplicate(true);probe._basis_lineage_snapshot=target._basis_lineage_snapshot.duplicate(true)
+		probe.world_context=target.world_context;probe.motion_video=target.motion_video.duplicate(true);probe.motion_video.duration_frames=duration
 		var binding_error:=probe.check_bindings()
 		if not binding_error.is_empty():return binding_error
 		for i in range(document.objects.size()):

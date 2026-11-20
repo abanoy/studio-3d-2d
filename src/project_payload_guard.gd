@@ -1,6 +1,7 @@
 extends RefCounted
 # One validation operation: only digest strings survive a decoded cel check.
 const PNG=preload("res://src/cel_png_verifier.gd")
+const BasisProject=preload("res://src/import_basis_project.gd")
 var png=PNG.new()
 var assets: Dictionary={}
 var files:=0
@@ -28,6 +29,10 @@ func asset(folder: String,row,path_key: String="path",hash_key: String="sha256",
  if FileAccess.get_sha256(target)!=wanted:return false
  assets[key]=true;return true
 func valid(folder: String,data: Dictionary,depth: int=0) -> bool:
+ var view:=BasisProject.validation_view(data)
+ if view.has("error"):return false
+ return _valid_without_import_basis(folder,view.document,depth)
+func _valid_without_import_basis(folder: String,data: Dictionary,depth: int=0) -> bool:
  if depth>8:return false
  var video=data.get("video")
  if not video is Dictionary:return false
@@ -63,5 +68,5 @@ func valid(folder: String,data: Dictionary,depth: int=0) -> bool:
  var graph=data.get("sequence_graph",{})
  if not graph is Dictionary or not graph.get("assets",[]) is Array:return false
  for child in graph.get("assets",[]):
-  if not child is Dictionary or not child.get("scene") is Dictionary or not valid(folder,child.scene,depth+1):return false
+  if not child is Dictionary or not child.get("scene") is Dictionary or not _valid_without_import_basis(folder,child.scene,depth+1):return false
  return true

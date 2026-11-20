@@ -4,13 +4,13 @@
   "files": [
     {
       "path": "src/app.gd",
-      "sha256": "79b34e7d591f433e060edf72888d22443d1a0fc5e22dd2a246eb77c83fcad1b6",
-      "lf_sha256": "79f340cc797738d205a3030f12339b1e74ed765edb557235a98c42282056328a",
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "lf_sha256": "2f61abe99c25d3c613c924dea9e4606786c462d900d54783e642bb89c8377518",
       "category": "runtime"
     },
     {
       "path": "src/has_project.gd",
-      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032",
+      "sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
       "lf_sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
       "category": "runtime"
     },
@@ -28,26 +28,26 @@
     },
     {
       "path": "src/pose_editor.gd",
-      "sha256": "925ae786ad65fd2e34ed9b93cf74829559d102e09c4e7870a6079b4cee20c570",
-      "lf_sha256": "293f5d7c8a9b14508227131885deebc3b6fcef3cf7d34ce9650285929b74ed8d",
+      "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "lf_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
       "category": "runtime"
     },
     {
       "path": "src/renderer.gd",
-      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
-      "lf_sha256": "1c29ed28eff20cece320fd9e6c3e1491770c5604831e11ce4694ede34267677a",
+      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "lf_sha256": "c8594bb28251e8b5a13ab756ca8b9afd0f1d45a598c5f5fc8394bf04e9b31a48",
       "category": "runtime"
     },
     {
       "path": "src/secondary_spring.gd",
-      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
       "lf_sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
       "category": "runtime"
     },
     {
       "path": "src/wind_review.gd",
-      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
-      "lf_sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "lf_sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
       "category": "runtime"
     },
     {
@@ -97,6 +97,36 @@
       "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
       "lf_sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
       "category": "gpu_test"
+    },
+    {
+      "path": "src/model.gd",
+      "category": "runtime",
+      "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7",
+      "lf_sha256": "e290a8df11be2311a543543c8e7114446089ed5bf134459eb76d1d2e3b9e037b"
+    },
+    {
+      "path": "src/import_basis.gd",
+      "category": "runtime",
+      "sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "lf_sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072"
+    },
+    {
+      "path": "src/import_basis_helpers.gd",
+      "category": "runtime",
+      "sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "lf_sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482"
+    },
+    {
+      "path": "src/import_basis_project.gd",
+      "category": "runtime",
+      "sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "lf_sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab"
+    },
+    {
+      "path": "tests/verify_wind_review.py",
+      "category": "test",
+      "sha256": "4aa54a2e54ffd1ab83d3dfdd7f1397eabede05592626a1e826a08e1182409c70",
+      "lf_sha256": "4aa54a2e54ffd1ab83d3dfdd7f1397eabede05592626a1e826a08e1182409c70"
     }
   ],
   "main_integration_fix": "Canvas-first teardown: validate the canvas before pose redraw; preserve original830 predicates and add3dormant canvas-first closure assertions.",
@@ -123,5 +153,27 @@
     "scope": "Capture immutable snapshot before project worker creation, start own filesystem Thread afterward. Original16-row scope and all old94unit/845graphics predicates retained; separate32ordering unit and actual background-save tests cover new ordering/failure lifecycle. Precise originalWindows launch-error cause remains unknown."
   },
   "source_native_leaf_successor_provenance": "experiments/source_native_live_independent_review_20261115/manifest-successor-20261116/PROVENANCE.json",
-  "neon_redesign_runtime_successor_provenance": "experiments/neon_redesign_review_20261116/SOURCE_PROOF.json"
+  "neon_redesign_runtime_successor_provenance": "experiments/neon_redesign_review_20261116/SOURCE_PROOF.json",
+  "human_reference_integration_revision": {
+    "baseline": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+    "previous_manifest_sha256": "987fb4b717b084034c0f9c1801d63435b478aceebf6aef176a1a14ca0c8384b9",
+    "added_runtime_rows": [
+      "src/model.gd",
+      "src/import_basis.gd",
+      "src/import_basis_helpers.gd",
+      "src/import_basis_project.gd",
+      "tests/verify_wind_review.py"
+    ],
+    "changed_existing_rows": [
+      "src/app.gd",
+      "src/has_project.gd",
+      "src/pose_editor.gd",
+      "src/renderer.gd",
+      "src/secondary_spring.gd",
+      "src/wind_review.gd"
+    ],
+    "scope": "Six-foot intrinsic import basis, schema9 capability validation, and independently checked existing-joint helper preservation. Preserve all historical rows and metadata; old experiment packets are unchanged.",
+    "driver_scope": "Required basis/runtime dependency membership and exact SHA/LF pins; original assertion counts and all safety predicates retained. Wind membership now rejects duplicates and requires the exact named source set.",
+    "test_scope": "This source refresh claims manifest preflight only. Fresh CPU/GPU results must be recorded separately; no historical PASS is reassigned to this successor."
+  }
 }

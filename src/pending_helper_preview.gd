@@ -5,6 +5,7 @@ const Bridge=preload("res://src/wind_helper_bridge.gd")
 const Runtime=preload("res://src/wind_helper_runtime.gd")
 const Adapter=preload("res://src/wind_helper_candidate.gd")
 const Model=preload("res://src/model.gd")
+const ImportBasis=preload("res://src/import_basis.gd")
 const Player=preload("res://src/pending_helper_wind_player.gd")
 var player: Node
 var catalog: Dictionary={}
@@ -37,9 +38,9 @@ var run_mode:=""
 class Admission extends RefCounted:
 	var owner: WeakRef
 	var token: int
-	func run(source: RefCounted,path: String,shape: Dictionary,pose: Dictionary,video: Dictionary,operations: Array,sha: String) -> void:
+	func run(source: RefCounted,path: String,shape: Dictionary,pose: Dictionary,video: Dictionary,operations: Array,sha: String,basis_preservation: Dictionary={}) -> void:
 		var keep_alive: RefCounted=self
-		var result: Dictionary=await Adapter.prepare(source,path,shape,pose,video,operations,sha)
+		var result: Dictionary=await Adapter.prepare(source,path,shape,pose,video,operations,sha,basis_preservation)
 		var host=owner.get_ref()
 		if not is_instance_valid(host) or not host.is_inside_tree() or host.epoch!=token:
 			if result.has("model") and is_instance_valid(result.model.root):result.model.root.free()
@@ -140,6 +141,8 @@ func start() -> String:
 	if app.renderer.capturing_final or app.playing or app.exporting or app.pose_editor.dragging or app.drawing or app.source_import.pid>0 or app.has_project.pid>0:return fail("Finish the current action before trying this setup.")
 	var draft:=reviewed()
 	if draft.has("error"):return fail(draft.error)
+	if ImportBasis.active(current.data) and draft.items.any(func(item):return not item.get("use_existing_joints",false)):
+		return fail("This reference-sized model can try its existing joints. New weighted joints still need a height-preservation check; the scene is unchanged.")
 	if not reviewed_shapes_match(current,draft.items):return fail("The model's expression changed since this part was reviewed. Reopen review at this frame before trying it.")
 	var config:=Runtime.configuration(app)
 	if config.has("error"):return fail(config.error)
@@ -173,7 +176,9 @@ func received(value: Dictionary) -> void:
 			last_receipt=receipt.duplicate(true);phase="importing"
 			bridge.close_transport();last_transport={"releases":bridge.release_calls,"result":bridge.release_result,"completion":bridge.prepared_completion.duplicate(true)}
 			var admission:=Admission.new();admission.owner=weakref(self);admission.token=epoch
-			admission.run(source_actor,candidate_path,frozen_shape.duplicate(true),frozen_pose.duplicate(true),app.video.duplicate(true),receipt.operations.duplicate(true),sha)
+			var basis_proof=receipt.get("basis_preservation",{})
+			if not basis_proof is Dictionary:fail("The height-reference preservation proof is invalid.");return
+			admission.run(source_actor,candidate_path,frozen_shape.duplicate(true),frozen_pose.duplicate(true),app.video.duplicate(true),receipt.operations.duplicate(true),sha,basis_proof.duplicate(true))
 		"refused","invalidated":fail(str(value.get("reason","This setup could not be prepared.")))
 	refresh()
 

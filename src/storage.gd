@@ -11,6 +11,8 @@ const Journal=preload("res://src/recovery_journal.gd")
 const Sequences=preload("res://src/sequence_graph.gd")
 const ReferenceSheet=preload("res://src/reference_sheet_data.gd")
 const Extended=preload("res://src/extended_timing.gd")
+const ImportBasis=preload("res://src/import_basis.gd")
+const BasisProject=preload("res://src/import_basis_project.gd")
 
 static func safe_relative(path: String) -> bool:
 	if path.is_empty() or path.is_absolute_path() or path.contains(":") or path.contains("\\"):
@@ -59,7 +61,11 @@ static func readable_manifest(path: String) -> bool:
 	if file == null or file.get_length() > 1024 * 1024: return false
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
-	var data: Dictionary=parser.data
+	var view:=BasisProject.validation_view(parser.data)
+	if view.has("error"):return false
+	return _readable_manifest_without_import_basis(view.document)
+
+static func _readable_manifest_without_import_basis(data: Dictionary) -> bool:
 	if not DrawingLimits.error(data.get("layers"),data.get("sequence_graph",{})).is_empty():return false
 	if not preload("res://src/canvas_size.gd").error(data.get("video")).is_empty():return false
 	if data.get("video") is Dictionary and not preload("res://src/output_size.gd").project_error(data.video).is_empty():return false
@@ -104,10 +110,25 @@ static func readable_payloads(folder: String,manifest: String,png_verifier=null)
 	if png_verifier!=null:guard.png=png_verifier
 	return guard.valid(folder,parser.data)
 
+static func _basis_save_error(video: Dictionary,layers: Array,model: Dictionary,world: Dictionary,sequence_graph: Dictionary,reference_sheet: Dictionary) -> String:
+	var candidate:={"schema_version":3,"model":model,"scene":{},"video":video,"layers":layers}
+	if not world.is_empty():
+		candidate={"schema_version":5 if world.get("format")==WorldDocument.EFFECT_FORMAT else 4,"world":world,"video":video,"layers":layers}
+	if not sequence_graph.is_empty():
+		candidate.schema_version=6;candidate["sequence_graph"]=sequence_graph
+	if not reference_sheet.is_empty():
+		candidate["content_schema_version"]=candidate.schema_version;candidate.schema_version=7;candidate["reference_sheet"]=reference_sheet
+	if Extended.required(candidate):
+		candidate["timing_content_schema_version"]=candidate.schema_version;candidate.schema_version=8
+	var encoded:=ImportBasis.encode_capability(candidate)
+	return str(encoded.error)+" Previous save preserved." if encoded.has("error") else ""
+
 static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={},cancel_path: String="") -> String:
 	if not cancel_path.is_empty() and FileAccess.file_exists(cancel_path):return "Project saving cancelled. Previous save preserved."
 	var count_error:=DrawingLimits.error(layers,sequence_graph)
 	if not count_error.is_empty():return count_error
+	var basis_error:=_basis_save_error(video,layers,model,world,sequence_graph,reference_sheet)
+	if not basis_error.is_empty():return basis_error
 	var sync_boundary:=preload("res://src/save_worker.gd").existing_boundary(folder)
 	var canvas_error:=preload("res://src/canvas_size.gd").error(video)
 	if not canvas_error.is_empty():return canvas_error
@@ -278,6 +299,9 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		manifest["content_schema_version"]=manifest.schema_version;manifest.schema_version=7;manifest["reference_sheet"]=portable_reference
 	if Extended.required(manifest):
 		manifest["timing_content_schema_version"]=manifest.schema_version;manifest.schema_version=8
+	var basis_encoded:=ImportBasis.encode_capability(manifest)
+	if basis_encoded.has("error"):return str(basis_encoded.error)+" Previous save preserved."
+	manifest=basis_encoded.document
 	# Compact JSON keeps dense recorded motion within the unchanged1MiB metadata cap.
 	# Preserve small quaternion components across repeated editable saves.
 	var serialized := JSON.stringify(manifest,"",true,true)
@@ -349,6 +373,13 @@ static func load_project(folder: String, manifest_name := "project.json",cold_ce
 	return loaded
 
 static func decode_project(data,folder: String,extended:=false,rasters=null) -> Dictionary:
+	var view:=BasisProject.validation_view(data)
+	if view.has("error"):return view
+	var decoded:=_decode_project_without_import_basis(view.document,folder,extended,rasters)
+	if decoded.has("error"):return decoded
+	return BasisProject.restore_capabilities(data,decoded)
+
+static func _decode_project_without_import_basis(data,folder: String,extended:=false,rasters=null) -> Dictionary:
 	if rasters==null:rasters=RasterReader.new()
 	if not rasters.cancel_path.is_empty() and FileAccess.file_exists(rasters.cancel_path):return {"error":"Project opening cancelled. Previous project preserved."}
 	if data is Dictionary:
@@ -356,7 +387,7 @@ static func decode_project(data,folder: String,extended:=false,rasters=null) -> 
 		if not rasters.cold_cels and raster_reserve(data)>preload("res://src/cel_raster_snapshot_cache.gd").DEFAULT_OWNER_LIMIT:return {"error":"This project requires adaptive raster loading; eager decoding would exceed its memory budget."}
 	if data is Dictionary and data.get("schema_version")==8:
 		var unwrapped:=Extended.unwrap(data)
-		return unwrapped if unwrapped.has("error") else decode_project(unwrapped.base,folder,true,rasters)
+		return unwrapped if unwrapped.has("error") else _decode_project_without_import_basis(unwrapped.base,folder,true,rasters)
 	if data is Dictionary and data.has("timing_content_schema_version"):return {"error":"Extended project timing requires schema8."}
 	if data is Dictionary and not extended and Extended.required(data):return {"error":"Extended project timing requires schema8."}
 	if data is Dictionary and data.get("schema_version")==7:
@@ -366,7 +397,7 @@ static func decode_project(data,folder: String,extended:=false,rasters=null) -> 
 		var loaded:=ReferenceSheet.read_image(folder.path_join(reference.path))
 		if loaded.has("error"):return loaded
 		if loaded.sha256!=reference.sha256:return {"error":"Reference sheet checksum differs. Previous project stays open."}
-		var result:=decode_project(unwrapped.base,folder,extended,rasters)
+		var result:=_decode_project_without_import_basis(unwrapped.base,folder,extended,rasters)
 		if result.has("error"):return result
 		reference["source"]=folder.path_join(reference.path);reference.erase("path");result["reference_sheet"]=reference
 		return result
@@ -380,12 +411,12 @@ static func decode_project(data,folder: String,extended:=false,rasters=null) -> 
 		base.schema_version=5 if base.world.get("format")==WorldDocument.EFFECT_FORMAT else 4
 		var context=base.get("editor",{}).get("sequence_editor",{}) if base.get("editor",{}) is Dictionary else {}
 		if base.get("editor",{}) is Dictionary:base.editor.erase("sequence_editor")
-		var result:=decode_project(base,folder,extended,rasters)
+		var result:=_decode_project_without_import_basis(base,folder,extended,rasters)
 		if result.has("error"):return result
 		var decoded: Dictionary=graph.duplicate(true)
 		var pcm_bytes:=AudioTrack.memory(result.audio)
 		for asset in decoded.assets:
-			var child:=decode_project(asset.scene,folder,extended,rasters)
+			var child:=_decode_project_without_import_basis(asset.scene,folder,extended,rasters)
 			if child.has("error"):return {"error":"Sequence %s: %s" % [asset.name,child.error]}
 			pcm_bytes+=AudioTrack.memory(child.audio)
 			if pcm_bytes>AudioTrack.MAX_PCM:return {"error":"Nested audio sources exceed64MiB."}

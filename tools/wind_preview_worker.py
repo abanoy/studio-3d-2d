@@ -29,7 +29,8 @@ def code_paths(main_root):
     here = Path(__file__).resolve().parent
     return {'worker': here / 'wind_preview_worker.py', 'protocol': here / 'wind_helper_preview.py',
             'adapter': here / 'wind_preview_owned.py', 'native_job_layout': main_root / 'tools/private_desktop.py',
-            'helpers': main_root / 'tools/secondary_helpers.py', 'batch': main_root / 'tools/secondary_helpers_batch.py'}
+            'helpers': main_root / 'tools/secondary_helpers.py', 'batch': main_root / 'tools/secondary_helpers_batch.py',
+            'basis_helper': main_root / 'tools/import_basis_helper.py'}
 
 
 def self_owner():
