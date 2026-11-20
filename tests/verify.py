@@ -346,16 +346,28 @@ def main():
         assert domain['failures'] == 0, domain
         (output / (name + '-domain.log')).write_text(log, encoding='utf-8')
         results[name] = domain
-    guard_log = run(command('tests/reference_body_scale_guard.gd', True))
-    assert 'REFERENCE_BODY_SCALE_GUARD ' in guard_log and not any(bad in guard_log for bad in ('ERROR:', 'FAIL ', 'ObjectDB instances leaked', 'resources still in use')), guard_log
-    guard_result = json.loads(next(line.split('REFERENCE_BODY_SCALE_GUARD ', 1)[1] for line in guard_log.splitlines() if line.startswith('REFERENCE_BODY_SCALE_GUARD ')))
-    assert guard_result == {'checks': 51, 'failures': 0}, guard_result
-    (output / 'reference-body-scale-guard.log').write_text(guard_log, encoding='utf-8')
-    results['reference_body_scale_guard'] = guard_result
+    for name, marker, expected in (
+            ('reference_body_scale_guard', 'REFERENCE_BODY_SCALE_GUARD ', 71),
+            ('reference_body_plan_unit', 'REFERENCE_BODY_PLAN_UNIT ', 71),
+            ('reference_body_anatomy_unit', 'REFERENCE_BODY_ANATOMY_UNIT ', 75),
+            ('reference_body_physics_unit', 'REFERENCE_BODY_PHYSICS_UNIT ', 1039)):
+        log = run(command('tests/' + name + '.gd', True))
+        assert marker in log and not any(bad in log for bad in ('ERROR:', 'FAIL ', 'ObjectDB instances leaked', 'resources still in use')), log
+        result = json.loads(next(line.split(marker, 1)[1] for line in log.splitlines() if line.startswith(marker)))
+        assert result['checks'] == expected and result['failures'] == 0, result
+        if name == 'reference_body_physics_unit':assert result['fixed_tick_cases'] == 9, result
+        (output / (name.replace('_', '-') + '.log')).write_text(log, encoding='utf-8')
+        results[name] = result
     for theme in ('neon', 'light'):
         log = run([sys.executable, '-B', '-u', 'tests/verify_human_reference.py', '--theme', theme], timeout=500)
         (output / ('human-reference-' + theme + '-suite.log')).write_text(log, encoding='utf-8')
         results['human_reference_' + theme] = json.loads((output / ('human-reference-' + theme + '-verification.json')).read_bytes())
+        body_log = run([sys.executable, '-B', '-u', 'tests/verify_reference_body.py', '--theme', theme], timeout=650)
+        (output / ('reference-body-' + theme + '-suite.log')).write_text(body_log, encoding='utf-8')
+        results['reference_body_' + theme] = json.loads((output / ('reference-body-' + theme + '-verification.json')).read_bytes())
+    body_native_log = run([sys.executable, '-B', '-u', 'tests/verify_reference_body_native.py'], timeout=1200)
+    (output / 'reference-body-native-suite.log').write_text(body_native_log, encoding='utf-8')
+    results['reference_body_native'] = json.loads((output / 'reference-body-native-verification.json').read_bytes())
     print('PASS six-foot Scale 1 reference, relative size, immutable basis, helpers, portable HAS and both themes')
     map_log = run([sys.executable, '-u', 'tests/verify_map_calibration.py'], timeout=380)
     (output / 'map-calibration-suite.log').write_text(map_log, encoding='utf-8')

@@ -4,6 +4,7 @@ const IK=preload("res://src/limb_ik.gd")
 const Model=preload("res://src/model.gd")
 const SelfCollision=preload("res://src/physics_self_collision.gd")
 const PoseBounds=preload("res://src/pose_bounds.gd")
+const ReferencePlan=preload("res://src/reference_body_plan.gd")
 const EXTRA={"head":["頭","head","biphead","valvebipedbip01head1"],"hips":["下半身","hips","bippelvis","valvebipedbip01pelvis"],"spine":["上半身","spine","bipspine0","valvebipedbip01spine"]}
 var rig: RefCounted
 var simulator: PhysicalBoneSimulator3D
@@ -14,6 +15,7 @@ var running:=false
 var initial_pose: Dictionary={}
 var joint_profiles: Dictionary={}
 var rest_exclusions: Array=[]
+var reference_plan: Dictionary={}
 
 static func body_weight_helper(name: String) -> bool:
 	var normalized:=IK.normalized(name)
@@ -27,14 +29,18 @@ static func body_weight_helper(name: String) -> bool:
 	var suffix:=ring.trim_prefix("ring").trim_suffix("l").trim_suffix("r")
 	return suffix.is_empty() or suffix.is_valid_int()
 
-static func profiles(actor: RefCounted, chosen: Array[String], sk: Skeleton3D) -> Dictionary:
+static func profiles(actor: RefCounted, chosen: Array[String], sk: Skeleton3D, metric:=false) -> Dictionary:
 	var result:={};var limbs: Array=[];var landmarks:={}
+	# Reference plans use metre coordinates for anatomical thresholds as well as
+	# collider dimensions. Keep the original skeleton axes for joint profiles.
+	var coordinate_scale: float=sk.global_basis.get_scale().x if metric else 1.0
 	for tip in actor.order:
 		var limb:=IK.chain(actor,tip)
 		if limb.is_empty():continue
 		limbs.append(limb)
-		landmarks[limb.role]=sk.get_bone_global_pose(actor.bones[limb.ids[0]].index).origin
+		landmarks[limb.role]=sk.get_bone_global_pose(actor.bones[limb.ids[0]].index).origin*coordinate_scale
 	var forward: Vector3=sk.global_basis.inverse()*actor.root.global_basis.z
+	if metric:forward=sk.global_basis.orthonormalized().inverse()*actor.root.global_basis.orthonormalized().z
 	if landmarks.has_all(["leftHand","rightHand","leftFoot","rightFoot"]):
 		var left: Vector3=landmarks.leftHand-landmarks.rightHand
 		var up: Vector3=(landmarks.leftHand+landmarks.rightHand-landmarks.leftFoot-landmarks.rightFoot)*0.5
@@ -42,9 +48,9 @@ static func profiles(actor: RefCounted, chosen: Array[String], sk: Skeleton3D) -
 	for limb in limbs:
 		var ids: Array=limb.ids
 		var arm: bool=limb.role.ends_with("Hand")
-		var a: Vector3=sk.get_bone_global_pose(actor.bones[ids[0]].index).origin
-		var b: Vector3=sk.get_bone_global_pose(actor.bones[ids[1]].index).origin
-		var c: Vector3=sk.get_bone_global_pose(actor.bones[ids[2]].index).origin
+		var a: Vector3=sk.get_bone_global_pose(actor.bones[ids[0]].index).origin*coordinate_scale
+		var b: Vector3=sk.get_bone_global_pose(actor.bones[ids[1]].index).origin*coordinate_scale
+		var c: Vector3=sk.get_bone_global_pose(actor.bones[ids[2]].index).origin*coordinate_scale
 		var upper: Vector3=(b-a).normalized();var lower: Vector3=(c-b).normalized()
 		# X is cone twist; Z is hinge rotation. Imported bone bases need not
 		# point down the limb (VRM and Source commonly differ).
@@ -65,7 +71,7 @@ static func profiles(actor: RefCounted, chosen: Array[String], sk: Skeleton3D) -
 		if not result.has(id):result[id]={"part":"connector","axis":sk.get_bone_global_pose(actor.bones[id].index).basis.x.normalized(),"swing":40.0,"twist":30.0}
 	return result
 
-static func configure_joint(body: PhysicalBone3D, pose: Transform3D, profile: Dictionary) -> void:
+static func configure_joint(body: PhysicalBone3D, pose: Transform3D, profile: Dictionary, unit_frame:=false) -> void:
 	var axis: Vector3=profile.axis
 	var hinge: bool=profile.has("lower")
 	var basis: Basis
@@ -78,6 +84,9 @@ static func configure_joint(body: PhysicalBone3D, pose: Transform3D, profile: Di
 		y=y.normalized();basis=Basis(axis,y,axis.cross(y).normalized())
 	var offset:=body.joint_offset
 	offset.basis=body.body_offset.basis.inverse()*pose.basis.orthonormalized().inverse()*basis
+	# The reference adapter keeps reciprocal scale in body_offset for engine
+	# writeback. Joint axes are unit vectors; retain the engine-derived origin.
+	if unit_frame:offset.basis=offset.basis.orthonormalized()
 	body.joint_offset=offset
 	body.joint_type=PhysicalBone3D.JOINT_TYPE_HINGE if hinge else PhysicalBone3D.JOINT_TYPE_CONE
 	# PhysicalBone properties use degrees; PhysicsServer properties use radians.
@@ -186,23 +195,33 @@ static func create(actor: RefCounted, frame:=0) -> Dictionary:
 	if chosen.size()>48:return {"error":"Automatic ragdoll exceeds48 structural bodies; use a simpler rig."}
 	for id in chosen:
 		if not IK.regular(actor.bone_transform(id).basis):return {"error":"A connecting ragdoll bone has unsupported scale. Use direct posing for this rig."}
-	# Interim reference-size boundary: PhysicalBone3D strips its world scale.
-	# Keep the legacy path exact; active references need unit world bone bases.
-	# is_equal_approx uses the engine's usual ~1e-5 tolerance around unit scale.
+	# PhysicalBone3D strips world scale. Plan active nonunit references entirely
+	# in metres before allocating anything, with reciprocal offsets for writeback.
+	# Preserve the legacy and actual-unit paths, including their shape policy.
+	var use_reference_plan:=false
 	if Model.ImportBasis.active(actor.data):
+		# Unit world bones can still contain compensating source-bone scale below
+		# a scaled skeleton. Their dimensions need the same metre conversion.
+		var skeleton_scale: Vector3=sk.global_basis.get_scale()
+		use_reference_plan=not skeleton_scale.is_equal_approx(Vector3.ONE)
 		for id in chosen:
 			var world_scale: Vector3=actor.bone_transform(id).basis.get_scale()
 			if not is_equal_approx(world_scale.x,1.0) or not is_equal_approx(world_scale.y,1.0) or not is_equal_approx(world_scale.z,1.0):
-				return {"error":"Body Physics is not ready for this reference size. Posing and Hair & clothes are still available."}
+				use_reference_plan=true;break
+	var reference: Dictionary={}
+	var bounds:=weighted_bounds(actor,sk,chosen)
+	if use_reference_plan:
+		reference=ReferencePlan.build(actor,sk,chosen,role_ids,bounds)
+		if reference.has("error"):return reference
 	var candidate=new();candidate.rig=actor;candidate.skeleton=sk;candidate.initial_pose=actor.sample(frame,true)
+	candidate.reference_plan=reference
 	var sim:=PhysicalBoneSimulator3D.new();candidate.simulator=sim;sk.add_child(sim)
 	var minimum:=Vector3(INF,INF,INF);var maximum:=-minimum
 	for id in chosen:
 		var point: Vector3=sk.get_bone_global_pose(actor.bones[id].index).origin
 		minimum=minimum.min(point);maximum=maximum.max(point)
 	var size:=maxf((maximum-minimum).length(),0.01)
-	var bounds:=weighted_bounds(actor,sk,chosen)
-	candidate.joint_profiles=profiles(actor,chosen,sk)
+	candidate.joint_profiles=profiles(actor,chosen,sk,use_reference_plan)
 	for id in actor.order:
 		if not id in chosen:continue
 		var index: int=actor.bones[id].index
@@ -221,7 +240,17 @@ static func create(actor: RefCounted, frame:=0) -> Dictionary:
 		physical.collision_layer=2;physical.collision_mask=3
 		sim.add_child(physical)
 		var shape:=CollisionShape3D.new()
-		if bounds.has(id) and bounds[id].size.length()>size*0.005 and bounds[id].size.length()<size*0.75:
+		if use_reference_plan:
+			var planned: Dictionary=reference.bodies[id]
+			if planned.kind=="box":
+				var box:=BoxShape3D.new();box.size=planned.size;shape.shape=box
+			elif planned.kind=="capsule":
+				var capsule:=CapsuleShape3D.new();capsule.radius=planned.radius;capsule.height=planned.height;shape.shape=capsule
+			else:
+				var sphere:=SphereShape3D.new();sphere.radius=planned.radius;shape.shape=sphere
+			shape.shape.margin=planned.margin
+			physical.body_offset=planned.body_offset
+		elif bounds.has(id) and bounds[id].size.length()>size*0.005 and bounds[id].size.length()<size*0.75:
 			# Include skin corners: a narrow capsule can let a bent rectangular limb
 			# visibly enter the floor even when its center is above the surface.
 			var box:=BoxShape3D.new();box.size=bounds[id].size+Vector3.ONE*size*0.003;shape.shape=box
@@ -235,7 +264,7 @@ static func create(actor: RefCounted, frame:=0) -> Dictionary:
 		else:
 			var sphere:=SphereShape3D.new();sphere.radius=size*(0.045 if id==role_ids.get("head","") else 0.035);shape.shape=sphere
 		physical.add_child(shape)
-		configure_joint(physical,pose,candidate.joint_profiles[id])
+		configure_joint(physical,pose,candidate.joint_profiles[id],use_reference_plan)
 		PhysicsServer3D.body_set_enable_continuous_collision_detection(physical.get_rid(),true)
 		candidate.bodies[id]=physical
 	# Linked capsules overlap at their shared joint; exclude only direct neighbors.

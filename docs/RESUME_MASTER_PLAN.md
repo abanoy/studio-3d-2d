@@ -1,5 +1,13 @@
 # HAS — consolidated master reference for resuming work
 
+**November20 scoped addition passes:** reference-size Body Physics and an
+animated-parent recording correction pass1273 mechanical checks, both themes'
+72/21 editor/cold and18/6 parent checks, six native VRM cases23/9 each, and the
+old44/3 reference regression in both themes. All1059 source/driver files and
+native identities stay exact;24 private jobs close. Complete Windows verification
+and final publication/readback are next. See [current pickup](NEXT_SESSION_PLAN_2026-11-20.md).
+The November19 statements below describe the previous published checkpoint.
+
 **Latest verified source: `08ad583` (November19).** Six-foot Scale1 addition and
 guarded native review pass; complete Windows default passes163result/36core/
 20media groups with1045functional sources unchanged and200closed private jobs.

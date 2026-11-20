@@ -38,14 +38,14 @@ identity. Generating weighted helpers for a reference model currently refuses
 because that preservation proof is not implemented. Legacy weighted helpers
 remain available. No unsupported derivative is silently remeasured.
 
-Body Physics currently refuses reference models whose structural bones have a
-nonunit world scale. The engine strips that scale from its rigid bodies, so the
-existing collider sizes and pose writeback cannot safely reproduce the reference.
-The check happens before allocating a simulation and preserves authored/live
-state. Posing and Hair & clothes remain available; existing reference-free body
-physics is unchanged. The engine behavior is visible in
-[Godot 4.6 PhysicalBone3D](https://github.com/godotengine/godot/blob/4.6/scene/3d/physics/physical_bone_3d.cpp#L88).
-A scale-preserving body adapter is separate unfinished work.
+Body Physics now supports the qualified reference-size path, including artist
+sizes0.5/1/2, using metre collision planning and reciprocal body offsets. The
+original rig/source data stay intact; Freeze, Record, generic hair composition,
+history and packed replay use ordinary canonical poses. Unsupported numerical
+or structural states refuse before allocation. Existing reference-free body
+physics retains its behavior. See [the body contract](reference_body_physics.md)
+for bounds and exact executed scope. This replaces the November19 interim
+nonunit-scale refusal; earlier guard reports remain historical.
 
 Run `python -B tests/verify_human_reference.py --theme neon` or `--theme light`.
 The checks use authored synthetic figures at two original sizes, measure Scale
@@ -53,8 +53,8 @@ The checks use authored synthetic figures at two original sizes, measure Scale
 start a separate cold reader, and export a two-second 1080p H264 movie with an
 independent editable drawing. Preview and export input images are compared;
 encoded-video pixel equivalence and native-model fidelity are separate claims.
-The guarded native avatar reference check passes 25 size/Undo/save/reopen/body-
-boundary checks on the existing VRM0 preparation, with original/staged hashes
+The historical guarded native avatar reference check passed25 size/Undo/save/
+reopen/body-boundary checks on the existing VRM0 preparation, with original/staged hashes
 and mtimes preserved. The earlier23-check review remains historical.
 This does not certify the model's appearance against its original application.
 The ordinary height/native regression suite remains separate. Full results and
@@ -68,5 +68,5 @@ remain separate. See [terminal evidence](benchmarks/human_reference_full_2026-11
 
 Not included: automatic default normalization, assembly of separate parts,
 changing an existing character's reference, broad native-fidelity certification,
-weighted-helper reconstruction, scale-preserving body physics, or the larger
+weighted-helper reconstruction, unrestricted body-physics scales, or the larger
 planned HAS model capability audit.

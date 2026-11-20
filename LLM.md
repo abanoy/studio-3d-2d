@@ -6984,3 +6984,34 @@ offsets/world-metre geometry/joint frames look smaller than a shadow skeleton;
 neither is implemented/run. Keep the body guard until mechanical/lifecycle/native
 oracles pass. All62formal statuses and52/54,55/62scores stay unchanged. Private
 art, originals, source snapshots and pending owner deliverables remain local.
+
+### November20 — reference-size Body Physics and parented recording
+
+Implemented metre-based body planning/inverse offsets/unit joints for active
+references, including .5/1/2 and compensated source scales. Anatomical thresholds
+also use metres; original rig/source/basis and legacy paths remain. Body/hair
+compose on original canonical IDs, no new project schema or app.gd/theme edits.
+An actual animated-parent Record bug shifted replay21cm; exact held affine world
+frame and destination-frame parent compensation reduce it to5.365e-7m. Parent/
+target/held-root drift, invalid local frames, missing/cyclic parents and failed
+start/release ownership are guarded. Rational timing and ordinary keys remain.
+
+Actual final mechanical1273 checks pass (1039geometry with9fixedtick cases).
+Final scoped run passes265.3367374s: both themes72writer/21cold+parent18writer/
+6cold; six prepared VRM0/1 .5/1/2 cases23writer/9cold each; old reference44/3 each.
+All1059source+driver bytes/nsmtimes unchanged;24private jobs placed/closed with
+no foreground/switch. Four packed authored definitions pertheme match exactly
+in Python excluding only source/path locations; embedded hashes and native
+float32 pose/root bytes/scale, cold pixels and actual movies pass. Godot's JSON
+double parser caused invalid string oracles; raw packed data was proven exact,
+so no product serialization workaround or epsilon was introduced. Test gravity/
+metadata/type/count/path failures remain in SCOPED_RESULTS, with corrected runs.
+
+See docs/reference_body_physics.md, NEXT_SESSION_PLAN_2026-11-20.md and
+benchmarks/reference_body_2026-11-20.json; reproducible code/scalar packet is
+experiments/reference_body_20261120. Source content map SHA9b97f7160b67c745cbf3eb58e479126dfa0f3115b1c9b06aa98aa397c3a6831a.
+The13declared legacy input files32,095,990B retain exact hashes/nsmtimes, including
+optional PMD pose. Complete Windows source-commit run, main push/readback and
+owned cleanup are next; no new full-suite PASS claimed. All62formal IDs and
+52/54implementation/55/62acceptance remain. Human questions deferred; private art,
+originals, old reviews, installed Studio and shared approved runtimes protected.

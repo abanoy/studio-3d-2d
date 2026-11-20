@@ -5,6 +5,7 @@ const Model=preload("res://src/model.gd")
 const Clips=preload("res://src/animation_clips.gd")
 const World=preload("res://src/world_document.gd")
 const Contacts=preload("res://src/foot_contacts.gd")
+const Airflow=preload("res://src/airflow.gd")
 var editor
 var scope: OptionButton
 var button: Button
@@ -29,10 +30,62 @@ var retained_keys:={}
 var was_dirty:=false
 var start_revision:=0
 var last_end_reason:=""
+var reference_world_roots: Dictionary={}
+var reference_parent_data: Dictionary={}
+
+func prepare_reference_roots(ids: Array) -> String:
+	reference_world_roots.clear();reference_parent_data.clear()
+	var runtime=editor.app.renderer.world_runtime
+	for id in ids:
+		var actor: RefCounted=editor.simulations[id].rig
+		var parent: String=actor.data.get("parent_id","")
+		if parent.is_empty() or not Model.ImportBasis.active(actor.data) or not editor.body_active(id) or actor.order.size()<=1:continue
+		if runtime==null:return "Reference recording needs its original parent world."
+		# Humanoid body motion is stored in bones; start() holds the root in world
+		# space. Retain this exact affine artist-world frame, removing C*B0 once.
+		# It must not be decomposed into scalar scale before parent compensation.
+		reference_world_roots[id]=actor.root.global_transform*actor.base_root.affine_inverse()
+		var seen: Dictionary={}
+		while not parent.is_empty():
+			if seen.has(parent):return "A reference recording parent hierarchy changed."
+			seen[parent]=true
+			var ancestor: RefCounted=runtime.instance(parent)
+			if ancestor==null:return "A reference recording parent disappeared."
+			reference_parent_data[parent]=ancestor.data.duplicate(true)
+			parent=ancestor.data.get("parent_id","")
+	return ""
+
+func reference_transform(id: String, frame: int) -> Dictionary:
+	var runtime=editor.app.renderer.world_runtime
+	if runtime==null or not targets.has(id):return {"error":"A reference recording parent disappeared."}
+	var parent: RefCounted=runtime.instance(targets[id].parent_id)
+	if parent==null:return {"error":"A reference recording parent disappeared."}
+	var world: Transform3D=Airflow.world_transform(parent,runtime,frame)
+	if not world.origin.is_finite() or not world.basis.x.is_finite() or not world.basis.y.is_finite() or not world.basis.z.is_finite() or absf(world.basis.determinant())<0.000000000000001:
+		return {"error":"Recording cancelled: the reference parent transform is singular or nonfinite."}
+	var local: Transform3D=world.affine_inverse()*reference_world_roots[id]
+	var scale: Vector3=local.basis.get_scale()
+	if not local.origin.is_finite() or not local.basis.x.is_finite() or not local.basis.y.is_finite() or not local.basis.z.is_finite() or local.basis.determinant()<=0. or scale.x<=0.000001 or absf(scale.x-scale.y)>scale.x*.00001 or absf(scale.x-scale.z)>scale.x*.00001 or absf(local.basis.x.normalized().dot(local.basis.y.normalized()))>.00001 or absf(local.basis.x.normalized().dot(local.basis.z.normalized()))>.00001 or absf(local.basis.y.normalized().dot(local.basis.z.normalized()))>.00001:
+		return {"error":"Recording cancelled: this moving parent requires unsupported nonuniform reference scale. The authored animation was kept."}
+	var q:=local.basis.orthonormalized().get_rotation_quaternion().normalized()
+	return {"position":[local.origin.x,local.origin.y,local.origin.z],"rotation_xyzw":[q.x,q.y,q.z,q.w],"scale":scale.x}
+
+func reference_error(check_held:=true) -> String:
+	var runtime=editor.app.renderer.world_runtime
+	for id in reference_parent_data:
+		var ancestor: RefCounted=runtime.instance(id) if runtime else null
+		if ancestor==null or ancestor.data!=reference_parent_data[id]:return "Recording cancelled because a reference parent changed. Your edits were kept."
+	for id in reference_world_roots:
+		if not editor.active(id):return "A captured reference body disappeared."
+		var actor: RefCounted=editor.simulations[id].rig
+		if actor.data!=targets.get(id):return "Authored model data changed during recording. The take was not installed; your edits were kept."
+		if check_held and not actor.root.global_transform.is_equal_approx(reference_world_roots[id]*actor.base_root):return "Recording cancelled because the held reference root changed. Your edits were kept."
+	return ""
 
 func restore_dirty() -> void:
 	var app=editor.app
 	if app.recovery_revision!=start_revision:return
+	if not reference_error(false).is_empty():return
 	for id in targets:
 		var actor: RefCounted=app.renderer.world_runtime.instance(id) if app.renderer.world_runtime else app.renderer.model
 		if not actor or actor.data!=targets[id]:return
@@ -128,14 +181,21 @@ func start() -> bool:
 	if app.mode.selected==0:app.mode.select(1);app.change_mode(1)
 	targets={};samples={};previous={};ticks=0;sample_bytes=0;armed=false;start_frame=app.frame;last_frame=start_frame
 	fps_num=int(app.video.fps_num);fps_den=int(app.video.fps_den);duration=int(app.video.duration_frames)
+	var reference_error:=prepare_reference_roots(ids)
+	if not reference_error.is_empty():last_error=reference_error;reference_world_roots.clear();reference_parent_data.clear();app.message(last_error);sync();return false
 	for id in ids:
 		targets[id]=editor.simulations[id].rig.data.duplicate(true)
 		previous[id]=read_state(id)
+		if reference_world_roots.has(id):
+			var transform:=reference_transform(id,start_frame)
+			if transform.has("error"):
+				last_error=transform.error;targets.clear();samples.clear();previous.clear();reference_world_roots.clear();reference_parent_data.clear();app.message(last_error);sync();return false
+			previous[id].transform=transform
 		samples[id]=[key(previous[id],start_frame)]
 		if Model.ShapeAnimation.has_data(targets[id]):samples[id][0]["shapes"]=Model.ShapeAnimation.sample(targets[id],start_frame)
 		sample_bytes+=sample_cost(id,samples[id][0])
 	var candidate:=build(start_frame)
-	if candidate.has("error"):last_error=candidate.error;targets.clear();samples.clear();previous.clear();app.message(last_error);sync();return false
+	if candidate.has("error"):last_error=candidate.error;targets.clear();samples.clear();previous.clear();reference_world_roots.clear();reference_parent_data.clear();app.message(last_error);sync();return false
 	rebase(candidate)
 	was_dirty=app.dirty;start_revision=app.recovery_revision
 	active=true;app.dirty=true;sync()
@@ -148,6 +208,8 @@ static func key(state: Dictionary, frame: int) -> Dictionary:
 func _physics_process(_delta: float) -> void:
 	if not active:return
 	var app=editor.app;var began:=Time.get_ticks_usec()
+	var invalid_reference:=reference_error()
+	if not invalid_reference.is_empty():cancel(invalid_reference);return
 	if int(app.video.fps_num)!=fps_num or int(app.video.fps_den)!=fps_den or int(app.video.duration_frames)!=duration:
 		cancel("Recording cancelled because project timing changed. Your settings were kept.");return
 	var current:={}
@@ -172,6 +234,12 @@ func _physics_process(_delta: float) -> void:
 		var fraction:=clampf(float((next-start_frame)*denominator-(ticks-1)*numerator)/numerator,0,1)
 		for id in targets:
 			var state:={"pose":Model.blend(previous[id].pose,current[id].pose,fraction),"transform":Model.blend_transform(previous[id].transform,current[id].transform,fraction)}
+			if reference_world_roots.has(id):
+				# Previous/current parent-relative values can belong to different
+				# displayed frames. Compensate the exact held world frame at NEXT.
+				var transform:=reference_transform(id,next)
+				if transform.has("error"):cancel(transform.error);return
+				state.transform=transform
 			var sample:=key(state,next)
 			if Model.ShapeAnimation.has_data(targets[id]):sample["shapes"]=Model.ShapeAnimation.sample(targets[id],next)
 			samples[id].append(sample);sample_bytes+=sample_cost(id,sample)+1
@@ -266,6 +334,8 @@ static func replace_range(data: Dictionary, keys: Array, first: int, last: int, 
 
 func build(end: int) -> Dictionary:
 	var app=editor.app;var values:={}
+	var invalid_reference:=reference_error()
+	if not invalid_reference.is_empty():return {"error":invalid_reference}
 	for id in targets:
 		if not editor.active(id):return {"error":"A captured model is no longer simulated."}
 		if editor.simulations[id].rig.data!=targets[id]:return {"error":"Authored model data changed during recording. The take was not installed; your edits were kept."}
@@ -292,6 +362,7 @@ func build(end: int) -> Dictionary:
 	return {"values":values}
 
 func release_all() -> void:
+	reference_world_roots.clear();reference_parent_data.clear()
 	editor.release_grab()
 	for simulation in editor.simulations.values():simulation.dispose()
 	editor.simulations.clear();editor.clear_colliders();editor.clear_previews();editor.sync()

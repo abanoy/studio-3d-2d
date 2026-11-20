@@ -79,7 +79,8 @@ func run() -> void:
 		var reference_id: String=actor().data.id
 		var before_body_request:=var_to_bytes(actor().data)
 		app.physics_editor.enable_body(actor())
-		check(not app.physics_editor.body_active(reference_id) and app.status.text=="Body Physics is not ready for this reference size. Posing and Hair & clothes are still available." and var_to_bytes(actor().data)==before_body_request,"body toggle refuses unsupported reference scaling without changing the model")
+		check(app.physics_editor.body_active(reference_id) and var_to_bytes(actor().data)==before_body_request,"body toggle admits the reference without changing authored model data")
+		app.physics_editor.clear();app.pose_editor.apply_frame()
 		for scale in [.5,2.]:
 			app.pose_editor.human_size_field.value=scale
 			print("REFERENCE_SCALE_BEFORE "+JSON.stringify({"requested":scale,"simple":app.pose_editor.human_size_field.value,"advanced":app.pose_editor.scale_field.value,"frame":app.frame}))

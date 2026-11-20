@@ -5,7 +5,7 @@ const B=preload("res://src/import_basis.gd")
 const IK=preload("res://src/limb_ik.gd")
 const Rig=preload("res://src/physics_rig.gd")
 const SHA="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-const MESSAGE="Body Physics is not ready for this reference size. Posing and Hair & clothes are still available."
+const MESSAGE="Body Physics cannot safely prepare this reference size. Posing and Hair & clothes are still available."
 var checks:=0
 var failures:=0
 
@@ -57,7 +57,7 @@ func refused(height: String,factor: float,artist_scale:=1.0,parent_scale:=1.0) -
 	subject.live_pose=retained_pose.duplicate(true);subject.live_world_transform=subject.root.global_transform
 	subject.root.set_meta("has_secondary_rig",{"format":"studio_secondary_rig_1","chains":[],"colliders":[],"error":""})
 	var before:=snapshot(subject);var result: Dictionary=Rig.create(subject)
-	check(result.get("error","")==MESSAGE and not result.has("physics"),"nonunit active reference refuses body physics clearly: "+str(factor))
+	check(result.get("error","")==MESSAGE and not result.has("physics"),"unsafe active reference refuses body physics clearly: "+str([factor,artist_scale,parent_scale]))
 	check(snapshot(subject)==before,"refusal allocates no simulation/body nodes and preserves data, authored/live pose, roots and secondary metadata")
 	dispose_actor(subject)
 
@@ -86,11 +86,15 @@ func prior_error_categories() -> void:
 	dispose_actor(subject)
 
 func run() -> void:
-	refused("3.6576",0.5)
-	refused("0.9144",2.0)
-	# A unit intrinsic basis does not excuse an artist/parent enlargement.
-	refused("1.8288",1.0,2.0)
-	refused("1.8288",1.0,1.0,0.5)
+	refused("1828.8",0.001,0.5)
+	refused("0.0009144",2000.0)
+	# Admission follows the complete world frame, including artist/static parent.
+	refused("1.8288",1.0,2000.0)
+	refused("1.8288",1.0,1.0,0.0005)
+	admitted("3.6576",true)
+	admitted("0.9144",true)
+	admitted("1.8288",true,2.0)
+	admitted("1.8288",true,1.0,0.5)
 	admitted("1.8288",true)
 	# Admission follows actual world size, so exact compensating factors work.
 	admitted("3.6576",true,2.0)
