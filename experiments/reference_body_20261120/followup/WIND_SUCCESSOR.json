@@ -1,0 +1,161 @@
+{
+  "format": "has_body_recording_wind_successor_1",
+  "current_source_commit": "7d8e08fae15b21ef375a5a0f15a927f00fe93a7b",
+  "fresh_passed": true,
+  "units": 94,
+  "graphics": 845,
+  "parse_checks": 5,
+  "runtime_file_bindings": {
+    "src/app.gd": {
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "reviewed_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "reconstruction": "exact bytes"
+    },
+    "src/has_project.gd": {
+      "sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
+      "reviewed_sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
+      "reconstruction": "exact bytes"
+    },
+    "src/physics_editor.gd": {
+      "sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "reviewed_sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "reconstruction": "exact bytes"
+    },
+    "src/physics_recording.gd": {
+      "sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "reviewed_sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "reconstruction": "exact bytes"
+    },
+    "src/pose_editor.gd": {
+      "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "reviewed_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "reconstruction": "exact bytes"
+    },
+    "src/renderer.gd": {
+      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "reviewed_sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "reconstruction": "exact bytes"
+    },
+    "src/secondary_spring.gd": {
+      "sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "reviewed_sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "reconstruction": "exact bytes"
+    },
+    "src/wind_review.gd": {
+      "sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "reviewed_sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "reconstruction": "exact bytes"
+    },
+    "src/wind_review_groups.gd": {
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "reviewed_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_unit.gd": {
+      "sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "reviewed_sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_hooks_unit.gd": {
+      "sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "reviewed_sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_review_unit.gd": {
+      "sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "reviewed_sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_gpu_common.gd": {
+      "sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "reviewed_sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_gpu_motion.gd": {
+      "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "reviewed_sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_gpu_lifecycle.gd": {
+      "sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "reviewed_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_gpu_primary.gd": {
+      "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "reviewed_sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "reconstruction": "exact bytes"
+    },
+    "src/model.gd": {
+      "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7",
+      "reviewed_sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7",
+      "reconstruction": "exact bytes"
+    },
+    "src/import_basis.gd": {
+      "sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "reviewed_sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "reconstruction": "exact bytes"
+    },
+    "src/import_basis_helpers.gd": {
+      "sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "reviewed_sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "reconstruction": "exact bytes"
+    },
+    "src/import_basis_project.gd": {
+      "sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "reviewed_sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "reconstruction": "exact bytes"
+    },
+    "tests/verify_wind_review.py": {
+      "sha256": "4aa54a2e54ffd1ab83d3dfdd7f1397eabede05592626a1e826a08e1182409c70",
+      "reviewed_sha256": "4aa54a2e54ffd1ab83d3dfdd7f1397eabede05592626a1e826a08e1182409c70",
+      "reconstruction": "exact bytes"
+    }
+  },
+  "sources_unchanged": true,
+  "native_inputs_unchanged": true,
+  "receipt_count": 6,
+  "private_receipts": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\wind-review\\graphical-1795196181012357200\\procedural\\private-receipt.json",
+      "sha256": "a579ea9b1bb6691f36b2de3f748ed6ae634f2f19091cebfa6faa5d6edff8f7a3",
+      "desktop": "HAS_Test_73f0b84b5dcb4366b4f093c93a8ca517",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\wind-review\\graphical-1795196181012357200\\vrm0\\private-receipt.json",
+      "sha256": "a5c272218a225905eb0c6880e9260ea6bffa0630d45fa1d047ce8034fa3cc95e",
+      "desktop": "HAS_Test_7fa9271625ad4cb287f821821bb1d575",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\wind-review\\graphical-1795196181012357200\\vrm1\\private-receipt.json",
+      "sha256": "05726b264a311df68c118cfee49804f11e8178a567e8d6294747b59f0fdfe726",
+      "desktop": "HAS_Test_742ef6e190d048078774385c837a5e2e",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\wind-review\\graphical-1795196181012357200\\backhair\\private-receipt.json",
+      "sha256": "bebef338959beb609caee0e615c4623ee2981e6e61f0fa6f9388e1e71a515ac0",
+      "desktop": "HAS_Test_1a8360cb716a4247a8708bfb834a81aa",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\wind-review\\graphical-1795196181012357200\\lifecycle\\private-receipt.json",
+      "sha256": "7abcd8e781f2f15b6f778104401c22bd8f033fef51047aa99b48dc51b688296d",
+      "desktop": "HAS_Test_2aa70e0419c247d5a002bf1c12063caf",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\wind-review\\graphical-1795196181012357200\\primary\\private-receipt.json",
+      "sha256": "1518c07063d772c006932d12c880a6d09d79722a5223b24c68b2d2b239ba3254",
+      "desktop": "HAS_Test_1d34808f10a04140b09124adb5244863",
+      "exit": 0
+    }
+  ],
+  "full_report_sha256": "c433702e7649668c5da7d589cddb2ccca15bc51ae40d79c3be39768df49f9502",
+  "refreshed_row_only": "src/physics_recording.gd",
+  "old_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+  "new_sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+  "all_safety_membership_and_assertion_counts_retained": true
+}

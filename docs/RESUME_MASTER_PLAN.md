@@ -1,22 +1,30 @@
 # HAS — consolidated master reference for resuming work
 
-**November20 scoped addition passes:** reference-size Body Physics and an
-animated-parent recording correction pass1273 mechanical checks, both themes'
-72/21 editor/cold and18/6 parent checks, six native VRM cases23/9 each, and the
-old44/3 reference regression in both themes. All1059 source/driver files and
-native identities stay exact;24 private jobs close. Complete Windows verification
-and final publication/readback are next. See [current pickup](NEXT_SESSION_PLAN_2026-11-20.md).
-The November19 statements below describe the previous published checkpoint.
+**November20 successor checkpoint; complete Windows retry next.** Reference-size
+Body Physics/parented Record pass the scoped1273mechanical checks, both themes'
+72/21 editor/cold+18/6 parent, six native23/9 cases and old44/3 regressions.
+Source0329 has exact31file/2,943,330byte remote readback;7d8 has exact16file/
+716,520byte readback. Full0329 FAILED956.8793264s after36core groups and Neon on
+one stale Wind recording fingerprint, before Wind GPU. All1059sources/HEAD stay
+exact;53actual private jobs close (52normal/one expected Krita cancel).
+Another1127receipt paths are exact archived copies, not new jobs. Fresh Wind
+successor94unit/845GPU/5parse and6private jobs passes, as do current classifier17
+methods, retained15-method replay, helper120driver controls and35exact source
+bindings. Freeze the next source/test/driver checkpoint and retry the full suite;
+no new whole-suite PASS. See [current pickup](NEXT_SESSION_PLAN_2026-11-20.md) and
+`experiments/reference_body_20261120/followup/`. Formal62IDs and52/54,55/62scores
+remain unchanged. The November19 statements below describe the prior full-pass
+checkpoint, not the current implemented body adapter.
 
-**Latest verified source: `08ad583` (November19).** Six-foot Scale1 addition and
+**Latest complete-suite PASS remains `08ad583` (November19).** Six-foot Scale1 addition and
 guarded native review pass; complete Windows default passes163result/36core/
 20media groups with1045functional sources unchanged and200closed private jobs.
 Separate optional native PMD replay passes45checks/two movies; native reference
 review passes25. The full result itself retains its optional-PMD omission and
 is not relabelled164/21. See [current pickup](NEXT_SESSION_PLAN_2026-11-19.md) and
 `docs/benchmarks/human_reference_full_2026-11-19.json`. Actual artist/human/device
-acceptance is not inferred. The body scale adapter remains source-only next work;
-its safe active-reference refusal stays in place. Historical pending/full-failure
+acceptance is not inferred. At that historical checkpoint the body-scale adapter
+was source-only and its safe active-reference refusal remained in place. Historical pending/full-failure
 statements below describe their own checkpoints.
 
 **November 19, 2026 addition:** work has shifted to an optional

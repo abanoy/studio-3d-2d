@@ -1,0 +1,34 @@
+{
+  "format": "has_body_receipt_coordinator_qualification_1",
+  "unittest_methods": 17,
+  "failures": 0,
+  "seconds": 0.039,
+  "test_scope": "Synthetic provenance and temporary-file collector tests; no native process/graphics",
+  "one_raw_read_for_payload_and_hash": true,
+  "claimed_format_missing_or_false_desktop_refused": true,
+  "initial_inventory_validated_before_launch": true,
+  "actual_prior_inventory": {
+    "genuine_receipt_paths": 2354,
+    "original_experiment_receipt_paths": 1127,
+    "invalid_desktops": 0,
+    "conflicts": 0,
+    "changed_original_archives": 0
+  },
+  "failed_full_replay": "body-receipt-classifier-replay-20261120.json",
+  "earlier_replay_synthetic_methods": 15,
+  "sources": {
+    "run_full.py": {
+      "bytes": 8711,
+      "sha256": "74231a770fa282aee11326b05661063c2662c261bad33c1c58d63b696a018f34"
+    },
+    "receipt_provenance.py": {
+      "bytes": 6944,
+      "sha256": "24ec20ef3677f3ece89ba3f85a64060f1c2a40cddcc6fcae5042c866589e118a"
+    },
+    "test_receipt_provenance.py": {
+      "bytes": 10529,
+      "sha256": "e7737aab7387038623c1e8ffd69ed3290f54ab2481fdc7e9d8423baea4e0fb83"
+    }
+  },
+  "collector_single_read_and_invalid_claim_tested": true
+}

@@ -9,12 +9,16 @@ import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from receipt_provenance import classify
 TREES = ('src','tools','tests','data','examples')
 FILES = ('project.godot','main.tscn','run.py','launch.pyw','dependencies.json',
          'experiments/reference_body_20261120/run_full.py',
          'experiments/reference_body_20261120/stage_legacy_inputs.py',
          'experiments/reference_body_20261120/verify_units.py',
-         'experiments/reference_body_20261120/run_scoped.py')
+         'experiments/reference_body_20261120/run_scoped.py',
+         'experiments/reference_body_20261120/receipt_provenance.py',
+         'experiments/reference_body_20261120/test_receipt_provenance.py')
 
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -50,12 +54,17 @@ def committed_sources(revision):
 
 def receipts():
     rows = []
-    for path in (ROOT/'output').rglob('*.json'):
+    # Frozen runtime copies include old committed experiment receipts. Inventory
+    # their originals before launch, not just the current output directory.
+    paths=[path for part in ('output','experiments') for path in (ROOT/part).rglob('*.json')]
+    for path in paths:
         if path.stat().st_size > 1024*1024:continue
-        try:value = json.loads(path.read_bytes())
+        try:
+            data = path.read_bytes()
+            value = json.loads(data)
         except (OSError, ValueError):continue
-        if not isinstance(value,dict) or value.get('format') != 'studio_private_desktop_1' or not value.get('desktop'):continue
-        rows.append(dict(path=path.relative_to(ROOT).as_posix(), sha256=sha(path), value=value))
+        if not isinstance(value,dict) or value.get('format') != 'studio_private_desktop_1':continue
+        rows.append(dict(path=path.relative_to(ROOT).as_posix(), sha256=hashlib.sha256(data).hexdigest(), value=value))
     return rows
 
 
@@ -80,7 +89,8 @@ def main():
     write('source-before.json',before)
     write('committed-source-blobs.json',expected)
     prior = receipts();write('prior-receipts.json',prior)
-    prior_desktops = {row['value']['desktop'] for row in prior}
+    initial = classify(prior,prior)
+    assert not initial['conflicts'] and not initial['changed_original_archives']
     env = os.environ.copy()
     env.update(PYTHONDONTWRITEBYTECODE='1',HYBRID_PYTHON=sys.executable,
                HYBRID_GODOT=r'C:\a\tools\Godot\Godot_v4.6-stable_win64.exe',
@@ -100,7 +110,10 @@ def main():
         print(json.dumps(dict(folder=str(folder),child_pid=process.pid,revision=revision)),flush=True)
         process.wait()
     after = snapshot();write('source-after.json',after)
-    all_rows = receipts();current = [row for row in all_rows if row['value']['desktop'] not in prior_desktops]
+    all_rows = receipts();classification=classify(prior,all_rows)
+    write('receipt-provenance.json',classification)
+    current=classification['current']
+    provenance_ok=not classification['conflicts'] and not classification['changed_original_archives']
     unique = {};duplicates = []
     physical = ('desktop','child_pid','exit','seconds','job_closed','desktop_closed','private_window_seen',
                 'child_desktop_confirmed','foreground_child_observed','desktop_switch_requested','cancelled','error')
@@ -129,9 +142,11 @@ def main():
             unique_current_private_jobs=len(unique),new_receipt_paths=len(current),duplicates=duplicates,
             all_private_jobs_isolated_closed=isolation,nonzero_private_jobs=nonzero,
             nonzero_jobs_are_expected_cancellations=expected_cancels,current_jobs=list(unique.values()),
-            excluded_prior_desktop_receipt_paths=len(all_rows)-len(current),
+            byte_proven_archived_copy_paths=len(classification['archived_copies']),
+            unchanged_prior_receipt_paths=len(classification['unchanged_prior_paths']),
+            receipt_provenance_verified=provenance_ok,
             whole_verifier_pass=process.returncode==0 and before==after and fresh_report
-                and git('rev-parse','HEAD')==revision and isolation and expected_cancels)
+                and git('rev-parse','HEAD')==revision and isolation and expected_cancels and provenance_ok)
     write('completion.json',result)
     print(json.dumps({key:value for key,value in result.items() if key not in ('current_jobs','nonzero_private_jobs')},indent=2),flush=True)
     return 0 if result['whole_verifier_pass'] else 1

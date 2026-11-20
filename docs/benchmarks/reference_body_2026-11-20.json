@@ -1,7 +1,7 @@
 {
   "format": "has_reference_body_scoped_packet_1",
   "date_local": "2026-11-20",
-  "status": "SCOPED_PASS_FULL_WINDOWS_PENDING",
+  "status": "SCOPED_PASS_FAILED_FULL_RETAINED_RETRY_PENDING",
   "parent_commit": "ab62adff5f6961d8605f15c79a01a0215c9c5425",
   "source_tree_sha256": "9b97f7160b67c745cbf3eb58e479126dfa0f3115b1c9b06aa98aa397c3a6831a",
   "source_and_driver_files_unchanged": 1059,
@@ -339,5 +339,90 @@
     "jobs": 24,
     "all_exit_zero": true,
     "all_placed_closed_no_foreground_or_switch": true
+  },
+  "followup": {
+    "full_retry_required": true,
+    "failed_full": {
+      "evidence": "experiments/reference_body_20261120/followup/FAILED_FULL.json",
+      "source_commit": "0329c4ff9876486e6f437e8c86402308ca5be4d7",
+      "status": "FAILED_NOT_WHOLE_SUITE_PASS",
+      "exit": 1,
+      "seconds": 956.8793264,
+      "core_groups_passed": 36,
+      "wind_gpu_attempted": false,
+      "stale_source_pin": "src/physics_recording.gd",
+      "source_and_driver_files_unchanged": 1059,
+      "head_unchanged": true,
+      "child_reaped": true,
+      "actual_private_jobs": 53,
+      "normal_exits": 52,
+      "expected_owned_krita_cancellation": 1,
+      "all_actual_placed_closed_no_foreground_switch_monitor_error": true,
+      "incorrect_coordinator_unique_job_count": 1121,
+      "byte_proven_archive_copy_paths": 1127,
+      "historical_desktops": 1068,
+      "archive_duplicate_paths": 59
+    },
+    "wind_successor": {
+      "evidence": "experiments/reference_body_20261120/followup/WIND_SUCCESSOR.json",
+      "source_checkpoint": "7d8e08fae15b21ef375a5a0f15a927f00fe93a7b",
+      "passed": true,
+      "unit_checks": 94,
+      "gpu_checks": 845,
+      "parse_checks": 5,
+      "private_jobs": 6,
+      "source_and_native_inputs_unchanged": true,
+      "refreshed_row_only": "src/physics_recording.gd",
+      "membership_and_assertions_retained": true
+    },
+    "receipt_classifier": {
+      "current_synthetic_methods": 17,
+      "current_evidence": "experiments/reference_body_20261120/followup/COORDINATOR_QUALIFICATION.json",
+      "current_passed": true,
+      "retained_replay_synthetic_methods": 15,
+      "replay_evidence": "experiments/reference_body_20261120/followup/body-receipt-classifier-replay-20261120.json",
+      "replay_current_jobs": 53,
+      "replay_archived_copies": 1127,
+      "replay_conflicts": 0,
+      "replay_changed_original_archives": 0,
+      "initial_bank_paths": 2354,
+      "initial_original_archive_paths": 1127,
+      "initial_bank_conflicts": 0,
+      "malformed_claimed_desktop_negative_added": true,
+      "one_raw_read_for_parse_and_sha": true
+    },
+    "helper_source_and_driver": {
+      "driver_evidence": "experiments/reference_body_20261120/followup/HELPER_DRIVER.json",
+      "binding_evidence": "experiments/reference_body_20261120/followup/HELPER_BINDINGS.json",
+      "driver_controls": 120,
+      "runtime_processes": 0,
+      "exact_raw_source_pins": 35,
+      "passed": true,
+      "fresh_graphics_claimed": false
+    },
+    "remote_readbacks": [
+      {
+        "commit": "0329c4ff9876486e6f437e8c86402308ca5be4d7",
+        "files": 31,
+        "bytes": 2943330,
+        "receipt": "experiments/reference_body_20261120/followup/body-0329c4f-remote-receipt.json",
+        "receipt_sha256": "7507db6b676305637cf4a2109b19ed4295013da2e4ba95d69e2084f56d68e3f7",
+        "all_exact": true
+      },
+      {
+        "commit": "7d8e08fae15b21ef375a5a0f15a927f00fe93a7b",
+        "files": 16,
+        "bytes": 716520,
+        "receipt": "experiments/reference_body_20261120/followup/source-7d8e08f-remote-receipt.json",
+        "receipt_sha256": "7b428192164405527a0049a5c868c118ab75e2ec53ec36a21638274d46a5450e",
+        "all_exact": true
+      }
+    ],
+    "verified_api_cache_cleanup_bytes": [
+      3541912,
+      993115
+    ],
+    "source_weight_join_actual_blender_gather_resource_carrier_work": "UNRUN; CPU historical join and source-only plan do not qualify native fidelity/adoption",
+    "formal_statuses_and_scores_unchanged": true
   }
 }

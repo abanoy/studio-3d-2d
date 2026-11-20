@@ -7034,3 +7034,38 @@ scalar reports and concrete next hooks are in experiments/source_saved_weight_jo
 All62formal IDs/scores and protected inputs/old reviews remain. Next: actual
 owned fresh-B/ID/gather/resource/export qualification after the full run closes.
 Full0329 subsequently FAILED956.8793264s at the unchanged Wind Review old recording fingerprint, before its GPU work; all36core groups and1059source/driver identities/HEAD passed. Refresh only independently reviewed bindings and rerun; no full PASS claimed. Source archive replay in this isolated source-only checkout passes19methods and reproduces Root report bytes exactly (ed984d5b).
+
+### November20 followup — failed full, reviewed source gates and receipt provenance
+
+Source0329c4ff is pushed and independently decoded/hashed back:31files,
+2,943,330bytes, exact Git blob/API/working identities; receipt7507db6b. Source7d8e08f
+has separate16file/716,520byte exact remote proof, receipt7b428192. Only their
+verified disposable API response caches were removed afterward:3,541,912bytes
+and993,115bytes; originals/tools/private artwork and old reviews stay protected.
+
+The first full0329 run FAILED956.8793264seconds, exit1/reaped, after all36core
+and Neon scopes. Wind Review's strict preflight found one stale
+src/physics_recording.gd fingerprint before its GPU work. All1059functional/
+driver bytes/nsmtimes and HEAD remain unchanged. Independent receipt provenance
+finds53actual private jobs (52normal, one expected owned Krita cancellation),
+all placed/closed with no foreground/switch/monitor error. The initial1121job
+count incorrectly included1127byte-proven archived receipt copies representing
+1068historical desktops plus59duplicate paths. Original archive identities remain.
+
+Fresh Wind successor at7d8 passes94unit/845GPU/5parse checks and6private jobs,
+source/native identities unchanged, refreshing only the reviewed recording row
+without weakening membership/assertions. Current receipt classifier17methods pass;
+the retained15-method failed-run replay matches53actual/1127archived with no
+conflicts or source-archive drift. Coordinator uses output+experiments prior
+inventories, one-read parse/SHA, malformed desktop refusal and prelaunch bank
+validation. Root's2354prior paths/1127original archive paths have0conflicts.
+Helper120no-runtime driver controls and35exact source bindings pass; later
+helper GPU/full context is still required. Compact scalar evidence/readback/
+cleanup proofs are in experiments/reference_body_20261120/followup.
+
+Commit the reviewed retry checkpoint and rerun the complete Windows default.
+No new full-suite PASS or native fidelity/human/device/clean-install result.
+The exact historical Source weight/point CPU join and source-only export-hook
+plan remain separate from actual Blender/storage/gather/resource/carrier work,
+which is still unrun. All62formal IDs/statuses and52/54,55/62scores stay unchanged;
+manual questions remain deferred.
