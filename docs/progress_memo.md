@@ -16489,3 +16489,31 @@ certify this source. See human_reference.md, NEXT_SESSION_PLAN_2026-11-19.md and
 benchmarks/human_reference_2026-11-19.json. No installed tools/Studio or originals
 changed, private art stays local, all62formal IDs/scores stay unchanged, and manual
 checks remain deferred without interrupting the owner.
+
+### November 19 followup — native reference checks and body boundary
+
+Feature5f0a91e is pushed and independently recovered:50files/3,448,902bytes,
+all SHA256/Git blob/API identities and exact working bytes match. Readback receipt
+5bec34a6 is retained; its temporary API cache was removed after success.
+Native VRM0 reference passes23 size/Undo/save/reopen checks with unchanged
+original/staged hashes and nanosecond mtimes; screenshot inspected, private job
+closed. Authored source-only review recipe adds optional25-check guard coverage,
+still unrun, with current ancestry/code-hash checks and no visible test fallback.
+
+Full5f FAILED at701.2601093seconds on strict source pins after all36core groups.
+All1044 functional sources/HEAD stayed unchanged;48 private receipts closed with
+no foreground/switch. Four pins described archived CRLF rather than exact Git LF
+bytes. Verified byte conversion and tamper refusal justify four hash literals
+and a provenance comment; the oracle,106 assertions and2/255 tolerance are intact.
+Actual repeat passes12830unit/106GPU checks. Earlier Hecatia-default-path failure
+is retained; the selected owner original matches its historical exact SHA.
+
+The existing rigid-body adapter loses nonunit world scale through engine reset
+and raw collider/offset/writeback units. Interim guard safely refuses only active
+references with nonunit structural bone scales before allocations; other paths
+retain behavior. No self-collision workaround. Real Model/Skeleton51 and guarded
+Neon/classic each44+3 pass. The driver count correction45→44 reflects original43
+plus one new assertion; no assertion removed. Full scaled body support remains
+planned, with concrete followup in the pickup. No fresh whole-suite pass claimed.
+New compact evidence: benchmarks/human_reference_followup_2026-11-19.json.
+All62 formal statuses and52/54,55/62 scores remain; manual observations deferred.

@@ -1,5 +1,58 @@
 # HAS continuation — November 19, 2026
 
+## Followup after publishing the addition
+
+`5f0a91e208147c4ac938c738c60353c0b77cbe23` is pushed to main. Independent
+GitHub readback matches all 50 changed files, 3,448,902 bytes, SHA256/Git blob
+identities and exact working bytes. Receipt SHA256 is
+`5bec34a6a6c822806c984d123455421596d2621cbf717cc8d4d56f0332f16184`;
+the temporary API response cache was removed only after verification.
+
+The first full attempt stopped before graphics because the legacy Hecatia default
+path was absent. The second selected the owner's unchanged original, SHA256
+`fff3599293023f41f05eb27c9d51d2af45d01493b8618c5da51067f3449ff758`.
+That full run failed after 701.2601093 seconds at the viewport display source pins;
+all 36 core groups passed, 1044 functional sources and HEAD stayed unchanged, and
+all 48 collected private job/desktop receipts are closed with no foreground/switch.
+It is not a full pass. The four mismatching sources are exact CRLF-to-LF forms
+of their hash-verified archived qualified bytes; no text/settings changed. Only
+the four test hash literals and a provenance comment were updated. Strict byte
+comparison, all 106 assertions and the 2/255 pixel tolerance remain unchanged.
+The repeat passes 12830 unit checks and 106 actual GPU checks. For reproducibility
+create the isolated worktree with `git -c core.autocrlf=false worktree add ...`:
+this test requires the exact committed Git source bytes, not a rewritten checkout.
+
+The prepared native VRM0 reference review independently passes 23 actual checks
+for eligibility, six-foot Scale 1, .5/2 relative size, Undo/Redo and packed reopen
+without remeasurement. Original/staged hashes and nanosecond mtimes are unchanged;
+the private desktop closes. The inspected screenshot shows the avatar and Simple
+Human reference controls. This is not native appearance or human acceptance.
+
+A further source review found the existing rigid-body adapter derives local
+collision dimensions while Godot orthonormalizes physical body transforms. A
+scaled reference cannot safely use that body/offset/writeback path. The adopted
+boundary refuses Body Physics only for active references with nonunit actual
+world bone scales, before simulation allocation. Unit/compensated references
+and legacy behavior stay unchanged; posing and Hair & clothes remain available.
+The real Model/Skeleton regression passes 51 strict headless checks, including
+atomic refusal/live-state preservation and original error categories. The full
+scale-preserving body adapter remains unfinished. The guard is mitigation, not
+physics reconstruction. No self-collision radius workaround was adopted.
+
+For the body adapter followup, keep the imported root/reference immutable. Build
+unit-world rigid-body dimensions and joint anchors from transformed bone/skin
+geometry, then map body globals back through the original skeleton with correct
+offsets and authored scale. Test collider size, bone origins, Off restoration and
+Record/cold-save at factors .5/1/2 plus nonidentity original roots and compensating
+artist/parent scales. Cover native VRM/PMX/Source and hair/body interactions before
+removing the refusal. A radius-only change cannot repair engine pose writeback.
+
+The guarded interface check adds one body-toggle assertion to the original 43,
+and its driver now requires exactly 44 writer/3 cold-reader checks. The first
+guarded writer passed 44/0 but its driver incorrectly expected 45; that arithmetic
+was corrected without dropping assertions. A fresh complete Windows retry must
+use the final committed guard/test source; no previous full pass is inherited.
+
 The owner asked when visible additions would resume. Work has switched to an
 optional **Six-foot reference — Scale 1** for complete human imports, preserving
 the old Fit workflow and the approved Neon layout. Source baseline is

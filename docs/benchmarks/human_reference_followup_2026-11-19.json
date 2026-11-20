@@ -1,0 +1,269 @@
+{
+  "format": "has_human_reference_followup_1",
+  "date_local": "2026-11-19",
+  "parent_source_commit": "5f0a91e208147c4ac938c738c60353c0b77cbe23",
+  "status": "SCOPED_PASS_NOT_WHOLE_SUITE",
+  "source_sha256": {
+    "src/physics_rig.gd": "7f8f7cd840a505a34fe2a26f0bc7ca861163cd678f3d21656f1e65887b592060",
+    "tests/reference_body_scale_guard.gd": "5db2a69f17164f36e36ff5aef5247576e7096720b0e950fa9cf8b6f57f9334c1",
+    "tests/human_reference_smoke.gd": "51c4b441c416fa8723e4c9f9b9a5e1ab722acdfbcc736812eb120004dce044e1",
+    "tests/verify_human_reference.py": "1a5b61b6d7a97ec39b35aaaf6c4fc33df1c2afecf803a135b3a703c4e6a32e1d",
+    "tests/verify.py": "c8e4a40e7a939b2631be402ad59f5ec98f097146943c6ea5e9d04131ca45e9ad",
+    "tests/scene_view_smoke.gd": "ff6ffb24f28216b4511f0aaf5baee7d594241d365005bfd4e535bbcd2f5fa88c"
+  },
+  "remote_backup": {
+    "commit": "5f0a91e208147c4ac938c738c60353c0b77cbe23",
+    "files": 50,
+    "bytes": 3448902,
+    "receipt_sha256": "5bec34a6a6c822806c984d123455421596d2621cbf717cc8d4d56f0332f16184",
+    "all_bytes_sha256_git_sha1_api_identity_match": true,
+    "working_bytes_exact": true,
+    "temporary_api_cache_removed": true
+  },
+  "failed_full": {
+    "exit": 1,
+    "seconds": 701.2601093,
+    "core_groups_passed": [
+      "unit",
+      "motion_parts",
+      "motion_helper_edits",
+      "opaque_order",
+      "required_extensions",
+      "contact_bend",
+      "spikes",
+      "editor",
+      "export_failures",
+      "audio_editor",
+      "audio_dummy",
+      "ui",
+      "recovery_write",
+      "recovery",
+      "pose",
+      "autokey",
+      "new_scene",
+      "world_selection",
+      "world_document",
+      "world_runtime",
+      "world_edit",
+      "world_workflow",
+      "object_timing",
+      "bone_labels",
+      "animation_clips_unit",
+      "animation_clips",
+      "visibility",
+      "animated_channels",
+      "limb_ik",
+      "secondary_motion",
+      "fan_motion",
+      "physics",
+      "physics_contacts",
+      "physics_props",
+      "physics_recording_unit",
+      "physics_recording"
+    ],
+    "functional_source_count": 1044,
+    "functional_sources_and_head_unchanged": true,
+    "private_receipts": 48,
+    "all_jobs_desktops_closed_no_foreground_or_switch": true,
+    "failure": "Scene display oracle required historical CRLF source hashes; current exact Git bytes use LF for four files",
+    "completion_sha256": "4a17b73bcc13816bef5790e3db313d887ed15fb7c8591da007e227863f731d7d",
+    "not_full_pass": true
+  },
+  "display_pin_repair": {
+    "review": {
+      "format": "has_scene_display_exact_git_pin_review_1",
+      "scope": "Four literal reviewed source pin replacements and provenance comment only. No production files, arbitrary EOL aliases, runtime normalization, oracle, tolerance or assertion changes.",
+      "test_path": "tests/scene_view_smoke.gd",
+      "before_sha256": "7b4d1c6f570e47248cda0dda0671972166cfb0585be74d428e01a0ec79089f3f",
+      "after_sha256": "ff6ffb24f28216b4511f0aaf5baee7d594241d365005bfd4e535bbcd2f5fa88c",
+      "changed_pins": [
+        "src/canvas_raster.gd",
+        "src/scene_view.gd",
+        "src/studio_theme.gd",
+        "project.godot"
+      ],
+      "sources": [
+        {
+          "path": "src/canvas_view.gd",
+          "qualified_object": "experiments/neon_scene106_actual_packet_20261117/objects/dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459.gz",
+          "qualified_object_compressed_sha256": "786f27825ed8ff10286bc01655a5969f96b8d97e67f990444c9999291d9b9397",
+          "qualified_raw_sha256": "dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459",
+          "qualified_bytes": 10467,
+          "qualified_crlf": 202,
+          "canonical_git_revision": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+          "canonical_git_sha256": "dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459",
+          "working_sha256": "dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459",
+          "working_bytes": 10467,
+          "exact_git_bytes": true,
+          "exact_original_crlf_to_lf_equal": false,
+          "working_raw_preserved": true,
+          "one_byte_tamper_rejected": true
+        },
+        {
+          "path": "src/canvas_raster.gd",
+          "qualified_object": "experiments/neon_scene106_actual_packet_20261117/objects/21dcb27b0c607fbb82897736a97a7969409fcb3ef10b22a987a271d5b41180bb.gz",
+          "qualified_object_compressed_sha256": "8a9a54909b59f0497f5cffdf8030f5dd80ed8fe2e9dc28fde707fdc46bed766f",
+          "qualified_raw_sha256": "21dcb27b0c607fbb82897736a97a7969409fcb3ef10b22a987a271d5b41180bb",
+          "qualified_bytes": 282,
+          "qualified_crlf": 7,
+          "canonical_git_revision": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+          "canonical_git_sha256": "3d72e3676aa7a417e7a92f93faac88b9568f3b8d4e9952f7067803e242e37e0e",
+          "working_sha256": "3d72e3676aa7a417e7a92f93faac88b9568f3b8d4e9952f7067803e242e37e0e",
+          "working_bytes": 275,
+          "exact_git_bytes": true,
+          "exact_original_crlf_to_lf_equal": true,
+          "working_raw_preserved": true,
+          "one_byte_tamper_rejected": true
+        },
+        {
+          "path": "src/scene_view.gd",
+          "qualified_object": "experiments/neon_scene106_actual_packet_20261117/objects/9771833fab4b2daaafd804c349a89c719b9775e44d9ed52d26b7a6ad8992bb20.gz",
+          "qualified_object_compressed_sha256": "9cbeae8864be4b6f0fd63793a3b49d5826f6f019c57418c5fa9cdbb51537b605",
+          "qualified_raw_sha256": "9771833fab4b2daaafd804c349a89c719b9775e44d9ed52d26b7a6ad8992bb20",
+          "qualified_bytes": 7625,
+          "qualified_crlf": 115,
+          "canonical_git_revision": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+          "canonical_git_sha256": "7835eed1bc15e6b66993612260d2726d18b67ad65685d1335245ca1a075171c2",
+          "working_sha256": "7835eed1bc15e6b66993612260d2726d18b67ad65685d1335245ca1a075171c2",
+          "working_bytes": 7510,
+          "exact_git_bytes": true,
+          "exact_original_crlf_to_lf_equal": true,
+          "working_raw_preserved": true,
+          "one_byte_tamper_rejected": true
+        },
+        {
+          "path": "src/studio_theme.gd",
+          "qualified_object": "experiments/neon_scene106_actual_packet_20261117/objects/dcbf0b9cb079ba552c7d02f447a7a5d33db19509a54bd6e14a1468b486061dc2.gz",
+          "qualified_object_compressed_sha256": "ca225f20782248e265a67eeb4567fb7597aa01ebd2cd3229ec35262e04e8f5d6",
+          "qualified_raw_sha256": "dcbf0b9cb079ba552c7d02f447a7a5d33db19509a54bd6e14a1468b486061dc2",
+          "qualified_bytes": 54722,
+          "qualified_crlf": 776,
+          "canonical_git_revision": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+          "canonical_git_sha256": "902a1973749ca1ddd5d586148a855c62b08002d4c1f53e64578514d2d717135b",
+          "working_sha256": "902a1973749ca1ddd5d586148a855c62b08002d4c1f53e64578514d2d717135b",
+          "working_bytes": 53946,
+          "exact_git_bytes": true,
+          "exact_original_crlf_to_lf_equal": true,
+          "working_raw_preserved": true,
+          "one_byte_tamper_rejected": true
+        },
+        {
+          "path": "project.godot",
+          "qualified_object": "experiments/neon_scene106_actual_packet_20261117/objects/4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30.gz",
+          "qualified_object_compressed_sha256": "af7d7a7a73a6be44fed90665aeeaf971c3d25654ddb2e39995105634492cc8be",
+          "qualified_raw_sha256": "4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30",
+          "qualified_bytes": 1000,
+          "qualified_crlf": 30,
+          "canonical_git_revision": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+          "canonical_git_sha256": "035837440da21e9a478b1edec8824410606e01666035aeb9e531531de482d372",
+          "working_sha256": "035837440da21e9a478b1edec8824410606e01666035aeb9e531531de482d372",
+          "working_bytes": 970,
+          "exact_git_bytes": true,
+          "exact_original_crlf_to_lf_equal": true,
+          "working_raw_preserved": true,
+          "one_byte_tamper_rejected": true
+        }
+      ],
+      "source_raw_files_preserved": true,
+      "all_five_exact_pins_match": true,
+      "strict_raw_gate_unchanged": true,
+      "oracle_and_other_test_bytes_unchanged": true,
+      "engine_or_native_accessed": false,
+      "read_only_git_calls": 5
+    },
+    "unit_checks": 12830,
+    "gpu_checks": 106,
+    "failures": 0,
+    "strict_raw_hash_oracle_and_2_over_255_tolerance_unchanged": true,
+    "verification_sha256": "1df6595d181f6d5bba656e02433d74eae59a079af3e397e025381974729219b9"
+  },
+  "reference_body_boundary": {
+    "checks": 51,
+    "failures": 0,
+    "console_sha256": "5e6b2df52f4f04ca44aea90f27913d9c71dfbbe1515361f9d76461a407e572d9",
+    "process_sha256": "29365239e628a6816ff17270851ca4debe0ec6302a0962aaf636050c83a42786",
+    "scope": "Active references with nonunit actual structural bone world scales refuse before allocation; unit/compensation and legacy admission retain existing path",
+    "full_scale_preserving_body_adapter": "UNIMPLEMENTED",
+    "self_collision_radius_workaround_adopted": false,
+    "initial_premature_self_collision_attribution_corrected": true
+  },
+  "interfaces": {
+    "neon": {
+      "writer": 44,
+      "cold_reader": 3,
+      "failures": 0,
+      "functional_files_unchanged": 1044,
+      "report_sha256": "20333dbdf1d08eb4ab6624d984737d73b6d12a000eb23861796777ebc0452417",
+      "private_receipt_sha256": {
+        "writer": "da81a3ee54f0aa938199a414b468bb83017b4ba652db05c49b868ef118bc1b64",
+        "cold_reader": "6da3afbf6ae8237d211701a2223b95716098850a520f1a159da70c035698a2e4"
+      },
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "24/1",
+        "frames": 48,
+        "seconds": 2
+      }
+    },
+    "light": {
+      "writer": 44,
+      "cold_reader": 3,
+      "failures": 0,
+      "functional_files_unchanged": 1044,
+      "report_sha256": "36cf41d87dc7496943a6998229ed2af96a93c6a968536a7682f141eba4f023cf",
+      "private_receipt_sha256": {
+        "writer": "e561a96b64eb31d389961cb48cc1179dc331b120c1337d192812079cb9efb022",
+        "cold_reader": "595545548f6a917c90c747045a8fe0500be99e2904f142edb28b77e6e0654c16"
+      },
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "24/1",
+        "frames": 48,
+        "seconds": 2
+      }
+    }
+  },
+  "native_reference_alpha": {
+    "format": "has_native_human_reference_result_1",
+    "mode": "verify",
+    "status": "passed",
+    "checks": 23,
+    "failures": 0,
+    "scope": "Existing prepared VRM0 size-reference workflow; no native fidelity certification and no owner acceptance implied.",
+    "source_sha256": "3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56",
+    "parameters_sha256": "0f8f746ca68a821acaf9e502b6895a2f2798d8d1d2bd62569d78deea652fc0ef"
+  },
+  "native_originals_and_staging_preserved": {
+    "original_inputs_preserved": true,
+    "staged_inputs_preserved": true
+  },
+  "native_guarded_25_check_recipe": {
+    "path": "experiments/human_reference_native_review_20261119",
+    "INDEX_sha256": "0486b2d02f2598aeb70460cd5f4052d06455df3f84d904ef72e971e3c93b0030",
+    "status": "AUTHORED_SOURCE_REVIEW_GO_RUNTIME_UNRUN",
+    "private_assets_uploaded": false
+  },
+  "remaining": [
+    "Fresh final-source full Windows verifier",
+    "Run guarded native review25 after source commit and prepare owner launcher",
+    "Automatic default normalization",
+    "Scale-preserving body physics and normalized weighted helpers",
+    "Native fidelity and deferred human/device/clean-machine observations"
+  ],
+  "formal_scores": {
+    "implementation": [
+      52,
+      54
+    ],
+    "acceptance": [
+      55,
+      62
+    ],
+    "stable_required_ids": 62
+  },
+  "private_art_uploaded": false
+}

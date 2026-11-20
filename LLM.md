@@ -6919,3 +6919,38 @@ reviews. Eleven declared fixture copies total30,825,558B and match original hash
 sizes/mtimes. No private art uploaded. Human questions stay deferred. All62formal
 statuses and52/54 implementation/55/62 acceptance remain unchanged; Source normal
 repair, automatic normalization and broad standardization remain separate work.
+
+### November 19 followup — native reference and safe body boundary
+
+Published 5f0a91e208147c4ac938c738c60353c0b77cbe23 without force. Independent
+GitHub readback verifies all 50 changed files, 3,448,902 bytes, SHA256/Git blob
+identities and exact working bytes. Receipt 5bec34a6 is retained/publicly copied;
+temporary API response cache removed after verification.
+
+Full5f failed after 701.2601093 seconds at strict display source fingerprints.
+All36core groups passed;1044 functional sources/HEAD stayed unchanged;48 private
+receipts closed with no foreground/switch. Four source files are exact LF forms
+of verified archived qualified CRLF bytes. Only four test hashes and a provenance
+comment changed; strict comparison,106 assertions and2/255 tolerance stay exact.
+Repeat passes12830unit/106GPU. First missing-default-Hecatia attempt also remains
+failed; retry uses the owner's unchanged original exact SHA.
+
+Native VRM0 reference passes23 actual size/Undo/portable-reopen checks, original
+and staged hashes/ns-mtimes preserved, private desktop closed; screenshot inspected.
+New recoverable review/QA recipe contains source only, with optional25-check body
+boundary extension still unrun. Peer review tightened current no-reparse ancestry
+and review-code hash checks before launch; old23 source/receipt stays intact.
+
+Engine/source review corrected a premature self-collision attribution: rigid-body
+reset strips scale while the adapter derives local dimensions/raw offsets. No
+radius workaround adopted. Active references with nonunit actual structural bone
+scales now refuse body Physics before allocation. Unit/compensated and legacy
+paths remain. Posing/hair remain; full scaled body adaptation is unfinished.
+Real Model/Skeleton boundary51 and guarded Neon/classic each44+3 pass strict checks
+and exports. First guarded writer passed44/0 but driver expected45 in error;
+corrected to original43 plus one assertion, without dropping any check.
+
+See docs/benchmarks/human_reference_followup_2026-11-19.json and current pickup.
+Fresh final-source full verification and guarded native review remain next.
+Formal62 IDs,52/54 implementation and55/62 acceptance unchanged. Human questions
+stay deferred; originals, installed Studio and earlier reviews remain protected.

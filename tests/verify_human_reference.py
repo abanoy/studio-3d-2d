@@ -33,7 +33,7 @@ def invoke(folder, reader=False):
     (folder / (name + '-command.json')).write_text(json.dumps({'args': args, 'exit': process.returncode}), encoding='utf-8')
     assert process.returncode == 0 and b'HUMAN_REFERENCE ' in log and not any(x in log for x in BAD), log[-6000:]
     result = json.loads((folder / ('result-reader.json' if reader else 'result.json')).read_bytes())
-    assert result['failures'] == 0 and result['checks'] >= (3 if reader else 35), result
+    assert result['failures'] == 0 and result['checks'] == (3 if reader else 44), result
     receipt_path = Path(args[args.index('--receipt') + 1])
     receipt = json.loads(receipt_path.read_bytes())
     assert receipt['exit'] == 0 and receipt['child_desktop_confirmed'] and not receipt['foreground_child_observed'], receipt

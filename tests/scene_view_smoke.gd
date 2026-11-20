@@ -40,7 +40,8 @@ const ScenePalette=preload("res://src/studio_theme.gd")
 const SETUP_MASK=Color(4/255.,5/255.,8/255.,.62)
 # Two UNORM8 writes: conservative truncation error <= ((1-a)+1)/255 < 2/255.
 const COMPOSITE_TOLERANCE=2./255.
-const DISPLAY_SOURCE_PINS={"src/canvas_view.gd":"dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459","src/canvas_raster.gd":"21dcb27b0c607fbb82897736a97a7969409fcb3ef10b22a987a271d5b41180bb","src/scene_view.gd":"9771833fab4b2daaafd804c349a89c719b9775e44d9ed52d26b7a6ad8992bb20","src/studio_theme.gd":"dcbf0b9cb079ba552c7d02f447a7a5d33db19509a54bd6e14a1468b486061dc2","project.godot":"4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30"}
+# Reviewed CRLF-to-LF-only successors match Git170abb7 exactly; this gate requires exact Git checkout bytes.
+const DISPLAY_SOURCE_PINS={"src/canvas_view.gd":"dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459","src/canvas_raster.gd":"3d72e3676aa7a417e7a92f93faac88b9568f3b8d4e9952f7067803e242e37e0e","src/scene_view.gd":"7835eed1bc15e6b66993612260d2726d18b67ad65685d1335245ca1a075171c2","src/studio_theme.gd":"902a1973749ca1ddd5d586148a855c62b08002d4c1f53e64578514d2d717135b","project.godot":"035837440da21e9a478b1edec8824410606e01666035aeb9e531531de482d372"}
 func display_modulator(node: Node) -> bool:
 	if node is CanvasModulate or node is CanvasGroup:return true
 	for child in node.get_children():

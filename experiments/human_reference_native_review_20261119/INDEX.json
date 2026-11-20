@@ -1,0 +1,42 @@
+{
+  "format": "has_native_human_reference_recipe_1",
+  "scope": "Authored public recipe and QA source only; no model, geometry array, private screenshot, runtime snapshot or full snapshot hash inventory",
+  "status": "BODY_GUARD_EXTENSION_AUTHORED_UNRUN",
+  "prior_private_qa": {
+    "source_commit": "5f0a91e208147c4ac938c738c60353c0b77cbe23",
+    "checks": 23,
+    "failures": 0,
+    "coordinator_reported": true,
+    "original_entry_and_receipt_unchanged": true
+  },
+  "expected_checks": {
+    "size_workflow": 23,
+    "size_with_body_guard_refusal": 25
+  },
+  "python_sources_parsed": true,
+  "builder_executed": false,
+  "engine_executed": false,
+  "files": {
+    "build_review.py": {
+      "bytes": 7490,
+      "sha256": "883e8ade6d42a2d89f8b821ab428ecc1baf139da63bf8b96b020458ef1ca239d"
+    },
+    "native_reference.gd": {
+      "bytes": 10422,
+      "sha256": "37030e6e636b2f8ea1d4562f3dab7392e4afe185d657fd8d47501aa3b5f66ee3"
+    },
+    "owner_launch.pyw": {
+      "bytes": 3219,
+      "sha256": "f47323d9a6e2bc3f511fa62a5cc4fbcb9157a36dbb6c34d0cab0534c31e9e12d"
+    },
+    "README.md": {
+      "bytes": 4199,
+      "sha256": "412c3c1dab45980879a8050e536306b1035d46131024e22c188957d5ce41bd47"
+    },
+    "verify_native_reference.py": {
+      "bytes": 5040,
+      "sha256": "0af151307847793cfd277121b45cff10f2a7ab5547440406d5e34e0c1780d9bd"
+    }
+  },
+  "launch_boundary": "Python helpers verify prepared artifact membership/hashes and current no-reparse ancestry before launch; GD rejects ancestor links visible to engine filesystem"
+}

@@ -186,6 +186,14 @@ static func create(actor: RefCounted, frame:=0) -> Dictionary:
 	if chosen.size()>48:return {"error":"Automatic ragdoll exceeds48 structural bodies; use a simpler rig."}
 	for id in chosen:
 		if not IK.regular(actor.bone_transform(id).basis):return {"error":"A connecting ragdoll bone has unsupported scale. Use direct posing for this rig."}
+	# Interim reference-size boundary: PhysicalBone3D strips its world scale.
+	# Keep the legacy path exact; active references need unit world bone bases.
+	# is_equal_approx uses the engine's usual ~1e-5 tolerance around unit scale.
+	if Model.ImportBasis.active(actor.data):
+		for id in chosen:
+			var world_scale: Vector3=actor.bone_transform(id).basis.get_scale()
+			if not is_equal_approx(world_scale.x,1.0) or not is_equal_approx(world_scale.y,1.0) or not is_equal_approx(world_scale.z,1.0):
+				return {"error":"Body Physics is not ready for this reference size. Posing and Hair & clothes are still available."}
 	var candidate=new();candidate.rig=actor;candidate.skeleton=sk;candidate.initial_pose=actor.sample(frame,true)
 	var sim:=PhysicalBoneSimulator3D.new();candidate.simulator=sim;sk.add_child(sim)
 	var minimum:=Vector3(INF,INF,INF);var maximum:=-minimum

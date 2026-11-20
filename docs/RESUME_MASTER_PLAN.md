@@ -5,6 +5,12 @@ six-foot human reference at artist Scale 1, with a separate immutable import
 basis and scene-local save capability. See [the current feature contract](human_reference.md).
 The source and helper preservation reviews and both interface checks pass.
 See [current pickup](NEXT_SESSION_PLAN_2026-11-19.md) for exact scope and next checks.
+Addition commit `5f0a91e` has exact independent remote readback. The native avatar
+reference passes 23 checks. The full run failed on EOL-only display source pins;
+their corrected strict repeat passes 12830 unit/106 GPU checks. A 51-check body
+boundary now refuses scaled references before unsafe rigid-body allocation;
+scale-preserving body physics remains unfinished. A final-source full retry is
+required. These are scoped results, not full acceptance closure.
 The historical inactive-prototype statements below describe
 their earlier checkpoints. They do not certify or replace this implementation.
 Source normal-fidelity repair remains a separate open task. Human questions stay

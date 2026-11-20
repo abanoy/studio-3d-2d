@@ -346,6 +346,12 @@ def main():
         assert domain['failures'] == 0, domain
         (output / (name + '-domain.log')).write_text(log, encoding='utf-8')
         results[name] = domain
+    guard_log = run(command('tests/reference_body_scale_guard.gd', True))
+    assert 'REFERENCE_BODY_SCALE_GUARD ' in guard_log and not any(bad in guard_log for bad in ('ERROR:', 'FAIL ', 'ObjectDB instances leaked', 'resources still in use')), guard_log
+    guard_result = json.loads(next(line.split('REFERENCE_BODY_SCALE_GUARD ', 1)[1] for line in guard_log.splitlines() if line.startswith('REFERENCE_BODY_SCALE_GUARD ')))
+    assert guard_result == {'checks': 51, 'failures': 0}, guard_result
+    (output / 'reference-body-scale-guard.log').write_text(guard_log, encoding='utf-8')
+    results['reference_body_scale_guard'] = guard_result
     for theme in ('neon', 'light'):
         log = run([sys.executable, '-B', '-u', 'tests/verify_human_reference.py', '--theme', theme], timeout=500)
         (output / ('human-reference-' + theme + '-suite.log')).write_text(log, encoding='utf-8')

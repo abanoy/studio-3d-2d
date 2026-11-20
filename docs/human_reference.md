@@ -38,15 +38,28 @@ identity. Generating weighted helpers for a reference model currently refuses
 because that preservation proof is not implemented. Legacy weighted helpers
 remain available. No unsupported derivative is silently remeasured.
 
+Body Physics currently refuses reference models whose structural bones have a
+nonunit world scale. The engine strips that scale from its rigid bodies, so the
+existing collider sizes and pose writeback cannot safely reproduce the reference.
+The check happens before allocating a simulation and preserves authored/live
+state. Posing and Hair & clothes remain available; existing reference-free body
+physics is unchanged. The engine behavior is visible in
+[Godot 4.6 PhysicalBone3D](https://github.com/godotengine/godot/blob/4.6/scene/3d/physics/physical_bone_3d.cpp#L88).
+A scale-preserving body adapter is separate unfinished work.
+
 Run `python -B tests/verify_human_reference.py --theme neon` or `--theme light`.
 The checks use authored synthetic figures at two original sizes, measure Scale
 1/.5/2 geometry, preserve originals, exercise Undo/Redo and packed/linked save,
 start a separate cold reader, and export a two-second 1080p H264 movie with an
 independent editable drawing. Preview and export input images are compared;
 encoded-video pixel equivalence and native-model fidelity are separate claims.
+The native avatar reference check also passes 23 size/Undo/save/reopen checks on
+the existing VRM0 preparation, with original/staged hashes and mtimes preserved.
+This does not certify the model's appearance against its original application.
 The ordinary height/native regression suite remains separate. Full results and
 failed attempts are recorded in the current benchmark/pickup after execution.
 
 Not included: automatic default normalization, assembly of separate parts,
 changing an existing character's reference, broad native-fidelity certification,
-weighted-helper reconstruction, or the larger planned HAS model capability audit.
+weighted-helper reconstruction, scale-preserving body physics, or the larger
+planned HAS model capability audit.
