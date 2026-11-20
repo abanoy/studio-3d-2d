@@ -2,6 +2,36 @@
 
 ## Body addition complete; full Windows PASS; material and bounded B inspection observed
 
+Latest research checkpoint: main0ffadead15d41a098c8ab2248d625486e94f8a39 now has
+exact independent25file/2,751,622B remote readback, raw SHA256/GitSHA1/length plus
+Node-crypto local equality and main-ref match, receipt05ba7586. Previous six-stage
+cleanup remains87files/19,072,844logical bytes; no free-space gain was measured.
+
+The combined successor passes105CPU/1.171s (72driver+33worker), but actual6.447s
+exits1 at B_MATERIAL_FULL_PATH_DIFFERS_FROM_ORDINARY_IMPORTER. Approved SDK module
+imports, native MDL/VVD/VTX parsing and independent native geometry decode ran
+in private RAM. The observed import_model call never ran: no new native Object/
+Mesh, four-stage ID/RNA ledger or combined reference binding was qualified.
+B inspection itself passes4graphs/2unique Images/2shared refs/1owned Library,
+35->42exposed IDs after three factory objects were deleted. All595retained input
+identity rows (574SDK+21other),32preservation checks, job/desktop closure, parent
+reap, noFG, physical owned0 and exact owned-lock removal pass. Actual full_path
+absence/present-conflict state is UNKNOWN; the refusal does not identify it.
+Frozen source_material_combined_20261120:69files/1,449,919B, CONTENTS8a11eddc/
+SUMMARY22388ebc. The earlier104of105 CPU failure and both source versions remain.
+
+Shared-Image/cache source passes73CPU/0.369s,1.0034321s wall,36source identities
+exact: old38methods included plus35new, not additive with the old receipt.
+Frozen source_shared_image_resource_20261120:44files/647,320B, CONTENTS59ccf83b/
+SUMMARY72db1483. Actual Blender/shared-resource/export/normal/non-NORMAL/adoption
+qualification remains unrun. Next qualify a distinct read-only finite native
+name/search-path preloaded-material provider and opt-in binder witness, retaining
+original0e/default34. Provider acknowledgement would mean an already-admitted
+in-memory B Material, not physical VMT existence. The missing-key adapter remains
+an unrun alternative; metadata overwrites, material/skin swaps and B point labels
+were not used. V3 remains source-only/PENDING; strict resource/non-NORMAL/original
+2e-5normal gates and unchanged full9e/1061software scope remain. All62statuses
+and52/54implementation,55/62acceptance scores stay unchanged.
 Worktree `C:/a/Programming/cloudflare/has-body-addition-20261120`, branch
 `codex/reference-body-20261120`, base `ab62adff5f6961d8605f15c79a01a0215c9c5425`.
 Scoped verification is complete and source0329 is pushed with exact independent
@@ -59,8 +89,8 @@ free-space gain was measured. Version1's no-delete plan had a zero-byte
 aggregation bug; both old source/plan and corrected v2 source/plan/result are
 retained. Frozen source_material_inspection_cleanup_20261120:18files/213,864B,
 CONTENTS2e55afd5/SUMMARY47e3d313. Prior public packets, full9e/1061proof,
-pending preparations and originals remain protected. Combined host is separately
-pending qualification. This is publication/cleanup evidence, not a new app or
+pending preparations and originals remain protected. The first combined attempt
+is now a retained refusal; its separate v3 qualification remains pending. This is publication/cleanup evidence, not a new app or
 fidelity test. Normal/non-NORMAL/resource/export/adoption gates stay unchanged.
 
 First material-only inspection passes31helper+57host CPU, but actual4.148s exits1
@@ -129,8 +159,9 @@ Five publication packets are beneath experiments/: reference_body_full_20261120
 and source_current_native_ids_20261120, now frozen at148files/1,159,717bytes with
 86CPU/current actual success. CONTENTS SHA256 starts dbb470fd; SUMMARY afabcc04;
 exact hashes are recorded in the benchmark. Historical evidence remains retained.
-Next qualify combined fresh-native/B-material binding, then shared-resource export only
-under strict non-NORMAL semantics and the original2e-5normal gate.
+Next qualify the read-only native-path/provider/binder witness, retry combined
+binding, then actual shared-resource export under strict non-NORMAL semantics
+and the original2e-5normal gate.
 
 Implemented the direct reference body plan in `src/reference_body_plan.gd` and
 `physics_rig.gd`: metre shape/threshold/margin/anatomical planning, inverse bone
@@ -254,10 +285,13 @@ completed successfully; old expected files lack the new definition metadata.
    added Library (4Mat/2Image/1Library), zero graphs/packed bytes, all35preservation
    checks and owned closure pass. Separate inspector2 now passes101CPU and
    actual4.091s:four graphs/two shared Images/1709130packed PNG bytes and one
-   exact owned-source Library. All35preservation/14bindings/closure pass. Next
-   qualify fresh-native material/face/skin refs bound to inspected B refs, then
-   shared-Image exporter-cache/carrier work under the source-only future plans.
-   Resource-RNA38CPU is future-export-only. Keep enumeration and bounded material
+   exact owned-source Library. All35preservation/14bindings/closure pass. The
+   combined105CPU successor then actually refuses before observed model import
+   at its bare full_path gate; all595bindings/32preservation/closure pass, no
+   field-presence inference. Next qualify finite independent native-path/provider
+   and opt-in binder witnesses preserving0e/default34, then retry combined
+   material/face/skin refs. Shared-cache73CPU includes old38+35new; actual exporter
+   and carrier work remains unrun. Keep enumeration and bounded material
    inspection separate. Use `SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md`:
    static DNA closure is not a universal prerequisite for this narrower result;
    transient IDs/C-level reads are not promised absent. Record/refuse actual
@@ -269,8 +303,9 @@ completed successfully; old expected files lack the new definition metadata.
    completed the four-packet/seven-doc successor37fc:140files/4,141,253B exact
    independent remote readback1ea2ad00. Six exact owned stages were then removed
    after proof;87files/19,072,844logical bytes, all absent, no free-space measure.
-   The new18-file cleanup packet and seven-doc successor await their own remote
-   proof; combined source preparations remain separate and protected.
+   Cleanup checkpoint0ffa now has exact25file/2,751,622B remote proof05ba7586.
+   The new69-file combined-refusal and44-file shared-resource packets plus docs
+   await their own proof; v3 source preparations remain separate and protected.
    Source9e already has exact24file/3,739,119byte proof.
    Only clean disposable owned artifacts after proof; originals, installation,
    old reviews/shared tools and the earlier dirty checkout remain protected.

@@ -1,5 +1,35 @@
 # HAS — consolidated master reference for resuming work
 
+Latest research checkpoint: main0ffadead15d41a098c8ab2248d625486e94f8a39 now has
+exact independent25file/2,751,622B remote readback, raw SHA256/GitSHA1/length plus
+Node-crypto local equality and main-ref match, receipt05ba7586. Previous six-stage
+cleanup remains87files/19,072,844logical bytes; no free-space gain was measured.
+
+The combined successor passes105CPU/1.171s (72driver+33worker), but actual6.447s
+exits1 at B_MATERIAL_FULL_PATH_DIFFERS_FROM_ORDINARY_IMPORTER. Approved SDK module
+imports, native MDL/VVD/VTX parsing and independent native geometry decode ran
+in private RAM. The observed import_model call never ran: no new native Object/
+Mesh, four-stage ID/RNA ledger or combined reference binding was qualified.
+B inspection itself passes4graphs/2unique Images/2shared refs/1owned Library,
+35->42exposed IDs after three factory objects were deleted. All595retained input
+identity rows (574SDK+21other),32preservation checks, job/desktop closure, parent
+reap, noFG, physical owned0 and exact owned-lock removal pass. Actual full_path
+absence/present-conflict state is UNKNOWN; the refusal does not identify it.
+Frozen source_material_combined_20261120:69files/1,449,919B, CONTENTS8a11eddc/
+SUMMARY22388ebc. The earlier104of105 CPU failure and both source versions remain.
+
+Shared-Image/cache source passes73CPU/0.369s,1.0034321s wall,36source identities
+exact: old38methods included plus35new, not additive with the old receipt.
+Frozen source_shared_image_resource_20261120:44files/647,320B, CONTENTS59ccf83b/
+SUMMARY72db1483. Actual Blender/shared-resource/export/normal/non-NORMAL/adoption
+qualification remains unrun. Next qualify a distinct read-only finite native
+name/search-path preloaded-material provider and opt-in binder witness, retaining
+original0e/default34. Provider acknowledgement would mean an already-admitted
+in-memory B Material, not physical VMT existence. The missing-key adapter remains
+an unrun alternative; metadata overwrites, material/skin swaps and B point labels
+were not used. V3 remains source-only/PENDING; strict resource/non-NORMAL/original
+2e-5normal gates and unchanged full9e/1061software scope remain. All62statuses
+and52/54implementation,55/62acceptance scores stay unchanged.
 **November20 Body Physics addition complete; full Windows9e PASS.**
 Exact9e3b039 completes in3546.0819016s with170result/36core/21final-media groups
 and actual MMD tested. All1061functional/driver bytes-size-nsmtime and revision
@@ -36,8 +66,8 @@ free-space gain was measured. Version1's no-delete plan had a zero-byte
 aggregation bug; both old source/plan and corrected v2 source/plan/result are
 retained. Frozen source_material_inspection_cleanup_20261120:18files/213,864B,
 CONTENTS2e55afd5/SUMMARY47e3d313. Prior public packets, full9e/1061proof,
-pending preparations and originals remain protected. Combined host is separately
-pending qualification. This is publication/cleanup evidence, not a new app or
+pending preparations and originals remain protected. The first combined attempt
+is now a retained refusal; its separate v3 qualification remains pending. This is publication/cleanup evidence, not a new app or
 fidelity test. Normal/non-NORMAL/resource/export/adoption gates stay unchanged.
 
 CENSUS2 now passes53CPU/0.525s and actual3.985s:5BMaterials/34names/36types,
@@ -95,9 +125,9 @@ All590reads, native3, six runtimes,574SDK/120exporter files and1061sources are
 preserved; job/desktop close, parent is reaped, no foreground activation and
 fresh owned process count0. This is the exact Junko profile, not generic storage,
 historical-B causality, normal/fidelity, export or HAS-adoption qualification.
-Next qualify combined fresh-native/B-material binding and shared-Image exporter
-provenance separately, retaining strict non-NORMAL semantics and original2e-5
-normal gate. No full rerun absent
+Next qualify the read-only finite native-path/provider and opt-in binder witness,
+retry combined binding, then actual shared-Image exporter provenance separately,
+retaining strict non-NORMAL semantics and original2e-5normal gate. No full rerun absent
 functional changes. The five frozen experiments/ packets include full/hook10/9,
 failed native8 and clone-cleanup6files. source_current_native_ids_20261120 is
 frozen at148files/1,159,717bytes,86CPU/actual success; CONTENTS dbb470fd and SUMMARY

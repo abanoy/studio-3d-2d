@@ -7420,3 +7420,71 @@ Keep strict original2e-5normal, non-NORMAL/resource/export/adoption gates, no
 B-derived geometry/point labels and all failed historical results unchanged.
 This raw append preserves the exact37fc prefix and every preexisting byte.
 Work continues independently; the publication checkpoint is not goal completion.
+
+## 2026-11-20 — Combined bare-path refusal retained; shared-cache CPU successor passes
+
+Main0ffadead15d41a098c8ab2248d625486e94f8a39 is pushed with independent exact
+25-file/2751622-byte readback:raw SHA256/Git-blob SHA1/length plus Node-crypto
+local equality/main-ref match. Receipt05ba758673bb8da33a0253da638936732c08ed8b07f302ee7a598dc9eeca05d3.
+Prior six-stage cleanup remains87files/19072844logical bytes removed only after
+proof, no measured free-space gain. Frozen cleanup/public packets and originals
+remain protected; full Windows9e/1061-source Body/Record scope is unchanged.
+
+Combined v1's105 CPU methods had104PASS/one wrong diagnostic expectation in
+1.096s; that failure is retained. V2 changes only the test's two exact anchored
+refusal codes and documentation/version metadata. Runtime worker826c/driver10dc,
+all five pure helpers and original no-repair assertion stay unchanged. Root
+v2's105methods (72driver+33worker) PASS1.171s/1.5726389s wall; both versions'
+21source hash/size/nsmtime identities remain exact. These are versioned profiles,
+not104+105added acceptance checks.
+
+Root's actual combined attempt then REFUSES at
+B_MATERIAL_FULL_PATH_DIFFERS_FROM_ORDINARY_IMPORTER,6.447s private/exit1.
+Approved SourceIO SDK modules loaded, native MDL/VVD/VTX parsing and independent
+native geometry decode already ran in private RAM. The observed import_model
+call never ran: no new native Object/Mesh, four-stage ID/RNA ledger or combined
+material-reference binding result was qualified. Do not claim no SDK or no
+native geometry decoding globally; the B metadata reader's no-geometry flag is
+its own producer scope.
+
+The B sub-observation does pass4graphs/2unique Images/2shared refs/1owned Library,
+1709130packed PNG bytes and83886080prospective RGBA-F32 bytes. Exposed IDs35->42
+follow deletion of three disposable factory objects before append, rather than
+CENSUS2/inspector2's38->45context. All595retained worker identities (574SDK+21other,
+not all OS reads),32preservation checks, parent reap/private job+desktop closure,
+noFG, final physical owned0 and exact own-lock removal pass. Failure audit keeps
+runtime_lane_releasedFalse. Source1061/HEAD0ffa, runtime6/SDK574/exporter120,
+original/staged native3+B and code/full/request receipts remain exact. Actual
+full_path absence versus present/conflicting/prefixed state is UNKNOWN from this
+refusal; no metadata repair or material/skin swap was executed.
+
+Frozen experiments/source_material_combined_20261120:69files/1449919B.
+CONTENTS8a11eddce686fdcbd6a831f113d4985884d7c53bc7a23bc5a557b89041d18874;
+SUMMARY22388ebc0a9cb688624b5dc8530c3b53c8db9f32162892411edd26d72af2f100.
+Both source versions, old/current CPU evidence, six safe actual JSONs, prior0ffa
+proof and unrun native-path-provider design remain recoverable. No native/image
+bytes, arrays, requests or private logs are published.
+
+Separate shared-Image/cache successor now passes73CPU/0.369s/1.0034321s wall,
+all36source identities exact. The original38methods are included plus35new;
+its archived38receipt is not additive. Frozen
+experiments/source_shared_image_resource_20261120:44files/647320B,
+CONTENTS59ccf83b89044509e973a6ffee5ba4baf83e66c4862dabdc603de05207dfc8d3;
+SUMMARY72db148372bc9391045e4ac9f1fbd88e289a24e45edac96dfa4ee5593b53139c.
+Exact argument admission precedes cache equality/hash; cache bounds precede
+snapshot allocation; BinaryData class descriptor traps refuse before reads.
+Per-graph bindings, unique Images, first-stored encoded buffers, source-ID/full
+mapping cache witnesses, failure latching and exact slot restoration stay
+separate. Actual Blender/shared-resource/export/non-NORMAL/normal/adoption
+qualification remains UNRUN; strict original2e-5gate is unchanged.
+
+Next independently qualify the read-only finite native name/search-path
+preloaded-material provider and explicit opt-in binder witness. Preserve the
+original0e bare/default34 profile. Provider acknowledgement would mean an
+already-inspected in-memory material, not VMT physical existence. V3 remains
+source-only/PENDING; the missing-only metadata adapter is an unrun alternative,
+not an assumption about B. Keep no B geometry/point labels, originals/private
+caps, all historical failures and strict resource/non-NORMAL/normal/export gates.
+All62statuses/52of54implementation/55of62acceptance stay unchanged. This raw
+append preserves the exact0ffa prefix and every previous byte. New two-packet
+checkpoint commit/push/remote proof is not claimed yet; independent work continues.

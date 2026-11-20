@@ -1,0 +1,65 @@
+{
+  "format": "has_shared_image_resource_cpu_publication_1",
+  "status": "CPU_PASS_ACTUAL_EXPORT_UNRUN",
+  "cpu": {
+    "total_tests": 73,
+    "prior_tests_included": 38,
+    "added_test_methods": 35,
+    "prior_38_are_not_additive": true,
+    "exit_code": 0,
+    "reaped": true,
+    "unittest_seconds": 0.369,
+    "wall_seconds": 1.003432099998463,
+    "frozen_files": 36,
+    "hash_size_nsmtime_unchanged": true,
+    "copied_bytes_match_root_before_after": true
+  },
+  "package": {
+    "code_files": 36,
+    "current_cpu_evidence_files": 5,
+    "payload_files": 41,
+    "payload_bytes": 632694,
+    "total_files_including_scope_inventory": 44,
+    "contents_excludes_itself": true
+  },
+  "evidence": {
+    "stderr.log": {
+      "bytes": 13356,
+      "sha256": "b8742b80723df61101c4749389fec5e1f61b8dc859469ebd6ac6ee8935c88677"
+    },
+    "stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ROOT_RESULT.json": {
+      "bytes": 475,
+      "sha256": "a6bfa3c214d2eb3cf4080372780013fe6ce4a98595e17ceb2895d13b9af61deb"
+    },
+    "before.json": {
+      "bytes": 6898,
+      "sha256": "b872ce446d64eba495e9f99c90d500be3c338a03b2aa4c71fb9542b7dcb3ae75"
+    },
+    "after.json": {
+      "bytes": 6898,
+      "sha256": "b872ce446d64eba495e9f99c90d500be3c338a03b2aa4c71fb9542b7dcb3ae75"
+    }
+  },
+  "scope": {
+    "actual_Blender_or_export": false,
+    "actual_shared_image_export_unrun": true,
+    "actual_shared_image_export_qualified": false,
+    "current_native_mesh_binding_qualified_by_this_packet": false,
+    "historical_B_point_identity_qualified": false,
+    "resource_fidelity_qualified": false,
+    "non_normal_semantic_equivalence_qualified": false,
+    "source_normal_threshold_unchanged": 2E-05,
+    "normal_fidelity_qualified": false,
+    "generic_shader_evaluator_qualified": false,
+    "dependency_closure_qualified": false,
+    "application_adoption_qualified": false,
+    "native_arrays_published": false,
+    "author_executed_tests_or_native": false
+  },
+  "root_cpu_directory": "output/source-shared-image-resource-cpu-20261120-01",
+  "source_directory": "output/source-shared-image-resource-prep-20261120"
+}
