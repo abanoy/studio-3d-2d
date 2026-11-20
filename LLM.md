@@ -7379,3 +7379,44 @@ SourceBinding27/116CPU/actual592bindings/14234faces remains separate and frozen.
 All62statuses,52/54implementation and55/62acceptance scores are unchanged.
 This append preserves the exact99fe raw prefix and every preexisting byte;
 new packet commit/push/remote proof is not yet claimed. Work continues.
+
+## 2026-11-20 — Material checkpoint remote proof and exact owned-stage cleanup
+
+Root pushed main37fc81adb407209597ae57c05a575547c817528d. Independent readback
+proves all140changed files/4141253bytes raw SHA256/Git-blob SHA1/length equal,
+plus independent Node-crypto local equality; GitHub main-ref agrees. Receipt
+1ea2ad0040d6aa7ea389fdcef468996ab81215d7e3ebf5a36bd805ead66eb8a2
+binds the four frozen census/inspection/resource packets and seven docs. This
+publication does not alter their observed scopes or the unchanged full Windows
+9e/1061-source Body/Record PASS, formal62statuses or52/54and55/62scores.
+
+Only after the independent remote proof, Root removed six exact owned completed
+stages:87files/19072844logical bytes. They were the initial owned B copy, Source
+material-binding run, first failed fixed-four enumeration, successful CENSUS2,
+first failed material inspection and successful inspector2. Each exact compact
+receipt remains in its published packet. Root's v2 result confirms all six
+targets absent; independent audit confirms absence and four protected-original
+hashes/sizes exact. Pending preparations, full proof, original assets, shared
+tools and prior public packets remain retained. No free-space gain was measured.
+
+The first plan-only cleanup version mis-aggregated bytes to0 and performed no
+removal. Its exact source/plan are preserved beside corrected v2 source/plan/
+actual result. The guarded v2 inventory uses explicit numeric byte aggregation,
+literal contained targets, reparse refusal, exact compact/remote proof and an
+immediate inventory recheck before each removal. No other removal is claimed.
+
+Frozen experiments/source_material_inspection_cleanup_20261120:18files/213864B,
+including exact publication/checkpoint/crypto/cleanup scripts and metadata only.
+CONTENTS2e55afd533f862e99e6b473b81ff09a6d9ff6b0de20b0b4d8cbaf786f4f2b053;
+SUMMARY47e3d31311d60922af78f7e15a2b4190c6ffd6334411b6ffc6814cc7e1089f7c.
+Native/image bytes, arrays, requests, private logs and process listings are not
+included. The publication author executed no tests, Git, native API, process
+queries or removal; Root owns the actual completed publication/cleanup record.
+This new cleanup packet does not yet claim its own commit/push/remote proof.
+
+The combined fresh-native/B-material host and shared-Image/cache/carrier work
+remain separate pending qualification, excluded from this cleanup checkpoint.
+Keep strict original2e-5normal, non-NORMAL/resource/export/adoption gates, no
+B-derived geometry/point labels and all failed historical results unchanged.
+This raw append preserves the exact37fc prefix and every preexisting byte.
+Work continues independently; the publication checkpoint is not goal completion.

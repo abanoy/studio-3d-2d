@@ -49,6 +49,20 @@ SUMMARY2886b687. The native4-material table is a separate domain. The old fixed4
 count failure remains an unchanged25-file packet; its unknown count was not
 retroactively guessed. Main99fe has exact60file/3,062,606B remote readback7c44bf6f.
 
+
+Main37fc81adb407209597ae57c05a575547c817528d now has exact independent remote
+readback:140files/4,141,253B, raw SHA256/GitSHA1/length plus Node-crypto local
+equality; GitHub main-ref agrees, receipt1ea2ad00. Only after that proof, Root
+removed six exact owned completed stages:87files/19,072,844logical bytes, all
+absent; independent audit verifies four protected-original hashes/sizes. No
+free-space gain was measured. Version1's no-delete plan had a zero-byte
+aggregation bug; both old source/plan and corrected v2 source/plan/result are
+retained. Frozen source_material_inspection_cleanup_20261120:18files/213,864B,
+CONTENTS2e55afd5/SUMMARY47e3d313. Prior public packets, full9e/1061proof,
+pending preparations and originals remain protected. Combined host is separately
+pending qualification. This is publication/cleanup evidence, not a new app or
+fidelity test. Normal/non-NORMAL/resource/export/adoption gates stay unchanged.
+
 First material-only inspection passes31helper+57host CPU, but actual4.148s exits1
 at UNSUPPORTED_ADDED_ID_CATEGORY:4Materials/2Images/1Library survive, originals
 unchanged, zero helper-inspected graphs/packed bytes. Separate diagnostics count
@@ -252,9 +266,11 @@ completed successfully; old expected files lack the new definition metadata.
    context. Preserve originals/private caps, all failures and strict non-NORMAL/
    original2e-5gates. No full rerun without functional changes.
 5. Main610 publication and exact189file/4,639,006byte readback are complete. Root
-   prepares the four frozen census/inspection/resource packets and seven-document
-   successor (140files), then pushes without force and independently hashes every
-   changed remote file. This successor has no remote-proof claim yet.
+   completed the four-packet/seven-doc successor37fc:140files/4,141,253B exact
+   independent remote readback1ea2ad00. Six exact owned stages were then removed
+   after proof;87files/19,072,844logical bytes, all absent, no free-space measure.
+   The new18-file cleanup packet and seven-doc successor await their own remote
+   proof; combined source preparations remain separate and protected.
    Source9e already has exact24file/3,739,119byte proof.
    Only clean disposable owned artifacts after proof; originals, installation,
    old reviews/shared tools and the earlier dirty checkout remain protected.

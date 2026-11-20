@@ -26,6 +26,20 @@ Frozen experiments/source_material_binding_20261120:27files/333,687B,
 CONTENTS8e29d3e7/SUMMARY9d67b881. Metadata24 and older86profiles are separate,
 not additive to116. Main9498 has exact27file/2,637,232B remote proof, d584b907;
 full9e is unchanged. Main99fe has exact60file/3,062,606B readback7c44bf6f.
+
+Main37fc81adb407209597ae57c05a575547c817528d now has exact independent remote
+readback:140files/4,141,253B, raw SHA256/GitSHA1/length plus Node-crypto local
+equality; GitHub main-ref agrees, receipt1ea2ad00. Only after that proof, Root
+removed six exact owned completed stages:87files/19,072,844logical bytes, all
+absent; independent audit verifies four protected-original hashes/sizes. No
+free-space gain was measured. Version1's no-delete plan had a zero-byte
+aggregation bug; both old source/plan and corrected v2 source/plan/result are
+retained. Frozen source_material_inspection_cleanup_20261120:18files/213,864B,
+CONTENTS2e55afd5/SUMMARY47e3d313. Prior public packets, full9e/1061proof,
+pending preparations and originals remain protected. Combined host is separately
+pending qualification. This is publication/cleanup evidence, not a new app or
+fidelity test. Normal/non-NORMAL/resource/export/adoption gates stay unchanged.
+
 CENSUS2 now passes53CPU/0.525s and actual3.985s:5BMaterials/34names/36types,
 38unchanged exposed IDs/39collections,8bindings/all20preservation/private
 closure/noFG. Frozen source_material_library_census2_20261120:32files/396,868B,
