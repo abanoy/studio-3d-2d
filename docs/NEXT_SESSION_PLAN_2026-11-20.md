@@ -19,6 +19,26 @@ Main report SHA25650ad195e21e14242e1f6fc5ce4279987c768473d36f9f9e25f982adbd741ca
 Body-reference software is complete. Main9e also has exact24file/3,739,119byte
 independent remote readback, receiptb1d3d12c318ee5cb6fa482cb4c71886126eae0d3c7024f4c2bcd57376f392b60.
 
+Main610379aeb672b6f7a585b5d7d3bf7e20f7265c30 is now pushed and independently
+read back:189files/4,639,006bytes, every raw SHA256/Git-blob SHA1/length exact,
+plus independent Node-crypto local recheck. Receiptf5631af3 records the proof.
+Only the disposable has-source-weights-prep-20261120 clone was then removed:
+285files/4,444,966logical bytes, fresh scopedCIM0matches and33.836s-old preflight.
+Its target is absent; external alternates were not traversed, protected Git store,
+active Root, originals and shared tools remain. Full9e test scope stays unchanged.
+
+The pure material-metadata oracle passes24synthetic CPU methods in0.007s
+(c04c4e/25fb01). Root's actual pure-RAM exact-native3 replay now PASSES in0.0093978s:
+4materials,1search path,4skin refs/1family,2bodyparts,3model records (2renderable
+plus1blank),4mesh records and9661aggregate model vertices. Metadata digest2447c786
+records the result; parser/native3 hash-size-nsmtime are unchanged. No Blender,
+SourceIO, B, library/export or geometry decode ran in this metadata-only phase;
+private metadata names/arrays were never persisted. Raw mesh.material is NOT
+qualified as resolved native skin material; face/slot/skin binding and B resource
+closure remain next. Two packets are frozen: body_source_followup_20261120
+(10files/108,840bytes) and source_material_metadata_20261120 (10/51,991), both
+beneath experiments/. Exact manifests and hashes are in the benchmark.
+
 Source followup remains separate:30export-hook CPU methods and86fresh-current-ID
 controls pass (19ledger/9worker/58driver). Historical81/76/74profiles and the b9ad
 failed importer-attestation attempt remain retained. Actual f9bc/d783 now passes
@@ -163,10 +183,15 @@ completed successfully; old expected files lack the new definition metadata.
    causality, export and application adoption remain unqualified. Retain b9ad's
    failure and all successful native3/source/runtime/owned-closure proofs.
    No complete-suite rerun is needed without a functional source change.
+   Material metadata24CPU and actual pure-RAM exact-native3 replay now pass.
+   Next resolve native material0/placeholder references and actual face/slot/skin
+   binding, then B dependency closure. Raw mesh.material is not a resolved skin
+   material;4mesh records must not be relabelled as2renderable models.
    Detailed source-only boundaries: `SOURCE_MATERIAL_QUALIFICATION_2026-11-20.md`.
    Library append is not transactional: pre-admit dependency closure and account
    for mesh slots plus skin_groups material references before requesting IDs.
-5. Root checkpoints these reviewed docs and the five source-only/proof packets,
+5. Main610 publication and exact189file/4,639,006byte readback are complete. Root
+   prepares the two new followup packets and this documentation successor, then
    pushes without force and independently hashes every changed remote file.
    Source9e already has exact24file/3,739,119byte proof.
    Only clean disposable owned artifacts after proof; originals, installation,

@@ -16715,3 +16715,68 @@ remain unchanged; human observations stay deferred without prompts.
 This doc pass used only actual scalar report reads and the existing ledger
 validator/renderer. No engine/native/Git/process query or functional/source packet
 write was performed. Earlier LLM/progress bytes remain an exact unchanged prefix.
+
+
+## 2026-11-20 publication/cleanup followup; material oracle synthetic checkpoint
+
+Main610379aeb672b6f7a585b5d7d3bf7e20f7265c30 is pushed. Independent raw connector
+readback matches all189files/4,639,006bytes by SHA256, Git blob SHA1 and length;
+Node crypto independently rechecks local bytes. Receipt SHA256
+f5631af37791d3103d110d5915398fff1ae7a302940bbc08806b9ce0636f1a33.
+This is source/publication preservation, not a new complete runtime test.
+
+After exact285file/4,444,966byte clone preflight, retained/reaped fresh scoped
+CIM0matches and33.836s proof age, Root removes only literal disposable
+has-source-weights-prep-20261120. Its absence is verified. External alternates
+were not traversed; protected external Git store, active Root, originals and
+shared tools remain. Removal proof:output/source-clone-removal-20261120.json.
+
+Root material-metadata oracle c04c4e20705b490ed7633855b2e3bdde14350adec35c8b2a25afc42b69508395
+and tests25fb01b46ed467f009b52673cbdeed0b70ad39c772cb9bfeada84ba58ce2975c
+pass24synthetic CPU methods in0.007s with source identities unchanged. At this
+checkpoint exact-native3 pure metadata replay is NEXT after peer review, not
+executed. Fabricated metadata tests do not qualify actual face/slot/skin binding,
+resource dependencies, B closure, normal/fidelity, export or adoption.
+
+Next perform only Root-authenticated bounded native3 metadata read after peer
+review, then independently compare fresh actual face-material/slot/skin identity
+and pre-admit full resource dependency closure before material library append.
+Keep original2e-5normal and strict non-NORMAL semantic gates. Root is preparing
+experiments/body_source_followup_20261120 and source_material_metadata_20261120;
+final new packet counts are not asserted at this checkpoint. Full9e and the
+fresh native ID/RNA profile retain their previously recorded exact scopes.
+All62formal statuses and52/54implementation/55/62acceptance stay unchanged.
+
+Only scalar proof/source reads and existing ledger validation/rendering ran for
+this documentation pass; no engine/native/Git/process query or functional edits.
+Earlier LLM/progress bytes are retained as an exact unchanged610 prefix.
+
+
+## 2026-11-20 actual exact-native material metadata replay PASS
+
+Root's pure Python RAM-only controller f302cc8d6007f6f0d80a8ea0322903534482a6f86199b340020901b88ff2ed2f
+exits0 after exact staged-native3 metadata replay in0.0093978s. Status is
+EXACT_NATIVE_METADATA_PARSED; source c04c4e and all3input hash/size/nsmtime are
+unchanged. Public scalar result is
+output/source-material-native-metadata-20261120-01/PUBLIC_RESULT.json.
+Metadata SHA2562447c7862e4d5db64d3072e3a40699456e196558c12c9354312242312a96d290.
+
+Counts:4materials,1search path,4skin references/1family,2bodyparts,
+3model records (2renderable+1blank),4mesh records and9661aggregate model vertices.
+Four mesh records are not two renderable models. The unchanged reader separately
+passes24synthetic CPU methods; that is the reader-only CPU scope, not a full suite.
+No Blender/SourceIO/B/library/export or geometry decode ran for the metadata
+replay, and private metadata arrays/names were never persisted.
+
+raw_mesh_material_field_is_resolved_native_skin_material remains FALSE.
+Actual VTX face-material order, Blender face/slot/skin binding, B resource
+closure, normal/fidelity and application adoption remain unqualified. Next
+resolve native material0/placeholder references and actual face/slot/skin binding,
+then pre-admit full B resource dependency closure before material append.
+Keep original2e-5normal and strict non-NORMAL semantic gates; no full rerun absent
+relevant functional changes. The prior pure-CPU-only checkpoint remains history.
+
+Main610 remote proof and disposable-only clone removal retain their exact scopes.
+All62formal statuses and52/54implementation/55/62acceptance remain unchanged.
+This update reads actual scalar proof and validates/renders the existing ledger;
+no native/engine/Git/process query, functional edit or source packet write ran.

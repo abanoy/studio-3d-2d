@@ -11,6 +11,25 @@ Source9e is remotely exact24files/3,739,119bytes (receiptb1d3d12c); older0329FAI
 Wind successor and all earlier scoped/source-pass evidence remain retained.
 See the current November20 pickup and docs/benchmarks/reference_body_2026-11-20.json.
 
+Main610379aeb672b6f7a585b5d7d3bf7e20f7265c30 is pushed with independent exact
+raw189file/4,639,006byte readback (SHA256/GitSHA1/length and Node-crypto local
+recheck), receiptf5631af3. Subsequent guarded cleanup removed only the disposable
+has-source-weights-prep-20261120 clone:285files/4,444,966logical bytes, fresh scoped
+CIM0matches/33.836s-old preflight; external alternate Git store, active Root,
+originals/shared tools retained. This does not relabel the tested full9e revision.
+Material metadata c04c4e/25fb01 passes24synthetic CPU methods in0.007s and actual
+pure-RAM exact-native3 replay in0.0093978s:4materials/1path/4skin refs/1family,
+2bodyparts,3model records (2renderable+1blank),4mesh records/9661vertices. Source/
+inputs remain exact; no Blender/SourceIO/B/export/library/geometry decode ran and
+metadata arrays/names were not persisted. Digest2447c786; raw mesh.material is
+not qualified as resolved native skin material. Next resolve native material0/
+placeholder references and actual face/slot/skin binding, then B dependency closure.
+Normal/fidelity/export/adoption remain unqualified. Followup packets are frozen:
+experiments/body_source_followup_20261120 (10files/108,840bytes) and
+experiments/source_material_metadata_20261120 (10files/51,991bytes). Their exact
+manifest hashes are in the benchmark. Raw mesh fields must not be promoted into
+resolved native skin materials; independent skin mapping remains a prerequisite.
+
 Source work has30export-hook and86current-ID CPU controls passing
 (19ledger/9worker/58driver); historical81/76/74versions and b9ad refusal remain.
 Actual f9bc/d783 private Blender/SourceIO model import passes in6.176s:2models,

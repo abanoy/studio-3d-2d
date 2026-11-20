@@ -25,6 +25,81 @@
     "remote_exact_files": 24,
     "remote_exact_bytes": 3739119,
     "remote_receipt_sha256": "b1d3d12c318ee5cb6fa482cb4c71886126eae0d3c7024f4c2bcd57376f392b60",
+    "publication_cleanup_and_material_followup": {
+      "source_publication": {
+        "commit": "610379aeb672b6f7a585b5d7d3bf7e20f7265c30",
+        "remote_main_exact": true,
+        "files": 189,
+        "bytes": 4639006,
+        "independent_raw_SHA256_Git_SHA1_and_length_exact": true,
+        "independent_Node_crypto_local_recheck_exact": true,
+        "receipt": "experiments/body_source_followup_20261120/READBACK_610379a.json",
+        "receipt_sha256": "f5631af37791d3103d110d5915398fff1ae7a302940bbc08806b9ce0636f1a33",
+        "changes_full_tested_9e_scope": false
+      },
+      "disposable_clone_cleanup": {
+        "target_basename": "has-source-weights-prep-20261120",
+        "actual_removed": true,
+        "files": 285,
+        "logical_bytes": 4444966,
+        "fresh_scoped_CIM_command_matches": 0,
+        "preflight_age_seconds": 33.836,
+        "target_absent_verified": true,
+        "external_alternates_not_traversed": true,
+        "protected_external_git_store_retained": true,
+        "active_root_originals_and_shared_tools_retained": true,
+        "report": "experiments/body_source_followup_20261120/SOURCE_CLONE_REMOVAL.json"
+      },
+      "material_metadata_oracle": {
+        "status": "24_SYNTHETIC_CPU_PASS_AND_EXACT_NATIVE_METADATA_PARSED",
+        "CPU_methods": 24,
+        "CPU_seconds": 0.007,
+        "source_sha256": "c04c4e20705b490ed7633855b2e3bdde14350adec35c8b2a25afc42b69508395",
+        "tests_sha256": "25fb01b46ed467f009b52673cbdeed0b70ad39c772cb9bfeada84ba58ce2975c",
+        "README_sha256": "d3c04de4fc3309712fe75997505b53e5a55d0ee1e4dec36ca430e2b8b8fe2713",
+        "actual_native_metadata_replay_executed": true,
+        "actual_face_material_binding_qualified": false,
+        "material_resources_or_B_opened": false,
+        "normal_export_or_adoption_qualified": false,
+        "next": "Resolve native skin-family material mapping, actual placeholder references and face/slot/skin bindings; then pre-admit complete B resource dependency closure before material append. Preserve strict non-NORMAL and original2e-5normal gates.",
+        "actual_metadata_result": "experiments/source_material_metadata_20261120/NATIVE_METADATA_RESULT.json",
+        "actual_metadata_result_sha256": "cab2948e33b0581d8f68ac936c1a6a4c99ac86e5dd2543401b8caa7fbd476954",
+        "actual_wall_seconds": 0.009397800000442658,
+        "actual_controller_sha256": "f302cc8d6007f6f0d80a8ea0322903534482a6f86199b340020901b88ff2ed2f",
+        "metadata_sha256": "2447c7862e4d5db64d3072e3a40699456e196558c12c9354312242312a96d290",
+        "materials": 4,
+        "search_paths": 1,
+        "skin_reference_count": 4,
+        "skin_families": 1,
+        "body_parts": 2,
+        "model_records": 3,
+        "renderable_models": 2,
+        "blank_model_records": 1,
+        "mesh_records": 4,
+        "aggregate_model_vertices": 9661,
+        "source_and_input_hash_size_nsmtime_unchanged": true,
+        "actual_Blender_SourceIO_library_or_exporter_executed": false,
+        "input_geometry_decoded": false,
+        "private_metadata_names_or_arrays_persisted": false,
+        "raw_mesh_material_field_is_resolved_native_skin_material": false,
+        "VTX_face_material_order_qualified": false,
+        "Blender_face_slot_binding_qualified": false,
+        "B_dependency_closure_qualified": false,
+        "CPU_result": "experiments/source_material_metadata_20261120/CPU_RESULT.json"
+      },
+      "frozen_publication_packets": {
+        "experiments/body_source_followup_20261120": {
+          "files": 10,
+          "bytes": 108840,
+          "CONTENTS_sha256": "e8aef1d790525362565da2e984ad503c080c63ece217c1c9bcdb68c15ce4d168"
+        },
+        "experiments/source_material_metadata_20261120": {
+          "files": 10,
+          "bytes": 51991,
+          "CONTENTS_sha256": "74c89876dcd303e0849bcc49d68ac92f70b29b524a84d54ff0781c547ba8061f"
+        }
+      }
+    },
     "Source_export_hook_CPU_methods": 30,
     "Source_current_ID_CPU_methods": 86,
     "Source_native_packet_status": "FROZEN_CURRENT86_CPU_AND_EXACT_FRESH_IDS_RNA_ACTUAL_SUCCESS",
@@ -3918,7 +3993,7 @@
     {
       "priority": 0,
       "requirement": "IMPORT-03",
-      "action": "Native normal fidelity remains open. Source30export-hook/86current-ID CPU controls pass (19ledger/9worker/58driver; historical81/76/74profiles retained). Actual f9bc/d7836.176s private Blender/SourceIO import matches fresh native IDs and current ordered RNA weights on exact Junko2models/9661points/42702corners,69groups/four stages each;590reads and source/native/runtime identities preserved, job/desktop closed, parent reaped, no foreground activation and0owned processes. Next close material-only dependencies and material slot bindings while preserving geometry/ID/group identity, then qualify the export hook under strict non-NORMAL semantic and original2e-5normal gates. Generic storage, historical-B causality, normal/fidelity, export and adoption remain unqualified; b9ad failure stays retained. The current native packet is frozen at148files/1,159,717bytes; exact CONTENTS/SUMMARY hashes are recorded in the benchmark. Full9e Body software and all62formal statuses/scores remain unchanged; no full rerun without functional change and human observations remain deferred."
+      "action": "Native normal fidelity remains open. Source30export-hook/86current-ID CPU controls pass (19ledger/9worker/58driver; historical81/76/74profiles retained). Actual f9bc/d7836.176s private Blender/SourceIO import matches fresh native IDs and current ordered RNA weights on exact Junko2models/9661points/42702corners,69groups/four stages each;590reads and source/native/runtime identities preserved, job/desktop closed, parent reaped, no foreground activation and0owned processes. Next close material-only dependencies and material slot bindings while preserving geometry/ID/group identity, then qualify the export hook under strict non-NORMAL semantic and original2e-5normal gates. Generic storage, historical-B causality, normal/fidelity, export and adoption remain unqualified; b9ad failure stays retained. The current native packet is frozen at148files/1,159,717bytes; exact CONTENTS/SUMMARY hashes are recorded in the benchmark. Full9e Body software and all62formal statuses/scores remain unchanged; no full rerun without functional change and human observations remain deferred. Main610 has exact189file/4,639,006byte remote proof; only the285file/4,444,966byte disposable Source clone was removed after fresh protected-input/process preflight. Material metadata oracle passes24synthetic methods and actual pure-RAM exact-native3 metadata replay in0.0093978s:4materials/1path/4skin refs/1family,2bodyparts/3model records(2renderable+1blank)/4mesh records/9661vertices. Inputs/parser remain exact; no Blender/SourceIO/B/library/export/geometry decode or private metadata persistence. Raw mesh.material is not resolved native skin material. Next resolve native material0/placeholder references and actual face/slot/skin binding, then B dependency closure; normals/export/adoption remain unqualified."
     },
     {
       "priority": 1,

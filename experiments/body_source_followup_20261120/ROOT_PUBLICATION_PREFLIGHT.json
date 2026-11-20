@@ -1,0 +1,54 @@
+{
+  "format": "has_body_full_source_publication_preflight_1",
+  "base": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "packets": [
+    {
+      "path": "experiments/reference_body_full_20261120",
+      "files": 10,
+      "bytes": 775818,
+      "contents_sha256": "ab706018b598c50cbc763de134798166cc18d2e3351f40ee86e9c431e030fa6c"
+    },
+    {
+      "path": "experiments/source_export_hook_20261120",
+      "files": 9,
+      "bytes": 119763,
+      "contents_sha256": "16632b8b512479e15ea9094514713f33352d2a8a5e6018f84b5dda97ffc71376"
+    },
+    {
+      "path": "experiments/source_current_native_ids_20261120",
+      "files": 148,
+      "bytes": 1159717,
+      "contents_sha256": "dbb470fde50d26f5b6080f68ee468f1cfb5488706667d040e352b061583ddd42"
+    },
+    {
+      "path": "experiments/source_current_native_ids_failed_20261120",
+      "files": 8,
+      "bytes": 12382,
+      "contents_sha256": "6169a2bd8eb9ba21c793d768e94dfa3f7bdd571765d21e4e1e30d8caabc7a195"
+    },
+    {
+      "path": "experiments/source_clone_cleanup_20261120",
+      "files": 6,
+      "bytes": 106248,
+      "contents_sha256": "5e39fcee986198f8d44deea2bfd65c1259d092c30de53118ce3047cf708b8458"
+    }
+  ],
+  "history_prefixes": [
+    {
+      "path": "LLM.md",
+      "original_bytes": 605889,
+      "prefix_exact": true,
+      "added_bytes": 7092
+    },
+    {
+      "path": "docs/progress_memo.md",
+      "original_bytes": 1422468,
+      "prefix_exact": true,
+      "added_bytes": 7092
+    }
+  ],
+  "stable_requirements": 62,
+  "statuses_unchanged": true,
+  "functional_sources_unchanged": true,
+  "exact_full_source_files": 1061
+}
