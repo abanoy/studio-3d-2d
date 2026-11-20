@@ -1,0 +1,141 @@
+{
+  "format": "has_source_material_library_public_contents_2",
+  "status": "UNQUALIFIED_FAILED_RUN_B_CATALOGUE_COUNT_ASSUMPTION",
+  "payload_files": 24,
+  "payload_bytes": 213293,
+  "manifest_excludes_itself": true,
+  "current_CPU_methods": 44,
+  "actual_library_enumeration_executed": true,
+  "actual_library_qualified": false,
+  "actual_B_material_count_known": false,
+  "actual_B_material_count": null,
+  "actual_B_material_count_differs_from_four": true,
+  "actual_private_job_closed": true,
+  "actual_preservation_checks": 20,
+  "actual_all_preservation_checks_passed": true,
+  "CENSUS2_successor_status": "PENDING",
+  "original_B_or_native_bytes_published": false,
+  "authored_predecessor_files": 4,
+  "files": [
+    {
+      "path": "evidence/actual-failed-01/graphics-release.json",
+      "bytes": 631,
+      "sha256": "8e194a279aa6c94d1cc3ebd7ae2bdccfc757f0bee525bcd4cb93840a8a03adc8"
+    },
+    {
+      "path": "evidence/actual-failed-01/physical-closure.json",
+      "bytes": 447,
+      "sha256": "a5252cc4167ea1aa6164131be7bd2bd700a2f82fe17af9ddfc34bb5fac5258c3"
+    },
+    {
+      "path": "evidence/actual-failed-01/PLACEMENT_LIBRARY_ENUMERATION.json",
+      "bytes": 688,
+      "sha256": "2bc7d2441d4cc7f0815c212f1cb877d0175fbf4ee6bd23ef5723c070f1ec9cb6"
+    },
+    {
+      "path": "evidence/actual-failed-01/private-desktop.json",
+      "bytes": 428,
+      "sha256": "9f69a3f5552e90cb0b343d0c526edbefdb3af15601fa8afd83ecf9ccd357dd6f"
+    },
+    {
+      "path": "evidence/actual-failed-01/PUBLIC_FAILED_RUN.json",
+      "bytes": 1921,
+      "sha256": "2de3a38f2558a947e58070bf30985542b55134eff154e4523a75a7cca2dcd2f3"
+    },
+    {
+      "path": "evidence/actual-failed-01/PUBLIC_LIBRARY_ENUMERATION.json",
+      "bytes": 2009,
+      "sha256": "6c07db7759b625a364957fc060e9534484d68bb0ddebc89bd3b37b8b85145205"
+    },
+    {
+      "path": "evidence/cpu-44/RESULT.json",
+      "bytes": 1693,
+      "sha256": "bffd69b0568a3a549ca6ed19dcbbd54288408f2290fb594cded63c8c57231c17"
+    },
+    {
+      "path": "evidence/cpu-44/stderr.log",
+      "bytes": 7500,
+      "sha256": "ec53fcd9ccef03c1fc22f529d459462c70be13c1a2bfbe76c3605bf6fada548a"
+    },
+    {
+      "path": "evidence/cpu-44/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/cpu-preflight-01/PREFLIGHT_REFUSAL.json",
+      "bytes": 519,
+      "sha256": "943e519bd77753181b007de917e414c588729df03ce6680686aab71a7571be0f"
+    },
+    {
+      "path": "evidence/header/HEADER.json",
+      "bytes": 447,
+      "sha256": "ce6bf8ff5be8b435ee10c0ad691e0a8a6407bae804f9f8ad6baf690c6f4a7500"
+    },
+    {
+      "path": "evidence/source-chain/9498-remote-readback.json",
+      "bytes": 11097,
+      "sha256": "d584b907de717b1da03c87acd2555a36402e72d14858ea40ff72fd19b673e2df"
+    },
+    {
+      "path": "library_worker.py",
+      "bytes": 18242,
+      "sha256": "6258a798b0cb37e14f9d8d478ac5030e36db663e2391675f5de5912feb3c19fc"
+    },
+    {
+      "path": "README_DRIVER.md",
+      "bytes": 6162,
+      "sha256": "acdad5839f286570b987f6d73996c9ac3062e2b2fd33ed179337e1d0b2a8fd8c"
+    },
+    {
+      "path": "README_WORKER.md",
+      "bytes": 6236,
+      "sha256": "c41479d8314c29009edca81307a4ba1a5a304e7e88e315a21c74aa5098c4dc54"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8877,
+      "sha256": "c1c68c6c7a3282bc574529b6ff2b12971e71ad125aee6af4f33f119e735ab528"
+    },
+    {
+      "path": "run_library.py",
+      "bytes": 27256,
+      "sha256": "a3615822952aa3200b093f27dc6e67541188a808262bf1550e6df41192885a6a"
+    },
+    {
+      "path": "SUMMARY.json",
+      "bytes": 3699,
+      "sha256": "14dd0d5d65e4a57c9c0a7eaffe8ff8f89584edbe3da054d5dbd97a026e30ab96"
+    },
+    {
+      "path": "test_library_driver.py",
+      "bytes": 18863,
+      "sha256": "3b9145cdf8dad37fb6b3bbbc069fe540d2495f7035b5f28d5b660379785015f4"
+    },
+    {
+      "path": "test_library_worker.py",
+      "bytes": 16316,
+      "sha256": "cbc3fdc2045c253912b5b59a1f1b99f24013abc4b8b4cc031f256d0da24dbf99"
+    },
+    {
+      "path": "versions/driver_a714b245/run_library.py",
+      "bytes": 26801,
+      "sha256": "a714b245e11d13f085ec0173a3687a1b4b507c9945eb58ddb59b973be22dc82a"
+    },
+    {
+      "path": "versions/driver_a714b245/test_library_driver.py",
+      "bytes": 18108,
+      "sha256": "262b7a7f582825c94bf10e4202d1c2782e2dbbea087e4a1fc11310db6ba4ef25"
+    },
+    {
+      "path": "versions/root_draft_2316/run_library.py",
+      "bytes": 17119,
+      "sha256": "2316c062e0989d60aa63420b2cf5a60508697d65d19d70bf721dde2fde36b57f"
+    },
+    {
+      "path": "versions/worker_63292fd5/library_worker.py",
+      "bytes": 18234,
+      "sha256": "63292fd5c67114409bc5ed38fc32811aa9ed6ad0e08e859d3cab64d661f5b225"
+    }
+  ]
+}

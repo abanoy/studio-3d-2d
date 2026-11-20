@@ -17,20 +17,43 @@ recheck), receiptf5631af3. Subsequent guarded cleanup removed only the disposabl
 has-source-weights-prep-20261120 clone:285files/4,444,966logical bytes, fresh scoped
 CIM0matches/33.836s-old preflight; external alternate Git store, active Root,
 originals/shared tools retained. This does not relabel the tested full9e revision.
+Latest exact-family raw-material binding passes116CPU (34core/0.010s+82host/
+1.087s) and actual7.863s private Blender:14234faces (11444/2790),2slots each,
+both MATERIAL_ID branches, retained2models/9661points/42702corners/69groups/four
+stages+return. All592identity bindings and original/staged inputs,1061sources/
+runtime6/SDK574/exporter120/HEAD9498 stay exact; launcher/job/desktop close/noFG.
+Frozen experiments/source_material_binding_20261120:27files/333,687B,
+CONTENTS8e29d3e7/SUMMARY9d67b881. Metadata24 and older86profiles are separate,
+not additive to116. Main9498 has exact27file/2,637,232B remote proof, d584b907;
+full9e is unchanged. B preparation still passes44CPU, but its first actual4.046s
+private job FAILED exit1 at EXACT_OWNED_B_MATERIAL_COUNT. B catalogue count is
+UNKNOWN!=4, no5inference or retained count/summary. All20preservation checks pass,
+launcher/job/desktop close/noFG, fresh physical owned0 and exact lock removed;
+failure remains unqualified. Frozen source_material_library_20261120 has25files/
+218,198B, CONTENTS6838f0c8/SUMMARY14dd0d5d. CENSUS2 complete B catalogue1..256,
+separate from native4, remains PENDING before bounded material-only inspection. See
+SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md: static DNA closure is not required
+universally for this narrower inspection; no absence of transient IDs/C-level
+reads is promised. Preserve originals/private caps, record actual surviving IDs/
+graphs, derive no point labels from B and refuse unsupported profiles before
+binding/export. Resource qualification, strict non-NORMAL/original2e-5gates
+remain. Native MDL49 renderer, old-B, normal/fidelity/export/adoption remain
+unqualified. Older stronger plans retain their historical scope.
+
 Material metadata c04c4e/25fb01 passes24synthetic CPU methods in0.007s and actual
 pure-RAM exact-native3 replay in0.0093978s:4materials/1path/4skin refs/1family,
 2bodyparts,3model records (2renderable+1blank),4mesh records/9661vertices. Source/
 inputs remain exact; no Blender/SourceIO/B/export/library/geometry decode ran and
 metadata arrays/names were not persisted. Digest2447c786; raw mesh.material is
-not qualified as resolved native skin material. Next resolve native material0/
-placeholder references and actual face/slot/skin binding, then B dependency closure.
+not qualified as native MDL49 resolved skin material. Raw placeholder/face/slot/
+skin-property binding is separately observed above; B resources remain unqualified.
 Normal/fidelity/export/adoption remain unqualified. Followup packets are frozen:
 experiments/body_source_followup_20261120 (10files/108,840bytes) and
 experiments/source_material_metadata_20261120 (10files/51,991bytes). Their exact
 manifest hashes are in the benchmark. Raw mesh fields must not be promoted into
 resolved native skin materials; independent skin mapping remains a prerequisite.
 
-Source work has30export-hook and86current-ID CPU controls passing
+Earlier current-ID-only work has30export-hook and86CPU controls passing
 (19ledger/9worker/58driver); historical81/76/74versions and b9ad refusal remain.
 Actual f9bc/d783 private Blender/SourceIO model import passes in6.176s:2models,
 9661points/42702corners,69groups/four stages each and17612positive source calls.
@@ -40,8 +63,8 @@ All590reads, native3, six runtimes,574SDK/120exporter files and1061sources are
 preserved; job/desktop close, parent is reaped, no foreground activation and
 fresh owned process count0. This is the exact Junko profile, not generic storage,
 historical-B causality, normal/fidelity, export or HAS-adoption qualification.
-Next close material-only dependencies/slots, then qualify the export hook with
-strict non-NORMAL semantics and the original2e-5normal gate. No full rerun absent
+Next inspect/qualify B resource profiles separately before export binding,
+retaining strict non-NORMAL semantics and the original2e-5normal gate. No full rerun absent
 functional changes. The five frozen experiments/ packets include full/hook10/9,
 failed native8 and clone-cleanup6files. source_current_native_ids_20261120 is
 frozen at148files/1,159,717bytes,86CPU/actual success; CONTENTS dbb470fd and SUMMARY

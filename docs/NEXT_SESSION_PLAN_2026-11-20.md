@@ -1,6 +1,6 @@
 # HAS continuation — November 20, 2026
 
-## Body addition complete; full Windows PASS; fresh Source IDs and RNA weights observed
+## Body addition complete; full Windows PASS; fresh raw material binding observed
 
 Worktree `C:/a/Programming/cloudflare/has-body-addition-20261120`, branch
 `codex/reference-body-20261120`, base `ab62adff5f6961d8605f15c79a01a0215c9c5425`.
@@ -27,6 +27,36 @@ Only the disposable has-source-weights-prep-20261120 clone was then removed:
 Its target is absent; external alternates were not traversed, protected Git store,
 active Root, originals and shared tools remain. Full9e test scope stays unchanged.
 
+Latest raw-material binding now PASSES at source9498:116CPU methods
+(34binder/0.010s+82host/1.087s), followed by one7.863s closed private Blender job.
+The same2models/9661points/42702corners/69groups retain their ID/RNA observations;
+all14234faces (11444/2790) bind to2actual slots each, and both stored skin groups
+use MATERIAL_ID references. All4stages+return and592input identity bindings are
+preserved (original590+metadata/binder;574SDK+18other; OS rereads are additional).
+Native/staged inputs,1061functional files, six runtimes,SDK574/exporter120 and
+HEAD9498 are exact; launcher/job/desktop close with no foreground activation.
+Packet experiments/source_material_binding_20261120 is frozen:27files/333,687B,
+CONTENTS8e29d3e7/SUMMARY9d67b881. Renderer/default-skin semantics, old-B labels,
+resources, normals/export/adoption remain unqualified. Separate metadata24 and
+older86profiles are not added to116. Main9498 also has exact27file/2,637,232byte
+remote readback, receiptd584b907; full9e test scope remains unchanged.
+
+B empty-enumeration preparation passes44CPU methods in0.575s (22worker/22driver),
+with six source identities unchanged. The first actual4.046s private job FAILED
+exit1 at EXACT_OWNED_B_MATERIAL_COUNT: the actual B catalogue count is UNKNOWN
+and differs from4; no count/summary was published and5must not be assumed. All20
+preservation checks pass, launcher/job/desktop close/noFG, fresh physical owned0
+and exact owned lock removed; failure remains unqualified. Frozen library packet:
+experiments/source_material_library_20261120,25files/218,198B,
+CONTENTS6838f0c8/SUMMARY14dd0d5d. CENSUS2 successor is PENDING: admit the complete
+B catalogue within1..256, independently of the native4-material table. Next use
+that separate empty-request enumeration and narrow material-only read-only
+inspection under `SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md`. A universal
+static DNA pre-proof is not required for this new inspection scope; transient
+IDs/C-level reads are not claimed absent. Record actual surviving IDs/graphs,
+keep private caps/originals and derive no native point labels from B. Binding/
+export still require resource qualification and strict non-NORMAL/2e-5gates.
+
 The pure material-metadata oracle passes24synthetic CPU methods in0.007s
 (c04c4e/25fb01). Root's actual pure-RAM exact-native3 replay now PASSES in0.0093978s:
 4materials,1search path,4skin refs/1family,2bodyparts,3model records (2renderable
@@ -34,12 +64,13 @@ plus1blank),4mesh records and9661aggregate model vertices. Metadata digest2447c7
 records the result; parser/native3 hash-size-nsmtime are unchanged. No Blender,
 SourceIO, B, library/export or geometry decode ran in this metadata-only phase;
 private metadata names/arrays were never persisted. Raw mesh.material is NOT
-qualified as resolved native skin material; face/slot/skin binding and B resource
-closure remain next. Two packets are frozen: body_source_followup_20261120
+qualified as native MDL49 resolved skin material. Raw importer face/slot/skin
+property binding now passes in the separate latest result; B resource scope
+remains unqualified. Two packets are frozen: body_source_followup_20261120
 (10files/108,840bytes) and source_material_metadata_20261120 (10/51,991), both
 beneath experiments/. Exact manifests and hashes are in the benchmark.
 
-Source followup remains separate:30export-hook CPU methods and86fresh-current-ID
+Earlier current-ID-only profile:30export-hook CPU methods and86fresh-current-ID
 controls pass (19ledger/9worker/58driver). Historical81/76/74profiles and the b9ad
 failed importer-attestation attempt remain retained. Actual f9bc/d783 now passes
 one6.176s private Blender/SourceIO model import:2models,9661points,42702corners,
@@ -59,8 +90,8 @@ Five publication packets are beneath experiments/: reference_body_full_20261120
 and source_current_native_ids_20261120, now frozen at148files/1,159,717bytes with
 86CPU/current actual success. CONTENTS SHA256 starts dbb470fd; SUMMARY afabcc04;
 exact hashes are recorded in the benchmark. Historical evidence remains retained.
-Next close material-only dependencies and slot bindings, then qualify the export
-hook against strict non-NORMAL semantics and the original2e-5normal gate.
+Next qualify the separate B inspection/resource profile, then bind/export only
+under strict non-NORMAL semantics and the original2e-5normal gate.
 
 Implemented the direct reference body plan in `src/reference_body_plan.gd` and
 `physics_rig.gd`: metre shape/threshold/margin/anatomical planning, inverse bone
@@ -176,20 +207,19 @@ completed successfully; old expected files lack the new definition metadata.
 3. Keep the13declared legacy files/32,095,990bytes and original/staged identities
    protected. The complete run tested actual native MMD; no fixture or original
    asset needs replacement.
-4. Fresh Source native-ID/current RNA weights now pass on the exact Junko family.
-   Next close material-only dependencies and slot bindings while preserving
-   geometry/ID/group identity; then qualify the export hook under the strict
-   non-NORMAL semantic and original2e-5normal gates. Generic storage, historical-B
-   causality, export and application adoption remain unqualified. Retain b9ad's
-   failure and all successful native3/source/runtime/owned-closure proofs.
-   No complete-suite rerun is needed without a functional source change.
-   Material metadata24CPU and actual pure-RAM exact-native3 replay now pass.
-   Next resolve native material0/placeholder references and actual face/slot/skin
-   binding, then B dependency closure. Raw mesh.material is not a resolved skin
-   material;4mesh records must not be relabelled as2renderable models.
-   Detailed source-only boundaries: `SOURCE_MATERIAL_QUALIFICATION_2026-11-20.md`.
-   Library append is not transactional: pre-admit dependency closure and account
-   for mesh slots plus skin_groups material references before requesting IDs.
+4. Exact-family raw placeholder/slot/whole-face/skin-property binding now passes:
+   116CPU and actual592bindings/14234faces; native-renderer/default-skin,
+   historical-B, resources, normals/export/adoption remain unqualified.
+   First B enumeration failed its4-count assumption with all20preservation/closure
+   checks passing; B count UNKNOWN!=4, no5inference. CENSUS2 complete1..256catalogue
+   remains PENDING and separate from the native4. Keep enumeration separate from material-
+   only read-only inspection. Use `SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md`:
+   static DNA closure is not a universal prerequisite for this narrower result;
+   transient IDs/C-level reads are not promised absent. Record/refuse actual
+   unsupported dependencies before binding/export; no point labels from B.
+   `SOURCE_MATERIAL_QUALIFICATION_2026-11-20.md` remains historical stronger-plan
+   context. Preserve originals/private caps, all failures and strict non-NORMAL/
+   original2e-5gates. No full rerun without functional changes.
 5. Main610 publication and exact189file/4,639,006byte readback are complete. Root
    prepares the two new followup packets and this documentation successor, then
    pushes without force and independently hashes every changed remote file.

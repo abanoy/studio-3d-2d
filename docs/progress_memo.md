@@ -16780,3 +16780,77 @@ Main610 remote proof and disposable-only clone removal retain their exact scopes
 All62formal statuses and52/54implementation/55/62acceptance remain unchanged.
 This update reads actual scalar proof and validates/renders the existing ledger;
 no native/engine/Git/process query, functional edit or source packet write ran.
+
+
+## 2026-11-20 raw material binding actual PASS; separate B inspection next
+
+Root session52658 finishes/reaps: CURRENT_IDS_RNA_AND_RAW_MATERIAL_BINDING_MATCHED.
+At source9498,116CPU pass(34core/0.010s+82host/1.087s), followed by one7.863s
+private Blender job. Whole polygon streams14234faces(11444/2790) match2mesh/Object
+DATA slots each; both skin groups store MATERIAL_ID references. Fresh ID/RNA
+remains2models/9661points/42702corners/69groups/four stages+return. All592input
+identity bindings(old590+metadata/binder;574SDK+18other; OS rereads additional),
+1061sources,runtime6/SDK574/exporter120, original/staged native and HEAD9498 stay
+exact. Retained launcher/job/desktop close, hidden placement verified, noFG.
+
+Frozen experiments/source_material_binding_20261120:27files/333,687B;
+CONTENTS8e29d3e7661892fb336e91fcb838e6cd41197a2416c9e3f86b728fb99943260d;
+SUMMARY9d67b88166481f925c6f54198fc7019a536746425675901ae13fa90d1d3a9a49.
+Metadata24 and older86profiles stay separate, not additive to116. Main9498 has
+independent exact27file/2,637,232B remote proof, receiptSHA256
+d584b907de717b1da03c87acd2555a36402e72d14858ea40ff72fd19b673e2df.
+Source readback does not relabel tested full9e runtime verification.
+
+Library drivera361/worker6258 separately pass44CPU in0.575s(22driver/22worker),
+all6source hashes/sizes/nsmtimes exact. This is CPU-only; actual empty-request B
+enumeration is PENDING. No future B public packet count is asserted.
+
+New narrower scope:docs/SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md. Use two
+separate private experiments: empty destination-request enumeration with unchanged
+actual ID census; then bounded material-only read-only inspection recording
+actual surviving IDs/Material refs/dependency graph and packed headers. Universal
+static DNA pre-proof is not prerequisite for this narrower inspection result.
+Older stronger plans stay historical. Do not promise absence of transient IDs
+or C-level reads. Preserve originals/private caps, refuse unsupported observed
+profiles, derive no point labels from B and do not bind/export before resource
+qualification and strict non-NORMAL/original2e-5normal gates.
+
+Native MDL49 renderer/default-skin/switching, old-B, resource closure, normal/
+fidelity/export/adoption remain unqualified. All62statuses and52/54implementation/
+55/62acceptance remain; human checks deferred. Only scalar evidence and existing
+ledger validation/rendering ran here; no frozen packet/functional source or
+native/engine/Git/process query was changed. Previous history bytes remain exact.
+
+## 2026-11-20 — Failed B catalogue assumption retained; CENSUS2 pending
+
+Root's first owned-B empty-library attempt exited1/reaped after4.046s at
+EXACT_OWNED_B_MATERIAL_COUNT. The fixed four-count check was reached after
+library enumeration, but no catalogue summary/count was published. Actual B
+catalogue count is UNKNOWN and differs from4; do not infer5. The native MDL
+four-material table and the complete B catalogue are different scopes.
+
+All20failed-run preservation checks pass: original/owned B,1061functional
+source, code/helpers, runtime6/SDK574/exporter120, HEAD and full proofs remain
+exact. Retained launcher/private job/desktop close with noFG/switch; fresh
+physical owned0 and exact owned lock removed. Root remains UNQUALIFIED_FAILED_RUN
+(outer PRIVATE_LIBRARY_JOB_FAILED; worker EXACT_OWNED_B_MATERIAL_COUNT).
+Closure/preservation do not turn failure into success or establish a new lease.
+No append/image-pixel/SourceIO/export/save/point-label/normal qualification.
+
+Frozen experiments/source_material_library_20261120:25files/218,198B, six safe
+failed JSON receipts, unchanged44CPU code and all authored predecessors.
+CONTENTS6838f0c80b6f9bacf7612dedc5f4255faf227cd2ed707442a83050119198f4af;
+SUMMARY14dd0d5d65e4a57c9c0a7eaffe8ff8f89584edbe3da054d5dbd97a026e30ab96.
+No private logs, requests, B bytes or arrays published. Separate Source binding
+remains27files/333,687B/CONTENTS8e29d3e7,116CPU and actual592bindings/14234faces/
+MATERIAL_ID PASS. Full Windows9e Body/Record remains complete and unchanged.
+
+Next: separately authored CENSUS2 complete B catalogue1..256, PENDING source/
+CPU/actual qualification; report bounded actual count/digests separately from
+native4. Later bounded material-only inspection may admit a subset separately.
+Keep docs/SOURCE_MATERIAL_INSPECTION_SCOPE_2026-11-20.md, original/private caps,
+source preservation, no B-derived point labels and strict resource/non-NORMAL/
+original2e-5normal gates. Never repair unsupported profiles to make them pass.
+All62statuses and52/54implementation,55/62acceptance remain unchanged.
+This exact9498-prefix/all-prior-byte-preserving append supersedes the earlier
+PENDING-first-attempt statement; it does not rewrite historical evidence.
