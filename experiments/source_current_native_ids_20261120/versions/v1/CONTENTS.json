@@ -1,0 +1,130 @@
+{
+  "format": "has_source_current_id_public_contents_1",
+  "status": "CPU_TESTED_NATIVE_UNRUN",
+  "application_source_commit": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "payload_files": 23,
+  "payload_bytes": 189102,
+  "manifest_excludes_itself": true,
+  "frozen_source_recipe_test_files": 7,
+  "actual_Root_CPU_methods_passed": 74,
+  "actual_native_SDK_API_qualified": false,
+  "historical_B_qualified": false,
+  "native_normal_export_or_adoption_qualified": false,
+  "files": [
+    {
+      "path": "code_used/CPUhardlinkrunner.py",
+      "bytes": 3075,
+      "sha256": "97ce9e1ab6f31865d7b71e7e2e275de4a5114c13a361afdabe05417cbd86b4f5"
+    },
+    {
+      "path": "CPU_SUMMARY.json",
+      "bytes": 3351,
+      "sha256": "c39995ad39e6ef872983b54996d20bcfe9ae95bffe388efd0c3fcbc91131d093"
+    },
+    {
+      "path": "cpu/driver51-restricted-predecessor/FAILURE_REASON.json",
+      "bytes": 1181,
+      "sha256": "760da8dbae383c3a89a5495f39ca82295595b7e21d3d2e8ebe973982cec9e093"
+    },
+    {
+      "path": "cpu/driver51-restricted-predecessor/result.json",
+      "bytes": 1412,
+      "sha256": "62d93129aff0dacf3153a8d1f8ec38d89196b2c5b266106340741e8c8ccbdbf1"
+    },
+    {
+      "path": "cpu/driver51/result.json",
+      "bytes": 1667,
+      "sha256": "de1be2625cfe4259cf46c0b7d97f601c80249ceca4a005adfd70608daf526458"
+    },
+    {
+      "path": "cpu/driver51/stderr.log",
+      "bytes": 8097,
+      "sha256": "f870545586fce1afea98d5678e72592e956f51dd773122a3663d8295aed771c0"
+    },
+    {
+      "path": "cpu/driver51/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu/ledger19/result.json",
+      "bytes": 1503,
+      "sha256": "044dc30e25eca14217d412e3b2f72139e7461912ced283de6e1758c08a06629c"
+    },
+    {
+      "path": "cpu/ledger19/stderr.log",
+      "bytes": 3494,
+      "sha256": "2997b434f24623d030efb2d2f92f2912e61b57a3a335becf420b98b56e083ce8"
+    },
+    {
+      "path": "cpu/ledger19/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu/worker4/result.json",
+      "bytes": 1372,
+      "sha256": "85d1001aabd72b56ff8e59fa16cbdb2a399a4f45bf2814e872bca14aeb2e06b2"
+    },
+    {
+      "path": "cpu/worker4/stderr.log",
+      "bytes": 735,
+      "sha256": "66525ee0640e051c285de00b27daf47f48471f79c4914b798f08ba379e169459"
+    },
+    {
+      "path": "cpu/worker4/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "current_id_ledger.py",
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9"
+    },
+    {
+      "path": "fresh_current_id_probe.py",
+      "bytes": 28800,
+      "sha256": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf"
+    },
+    {
+      "path": "PEER_SCOPE.md",
+      "bytes": 3018,
+      "sha256": "b861ac633c7c69abf77895a5d06da39b80920414ecd1835da77ac94a0fad4f81"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5172,
+      "sha256": "214e5ef367e9dac30c9acbba42bf80317aeaa0f55a008884aecc7e40415295c4"
+    },
+    {
+      "path": "ROOT_RECIPE.md",
+      "bytes": 8806,
+      "sha256": "daa5091436b923e12a8c1ca8842f60546c768efff779edb5d67f8f6155f165f2"
+    },
+    {
+      "path": "run_probe.py",
+      "bytes": 50722,
+      "sha256": "f33f979adf71835c6a06701470bb58c7919d0108f7bfd056e876223a9f78f9b1"
+    },
+    {
+      "path": "runtime/readonly-preflight.json",
+      "bytes": 697,
+      "sha256": "047770f23de675ec804149edecb59425423add06912bb6b13e5737552a00c12a"
+    },
+    {
+      "path": "test_current_id_ledger.py",
+      "bytes": 8914,
+      "sha256": "cec5e35fcd8c37ce64d348c63fca91c7cbe5bf6e20fe379dcf2632af754adee5"
+    },
+    {
+      "path": "test_probe_driver.py",
+      "bytes": 37971,
+      "sha256": "da1b656d0b8d0d9746d247df563bde811e8354614d95d2d8f54e81368fe2a432"
+    },
+    {
+      "path": "test_worker_contract.py",
+      "bytes": 4230,
+      "sha256": "a65f1bec9bae56e610e4a9c49b3265f3de7a6cce960ffcfefb2207472b56614e"
+    }
+  ]
+}

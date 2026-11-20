@@ -1,0 +1,28 @@
+{
+  "format": "has_current_native_id_preflight_refusal_1",
+  "driver_sha256": "f33f979adf71835c6a06701470bb58c7919d0108f7bfd056e876223a9f78f9b1",
+  "worker_sha256": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf",
+  "status": "REFUSED_BEFORE_CIM_OR_NATIVE_IMPORT",
+  "code": "HARDLINK_PATH",
+  "launcher_exit": 1,
+  "launcher_reaped": true,
+  "attempt_folder": "output/source-current-id-run-1795200712424122700",
+  "native_or_Blender_jobs_started": 0,
+  "native_input_copies_created": 0,
+  "model_or_B_opened": false,
+  "owned_lock_removed": true,
+  "reason": "Observer selected WindowsSystem32PowerShell, which is a legitimate NTFS hardlink; the unchanged single-link guard refused it.",
+  "system_powershell": {
+    "bytes": 491520,
+    "sha256": "95ce2acbc6cd9d7f4a22759d39a8d40fc2a53ceeecf068ef856849f0d2076961",
+    "hardlink_count": 2
+  },
+  "approved_alternative": {
+    "path": "C:/Users/noble/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe",
+    "bytes": 301360,
+    "sha256": "2a6769a3330dc1084d0154bfde7d164ab750ca7f700f313f9d417c1be78b2233",
+    "hardlink_count": 1
+  },
+  "guard_relaxed": false,
+  "full_Windows_tested_source_9e_unchanged": true
+}

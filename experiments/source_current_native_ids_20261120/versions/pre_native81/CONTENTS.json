@@ -1,0 +1,322 @@
+{
+  "format": "has_source_current_id_public_contents_2",
+  "status": "CURRENT_CPU81_ACTUAL_NATIVE_OUTCOME_PENDING",
+  "current_source_version": 3,
+  "application_source_commit": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "payload_files": 60,
+  "payload_bytes": 512762,
+  "manifest_excludes_itself": true,
+  "original_v1_packet_files": 24,
+  "original_v1_packet_bytes": 193366,
+  "original_v1_contents_sha256": "a1b065cf2250679648647943001a77eb2446a5df6d938183ee598f3800787ab1",
+  "original_v1_packet_preserved_byte_exact": true,
+  "actual_Root_current_CPU_methods_passed": 81,
+  "current_coordinator_methods": 58,
+  "historical_v2_coordinator_methods": 53,
+  "historical_v1_coordinator_methods": 51,
+  "actual_native_SDK_API_qualified": false,
+  "historical_B_qualified": false,
+  "native_normal_export_or_adoption_qualified": false,
+  "files": [
+    {
+      "path": "code_used/CPUhardlinkrunner.py",
+      "bytes": 3075,
+      "sha256": "97ce9e1ab6f31865d7b71e7e2e275de4a5114c13a361afdabe05417cbd86b4f5"
+    },
+    {
+      "path": "CPU_SUMMARY.json",
+      "bytes": 3498,
+      "sha256": "0229f8d383f79b3defe07b8b2c264aeaf6817cfece538c76c4d4f871fe72c8df"
+    },
+    {
+      "path": "cpu/driver51-restricted-predecessor/FAILURE_REASON.json",
+      "bytes": 1181,
+      "sha256": "760da8dbae383c3a89a5495f39ca82295595b7e21d3d2e8ebe973982cec9e093"
+    },
+    {
+      "path": "cpu/driver51-restricted-predecessor/result.json",
+      "bytes": 1412,
+      "sha256": "62d93129aff0dacf3153a8d1f8ec38d89196b2c5b266106340741e8c8ccbdbf1"
+    },
+    {
+      "path": "cpu/driver51/result.json",
+      "bytes": 1667,
+      "sha256": "de1be2625cfe4259cf46c0b7d97f601c80249ceca4a005adfd70608daf526458"
+    },
+    {
+      "path": "cpu/driver51/stderr.log",
+      "bytes": 8097,
+      "sha256": "f870545586fce1afea98d5678e72592e956f51dd773122a3663d8295aed771c0"
+    },
+    {
+      "path": "cpu/driver51/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu/driver58/result.json",
+      "bytes": 1705,
+      "sha256": "2b3a1c1312b990ac926106dbe6ae91e5200f5c65190fdb8da0c0954b44eb8699"
+    },
+    {
+      "path": "cpu/driver58/stderr.log",
+      "bytes": 9320,
+      "sha256": "3c7be673217b15c56a36a307edec32791c5b98d10ba3d5139576a9c2526d23e3"
+    },
+    {
+      "path": "cpu/driver58/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu/ledger19/result.json",
+      "bytes": 1503,
+      "sha256": "044dc30e25eca14217d412e3b2f72139e7461912ced283de6e1758c08a06629c"
+    },
+    {
+      "path": "cpu/ledger19/stderr.log",
+      "bytes": 3494,
+      "sha256": "2997b434f24623d030efb2d2f92f2912e61b57a3a335becf420b98b56e083ce8"
+    },
+    {
+      "path": "cpu/ledger19/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu/worker4/result.json",
+      "bytes": 1372,
+      "sha256": "85d1001aabd72b56ff8e59fa16cbdb2a399a4f45bf2814e872bca14aeb2e06b2"
+    },
+    {
+      "path": "cpu/worker4/stderr.log",
+      "bytes": 735,
+      "sha256": "66525ee0640e051c285de00b27daf47f48471f79c4914b798f08ba379e169459"
+    },
+    {
+      "path": "cpu/worker4/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "current_id_ledger.py",
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9"
+    },
+    {
+      "path": "fresh_current_id_probe.py",
+      "bytes": 28800,
+      "sha256": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf"
+    },
+    {
+      "path": "PEER_SCOPE.md",
+      "bytes": 3775,
+      "sha256": "c851af91d42eee530c8f92eb977e3f23eab23651a7570af6fdf4e663d569d5d2"
+    },
+    {
+      "path": "preflight/runtime-stamp-diagnostic.json",
+      "bytes": 3425,
+      "sha256": "ae6b0006ba8eac349f443405052319537e0e28fa17a0d8da7212022f220121bb"
+    },
+    {
+      "path": "preflight/STAMP_POLICY.md",
+      "bytes": 1464,
+      "sha256": "9039d0a41c8ae557ea3aaeecdce9a9171016243535a2a2c4c1a90422fc58481c"
+    },
+    {
+      "path": "preflight/v1-HARDLINK_PATH.json",
+      "bytes": 1245,
+      "sha256": "ec703bcfeeefda243ea1ec2f13b5d1c0e6adad3e7f49fd18580ce782ab00c2ed"
+    },
+    {
+      "path": "preflight/v2-FILE_CHANGED_BEFORE_READ.json",
+      "bytes": 1417,
+      "sha256": "280f6de0d384e3ed59fdcd963a6d3d18f3da5280ffdcb4cee3fcdf590e47e89d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5916,
+      "sha256": "68d07979742f47c741a5a8712595d94448527e036d9f98a6635bca322c89cd63"
+    },
+    {
+      "path": "ROOT_RECIPE.md",
+      "bytes": 8806,
+      "sha256": "daa5091436b923e12a8c1ca8842f60546c768efff779edb5d67f8f6155f165f2"
+    },
+    {
+      "path": "run_probe.py",
+      "bytes": 51728,
+      "sha256": "f9bc228e02f3097548fad9ed1e83bc7c3d475abc40c088cd3c236e91f1dbf324"
+    },
+    {
+      "path": "runtime/readonly-preflight.json",
+      "bytes": 697,
+      "sha256": "047770f23de675ec804149edecb59425423add06912bb6b13e5737552a00c12a"
+    },
+    {
+      "path": "test_current_id_ledger.py",
+      "bytes": 8914,
+      "sha256": "cec5e35fcd8c37ce64d348c63fca91c7cbe5bf6e20fe379dcf2632af754adee5"
+    },
+    {
+      "path": "test_probe_driver.py",
+      "bytes": 44503,
+      "sha256": "3ae6d4974f4e38944b4f5920c26083c0be5a6364aed735d5d44618168b1af99c"
+    },
+    {
+      "path": "test_worker_contract.py",
+      "bytes": 4230,
+      "sha256": "a65f1bec9bae56e610e4a9c49b3265f3de7a6cce960ffcfefb2207472b56614e"
+    },
+    {
+      "path": "versions/v1/code_used/CPUhardlinkrunner.py",
+      "bytes": 3075,
+      "sha256": "97ce9e1ab6f31865d7b71e7e2e275de4a5114c13a361afdabe05417cbd86b4f5"
+    },
+    {
+      "path": "versions/v1/CONTENTS.json",
+      "bytes": 4264,
+      "sha256": "a1b065cf2250679648647943001a77eb2446a5df6d938183ee598f3800787ab1"
+    },
+    {
+      "path": "versions/v1/CPU_SUMMARY.json",
+      "bytes": 3351,
+      "sha256": "c39995ad39e6ef872983b54996d20bcfe9ae95bffe388efd0c3fcbc91131d093"
+    },
+    {
+      "path": "versions/v1/cpu/driver51-restricted-predecessor/FAILURE_REASON.json",
+      "bytes": 1181,
+      "sha256": "760da8dbae383c3a89a5495f39ca82295595b7e21d3d2e8ebe973982cec9e093"
+    },
+    {
+      "path": "versions/v1/cpu/driver51-restricted-predecessor/result.json",
+      "bytes": 1412,
+      "sha256": "62d93129aff0dacf3153a8d1f8ec38d89196b2c5b266106340741e8c8ccbdbf1"
+    },
+    {
+      "path": "versions/v1/cpu/driver51/result.json",
+      "bytes": 1667,
+      "sha256": "de1be2625cfe4259cf46c0b7d97f601c80249ceca4a005adfd70608daf526458"
+    },
+    {
+      "path": "versions/v1/cpu/driver51/stderr.log",
+      "bytes": 8097,
+      "sha256": "f870545586fce1afea98d5678e72592e956f51dd773122a3663d8295aed771c0"
+    },
+    {
+      "path": "versions/v1/cpu/driver51/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "versions/v1/cpu/ledger19/result.json",
+      "bytes": 1503,
+      "sha256": "044dc30e25eca14217d412e3b2f72139e7461912ced283de6e1758c08a06629c"
+    },
+    {
+      "path": "versions/v1/cpu/ledger19/stderr.log",
+      "bytes": 3494,
+      "sha256": "2997b434f24623d030efb2d2f92f2912e61b57a3a335becf420b98b56e083ce8"
+    },
+    {
+      "path": "versions/v1/cpu/ledger19/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "versions/v1/cpu/worker4/result.json",
+      "bytes": 1372,
+      "sha256": "85d1001aabd72b56ff8e59fa16cbdb2a399a4f45bf2814e872bca14aeb2e06b2"
+    },
+    {
+      "path": "versions/v1/cpu/worker4/stderr.log",
+      "bytes": 735,
+      "sha256": "66525ee0640e051c285de00b27daf47f48471f79c4914b798f08ba379e169459"
+    },
+    {
+      "path": "versions/v1/cpu/worker4/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "versions/v1/current_id_ledger.py",
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9"
+    },
+    {
+      "path": "versions/v1/fresh_current_id_probe.py",
+      "bytes": 28800,
+      "sha256": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf"
+    },
+    {
+      "path": "versions/v1/PEER_SCOPE.md",
+      "bytes": 3018,
+      "sha256": "b861ac633c7c69abf77895a5d06da39b80920414ecd1835da77ac94a0fad4f81"
+    },
+    {
+      "path": "versions/v1/README.md",
+      "bytes": 5172,
+      "sha256": "214e5ef367e9dac30c9acbba42bf80317aeaa0f55a008884aecc7e40415295c4"
+    },
+    {
+      "path": "versions/v1/ROOT_RECIPE.md",
+      "bytes": 8806,
+      "sha256": "daa5091436b923e12a8c1ca8842f60546c768efff779edb5d67f8f6155f165f2"
+    },
+    {
+      "path": "versions/v1/run_probe.py",
+      "bytes": 50722,
+      "sha256": "f33f979adf71835c6a06701470bb58c7919d0108f7bfd056e876223a9f78f9b1"
+    },
+    {
+      "path": "versions/v1/runtime/readonly-preflight.json",
+      "bytes": 697,
+      "sha256": "047770f23de675ec804149edecb59425423add06912bb6b13e5737552a00c12a"
+    },
+    {
+      "path": "versions/v1/test_current_id_ledger.py",
+      "bytes": 8914,
+      "sha256": "cec5e35fcd8c37ce64d348c63fca91c7cbe5bf6e20fe379dcf2632af754adee5"
+    },
+    {
+      "path": "versions/v1/test_probe_driver.py",
+      "bytes": 37971,
+      "sha256": "da1b656d0b8d0d9746d247df563bde811e8354614d95d2d8f54e81368fe2a432"
+    },
+    {
+      "path": "versions/v1/test_worker_contract.py",
+      "bytes": 4230,
+      "sha256": "a65f1bec9bae56e610e4a9c49b3265f3de7a6cce960ffcfefb2207472b56614e"
+    },
+    {
+      "path": "versions/v2/cpu/driver53/result.json",
+      "bytes": 1682,
+      "sha256": "13bccb9086fc0f057b75e2ae3f515d73869e438b067b47d0b0b0d58b8565e40e"
+    },
+    {
+      "path": "versions/v2/cpu/driver53/stderr.log",
+      "bytes": 8443,
+      "sha256": "2c15494f20b96e47e7f7a8a055d9825edbb5141ab9ae79b93d00202255506616"
+    },
+    {
+      "path": "versions/v2/cpu/driver53/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "versions/v2/run_probe.py",
+      "bytes": 51005,
+      "sha256": "b0495e8e13e382c893faefd01f50aa720950958142b64090fc12de3661a7d6bc"
+    },
+    {
+      "path": "versions/v2/test_probe_driver.py",
+      "bytes": 40495,
+      "sha256": "640d12dc203aad79c64c2098963ddd6f3731e1915e6da6ddcbfdab3351dacef9"
+    },
+    {
+      "path": "versions/v2/VERSION.json",
+      "bytes": 907,
+      "sha256": "be84be05805ca81e10f27a53dca74fca0e8f5d45210009155a4f967efc546610"
+    }
+  ]
+}

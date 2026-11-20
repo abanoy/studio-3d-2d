@@ -1,0 +1,73 @@
+{
+  "format": "has_source_current_id_public_preparation_1",
+  "status": "CPU_TESTED_NATIVE_UNRUN",
+  "application_source_commit": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "frozen_source_recipe_test_files": 7,
+  "source_copies_byte_exact": true,
+  "actual_Root_CPU_methods_passed": 74,
+  "summed_unittest_seconds": 0.977,
+  "executions": {
+    "ledger19": {
+      "methods": 19,
+      "unittest_seconds": 0.004,
+      "result_sha256": "044dc30e25eca14217d412e3b2f72139e7461912ced283de6e1758c08a06629c",
+      "executed_sources": {
+        "current_id_ledger.py": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9",
+        "test_current_id_ledger.py": "cec5e35fcd8c37ce64d348c63fca91c7cbe5bf6e20fe379dcf2632af754adee5"
+      },
+      "snapshot_worker_4f578d_was_executed": false,
+      "snapshot_recipe_was_executed": false,
+      "successor_worker_b9ad16_qualified_by_this_run": false
+    },
+    "worker4": {
+      "methods": 4,
+      "unittest_seconds": 0.029,
+      "result_sha256": "85d1001aabd72b56ff8e59fa16cbdb2a399a4f45bf2814e872bca14aeb2e06b2",
+      "executed_sources": {
+        "fresh_current_id_probe.py": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf",
+        "test_worker_contract.py": "a65f1bec9bae56e610e4a9c49b3265f3de7a6cce960ffcfefb2207472b56614e",
+        "repository_pure_AST_instrumentation": "361fcad3dbff79bfd5367cd71ac5a769fc8155d6f38a1b061d5ce6e631f5a895"
+      },
+      "actual_worker_main_executed": false
+    },
+    "driver51": {
+      "methods": 51,
+      "unittest_seconds": 0.944,
+      "result_sha256": "de1be2625cfe4259cf46c0b7d97f601c80249ceca4a005adfd70608daf526458",
+      "executed_sources": {
+        "run_probe.py": "f33f979adf71835c6a06701470bb58c7919d0108f7bfd056e876223a9f78f9b1",
+        "test_probe_driver.py": "da1b656d0b8d0d9746d247df563bde811e8354614d95d2d8f54e81368fe2a432"
+      },
+      "CPU_repeat_runner_sha256": "97ce9e1ab6f31865d7b71e7e2e275de4a5114c13a361afdabe05417cbd86b4f5",
+      "initial_restricted_context_attempt_failed": true,
+      "unchanged_source_host_context_repeat": true,
+      "waived_assertions": 0
+    }
+  },
+  "actual_readonly_runtime_metadata": {
+    "result_sha256": "047770f23de675ec804149edecb59425423add06912bb6b13e5737552a00c12a",
+    "executables": 6,
+    "SourceIO_all_files": 574,
+    "exporter_noncache_files": 120,
+    "hash_size_nsmtime_exact": true
+  },
+  "SourceIO_Blender_or_engine_processes": 0,
+  "native_inputs_or_captures_opened_by_CPU_tests": false,
+  "original_models_or_captures_or_native_arrays_copied": false,
+  "actual_worker_main_executed": false,
+  "actual_native_SDK_API_qualified": false,
+  "fresh_current_native_ID_policy_qualified": false,
+  "current_exact_family_RNA_weights_qualified": false,
+  "historical_saved_B_native_causality_qualified": false,
+  "current_B_identity_qualified": false,
+  "generic_weight_storage_qualified": false,
+  "native_normal_fidelity_qualified": false,
+  "carrier_or_exporter_binding_qualified": false,
+  "non_normal_semantic_equivalence_qualified": false,
+  "application_adoption_qualified": false,
+  "full_Windows_suite_passed_by_this_packet": false,
+  "original_failed_source_normal_gate_unchanged": true,
+  "source_normal_threshold": 0.00002,
+  "later_actual_result_must_be_separately_appended_by_Root": true,
+  "staging_author_ran_tests_or_native_processes": false
+}

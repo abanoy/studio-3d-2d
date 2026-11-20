@@ -1,0 +1,41 @@
+{
+  "format": "has_current_native_id_driver_cpu_1",
+  "application_source_commit": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "exit": 0,
+  "unittest_methods": 51,
+  "unittest_seconds": 0.944,
+  "wall_seconds": 1.2985568000003695,
+  "passed": true,
+  "source_hash_size_nsmtime_unchanged": true,
+  "sources": {
+    "run_probe.py": {
+      "bytes": 50722,
+      "sha256": "f33f979adf71835c6a06701470bb58c7919d0108f7bfd056e876223a9f78f9b1",
+      "mtime_ns": 1795199575408645000
+    },
+    "test_probe_driver.py": {
+      "bytes": 37971,
+      "sha256": "da1b656d0b8d0d9746d247df563bde811e8354614d95d2d8f54e81368fe2a432",
+      "mtime_ns": 1795199611256598000
+    },
+    "fresh_current_id_probe.py": {
+      "bytes": 28800,
+      "sha256": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf",
+      "mtime_ns": 1795199130741564400
+    },
+    "current_id_ledger.py": {
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9",
+      "mtime_ns": 1795198760298538900
+    }
+  },
+  "actual_Blender_SourceIO_CIM_Git_or_native_calls": false,
+  "native_inputs_or_captures_opened": false,
+  "actual_native_IDs_normal_or_export_qualified": false,
+  "host_context_repeat": true,
+  "predecessor": "source-current-id-driver-qualification-20261120-01",
+  "predecessor_error": "WinError5 creating a synthetic temporary hard link; guard not exercised",
+  "assertions_or_source_changed_for_repeat": false,
+  "stderr_sha256": "f870545586fce1afea98d5678e72592e956f51dd773122a3663d8295aed771c0",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

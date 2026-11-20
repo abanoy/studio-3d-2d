@@ -1,0 +1,34 @@
+{
+  "format": "has_current_native_id_worker_bootstrap_cpu_1",
+  "application_source_commit": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "exit": 1,
+  "unittest_methods": 9,
+  "unittest_seconds": 0.173,
+  "wall_seconds": 0.38921969999864814,
+  "passed": false,
+  "source_hash_size_nsmtime_unchanged": true,
+  "sources": {
+    "fresh_current_id_probe.py": {
+      "bytes": 35572,
+      "sha256": "d78369585463dcc2a511e00889f7e768e10c61004cf4f3fac0df3885b7d60c93",
+      "mtime_ns": 1795202215137294100
+    },
+    "test_worker_contract.py": {
+      "bytes": 10817,
+      "sha256": "8e96cf58e00c7b43b307606b6cc34fb493bd783783a42efe71646d30cd2b11eb",
+      "mtime_ns": 1795202303844750900
+    },
+    "current_id_ledger.py": {
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9",
+      "mtime_ns": 1795198760298538900
+    }
+  },
+  "SourceIO_Blender_or_native_processes": 0,
+  "native_inputs_or_captures_opened": false,
+  "actual_worker_main_executed": false,
+  "actual_current_ID_or_native_fidelity_qualified": false,
+  "full_code_equality_gate_unchanged": true,
+  "predecessor_actual_refusal": "IMPORTER_RUNTIME_CODE_DIFFERS from isolatedAST baseline; full-module compile-only baseline is the exact source loader context",
+  "stderr_sha256": "93d8d38b770a24990d2b29a79ac1e34ed9f08ccac1bf5d77549e82a42921a85c"
+}

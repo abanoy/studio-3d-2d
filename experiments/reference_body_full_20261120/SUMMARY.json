@@ -1,0 +1,266 @@
+{
+  "format": "has_reference_body_complete_windows_1",
+  "tested_commit": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "status": "COMPLETE_WINDOWS_PASS",
+  "seconds": 3546.0819016,
+  "result_groups": 170,
+  "core_groups": 36,
+  "core": [
+    "unit",
+    "motion_parts",
+    "motion_helper_edits",
+    "opaque_order",
+    "required_extensions",
+    "contact_bend",
+    "spikes",
+    "editor",
+    "export_failures",
+    "audio_editor",
+    "audio_dummy",
+    "ui",
+    "recovery_write",
+    "recovery",
+    "pose",
+    "autokey",
+    "new_scene",
+    "world_selection",
+    "world_document",
+    "world_runtime",
+    "world_edit",
+    "world_workflow",
+    "object_timing",
+    "bone_labels",
+    "animation_clips_unit",
+    "animation_clips",
+    "visibility",
+    "animated_channels",
+    "limb_ik",
+    "secondary_motion",
+    "fan_motion",
+    "physics",
+    "physics_contacts",
+    "physics_props",
+    "physics_recording_unit",
+    "physics_recording"
+  ],
+  "final_media_groups": 21,
+  "movie_groups": [
+    "silent_video",
+    "spike_silent_video",
+    "tone_video",
+    "editor_audio_video",
+    "autokey_video",
+    "new_scene_video",
+    "world_runtime_video",
+    "world_edit_video",
+    "world_workflow_video",
+    "object_timing_video",
+    "animation_clips_video",
+    "visibility_video",
+    "animated_channels_video",
+    "limb_ik_video",
+    "physics_video",
+    "secondary_motion_video",
+    "fan_motion_video",
+    "physics_props_video",
+    "physics_recording_video",
+    "posed_model_video_0",
+    "posed_model_video_1"
+  ],
+  "actual_mmd_tested": true,
+  "source_and_driver_files": 1061,
+  "all_source_hash_size_nsmtime_unchanged": true,
+  "fresh_report_sha256": "50ad195e21e14242e1f6fc5ce4279987c768473d36f9f9e25f982adbd741ca72",
+  "actual_private_jobs": 220,
+  "normal_exit_jobs": 219,
+  "expected_krita_cancel_jobs": 1,
+  "receipt_paths": 221,
+  "physical_duplicate_paths": 1,
+  "all_jobs_window_placed_closed_no_foreground_or_switch": true,
+  "byte_proven_archive_copy_paths": 1127,
+  "unchanged_prior_receipt_paths": 2354,
+  "receipt_provenance_verified": true,
+  "raw_provenance_sha256": "d0dbae986e5d509b95205f92d8dd19bbfa376d82f15bac9a42d4d58360aa306c",
+  "tone_onset_seconds": 1.0,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "full_coordinator_reaped": true,
+  "owner_artist_device_or_offline_acceptance_claimed": false,
+  "formal_ids": 62,
+  "formal_implementation": [
+    52,
+    54
+  ],
+  "formal_acceptance": [
+    55,
+    62
+  ],
+  "new_body_workflow_groups": {
+    "reference_body_scale_guard": {
+      "type": "dict",
+      "summary_keys": [
+        "checks",
+        "failures"
+      ]
+    },
+    "reference_body_plan_unit": {
+      "type": "dict",
+      "summary_keys": [
+        "checks",
+        "failures"
+      ]
+    },
+    "reference_body_anatomy_unit": {
+      "type": "dict",
+      "summary_keys": [
+        "checks",
+        "failures"
+      ]
+    },
+    "reference_body_physics_unit": {
+      "type": "dict",
+      "summary_keys": [
+        "checks",
+        "failures",
+        "fixed_tick_cases",
+        "max_basis_error",
+        "max_collision_error",
+        "max_pose_angle_error",
+        "max_pose_world_error",
+        "max_position_error",
+        "max_relative_basis_error"
+      ]
+    },
+    "reference_body_neon": {
+      "type": "dict",
+      "summary_keys": [
+        "theme",
+        "writer",
+        "cold_reader",
+        "parent_writer",
+        "parent_cold_reader",
+        "packed_authored_data",
+        "functional_files_unchanged",
+        "movie",
+        "folder"
+      ]
+    },
+    "reference_body_light": {
+      "type": "dict",
+      "summary_keys": [
+        "theme",
+        "writer",
+        "cold_reader",
+        "parent_writer",
+        "parent_cold_reader",
+        "packed_authored_data",
+        "functional_files_unchanged",
+        "movie",
+        "folder"
+      ]
+    },
+    "reference_body_native": {
+      "type": "dict",
+      "summary_keys": [
+        "format",
+        "passed",
+        "folder",
+        "project_root",
+        "error",
+        "expected_cases",
+        "results",
+        "functional_hash_size_mtime_unchanged",
+        "original_fixture_hash_size_mtime_unchanged",
+        "staged_fixture_hash_size_mtime_unchanged",
+        "source_parameter_raw_hashes_distinctly_recorded",
+        "raw_original_bytes_read",
+        "private_art_uploaded",
+        "native_fidelity_claimed",
+        "pmd_pmx_sfm_controls",
+        "scope"
+      ]
+    }
+  },
+  "new_body_units": {
+    "reference_body_scale_guard": {
+      "checks": 71,
+      "failures": 0
+    },
+    "reference_body_plan_unit": {
+      "checks": 71,
+      "failures": 0
+    },
+    "reference_body_anatomy_unit": {
+      "checks": 75,
+      "failures": 0
+    },
+    "reference_body_physics_unit": {
+      "checks": 1039,
+      "failures": 0,
+      "fixed_tick_cases": 9,
+      "max_basis_error": 0.000457000103779137,
+      "max_collision_error": 1.22153176107531e-06,
+      "max_pose_angle_error": 3.55389531403834e-07,
+      "max_pose_world_error": 1.56455098476727e-06,
+      "max_position_error": 1.72338866377686e-06,
+      "max_relative_basis_error": 5.31326168129453e-06
+    }
+  },
+  "new_body_workflows": {
+    "neon": {
+      "writer": {
+        "checks": 72,
+        "failures": 0
+      },
+      "cold_reader": {
+        "checks": 21,
+        "failures": 0
+      },
+      "parent_writer": {
+        "checks": 18,
+        "failures": 0
+      },
+      "parent_cold_reader": {
+        "checks": 6,
+        "failures": 0
+      },
+      "functional_files_unchanged": 1054
+    },
+    "light": {
+      "writer": {
+        "checks": 72,
+        "failures": 0
+      },
+      "cold_reader": {
+        "checks": 21,
+        "failures": 0
+      },
+      "parent_writer": {
+        "checks": 18,
+        "failures": 0
+      },
+      "parent_cold_reader": {
+        "checks": 6,
+        "failures": 0
+      },
+      "functional_files_unchanged": 1054
+    }
+  },
+  "new_body_native": {
+    "passed": true,
+    "expected_cases": 6,
+    "functional_hash_size_mtime_unchanged": true,
+    "original_fixture_hash_size_mtime_unchanged": true,
+    "staged_fixture_hash_size_mtime_unchanged": true,
+    "native_fidelity_claimed": false,
+    "case_keys": [
+      "role",
+      "scale",
+      "writer",
+      "reader"
+    ]
+  }
+}

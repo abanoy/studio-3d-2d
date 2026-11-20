@@ -1,0 +1,41 @@
+{
+  "format": "has_current_native_id_driver_cpu_1",
+  "application_source_commit": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "exit": 0,
+  "unittest_methods": 53,
+  "unittest_seconds": 1.137,
+  "wall_seconds": 2.043834899999638,
+  "passed": true,
+  "source_hash_size_nsmtime_unchanged": true,
+  "sources": {
+    "run_probe.py": {
+      "bytes": 51005,
+      "sha256": "b0495e8e13e382c893faefd01f50aa720950958142b64090fc12de3661a7d6bc",
+      "mtime_ns": 1795200914239564500
+    },
+    "test_probe_driver.py": {
+      "bytes": 40495,
+      "sha256": "640d12dc203aad79c64c2098963ddd6f3731e1915e6da6ddcbfdab3351dacef9",
+      "mtime_ns": 1795200914538327700
+    },
+    "fresh_current_id_probe.py": {
+      "bytes": 28800,
+      "sha256": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf",
+      "mtime_ns": 1795199130741564400
+    },
+    "current_id_ledger.py": {
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9",
+      "mtime_ns": 1795198760298538900
+    }
+  },
+  "actual_Blender_SourceIO_CIM_Git_or_native_calls": false,
+  "native_inputs_or_captures_opened": false,
+  "actual_native_IDs_normal_or_export_qualified": false,
+  "host_context_repeat": false,
+  "predecessor": "source-current-id-driver-qualification-20261120-02",
+  "predecessor_error": "Prior51CPU passed; actual probe refused hardlinked System32 observer before native work",
+  "assertions_or_source_changed_for_repeat": true,
+  "stderr_sha256": "2c15494f20b96e47e7f7a8a055d9825edbb5141ab9ae79b93d00202255506616",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

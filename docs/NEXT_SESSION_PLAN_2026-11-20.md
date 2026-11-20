@@ -1,6 +1,6 @@
 # HAS continuation — November 20, 2026
 
-## Scoped addition verified; failed full retained, fresh full retry next
+## Body addition complete; full Windows PASS; fresh Source IDs and RNA weights observed
 
 Worktree `C:/a/Programming/cloudflare/has-body-addition-20261120`, branch
 `codex/reference-body-20261120`, base `ab62adff5f6961d8605f15c79a01a0215c9c5425`.
@@ -8,8 +8,39 @@ Scoped verification is complete and source0329 is pushed with exact independent
 readback:31files/2,943,330bytes, receipt7507db6b. Subsequent source checkpoint7d8
 has exact16file/716,520byte readback, receipt7b428192. Their disposable API response
 caches alone were removed after proof (3,541,912bytes and993,115bytes respectively).
-The first complete run FAILED; a frozen successor complete-suite retry is next.
-Do not call the current source a full-suite PASS.
+The first complete run FAILED and remains retained. Successor9e3b039 now passes
+the complete Windows default in3546.0819016seconds:170result/36core/21final-media
+groups, actual MMD tested,1061source/driver bytes-size-nsmtime and revision exact.
+All220actual private jobs close (219normal/one expected owned Krita cancel);
+221paths include one physical duplicate,1127byte-proven archived copies and2354
+unchanged prior paths are separately classified, and provenance is verified.
+Both decoded audio onsets are1.0s; WASAPI RMS5658.2992336. Retained verifier exited0 and was reaped.
+Main report SHA25650ad195e21e14242e1f6fc5ce4279987c768473d36f9f9e25f982adbd741ca72.
+Body-reference software is complete. Main9e also has exact24file/3,739,119byte
+independent remote readback, receiptb1d3d12c318ee5cb6fa482cb4c71886126eae0d3c7024f4c2bcd57376f392b60.
+
+Source followup remains separate:30export-hook CPU methods and86fresh-current-ID
+controls pass (19ledger/9worker/58driver). Historical81/76/74profiles and the b9ad
+failed importer-attestation attempt remain retained. Actual f9bc/d783 now passes
+one6.176s private Blender/SourceIO model import:2models,9661points,42702corners,
+69groups and4observed stages each, with17612ordered positive source calls.
+Fresh native-ID creation and current exact-family ordered RNA weights match the
+independent native candidate. Full-module compiler-context attestation passes;
+the isolated-AST mismatch remains a diagnostic, not a waived runtime-code guard.
+All590reads, native3, six runtimes,574SDK/120exporter files and1061functional
+sources are preserved. Job/desktop close, retained parent is reaped, no foreground
+activation occurs and fresh owned process count is0. Scope is this exact Junko
+family only: no generic storage, historical-B, normal/fidelity, export or adoption
+qualification is inferred. Original2e-5normal failure remains open.
+
+Five publication packets are beneath experiments/: reference_body_full_20261120
+(10files), source_export_hook_20261120 (9), source_current_native_ids_failed_20261120
+(8safe historical failed proofs), source_clone_cleanup_20261120 (6scalar/log files),
+and source_current_native_ids_20261120, now frozen at148files/1,159,717bytes with
+86CPU/current actual success. CONTENTS SHA256 starts dbb470fd; SUMMARY afabcc04;
+exact hashes are recorded in the benchmark. Historical evidence remains retained.
+Next close material-only dependencies and slot bindings, then qualify the export
+hook against strict non-NORMAL semantics and the original2e-5normal gate.
 
 Implemented the direct reference body plan in `src/reference_body_plan.gd` and
 `physics_rig.gd`: metre shape/threshold/margin/anatomical planning, inverse bone
@@ -43,9 +74,9 @@ bindings pass; these do not substitute for its later complete-suite GPU checks.
 Compact evidence is `experiments/reference_body_20261120/followup/`:
 `FAILED_FULL.json`, `WIND_SUCCESSOR.json`, `HELPER_DRIVER.json`,
 `HELPER_BINDINGS.json`, failed-receipt audit/replay and both remote-readback/
-cleanup receipts. Preserve the first failed run and its source proof. Commit the
-reviewed driver/test/docs successor, then run the complete default from its exact
-commit. No current full-pass, native fidelity or human/device result is inferred.
+cleanup receipts. Preserve the first failed run and its source proof. The reviewed
+successor9e complete default now passes as recorded above; this does not infer
+native Source fidelity or human/device acceptance.
 
 The independent real-engine mechanical suite passes **1273 checks** total:
 admission71, planner71, anatomy75, mechanics1039/nine fixed-tick cases, existing
@@ -115,32 +146,31 @@ completed successfully; old expected files lack the new definition metadata.
 
 ## Next concrete actions
 
-1. Scoped Neon/classic72/21+parent18/6, six native23/9 cases and old reference44/3
-   regressions all pass. Do not repeat them without a source change/failure or
-   the required complete-suite context.
-2. Retry the complete Windows suite after the retained0329failure and fresh Wind
-   successor, including affected existing physics/recording/
-   secondary/framing behavior. `tests/verify.py` now integrates
-   admission71/planner71/anatomy75/mechanics1039/nine ticks, both new workflow
-   themes and native wrapper. Keep every old failure/skipped scope explicit.
-3. Stage only declared legacy inputs using
-   `experiments/reference_body_20261120/stage_legacy_inputs.py`. Actual13files,
-   32,095,990bytes now copied with exact original/staged hashes and ns mtimes,
-   including the optional PMD pose pair. Destination guard was reviewed/repaired
-   before writes to reject links/reparse/hardlinked files. Originals untouched.
-4. Source0329and7d8 already have exact independent remote readback. Commit the
-   reviewed retry-driver/test/scalar evidence/docs/ledger/history successor using
-   `git -c core.autocrlf=false add` on explicit files only. Never stage generated
-   tracked output reports, bytecode or private artwork. Run full Windows verifier
-   with `experiments/reference_body_20261120/run_full.py --revision <commit>` plus
-   explicit approved fixture/sourceio paths. Coordinator retains/reaps child,
-   checks exact Git source membership/raw bytes+after identities and private jobs.
-   Its prior bank includes both output and experiments; only exact known receipt
-   bytes admit inherited copies, and source archive mutation/conflicts refuse.
-5. Update final results/history and stable ledger evidence, push main without
-   force and independently fetch/decode/hash every changed remote file. Only then
-   clean disposable owned generated artifacts; protect originals, existing
-   installation, prior reviews, shared tools and earlier dirty checkout.
+1. Body software is complete: full9e170/36/21 and actual MMD pass, preserving all
+   scoped Neon/classic72/21+parent18/6, six native23/9 and old reference44/3 evidence.
+   Do not rerun unchanged verified scopes without a new failure/source change.
+2. Preserve the exact full completion at
+   output/windows-reference-body-1795197079606290600/completion.json, its source
+   proof and all220actual job closures. Keep old0329FAILED separate; do not
+   relabel archived receipt copies as new jobs or alter historical source passes.
+3. Keep the13declared legacy files/32,095,990bytes and original/staged identities
+   protected. The complete run tested actual native MMD; no fixture or original
+   asset needs replacement.
+4. Fresh Source native-ID/current RNA weights now pass on the exact Junko family.
+   Next close material-only dependencies and slot bindings while preserving
+   geometry/ID/group identity; then qualify the export hook under the strict
+   non-NORMAL semantic and original2e-5normal gates. Generic storage, historical-B
+   causality, export and application adoption remain unqualified. Retain b9ad's
+   failure and all successful native3/source/runtime/owned-closure proofs.
+   No complete-suite rerun is needed without a functional source change.
+   Detailed source-only boundaries: `SOURCE_MATERIAL_QUALIFICATION_2026-11-20.md`.
+   Library append is not transactional: pre-admit dependency closure and account
+   for mesh slots plus skin_groups material references before requesting IDs.
+5. Root checkpoints these reviewed docs and the five source-only/proof packets,
+   pushes without force and independently hashes every changed remote file.
+   Source9e already has exact24file/3,739,119byte proof.
+   Only clean disposable owned artifacts after proof; originals, installation,
+   old reviews/shared tools and the earlier dirty checkout remain protected.
 
 All62 formal IDs/statuses and52/54 implementation/55/62 acceptance remain.
 Human/device/artist/clean-offline observations remain deferred without owner

@@ -1,0 +1,26 @@
+{
+  "format": "has_current_native_id_preflight_refusal_1",
+  "status": "REFUSED_BEFORE_NATIVE_IMPORT",
+  "driver_sha256": "b0495e8e13e382c893faefd01f50aa720950958142b64090fc12de3661a7d6bc",
+  "worker_sha256": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf",
+  "launcher_exit": 1,
+  "launcher_reaped": true,
+  "code": "FILE_CHANGED_BEFORE_READ",
+  "attempt_folder": "output/source-current-id-run-1795201036841498500",
+  "CIM_before_recorded": true,
+  "native_or_Blender_jobs_started": 0,
+  "native_input_copies_created": 0,
+  "B_opened": false,
+  "diagnostic_sha256": "ae6b0006ba8eac349f443405052319537e0e28fa17a0d8da7212022f220121bb",
+  "observed_transition": {
+    "lstat_attributes": 262176,
+    "opened_and_final_attributes": 32,
+    "only_difference_hex": "0x40000",
+    "device_inode_bytes_nsmtime_linkcount_unchanged": true
+  },
+  "official_source": "https://learn.microsoft.com/en-us/windows/win32/fileio/file-attribute-constants",
+  "reviewed_successor_policy": "Ignore only directory recall-on-open hint in identity stamp; raw attributes retained, no EA-state claim. Reparse0x400, all other attributes, dev/inode/bytes/nsmtime/nlink and literal content hashes remain strict.",
+  "successor_driver_sha256": "f9bc228e02f3097548fad9ed1e83bc7c3d475abc40c088cd3c236e91f1dbf324",
+  "successor_actual_Root_CPU_methods": 58,
+  "native_normal_fidelity_qualified": false
+}

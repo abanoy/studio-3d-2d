@@ -7069,3 +7069,112 @@ The exact historical Source weight/point CPU join and source-only export-hook
 plan remain separate from actual Blender/storage/gather/resource/carrier work,
 which is still unrun. All62formal IDs/statuses and52/54,55/62scores stay unchanged;
 manual questions remain deferred.
+
+### November20 — full9e Body Physics PASS; Source native outcome pending
+
+The complete configured-Windows default now PASSES at9e3b039039833adce4723bbb70681595cd4eef16:
+3546.0819016seconds,170result/36core/21final-media groups, actual MMD tested.
+All1061functional/driver raw bytes, sizes, nsmtimes and revision remain exact.
+Retained verifier exited0 and was reaped. Receipt provenance proves220actual private jobs
+(219normal/one expected owned Krita cancellation), all private placement/closure
+confirmed;221paths include one physical duplicate,1127byte-proven archived copies
+and2354unchanged prior paths stay separate. Both decoded audio onsets are1.0s;
+WASAPI RMS5658.2992336. Main report SHA256
+50ad195e21e14242e1f6fc5ce4279987c768473d36f9f9e25f982adbd741ca72.
+Public summary: output/reference-body-full-public-20261120/SUMMARY.json.
+The reference-size Body Physics/animated-parent Record software addition is done;
+all scoped1273mechanical, themed72/21+parent18/6, six native23/9 and legacy44/3
+evidence remain. Old0329FAILED is retained, not rewritten as a pass.
+
+Main9e has exact independent remote readback:24files/3,739,119bytes, receipt
+b1d3d12c318ee5cb6fa482cb4c71886126eae0d3c7024f4c2bcd57376f392b60.
+Historical0329/7d8 proofs and all prior full passes retain their original scope.
+
+Source followup has30export-hook CPU controls and current76fresh-ID controls
+(19ledger/4worker/53coordinator) passing. Earlier74/51packet remains historical:
+its synthetic WinError5 hardlink failure and unchanged51pass host repeat are
+retained. Root's first actual f33 attempt REFUSED before native work on a
+legitimate two-link System32 PowerShell path; Native/CIM/input counts were zero.
+Reviewed b049/640 successor selects the approved single-link Codex PowerShell;
+all53CPU methods pass in1.137s with source identities exact. Actual native-ID/
+current RNA-weight retry outcome is PENDING, not an SDK/API, historical-B,
+normal, carrier/export, semantic or HAS-adoption pass. Root appends that actual
+outcome separately. Immutable runtime metadata6/574/120matches remain separate.
+
+Latest pickup, master/checklist and reference_body_2026-11-20 benchmark are updated.
+All62formal statuses and52/54implementation/55/62acceptance remain unchanged.
+Human/device/artist/clean-offline checks stay deferred without repeated prompts.
+Original inputs, private arrays/artwork, prior reviews, installed Studio and
+approved shared runtimes remain protected. No additional test/native/Git/process
+query was performed for this documentation update.
+
+
+## 2026-11-20 publication checkpoint: full9e PASS; Source importer attestation REFUSED
+
+Full9e remains PASS:170result/36core/21media groups in3546.0819016s,
+1061functional/driver bytes-size-nsmtime and revision exact,220private jobs closed.
+The body/reference Record addition is complete; no new full run is needed solely
+for these documentation/source-only packets. Main9e remote readback remains exact.
+
+Published-source staging under experiments/ now contains reference_body_full_20261120
+(10files), source_export_hook_20261120 (9), source_current_native_ids_20261120
+(61; current81CPU=19ledger+4worker+58driver, historical76/74versions/results) and
+source_current_native_ids_failed_20261120 (8safe actual failed proofs).
+
+Actual f9bc/b9ad ran one private Blender job for9.414s and loaded the SourceIO
+module, then REFUSED IMPORTER_RUNTIME_CODE_DIFFERS before import_model or mesh
+creation. This is the completed failed attempt, not PENDING. All590worker reads
+and native3/six runtimes/574SDK/120exporter/1061functional source identities pass
+preservation; private job/desktop close, retained parent is reaped and fresh owned
+process count is0. No old B was opened; normal2e-5failure and all old-B/export/
+fidelity/adoption qualifications remain unchanged/false. Earlier preparation
+PENDING prose is historical and does not replace this separate failed proof.
+
+Root's pure Python3.13 diagnostic independently reproduces full-module versus
+isolated-AST runtime-code inequality for exact pinned173a importer source.
+Next fix that compiler baseline while retaining strict actual runtime-code
+attestation, test the pinned-source and mismatch negatives, then Root retries
+only the isolated private native-ID/current RNA probe. The fix/diagnostic
+successor is NEXT and unexecuted at this checkpoint. A complete Windows rerun
+is needed only after a relevant functional change or new failure.
+
+All62stable formal statuses and52/54implementation/55/62acceptance remain.
+Human/device/artist/clean-offline observations stay deferred without prompts.
+Only existing-tool ledger validation/rendering was performed for this doc pass;
+no native/engine/Git/process query, original input or historical proof was changed.
+
+
+## 2026-11-20 latest Source success: exact fresh IDs and current RNA weights observed
+
+Actual Root session44969 exits0 and is reaped. At
+output/source-current-id-run-1795202600420799400, f9bc driver/d783 worker passes
+one6.176s private Blender/SourceIO model import:2models,9661points,42702corners,
+69groups/four observed stages each and17612ordered positive source calls
+(1650hat,15962hair). Fresh creation IDs and current exact-family ordered RNA
+weights match the independent native candidate. Full-module compiler-context
+runtime-code attestation passes without patching the original importer attribute.
+
+All590worker reads and original/staged native3, six runtimes,574SDK/120exporter
+and1061functional source identities are preserved. Private job/desktop close,
+hidden placement is verified, no foreground activation, retained parent reaped
+and fresh owned processes0. Worker result SHA256
+ab33216233b13d81c4738d3fb1516b105a4e27040d59602f607f13f61bd141f1.
+
+Current CPU profile86=19ledger+9worker+58driver. Earlier81/76/74profiles,
+preflight refusals and b9ad9.414s importer-code refusal remain historical evidence.
+The current native-ID publication packet is being refreshed by its owner; its
+final file count is not asserted here. Existing full9e170/36/21PASS remains exact.
+
+This qualifies only this fresh exact Junko creation-ID/current ordered RNA-weight
+profile. Generic weight storage, historical-B causality, normal/fidelity, carrier/
+export, non-NORMAL semantic equivalence and application adoption remain false;
+old B was not opened and no exporter or blend save ran. Original2e-5normal
+failure stays open. Next close material-only dependencies and slot bindings while
+preserving geometry/ID/group identity, then qualify the export hook against strict
+non-NORMAL semantics and the original normal gate. No full rerun absent relevant
+functional changes. All62formal statuses and52/54implementation/55/62acceptance
+remain unchanged; human observations stay deferred without prompts.
+
+This doc pass used only actual scalar report reads and the existing ledger
+validator/renderer. No engine/native/Git/process query or functional/source packet
+write was performed. Earlier LLM/progress bytes remain an exact unchanged prefix.

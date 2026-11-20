@@ -1,0 +1,32 @@
+{
+  "format": "has_current_native_id_worker_bootstrap_cpu_1",
+  "exit": 0,
+  "unittest_methods": 9,
+  "unittest_seconds": 0.187,
+  "wall_seconds": 0.4401146999989578,
+  "passed": true,
+  "source_hash_size_nsmtime_unchanged": true,
+  "sources": {
+    "fresh_current_id_probe.py": {
+      "bytes": 35572,
+      "sha256": "d78369585463dcc2a511e00889f7e768e10c61004cf4f3fac0df3885b7d60c93",
+      "mtime_ns": 1795202215137294100
+    },
+    "test_worker_contract.py": {
+      "bytes": 10822,
+      "sha256": "1e5ec9d6b43532bb0962f079a899b23317f7068e219275c449898c67bbd03e52",
+      "mtime_ns": 1795202487525895300
+    },
+    "current_id_ledger.py": {
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9",
+      "mtime_ns": 1795198760298538900
+    }
+  },
+  "actual_SourceIO_Blender_or_native_calls": false,
+  "native_inputs_or_captures_opened": false,
+  "complete_code_equality_gate_preserved": true,
+  "predecessor_test_setup_error": "Unconditional top-level raise before function caused compiler dead-code elimination; raise moved after definition, all predicates retained.",
+  "worker_changed_for_repeat": false,
+  "stderr_sha256": "3c2f0fca1032c7faf8d2153c5075a083dc198af3dc9b141e1861ca7d3b77b79d"
+}

@@ -1,0 +1,41 @@
+{
+  "format": "has_current_native_id_driver_cpu_1",
+  "application_source_commit": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "exit": 0,
+  "unittest_methods": 58,
+  "unittest_seconds": 1.039,
+  "wall_seconds": 1.4254419000026246,
+  "passed": true,
+  "source_hash_size_nsmtime_unchanged": true,
+  "sources": {
+    "run_probe.py": {
+      "bytes": 51728,
+      "sha256": "f9bc228e02f3097548fad9ed1e83bc7c3d475abc40c088cd3c236e91f1dbf324",
+      "mtime_ns": 1795201456118468200
+    },
+    "test_probe_driver.py": {
+      "bytes": 44503,
+      "sha256": "3ae6d4974f4e38944b4f5920c26083c0be5a6364aed735d5d44618168b1af99c",
+      "mtime_ns": 1795201456360733600
+    },
+    "fresh_current_id_probe.py": {
+      "bytes": 28800,
+      "sha256": "b9ad16319fe6211cffafc08704de78482271eaff28326e9499fc418db583f0bf",
+      "mtime_ns": 1795199130741564400
+    },
+    "current_id_ledger.py": {
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9",
+      "mtime_ns": 1795198760298538900
+    }
+  },
+  "actual_Blender_SourceIO_CIM_Git_or_native_calls": false,
+  "native_inputs_or_captures_opened": false,
+  "actual_native_IDs_normal_or_export_qualified": false,
+  "host_context_repeat": false,
+  "predecessor": "source-current-id-driver-qualification-20261120-03",
+  "predecessor_error": "Prior53CPU passed; actual probe refused directory recall hint transition with unchanged file identity/content",
+  "assertions_or_source_changed_for_repeat": true,
+  "stderr_sha256": "3c7be673217b15c56a36a307edec32791c5b98d10ba3d5139576a9c2526d23e3",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

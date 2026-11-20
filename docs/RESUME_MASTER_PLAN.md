@@ -1,22 +1,37 @@
 # HAS — consolidated master reference for resuming work
 
-**November20 successor checkpoint; complete Windows retry next.** Reference-size
-Body Physics/parented Record pass the scoped1273mechanical checks, both themes'
-72/21 editor/cold+18/6 parent, six native23/9 cases and old44/3 regressions.
-Source0329 has exact31file/2,943,330byte remote readback;7d8 has exact16file/
-716,520byte readback. Full0329 FAILED956.8793264s after36core groups and Neon on
-one stale Wind recording fingerprint, before Wind GPU. All1059sources/HEAD stay
-exact;53actual private jobs close (52normal/one expected Krita cancel).
-Another1127receipt paths are exact archived copies, not new jobs. Fresh Wind
-successor94unit/845GPU/5parse and6private jobs passes, as do current classifier17
-methods, retained15-method replay, helper120driver controls and35exact source
-bindings. Freeze the next source/test/driver checkpoint and retry the full suite;
-no new whole-suite PASS. See [current pickup](NEXT_SESSION_PLAN_2026-11-20.md) and
-`experiments/reference_body_20261120/followup/`. Formal62IDs and52/54,55/62scores
-remain unchanged. The November19 statements below describe the prior full-pass
-checkpoint, not the current implemented body adapter.
+**November20 Body Physics addition complete; full Windows9e PASS.**
+Exact9e3b039 completes in3546.0819016s with170result/36core/21final-media groups
+and actual MMD tested. All1061functional/driver bytes-size-nsmtime and revision
+stay exact;220actual private jobs close (219normal/one expected owned Krita
+cancel). The221receipt paths include one physical duplicate;1127byte-proven
+archive copies and2354unchanged prior paths remain separate, with provenance
+verified. Both audio onsets are1.0s and WASAPI RMS5658.2992336. Retained verifier exited0 and was reaped; report SHA50ad195e21e14242e1f6fc5ce4279987c768473d36f9f9e25f982adbd741ca72.
+Source9e is remotely exact24files/3,739,119bytes (receiptb1d3d12c); older0329FAILED,
+Wind successor and all earlier scoped/source-pass evidence remain retained.
+See the current November20 pickup and docs/benchmarks/reference_body_2026-11-20.json.
 
-**Latest complete-suite PASS remains `08ad583` (November19).** Six-foot Scale1 addition and
+Source work has30export-hook and86current-ID CPU controls passing
+(19ledger/9worker/58driver); historical81/76/74versions and b9ad refusal remain.
+Actual f9bc/d783 private Blender/SourceIO model import passes in6.176s:2models,
+9661points/42702corners,69groups/four stages each and17612positive source calls.
+Fresh creation IDs and current exact-family ordered RNA weights match the
+independent native candidate; full-module compiler-context attestation passes.
+All590reads, native3, six runtimes,574SDK/120exporter files and1061sources are
+preserved; job/desktop close, parent is reaped, no foreground activation and
+fresh owned process count0. This is the exact Junko profile, not generic storage,
+historical-B causality, normal/fidelity, export or HAS-adoption qualification.
+Next close material-only dependencies/slots, then qualify the export hook with
+strict non-NORMAL semantics and the original2e-5normal gate. No full rerun absent
+functional changes. The five frozen experiments/ packets include full/hook10/9,
+failed native8 and clone-cleanup6files. source_current_native_ids_20261120 is
+frozen at148files/1,159,717bytes,86CPU/actual success; CONTENTS dbb470fd and SUMMARY
+afabcc04 (exact hashes in the benchmark). Historical versions remain retained.
+All62formal statuses and52/54implementation/55/62acceptance scores remain.
+Human/device/artist/clean-offline observations stay deferred without owner prompts.
+The dated historical checkpoints below retain their original scopes and results.
+
+**Historical November19 complete-suite PASS: `08ad583` (November19).** Six-foot Scale1 addition and
 guarded native review pass; complete Windows default passes163result/36core/
 20media groups with1045functional sources unchanged and200closed private jobs.
 Separate optional native PMD replay passes45checks/two movies; native reference
