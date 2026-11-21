@@ -16,10 +16,12 @@ Focused headless checks cover settings, gravity with rotated centers, both airfl
 
 The diagonal Junko request remains open. Her protected original has no configured helper chains. Enabling one supported existing four-joint chain preserves the original skin and adds only an unweighted endpoint. That chain touches 903 of the 5,600 vertices in hair-named material primitives: it cannot relax all back hair. A recorded trial lowered its terminal about 7 cm, but the entire affected geometry averaged only 7.6 mm lower, failing the retained 1 cm settling criterion. Final sampled skin contact pairs reached zero; transient penetration and significant CPU cost remain. This is not visual acceptance or a complete hair reconstruction.
 
-Further work needs explicit reviewed setup of the other hair groups, appropriate additional degrees of freedom where the native weights lack them, and graphical checks of the full body and motion. Source-only preparation and headless geometry results do not establish appearance. No graphical verification or whole-suite result is claimed for this feature branch.
+Further work needs explicit reviewed setup of the other hair groups, appropriate additional degrees of freedom where the native weights lack them, and graphical checks of the full body and motion. Source-only preparation and headless geometry results do not establish appearance. Private graphical controls also passed 64 checks across Classic/Neon and Simple/Advanced. Twelve generated-only interface captures were retained, and six were visually inspected. This establishes control routing/layout, not Junko appearance or a whole-suite result.
 
 ## Focused checks
 
 Run `python tests/verify_generated_secondary_motion.py` on Windows. Its headless children use owned descendant Jobs and individual profiles, without desktop creation. The optional `--existing-source <read-only GLB> --region <node> <primitive> <component>` adds the existing-chain trial; the protected Junko trial intentionally remains a failing quality check.
 
 The unchanged `tests/verify_secondary_body_contact.py` checks the prior Miku contract, with its documented three protected input arguments. A private-desktop lifecycle resource may require the approved host even though Godot itself runs headlessly. No visible fallback is used.
+
+Run `python tests/verify_generated_secondary_controls.py` in the approved private Windows host for the four graphical variants. The first generated-only attempt retained a fixture serialization failure; exact integer JSON tokens corrected that fixture without weakening the actual helper.

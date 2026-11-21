@@ -4,15 +4,15 @@
   "feature_branch": "codex/hair-settling-20261121",
   "status": "PARTIAL_FEATURE_CPU_VERIFIED",
   "whole_full_claimed": false,
-  "graphical_verification_claimed": false,
+  "graphical_verification_claimed": true,
   "full_junko_hair_request_solved": false,
   "formal_ledger_promoted": false,
   "source_arrays_or_art_published": false,
   "current_focused": {
     "status": "PASS",
     "checks": 73,
-    "receipt_sha256": "3585c188e2bd67d5194bd0e8ad7c1107999866432e6c087398e28cdaea640743",
-    "local_receipt": "output/generated-settling-1795292371690247900/verification.json",
+    "receipt_sha256": "edda6c1677efd54e937ae0e75e6db459667752a4ed643ce4f323b84371081873",
+    "local_receipt": "output/generated-settling-1795294245974898900/verification.json",
     "cases": 5,
     "all_owned_jobs_closed": true,
     "graphics_used": false,
@@ -143,7 +143,7 @@
     "Only the explicitly configured chain is simulated; the other Junko hair requires reviewed additional setup or reconstruction.",
     "Final sampled zero contact pairs does not erase transient penetrations; the retained trial reached64 pairs and a minimum gap near-0.021m.",
     "Natural trial average CPU tick cost was about11.9ms including authored/model evaluation on this run; no universal real-time performance guarantee.",
-    "Temporary preview tuning and direction are CPU-qualified; its graphical display and filtered collider participation still need visual checks."
+    "Temporary preview controls are graphically checked only on generated fixtures. Full native Junko appearance/settling remains open."
   ],
   "component_source_files": [
     {
@@ -189,6 +189,12 @@
       "sha256_lf": "e69de68cb809c4d6b1c7b15dd37863fc08121bb639d29478b1e86c02a31d96d8"
     },
     {
+      "path": "tests/generated_secondary_controls_smoke.gd",
+      "bytes": 7985,
+      "sha256": "a33e505007a3097e2a31cd38f548b19f467a4bb3f08adec4daa60787a13dc935",
+      "sha256_lf": "a33e505007a3097e2a31cd38f548b19f467a4bb3f08adec4daa60787a13dc935"
+    },
+    {
       "path": "tests/generated_secondary_editor_smoke.gd",
       "bytes": 5823,
       "sha256": "d424ea6bb992ac7dc80867db55880be49d1164f25890f06711e48242258c1d5b",
@@ -202,9 +208,9 @@
     },
     {
       "path": "tests/generated_secondary_fixture.gd",
-      "bytes": 795,
-      "sha256": "dee7cf0453ec901d540a1ddf6777438c22f98bc230fbef0716b249a5d459b204",
-      "sha256_lf": "dee7cf0453ec901d540a1ddf6777438c22f98bc230fbef0716b249a5d459b204"
+      "bytes": 1370,
+      "sha256": "e284fcd9527e04c0790c41b7b476a47ee6ecc69da576c3d8e220442d89d86007",
+      "sha256_lf": "e284fcd9527e04c0790c41b7b476a47ee6ecc69da576c3d8e220442d89d86007"
     },
     {
       "path": "tests/generated_secondary_motion_unit.gd",
@@ -237,10 +243,143 @@
       "sha256_lf": "929e43af07b2ca71bc4b41b28fddde7ee6e50c2b5fba7c83631138fd8ff7c3e6"
     },
     {
+      "path": "tests/verify_generated_secondary_controls.py",
+      "bytes": 2742,
+      "sha256": "45f644680023fe937dae779b08be7352d2f17acea1b10b2bbc81ed43728e13e6",
+      "sha256_lf": "45f644680023fe937dae779b08be7352d2f17acea1b10b2bbc81ed43728e13e6"
+    },
+    {
       "path": "tests/verify_generated_secondary_motion.py",
       "bytes": 11397,
       "sha256": "cb79f8c4ff440aced5b64d968cc45f5da5a649a14500ede6dd6fc2012de7efb8",
       "sha256_lf": "59bb1c8d93e8a1ea5f9d094a9705c6cc4339e1070e479edd346283054cde96bd"
     }
-  ]
+  ],
+  "current_graphical": {
+    "status": "PASS",
+    "checks": 64,
+    "variants": 4,
+    "captures": 12,
+    "owner_assets_used": false,
+    "source_preserved": true,
+    "runtime_preserved": true,
+    "parent_environment_preserved": true,
+    "all_private_resources_closed": true,
+    "receipt_sha256": "8b65737d054e41b8c30e1b5c762848b0f4a40e291fc9cd1b45e1e08630c3cc91",
+    "local_receipt": "output/generated-controls-1795294416638008200/verification.json",
+    "actual_variants": [
+      {
+        "name": "neon-simple",
+        "classic": false,
+        "advanced": false,
+        "checks": 16
+      },
+      {
+        "name": "neon-advanced",
+        "classic": false,
+        "advanced": true,
+        "checks": 16
+      },
+      {
+        "name": "classic-simple",
+        "classic": true,
+        "advanced": false,
+        "checks": 16
+      },
+      {
+        "name": "classic-advanced",
+        "classic": true,
+        "advanced": true,
+        "checks": 16
+      }
+    ],
+    "capture_hashes": [
+      {
+        "variant": "neon-simple",
+        "capture": "controls",
+        "sha256": "5077b4987234770cc3312f9b1a3025d19b03710f960571aa9c3752e6a254ee29",
+        "bytes": 174868
+      },
+      {
+        "variant": "neon-simple",
+        "capture": "local-wind",
+        "sha256": "0ccabb94af30f515dbf8628758b05132cde3fc57e8b9e53a5486f7ee57fee6a9",
+        "bytes": 154202
+      },
+      {
+        "variant": "neon-simple",
+        "capture": "pending-wind",
+        "sha256": "ce9c27a7ccd5f2c81252c167d2754b15bbd62153c1462d570f606927e14a8677",
+        "bytes": 171604
+      },
+      {
+        "variant": "neon-advanced",
+        "capture": "controls",
+        "sha256": "49382edc9a3343e51429c65455b82f9ea03d408be2f2962fc3768a16e958abe8",
+        "bytes": 191016
+      },
+      {
+        "variant": "neon-advanced",
+        "capture": "local-wind",
+        "sha256": "132bd54787d81a2a3bac0de81edf7c8a114dee5ed8163c89be1fff340b185e25",
+        "bytes": 168098
+      },
+      {
+        "variant": "neon-advanced",
+        "capture": "pending-wind",
+        "sha256": "d05cb9a61aae91cd2d6298899539786f075fcc1a068a7999f7a9d20cc180b524",
+        "bytes": 187247
+      },
+      {
+        "variant": "classic-simple",
+        "capture": "controls",
+        "sha256": "2111d40c85d9255d8a3c42bf40c9ad3513fd9544a39a390a2564bb2f440377e9",
+        "bytes": 186355
+      },
+      {
+        "variant": "classic-simple",
+        "capture": "local-wind",
+        "sha256": "98d3d0394f55fc692b1547e39d33ddc883609af2816d90f23b4223518c65dd5b",
+        "bytes": 173642
+      },
+      {
+        "variant": "classic-simple",
+        "capture": "pending-wind",
+        "sha256": "ac2ff3b191f7757f2ae52ff7d71f827c38f4d33bd81552df14141bdd34f25511",
+        "bytes": 205520
+      },
+      {
+        "variant": "classic-advanced",
+        "capture": "controls",
+        "sha256": "fcd86e35fec06ca9ebd8c59937634e76c426b9bce9b69de724b6675a9a07e153",
+        "bytes": 182078
+      },
+      {
+        "variant": "classic-advanced",
+        "capture": "local-wind",
+        "sha256": "3fcd1baf0aba29594813b99aa33ef80c1b095e19603016e83584ce10f8fe07e7",
+        "bytes": 186036
+      },
+      {
+        "variant": "classic-advanced",
+        "capture": "pending-wind",
+        "sha256": "94303bb7c06abe0d4b8b87ac92c848addea46d33e25638cd10f4cb1f663a86ee",
+        "bytes": 221861
+      }
+    ],
+    "agent_visual_review": {
+      "controls_all_four_variants": true,
+      "neon_simple_local_wind": true,
+      "classic_advanced_pending_wind": true,
+      "observed": "Preset control readable and within window; both selected temporary wind windows show running state. Generated geometry only; no Junko appearance acceptance."
+    }
+  },
+  "retained_graphical_first_attempt": {
+    "status": "FAIL",
+    "credited_checks": 0,
+    "observed_pass_lines": 10,
+    "failure": "Generated fixture emitted integral JSON floats; strict helper refused Expected one embedded buffer. Fixed only generated-fixture serialization; actual helper/profile guards unchanged.",
+    "receipt_sha256": "ff95976f6836f4152f7bc98cab9617edd0a8f7376ae6193975ee9d5a4bfd8005",
+    "all_private_resources_closed": true
+  }
 }
