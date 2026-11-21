@@ -2,9 +2,11 @@
 
 Follow-up branch `worker/indirect-lighting-20261121`, based on the published lighting
 increment plus its handoff (`a5ef11b6`). This prototype is separate from the completed
-editable-light qualification at `edf98f68`. Current status: runnable controls and
-41 focused headless checks pass; actual bounced-light pixels/convergence/movie
-checks are authored but have not run. Do not infer graphics support from CPU checks.
+editable-light qualification at `edf98f68`. Current status: 45 focused headless
+checks and 52 private-desktop Forward+ graphics checks pass on Godot 4.6 stable,
+Intel Arc 140V. Both Neon and Classic show actual bounced light on imported static
+environment geometry and an imported skinned model. This is a tested prototype,
+with the scene/history/material limits below; it is not a general GI qualification.
 
 ## Use and behavior
 
@@ -36,15 +38,32 @@ for this history-dependent GI method; its new pixel comparison records an explic
 
 `python tests/verify_scene_lighting.py --indirect --cpu` runs actual transactions,
 contributor/receiver flags, exact restoration, ordinary directory persistence,
-fresh packed reopening and closing during a pending settling capture. Final CPU41
+fresh packed reopening and closing during a pending settling capture. Final CPU45
 passes; the first CPU attempt's six reader failures were a fixture-directory
-mismatch and are retained in ignored output. Existing lighting CPU103 also passes.
+mismatch and are retained in ignored output. Existing lighting CPU103 passed
+before this follow-up's editor-copy exclusion fix; it is a separate scope.
 
 `python tests/verify_scene_lighting.py --indirect` selects Forward+ and the existing
-private-desktop launcher. It will check a static red wall's contribution to an
-imported skinned white receiver, record actual images/metrics, export four H.264
-frames, and reopen via the actual HAS UI in a fresh process. It has not run yet.
+private-desktop launcher. It checks a static red wall's contribution to an
+imported skinned white receiver, records actual images/metrics, exports four H.264
+frames, and reopen via the actual HAS UI in a fresh process. Final result: 52
+checks, no failures. The 32-frame rebuild capture, preview/export PNG and cold
+reopen agree exactly in this static fixture, including its model receiver patch.
+The bound remains 2/255 mean channel error; exactness is an observation, not a
+cross-scene or cross-GPU promise. Both jobs confirmed the private desktop, no
+foreground child, and closed their job/desktop. No engine errors or texture-RID
+shutdown warnings occurred in this SDFGI run. Actual H.264 is 1920x1080, 24fps,
+four frames; the ordinary final capture/composite/encoder path is used.
 No private screenshots/models/videos/binaries belong in Git.
+
+The stronger cold-pixel check found a real defect: deferred ID/outline copies
+in `world_selection.gd` could retain Godot's default static GI mode and enter
+voxelization after the lighting inventory. Before the fix, Classic differed by
+2.2108/255 overall and 2.7197/255 on the receiver. Another 80 frames and a rebuild
+did not fix that cached contamination. Copies now have GI disabled **before**
+entering World3D. Reopening is exactly equal in both themes after that change.
+The original failure and diagnostic receipts remain in ignored output; compact
+metrics and source hashes are in `benchmarks/indirect_lighting_prototype_2026-11-21.json`.
 
 This is Godot's semi-real-time signed-distance-field GI, not path tracing. Dynamic
 models do not occlude bounced light, transparent/cutout materials and thin walls
@@ -60,7 +79,15 @@ installation or renderer-default change is introduced.
 - Renderer passes itself to lighting setup and adds an explicit bounded warmup loop
   before readback. The existing owner-bound native-frame signal/cancellation path
   remains authoritative; the close-during-settling CPU test exercises it.
+- `world_selection.gd`: set the editor-only mesh copy's GI mode to disabled
+  immediately before adding it to `copies_root`. Integrate this two-line hunk;
+  do not replace the primary worker's selection module wholesale.
 - No app.gd, world-runtime, model/material or encoder edits in this follow-up.
+
+Next practical investigation: compare bounded-room VoxelGI for dynamic model
+occlusion against this static-environment SDFGI option. That needs its own bake,
+moving-model, cold-reopen and export evidence. Do not advertise dynamic indirect
+shadows, path tracing or RTX behavior from the current receiver-only model path.
 
 Official sources rechecked November21,2026:
 

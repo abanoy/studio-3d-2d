@@ -33,6 +33,8 @@ func run() -> void:
 		var room_id: String=app.last_import_id
 		check(app.pose_editor.add_model(folder.path_join("actor.glb")).is_empty(),"Skinned receiver imports normally")
 		var actor_id: String=app.last_import_id
+		await settled()
+		check(not app.world_selection.entries.is_empty() and app.world_selection.entries.all(func(entry):return entry.copy.gi_mode==GeometryInstance3D.GI_MODE_DISABLED),"Deferred picking copies never contribute to GI")
 		var room=app.renderer.world_runtime.instance(room_id);var actor=app.renderer.world_runtime.instance(actor_id)
 		room.data.position=[0,0,0];room.data.rotation_xyzw=[0,0,0,1];room.data.scale=1.
 		actor.data.position=[0,.8,0];actor.data.rotation_xyzw=[0,-.3007058,0,.95371695];actor.data.scale=1.
@@ -69,7 +71,23 @@ func run() -> void:
 			var direct:=sum_region(before,point,8);var indirect:=sum_region(after,point,8)
 			measurements[theme]={"model_direct_rgb":[direct.x,direct.y,direct.z],"model_indirect_rgb":[indirect.x,indirect.y,indirect.z],"gi_pixel_difference":difference(before,after)}
 			check(indirect.x>direct.x+5 and indirect.x>indirect.y*1.2,"Static red wall visibly bounces color onto skinned receiver")
+			var floor_point: Vector2=app.renderer.camera.unproject_position(Vector3(0,.001,1.))
+			var floor_direct:=sum_region(before,floor_point,8);var floor_indirect:=sum_region(after,floor_point,8)
+			measurements[theme].environment_direct_rgb=[floor_direct.x,floor_direct.y,floor_direct.z]
+			measurements[theme].environment_indirect_rgb=[floor_indirect.x,floor_indirect.y,floor_indirect.z]
+			check(floor_indirect.x>floor_direct.x+5 and floor_indirect.x>floor_indirect.y*1.2,"Environment also receives colored bounce outside the spotlight")
 			before.save_png(folder.path_join(theme+"-direct.png"));after.save_png(folder.path_join(theme+"-indirect.png"))
+			# Compare a fresh voxel rebuild with an already-converged frame. This
+			# measures this fixture's explicit budget, not arbitrary scenes/cuts.
+			gi.rebuild();app.renderer.apply_lighting()
+			var rebuilt: Image=await app.renderer.capture(app.keys,[],0,true)
+			var rebuild_drift:=mean_difference(after,rebuilt)
+			measurements[theme].rebuild_mean=rebuild_drift
+			var patch:=Rect2i(Vector2i(point)-Vector2i(8,8),Vector2i(16,16))
+			var receiver_drift:=mean_difference(after.get_region(patch),rebuilt.get_region(patch))
+			measurements[theme].receiver_rebuild_mean=receiver_drift
+			check(rebuild_drift<=2. and receiver_drift<=2.,"32 settling frames after rebuild agree with converged fixture within 2/255, including receiver")
+			rebuilt.save_png(folder.path_join(theme+"-rebuilt.png"))
 		var expected: Dictionary=Document.indirect(Document.document(app.video)).duplicate(true)
 		var directory:=folder.path_join(theme+"-snapshot")
 		check(Storage.save_project(directory,app.video,app.keys,app.layers,"",0,{}, {},{},false,app.renderer.world_state()).is_empty(),"Indirect settings save through ordinary Storage")
@@ -121,7 +139,19 @@ func reader() -> void:
 			var loaded:=Storage.load_project(directory);check(not loaded.has("error") and app.install_project_data(loaded,directory),"Fresh process installs packed indirect project")
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join(theme+"-expected.json")))
 		check(saved_equal(Document.indirect(Document.document(app.video)),expected.indirect),"Fresh process retains indirect settings")
+		check(not app.world_selection.entries.is_empty() and app.world_selection.entries.all(func(entry):return entry.copy.gi_mode==GeometryInstance3D.GI_MODE_DISABLED),"Cold picking copies are excluded before voxelization")
 		app.scene_lighting_editor.open();app.scene_lighting_editor.indirect_energy.get_line_edit().text="0.7";app.scene_lighting_editor.apply_indirect();app.undo();await settled()
 		check(saved_equal(Document.indirect(Document.document(app.video)),expected.indirect),"Reopened indirect setting remains editable and undoable")
+		if graphics:
+			var capture_draw_start:=Engine.get_frames_drawn()
+			var reopened: Image=await app.renderer.capture(app.keys,[],0,true)
+			var converged:=Image.load_from_file(folder.path_join(theme+"-indirect.png"))
+			var drift:=mean_difference(converged,reopened)
+			var point: Vector2=app.renderer.camera.unproject_position(Vector3(0,.8,.025))
+			var patch:=Rect2i(Vector2i(point)-Vector2i(8,8),Vector2i(16,16))
+			var receiver_drift:=mean_difference(converged.get_region(patch),reopened.get_region(patch))
+			measurements[theme]={"cold_reopen_mean":drift,"receiver_cold_reopen_mean":receiver_drift,"capture_draws":Engine.get_frames_drawn()-capture_draw_start}
+			check(drift<=2. and receiver_drift<=2.,"Cold reopen settles to the converged fixture within 2/255, including receiver")
+			reopened.save_png(folder.path_join(theme+"-reopened.png"))
 		app.free();await process_frame
 	finish("reader")

@@ -17441,3 +17441,5 @@ Initial six reader failures were a fixture unpack-directory mismatch; corrected.
 No new GPU pixel/convergence/movie results yet; serial graphics slot is pending.
 See indirect_lighting_prototype.md and its compact benchmark. No path tracing,
 dynamic occluder or unrestricted native-material claim. No main changes/installs.
+
+2026-11-21 lighting SDFGI follow-up: CPU45/private Forward+ GPU52 pass in Neon+Classic, imported room/skinned model colored bounce,32-frame rebuild and actual packed cold reopen/preview-video errors0 on IntelArc140V,1080p24 H264fourframes. Fixed deferred editor picking copies entering GI (world_selection two-line hunk). See docs/indirect_lighting_prototype.md and its compact benchmark; private evidence stays ignored; only own feature branch published, no main/installedStudio/tools/originalassets changes.
