@@ -17777,3 +17777,25 @@ Originals, reviews, shared runtimes and other checkouts remain protected.
 
 Formal52/54 implementation and55/62 acceptance stay unchanged. Publish/retrieve
 this completed scoped increment, then continue the specifically open rig coverage.
+
+
+## 2026-11-21 - Generated-motion source retrieved and review prepared
+
+Published main43dbdecc759e971a80f0d1e468e1e7d1e3b9ed2b and independently fetched
+all tree blobs/modes plus1267 raw source/evidence files/14223643 bytes, no alternates;
+treef93238206a26ef66fdae397808c8634697ab5c18. Source and actual scoped results are
+recoverable in the repo. See experiments/generated_motion_publication_20261121.
+
+Latest local review is C:/a/Programming/cloudflare/HAS-Review-Gravity-43dbdecc:
+1214 exact source files, three generated projects, one LOCAL PRIVATE limited-Junko
+project and five isolated-profile interactive shortcuts. SourceIO/Blender remain
+external protected dependencies. Root20-frame headless main startup exits0 with
+empty logs; all1214 source files remain exact. No private Junko import/GUI/native
+appearance or full-hair success is inferred. No private model/textures/pose payload
+was uploaded; public preparation is code, safe hashes/counts and portability flags.
+
+The private Junko setup still touches903/5600 hair vertices and retains13/14 quality
+failure. Explicit multi-group/owned-derived reconstruction continues separately.
+Formal52/54 and55/62 stay. Cleanup53.6MB browser residue and6.88GB completed Full5d
+remain untouched after automatic review rejection; exact-path owner approval is
+pending, with no retry/workaround. This receipt update changes no application code.

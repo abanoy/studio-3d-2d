@@ -1,0 +1,1 @@
+Stable owner review preparation only. See PREPARATION.json. No engines/apps launched. Source 43dbdecc759e971a80f0d1e468e1e7d1e3b9ed2b; source files and Git HEAD were preserved; writes were limited to this new preparation and review folder. Only source/recipe/hash metadata is archived here; prepared projects remain at C:\a\Programming\cloudflare\HAS-Review-Gravity-43dbdecc.
