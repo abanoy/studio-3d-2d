@@ -1,0 +1,39 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS independent prepared source rigs created
+PASS ordinary parts feature installs generated rigs
+PASS unique source-node/runtime/rest/parent correspondences found
+PASS part authored refinement remains independently editable
+PASS body authored pose installed
+PASS following is Off by default
+PASS Manage parts exposes the supported opt-in
+PASS following is one ordinary Undo edit
+PASS body motion changes the actual separate part pose
+PASS same-frame evaluation does not feed derived poses back
+PASS derived following never rewrites authored poses or expression settings
+PASS Undo following restores exact independent authored pose
+PASS Redo restores derived following
+PASS Off is an ordinary scene edit
+PASS Off immediately restores authored channels
+PASS following can be enabled again
+PASS live simulation ownership pauses following without target writes
+PASS following resumes after the live owner releases
+PASS explicit user modifier is refused even when empty and inactive
+PASS a changed rest frame refuses the cached correspondence
+PASS external actor reparent cannot reuse the old common-space plan
+PASS persistent global-only override refuses following
+PASS changed prepared source identity refuses without guessing names
+PASS following and original independent poses save normally
+PASS saved following reloads through ordinary WorldRuntime
+PASS reload recomputes derived pose without baking it into authored data
+PASS shared six-foot reference remains owned by the group
+PASS source GLBs stay unchanged
+PASS actual prepared Junko snapshot opens without native conversion or proof gate
+NATIVE_FOLLOW_MATCH {"ambiguous":0,"matched":50,"native_fidelity_qualified":false,"plan_key":"525663752029:538414431090","procedural":6,"unmatched":56}
+PASS actual body/dress rigs match compatible joints and exclude procedural ownership
+PASS actual body pose and dress opt-in apply
+PASS actual separate dress joint responds to body pose
+PASS actual prepared dress repeats stably without authored pose changes
+PASS actual dress Off restores independent native prepared pose
+PASS actual six-part skeleton inventories and bundle remain separate
+CHARACTER_PARTS_FOLLOW {"checks":35,"failures":0}

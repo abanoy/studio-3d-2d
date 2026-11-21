@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-import-info-full-20261121-243e6a1e\tests\verify.py", line 709, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-import-info-full-20261121-243e6a1e\tests\verify.py", line 198, in main
+    wind_log = run([sys.executable, '-u', 'tests/verify_wind_review.py', '--mode', 'graphical', '--lease-confirmed', '--allow-checkout-eol'], timeout=2600)
+  File "C:\a\Programming\cloudflare\has-import-info-full-20261121-243e6a1e\tests\verify.py", line 24, in run
+    raise RuntimeError(f"Exit {result.returncode}: {args}\n{result.stdout}\n{result.stderr}")
+RuntimeError: Exit 1: ['C:\\Program Files\\Python313\\python.exe', '-u', 'tests/verify_wind_review.py', '--mode', 'graphical', '--lease-confirmed', '--allow-checkout-eol']
+WIND_REVIEW_MAIN {"folder": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-243e6a1e\\output\\wind-review\\graphical-1795279676694898200", "verification": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-243e6a1e\\output\\wind-review\\graphical-1795279676694898200\\verification.json", "mode": "graphical", "passed": false, "gpu_used": false}
+
+

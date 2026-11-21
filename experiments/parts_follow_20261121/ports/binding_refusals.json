@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "checks": 10,
+  "rows": [
+    {
+      "case": "wind exact combined-source bindings",
+      "passed": true,
+      "files": 33
+    },
+    {
+      "case": "wind refuses changed bytes src/character_part_follow.gd",
+      "passed": true
+    },
+    {
+      "case": "wind refuses omitted src/character_part_follow.gd",
+      "passed": true
+    },
+    {
+      "case": "wind refuses changed bytes src/part_pose_follow_math.gd",
+      "passed": true
+    },
+    {
+      "case": "wind refuses omitted src/part_pose_follow_math.gd",
+      "passed": true
+    },
+    {
+      "case": "helper exact combined-source bindings",
+      "passed": true,
+      "files": 48
+    },
+    {
+      "case": "helper refuses changed bytes src/character_part_follow.gd",
+      "passed": true
+    },
+    {
+      "case": "helper refuses omitted src/character_part_follow.gd",
+      "passed": true
+    },
+    {
+      "case": "helper refuses changed bytes src/part_pose_follow_math.gd",
+      "passed": true
+    },
+    {
+      "case": "helper refuses omitted src/part_pose_follow_math.gd",
+      "passed": true
+    }
+  ],
+  "mutated_shipping_files": false,
+  "gpu_used": false
+}

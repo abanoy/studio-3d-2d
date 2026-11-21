@@ -12,8 +12,8 @@
   "files": [
     {
       "path": "src/app.gd",
-      "sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f",
-      "lf_sha256": "5d6c98f8e6889fe7d42b352a16c9ea6e6fc5276da8ac99b789bdaca11f82c65d",
+      "sha256": "f21d17204d5f10477a496fe3e92ca19537f7c776ed22d8a5971493e1d3ec0125",
+      "lf_sha256": "d800dd1044f1f4fa09e15ae919c9f260c91c6a6064ad8ddc0eb4a5d23ddc3f79",
       "category": "runtime"
     },
     {
@@ -150,8 +150,8 @@
     },
     {
       "path": "tests/verify_helper_preview.py",
-      "sha256": "2fc300a695609094baa1d8d5cc0a815ce343c8d5d2c5df202d4152f5e615d723",
-      "lf_sha256": "2fc300a695609094baa1d8d5cc0a815ce343c8d5d2c5df202d4152f5e615d723",
+      "sha256": "1118bb8701acb2a2cf791af9d950ba1b9cfef7fb8df6dfbe94bf984a81d2c81a",
+      "lf_sha256": "1118bb8701acb2a2cf791af9d950ba1b9cfef7fb8df6dfbe94bf984a81d2c81a",
       "category": "test"
     },
     {
@@ -163,14 +163,14 @@
     {
       "path": "src/model.gd",
       "category": "runtime",
-      "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7",
-      "lf_sha256": "e290a8df11be2311a543543c8e7114446089ed5bf134459eb76d1d2e3b9e037b"
+      "sha256": "73ecf64d9d855e24dabe925bd33afff81b424071ce3a6fed43ba73970b34dcd1",
+      "lf_sha256": "2f17c0e43ac3e53daa314015a0e9c595182385f50118d2032552e05e2f7a9522"
     },
     {
       "path": "src/renderer.gd",
       "category": "runtime",
-      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
-      "lf_sha256": "c8594bb28251e8b5a13ab756ca8b9afd0f1d45a598c5f5fc8394bf04e9b31a48"
+      "sha256": "2db5d3869b8ccbb82854a95c9c9de87da7c0a6ac1b38ee1bfcb24b19a2581f8e",
+      "lf_sha256": "cc51dbfcbe2b090912ac28d546593e15db41f0def30310c0e84dc1206fc8483d"
     },
     {
       "path": "src/import_basis.gd",
@@ -219,6 +219,84 @@
       "category": "runtime",
       "sha256": "c3bad5ab1792f7103a9bf31eef283ee8b928bd4557b6e53c18b9c0718d92ae61",
       "lf_sha256": "c3bad5ab1792f7103a9bf31eef283ee8b928bd4557b6e53c18b9c0718d92ae61"
+    },
+    {
+      "path": "src/has_project.gd",
+      "sha256": "80a22d5b8a680c504122823e62fb116792f03cefc2b56926c61b16cdfdafdb92",
+      "lf_sha256": "80a22d5b8a680c504122823e62fb116792f03cefc2b56926c61b16cdfdafdb92",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_rig.gd",
+      "sha256": "ca981a8d91670839a89e897e4c34917a291a6d865bf19770affdb85775e9d72b",
+      "lf_sha256": "ca981a8d91670839a89e897e4c34917a291a6d865bf19770affdb85775e9d72b",
+      "category": "runtime"
+    },
+    {
+      "path": "src/source_import.gd",
+      "sha256": "629f8f7b1443aa14e51513ffb75b7b3b5744254579afb1b815fdf4a3f131c024",
+      "lf_sha256": "aa8e2a30682bed585d16a13a4cffb86d5fb5f6b11e48f0bc1df04f5ad9e8c172",
+      "category": "runtime"
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "sha256": "05f6152e6c2003949523e0783b2a8e77a26ed3a1398218a4757554b1c1624db1",
+      "lf_sha256": "803c02ed799f4d1a0d113c510c260991715b19c91cc6ac78f799b40b8d5982f5",
+      "category": "runtime"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "sha256": "4e8654e5d468bb97c2551006693b1b6aa5809a924396267007a62aecaaf6eb72",
+      "lf_sha256": "65cf0cb24c4241875f3e4db9c31619cfaec25e4476f4ea80168b0527ef116409",
+      "category": "runtime"
+    },
+    {
+      "path": "src/camera_easing_editor.gd",
+      "sha256": "cc1ef515a5c868bfc200ed7fa743c6d70f6b43614169492799827442cfff8e1a",
+      "lf_sha256": "cc1ef515a5c868bfc200ed7fa743c6d70f6b43614169492799827442cfff8e1a",
+      "category": "runtime"
+    },
+    {
+      "path": "src/keyframe_easing.gd",
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "lf_sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_parts.gd",
+      "sha256": "ca4a4610ba8abf6f0842c22c08146c7e4820cdfee270d86876920a65f59d39ef",
+      "lf_sha256": "ffde710edf951d1b844db4664eb2159d7e97cb14212dca0c5bd29b9351b25cf9",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_parts_editor.gd",
+      "sha256": "02b7e17b87aaa9131ff7a01960d2b09e470f41391dd8291fc86aaf9bef9eebda",
+      "lf_sha256": "56f7619e2a73ebf76f60f6d1c2e98aaa79aa8cfae622366dd611ef6c0e59f7ef",
+      "category": "runtime"
+    },
+    {
+      "path": "src/posed_render_bounds.gd",
+      "sha256": "2f6268f018c0f275c6a549be01a5ef80fa48f7a361f8d194c863f5ac4df3edbe",
+      "lf_sha256": "dcc9afb9f3db677ba1c40530abae883b60f8518dd89eb190aedaa4c799683f45",
+      "category": "runtime"
+    },
+    {
+      "path": "src/posed_render_envelope.gd",
+      "sha256": "af6e65a8db6cf2907edc2541dc58add1c5eea3cfea5dfa19a286046c6b3785d7",
+      "lf_sha256": "af6e65a8db6cf2907edc2541dc58add1c5eea3cfea5dfa19a286046c6b3785d7",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_part_follow.gd",
+      "category": "runtime",
+      "sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb",
+      "lf_sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb"
+    },
+    {
+      "path": "src/part_pose_follow_math.gd",
+      "category": "runtime",
+      "sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf",
+      "lf_sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf"
     }
   ],
   "test_driver_scope": "Exact current-main source snapshots without overlays; labeled working-source checks require explicit opt-in. CPU defaults208; graphical defaults266 (original199+4UI+17popup endpoint+1long-job launch). Optional native adds23CPU/39graphical. Actual results recorded separately.",

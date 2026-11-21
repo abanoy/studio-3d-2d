@@ -1,0 +1,19 @@
+{
+  "status": "REFUSED_NOT_REMOVED",
+  "target": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-2f1acbd",
+  "reason": "Initial read-only fast directory audit refused a metadata-test reparse redirect and link-count values other than one. No removal attempted. Later explicit Path.stat reports AGENTS.md link count1, so fast scan values do not establish actual hardlinks. Further precise alias/dependency audit required.",
+  "aliases": [
+    "output/private-metadata-windows/1795270574291047100/owned metadata [unicode]/redirect"
+  ],
+  "alias_resolves_inside_same_checkout": true,
+  "actual_hardlinks_not_established": true,
+  "flagged_link_count_examples": [
+    ".gitattributes",
+    ".gitignore",
+    "AGENTS.md",
+    "CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md",
+    "CREDITS.md"
+  ],
+  "unknown_non_generated_files": 0,
+  "actual_removal": false
+}

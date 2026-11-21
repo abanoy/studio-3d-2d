@@ -4,6 +4,8 @@ const Document = preload("res://src/world_document.gd")
 const Model = preload("res://src/model.gd")
 const SceneIO = preload("res://src/scene3d.gd")
 const Parts = preload("res://src/character_parts.gd")
+const PartFollow = preload("res://src/character_part_follow.gd")
+var part_follow: RefCounted=PartFollow.new()
 var root: Node3D
 var data := {}
 var instances := {}
@@ -108,6 +110,9 @@ func evaluate(frame: int, final := false, editing_id := "", video: Dictionary = 
 		var parent_alpha: float=instances[instance.data.parent_id].evaluated_opacity if not instance.data.parent_id.is_empty() else 1.0
 		instance.apply(frame,id==editing_id,final,video,parent_alpha,editing_id)
 		instance.root.visible=instance.root.visible and frame>=instance.data.start_frame
+	# Every sibling's authored pose is ready before following derives any local
+	# channels. No previous follower result can feed into this frame's snapshot.
+	part_follow.evaluate(self)
 	for row in data.get("effects",[]):
 		var effect: RefCounted=effects[row.id]
 		effect.root.visible=row.visible and frame>=row.start_frame and frame<row.end_frame
@@ -117,6 +122,9 @@ func evaluate(frame: int, final := false, editing_id := "", video: Dictionary = 
 
 func instance(id: String) -> RefCounted:
 	return instances.get(id)
+
+func follow_report(id: String,reference_id: String="") -> Dictionary:
+	return part_follow.inspect(self,id,reference_id)
 
 func snapshot() -> Dictionary:
 	var result:=data.duplicate(true)
@@ -152,6 +160,7 @@ func restore_instances(values: Dictionary) -> String:
 	return ""
 
 func dispose() -> void:
+	part_follow.dispose()
 	if is_instance_valid(root):
 		if root.get_parent():root.get_parent().remove_child(root)
 		root.free()

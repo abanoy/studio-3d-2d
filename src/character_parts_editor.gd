@@ -15,6 +15,9 @@ var root_id:=""
 var opened_session:=""
 var opened_owner:=""
 var info: Label
+var follow_switches: Dictionary={}
+var follow_notes: Dictionary={}
+var follow_reference: OptionButton
 
 func ready_to_edit() -> bool:
 	return is_instance_valid(app) and not app.exporting and not app.playing and not app.navigating and not app.pose_editor.dragging and not app.physics_editor.is_running() and not app.physics_editor.recording.active and app.source_import.pid<=0 and app.has_project.pid<=0 and not (app.height_review and app.height_review.pending)
@@ -37,27 +40,59 @@ func open(selected: String) -> void:
 	if bundle.has("error"):app.message(bundle.error);return
 	if is_instance_valid(dialog):dialog.hide();dialog.queue_free()
 	opened_world=app.current_world().duplicate(true);opened_frame=app.frame;root_id=bundle.root_id
-	opened_session=app.recovery_session;opened_owner=app.sequence_editor.active_owner;switches.clear()
+	opened_session=app.recovery_session;opened_owner=app.sequence_editor.active_owner;switches.clear();follow_switches.clear();follow_notes.clear()
 	dialog=AcceptDialog.new();dialog.title="Parts — "+str(bundle.name);dialog.min_size=Vector2i(420,300);dialog.unresizable=false
 	app.add_child(dialog);dialog.get_ok_button().hide()
 	var box:=VBoxContainer.new();dialog.add_child(box)
 	info=app.label(box,"Show or hide parts at this frame. Later visibility keys use the project fade; rigs and expressions stay independent.");info.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var reference_line:=HBoxContainer.new();box.add_child(reference_line)
+	app.label(reference_line,"Body to follow:")
+	follow_reference=OptionButton.new();follow_reference.size_flags_horizontal=Control.SIZE_EXPAND_FILL;reference_line.add_child(follow_reference)
+	var reference_id: String=str(bundle.metadata.get("follow_reference_id",bundle.metadata.get("height_reference_id","")))
+	for part in bundle.parts:
+		follow_reference.add_item(str(part.row.name));var at: int=follow_reference.item_count-1
+		follow_reference.set_item_metadata(at,part.row.id)
+		if part.row.id==reference_id:follow_reference.select(at)
+	follow_reference.item_selected.connect(func(_index):update_follow_options())
 	var scroll:=ScrollContainer.new();scroll.custom_minimum_size=Vector2(430,220);scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;box.add_child(scroll)
 	var list:=VBoxContainer.new();list.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(list)
 	for part in bundle.parts:
-		var line:=HBoxContainer.new();list.add_child(line)
+		var entry:=VBoxContainer.new();list.add_child(entry)
+		var line:=HBoxContainer.new();entry.add_child(line)
 		var control:=CheckBox.new();control.text=str(part.row.name);control.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		control.button_pressed=Parts.Visibility.target(part.row,opened_frame);line.add_child(control);switches[part.row.id]=control
 		var id: String=part.row.id
 		app.button(line,"Select",func():dialog.hide();app.world_selection.select_entity(id))
 		app.button(line,"Remove…",func():remove_part(id))
+		var follow_line:=HBoxContainer.new();entry.add_child(follow_line)
+		var settings=part.row.metadata.get("character_part",{})
+		var follow:=CheckBox.new();follow.text="Follow body joints";follow.button_pressed=settings is Dictionary and settings.get("follow_body",false)==true
+		follow_line.add_child(follow);follow_switches[id]=follow
+		var note:=Label.new();note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.size_flags_horizontal=Control.SIZE_EXPAND_FILL;follow_line.add_child(note);follow_notes[id]=note
 	var row:=HBoxContainer.new();box.add_child(row)
 	app.button(row,"Show all",func():set_all_parts(true))
 	app.button(row,"Hide all",func():set_all_parts(false))
 	app.button(row,"Add part…",add_part_dialog)
-	app.button(box,"Apply visibility at this frame",apply_visibility)
+	app.label(box,"Following is opt-in. Unmatched joints and expressions stay independent; live physics pauses following.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	app.button(box,"Apply part settings",apply_visibility)
 	app.button(box,"Close",dialog.hide)
-	dialog.popup_centered(Vector2i(620,440))
+	update_follow_options()
+	dialog.popup_centered(Vector2i(760,560))
+
+func selected_follow_reference() -> String:
+	return str(follow_reference.get_item_metadata(follow_reference.selected)) if is_instance_valid(follow_reference) and follow_reference.selected>=0 else ""
+
+func update_follow_options() -> void:
+	if app.renderer.world_runtime==null:return
+	var reference:=selected_follow_reference()
+	for id in follow_switches:
+		var control: CheckBox=follow_switches[id];var note: Label=follow_notes[id]
+		var report: Dictionary=app.renderer.world_runtime.follow_report(id,reference)
+		if report.has("error"):
+			note.text=str(report.error);control.disabled=not control.button_pressed
+		else:
+			note.text="%d matched · %d unmatched · %d ambiguous · %d procedural kept independent" % [report.matched,report.unmatched,report.ambiguous,report.procedural]
+			control.disabled=report.matched==0 and not control.button_pressed
 
 func set_all_parts(value: bool) -> void:
 	for control in switches.values():control.button_pressed=value
@@ -67,15 +102,27 @@ func context_matches() -> bool:
 
 func apply_visibility() -> void:
 	if not context_matches():info.text="The scene changed. Reopen Parts before applying.";return
+	if switches.is_empty():info.text="Add a part before applying settings.";return
 	var values:={}
 	for id in switches:values[id]=switches[id].button_pressed
 	var edit:=Parts.visibility_edit(opened_world,root_id,values,opened_frame,int(app.video.duration_frames))
 	if edit.has("error"):info.text=edit.error;return
+	var proposed:=opened_world.duplicate(true)
+	for i in range(proposed.objects.size()):
+		if edit.after.has(proposed.objects[i].id):proposed.objects[i]=edit.after[proposed.objects[i].id]
+	var follows:={}
+	for id in follow_switches:follows[id]=follow_switches[id].button_pressed
+	var follow_edit:=Parts.follow_edit(proposed,root_id,follows,selected_follow_reference(),int(app.video.duration_frames))
+	if follow_edit.has("error"):info.text=follow_edit.error;return
+	for id in follow_edit.after:
+		if not edit.before.has(id):edit.before[id]=follow_edit.before[id]
+		edit.after[id]=follow_edit.after[id]
 	if edit.after.is_empty():info.text="Those visibility states are already set.";return
 	var why: String=app.renderer.world_runtime.restore_instances(edit.after)
 	if not why.is_empty():info.text=why;return
 	app.push_history(edit);app.set_frame(app.frame);app.changed();app.refresh_timeline()
-	opened_world=app.current_world().duplicate(true);info.text="Parts updated. Undo restores the whole visibility change."
+	opened_world=app.current_world().duplicate(true);info.text="Parts updated. Undo restores visibility and following together."
+	update_follow_options()
 
 func remove_part(id: String) -> void:
 	if not context_matches():info.text="The scene changed. Reopen Parts before removing a part.";return

@@ -17,7 +17,7 @@ UNITS = [('tests/wind_review_unit.gd', 'WIND_REVIEW_UNIT', 51), ('tests/wind_rev
 COUNTS = {'procedural':62, 'vrm0':47, 'vrm1':47, 'backhair':49, 'lifecycle':549, 'primary':91}
 ERRORS = ['ERROR:', 'SCRIPT ERROR', 'SHADER ERROR', 'FAIL ', 'ObjectDB instances leaked', 'unclaimed string names', 'Object was freed while a signal is being emitted', '_set_transient_exclusive_child', 'Pages in use exist at exit']
 ALLOW_EOL = False
-PORT_RUNTIME_FILES = ['src/'+name+'.gd' for name in ['app', 'has_project', 'physics_editor', 'physics_recording', 'pose_editor', 'renderer', 'secondary_spring', 'wind_review', 'wind_review_groups', 'model', 'import_basis', 'import_basis_helpers', 'import_basis_project']]
+PORT_RUNTIME_FILES = ['src/'+name+'.gd' for name in ['app', 'has_project', 'physics_editor', 'physics_recording', 'pose_editor', 'renderer', 'secondary_spring', 'wind_review', 'wind_review_groups', 'model', 'import_basis', 'import_basis_helpers', 'import_basis_project', 'physics_rig', 'source_import', 'world_runtime', 'world_selection', 'camera_easing_editor', 'keyframe_easing', 'character_parts', 'character_parts_editor', 'posed_render_bounds', 'posed_render_envelope', 'character_part_follow', 'part_pose_follow_math']]
 PORT_TEST_FILES = [name for name, _, _ in UNITS]+SCRIPTS+['tests/verify_wind_review.py']
 
 def require(ok, message):

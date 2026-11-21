@@ -2518,3 +2518,50 @@ lighting workers now explicitly report native continuous goals active. Their
 earlier ChatGPT/durable goal calls failed; the new local workers continue the
 existing implementations rather than discarding them. No sibling code is
 included in this checkpoint. No human/device acceptance or score change.
+
+
+## 2026-11-21 — Body-following addition and repaired review routes
+
+Retrieved mainc0618407539ac51a66cb7cb8c5fe44d5acee5e0d before continuing.
+Character parts now offer opt-in Follow body joints and a body reference choice.
+Actual Junko body/dress retain separate145/112-bone rigs:50matched,56unmatched,
+six procedural exclusions, zero ambiguous. Derived transforms preserve authored
+poses/expressions, reset each evaluation, restore on Off/Undo/Redo and recompute
+after packed reopen. Live simulation pauses following; no native physics or
+reconstruction fidelity is inferred. Older readers do not reproduce following.
+
+Review found/fixed malformed optional metadata, stale procedural/source-map
+ownership and unsafe declared-count conversion. Final54 headless controls
+(47generated+7actual prepared, including19 new counterexamples) and static22
+pass with owned Jobs closed. GUI14writer+7freshreader passes in Neon and Classic,
+both Simple. Metadata/cache corrections were rerun in both; the final numeric
+guard has54CPU coverage. Four corrected captures are byte-identical to the pair
+Root inspected: sleeve movement, other sleeve/legs/shoes retained, body hidden
+deliberately to isolate the clothing. No human review is claimed. Whole-world
+617-bone CPU means4.88msOff/8.04msOn,120samples each; no rendering/FPS claim.
+
+Full243 actually FAILED after1268.0061977s (outer1339.9351044s):1134sources/HEAD
+unchanged,55private jobs closed, no fresh aggregate. Wind refused stale reviewed
+app bytes before graphical launch. Minimal dependency-list/pin repair retains
+all other driver lines/assertions and guards. Current application scopes pass
+Wind94CPU+5syntax+845graphical and helper266graphical;33/48exact bindings and10
+new missing/drift refusals pass. Later CPU-fixture sync changes no application
+code. These scoped repairs do not relabel the failed Full or certify a new Full.
+
+After verified c061 retrieval, the exact six planned failed-output directories
+were removed:54files/138270logical bytes,380processes inspected and no target
+users/process termination. Allocated space gain was not measured. Old2f Full
+remains: its audit refused a test redirect/fast link counts; explicit file stat
+does not establish actual hardlinks. Originals, current Fulls, private review,
+primary Git store and installed tools remain protected.
+
+See docs/benchmarks/character_parts_follow_2026-11-21.json and the text-only
+experiments/parts_follow_20261121 receipts. Miku's prior15 runtime checks passed
+but actual skin contact remained false/1059penetrating pairs; that adverse result
+is retained, with its improved solver still separate. Discovery and direct-light
+workers have tested feature increments awaiting reviewed integration. Continue
+those additions and skin contact without owner manual questions. Formal52/54
+implementation and55/62acceptance stay unchanged; the seven actual human/native/
+device/clean-install prerequisites remain. Push/retrieve this source increment
+before cleaning its disposable files; no publication of this entry is inferred
+until the actual push and independent readback complete.

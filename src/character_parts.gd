@@ -28,6 +28,7 @@ static func describe(world: Dictionary, selected: String, duration: int) -> Dict
 	var root: Dictionary=chosen if chosen.get("kind")=="group" else index.get(chosen.get("parent_id",""),{})
 	var metadata=root.get("metadata",{}).get("character_parts",{})
 	if not metadata is Dictionary or metadata.get("format")!=FORMAT:return {"error":"This object is not a character bundle."}
+	if not metadata.get("members",[]) is Array or metadata.get("members",[]).size()>MAX_PARTS:return {"error":"The character's part list is invalid."}
 	var parts:=[];var seen:={}
 	for member in metadata.get("members",[]):
 		if not member is Dictionary or not index.has(member.get("id")) or seen.has(member.id):continue
@@ -82,4 +83,32 @@ static func visibility_edit(world: Dictionary, selected: String, values: Diction
 		var why: String=Model.validate(changed,duration)
 		if not why.is_empty():return {"error":why}
 		before[row.id]=row;after[row.id]=changed
+	return {"type":"world_objects","before":before,"after":after}
+
+static func follow_edit(world: Dictionary, selected: String, values: Dictionary, reference_id: String, duration: int) -> Dictionary:
+	var bundle:=describe(world,selected,duration)
+	if bundle.has("error"):return bundle
+	var allowed:={};var before:={};var after:={};var following:=false
+	for part in bundle.parts:allowed[part.row.id]=part.row
+	if not allowed.has(reference_id):return {"error":"Choose an existing body part from this character."}
+	for id in values:
+		if not allowed.has(id) or not values[id] is bool:return {"error":"Follow controls refer to an invalid character part."}
+	for part in bundle.parts:
+		var row: Dictionary=part.row
+		var settings=row.metadata.get("character_part",{})
+		if not settings is Dictionary or not settings.get("follow_body",false) is bool:return {"error":"A part's following settings are invalid."}
+		var enabled: bool=values.get(row.id,settings.get("follow_body",false))==true and row.id!=reference_id
+		following=following or enabled
+		var changed:=row.duplicate(true)
+		if not changed.metadata.has("character_part"):changed.metadata["character_part"]={"root_id":bundle.root_id,"role":part.role}
+		changed.metadata.character_part["follow_body"]=enabled
+		if changed!=row:
+			before[row.id]=row;after[row.id]=changed
+	for root in world.objects:
+		if root.id!=bundle.root_id:continue
+		var changed: Dictionary=root.duplicate(true)
+		changed.metadata.character_parts["follow_reference_id"]=reference_id
+		changed.metadata.character_parts["bone_following"]=following
+		changed.metadata.character_parts["following_profile"]="prepared_rest_correspondence_1"
+		if changed!=root:before[root.id]=root.duplicate(true);after[root.id]=changed
 	return {"type":"world_objects","before":before,"after":after}

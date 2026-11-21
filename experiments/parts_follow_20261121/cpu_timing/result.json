@@ -1,0 +1,29 @@
+{
+  "status": "MEASURED",
+  "checks": 0,
+  "actual_prepared_native_rigs": true,
+  "native_fidelity_qualified": false,
+  "output": "C:\\a\\Programming\\cloudflare\\has-parts-follow-20261121\\output\\character-parts-follow-1795281981818221300",
+  "benchmark": {
+    "authored_poses_unchanged": true,
+    "bones": 617,
+    "matched": 50,
+    "native_fidelity_qualified": false,
+    "off": {
+      "max_ms": 10.889,
+      "mean_ms": 4.88436666666667,
+      "median_ms": 4.532,
+      "p95_ms": 7.787,
+      "samples": 120
+    },
+    "on": {
+      "max_ms": 30.09,
+      "mean_ms": 8.03854166666667,
+      "median_ms": 7.277,
+      "p95_ms": 12.817,
+      "samples": 120
+    },
+    "scope": "headless steady whole-world evaluation; no render/input/export",
+    "world_objects": 7
+  }
+}

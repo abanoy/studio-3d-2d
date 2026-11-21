@@ -1,0 +1,140 @@
+{
+  "format": "has_character_parts_follow_increment_1",
+  "date": "2026-11-21",
+  "status": "IMPLEMENTED_FOCUSED_QUALIFIED",
+  "retrieved_main": "c0618407539ac51a66cb7cb8c5fe44d5acee5e0d",
+  "production_source_pins": {
+    "src/character_part_follow.gd": {
+      "bytes": 18633,
+      "sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb"
+    },
+    "src/part_pose_follow_math.gd": {
+      "bytes": 1454,
+      "sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf"
+    },
+    "src/character_parts.gd": {
+      "bytes": 7070,
+      "sha256": "ca4a4610ba8abf6f0842c22c08146c7e4820cdfee270d86876920a65f59d39ef"
+    },
+    "src/character_parts_editor.gd": {
+      "bytes": 17510,
+      "sha256": "02b7e17b87aaa9131ff7a01960d2b09e470f41391dd8291fc86aaf9bef9eebda"
+    },
+    "src/world_runtime.gd": {
+      "bytes": 9544,
+      "sha256": "05f6152e6c2003949523e0783b2a8e77a26ed3a1398218a4757554b1c1624db1"
+    }
+  },
+  "features": [
+    "Opt-in body-to-part following of compatible prepared joints",
+    "Body reference choice, per-part switch and matched/unmatched/procedural counts",
+    "Derived pose with independent authored keys/expressions, Off, Undo/Redo and packed persistence"
+  ],
+  "native_prepared_junko": {
+    "world_objects": 7,
+    "separate_body_bones": 145,
+    "separate_dress_bones": 112,
+    "matched": 50,
+    "unmatched": 56,
+    "procedural_excluded": 6,
+    "ambiguous": 0,
+    "native_fidelity_qualified": false
+  },
+  "focused": {
+    "headless": 54,
+    "generated": 47,
+    "actual_prepared_native": 7,
+    "new_malformed_metadata_and_cached_ownership_controls": 19,
+    "static_bundle_regression": 22,
+    "graphical": {
+      "neon_simple": {
+        "writer": 14,
+        "fresh_packed_reader": 7,
+        "report": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\part-follow-gui-1795281678152210900\\verification.json"
+      },
+      "classic_simple": {
+        "writer": 14,
+        "fresh_packed_reader": 7,
+        "report": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\part-follow-gui-1795281749492683000\\verification.json"
+      }
+    },
+    "rendered_captures_byte_identical_to_inspected_pair": 4,
+    "numeric_count_guard": "Final54 CPU; graphical following reruns precede only this numeric guard."
+  },
+  "cpu_measurement": {
+    "authored_poses_unchanged": true,
+    "bones": 617,
+    "matched": 50,
+    "native_fidelity_qualified": false,
+    "off": {
+      "max_ms": 10.889,
+      "mean_ms": 4.88436666666667,
+      "median_ms": 4.532,
+      "p95_ms": 7.787,
+      "samples": 120
+    },
+    "on": {
+      "max_ms": 30.09,
+      "mean_ms": 8.03854166666667,
+      "median_ms": 7.277,
+      "p95_ms": 12.817,
+      "samples": 120
+    },
+    "scope": "headless steady whole-world evaluation; no render/input/export",
+    "world_objects": 7
+  },
+  "reviewed_ports": {
+    "driver_assertions_and_process_guards_unchanged": true,
+    "wind_bindings": 33,
+    "helper_bindings": 48,
+    "additional_binding_refusal_controls": 10,
+    "Wind_graphical": 845,
+    "Wind_headless": 94,
+    "Wind_syntax": 5,
+    "helper_graphical": 266,
+    "helper_native_requested": false,
+    "Wind_native_inputs_preserved": true,
+    "graphical_application_source_unchanged_during_runs": true,
+    "later_CPU_fixture_sync_changes_only_test_sources": true,
+    "wind_report": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\wind-review\\graphical-1795281906235582000\\verification.json",
+    "helper_report": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\helper-preview\\graphical-1795282110844823700-89d374d3\\verification.json"
+  },
+  "full243": {
+    "status": "FAIL",
+    "functional_sources": 1134,
+    "all_sources_and_revision_unchanged": true,
+    "closed_private_jobs": 55,
+    "fresh_aggregate": false,
+    "error": "Unreviewed main port bytes: src/app.gd",
+    "later_scoped_repair_does_not_replace_failed_full": true
+  },
+  "cleanup": {
+    "prior_checkpoint_remote_verified": "c0618407539ac51a66cb7cb8c5fe44d5acee5e0d",
+    "actual_removed_directories": 6,
+    "actual_removed_files": 54,
+    "actual_removed_logical_bytes": 138270,
+    "allocated_space_gain_measured": false,
+    "older_completed_full_checkout_removed": false
+  },
+  "limitations": [
+    "Separate rigs remain; following and live hair/clothes/body simulation pause rather than sharing ownership.",
+    "Matching prepared rigs is not original native fidelity or reconstructed physics.",
+    "Unmatched local joints remain independent and inherit normal parent movement.",
+    "Following is a saved setting, not an animated enable key.",
+    "Older readers ignore following metadata and cannot reproduce its derived poses.",
+    "Miku skin/body collision is pending a separately reviewed increment; prior skin measurement remains false."
+  ],
+  "evidence_packet": "experiments/parts_follow_20261121",
+  "formal_status_changed": false,
+  "scores": "52/54 implementation;55/62 acceptance",
+  "remaining_external_ids": [
+    "IMPORT-02",
+    "IMPORT-03",
+    "ACCEPT-A",
+    "ACCEPT-B",
+    "ACCEPT-E",
+    "ACCEPT-TABLET",
+    "ACCEPT-INSTALL"
+  ],
+  "next": "Publish/verify this increment; integrate reviewed sibling discovery/direct-light changes; continue actual-skin contact and rest-hair settling. A new combined committed-source Full remains separate; do not block independent additions on it."
+}

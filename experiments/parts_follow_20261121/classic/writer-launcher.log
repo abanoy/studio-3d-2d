@@ -1,0 +1,18 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS ordinary Open loads the six-part native character
+PASS actual prepared dress has fifty unambiguous compatible joints
+PASS body and dress remain independent native rigs under their character
+PASS routed Parts checkbox enables body following
+PASS following applies through one ordinary settings Undo command
+PASS ordinary body pose edit leaves dress authored poses and expressions unchanged
+PASS body edit visibly deforms the independently rendered dress
+PASS Off restores independent dress pixels without undoing the body pose
+PASS Undo restores following and exact derived pixels
+PASS Redo restores independent dress pixels
+PASS following is ready to save without copying body animation into the dress
+PASS ordinary packed Save retains following and the edited body
+PASS original prepared body and dress GLBs remain unchanged
+PASS all native readbacks balance with six separate model parts
+CHARACTER_PARTS_FOLLOW_GUI {"checks":14,"failures":0}

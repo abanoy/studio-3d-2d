@@ -1,0 +1,177 @@
+{
+  "format": "has_helper_preview_main_verification_1",
+  "source_context": "main_working_source_snapshot",
+  "source_state": {
+    "revision": "c0618407539ac51a66cb7cb8c5fe44d5acee5e0d",
+    "working_status": [
+      {
+        "status": " M",
+        "paths": [
+          "src/character_parts.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "src/character_parts_editor.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "src/world_runtime.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/helper_preview_port_files.json"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/verify_helper_preview.py"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/verify_wind_review.py"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/wind_review_port_files.json"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "src/character_part_follow.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "src/part_pose_follow_math.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/character_parts_follow_gui.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/character_parts_follow_smoke.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/verify_character_parts_follow.py"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/verify_character_parts_follow_gui.py"
+        ]
+      }
+    ],
+    "ignored_generated_status": [
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/has_project.cpython-313.pyc"
+        ]
+      }
+    ],
+    "source_context": "main_working_source_snapshot"
+  },
+  "main_root": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121",
+  "actual_res_root": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\helper-preview\\graphical-1795282110844823700-89d374d3\\Studio",
+  "overlay_files": 0,
+  "mode": "graphical",
+  "native_requested": false,
+  "native_inputs_checked": false,
+  "native_fidelity": false,
+  "graphical_process_attempted": true,
+  "gpu_used": true,
+  "checks": 266,
+  "results": [
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "focused",
+      "script": "res://tests/helper_preview_gpu.gd",
+      "checks": 221,
+      "expected_checks": 221,
+      "failures": 0,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1139e82e16c84fe097b0680b002afcc8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 34812,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 92.328
+      },
+      "clean_private_receipt": true,
+      "result_source_context_bound": true,
+      "passed": true
+    },
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "peers",
+      "script": "res://tests/helper_preview_gpu_peers.gd",
+      "checks": 45,
+      "expected_checks": 45,
+      "failures": 0,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b91cc0cd3418424b9a4053998674bee6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 26620,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 13.222
+      },
+      "clean_private_receipt": true,
+      "result_source_context_bound": true,
+      "passed": true
+    }
+  ],
+  "error": null,
+  "preservation": {
+    "main_sources": true,
+    "runtimes": true,
+    "head": true,
+    "native_originals": true,
+    "staged_native_inputs": true,
+    "published_requests": true,
+    "snapshot_sources": true,
+    "snapshot_extras": true,
+    "fixtures": true
+  },
+  "passed": true
+}

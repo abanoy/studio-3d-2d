@@ -1,0 +1,338 @@
+{
+  "format": "has_wind_review_main_1",
+  "mode": "graphical",
+  "passed": true,
+  "error": "",
+  "folder": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\wind-review\\graphical-1795281906235582000",
+  "project_root": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121",
+  "revision_before": "c0618407539ac51a66cb7cb8c5fe44d5acee5e0d",
+  "revision_after": "c0618407539ac51a66cb7cb8c5fe44d5acee5e0d",
+  "reviewed_port_bindings": {
+    "src/app.gd": {
+      "sha256": "f21d17204d5f10477a496fe3e92ca19537f7c776ed22d8a5971493e1d3ec0125",
+      "reviewed_sha256": "f21d17204d5f10477a496fe3e92ca19537f7c776ed22d8a5971493e1d3ec0125",
+      "reconstruction": "exact bytes"
+    },
+    "src/has_project.gd": {
+      "sha256": "80a22d5b8a680c504122823e62fb116792f03cefc2b56926c61b16cdfdafdb92",
+      "reviewed_sha256": "80a22d5b8a680c504122823e62fb116792f03cefc2b56926c61b16cdfdafdb92",
+      "reconstruction": "exact bytes"
+    },
+    "src/physics_editor.gd": {
+      "sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "reviewed_sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "reconstruction": "exact bytes"
+    },
+    "src/physics_recording.gd": {
+      "sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "reviewed_sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "reconstruction": "exact bytes"
+    },
+    "src/pose_editor.gd": {
+      "sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "reviewed_sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "reconstruction": "exact bytes"
+    },
+    "src/renderer.gd": {
+      "sha256": "2db5d3869b8ccbb82854a95c9c9de87da7c0a6ac1b38ee1bfcb24b19a2581f8e",
+      "reviewed_sha256": "2db5d3869b8ccbb82854a95c9c9de87da7c0a6ac1b38ee1bfcb24b19a2581f8e",
+      "reconstruction": "exact bytes"
+    },
+    "src/secondary_spring.gd": {
+      "sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "reviewed_sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "reconstruction": "exact bytes"
+    },
+    "src/wind_review.gd": {
+      "sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "reviewed_sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "reconstruction": "exact bytes"
+    },
+    "src/wind_review_groups.gd": {
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "reviewed_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_unit.gd": {
+      "sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "reviewed_sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_hooks_unit.gd": {
+      "sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "reviewed_sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_review_unit.gd": {
+      "sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "reviewed_sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_gpu_common.gd": {
+      "sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "reviewed_sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_gpu_motion.gd": {
+      "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "reviewed_sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_gpu_lifecycle.gd": {
+      "sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "reviewed_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "reconstruction": "exact bytes"
+    },
+    "tests/wind_review_gpu_primary.gd": {
+      "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "reviewed_sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "reconstruction": "exact bytes"
+    },
+    "src/model.gd": {
+      "sha256": "73ecf64d9d855e24dabe925bd33afff81b424071ce3a6fed43ba73970b34dcd1",
+      "reviewed_sha256": "73ecf64d9d855e24dabe925bd33afff81b424071ce3a6fed43ba73970b34dcd1",
+      "reconstruction": "exact bytes"
+    },
+    "src/import_basis.gd": {
+      "sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "reviewed_sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "reconstruction": "exact bytes"
+    },
+    "src/import_basis_helpers.gd": {
+      "sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "reviewed_sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "reconstruction": "exact bytes"
+    },
+    "src/import_basis_project.gd": {
+      "sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "reviewed_sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "reconstruction": "exact bytes"
+    },
+    "tests/verify_wind_review.py": {
+      "sha256": "51ba217c9571bb166e5e174e1a8a63523d67f8bb423b7e8e9bf743f1284b58ee",
+      "reviewed_sha256": "51ba217c9571bb166e5e174e1a8a63523d67f8bb423b7e8e9bf743f1284b58ee",
+      "reconstruction": "exact bytes"
+    },
+    "src/physics_rig.gd": {
+      "sha256": "ca981a8d91670839a89e897e4c34917a291a6d865bf19770affdb85775e9d72b",
+      "reviewed_sha256": "ca981a8d91670839a89e897e4c34917a291a6d865bf19770affdb85775e9d72b",
+      "reconstruction": "exact bytes"
+    },
+    "src/source_import.gd": {
+      "sha256": "629f8f7b1443aa14e51513ffb75b7b3b5744254579afb1b815fdf4a3f131c024",
+      "reviewed_sha256": "629f8f7b1443aa14e51513ffb75b7b3b5744254579afb1b815fdf4a3f131c024",
+      "reconstruction": "exact bytes"
+    },
+    "src/world_runtime.gd": {
+      "sha256": "05f6152e6c2003949523e0783b2a8e77a26ed3a1398218a4757554b1c1624db1",
+      "reviewed_sha256": "05f6152e6c2003949523e0783b2a8e77a26ed3a1398218a4757554b1c1624db1",
+      "reconstruction": "exact bytes"
+    },
+    "src/world_selection.gd": {
+      "sha256": "4e8654e5d468bb97c2551006693b1b6aa5809a924396267007a62aecaaf6eb72",
+      "reviewed_sha256": "4e8654e5d468bb97c2551006693b1b6aa5809a924396267007a62aecaaf6eb72",
+      "reconstruction": "exact bytes"
+    },
+    "src/camera_easing_editor.gd": {
+      "sha256": "cc1ef515a5c868bfc200ed7fa743c6d70f6b43614169492799827442cfff8e1a",
+      "reviewed_sha256": "cc1ef515a5c868bfc200ed7fa743c6d70f6b43614169492799827442cfff8e1a",
+      "reconstruction": "exact bytes"
+    },
+    "src/keyframe_easing.gd": {
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "reviewed_sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "reconstruction": "exact bytes"
+    },
+    "src/character_parts.gd": {
+      "sha256": "ca4a4610ba8abf6f0842c22c08146c7e4820cdfee270d86876920a65f59d39ef",
+      "reviewed_sha256": "ca4a4610ba8abf6f0842c22c08146c7e4820cdfee270d86876920a65f59d39ef",
+      "reconstruction": "exact bytes"
+    },
+    "src/character_parts_editor.gd": {
+      "sha256": "02b7e17b87aaa9131ff7a01960d2b09e470f41391dd8291fc86aaf9bef9eebda",
+      "reviewed_sha256": "02b7e17b87aaa9131ff7a01960d2b09e470f41391dd8291fc86aaf9bef9eebda",
+      "reconstruction": "exact bytes"
+    },
+    "src/posed_render_bounds.gd": {
+      "sha256": "2f6268f018c0f275c6a549be01a5ef80fa48f7a361f8d194c863f5ac4df3edbe",
+      "reviewed_sha256": "2f6268f018c0f275c6a549be01a5ef80fa48f7a361f8d194c863f5ac4df3edbe",
+      "reconstruction": "exact bytes"
+    },
+    "src/posed_render_envelope.gd": {
+      "sha256": "af6e65a8db6cf2907edc2541dc58add1c5eea3cfea5dfa19a286046c6b3785d7",
+      "reviewed_sha256": "af6e65a8db6cf2907edc2541dc58add1c5eea3cfea5dfa19a286046c6b3785d7",
+      "reconstruction": "exact bytes"
+    },
+    "src/character_part_follow.gd": {
+      "sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb",
+      "reviewed_sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb",
+      "reconstruction": "exact bytes"
+    },
+    "src/part_pose_follow_math.gd": {
+      "sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf",
+      "reviewed_sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf",
+      "reconstruction": "exact bytes"
+    }
+  },
+  "headless": [
+    {
+      "script": "tests/wind_review_unit.gd",
+      "exit": 0,
+      "result": {
+        "checks": 51,
+        "failures": 0
+      },
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_hooks_unit.gd",
+      "exit": 0,
+      "result": {
+        "checks": 14,
+        "failures": 0
+      },
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_review_unit.gd",
+      "exit": 0,
+      "result": {
+        "checks": 29,
+        "failures": 0
+      },
+      "error_markers": [],
+      "passed": true
+    }
+  ],
+  "parse": [
+    {
+      "script": "src/app.gd",
+      "exit": 0,
+      "error_markers": [],
+      "gpu": false,
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_gpu_common.gd",
+      "exit": 0,
+      "error_markers": [],
+      "gpu": false,
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "error_markers": [],
+      "gpu": false,
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_gpu_lifecycle.gd",
+      "exit": 0,
+      "error_markers": [],
+      "gpu": false,
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_gpu_primary.gd",
+      "exit": 0,
+      "error_markers": [],
+      "gpu": false,
+      "passed": true
+    }
+  ],
+  "results": [
+    {
+      "mode": "procedural",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 62,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-feature-pass-20261121",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\wind-review\\graphical-1795281906235582000\\procedural\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "vrm0",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 47,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-feature-pass-20261121",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\wind-review\\graphical-1795281906235582000\\vrm0\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "vrm1",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 47,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-feature-pass-20261121",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\wind-review\\graphical-1795281906235582000\\vrm1\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "backhair",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 49,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-feature-pass-20261121",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\wind-review\\graphical-1795281906235582000\\backhair\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "lifecycle",
+      "script": "tests/wind_review_gpu_lifecycle.gd",
+      "exit": 0,
+      "checks": 549,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-feature-pass-20261121",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\wind-review\\graphical-1795281906235582000\\lifecycle\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "primary",
+      "script": "tests/wind_review_gpu_primary.gd",
+      "exit": 0,
+      "checks": 91,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-feature-pass-20261121",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-feature-pass-20261121\\output\\wind-review\\graphical-1795281906235582000\\primary\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    }
+  ],
+  "all_functional_sources_hash_size_mtime_unchanged": true,
+  "native_inputs_checked": true,
+  "native_prepared_inputs_unchanged": true,
+  "gpu_requested": true,
+  "graphical_process_attempted": true,
+  "gpu_used": true,
+  "private_art_uploaded": false,
+  "historical_gpu_checks": 830,
+  "expected_main_gpu_checks": 845,
+  "main_root_startup_guards": 12,
+  "canvas_first_teardown_checks": 3,
+  "scope": "Phase1: temporary preview of already declared groups; original830 checks plus12 explicit main-root/startup guards and3 canvas-first closure checks. PNG export, in-memory recovery sink, original-only start/cancel recording; no movie or persisted recovery-worker claim. Pending helper-before-Apply has separate verification and is outside these845 checks. Permanent exclusions, native jiggle/assembly, artist/device/installation acceptance remain open."
+}
