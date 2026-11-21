@@ -2851,3 +2851,24 @@ private asset checksum, native Head/all four guide-key states, and normal launch
 arguments/profile paths. The review and original packed-project bytes/nsmtime
 are unchanged. No engine was launched by this preparation/audit. Compact receipt:
 experiments/reconstructed_hair_review_20261121/verification.json.
+
+
+## 2026-11-21 — Outline correspondence remains a reviewed proposal
+
+Read-only protected-source analysis maps4865/4866 outline vertices using exact UV
+and native influence identity, unique nearest position/region and triangle classes;
+3409 map to the five colored back-hair sections and1456 map to front/bangs kept
+excluded. No XYZ weld or material-name grouping is used. Separation is about
+0.000381 original mesh-local units, not a measured world-metre distance. One
+unmatched vertex has a different native joint set; six unsupported triangles and
+ten incident vertices are quarantined. Strict all-incident masks contain
+929/776/1211/280/204 vertices. One shell component mixes front and back hair.
+
+No candidate or app source was changed, no engine ran, and original source bytes
+and nsmtime stayed exact. Original-index masks remain PRIVATE/local. Safe numeric
+findings and the exact executed diagnostic source are archived under
+experiments/outline_correspondence_20261121. This is a proposal, not an accepted
+outline/whole-hair result. Five paired color/mask operations could reuse40 guide
+chains/200 nodes, but naive colored3241+outline3409 contact rows can exceed4096.
+Do not raise that limit or silently omit rows: design explicit physical-surface
+and visual-shell correspondence before adoption. Formal52/54+55/62 stay unchanged.

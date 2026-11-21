@@ -1,0 +1,126 @@
+"""Output-only original-index shell correspondence proposal. No asset writer."""
+from pathlib import Path
+import collections,hashlib,json,math,os,stat,sys,time
+sys.dont_write_bytecode=True
+ROOT=Path(__file__).resolve().parents[1]
+TOOLS=ROOT.parent/'has-reconstruction-packed-20261121/tools'
+SOURCE=ROOT.parent/'has-backhair-reconstruction-20261121/output/backhair-map-1795295823960543900/source.glb'
+EXPECTED='a329cd47bd74b05278a6e501b9503d8e0b9231bf6adc647307d573170166a3ec'
+OUT=ROOT/'output/native-outline-correspondence-20261121'
+assert not OUT.exists()
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def identity(p):
+ s=p.lstat();assert stat.S_ISREG(s.st_mode) and s.st_nlink==1 and not (getattr(s,'st_file_attributes',0)&0x400)
+ return (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns,s.st_nlink,s.st_mode)
+before={str(p):(identity(p),sha(p.read_bytes())) for p in (SOURCE,TOOLS/'secondary_helpers.py')}
+assert before[str(SOURCE)][1]==EXPECTED
+sys.path.insert(0,str(TOOLS));import secondary_helpers as H
+g=H.GLB(SOURCE);assert g.sha==EXPECTED
+data={i:g.skin(131,i) for i in range(3)}
+uv={i:g.accessor(d[2]['attributes']['TEXCOORD_0'],'VEC2') for i,d in data.items()}
+normal={i:g.accessor(d[2]['attributes']['NORMAL'],'VEC3') for i,d in data.items()}
+weights={i:[tuple(sorted((d[3]['joints'][j],w) for j,w in pairs)) for pairs in d[6]] for i,d in data.items()}
+groups={i:H.components(d[4],d[5])[0] for i,d in data.items()}
+component={i:{v:ci for ci,vertices in enumerate(gs) for v in vertices} for i,gs in groups.items()}
+assert [len(x) for x in groups[1]]==[1008,821,1292,291,217]
+assert len(data[0][4])==4866 and len(data[2][4])==1534
+assert all(not d[2].get('targets') for d in data.values())
+index=collections.defaultdict(list);uv_index=collections.defaultdict(list)
+for pi in (1,2):
+ for vertex in range(len(data[pi][4])):
+  index[(uv[pi][vertex],weights[pi][vertex])].append((pi,vertex))
+  uv_index[uv[pi][vertex]].append((pi,vertex))
+matches={};unmatched=[];ambiguous=[];distances=[];duplicates=0;normal_opposed=0;normal_other=0
+for vertex,position in enumerate(data[0][4]):
+ candidates=index.get((uv[0][vertex],weights[0][vertex]),[])
+ if not candidates:
+  nearby=[]
+  for pi,v in uv_index.get(uv[0][vertex],[]):
+   distance=H.distance(position,data[pi][4][v]);a,b=dict(weights[0][vertex]),dict(weights[pi][v])
+   nearby.append({'primitive':pi,'component':component[pi][v],'vertex':v,'distance_source_units':distance,
+                  'same_source_joint_set':set(a)==set(b),'max_source_weight_difference':max(abs(a.get(j,0)-b.get(j,0)) for j in a.keys()|b.keys())})
+  unmatched.append({'outline_vertex':vertex,'uv_candidates_only_not_admitted':nearby});continue
+ scored=[(sum((a-b)**2 for a,b in zip(position,data[pi][4][v])),pi,v) for pi,v in candidates]
+ best=min(row[0] for row in scored);tied=[(pi,v) for score,pi,v in scored if score==best]
+ # Normals can have seams; original normals/indices are preserved, not copied.
+ classes={(pi,component[pi][v],data[pi][4][v],uv[pi][v],weights[pi][v]) for pi,v in tied}
+ if len(classes)!=1:
+  ambiguous.append({'outline_vertex':vertex,'nearest_candidates':tied});continue
+ pi,v=tied[0];distances.append(math.sqrt(best));duplicates+=len(tied)>1
+ dot=sum(a*b for a,b in zip(normal[0][vertex],normal[pi][v]))
+ normal_opposed+=dot<-.99;normal_other+=dot>=-.99
+ matches[vertex]={'primitive':pi,'component':component[pi][v],
+                  'equivalent_original_vertices':[j for _,j in tied],
+                  'distance_source_units':math.sqrt(best),'normal_dot':dot}
+def signature(pi,v):return(data[pi][4][v],uv[pi][v],weights[pi][v])
+triangle_sets={pi:{frozenset(signature(pi,v) for v in data[pi][5][o:o+3]) for o in range(0,len(data[pi][5]),3)} for pi in (1,2)}
+triangle_counts=collections.Counter();bad_triangles=[];quarantined=set();triangle_regions=collections.Counter()
+for offset in range(0,len(data[0][5]),3):
+ vertices=data[0][5][offset:offset+3]
+ reason=None
+ if any(v not in matches for v in vertices):reason='vertex_has_no_strict_correspondence'
+ else:
+  regions={(matches[v]['primitive'],matches[v]['component']) for v in vertices}
+  if len(regions)!=1:reason='crosses_correspondence_regions'
+  else:
+   pi,ci=next(iter(regions));key=frozenset(signature(pi,matches[v]['equivalent_original_vertices'][0]) for v in vertices)
+   if key not in triangle_sets[pi]:reason='no_exact_colored_triangle_class'
+   else:triangle_regions[(pi,ci)]+=1
+ if reason:
+  bad_triangles.append({'outline_triangle':offset//3,'outline_vertices':vertices,'reason':reason})
+  quarantined.update(vertices);triangle_counts[reason]+=1
+ else:triangle_counts['exact_corresponding_triangle']+=1
+candidate_masks={ci:sorted(v for v,m in matches.items() if m['primitive']==1 and m['component']==ci) for ci in range(5)}
+strict_masks={ci:[v for v in vertices if v not in quarantined] for ci,vertices in candidate_masks.items()}
+front=sorted(v for v,m in matches.items() if m['primitive']==2)
+component_summary=[]
+for ci,vertices in enumerate(groups[0]):
+ counts=collections.Counter('front_bangs' if matches[v]['primitive']==2 else 'colored_backhair_'+str(matches[v]['component']) for v in vertices if v in matches)
+ component_summary.append({'outline_connected_component':ci,'vertex_count':len(vertices),'mapped_region_counts':dict(counts),
+                           'unmatched_vertices':sum(v not in matches for v in vertices),'spans_front_and_back':bool(counts.get('front_bangs')) and len(counts)>1})
+parents={child:i for i,node in enumerate(g.doc['nodes']) for child in node.get('children',[])}
+at=131;chain=[]
+while True:
+ node=g.doc['nodes'][at];chain.append(at)
+ if at not in parents:break
+ at=parents[at]
+assert all('matrix' not in g.doc['nodes'][i] and g.doc['nodes'][i].get('scale',[1,1,1])==[1,1,1] for i in chain)
+rotation_norm_errors=[abs(sum(x*x for x in g.doc['nodes'][i].get('rotation',[0,0,0,1]))-1) for i in chain]
+for name,(stamp,digest) in before.items():
+ p=Path(name);assert identity(p)==stamp and sha(p.read_bytes())==digest
+OUT.mkdir()
+private={'format':'has_private_outline_correspondence_proposal_1','source_path':str(SOURCE),'source_sha256':EXPECTED,
+ 'source_identity':before[str(SOURCE)][0],'source_node':131,'outline_primitive':0,'colored_primitive':1,'front_primitive':2,
+ 'matches_by_original_outline_vertex':matches,'candidate_backhair_masks':candidate_masks,'strict_all_incident_triangles_masks':strict_masks,
+ 'front_bangs_excluded_original_vertices':front,'unmatched':unmatched,'ambiguous':ambiguous,'quarantined_original_vertices':sorted(quarantined),
+ 'unsupported_triangles':bad_triangles,'source_component_classification':component_summary,
+ 'proposal_only_not_asset_recipe':True,'source_geometry_or_weights_changed':False}
+raw=(json.dumps(private,indent=2)+'\n').encode();(OUT/'PRIVATE_original_index_correspondence.json').write_bytes(raw)
+safe={'format':'has_outline_correspondence_scalar_finding_1','status':'PROPOSAL_ONLY_NO_ASSET_WRITTEN','source_sha256':EXPECTED,
+ 'source_node':131,'outline_vertices':4866,'colored_backhair_vertices':3629,'front_bangs_vertices_excluded':1534,
+ 'strict_uv_and_native_joint_weight_matches':len(matches),'unique_nearest_position_region_classes':len(matches),
+ 'equivalent_seam_vertex_classes':duplicates,'nonunique_position_region_classes_refused':len(ambiguous),
+ 'outline_vertices_provisionally_paired_to_backhair':sum(map(len,candidate_masks.values())),
+ 'outline_backhair_counts_by_colored_component':[len(candidate_masks[i]) for i in range(5)],
+ 'strict_all_incident_triangles_mask_counts':[len(strict_masks[i]) for i in range(5)],
+ 'outline_vertices_paired_to_front_bangs_and_excluded':len(front),'unmatched_outline_vertices_refused':len(unmatched),
+ 'unmatched_uv_candidate_has_different_native_joint_set':bool(unmatched) and not unmatched[0]['uv_candidates_only_not_admitted'][0]['same_source_joint_set'],
+ 'unmatched_source_weight_max_difference':unmatched[0]['uv_candidates_only_not_admitted'][0]['max_source_weight_difference'],
+ 'exact_corresponding_shell_triangle_classes':triangle_counts['exact_corresponding_triangle'],
+ 'unsupported_shell_triangles':len(bad_triangles),'unsupported_triangle_reason_counts':dict(triangle_counts),
+ 'quarantined_incident_vertices':len(quarantined),'outline_connected_component_counts':[len(c) for c in groups[0]],
+ 'mixed_front_back_connected_components':sum(c['spans_front_and_back'] for c in component_summary),
+ 'shell_distance_min_source_units':min(distances),'shell_distance_max_source_units':max(distances),
+ 'distance_units':'Original GLB mesh-local coordinate units. No HAS scene/model scale applied; no world-metre claim.',
+ 'mesh_ancestor_scale_identity':True,'mesh_ancestor_rotation_norm_error_max':max(rotation_norm_errors),
+ 'source_morph_target_count':0,'normals_opposed_dot_below_minus_0_99':normal_opposed,'other_normal_directions':normal_other,
+ 'xyz_welding_used':False,'material_names_used_for_correspondence':False,'front_bangs_ribbons_auto_included':False,
+ 'private_mask_file_sha256':sha(raw),'source_helper_sha256':before[str(TOOLS/'secondary_helpers.py')][1],
+ 'source_bytes_and_mtime_preserved':True,'engine_or_gpu_run':False,'new_candidate_built':False,
+ 'contact_budget':{'current_colored_affected_rows':3241,'provisional_outline_backhair_vertices':sum(map(len,candidate_masks.values())),
+                   'naive_combined_upper_bound':3241+sum(map(len,candidate_masks.values())),'current_optional_cache_limit':4096,
+                   'potential_over_budget':True,'limit_changed':False,'outline_rows_silently_dropped':False},
+ 'next_design':'Explicit paired masks reuse each component guide set; keep ambiguous/unsupported triangles pending. Separate physical-surface/correspondence cache design required before all-outline adoption.',
+ 'qualification_or_complete_hair_claimed':False}
+(OUT/'SAFE_FINDING.json').write_text(json.dumps(safe,indent=2)+'\n',encoding='utf-8')
+print(json.dumps(safe));print('SAFE_FINDING_SHA256',sha((OUT/'SAFE_FINDING.json').read_bytes()))
