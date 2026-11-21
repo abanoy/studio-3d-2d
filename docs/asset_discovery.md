@@ -44,8 +44,9 @@ show defaults and a useful error without being overwritten on startup.
 
 Online has independent website and format menus. Enable online access and press
 Search (or Enter). An empty query starts discovery. The first batch targets 100
-unique listings across the available metadata providers. **Load another batch**
-adds up to another 100, preserving the relative order of earlier results while
+unique listings across the available metadata providers. Scrolling to the bottom
+requests another batch; **Load another batch** provides the same explicit fallback.
+Each adds up to another 100, preserving the relative order of earlier results while
 moving newly discovered exact matches ahead of broad matches. This is a target,
 not a fabricated quota: restricted, exhausted or failing providers can produce
 fewer results. Website search links do not count as listings.
@@ -305,3 +306,43 @@ Standalone panels without a host restriction keep their existing path-callback
 semantics. Focused headless checks pass: 107 browser and 117 additions controls,
 including 31 actual Studio checks per theme. Shared app/render/import/world
 sources are unchanged by this follow-up.
+
+## Follow-up automatic batches and source notices
+
+The follow-up branch adds bottom-of-list batches from wheel/pan, scrollbar and
+Down/Page Down/End input. Each still passes through the existing provider limits.
+Programmatic anchor restoration, layout changes and idle frames do not request
+more results. Cancel, a new search, tab changes and disabling online access
+invalidate pending scroll actions. Exhausted and unavailable sources do not
+loop; the manual batch control remains available for short lists and failures.
+
+Opening a Source Filmmaker or Garry's Mod Workshop search first explains that
+retrieval remains with the source site/Steam and individual requirements vary.
+**Open source website** is explicit. **Do not show again for this source** is
+saved only after confirmation, independently for the two applications. Cancel
+does not open a page or save the choice. Older preference files remain valid;
+remembering a notice never opts into online metadata access.
+
+Studio reuses the last local Source-browser discovery cache when available and
+labels it as possibly out of date. A configured GMod folder can be reported as
+an existing folder only. Missing detection remains **Unknown**. No new Steam
+scan, program, subscription, installation or download is started. Neither a
+folder nor a cached detection establishes ownership, a license or item access.
+
+Focused CPU checks: 108 browser controls; 24 paging guards (explicit scrollbar
+ranges because headless Godot does not draw native scrollbar ranges); 135
+additions controls, including 14 notice/restart checks and 33 real Studio checks
+per theme. Live retrieval still returns 100 then 200 distinct listings, 55
+English-name hits, 22 Japanese-name hits and eight MMD-filtered hits; optional
+thumbnail loading and native cancellation pass. BowlRoll still returns HTML
+instead of RSS and is honestly unavailable as a fetched listing provider.
+These observations do not establish future provider availability.
+
+```powershell
+python tests/verify_asset_discovery.py --paging
+python tests/verify_asset_discovery_additions.py --notices-only
+```
+
+Native graphical wheel/notice layout qualification is pending the coordinated
+private-desktop GPU slot. The CPU checks do not claim that graphical result.
+No full HAS suite was rerun for this independent browser increment.

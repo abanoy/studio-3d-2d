@@ -177,7 +177,7 @@ func _run() -> void:
 	check(browser.tabs.get_tab_title(0) == "Local" and browser.tabs.get_tab_title(1) == "Online", "separate Local/Online tabs")
 	check(requests.is_empty() and not browser.network.button_pressed, "construction is offline and sends nothing")
 	# FileDialog selection route and real filesystem enumeration on synthetic empty files.
-	var fixture := ProjectSettings.globalize_path("res://output/discovery-local-初音")
+	var fixture := ProjectSettings.globalize_path("res://output/discovery-local-初音-%d" % OS.get_process_id())
 	DirAccess.make_dir_recursive_absolute(fixture.path_join("nested"))
 	for name in ["Hatsune Miku.pmx", "voice.wav", "avatar.vrm", "same.mdl", "nested/room.glb", "other.fbx"]:
 		var file := FileAccess.open(fixture.path_join(name), FileAccess.WRITE); file.store_string("synthetic filename fixture; never loaded"); file.close()
@@ -280,6 +280,9 @@ func _run() -> void:
 	check(browser.status.text.contains("website search only") and not browser.website_button.disabled, "website-only provider exposes immediate search action")
 	var opens_before := opened.size()
 	await click_control(browser.website_button)
+	check(browser.retrieval_notice.visible and opened.size() == opens_before, "Steam requirements notice precedes explicit source opening")
+	browser.retrieval_notice.remember.button_pressed = true
+	browser.retrieval_notice.confirmed.emit(); await settle()
 	check(opened.size() == opens_before + 1 and opened[-1].contains("appid=1840"), "website search action uses selected provider and query")
 	browser.open_page(Catalog.website_url("steam_sfm", browser.search.text))
 	check(opened[-1].contains("appid=1840"), "website-only source search opens through same safe boundary")

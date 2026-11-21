@@ -38,7 +38,26 @@ func open() -> void:
 	if is_instance_valid(window): window.popup_centered(); return
 	app.stop(); app.finish_stroke(); app.pose_editor.finish_drag(); app.release_mouse()
 	var requesting := context()
-	window = DiscoveryWindow.open(app, func(path: String): accept_local(path, requesting), {"preferences_path":preferences_path, "local_import_extensions":IMPORT_EXTENSIONS})
+	window = DiscoveryWindow.open(app, func(path: String): accept_local(path, requesting), {"preferences_path":preferences_path, "local_import_extensions":IMPORT_EXTENSIONS, "retrieval_context":retrieval_context})
+
+func retrieval_context(provider: String) -> String:
+	var app = owner_ref.get_ref() if owner_ref else null
+	if not is_instance_valid(app): return "Local installation status is Unknown."
+	# Reuse the existing local Source-browser discovery cache. Do not start a
+	# library scan, executable, converter or network request just to open a link.
+	var discovery: Dictionary = app.source_browser.discovery
+	var names: Array = []
+	var games = discovery.get("games", [])
+	if not games is Array: games = []
+	for game in games.slice(0, 32):
+		if game is Dictionary and game.get("installed") == true:
+			names.append(str(game.get("name", "Source game")).left(128))
+	if not names.is_empty():
+		return "The last local Source-browser scan found game folders for: %s. This cached check may be out of date and does not verify this item's requirements. Refresh Source browser to check local folders again." % ", ".join(names)
+	var configured := str(app.source_import.gmod_root) if provider == "steam_gmod" else ""
+	if not configured.is_empty() and DirAccess.dir_exists_absolute(configured):
+		return "A configured Garry's Mod content folder exists. Its installation, Steam access and this item's requirements have not been verified by this browser."
+	return "Local installation status is Unknown. Use Source browser's local discovery to check configured Steam libraries; other libraries may exist."
 
 func accept_local(path: String, requesting: Dictionary) -> void:
 	var app = owner_ref.get_ref()

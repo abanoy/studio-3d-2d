@@ -6,7 +6,7 @@ const MAX_BYTES := 65536
 const MAX_DIRECTORIES := 32
 
 static func defaults() -> Dictionary:
-	return {"version":1, "directories":[], "website":"All", "local_format":"All", "online_format":"All", "expand":true, "tab":0}
+	return {"version":1, "directories":[], "website":"All", "local_format":"All", "online_format":"All", "expand":true, "tab":0, "dismissed_notices":{}}
 
 static func validate(value) -> Dictionary:
 	if not value is Dictionary or value.get("version") != 1: return {"error":"Unsupported discovery preferences. Using defaults."}
@@ -27,6 +27,11 @@ static func validate(value) -> Dictionary:
 	if not value.get("expand") is bool or not (tab is int or tab is float) or (tab != 0 and tab != 1): return {"error":"Invalid saved discovery controls. Using defaults."}
 	for key in ["website", "local_format", "online_format", "expand", "tab"]: clean[key] = value[key]
 	clean.tab = int(tab)
+	var notices = value.get("dismissed_notices", {}) # Version-1 files predating notices remain valid.
+	if not notices is Dictionary or notices.size() > 2: return {"error":"Invalid saved source notices. Using defaults."}
+	for key in notices:
+		if key not in ["steam_sfm", "steam_gmod"] or not notices[key] is bool: return {"error":"Invalid saved source notice choice. Using defaults."}
+		clean.dismissed_notices[key] = notices[key]
 	return {"data":clean}
 
 static func read_file(path: String) -> Dictionary:

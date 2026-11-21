@@ -18,6 +18,7 @@ static func open(owner: Node, on_local: Callable = Callable(), options: Dictiona
 	var browser := Browser.new(); browser.name = "Discovery"
 	if options.has("preferences_path"): browser.preferences_path = options.preferences_path
 	if options.get("local_import_extensions") is Array: browser.local_import_extensions = options.local_import_extensions
+	if options.get("retrieval_context") is Callable: browser.retrieval_context = options.retrieval_context
 	margin.add_child(browser)
 	window.set_meta("discovery_panel", browser)
 	browser.local_file_selected.connect(func(path):

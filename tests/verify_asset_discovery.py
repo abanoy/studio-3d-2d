@@ -16,17 +16,18 @@ def main():
         sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser()
     parser.add_argument("--graphical", action="store_true")
+    parser.add_argument("--paging", action="store_true", help="Native Tree scrolling and automatic next-batch guards")
     parser.add_argument("--live", action="store_true", help="Explicit real metadata probe, separate from fixture interactions")
     parser.add_argument("--close-live", action="store_true", help="Close the real browser during a native metadata request; verify cleanup")
     parser.add_argument("--quit-live", action="store_true", help="Quit real Studio with a browser metadata request pending; verify cleanup")
     parser.add_argument("--require-listings", action="store_true", help="With --live, require 100 mixed results, another batch and real English/Japanese name hits")
     options = parser.parse_args()
-    if sum([options.live, options.close_live, options.quit_live]) > 1:
+    if sum([options.live, options.close_live, options.quit_live, options.paging]) > 1:
         parser.error("Choose --live, --close-live or --quit-live.")
     lifecycle = options.close_live or options.quit_live
-    script = "tests/asset_discovery_close_live.gd" if lifecycle else "tests/asset_discovery_live.gd" if options.live else "tests/asset_discovery_smoke.gd"
+    script = "tests/asset_discovery_paging.gd" if options.paging else "tests/asset_discovery_close_live.gd" if lifecycle else "tests/asset_discovery_live.gd" if options.live else "tests/asset_discovery_smoke.gd"
     command = run.command(script, headless=not options.graphical, extra=("--", "--studio-quit") if options.quit_live else ())
-    report_path = ROOT / ("output/asset-discovery-quit-live.json" if options.quit_live else "output/asset-discovery-close-live.json" if options.close_live else "output/asset-discovery-live.json" if options.live else "output/asset-discovery-test.json")
+    report_path = ROOT / ("output/asset-discovery-paging.json" if options.paging else "output/asset-discovery-quit-live.json" if options.quit_live else "output/asset-discovery-close-live.json" if options.close_live else "output/asset-discovery-live.json" if options.live else "output/asset-discovery-test.json")
     # Never accept an old report after a failed launcher or parse error.
     report_path.unlink(missing_ok=True)
     result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=90)
@@ -62,7 +63,7 @@ def main():
         print("Live metadata observations recorded; required listing checks passed." if options.require_listings else "Live provider observations recorded; availability is not asserted.")
         return 0
     print(f"Discovery: {report['checks']} runtime checks, {len(report['failures'])} failures; {report['display_driver']}")
-    return int(bool(report["failures"]) or report["checks"] < 50)
+    return int(bool(report["failures"]) or report["checks"] < (15 if options.paging else 50))
 
 
 if __name__ == "__main__":

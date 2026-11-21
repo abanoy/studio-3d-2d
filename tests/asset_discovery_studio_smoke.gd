@@ -41,6 +41,13 @@ func run() -> void:
 	app.home.hide(); app.autosave_enabled.button_pressed = false
 	var bridge = app.get_node("AssetDiscoveryBridge")
 	check(bridge != null and bridge.button.get_meta("label", bridge.button.text) == "Discover", "patched real Studio installs Discover toolbar button")
+	var old_discovery: Dictionary = app.source_browser.discovery
+	app.source_browser.discovery = {"games":[{"name":"Source Filmmaker", "installed":true}]}
+	var local_notice: String = bridge.retrieval_context("steam_sfm")
+	check(local_notice.contains("last local Source-browser scan") and local_notice.contains("out of date"), "retrieval notice reuses cached local detection with its age limitation")
+	app.source_browser.discovery = {}
+	check(bridge.retrieval_context("steam_sfm").contains("Unknown"), "missing local cache never invents an installation")
+	app.source_browser.discovery = old_discovery
 	app.set_advanced(false)
 	var add := find_add(app)
 	check(add != null and add.is_visible_in_tree(), "Simple Add menu remains visible")

@@ -33,10 +33,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--graphical", action="store_true")
     parser.add_argument("--persistence-only", action="store_true")
+    parser.add_argument("--notices-only", action="store_true")
     args = parser.parse_args()
     folder = ROOT / "output" / f"discovery-additions-{time.time_ns()}"
     folder.mkdir(parents=True)
     reports = {}
+    print("Source requirements notices and restart")
+    for phase, extra in [("write", []), ("read", ["--read"])]:
+        execute("tests/asset_discovery_notices.gd", folder, extra)
+        reports["notices_" + phase] = json.loads((folder / f"notices-{phase}.json").read_text(encoding="utf-8"))
+    if args.notices_only:
+        (folder / "result.json").write_text(json.dumps(reports, indent=2), encoding="utf-8")
+        assert all(not report["failures"] for report in reports.values())
+        print(f"Notice checks passed: {sum(report['checks'] for report in reports.values())}; {folder}")
+        return 0
     print("Local geometry preview")
     execute("tests/asset_discovery_preview.gd", folder)
     reports["geometry_preview"] = json.loads((folder / "preview-result.json").read_text(encoding="utf-8"))

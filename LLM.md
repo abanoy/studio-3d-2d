@@ -8070,3 +8070,10 @@ docs/benchmarks/asset_discovery_import_policy_2026-11-21.json. Auto-bottom pagin
 and remembered retrieval notices remain the next requested work, not claimed
 by this checkpoint. Sibling introductions/role coordination were sent to both
 Follow Windows Codex goal and Add editable scene lighting at the owner's request.
+
+
+## 2026-11-21 Asset discovery automatic batches and remembered source notices
+
+Continues worker/asset-browser-followup-20261121 after published/read-back-verified6795884f; main and primary checkouts remain untouched. Native wheel/pan/scrollbar/key intent at the online bottom requests the existing bounded next batch. Layout/anchor changes do not; Cancel/search/tab/network-off invalidate deferred actions. Manual paging remains. Steam SFM/GMod website handoff now explains variable item/source requirements and offers explicit Open plus per-source remembered Do not show again. Cancel saves nothing/opens nothing. Studio reuses existing Source-browser cached local folder discovery with an age warning; configured GMod directory existence is labelled only as such, missing evidence Unknown, never ownership/license proof. No installer, game, converter, subscription or model download is started. Preferences remain backward compatible and metadata consent stays off at restart.
+
+Implemented before focused tests: browser108 pass (fixed repeated-run fixture isolation), paging24 pass with explicitly supplied headless scrollbar range, additions135 pass including14 fresh-process notice checks and33 actual Studio controls per theme. Real providers100→200 distinct, English55/Japanese22/MMD8, public optional thumbnail and native cancellation pass. BowlRoll remains rejected HTML/feed fallback. Native graphical wheel/notice qualification is pending primary GPU coordination; no graphical claim/full-suite rerun/owner acceptance. Safe evidence: docs/benchmarks/asset_discovery_paging_notices_2026-11-21.json.
