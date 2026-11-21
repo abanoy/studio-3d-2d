@@ -8488,3 +8488,18 @@ failure. Explicit multi-group/owned-derived reconstruction continues separately.
 Formal52/54 and55/62 stay. Cleanup53.6MB browser residue and6.88GB completed Full5d
 remain untouched after automatic review rejection; exact-path owner approval is
 pending, with no retry/workaround. This receipt update changes no application code.
+
+
+## 2026-11-21 - Correct current Windows handoff and label November9 history
+
+Corrected only the current header of docs/local_acceptance_handoff.md: exact5d
+canonical Full183/21movies and supplied/preserved original fixtures now replace
+the stale missing-hecatia/no-Full wording. Later43 Voxel/gravity results remain
+focused-only; formal52/54 implementation and55/62 acceptance are unchanged.
+The remaining November9 body, including its old scores and failed/skipped/input
+narrative, is preserved byte-exact under an explicit historical heading rather
+than treated as current pickup prerequisites. Current follow-up and Gravity43
+review are linked; prepared/headless startup is not private import/GUI acceptance.
+Cleanup53.6MB+6.88GB remains rejected/pending direct permission, with no retry;
+external review SourceIO/Blender, owner originals and other checkouts stay protected.
+No application/test/ledger or Git changes, engine runs or cleanup were performed.

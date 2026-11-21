@@ -1,26 +1,42 @@
-# Target acceptance handoff — 2026-11-09
+# Target acceptance handoff — current Windows status
 
-## Current Windows checkpoint
+## Current Windows checkpoint — 2026-11-21
 
-The local Windows continuation supersedes the unrun/missing-input state below.
-Fresh A/B/C/D/tutorial/first-movie/recovery software wrappers, 36 canonical core
-groups and 413 Python tests (44 explicit skips) pass. Windows C/D/F acceptance
-is now verified: 55/62 required acceptance groups are closed; implementation
-coverage stays 52/54. Full aggregate is not claimed: its historical eight-cel
-`hecatia.kra` fixture is absent. Initial failures and their fixes are preserved.
+Frozen published `5d37647c0004849247239817364e093c010eddd6` passed the canonical
+Windows Full verifier: 183 groups and all 21 movie groups, with 1,189 functional
+source files unchanged and 259 unique private jobs closed (260 receipt paths).
+The historical `hecatia.kra` fixture was later supplied; all 13 declared original
+fixture files remain hash/size/timestamp exact. See the
+[completed Full5d evidence](../experiments/integrated_full5d_20261121/summary.json).
 
-The supplied GMA contains Transit; installed Flatgrass and all five original
-street atlases now have native evidence. Transit retains its explicit 64-light
-refusal, with named diagnostics and project-preservation checks. Native source
-appearance/artist comparison, actual novice/learner/tablet/listening sessions,
-and clean offline Windows setup remain specific external prerequisites. See
-[the remaining exercises](windows_acceptance_followup.md),
-[Windows receipt](benchmarks/windows_acceptance_2026-11-09.json),
-[native/core receipt](benchmarks/windows_native_acceptance_2026-11-09.json)
-and the current ledger. Retrieve saved progress from current main; disposable
-session files and the temporary SourceIO runtime are cleaned after remote
-verification. Owner originals, Steam content and installed Studio/tools remain
-protected. Earlier cloud-only text below is retained as historical handoff scope.
+Later published `43dbdecc759e971a80f0d1e468e1e7d1e3b9ed2b` includes separately
+qualified focused VoxelGI and generated-gravity/control work. Those later results
+do not extend the 183-group Full pass to newer source. Formal implementation
+coverage remains **52/54** and acceptance closure **55/62**; human/device/install
+and native appearance limitations remain open. The limited Junko setup still
+retains its 13/14 quality failure and does not establish full-hair settling.
+
+Use [current Windows follow-up and evidence](windows_acceptance_followup.md) and
+retrieve the latest independently verified `origin/main` at pickup. The current
+local review is `C:/a/Programming/cloudflare/HAS-Review-Gravity-43dbdecc`: 1,214
+source files, three generated projects and one LOCAL PRIVATE limited-Junko project.
+Its normal interactive shortcuts are prepared; headless main startup passed.
+That startup is not private-project import, rendered GUI or owner acceptance.
+See [the source-pinned review receipt](../experiments/generated_motion_publication_20261121/summary.json).
+
+The remaining 53.6 MB browser residue and 6.88 GB completed Full5d clone were not
+removed: automatic approval review rejected their exact cleanup actions, and direct
+permission is pending. Do not retry or work around those rejections. Preserve owner
+originals/projects, review copies and installed/shared tools. The Gravity review's
+external SourceIO dependency under `has-neon-review-20261116-c2d52ff/output/dependencies/`
+and existing Blender runtime remain protected; they are not disposable review caches.
+
+## Historical November 9 handoff scope — not current pickup prerequisites
+
+The remainder below preserves the November 9 baseline, older failures/skips and
+then-open exercises. Its old fixture-availability, Full, score and cleanup wording
+is historical. Current status and pickup requirements are the checkpoint above
+and `windows_acceptance_followup.md`; no acceptance gate is promoted here.
 
 Implementation/evidence baseline: `90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f`.
 It includes the preceding cutout fix `38a72ee6aa65c0fec311613fa197b7417c1eda84`.
