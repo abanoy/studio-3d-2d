@@ -8188,3 +8188,40 @@ See indirect_lighting_prototype.md and its compact benchmark. No path tracing,
 dynamic occluder or unrestricted native-material claim. No main changes/installs.
 
 2026-11-21 lighting SDFGI follow-up: CPU45/private Forward+ GPU52 pass in Neon+Classic, imported room/skinned model colored bounce,32-frame rebuild and actual packed cold reopen/preview-video errors0 on IntelArc140V,1080p24 H264fourframes. Fixed deferred editor picking copies entering GI (world_selection two-line hunk). See docs/indirect_lighting_prototype.md and its compact benchmark; private evidence stays ignored; only own feature branch published, no main/installedStudio/tools/originalassets changes.
+
+
+## 2026-11-21 — Discovery follow-up: unsupported Studio imports
+
+New worker/asset-browser-followup-20261121 starts at the separately published
+92c65708 selection correction, keeping the ready PR branch stable for primary
+adoption. Studio now supplies its import extensions before opening discovery.
+Blend files stay browsable but show a disabled Studio import unavailable action
+and a GLB-export explanation, before close. Forced signals/delayed callbacks
+respect the same policy. Standalone parent callbacks retain their old semantics.
+Actual107browser and117headless additions controls pass, with31real Studio
+controls per theme, valid GLB import/Undo and rejected Blend forced-use. No
+shared app/renderer/import/world files changed. Evidence is
+docs/benchmarks/asset_discovery_import_policy_2026-11-21.json. Auto-bottom paging
+and remembered retrieval notices remain the next requested work, not claimed
+by this checkpoint. Sibling introductions/role coordination were sent to both
+Follow Windows Codex goal and Add editable scene lighting at the owner's request.
+
+
+## 2026-11-21 Asset discovery automatic batches and remembered source notices
+
+Continues worker/asset-browser-followup-20261121 after published/read-back-verified6795884f; main and primary checkouts remain untouched. Native wheel/pan/scrollbar/key intent at the online bottom requests the existing bounded next batch. Layout/anchor changes do not; Cancel/search/tab/network-off invalidate deferred actions. Manual paging remains. Steam SFM/GMod website handoff now explains variable item/source requirements and offers explicit Open plus per-source remembered Do not show again. Cancel saves nothing/opens nothing. Studio reuses existing Source-browser cached local folder discovery with an age warning; configured GMod directory existence is labelled only as such, missing evidence Unknown, never ownership/license proof. No installer, game, converter, subscription or model download is started. Preferences remain backward compatible and metadata consent stays off at restart.
+
+Implemented before focused tests: browser108 pass (fixed repeated-run fixture isolation), paging24 pass with explicitly supplied headless scrollbar range, additions135 pass including14 fresh-process notice checks and33 actual Studio controls per theme. Real providers100→200 distinct, English55/Japanese22/MMD8, public optional thumbnail and native cancellation pass. BowlRoll remains rejected HTML/feed fallback. Native graphical wheel/notice qualification is pending primary GPU coordination; no graphical claim/full-suite rerun/owner acceptance. Safe evidence: docs/benchmarks/asset_discovery_paging_notices_2026-11-21.json.
+
+
+### Prepared native requirements-notice controls
+
+The follow-up notice fixture now routes graphical Cancel/checkbox/Open through actual Window pointer input and captures Neon/Classic notices with viewport bounds; the additions runner forwards its explicit graphical flag. Headless-only fresh-process notice checks remain14/14 passing after preparation. Native execution is still pending the primary's coordinated private-desktop slot; no GPU was used. Production source is unchanged fromc816c465. Its published remote ref and all14 changed text files/832312B were independently read back exactly; that receipt is ignored output/asset-discovery-remote-c816c465.json.
+
+
+
+### Native paging and remembered-notice qualification
+
+Primary explicitly granted a serial private GPU slot after lighting released. Sandbox CreateDesktop failed before engine launch; approved host context retained private launcher/no visible fallback. First actual paging run session41123/child31088 failed seven controls: recursive scrollbar lookup selected a hidden TextEdit bar. Production now prefers a direct Tree VScrollBar. Corrected child23664 passes24 native wheel/guard/error checks (100→200→300→400→500, exhaustion/cancel/malformed/unavailable). Added a CPU direct-parent regression assertion:25 pass. Native summary is retained from runner stdout/closed receipt; standard report/log names were later overwritten by this final CPU run, not falsely claimed as immutable native raw evidence. The failed native report/log are separately retained.
+
+First native notice checks failed two confirmation/persistence controls because the fixture sent pointer input into the embedded child Window rather than root subwindow routing; production dialog was unchanged. Corrected root+offset routing passes18 native controls over fresh Neon11/Classic7 processes, actual Cancel/checkbox/Open clicks and inspected fitting notice captures. Failed fixture reports remain retained. Success children18844/15180 and paging23664 all close jobs/desktops, confirm private desktop and never reach owner foreground; first failed children31088/7888/36780 also close safely. GPU slot explicitly released to primary before CPU evidence work. Safe source/evidence only, no PNG/binary/private-art staging. See docs/benchmarks/asset_discovery_native_paging_notices_2026-11-21.json.

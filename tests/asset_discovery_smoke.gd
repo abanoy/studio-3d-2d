@@ -177,7 +177,7 @@ func _run() -> void:
 	check(browser.tabs.get_tab_title(0) == "Local" and browser.tabs.get_tab_title(1) == "Online", "separate Local/Online tabs")
 	check(requests.is_empty() and not browser.network.button_pressed, "construction is offline and sends nothing")
 	# FileDialog selection route and real filesystem enumeration on synthetic empty files.
-	var fixture := ProjectSettings.globalize_path("res://output/discovery-local-初音")
+	var fixture := ProjectSettings.globalize_path("res://output/discovery-local-初音-%d" % OS.get_process_id())
 	DirAccess.make_dir_recursive_absolute(fixture.path_join("nested"))
 	for name in ["Hatsune Miku.pmx", "voice.wav", "avatar.vrm", "same.mdl", "nested/room.glb", "other.fbx"]:
 		var file := FileAccess.open(fixture.path_join(name), FileAccess.WRITE); file.store_string("synthetic filename fixture; never loaded"); file.close()
@@ -222,6 +222,15 @@ func _run() -> void:
 	check(used.size() == uses_before and not is_instance_valid(browser.geometry_window), "Clear directories starts no deferred stale action")
 	await deferred_local_rejection(fixture, false)
 	await deferred_local_rejection(fixture, true)
+	# Standalone parents retain their own callback policy for listed extensions.
+	var blend_path := fixture.path_join("source.blend")
+	var blend_file := FileAccess.open(blend_path, FileAccess.WRITE); blend_file.store_string("synthetic standalone selection"); blend_file.close()
+	browser.picker.dir_selected.emit(fixture)
+	while browser.local.loading: await process_frame
+	await settle(); await select_local_title("source.blend")
+	check(not browser.use_button.disabled, "standalone callback policy still permits Blend selection")
+	browser.use_button.pressed.emit()
+	check(used[-1] == blend_path, "standalone callback receives Blend path without interpreting it")
 	browser.local.start([fixture]); browser.cancel_button.pressed.emit(); await settle()
 	check(not browser.local.loading and browser.local.message.contains("cancelled"), "Cancel stops local enumeration")
 	browser.local.start([fixture.path_join("missing")]); await settle()
@@ -271,6 +280,9 @@ func _run() -> void:
 	check(browser.status.text.contains("website search only") and not browser.website_button.disabled, "website-only provider exposes immediate search action")
 	var opens_before := opened.size()
 	await click_control(browser.website_button)
+	check(browser.retrieval_notice.visible and opened.size() == opens_before, "Steam requirements notice precedes explicit source opening")
+	browser.retrieval_notice.remember.button_pressed = true
+	browser.retrieval_notice.confirmed.emit(); await settle()
 	check(opened.size() == opens_before + 1 and opened[-1].contains("appid=1840"), "website search action uses selected provider and query")
 	browser.open_page(Catalog.website_url("steam_sfm", browser.search.text))
 	check(opened[-1].contains("appid=1840"), "website-only source search opens through same safe boundary")

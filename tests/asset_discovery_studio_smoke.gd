@@ -41,6 +41,13 @@ func run() -> void:
 	app.home.hide(); app.autosave_enabled.button_pressed = false
 	var bridge = app.get_node("AssetDiscoveryBridge")
 	check(bridge != null and bridge.button.get_meta("label", bridge.button.text) == "Discover", "patched real Studio installs Discover toolbar button")
+	var old_discovery: Dictionary = app.source_browser.discovery
+	app.source_browser.discovery = {"games":[{"name":"Source Filmmaker", "installed":true}]}
+	var local_notice: String = bridge.retrieval_context("steam_sfm")
+	check(local_notice.contains("last local Source-browser scan") and local_notice.contains("out of date"), "retrieval notice reuses cached local detection with its age limitation")
+	app.source_browser.discovery = {}
+	check(bridge.retrieval_context("steam_sfm").contains("Unknown"), "missing local cache never invents an installation")
+	app.source_browser.discovery = old_discovery
 	app.set_advanced(false)
 	var add := find_add(app)
 	check(add != null and add.is_visible_in_tree(), "Simple Add menu remains visible")
@@ -108,6 +115,13 @@ func run() -> void:
 	panel.tabs.current_tab = 0; panel.picker.dir_selected.emit(folder)
 	while panel.local.loading: await process_frame
 	await settle()
+	var blend_item: TreeItem = panel.tree.get_root().get_first_child()
+	while blend_item and blend_item.get_text(0) != "source.blend": blend_item = blend_item.get_next()
+	check(blend_item != null, "unsupported Blend file stays listed")
+	blend_item.select(0); panel.tree.item_selected.emit(); await settle()
+	check(panel.use_button.disabled and panel.use_button.text.contains("unavailable") and panel.details.text.contains(".blend"), "unsupported Studio import is disabled and explained before close")
+	panel.use_button.pressed.emit(); await settle()
+	check(is_instance_valid(bridge.window) and bridge.window.visible and app.current_world() == before and app.source_import.pid <= 0, "forcing unsupported Use preserves browser and Studio scene")
 	var selected_item: TreeItem = panel.tree.get_root().get_first_child()
 	while selected_item and str(selected_item.get_metadata(0).path).simplify_path() != path.simplify_path(): selected_item = selected_item.get_next()
 	check(selected_item != null, "integrated local scan finds generated cube")

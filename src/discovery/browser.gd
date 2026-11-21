@@ -8,7 +8,10 @@ const LocalScan = preload("res://src/discovery/local_scan.gd")
 const Preferences = preload("res://src/discovery/preferences.gd")
 const Thumbnail = preload("res://src/discovery/thumbnail.gd")
 const LocalPreview = preload("res://src/discovery/local_preview.gd")
+const RetrievalNotice = preload("res://src/discovery/retrieval_notice.gd")
 var preferences_path := Preferences.DEFAULT_PATH
+var local_import_extensions: Array = [] # Empty: parent-defined standalone callbacks.
+var import_target_name := "Studio"
 var online: Node
 var local: Node
 var tabs: TabBar
@@ -53,8 +56,14 @@ var _restoring := true
 var _last_tab := 0
 var _local_format := "All"
 var _online_format := "All"
+var _scrollbar: VScrollBar
+var _batch_generation := 0
+var _batch_check_pending := false
 # Tests inject a browser opener, never launch a real browser during automation.
 var page_opener: Callable
+var retrieval_context: Callable
+var retrieval_notice: ConfirmationDialog
+var dismissed_notices := {}
 
 func _ready() -> void:
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -62,6 +71,10 @@ func _ready() -> void:
 	online = Service.new(); add_child(online)
 	local = LocalScan.new(); add_child(local)
 	thumbnail = Thumbnail.new(); add_child(thumbnail)
+	retrieval_notice = RetrievalNotice.new(); add_child(retrieval_notice)
+	retrieval_notice.source_confirmed.connect(func(url, provider, remember):
+		if remember: dismissed_notices[provider] = true; save_preferences()
+		_open_source(url); _schedule_refresh())
 	thumbnail.changed.connect(func():
 		if is_instance_valid(preview): preview.texture = thumbnail.texture; preview_note.text = thumbnail.message
 		_schedule_refresh())
@@ -87,12 +100,12 @@ func _ready() -> void:
 	choose_button = _button(controls, "Choose directory…", func(): picker.popup_centered(Vector2i(800, 540)))
 	clear_button = _button(controls, "Clear directories", func(): directories.clear(); local.start([]); save_preferences(); _schedule_refresh())
 	network = CheckButton.new(); network.text = "Enable online access"; controls.add_child(network)
-	network.toggled.connect(func(enabled): online.set_network(enabled); _update_thumbnail(); _schedule_refresh())
+	network.toggled.connect(func(enabled): _batch_generation += 1; online.set_network(enabled); _update_thumbnail(); _schedule_refresh())
 	expand = CheckButton.new(); expand.text = "Expand names"; expand.button_pressed = true; controls.add_child(expand)
 	expand.tooltip_text = "Full name, reordered words, documented aliases and individual keywords. No translation service."
 	expand.toggled.connect(func(_enabled): run_search())
 	cancel_button = _button(controls, "Cancel", cancel)
-	more_button = _button(controls, "Load another batch", func(): online.fetch_more())
+	more_button = _button(controls, "Load another batch", _next_batch)
 	website_button = _button(controls, "Open website search", func(): open_page(Catalog.website_url(_site_ids[website.selected], search.text)))
 	website_button.tooltip_text = "Choose a website filter, then open its search page in your default browser."
 	thumbnails = CheckButton.new(); thumbnails.text = "Thumbnail preview"; controls.add_child(thumbnails)
@@ -109,7 +122,10 @@ func _ready() -> void:
 	for column in 4: tree.set_column_expand(column, column < 2); tree.set_column_custom_minimum_width(column, [240, 180, 110, 150][column])
 	tree.size_flags_vertical = Control.SIZE_EXPAND_FILL; tree.custom_minimum_size.y = 180; add_child(tree)
 	tree.item_selected.connect(_select)
+	_scrollbar = _find_vertical_scrollbar(tree)
+	if _scrollbar: _scrollbar.gui_input.connect(_scroll_intent.bind(true))
 	tree.gui_input.connect(func(event):
+		_scroll_intent(event)
 		if tabs.current_tab != 1: return
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and not event.double_click:
 			var item := tree.get_item_at_position(event.position)
@@ -155,6 +171,7 @@ func load_preferences() -> void:
 	_settings_error = result.get("error", "")
 	var data: Dictionary = result.get("data", Preferences.defaults())
 	directories = data.directories
+	dismissed_notices = data.dismissed_notices
 	_local_format = data.local_format; _online_format = data.online_format
 	website.select(_site_ids.find(data.website))
 	expand.set_pressed_no_signal(data.expand)
@@ -165,7 +182,7 @@ func save_preferences() -> void:
 	if _restoring: return
 	if tabs.current_tab == 0: _local_format = Catalog.FORMATS[format_filter.selected]
 	else: _online_format = Catalog.FORMATS[format_filter.selected]
-	_settings_error = Preferences.write_file(preferences_path, {"version":1, "directories":directories, "website":_site_ids[website.selected], "local_format":_local_format, "online_format":_online_format, "expand":expand.button_pressed, "tab":tabs.current_tab})
+	_settings_error = Preferences.write_file(preferences_path, {"version":1, "directories":directories, "website":_site_ids[website.selected], "local_format":_local_format, "online_format":_online_format, "expand":expand.button_pressed, "tab":tabs.current_tab, "dismissed_notices":dismissed_notices})
 
 func _label() -> Label:
 	var label := Label.new(); label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -206,6 +223,7 @@ func _tab_changed(index: int) -> void:
 
 func run_search() -> void:
 	if _restoring: return
+	_batch_generation += 1
 	save_preferences()
 	_open_error = ""
 	selected = {}; _render_signature = ""
@@ -215,10 +233,48 @@ func run_search() -> void:
 		online.search(search.text, _site_ids[website.selected], Catalog.FORMATS[format_filter.selected], expand.button_pressed)
 
 func cancel() -> void:
+	_batch_generation += 1
+	if is_instance_valid(retrieval_notice): retrieval_notice.dismiss()
 	if is_instance_valid(thumbnail): thumbnail.cancel()
 	if is_instance_valid(online): online.cancel()
 	if is_instance_valid(local): local.cancel()
 	_schedule_refresh()
+
+func _find_vertical_scrollbar(node: Node) -> VScrollBar:
+	# Tree owns internal scrollbars in pinned Godot 4.6; no public getter exists.
+	# Prefer its own bar over a hidden editor's nested TextEdit scrollbar.
+	for child in node.get_children(true):
+		if child is VScrollBar: return child
+	for child in node.get_children(true):
+		var found := _find_vertical_scrollbar(child)
+		if found: return found
+	return null
+
+func _next_batch() -> void:
+	_batch_generation += 1
+	online.fetch_more()
+
+func _scroll_intent(event: InputEvent, scrollbar_input := false) -> void:
+	if tabs.current_tab != 1 or _batch_check_pending: return
+	var scrolling := event is InputEventPanGesture
+	if event is InputEventMouseButton:
+		scrolling = event.pressed and (event.button_index == MOUSE_BUTTON_WHEEL_DOWN or (scrollbar_input and event.button_index == MOUSE_BUTTON_LEFT))
+	elif event is InputEventMouseMotion:
+		scrolling = scrollbar_input and event.button_mask & MOUSE_BUTTON_MASK_LEFT != 0
+	elif event is InputEventKey:
+		scrolling = event.pressed and event.keycode in [KEY_DOWN, KEY_PAGEDOWN, KEY_END]
+	if not scrolling: return
+	_batch_check_pending = true
+	_check_scroll_batch.call_deferred(_batch_generation)
+
+func _check_scroll_batch(generation: int) -> void:
+	_batch_check_pending = false
+	if generation != _batch_generation or not is_inside_tree() or not is_instance_valid(_scrollbar): return
+	if tabs.current_tab != 1 or not online.network_enabled or online.loading or not online.has_more or online.rows.is_empty(): return
+	var bottom := _scrollbar.max_value - _scrollbar.page
+	# Only explicit scrolling reaches here. Rendering, theme changes and restoring
+	# an anchor must never chain requests merely because the list fits the viewport.
+	if bottom > 0 and _scrollbar.value >= bottom - 1: _next_batch()
 
 func _schedule_refresh() -> void:
 	if _refresh_pending: return
@@ -285,6 +341,7 @@ func _refresh() -> void:
 	directory_label.text = "Directories: " + ("; ".join(directories) if not directories.is_empty() else "none selected")
 	disclosure.text = "Click an online listing to open its source page. No model files are downloaded."
 	if is_online:
+		disclosure.text += "\nScroll to the bottom for another batch, or use Load another batch."
 		disclosure.text += "\nQuery variations: " + (", ".join(online.variants) if not online.variants.is_empty() else "discovery feed")
 		if not online.tried.is_empty(): disclosure.text += "\nAPI queries sent: " + "; ".join(online.tried)
 		disclosure.text += "\nPoly Haven and BowlRoll match these variations against fetched metadata; BowlRoll covers recent feed entries only."
@@ -296,10 +353,14 @@ func _refresh() -> void:
 	if not _open_error.is_empty(): status.text += "\n" + _open_error
 	if not _settings_error.is_empty(): status.text += "\n" + _settings_error
 	search_button.disabled = false
-	use_button.disabled = selected.is_empty() or is_online
+	var import_error := local_import_error(selected) if not is_online else ""
+	use_button.disabled = selected.is_empty() or is_online or not import_error.is_empty()
+	use_button.text = import_target_name + " import unavailable" if not import_error.is_empty() else "Use selected local file"
+	use_button.tooltip_text = import_error if not import_error.is_empty() else "Passes the filename to the parent for explicit import. Browsing does not load models."
 	preview_button.disabled = selected.is_empty() or is_online or str(selected.get("path", "")).get_extension().to_lower() != "glb"
 	details.text = "Select a filename for its full path." if not is_online else "Access labels describe source metadata, not a verified download or permission to use the model."
 	if not selected.is_empty(): details.text = str(selected.get("path", selected.get("url", ""))) + "\n" + str(selected.get("evidence", ""))
+	if not import_error.is_empty(): details.text += "\n" + import_error
 	if is_online and not selected.get("formats", []).is_empty(): details.text += "\nFormat hints are inferred from title/tags; file contents were not inspected."
 	_update_thumbnail()
 	var lines: Array = []
@@ -336,6 +397,16 @@ func open_page(url: String) -> void:
 		_open_error = "Cannot open this source URL. Only known HTTPS provider pages are allowed."
 		status.text = _open_error
 		return
+	var provider := RetrievalNotice.provider_for_url(url)
+	if not provider.is_empty() and not dismissed_notices.get(provider, false):
+		var context_text := "Local installation status is Unknown. Studio has not checked your Steam libraries in this browser."
+		if retrieval_context.is_valid(): context_text = str(retrieval_context.call(provider))
+		retrieval_notice.present(url, provider, context_text)
+		return
+	_open_source(url)
+
+func _open_source(url: String) -> void:
+	if not Catalog.safe_page(url): return
 	var error: int = page_opener.call(url) if page_opener.is_valid() else OS.shell_open(url)
 	_open_error = "Could not open your default browser (%d)." % error if error != OK else ""
 	if error != OK: status.text = _open_error
@@ -345,8 +416,18 @@ func current_local_selection() -> Dictionary:
 	_reconcile_selection(_current_visible_rows())
 	return selected if tabs.current_tab == 0 else {}
 
-func _use_local() -> void:
+func local_import_error(row: Dictionary) -> String:
+	if row.is_empty() or local_import_extensions.is_empty(): return ""
+	var extension := str(row.get("path", "")).get_extension().to_lower()
+	if extension in local_import_extensions: return ""
+	return "%s cannot add .%s files here. Export a supported GLB first." % [import_target_name, extension]
+
+func current_local_import() -> Dictionary:
 	var row := current_local_selection()
+	return row if local_import_error(row).is_empty() else {}
+
+func _use_local() -> void:
+	var row := current_local_import()
 	if not row.is_empty(): local_file_selected.emit(row.path)
 
 func _preview_local() -> void:
