@@ -5,14 +5,16 @@ var nodes: Dictionary={}
 var stamp:=""
 var last_error:=""
 var reflection: ReflectionProbe
+var indirect:=preload("res://src/scene_indirect_runtime.gd").new()
 
 static func reflections_supported() -> bool:
 	# CPU checks inspect data/nodes only. Actual probe pixels are qualified on
 	# Forward+; the pinned Compatibility runtime produced a black cubemap.
 	return DisplayServer.get_name()=="headless" or RenderingServer.get_current_rendering_method()=="forward_plus"
 
-func setup(parent: Node3D) -> void:
+func setup(parent: Node3D,renderer: Node=null) -> void:
 	root=Node3D.new();root.name="AuthoredSceneLights";parent.add_child(root)
+	if renderer:indirect.setup(renderer)
 
 func sync(video: Dictionary) -> void:
 	var data:=Document.document(video)
@@ -69,6 +71,7 @@ func sync_reflection(data: Dictionary) -> void:
 	reflection.intensity=settings.intensity
 
 func apply_ambient(video: Dictionary,environment: Environment) -> void:
+	indirect.sync(video,environment)
 	# Studio keeps its established ambient light. Lit's fill is explicit and optional.
 	if video.get("lighting_mode","studio")=="studio":environment.ambient_light_color=Color("d2e2f2")
 	if video.get("lighting_mode","studio")!="lit":return

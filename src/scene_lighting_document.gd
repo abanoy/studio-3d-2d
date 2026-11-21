@@ -10,6 +10,9 @@ static func empty() -> Dictionary:
 static func document(video: Dictionary) -> Dictionary:
 	return video.get("scene_lighting",empty())
 
+static func indirect(data: Dictionary) -> Dictionary:
+	return data.get("indirect",{"enabled":false,"energy":1.,"cell_size":.2,"settle_frames":32})
+
 static func number(value: Variant,minimum: float,maximum: float) -> bool:
 	return (value is int or value is float) and is_finite(float(value)) and value>=minimum and value<=maximum
 
@@ -23,6 +26,11 @@ static func error(value: Variant) -> String:
 	if not value is Dictionary or value.get("format")!=FORMAT:return "Unsupported scene lighting document."
 	if not value.get("lights") is Array or value.lights.size()>MAX_LIGHTS:return "Scene lighting supports up to 64 authored lights."
 	if not triple(value.get("ambient_color"),0,1) or not number(value.get("ambient_energy"),0,4):return "Ambient fill needs an RGB color and intensity from 0 to 4."
+	if value.has("indirect"):
+		var gi=value.indirect
+		if not gi is Dictionary or not gi.get("enabled") is bool:return "Invalid indirect-light setting."
+		if not number(gi.get("energy"),0,4) or not number(gi.get("cell_size"),.05,4):return "Indirect light needs strength 0–4 and cell size 0.05–4 scene units."
+		if not number(gi.get("settle_frames"),8,120) or float(gi.settle_frames)!=floor(float(gi.settle_frames)):return "Indirect settling must be 8–120 whole render frames."
 	if value.has("reflection"):
 		var probe=value.reflection
 		if not probe is Dictionary or not probe.get("enabled") is bool:return "Invalid room reflection settings."

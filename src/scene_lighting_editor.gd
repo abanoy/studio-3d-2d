@@ -33,6 +33,11 @@ var reflection_strength: SpinBox
 var reflection_fields: VBoxContainer
 var undo_button: Button
 var redo_button: Button
+var indirect_enabled: CheckBox
+var indirect_energy: SpinBox
+var indirect_cell: SpinBox
+var indirect_settle: SpinBox
+var indirect_status: Label
 
 func setup(owner_app: Control) -> void:
 	app=owner_app
@@ -103,6 +108,18 @@ func build() -> void:
 	add_buttons.append(app.button(probe_actions,"Fit near scene",fit_reflection))
 	add_buttons.append(app.button(probe_actions,"Apply reflections",apply_reflection))
 	var probe_note: Label=app.label(reflection_fields,"Launch with python run.py --forward-plus for this optional mode. Set Ambient fill above 0 (try 0.3). A live room cubemap approximates reflections and local ambient fill; it does not trace light bounces or mirrors. Put its center in open air. Imported probes remain.");probe_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var indirect_toggle:=CheckButton.new();indirect_toggle.text="Environment bounce (SDFGI prototype, Forward+)";box.add_child(indirect_toggle)
+	var indirect_fields:=VBoxContainer.new();box.add_child(indirect_fields);indirect_fields.hide();indirect_toggle.toggled.connect(indirect_fields.set_visible)
+	indirect_enabled=CheckBox.new();indirect_enabled.text="Enable environment bounce (experimental)";indirect_fields.add_child(indirect_enabled)
+	var indirect_row:=HBoxContainer.new();indirect_fields.add_child(indirect_row)
+	indirect_energy=number(indirect_row,"Bounce strength",0,4,.05)
+	indirect_cell=number(indirect_row,"Cell size (scene units)",.05,4,.05)
+	indirect_settle=number(indirect_row,"Render settling frames",8,120,1)
+	var indirect_actions:=HBoxContainer.new();indirect_fields.add_child(indirect_actions)
+	add_buttons.append(app.button(indirect_actions,"Apply indirect light",apply_indirect))
+	add_buttons.append(app.button(indirect_actions,"Rebuild from current environment",rebuild_indirect))
+	var indirect_note: Label=app.label(indirect_fields,"Use Lit with python run.py --forward-plus. Static environments contribute approximate bounced light; moving models receive it but do not contribute dynamic occlusion. Rebuild after moving environment geometry. Export spends the settling budget on each exact timeline frame. More frames cost time and do not guarantee complete convergence. Unlit/custom materials keep their own response. This is not path tracing.");indirect_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	indirect_status=app.label(indirect_fields,"");indirect_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	hint=app.label(box,"");hint.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 
 func number(parent: Control,title: String,minimum: float,maximum: float,step: float) -> SpinBox:
@@ -125,6 +142,8 @@ func _process(_delta: float) -> void:
 	undo_button.disabled=blocked() or app.history.is_empty();redo_button.disabled=blocked() or app.redo_history.is_empty()
 	enabled.disabled=blocked()
 	reflection_enabled.disabled=blocked() or not Runtime.reflections_supported()
+	indirect_enabled.disabled=blocked() or not app.renderer.scene_lighting.indirect.supported()
+	indirect_status.text=app.renderer.scene_lighting.indirect.status
 	apply_button.disabled=blocked() or selected.is_empty();remove_button.disabled=apply_button.disabled
 
 func refresh() -> void:
@@ -146,6 +165,8 @@ func refresh() -> void:
 	var probe: Dictionary=data.get("reflection",default_reflection())
 	reflection_enabled.set_pressed_no_signal(probe.enabled);reflection_strength.set_value_no_signal(probe.intensity)
 	for axis in range(3):reflection_positions[axis].set_value_no_signal(probe.position[axis]);reflection_sizes[axis].set_value_no_signal(probe.size[axis])
+	var gi:=Document.indirect(data)
+	indirect_enabled.set_pressed_no_signal(gi.enabled);indirect_energy.set_value_no_signal(gi.energy);indirect_cell.set_value_no_signal(gi.cell_size);indirect_settle.set_value_no_signal(gi.settle_frames)
 	var message:="Unshaded hides light effects. Choose Use Lit to see your lights." if app.video.get("lighting_mode")=="unshaded" else "Studio light adds its legacy lamp and ambient fill." if app.video.get("lighting_mode","studio")=="studio" else "Lit uses authored and imported lights, plus your ambient fill."
 	message+="\nCompatibility rendering supports 8 directional lights and normally 8 point + 8 spot lights per mesh, including imported lights. Reduce overlapping lights if one stops contributing."
 	var limits:=Runtime.material_limits(app.renderer)
@@ -208,6 +229,20 @@ func apply_fill() -> void:
 	if data.is_empty():return
 	data.ambient_energy=typed(ambient);data.ambient_color=[ambient_color.color.r,ambient_color.color.g,ambient_color.color.b]
 	commit(data,"Ambient fill updated. This uniform fill does not simulate bounced light.")
+
+func apply_indirect() -> void:
+	var data:=current()
+	if data.is_empty():return
+	if not app.renderer.scene_lighting.indirect.supported():
+		hint.text="Environment bounce requires Forward+. Launch python run.py --forward-plus and choose Lit."
+		app.message(hint.text);return
+	data["indirect"]={"enabled":indirect_enabled.button_pressed,"energy":typed(indirect_energy),"cell_size":typed(indirect_cell),"settle_frames":typed(indirect_settle)}
+	commit(data,"Indirect settings updated. Static environments contribute; models receive. Allow time to settle.")
+
+func rebuild_indirect() -> void:
+	if blocked():return
+	app.renderer.scene_lighting.indirect.rebuild()
+	app.message("Rebuilding indirect light from the current environment. Geometry movement and camera cuts may need additional settling.")
 
 func default_reflection() -> Dictionary:
 	var target:=placement_context();var center: Vector3=target.center

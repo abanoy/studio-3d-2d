@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-21",
+  "branch": "worker/indirect-lighting-20261121",
+  "base": "a5ef11b63b23e73403861b559fe2622d1a74581d",
+  "status": "CPU_PASS_GRAPHICS_UNRUN",
+  "cpu": {
+    "checks": 41,
+    "failures": 0,
+    "phases": [
+      {
+        "checks": 35,
+        "failures": 0,
+        "graphics": false,
+        "measurements": {},
+        "phase": "writer"
+      },
+      {
+        "checks": 6,
+        "failures": 0,
+        "graphics": false,
+        "measurements": {},
+        "phase": "reader"
+      }
+    ],
+    "folder": "scene-indirect-1795282222548381400",
+    "source_bytes_unchanged": true
+  },
+  "baseline_lighting_cpu": {
+    "checks": 103,
+    "failures": 0,
+    "folder": "scene-lighting-1795282020777229500"
+  },
+  "tested_files_sha256": {
+    "src/scene_indirect_runtime.gd": "9cadefc2149d33da5bde708c7ed560b637d151553ac9744bec9328181fa617fc",
+    "src/scene_lighting_document.gd": "2ae07d0a01034f586f4f3113d856b78005d42df26e21b805c77b1cd0f998c239",
+    "src/scene_lighting_runtime.gd": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a",
+    "src/scene_lighting_editor.gd": "ab4a543c2883c11bc74ed59bb58b8a34f8d57ccce8fd531914a6f79d5869375f",
+    "src/renderer.gd": "f04a87b31d62626e4d7a5258fa62e6a8e0c5b250fa6f4cc24ad6d56633b306f1",
+    "tests/scene_indirect_smoke.gd": "547c99ef287c90e58a43801aa296d3b2a48664a4da96a32100ecbaadef05f5b0",
+    "tests/verify_scene_lighting.py": "3d52668be0b897321539ec24a5cc9dfbd0a41075bfd6cfedde8ae149aba42e80"
+  },
+  "earlier_failure": {
+    "folder": "scene-indirect-1795281842390444100",
+    "writer": {
+      "checks": 29,
+      "failures": 0
+    },
+    "reader": {
+      "checks": 6,
+      "failures": 6
+    },
+    "cause": "Fixture reader used a different unpacked directory name; fixed. Headless mode no longer attempts physical SDFGI activation."
+  },
+  "graphics": {
+    "status": "NOT_RUN_AWAITING_SERIAL_GPU_SLOT",
+    "illumination_checks": 0,
+    "movies": 0,
+    "convergence_verified": false
+  },
+  "limitations": [
+    "Headless checks do not establish physical SDFGI support or bounced-light appearance.",
+    "Static environment contributors only; models receive GI without dynamic occlusion/emission contribution.",
+    "Explicit settling budget does not guarantee convergence after cuts/rebuilds.",
+    "No material/resource/native-model data replacement; temporary live GI flags restore exactly.",
+    "No path-tracing or native-shader fidelity claim."
+  ]
+}

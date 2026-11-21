@@ -13,10 +13,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--cpu', action='store_true')
     parser.add_argument('--forward-plus', action='store_true')
+    parser.add_argument('--indirect', action='store_true', help='Focused SDFGI prototype; graphics use Forward+')
     parser.add_argument('--native-model', type=Path)
     parser.add_argument('--native-environment', type=Path)
     options = parser.parse_args()
-    folder = ROOT / 'output' / ('scene-lighting-' + str(time.time_ns()))
+    if options.indirect and not options.cpu:
+        options.forward_plus = True
+    script = 'tests/scene_indirect_smoke.gd' if options.indirect else 'tests/scene_lighting_smoke.gd'
+    folder = ROOT / 'output' / (('scene-indirect-' if options.indirect else 'scene-lighting-') + str(time.time_ns()))
     folder.mkdir(parents=True)
     native = {kind: str(path.resolve(strict=True)) for kind, path in
               [('model', options.native_model), ('environment', options.native_environment)] if path}
@@ -48,7 +52,7 @@ def main():
                     assert saved['ok'], saved
                     opened = unpack({'path': str(archive), 'folder': str(folder / (theme + '-' + storage + '-unpacked'))})
                     assert opened['ok'], opened
-        args = command('tests/scene_lighting_smoke.gd', headless=options.cpu,
+        args = command(script, headless=options.cpu,
                        extra= (['--rendering-method', 'forward_plus'] if options.forward_plus else []) + ['--audio-driver', 'Dummy', '--log-file', str(folder / (phase + '-engine.log')),
                               '--', str(folder), *(['--cpu'] if options.cpu else []),
                               *(['--read'] if phase == 'reader' else [])])
@@ -77,7 +81,7 @@ def main():
         ffmpeg = Path(os.environ.get('HYBRID_FFMPEG', 'C:/Program Files/ffmpeg/bin/ffmpeg.exe'))
         probe = json.loads(subprocess.check_output([str(ffmpeg.with_name('ffprobe.exe')), '-v', 'error', '-count_frames', '-show_streams', '-of', 'json', movie], text=True))
         video = next(s for s in probe['streams'] if s['codec_type'] == 'video')
-        assert (video['codec_name'], video['width'], video['height'], video['r_frame_rate'], video['nb_read_frames']) == ('h264', 1920, 1080, '24/1', '48')
+        assert (video['codec_name'], video['width'], video['height'], video['r_frame_rate'], video['nb_read_frames']) == ('h264', 1920, 1080, '24/1', '4' if options.indirect else '48')
     assert all(hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest for path, digest in frozen.items())
     assert all(hashlib.sha256(Path(path).read_bytes()).hexdigest() == digest for path, digest in preserved.items())
     result = {'results': results, 'private_desktops': receipts, 'video': video, 'source_sha256': frozen, 'folder': str(folder)}
