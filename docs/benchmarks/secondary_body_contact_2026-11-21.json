@@ -1,0 +1,123 @@
+{
+  "format": "has_secondary_body_contact_benchmark_1",
+  "date": "2026-11-21",
+  "status": "SCOPED_CONTACT_IMPROVEMENT",
+  "whole_full_claimed": false,
+  "main_adoption_claimed": false,
+  "source_manifest": "secondary_body_contact_sources_2026-11-21.json",
+  "source_manifest_sha256": "b4ea6fe6a52f96b7ed9f527d9480d7122fca0da7ec1da31bdcb8d93efde64be4",
+  "synthetic_cpu25": {
+    "raw_result_sha256": "b368160df18fd7a16e26deaed86b9483966e7635aed82f13ed75802297189e30",
+    "checks": 25,
+    "case_count": 2,
+    "unique_profile_count": 2,
+    "status": "PASS",
+    "source_hash_manifest_sha256": "7c2c984510260ee289150c86a81acd57e272fd690a280f395b7610a17fda9a00",
+    "all_admitted_sources_unchanged": true,
+    "all_runtime_sources_unchanged": true,
+    "original_inputs_preserved": true,
+    "parent_environment_preserved": true,
+    "all_private_jobs_and_desktops_closed": true
+  },
+  "protected_cpu54": {
+    "raw_result_sha256": "79315b0a34cd1b9877bad84f51dcf28096ea3ab6a722729dcf57dcf5dcc9d44f",
+    "checks": 54,
+    "case_count": 5,
+    "unique_profile_count": 5,
+    "status": "PASS",
+    "source_hash_manifest_sha256": "7c2c984510260ee289150c86a81acd57e272fd690a280f395b7610a17fda9a00",
+    "all_admitted_sources_unchanged": true,
+    "all_runtime_sources_unchanged": true,
+    "original_inputs_preserved": true,
+    "parent_environment_preserved": true,
+    "all_private_jobs_and_desktops_closed": true,
+    "surface": {
+      "ticks": 480,
+      "hair_vertices": 989,
+      "penetrating_skin_vertex_pairs": 0,
+      "minimum_skin_clearance": -3.40119004249573e-06,
+      "maximum_palette_disagreement": 0.0,
+      "graphics_used": false,
+      "source_arrays_published": false
+    },
+    "cache": {
+      "vertices": 989,
+      "array_reads": 17,
+      "hot_array_reads": 0,
+      "refreshes": 480,
+      "corrections": 846,
+      "blocked_points": 0,
+      "remaining_pairs": 0,
+      "minimum_gap": 0.0,
+      "iteration_limit_hits": 0,
+      "total_usec": 2171554,
+      "max_usec": 10254
+    },
+    "contact_mean_ms": 4.524070833333333,
+    "contact_max_ms": 10.254
+  },
+  "protected_gpu15": {
+    "raw_result_sha256": "d3f6d5cfe5e839d3590ea8cfe071f87d205b1a5c6ca62da5ab78cb55102bd00d",
+    "checks": 15,
+    "engine_exit": 0,
+    "private_job_closed": true,
+    "private_desktop_closed": true,
+    "foreground_child_observed": false,
+    "actual_skin_vertices": 989,
+    "penetrating_skin_vertex_pairs": 0,
+    "minimum_skin_clearance": -2.21654772758484e-06,
+    "maximum_palette_disagreement": 0.0,
+    "skin_surface_capsule_clear": true,
+    "readbacks_balanced": true
+  },
+  "adverse_original_links_clear_surface_penetrates": {
+    "raw_result_sha256": "2179fe332d03ec8cb072b1e5a5b806564ff20d03fc47d6f41623a8009b3f9d9d",
+    "checks": 15,
+    "engine_exit": 0,
+    "private_job_closed": true,
+    "private_desktop_closed": true,
+    "foreground_child_observed": false,
+    "actual_skin_vertices": 989,
+    "penetrating_skin_vertex_pairs": 1059,
+    "minimum_skin_clearance": -0.0540628479648149,
+    "maximum_palette_disagreement": 0.0,
+    "skin_surface_capsule_clear": false,
+    "readbacks_balanced": true
+  },
+  "adverse_unbounded_gradient_trial": {
+    "raw_engine_log_sha256": "885841a7b93415791822f214b7fade400c2acbf9dd96eb0b0e3781a354c7219b",
+    "status": "FAILED_SURFACE_CONSTRAINT",
+    "checks": 10,
+    "failures": 1,
+    "ticks": 480,
+    "hair_vertices": 989,
+    "minimum_skin_clearance": -0.0456544458866119,
+    "penetrating_skin_vertex_pairs": 62,
+    "maximum_palette_disagreement": 0.0,
+    "iteration_limit_hits": 65
+  },
+  "gpu_source_scope_note": "GPU capture preceded two compatibility-only guards;final source is covered by CPU54. No exact final-source GPU snapshot claim.",
+  "visual_review": {
+    "whole_model_retained": true,
+    "junko_and_fan_retained_in_side_view": true,
+    "same_pose_angles_in_latest_capture": true,
+    "back_view_obstructed_by_fan": true,
+    "tail_strong_forward_up_bend_remains": true,
+    "polished_dynamics_claimed": false
+  },
+  "boundaries": [
+    "Generated missing-collider helper profile;original imported collider path preserved.",
+    "Static arm capsules,positive uniform scale,matching mesh and skeleton frames.",
+    "Affected morph changes require restart;separate body morphs are outside qualification.",
+    "Finite solve and optional cache fallback do not guarantee arbitrary cloth contact."
+  ],
+  "privacy": {
+    "projection": "allowlisted finite scalar metrics and source hashes",
+    "native_assets_copied": false,
+    "art_or_screenshots_copied": false,
+    "raw_logs_copied": false,
+    "skin_streams_or_geometry_arrays_copied": false,
+    "private_input_paths_published": false,
+    "universal_native_fidelity_claimed": false
+  }
+}

@@ -45,6 +45,7 @@ static func create(actor: RefCounted,body: RefCounted,frame: int,editing: bool) 
 	return {"physics":candidate}
 
 func start() -> void:
+	if not native_backend and runner:runner.defer_skin_contact=true
 	running=true;rig.live_world_transform=initial_world;rig.live_pose=latest
 
 func advance(delta: float,frame: int,time: float,recording: bool,fields: Array,runtime: RefCounted) -> String:
@@ -93,6 +94,19 @@ func advance(delta: float,frame: int,time: float,recording: bool,fields: Array,r
 		var offset:=previous.slerp(target,minf(1.0,maximum/angle)) if angle>0.000001 else target
 		dynamics[id]=offset;var rotation: Quaternion=(q*offset).normalized()
 		latest[id]={"position":authored.position.duplicate(),"rotation_xyzw":[rotation.x,rotation.y,rotation.z,rotation.w]}
+	# Smoothing may interpolate a valid solver pose back through an arm. Apply
+	# the generated-profile contact guard to the pose actually displayed/recorded.
+	if runner.has_method("constrain_pose"):
+		var contact: Dictionary=runner.constrain_pose(latest)
+		if contact.has("error"):return contact.error
+		latest=contact.pose
+		# The next rate-limited step starts from the pose actually displayed.
+		# Keeping the pre-contact offset here repeatedly drives the smoother
+		# through the same obstacle and creates visible corrective snapping.
+		if runner.contact_info.get("runtime_generated",false):
+			for id in result.pose:
+				var authored: Dictionary=base.get(id,Model.identity())
+				dynamics[id]=(Timeline.quaternion(authored.rotation_xyzw).inverse()*Timeline.quaternion(latest[id].rotation_xyzw)).normalized()
 	rig.live_pose=latest;rig.apply_current(frame)
 	return ""
 

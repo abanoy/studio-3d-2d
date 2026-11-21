@@ -183,6 +183,7 @@ func run() -> void:
 		else:
 			editor.reflection_enabled.set_pressed_no_signal(true);editor.apply_reflection()
 			check(app.renderer.scene_lighting.reflection==null and "Forward+" in editor.hint.text,"Compatibility gives an actionable Forward+ reflection limitation")
+			await compatibility_reflection_controls(app,editor,theme)
 		var saved:=Document.document(app.video).duplicate(true)
 		for kind in ["point","spot"]:
 			var extra:=Document.create(kind,Vector3(0,1,0));extra.visible=false;saved.lights.append(extra)
@@ -215,6 +216,51 @@ func run() -> void:
 		app.free();await process_frame
 	if graphics and FileAccess.file_exists(folder.path_join("native-inputs.json")):await native_pixels()
 	finish("writer")
+func press_reflection_control(control: Control) -> void:
+	var parent: Node=control.get_parent()
+	while parent!=null and not parent is ScrollContainer:parent=parent.get_parent()
+	if parent is ScrollContainer:parent.ensure_control_visible(control)
+	await settled();await press(control)
+
+func compatibility_reflection_controls(app,editor: Node,theme: String) -> void:
+	# This runs only on a real unsupported graphical renderer. Headless and
+	# Forward+ keep their supported branch; no backend result is mocked.
+	var before: Dictionary=Document.document(app.video).duplicate(true)
+	var saved: Dictionary=before.duplicate(true)
+	saved.ambient_energy=.3
+	saved["reflection"]=editor.default_reflection();saved.reflection.enabled=true
+	var saved_video: Dictionary=app.video.duplicate(true);saved_video.scene_lighting=saved
+	var on_folder:=folder.path_join("compat-reflections-on-"+theme)
+	var why: String=Storage.save_project(on_folder,saved_video,app.keys,app.layers,"",0,{}, {},{},false,app.renderer.world_state())
+	var loaded: Dictionary=Storage.load_project(on_folder) if why.is_empty() else {"error":why}
+	check(not loaded.has("error") and saved_equal(Document.document(loaded.video),saved),"Saved Forward+ reflection settings survive Compatibility loading")
+	if loaded.has("error"):return
+	editor.commit(Document.document(loaded.video).duplicate(true),"Load saved reflection settings for Compatibility control")
+	await settled()
+	check(editor.reflection_enabled.button_pressed and not editor.reflection_enabled.disabled and app.renderer.scene_lighting.reflection==null,"Compatibility permits switching a saved On reflection setting Off without creating a probe")
+	var history: int=app.history.size()
+	editor.reflection_fields.show();await settled()
+	await press_reflection_control(editor.reflection_enabled)
+	check(not editor.reflection_enabled.button_pressed and Document.document(app.video).reflection.enabled,"Routed Compatibility checkbox stages Off before Apply")
+	editor.apply_reflection();await settled()
+	var off: Dictionary=saved.duplicate(true);off.reflection.enabled=false
+	check(saved_equal(Document.document(app.video),off) and app.history.size()==history+1 and app.renderer.scene_lighting.reflection==null,"Compatibility Apply changes only saved enabled state in one Undo")
+	var off_folder:=folder.path_join("compat-reflections-off-"+theme)
+	why=Storage.save_project(off_folder,app.video,app.keys,app.layers,"",0,{}, {},{},false,app.renderer.world_state())
+	var reopened: Dictionary=Storage.load_project(off_folder) if why.is_empty() else {"error":why}
+	check(not reopened.has("error") and saved_equal(Document.document(reopened.video),off),"Compatibility Off saves and reopens with placement and strength retained")
+	app.undo();await settled()
+	check(saved_equal(Document.document(app.video),saved) and editor.reflection_enabled.button_pressed and not editor.reflection_enabled.disabled and app.renderer.scene_lighting.reflection==null,"Compatibility Undo restores saved On metadata and its usable Off control")
+	app.redo();await settled()
+	check(saved_equal(Document.document(app.video),off) and app.renderer.scene_lighting.reflection==null,"Compatibility Redo restores Off without creating a probe")
+	var protected_video: Dictionary=app.video.duplicate(true);history=app.history.size()
+	editor.reflection_enabled.set_pressed_no_signal(true);editor.apply_reflection();await settled()
+	check(app.video==protected_video and app.history.size()==history and app.renderer.scene_lighting.reflection==null and "Forward+" in editor.hint.text,"Compatibility rejects unsupported enabling without changing settings or Undo")
+	editor.refresh();await settled()
+	check(not editor.reflection_enabled.button_pressed and editor.reflection_enabled.disabled,"Saved Off remains disabled for unsupported enabling")
+	editor.commit(before,"Restore remaining lighting fixture")
+	await settled()
+
 func reflection_controls(app,editor: Node,theme: String) -> void:
 	editor.reflection_enabled.set_pressed_no_signal(true);editor.apply_reflection()
 	check(app.renderer.scene_lighting.reflection==null and "Ambient fill above 0" in editor.hint.text,"Zero ambient has an actionable reflection limitation without injecting fill")

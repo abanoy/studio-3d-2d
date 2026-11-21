@@ -109,7 +109,19 @@ func number(parent: Control,title: String,minimum: float,maximum: float,step: fl
 	var box:=VBoxContainer.new();box.size_flags_horizontal=Control.SIZE_EXPAND_FILL;parent.add_child(box)
 	app.label(box,title)
 	var spin:=SpinBox.new();spin.min_value=minimum;spin.max_value=maximum;spin.step=step;spin.size_flags_horizontal=Control.SIZE_EXPAND_FILL;box.add_child(spin)
+	spin.value_changed.connect(func(_value):if not refreshing:spin.set_meta("lighting_numeric_edited",true))
+	spin.get_line_edit().text_changed.connect(func(_text):if not refreshing:spin.set_meta("lighting_numeric_edited",true))
 	return spin
+
+func load_number(spin: SpinBox,value: float) -> void:
+	# Godot4.6 updates SpinBox text on draw. Hidden fields may still contain
+	# their initial minimum, and visible values can be rounded to the UI step.
+	# Retain the exact document value until a real edit, including across folds.
+	spin.set_value_no_signal(value)
+	var text:=JSON.stringify(value,"",true,true)
+	spin.set_meta("lighting_numeric_snapshot",{"original":value,"value":spin.value,"text":text,"shown":String.num(spin.value,step_decimals(spin.step))})
+	spin.set_meta("lighting_numeric_edited",false)
+	spin.get_line_edit().text=text
 
 func open() -> void:
 	if blocked():return
@@ -124,7 +136,8 @@ func _process(_delta: float) -> void:
 	for control in add_buttons:control.disabled=blocked()
 	undo_button.disabled=blocked() or app.history.is_empty();redo_button.disabled=blocked() or app.redo_history.is_empty()
 	enabled.disabled=blocked()
-	reflection_enabled.disabled=blocked() or not Runtime.reflections_supported()
+	var saved_reflection: bool=Document.document(app.video).get("reflection",{}).get("enabled",false)
+	reflection_enabled.disabled=blocked() or not Runtime.reflections_supported() and not saved_reflection
 	apply_button.disabled=blocked() or selected.is_empty();remove_button.disabled=apply_button.disabled
 
 func refresh() -> void:
@@ -138,14 +151,14 @@ func refresh() -> void:
 	if not selected.is_empty():
 		var index:=ids.find(selected);list.select(index);var row: Dictionary=data.lights[index]
 		name_field.text=row.name;enabled.set_pressed_no_signal(row.visible);shadows.set_pressed_no_signal(row.shadows)
-		color.color=Color(row.color[0],row.color[1],row.color[2]);energy.set_value_no_signal(row.energy)
-		for axis in range(3):positions[axis].set_value_no_signal(row.position[axis]);directions[axis].set_value_no_signal(row.rotation_degrees[axis]);directions[axis].editable=row.type!="point"
-		distance.set_value_no_signal(row.range);distance.editable=row.type!="directional"
-		angle.set_value_no_signal(row.spot_angle);angle.editable=row.type=="spot"
-	ambient.set_value_no_signal(data.ambient_energy);ambient_color.color=Color(data.ambient_color[0],data.ambient_color[1],data.ambient_color[2])
+		color.color=Color(row.color[0],row.color[1],row.color[2]);load_number(energy,row.energy)
+		for axis in range(3):load_number(positions[axis],row.position[axis]);load_number(directions[axis],row.rotation_degrees[axis]);directions[axis].editable=row.type!="point"
+		load_number(distance,row.range);distance.editable=row.type!="directional"
+		load_number(angle,row.spot_angle);angle.editable=row.type=="spot"
+	load_number(ambient,data.ambient_energy);ambient_color.color=Color(data.ambient_color[0],data.ambient_color[1],data.ambient_color[2])
 	var probe: Dictionary=data.get("reflection",default_reflection())
-	reflection_enabled.set_pressed_no_signal(probe.enabled);reflection_strength.set_value_no_signal(probe.intensity)
-	for axis in range(3):reflection_positions[axis].set_value_no_signal(probe.position[axis]);reflection_sizes[axis].set_value_no_signal(probe.size[axis])
+	reflection_enabled.set_pressed_no_signal(probe.enabled);load_number(reflection_strength,probe.intensity)
+	for axis in range(3):load_number(reflection_positions[axis],probe.position[axis]);load_number(reflection_sizes[axis],probe.size[axis])
 	var message:="Unshaded hides light effects. Choose Use Lit to see your lights." if app.video.get("lighting_mode")=="unshaded" else "Studio light adds its legacy lamp and ambient fill." if app.video.get("lighting_mode","studio")=="studio" else "Lit uses authored and imported lights, plus your ambient fill."
 	message+="\nCompatibility rendering supports 8 directional lights and normally 8 point + 8 spot lights per mesh, including imported lights. Reduce overlapping lights if one stops contributing."
 	var limits:=Runtime.material_limits(app.renderer)
@@ -201,6 +214,8 @@ func apply() -> void:
 
 func typed(spin: SpinBox) -> float:
 	var value:=spin.get_line_edit().text.strip_edges()
+	var snapshot: Dictionary=spin.get_meta("lighting_numeric_snapshot",{})
+	if not snapshot.is_empty() and not spin.get_meta("lighting_numeric_edited",false) and spin.value==snapshot.value and value in [snapshot.text,snapshot.shown]:return snapshot.original
 	return value.to_float() if value.is_valid_float() else NAN
 
 func apply_fill() -> void:
@@ -222,6 +237,12 @@ func apply_reflection() -> void:
 	var data:=current()
 	if data.is_empty():return
 	if not Runtime.reflections_supported():
+		# A project made in Forward+ can retain a probe in Compatibility. Allow
+		# switching it Off without changing its saved placement/strength fields.
+		if not reflection_enabled.button_pressed and data.has("reflection"):
+			data.reflection.enabled=false
+			commit(data,"Room reflections turned off. Saved placement and strength are retained.")
+			return
 		hint.text="Room reflections require Forward+. Launch python run.py --forward-plus. Direct lights remain available in Compatibility."
 		app.message(hint.text);return
 	if reflection_enabled.button_pressed and data.ambient_energy<=0:

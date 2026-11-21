@@ -1,20 +1,41 @@
 extends RefCounted
-# Explicit fixed-step experimental runner. Unit-world scratch skeletons avoid the
-# engine spring modifier's scaled-skeleton limitation. No auto-processing, keys,
-# data mutation or user-facing activation until lifecycle/recording is integrated.
+# Fixed-step runner used by Hair & clothes. Unit-world scratch skeletons avoid
+# the engine spring modifier's scaled-skeleton limitation. Outputs ordinary FK
+# without changing source rig declarations or authored keys.
 const Definition=preload("res://src/secondary_rig.gd")
 const IK=preload("res://src/limb_ik.gd")
+const BodyColliders=preload("res://src/secondary_body_colliders.gd")
+const SegmentContact=preload("res://src/secondary_segment_contact.gd")
+const SkinContact=preload("res://src/secondary_skin_contact.gd")
 var actor: RefCounted
 var host: Node3D
 var chains: Array=[]
 var colliders: Array=[]
 var error:=""
+var contact_info: Dictionary={}
+var skin_contact: RefCounted
+var defer_skin_contact:=false
 
 static func construct(rig: RefCounted,private_definition: Dictionary={},host_owner: Node=null) -> Dictionary:
 	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{}) if private_definition.is_empty() else private_definition
 	if not definition.get("error","").is_empty():return {"error":definition.error}
 	if definition.get("chains",[]).is_empty():return {"error":"This model has no declared secondary chains."}
 	var runner=new();runner.actor=rig;runner.host=Node3D.new();runner.host.name="SecondaryMotionScratch"
+	# Generated HAS helpers intentionally contain no imported collider records.
+	# Supply bounded runtime body envelopes without rewriting that provenance.
+	if private_definition.is_empty() and definition.get("source_family","")=="HAS" and definition.get("colliders",[]).is_empty():
+		var fitted: Dictionary=BodyColliders.build(rig);runner.contact_info=fitted.duplicate(true);runner.contact_info.erase("colliders")
+		runner.contact_info["runtime_generated"]=not fitted.colliders.is_empty()
+		if not fitted.colliders.is_empty():
+			definition=definition.duplicate(true);definition.colliders=fitted.colliders
+			for chain in definition.chains:
+				var attached: Dictionary={};var at: String=str(chain.joints[0].binding.get("id","@root"))
+				while at!="@root" and rig.bones.has(at) and not attached.has(at):attached[at]=true;at=rig.parent_id(at)
+				chain.colliders=[]
+				for ci in range(definition.colliders.size()):
+					var c: Dictionary=definition.colliders[ci]
+					# Do not push a sleeve/limb attachment out of its own arm.
+					if not attached.has(c.binding.id) and not attached.has(c.tail_binding.id):chain.colliders.append(ci)
 	var owner: Node=host_owner if is_instance_valid(host_owner) else rig.root.get_tree().root
 	owner.add_child(runner.host)
 	for c in definition.colliders:
@@ -70,6 +91,20 @@ static func construct(rig: RefCounted,private_definition: Dictionary={},host_own
 	for c in runner.colliders:c.node.free()
 	runner.colliders.clear()
 	if not runner.error.is_empty():runner.dispose();return {"error":runner.error}
+	if runner.contact_info.get("runtime_generated",false):
+		var order: Dictionary=SegmentContact.ordered(rig,runner.chains)
+		if order.has("error"):runner.dispose();return order
+		runner.chains=order.chains
+		var skin: Dictionary=SkinContact.create(rig,runner.chains)
+		# Surface contact is an optional bounded refinement. An oversized or
+		# unsupported cache must not disable a previously usable ordinary rig.
+		if skin.has("error"):
+			runner.contact_info["skin_surface_available"]=false
+			runner.contact_info["skin_reason"]=str(skin.error)
+		else:
+			runner.skin_contact=skin.control
+			runner.contact_info["skin_surface_available"]=true
+			runner.contact_info["skin_cache"]=skin.control.stats.duplicate(true)
 	runner.update_colliders()
 	return {"runner":runner}
 
@@ -92,7 +127,7 @@ func update_colliders() -> void:
 			var start: Vector3=t*Vector3(def.offset[0],def.offset[1],def.offset[2]);var node: Node3D=c.node
 			node.global_transform=Transform3D(Basis.IDENTITY,start);node.radius=def.radius*scale
 			if def.shape=="capsule":
-				var end: Vector3=t*Vector3(def.tail[0],def.tail[1],def.tail[2]);var axis:=end-start
+				var end: Vector3=Definition.binding_transform(actor,def.tail_binding).origin if def.has("tail_binding") else t*Vector3(def.tail[0],def.tail[1],def.tail[2]);var axis:=end-start
 				node.global_position=(start+end)*0.5;node.height=axis.length()+2*node.radius
 				if axis.length()>0.000001:node.global_basis=Basis(Quaternion(Vector3.UP,axis.normalized()))
 
@@ -132,9 +167,23 @@ func step(delta: float,wind: Vector3,forces: Array=[]) -> Dictionary:
 			var q: Quaternion=(base.basis.get_rotation_quaternion().inverse()*parent_world.basis.get_rotation_quaternion().inverse()*captured[i].basis.get_rotation_quaternion()).normalized()
 			var local: Transform3D=actor.bones[id].skeleton.get_bone_pose(actor.bones[id].index);var p:=local.origin-base.origin
 			result[id]={"position":[p.x,p.y,p.z],"rotation_xyzw":[q.x,q.y,q.z,q.w]}
-	return {"pose":result}
+	return constrain_pose(result,not defer_skin_contact)
+
+func constrain_pose(value: Dictionary,include_skin: bool=true) -> Dictionary:
+	if not contact_info.get("runtime_generated",false):return {"pose":value}
+	var guarded: Dictionary=SegmentContact.constrain(actor,chains,value)
+	if not guarded.has("error"):
+		contact_info["last_segment_corrections"]=guarded.corrections
+		contact_info["blocked_attachments"]=guarded.blocked_attachments
+		if include_skin and skin_contact:
+			var surface: Dictionary=skin_contact.constrain(actor,chains,guarded.pose)
+			if surface.has("error"):return surface
+			guarded.pose=surface.pose
+			contact_info["skin_cache"]=surface.stats
+	return guarded
 
 func dispose() -> void:
+	if skin_contact:skin_contact.dispose();skin_contact=null
 	chains.clear()
 	for collider in colliders:
 		if is_instance_valid(collider.node):collider.node.free()
