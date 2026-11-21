@@ -1,0 +1,204 @@
+{
+  "date": "2026-11-21",
+  "scope": "Focused private Windows desktop paging and notice qualification; no full HAS suite or owner acceptance.",
+  "production_fix": "Prefer Tree direct VScrollBar over hidden nested TextEdit scrollbar; initial native wheel failure preserved, corrected native run passes.",
+  "native_paging": {
+    "checks": 24,
+    "failures": [],
+    "display_driver": "Windows",
+    "requests": 3,
+    "observed_rows": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "child_pid": 23664,
+    "evidence": "Successful runner stdout and closed private receipt. The standard paging JSON/log paths were subsequently reused by the 25-check headless regression run; this is the observed summary, not a retained raw native report."
+  },
+  "headless_paging_regression": {
+    "checks": 25,
+    "display_driver": "headless",
+    "failures": [],
+    "requests": 3,
+    "scope": "Production wheel-input and paging guards with synthetic metadata. Headless ranges are explicitly supplied because Tree draws no scrollbars; native graphical scrolling is qualified only with --graphical."
+  },
+  "native_notices": {
+    "notices_write": {
+      "checks": 11,
+      "display_driver": "Windows",
+      "failures": [],
+      "phase": "write",
+      "scope": "Notice controls, intercepted source opener and personal preferences across fresh processes. Graphical mode additionally uses pointer clicks/captures; headless mode emits control signals. No Steam account or game launched.",
+      "theme": "neon"
+    },
+    "notices_read": {
+      "checks": 7,
+      "display_driver": "Windows",
+      "failures": [],
+      "phase": "read",
+      "scope": "Notice controls, intercepted source opener and personal preferences across fresh processes. Graphical mode additionally uses pointer clicks/captures; headless mode emits control signals. No Steam account or game launched.",
+      "theme": "classic"
+    }
+  },
+  "failed_native_paging": {
+    "checks": 24,
+    "display_driver": "Windows",
+    "failures": [
+      "native wheel reaches bottom and loads 200 rows",
+      "layout and idle do not chain automatic batches",
+      "native wheel reaches bottom and loads 300 rows",
+      "native wheel reaches bottom and loads 400 rows",
+      "native wheel reaches bottom and loads 500 rows",
+      "exhausted cache makes no extra metadata requests",
+      "bottom after exhaustion stays quiet"
+    ],
+    "requests": 3,
+    "scope": "Production wheel-input and paging guards with synthetic metadata. Headless ranges are explicitly supplied because Tree draws no scrollbars; native graphical scrolling is qualified only with --graphical."
+  },
+  "failed_notice_fixtures": [
+    {
+      "path": "output/discovery-additions-1795284826434714900/notices-write.json",
+      "sha256": "9e11ceebdb628229393b5cef384857d98620664bdb6ee014bd636a323ef1ed39",
+      "report": {
+        "checks": 11,
+        "display_driver": "Windows",
+        "failures": [
+          "confirm opens once and remembers only selected source",
+          "remembered choice saved using personal preferences"
+        ],
+        "phase": "write",
+        "scope": "Notice controls, intercepted source opener and personal preferences across fresh processes. Graphical mode additionally uses pointer clicks/captures; headless mode emits control signals. No Steam account or game launched.",
+        "theme": "neon"
+      }
+    },
+    {
+      "path": "output/discovery-additions-1795284853307587700/notices-write.json",
+      "sha256": "9e11ceebdb628229393b5cef384857d98620664bdb6ee014bd636a323ef1ed39",
+      "report": {
+        "checks": 11,
+        "display_driver": "Windows",
+        "failures": [
+          "confirm opens once and remembers only selected source",
+          "remembered choice saved using personal preferences"
+        ],
+        "phase": "write",
+        "scope": "Notice controls, intercepted source opener and personal preferences across fresh processes. Graphical mode additionally uses pointer clicks/captures; headless mode emits control signals. No Steam account or game launched.",
+        "theme": "neon"
+      }
+    }
+  ],
+  "notice_fixture_fix": "Route pointer events through root viewport plus embedded Window offset. Actual Cancel/checkbox/Open clicks pass; production notice code unchanged.",
+  "private_receipts": [
+    {
+      "path": "output/private-desktop/asset_discovery_notices_7768c0ac565b406389636a0d2090f8a3.json",
+      "sha256": "e37089032dfdebdc6d3fc6c7b529673a079ff8dc5dd1d87f715730d35dbd8713",
+      "child_pid": 36780,
+      "exit": 1,
+      "error": null,
+      "job_closed": true,
+      "desktop_closed": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "desktop_switch_requested": false,
+      "seconds": 1.685
+    },
+    {
+      "path": "output/private-desktop/asset_discovery_notices_b1704f8d9d644f069f7d46721e83141b.json",
+      "sha256": "4fd69121e1f5b733ffe3ce958ff940354a80e50a51fdff1110d7a34bf5da6669",
+      "child_pid": 7888,
+      "exit": 1,
+      "error": null,
+      "job_closed": true,
+      "desktop_closed": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "desktop_switch_requested": false,
+      "seconds": 1.709
+    },
+    {
+      "path": "output/private-desktop/asset_discovery_notices_ccf9a008bbf0457f901201a83dd4d72c.json",
+      "sha256": "6db65e1039fa87e2b2ac21db44e43cb2263b7dbefb436cf3f866cf1d2872e7f0",
+      "child_pid": 15180,
+      "exit": 0,
+      "error": null,
+      "job_closed": true,
+      "desktop_closed": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "desktop_switch_requested": false,
+      "seconds": 1.217
+    },
+    {
+      "path": "output/private-desktop/asset_discovery_notices_ce27997b227340f8bfe020887f7b7bb0.json",
+      "sha256": "2048b27febffcb5134cd471c0c7fcc1b4ab0ff28256e43946a70543d03fb1b0c",
+      "child_pid": 18844,
+      "exit": 0,
+      "error": null,
+      "job_closed": true,
+      "desktop_closed": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "desktop_switch_requested": false,
+      "seconds": 1.749
+    },
+    {
+      "path": "output/private-desktop/asset_discovery_paging_9d97064889c74ef7b3e5d90a26483b7d.json",
+      "sha256": "2f8f8d90b3a52e514608ecf8607c8680d5dc6d9aaa0a5c07d65b6e99716101c2",
+      "child_pid": null,
+      "exit": 2,
+      "error": "[Errno 5] Create private test desktop",
+      "job_closed": null,
+      "desktop_closed": null,
+      "child_desktop_confirmed": false,
+      "foreground_child_observed": false,
+      "desktop_switch_requested": false,
+      "seconds": 0.0
+    },
+    {
+      "path": "output/private-desktop/asset_discovery_paging_cb1fa4e668614df58937566ca40ccfd0.json",
+      "sha256": "b34ee3556889d527903dbecff5fb564e408ea930d71c0bcf681a19332aa540c8",
+      "child_pid": 31088,
+      "exit": 1,
+      "error": null,
+      "job_closed": true,
+      "desktop_closed": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "desktop_switch_requested": false,
+      "seconds": 27.774
+    },
+    {
+      "path": "output/private-desktop/asset_discovery_paging_cd4017629fdf4e9c97e64d5b64caa3cf.json",
+      "sha256": "144b800face11b7ef09eb1d772082e7b724f14c4521a5d42add39daa0759634c",
+      "child_pid": 23664,
+      "exit": 0,
+      "error": null,
+      "job_closed": true,
+      "desktop_closed": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "desktop_switch_requested": false,
+      "seconds": 7.159
+    }
+  ],
+  "captures": [
+    {
+      "path": "output/discovery-additions-1795284868623382800/notice-classic.png",
+      "bytes": 177221,
+      "sha256": "b5e9e8dc6d38acb54b66681a2c213a269676599e51a5c8785479c0a4f59c5fe2",
+      "committed": false,
+      "inspection": "Notice body and controls fit and are readable. This fixture qualifies the notice, not the underlying full-browser layout."
+    },
+    {
+      "path": "output/discovery-additions-1795284868623382800/notice-neon.png",
+      "bytes": 150447,
+      "sha256": "a706ffbdc96f3810c447ecbed6f761ca448df0334848cab3aaee0ff4d1e278e4",
+      "committed": false,
+      "inspection": "Notice body and controls fit and are readable. This fixture qualifies the notice, not the underlying full-browser layout."
+    }
+  ],
+  "gpu_slot": "Released explicitly to primary after both serial checks; no subsequent graphics run.",
+  "publication": "Commit/push/readback follows; no main writes."
+}

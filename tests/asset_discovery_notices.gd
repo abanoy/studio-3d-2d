@@ -20,11 +20,11 @@ func settle() -> void: await process_frame; await process_frame
 
 func click_notice(control: Control) -> void:
 	var window: Window = browser.retrieval_notice
-	var point := control.get_global_rect().get_center()
-	var move := InputEventMouseMotion.new(); move.position = point; move.global_position = point; window.push_input(move, true)
+	var point := Vector2(window.position) + control.get_global_rect().get_center()
+	var move := InputEventMouseMotion.new(); move.position = point; move.global_position = point; root.push_input(move, true)
 	for pressed in [true, false]:
 		var event := InputEventMouseButton.new(); event.position = point; event.global_position = point
-		event.button_index = MOUSE_BUTTON_LEFT; event.pressed = pressed; window.push_input(event, true)
+		event.button_index = MOUSE_BUTTON_LEFT; event.pressed = pressed; root.push_input(event, true)
 		await process_frame
 	await settle()
 

@@ -343,6 +343,15 @@ python tests/verify_asset_discovery.py --paging
 python tests/verify_asset_discovery_additions.py --notices-only
 ```
 
-Native graphical wheel/notice layout qualification is pending the coordinated
-private-desktop GPU slot. The CPU checks do not claim that graphical result.
-No full HAS suite was rerun for this independent browser increment.
+Native private-desktop qualification then found and fixed a real scrollbar bug:
+the first recursive search chose a hidden editor's nested bar. The lookup now
+prefers the Tree's own direct bar. A CPU regression assertion checks that parent.
+Actual graphical wheel paging passes **24 checks**, including 100→200→300→400→500,
+exhaustion, cancellation and malformed/unavailable providers. Native notice
+checks pass **18 controls** across fresh Neon and Classic processes, with real
+Cancel/checkbox/Open clicks and inspected, fitting notice captures. The first
+notice fixture sent events to the wrong embedded viewport; its corrected root
+routing passes. Failed runs and private launcher receipts remain preserved.
+All actual private jobs/desktops closed; none reached the owner's foreground.
+No full HAS suite was rerun for this independent browser increment. See
+`docs/benchmarks/asset_discovery_native_paging_notices_2026-11-21.json`.

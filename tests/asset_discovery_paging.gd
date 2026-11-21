@@ -58,6 +58,7 @@ func _run() -> void:
 	check(browser.online.rows.size() == 100 and requests == 1, "initial batch remains bounded")
 	check(is_instance_valid(browser._scrollbar), "find native Tree vertical scrollbar")
 	if not is_instance_valid(browser._scrollbar): finish(); return
+	check(browser._scrollbar.get_parent() == browser.tree, "use Tree's own scrollbar rather than a hidden editor's bar")
 	var bar: VScrollBar = browser._scrollbar
 	# Headless Godot does not draw Tree's internal scrollbar ranges. Exercise the
 	# same input/guard path with explicit ranges; graphical mode uses native ones.

@@ -242,8 +242,10 @@ func cancel() -> void:
 
 func _find_vertical_scrollbar(node: Node) -> VScrollBar:
 	# Tree owns internal scrollbars in pinned Godot 4.6; no public getter exists.
+	# Prefer its own bar over a hidden editor's nested TextEdit scrollbar.
 	for child in node.get_children(true):
 		if child is VScrollBar: return child
+	for child in node.get_children(true):
 		var found := _find_vertical_scrollbar(child)
 		if found: return found
 	return null
