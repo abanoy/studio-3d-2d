@@ -1,0 +1,44 @@
+{
+  "format": "has_junko_factory_boundary_plan_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "prior_first_index": 38,
+  "exact_original_error": "native_Blender_rest_matrix_mismatch",
+  "factory_lines": {
+    "root_assignment": 60,
+    "child_assignment": 62,
+    "refpose_branch": 65,
+    "pre_object": 79,
+    "factory_return": 82
+  },
+  "trace_profile": {
+    "body_sha256": "d916863f801d0894009fad43c587ae630bf05556f484ebae4803734bd15c8af7",
+    "bone_count": 145,
+    "native_index": 38,
+    "scale": 0.01905,
+    "existing_trace_slot": "must_be_empty"
+  },
+  "private_boundaries": [
+    "before_assignment",
+    "assigned_matrix",
+    "immediate_edit_getter",
+    "before_object_conversion",
+    "object_return_matrix",
+    "object_return_pose",
+    "actual_load_refpose",
+    "actual_refpose_branch_entered"
+  ],
+  "public_extra_fields": [
+    "factory_assignment_to_edit_error",
+    "factory_edit_later_error",
+    "factory_edit_to_object_error",
+    "factory_object_to_final_error",
+    "factory_return_pose_error",
+    "factory_assignment_to_reference_error",
+    "factory_before_length",
+    "factory_after_length"
+  ],
+  "qualified_conversions": 0,
+  "tolerance_changed": false,
+  "SDK_or_model_written": false,
+  "cause_established": false
+}

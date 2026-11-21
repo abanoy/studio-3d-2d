@@ -1,0 +1,42 @@
+{
+  "status": "FAIL",
+  "groups": {
+    "parts": {
+      "writer": {
+        "checks": 12,
+        "failures": 0
+      }
+    }
+  },
+  "private_receipts": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_5e86c7b542b7489d89da4247940ce06d",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 34760,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 5.812
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_ca9a7f1cf48247dabcb7054b567257fe",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 1,
+      "child_pid": 26032,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.294
+    }
+  ],
+  "error": ""
+}

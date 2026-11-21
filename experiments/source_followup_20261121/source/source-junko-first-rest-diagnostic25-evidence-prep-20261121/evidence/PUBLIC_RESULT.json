@@ -1,0 +1,95 @@
+{
+  "format": "has_junko_body_rest_diagnostic_v3_1",
+  "status": "EXPECTED_REFUSAL_WITH_DIAGNOSTIC",
+  "revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "checks": 25,
+  "jobs": {
+    "unit25": {
+      "status": "PASS",
+      "wrapper_reaped": true,
+      "wrapper_handle_closed": true,
+      "job_closed": true,
+      "active_zero_before_close": true,
+      "assigned_before_START": true,
+      "owner": {
+        "pid": 32880,
+        "created_100ns": "134397456703344593"
+      },
+      "wrapper_exit": 0,
+      "pre_termination_accounting": {
+        "active": 0,
+        "total": 4,
+        "terminated_by_limit": 0
+      },
+      "accounting": {
+        "active": 0,
+        "total": 4,
+        "terminated_by_limit": 0
+      },
+      "worker_receipt_sha256": "b24123d7c0db75959403cd3d0027928337665203f4c5501e36018d88321a551f"
+    },
+    "body": {
+      "status": "EXPECTED_CHILD_REFUSAL",
+      "wrapper_reaped": true,
+      "wrapper_handle_closed": true,
+      "job_closed": true,
+      "active_zero_before_close": true,
+      "assigned_before_START": true,
+      "owner": {
+        "pid": 18836,
+        "created_100ns": "134397456708118449"
+      },
+      "wrapper_exit": 0,
+      "pre_termination_accounting": {
+        "active": 0,
+        "total": 7,
+        "terminated_by_limit": 0
+      },
+      "accounting": {
+        "active": 0,
+        "total": 7,
+        "terminated_by_limit": 0
+      },
+      "worker_receipt_sha256": "d8fe03cf69c188ac854ea88984ae3ec33f614e180eb4e9e461a954ddc82c4d41"
+    }
+  },
+  "conversions": {},
+  "diagnostic": {
+    "status": "EXPECTED_REFUSAL_WITH_DIAGNOSTIC",
+    "scalar_errors": {
+      "first_native_index": 38,
+      "global_max_error": 4.493998966426105e-05,
+      "global_translation_error": 7.751130337574352e-08,
+      "global_basis_error": 4.493998966426105e-05,
+      "global_normalized_error": 4.493998966426105e-05,
+      "parent_global_error": 2.03674886829579e-07,
+      "current_parent_native_local_error": 4.493998966426105e-05,
+      "current_parent_mathutils_local_error": 4.494190216064453e-05,
+      "mathutils_vs_native_local_error": 9.558213465155063e-08,
+      "native_quaternion_unit_error": 2.017339184590128e-08
+    },
+    "private_diagnostic_sha256": "c20532fb725094c4e62fadefb0ef70153f19c01ae596b7bdd8e22b445630b7e8",
+    "conversion_log_sha256": "ab981f5280ac9ef42801f847453af5b9086f01e7ec7745a6190f34b543c7dbd7",
+    "original_close_predicate_still_false": true,
+    "source_rest_tolerance_changed": false,
+    "diagnosed_cause_claimed": false,
+    "reference_pose_or_later_factory_writes_ruled_out": false,
+    "export_binding_qualified": false,
+    "Godot_binding_qualified": false,
+    "native_simulation_qualified": false
+  },
+  "dress_started": false,
+  "graphics_executed": false,
+  "Full_claimed": false,
+  "native_simulation_qualified": false,
+  "Godot_binding_qualified": false,
+  "application_modified": false,
+  "private_arrays_published": false,
+  "all_jobs_closed": true,
+  "all_memberships_and_Main_preserved": true,
+  "parent_environment_preserved": true,
+  "all_admitted_inputs_preserved": true,
+  "lock_removed": true,
+  "preservation_failure_count": 0,
+  "source_input_file_count": 2902
+}

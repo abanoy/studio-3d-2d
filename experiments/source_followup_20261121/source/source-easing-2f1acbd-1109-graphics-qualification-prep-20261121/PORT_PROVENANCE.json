@@ -1,0 +1,48 @@
+{
+  "format": "has_easing_2f1acbd_graphics_port_provenance_1",
+  "old_host_manifest": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-easing-c315-graphics-qualification-prep-20261121/SOURCE_PINS.json",
+    "bytes": 6276,
+    "sha256": "71f1ea3af625b2032639ef4837c4a195d086b31e94a72d81a82aa7b31a9a8466"
+  },
+  "new_revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "new_functional_base": 1109,
+  "new_full_groups": 183,
+  "old_candidate_manifest_sha256": "b8d482e75aeca185a56abcdf87ae42af2d5f98b0a28fe2cb1675e7e75d0d4ab3",
+  "payload_count": 7,
+  "core_headless_qualified_payloads": 6,
+  "old_graphical_fixture_unchanged": true,
+  "all_payload_hashes_exact_old_input_targets": true,
+  "app_renderer_bases": [
+    {
+      "path": "src/app.gd",
+      "bytes": 314927,
+      "sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f",
+      "c315_base_equals_published2f1acbd": true
+    },
+    {
+      "path": "src/renderer.gd",
+      "bytes": 15453,
+      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "c315_base_equals_published2f1acbd": true
+    }
+  ],
+  "immutable_base_runtime": 1112,
+  "owned_overlay_runtime": 1117,
+  "modified_existing": [
+    "src/app.gd",
+    "src/renderer.gd"
+  ],
+  "new_files": 5,
+  "non_main_host_functions_AST_unchanged": 9,
+  "source_only_AST_files": 3,
+  "read_only_source_validation": "PASS; no candidate imports or engine execution.",
+  "future_jobs": 16,
+  "future_ffprobe_processes": 2,
+  "future_writer_checks": 190,
+  "future_reader_checks": 64,
+  "future_total_checks": 254,
+  "future_cold_pairs": 8,
+  "actual_qualification_execution": false,
+  "Main_or_old_packet_modified": false
+}

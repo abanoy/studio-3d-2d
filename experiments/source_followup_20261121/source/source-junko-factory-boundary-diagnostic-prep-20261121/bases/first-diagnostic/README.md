@@ -1,0 +1,13 @@
+# Read-only first native rest mismatch diagnostic
+
+SOURCE ONLY / UNRUN. Actual StageA pure16passed, then body conversion failed before export at unchanged native_Blender_rest_matrix_mismatch; dress was not launched. Both attempted jobs closed/reaped/active0,2859 inputs/Main/environment preserved and lock removed. Original9989f3 source and failed run remain unchanged. Safe failure evidence is frozen separately at source-junko-stage-a-failure-evidence-prep-20261121/a6a9ae50.
+
+This successor observes ONLY the first refused body native-index frame by wrapping C.require during the existing exact C.prove_native_blender call. It delegates the original condition/code and always restores C.require. It does not replace C.close, edit any source bone/mesh/pose/skin/constraint or change tolerance. It uses the exact original failed function code object and its locals, avoiding a second rest implementation or guessed failing bone. A diagnostic capture failure still rethrows the original refusal.
+
+The original actual/expected and parent/local matrices, source words/name, pose matrix and actual RNA pointers are written exclusively to PRIVATE_first_rest_refusal.json. Only first_native_index and finite scalar errors print publicly. Additional read-only mathutils Matrix.LocRotScale/Quaternion/Vector operations mirror the pinned SourceIO factory local expression, to distinguish translation/basis/parent accumulation and native-normalized versus mathutils-step errors. They create no Blender bone/object or repair. This does not identify a cause until Root actually measures the values.
+
+The16 old guard tests remain unchanged;9 new synthetic delegation tests verify original predicate/refusal and restoration, exact failed-callsite handling, capture failure privacy, observe-once behavior and scalar component math. They import no Blender/SDK/native input and perform no child launch; actual native source remains unrun in this successor. Root should run25 pure controls, then ONLY one fresh body diagnostic expecting the original conversion failure plus the captured marker/private artifact. Dress remains unrun.
+
+A captured refusal is diagnostic evidence, not native export, inverse-bind, Godot257 mapping,54 following, physics, Main adoption, appearance or Full qualification. All native arrays stay local. See DIAGNOSTIC_PLAN and ROOT_PROTOCOL.
+
+Source-review caveat: the pinned factory also contains an optional load_refpose animation override. The diagnostic does not observe that branch and cannot isolate all later SDK rest writes. Scalar comparisons alone must not be labeled a unique rounding cause.

@@ -1,0 +1,15 @@
+# Smooth-timing graphical qualification on published2f1acbd /1109
+
+SOURCE ONLY, UNRUN. The old71f1 c315 host remains unchanged and closed in its original folder; its complete source is preserved under bases/c315 here. This port adds no curve, easing, key, Undo, bake, renderer or application logic.
+
+All seven overlay payloads are byte-identical to candidate b8d482: the six core app/renderer/editor/math+unit files previously covered by69 pure and96 actual-app headless checks, plus the previously reviewed balanced-readback graphical fixture. Neither69 nor96 is newly executed or credited to this port. Current2f1 app.gd and renderer.gd are byte-identical to their c315 bases; four+three literal anchors independently reproduce the exact candidate payloads. Current Import info/camera/theme code stays in the immutable baseline.
+
+The host reuses exactly the frozen72fc face port's source1109 helper and read-only b91 validation wrapper. It requires actual successful Full183/1109 in the reserved2f1 checkout, exact183 keys/626 editor-camera/267 Import info/21 movies, five current typed headless lifecycle receipts, all other graphical receipt guards, a completed isolated outer owner and the actual Root b91 postflight PASS. The running Full has not qualified this host. No stage, lock, engine, ffprobe or graphic starts before admission.
+
+After that gate: eight contexts (Classic/Neon ×100/150% ×Simple/Advanced), each a private writer23 and a fresh private reader8. Neon/100/Advanced adds six movie assertions, making190 writer+64 reader=254 total in16 private jobs. Exactly two actual H264/1080p/24fps/48frame/two-second movies get two additional hidden retained ffprobe processes. All nine non-main host functions (matrix, owned trees/cold copying, offline restoration, closure and probes) remain AST-identical to the predecessor.
+
+Reader inputs are exactly Unbaked.has, Baked.has, original-keys.var, baked-keys.var and expected.json. Each reader has its own Studio/process/user profile/cache. Writer Studio, WriterData (including cache) and Writer UserData are sealed and moved to owned .OFFLINE names while reading, then restored before preservation even on failure. Any closure/restoration/source/hash/count failure stays a failure and can retain the owned lock. No owner assets or native conversion are involved.
+
+The three old source1103-specific gate-file test utilities are retained only in the historical predecessor. This port does not offer them as current1109 tests. Its read-only source check parses code, proves the nine unchanged helper functions/seven payloads and replays both current-base patches without importing candidate programs. All engine/GUI/cold/movie work remains UNRUN.
+
+Prior failed bake-Undo, zero-assertion parse/startup and source-only fields remain historical. This package is an isolated qualification candidate, not an adopted feature, a new whole Full result, native fidelity or human/device approval. Private generated movies/HAS/cache/render outputs stay local.

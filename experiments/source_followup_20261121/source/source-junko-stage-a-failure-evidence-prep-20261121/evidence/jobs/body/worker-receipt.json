@@ -1,0 +1,23 @@
+{
+  "format": "has_junko_stage_a_worker_1",
+  "job": "body",
+  "request_sha256": "e42f6b3e075eb2fe261d492062ce9b2e0c6841b50d58d8ccfbda2c0565947860",
+  "status": "FAIL",
+  "gate_accepted": true,
+  "child_launched": true,
+  "child_reaped": true,
+  "child_handle_closed": true,
+  "wrapper_identity": {
+    "pid": 33348,
+    "created_100ns": "134397440607555181"
+  },
+  "started_ns": 1795270460839104800,
+  "child_identity": {
+    "pid": 27192,
+    "created_100ns": "134397440608402015"
+  },
+  "child_exit": 1,
+  "error_type": "RuntimeError",
+  "error": "CHILD_NONZERO",
+  "finished_ns": 1795270465638013800
+}

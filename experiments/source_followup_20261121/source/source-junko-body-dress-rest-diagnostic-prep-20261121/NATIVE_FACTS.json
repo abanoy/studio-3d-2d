@@ -1,0 +1,31 @@
+{
+  "format": "has_junko_body_dress_native_probe_facts_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "models": [
+    {
+      "role": "body",
+      "source_relative": "models/touhou/tamo/junko.mdl",
+      "sha256": "d916863f801d0894009fad43c587ae630bf05556f484ebae4803734bd15c8af7",
+      "bones": 145,
+      "procedural_owners": 2
+    },
+    {
+      "role": "dress",
+      "source_relative": "models/touhou/tamo/junko dress.mdl",
+      "sha256": "be03e608fc7fc0316a5441e65d01cef355e076b4eff17dd5b57fbf4defb35fdf",
+      "bones": 112,
+      "procedural_owners": 28
+    }
+  ],
+  "shared_native_exact_parent_localrest_inversebind": 56,
+  "nonprocedural_direct_endpoints": 54,
+  "nonprocedural_endpoints_below_shared_procedural_ancestor": 4,
+  "complete_shared_ancestor_graph": true,
+  "conservative_nonprocedural_ancestor_free_candidate": 50,
+  "converted_runtime_bindings_qualified": false,
+  "follow_simulation_qualified": false,
+  "scale": 0.01905,
+  "common_scale_applied_once": true,
+  "six_foot_bundle_height_normalization_qualified": false,
+  "public_arrays_or_asset_bytes": false
+}

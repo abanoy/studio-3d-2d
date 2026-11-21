@@ -1,0 +1,21 @@
+{
+  "format": "has_installed_blender51_readonly_api_references_1",
+  "files": [
+    {
+      "path": "C:/Program Files/Blender Foundation/Blender 5.1/5.1/scripts/modules/_bpy_types.py",
+      "bytes": 49156,
+      "sha256": "1fb91b1ff5d8b79589f5cbf86b064334a9c4a2219a4ce090e0fb45d2f3d6b62c"
+    },
+    {
+      "path": "C:/Program Files/Blender Foundation/Blender 5.1/5.1/scripts/addons_core/io_scene_gltf2/blender/imp/node.py",
+      "bytes": 14872,
+      "sha256": "a39d7111a9fdda34508f7a4adbdee90a3a8478a7464a4f647b89489e6de4752a"
+    }
+  ],
+  "used_sections": [
+    "_bpy_types.py EditBone transform lines603–625 calls align_roll",
+    "io_scene_gltf2/blender/imp/node.py bone construction lines211–222 uses head/tail+length+align_roll"
+  ],
+  "files_copied_into_packet": false,
+  "web_reference_attempts": "Blender API5.1/current pages unavailable; installed pinned source used instead"
+}

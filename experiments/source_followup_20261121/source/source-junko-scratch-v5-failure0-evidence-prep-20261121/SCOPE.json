@@ -1,0 +1,35 @@
+{
+  "format": "has_scratch_v5_actual_unit_failure_1",
+  "status": "ACTUAL_FAIL0",
+  "unit_batch_pass_credit": 0,
+  "individual_ok_lines_observed_not_batch_credit": 11,
+  "failed_methods": 1,
+  "total_attempted_tests": 12,
+  "Blender_started": false,
+  "scratch_measurements": 0,
+  "private_capture_or_matrices_read_by_collector": false,
+  "all_one_owned_job_reaped_closed_active0": true,
+  "admitted_inputs_preserved": 1144,
+  "source_host_manifest": "5140f53058ab4dddaedccd2f3428b0ead4af7a97fb009f43d143150b2980b20a",
+  "source_candidate_manifest": "9557dff66394116bb5b7049f036e6674195171f98da6a0ed895ce8bd86dac015",
+  "runtime3_source_hashes": [
+    {
+      "path": "tools/junko_scratch_rest.py",
+      "bytes": 10395,
+      "sha256": "4e8de7b858127a25c0fa782730d27a1cfcee4e9acc06f0fd9b4d484269ad4ec9"
+    },
+    {
+      "path": "tests/test_junko_scratch_rest.py",
+      "bytes": 2970,
+      "sha256": "7fb26b32783769edb290af42381c54016bad1113e1433d69372dfcb50994c345"
+    },
+    {
+      "path": "tools/source_jiggle_crosswalk.py",
+      "bytes": 29012,
+      "sha256": "c384cbfe912170d5107995c60ac5bcf033ad6061a14ff29d06599898fcfaf646"
+    }
+  ],
+  "root_revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "production_or_native_tolerance_changed": false,
+  "new_Full_or_model_repair_qualification": false
+}

@@ -1,0 +1,201 @@
+{
+  "format": "has_miku_contact_source_inputs_1109_1",
+  "baseline_revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "files": [
+    {
+      "path": "qualified_ui_host.py",
+      "bytes": 21967,
+      "sha256": "dfb0cf83cef6dc455d5da9f1c1631f1f0ee053b6e4a646c9045e90e7e9967a3e"
+    },
+    {
+      "path": "qualified_helpers.py",
+      "bytes": 26455,
+      "sha256": "990c37ddca7b1301613f5efc5a7e5a30ce2723369112ef274ee78d2d4dc34087"
+    },
+    {
+      "path": "source1109.py",
+      "bytes": 11221,
+      "sha256": "0afe7a6d1ceda9ddce6de26dcadb213cb7306fdf5907709ffd57c4765c14262d"
+    },
+    {
+      "path": "full183_validation.py",
+      "bytes": 13174,
+      "sha256": "f2484142436d1a9699a5686b67310cb8fd65f5bf1bd38a37352263cc7923b2cc"
+    },
+    {
+      "path": "POSTFLIGHT_SOURCE_REFERENCE.py",
+      "bytes": 12190,
+      "sha256": "b91c63c0096ba4ee3d7a4f158c37cf46ca57af5e343ee077152d3cd96c1f8957"
+    },
+    {
+      "path": "BASELINE_SOURCE1109.json",
+      "bytes": 277374,
+      "sha256": "467e05f7d731366fe1654e09cb2a23586bc13aab6fe0b955ee46065294aa7da6"
+    },
+    {
+      "path": "FULL183_GROUP_CONTRACT_20261121.json",
+      "bytes": 6076,
+      "sha256": "d7bd9c53add4088d88a05d575a34752ed9ac15e802755f0ff8cb13142f5da0f4"
+    },
+    {
+      "path": "IMPORT_INFO_REMOTE_VERIFIED_20261121.json",
+      "bytes": 699,
+      "sha256": "47c2c8c0df02a02dd5399bd82af4af96937a56abf989256af65e0fe1a1a00ac1"
+    },
+    {
+      "path": "IMPORT_INFO_FINAL_FUNCTIONAL_CATALOGUE_20261121.json",
+      "bytes": 271681,
+      "sha256": "23ea7fe6c4e92c8184f421ce9425173d25c409c49d24dd150e5cafd3966685b2"
+    },
+    {
+      "path": "payload/src/godot_skin_weight_conversion.gd",
+      "bytes": 2974,
+      "sha256": "deb82e95713aff54da15296a841f0241a59781b4300d8c869651e9449437cc92"
+    },
+    {
+      "path": "payload/src/miku_collider_binding.gd",
+      "bytes": 6935,
+      "sha256": "e58afb8325054315209c92c64504037642719f48ac05f0bbb0f1eab0d6bfdc2a"
+    },
+    {
+      "path": "payload/src/miku_saved_context.gd",
+      "bytes": 2289,
+      "sha256": "e80f3d8ade9ed5702a9204ad968c857979ccf2521a6696c7ade49fa41fe41a7b"
+    },
+    {
+      "path": "payload/src/miku_skin_binding.gd",
+      "bytes": 27177,
+      "sha256": "9bd7bd9cc86da2b11ba2ba74664ee6efb22d72d54e227938555d2510b6e760d1"
+    },
+    {
+      "path": "payload/src/secondary_collision_geometry.gd",
+      "bytes": 5190,
+      "sha256": "63f75e7cae189fad1dab190302c7218f94ae3d4910b3eb9319e4f0a1b54e6cc2"
+    },
+    {
+      "path": "payload/src/secondary_collision_probe.gd",
+      "bytes": 13530,
+      "sha256": "f4aea0b34013065fd0e3ac17d55b2c241b4a88d5e235716402e79c12f681ecd4"
+    },
+    {
+      "path": "payload/tests/godot_skin_weight_conversion_unit.gd",
+      "bytes": 4363,
+      "sha256": "bda14464e85e93083e7ea110ef62736aaadcf6842f61b50ec43939cfbd03cea5"
+    },
+    {
+      "path": "payload/tests/godot_skin_weight_engine_conformance.gd",
+      "bytes": 1897,
+      "sha256": "bb340bc100539a3fb1f85585d17b508371cc444ead739ddd73cc10e88e4c98f3"
+    },
+    {
+      "path": "payload/tests/miku_collider_binding_unit.gd",
+      "bytes": 5586,
+      "sha256": "84c0f1b46aa3a3f0be0926be2b7694c73a333ae0e323e1dd7ae0bdc925c7644c"
+    },
+    {
+      "path": "payload/tests/miku_contact_qualification.gd",
+      "bytes": 18968,
+      "sha256": "150164129c69b76f03f6459e38c79238f40e1933a0092c3b8abfa5a27bb0bc76"
+    },
+    {
+      "path": "payload/tests/miku_skin_binding_unit.gd",
+      "bytes": 12663,
+      "sha256": "af6eb752697538cdf9f62a0a1158ccec02b040e33f60d0f81c6bcfd9340a178e"
+    },
+    {
+      "path": "payload/tests/secondary_collision_geometry_unit.gd",
+      "bytes": 4542,
+      "sha256": "6f23d6bf84beba91c6eb4237eeaa62ef71e86e0ec1f9dd4c072f8a54ad5f16de"
+    },
+    {
+      "path": "payload/tests/secondary_collision_probe_unit.gd",
+      "bytes": 8240,
+      "sha256": "0f579122671341a16b55260d44bfdebeb4d768f858abdeb6c1b130974e600fcb"
+    }
+  ],
+  "targets": [
+    {
+      "path": "src/godot_skin_weight_conversion.gd",
+      "operation": "new",
+      "bytes": 2974,
+      "sha256": "deb82e95713aff54da15296a841f0241a59781b4300d8c869651e9449437cc92"
+    },
+    {
+      "path": "src/miku_collider_binding.gd",
+      "operation": "new",
+      "bytes": 6935,
+      "sha256": "e58afb8325054315209c92c64504037642719f48ac05f0bbb0f1eab0d6bfdc2a"
+    },
+    {
+      "path": "src/miku_saved_context.gd",
+      "operation": "new",
+      "bytes": 2289,
+      "sha256": "e80f3d8ade9ed5702a9204ad968c857979ccf2521a6696c7ade49fa41fe41a7b"
+    },
+    {
+      "path": "src/miku_skin_binding.gd",
+      "operation": "new",
+      "bytes": 27177,
+      "sha256": "9bd7bd9cc86da2b11ba2ba74664ee6efb22d72d54e227938555d2510b6e760d1"
+    },
+    {
+      "path": "src/secondary_collision_geometry.gd",
+      "operation": "new",
+      "bytes": 5190,
+      "sha256": "63f75e7cae189fad1dab190302c7218f94ae3d4910b3eb9319e4f0a1b54e6cc2"
+    },
+    {
+      "path": "src/secondary_collision_probe.gd",
+      "operation": "new",
+      "bytes": 13530,
+      "sha256": "f4aea0b34013065fd0e3ac17d55b2c241b4a88d5e235716402e79c12f681ecd4"
+    },
+    {
+      "path": "tests/godot_skin_weight_conversion_unit.gd",
+      "operation": "new",
+      "bytes": 4363,
+      "sha256": "bda14464e85e93083e7ea110ef62736aaadcf6842f61b50ec43939cfbd03cea5"
+    },
+    {
+      "path": "tests/godot_skin_weight_engine_conformance.gd",
+      "operation": "new",
+      "bytes": 1897,
+      "sha256": "bb340bc100539a3fb1f85585d17b508371cc444ead739ddd73cc10e88e4c98f3"
+    },
+    {
+      "path": "tests/miku_collider_binding_unit.gd",
+      "operation": "new",
+      "bytes": 5586,
+      "sha256": "84c0f1b46aa3a3f0be0926be2b7694c73a333ae0e323e1dd7ae0bdc925c7644c"
+    },
+    {
+      "path": "tests/miku_contact_qualification.gd",
+      "operation": "new",
+      "bytes": 18968,
+      "sha256": "150164129c69b76f03f6459e38c79238f40e1933a0092c3b8abfa5a27bb0bc76"
+    },
+    {
+      "path": "tests/miku_skin_binding_unit.gd",
+      "operation": "new",
+      "bytes": 12663,
+      "sha256": "af6eb752697538cdf9f62a0a1158ccec02b040e33f60d0f81c6bcfd9340a178e"
+    },
+    {
+      "path": "tests/secondary_collision_geometry_unit.gd",
+      "operation": "new",
+      "bytes": 4542,
+      "sha256": "6f23d6bf84beba91c6eb4237eeaa62ef71e86e0ec1f9dd4c072f8a54ad5f16de"
+    },
+    {
+      "path": "tests/secondary_collision_probe_unit.gd",
+      "operation": "new",
+      "bytes": 8240,
+      "sha256": "0f579122671341a16b55260d44bfdebeb4d768f858abdeb6c1b130974e600fcb"
+    }
+  ],
+  "completed_canonical_full_required": true,
+  "completed_outer_isolated_full_required": true,
+  "actual_private_receipts_required": true,
+  "actual_Root_b91_postflight_required": true,
+  "shared_source_manifest_sha256": "72fc1f2f6626db08bb23e3330f39401b0cf0202dc43df01b433342e16d2e5402"
+}

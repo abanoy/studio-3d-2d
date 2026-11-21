@@ -1,0 +1,78 @@
+{
+  "format": "has_posed_head_native_1109_control_1",
+  "status": "CAPTURED_FOR_PRIVATE_REVIEW",
+  "revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "source_context": "completed2f1acbd_Full1109_183_and_b91_postflight_then_separate_owned_control_snapshot",
+  "full_completion_sha256": "3846f7a039ef30dfebe11f7e92faf316ad24cf22a58381551b5bd9e3b1bbdf9c",
+  "full_source_sha256": "b4bb0a6be4aa7fb2d8fb7238505a2b947c60fd7e65c46d6d0287860156246d60",
+  "full_report_sha256": "a19bd7633a868a6fd2f473e32a467e4deaeec0706015503121d6529ffcf79213",
+  "full_outer_launch_sha256": "b6d30bbbb5ee6248ffb41b657e2f254aa33f4edd935cc378dbf9a8c26b2ff57b",
+  "full_outer_completion_sha256": "aa84faa61b4c57e96a761e78d79566cb5fc3799ac9ef2144cceb7805731fe47e",
+  "current_functional_source_count": 1109,
+  "full_groups": 183,
+  "required_new_group_checks": 626,
+  "required_import_info_checks": 267,
+  "required_movie_groups": 21,
+  "required_headless_lifecycle_jobs": 5,
+  "root_postflight_sha256": "b22f46ae0121cdb3bac085eceb0ca87dd1bbf660424639d10e957e5940510561",
+  "immutable_runtime_files": 1112,
+  "owned_runtime_files": 1117,
+  "new_source_targets": 5,
+  "source_archive_sha256": "d304744dea70a05e7176b668bc10b0058b8cb4e6b1ffe5fc9fab05303da60efb",
+  "source_asset_sha256": "e3e233004f2ce1aed3c2f221f7d92d9218c0de1f133cad88557f8181644e6e8c",
+  "owner_original_reproduced": false,
+  "original40_inputs_preserved": true,
+  "new_Full_claimed": false,
+  "application_adopted": false,
+  "native_fix_qualified": false,
+  "visual_face_restoration_qualified": false,
+  "nonuniform_renderer_order_qualified": false,
+  "export_or_cold_qualified": false,
+  "private_arrays_published": false,
+  "pure_checks": 43,
+  "native_cpu_geometry_checks": 22,
+  "native_capture_controls": 49,
+  "private_capture_count": 16,
+  "native_cpu_geometry_admitted": true,
+  "all_owned_launchers_reaped": true,
+  "all_attempted_private_jobs_closed": true,
+  "parent_environment_unchanged": true,
+  "head_unchanged": true,
+  "all_admitted_inputs_preserved": true,
+  "current_functional_domain_preserved": true,
+  "owned_lock_removed": true,
+  "owned_lock_retained": false,
+  "private_job_count": 5,
+  "preservation_failure_count": 0,
+  "cases": [
+    {
+      "name": "import",
+      "status": "PASS",
+      "graphical": false
+    },
+    {
+      "name": "envelope-unit",
+      "status": "PASS",
+      "graphical": false,
+      "checks": 21
+    },
+    {
+      "name": "control-unit",
+      "status": "PASS",
+      "graphical": false,
+      "checks": 22
+    },
+    {
+      "name": "native-cpu-geometry",
+      "status": "PASS",
+      "graphical": false,
+      "checks": 22
+    },
+    {
+      "name": "native-captures",
+      "status": "PASS",
+      "graphical": true,
+      "checks": 49
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "format": "has_import03_implementation_audit_bases_1",
+  "revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "functional_sources": 1109,
+  "functional_baseline": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-miku-contact-2f1acbd-1109-successor-prep-20261121/BASELINE_SOURCE1109.json",
+    "bytes": 277374,
+    "sha256": "467e05f7d731366fe1654e09cb2a23586bc13aab6fe0b955ee46065294aa7da6"
+  },
+  "all1109_current_raw_Gitblob_ns_exact": true,
+  "files": [
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md",
+      "bytes": 43930,
+      "sha256": "2595348e15383bc3aef125d0f43118f5244271f3ef34a1ae1f1c13458b589a8b"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/design/HAS_2026-10-29_Voice_Design_Addendum_for_Codex.md",
+      "bytes": 54122,
+      "sha256": "85c5628cb51bd8acb3abd66052bd638530e60fd2f71ea550cff773d643a4bbf7"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/completion_checklist.json",
+      "bytes": 269103,
+      "sha256": "3977551a1a103780b7753213e6422690a344489837ad8ad9fb507410157e9da0"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/completion_checklist.md",
+      "bytes": 28662,
+      "sha256": "6790641f88e2608d1ecb059db428fcf31910432ed69ed53a88544b32e7b282d4"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/benchmarks/completion_baseline_audit_2026-11-07.json",
+      "bytes": 178570,
+      "sha256": "393715cdc7936e92592589d1aab7906139236ce17ae1b961dc143dcbd4a0957d"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/tools/check_completion.py",
+      "bytes": 13060,
+      "sha256": "2b1cede41fe615d1e35412fe767d1e562ea5473078efefc670c3d9eb33969d09"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/import_info.md",
+      "bytes": 1463,
+      "sha256": "b59bca73a08aee8285149c2394e30c6dd777abc9398adee279eb5f3581f54591"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/source_import.md",
+      "bytes": 14113,
+      "sha256": "c398bc9dc32f09c9db09b00399acf9c5ea26e79965b79d113891384801de6113"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/source_brush_lightmaps.md",
+      "bytes": 2588,
+      "sha256": "dc5f17224103c87e1567c8f1f5e0370909dc85831f40d626088530b1c3d239a1"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/native_profile_acceptance_review.md",
+      "bytes": 6856,
+      "sha256": "ea20d5d38e9503676e3ddbc35928f0888e842cb84e7e2304e89f70834951eece"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/docs/benchmarks/import_info_increment_2026-11-21.json",
+      "bytes": 3888,
+      "sha256": "0713aabf627866688faaa7ab33037d1aaba5f9d05c2df182f74bd17b596e4be8"
+    }
+  ],
+  "code_anchors": [
+    {
+      "path": "src/import_capability_summary.gd",
+      "function_or_anchor": "static func summarize",
+      "line": 52,
+      "file_sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81"
+    },
+    {
+      "path": "src/import_capability_summary.gd",
+      "function_or_anchor": "static func native_preview",
+      "line": 33,
+      "file_sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81"
+    },
+    {
+      "path": "src/import_capability_editor.gd",
+      "function_or_anchor": "func matches",
+      "line": 38,
+      "file_sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35"
+    },
+    {
+      "path": "src/import_capability_editor.gd",
+      "function_or_anchor": "func open(",
+      "line": 61,
+      "file_sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35"
+    },
+    {
+      "path": "src/import_capability_editor.gd",
+      "function_or_anchor": "func notify_import",
+      "line": 83,
+      "file_sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35"
+    },
+    {
+      "path": "src/source_import.gd",
+      "function_or_anchor": "func completion_matches",
+      "line": 32,
+      "file_sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2"
+    },
+    {
+      "path": "src/source_import.gd",
+      "function_or_anchor": "func _process",
+      "line": 287,
+      "file_sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "function_or_anchor": "func add_import_info",
+      "line": 80,
+      "file_sha256": "4aad0b860df30e598f560c784308380fd217e7ac02fe70467456125f20cb3c3f"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "function_or_anchor": "var report := path.get_base_dir()",
+      "line": 246,
+      "file_sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "function_or_anchor": "func definition",
+      "line": 244,
+      "file_sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565"
+    },
+    {
+      "path": "tests/verify.py",
+      "function_or_anchor": "results['import_capability']",
+      "line": 337,
+      "file_sha256": "28bc3153a0bd765dfc0366014d5d482ec1f320d5457106333c0db66e2ec61840"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS direct4/8-influence points enclosed at sum 0.9995
+PASS direct4/8-influence points enclosed at sum 1.0
+PASS direct4/8-influence points enclosed at sum 1.0005
+PASS actual sum interval and independent unequal influence mixtures are enclosed
+PASS below-one weights move offset geometry outside the old unscaled union
+PASS above-one weights move offset geometry outside the old unscaled union
+PASS tight positive sum interval does not add the distant local origin
+PASS mixed weighted and unskinned surfaces retain the raw geometry
+PASS fully unskinned geometry retains its intrinsic bound
+PASS missing weighted geometry refuses
+PASS invalid weight interval refuses [0.0, 1.0]
+PASS invalid weight interval refuses [-1.0, 1.0]
+PASS invalid weight interval refuses [1.1, 1.0]
+PASS invalid weight interval refuses [nan, 1.0]
+PASS invalid weight interval refuses [1.0, inf]
+PASS non-finite skin transform refuses
+PASS negative intrinsic extent refuses
+PASS wrong palette type refuses
+PASS derived finite margin encloses the independently shifted box
+PASS derived near-unit-weight padding is bounded rather than a huge diagnostic margin
+PASS non-finite padding target refuses
+POSED_RENDER_ENVELOPE {"checks":21,"failures":0,"graphics_or_native_assets_used":false}

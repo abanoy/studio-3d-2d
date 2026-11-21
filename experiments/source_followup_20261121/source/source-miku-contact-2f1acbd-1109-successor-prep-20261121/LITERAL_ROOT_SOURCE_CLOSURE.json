@@ -1,0 +1,1536 @@
+{
+  "format": "has_miku_2f1acbd_literal_root_source_closure_1",
+  "status": "READ_ONLY_SOURCE_BINDING",
+  "candidate_targets": 13,
+  "root_dependency_count": 218,
+  "unresolved": [],
+  "files": [
+    {
+      "path": "main.tscn",
+      "scope": "current_Main1109",
+      "bytes": 254,
+      "sha256": "29917990b427f23d37cfba9f7f6d431a3bf9e940ad28b3a77350144be73a8043",
+      "git_sha1": "b64125eaf234ab29347c6d1e7b252f7242d35055"
+    },
+    {
+      "path": "src/airflow.gd",
+      "scope": "current_Main1109",
+      "bytes": 6191,
+      "sha256": "e072ffeb4a5702a47ab413deb9be2305d35e46562887eb3464ca765654f9cfb4",
+      "git_sha1": "bb3563cc73d9d884b52878c7b950e364d0026f9b"
+    },
+    {
+      "path": "src/animated_channels.gd",
+      "scope": "current_Main1109",
+      "bytes": 10184,
+      "sha256": "0ea45c03afcd0e8bb5d9f7f6b685ba11a0b7d8674494940ba6dec7f42996a6b0",
+      "git_sha1": "248d519e11a43a6b4f0b17b30cf25152a0dddba8"
+    },
+    {
+      "path": "src/animation_clips.gd",
+      "scope": "current_Main1109",
+      "bytes": 14386,
+      "sha256": "5408c7b7cd4db347d461d5c4ba56f2aa2e8646bfea7f86967e2eec459a9503cf",
+      "git_sha1": "f7d62027b300f08b5602ee25b04c9c4b797f5c34"
+    },
+    {
+      "path": "src/app.gd",
+      "scope": "current_Main1109",
+      "bytes": 314927,
+      "sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f",
+      "git_sha1": "7d0e527db91b0fe8b8215a3f19f5e188fd54e816"
+    },
+    {
+      "path": "src/asset_package.gd",
+      "scope": "current_Main1109",
+      "bytes": 3735,
+      "sha256": "643104a272691d3bc258cd75e080c99945c362c2d75769ff99530ba4518372ef",
+      "git_sha1": "bb50e37e6db593d456d2dc31da89ff044a79234f"
+    },
+    {
+      "path": "src/atomic_metadata.gd",
+      "scope": "current_Main1109",
+      "bytes": 3930,
+      "sha256": "ab189890c14646241fce9019e40c0e162d1fbb82aabe760e145721c9f52f10b5",
+      "git_sha1": "0f64e01101e8475d4691ca0a5bb419d82d8239f3"
+    },
+    {
+      "path": "src/audio_fade_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 2539,
+      "sha256": "27c2a3e76ad042de956b5521df127990a5274b83214b88912c730423ac5f539c",
+      "git_sha1": "530dc2e9b083773703b28c4b408d328e1122f356"
+    },
+    {
+      "path": "src/audio_import.gd",
+      "scope": "current_Main1109",
+      "bytes": 4290,
+      "sha256": "c4fe87781f8a4532b7e353bdd35e69c8ca14f9fe3da62edf7e6c7ca0ddc28d74",
+      "git_sha1": "b83e76939502a1a67efda3c48b118fb2a2dcad57"
+    },
+    {
+      "path": "src/audio_track.gd",
+      "scope": "current_Main1109",
+      "bytes": 16208,
+      "sha256": "815bf76f204d86399d487295e183a2113a48383abd325cd166d6cb141544222a",
+      "git_sha1": "e8ee6dcc1faeafe9a12fb58bfcf970163d9a51b9"
+    },
+    {
+      "path": "src/audio_trim_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 4263,
+      "sha256": "b1d2cfbbb24acbb1a2d6ff4acbbf17e2ff262d16a4e2bf4d567ebe5efe5cb864",
+      "git_sha1": "a2652180a7b10079b4e544fb25313ac06106e497"
+    },
+    {
+      "path": "src/base_shape_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0",
+      "git_sha1": "3de8601d9094e575ed94252eb2c32000b014220d"
+    },
+    {
+      "path": "src/body_animation.gd",
+      "scope": "current_Main1109",
+      "bytes": 8824,
+      "sha256": "aae1891ae15f7e7d79c4a963aed967e73dfdcb56dcfd1431fa73e8755cdff763",
+      "git_sha1": "77498f01629fc09c1eac47e2e6043121f5c2b240"
+    },
+    {
+      "path": "src/body_curve_runtime.gd",
+      "scope": "current_Main1109",
+      "bytes": 4840,
+      "sha256": "2ab81a207b3afbb2f88ae1f4b10fdb9aae1b41f982bdef845a793ed47fa08db2",
+      "git_sha1": "9319300be80c14ee5efedf88c0ee69f4788b0694"
+    },
+    {
+      "path": "src/body_curves.gd",
+      "scope": "current_Main1109",
+      "bytes": 18527,
+      "sha256": "8c227a2093f117d66544ee597dade2163f6859f55fabaa72987f02abed280a62",
+      "git_sha1": "42f2ec11a5f440498aea1cf4826c34f568400d3a"
+    },
+    {
+      "path": "src/bone_labels.gd",
+      "scope": "current_Main1109",
+      "bytes": 3426,
+      "sha256": "c2578be56876c26dcb7b9bbf373bd5c0d54c47b255c67ad2d125103f3afbf6c2",
+      "git_sha1": "1f6b67091e690322bb54edd2399e470310f2b35c"
+    },
+    {
+      "path": "src/brush_stroke.gd",
+      "scope": "current_Main1109",
+      "bytes": 3131,
+      "sha256": "2ed0fa4980f6171b725fc392edcb98b2e17ebacd604ad2c72486fa5cff0192e2",
+      "git_sha1": "0637185fd5113a7ea6c2797fb93a36ecc3fb2323"
+    },
+    {
+      "path": "src/camera_key_edits.gd",
+      "scope": "current_Main1109",
+      "bytes": 3812,
+      "sha256": "785bef72a010cb0f47086525a4c388ce9247e26b7c950f5ecb80991be463f949",
+      "git_sha1": "fa37c0af7c5af53a9d2bbd2c7d5b7855782b3459"
+    },
+    {
+      "path": "src/camera_lens_gesture.gd",
+      "scope": "current_Main1109",
+      "bytes": 2340,
+      "sha256": "c695bda1b1d8c8c275c7646363d3d3d45b92cdc946bcf5cc0bb4c0b1a42a2baa",
+      "git_sha1": "91395001abc7f15e75fde0714aa4042f28631f37"
+    },
+    {
+      "path": "src/camera_timeline_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 8353,
+      "sha256": "c67a8a0f1da9ebae7d75dd061b59ae1aac8fc0e226b5fecdcf9806fb6356ec8e",
+      "git_sha1": "da7e54a39a2f723fbfa388299038f3a00670f83f"
+    },
+    {
+      "path": "src/camera_transform_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 5635,
+      "sha256": "bafa6dbf00ff4a9c17c2c2b4e94e0a255b9ce09cb3102a9dcb06f4d3b3f6374a",
+      "git_sha1": "f3c9a1df6039e6449c59339fc48cb8bdef1c1007"
+    },
+    {
+      "path": "src/canvas_raster.gd",
+      "scope": "current_Main1109",
+      "bytes": 275,
+      "sha256": "3d72e3676aa7a417e7a92f93faac88b9568f3b8d4e9952f7067803e242e37e0e",
+      "git_sha1": "9a51402563541f087bd932485445a90f8ff65a7e"
+    },
+    {
+      "path": "src/canvas_size.gd",
+      "scope": "current_Main1109",
+      "bytes": 868,
+      "sha256": "336b82049f63458dbc5d149ee7edfaf215f251793b5620a4aa0dde75b009e62a",
+      "git_sha1": "c449849835fb7459944fdcf04f1fe5638c590ecd"
+    },
+    {
+      "path": "src/canvas_view.gd",
+      "scope": "current_Main1109",
+      "bytes": 10467,
+      "sha256": "dfbb68942017aa2c4f9dafe4a638f9548f2ae8928d8edc2e4f9106d30f236459",
+      "git_sha1": "b40e163cab3ee681c131b8c9a0d70518405c02b7"
+    },
+    {
+      "path": "src/cel_clipboard.gd",
+      "scope": "current_Main1109",
+      "bytes": 7915,
+      "sha256": "ed3c41077855e4e6ff0507e8a90cf76b1b93681df57a57f43e825052705d9219",
+      "git_sha1": "815bc3541cda2e34c4b885f674e1ba0fca5f2ea8"
+    },
+    {
+      "path": "src/cel_patch.gd",
+      "scope": "current_Main1109",
+      "bytes": 3253,
+      "sha256": "f5633aba0739e477422f8953d2a93761558c708402195d69ddba54a4ccf5d2e9",
+      "git_sha1": "7359afd5633df65bd76537a5be8c46ceba8682f5"
+    },
+    {
+      "path": "src/cel_pixel_history.gd",
+      "scope": "current_Main1109",
+      "bytes": 2534,
+      "sha256": "bbfc4b1464deecbdaa11a05bb39bcb2667b92cc3e145cfbbbe86397ab30b7d3b",
+      "git_sha1": "1cc4bb2dc268b848294ec62c7ece2ba961fbc0f6"
+    },
+    {
+      "path": "src/cel_png_verifier.gd",
+      "scope": "current_Main1109",
+      "bytes": 1919,
+      "sha256": "bd81aa21005b6ff67f31883547a4be08a6f07fec93e3fa092c9394d18b2ad238",
+      "git_sha1": "01d61aee85753eae9dae7d06e2eca9ece4f08bf2"
+    },
+    {
+      "path": "src/cel_raster_budget.gd",
+      "scope": "current_Main1109",
+      "bytes": 2733,
+      "sha256": "ae0273ad3aa07c0d64dafef95aa8c0b2bac811c5f2f546d5f2c52dc8a29b3414",
+      "git_sha1": "3ea3fb97c326d75a785d9f8c43578c3c1f44c54e"
+    },
+    {
+      "path": "src/cel_raster_owner.gd",
+      "scope": "current_Main1109",
+      "bytes": 4958,
+      "sha256": "30b6601df440dcc9035e9104ac93049a0c74a0da7c3bd42df1f04c71247eb9df",
+      "git_sha1": "8e9fde4b8ea1b94f5a6dee48f8cebdb428e45a3d"
+    },
+    {
+      "path": "src/cel_raster_reader.gd",
+      "scope": "current_Main1109",
+      "bytes": 5847,
+      "sha256": "1dd4acf082cdc5a88115b250cbead6fe7b0bcdd333805495e24872fd65250250",
+      "git_sha1": "8f4850454cb677c7338817926d3e460a6259e80e"
+    },
+    {
+      "path": "src/cel_raster_snapshot_cache.gd",
+      "scope": "current_Main1109",
+      "bytes": 3025,
+      "sha256": "b9554ab47f6655da46d2039bf16f3e51453117e7a98dffd6d515b209eb38d95f",
+      "git_sha1": "25b6a86cca1003a2ede94289955ec64fbb126542"
+    },
+    {
+      "path": "src/cel_raster_snapshot.gd",
+      "scope": "current_Main1109",
+      "bytes": 2577,
+      "sha256": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+      "git_sha1": "cafb9300d22f6b306247c84e65b83448974e5cc6"
+    },
+    {
+      "path": "src/cel_timing_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 5102,
+      "sha256": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+      "git_sha1": "8bed4cb0932d6597bed55dfdf78aa45063474fa5"
+    },
+    {
+      "path": "src/cel_timing.gd",
+      "scope": "current_Main1109",
+      "bytes": 1963,
+      "sha256": "0717469a7cfab94fc46e80cc2973ad68b8c5be1aac503109173414ba8719e1f0",
+      "git_sha1": "31be5a5b822cf51508b7809418fe08e6074c1f34"
+    },
+    {
+      "path": "src/character_height.gd",
+      "scope": "current_Main1109",
+      "bytes": 5312,
+      "sha256": "a67e7de2f4c53207cdf8b69422b67d140b067e72b3f1bb5bf3ecab3529690198",
+      "git_sha1": "a880dc3e65bd2d748a2c1233461e61449f9c6ad3"
+    },
+    {
+      "path": "src/clip_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 11219,
+      "sha256": "88ca46f1f4e0a9f174a42cdd0a4305ec80d3c32fbf59c9e055cc2aeb037434aa",
+      "git_sha1": "f8482b46bbbd4007484a447277f77b6c3c91131f"
+    },
+    {
+      "path": "src/color_palette.gd",
+      "scope": "current_Main1109",
+      "bytes": 1200,
+      "sha256": "d8f7107a0a55998ba175aae1b28bd92f174190db8a7fe635372e8c3c3b36b369",
+      "git_sha1": "b81652d572f0c10c0f466ec1a4e51742cfc3eb44"
+    },
+    {
+      "path": "src/color_sampler.gd",
+      "scope": "current_Main1109",
+      "bytes": 7170,
+      "sha256": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+      "git_sha1": "164409315d4703dadc3d081b12d6aef2b4ba8af5"
+    },
+    {
+      "path": "src/constraints_lesson.gd",
+      "scope": "current_Main1109",
+      "bytes": 3833,
+      "sha256": "0839da05a7253289fba7270377f0e9b86d70263a02ee9983204925d1fa519cd6",
+      "git_sha1": "7e2ba32818a5925bd746f4f0d4f630ca4eaa787d"
+    },
+    {
+      "path": "src/contact_animation.gd",
+      "scope": "current_Main1109",
+      "bytes": 3782,
+      "sha256": "03d56343e67064c3994632d326fce8608caff6b190e340452253370f1d97d4ba",
+      "git_sha1": "56932723f7f4a2ad26cf217ff7cfd913bbff6fa9"
+    },
+    {
+      "path": "src/contact_bend.gd",
+      "scope": "current_Main1109",
+      "bytes": 1202,
+      "sha256": "5f10c4810a50ede195b40f014e4c547ce2ea9d0e6542ffc5105ed286d77a9721",
+      "git_sha1": "12596f3ef6957eafd6670cf30621b39175dfa90e"
+    },
+    {
+      "path": "src/contact_clipboard.gd",
+      "scope": "current_Main1109",
+      "bytes": 3365,
+      "sha256": "0bf565300079be0342dd1a42920c26d5972cc6b89f4e8f0ef5171234115b0806",
+      "git_sha1": "111b62047aa57a21dbaa63be21eeaf48f86f7665"
+    },
+    {
+      "path": "src/contact_correction.gd",
+      "scope": "current_Main1109",
+      "bytes": 1772,
+      "sha256": "22d5b2463cfd330cbff20216dfb6b42f56f0cd6da680b4595dbc73c589b4617c",
+      "git_sha1": "ac989724406c782401611c84908b1dad91e9062b"
+    },
+    {
+      "path": "src/contact_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 13486,
+      "sha256": "a5c18edbafaad3fc4e9c78d89121d30080a18ddf08507241ae08e1839f135504",
+      "git_sha1": "d2c8696e7616fc7c0fa75d5edeb762c1c72fdb06"
+    },
+    {
+      "path": "src/contact_ranges.gd",
+      "scope": "current_Main1109",
+      "bytes": 4025,
+      "sha256": "92da7a71da1e77543a940b6cfcee0325fb7ed26cabf7653b26f7ff55e84c9a5b",
+      "git_sha1": "980b648989bb16c398287ebae57de3e460f8b87d"
+    },
+    {
+      "path": "src/contact_viewport.gd",
+      "scope": "current_Main1109",
+      "bytes": 11616,
+      "sha256": "48137108abe591ccd92401c02969579219ddc5dfbdee8e682f093693fe4af346",
+      "git_sha1": "41dd093460cd923b7e140c1b5b16bcc70f0b5f5b"
+    },
+    {
+      "path": "src/dock_tree.gd",
+      "scope": "current_Main1109",
+      "bytes": 11350,
+      "sha256": "a8a46c1323af5fddee14758caa4b81d2be64db1626d8f4e1961ca650ae2f3efa",
+      "git_sha1": "cba54e0ecbbf3b2fde75cd5b5cbc12fe32cd4029"
+    },
+    {
+      "path": "src/drawing_limits.gd",
+      "scope": "current_Main1109",
+      "bytes": 900,
+      "sha256": "d62518750895cc368d7bc1b3826335d369dfc26344daf70f30037208c7499ffa",
+      "git_sha1": "bdec6eed4b940acf79518a13665fc739cc97c738"
+    },
+    {
+      "path": "src/drawing_origin.gd",
+      "scope": "current_Main1109",
+      "bytes": 5393,
+      "sha256": "6aa6d775f105ee67f4f280db6adf0d3668566c8aa324a2e56286b6cde95ca64d",
+      "git_sha1": "bd20866709236b5ab627c0f8ecf3bf33dcd5dc6f"
+    },
+    {
+      "path": "src/drawing_overlay_cache.gd",
+      "scope": "current_Main1109",
+      "bytes": 1727,
+      "sha256": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+      "git_sha1": "1d423b1360f40221432b7650ef161cbb2ca2eb7d"
+    },
+    {
+      "path": "src/drawing_selection_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 10084,
+      "sha256": "bf63e7b586d79e37b3cc983854c08482dff341af252505c652ad1c15bcb35908",
+      "git_sha1": "a3b2953346b050d4269c8e4d9a36a4573f466d47"
+    },
+    {
+      "path": "src/drawing_selection.gd",
+      "scope": "current_Main1109",
+      "bytes": 1872,
+      "sha256": "24bfd1475afda5afc623eecea29447a6b5c3eeb9eb8bd84fca78321b0be5931a",
+      "git_sha1": "26e7a24af3d7b544289298be6114657a50be42b7"
+    },
+    {
+      "path": "src/drawing_transform_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 8114,
+      "sha256": "5ac0b2257ffa54587ecba5ff0aa36688f7fdaff7fdae6a7d575e79a3f08beec3",
+      "git_sha1": "f6fc083e193618d423283ecd6380f322d08fb700"
+    },
+    {
+      "path": "src/drawing_transform.gd",
+      "scope": "current_Main1109",
+      "bytes": 4156,
+      "sha256": "f14bfa944db0d37967b97dfff396addc7735e960fac41cb627595323ee391b1e",
+      "git_sha1": "561976df9f019230a657fa5036d903f668a71e78"
+    },
+    {
+      "path": "src/drawing.gd",
+      "scope": "current_Main1109",
+      "bytes": 9161,
+      "sha256": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+      "git_sha1": "b3353d8244b98b628c4e75508b1aacccedf0d913"
+    },
+    {
+      "path": "src/editor_grid.gdshader",
+      "scope": "current_Main1109",
+      "bytes": 759,
+      "sha256": "cb40bb828a0844f641c6bd1d3a69c0a0ba7d4e446d1b0ad8bd450429143a730a",
+      "git_sha1": "cb613f2f95856faae96cc926e3ad7346f472daec"
+    },
+    {
+      "path": "src/editor_handle_metrics.gd",
+      "scope": "current_Main1109",
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48",
+      "git_sha1": "5b5c9d3d18fac8b7922ec76684dc4f4499445748"
+    },
+    {
+      "path": "src/encoder.gd",
+      "scope": "current_Main1109",
+      "bytes": 4321,
+      "sha256": "8851c3edf9ff07f9e6ddc4a49bd03a2d342791e5cb3f9fc0116d5bffaded75c9",
+      "git_sha1": "59fa13d16ec649ec94dac16196de5a0202d388d7"
+    },
+    {
+      "path": "src/expression_pose_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 3837,
+      "sha256": "e59b537659c67b47721343f7c7f7ef00d5b91859468743dbb5ee10df0ae53e5a",
+      "git_sha1": "d659343ed5d3e20c7db27b5153ee2789630fd538"
+    },
+    {
+      "path": "src/expression_presets.gd",
+      "scope": "current_Main1109",
+      "bytes": 11635,
+      "sha256": "d184a8c16c8e7947e9eedbe445e40c86cdbec6c0f497ce18720432a20c2698b6",
+      "git_sha1": "5e6af783aa2083f804af35f5562955d2e5c8ceff"
+    },
+    {
+      "path": "src/extended_timing.gd",
+      "scope": "current_Main1109",
+      "bytes": 3582,
+      "sha256": "1f1610018b65f7dead4afe029fb9923b6ef9d9b3cf8840d9502da3c3b9dfce68",
+      "git_sha1": "bd30849687df9a5b3e355c2afc6713c4ba0da426"
+    },
+    {
+      "path": "src/fan_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 7918,
+      "sha256": "d01af152dbfa656516af8f2675c6d8c96597d65afa3384bb257722743ee5614e",
+      "git_sha1": "8f5f413f63596697ddf7b165d7792b276f207b5d"
+    },
+    {
+      "path": "src/fill_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 10555,
+      "sha256": "df6a8c91f1c23c775892a404114b2c70d4b852f66d05e390746c2f44c1e21cf4",
+      "git_sha1": "affb45daf9770e885199c0da40882c38d56a00be"
+    },
+    {
+      "path": "src/fill_gaps.gd",
+      "scope": "current_Main1109",
+      "bytes": 1565,
+      "sha256": "198337bcf8dfd5e1f00730985b89fa9351147626b162d1705b471d9f77479b3e",
+      "git_sha1": "5a3a3a63f87ac5e06adf3e20a3fcf4c51b883112"
+    },
+    {
+      "path": "src/fill.gd",
+      "scope": "current_Main1109",
+      "bytes": 5738,
+      "sha256": "a420c1b6cbc024c86f45bcdf6068c8ba7e570a32e88eda3c49828e7ca9479413",
+      "git_sha1": "7eb21318c107589cb0a2806cc21f1dc45b4e944a"
+    },
+    {
+      "path": "src/first_movie_lesson.gd",
+      "scope": "current_Main1109",
+      "bytes": 7471,
+      "sha256": "23c2b0f3a8ba6c828f5211e8d373edfc0ea1a23b05c41f740c19a3794f7f964b",
+      "git_sha1": "09f66d05a53a83611a2666c8173305c3faa36480"
+    },
+    {
+      "path": "src/foot_contacts.gd",
+      "scope": "current_Main1109",
+      "bytes": 9762,
+      "sha256": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607",
+      "git_sha1": "d75774a0c8dd9591652af05ba5678db92a68d67d"
+    },
+    {
+      "path": "src/foot_hold.gd",
+      "scope": "current_Main1109",
+      "bytes": 2687,
+      "sha256": "5fe8d8023e2d74aa99c92e402e90a6a1506fee396767d21e32a408fb398244ea",
+      "git_sha1": "1600edb438b92bcbaa3a5403362d4641e8fcfe88"
+    },
+    {
+      "path": "src/has_project_loader.gd",
+      "scope": "current_Main1109",
+      "bytes": 1437,
+      "sha256": "6c9f5e0803eeffc9c0596777c5c1518295abccf9ebc16441e7ec3817c274adc1",
+      "git_sha1": "27b4233c9166e3289999966df4f136ce4acb0708"
+    },
+    {
+      "path": "src/has_project.gd",
+      "scope": "current_Main1109",
+      "bytes": 15014,
+      "sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
+      "git_sha1": "9765a94e53d32a423cf6d1ef507cd4c3b84dcc3e"
+    },
+    {
+      "path": "src/has_snapshot_writer.gd",
+      "scope": "current_Main1109",
+      "bytes": 5548,
+      "sha256": "acddf9b090d26f591e989ca217a870bddd85bd85713ffa0aec5701cf5ae8301a",
+      "git_sha1": "9b120add9b9f0d6d2e40a42658246cbbf1c620ea"
+    },
+    {
+      "path": "src/home_screen.gd",
+      "scope": "current_Main1109",
+      "bytes": 6686,
+      "sha256": "7bb5015a87f30c10d8cfbd156578a13d1b69a22cd76e9d957fea6e41d34210ca",
+      "git_sha1": "b6fac4da7b1eab358cb7533b5eb1b216bc8419ae"
+    },
+    {
+      "path": "src/import_actions.gd",
+      "scope": "current_Main1109",
+      "bytes": 3870,
+      "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2",
+      "git_sha1": "b5114be7a75369d84e06fa7554f40d2c5d087917"
+    },
+    {
+      "path": "src/import_basis_helpers.gd",
+      "scope": "current_Main1109",
+      "bytes": 3865,
+      "sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "git_sha1": "6d921b22463928d675526bda632e728e945a5ee3"
+    },
+    {
+      "path": "src/import_basis_project.gd",
+      "scope": "current_Main1109",
+      "bytes": 5446,
+      "sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "git_sha1": "1f80e1342f14959c3b67b87236331adfecfde62a"
+    },
+    {
+      "path": "src/import_basis.gd",
+      "scope": "current_Main1109",
+      "bytes": 21417,
+      "sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "git_sha1": "7f765ad3a15517ee8a14deb1dddc07630f2bcfcf"
+    },
+    {
+      "path": "src/import_capability_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 6027,
+      "sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35",
+      "git_sha1": "19182d16fc00b90a6d8bf0691963fa8d9ee7378e"
+    },
+    {
+      "path": "src/import_capability_summary.gd",
+      "scope": "current_Main1109",
+      "bytes": 9894,
+      "sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81",
+      "git_sha1": "0bc47d316bff6f2b1b41061416b220a3f3e0c2df"
+    },
+    {
+      "path": "src/import_height_review.gd",
+      "scope": "current_Main1109",
+      "bytes": 9571,
+      "sha256": "eb722a56b6b4ced19d630b502f7d38413abdf287327b2e623ffb6732c629c35b",
+      "git_sha1": "294dcfc60c8b0c699a5d2252b81d13f5363fc85b"
+    },
+    {
+      "path": "src/import_placement.gd",
+      "scope": "current_Main1109",
+      "bytes": 8405,
+      "sha256": "f464d7595e894d53cc64a5fbac1de7708b152ecbf8b5163b56df1c66976e49e0",
+      "git_sha1": "d82bc472d2d5bfea9d9b0c2be64c8206ea560456"
+    },
+    {
+      "path": "src/interpolation_lesson.gd",
+      "scope": "current_Main1109",
+      "bytes": 3287,
+      "sha256": "fb91ac7c3f6b0b319c5fb27ea08f8b777fcf584f98e66af97cc69f650197974a",
+      "git_sha1": "f94393a24fedfe6cdfec6b451d9a7ca4da7327f5"
+    },
+    {
+      "path": "src/joint_constraints.gd",
+      "scope": "current_Main1109",
+      "bytes": 10183,
+      "sha256": "159b6ca53b1167bc646ebc01f599811c497664f20e87b69da3405dd3f0bd02f3",
+      "git_sha1": "7bd46ad65070f20010031acecbd22b09cb5674a1"
+    },
+    {
+      "path": "src/krita_import.gd",
+      "scope": "current_Main1109",
+      "bytes": 16152,
+      "sha256": "af1dad5014af23fd05310a687638e7de3eaa7d41395352fc4feeb7e16453b5be",
+      "git_sha1": "a0157ca0722f2a010605db17689c35368a018ca0"
+    },
+    {
+      "path": "src/krita_preview.gd",
+      "scope": "current_Main1109",
+      "bytes": 656,
+      "sha256": "af9bcbb6bce378a43434fb06f0deb6cdc306ec10c05f136d2793424b23fc6c60",
+      "git_sha1": "229affd28a1e17d82b9e93681e7ce2af72d2efca"
+    },
+    {
+      "path": "src/layer_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 9602,
+      "sha256": "6188e135d99aaa6a75047cc540ba8ecab3455ea7b4af928838f476623a6fa56d",
+      "git_sha1": "7eb081e244d19143d7854638a4568f5cd77c9178"
+    },
+    {
+      "path": "src/lesson_store.gd",
+      "scope": "current_Main1109",
+      "bytes": 8824,
+      "sha256": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260",
+      "git_sha1": "7a9ae871dce555c863c4b568b0693ffe3c73f9b2"
+    },
+    {
+      "path": "src/lighting_lesson.gd",
+      "scope": "current_Main1109",
+      "bytes": 1577,
+      "sha256": "674456f18dc97947dcb9033e2073f27b633681fb322bf1b529b2ac343e3759ec",
+      "git_sha1": "010f09bd05d1744699c8ceeb16da79dd5e167bf2"
+    },
+    {
+      "path": "src/lighting.gd",
+      "scope": "current_Main1109",
+      "bytes": 484,
+      "sha256": "a42c3b9584923e5e362b9a8674457f42ca6e327c927b46f4795d8dc30aa66c17",
+      "git_sha1": "8629da2aa95be57d161c30eb33ce905f9a3eb57e"
+    },
+    {
+      "path": "src/limb_ik.gd",
+      "scope": "current_Main1109",
+      "bytes": 8969,
+      "sha256": "5aaf67f2329cc71e8ed16e038f77a1c17f4a48da8fd8c2489719074d6c26d870",
+      "git_sha1": "f0b793d2a9a5cec8caf176c6be2c5f039893866f"
+    },
+    {
+      "path": "src/map_calibration.gd",
+      "scope": "current_Main1109",
+      "bytes": 11199,
+      "sha256": "cc9d1150c8c84924cb685c973bd9ddeb5128232d9ea42688c9e3beacffd776e2",
+      "git_sha1": "6829caea3fe33dc9ef0b322493c2a93a7515d28c"
+    },
+    {
+      "path": "src/map_measure.gd",
+      "scope": "current_Main1109",
+      "bytes": 4077,
+      "sha256": "f15de2e25de6ffb71506483dbca0e4d123616b5b6c5fdbb318be22251000d853",
+      "git_sha1": "232c400d69bd9c74ab0c9fbe85c4069fd0ccac3b"
+    },
+    {
+      "path": "src/mmd_motion_candidate.gd",
+      "scope": "current_Main1109",
+      "bytes": 6131,
+      "sha256": "39780d352f8ee935571e99a68e19a26bb822750206851489783e1a0474cb391e",
+      "git_sha1": "aded5a378738ad55152dc432339abd8e57755a20"
+    },
+    {
+      "path": "src/mmd_pose_candidate.gd",
+      "scope": "current_Main1109",
+      "bytes": 4321,
+      "sha256": "3f9f89f9b98668ed1ff93b31571d55098089d27527389498edf6d366bcb2199f",
+      "git_sha1": "ca2e455e5825c5504f87ccd9ca74ac83a5047830"
+    },
+    {
+      "path": "src/mmd_pose_import.gd",
+      "scope": "current_Main1109",
+      "bytes": 15140,
+      "sha256": "86cff64c101ab9cd655497e5ff93f0f22814195230cee11a077cb8da47946118",
+      "git_sha1": "814a3488b1827e8093cab49bd12604d6735e5a5f"
+    },
+    {
+      "path": "src/mmd_pose_shapes.gd",
+      "scope": "current_Main1109",
+      "bytes": 2856,
+      "sha256": "3bfee8d1317c6a80837437ea5fd785c196a7771606e76420fae443e1ca3a256b",
+      "git_sha1": "4fcaf9073276d899a8412284f390b6286633e0cb"
+    },
+    {
+      "path": "src/model_opacity.gd",
+      "scope": "current_Main1109",
+      "bytes": 3076,
+      "sha256": "2408cda6f011132be1cffbfd1446c76a4b21631338e83957164c127241192dde",
+      "git_sha1": "b6f81d6aaf22bf68bae6f8df8f883e452aea4068"
+    },
+    {
+      "path": "src/model.gd",
+      "scope": "current_Main1109",
+      "bytes": 30301,
+      "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7",
+      "git_sha1": "e555501880dd7f62d4578069b04934ed6eaa4838"
+    },
+    {
+      "path": "src/motion_animation.gd",
+      "scope": "current_Main1109",
+      "bytes": 6546,
+      "sha256": "c0116a027a9828f799dcfd9b825cecf887730b58f01afc27be5b77ef716c64d3",
+      "git_sha1": "152d471849d87d9193189c20824ed6bc5f24188d"
+    },
+    {
+      "path": "src/motion_assist_tracks.gd",
+      "scope": "current_Main1109",
+      "bytes": 11765,
+      "sha256": "fd9f3e530683d6e19df957decfa990987ab71a5a53cca47dcb3b1969dfbc72e0",
+      "git_sha1": "e6e237f25b1a4c7a4689ed22d8930116ff80cea9"
+    },
+    {
+      "path": "src/motion_assist.gd",
+      "scope": "current_Main1109",
+      "bytes": 8924,
+      "sha256": "8dc52ae7b61859ec6874e18a4119716594a4d7f8e4291c1b6fba81f74f5be953",
+      "git_sha1": "f7b7210c9a5f6e7c62e3d917c0b3f43f76421997"
+    },
+    {
+      "path": "src/motion_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 11316,
+      "sha256": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d",
+      "git_sha1": "c6cf3ac58f2b3b8ffb8ae7c9b45e7ca8988c59bc"
+    },
+    {
+      "path": "src/movement_path_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 14542,
+      "sha256": "7296d617178779d7cd87792bcbad67fbcbf44a7c57e49f481187ca61ec4c12e3",
+      "git_sha1": "52359fb70b88f7578f90cb1f501d166583cbc925"
+    },
+    {
+      "path": "src/movement_path_preset.gd",
+      "scope": "current_Main1109",
+      "bytes": 9437,
+      "sha256": "9b0fb240ae55e6a485623334e68e1a65d9e6a47181876a8fb983df288476cc81",
+      "git_sha1": "55fac9a5c438bdbdb7e868e4de0b83d25f29c80f"
+    },
+    {
+      "path": "src/movement_path_view.gd",
+      "scope": "current_Main1109",
+      "bytes": 3214,
+      "sha256": "186087499f701a4fe4752381e0143beea015de56452e7bbb4ebb7f7b6d2233b0",
+      "git_sha1": "b8be519e34b251bbbcdd5f3b715231fefd04f6c6"
+    },
+    {
+      "path": "src/movement_path.gd",
+      "scope": "current_Main1109",
+      "bytes": 4754,
+      "sha256": "777123851803dfb2fda5c0a311c7c91d4e7e161593deda31cf7032d24ca63770",
+      "git_sha1": "1caad1e61be399937b48ee5258f9e05d729f01a5"
+    },
+    {
+      "path": "src/object_timing.gd",
+      "scope": "current_Main1109",
+      "bytes": 1742,
+      "sha256": "745d23917a586867f3c2e9634d9bab8a62a6663ae2bbd6891b8f3c6d163b6785",
+      "git_sha1": "a4e5ef85ba732020525209a862d417d233b029a1"
+    },
+    {
+      "path": "src/onion_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 2863,
+      "sha256": "57807886afb36115cc33a31140550c041328d67e9629377ed7793c8a27efc147",
+      "git_sha1": "78a030c119c6ad2b8215b8a5d28451c1ecbc97e5"
+    },
+    {
+      "path": "src/onion.gdshader",
+      "scope": "current_Main1109",
+      "bytes": 204,
+      "sha256": "d33b8120b5a2e2aa0d6323878ebd7a9fcefbb4148b6a601ce0169f93d14aca9b",
+      "git_sha1": "6f465ef15e168e5f235cb56f9199665173d996a8"
+    },
+    {
+      "path": "src/orbit_navigation.gd",
+      "scope": "current_Main1109",
+      "bytes": 1760,
+      "sha256": "8076e1ab69c21030c984d6f4724b0a88d28ee1c917d5670daa0ddb4504feb716",
+      "git_sha1": "4a46295cf16b143a929106d95df6b8bee9dd3db8"
+    },
+    {
+      "path": "src/output_size.gd",
+      "scope": "current_Main1109",
+      "bytes": 1224,
+      "sha256": "6af5a9e209fdc753fd24c4e2e6cfefcdb4bd94c484409edf80f6b9c2a256bc40",
+      "git_sha1": "f77391f72eaa54416d746815c6687c6dc30b3d8f"
+    },
+    {
+      "path": "src/palette_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 4993,
+      "sha256": "d90cd4f1a32d56adc3f031d75bf8b4e10a1ba58a82c5864d1bd196f0e36e8c81",
+      "git_sha1": "ab7c1d33cc6fcfbd24a32ac7d0ba5ba90d18ae5e"
+    },
+    {
+      "path": "src/particle_document.gd",
+      "scope": "current_Main1109",
+      "bytes": 5210,
+      "sha256": "1d6edf3fd8c9ded52323389bdcfab5e0462b5490eb0163d2d4b95ad21e303423",
+      "git_sha1": "c2f4c6753c6c74c0c2df719d84205abd2bee7e2b"
+    },
+    {
+      "path": "src/particle_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 18316,
+      "sha256": "74e33b917fc5857d96ff2860cb80871748041fccff46f18123456c7e5d852b34",
+      "git_sha1": "6d1cfcd258412123a388f17b6ffb7d61b3b24686"
+    },
+    {
+      "path": "src/particle_sprite.gd",
+      "scope": "current_Main1109",
+      "bytes": 6158,
+      "sha256": "2d84a7253aac552f8fe99f142fc67346879a86671c518fd6cc3f04e717e07c81",
+      "git_sha1": "0a7d4b70a15dd5c460efc89550c9157eb623e143"
+    },
+    {
+      "path": "src/particle_sprite.gdshader",
+      "scope": "current_Main1109",
+      "bytes": 658,
+      "sha256": "704acb2c7a2903b4fbcc13ad2196f09dbc5767567ee3a570835fd03ed2bd8071",
+      "git_sha1": "3d6c814e334873ff972f69e848190fd915f5d6cc"
+    },
+    {
+      "path": "src/path_locomotion.gd",
+      "scope": "current_Main1109",
+      "bytes": 19710,
+      "sha256": "e66da5a1ef421621be01ff5be230a098ebbb0464b5e1b25437ed539596859f31",
+      "git_sha1": "9b8cd04b29a50ba8887d927192f23c262f070dff"
+    },
+    {
+      "path": "src/pending_helper_preview.gd",
+      "scope": "current_Main1109",
+      "bytes": 17747,
+      "sha256": "151d5394a1955361d612d66325b8bd64bdeedeebfb836e2e18b405fac2b1dfdb",
+      "git_sha1": "89183cdd7d98bdc1713966e22622d54b056ceb81"
+    },
+    {
+      "path": "src/pending_helper_wind_player.gd",
+      "scope": "current_Main1109",
+      "bytes": 8476,
+      "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+      "git_sha1": "95101531d26b1bdc7a21530ebf1a050217d37186"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 23446,
+      "sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "git_sha1": "00fac49d3dd108789f53209bef7da6817f8ba4ef"
+    },
+    {
+      "path": "src/physics_lesson.gd",
+      "scope": "current_Main1109",
+      "bytes": 3735,
+      "sha256": "3123f80755645d134cccf8aac1aee57103fe4ddba7ecf944eb8decb669bc5d3c",
+      "git_sha1": "a6a74af04b81fe11c9c73f9cce654c868fe3b164"
+    },
+    {
+      "path": "src/physics_prop.gd",
+      "scope": "current_Main1109",
+      "bytes": 6726,
+      "sha256": "7a9a0cf7e51e5b353fce3dcfe784ebab2c70b1b61dc989b6060159809c9d0bec",
+      "git_sha1": "c4418da8ec86c1ef7cedadcedb8b43aeedb13753"
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "scope": "current_Main1109",
+      "bytes": 24512,
+      "sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "git_sha1": "ae01ffb7427f9e79f7236cd313e373346c0eeb15"
+    },
+    {
+      "path": "src/physics_rig.gd",
+      "scope": "current_Main1109",
+      "bytes": 18809,
+      "sha256": "77099d047b494e5b63ae3886b80f921c9c66256a65f6a3c4728a738717666b47",
+      "git_sha1": "c1f016c9c3a4945b3c04906759e746fb00a298a4"
+    },
+    {
+      "path": "src/physics_self_collision.gd",
+      "scope": "current_Main1109",
+      "bytes": 4248,
+      "sha256": "bd2244dd68c7310da7d1afdbff263f705d5fab206708e37006876f77ba0b5ef2",
+      "git_sha1": "e6ee0d71698f18d6b51302b2d6dc4166aa100615"
+    },
+    {
+      "path": "src/pose_bounds.gd",
+      "scope": "current_Main1109",
+      "bytes": 6430,
+      "sha256": "ca501807f2956a9cec85eda6ba197b6525ca0b3c2b855104ea25e65a68ccd2cf",
+      "git_sha1": "55e55e862db6106642a79c287a52058eb0f56818"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 71326,
+      "sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "git_sha1": "83c4619cc3637e2eeff52e027387daa646865321"
+    },
+    {
+      "path": "src/pose_library_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 11537,
+      "sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f",
+      "git_sha1": "78f7a187af893c7c12fafcaa4258f9335684ffe1"
+    },
+    {
+      "path": "src/pose_library.gd",
+      "scope": "current_Main1109",
+      "bytes": 4338,
+      "sha256": "4b0afbe38f4c9392bb89927f43b3ea1b8f5827f020823b50169e7586a139d931",
+      "git_sha1": "54ea68703b618cb4ac6c261911f07b7bad51680c"
+    },
+    {
+      "path": "src/pose_thumbnail.gd",
+      "scope": "current_Main1109",
+      "bytes": 3319,
+      "sha256": "45dcce2d605d931b6253942d280ead2a9028ae2d03dfdca861f3efd5b7c90e5d",
+      "git_sha1": "07b7882c91cf5752bccb69e0b90e0f42a41e02ff"
+    },
+    {
+      "path": "src/project_canvas.gd",
+      "scope": "current_Main1109",
+      "bytes": 3456,
+      "sha256": "fc83908dcbdee70204a8c7d7a47794e4b8f7289f5fa9a54b1dcc15a4c1c337b4",
+      "git_sha1": "c3e0f1687492f498decb96faf37ed57c9ec937b8"
+    },
+    {
+      "path": "src/project_payload_guard.gd",
+      "scope": "current_Main1109",
+      "bytes": 3886,
+      "sha256": "cf265bf5ff816e8951af113c10985c1d95e92f6b5feb6ed30f743c8abc47a2f6",
+      "git_sha1": "7ce70ac229df8ecd938cfb1818a288f8dc0df9ba"
+    },
+    {
+      "path": "src/project_raster_ownership.gd",
+      "scope": "current_Main1109",
+      "bytes": 1854,
+      "sha256": "1194e6cbc364c092829ae6829312b69b8aa08db27bafe93d38c9f28f7ea176a6",
+      "git_sha1": "cfb8f7d1092178684db68cbe20aa2d39251a57dc"
+    },
+    {
+      "path": "src/project_timing.gd",
+      "scope": "current_Main1109",
+      "bytes": 6178,
+      "sha256": "5a631dd628dbc8535ff16d775045e7973b968812012038779f42597b121f5f5a",
+      "git_sha1": "30d4fc9aa024c203abb710d733a0d9b1fe6ffa61"
+    },
+    {
+      "path": "src/raster_clip.gd",
+      "scope": "current_Main1109",
+      "bytes": 3156,
+      "sha256": "1fb451f811d20e900f34d6efcd103657b0073969b1a0436b4c62ed1b3cd74475",
+      "git_sha1": "7a160c558a5d710539e70026a65f640ad83a8ae6"
+    },
+    {
+      "path": "src/recent_projects.gd",
+      "scope": "current_Main1109",
+      "bytes": 3444,
+      "sha256": "ab5682f43afc0fa665bff970ee99c21f154c7d5fcd5332a709d9cba4883bb149",
+      "git_sha1": "a86ebfb01b18163517e56fafbc9a695ea33f8cb9"
+    },
+    {
+      "path": "src/recovery_blob_retention.gd",
+      "scope": "current_Main1109",
+      "bytes": 4718,
+      "sha256": "21f09c9629e893fba5591a16aa7490ebd6f7c0cbc14c251e3c5f1d8eafc1bba8",
+      "git_sha1": "b886fbf58c3ab2dffe905fd21e66c9558581ac15"
+    },
+    {
+      "path": "src/recovery_journal.gd",
+      "scope": "current_Main1109",
+      "bytes": 7968,
+      "sha256": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa",
+      "git_sha1": "e337df16106dadce66b09d741d1d5621035d7182"
+    },
+    {
+      "path": "src/recovery_preview.gd",
+      "scope": "current_Main1109",
+      "bytes": 1982,
+      "sha256": "250e6107ba54b6862b62194b23d48654632919e8b5bf19e8339b1ad89770b4fd",
+      "git_sha1": "c124a92e9bf8404307523484f38a4415aadbdab0"
+    },
+    {
+      "path": "src/recovery_snapshot.gd",
+      "scope": "current_Main1109",
+      "bytes": 3208,
+      "sha256": "b6b45f09ab60a4abd020fc333691e243c9e14ddb2a94dc8dccadeb0d911d4233",
+      "git_sha1": "9619c7a27c2b4591dd4b3eaa3c3cdb840490dec3"
+    },
+    {
+      "path": "src/recovery_writer.gd",
+      "scope": "current_Main1109",
+      "bytes": 2392,
+      "sha256": "7a9f9fb29d19c319d042f813705e3315802ee449fd3e81822c0fba1660ef2e93",
+      "git_sha1": "61e966cc8e60abd7a8392be88da38ba45efe1964"
+    },
+    {
+      "path": "src/recovery.gd",
+      "scope": "current_Main1109",
+      "bytes": 16254,
+      "sha256": "f9efb9e0f925ab6e4720de90b82ba6a482b866681a85dad650187bd3966310f9",
+      "git_sha1": "a8dbbda0da614781dd24115e23311880bae060d1"
+    },
+    {
+      "path": "src/reference_body_plan.gd",
+      "scope": "current_Main1109",
+      "bytes": 7595,
+      "sha256": "a232f76f5aa7df1152cbc40e542252cac475e6b8bcc7ae2a2a37c83b38179d61",
+      "git_sha1": "92ea08e3c56779d0b053daa341e2434844906a86"
+    },
+    {
+      "path": "src/reference_guide.gd",
+      "scope": "current_Main1109",
+      "bytes": 268,
+      "sha256": "4ea6ade60f00f7d65c2f271c7b45a85b2eec47c7bf16d25d020ee858a3371fcc",
+      "git_sha1": "110bc59b4de1125bbaa8b85dccadfc423a384367"
+    },
+    {
+      "path": "src/reference_sheet_data.gd",
+      "scope": "current_Main1109",
+      "bytes": 4853,
+      "sha256": "fe594c456d6b31fc5c50948cdf2b64f7e60541461bdccb7ab134e0144807753d",
+      "git_sha1": "010d051ae1b04c233f6503f354281377aef7b2df"
+    },
+    {
+      "path": "src/reference_sheet_view.gd",
+      "scope": "current_Main1109",
+      "bytes": 2535,
+      "sha256": "8c73ec2eea10782cbb53b4fd50f7c9ee1b7f1dcb9e69be881bcaf087857da609",
+      "git_sha1": "3f180002c6fafe310ee295fd9e7679ad6ac6713a"
+    },
+    {
+      "path": "src/reference_sheet.gd",
+      "scope": "current_Main1109",
+      "bytes": 14623,
+      "sha256": "93088df5090ea0a94bfbd18f3d993843bb8c14537c45d3eb913656ced0a77fd3",
+      "git_sha1": "b519b7c83918de8fea91a8dfc3c35773e6cb4db9"
+    },
+    {
+      "path": "src/renderer.gd",
+      "scope": "current_Main1109",
+      "bytes": 15453,
+      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "git_sha1": "3915aea26607bf8f615b80d74f943c1efa1c5b82"
+    },
+    {
+      "path": "src/root_component_assistance.gd",
+      "scope": "current_Main1109",
+      "bytes": 3027,
+      "sha256": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f",
+      "git_sha1": "e4c191dc3f2fd11aa0d65771327d7f6a8ee84086"
+    },
+    {
+      "path": "src/root_component_clips.gd",
+      "scope": "current_Main1109",
+      "bytes": 2577,
+      "sha256": "c956b4b4014fbc2e6efbdd0f6afda49ce32230b8d0c1c845d74ac9709f280f64",
+      "git_sha1": "6fb6e9f9124cf752d69b026f79b2ffa31bbd8659"
+    },
+    {
+      "path": "src/root_component_curves.gd",
+      "scope": "current_Main1109",
+      "bytes": 2965,
+      "sha256": "a0b718daffcc1285d29e3ead559746305bd5cd7d813f95788015d527e2e0235d",
+      "git_sha1": "527419c02af9d9a683635e82e2a04112bce476c2"
+    },
+    {
+      "path": "src/root_component_document.gd",
+      "scope": "current_Main1109",
+      "bytes": 19509,
+      "sha256": "98530f2cd95ec6a82bfc8f7d0362e429f264078cef62f3d529ff44a39d66128f",
+      "git_sha1": "d54b379ab972fd3ac0118a686445e18ce6344840"
+    },
+    {
+      "path": "src/root_component_motion.gd",
+      "scope": "current_Main1109",
+      "bytes": 2454,
+      "sha256": "befef7ed4d7343ccba705e9e6676b9658566e37c3ad417ef67a9f50a007226b9",
+      "git_sha1": "b7cacab9c165709a6518b5360183fd7763559aa1"
+    },
+    {
+      "path": "src/root_component_runtime.gd",
+      "scope": "current_Main1109",
+      "bytes": 667,
+      "sha256": "ace6b71ebdc931a05fe2468a4042dc797a90836b5bd4c99e082ea3202c5d51ff",
+      "git_sha1": "9711658b7c846596462c49cf5a4b63fbd46ba77d"
+    },
+    {
+      "path": "src/save_worker.gd",
+      "scope": "current_Main1109",
+      "bytes": 1467,
+      "sha256": "038a5e769bb7ca72234f1c902127b7cbc6b14595dc559611ef7544b9cc2705e0",
+      "git_sha1": "8f645a0321613fe7ff12caee6b00e514a55f7df3"
+    },
+    {
+      "path": "src/scene_view.gd",
+      "scope": "current_Main1109",
+      "bytes": 7510,
+      "sha256": "7835eed1bc15e6b66993612260d2726d18b67ad65685d1335245ca1a075171c2",
+      "git_sha1": "8f421185beb41bdcb60193d1ff37dd43cd0b3d2c"
+    },
+    {
+      "path": "src/scene3d.gd",
+      "scope": "current_Main1109",
+      "bytes": 11042,
+      "sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1",
+      "git_sha1": "3cd0d7d9f81f2b0b9eeec0c2b81cd77e298a6aac"
+    },
+    {
+      "path": "src/secondary_helper_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 46668,
+      "sha256": "5757e86b2f81a14ccd65ca3e91c2eedcecf2c03f653d08c9c5ead18aebe81f71",
+      "git_sha1": "9255aa0227226801444378fc669af4d0c5cbf50a"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "scope": "current_Main1109",
+      "bytes": 6426,
+      "sha256": "600f30f9801f50b2e58e8d09ad8f758e62f6a8418723497bba1baeadaa4b1eac",
+      "git_sha1": "68604a357ae2317d6998b33d0bd551e5cc5a56ce"
+    },
+    {
+      "path": "src/secondary_rig.gd",
+      "scope": "current_Main1109",
+      "bytes": 12034,
+      "sha256": "e781bd6949ed32cd3b3bf27d6a881ef105ce84d05dff41370861de6c39344ba1",
+      "git_sha1": "7ce39f412ed32631406ed646d96f92642fa62a7b"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "scope": "current_Main1109",
+      "bytes": 9449,
+      "sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "git_sha1": "43d9bbcdcb143e10c5776b1a4796eed44fd0d446"
+    },
+    {
+      "path": "src/selection_ghost.gdshader",
+      "scope": "current_Main1109",
+      "bytes": 410,
+      "sha256": "01123cff41bb14f8829d17961ff06343fa8eabd76ca185b65b51c5c8203b6b70",
+      "git_sha1": "492a9b85e0fdecfabd60197074681000aa6ea6c5"
+    },
+    {
+      "path": "src/selection_id.gdshader",
+      "scope": "current_Main1109",
+      "bytes": 379,
+      "sha256": "42a7abf8061da1ca517d366de1683cc3e719532a856d2348f51299c26cdbde84",
+      "git_sha1": "deb671a0501c9364541730cd1b116b6d30e59397"
+    },
+    {
+      "path": "src/selection_outline.gdshader",
+      "scope": "current_Main1109",
+      "bytes": 651,
+      "sha256": "10706cca00b0aadfb7b563f4c00ff8cce7846886f566b19eeade8769e5afd4f5",
+      "git_sha1": "f942bc7904c9c7f8537a4f93c10cd6fe62912018"
+    },
+    {
+      "path": "src/sequence_audio.gd",
+      "scope": "current_Main1109",
+      "bytes": 4211,
+      "sha256": "0cd7f3019ee003f73b9b2accbbaf5d16bbad565e1d0d23796214f6c5077c1355",
+      "git_sha1": "de85d10790c31136b9fa1ebd8a1a42244493df58"
+    },
+    {
+      "path": "src/sequence_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 36505,
+      "sha256": "66440d6019b2955264ca9e6b858a34255695858dfbabf19c68a671cee3138855",
+      "git_sha1": "f9ef88e6d824016427565d09fb7b25005371838c"
+    },
+    {
+      "path": "src/sequence_graph.gd",
+      "scope": "current_Main1109",
+      "bytes": 9862,
+      "sha256": "0cdda55aa99c944023e6e12c3361b7a04cc71fc5d1e2b9de23cfcf987be44b4b",
+      "git_sha1": "519cb611c885a1f755e578d62926a72374c7c7d8"
+    },
+    {
+      "path": "src/sequence_pixels.gd",
+      "scope": "current_Main1109",
+      "bytes": 713,
+      "sha256": "4a17d48ba3035f5292b53e82ff4b72b4c68dc8d7a0727ad945c3fcae4a818cbb",
+      "git_sha1": "e54c79261914a4c16237b455a9981b0896f92dea"
+    },
+    {
+      "path": "src/sequence_runtime.gd",
+      "scope": "current_Main1109",
+      "bytes": 8377,
+      "sha256": "a0bc649ec192a7eddcc54fe91eb765d67145d4974a37be390f8c5ba09a2111bc",
+      "git_sha1": "bfaf5279647184866d6a3c78ed343e276d1d0460"
+    },
+    {
+      "path": "src/sequence_shadow.gdshader",
+      "scope": "current_Main1109",
+      "bytes": 311,
+      "sha256": "9d45ab2c6eefda2f1f875d14e110e5dc3d96acef0c6cf52328c37e6cc10ba2e3",
+      "git_sha1": "12bbc34a4912fe5a43598692d717057115e216ea"
+    },
+    {
+      "path": "src/sequence_timeline.gd",
+      "scope": "current_Main1109",
+      "bytes": 4944,
+      "sha256": "07c0d69258b535d93ed25a473708be44db392cba9bea39aa033bb2b54ef52756",
+      "git_sha1": "6090ec949a9b6ccb2a3556202efe59ed69b24ee3"
+    },
+    {
+      "path": "src/shape_animation.gd",
+      "scope": "current_Main1109",
+      "bytes": 13627,
+      "sha256": "0192db43abcef661aadfe897d827ddc47f1db44b9abd2c48f4b3c7efbab41148",
+      "git_sha1": "6873884b75a2fe29f5372f9827b675d94120c05f"
+    },
+    {
+      "path": "src/shape_catalog.gd",
+      "scope": "current_Main1109",
+      "bytes": 6132,
+      "sha256": "1ec7737abe92141844921b0c261f43cdeb90513185669ec92971f31f9aa4babc",
+      "git_sha1": "57c7584f2ac3986d32b4c7162b0faed3d8fceb70"
+    },
+    {
+      "path": "src/shape_comparison_bounds.gd",
+      "scope": "current_Main1109",
+      "bytes": 3059,
+      "sha256": "683ff6578f55a251686a8ec2832f69481c7430bc45c9ff212cfb983b617311f5",
+      "git_sha1": "8fcee4aa147ee100b04803d854c845f0e4fc3ae0"
+    },
+    {
+      "path": "src/shape_comparison.gd",
+      "scope": "current_Main1109",
+      "bytes": 11924,
+      "sha256": "92d35ea266bbf70b75d5c6b24ddbb3aceda0d069855731b0c73d8fb59f6c0acb",
+      "git_sha1": "5c25f428b8e0666b44528370146cf4f10882fef0"
+    },
+    {
+      "path": "src/shape_labels.gd",
+      "scope": "current_Main1109",
+      "bytes": 703,
+      "sha256": "6e86df1cbef9463ab41165db1964b92ee04881858da95b8a747e1c49103706d3",
+      "git_sha1": "5ea927f4b0e76714e667a0f834f0a97abf6c3111"
+    },
+    {
+      "path": "src/shape_study.gd",
+      "scope": "current_Main1109",
+      "bytes": 9865,
+      "sha256": "7fe5fe5451cf9ed76fa42cd02534e78fb1f2a0d255dab33bf5273a2f89dc0ecf",
+      "git_sha1": "429812479958cd451877662862d6708636a9fed9"
+    },
+    {
+      "path": "src/shape_window_layout.gd",
+      "scope": "current_Main1109",
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5",
+      "git_sha1": "b5165c09ebf12995a891332a8b1c11e4a3d01786"
+    },
+    {
+      "path": "src/shortcut_bindings.gd",
+      "scope": "current_Main1109",
+      "bytes": 2603,
+      "sha256": "9cf14682af95399dafb96c6ee7cfb9d9dd47c90dd87054c1a8e2bff89cc34bdd",
+      "git_sha1": "4cf4e57b3377389e8f541977894dc0b896567639"
+    },
+    {
+      "path": "src/shortcut_editor.gd",
+      "scope": "current_Main1109",
+      "bytes": 6388,
+      "sha256": "8b2455ee064f64b4df28917272545d9ee445f18afad12163722ada56b0dbf297",
+      "git_sha1": "be1f59c2d2be7e896143db32d481ba993a33d2b2"
+    },
+    {
+      "path": "src/source_bone_bindings.gd",
+      "scope": "current_Main1109",
+      "bytes": 24681,
+      "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54",
+      "git_sha1": "ba6dc0436405839fb1d142dda342252a2a01d2ec"
+    },
+    {
+      "path": "src/source_browser.gd",
+      "scope": "current_Main1109",
+      "bytes": 13945,
+      "sha256": "9eff527d2bae12a0b0c51f1f6fd2b9b021bd76eb3cd9a457e554a542a1ad12f6",
+      "git_sha1": "9b373902bf374249e1a900ca2925604ff4048c77"
+    },
+    {
+      "path": "src/source_chain_math.gd",
+      "scope": "current_Main1109",
+      "bytes": 8794,
+      "sha256": "3245868060893b020c6caaf253bac9263d103fb299ac4dec81b9b62f8f7a0461",
+      "git_sha1": "07d0be2cf4c723e5710d9e156dfe23e4a357da0b"
+    },
+    {
+      "path": "src/source_choice_dialog.gd",
+      "scope": "current_Main1109",
+      "bytes": 10234,
+      "sha256": "cca883ccb983bc77ae9a257bae6cefb436e81742864830801f93ba58447cef5e",
+      "git_sha1": "8d2ee58ffd0b12747ebeb6f479355b656ddc4791"
+    },
+    {
+      "path": "src/source_import.gd",
+      "scope": "current_Main1109",
+      "bytes": 18129,
+      "sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2",
+      "git_sha1": "82be906937c5ddb2c7a8a784db9f48841b4555b9"
+    },
+    {
+      "path": "src/source_jiggle_math.gd",
+      "scope": "current_Main1109",
+      "bytes": 10025,
+      "sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90",
+      "git_sha1": "01d5c68cad2492495c0e886e533bc824ab8856e8"
+    },
+    {
+      "path": "src/source_secondary.gd",
+      "scope": "current_Main1109",
+      "bytes": 30597,
+      "sha256": "012d54ce1305b29bb24a1a58a5343f26aa7e7d5b27f2be30fc1975b5981c5b9d",
+      "git_sha1": "4ce088d7cac7212c012dfee27cb3757f20dfb2f5"
+    },
+    {
+      "path": "src/source_shape.gd",
+      "scope": "current_Main1109",
+      "bytes": 15340,
+      "sha256": "ec653786838c5b1a16e1c4463e16a47904e3f1045755b095996f1df356af2c8c",
+      "git_sha1": "25c654cf86adad0ae5043bc7f5aa991ac32ae84c"
+    },
+    {
+      "path": "src/storage.gd",
+      "scope": "current_Main1109",
+      "bytes": 37190,
+      "sha256": "54f503d4960e6bc7c1d7f28464208d9059789467056029a06ca823fe8e90ebfa",
+      "git_sha1": "c0c7add00bedd7817a38341afe9a4ab8cc642cd9"
+    },
+    {
+      "path": "src/stroke_stabilizer.gd",
+      "scope": "current_Main1109",
+      "bytes": 672,
+      "sha256": "55b760df8b28909c307c92ed2c89550a177802c8fc5bc9e767868703132144d8",
+      "git_sha1": "c9a39d05a3f41d9a4febdaa87c499cb495dfc49a"
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "scope": "current_Main1109",
+      "bytes": 53946,
+      "sha256": "902a1973749ca1ddd5d586148a855c62b08002d4c1f53e64578514d2d717135b",
+      "git_sha1": "c89c06554d46266c094adb726241601a3aff39d3"
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "scope": "current_Main1109",
+      "bytes": 5523,
+      "sha256": "80a1c4964ea0c97e5ea546f550e0ab84a4dc2e1254ffd65f79064295514e75be",
+      "git_sha1": "fa6b6d02adfc306bb984b1913c6c25791da472a7"
+    },
+    {
+      "path": "src/timeline_picture.gd",
+      "scope": "current_Main1109",
+      "bytes": 228,
+      "sha256": "e6e0394deeae91997bb64ff8e1710215372841aa6cea72877cb43020a6bcdbc0",
+      "git_sha1": "629d2db0a9f7ee2855ee4479e75d1cfa45522c20"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "scope": "current_Main1109",
+      "bytes": 56136,
+      "sha256": "817a574f1f54f40f2936f9b1a9cc561c77e353408df691976a38c4ea853f84d1",
+      "git_sha1": "04d83b0fcc3229439caf641e05179c8bcc7a3eca"
+    },
+    {
+      "path": "src/timeline.gd",
+      "scope": "current_Main1109",
+      "bytes": 2878,
+      "sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+      "git_sha1": "1a1c5a3c0e224768b04a19314cf30015fac6a9c9"
+    },
+    {
+      "path": "src/tutorial_assets.gd",
+      "scope": "current_Main1109",
+      "bytes": 5186,
+      "sha256": "b2fa1698ee112ab3f1b708f92731c88857d6851f91e54a24ff753f7bd891677e",
+      "git_sha1": "34ff83cfd700699cae1c37e0269ad53b0c0e5efa"
+    },
+    {
+      "path": "src/tutorial_catalog.gd",
+      "scope": "current_Main1109",
+      "bytes": 1270,
+      "sha256": "2defdebdf4325884d2a56f52627982bc9bb3118a34ebc55c6de6fccb79fa87a7",
+      "git_sha1": "fa710fa8a29244706b5cedcf025b64ccbbe8098f"
+    },
+    {
+      "path": "src/tutorials.gd",
+      "scope": "current_Main1109",
+      "bytes": 22544,
+      "sha256": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3",
+      "git_sha1": "e3f70916553094cf2998cb594e4db7a558ebf7d7"
+    },
+    {
+      "path": "src/video_import.gd",
+      "scope": "current_Main1109",
+      "bytes": 3604,
+      "sha256": "8307220b2c021924ad3eaaece5eababa9b617c967e9e47ee060fac6b1f10ebf2",
+      "git_sha1": "46ac08547c3013bd1e6e1af3d099e71bab2e8f35"
+    },
+    {
+      "path": "src/video_timing.gd",
+      "scope": "current_Main1109",
+      "bytes": 869,
+      "sha256": "27501e86b9330da16a340f46af2cb703749136e011a806e2cac828856f040c13",
+      "git_sha1": "86009e00b2d3fb91e19937860f4e011359bb5d30"
+    },
+    {
+      "path": "src/visibility_track.gd",
+      "scope": "current_Main1109",
+      "bytes": 2124,
+      "sha256": "a79ae20e354d2b5f4436e6dc98186e69be41b72c71e9d3180917a586f6d37152",
+      "git_sha1": "bd855991aac94cf04764eb7f4dc1b92ca175504c"
+    },
+    {
+      "path": "src/walking_animation.gd",
+      "scope": "current_Main1109",
+      "bytes": 4417,
+      "sha256": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb",
+      "git_sha1": "bec75ad3b53b4f65555360d593c2ac98e87024ee"
+    },
+    {
+      "path": "src/wind_helper_bridge.gd",
+      "scope": "current_Main1109",
+      "bytes": 16539,
+      "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "git_sha1": "1ef39a1d22c80fb4075ea122992285fac39a1518"
+    },
+    {
+      "path": "src/wind_helper_candidate.gd",
+      "scope": "current_Main1109",
+      "bytes": 26272,
+      "sha256": "434063885bc9525b4c5ab4cfe8138b1d255c83820eab97f73eee9a1b766ebc30",
+      "git_sha1": "689d0f8d9b05191e8354e0bb790859e29d9f1163"
+    },
+    {
+      "path": "src/wind_helper_runtime.gd",
+      "scope": "current_Main1109",
+      "bytes": 2746,
+      "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "git_sha1": "611f63ecedc03cfe906b430dac8471e6e37f4ee3"
+    },
+    {
+      "path": "src/wind_review_groups.gd",
+      "scope": "current_Main1109",
+      "bytes": 8617,
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "git_sha1": "00379b2095a69d25438479fcfd03bd313400aba8"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "scope": "current_Main1109",
+      "bytes": 18127,
+      "sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "git_sha1": "fff0ab45df405504dc39809ea9bc6920c1782c53"
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "scope": "current_Main1109",
+      "bytes": 34983,
+      "sha256": "425eca5a8526949afa9d68344778ce98f2bc71a5a9e8749e70bdd1a7208a7220",
+      "git_sha1": "c44c1262b14fb103ce4575d03f8aaba32c39bc0b"
+    },
+    {
+      "path": "src/world_document.gd",
+      "scope": "current_Main1109",
+      "bytes": 5715,
+      "sha256": "25b1576a850715c06fae7f9abf1ca0b5483dc7ca454775108c0685682e0a749e",
+      "git_sha1": "9b2f0162c839336e0cb313936ce8bce6f2d5b51a"
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "scope": "current_Main1109",
+      "bytes": 8424,
+      "sha256": "f155b7a2ae7b8a42f6ce14e88b485e14cdc3ac95855d0ab43575c4fe4f89b213",
+      "git_sha1": "de88dffe5046ad4efcc963cecf89161d0efca5e6"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "scope": "current_Main1109",
+      "bytes": 32551,
+      "sha256": "4aad0b860df30e598f560c784308380fd217e7ac02fe70467456125f20cb3c3f",
+      "git_sha1": "e143d2e87f3c4f143e07791d24e23ca52bc67f2c"
+    },
+    {
+      "path": "tests/app_smoke.gd",
+      "scope": "current_Main1109",
+      "bytes": 12613,
+      "sha256": "1c6dc2f45a42302ced22c0ff728704c7330869082e210d0be5e996daafd6c0ee",
+      "git_sha1": "d1ce710b4768d02496f5a01634ab916df3fd60b6"
+    },
+    {
+      "path": "tests/audio_editor_smoke.gd",
+      "scope": "current_Main1109",
+      "bytes": 9642,
+      "sha256": "aa001abbe996f25d6b3df1d48f90a54098da9c9110f026307337455933b7ddd3",
+      "git_sha1": "844cf9f393074f5ae628322f04dcd84878d0543a"
+    },
+    {
+      "path": "tests/pose_smoke.gd",
+      "scope": "current_Main1109",
+      "bytes": 16865,
+      "sha256": "f2f84fa89a1700d7bd2aa0cd585931b317fba8cd8f351a6df9e5e9a6d8d452d5",
+      "git_sha1": "fcccc7a228bacf8ff6aeef264f8f4143875c2fcc"
+    },
+    {
+      "path": "tests/recovery_smoke.gd",
+      "scope": "current_Main1109",
+      "bytes": 9735,
+      "sha256": "1bab3c4feeed9c177c5ceac1b328d2df8fa697be04649e975dac437970e3a396",
+      "git_sha1": "26db4e05ba350c7817e03d5516605b24035bdb63"
+    },
+    {
+      "path": "tests/recovery_wait.gd",
+      "scope": "current_Main1109",
+      "bytes": 910,
+      "sha256": "b29cff9f7c0a6eaaac6f8f903c8fbc5dbe4018889103ab1eea018553dbf22be3",
+      "git_sha1": "1a3a2d4c7e2212a8b2bb3742ca0dfc8de77b49f0"
+    },
+    {
+      "path": "tests/ui_smoke.gd",
+      "scope": "current_Main1109",
+      "bytes": 5629,
+      "sha256": "4da34dd8875a93185554bab30eb93248206b8ce2122f4ce545e4c92a8f974dfd",
+      "git_sha1": "dd5ea7740cd8ef7d99a31274023e6ad1d5cd7035"
+    },
+    {
+      "path": "tests/world_test_support.gd",
+      "scope": "current_Main1109",
+      "bytes": 2090,
+      "sha256": "6fefc8ff6f3413d9b621a56f47cb9c0d1a742cc62f5b66c955a39f249dc7b653",
+      "git_sha1": "53759df1f9563c55f238531a9ade5ca6fe1ce7ce"
+    }
+  ],
+  "scope": "Literal preload/load and scene source dependencies; complete immutable runtime still binds all1109 functional files and1112 source/resources at actual admission. Non-functional platform web resources are separately current Git resources, not claimed in functional catalogue."
+}

@@ -1,0 +1,17 @@
+# Posed-head derived-bounds control — c315 / 1103
+
+Source preparation only. No native or graphical execution, production activation, face fix or Full pass is claimed by this packet. The historical 435/1102 preparation and all original40 captures stay unchanged.
+
+This successor binds c31576d0c1d84030d51ec886f2f3976a60a70c7b and exactly1103 functional sources. Its immutable runtime is built from the exact committed revision and must include all1097 non-experiment functional files before adding only five new control targets. The two bounds modules and their43 synthetic checks are byte-identical to the earlier CPU-qualified candidate.
+
+Before creating a stage or starting a process, the host requires externally supplied hashes for a successful canonical Full182 completion, matching source-before/source-after, final report, and outer isolated launch/completion. The shared source1103 admission also checks all182 exact group identities, new626 checks,21 exact movie identities, current physical private-desktop receipt files/provenance, same outer coordinator identity and four fresh user-environment paths. The current in-progress Full cannot satisfy these completion gates.
+
+The target fixture is the protected d304 archive, containing the specific Youmu head. This is separate from Summer Sakuya amount12. The source exposes85 imported morph targets; saved authored expression maps are empty. After EACH evaluated CPU and graphical context, all85 actual runtime amounts must again be finite exact zero before raw-base vertex geometry is compared. cpu_geometry independently refuses nonneutral amounts. A later animated/morphed case needs a separate actual-morph evaluator; this test never silently ignores active morphs.
+
+Five owned jobs,114 checks: import0, envelope21, controller22, native CPU22, private graphical controls49. The16 captures cover the two saved contexts at backoffs0,0.1,0.3,1.0, each with baseline and opt-in derived control. CPU results are read back and all earlier jobs must close before the graphical job starts. Private images, working GLB, bone/vertex/pose/camera arrays and geometry results stay in the mandatory-new private stage. The public projection contains only counts, flags and source/evidence hashes.
+
+The current owner-original stuff.has is admitted and preserved separately regardless of resave; it is never parsed or copied. The protected historical copy supplies the test input. All40 earlier images, pinned earlier metadata and original working asset are read-only preservation inputs. Explicit control disposal restores only the margin it owns; source mesh, authored pose, morph amounts, SourceShape custom_aabb ownership and captured view must remain intact. No large global margin or per-frame vertex inventory is used.
+
+Root CLI: use approved Python3.13 with -I -B and run_posed_head_controls.py. Required arguments are --self-sha256, --expected-head, --full-folder, --full-completion-sha256, --full-source-sha256, --full-report-sha256, --full-outer-folder, --full-outer-launch-sha256, --full-outer-completion-sha256 and --root-exclusive-lane-confirmed. Fill evidence hashes from the ACTUAL completed c315 Full, never an older run. The only runtime owner is Root's exclusive graphical lane; no visible/shared desktop fallback.
+
+A successful run says CAPTURED_FOR_PRIVATE_REVIEW. It does not establish visual restoration, renderer culling order under nonuniform scale, export parity, cold reopening, performance suitability or production adoption. Those remain distinct gates.

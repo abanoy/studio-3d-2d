@@ -1,0 +1,702 @@
+{
+  "format": "has_import03_software_only_patch_proposal_1",
+  "status": "NOT_READY_FUTURE_FULL183_AND_ROOT_DECISION_REQUIRED",
+  "not_executable": true,
+  "base_revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "exact_bases": "BASE_PINS.json",
+  "conditions": [
+    "Root actual completed successful Full183 on exact published2f1/1109; final canonical import_capability267 report21cases/eightcoldpairs",
+    "Root b91 postflight actual PASS including current receipts/source/environment/outer lifecycle",
+    "Curated committed actual Full receipt linked in IMPORT03 evidence and mirrored audit; no invented receipt placeholder",
+    "Root accepts this supported-profile source audit, refreshes exact doc base pins if concurrent documentation changed"
+  ],
+  "changes": [
+    {
+      "target": "docs/completion_checklist.json",
+      "selector": {
+        "id": "IMPORT-03"
+      },
+      "field": "implementation",
+      "before": "partial",
+      "after": "implemented"
+    },
+    {
+      "target": "docs/completion_checklist.json",
+      "selector": {
+        "id": "IMPORT-03"
+      },
+      "field": "remaining",
+      "before": "Live current-ID/native-normal/bone-checksum integration and application adoption pass, including exact0.0 raw-L2 correctednormals for9661points and full360/1084. The concrete required loss-report gap remains: report.limits has no normal/persistent UI reader and legacy blanket physics wording is stale. Source-only43-control Import info candidate is unrun. Owner five-of49 coverage, lag, setup multi-selection, import OFF defaults and camera/Shapes/radial requests are separately tracked additions; prepared candidates are not adopted or qualified by this Full. Preserve raw provenance, semantic proof, source ownership, six-foot scale and Off/Undo/Record. Native artist/device/novice/install acceptance stays separate; no formal status promotion.",
+      "after": "Persistent supported-profile loss/dependency reporting is adopted and scoped-qualified: selected model/environment Import info preserves raw native_parameters, reports available/stored/limited features, names missing resources and optional-map-light omissions, survives packed offline reopen and rejects stale project/sequence ownership. Actual artist comparison with supported native originals remains B-NATIVE/ACCEPT-B; no universal shader, all49 physics, PMX200 reconstruction or human acceptance is inferred."
+    },
+    {
+      "target": "docs/completion_checklist.json",
+      "selector": {
+        "id": "IMPORT-03"
+      },
+      "field": "evidence",
+      "before": [
+        {
+          "kind": "source",
+          "path": "src/model.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/source_import.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/source_entity_lights_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/source_brush_lightmaps_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sfm_uploaded_samples_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sourceio_worker_runtime_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/standalone_source_samples_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
+          "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
+          "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_vrm_2026-11-09.json",
+          "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
+          "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+          "commit": "38a72ee6aa65c0fec311613fa197b7417c1eda84",
+          "scope": "Controlled GPU allocation probes reproduce legacy cutout image variation with bit-exact camera/root/all-bone transforms; copy-only control fails to stabilize and stable source order removes variation. Current9contract/16allocation-state/37native writer/16fresh cold/28expression-spring/31lighting checks pass. Original test assertions and historical failed hashes remain; new fixed-version writer/cold replay is exact on all four models without added tolerance. Native originals unchanged and actual24/48frame1080p24H264 movies probed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/native_profile_acceptance_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_six_projects_2026-11-12.json",
+          "scope": "Six protected existing native review packages open through ordinary recovery/Home and Python unpack/threaded load in fresh private Windows processes from committed source c6782d2; 129 checks pass. Saved metadata, native Setup/Focus pixels, source/package/harness hashes and strict owned-cache containment stay exact. Runnable review only: no artist, novice, device, clean-install or six-movie acceptance; counts/status unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_native_resource_staging_2026-11-12.json",
+          "scope": "Exact296resources/181460484bytes staged from two supplied RARs;34CPUchecks and actual10VMT closure. Keiki16refs resolve; Nitori25/28 with one missing hairbump resource referenced3times. Both base-texture sets present; originals exact. Staging/metadata only, not selected Blender exports, app adoption, native shader/jiggle/assembly or artist acceptance."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_static_appearance_actual_2026-11-13.json",
+          "scope": "Frozen unshipped Source worker passes14actual static cases(12bundles/2expected allblank refusals), native skin/bodygroup indices, derived rig/rest/morph structure and owned dependency checks. Dual Python/Blender background desktop/process attestation and exact source/original preservation pass; old graphical exit2 stays rejected. Native shader/deformation/render fidelity, app adoption/Undo/HAS/movie, runtime variants and broader82MDLextra features remain unrun/unimplemented. No acceptance status changed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_native_geometry_oracle_2026-11-13.json",
+          "scope": "Independent stdlib native MDL49/VVD4/legacyVTX7 reader:30synthetic controls,12derived bundles,7whole base maps/3whole triangle maps match;23/28mesh base maps and15oriented triangle multiplicities. Four Nitori topology cases remain unrun;five Tools maps unresolved. No fitted transform/guessed native identity; original/stage/bundle preservation exact. Native normal/flex/shader/jiggle/GPU/app/artist fidelity remains separate; no acceptance status changes."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_current_six_2026-11-13.json",
+          "scope": "Separate exacte9committed review:normalHome/Simple startup plus129checks acrosssixordinarypacked replays; freshCRC/payloadSHA, source/package/harness preservation andcleanprivate receipts. Oldreview/installation/recovery unchanged. Runnable reviewonly; notartist/novice/device/cleaninstall orsixnewmovies."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_derived_render_app_actual_2026-11-13.json",
+          "scope": "Exact4fa v3 passes328writer+60freshreader checks:12preparedbundles,8rawcaptures/24derivedpoint comparisons, twoordinarypreparedGLBimports withUndoRedo/namednumericposes/normalpackedHAS/exactofflinecoldpixels; allsevenpreservationgates andbothprivatedesktopclosures pass. Tools0/.5/1usesrawenginechannels, notappshapeUI. Newmovies/nativeSourcefidelity andnewstaticvariantworker/chooser mainport remainunrun/unimplemented; wider82MDLfeatureinventory separate. Priorv2failuresretained; statusunchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+          "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+          "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_inert_metadata_shapes_main_2026-11-13.json",
+          "scope": "New main-working-source snapshot at eb089488: actual4native workflows,241static+154named checks,8cold Opens/20exactframejoins,1movie,8preservationgates/5privatejobs; inactive Junko49rules/1421rawfloatjoins. No native dynamics/controller/shader or original artist fidelity inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/windows_bone_binding_full_actual_20261115/BENCHMARK.json",
+          "commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+          "scope": "Fresh complete configured-Windows default PASS:157named results/36core groups/21movie metadata groups, both decoded audio onsets1.0s;1008functional files/HEAD exact;192closed private jobs(191exit0,one registered Krita cancel2). Actual receipt/report reconciliation and root closure; prior failed/interrupted runs remain separate. Not artist/novice/device/clean-install or native Source dynamics certification."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/sfm_review_actual_20261115/BENCHMARK.json",
+          "commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+          "scope": "Fresh separate four-example SFM review PASS180checks(44/46/49/41),4closed private jobs,9preservation gates,8native reference frame matches and12strict state/audio-cache comparisons. First failed cache/portable-state comparison is retained; successor independently proves decoded PCM cache bindings before projection. Installed Studio/originals/prior reviews unchanged. Not native solver/artist parity or manual acceptance."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_source_readiness_2026-11-15.json",
+          "commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+          "scope": "Actual unchanged Model/SceneIO native pose/tip transport41588checks/220configurations at one source conversion0.01905 with root scales1/2; standalone scalar64 Godot math8994checks/1440synthetic ticks. Scoped experiment only; source coefficients stay inactive. No full Source SDK/artist/GUI/fan/body/Record/HAS/render qualification, native normal gate remains failed. No status/denominator changes."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/native_leaf_actual_20261115/BENCHMARK.json",
+          "commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+          "scope": "Actual native8 FrontHair1 bounded temporary live-pose adapter PASS7289checks/1440ticks/12cases: real CPU skin movement,152weighted/144shared/9509unaffected,all68other bones exact,Off24/12andweightedrestoration/repeat exact. Two initial guard failures retained; only verified empty non-simulating native defaultsimulator admitted. No SourceSDK/artist/GPU/fullGUI/fan/body/Record/HAS qualification or productactivation; sourceflags andformalstatusesunchanged."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "experiments/resume_cleanup_actual_20261115/BENCHMARK.json",
+          "scope": "Publication4da3557 verified via exactGitHub readback;981oldGitblobs/1962snapshot restorations/44metadata joins/506publicpayloads. Actualtwo-root9307-file cleanup removes1442187088logicalbytes afterfreshownership/sharing/identity proof. Original561/currentreview5844/runtime6/SourceIO574/export120/source1008 preservedbeforeandstrictpostrepeat; firstpostffprobe stamp refusal remainsfailed/undetermined. No nativephysics/fidelity acceptance credit or formalstatus change."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_source_live_2026-11-15.json",
+          "scope": "Working-source native8 FrontHair1 only:96 actual private UI/fan/Off/Record/Undo/cold-HAS/PNG-export checks; later header/complete-binding guard separately180headless lifecycle checks on3actualinstances. One of49rules; rawmetadata unchanged. Earlier74/2fixture failure and parse refusal retained. Same-actor active ragdoll, wider chains, artist/SDK fidelity and current complete-default remain unqualified; oldfullf0dd is separate. No acceptance status change."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_leaf_full_timeout_2026-11-15.json",
+          "commit": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+          "scope": "Current native8 complete Windows default FAILED after1346.822071seconds at outer180second teardown timeout;36core groups pass,1014functional files/HEAD exact. Separate late28/0 child closes normally after full deadline;46private jobs close. Archive freeze/rehash workload exhausts wrapper budget. Oldfullf0dd remains separate; no current complete PASS or status credit."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_selection_runtime_snapshot_2026-11-15.json",
+          "scope": "Applied opt-in bounded runtime snapshot repair passes27CPU checks and28unchanged actual shutdown checks in21.763778seconds/1024files, two closed private jobs, unchanged180/60/110timeouts and default full-owner archive/revision behavior. Scoped repair only; fresh complete Windows default required. Sealed raw metadata:experiments/runtime_snapshot_repair_actual_20261115."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/native_five_initial_actual_20261116/BENCHMARK.json",
+          "scope": "Isolated five-rule original overlay passes266headless checks then FAILED82actual writer checks/one opposite-tip assertion; cold readers unrun. Strict all69guard/14ancestor successor separately passes266headless checks, then diagnostic57checks/two retained direction failures localized to native8. No main promotion, five-rule fullGUI/cold/export/FPS/SDK/artist acceptance. All observed leases close; sources/native inputs preserved. Earlier failures and malformed-fixture assumptions remain explicit."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "experiments/native_source_live_port_20261115/remote_dbf0bc1/COMPLETE.json",
+          "scope": "Connected GitHub exact immutable dbf0bc1 readback now205/205changed files with raw-byte/GitSHA1/SHA256 equality;11functional files reconstruct exact working bytes. This verifies the old checkpoint only. Later working state needs its own push/readback; no cleanup or acceptance credit."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/native_five_qualified_actual_20261116/BENCHMARK.json",
+          "scope": "Exact isolated Stage3 strict2 five-rule backend passes266actual headless lifecycle checks and102actual editor/cold checks(83writer/11packed/8linked), with unchanged original opposite-tip predicate plus controlled transverse-fixture admission. Three private jobs close exit0/no foreground; root wrapper exits0/reaped/leaseclosed; original1017functional files, native inputs and baseline preserved before promotion. Qualified subset8/17/18/26/27 only; main promotion/regressions/full retry remain separate. Earlier82/1 and57/2 failures retained; no SDK/artist/wider49/active same-actor ragdoll/FPS/full-default credit."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_five_qualified_2026-11-15.json",
+          "scope": "Actual isolated266state+102GUI/cold/export checks PASS; runtime-equivalent five-rule implementation promoted.120CPU driver controls and current41port rows pass. Fresh complete default required; old failed trials/normal gate retained."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_five_full_2026-11-16.json",
+          "scope": "Complete Windows default passes on52f source1019:157groups/36core/21movies,192closed privatejobs; bounded native5 qualification remains separate, original normal gate and deferred human result unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_five_owner_review_2026-11-16.json",
+          "scope": "New52f sibling review passes187actualsoftwarechecks,4examples/9preservationgates,includingrealnative5On/tick/Off; manualreviewdeferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/source_normal_boundary_2026-11-16.json",
+          "scope": "ActualcoherentBlenderboundarymeasurement9661witnesses/predictionerror0; originalraw8364failuresremain. No native-normal fidelity pass."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/six_foot_domain_transport_2026-11-17.json",
+          "scope": "Separateinactivesyntheticdomain480+boundary21PASS; old444/7 retained andraw7typedtransportdifferencesreproduced. No productionnormalization/classification/PMXqualification."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/source_normal_setter_2026-11-17.json",
+          "scope": "Actualexactsetterinput/immediatereadback/validate/untouchedreplay/savedcontrol boundaries measured; firstobservedAPIboundaryloss, no normalrepairorfidelitypass. Privatearrayskeptoutputonly."
+        }
+      ],
+      "after": [
+        {
+          "kind": "source",
+          "path": "src/model.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/source_import.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/source_entity_lights_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/source_brush_lightmaps_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sfm_uploaded_samples_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sourceio_worker_runtime_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/standalone_source_samples_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
+          "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
+          "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_vrm_2026-11-09.json",
+          "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
+          "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+          "commit": "38a72ee6aa65c0fec311613fa197b7417c1eda84",
+          "scope": "Controlled GPU allocation probes reproduce legacy cutout image variation with bit-exact camera/root/all-bone transforms; copy-only control fails to stabilize and stable source order removes variation. Current9contract/16allocation-state/37native writer/16fresh cold/28expression-spring/31lighting checks pass. Original test assertions and historical failed hashes remain; new fixed-version writer/cold replay is exact on all four models without added tolerance. Native originals unchanged and actual24/48frame1080p24H264 movies probed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/native_profile_acceptance_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_six_projects_2026-11-12.json",
+          "scope": "Six protected existing native review packages open through ordinary recovery/Home and Python unpack/threaded load in fresh private Windows processes from committed source c6782d2; 129 checks pass. Saved metadata, native Setup/Focus pixels, source/package/harness hashes and strict owned-cache containment stay exact. Runnable review only: no artist, novice, device, clean-install or six-movie acceptance; counts/status unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_native_resource_staging_2026-11-12.json",
+          "scope": "Exact296resources/181460484bytes staged from two supplied RARs;34CPUchecks and actual10VMT closure. Keiki16refs resolve; Nitori25/28 with one missing hairbump resource referenced3times. Both base-texture sets present; originals exact. Staging/metadata only, not selected Blender exports, app adoption, native shader/jiggle/assembly or artist acceptance."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_static_appearance_actual_2026-11-13.json",
+          "scope": "Frozen unshipped Source worker passes14actual static cases(12bundles/2expected allblank refusals), native skin/bodygroup indices, derived rig/rest/morph structure and owned dependency checks. Dual Python/Blender background desktop/process attestation and exact source/original preservation pass; old graphical exit2 stays rejected. Native shader/deformation/render fidelity, app adoption/Undo/HAS/movie, runtime variants and broader82MDLextra features remain unrun/unimplemented. No acceptance status changed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_native_geometry_oracle_2026-11-13.json",
+          "scope": "Independent stdlib native MDL49/VVD4/legacyVTX7 reader:30synthetic controls,12derived bundles,7whole base maps/3whole triangle maps match;23/28mesh base maps and15oriented triangle multiplicities. Four Nitori topology cases remain unrun;five Tools maps unresolved. No fitted transform/guessed native identity; original/stage/bundle preservation exact. Native normal/flex/shader/jiggle/GPU/app/artist fidelity remains separate; no acceptance status changes."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_current_six_2026-11-13.json",
+          "scope": "Separate exacte9committed review:normalHome/Simple startup plus129checks acrosssixordinarypacked replays; freshCRC/payloadSHA, source/package/harness preservation andcleanprivate receipts. Oldreview/installation/recovery unchanged. Runnable reviewonly; notartist/novice/device/cleaninstall orsixnewmovies."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_derived_render_app_actual_2026-11-13.json",
+          "scope": "Exact4fa v3 passes328writer+60freshreader checks:12preparedbundles,8rawcaptures/24derivedpoint comparisons, twoordinarypreparedGLBimports withUndoRedo/namednumericposes/normalpackedHAS/exactofflinecoldpixels; allsevenpreservationgates andbothprivatedesktopclosures pass. Tools0/.5/1usesrawenginechannels, notappshapeUI. Newmovies/nativeSourcefidelity andnewstaticvariantworker/chooser mainport remainunrun/unimplemented; wider82MDLfeatureinventory separate. Priorv2failuresretained; statusunchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+          "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+          "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_inert_metadata_shapes_main_2026-11-13.json",
+          "scope": "New main-working-source snapshot at eb089488: actual4native workflows,241static+154named checks,8cold Opens/20exactframejoins,1movie,8preservationgates/5privatejobs; inactive Junko49rules/1421rawfloatjoins. No native dynamics/controller/shader or original artist fidelity inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/windows_bone_binding_full_actual_20261115/BENCHMARK.json",
+          "commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+          "scope": "Fresh complete configured-Windows default PASS:157named results/36core groups/21movie metadata groups, both decoded audio onsets1.0s;1008functional files/HEAD exact;192closed private jobs(191exit0,one registered Krita cancel2). Actual receipt/report reconciliation and root closure; prior failed/interrupted runs remain separate. Not artist/novice/device/clean-install or native Source dynamics certification."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/sfm_review_actual_20261115/BENCHMARK.json",
+          "commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+          "scope": "Fresh separate four-example SFM review PASS180checks(44/46/49/41),4closed private jobs,9preservation gates,8native reference frame matches and12strict state/audio-cache comparisons. First failed cache/portable-state comparison is retained; successor independently proves decoded PCM cache bindings before projection. Installed Studio/originals/prior reviews unchanged. Not native solver/artist parity or manual acceptance."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_source_readiness_2026-11-15.json",
+          "commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+          "scope": "Actual unchanged Model/SceneIO native pose/tip transport41588checks/220configurations at one source conversion0.01905 with root scales1/2; standalone scalar64 Godot math8994checks/1440synthetic ticks. Scoped experiment only; source coefficients stay inactive. No full Source SDK/artist/GUI/fan/body/Record/HAS/render qualification, native normal gate remains failed. No status/denominator changes."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/native_leaf_actual_20261115/BENCHMARK.json",
+          "commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+          "scope": "Actual native8 FrontHair1 bounded temporary live-pose adapter PASS7289checks/1440ticks/12cases: real CPU skin movement,152weighted/144shared/9509unaffected,all68other bones exact,Off24/12andweightedrestoration/repeat exact. Two initial guard failures retained; only verified empty non-simulating native defaultsimulator admitted. No SourceSDK/artist/GPU/fullGUI/fan/body/Record/HAS qualification or productactivation; sourceflags andformalstatusesunchanged."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "experiments/resume_cleanup_actual_20261115/BENCHMARK.json",
+          "scope": "Publication4da3557 verified via exactGitHub readback;981oldGitblobs/1962snapshot restorations/44metadata joins/506publicpayloads. Actualtwo-root9307-file cleanup removes1442187088logicalbytes afterfreshownership/sharing/identity proof. Original561/currentreview5844/runtime6/SourceIO574/export120/source1008 preservedbeforeandstrictpostrepeat; firstpostffprobe stamp refusal remainsfailed/undetermined. No nativephysics/fidelity acceptance credit or formalstatus change."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_source_live_2026-11-15.json",
+          "scope": "Working-source native8 FrontHair1 only:96 actual private UI/fan/Off/Record/Undo/cold-HAS/PNG-export checks; later header/complete-binding guard separately180headless lifecycle checks on3actualinstances. One of49rules; rawmetadata unchanged. Earlier74/2fixture failure and parse refusal retained. Same-actor active ragdoll, wider chains, artist/SDK fidelity and current complete-default remain unqualified; oldfullf0dd is separate. No acceptance status change."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_leaf_full_timeout_2026-11-15.json",
+          "commit": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+          "scope": "Current native8 complete Windows default FAILED after1346.822071seconds at outer180second teardown timeout;36core groups pass,1014functional files/HEAD exact. Separate late28/0 child closes normally after full deadline;46private jobs close. Archive freeze/rehash workload exhausts wrapper budget. Oldfullf0dd remains separate; no current complete PASS or status credit."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_selection_runtime_snapshot_2026-11-15.json",
+          "scope": "Applied opt-in bounded runtime snapshot repair passes27CPU checks and28unchanged actual shutdown checks in21.763778seconds/1024files, two closed private jobs, unchanged180/60/110timeouts and default full-owner archive/revision behavior. Scoped repair only; fresh complete Windows default required. Sealed raw metadata:experiments/runtime_snapshot_repair_actual_20261115."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/native_five_initial_actual_20261116/BENCHMARK.json",
+          "scope": "Isolated five-rule original overlay passes266headless checks then FAILED82actual writer checks/one opposite-tip assertion; cold readers unrun. Strict all69guard/14ancestor successor separately passes266headless checks, then diagnostic57checks/two retained direction failures localized to native8. No main promotion, five-rule fullGUI/cold/export/FPS/SDK/artist acceptance. All observed leases close; sources/native inputs preserved. Earlier failures and malformed-fixture assumptions remain explicit."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "experiments/native_source_live_port_20261115/remote_dbf0bc1/COMPLETE.json",
+          "scope": "Connected GitHub exact immutable dbf0bc1 readback now205/205changed files with raw-byte/GitSHA1/SHA256 equality;11functional files reconstruct exact working bytes. This verifies the old checkpoint only. Later working state needs its own push/readback; no cleanup or acceptance credit."
+        },
+        {
+          "kind": "test_result",
+          "path": "experiments/native_five_qualified_actual_20261116/BENCHMARK.json",
+          "scope": "Exact isolated Stage3 strict2 five-rule backend passes266actual headless lifecycle checks and102actual editor/cold checks(83writer/11packed/8linked), with unchanged original opposite-tip predicate plus controlled transverse-fixture admission. Three private jobs close exit0/no foreground; root wrapper exits0/reaped/leaseclosed; original1017functional files, native inputs and baseline preserved before promotion. Qualified subset8/17/18/26/27 only; main promotion/regressions/full retry remain separate. Earlier82/1 and57/2 failures retained; no SDK/artist/wider49/active same-actor ragdoll/FPS/full-default credit."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_five_qualified_2026-11-15.json",
+          "scope": "Actual isolated266state+102GUI/cold/export checks PASS; runtime-equivalent five-rule implementation promoted.120CPU driver controls and current41port rows pass. Fresh complete default required; old failed trials/normal gate retained."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_five_full_2026-11-16.json",
+          "scope": "Complete Windows default passes on52f source1019:157groups/36core/21movies,192closed privatejobs; bounded native5 qualification remains separate, original normal gate and deferred human result unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_five_owner_review_2026-11-16.json",
+          "scope": "New52f sibling review passes187actualsoftwarechecks,4examples/9preservationgates,includingrealnative5On/tick/Off; manualreviewdeferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/source_normal_boundary_2026-11-16.json",
+          "scope": "ActualcoherentBlenderboundarymeasurement9661witnesses/predictionerror0; originalraw8364failuresremain. No native-normal fidelity pass."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/six_foot_domain_transport_2026-11-17.json",
+          "scope": "Separateinactivesyntheticdomain480+boundary21PASS; old444/7 retained andraw7typedtransportdifferencesreproduced. No productionnormalization/classification/PMXqualification."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/source_normal_setter_2026-11-17.json",
+          "scope": "Actualexactsetterinput/immediatereadback/validate/untouchedreplay/savedcontrol boundaries measured; firstobservedAPIboundaryloss, no normalrepairorfidelitypass. Privatearrayskeptoutputonly."
+        },
+        {
+          "kind": "source",
+          "path": "src/import_capability_summary.gd"
+        },
+        {
+          "kind": "source",
+          "path": "src/import_capability_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/import_info.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/import_info_increment_2026-11-21.json",
+          "commit": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+          "scope": "Adopted selected-model/environment Import info: component267 (163 CPU+104 GUI/cold,21cases/eightpairs); final metadata-only successor163 and receipt-policy47; ownership53 and optional native missing-texture packed/offline wrapper; prepared-map Import info64. These are independently scoped passes, not a new Full or original-native appearance approval."
+        }
+      ]
+    },
+    {
+      "target": "docs/benchmarks/completion_baseline_audit_2026-11-07.json",
+      "selector": {
+        "id": "IMPORT-03"
+      },
+      "field": "implementation",
+      "before": "partial",
+      "after": "implemented"
+    },
+    {
+      "target": "docs/benchmarks/completion_baseline_audit_2026-11-07.json",
+      "selector": {
+        "id": "IMPORT-03"
+      },
+      "field": "implementation_review",
+      "before": "Canonical model/world validation and provenance exist, while native material/lightmap, inherited rig, cloth and dependency fidelity remain incomplete.",
+      "after": "Supported-profile software coverage is implemented: canonical managed representation/provenance and practical bounded geometry/material/rig/morph/lighting paths are retained; the adopted persistent read-only Import info closes the concrete JSON-only loss/dependency-reporting gap. Unsupported native programs, shading and physics remain explicitly scoped and actionable. Original-native artist fidelity stays external; explicit compatibility limits do not claim universal reproduction."
+    },
+    {
+      "target": "docs/benchmarks/completion_baseline_audit_2026-11-07.json",
+      "selector": {
+        "id": "IMPORT-03"
+      },
+      "field": "reviewed_code_anchors",
+      "before": [
+        {
+          "path": "src/model.gd",
+          "function": "validate",
+          "line": 94,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "check_bindings",
+          "line": 198,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        }
+      ],
+      "after": [
+        {
+          "path": "src/model.gd",
+          "function": "validate",
+          "line": 94,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "check_bindings",
+          "line": 198,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/import_capability_summary.gd",
+          "function_or_anchor": "static func summarize",
+          "line": 52,
+          "file_sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81"
+        },
+        {
+          "path": "src/import_capability_summary.gd",
+          "function_or_anchor": "static func native_preview",
+          "line": 33,
+          "file_sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81"
+        },
+        {
+          "path": "src/import_capability_editor.gd",
+          "function_or_anchor": "func matches",
+          "line": 38,
+          "file_sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35"
+        },
+        {
+          "path": "src/import_capability_editor.gd",
+          "function_or_anchor": "func open(",
+          "line": 61,
+          "file_sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35"
+        },
+        {
+          "path": "src/import_capability_editor.gd",
+          "function_or_anchor": "func notify_import",
+          "line": 83,
+          "file_sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35"
+        },
+        {
+          "path": "src/source_import.gd",
+          "function_or_anchor": "func completion_matches",
+          "line": 32,
+          "file_sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2"
+        },
+        {
+          "path": "src/source_import.gd",
+          "function_or_anchor": "func _process",
+          "line": 287,
+          "file_sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2"
+        },
+        {
+          "path": "src/world_selection.gd",
+          "function_or_anchor": "func add_import_info",
+          "line": 80,
+          "file_sha256": "4aad0b860df30e598f560c784308380fd217e7ac02fe70467456125f20cb3c3f"
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "function_or_anchor": "var report := path.get_base_dir()",
+          "line": 246,
+          "file_sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565"
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "function_or_anchor": "func definition",
+          "line": 244,
+          "file_sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565"
+        },
+        {
+          "path": "tests/verify.py",
+          "function_or_anchor": "results['import_capability']",
+          "line": 337,
+          "file_sha256": "28bc3153a0bd765dfc0366014d5d482ec1f320d5457106333c0db66e2ec61840"
+        }
+      ]
+    },
+    {
+      "target": "docs/benchmarks/completion_baseline_audit_2026-11-07.json",
+      "selector": {
+        "id": "IMPORT-03"
+      },
+      "field": "evidence_review",
+      "before": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external.",
+      "after": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external. Adopted selected-model/environment Import info: component267 (163 CPU+104 GUI/cold,21cases/eightpairs); final metadata-only successor163 and receipt-policy47; ownership53 and optional native missing-texture packed/offline wrapper; prepared-map Import info64. These are independently scoped passes, not a new Full or original-native appearance approval."
+    },
+    {
+      "target": "docs/benchmarks/completion_baseline_audit_2026-11-07.json",
+      "selector": {
+        "id": "IMPORT-03"
+      },
+      "field": "formal_receipts",
+      "before": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
+          "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
+          "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_vrm_2026-11-09.json",
+          "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
+          "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+          "commit": "38a72ee6aa65c0fec311613fa197b7417c1eda84",
+          "scope": "Controlled GPU allocation probes reproduce legacy cutout image variation with bit-exact camera/root/all-bone transforms; copy-only control fails to stabilize and stable source order removes variation. Current9contract/16allocation-state/37native writer/16fresh cold/28expression-spring/31lighting checks pass. Original test assertions and historical failed hashes remain; new fixed-version writer/cold replay is exact on all four models without added tolerance. Native originals unchanged and actual24/48frame1080p24H264 movies probed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external."
+        }
+      ],
+      "after": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
+          "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
+          "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_vrm_2026-11-09.json",
+          "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
+          "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+          "commit": "38a72ee6aa65c0fec311613fa197b7417c1eda84",
+          "scope": "Controlled GPU allocation probes reproduce legacy cutout image variation with bit-exact camera/root/all-bone transforms; copy-only control fails to stabilize and stable source order removes variation. Current9contract/16allocation-state/37native writer/16fresh cold/28expression-spring/31lighting checks pass. Original test assertions and historical failed hashes remain; new fixed-version writer/cold replay is exact on all four models without added tolerance. Native originals unchanged and actual24/48frame1080p24H264 movies probed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/import_info_increment_2026-11-21.json",
+          "commit": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+          "scope": "Adopted selected-model/environment Import info: component267 (163 CPU+104 GUI/cold,21cases/eightpairs); final metadata-only successor163 and receipt-policy47; ownership53 and optional native missing-texture packed/offline wrapper; prepared-map Import info64. These are independently scoped passes, not a new Full or original-native appearance approval."
+        }
+      ]
+    }
+  ],
+  "additional_editorial_updates_required": [
+    "Replace stale IMPORT03 P0 next_action JSON-only/candidate43-unrun prose with actual scoped reporting result and remaining native-artist acceptance. Keep historical evidence unchanged.",
+    "Append a dated baseline changes entry; update only the current52/54 limitations wording to53/54 while retaining55/62 and seven external acceptance IDs.",
+    "Update latest software checkpoint metadata with actual future Full receipt, not this proposal.",
+    "Regenerate overview through tools/check_completion.py --write then validate ledger and matching per-item audit."
+  ],
+  "preserved": {
+    "requirement_IDs": 62,
+    "implementation_denominator": 54,
+    "acceptance_numerator": 55,
+    "acceptance_denominator": 62,
+    "verification": "external_required",
+    "acceptance_status": "external_blocked",
+    "external_dependencies": [
+      "B-NATIVE"
+    ],
+    "governing_documents_and_acceptance_text_unchanged": true,
+    "other_requirement_statuses_unchanged": true
+  },
+  "expected_implementation_only": [
+    53,
+    54
+  ],
+  "applied": false,
+  "Full183_pass_assumed": false
+}
