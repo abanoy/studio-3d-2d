@@ -392,6 +392,8 @@ func collect(node: Node, kind: String) -> void:
 	if node is MeshInstance3D and node.mesh:
 		var copy := MeshInstance3D.new()
 		copy.mesh = node.mesh; copy.skin = node.skin; copy.layers = MASK_LAYER
+		# ID/outline copies share World3D but must never enter SDFGI voxelization.
+		copy.gi_mode=GeometryInstance3D.GI_MODE_DISABLED
 		copy.extra_cull_margin=node.extra_cull_margin
 		copy.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		copies_root.add_child(copy)

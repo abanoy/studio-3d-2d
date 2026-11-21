@@ -49,7 +49,7 @@ func setup(width := 1920, height := 1080) -> void:
 	add_child(viewport)
 	world = Node3D.new()
 	viewport.add_child(world)
-	scene_lighting=preload("res://src/scene_lighting_runtime.gd").new();scene_lighting.setup(world)
+	scene_lighting=preload("res://src/scene_lighting_runtime.gd").new();scene_lighting.setup(world,self)
 	var env := WorldEnvironment.new()
 	world_environment = env
 	env.environment = Environment.new()
@@ -332,6 +332,14 @@ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 			return null
 	capturing_final = final
 	editor_grid.visible = empty_environment and not final and not sequence_instance
+	# Optional SDFGI is history-dependent. Hold this exact authored frame while
+	# spending the project's explicit settling budget, before the final readback.
+	for warmup in range(scene_lighting.indirect.capture_frames(video_settings)):
+		if not begin_native_readback():break
+		var settling_notice:=native_frame_notification
+		await settling_notice.ready
+		finish_native_readback(false)
+		if not native_view_available():break
 	if not begin_native_readback():
 		capturing_final=false;editor_grid.visible=empty_environment and not sequence_instance
 		last_capture_error="Native render view is unavailable.";return null

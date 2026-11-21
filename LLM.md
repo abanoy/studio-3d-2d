@@ -8168,3 +8168,23 @@ docs/benchmarks/asset_discovery_selection_2026-11-21.json. Subsequent requested
 unsupported-import gating, automatic bottom batches and remembered retrieval
 notices remain separate upcoming work; button-only/manual website flow is not
 claimed to deliver those additions.
+
+## 2026-11-21 - Lighting published; indirect prototype in separate branch
+
+Completed lighting source edf98f68 is published on worker/editable-lights-20261121.
+Independent fetch matches1164functional/evidence files/12306652bytes/raw/Gitblobs;
+publication inventorycf0f1792a9c4a47107c7aa74c3b131122bd5de5a464e4808ea403c557c404dad.
+Handoff-only a5ef11b6 is also published/retrieved; exactly two documentation files,
+no production change. Earlier paused lighting rebase remains untouched.
+
+Separate worker/indirect-lighting-20261121 implements opt-in Forward+ SDFGI controls,
+static environment contributors, receive-only models, exact temporary GI-flag
+restoration and bounded per-frame capture settling. This is a runnable prototype,
+not graphic qualification. Focused CPU41 passes (35writer+6freshreader), including
+rebuild/pending-capture closure. Existing lighting CPU103 passes with GI off.
+Initial six reader failures were a fixture unpack-directory mismatch; corrected.
+No new GPU pixel/convergence/movie results yet; serial graphics slot is pending.
+See indirect_lighting_prototype.md and its compact benchmark. No path tracing,
+dynamic occluder or unrestricted native-material claim. No main changes/installs.
+
+2026-11-21 lighting SDFGI follow-up: CPU45/private Forward+ GPU52 pass in Neon+Classic, imported room/skinned model colored bounce,32-frame rebuild and actual packed cold reopen/preview-video errors0 on IntelArc140V,1080p24 H264fourframes. Fixed deferred editor picking copies entering GI (world_selection two-line hunk). See docs/indirect_lighting_prototype.md and its compact benchmark; private evidence stays ignored; only own feature branch published, no main/installedStudio/tools/originalassets changes.

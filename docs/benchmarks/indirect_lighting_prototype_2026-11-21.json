@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-21",
+  "branch": "worker/indirect-lighting-20261121",
+  "base": "a5ef11b63b23e73403861b559fe2622d1a74581d",
+  "status": "CPU_PASS_PRIVATE_FORWARD_PLUS_PASS",
+  "cpu": {
+    "checks": 45,
+    "failures": 0,
+    "phases": [
+      {
+        "checks": 37,
+        "failures": 0,
+        "graphics": false,
+        "measurements": {},
+        "phase": "writer"
+      },
+      {
+        "checks": 8,
+        "failures": 0,
+        "graphics": false,
+        "measurements": {},
+        "phase": "reader"
+      }
+    ],
+    "folder": "scene-indirect-1795284417449689000",
+    "source_bytes_unchanged": true
+  },
+  "baseline_lighting_cpu": {
+    "checks": 103,
+    "failures": 0,
+    "folder": "scene-lighting-1795282020777229500"
+  },
+  "tested_files_sha256": {
+    "src/scene_indirect_runtime.gd": "9cadefc2149d33da5bde708c7ed560b637d151553ac9744bec9328181fa617fc",
+    "src/scene_lighting_document.gd": "2ae07d0a01034f586f4f3113d856b78005d42df26e21b805c77b1cd0f998c239",
+    "src/scene_lighting_runtime.gd": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a",
+    "src/scene_lighting_editor.gd": "8f2dd52f51b2002907648689d7c501ee3587c7524a37ad2524e9df6e4d120531",
+    "src/renderer.gd": "f04a87b31d62626e4d7a5258fa62e6a8e0c5b250fa6f4cc24ad6d56633b306f1",
+    "tests/scene_indirect_smoke.gd": "5de09098fb8fbb67fff6b173a1b4ba4910194cd144ff2c79b050164163e98d12",
+    "tests/verify_scene_lighting.py": "3d52668be0b897321539ec24a5cc9dfbd0a41075bfd6cfedde8ae149aba42e80",
+    "src/world_selection.gd": "c11ae6352eeae4df8c7572af84118efa9d1ade714ccab8fe44bc7e8bd6cd0ea7"
+  },
+  "earlier_failure": {
+    "folder": "scene-indirect-1795281842390444100",
+    "writer": {
+      "checks": 29,
+      "failures": 0
+    },
+    "reader": {
+      "checks": 6,
+      "failures": 6
+    },
+    "cause": "Fixture reader used a different unpacked directory name; fixed. Headless mode no longer attempts physical SDFGI activation."
+  },
+  "graphics": {
+    "status": "PASS",
+    "checks": 52,
+    "failures": 0,
+    "folder": "scene-indirect-1795284401525888900",
+    "runtime": "Godot4.6.stable.official.89cea1439",
+    "backend": "Forward+ Vulkan1.4.340",
+    "gpu": "Intel Arc140V8GB",
+    "phases": [
+      {
+        "checks": 42,
+        "failures": 0,
+        "graphics": true,
+        "measurements": {
+          "light": {
+            "environment_direct_rgb": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "environment_indirect_rgb": [
+              34.35686111450195,
+              3.011774778366089,
+              3.011774778366089
+            ],
+            "gi_pixel_difference": 8695481.0,
+            "model_direct_rgb": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "model_indirect_rgb": [
+              16.04705810546875,
+              1.003921627998352,
+              1.003921627998352
+            ],
+            "rebuild_mean": 0.0,
+            "receiver_rebuild_mean": 0.0
+          },
+          "movie": "render_1795284417_15678582_0/movie.mp4",
+          "neon": {
+            "environment_direct_rgb": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "environment_indirect_rgb": [
+              34.35686111450195,
+              3.011774778366089,
+              3.011774778366089
+            ],
+            "gi_pixel_difference": 8695481.0,
+            "model_direct_rgb": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "model_indirect_rgb": [
+              16.04705810546875,
+              1.003921627998352,
+              1.003921627998352
+            ],
+            "rebuild_mean": 0.0,
+            "receiver_rebuild_mean": 0.0
+          },
+          "preview_export_mean": 0.0,
+          "receiver_preview_export_mean": 0.0
+        },
+        "phase": "writer"
+      },
+      {
+        "checks": 10,
+        "failures": 0,
+        "graphics": true,
+        "measurements": {
+          "light": {
+            "capture_draws": 33,
+            "cold_reopen_mean": 0.0,
+            "receiver_cold_reopen_mean": 0.0
+          },
+          "neon": {
+            "capture_draws": 33,
+            "cold_reopen_mean": 0.0,
+            "receiver_cold_reopen_mean": 0.0
+          }
+        },
+        "phase": "reader"
+      }
+    ],
+    "rgb_measurement_units": "Sum of normalized channels over16x16pixel patches; these are not mean8bit RGB values.",
+    "private_desktops": [
+      {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1c928a5d8ad243ceb99df8050e011906",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 11,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22004,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 29.784
+      },
+      {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8ee5e33caa194b7bb528a07b56111738",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 11,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 28224,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 13.686
+      }
+    ],
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "4",
+      "duration": "0.166667"
+    },
+    "convergence_verified": "Static fixture only:32warmup draws+1readback; image and receiver errors0 for rebuild/cold reopen/preview-export. No large-cut/moving-geometry guarantee.",
+    "engine_errors": 0,
+    "shutdown_texture_rid_warnings": 0,
+    "source_bytes_unchanged": true
+  },
+  "limitations": [
+    "Forward+ only; Compatibility retains direct-light path and saved GI settings.",
+    "Static environment contributors; moving/skinned models receive GI without dynamic occlusion or emissive contribution.",
+    "Measured convergence is for one static original imported room+skinned receiver on one GPU; no arbitrary map/native shader/camera-cut/cross-GPU fidelity claim.",
+    "Explicit8-120frame settling spends render time but cannot guarantee convergence after cuts or geometry changes; manually rebuild after moving static environments.",
+    "One diffuse bounce (bounce_feedback0); thin/cutout/transparent geometry and cascades can leak or shift.",
+    "Material/resources/native-model data are preserved; temporary live GI flags restore ondisable/Undo/modechange.",
+    "No path tracing/RTX claim; no broad suite/performance qualification."
+  ],
+  "cold_reopen_failure_and_fix": {
+    "before": {
+      "folder": "scene-indirect-1795283766301125500",
+      "checks": 8,
+      "failures": 1,
+      "measurements": {
+        "light": {
+          "cold_reopen_mean": 2.2107658179012346,
+          "receiver_cold_reopen_mean": 2.7197265625
+        },
+        "neon": {
+          "cold_reopen_mean": 1.5815540605709877,
+          "receiver_cold_reopen_mean": 1.9521484375
+        }
+      }
+    },
+    "diagnostic_folder": "scene-indirect-1795283949446961800",
+    "diagnosis": "Extra80draws and explicit rebuild leave drift unchanged. Deferred ID/outline copies entered World3D with default GI_STATIC after inventory. Disable their GI at creation, beforeadd_child.",
+    "production_fix": "src/world_selection.gd:copy.gi_mode=GeometryInstance3D.GI_MODE_DISABLED",
+    "after": {
+      "folder": "scene-indirect-1795284401525888900",
+      "image_and_receiver_mean_error": 0
+    },
+    "discarded_attempt": "Extra startup delay did not help and was reverted."
+  }
+}

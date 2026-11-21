@@ -32,7 +32,11 @@ The earlier has-lighting-20261121 checkout and paused rebase remain preserved.
 Installed Studio, original assets and shared tools were not replaced. Private
 models/captures/video remain in ignored output. Main was neither merged nor pushed.
 
-A separate follow-up in the isolated checkout is developing opt-in SDFGI with
-static-environment contributors, model receivers and explicit render settling.
-That follow-up is not qualified by the completed increment's evidence. Its CPU
-checks and future serial private-desktop tests are separate scopes.
+A separate follow-up, `worker/indirect-lighting-20261121`, provides opt-in SDFGI
+with static-environment contributors, model receivers and explicit render settling.
+It has its own CPU45 and private Forward+ GPU52 evidence, including colored bounce
+on imported environment/model fixtures, exact static-fixture rebuild/cold-reopen/
+preview-export pixels and a four-frame H.264 movie. See `indirect_lighting_prototype.md`
+for exact integration hunks and limits. Include its two-line `world_selection.gd`
+fix: deferred editor picking copies must disable GI before entering World3D.
+The original direct-light branch's publication and evidence remain unchanged.
