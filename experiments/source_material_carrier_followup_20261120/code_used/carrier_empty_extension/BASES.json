@@ -1,0 +1,32 @@
+{
+  "format": "has_carrier_empty_extension_keyword_wiring_1",
+  "status": "FROZEN_SOURCE_ONLY_ROOT45_CPU_PASS",
+  "helper_semantic_delta": "exactly two keyword arguments; admission lives in separate H/R profile",
+  "old_methods": 43,
+  "new_methods": 2,
+  "total_methods": 45,
+  "native_execution": false,
+  "application_adoption_qualified": false,
+  "entries": [
+    {
+      "path": "carrier_export.py",
+      "bytes": 29402,
+      "sha256": "762f7892b1fa30de34b4d494ac8aae2cc3c910a324a6785e0771ff7ea7b86dd9"
+    },
+    {
+      "path": "test_carrier_export.py",
+      "bytes": 51480,
+      "sha256": "ffb4ad6bc7b472e7229bb773060e576d738feb1824d565b96aa9a273baf8770f"
+    },
+    {
+      "path": "bases/carrier_export.py",
+      "bytes": 29230,
+      "sha256": "ac575393ea28517da6f3de0f3a34fca5519cfb83a51b843e4e18227fcf1ef2be"
+    },
+    {
+      "path": "bases/test_carrier_export.py",
+      "bytes": 49442,
+      "sha256": "911760f98dc56ba0a78784f62b91b680849d6d1e9345d4195783051015036222"
+    }
+  ]
+}

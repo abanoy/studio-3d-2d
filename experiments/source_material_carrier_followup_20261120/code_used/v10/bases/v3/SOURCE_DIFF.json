@@ -1,0 +1,89 @@
+{
+  "format": "has_readonly_native_path_host_source_delta_3",
+  "status": "AUTHORED_UNRUN",
+  "predecessor": "source-material-combined-host-v2-prep-20261120",
+  "predecessor_files_preserved": 21,
+  "unchanged_pure_helpers": 5,
+  "unchanged_default_binder_tests": 34,
+  "byte_exact_legacy_worker_helpers": [
+    "capture_material_snapshot",
+    "admit_existing_materials",
+    "prepare_owned_materials",
+    "recheck_owned_materials",
+    "observed_clone"
+  ],
+  "worker_identity_rows": 596,
+  "SDK_identity_rows": 574,
+  "other_roles": 22,
+  "profile_delta": "Separate explicit native-derived candidate/path/ref witness; original0e and default profile unchanged",
+  "host_delta": "Genuine resolver runtime attestation and actual-clone binding; resolved-profile callbacks; stable witness report binding",
+  "metadata_or_material_or_skin_writes": false,
+  "old_test_methods": 105,
+  "new_host_test_methods": 8,
+  "host_methods": 113,
+  "focused_profile_methods": 57,
+  "total_methods": 170,
+  "host_tests_executed_by_author": false,
+  "sources": {
+    "BASES.json": {
+      "bytes": 3835,
+      "sha256": "8fa45d1e7be256e118da73baa98fc497d69f5e379008af278b0e40c2690b5e5c"
+    },
+    "current_id_ledger.py": {
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9"
+    },
+    "fresh_resolved_material_probe.py": {
+      "bytes": 63069,
+      "sha256": "e7477ac360063ad6d3af9a53522dcb54106b7ad9451977561e07663e0df78543"
+    },
+    "library_enumeration.py": {
+      "bytes": 18845,
+      "sha256": "6c3aeff6a56b22a448d3ca093997ca866e76ac6ec2fb3948c811abad9c86f903"
+    },
+    "material_binding.py": {
+      "bytes": 27946,
+      "sha256": "0e2b8cae2f376615e6d038c5f888e06aa31f9595345f54863be9a3e3c013afe0"
+    },
+    "material_inspection.py": {
+      "bytes": 24579,
+      "sha256": "5efd488d7912e7b032f5590a85e1a20419913f5f6736d906b126c4e8a6280d17"
+    },
+    "material_metadata.py": {
+      "bytes": 13818,
+      "sha256": "c04c4e20705b490ed7633855b2e3bdde14350adec35c8b2a25afc42b69508395"
+    },
+    "README.md": {
+      "bytes": 4129,
+      "sha256": "f12dbdaaacfe2dfab5e890a8c126bd5a4f85cda4e9176acb54dc5fafbf661675"
+    },
+    "README_PROFILE.md": {
+      "bytes": 7258,
+      "sha256": "035ea4f71468c3708f1d95feedb152431010cdc3a7670526f2e317309b720a5c"
+    },
+    "resolved_profile.py": {
+      "bytes": 30378,
+      "sha256": "82359c33b116278fb5f12ad75e49ecdfcda00c7fa2e6d283a5677867438d602f"
+    },
+    "run_resolved_material.py": {
+      "bytes": 71220,
+      "sha256": "4d4d514d4d55f1affa495b5dbbd8c75e9f9304d42e9ec22c0ee31daf8732420c"
+    },
+    "test_material_binding_default.py": {
+      "bytes": 21927,
+      "sha256": "b3439985406a20e1cb8c20a3739df8f96cd9af8b1b8f8fe8f26b4c413779fe21"
+    },
+    "test_resolved_material_driver.py": {
+      "bytes": 62435,
+      "sha256": "47b2d2f95c70f308f6001a6ff371bb27fdf45ccff337ce0432ba3ce79177c372"
+    },
+    "test_resolved_material_worker.py": {
+      "bytes": 39480,
+      "sha256": "ae9f44022259296c7255b607393a5d36dc5c092ce16c712975b62bf51fe771f8"
+    },
+    "test_resolved_profile.py": {
+      "bytes": 23171,
+      "sha256": "048b43860e717944e559e311ebd98e801a730d1c336122d87b2f3e15330ffbbf"
+    }
+  }
+}

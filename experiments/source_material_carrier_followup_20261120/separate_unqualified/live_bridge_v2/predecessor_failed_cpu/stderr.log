@@ -1,0 +1,41 @@
+EEE................
+======================================================================
+ERROR: test_actual_operator_failure_is_not_retried_and_owned_scene_is_closed (test_source_native_normal_export.ExportWiringTests.test_actual_operator_failure_is_not_retried_and_owned_scene_is_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-live-normal-bridge-prep-20261120\test_source_native_normal_export.py", line 337, in test_actual_operator_failure_is_not_retried_and_owned_scene_is_closed
+    with self.assertRaises(RuntimeError) as caught: f.w.export_final(Path(tmp), f.observation, f.bone)
+                                                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-live-normal-bridge-prep-20261120\source_native_normal_export.py", line 450, in export_final
+    resources = resources_module.SimplePackedResources(private['materials'], tickets, self.bpy.types,
+                                                                                      ^^^^^^^^^^^^^^
+AttributeError: 'types.SimpleNamespace' object has no attribute 'types'
+
+======================================================================
+ERROR: test_finalizer_failure_cannot_publish_a_scene_or_skip_restore (test_source_native_normal_export.ExportWiringTests.test_finalizer_failure_cannot_publish_a_scene_or_skip_restore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-live-normal-bridge-prep-20261120\test_source_native_normal_export.py", line 347, in test_finalizer_failure_cannot_publish_a_scene_or_skip_restore
+    with self.assertRaises(ValueError) as caught: f.w.export_final(Path(tmp), f.observation, f.bone)
+                                                  ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-live-normal-bridge-prep-20261120\source_native_normal_export.py", line 450, in export_final
+    resources = resources_module.SimplePackedResources(private['materials'], tickets, self.bpy.types,
+                                                                                      ^^^^^^^^^^^^^^
+AttributeError: 'types.SimpleNamespace' object has no attribute 'types'
+
+======================================================================
+ERROR: test_one_export_raw_completion_bones_correction_and_final_publication_are_ordered_and_restored (test_source_native_normal_export.ExportWiringTests.test_one_export_raw_completion_bones_correction_and_final_publication_are_ordered_and_restored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-live-normal-bridge-prep-20261120\test_source_native_normal_export.py", line 321, in test_one_export_raw_completion_bones_correction_and_final_publication_are_ordered_and_restored
+    publication, report = f.w.export_final(Path(tmp), f.observation, f.bone)
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-live-normal-bridge-prep-20261120\source_native_normal_export.py", line 450, in export_final
+    resources = resources_module.SimplePackedResources(private['materials'], tickets, self.bpy.types,
+                                                                                      ^^^^^^^^^^^^^^
+AttributeError: 'types.SimpleNamespace' object has no attribute 'types'
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.167s
+
+FAILED (errors=3)

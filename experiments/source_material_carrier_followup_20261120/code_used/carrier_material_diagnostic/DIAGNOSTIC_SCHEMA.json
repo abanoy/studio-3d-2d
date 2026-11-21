@@ -1,0 +1,166 @@
+{
+  "format": "has_material_guard_diagnostic_public_schema_1",
+  "report_format": "has_strict_material_guard_failure_observation_1",
+  "top": {
+    "format": "exact report_format",
+    "status": [
+      "OBSERVED",
+      "UNAVAILABLE"
+    ],
+    "failures": "exact int1..128",
+    "failure_count_capped": "exact bool",
+    "first_refusal_code": [
+      "unsupported_gathered_material_profile",
+      "material_texture_reachability_missing",
+      "unexpected_texture_on_untextured_material",
+      "repeated_or_aliased_material_hook",
+      "OTHER_MATERIAL_FAILURE"
+    ],
+    "observation": "None only when UNAVAILABLE; otherwise exact observation schema",
+    "original_strict_failure_preserved": true,
+    "material_admission_changed": false,
+    "resource_equivalence_qualified": false
+  },
+  "observation": {
+    "booleans": [
+      "actual_material_type",
+      "fields_available",
+      "source_graph_has_images"
+    ],
+    "counts": [
+      "source_graph_matches",
+      "captured_image_socket_count",
+      "positive_info_identity_matches",
+      "positive_info_graph_key_matches",
+      "gathered_material_count",
+      "repeated_material_identity_count",
+      "repeated_source_identity_count"
+    ],
+    "field_types_keys": [
+      "extensions",
+      "extras",
+      "normal_texture",
+      "occlusion_texture",
+      "emissive_texture",
+      "pbr_metallic_roughness",
+      "metallic_roughness_texture",
+      "base_color_texture"
+    ],
+    "guard_keys": [
+      "source_graph_is_unique",
+      "extensions_is_none",
+      "extensions_is_exact_empty_dict",
+      "extras_is_none",
+      "normal_texture_is_none",
+      "occlusion_texture_is_none",
+      "emissive_texture_is_none",
+      "pbr_is_present",
+      "pbr_type_is_expected",
+      "pbr_fields_available",
+      "metallic_roughness_texture_is_none"
+    ],
+    "dicts": [
+      "field_types",
+      "guards",
+      "extensions"
+    ],
+    "fields_available_false": "field_types and guards empty; no unknown getters read"
+  },
+  "extensions": {
+    "keys": [
+      "field_type",
+      "count",
+      "count_in_budget",
+      "known",
+      "unknown_name_count",
+      "non_string_name_count"
+    ],
+    "known_row_keys": [
+      "name",
+      "value_type",
+      "plain_wrapper_fields",
+      "wrapper_name_matches",
+      "payload_type",
+      "payload_count",
+      "payload_count_in_budget",
+      "known_field_types",
+      "unknown_field_count",
+      "non_string_field_count"
+    ],
+    "count_max": 65536,
+    "enumeration_budget": 32,
+    "payload_enumeration_budget": 64,
+    "known_name_allowlist": [
+      "KHR_materials_anisotropy",
+      "KHR_materials_clearcoat",
+      "KHR_materials_dispersion",
+      "KHR_materials_emissive_strength",
+      "KHR_materials_ior",
+      "KHR_materials_iridescence",
+      "KHR_materials_sheen",
+      "KHR_materials_specular",
+      "KHR_materials_transmission",
+      "KHR_materials_unlit",
+      "KHR_materials_variants",
+      "KHR_materials_volume",
+      "KHR_materials_diffuse_transmission",
+      "KHR_materials_pbrSpecularGlossiness"
+    ],
+    "known_field_allowlist": [
+      "anisotropyStrength",
+      "anisotropyRotation",
+      "anisotropyTexture",
+      "clearcoatFactor",
+      "clearcoatTexture",
+      "clearcoatRoughnessFactor",
+      "clearcoatRoughnessTexture",
+      "clearcoatNormalTexture",
+      "dispersion",
+      "emissiveStrength",
+      "ior",
+      "iridescenceFactor",
+      "iridescenceTexture",
+      "iridescenceIor",
+      "iridescenceThicknessMinimum",
+      "iridescenceThicknessMaximum",
+      "iridescenceThicknessTexture",
+      "sheenColorFactor",
+      "sheenColorTexture",
+      "sheenRoughnessFactor",
+      "sheenRoughnessTexture",
+      "specularFactor",
+      "specularTexture",
+      "specularColorFactor",
+      "specularColorTexture",
+      "transmissionFactor",
+      "transmissionTexture",
+      "thicknessFactor",
+      "thicknessTexture",
+      "attenuationDistance",
+      "attenuationColor",
+      "diffuseTransmissionFactor",
+      "diffuseTransmissionTexture",
+      "diffuseTransmissionColorFactor",
+      "diffuseTransmissionColorTexture",
+      "diffuseFactor",
+      "diffuseTexture",
+      "specularGlossinessTexture",
+      "glossinessFactor"
+    ],
+    "type_labels": [
+      "NONE",
+      "BOOL",
+      "INT",
+      "FLOAT",
+      "STR",
+      "LIST",
+      "TUPLE",
+      "DICT",
+      "OTHER",
+      "UNAVAILABLE"
+    ],
+    "no_payload_values_or_unknown_names_published": true
+  },
+  "source_body_only_renamed_to_material_strict": true,
+  "strict_material_failure_preserved": true
+}

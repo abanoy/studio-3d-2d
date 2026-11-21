@@ -1,0 +1,40 @@
+{
+  "format": "has_carrier_make_image_diagnostic_bases_1",
+  "scope": "Source-only authored successor; no tests or native work executed by author.",
+  "predecessor": {
+    "path": "output/source-carrier-empty-extension-prep-20261120",
+    "helper": {
+      "bytes": 29402,
+      "sha256": "762f7892b1fa30de34b4d494ac8aae2cc3c910a324a6785e0771ff7ea7b86dd9"
+    },
+    "tests": {
+      "bytes": 51480,
+      "sha256": "ffb4ad6bc7b472e7229bb773060e576d738feb1824d565b96aa9a273baf8770f"
+    },
+    "root_methods_passed": 45
+  },
+  "current": {
+    "helper": {
+      "bytes": 33131,
+      "sha256": "983c9f44d4588decfb0169d5889db09c77b5b3cec7e1b1e280d38166d70fb763"
+    },
+    "tests": {
+      "bytes": 61653,
+      "sha256": "3a990ee974b4f405862b89d502f9d7fed66e726863baef27b6848f4c90758ee5"
+    },
+    "authored_methods": 52
+  },
+  "delta": [
+    "Added exact closed S report copier for 26 boolean predicates and fixed malformed marker.",
+    "Copy runs only on export failure from owned session/shared-cache plain fields.",
+    "Original latch/material diagnostics, primary errors and secondary cleanup behavior remain.",
+    "Preserved all 45 predecessor methods and assertions; appended seven focused methods."
+  ],
+  "forbidden_scope": [
+    "No admission relaxation",
+    "No exporter or resource mutation",
+    "No native fixture or image reads",
+    "No product adoption",
+    "No actual tests by author"
+  ]
+}

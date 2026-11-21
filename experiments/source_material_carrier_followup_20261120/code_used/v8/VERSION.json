@@ -1,0 +1,270 @@
+{
+  "format": "has_fresh_source_native_carrier_export_preparation_v8_1",
+  "status": "FROZEN_STRICT_MATERIAL_SHAPE_FACT_PROBE_AWAITING_ROOT_162_AND_NATIVE_RETRY",
+  "current_native_execution": false,
+  "authored_child_retained_identity_rows": 605,
+  "sourceio_rows": 574,
+  "other_child_rows": 31,
+  "root_normal_metric": "raw_unnormalized_euclidean_vector_distance",
+  "root_normal_threshold": 0.00002,
+  "authored_methods": {
+    "worker": 45,
+    "driver": 104,
+    "bounded_reader": 13,
+    "cold_images": 40,
+    "carrier_export": 43,
+    "normal_gate": 20,
+    "compiler_context": 13,
+    "shared_resources": 101
+  },
+  "root_already_executed_frozen_scopes": {
+    "cold_images": 40,
+    "carrier_export": 43,
+    "normal_gate": 20,
+    "compiler_context": 13,
+    "shared_resources": 101
+  },
+  "frozen_predecessor": "bases/v3",
+  "unchanged_application_source": true,
+  "normal_repair_applied": false,
+  "application_adoption_qualified": false,
+  "literal_module_checks": [
+    {
+      "source": "run_carrier.py",
+      "role": "export_hook",
+      "file": "export_hook_proposal.py",
+      "bytes": 43512,
+      "sha256": "636a8d92d29b7c6a7118535cdea0e0ea3ba8a17f12ec30c680280755c6ba4f59"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "resource_gate",
+      "file": "resource_gate_proposal.py",
+      "bytes": 50146,
+      "sha256": "6d6fdd70f73693aff2b1ce0163f153eefcd3e196a0a6ab6e88c4593a5d2a12fd"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "shared_cache",
+      "file": "shared_image_cache_proposal.py",
+      "bytes": 27573,
+      "sha256": "5f54d0d1979a97e7174a967802b8de68bf48fe75d8af4c9c50a4ea90a9e624ba"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "extract_observer",
+      "file": "observer_instrumentation.py",
+      "bytes": 7829,
+      "sha256": "15145030fab5b662be490e519ff59f870c4e9c0352766ff59bf3da3f12198f7b"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "gather_binder",
+      "file": "gather_binding.py",
+      "bytes": 17534,
+      "sha256": "617c062b516ecefa5fab0a6ec8f98163a3b13f76896969cb22102f859323b850"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "semantic_compare",
+      "file": "semantic_compare.py",
+      "bytes": 22754,
+      "sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "cold_readiness",
+      "file": "cold_image_readiness.py",
+      "bytes": 14496,
+      "sha256": "eac159fa9c31f9a0bc600025f27a3e988dd486d1e38497698814f3121399bbd9"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "carrier_export",
+      "file": "carrier_export.py",
+      "bytes": 29230,
+      "sha256": "ac575393ea28517da6f3de0f3a34fca5519cfb83a51b843e4e18227fcf1ef2be"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "export_hook",
+      "file": "export_hook_proposal.py",
+      "bytes": 43512,
+      "sha256": "636a8d92d29b7c6a7118535cdea0e0ea3ba8a17f12ec30c680280755c6ba4f59"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "resource_gate",
+      "file": "resource_gate_proposal.py",
+      "bytes": 50146,
+      "sha256": "6d6fdd70f73693aff2b1ce0163f153eefcd3e196a0a6ab6e88c4593a5d2a12fd"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "shared_cache",
+      "file": "shared_image_cache_proposal.py",
+      "bytes": 27573,
+      "sha256": "5f54d0d1979a97e7174a967802b8de68bf48fe75d8af4c9c50a4ea90a9e624ba"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "extract_observer",
+      "file": "observer_instrumentation.py",
+      "bytes": 7829,
+      "sha256": "15145030fab5b662be490e519ff59f870c4e9c0352766ff59bf3da3f12198f7b"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "gather_binder",
+      "file": "gather_binding.py",
+      "bytes": 17534,
+      "sha256": "617c062b516ecefa5fab0a6ec8f98163a3b13f76896969cb22102f859323b850"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "semantic_compare",
+      "file": "semantic_compare.py",
+      "bytes": 22754,
+      "sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "cold_readiness",
+      "file": "cold_image_readiness.py",
+      "bytes": 14496,
+      "sha256": "eac159fa9c31f9a0bc600025f27a3e988dd486d1e38497698814f3121399bbd9"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "carrier_export",
+      "file": "carrier_export.py",
+      "bytes": 29230,
+      "sha256": "ac575393ea28517da6f3de0f3a34fca5519cfb83a51b843e4e18227fcf1ef2be"
+    }
+  ],
+  "version": 8,
+  "predecessor": "V8_PREDECESSOR.json",
+  "only_test_function_delta": "Original strict material guard is byte-exact under diagnostic wrapper; failure-only bounded KHR/type/count transport. Host sources update R and carrier helper tuples only.",
+  "original_predecessor_driver_cpu": {
+    "passed": 103,
+    "failed": 1,
+    "methods": 104
+  },
+  "historical_cold_failure": {
+    "status": "UNQUALIFIED_FAILED_RUN",
+    "source_stage": "source-material-carrier-run-1795220688291646000",
+    "error": "PACKED_IMAGE_READINESS_API_OR_ACQUISITION_FAILED",
+    "images_admitted": 0,
+    "image_buffer_getter_attempts": 0,
+    "operator_invocations": 0,
+    "preservation_checks": 42,
+    "all_checks_passed": true,
+    "physical_owned_processes": 0,
+    "coordinator_reaped": true,
+    "owned_lock_retained": false
+  },
+  "authored_expected_focused_total": 379,
+  "required_root_cpu": {
+    "changed_host": {
+      "methods": 162,
+      "status": "PENDING_AT_FREEZE"
+    }
+  },
+  "unchanged_source_cpu": {
+    "cold_images": 40,
+    "carrier_export": 43,
+    "normal_gate": 20,
+    "compiler_context": 13,
+    "shared_resources": 101
+  },
+  "external_hook_test_source": {
+    "folder": "source-export-hook-compiler-context-v3-prep-20261120",
+    "new_methods": 13,
+    "old_methods_unchanged": 73,
+    "new_test_bytes": 17581,
+    "new_test_sha256": "e79fa21d465c37e7bad990c7452668f77a79aacfe958d4b5a384dd2ef12ea1e2"
+  },
+  "v4_helper_failure": {
+    "old_controls_passed": 73,
+    "focused_methods": 11,
+    "failing_subtests": 2,
+    "failing_methods": 1,
+    "native_attempted": false,
+    "code_source_retained": "a014dab02265b6ccb7f354c8f96eb8a212f569bfe0386ae99820fd6368e7102b"
+  },
+  "external_negative_probe_source": {
+    "folder": "source-shared-image-negative-probe-v2-prep-20261120",
+    "old_methods_unchanged": 73,
+    "new_methods": 16,
+    "total_methods": 89,
+    "resource_bytes": 39161,
+    "resource_sha256": "6b789b54e1d3d500db9e66da43b156c3cc16af483ce29777a7f7092526f14f65",
+    "cache_bytes": 27573,
+    "cache_sha256": "5f54d0d1979a97e7174a967802b8de68bf48fe75d8af4c9c50a4ea90a9e624ba"
+  },
+  "qualified_bounded_read_predecessor": {
+    "driver_bytes": 87426,
+    "driver_sha256": "493a5cd1ae57cf81d7b7e649b254d1c177f85469ad8c4750851d77b26769d6b4",
+    "test_bytes": 6889,
+    "test_sha256": "876c8f1948dc32e37506446884256475a0ae2381f531dcf2152ce9720f894cca",
+    "methods": 13,
+    "status": "PASS",
+    "result_folder": "source-carrier-bounded-read-cpu-20261120-01",
+    "read_function_unchanged_by_R_S_tuples": true
+  },
+  "isolated_source_read_benchmark": {
+    "baseline_wall_seconds": 0.4087155,
+    "candidate_wall_seconds": 0.0111993,
+    "reads_each": 8,
+    "returned_bytes_each": 113256,
+    "baseline_requested_bytes": 2147483656,
+    "candidate_requested_bytes": 113264,
+    "scope": "isolated source reads only; no whole coordinator benchmark"
+  },
+  "external_diagnostic_source": {
+    "folder": "source-carrier-latch-diagnostic-prep-20261120",
+    "methods": 37,
+    "helper_bytes": 17760,
+    "helper_sha256": "3b1d64421ff0e57cbf7d5f5a696308be2c12be1eb8d0e534a8ff23bf27afa9a3",
+    "test_bytes": 40058,
+    "test_sha256": "f244e8c882a1cd7d5a469ce6a2da0041a312df93aae70d06072b200b6a498ccb",
+    "root_cpu_status": "PASS",
+    "result_folder": "source-carrier-latch-diagnostic-cpu-20261120-01"
+  },
+  "v6_actual": {
+    "status": "REFUSED_UNQUALIFIED",
+    "exporter_invoked": true,
+    "glb_written": false,
+    "first_latched_cause": "unknown before this diagnostic version",
+    "preservation_checks": 42,
+    "all_checks_passed": true,
+    "physical_owned_processes": 0,
+    "coordinator_reaped": true,
+    "owned_lock_retained": false,
+    "whole_coordinator_elapsed_seconds": 21.1057118
+  },
+  "external_material_diagnostic_source": {
+    "resource_folder": "source-material-guard-diagnostic-prep-20261120",
+    "resource_methods": 101,
+    "resource_bytes": 50146,
+    "resource_sha256": "6d6fdd70f73693aff2b1ce0163f153eefcd3e196a0a6ab6e88c4593a5d2a12fd",
+    "carrier_folder": "source-carrier-material-diagnostic-prep-20261120",
+    "carrier_methods": 43,
+    "carrier_bytes": 29230,
+    "carrier_sha256": "ac575393ea28517da6f3de0f3a34fca5519cfb83a51b843e4e18227fcf1ef2be",
+    "carrier_test_bytes": 49442,
+    "carrier_test_sha256": "911760f98dc56ba0a78784f62b91b680849d6d1e9345d4195783051015036222",
+    "Root_resource_cpu_status": "PASS",
+    "Root_carrier_cpu_status": "PASS"
+  },
+  "v7_actual": {
+    "status": "REFUSED_UNQUALIFIED",
+    "first_latched_stage": "gather_material_hook",
+    "exception_category": "Refusal",
+    "latched_count": 4,
+    "material_failure_count_not_inferred": true,
+    "glb_written": false,
+    "coordinator_reaped": true,
+    "whole_coordinator_elapsed_seconds": 20.0697
+  }
+}

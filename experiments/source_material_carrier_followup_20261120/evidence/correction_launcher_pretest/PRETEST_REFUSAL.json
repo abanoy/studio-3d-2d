@@ -1,0 +1,13 @@
+{
+  "code": "WHOLE_STAT_RESULT_COMPARED_PLATFORM_CTIME_VARIANTS",
+  "correction_wrapper_launched": false,
+  "fix": "Use existing dev/ino/mode/nlink/size/nsmtime/attributes identity policy, retaining all those checks and content hashes; exclude platform-dependent ctime and access time.",
+  "format": "has_root_correction_launcher_preflight_refusal_1",
+  "native_process_launched": false,
+  "observation": {
+    "handle_ctime_ns": 1795228735066338800,
+    "path_ctime_ns": 1795228735065335000
+  },
+  "phase": "FIRST_WRAPPER_READ",
+  "request_created": false
+}

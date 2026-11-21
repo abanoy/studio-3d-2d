@@ -1,0 +1,51 @@
+{
+  "format": "has_production_normal_adapter_test_only_v2_1",
+  "module_unchanged": {
+    "bytes": 23576,
+    "sha256": "5d19134b9a4fbfd7a93777d9eb3026173d52b6380e3beb80a8211dedf9afc24e"
+  },
+  "old_test": {
+    "bytes": 24169,
+    "sha256": "51417ecdfd5d8b79a0613853ade3f0595e3ecb610bb72fbc6023bf1ac92e2217"
+  },
+  "new_test": {
+    "bytes": 24586,
+    "sha256": "f3591fa34cdc4197642339c9633a07f865c6894965b58e3c52bc05d46702921c",
+    "methods": 20
+  },
+  "delta": "Measured fake callback compares private COPYdict+TUPLE values and unchanged caller originallists; no MappingProxy/newmodule contract.",
+  "failed_old_scope": {
+    "passed": 19,
+    "errors": 1,
+    "native_execution": false,
+    "files": [
+      {
+        "path": "failed_cpu_v1/after.json",
+        "bytes": 673,
+        "sha256": "7e5c5dc49466ab4101a8da5361b26e53316640afb529c3f0a3fd5732b4c2bc95"
+      },
+      {
+        "path": "failed_cpu_v1/before.json",
+        "bytes": 673,
+        "sha256": "7e5c5dc49466ab4101a8da5361b26e53316640afb529c3f0a3fd5732b4c2bc95"
+      },
+      {
+        "path": "failed_cpu_v1/ROOT_RESULT.json",
+        "bytes": 309,
+        "sha256": "7c64d237ae8a62dce3f134829e04a6c95be3095110e75fa842e317c657fd30ac"
+      },
+      {
+        "path": "failed_cpu_v1/stderr.log",
+        "bytes": 6585,
+        "sha256": "9b848586ec17569ab8dac8fcd74df50ff8e9547c81fad4fd3884178a985c2ad3"
+      },
+      {
+        "path": "failed_cpu_v1/stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "current_status": "FROZEN_TEST_ONLY_SUCCESSOR_AWAITING_ROOT20",
+  "application_adoption_qualified": false
+}

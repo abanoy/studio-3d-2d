@@ -1,0 +1,745 @@
+{
+  "B_dependency_closure_qualified": false,
+  "all_four_source_materials_reuse_admitted_B_refs": true,
+  "all_read_inputs_hash_size_stamp_unchanged": true,
+  "blend_saved": false,
+  "bounded_image_buffer_readiness": {
+    "C_encoded_image_decode_may_occur": true,
+    "C_external_access_absence_proven": false,
+    "application_adoption_qualified": false,
+    "cached_pixel_provenance_qualified": false,
+    "channel_getter_attempts": 2,
+    "complete_set_admitted_before_buffer_getters": true,
+    "encoded_bytes": 1709130,
+    "exporter_qualified": false,
+    "format": "has_bounded_packed_png_buffer_readiness_1",
+    "image_buffer_getters_used": true,
+    "images_admitted": 2,
+    "images_verified_ready": 2,
+    "images_with_exposed_empty_animation_data": 0,
+    "images_without_animation_data_attribute": 2,
+    "initially_loaded_images": 0,
+    "initially_unloaded_images": 2,
+    "metadata_written": false,
+    "native_or_historical_point_identity_qualified": false,
+    "nonbuffer_metadata_and_packed_refs_unchanged": true,
+    "normal_fidelity_qualified": false,
+    "packed_hashes_rechecked": true,
+    "packed_header_set_sha256": "ac11266b70b6d7ac0c474be1958e2e845ba3e75dcfba575d6cd152c24e060cbd",
+    "packed_memory_branch_preconditions_validated": true,
+    "prospective_rgba_f32_bytes": 83886080,
+    "python_image_foreach_get_used": false,
+    "python_image_pixels_getter_used": false,
+    "resource_equivalence_qualified": false,
+    "size_getter_attempts": 2,
+    "status": "BOUNDED_PACKED_PNG_BUFFERS_READY_1"
+  },
+  "carrier_output_present_unqualified": false,
+  "carrier_written": false,
+  "error_code": "PINNED_API_OR_SCHEMA_REFUSAL",
+  "error_type": "RuntimeError",
+  "exact_authenticated_reads": 605,
+  "export_failure_latch": {
+    "exception_category": "Refusal",
+    "failures": 4,
+    "format": "has_carrier_safe_latch_failure_1",
+    "latched_failure_observed": true,
+    "stage": "gather_material_hook",
+    "status": "LATCHED_FAILURE"
+  },
+  "export_material_failure": {
+    "failure_count_capped": false,
+    "failures": 1,
+    "first_refusal_code": "unsupported_gathered_material_profile",
+    "format": "has_strict_material_guard_failure_observation_1",
+    "material_admission_changed": false,
+    "observation": {
+      "actual_material_type": true,
+      "captured_image_socket_count": 1,
+      "extensions": {
+        "count": 6,
+        "count_in_budget": true,
+        "field_type": "DICT",
+        "known": [
+          {
+            "known_field_types": {},
+            "name": "KHR_materials_anisotropy",
+            "non_string_field_count": 0,
+            "payload_count": 0,
+            "payload_count_in_budget": true,
+            "payload_type": "DICT",
+            "plain_wrapper_fields": true,
+            "unknown_field_count": 0,
+            "value_type": "OTHER",
+            "wrapper_name_matches": true
+          },
+          {
+            "known_field_types": {},
+            "name": "KHR_materials_clearcoat",
+            "non_string_field_count": 0,
+            "payload_count": 0,
+            "payload_count_in_budget": true,
+            "payload_type": "DICT",
+            "plain_wrapper_fields": true,
+            "unknown_field_count": 0,
+            "value_type": "OTHER",
+            "wrapper_name_matches": true
+          },
+          {
+            "known_field_types": {},
+            "name": "KHR_materials_emissive_strength",
+            "non_string_field_count": 0,
+            "payload_count": 0,
+            "payload_count_in_budget": true,
+            "payload_type": "DICT",
+            "plain_wrapper_fields": true,
+            "unknown_field_count": 0,
+            "value_type": "OTHER",
+            "wrapper_name_matches": true
+          },
+          {
+            "known_field_types": {},
+            "name": "KHR_materials_ior",
+            "non_string_field_count": 0,
+            "payload_count": 0,
+            "payload_count_in_budget": true,
+            "payload_type": "DICT",
+            "plain_wrapper_fields": true,
+            "unknown_field_count": 0,
+            "value_type": "OTHER",
+            "wrapper_name_matches": true
+          },
+          {
+            "known_field_types": {},
+            "name": "KHR_materials_specular",
+            "non_string_field_count": 0,
+            "payload_count": 0,
+            "payload_count_in_budget": true,
+            "payload_type": "DICT",
+            "plain_wrapper_fields": true,
+            "unknown_field_count": 0,
+            "value_type": "OTHER",
+            "wrapper_name_matches": true
+          },
+          {
+            "known_field_types": {},
+            "name": "KHR_materials_transmission",
+            "non_string_field_count": 0,
+            "payload_count": 0,
+            "payload_count_in_budget": true,
+            "payload_type": "DICT",
+            "plain_wrapper_fields": true,
+            "unknown_field_count": 0,
+            "value_type": "OTHER",
+            "wrapper_name_matches": true
+          }
+        ],
+        "non_string_name_count": 0,
+        "unknown_name_count": 0
+      },
+      "field_types": {
+        "base_color_texture": "OTHER",
+        "emissive_texture": "NONE",
+        "extensions": "DICT",
+        "extras": "NONE",
+        "metallic_roughness_texture": "NONE",
+        "normal_texture": "NONE",
+        "occlusion_texture": "NONE",
+        "pbr_metallic_roughness": "OTHER"
+      },
+      "fields_available": true,
+      "gathered_material_count": 0,
+      "guards": {
+        "emissive_texture_is_none": true,
+        "extensions_is_exact_empty_dict": false,
+        "extensions_is_none": false,
+        "extras_is_none": true,
+        "metallic_roughness_texture_is_none": true,
+        "normal_texture_is_none": true,
+        "occlusion_texture_is_none": true,
+        "pbr_fields_available": true,
+        "pbr_is_present": true,
+        "pbr_type_is_expected": true,
+        "source_graph_is_unique": true
+      },
+      "positive_info_graph_key_matches": 1,
+      "positive_info_identity_matches": 1,
+      "repeated_material_identity_count": 0,
+      "repeated_source_identity_count": 0,
+      "source_graph_has_images": true,
+      "source_graph_matches": 1
+    },
+    "original_strict_failure_preserved": true,
+    "resource_equivalence_qualified": false,
+    "status": "OBSERVED"
+  },
+  "exporter_attempted": true,
+  "exporter_invoked": true,
+  "format": "has_fresh_source_native_carrier_export_probe_1",
+  "hidden_placement_verified": true,
+  "historical_saved_B_native_causality_qualified": false,
+  "host_image_pixels_getter_used": false,
+  "image_buffer_getters_used": true,
+  "image_creation_counter_scope": "SourceIO import after the admitted B append",
+  "importer_attribute_never_patched": true,
+  "importer_code_attestation": {
+    "complete_module_AST_inverse_exact": true,
+    "dont_write_bytecode": true,
+    "format": "has_full_module_importer_code_attestation_1",
+    "full_source_vs_isolated_AST": {
+      "complete_code_equal": false,
+      "differing_fields": [
+        "co_code",
+        "co_linetable",
+        "co_exceptiontable"
+      ],
+      "left": {
+        "cell_variables": 0,
+        "code_sha256": "cee7072ca8d5fb7e60843c92ab7e5ee2180791d7d0fad88d6fd6989a1a141bac",
+        "constants": 50,
+        "exceptiontable_sha256": "367cad81de3f76d9ac5fd7dda8553c7dc2cccf61008742ca737e4e1c8aeb2639",
+        "firstlineno": 35,
+        "flags": 3,
+        "free_variables": 0,
+        "keyword_arguments": 0,
+        "linetable_sha256": "3bda9c2e52b8e98dd9e73f924f0e442892b788bc2f9d99bf74d7392a45083f7a",
+        "locals": 76,
+        "marshalled_code_sha256": "28633d9123737699bc6e4ff28f3bb6136fbfde4e86bf089968f049af59d70a46",
+        "names": 100,
+        "positional_arguments": 5,
+        "stacksize": 13,
+        "variable_names": 76
+      },
+      "right": {
+        "cell_variables": 0,
+        "code_sha256": "f0ced2c7af8a551574996abb3d7d6adb3f96388971d085c00a8a6c93a3445f40",
+        "constants": 50,
+        "exceptiontable_sha256": "b94e577d833208543d1bda2d882d48d9930707eb8026ee1cc06651da659d43a4",
+        "firstlineno": 35,
+        "flags": 3,
+        "free_variables": 0,
+        "keyword_arguments": 0,
+        "linetable_sha256": "09fbe1888a9653f9efa266b5238bc0534d1bff9dce99aaff8f107a37297997be",
+        "locals": 76,
+        "marshalled_code_sha256": "ca542970e31fd5db1260e35381b6d3832c46bced1b21b30dd8a94056dd8a31b4",
+        "names": 100,
+        "positional_arguments": 5,
+        "stacksize": 13,
+        "variable_names": 76
+      }
+    },
+    "function_annotations_reevaluated": false,
+    "loader_type": "_frozen_importlib_external.SourceFileLoader",
+    "module_top_level_executed_for_clone": false,
+    "observed_function_uses_full_module_compiler_context": true,
+    "optimize": 0,
+    "original_module_attribute_patched": false,
+    "original_vs_full_source": {
+      "complete_code_equal": true,
+      "differing_fields": [],
+      "left": {
+        "cell_variables": 0,
+        "code_sha256": "cee7072ca8d5fb7e60843c92ab7e5ee2180791d7d0fad88d6fd6989a1a141bac",
+        "constants": 50,
+        "exceptiontable_sha256": "367cad81de3f76d9ac5fd7dda8553c7dc2cccf61008742ca737e4e1c8aeb2639",
+        "firstlineno": 35,
+        "flags": 3,
+        "free_variables": 0,
+        "keyword_arguments": 0,
+        "linetable_sha256": "3bda9c2e52b8e98dd9e73f924f0e442892b788bc2f9d99bf74d7392a45083f7a",
+        "locals": 76,
+        "marshalled_code_sha256": "28633d9123737699bc6e4ff28f3bb6136fbfde4e86bf089968f049af59d70a46",
+        "names": 100,
+        "positional_arguments": 5,
+        "stacksize": 13,
+        "variable_names": 76
+      },
+      "right": {
+        "cell_variables": 0,
+        "code_sha256": "cee7072ca8d5fb7e60843c92ab7e5ee2180791d7d0fad88d6fd6989a1a141bac",
+        "constants": 50,
+        "exceptiontable_sha256": "367cad81de3f76d9ac5fd7dda8553c7dc2cccf61008742ca737e4e1c8aeb2639",
+        "firstlineno": 35,
+        "flags": 3,
+        "free_variables": 0,
+        "keyword_arguments": 0,
+        "linetable_sha256": "3bda9c2e52b8e98dd9e73f924f0e442892b788bc2f9d99bf74d7392a45083f7a",
+        "locals": 76,
+        "marshalled_code_sha256": "28633d9123737699bc6e4ff28f3bb6136fbfde4e86bf089968f049af59d70a46",
+        "names": 100,
+        "positional_arguments": 5,
+        "stacksize": 13,
+        "variable_names": 76
+      }
+    },
+    "pycache_prefix_set": false,
+    "python_version": "3.13.9 (main, Jan 16 2026, 12:29:45) [MSC v.1944 64 bit (AMD64)]",
+    "raw_full_source_vs_full_AST": {
+      "complete_code_equal": true,
+      "differing_fields": [],
+      "left": {
+        "cell_variables": 0,
+        "code_sha256": "cee7072ca8d5fb7e60843c92ab7e5ee2180791d7d0fad88d6fd6989a1a141bac",
+        "constants": 50,
+        "exceptiontable_sha256": "367cad81de3f76d9ac5fd7dda8553c7dc2cccf61008742ca737e4e1c8aeb2639",
+        "firstlineno": 35,
+        "flags": 3,
+        "free_variables": 0,
+        "keyword_arguments": 0,
+        "linetable_sha256": "3bda9c2e52b8e98dd9e73f924f0e442892b788bc2f9d99bf74d7392a45083f7a",
+        "locals": 76,
+        "marshalled_code_sha256": "28633d9123737699bc6e4ff28f3bb6136fbfde4e86bf089968f049af59d70a46",
+        "names": 100,
+        "positional_arguments": 5,
+        "stacksize": 13,
+        "variable_names": 76
+      },
+      "right": {
+        "cell_variables": 0,
+        "code_sha256": "cee7072ca8d5fb7e60843c92ab7e5ee2180791d7d0fad88d6fd6989a1a141bac",
+        "constants": 50,
+        "exceptiontable_sha256": "367cad81de3f76d9ac5fd7dda8553c7dc2cccf61008742ca737e4e1c8aeb2639",
+        "firstlineno": 35,
+        "flags": 3,
+        "free_variables": 0,
+        "keyword_arguments": 0,
+        "linetable_sha256": "3bda9c2e52b8e98dd9e73f924f0e442892b788bc2f9d99bf74d7392a45083f7a",
+        "locals": 76,
+        "marshalled_code_sha256": "88c37999a7bf36d70b241a6fee24ad7c4b08708e12f48afefaff916cc8ff5994",
+        "names": 100,
+        "positional_arguments": 5,
+        "stacksize": 13,
+        "variable_names": 76
+      }
+    },
+    "source_sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+  },
+  "inherited_authenticated_reads": 590,
+  "input_identities": {
+    "approved_runtime_lock": {
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    "blender_exe": {
+      "bytes": 108687824,
+      "sha256": "1e6624af112b3c936f4b038b025ebd2bf00ae72c4b62881a6787166d71c58fa5"
+    },
+    "carrier_export": {
+      "bytes": 29230,
+      "sha256": "ac575393ea28517da6f3de0f3a34fca5519cfb83a51b843e4e18227fcf1ef2be"
+    },
+    "cold_readiness": {
+      "bytes": 14496,
+      "sha256": "eac159fa9c31f9a0bc600025f27a3e988dd486d1e38497698814f3121399bbd9"
+    },
+    "enumeration_module": {
+      "bytes": 18845,
+      "sha256": "6c3aeff6a56b22a448d3ca093997ca866e76ac6ec2fb3948c811abad9c86f903"
+    },
+    "export_hook": {
+      "bytes": 43512,
+      "sha256": "636a8d92d29b7c6a7118535cdea0e0ea3ba8a17f12ec30c680280755c6ba4f59"
+    },
+    "extract_observer": {
+      "bytes": 7829,
+      "sha256": "15145030fab5b662be490e519ff59f870c4e9c0352766ff59bf3da3f12198f7b"
+    },
+    "full_state": {
+      "bytes": 152700,
+      "sha256": "6b42d6b4764c2370f76e68e249017ac98b16aedb8aed5ca2f8acc96f042eb7d7"
+    },
+    "gather_binder": {
+      "bytes": 17534,
+      "sha256": "617c062b516ecefa5fab0a6ec8f98163a3b13f76896969cb22102f859323b850"
+    },
+    "graphics_release": {
+      "bytes": 683,
+      "sha256": "795cf380e72c7923e0930ec677d9a0d882c95f3e1efc8fa1de4333219f78d4a8"
+    },
+    "importer": {
+      "bytes": 12880,
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+    },
+    "inspection_module": {
+      "bytes": 24579,
+      "sha256": "5efd488d7912e7b032f5590a85e1a20419913f5f6736d906b126c4e8a6280d17"
+    },
+    "instrumentation": {
+      "bytes": 3306,
+      "sha256": "361fcad3dbff79bfd5367cd71ac5a769fc8155d6f38a1b061d5ce6e631f5a895"
+    },
+    "join_policy": {
+      "bytes": 20860,
+      "sha256": "f838e0d893969aa1ad884a1c1d92e28ba019454f313632855f2a33c55fc3415c"
+    },
+    "ledger": {
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9"
+    },
+    "material_binding": {
+      "bytes": 27946,
+      "sha256": "0e2b8cae2f376615e6d038c5f888e06aa31f9595345f54863be9a3e3c013afe0"
+    },
+    "metadata_reader": {
+      "bytes": 13818,
+      "sha256": "c04c4e20705b490ed7633855b2e3bdde14350adec35c8b2a25afc42b69508395"
+    },
+    "native_helper": {
+      "bytes": 27615,
+      "sha256": "cbb4eca98a6cf5045211dc10bd8e060b79492ec306d61a4d29679fc0d5cc184d"
+    },
+    "owned_B": {
+      "bytes": 2423175,
+      "sha256": "ead1f1913812593abd69e353fed375944a15f280738784886fcef7fda3ee65c6"
+    },
+    "physical_closure": {
+      "bytes": 649,
+      "sha256": "a4881c70764ffa426af6a07dafbe69344ff30b93768315ee7e12d42c9b359190"
+    },
+    "probe": {
+      "bytes": 72518,
+      "sha256": "5621d5c72d1dd4f1c0903347da6a217389029eda82e68dff0c5e469e547a8b11"
+    },
+    "qualified_creation": {
+      "bytes": 12269,
+      "sha256": "8cfb0a681e4ed99585686d82c25cae1e4b88bc04bd045f0ffca99951c2dd791a"
+    },
+    "resolved_profile": {
+      "bytes": 30378,
+      "sha256": "82359c33b116278fb5f12ad75e49ecdfcda00c7fa2e6d283a5677867438d602f"
+    },
+    "resource_gate": {
+      "bytes": 50146,
+      "sha256": "6d6fdd70f73693aff2b1ce0163f153eefcd3e196a0a6ab6e88c4593a5d2a12fd"
+    },
+    "root_request": {
+      "bytes": 104622,
+      "sha256": "c1ec89c8de78517223515d4bc444012f06db2813a4179b8ccebf3d1ed9731c2a"
+    },
+    "semantic_compare": {
+      "bytes": 22754,
+      "sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00"
+    },
+    "sentinel_source": {
+      "bytes": 17989,
+      "sha256": "034122697e8fa0e7a855ea42b51eddc351b647ae5f7641cad8d02994a51fc3c3"
+    },
+    "shared_cache": {
+      "bytes": 27573,
+      "sha256": "5f54d0d1979a97e7174a967802b8de68bf48fe75d8af4c9c50a4ea90a9e624ba"
+    },
+    "staged/mdl": {
+      "bytes": 37644,
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+    },
+    "staged/vtx": {
+      "bytes": 173309,
+      "sha256": "924954f27574fc83945934a13e6b4e90049b5d46356053dc4b41ec43d3ce364a"
+    },
+    "staged/vvd": {
+      "bytes": 618368,
+      "sha256": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0"
+    }
+  },
+  "material_binding": {
+    "B_dependency_closure_qualified": false,
+    "B_material_properties_written": false,
+    "application_adoption_qualified": false,
+    "candidate_default_skin_row_sha256": "baed642339816affb3fe8719792d0e4ce82f12db72b7373d244eaa65445800fe",
+    "carrier_or_exporter_binding_qualified": false,
+    "exact_family_raw_material_placeholder_slot_face_binding_observed": true,
+    "exact_family_skin_property_reference_or_name_storage_observed": true,
+    "explicit_read_only_preloaded_path_profile": true,
+    "external_material_file_existence_qualified": false,
+    "format": "has_fresh_sourceio_resolved_material_slot_skin_observation_1",
+    "material_files_or_B_opened": false,
+    "models": [
+      {
+        "faces": 11444,
+        "observed_stages": 4,
+        "raw_face_material_order_sha256": "beeb76f04bf618574ac6b7c39485828bc2871b0edc26fa786469f45414d66472",
+        "skin_storage": "MATERIAL_ID",
+        "slots": 2
+      },
+      {
+        "faces": 2790,
+        "observed_stages": 4,
+        "raw_face_material_order_sha256": "b81ac7e70785f9ba57b09a8c23e3b5fc0976f7e9e18c47443c160c052e867c0a",
+        "skin_storage": "MATERIAL_ID",
+        "slots": 2
+      }
+    ],
+    "native_body_parts": 2,
+    "native_material_records": 4,
+    "native_mesh_records": 4,
+    "native_model_records": 3,
+    "native_normal_fidelity_qualified": false,
+    "native_path_witness": {
+      "application_adoption_qualified": false,
+      "cache_materials_observed": 4,
+      "candidate_membership_ambiguous": 0,
+      "candidate_membership_matches": 4,
+      "candidate_membership_missing": 0,
+      "candidate_order_sha256": "0627617e7f8b9fe67a6c689ef6662f5544c795f146467ad8853403d10db95d8d",
+      "check_calls": 67,
+      "complete_check_calls": 59,
+      "current_reference_witness_sha256": "ea8c86728484d4082fcb15bdafe1210183443f61d10e273ceee0913b3af02c21",
+      "domain_material_records": 6,
+      "exporter_invoked": false,
+      "format": "has_finite_native_preloaded_material_path_witness_1",
+      "full_path_missing": 0,
+      "full_path_nonstring": 0,
+      "full_path_present": 4,
+      "full_path_string": 4,
+      "genuine_material_rows": 4,
+      "global_lookup_conflicts": 0,
+      "global_lookup_matches": 4,
+      "metadata_rows_observed": 4,
+      "native_candidates": 8,
+      "native_material_records": 4,
+      "native_or_historical_point_identity_qualified": false,
+      "native_path_provenance_sha256": "17ba1ccef57f7aa289579dc8e2c55513e804ec970c1a3ea59827d3502ec4977c",
+      "no_file_existence_claim": true,
+      "no_material_file_IO": true,
+      "no_metadata_writes": true,
+      "phase_observations": 8,
+      "preflight_admitted": true,
+      "provider_false": 4,
+      "provider_queries": 8,
+      "provider_true": 4,
+      "resolution_complete": true,
+      "resolved_cache_witness_sha256": "ee2ea461eed4a430e422c8591efde583b6ff160b9cc42e5e2b153650d9f20f34",
+      "resolver_bound": true,
+      "resource_or_normal_fidelity_qualified": false,
+      "returned_binding_observed": true,
+      "returned_observations": 1,
+      "selected_domain_memberships": 4,
+      "selected_material_records": 4,
+      "source_B_refs_observed": 4,
+      "status": "RETURNED_BINDING_OBSERVED"
+    },
+    "native_skin_families": 1,
+    "native_skin_references": 4,
+    "native_skin_switching_qualified": false,
+    "non_normal_semantic_equivalence_qualified": false,
+    "observed_faces": 14234,
+    "observed_models": 2,
+    "resolved_native_default_skin_equivalence_qualified": false,
+    "sourceio_raw_matches_candidate_default_skin_on_used_meshes": true,
+    "used_raw_mesh_material_count": 4
+  },
+  "material_library_appended": true,
+  "material_resources_loaded": true,
+  "metadata_candidate_sha256": "5e4e6aee49d41ad4710c724cdd18404b51d000827f26d2e00fa6d3faf7be0305",
+  "native_arrays_published": false,
+  "native_material_path_witness": {
+    "application_adoption_qualified": false,
+    "cache_materials_observed": 4,
+    "candidate_membership_ambiguous": 0,
+    "candidate_membership_matches": 4,
+    "candidate_membership_missing": 0,
+    "candidate_order_sha256": "0627617e7f8b9fe67a6c689ef6662f5544c795f146467ad8853403d10db95d8d",
+    "check_calls": 68,
+    "complete_check_calls": 60,
+    "current_reference_witness_sha256": "ea8c86728484d4082fcb15bdafe1210183443f61d10e273ceee0913b3af02c21",
+    "domain_material_records": 6,
+    "exporter_invoked": false,
+    "format": "has_finite_native_preloaded_material_path_witness_1",
+    "full_path_missing": 0,
+    "full_path_nonstring": 0,
+    "full_path_present": 4,
+    "full_path_string": 4,
+    "genuine_material_rows": 4,
+    "global_lookup_conflicts": 0,
+    "global_lookup_matches": 4,
+    "metadata_rows_observed": 4,
+    "native_candidates": 8,
+    "native_material_records": 4,
+    "native_or_historical_point_identity_qualified": false,
+    "native_path_provenance_sha256": "17ba1ccef57f7aa289579dc8e2c55513e804ec970c1a3ea59827d3502ec4977c",
+    "no_file_existence_claim": true,
+    "no_material_file_IO": true,
+    "no_metadata_writes": true,
+    "phase_observations": 8,
+    "preflight_admitted": true,
+    "provider_false": 4,
+    "provider_queries": 8,
+    "provider_true": 4,
+    "resolution_complete": true,
+    "resolved_cache_witness_sha256": "ee2ea461eed4a430e422c8591efde583b6ff160b9cc42e5e2b153650d9f20f34",
+    "resolver_bound": true,
+    "resource_or_normal_fidelity_qualified": false,
+    "returned_binding_observed": true,
+    "returned_observations": 1,
+    "selected_domain_memberships": 4,
+    "selected_material_records": 4,
+    "source_B_refs_observed": 4,
+    "status": "RETURNED_BINDING_OBSERVED"
+  },
+  "normal_fidelity_qualified": false,
+  "normal_transport_frame": {
+    "armature_world_identity": true,
+    "export_apply": false,
+    "export_yup": true,
+    "format": "has_actual_identity_source_to_yup_normal_frame_1",
+    "mesh_count": 2,
+    "mesh_world_identity": true,
+    "signed_axis_permutation": [
+      1,
+      3,
+      -2
+    ],
+    "six_foot_normalization_applied": false,
+    "source_coordinate_policy": "sourceio_mdl49_standalone_01905_identity_standard_vtx7_1",
+    "source_unit_conversion_changed": false
+  },
+  "observation": {
+    "application_adoption_qualified": false,
+    "carrier_or_exporter_binding_qualified": false,
+    "current_B_opened_or_relabelled": false,
+    "current_exact_family_ordered_weight_storage_observed": true,
+    "format": "has_fresh_sourceio_current_id_and_RNA_weight_observation_1",
+    "fresh_creation_chain_matches_independent_native_candidate": true,
+    "generic_weight_storage_qualified": false,
+    "historical_saved_B_native_causality_qualified": false,
+    "models": [
+      {
+        "corners": 8370,
+        "groups": 69,
+        "lod0_id_order_sha256": "124abfa549823b8f419d43c8188199a7530ec84681e6cd2f56ab31b3bac5ce42",
+        "observed_stages": 4,
+        "ordered_positive_source_calls": 1650,
+        "points": 1650,
+        "raw_id_order_sha256": "124abfa549823b8f419d43c8188199a7530ec84681e6cd2f56ab31b3bac5ce42"
+      },
+      {
+        "corners": 34332,
+        "groups": 69,
+        "lod0_id_order_sha256": "d556d66a4e55eb40f8cc9e08d3f28bb989351910ca6d96acdfa509f286f773ff",
+        "observed_stages": 4,
+        "ordered_positive_source_calls": 15962,
+        "points": 8011,
+        "raw_id_order_sha256": "d556d66a4e55eb40f8cc9e08d3f28bb989351910ca6d96acdfa509f286f773ff"
+      }
+    ],
+    "native_normal_fidelity_qualified": false,
+    "non_normal_semantic_equivalence_qualified": false,
+    "observed_new_corners": 42702,
+    "observed_new_models": 2,
+    "observed_new_points": 9661
+  },
+  "observer_ast_inverse": {
+    "observer_calls": 4,
+    "original_function_AST_restored": true,
+    "setter_sites": 1,
+    "validate_sites": 1
+  },
+  "operator_call_attempted": true,
+  "operator_preflight_observed": true,
+  "original_B_scene_opened": false,
+  "original_current_ID_RNA_controls_retained": true,
+  "original_importer_attribute_unchanged": true,
+  "original_source_normal_threshold": 2e-05,
+  "outer_physical_closure_verified_by_worker": false,
+  "owned_B_enumeration": {
+    "actual_id_census_unchanged": true,
+    "after_id_count": 35,
+    "all_destination_requests_empty": true,
+    "before_id_count": 35,
+    "destination_request_types": 36,
+    "format": "has_empty_library_enumeration_summary_2",
+    "id_collections": 39,
+    "source_catalogue_name_count": 34,
+    "source_catalogue_sha256": "401eb9d3f9dd34b462483a9cd5be0c94efe1c3126fd6c742b3f08f8c58f3eb43",
+    "source_id_types": 36,
+    "source_material_names_sha256": "070839dde1ba414c48cd2a15fb0e32a7432745a2f866fc20141dae2e1c9bc0c7",
+    "source_materials": 5
+  },
+  "owned_B_enumeration_attempted": true,
+  "owned_B_inspection": {
+    "B_dependency_closure_qualified": false,
+    "added_id_counts": {
+      "images": 2,
+      "libraries": 1,
+      "materials": 4
+    },
+    "after_id_count": 42,
+    "append_completed": true,
+    "append_requested": true,
+    "application_adoption_qualified": false,
+    "available_materials": 5,
+    "before_id_count": 35,
+    "blend_saved": false,
+    "exporter_invoked": false,
+    "exporter_qualified": false,
+    "external_filepath_retrieval_attempted": false,
+    "format": "has_material_only_library_inspection_summary_2",
+    "graph_metadata_sha256": "2f6b0c323e5a38b721efc2100f671a34b824b2bbdd7cabb8dc4c94207d729aac",
+    "image_buffer_getters_used": false,
+    "inspected_material_graphs": 4,
+    "material_binding_qualified": false,
+    "material_names_sha256": "c68563b541cf2b6f7f46da2e7ff18efb0e04eec8b582f98aa2b1c83d50ba80bf",
+    "native_or_historical_point_identity_qualified": false,
+    "non_normal_semantic_equivalence_qualified": false,
+    "normal_fidelity_qualified": false,
+    "owned_source_library_validation_attempted": true,
+    "packed_bytes_copied": 1709130,
+    "packed_observation_sha256": "9921c77e18dcf0bdd61592fae8e7341b49c501e9c7cc9a4c4fdee008c0c5b366",
+    "prospective_rgba_f32_bytes": 83886080,
+    "reached_images": 2,
+    "requested_materials": 4,
+    "resource_equivalence_qualified": false,
+    "retained_library_filepath_sha256": "4c11107b3a443bb8678be6fe08ec8ed29bfd220c52e71cdf010617ca03b899b9",
+    "retained_owned_source_libraries": 1,
+    "retained_owned_source_library_verified": true,
+    "shared_image_references": 2,
+    "status": "INSPECTED_MATERIAL_ONLY_OWNED_LIBRARY_AND_PACKED_PNG_HEADERS_2",
+    "surviving_originals_unchanged": true,
+    "transient_ID_or_C_level_read_absence_qualified": false,
+    "unrequested_catalogue_materials": 1
+  },
+  "owned_B_material_append_attempted": true,
+  "owned_B_materials_precede_native_import": true,
+  "owned_B_resources_unchanged_after_native_import": true,
+  "phase": "ONE_QUALIFIED_CARRIER_EXPORT",
+  "preloaded_material_query_checks": true,
+  "preloaded_resolver_runtime_attestation": {
+    "actual_globals_and_aliases_equal": true,
+    "complete_module_code_equal": true,
+    "format": "has_preloaded_material_resolver_runtime_attestation_1",
+    "genuine_functions": 3,
+    "no_resolver_replacement": true,
+    "original_importer_attribute_unchanged": true,
+    "source_catalogue_helpers": 2
+  },
+  "pure_observation_IO_scope": "Ledger and binder perform no B or file IO; this outer host appended owned B Materials",
+  "readonly_preloaded_material_adaptation": {
+    "format": "has_readonly_preloaded_material_adaptation_1",
+    "native_imports_before_append": 0,
+    "no_material_renames": true,
+    "no_material_swaps": true,
+    "no_metadata_writes": true
+  },
+  "resolved_native_default_skin_equivalence_qualified": false,
+  "root_attested_hash_only_provenance": {
+    "blend": {
+      "bytes": 2423175,
+      "sha256": "ead1f1913812593abd69e353fed375944a15f280738784886fcef7fda3ee65c6"
+    },
+    "glb": {
+      "bytes": 2322644,
+      "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d"
+    },
+    "parameters": {
+      "bytes": 159684,
+      "sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed"
+    }
+  },
+  "scene_or_registration_restoration_failed": false,
+  "sourceio_catalogue_files": 574,
+  "sourceio_catalogue_summary_sha256": "b89c38922a033a21da0f3b9901d0a02417a8663903dcc1e04287c7b8dc607523",
+  "sourceio_image_datablocks_created": 0,
+  "sourceio_import_executed": true,
+  "sourceio_material_files_opened": 0,
+  "status": "REFUSED"
+}

@@ -1,0 +1,132 @@
+{
+  "all_root_preservation_checks_passed": true,
+  "application_adoption_qualified": false,
+  "carrier_bytes": 2361932,
+  "carrier_sha256": "44d6c00f80068a83b43cb9007de40a729418ed10b553f92738aa32e6b1dc67a5",
+  "current_image_cache_defect_resolved": true,
+  "evidence": {
+    "comparison": {
+      "bytes": 4178,
+      "mtime_ns": 1795228461830971700,
+      "sha256": "3f2005e8b1dcfa07e0e161d2796cee88d5da67fe3173c7888897259155637618"
+    },
+    "final_audit": {
+      "bytes": 2879,
+      "mtime_ns": 1795228463340591200,
+      "sha256": "3f94eea14a1683da00805eb0b64482002a3e4d85e1b6104166a57b143599ecf0"
+    },
+    "worker": {
+      "bytes": 28741,
+      "mtime_ns": 1795228459736722300,
+      "sha256": "d152081702ff87484234d98886ba08afd702468a96cfd404b357d0a912eeaeef"
+    }
+  },
+  "format": "has_root_closed_carrier_v11_facts_1",
+  "ordinary_operator_invocations": 1,
+  "owned_lock_retained": false,
+  "physical_owned_processes": 0,
+  "private_native_arrays_or_images_published": false,
+  "raw_normal": {
+    "all_native_source_points_covered": true,
+    "application_adoption_qualified": false,
+    "carrier_sha256": "44d6c00f80068a83b43cb9007de40a729418ed10b553f92738aa32e6b1dc67a5",
+    "carrier_words_equal_independent_observed_relation": true,
+    "compared_components": 28983,
+    "current_or_historical_B_identity_inferred": false,
+    "exported_normal_rows": 9661,
+    "format": "has_exact_carrier_native_normal_measurement_1",
+    "frame_sha256": "e32931f316610ec0500ab1075ad64b04005bef3a78b44792609ef619296df56c",
+    "generic_source_or_renderer_fidelity_qualified": false,
+    "measured": true,
+    "native_source_identity_sha256": "637a7508a694d4be0d8fc40ab1dba2e81f7865404080bb746c2eba64cda29634",
+    "nearest_or_numeric_identity_matching_used": false,
+    "normalization_or_repair_applied": false,
+    "passed": false,
+    "primitives": 4,
+    "signed_axis_permutation": [
+      1,
+      3,
+      -2
+    ],
+    "source_normal_max_component_error": 0.0012078061699867249,
+    "source_normal_max_euclidean_error": 0.00121654672362075,
+    "source_normal_metric": "raw_unnormalized_euclidean_vector_distance",
+    "source_normal_threshold": 2e-05,
+    "source_points": 9661,
+    "unmatched_source_points": 0
+  },
+  "resources": {
+    "cache_observation": {
+      "actual_export_or_native_fidelity_qualified": false,
+      "caches": {
+        "buffer_view": {
+          "calls": 4,
+          "entries": 4,
+          "hits": 0,
+          "misses": 4
+        },
+        "gather_image": {
+          "calls": 4,
+          "entries": 4,
+          "hits": 0,
+          "misses": 4
+        },
+        "gather_texture": {
+          "calls": 4,
+          "entries": 4,
+          "hits": 0,
+          "misses": 4
+        },
+        "make_image": {
+          "calls": 4,
+          "entries": 2,
+          "hits": 2,
+          "misses": 2
+        },
+        "texture_info": {
+          "calls": 12,
+          "entries": 12,
+          "hits": 0,
+          "misses": 12
+        },
+        "uri": {
+          "calls": 4,
+          "entries": 4,
+          "hits": 0,
+          "misses": 4
+        }
+      },
+      "calls": 32,
+      "format": "has_observed_shared_image_cache_relation_1",
+      "image_bindings": 4,
+      "observed_encoded_buffer_bytes": 3418260,
+      "observed_negative_texture_probe_hits": 0,
+      "observed_negative_texture_probe_misses": 8,
+      "unique_glTF_images": 2
+    },
+    "complete_shader_evaluator": false,
+    "empty_material_extension_profile": "has_pinned_empty_default_material_extensions_1",
+    "extensions_removed_by_this_observer": false,
+    "final_serialized_image_extensions_absent": true,
+    "final_serialized_material_extensions_absent": true,
+    "final_serialized_texture_extensions_absent": true,
+    "final_used_and_required_extensions_absent": true,
+    "format": "has_narrow_shared_actual_resource_reference_observation_3",
+    "full_semantic_equivalence": false,
+    "image_bindings": 4,
+    "images": 2,
+    "materials": 4,
+    "observed_empty_extension_wrappers": 24,
+    "resource_global_unreachability_proved": false,
+    "serialized_resource_extensions_removed_by_this_observer": false,
+    "source_images": 2,
+    "textures": 4
+  },
+  "root_launcher_reaped": true,
+  "root_preservation_checks": 48,
+  "source_head": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+  "status": "ACTUAL_EXPORT_AND_NON_NORMAL_PASS_RAW_NORMAL_FAIL",
+  "strict_non_NORMAL_passed": true,
+  "whole_export_qualified": false,
+  "worker_inputs_preserved": 605
+}

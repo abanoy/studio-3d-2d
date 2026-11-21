@@ -1,0 +1,28 @@
+{
+  "format": "has_owned_image_extension_lifecycle_bases_1",
+  "sources": [
+    {
+      "path": "bases/resource_gate_proposal.py",
+      "bytes": 54511,
+      "sha256": "f892ade8fc83d198261edd2fbcdd608ef0cb77ba41a3f1cf52b7705de4fdfea7"
+    },
+    {
+      "path": "bases/shared_image_cache_proposal.py",
+      "bytes": 34089,
+      "sha256": "b1c0862c21f5e7f86ca889107c4530b68eb624196a83256333ac379f06712b1e"
+    },
+    {
+      "path": "bases/test_make_image_return_diagnostic.py",
+      "bytes": 9573,
+      "sha256": "fab1e85b5913d994624b76b4904f1073436da8ebc9f0df7198d6bf305f7f5b66"
+    }
+  ],
+  "source_dispatcher_sha256": "25d27cebbfce855dd5ac34928582ac5ab7f0e84d9a1d1862492ba3b82f523186",
+  "miss_extensions_none_unchanged": true,
+  "hit_only_prior_owned_exact_empty_state": true,
+  "make_image_admission_changed": true,
+  "diagnostic_test_claim_assertions_changed": 2,
+  "expected_cpu_methods": 159,
+  "author_executed_tests": false,
+  "actual_successor_export_run": false
+}

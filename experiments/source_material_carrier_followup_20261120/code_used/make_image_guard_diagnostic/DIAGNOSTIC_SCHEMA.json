@@ -1,0 +1,49 @@
+{
+  "format": "has_make_image_return_diagnostic_schema_1",
+  "report_format": "has_strict_make_image_return_failure_observation_1",
+  "owner": "owned SharedImageCaches.public_make_image_failure plain field",
+  "top": {
+    "format": "exact report_format",
+    "status": [
+      "OBSERVED",
+      "UNAVAILABLE"
+    ],
+    "failures": "exact int1..128",
+    "failure_count_capped": "exact bool",
+    "first_refusal_code": "shared_make_image_return_differs",
+    "observation": "None only when UNAVAILABLE, else exact BOOL-only keys below",
+    "original_strict_failure_preserved": true,
+    "make_image_admission_changed": false,
+    "resource_equivalence_qualified": false
+  },
+  "booleans": [
+    "cache_hit",
+    "expected_buffer_is_binary_data",
+    "expected_buffer_is_retained",
+    "result_is_expected_image_type",
+    "result_buffer_is_expected_buffer",
+    "result_mime_is_png",
+    "result_uri_is_none",
+    "result_extensions_is_none",
+    "result_extras_is_none",
+    "result_name_matches_frame",
+    "result_fields_observed",
+    "result_buffer_is_binary_data",
+    "result_buffer_is_exact_int",
+    "result_buffer_is_none",
+    "result_buffer_is_incoming_buffer",
+    "result_buffer_is_stored_key_buffer",
+    "result_buffer_is_retained",
+    "result_buffer_hash_matches_authorized_source",
+    "incoming_buffer_is_retained",
+    "incoming_buffer_hash_matches_authorized_source",
+    "stored_buffer_is_binary_data",
+    "stored_buffer_is_retained",
+    "stored_buffer_hash_matches_authorized_source",
+    "expected_buffer_hash_matches_authorized_source",
+    "authorized_source_ticket_observed",
+    "all_strict_return_predicates_pass"
+  ],
+  "first_observation_retained": true,
+  "actual_V9_predicate_failure_identified_by_this_source": false
+}

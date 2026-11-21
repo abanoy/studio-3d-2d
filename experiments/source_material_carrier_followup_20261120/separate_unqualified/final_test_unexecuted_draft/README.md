@@ -1,0 +1,1 @@
+Unexecuted authoring predecessor. Peer review caught JavaScript replacement-string suffix expansion corrupting one exact regex assertion line before any test execution. The successor restores the intended exact assertion using direct concatenation. This source was never executed or qualified.

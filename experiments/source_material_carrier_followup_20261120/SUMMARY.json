@@ -1,0 +1,138 @@
+{
+  "format": "has_source_material_carrier_followup_checkpoint_1",
+  "date": "2026-11-20",
+  "status": "ACTUAL_IMAGE_EXPORT_AND_CPU_NORMAL_DERIVATIVE_PASSED_UNADOPTED",
+  "scope": {
+    "format": "has_source_carrier_followup_progress_1",
+    "date": "2026-11-20",
+    "status": "ACTUAL_IMAGE_EXPORT_AND_CPU_NORMAL_DERIVATIVE_PASSED_UNADOPTED",
+    "source_context_head": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+    "functional_source_files_preserved": 1061,
+    "formal_statuses": 62,
+    "implementation_score": [
+      52,
+      54
+    ],
+    "acceptance_score": [
+      55,
+      62
+    ],
+    "formal_statuses_and_scores_unchanged": true,
+    "CPU_current_scoped_methods": 448,
+    "CPU_scopes": {
+      "host": 164,
+      "shared_resource_lifecycle": 159,
+      "carrier": 52,
+      "cold_readiness": 40,
+      "raw_L2_normal_oracle": 20,
+      "compiler_context": 13
+    },
+    "historical_423_and_included_predecessors_not_additive": true,
+    "separate_not_additive": {
+      "sealed_normal_corrector_methods": 16,
+      "corrected_measurement_methods": 5,
+      "production_adapter_methods": 20,
+      "production_adapter_application_adoption": false
+    },
+    "raw_V11": {
+      "status": "ACTUAL_EXPORT_AND_NON_NORMAL_PASS_RAW_NORMAL_FAIL",
+      "stage": "output/source-material-carrier-run-1795228448950398100",
+      "carrier_bytes": 2361932,
+      "carrier_sha256": "44d6c00f80068a83b43cb9007de40a729418ed10b553f92738aa32e6b1dc67a5",
+      "operator_invocations": 1,
+      "source_points": 9661,
+      "primitives": 4,
+      "source_images": 2,
+      "textures": 4,
+      "materials": 4,
+      "make_image_misses": 2,
+      "make_image_hits": 2,
+      "negative_texture_probes": 8,
+      "strict_non_NORMAL_passed": true,
+      "final_image_texture_material_extensions_absent": true,
+      "raw_normal_metric": "raw_unnormalized_euclidean_vector_distance",
+      "raw_normal_threshold": 0.00002,
+      "raw_normal_max_euclidean_error": 0.00121654672362075,
+      "raw_normal_passed": false,
+      "overall_carrier_qualified": false,
+      "authenticated_input_identities": 605,
+      "root_preservation_checks": 48,
+      "all_preservation_checks_true": true,
+      "root_reaped": true,
+      "physical_owned_processes": 0,
+      "owned_lock_retained": false
+    },
+    "conditional_derivative": {
+      "status": "CPU_DERIVATIVE_CONTRACTS_PASSED_UNADOPTED",
+      "result": "output/source-native-normal-correction-1795228886305305200/PUBLIC_CORRECTION.json",
+      "bytes": 2478804,
+      "sha256": "b8436dea1d13a7cb4632c37c50b4cab123616ec574720fe4e764b844c5293e71",
+      "exact_source_normal_words": true,
+      "source_points": 9661,
+      "normal_rows": 9661,
+      "raw_L2_maximum": 0,
+      "raw_L2_threshold": 0.00002,
+      "passed": true,
+      "original_to_raw_strict_non_NORMAL_replayed": true,
+      "raw_to_corrected_sealed_preservation": true,
+      "all_original_BIN_bytes_preserved": true,
+      "scene_nodes_skins_type_exact": true,
+      "corrected_closed_semantic_comparator_claimed": false,
+      "compositional_non_NORMAL_proof_only": true,
+      "originals6_and_request_inputs10_preserved": true,
+      "bone_physics_binding_requalification_required": true,
+      "application_adoption_qualified": false
+    },
+    "publication_baseline": {
+      "main": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+      "remote_exact_files": 529,
+      "remote_exact_bytes": 13503036,
+      "Root_independent_remote_SHA256_GitSHA1_length_Node_crypto_main_ref_verified": true
+    },
+    "owned_stage_cleanup": {
+      "removed_stages": 3,
+      "files": 57,
+      "logical_bytes": 13667249,
+      "physical_space_gain_measured": false,
+      "originals_preserved": true,
+      "V11_stage_retained_for_correction": true
+    },
+    "preserved_preexisting_tracked_output": {
+      "files": 171,
+      "bytes": 4411867,
+      "baseline_revision": "5f6a0efba5205f2b1ad4dda73271d968993db4c7",
+      "baseline_sha256": "c40dfc182df6907acf1be74f46f49441e0c2a5f1ee388bb3a4e0c246f1b448e3",
+      "exclude_from_publication_index": true
+    },
+    "new_packet": "experiments/source_material_carrier_followup_20261120",
+    "application_adoption_qualified": false,
+    "historical_saved_B_point_identity_inferred": false,
+    "private_arrays_images_models_raw_GLB_or_relation_published": false,
+    "separate_live_bridge_preparation": {
+      "original_source_preserved": true,
+      "original_cpu_methods": 19,
+      "original_cpu_passed": 16,
+      "original_cpu_errors": 3,
+      "fixture_error": "missing fake bpy.types before operator",
+      "test_only_successor_methods": 19,
+      "test_only_successor_passed": true,
+      "production_source_unchanged": true,
+      "actual_live_host_qualified": false,
+      "application_adoption_qualified": false,
+      "included_in_448": false
+    }
+  },
+  "scope_note": "V11 raw carrier remains failed; separate CPU derivative exactword/L2 passes, application and corrected bone/physics binding unadopted.",
+  "live_candidate_preparation": {
+    "original19_result": "16PASS_3_FIXTURE_ERRORS",
+    "successor19_result": "PASS",
+    "fixture_only_added_bpy_types": true,
+    "production_code_unchanged": true,
+    "actual_host_qualified": false,
+    "application_adoption_qualified": false,
+    "included_in_448": false
+  },
+  "historical_failures_and_predecessors_preserved": true,
+  "private_asset_and_array_payloads_excluded": true,
+  "tracked_output171_excluded_from_index": true
+}

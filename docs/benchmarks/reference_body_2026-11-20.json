@@ -2,6 +2,143 @@
   "format": "has_reference_body_scoped_packet_1",
   "date_local": "2026-11-20",
   "status": "FULL_PASS_BODY_COMPLETE_RAW_MATERIAL_BINDING_AND_B_INSPECTION_OBSERVED",
+  "latest_source_carrier_followup": {
+    "format": "has_source_carrier_followup_progress_1",
+    "date": "2026-11-20",
+    "status": "ACTUAL_IMAGE_EXPORT_AND_CPU_NORMAL_DERIVATIVE_PASSED_UNADOPTED",
+    "source_context_head": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+    "functional_source_files_preserved": 1061,
+    "formal_statuses": 62,
+    "implementation_score": [
+      52,
+      54
+    ],
+    "acceptance_score": [
+      55,
+      62
+    ],
+    "formal_statuses_and_scores_unchanged": true,
+    "CPU_current_scoped_methods": 448,
+    "CPU_scopes": {
+      "host": 164,
+      "shared_resource_lifecycle": 159,
+      "carrier": 52,
+      "cold_readiness": 40,
+      "raw_L2_normal_oracle": 20,
+      "compiler_context": 13
+    },
+    "historical_423_and_included_predecessors_not_additive": true,
+    "separate_not_additive": {
+      "sealed_normal_corrector_methods": 16,
+      "corrected_measurement_methods": 5,
+      "production_adapter_methods": 20,
+      "production_adapter_application_adoption": false
+    },
+    "raw_V11": {
+      "status": "ACTUAL_EXPORT_AND_NON_NORMAL_PASS_RAW_NORMAL_FAIL",
+      "stage": "output/source-material-carrier-run-1795228448950398100",
+      "carrier_bytes": 2361932,
+      "carrier_sha256": "44d6c00f80068a83b43cb9007de40a729418ed10b553f92738aa32e6b1dc67a5",
+      "operator_invocations": 1,
+      "source_points": 9661,
+      "primitives": 4,
+      "source_images": 2,
+      "textures": 4,
+      "materials": 4,
+      "make_image_misses": 2,
+      "make_image_hits": 2,
+      "negative_texture_probes": 8,
+      "strict_non_NORMAL_passed": true,
+      "final_image_texture_material_extensions_absent": true,
+      "raw_normal_metric": "raw_unnormalized_euclidean_vector_distance",
+      "raw_normal_threshold": 0.00002,
+      "raw_normal_max_euclidean_error": 0.00121654672362075,
+      "raw_normal_passed": false,
+      "overall_carrier_qualified": false,
+      "authenticated_input_identities": 605,
+      "root_preservation_checks": 48,
+      "all_preservation_checks_true": true,
+      "root_reaped": true,
+      "physical_owned_processes": 0,
+      "owned_lock_retained": false
+    },
+    "conditional_derivative": {
+      "status": "CPU_DERIVATIVE_CONTRACTS_PASSED_UNADOPTED",
+      "result": "output/source-native-normal-correction-1795228886305305200/PUBLIC_CORRECTION.json",
+      "bytes": 2478804,
+      "sha256": "b8436dea1d13a7cb4632c37c50b4cab123616ec574720fe4e764b844c5293e71",
+      "exact_source_normal_words": true,
+      "source_points": 9661,
+      "normal_rows": 9661,
+      "raw_L2_maximum": 0,
+      "raw_L2_threshold": 0.00002,
+      "passed": true,
+      "original_to_raw_strict_non_NORMAL_replayed": true,
+      "raw_to_corrected_sealed_preservation": true,
+      "all_original_BIN_bytes_preserved": true,
+      "scene_nodes_skins_type_exact": true,
+      "corrected_closed_semantic_comparator_claimed": false,
+      "compositional_non_NORMAL_proof_only": true,
+      "originals6_and_request_inputs10_preserved": true,
+      "bone_physics_binding_requalification_required": true,
+      "application_adoption_qualified": false
+    },
+    "publication_baseline": {
+      "main": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+      "remote_exact_files": 529,
+      "remote_exact_bytes": 13503036,
+      "Root_independent_remote_SHA256_GitSHA1_length_Node_crypto_main_ref_verified": true
+    },
+    "owned_stage_cleanup": {
+      "removed_stages": 3,
+      "files": 57,
+      "logical_bytes": 13667249,
+      "physical_space_gain_measured": false,
+      "originals_preserved": true,
+      "V11_stage_retained_for_correction": true
+    },
+    "preserved_preexisting_tracked_output": {
+      "files": 171,
+      "bytes": 4411867,
+      "baseline_revision": "5f6a0efba5205f2b1ad4dda73271d968993db4c7",
+      "baseline_sha256": "c40dfc182df6907acf1be74f46f49441e0c2a5f1ee388bb3a4e0c246f1b448e3",
+      "exclude_from_publication_index": true
+    },
+    "new_packet": "experiments/source_material_carrier_followup_20261120",
+    "application_adoption_qualified": false,
+    "historical_saved_B_point_identity_inferred": false,
+    "private_arrays_images_models_raw_GLB_or_relation_published": false,
+    "separate_live_bridge_preparation": {
+      "original_source_preserved": true,
+      "original_cpu_methods": 19,
+      "original_cpu_passed": 16,
+      "original_cpu_errors": 3,
+      "fixture_error": "missing fake bpy.types before operator",
+      "test_only_successor_methods": 19,
+      "test_only_successor_passed": true,
+      "production_source_unchanged": true,
+      "actual_live_host_qualified": false,
+      "application_adoption_qualified": false,
+      "included_in_448": false
+    },
+    "packet": {
+      "path": "experiments/source_material_carrier_followup_20261120",
+      "files": 932,
+      "bytes": 16945707,
+      "CONTENTS_sha256": "7371d356ac707ec7bcf633ca160c30192fcaf195fc4a3ec83628ff27cd83c246",
+      "SUMMARY_sha256": "de1afe16f57e9bbbc3482d276fe3aba839f7e661bb9fccaf2c2cfad82bb77d32",
+      "frozen": true,
+      "new_remote_proof_claimed": false
+    },
+    "control_packet": {
+      "path": "experiments/source_material_carrier_followup_checkpoint_20261120",
+      "files": 4,
+      "bytes": 14799,
+      "CONTENTS_sha256": "e288695c2c653ad449dacc25211523822f974fde29ea1ad06cbe6b376e147dcf",
+      "SUMMARY_sha256": "4f31d0b74d367960b2f1111229d4781ed9dc6c2651b7c41563ed56a5e0999138",
+      "protected_tracked_output_files": 171
+    }
+  },
   "latest_source_carrier_progress": {
     "format": "has_source_carrier_progress_1",
     "status": "CLOSED_V5_OPERATOR_REFUSED_ABSENT_TEXTURE_PROBE_NO_GLB",
@@ -367,7 +504,7 @@
       "main_ref_matches": true,
       "receipt_sha256": "05ba758673bb8da33a0253da638936732c08ed8b07f302ee7a598dc9eeca05d3"
     },
-    "strict_normal_threshold": 2E-05,
+    "strict_normal_threshold": 0.00002,
     "resource_non_NORMAL_normal_export_and_adoption_gates_unchanged": true,
     "formal62_statuses_52of54_55of62_scores_unchanged": true,
     "new_two_packet_checkpoint_remote_proof_claimed": false
@@ -512,7 +649,7 @@
       ],
       "new_combined_or_shared_exporter_code_included": false
     },
-    "strict_normal_threshold": 2E-05,
+    "strict_normal_threshold": 0.00002,
     "non_NORMAL_resource_export_and_adoption_gates_unchanged": true,
     "formal_62_statuses_and_52_of_54_55_of_62_scores_unchanged": true
   },
@@ -540,7 +677,10 @@
     "receipt_provenance_verified": true,
     "all_private_jobs_isolated_closed": true,
     "main_report_sha256": "50ad195e21e14242e1f6fc5ce4279987c768473d36f9f9e25f982adbd741ca72",
-    "decoded_audio_onsets_seconds": [1.0, 1.0],
+    "decoded_audio_onsets_seconds": [
+      1,
+      1
+    ],
     "WASAPI_RMS": 5658.2992336,
     "remote_exact_files": 24,
     "remote_exact_bytes": 3739119,
@@ -610,7 +750,7 @@
     "B_dependency_closure_qualified": false,
     "non_NORMAL_B_semantic_equivalence_qualified": false,
     "normal_fidelity_qualified": false,
-    "original_strict_normal_threshold": 2e-05,
+    "original_strict_normal_threshold": 0.00002,
     "carrier_written_or_qualified": false,
     "exporter_invoked_or_qualified": false,
     "blend_saved": false,
@@ -658,7 +798,10 @@
       "actual_failed_run_folder": "output/source-library-enumeration-run-1795212892760261100",
       "actual_library_qualified": false,
       "CENSUS2_successor_status": "ACTUAL_PASS_SEPARATE_CENSUS2_PACKET",
-      "CENSUS2_complete_B_catalogue_bounds": [1, 256],
+      "CENSUS2_complete_B_catalogue_bounds": [
+        1,
+        256
+      ],
       "native_four_materials_not_complete_B_catalogue": true,
       "packet": "experiments/source_material_library_20261120",
       "packet_files": 25,
@@ -775,7 +918,7 @@
     "actual_native_ID_and_RNA_weight_probe_outcome": "CURRENT_IDS_AND_ORDERED_RNA_WEIGHTS_MATCHED",
     "actual_SDK_API_qualified": false,
     "historical_B_normal_export_or_adoption_qualified": false,
-    "source_normal_threshold_unchanged": 2e-05,
+    "source_normal_threshold_unchanged": 0.00002,
     "public_staging": "experiments/source_current_native_ids_20261120",
     "Source_native_packet_status": "FROZEN_CURRENT86_CPU_AND_EXACT_FRESH_IDS_RNA_ACTUAL_SUCCESS",
     "Source_native_packet_files": 148,
@@ -866,11 +1009,11 @@
       "failures": 0,
       "fixed_tick_cases": 9,
       "max_basis_error": 0.000457000103779137,
-      "max_collision_error": 1.22153176107531e-06,
-      "max_pose_angle_error": 3.55389531403834e-07,
-      "max_pose_world_error": 1.56455098476727e-06,
-      "max_position_error": 1.72338866377686e-06,
-      "max_relative_basis_error": 5.31326168129453e-06
+      "max_collision_error": 0.00000122153176107531,
+      "max_pose_angle_error": 3.55389531403834e-7,
+      "max_pose_world_error": 0.00000156455098476727,
+      "max_position_error": 0.00000172338866377686,
+      "max_relative_basis_error": 0.00000531326168129453
     },
     "physics_recording_unit": {
       "checks": 17,
@@ -886,14 +1029,14 @@
       "metrics": {
         "end_mean_y": 1.8959646284580232,
         "initial_binding_error": {
-          "basis": 0.0,
+          "basis": 0,
           "finite": true,
-          "position": 2.384258550591767e-07
+          "position": 2.384258550591767e-7
         },
         "live_binding_error": {
-          "basis": 0.0,
+          "basis": 0,
           "finite": true,
-          "position": 2.3842039809096605e-07
+          "position": 2.3842039809096605e-7
         },
         "physical_bodies": 20,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
@@ -904,20 +1047,20 @@
     },
     {
       "role": "vrm0",
-      "scale": 1.0,
+      "scale": 1,
       "writer_checks": 23,
       "cold_reader_checks": 9,
       "metrics": {
         "end_mean_y": 2.4494016289711,
         "initial_binding_error": {
-          "basis": 0.0,
+          "basis": 0,
           "finite": true,
-          "position": 2.385422419592942e-07
+          "position": 2.385422419592942e-7
         },
         "live_binding_error": {
-          "basis": 0.0,
+          "basis": 0,
           "finite": true,
-          "position": 2.3848406272009015e-07
+          "position": 2.3848406272009015e-7
         },
         "physical_bodies": 20,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
@@ -928,20 +1071,20 @@
     },
     {
       "role": "vrm0",
-      "scale": 2.0,
+      "scale": 2,
       "writer_checks": 23,
       "cold_reader_checks": 9,
       "metrics": {
         "end_mean_y": 3.556274890899658,
         "initial_binding_error": {
-          "basis": 0.0,
+          "basis": 0,
           "finite": true,
-          "position": 4.770844839185884e-07
+          "position": 4.770844839185884e-7
         },
         "live_binding_error": {
           "basis": 9.18988458162099e-19,
           "finite": true,
-          "position": 4.769681254401803e-07
+          "position": 4.769681254401803e-7
         },
         "physical_bodies": 20,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
@@ -958,14 +1101,14 @@
       "metrics": {
         "end_mean_y": 1.8949950277805327,
         "initial_binding_error": {
-          "basis": 2.1490760104825313e-07,
+          "basis": 2.1490760104825313e-7,
           "finite": true,
-          "position": 2.384258550591767e-07
+          "position": 2.384258550591767e-7
         },
         "live_binding_error": {
-          "basis": 1.8431718729061686e-07,
+          "basis": 1.8431718729061686e-7,
           "finite": true,
-          "position": 2.3868037146712595e-07
+          "position": 2.3868037146712595e-7
         },
         "physical_bodies": 20,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
@@ -976,20 +1119,20 @@
     },
     {
       "role": "vrm1",
-      "scale": 1.0,
+      "scale": 1,
       "writer_checks": 23,
       "cold_reader_checks": 9,
       "metrics": {
         "end_mean_y": 2.4474623084068297,
         "initial_binding_error": {
-          "basis": 4.2981520209650625e-07,
+          "basis": 4.2981520209650625e-7,
           "finite": true,
-          "position": 4.768953658640385e-07
+          "position": 4.768953658640385e-7
         },
         "live_binding_error": {
-          "basis": 3.686343745812337e-07,
+          "basis": 3.686343745812337e-7,
           "finite": true,
-          "position": 2.3870944687587325e-07
+          "position": 2.3870944687587325e-7
         },
         "physical_bodies": 20,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
@@ -1000,20 +1143,20 @@
     },
     {
       "role": "vrm1",
-      "scale": 2.0,
+      "scale": 2,
       "writer_checks": 23,
       "cold_reader_checks": 9,
       "metrics": {
         "end_mean_y": 3.552396035194397,
         "initial_binding_error": {
-          "basis": 8.596304041930125e-07,
+          "basis": 8.596304041930125e-7,
           "finite": true,
-          "position": 4.873300554208981e-07
+          "position": 4.873300554208981e-7
         },
         "live_binding_error": {
-          "basis": 7.372687491624674e-07,
+          "basis": 7.372687491624674e-7,
           "finite": true,
-          "position": 4.77949981814163e-07
+          "position": 4.77949981814163e-7
         },
         "physical_bodies": 20,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
@@ -1086,7 +1229,7 @@
       "case": "corrected parent geometry but cold path assumption",
       "checks": 14,
       "failures": 1,
-      "world_root_error_metres": 5.364418029785156e-07,
+      "world_root_error_metres": 5.364418029785156e-7,
       "folder": "output/body-parent-fixed-1795193171286588400"
     },
     {
@@ -1120,16 +1263,16 @@
         "parent_cold_reader": 6
       },
       "parent_metrics": {
-        "maximum_live_root_error": 5.364418029785156e-07,
-        "maximum_recorded_world_root_error": 5.364418029785156e-07,
+        "maximum_live_root_error": 5.364418029785156e-7,
+        "maximum_recorded_world_root_error": 5.364418029785156e-7,
         "parent_motion": 2.0822665691375732,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
-        "reopened_world_root_error": 5.364418029785156e-07,
+        "reopened_world_root_error": 5.364418029785156e-7,
         "samples": 13,
         "ticks": 116
       },
       "parent_cold_metrics": {
-        "cold_recorded_world_root_error": 5.364418029785156e-07,
+        "cold_recorded_world_root_error": 5.364418029785156e-7,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120"
       },
       "exact_packed_authored_definitions": 4,
@@ -1147,16 +1290,16 @@
         "parent_cold_reader": 6
       },
       "parent_metrics": {
-        "maximum_live_root_error": 5.364418029785156e-07,
-        "maximum_recorded_world_root_error": 5.364418029785156e-07,
+        "maximum_live_root_error": 5.364418029785156e-7,
+        "maximum_recorded_world_root_error": 5.364418029785156e-7,
         "parent_motion": 2.0822665691375732,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
-        "reopened_world_root_error": 5.364418029785156e-07,
+        "reopened_world_root_error": 5.364418029785156e-7,
         "samples": 13,
         "ticks": 116
       },
       "parent_cold_metrics": {
-        "cold_recorded_world_root_error": 5.364418029785156e-07,
+        "cold_recorded_world_root_error": 5.364418029785156e-7,
         "project_root": "C:/a/Programming/cloudflare/has-body-addition-20261120"
       },
       "exact_packed_authored_definitions": 4,

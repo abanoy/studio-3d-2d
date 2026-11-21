@@ -1,0 +1,121 @@
+{
+  "format": "has_live_known_native_normal_bridge_candidate_preparation_1",
+  "status": "AUTHORED_UNRUN_NOT_ADOPTED",
+  "original_bridge": {
+    "path": "tools/blender_source_bridge.py",
+    "bytes": 28737,
+    "sha256": "d8c8c76f53a567ecc8682ef7d0b5dd8d914118989a45e2b9020c4d8c3edd9f3d"
+  },
+  "candidate": {
+    "bridge": {
+      "bytes": 30508,
+      "sha256": "4164cb6e264bfac1e3d7e6e9426370398eb6828ffe49735334893aff64f7f633"
+    },
+    "module": {
+      "bytes": 29852,
+      "sha256": "9e79cbb74a5d59707f58fdb042b6ea4033269459582e73d20d7b0381303cfbcf"
+    }
+  },
+  "toolkit_entries": {
+    "creation_support": {
+      "file": "creation_support.py",
+      "bytes": 72518,
+      "sha256": "2c890e5065203473802fd799d21f274eb6d4c8d0c4644d8ecf767b411afd58ea"
+    },
+    "current_id_ledger": {
+      "file": "current_id_ledger.py",
+      "bytes": 14885,
+      "sha256": "ab2d0d3076f63d6a398b209a5a39c2334f3b00664c0fa38d152d4587a54ffee9"
+    },
+    "native_point_expectation": {
+      "file": "native_point_expectation.py",
+      "bytes": 27615,
+      "sha256": "cbb4eca98a6cf5045211dc10bd8e060b79492ec306d61a4d29679fc0d5cc184d"
+    },
+    "weight_policy": {
+      "file": "weight_policy.py",
+      "bytes": 20860,
+      "sha256": "f838e0d893969aa1ad884a1c1d92e28ba019454f313632855f2a33c55fc3415c"
+    },
+    "import_instrumentation": {
+      "file": "import_instrumentation.py",
+      "bytes": 3306,
+      "sha256": "361fcad3dbff79bfd5367cd71ac5a769fc8155d6f38a1b061d5ce6e631f5a895"
+    },
+    "normal_export_adapter": {
+      "file": "normal_export_adapter.py",
+      "bytes": 23576,
+      "sha256": "5d19134b9a4fbfd7a93777d9eb3026173d52b6380e3beb80a8211dedf9afc24e"
+    },
+    "vvd_normals": {
+      "file": "vvd_normals.py",
+      "bytes": 4184,
+      "sha256": "f3a959cc8dff0bd03528b20886984857b16a21944d2f5ef627cf4c4c05ebcdfb"
+    },
+    "normal_identity_carrier": {
+      "file": "normal_identity_carrier.py",
+      "bytes": 17632,
+      "sha256": "37be746c21274e9844a532698078423a0b4f156dcb546135d18b0217daf0fb08"
+    },
+    "material_inspection": {
+      "file": "material_inspection.py",
+      "bytes": 24579,
+      "sha256": "5efd488d7912e7b032f5590a85e1a20419913f5f6736d906b126c4e8a6280d17"
+    },
+    "export_hook_proposal": {
+      "file": "export_hook_proposal.py",
+      "bytes": 48895,
+      "sha256": "cad4213ed8f55ac060a2f7b2387637a466ef751b36ac26769dbda93e7e343511"
+    },
+    "resource_gate_proposal": {
+      "file": "resource_gate_proposal.py",
+      "bytes": 55481,
+      "sha256": "4ce714dc84712384d089fc2d0b5b5a93c25c1f3dfe90f53ccee76477a3d1cee8"
+    },
+    "shared_image_cache_proposal": {
+      "file": "shared_image_cache_proposal.py",
+      "bytes": 36158,
+      "sha256": "b4aed0a276e5a469274e961e11bddff6183e6d56d4ff91af9e339af4712617e6"
+    },
+    "observer_instrumentation": {
+      "file": "observer_instrumentation.py",
+      "bytes": 7829,
+      "sha256": "15145030fab5b662be490e519ff59f870c4e9c0352766ff59bf3da3f12198f7b"
+    },
+    "gather_binding": {
+      "file": "gather_binding.py",
+      "bytes": 17534,
+      "sha256": "617c062b516ecefa5fab0a6ec8f98163a3b13f76896969cb22102f859323b850"
+    },
+    "carrier_export": {
+      "file": "carrier_export.py",
+      "bytes": 33129,
+      "sha256": "867b8ca6dbd11818edca22d6dc8a0e0671e0855d7d9c7c87ba317e5059868941"
+    },
+    "cold_image_readiness": {
+      "file": "cold_image_readiness.py",
+      "bytes": 14496,
+      "sha256": "eac159fa9c31f9a0bc600025f27a3e988dd486d1e38497698814f3121399bbd9"
+    },
+    "semantic_compare": {
+      "file": "semantic_compare.py",
+      "bytes": 22754,
+      "sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00"
+    },
+    "input_domain": {
+      "file": "input_domain.py",
+      "bytes": 16109,
+      "sha256": "c679d873aa45aac4fad553f014e83c8e42a9a458c8189151e9e3695072be8c74"
+    }
+  },
+  "actual_native_execution": false,
+  "tracked_application_source_modified": false,
+  "saved_B_opened": false,
+  "normal_metric": "raw_unnormalized_euclidean_vector_distance",
+  "normal_threshold": 0.00002,
+  "application_adoption_qualified": false,
+  "latest_source_review": {
+    "lifecycle": "GO - actual APIs/native slot assignments/live graph/combined collector/publication seam",
+    "actual_execution": false
+  }
+}

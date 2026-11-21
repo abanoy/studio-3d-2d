@@ -1,0 +1,41 @@
+{
+  "format": "has_ffed_backed_three_carrier_stage_cleanup_result_1",
+  "status": "REMOVED_ONLY_THREE_FFED_BACKED_CARRIER_STAGES",
+  "backed_commit": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+  "head": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+  "remote_receipt_sha256": "986433bc02ad361d6991c0f6871fac0584a79931a6ca5cf2fe51312ad61bbff9",
+  "physical": {
+    "format": "has_carrier_cleanup_fresh_owned_process_observation_1",
+    "observed_utc": "2026-11-21T01:48:50.7824696Z",
+    "owned_processes": 0,
+    "excluded_exact_pid": 6760,
+    "root_lane_attested": true,
+    "global_runtime_lease_proven": false,
+    "process_rows_published": false,
+    "processes_killed": false,
+    "descendant_scope_checked": true,
+    "missing_commandline_global_absence_proven": false
+  },
+  "removed": [
+    {
+      "name": "source-material-carrier-run-1795220688291646000",
+      "files": 19,
+      "logical_bytes": 4549312,
+      "absence_confirmed": true
+    },
+    {
+      "name": "source-material-carrier-run-1795221526821681200",
+      "files": 19,
+      "logical_bytes": 4549784,
+      "absence_confirmed": true
+    },
+    {
+      "name": "source-material-carrier-run-1795222877275620300",
+      "files": 19,
+      "logical_bytes": 4568153,
+      "absence_confirmed": true
+    }
+  ],
+  "protected_originals_unchanged": true,
+  "free_space_gain_measured": false
+}

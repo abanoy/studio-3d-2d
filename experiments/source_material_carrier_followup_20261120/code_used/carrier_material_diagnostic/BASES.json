@@ -1,0 +1,45 @@
+{
+  "format": "has_carrier_material_diagnostic_source_lineage_1",
+  "status": "AUTHORED_UNRUN",
+  "active": {
+    "carrier_export.py": {
+      "bytes": 29230,
+      "sha256": "ac575393ea28517da6f3de0f3a34fca5519cfb83a51b843e4e18227fcf1ef2be"
+    },
+    "test_carrier_export.py": {
+      "bytes": 49442,
+      "sha256": "911760f98dc56ba0a78784f62b91b680849d6d1e9345d4195783051015036222",
+      "methods": 43
+    }
+  },
+  "base": {
+    "bases/carrier_export.py": {
+      "bytes": 17760,
+      "sha256": "3b1d64421ff0e57cbf7d5f5a696308be2c12be1eb8d0e534a8ff23bf27afa9a3"
+    },
+    "bases/test_carrier_export.py": {
+      "bytes": 40058,
+      "sha256": "f244e8c882a1cd7d5a469ce6a2da0041a312df93aae70d06072b200b6a498ccb",
+      "methods": 37
+    }
+  },
+  "producer_schema": {
+    "path": "DIAGNOSTIC_SCHEMA.json",
+    "bytes": 4576,
+    "sha256": "c5c0453179fe8204fb81bfe0f941ef8f71ca8db034b5cfe204bd5a93c15754a3"
+  },
+  "test_scope": {
+    "old_methods_preserved": 37,
+    "new_methods": 6,
+    "expected_total": 43,
+    "old_test_source_prefix_byte_exact": true
+  },
+  "qualification": {
+    "author_ran_tests": false,
+    "author_native_process": false,
+    "actual_export_success": false,
+    "normal_fidelity": false,
+    "material_admission_changed": false,
+    "app_adoption": false
+  }
+}

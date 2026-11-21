@@ -1,0 +1,112 @@
+{
+  "format": "has_ffed_backed_three_carrier_stage_cleanup_plan_1",
+  "backed_commit": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+  "observed_head": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+  "remote_receipt_sha256": "986433bc02ad361d6991c0f6871fac0584a79931a6ca5cf2fe51312ad61bbff9",
+  "target_count": 3,
+  "targets": [
+    {
+      "name": "source-material-carrier-run-1795220688291646000",
+      "resolved": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-material-carrier-run-1795220688291646000",
+      "safe_reports": 6,
+      "inventory": {
+        "files": 19,
+        "directories": 7,
+        "logical_bytes": 4549312,
+        "inventory_sha256": "68e9f8933468ae779ec5e5e6d0a626025c7fcbd66803477865a737be21694408"
+      }
+    },
+    {
+      "name": "source-material-carrier-run-1795221526821681200",
+      "resolved": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-material-carrier-run-1795221526821681200",
+      "safe_reports": 6,
+      "inventory": {
+        "files": 19,
+        "directories": 7,
+        "logical_bytes": 4549784,
+        "inventory_sha256": "f8a217d2803f8f40e288b664b19c002d2d4e59612cc30a6b163c4a955f624285"
+      }
+    },
+    {
+      "name": "source-material-carrier-run-1795222877275620300",
+      "resolved": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-material-carrier-run-1795222877275620300",
+      "safe_reports": 6,
+      "inventory": {
+        "files": 19,
+        "directories": 7,
+        "logical_bytes": 4568153,
+        "inventory_sha256": "48cf2292c53ef07131ac5c82932ced90b84ca98a0b7b999c0c79a49f5fe19146"
+      }
+    }
+  ],
+  "protected_originals": [
+    {
+      "relative": "editable.blend",
+      "file": {
+        "bytes": 2423175,
+        "mtime_ticks": 639302239220791436,
+        "identity": "1351841855:589824:1889414:0:2423175:31290344:3060201612:1:32",
+        "sha256": "ead1f1913812593abd69e353fed375944a15f280738784886fcef7fda3ee65c6"
+      }
+    },
+    {
+      "relative": "scene.glb",
+      "file": {
+        "bytes": 2322644,
+        "mtime_ticks": 639302239223027682,
+        "identity": "1351841855:1966080:1889417:0:2322644:31290344:3062437858:1:32",
+        "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d"
+      }
+    },
+    {
+      "relative": "parameters.json",
+      "file": {
+        "bytes": 159684,
+        "mtime_ticks": 639302239224012219,
+        "identity": "1351841855:720896:1889420:0:159684:31290344:3063422395:1:32",
+        "sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed"
+      }
+    },
+    {
+      "relative": "native/junko hair.mdl",
+      "file": {
+        "bytes": 37644,
+        "mtime_ticks": 639302239200299975,
+        "identity": "1351841855:589824:1889386:0:37644:31290344:3039710151:1:32",
+        "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+      }
+    },
+    {
+      "relative": "native/junko hair.vvd",
+      "file": {
+        "bytes": 618368,
+        "mtime_ticks": 639302239200325044,
+        "identity": "1351841855:589824:1889393:0:618368:31290344:3039735220:1:32",
+        "sha256": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0"
+      }
+    },
+    {
+      "relative": "native/junko hair.dx90.vtx",
+      "file": {
+        "bytes": 173309,
+        "mtime_ticks": 639302239200325044,
+        "identity": "1351841855:1048576:1889394:0:173309:31290344:3039735220:1:32",
+        "sha256": "924954f27574fc83945934a13e6b4e90049b5d46356053dc4b41ec43d3ce364a"
+      }
+    }
+  ],
+  "physical": {
+    "format": "has_carrier_cleanup_fresh_owned_process_observation_1",
+    "observed_utc": "2026-11-21T01:48:15.0125061Z",
+    "owned_processes": 0,
+    "excluded_exact_pid": 6328,
+    "root_lane_attested": true,
+    "global_runtime_lease_proven": false,
+    "process_rows_published": false,
+    "processes_killed": false,
+    "descendant_scope_checked": true,
+    "missing_commandline_global_absence_proven": false
+  },
+  "no_other_stage_authorized": true,
+  "free_space_gain_measured": false
+}

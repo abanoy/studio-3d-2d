@@ -1,0 +1,79 @@
+{
+  "format": "has_three_carrier_cleanup_independent_node_audit_1",
+  "backed_commit": "ffed3fc2fe4f078a4c6cd506c5c757b7f46db82b",
+  "all_three_absent": true,
+  "removed": [
+    {
+      "name": "source-material-carrier-run-1795220688291646000",
+      "files": 19,
+      "logical_bytes": 4549312,
+      "absent": true
+    },
+    {
+      "name": "source-material-carrier-run-1795221526821681200",
+      "files": 19,
+      "logical_bytes": 4549784,
+      "absent": true
+    },
+    {
+      "name": "source-material-carrier-run-1795222877275620300",
+      "files": 19,
+      "logical_bytes": 4568153,
+      "absent": true
+    }
+  ],
+  "files": 57,
+  "logical_bytes": 13667249,
+  "six_original_raw_hash_sizes_and_read_identities_exact": true,
+  "originals": [
+    {
+      "relative": "editable.blend",
+      "bytes": 2423175,
+      "sha256": "ead1f1913812593abd69e353fed375944a15f280738784886fcef7fda3ee65c6",
+      "mtime_ns": "1794627122079143600",
+      "read_identity_stable": true
+    },
+    {
+      "relative": "scene.glb",
+      "bytes": 2322644,
+      "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+      "mtime_ns": "1794627122302768200",
+      "read_identity_stable": true
+    },
+    {
+      "relative": "parameters.json",
+      "bytes": 159684,
+      "sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed",
+      "mtime_ns": "1794627122401221900",
+      "read_identity_stable": true
+    },
+    {
+      "relative": "native/junko hair.mdl",
+      "bytes": 37644,
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "mtime_ns": "1794627120029997500",
+      "read_identity_stable": true
+    },
+    {
+      "relative": "native/junko hair.vvd",
+      "bytes": 618368,
+      "sha256": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0",
+      "mtime_ns": "1794627120032504400",
+      "read_identity_stable": true
+    },
+    {
+      "relative": "native/junko hair.dx90.vtx",
+      "bytes": 173309,
+      "sha256": "924954f27574fc83945934a13e6b4e90049b5d46356053dc4b41ec43d3ce364a",
+      "mtime_ns": "1794627120032504400",
+      "read_identity_stable": true
+    }
+  ],
+  "pending_V6_V7_resolved_and_full_proof_retained": [
+    "output/source-material-carrier-run-1795224730880132700",
+    "output/source-material-carrier-run-1795224988135112200",
+    "output/source-material-resolved-run-1795218557069751000",
+    "output/windows-reference-body-1795197079606290600"
+  ],
+  "physical_free_space_gain_measured": false
+}

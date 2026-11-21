@@ -1,0 +1,23 @@
+{
+  "format": "has_carrier_v8_small_predecessor_1",
+  "source_folder": "source-material-carrier-host-v7-prep-20261120",
+  "files": 77,
+  "logical_bytes": 1900800,
+  "source_manifest": {
+    "path": "SOURCE_PINS.json",
+    "bytes": 12889,
+    "sha256": "b592952a321c65615446ed32ae775d9fcad654273929cd1a5d8f7314d827acab"
+  },
+  "status": "FROZEN_R_AND_CARRIER_SHAPE_DIAGNOSTICS_WIRED",
+  "strict_material_semantics_unchanged": true,
+  "native_execution": false,
+  "no_private_assets_copied": true,
+  "changed_code_files": [
+    "resource_gate_proposal.py",
+    "carrier_export.py",
+    "test_carrier_export.py",
+    "fresh_carrier_probe.py",
+    "run_carrier.py"
+  ],
+  "changed_host_bytes": "TWO R/carrier exact tuples each"
+}

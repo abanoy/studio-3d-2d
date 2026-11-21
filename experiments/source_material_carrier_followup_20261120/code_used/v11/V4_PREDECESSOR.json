@@ -1,0 +1,22 @@
+{
+  "format": "has_carrier_v4_small_predecessor_1",
+  "predecessor_folder": "source-material-carrier-host-v3-prep-20261120",
+  "files": 72,
+  "logical_bytes": 1860538,
+  "source_manifest": {
+    "path": "SOURCE_PINS.json",
+    "bytes": 12122,
+    "sha256": "23f3d9fca5b3225c03e64ffabef18663af3119e13217ef5f1cc12f14bf213563"
+  },
+  "copy_all_files_byte_exact": true,
+  "no_native_inputs_or_stage_assets_copied": true,
+  "current_status": "FROZEN_WIRED_COMPILER_CONTEXT_SUCCESSOR",
+  "native_execution": false,
+  "changed_code_files": [
+    "export_hook_proposal.py",
+    "fresh_carrier_probe.py",
+    "run_carrier.py"
+  ],
+  "changed_host_bytes": "ONE exact H tuple each",
+  "external_successor_folder": "source-export-hook-compiler-context-v2-prep-20261120"
+}

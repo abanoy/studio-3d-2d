@@ -1,0 +1,24 @@
+{
+  "format": "has_carrier_v6_small_predecessor_1",
+  "source_folder": "source-material-carrier-host-v5-prep-20261120",
+  "files": 74,
+  "logical_bytes": 1870673,
+  "source_manifest": {
+    "path": "SOURCE_PINS.json",
+    "bytes": 12428,
+    "sha256": "452d5c19c9ba621f38d9dde7f676c24b2412ebb658eabdc3b5099d52eb0d15e3"
+  },
+  "status": "FROZEN_WIRED_NEGATIVE_TEXTURE_PROBE_AND_BOUNDED_READ_SUCCESSOR",
+  "native_attempted": false,
+  "only_current_code_delta": "Root read_checked stream.read(before.st_size+1); all guards unchanged",
+  "no_private_stage_or_native_assets_copied": true,
+  "changed_code_files": [
+    "resource_gate_proposal.py",
+    "shared_image_cache_proposal.py",
+    "fresh_carrier_probe.py",
+    "run_carrier.py",
+    "test_bounded_read.py"
+  ],
+  "changed_host_bytes": "TWO R/S tuples each; Root read amount only",
+  "external_successor_folder": "source-shared-image-negative-probe-v2-prep-20261120"
+}

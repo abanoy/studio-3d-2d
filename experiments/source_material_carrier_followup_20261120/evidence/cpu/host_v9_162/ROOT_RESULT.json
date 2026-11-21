@@ -1,0 +1,31 @@
+{
+  "format": "has_source_carrier_host_v9_cpu_root_1",
+  "native_launch_attempted": false,
+  "scopes": [
+    {
+      "elapsed_seconds": 0.5957406999950763,
+      "returncode": 0,
+      "scope": "worker",
+      "status": "PASS",
+      "tests": 45
+    },
+    {
+      "elapsed_seconds": 1.027180999997654,
+      "returncode": 0,
+      "scope": "driver",
+      "status": "PASS",
+      "tests": 104
+    },
+    {
+      "elapsed_seconds": 0.4005662999988999,
+      "returncode": 0,
+      "scope": "bounded",
+      "status": "PASS",
+      "tests": 13
+    }
+  ],
+  "source_count": 52,
+  "source_hash_size_mtime_unchanged": true,
+  "status": "PASS",
+  "tests_expected": 162
+}

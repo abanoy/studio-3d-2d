@@ -1,0 +1,56 @@
+test_bone_raw_proof_is_completed_before_normal_correction_and_measured_after_contracts (test_normal_export_adapter.FinalizerTests.test_bone_raw_proof_is_completed_before_normal_correction_and_measured_after_contracts) ... ERROR
+test_corrector_cannot_mutate_the_observed_raw_bone_proof_before_rebind (test_normal_export_adapter.FinalizerTests.test_corrector_cannot_mutate_the_observed_raw_bone_proof_before_rebind) ... ok
+test_declared_measurement_must_be_raw_euclidean_and_original_exact_threshold (test_normal_export_adapter.FinalizerTests.test_declared_measurement_must_be_raw_euclidean_and_original_exact_threshold) ... ok
+test_default_measurer_checks_raw_vector_distance_not_each_component (test_normal_export_adapter.FinalizerTests.test_default_measurer_checks_raw_vector_distance_not_each_component) ... ok
+test_existing_finalization_namespace_is_never_overwritten (test_normal_export_adapter.FinalizerTests.test_existing_finalization_namespace_is_never_overwritten) ... ok
+test_latched_bone_failure_cannot_fall_back_to_unproved_normal_publication (test_normal_export_adapter.FinalizerTests.test_latched_bone_failure_cannot_fall_back_to_unproved_normal_publication) ... ok
+test_measurement_cannot_mutate_the_frozen_gather_relation (test_normal_export_adapter.FinalizerTests.test_measurement_cannot_mutate_the_frozen_gather_relation) ... ok
+test_measurement_source_and_exported_component_counts_cannot_be_fabricated (test_normal_export_adapter.FinalizerTests.test_measurement_source_and_exported_component_counts_cannot_be_fabricated) ... ok
+test_preservation_and_word_contract_must_return_exact_true (test_normal_export_adapter.FinalizerTests.test_preservation_and_word_contract_must_return_exact_true) ... ok
+test_raw_bone_checksum_or_length_mismatch_refuses_before_correction (test_normal_export_adapter.FinalizerTests.test_raw_bone_checksum_or_length_mismatch_refuses_before_correction) ... ok
+test_raw_bone_status_native_count_or_catalogue_ambiguity_refuses (test_normal_export_adapter.FinalizerTests.test_raw_bone_status_native_count_or_catalogue_ambiguity_refuses) ... ok
+test_real_correction_and_contracts_rebind_69_bones_to_final_hash_without_mutation (test_normal_export_adapter.FinalizerTests.test_real_correction_and_contracts_rebind_69_bones_to_final_hash_without_mutation) ... ok
+test_two_subthreshold_component_errors_do_not_bypass_original_euclidean_gate (test_normal_export_adapter.FinalizerTests.test_two_subthreshold_component_errors_do_not_bypass_original_euclidean_gate) ... ok
+test_type_only_scene_node_or_skin_drift_cannot_rebind_even_if_contract_facade_claims_true (test_normal_export_adapter.FinalizerTests.test_type_only_scene_node_or_skin_drift_cannot_rebind_even_if_contract_facade_claims_true) ... ok
+test_wrong_carrier_or_native_hash_and_unverified_relation_refuse (test_normal_export_adapter.FinalizerTests.test_wrong_carrier_or_native_hash_and_unverified_relation_refuse) ... ok
+test_actual_identity_frame_requires_two_distinct_mesh_worlds_and_same_armature_world (test_normal_export_adapter.ProfileAndCompositionTests.test_actual_identity_frame_requires_two_distinct_mesh_worlds_and_same_armature_world) ... ok
+test_base_state_collision_refuses_instead_of_overwriting_H_lifecycle (test_normal_export_adapter.ProfileAndCompositionTests.test_base_state_collision_refuses_instead_of_overwriting_H_lifecycle) ... ok
+test_both_failure_latches_and_wrong_extension_self_refuse (test_normal_export_adapter.ProfileAndCompositionTests.test_both_failure_latches_and_wrong_extension_self_refuse) ... ok
+test_only_exact_known_profile_is_eligible_and_unknowns_keep_legacy_route (test_normal_export_adapter.ProfileAndCompositionTests.test_only_exact_known_profile_is_eligible_and_unknowns_keep_legacy_route) ... ok
+test_single_composite_self_initializes_both_and_requires_H_completion_before_one_shot_bones (test_normal_export_adapter.ProfileAndCompositionTests.test_single_composite_self_initializes_both_and_requires_H_completion_before_one_shot_bones) ... ok
+
+======================================================================
+ERROR: test_bone_raw_proof_is_completed_before_normal_correction_and_measured_after_contracts (test_normal_export_adapter.FinalizerTests.test_bone_raw_proof_is_completed_before_normal_correction_and_measured_after_contracts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-production-normal-adapter-prep-20261120\normal_export_adapter.py", line 268, in finalize_native_normals
+    if measure_corrected is None else measure_corrected(corrected, native, relation, axes))
+                                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-production-normal-adapter-prep-20261120\test_normal_export_adapter.py", line 153, in measure
+    self.assertIs(native, self.native); self.assertEqual(relation, self.relation); self.assertEqual(tuple(axes), self.axes)
+                                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {(0, 0): (1, 2, 3)} != {(0, 0): [1, 2, 3]}
+- {(0, 0): (1, 2, 3)}
+?          ^       ^
+
++ {(0, 0): [1, 2, 3]}
+?          ^       ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-production-normal-adapter-prep-20261120\test_normal_export_adapter.py", line 181, in test_bone_raw_proof_is_completed_before_normal_correction_and_measured_after_contracts
+    output, _, _ = self.finalize(measure_corrected=self.measured())
+                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-production-normal-adapter-prep-20261120\test_normal_export_adapter.py", line 143, in finalize
+    return A.finalize_native_normals(self.raw, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-production-normal-adapter-prep-20261120\normal_export_adapter.py", line 306, in finalize_native_normals
+    raise Refusal('NORMAL_EXPORT_FINALIZATION_API_OR_CONTRACT_FAILED', summary) from error
+_has_normal_finalizer_under_test.Refusal: NORMAL_EXPORT_FINALIZATION_API_OR_CONTRACT_FAILED
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.179s
+
+FAILED (errors=1)
