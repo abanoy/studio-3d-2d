@@ -1,0 +1,234 @@
+{
+  "format": "has_secondary_reconstruction_benchmark_1",
+  "base_commit": "43dbdecc759e971a80f0d1e468e1e7d1e3b9ed2b",
+  "feature_branch": "codex/backhair-reconstruction-20261121",
+  "status": "EXPLICIT_FIRST_COMPONENT_EXPERIMENTAL_WITH_KNOWN_REST_RENDER_DIFFERENCE",
+  "whole_back_hair_complete": false,
+  "whole_full_claimed": false,
+  "formal_ledger_promoted": false,
+  "source_arrays_or_art_published": false,
+  "coverage": {
+    "reviewed_colored_back_hair_vertices": 1292,
+    "all_colored_back_hair_vertices": 3629,
+    "new_guide_chains": 13,
+    "new_nodes": 65,
+    "actually_changed_weight_rows": 1236,
+    "original_nodes": 145,
+    "front_bangs_ribbons_and_outline_shells_included": false
+  },
+  "pure_reconstruction": {
+    "status": "PASS",
+    "checks": 11,
+    "actual_unit_log_sha256": "ea1ff75ea22d232d463d405d0d0ddf8cc4e43607aeaa72859a7e062a8739a1b3"
+  },
+  "pure_wind_binding": {
+    "status": "PASS",
+    "checks": 16,
+    "receipt_sha256": "46f64d4d1ae9efcfad95875fbc045c7b9a2aceb3ae826892e1fabc80d1e0a5d8",
+    "current_receipt": {
+      "status": "PASS",
+      "checks": 16,
+      "exit": 0,
+      "source_hashes": {
+        "tools/secondary_reconstruction.py": "428ad97060ed2866a98accaddc8d4c8713ba9a201c944f147bed06f8d171157f",
+        "tools/wind_helper_preview.py": "69bf53ee778e34808d9fb685c3ff2faf79924263b80fe5a37a704fa5d05d2a9b",
+        "tests/test_reconstruction_wind_mapping.py": "bef2bac98998bee7bf6f43594ff29260d6ba398c350990b5eb1e7eadf22074a2"
+      },
+      "source_preserved": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "67dfe94c055ffb145a9d5e62fc8bf13846ab2433e2aeec1c2f8fef04af27f4d8"
+    }
+  },
+  "existing_public_regressions": {
+    "status": "PASS",
+    "checks": 56,
+    "receipt_sha256": "cb9ea139e5ab306dffa9188f33ad73b746fc8c2f436261954bef7058bc47bc21",
+    "scope": "helpers20+batch26+morph10; Root actual source-pinned predecessor observation",
+    "source_hashes_at_observation": {
+      "tools/secondary_helpers.py": "2b6c22700b6100acdb2c087fb8a1295bbd1584fc5d32d09eaf0112625d7b1380",
+      "tools/secondary_helpers_batch.py": "fc0411eac11e0a454735fe2d6e95d0dbe8b291af65cd7389dae534eea3547f7f",
+      "tools/secondary_reconstruction.py": "fce671c11a625a9db42e265413f8dd438f23f2d841a666d788938921844ba349",
+      "tools/wind_helper_preview.py": "049b66bb20fdf2da4f89fb7eceb5576f1bbd94a143e2e193dc7baa73f7b07bef"
+    }
+  },
+  "actual_source_fk_and_morph_peer": {
+    "receipt_sha256": "29fbde611ddcead5e68365c8bb50aec6e4801bec2b467f2ff38500d518a10aa2",
+    "result": {
+      "scope": "actual Junko derived component: guide-rest native FK and morph preservation; no runtime simulation or pixels",
+      "status": "PASS",
+      "source_sha256": "a329cd47bd74b05278a6e501b9503d8e0b9231bf6adc647307d573170166a3ec",
+      "candidate_sha256": "b8bddf289ef14fcf511eafe08f229760f3fe570dd3840060f9ed3396d61acbb5",
+      "old_nodes": 145,
+      "appended_nodes": 65,
+      "primitives": 24,
+      "vertices": 37470,
+      "changed_weight_rows": 1236,
+      "evaluated_vertex_poses": 121467,
+      "maximum_position_error": 2.924372224932803e-08,
+      "original_bytes_mtime_preserved": true,
+      "elapsed_seconds": 1.921412467956543
+    }
+  },
+  "actual_native_headless": {
+    "status": "PASS",
+    "checks": 12,
+    "receipt_sha256": "3ef10fa1ae6599a57a41399baff6dca3578834072716600d4e6f7f4578b32b04",
+    "all_owned_descendants_closed": true,
+    "actual_metrics": {
+      "anchor_error": 0.0,
+      "average_tick_usec": 12534.0611111111,
+      "centroid_drop": 0.12235963344574,
+      "chains": 13,
+      "checks": 12,
+      "collider_instances": 52,
+      "failures": 0,
+      "final_remaining_contact_pairs": 0,
+      "maximum_off_vertex_error": 0.0,
+      "maximum_remaining_contact_pairs": 0,
+      "minimum_contact_gap": 0.0,
+      "natural_chains": 13,
+      "original_joint_error": 0.0,
+      "selected_vertices": 1292,
+      "skin_refreshes": 720,
+      "skin_vertices": 1236
+    }
+  },
+  "actual_private_simple_gui": {
+    "wrapper_status": "FAIL",
+    "observed_checks": 19,
+    "observed_failures": 1,
+    "observed_passes": 18,
+    "receipt_sha256": "592821606069b4ef284e148d082028a0a0993ce3108fe1dcd936637703a9e9ff",
+    "stdout_sha256": "57d12851c3acbb8289669175ddc495e75be595e9a5a3ffb5001ebe1d915d45f8",
+    "actual_metrics": {
+      "advanced": false,
+      "captures": 4,
+      "checks": 19,
+      "failures": 1,
+      "maximum_channel_difference": 240,
+      "maximum_off_transform_error": 0.0,
+      "maximum_posed_vertex_difference": 4.82201030536089e-05,
+      "rest_pixel_bytes_changed": 165,
+      "rest_pixels_changed": 144,
+      "sampled_posed_vertices": 37470,
+      "total_channel_difference": 918
+    },
+    "graphical_private_window_proven": true,
+    "all_resources_closed": true,
+    "known_failure": "Exact zero rest pixels fails. No tolerance substituted. Actual imported posed vertex drift observed; packing cause is unproven.",
+    "visual_observation": "Selected section extends downward; unchecked curls/outline surfaces retain original pose. Whole appearance remains open."
+  },
+  "protected_miku_contract": {
+    "status": "PASS",
+    "checks": 54,
+    "receipt_sha256": "bb0f61f27b51b7ae9da8dae5dee3731c883b581f6c2601415cb20d676aeaf757",
+    "all_originals_preserved": true,
+    "all_private_jobs_and_desktops_closed": true
+  },
+  "retained_failures": [
+    {
+      "case": "native fixture omitted deferred spring warmup",
+      "status": "FAIL",
+      "observed_checks": 10,
+      "observed_failures": 1,
+      "centroid_drop": 0.0,
+      "receipt_sha256": "2b57f576bdd89650604667262741c8c2b8776364062065c6429f31514f756eca",
+      "correction": "Await ordinary deferred spring initialization; production algorithm unchanged."
+    },
+    {
+      "case": "first graphical launch",
+      "status": "FAIL",
+      "credited_gui_checks": 0,
+      "receipt_sha256": "012700f7ffb517740b0126d8e53b8ddfc97f7689188b3c551c1e8bf19e6db283",
+      "reason": "Errno5 Create private test desktop; no child. Concurrent peer test-file edit correctly recorded source preservation failure. Approved host used for later runs."
+    },
+    {
+      "case": "GUI fixture Theme native-class name collision",
+      "status": "FAIL",
+      "credited_gui_checks": 0,
+      "receipt_sha256": "a5c3ae1c23bd0a7dd68d193977e2e44bf7eeec9491ae468829a2d1047164610e"
+    },
+    {
+      "case": "first actual UI run with incorrectly retained framing",
+      "status": "FAIL",
+      "observed_checks": 18,
+      "observed_failures": 1,
+      "rest_changed_channel_bytes": 6,
+      "receipt_sha256": "05416cc9eee019de792e93554dfaa2899d0c6140499689af96f19c7d7b0b3656",
+      "correction": "Persist the frame_model camera in an actual camera key; no image tolerance added."
+    }
+  ],
+  "remaining": [
+    "Investigate actual four/eight-influence float32 normalization and UNORM16 conversion versus bind accumulation before resolving rest-render drift.",
+    "Review remaining colored back-hair components and explicit shell masks/correspondence; no merged front/back auto-weld.",
+    "Reduce measured~12.5ms fixed-step cost; current loop exceeds120Hz8.33ms budget.",
+    "No whole-backhair, all-frames collision, full appearance, cold reconstructed save/reopen, Advanced/Classic UI or whole-suite acceptance claimed."
+  ],
+  "current_source_hashes": [
+    {
+      "path": "src/secondary_helper_editor.gd",
+      "bytes": 49060,
+      "sha256": "5688f30e441026f388902d1086cc589204b31a7d24d238a835645a5b327580c8"
+    },
+    {
+      "path": "src/wind_helper_candidate.gd",
+      "bytes": 27227,
+      "sha256": "c84f6a08a0b8f254a49e05b716a3566cd1a65d6e5c55c6f56de2a7a1a644c3a7"
+    },
+    {
+      "path": "tools/secondary_reconstruction.py",
+      "bytes": 17344,
+      "sha256": "428ad97060ed2866a98accaddc8d4c8713ba9a201c944f147bed06f8d171157f"
+    },
+    {
+      "path": "tools/secondary_helpers.py",
+      "bytes": 50139,
+      "sha256": "2b6c22700b6100acdb2c087fb8a1295bbd1584fc5d32d09eaf0112625d7b1380"
+    },
+    {
+      "path": "tools/secondary_helpers_batch.py",
+      "bytes": 11236,
+      "sha256": "fc0411eac11e0a454735fe2d6e95d0dbe8b291af65cd7389dae534eea3547f7f"
+    },
+    {
+      "path": "tools/wind_helper_preview.py",
+      "bytes": 27130,
+      "sha256": "69bf53ee778e34808d9fb685c3ff2faf79924263b80fe5a37a704fa5d05d2a9b"
+    },
+    {
+      "path": "tools/wind_preview_worker.py",
+      "bytes": 6038,
+      "sha256": "e5e31827d219802b6f53b7e9bbf81545bf0e4f9346fcdcee0317d56464b19027"
+    },
+    {
+      "path": "tests/helper_preview_fixtures.py",
+      "bytes": 16042,
+      "sha256": "aad2fa105ebf7db63cd267698f2a2098a3b5d04c19aa1f2fcf04d27240ae7661"
+    },
+    {
+      "path": "tests/secondary_reconstruction_controls_smoke.gd",
+      "bytes": 10243,
+      "sha256": "2f8de8f7f22440b71b2a6065ed1c79eb89f5edef29004430f735f8973b0ccab2"
+    },
+    {
+      "path": "tests/secondary_reconstruction_native_smoke.gd",
+      "bytes": 8151,
+      "sha256": "e0b604e59e85ecf575d4402f3ce83146002c7af23d4f02e83307c7d2aeb9d5ef"
+    },
+    {
+      "path": "tests/test_secondary_reconstruction.py",
+      "bytes": 7000,
+      "sha256": "ef61b03fed52a85ccdf111820fc07c000d872dced33b2c402b02e56e33974961"
+    },
+    {
+      "path": "tests/test_reconstruction_wind_mapping.py",
+      "bytes": 9533,
+      "sha256": "bef2bac98998bee7bf6f43594ff29260d6ba398c350990b5eb1e7eadf22074a2"
+    },
+    {
+      "path": "tests/verify_secondary_reconstruction.py",
+      "bytes": 4715,
+      "sha256": "1e27f1a0ad8904847b5a040f053d38937b1fa370c9d51d4ae19cf65aae5edb16"
+    }
+  ]
+}

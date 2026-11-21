@@ -8466,3 +8466,33 @@ Originals, reviews, shared runtimes and other checkouts remain protected.
 
 Formal52/54 implementation and55/62 acceptance stay unchanged. Publish/retrieve
 this completed scoped increment, then continue the specifically open rig coverage.
+
+
+## 2026-11-21 — explicit first-component back-hair reconstruction
+
+Feature branch codex/backhair-reconstruction-20261121 starts at43dbdecc. Adds an
+explicit Make this part flexible option, per-original-influence appended guides,
+reviewed source-vertex highlights/checked inclusion, temporary wind binding and
+one reversible owned-asset Apply. Originals/native rest/morph/material tables and
+unchecked weights remain intact. Natural remains an explicit subsequent choice.
+Cross-skin frame/budget/ownership refusals and generated node/parent/bind tamper
+checks remain strict. This is not an automatic native asset replacement.
+
+Actual generated tests11+16PASS; existing helper/batch/morph56PASS (Root scope).
+Protected native first-component12PASS: all1292 reviewed vertices lower12.24cm,
+13chains/65newnodes,52colliderinstances/1236skinrows/720refreshes; all original
+joints/attachments held and every reviewed vertex restored exactly with Off.
+Loop~12.5ms per120Hz step exceeds its8.33ms budget. Protected Miku54PASS unchanged.
+Private Simple UI18/19: temporary13-group wind, Apply/Undo/Redo, nonzero native
+Head FK+pose key and Natural/Off/source preservation pass. Exact rest pixelsFAIL
+(165channelbytes; actual imported geometry max48.23micrometers). No invented
+pixel tolerance replaces the failure. Packing/normalization cause is unproven.
+Prior no-warmup, denied-desktop/source-freeze, Theme parse and tiny-framing
+attempts remain explicit failures. No whole-suite/human/ledger promotion.
+
+Only one colored component1292of3629 is configured; unchecked outline curls,
+other back-hair components, bangs and ribbons remain separate. Next: diagnose
+imported precision, review missing groups/shared outlines, improve CPU cost and
+cold reconstructed persistence. Native art/spec arrays/captures stay private.
+Formal52/54 implementation and55/62 acceptance remain unchanged. See
+docs/secondary_reconstruction.md and scalar benchmark for actual receipt hashes.

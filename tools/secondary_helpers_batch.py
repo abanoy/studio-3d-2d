@@ -43,6 +43,7 @@ def _shape_settings(item):
 def review(source, request):
     """Preview the actual corrected controls instead of regenerating defaults."""
     view = helpers.preview(source, request)
+    if view.get('mode')=='reconstructed_weights':return view
     if view.get('mode') == 'existing_joints':
         if 'points_in_anchor' in request:
             raise ValueError('Existing joints keep their authored chain; remove custom control points')
@@ -112,14 +113,16 @@ def plan(source, request):
             skin = glb.skin(key[0], key[1])
             influenced = {skin[3]['joints'][j] for v in selected for j, weight in skin[6][v] if weight > 0}
             weighted.append({'mesh_key': mesh_key, 'vertices': selected, 'influenced': influenced})
-            operation = {'request': copy.deepcopy(item), 'source_regions': [list(key)], 'mode': 'weighted'}
+            operation = {'request': copy.deepcopy(item), 'source_regions': [list(key)], 'mode': view.get('mode','weighted')}
+            if view.get('mode')=='reconstructed_weights':
+                operation.update(added_nodes=view['added_nodes'],added_chains=view['added_chains'])
         operations.append(operation)
     native = set().union(*(group['nodes'] for group in existing.values())) if existing else set()
     if any(native & row['influenced'] for row in weighted):
         raise ValueError('A weighted selection shares moving native joints with an included chain')
-    added_skin = sum(int(op['request'].get('segments', 3)) + 1 for op in operations if op['mode'] == 'weighted')
+    added_skin = sum(op.get('added_nodes',int(op['request'].get('segments', 3)) + 1) for op in operations if op['mode'] != 'existing_joints')
     added_endpoints = sum(op['mode'] == 'existing_joints' for op in operations)
-    if len(glb.springs()) + len(operations) > 128: raise ValueError('Batch exceeds128spring chains')
+    if len(glb.springs()) + sum(op.get('added_chains',1) for op in operations) > 128: raise ValueError('Batch exceeds128spring chains')
     if len(glb.doc['nodes']) + added_skin + added_endpoints > MAX_NODES:
         raise ValueError('Batch exceeds100000source-node budget')
     if len({j for skin in glb.doc['skins'] for j in skin['joints']}) + added_skin > 512:

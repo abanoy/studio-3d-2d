@@ -515,6 +515,9 @@ def control_points(coords, distances, count):
 
 
 def preview(source, request):
+    if request.get('reconstruct_weights',False):
+        import secondary_reconstruction
+        return secondary_reconstruction.preview(source,request)
     glb = GLB(source)
     if request.get('source_sha256') != glb.sha: raise ValueError('Model changed; inspect it again')
     data, selected, welded, distances, coords, joint, summary = region(glb, request.get('node'), request.get('primitive'), request.get('component'), request.get('anchor_node'), vertex_mask=request.get('vertex_mask'), shape=request)
@@ -562,6 +565,9 @@ def preview(source, request):
 
 
 def build(source, output, request):
+    if request.get('reconstruct_weights',False):
+        import secondary_reconstruction
+        return secondary_reconstruction.build(source,output,request)
     glb = GLB(source); original_stat = glb.source.stat().st_mtime_ns
     if not isinstance(request, dict) or request.get('source_sha256') != glb.sha or request.get('reviewed') is not True:
         raise ValueError('A reviewed region and matching source checksum are required')
