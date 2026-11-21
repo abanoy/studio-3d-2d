@@ -7887,3 +7887,23 @@ Godot launch (Create private test desktop, Errno5); no visible fallback or GPU
 claim. Full suite/native artwork/import tests were not run for this separate
 increment. See docs/asset_discovery.md and docs/asset_discovery_sources.md for
 launch, exact hooks, current provider research and remaining limitations.
+
+## 2026-11-21 — Asset browser live follow-up
+
+Continued the preserved85d07df0 browser on worker/asset-browser-live-20261121,
+rebased onto current origin/main243e6a1e in the isolated browser checkout. No
+primary integration/renderer/model/import files changed. Added real loading
+activity, immediate website-search action, persistent browser-launch errors,
+plain BowlRoll HTML-versus-RSS feedback and ranking that promotes later exact
+hits above earlier broad matches while retaining existing relative order.
+
+Actual focused verification:88headless and100private-Windows-desktop controls,
+with six inspected layouts across Neon/Classic light/dark at1240x860/960x700.
+Host-network production HTTPRequest/UI returned100then200real mixed listings
+(76/24then152/48Poly Haven/Sketchfab);54English-name and21original-Japanese
+results. Real in-flight cancellation released the request. Cold start remains
+offline; source-page opening was intercepted, with no artwork/model downloads.
+BowlRoll historical RSS actually returns HTML; its website fallback is explicit.
+Steam/SFMLab/BOOTH/VRoid remain website-only. Initial DNS/private-desktop and
+layout-fixture failures remain recorded, not relabelled. No full-suite claim.
+See docs/asset_discovery.md and its safe benchmark JSON for integration/limits.

@@ -7,9 +7,9 @@ were downloaded during research or verification.
 
 | Directory | Language / scope | Actual search or API method | First-version boundary |
 | --- | --- | --- | --- |
-| Poly Haven | English/global props and environments | GET `https://api.polyhaven.com/assets?type=models`; dictionary keyed by asset ID, type 2, name/tags/thumbnail_url. Match query variants locally, paginate cached records in the client. | Public metadata API adapter. Current JSON endpoint independently observed via web research; app DNS failed. API listing alone does not prove a specific format or current file retrieval. |
-| Sketchfab | English/global, original-language titles | GET `https://api.sketchfab.com/v3/search?type=models&count=24&q=...`; public search, space-separated keywords; follow returned same-endpoint next cursor. Separate queries, not all aliases in a single AND query. | Public metadata API adapter, no token. Official docs cap count at 24 and warn about 429. Web/API access was unavailable in this session; current live app retrieval is unverified. |
-| BowlRoll | Japanese; MMD ecosystem including models, motions and other files | Published feed `https://bowlroll.net/file/tag/MikuMikuDance.rss`; website keyword search `https://bowlroll.net/file/keyword/<encoded keyword>`. The administrator describes keyword search over title, description and filename, distinct from tags. | RSS adapter only; title filtering over recent entries. No invented feed pagination or keyword-feed API. Do not infer MMD model format merely from feed membership. Feed endpoint could not be retrieved here; source links remain useful if it is unavailable. |
+| Poly Haven | English/global props and environments | GET `https://api.polyhaven.com/assets?type=models`; dictionary keyed by asset ID, type 2, name/tags/thumbnail_url. Match query variants locally, paginate cached records in the client. | Public metadata API adapter. Actual browser metadata retrieval passed with host network access; earlier restricted-shell DNS failed. API listing alone does not prove a specific format or current file retrieval. |
+| Sketchfab | English/global, original-language titles | GET `https://api.sketchfab.com/v3/search?type=models&count=24&q=...`; public search, space-separated keywords; follow returned same-endpoint next cursor. Separate queries, not all aliases in a single AND query. | Public metadata API adapter, no token. Official docs cap count at 24 and warn about 429. Actual browser retrieval, cursor paging and English/Japanese searches passed with host network access. |
+| BowlRoll | Japanese; MMD ecosystem including models, motions and other files | Published feed `https://bowlroll.net/file/tag/MikuMikuDance.rss`; website keyword search `https://bowlroll.net/file/keyword/<encoded keyword>`. The administrator describes keyword search over title, description and filename, distinct from tags. | RSS adapter only; title filtering over recent entries. No invented feed pagination or keyword-feed API. Do not infer MMD model format merely from feed membership. Live endpoint returned HTML rather than RSS; reported unavailable with website fallback. No HTML scraping was added. |
 | Steam Workshop SFM | Multilingual; app 1840, includes non-model content | Website `https://steamcommunity.com/workshop/browse/?appid=1840&searchtext=...`. Documented IPublishedFileService/QueryFiles uses key, appid, search_text, language, cursor/next_cursor. | Website only. No bundled key/server, HTML scraping, account access or subscription calls. Retrieval conditions vary; no universal GMod/SFM ownership claim. |
 | Steam Workshop GMod | Multilingual; app 4000, includes non-model content | Same website/API methods with appid 4000. | Separate website filter; not an item-format inference. |
 | SFMLab | English, SFM/general community uploads | Source homepage/search UI. Published Terms discuss an API but do not establish a public catalogue-search contract. Search query template was not verified. | Website only, opens home so the user can use its search. Terms prohibit automated scraping without explicit permission. Anubis was observed in the earlier catalogue and confirmed in the site's own description; no challenge bypass attempted. |
@@ -60,6 +60,26 @@ uses 初音未来. Reordering the English words is a deterministic search variat
 not a separate official character name. Capitalization/ASCII width/spacing are
 local query variants, not claims about a provider's collation rules. No universal
 translation, transliteration or language coverage is promised.
+
+## Follow-up live observations
+
+Host-network runs on November 21 retrieved real Poly Haven and Sketchfab listings
+through the production browser, including 100 + 100 mixed discovery and original
+Japanese search results. The earlier app DNS failures described above belong to
+the restricted-shell attempt, not the final host-network result. No credentials
+or authentication workaround was needed for these two public metadata APIs.
+
+The documented BowlRoll RSS URL returned HTTP 200 **HTML**, with the normal
+MikuMikuDance tag-page title and canonical URL. This is not usable RSS and is
+reported as a provider limitation, without parsing the HTML into assets or
+claiming that it is an anti-bot challenge. Website search remains available.
+The RSS documentation is historical evidence, not a current availability claim.
+
+SFMLab's current [Terms](https://sfmlab.com/about/tos/) still prohibit scraping
+without explicit permission. Steam's documented QueryFiles still requires a key;
+VRoid's official API outline still requires registration and OAuth. Those sources
+remain website-only. No additional account API, scraped catalogue or invented
+search template was introduced in this follow-up.
 
 ## Request policy
 

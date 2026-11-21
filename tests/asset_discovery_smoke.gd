@@ -278,7 +278,7 @@ func _run() -> void:
 	popup.close_requested.emit(); await settle()
 	check(not is_instance_valid(popup), "closing integration window frees its discovery services")
 	browser.queue_free(); await settle()
-	var report := {"checks":checks, "failures":failures, "requests":requests.size(), "browser_opens_intercepted":opened.size(), "display_driver":DisplayServer.get_name(), "scope":"Production UI signals, filesystem scan, metadata fixtures. No live-provider success or visual/GPU claim."}
+	var report := {"checks":checks, "failures":failures, "requests":requests.size(), "browser_opens_intercepted":opened.size(), "display_driver":DisplayServer.get_name(), "scope":"Production UI, filesystem scan and metadata fixtures; rendered layout captures only when graphical. No live-provider or native-model appearance claim."}
 	var file := FileAccess.open("res://output/asset-discovery-test.json", FileAccess.WRITE); file.store_string(JSON.stringify(report, "  ")); file.close()
 	print("ASSET_DISCOVERY_RESULT " + JSON.stringify(report))
 	quit(0 if failures.is_empty() else 1)

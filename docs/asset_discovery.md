@@ -1,7 +1,9 @@
 # Asset discovery — first working increment
 
-Implemented on `worker/asset-browser-20261121`, based on GitHub `main`
-`2f1acbd7867087d9f18cfbc1122cc0c883c5f788` (checked November 21, 2026).
+Implemented on `worker/asset-browser-live-20261121`, based on GitHub `main`
+`243e6a1edf1aee5cd07f107a34775db49a2caa01` (checked November 21, 2026).
+Continues the preserved initial `worker/asset-browser-20261121` / `85d07df0`
+implementation; that earlier branch and its checkout outputs are retained.
 This is a separate panel/demo, not a change to normal Studio startup.
 
 ## Launch
@@ -27,9 +29,13 @@ Directories are session-only, not written to projects or personal preferences.
 Online has independent website and format menus. Enable online access and press
 Search (or Enter). An empty query starts discovery. The first batch targets 100
 unique listings across the available metadata providers. **Load another batch**
-appends up to another 100 without reordering previous batches. This is a target,
+adds up to another 100, preserving the relative order of earlier results while
+moving newly discovered exact matches ahead of broad matches. This is a target,
 not a fabricated quota: restricted, exhausted or failing providers can produce
 fewer results. Website search links do not count as listings.
+An activity bar shows work in progress. For a website-only provider, **Open
+website search** is available directly beside the paging controls, even with
+online access disabled. Other website/query variations are under provider details.
 
 Click a listing to open its source page through the default browser. Enter also
 opens the selected online listing. There are no asset downloads, subscriptions,
@@ -48,7 +54,7 @@ renderer. A thumbnail never establishes a 3D preview or access permission.
 | Names | Original query, ASCII width/case/spacing normalization, reverse word order, explicit aliases, individual words. Expand names can be disabled. Original titles are retained. |
 | Aliases | Only Hatsune Miku / Miku Hatsune / 初音ミク / 初音未来 are bundled; primary references are in the source notes. Unknown names are not translated. |
 | Query disclosure | Shows generated variations and actual Sketchfab queries sent. Poly Haven/feed matching is local against fetched metadata. Website searches let the user choose a variation. |
-| Ranking | Exact loaded titles first, then contained full/reordered names and known aliases, then broad words. Each new batch is ranked independently so older results keep their position. Unfetched remote matches cannot be ranked. |
+| Ranking | Exact loaded titles first, then contained full/reordered names and known aliases, then broad words. Newly fetched exact matches move ahead of earlier broad matches; existing rows retain their relative order and the visible row anchor is restored. Unfetched remote matches cannot be ranked. |
 | Duplicates | Provider item IDs and source-page URLs (without query/fragment for the three current path-ID adapters); distinct entries sharing a title remain distinct. |
 | Requests | One metadata request at a time, at least 600 ms apart, at most six requests per batch, 12-second timeout, 4 MiB response limit, no redirects/cookies/authentication. Normal editing never opts into networking. |
 | Throttling | HTTP 429 stops that provider, preserves partial results and observes numeric Retry-After (at least 60 seconds). Without the header, wait 60 seconds; unrecognized/date-form hints pause that provider for the session. No automatic retry. Search can retry other failures. |
@@ -104,7 +110,7 @@ returns a Window and exposes its panel via `get_meta("discovery_panel")`.
 
 ## Actual verification and limits
 
-`python tests/verify_asset_discovery.py` passes **80 runtime checks** in Godot
+`python tests/verify_asset_discovery.py` passes **88 runtime checks** in Godot
 4.6 stable, headless. It operates production Controls, including viewport mouse
 events for Search and the online Tree, FileDialog directory-selection signal,
 filter/button/tab signals, real filesystem enumeration of synthetic empty model
@@ -120,21 +126,40 @@ The initial run found truncated RSS accepted by Godot's parser; explicit nesting
 and closure checks fixed it. Pointer testing also exposed reselect activation;
 the final Tree handler opens directly from the clicked row and supports Enter.
 
-`python tests/verify_asset_discovery.py --live` ran the real HTTPRequest path.
-All three metadata hosts failed DNS resolution in the restricted shell; zero
-listings were returned, with individual errors. The probe reports observations,
-not catalogue-success assertions. Independent web research did retrieve the
-current Poly Haven model metadata endpoint; that is not a successful app fetch.
-Sketchfab and BowlRoll live retrieval remain unverified here.
+`python tests/verify_asset_discovery.py --live --require-listings` passed using
+the actual production HTTPRequest and UI paths with host network access. Initial
+discovery returned **100 real individual listings** (76 Poly Haven / 24 Sketchfab),
+then **200 total** (152 / 48) with no repeated identities or lost earlier entries.
+The English name search returned **54** unique listings after five queries,
+including Japanese/Chinese aliases; **21** matched a separate `初音ミク` query.
+The name search honestly stopped short of 100 with more available. A real
+in-flight request was cancelled, its HTTPRequest released and loading cleared.
+Cold startup was offline; opening a real result's source URL was intercepted
+in the test. No model/image file or actual download was requested. Counts are
+observations of that run, not permanent provider guarantees. The non-strict
+`--live` mode records provider outages without inventing a success requirement.
+Earlier restricted-shell DNS failures remain historical failures; host access
+resolved that test environment limitation.
 
-`python tests/verify_asset_discovery.py --graphical` was attempted once. Windows
-refused `Create private test desktop` with Errno 5, before a Godot window launched.
-No visible fallback, screenshot, GPU appearance or physical-input claim is made.
-The demo script separately passes the engine's check-only compilation. Only
-focused discovery checks ran; no complete-suite claim is made.
+`python tests/verify_asset_discovery.py --graphical` passed **100 runtime checks**
+on the private Windows desktop with Intel OpenGL, including pointer interaction
+and six inspected PNG captures: Neon, Classic light and Classic dark at 1240x860
+and 960x700. Each owned child/desktop/job closed; no foreground child was observed.
+The earlier restricted-shell private-desktop refusal remains historical. The
+new layout assertion initially confused native pixels with stretched viewport
+coordinates; comparing the viewport boundary fixed the fixture. The fixture now
+uses the same background surface as the demo, preserving readable Classic text.
+No application tolerance was relaxed. Captures stay ignored in output, outside
+Git. See `docs/benchmarks/asset_discovery_2026-11-21.json` for safe run observations.
+Only focused discovery checks ran; no complete-suite or owner-acceptance claim.
 
 Remaining limitations: several providers are website-only, BowlRoll is a recent
 mixed-content feed rather than a full model catalogue, known-type filtering can
 exclude useful Unknown entries, aliases are deliberately small, and thumbnail/
 local 3D previews, persistent locations, sounds and account APIs are later work.
 There are no blocking owner decisions for this increment.
+
+The live BowlRoll endpoint returned HTML instead of RSS (HTTP 200). Its historical
+RSS adapter remains available if RSS returns, but current BowlRoll discovery is
+website-only in practice. No HTML scraping fallback was added. Steam, SFMLab,
+BOOTH and VRoid likewise have website actions rather than fabricated result rows.

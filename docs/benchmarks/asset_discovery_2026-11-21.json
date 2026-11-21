@@ -1,0 +1,373 @@
+{
+  "date": "2026-11-21",
+  "base_main": "243e6a1edf1aee5cd07f107a34775db49a2caa01",
+  "graphical": {
+    "browser_opens_intercepted": 3,
+    "checks": 100,
+    "display_driver": "Windows",
+    "failures": [],
+    "requests": 24,
+    "scope": "Production UI, filesystem scan, metadata fixtures and six rendered layouts; no native-model appearance claim."
+  },
+  "headless": {
+    "checks": 88,
+    "failures": []
+  },
+  "live": {
+    "cancel": {
+      "http_released": true,
+      "loading": false,
+      "message": "Cancelled. Partial results are kept; Search retries this query.",
+      "request_existed": true
+    },
+    "cold_start_offline": true,
+    "failures": [],
+    "initial": {
+      "listings": 100,
+      "message": "100 listings loaded (100 new; target about 100). More metadata is available.\nBowlRoll: BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+      "queries": [
+        "Sketchfab: discovery feed"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "2nd 3d2",
+          "url": "https://sketchfab.com/3d-models/none-bd5d179db1a6410f829b28cee38a2041"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "8686",
+          "url": "https://sketchfab.com/3d-models/none-18734475ae6244f2a4626c5c1b2d2757"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "38558",
+          "url": "https://sketchfab.com/3d-models/none-415fe26b3e794b15a1613a43e42365c0"
+        },
+        {
+          "access": [
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "polyhaven",
+          "title": "Adjustable Wrench",
+          "url": "https://polyhaven.com/a/adjustable_wrench"
+        },
+        {
+          "access": [
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "polyhaven",
+          "title": "Alarm Clock 01",
+          "url": "https://polyhaven.com/a/alarm_clock_01"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Alex",
+          "url": "https://sketchfab.com/3d-models/none-3620a5d4ebb845be981934306545f420"
+        }
+      ],
+      "sources": {
+        "polyhaven": 76,
+        "sketchfab": 24
+      },
+      "statuses": {
+        "booth": "Japanese/English marketplace search; no verified public catalogue API. Listings can be paid or require login; check each page.",
+        "bowlroll": "BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+        "polyhaven": "522 metadata entries. ",
+        "sfmlab": "Terms restrict scraping; Anubis protection observed. Search in your browser. API catalogue access has not been established.",
+        "sketchfab": "24 metadata entries. ",
+        "steam_gmod": "Official QueryFiles API needs a key. Access and retrieval depend on the app/item; check its source page.",
+        "steam_sfm": "Official QueryFiles API needs a key. Open website search; no scraping, subscriptions or ownership assumptions.",
+        "vroid": "Japanese/English VRM directory. API needs registered application/OAuth. Public preview does not prove download permission."
+      },
+      "unique_ids": 100
+    },
+    "japanese_search": {
+      "listings": 21,
+      "message": "21 listings loaded (21 new; target about 100). No more results from the available sources. Website-only sources are not counted.",
+      "queries": [
+        "Sketchfab: 初音ミク",
+        "Sketchfab: 初音ミク"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-19ca79ea15e3466081296c1f4208526c"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-3d0285f40c1a44628c7035a284c6a616"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-286c7808f4d146b2b0009b363505b617"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-31099f179c934306b05077879dfb992c"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku Fanart - 初音ミク ファンアート",
+          "url": "https://sketchfab.com/3d-models/none-c59476da354b4260ab6694a0ba0519d2"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [
+            "MMD"
+          ],
+          "source": "sketchfab",
+          "title": "Miku Hatsune / Wasabi式初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-8c57c4b6314e40e2a70b474d721c2735"
+        }
+      ],
+      "sources": {
+        "sketchfab": 21
+      },
+      "statuses": {
+        "sketchfab": "16 metadata entries. "
+      },
+      "unique_ids": 21
+    },
+    "name_search": {
+      "listings": 54,
+      "message": "54 listings loaded (54 new; target about 100). More metadata is available.",
+      "queries": [
+        "Sketchfab: Hatsune Miku",
+        "Sketchfab: hatsune miku",
+        "Sketchfab: miku hatsune",
+        "Sketchfab: 初音ミク",
+        "Sketchfab: 初音未来"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-70a7b23a5e2b4abe8c84f393fa51f4b5"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-dfae2c6fc8e54c7c832708c40db55be3"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-413dffcb80ef4bf789d637c207b950a9"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-ee8ad20e5dbe4353883e483b314f7995"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-34f3e7daa4c64c8a8000ae7f90b01ceb"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-a25f6548a8684500ac0004559484a4f9"
+        }
+      ],
+      "sources": {
+        "sketchfab": 54
+      },
+      "statuses": {
+        "sketchfab": "3 metadata entries. "
+      },
+      "unique_ids": 54
+    },
+    "scope": "Actual HTTPRequest metadata and production UI; browser opening intercepted. No model/thumbnail download, appearance or ownership claim. Provider availability is an observation.",
+    "second_batch": {
+      "listings": 200,
+      "message": "200 listings loaded (100 new; target about 100). More metadata is available.\nBowlRoll: BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+      "queries": [
+        "Sketchfab: discovery feed",
+        "Sketchfab: discovery feed"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "2nd 3d2",
+          "url": "https://sketchfab.com/3d-models/none-bd5d179db1a6410f829b28cee38a2041"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "8686",
+          "url": "https://sketchfab.com/3d-models/none-18734475ae6244f2a4626c5c1b2d2757"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "38558",
+          "url": "https://sketchfab.com/3d-models/none-415fe26b3e794b15a1613a43e42365c0"
+        },
+        {
+          "access": [
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "polyhaven",
+          "title": "Adjustable Wrench",
+          "url": "https://polyhaven.com/a/adjustable_wrench"
+        },
+        {
+          "access": [
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "polyhaven",
+          "title": "Alarm Clock 01",
+          "url": "https://polyhaven.com/a/alarm_clock_01"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Alex",
+          "url": "https://sketchfab.com/3d-models/none-3620a5d4ebb845be981934306545f420"
+        }
+      ],
+      "sources": {
+        "polyhaven": 152,
+        "sketchfab": 48
+      },
+      "statuses": {
+        "booth": "Japanese/English marketplace search; no verified public catalogue API. Listings can be paid or require login; check each page.",
+        "bowlroll": "BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+        "polyhaven": "522 metadata entries. ",
+        "sfmlab": "Terms restrict scraping; Anubis protection observed. Search in your browser. API catalogue access has not been established.",
+        "sketchfab": "24 metadata entries. ",
+        "steam_gmod": "Official QueryFiles API needs a key. Access and retrieval depend on the app/item; check its source page.",
+        "steam_sfm": "Official QueryFiles API needs a key. Open website search; no scraping, subscriptions or ownership assumptions.",
+        "vroid": "Japanese/English VRM directory. API needs registered application/OAuth. Public preview does not prove download permission."
+      },
+      "unique_ids": 200
+    },
+    "seconds": 23.433,
+    "source_click_intercepted": [
+      "https://sketchfab.com/3d-models/none-bd5d179db1a6410f829b28cee38a2041"
+    ]
+  },
+  "limits": [
+    "No model/image download; public metadata only.",
+    "Website-only providers are not counted as individual listings.",
+    "BowlRoll historical feed currently returns HTML.",
+    "No complete-suite, physical-input, native-model appearance or owner acceptance claim."
+  ],
+  "retained_failures": [
+    "Earlier restricted-shell DNS/private-desktop failures; resolved with approved host execution.",
+    "Initial layout fixture compared native dimensions with logical stretched coordinates; corrected to viewport coordinates."
+  ],
+  "private_desktop": {
+    "private_window_seen": true,
+    "child_desktop_confirmed": true,
+    "foreground_child_observed": false,
+    "exit": 0,
+    "job_closed": true,
+    "desktop_closed": true
+  }
+}
