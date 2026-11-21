@@ -4,19 +4,23 @@ Implemented on `worker/asset-browser-live-20261121`, based on GitHub `main`
 `243e6a1edf1aee5cd07f107a34775db49a2caa01` (checked November 21, 2026).
 Continues the preserved initial `worker/asset-browser-20261121` / `85d07df0`
 implementation; that earlier branch and its checkout outputs are retained.
-This is a separate panel/demo, not a change to normal Studio startup.
+This feature checkout now integrates the browser into normal Studio with two
+small app.gd hooks. Other checkouts and installed Studio remain unchanged.
 
 ## Launch
 
 From this checkout, with the existing Godot 4.6 stable standard installation:
 
 ```powershell
+python run.py
+# Simple: Add → Asset discovery…; Advanced: Discover
+# Standalone browser, without the rest of Studio:
 python tools/asset_discovery_demo.py
 ```
 
 Alternatively set `HYBRID_GODOT` to that engine's executable first. No dependency
-installation, app.gd change, model files or project are needed. The normal engine
-project/main scene remains unchanged. The demo offers Neon, Classic light and
+installation, model files or project are needed. The engine project/main scene
+remains unchanged. The demo offers Neon, Classic light and
 Classic dark using the existing `studio_theme.gd` implementation.
 
 Local starts offline. Choose one or more directories; filename search updates
@@ -24,6 +28,10 @@ the list, and the format menu combines with it. Clear directories starts over.
 Selecting a filename shows its full path and extension-only evidence. **Use
 selected local file** emits a path to the parent; the standalone demo reports
 that selection without importing anything. Cancellation keeps partial filenames.
+**Preview GLB geometry** explicitly opens a separate, orbitable geometry-only
+window for supported GLBs. It does not change the Studio project or source file,
+start a converter or fetch external resources. See its limits below.
+
 Directories, provider, separate Local/Online format filters, the last tab and name
 expansion choice survive restart in a personal JSON file. The standalone default
 is `output/discovery-preferences.json`; the Studio bridge places it beside the
@@ -58,6 +66,7 @@ access permission. Other providers do not gain image requests via website links.
 | Area | Behavior |
 | --- | --- |
 | Local enumeration | PMX/PMD, VRM, MDL, GLB/glTF, FBX, OBJ and Blend filenames; recursive selected directories; hidden entries and links skipped. No archive or model parsing. |
+| Explicit local preview | GLB only, maximum 8 MiB, embedded geometry buffers only. Materials/images/animations/morphs/cameras/extras/extensions are removed from an in-memory preview copy before import. Required extensions and compressed buffers are refused. No source file is rewritten. Counts, buffer bounds, node hierarchy and instanced vertex counts are bounded; at most 256 joints per skin. A separate world/camera renders plain geometry with an orbit slider. Parsing is synchronous after the explicit click; full-material/native-format previews remain unsupported. |
 | Format labels | MMD, SFM, VRM, GMod, glTF, FBX, OBJ, Blend, Source MDL and Unknown. Online labels use title/tag terms and visibly say **(inferred)**. The selected-row details explain that file contents were not inspected. Provider identity alone never supplies a format. |
 | Local MDL | Labelled Source MDL. SFM/GMod cannot be distinguished from the extension; neither compatibility is invented. |
 | Access | Sketchfab viewerUrl gives Preview (source-site viewer); isDownloadable=true gives Downloadable, not a tested retrieval; explicit isProtected=true gives Password. Missing download/login/password information remains Unknown in labels/evidence. No current adapter has evidence for an item-specific Login required badge. |
@@ -75,21 +84,25 @@ access permission. Other providers do not gain image requests via website links.
 
 ## Integration hooks (primary worker applies separately)
 
-No edits to app.gd, renderer.gd, model.gd, source_import.gd, world_runtime.gd,
-world_selection.gd, project.godot or the canonical verifier are part of this branch.
-Apply the reviewable **two-line shell patch** in
-`docs/asset_discovery_integration.patch` after adopting `src/discovery`:
+The **two-line app.gd hook is already applied on this feature branch**. It is the
+only shared application source changed. Renderer/model/import/world files,
+project.godot and the canonical verifier remain untouched. The independent patch
+is retained for the primary to review or apply when adopting modules separately:
 
 ```powershell
 git apply --check docs/asset_discovery_integration.patch
 git apply docs/asset_discovery_integration.patch
 ```
 
+Do not apply that patch again after adopting this branch's integrated app.gd.
+The patch keeps app.gd's original CRLF source context and line endings.
+
 One line adds **Asset discovery…** to Simple's Add menu. The other calls
 `preload("res://src/discovery/studio_bridge.gd").install(self, toolbar)` beside
 Installed in Advanced. The module owns its button/window and needs no app member.
-Both hooks were actually applied/tested in a disposable copy of real Studio;
-the tracked app.gd and other shared files remained byte-identical.
+The earlier patch-only increment was tested in a disposable copy. Current tests
+copy the already integrated application source, verify exactly one bridge install
+and exercise both real entry points. They never modify the primary's checkout.
 
 The bridge captures recovery session/revision, sequence owner/generation and
 world/joint selections when opened. The deferred local callback checks them again,
@@ -157,8 +170,8 @@ Only focused discovery checks ran; no complete-suite or owner-acceptance claim.
 
 Remaining limitations: several providers are website-only, BowlRoll's historical
 mixed-content feed is not currently RSS, known-type filtering can exclude useful
-Unknown entries, and aliases are deliberately small. Local 3D previews, sounds
-and account APIs are later work. Thumbnails are selected-item previews rather
+Unknown entries, and aliases are deliberately small. Fully materialled/native
+3D previews, sounds and account APIs are later work. Thumbnails are selected-item previews rather
 than an image grid; cache and opt-in last for the current browser instance.
 There are no blocking owner decisions for this increment.
 
@@ -169,8 +182,9 @@ BOOTH and VRoid likewise have website actions rather than fabricated result rows
 
 ## Persistence, thumbnails and guarded integration follow-up
 
-The continuing increment is based on the preserved `e1383a38` browser; normal
-Studio startup remains unchanged until the primary applies the shell patch.
+The persistence increment is based on the preserved `e1383a38` browser. Its
+patch-only scope is historical; the subsequent integration increment applies the
+two hooks in this feature checkout and adds explicit local geometry preview.
 
 ```powershell
 # New checks: thumbnail limits + two-process persistence + patched real Studio
@@ -215,3 +229,26 @@ Initial attempts and local captures remain in ignored output; no private model,
 generated binary or thumbnail image was added to Git. Earlier 88/100 checks and
 100→200 / 54-English / 21-Japanese retrieval remain historical scopes, not a new
 single aggregate run. No complete-suite or owner-acceptance claim is made.
+
+## Integrated geometry-preview checkpoint
+
+The subsequent feature-branch increment includes the two normal Studio hooks
+and **Preview GLB geometry**. A current focused invocation passed **109 checks**:
+17 preview, 21 thumbnail, 17 two-process persistence, and 27 integrated Studio
+controls in each of Neon/Classic on private Windows desktops. Preview images
+were inspected and show the generated cube. Preview preserves source bytes and
+the Studio world; the same selected cube then imports through ordinary
+ImportActions and is removed by ordinary Undo. The normal main.tscn entry also
+started headlessly and exited successfully in a bounded startup smoke without
+recovering an existing project. No installation was changed.
+
+The live provider probe on the integrated code returned 100→200 mixed listings,
+55 English-name hits, 22 Japanese-name hits, eight MMD-filtered Sketchfab hits,
+one explicitly enabled public thumbnail and real cancellation cleanup. These
+counts are observations, not provider guarantees. Current safe evidence is in
+`docs/benchmarks/asset_discovery_integrated_preview_2026-11-21.json`.
+
+The preview hierarchy validator initially needed an explicit GDScript int type;
+that compile failure occurred before graphical launch and was fixed. Materials,
+animation/morph fidelity, preview conversion of other formats and large GLBs
+remain unsupported. The full HAS suite and owner acceptance are separate work.

@@ -37,6 +37,9 @@ def main():
     folder = ROOT / "output" / f"discovery-additions-{time.time_ns()}"
     folder.mkdir(parents=True)
     reports = {}
+    print("Local geometry preview")
+    execute("tests/asset_discovery_preview.gd", folder)
+    reports["geometry_preview"] = json.loads((folder / "preview-result.json").read_text(encoding="utf-8"))
     print("Optional thumbnail preview")
     execute("tests/asset_discovery_thumbnail.gd", folder)
     reports["thumbnails"] = json.loads((folder / "thumbnail-result.json").read_text(encoding="utf-8"))
@@ -58,8 +61,12 @@ def main():
         (stage / "tests").mkdir()
         shutil.copy2(ROOT / "tests/asset_discovery_studio_smoke.gd", stage / "tests/asset_discovery_studio_smoke.gd")
         original = hashlib.sha256((ROOT / "src/app.gd").read_bytes()).hexdigest()
-        subprocess.run(["git", "apply", "--directory=" + stage.relative_to(ROOT).as_posix(),
-                        "docs/asset_discovery_integration.patch"], cwd=ROOT, check=True)
+        staged_app = (stage / "src/app.gd").read_text(encoding="utf-8")
+        if 'get_node("AssetDiscoveryBridge").open()' not in staged_app:
+            subprocess.run(["git", "apply", "--directory=" + stage.relative_to(ROOT).as_posix(),
+                            "docs/asset_discovery_integration.patch"], cwd=ROOT, check=True)
+        else:
+            assert staged_app.count('preload("res://src/discovery/studio_bridge.gd").install(self, toolbar)') == 1
         assert hashlib.sha256((ROOT / "src/app.gd").read_bytes()).hexdigest() == original
         for theme in ["neon", "classic"]:
             case = folder / theme

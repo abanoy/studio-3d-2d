@@ -7942,3 +7942,33 @@ binary was committed. Website-only provider, inferred-format and optional cache
 limits remain explicit. No full-suite, owner acceptance, merge or main push claim.
 See docs/asset_discovery.md, asset_discovery_integration.patch and the
 asset_discovery_persistence_integration_2026-11-21 safe benchmark.
+
+
+## 2026-11-21 — Discovery integrated in feature checkout
+
+The continuous goal remains active through publication and primary adoption.
+The feature branch now applies the two reviewed app.gd hooks: Simple Add → Asset
+discovery and Advanced Discover. Only this isolated app.gd changes (two added
+lines, original CRLF retained); other checkouts, installed Studio, Renderer,
+Model, SourceImport and world files remain untouched. The existing guarded
+bridge owns all import callbacks and preserves active operations/bundle queues.
+
+An explicit GLB geometry preview now uses a separate viewport/world/camera and
+orbit slider, without changing the Studio world or original file. Preview strips
+images/materials/animations/morphs/extras/extensions from an in-memory glTF copy,
+refuses external geometry buffers/required extensions/compression, and bounds
+file bytes, accessor/instanced geometry, hierarchy, buffers and joints. Other
+formats still use normal explicit import; no preview converter/network was added.
+
+Actual current focused execution:109 controls in one additions invocation:17
+preview,21thumbnail,17two-process persistence and27real integrated Studio per
+Neon/Classic on private Windows desktops. Preview captures visibly show the
+generated cube, and import/Undo follows preview through ordinary ImportActions.
+Normal main.tscn entry also starts headlessly/exit0 with recovery disabled for
+the startup smoke. Live current probe again retrieves100→200 mixed listings,
+55English/22Japanese/8MMD-filtered hits, a permitted thumbnail and cancellation.
+No unrelated full suite or owner acceptance. The initial int-inference compile
+error in new hierarchy validation was fixed before graphical launch. Source
+and safe counts: docs/benchmarks/asset_discovery_integrated_preview_2026-11-21.json.
+Publication/readback follows on this feature branch only, with no main merge,
+force push, installed update or private artwork publication.

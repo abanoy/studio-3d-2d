@@ -110,6 +110,16 @@ func run() -> void:
 		printerr("LOCAL_SCAN_DIAGNOSTIC " + JSON.stringify({"message":panel.local.message, "rows":panel.local.rows, "visible":panel.visible_rows, "query":panel.search.text, "format":panel.format_filter.get_item_text(panel.format_filter.selected), "path":path}))
 		quit(1); return
 	selected_item.select(0); panel.tree.item_selected.emit(); await settle()
+	var original_glb := FileAccess.get_file_as_bytes(path)
+	check(not panel.preview_button.disabled, "selected local GLB enables explicit geometry preview")
+	panel.preview_button.pressed.emit(); await settle()
+	check(is_instance_valid(panel.geometry_window), "integrated browser opens isolated geometry preview")
+	check(app.current_world() == before and FileAccess.get_file_as_bytes(path) == original_glb, "local preview preserves Studio world and source GLB")
+	if DisplayServer.get_name() != "headless":
+		await RenderingServer.frame_post_draw
+		var view: SubViewport = panel.geometry_window.get_meta("preview_viewport")
+		check(view.get_texture().get_image().save_png(folder.path_join("geometry-preview.png")) == OK, "capture real geometry preview pixels")
+	panel.geometry_window.close_requested.emit(); await settle()
 	panel.use_button.pressed.emit(); await settle()
 	check(not is_instance_valid(bridge.window), "Use closes the browser before the callback")
 	check(app.current_world().objects.size() == before.objects.size() + 1, "real ordinary import pipeline adds generated model")

@@ -7,6 +7,7 @@ const Service = preload("res://src/discovery/service.gd")
 const LocalScan = preload("res://src/discovery/local_scan.gd")
 const Preferences = preload("res://src/discovery/preferences.gd")
 const Thumbnail = preload("res://src/discovery/thumbnail.gd")
+const LocalPreview = preload("res://src/discovery/local_preview.gd")
 var preferences_path := Preferences.DEFAULT_PATH
 var online: Node
 var local: Node
@@ -23,6 +24,8 @@ var website_button: Button
 var choose_button: Button
 var clear_button: Button
 var use_button: Button
+var preview_button: Button
+var geometry_window: Window
 var tree: Tree
 var status: Label
 var activity: ProgressBar
@@ -117,8 +120,11 @@ func _ready() -> void:
 	var preview_box := VBoxContainer.new(); detail_row.add_child(preview_box)
 	preview = TextureRect.new(); preview.custom_minimum_size = Vector2(96, 96); preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE; preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED; preview_box.add_child(preview)
 	preview_note = _label(); preview_note.custom_minimum_size.x = 150; preview_note.add_theme_font_size_override("font_size", 11); preview_box.add_child(preview_note)
-	use_button = _button(self, "Use selected local file", _use_local)
-	use_button.tooltip_text = "Passes the filename to the parent. This panel never loads or converts the model."
+	var local_actions := HBoxContainer.new(); add_child(local_actions)
+	preview_button = _button(local_actions, "Preview GLB geometry", _preview_local)
+	preview_button.tooltip_text = "Explicit local preview only: self-contained GLB up to 8 MiB. Materials and animation are omitted; no conversion or project edit."
+	use_button = _button(local_actions, "Use selected local file", _use_local); use_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	use_button.tooltip_text = "Passes the filename to the parent for explicit import. Browsing does not load models."
 	var providers_toggle := CheckButton.new(); providers_toggle.text = "Show provider details and website searches"; add_child(providers_toggle)
 	var provider_box := VBoxContainer.new(); provider_box.visible = false; add_child(provider_box)
 	providers_toggle.toggled.connect(func(enabled): provider_box.visible = enabled)
@@ -187,6 +193,7 @@ func _tab_changed(index: int) -> void:
 	website_button.visible = is_online
 	thumbnails.visible = is_online
 	choose_button.visible = not is_online; clear_button.visible = not is_online; use_button.visible = not is_online
+	preview_button.get_parent().visible = not is_online
 	directory_label.visible = not is_online
 	selected = {}; _render_signature = ""; _schedule_refresh()
 	_update_thumbnail()
@@ -261,7 +268,7 @@ func _refresh() -> void:
 		disclosure.text += "\nQuery variations: " + (", ".join(online.variants) if not online.variants.is_empty() else "discovery feed")
 		if not online.tried.is_empty(): disclosure.text += "\nAPI queries sent: " + "; ".join(online.tried)
 		disclosure.text += "\nPoly Haven and BowlRoll match these variations against fetched metadata; BowlRoll covers recent feed entries only."
-	else: disclosure.text = "Filename extensions only. No model loading, conversion or execution. Source MDL compatibility is Unknown."
+	else: disclosure.text = "Browsing lists filename extensions. GLB geometry preview is explicit and does not edit the project or start a converter. Source MDL compatibility is Unknown."
 	cancel_button.disabled = not (online.loading or local.loading or thumbnail.loading)
 	activity.visible = online.loading if is_online else local.loading
 	more_button.disabled = online.loading or not online.has_more or not online.network_enabled
@@ -270,6 +277,7 @@ func _refresh() -> void:
 	if not _settings_error.is_empty(): status.text += "\n" + _settings_error
 	search_button.disabled = false
 	use_button.disabled = selected.is_empty() or is_online
+	preview_button.disabled = selected.is_empty() or is_online or str(selected.get("path", "")).get_extension().to_lower() != "glb"
 	details.text = "Select a filename for its full path." if not is_online else "Access labels describe source metadata, not a verified download or permission to use the model."
 	if not selected.is_empty(): details.text = str(selected.get("path", selected.get("url", ""))) + "\n" + str(selected.get("evidence", ""))
 	if is_online and not selected.get("formats", []).is_empty(): details.text += "\nFormat hints are inferred from title/tags; file contents were not inspected."
@@ -313,6 +321,13 @@ func open_page(url: String) -> void:
 
 func _use_local() -> void:
 	if tabs.current_tab == 0 and not selected.is_empty(): local_file_selected.emit(selected.path)
+
+func _preview_local() -> void:
+	if tabs.current_tab != 0 or selected.is_empty(): return
+	if is_instance_valid(geometry_window): geometry_window.queue_free()
+	var result := LocalPreview.open(self, str(selected.get("path", "")))
+	if result.has("error"): _open_error = result.error; status.text = _open_error
+	else: geometry_window = result.window; _open_error = ""; _schedule_refresh()
 
 func _exit_tree() -> void:
 	if is_instance_valid(thumbnail): thumbnail.set_enabled(false)
