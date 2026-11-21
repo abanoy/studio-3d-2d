@@ -1,0 +1,235 @@
+{
+  "date": "2026-11-21",
+  "branch": "worker/editable-lights-20261121",
+  "base_commit": "243e6a1edf1aee5cd07f107a34775db49a2caa01",
+  "scope": "Focused actual editor, native prepared inputs, lighting pixels, portable reopening and movie export. No complete-suite claim.",
+  "runs": {
+    "cpu": {
+      "checks": 103,
+      "failures": 0,
+      "folder": "scene-lighting-1795280653345871600",
+      "source_unchanged": true,
+      "source_inventory_sha256": "455a5e6488de34b95a1f043d5e83d7b8defc1b7c40889b11bd4c104de54ea081",
+      "phases": [
+        {
+          "checks": 87,
+          "failures": 0,
+          "phase": "writer",
+          "graphics": false
+        },
+        {
+          "checks": 16,
+          "failures": 0,
+          "phase": "reader",
+          "graphics": false
+        }
+      ]
+    },
+    "compatibility": {
+      "checks": 107,
+      "failures": 0,
+      "folder": "scene-lighting-1795280685055280600",
+      "source_unchanged": true,
+      "source_inventory_sha256": "455a5e6488de34b95a1f043d5e83d7b8defc1b7c40889b11bd4c104de54ea081",
+      "phases": [
+        {
+          "checks": 103,
+          "failures": 0,
+          "phase": "writer",
+          "graphics": true
+        },
+        {
+          "checks": 4,
+          "failures": 0,
+          "phase": "reader",
+          "graphics": true
+        }
+      ],
+      "measurements": {
+        "light": {
+          "environment_light_gain": 696.9132690429688,
+          "model_light_gain": 633.80712890625,
+          "shadow_difference": 597052.0
+        },
+        "native_environment": {
+          "material_limits": "",
+          "pixel_difference": 3886933.0
+        },
+        "native_model": {
+          "material_limits": "",
+          "pixel_difference": 2886763.0
+        },
+        "neon": {
+          "environment_light_gain": 696.9132690429688,
+          "model_light_gain": 633.80712890625,
+          "shadow_difference": 597052.0
+        }
+      },
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "48",
+        "duration": "2.000000"
+      },
+      "private_desktops": [
+        {
+          "exit": 0,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "exit": 0,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      ],
+      "exact_preview_export_png": true,
+      "exact_fresh_process_pixels": true,
+      "engine_shutdown_texture_rid_warnings": []
+    },
+    "forward_plus": {
+      "checks": 119,
+      "failures": 0,
+      "folder": "scene-lighting-1795280635686435800",
+      "source_unchanged": true,
+      "source_inventory_sha256": "455a5e6488de34b95a1f043d5e83d7b8defc1b7c40889b11bd4c104de54ea081",
+      "phases": [
+        {
+          "checks": 115,
+          "failures": 0,
+          "phase": "writer",
+          "graphics": true
+        },
+        {
+          "checks": 4,
+          "failures": 0,
+          "phase": "reader",
+          "graphics": true
+        }
+      ],
+      "measurements": {
+        "light": {
+          "environment_light_gain": 697.2120971679688,
+          "model_light_gain": 633.80712890625,
+          "reflection_difference": 11580542.0,
+          "reflective_sphere_gain": 627.9215974807739,
+          "shadow_difference": 585093.0
+        },
+        "native_environment": {
+          "material_limits": "",
+          "pixel_difference": 3909724.0
+        },
+        "native_model": {
+          "material_limits": "",
+          "pixel_difference": 2997639.0
+        },
+        "neon": {
+          "environment_light_gain": 697.2120971679688,
+          "model_light_gain": 633.80712890625,
+          "reflection_difference": 11580542.0,
+          "reflective_sphere_gain": 627.9215974807739,
+          "shadow_difference": 585093.0
+        }
+      },
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "48",
+        "duration": "2.000000"
+      },
+      "private_desktops": [
+        {
+          "exit": 0,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "exit": 0,
+          "child_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      ],
+      "exact_preview_export_png": true,
+      "exact_fresh_process_pixels": true,
+      "engine_shutdown_texture_rid_warnings": [
+        14,
+        7
+      ]
+    }
+  },
+  "tested_changed_files_sha256": {
+    "run.py": "99767c6e5712b5319055a51a78019655976699a31bb73b2a1331e2201b05a821",
+    "src\\app.gd": "5333bec9a08d0e0c72d5387645d6874a859207afe709a47e68ed9c649d2300a9",
+    "src\\renderer.gd": "89f3421ecf86f8de927fd8987e1ba86a10b703042133a1aef51372f44bab0975",
+    "src\\lighting.gd": "ec8f5d36eac5d3ba9230e29cdd17affa17b13dc5ed61c28d4ec27c70b9ba87bc",
+    "src\\scene_lighting_document.gd": "c3ed20bf94390c7b2979baea7b5ace6f99757d0a65b7d297af6b377182c086d1",
+    "src\\scene_lighting_runtime.gd": "111d87302ba9b10b9090e8d8994bf5447ec917af7437a300675f3e28df5a8371",
+    "src\\scene_lighting_editor.gd": "56ccc62f011b8e6e63de7c5be86679a2dc55f4cc871fd342e465161f4d714830",
+    "tests\\scene_lighting_smoke.gd": "3de3f8e65665e018fa1f3ef3abf929d3bb9ddb939612f6a8156718d568f7f548",
+    "tests\\verify_scene_lighting.py": "716ea5c344683afa66a0c2acb2195e6c285bf6bedb2cd7875d310c35712eb3a7"
+  },
+  "earlier_attempts": [
+    {
+      "folder": "scene-lighting-1795279696382615600",
+      "checks": 111,
+      "failures": 2,
+      "finding": "Probe had zero visible contribution in Compatibility."
+    },
+    {
+      "folder": "scene-lighting-1795279951152280200",
+      "checks": 113,
+      "failures": 2,
+      "finding": "Explicit ambient alone did not fix probe contribution."
+    },
+    {
+      "folder": "scene-lighting-1795280149631992300",
+      "checks": 113,
+      "failures": 2,
+      "finding": "Probe ambient mode alone did not fix contribution."
+    },
+    {
+      "folder": "scene-lighting-1795280236374028400",
+      "checks": 117,
+      "failures": 0,
+      "finding": "Whole-room difference passed but was rejected as insufficient proof of metallic reflection."
+    },
+    {
+      "folder": "scene-lighting-1795280352639745800",
+      "checks": 115,
+      "failures": 2,
+      "finding": "Direct metallic patch correctly exposed absent Compatibility reflection."
+    },
+    {
+      "folder": "scene-lighting-1795280486069325400",
+      "checks": 115,
+      "failures": 2,
+      "finding": "Forward+ reflection worked visually; center patch faced black empty space (gain 5.284)."
+    },
+    {
+      "folder": "scene-lighting-1795280557901680600",
+      "checks": 115,
+      "failures": 2,
+      "finding": "Explicit .3 fill retained; center patch still faced empty space (gain 6.534). Final patch samples visible lower hemisphere, same >10 bound."
+    }
+  ],
+  "limitations": [
+    "Room cubemap is qualified on Forward+ only; default Compatibility shows an actionable limitation and preserves saved probe data.",
+    "Uniform ambient and cubemap local fill are approximations; no light-bounce GI or path tracing.",
+    "Forward+ engine emits 7 texture RID shutdown warnings per app/probe world; minimal engine-only case reproduces it. Ongoing-session leak/performance not established.",
+    "No arbitrary native-shader fidelity, multiple GPUs, animated reflection timing or reference-only reflection visibility qualification.",
+    "Imported lights/materials are preserved. Unlit and custom materials retain authored lighting behavior.",
+    "No original private models, screenshots, video or generated binaries committed."
+  ]
+}

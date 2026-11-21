@@ -29,6 +29,7 @@ var native_view_closing:=false
 var world_environment: WorldEnvironment
 var video_settings: Dictionary={}
 var studio_light: DirectionalLight3D
+var scene_lighting: RefCounted
 var legacy_materials: RefCounted
 var last_lighting:=""
 var last_framing: Dictionary={}
@@ -48,6 +49,7 @@ func setup(width := 1920, height := 1080) -> void:
 	add_child(viewport)
 	world = Node3D.new()
 	viewport.add_child(world)
+	scene_lighting=preload("res://src/scene_lighting_runtime.gd").new();scene_lighting.setup(world)
 	var env := WorldEnvironment.new()
 	world_environment = env
 	env.environment = Environment.new()
@@ -88,12 +90,14 @@ func _process(_delta: float) -> void:
 		editor_grid.visible = empty_environment and not capturing_final and not sequence_instance
 
 func apply_lighting() -> void:
+	scene_lighting.sync(video_settings)
 	var kind:=Lighting.mode(video_settings)
 	if kind!=last_lighting:
 		last_lighting=kind
 		studio_light.visible=kind=="studio"
 		world_environment.environment.ambient_light_energy=0.7 if kind=="studio" else 0.
 		world_environment.environment.ambient_light_sky_contribution=1. if kind=="studio" else 0.
+	scene_lighting.apply_ambient(video_settings,world_environment.environment)
 	if environment_scene:
 		if not legacy_materials:
 			legacy_materials=Model.Opacity.new();legacy_materials.inventory(environment_scene)

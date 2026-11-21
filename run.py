@@ -130,6 +130,7 @@ def command(script=None, headless=False, extra=(), quiet=False, project=None):
 def main(quiet=False):
     parser = argparse.ArgumentParser()
     parser.add_argument("project", nargs="?", help="Open this .has project at startup")
+    parser.add_argument("--forward-plus", action="store_true", help="Optional higher-quality renderer for room reflections; Compatibility remains the default")
     parser.add_argument("--test", choices=["unit", "spikes", "editor", "legacy", "ui", "recovery", "recovery-write", "pose", "source", "source-browser"])
     options = parser.parse_args()
     if options.test and options.project:
@@ -155,6 +156,9 @@ def main(quiet=False):
             args = command("tests/source_browser_smoke.gd")
         else:
             args = command(quiet=quiet, project=options.project)
+        if options.forward_plus:
+            offset = args.index("--path")
+            args[offset:offset] = ["--rendering-method", "forward_plus"]
         if options.test:
             if "--" not in args: args.append("--")
             args.append("--demo-room")

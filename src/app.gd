@@ -96,6 +96,7 @@ var timeline: Control
 var camera_key_editor: Node
 var mode: OptionButton
 var lighting_choice: OptionButton
+var scene_lighting_editor: Node
 var tool: OptionButton
 var fill_editor
 var onion_editor
@@ -549,6 +550,7 @@ func _ready() -> void:
 	camera_easing=preload("res://src/camera_easing_editor.gd").new();add_child(camera_easing);camera_easing.setup(self)
 	renderer.camera_preview_sampler=camera_easing.sample_preview
 	sequence_editor=preload("res://src/sequence_editor.gd").new();add_child(sequence_editor);sequence_editor.setup(self)
+	scene_lighting_editor=preload("res://src/scene_lighting_editor.gd").new();add_child(scene_lighting_editor);scene_lighting_editor.setup(self)
 	if StudioTheme.is_neon(): compact_timeline_rows()
 	keyboard_shortcuts.refresh_labels()
 	if keyboard_nav: apply_keyboard_nav(true)
@@ -3289,7 +3291,7 @@ func build_ui() -> void:
 		simple_only(t)
 	lighting_choice=OptionButton.new()
 	for lighting_title in ["Unshaded","Lit","Studio light"]:lighting_choice.add_item(lighting_title)
-	lighting_choice.tooltip_text="Unshaded shows base colors. Lit uses imported scene lights. Studio light retains older projects' illumination."
+	lighting_choice.tooltip_text="Unshaded shows base colors. Lit uses authored and imported lights. Lights… adds editable lights. Studio light retains older projects' illumination."
 	lighting_choice.item_selected.connect(change_lighting)
 	view_toolbar.add_child(lighting_choice)
 	# Redesign: Simple Draw tool strip; drives the tool dropdown (Advanced Drawing panel).
@@ -3999,7 +4001,7 @@ func change_lighting(index: int) -> void:
 	push_history({"type":"video","before":before,"after":video.duplicate(true)})
 	var view: Dictionary=renderer.view_state()
 	changed();set_frame(frame);renderer.restore_view(view)
-	message("Unshaded: base colors and textures." if kind=="unshaded" else "Lit: uses the lights supplied by your scene." if kind=="lit" else "Studio light: original preview illumination.")
+	message("Unshaded: base colors and textures." if kind=="unshaded" else "Lit: authored and imported scene lights. Use Lights… to add or edit." if kind=="lit" else "Studio light: original preview illumination.")
 
 func change_visibility_fade(value: float) -> void:
 	if exporting or int(value)==int(video.get("visibility_fade_ms",300)):return

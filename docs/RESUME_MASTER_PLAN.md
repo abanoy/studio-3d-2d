@@ -2579,3 +2579,14 @@ Miku now has a separate zero-penetration graphical measurement but an adverse
 sharp root bend; retain both findings and refine before adopting it. Continue
 reviewed discovery/direct-light integration. Formal55/62 acceptance and its
 seven actual external prerequisites remain unchanged; no manual owner prompt.
+
+## 2026-11-21 - Independent editable lighting ready for integration
+
+worker/editable-lights-20261121 in has-editable-lights-20261121 adds directional,
+point and spot editing, presets, list/history/native persistence, explicit fill
+and optional Forward+ cubemap reflections/local fill. Final focused CPU103,
+Compatibility107 and Forward+119 pass, including native prepared model/environment
+illumination and two real movies with exact preview/export and cold pixels.
+See docs/editable_scene_lighting.md for small integration hooks and honest engine/
+material limits. No world-runtime edits, main merge or main push. Next diffuse GI:
+opt-in Forward+ SDFGI colored-room prototype; no path tracing claim.

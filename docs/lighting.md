@@ -1,18 +1,25 @@
 # Project lighting
 
+The November 21 development increment adds [editable scene lights](editable_scene_lighting.md):
+directional, point and spot lights, named selection, property editing, presets,
+Undo/Redo and native project persistence. Focused private GPU checks on the current
+main base pass for model/environment illumination, shadows, cold reopening and MP4.
+Optional room cubemap reflections and soft character lighting extend this increment;
+see its current evidence for the exact tested scope.
+
 Future owner lighting requests and read-only reference research are recorded in
 [lighting_feedback_2026-11-12.md](lighting_feedback_2026-11-12.md), especially
-shared indirect lighting on models and props. That roadmap is deferred while
-work is paused and does not extend the implemented modes described here.
+shared indirect lighting on models and props. That historical roadmap is separate
+from the first authored-light increment and does not claim indirect-light support.
 
 The small lighting menu beside the Scene/Draw/Pose selector is available in Simple.
 
 - **Unshaded** is the default for a new empty project. It shows base colors and
   textures without scene light/shadow interaction; added emission is disabled in
   this view so it does not brighten the base twice.
-- **Lit** uses the lights supplied by the imported scene and the asset's original
+- **Lit** uses authored lights and lights supplied by the imported scene, with the asset's original
   material shading. A scene without lights can be dark. Authored unlit or emissive
-  materials retain their native behavior.
+  materials retain their native behavior. The Lights panel offers explicit ambient fill.
 - **Studio light** keeps the original ambient/directional preview illumination.
   Older projects with no lighting setting retain this appearance. The explicit
   Advanced Sample room also uses it to preserve that demonstration.
@@ -44,7 +51,8 @@ editor-only and unshaded independently of this setting.
 Existing standard glTF punctual lights can import through the normal GLB loader;
 an actual embedded directional-light fixture proves Lit response. This does not
 complete native Source BSP lightmaps, Source shader/proxy recreation, MToon fidelity,
-light creation/editing UI, photorealism or ray tracing. Those remain open importer/
+photorealism or ray tracing. Light creation/editing is provided by the development
+increment above; the other items remain open importer/
 rendering requirements. No lightmap is invented for an unlit map, and Lit adds no
 hidden studio lamp. Studio light remains an explicit usable fallback.
 
@@ -81,8 +89,8 @@ BSP preparation preserves geometry and raw entities when optional light data is
 invalid, sentinel-valued, animated, starts off, unsupported or over the global64
 emitted-light limit. The report gives every omission count and bounded warning
 examples; it does not silently switch these lights on or clamp them. A valid
-90-degree outer spot half-cone is accepted. This conversion does not add a light
-creation/editing UI or reproduce Source photometry.
+90-degree outer spot half-cone is accepted. This conversion does not reproduce
+Source photometry. The authored-light editor is separate from these preserved lamps.
 
 Compatible static LDR brush lightmaps have [separate bounded preservation](source_brush_lightmaps.md).
 The two-map2026-11-21 conversion retest did not qualify editor/visual acceptance.
