@@ -1,0 +1,35 @@
+{
+  "root_audit_programs": [
+    {
+      "location": "PRIMARY/output/review_native_reconstruction.py",
+      "file": "review_native_reconstruction.py",
+      "bytes": 4296,
+      "sha256": "1e7e8d7f7fe888282e5fc2a67ebf61edbe629237661ecf640fc803ec5ed22f39",
+      "scope": "Audit program identity only; not imported or rerun by draft author."
+    },
+    {
+      "location": "PRIMARY/output/review_reconstruction_fk.py",
+      "file": "review_reconstruction_fk.py",
+      "bytes": 3502,
+      "sha256": "f3f3ebbb097057670edb9f62c9f9c609ef1c615a45696013dd3c83cc5330ac31",
+      "scope": "Audit program identity only; not imported or rerun by draft author."
+    },
+    {
+      "location": "PRIMARY/output/review_reconstruction_regressions.py",
+      "file": "review_reconstruction_regressions.py",
+      "bytes": 1370,
+      "sha256": "6eedc0a4dcce5d974c784f9f067ca79b1472ea4741a5c40f4a89bcb8eb362a4d",
+      "scope": "Audit program identity only; not imported or rerun by draft author."
+    }
+  ],
+  "public56_execution_pins": {
+    "tools/secondary_helpers.py": "2b6c22700b6100acdb2c087fb8a1295bbd1584fc5d32d09eaf0112625d7b1380",
+    "tools/secondary_helpers_batch.py": "fc0411eac11e0a454735fe2d6e95d0dbe8b291af65cd7389dae534eea3547f7f",
+    "tools/secondary_reconstruction.py": "fce671c11a625a9db42e265413f8dd438f23f2d841a666d788938921844ba349",
+    "tools/wind_helper_preview.py": "049b66bb20fdf2da4f89fb7eceb5576f1bbd94a143e2e193dc7baa73f7b07bef"
+  },
+  "synthetic96_writer_pin": "6b7d84774fb1bdb0e0c2fdc7a7dc594c2a2cd3888119256e3c96f53a2bd4851f",
+  "native_guide_rest_source_hash": "a329cd47bd74b05278a6e501b9503d8e0b9231bf6adc647307d573170166a3ec",
+  "native_guide_rest_candidate_hash": "b8bddf289ef14fcf511eafe08f229760f3fe570dd3840060f9ed3396d61acbb5",
+  "scope": "Stage-specific identities; public regression and later synthetic stages may pin different writer bytes. No single merged-source or GUI qualification inferred."
+}

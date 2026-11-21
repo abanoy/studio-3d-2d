@@ -8503,3 +8503,22 @@ review are linked; prepared/headless startup is not private import/GUI acceptanc
 Cleanup53.6MB+6.88GB remains rejected/pending direct permission, with no retry;
 external review SourceIO/Blender, owner originals and other checkouts stay protected.
 No application/test/ledger or Git changes, engine runs or cleanup were performed.
+
+
+## 2026-11-21 — Published partial reconstruction; retain rest-render defect
+
+Reviewed and independently fetched experimental branch codex/backhair-reconstruction-20261121
+at7f1d85d7ea57a3bafd16e5be085e18609830c304. Main keeps its current application source;
+this checkpoint publishes independent compact observations and pickup instructions only.
+One1292-vertex back-hair component gains13 per-influence guide chains/65nodes.
+Native12 passes:12.24cm centroid drop, attachments fixed, every Off vertex restored,
+actual52colliders/1236skinrows/720refreshes, about12.5ms per120Hz step.
+Pure11/wind16/protectedMiku54 pass; Rootpublic56 and native/synthetic FK audits
+retain their own source versions. Properly framed SimpleGUI remains18/19:165channel
+bytes/144pixels differ, imported posed vertices differ up to48.22micrometers.
+No exact-pixel tolerance was added, no all-hair or native appearance claim made.
+Next:actual eight-slot packed-weight readback, bounded preservation/refusal, remaining
+colored sections and explicit outline masks, then performance. Raw source originals,
+private arrays/art and failed/unrun evidence remain protected. Source working CRLF
+equivalence is declared; remote raw blobs/tree match without claiming every working
+byte equal. Rejected cleanup stays pending direct permission. Formal52/54+55/62 unchanged.

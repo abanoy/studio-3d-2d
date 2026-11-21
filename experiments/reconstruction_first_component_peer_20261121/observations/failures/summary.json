@@ -1,0 +1,149 @@
+{
+  "failures": [
+    {
+      "stage": "first_buffer_read",
+      "status": "ROOT_REPORTED_DETECTED_DEFECT_BEFORE_CANDIDATE",
+      "evidence_type": "Root contemporaneous message, no raw result file supplied",
+      "description": "R.build appended inverse-bind accessors then reread them before updating buffers[0].byteLength; H.accessor correctly refused Helper accessor exceeds buffer view. No candidate written; original preserved. Writer updated buffer length before read; strict helper guard retained.",
+      "candidate_written": false,
+      "strict_guard_relaxed": false
+    },
+    {
+      "stage": "initial_native_without_warmup",
+      "status": "FAIL",
+      "wrapper_checks": 0,
+      "engine_marker": {
+        "anchor_error": 0.0,
+        "average_tick_usec": 5839.85833333333,
+        "centroid_drop": 0.0,
+        "chains": 0,
+        "checks": 10,
+        "failures": 1,
+        "final_remaining_contact_pairs": 0,
+        "maximum_remaining_contact_pairs": 0,
+        "minimum_contact_gap": 0.0,
+        "original_joint_error": 0.0,
+        "selected_vertices": 1292
+      },
+      "individually_passed_assertions": 9,
+      "scope": "Initial10-check native fixture, before strengthened expected-chain/active-contact/warmup assertions. Not qualified as a passing batch.",
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "job_active": 0,
+      "job_closed": true,
+      "original_result": {
+        "file": "result.json",
+        "bytes": 323,
+        "sha256": "2b57f576bdd89650604667262741c8c2b8776364062065c6429f31514f756eca"
+      }
+    },
+    {
+      "stage": "desktop_prelaunch_and_source_freeze",
+      "status": "FAIL",
+      "wrapper_checks": 23,
+      "prerequisite_pure_checks": 11,
+      "reason": "Private Job/window closure proof failed",
+      "gui_child_created": false,
+      "gui_error": "[Errno 5] Create private test desktop",
+      "graphical_placement_proven": false,
+      "source_preservation_failures": [
+        "tests\\test_reconstruction_wind_mapping.py"
+      ],
+      "runtime_preserved": true,
+      "parent_environment_preserved": true,
+      "scope": "Earlier native/pure assertions do not qualify this GUI attempt or source-integrity window.",
+      "original_result": {
+        "file": "verification.json",
+        "bytes": 3416,
+        "sha256": "012700f7ffb517740b0126d8e53b8ddfc97f7689188b3c551c1e8bf19e6db283"
+      }
+    },
+    {
+      "stage": "theme_native_class_parse",
+      "status": "FAIL",
+      "gui_assertions_executed": 0,
+      "wrapper_prior_checks": 23,
+      "wrapper_pure_checks": 11,
+      "reason": "Theme member shadows native class; script failed to parse.",
+      "original_result": {
+        "file": "verification.json",
+        "bytes": 3361,
+        "sha256": "a5c3ae1c23bd0a7dd68d193977e2e44bf7eeec9491ae468829a2d1047164610e"
+      }
+    },
+    {
+      "stage": "earlier_tiny_view_rest_pixels",
+      "status": "FAIL",
+      "wrapper_checks": 0,
+      "engine_marker": {
+        "advanced": false,
+        "captures": 4,
+        "checks": 18,
+        "failures": 1,
+        "maximum_off_transform_error": 0.0,
+        "rest_pixel_bytes_changed": 6
+      },
+      "individually_passed_assertions": 17,
+      "failing_assertion": "Owned guide rest exactly preserves the posed character rendered surfaces",
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "closure": {
+        "exit": 1,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_desktop_confirmed": true,
+        "private_window_seen": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "source_preservation_failures": [],
+      "original_result": {
+        "file": "verification.json",
+        "bytes": 2187,
+        "sha256": "05416cc9eee019de792e93554dfaa2899d0c6140499689af96f19c7d7b0b3656"
+      },
+      "scope": "Actual marker retained separately from aggregator0; no passing GUI or appearance claim. Camera framing attribution is Root-reported, not a private capture copied into this draft."
+    },
+    {
+      "stage": "later_correctly_framed_rest_pixels",
+      "status": "FAIL",
+      "wrapper_checks": 0,
+      "engine_marker": {
+        "advanced": false,
+        "captures": 4,
+        "checks": 19,
+        "failures": 1,
+        "maximum_channel_difference": 240,
+        "maximum_off_transform_error": 0.0,
+        "maximum_posed_vertex_difference": 4.82201030536089e-05,
+        "rest_pixel_bytes_changed": 165,
+        "rest_pixels_changed": 144,
+        "sampled_posed_vertices": 37470,
+        "total_channel_difference": 918
+      },
+      "individually_passed_assertions": 18,
+      "failing_assertion": "Owned guide rest exactly preserves the posed character rendered surfaces",
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "closure": {
+        "exit": 1,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_desktop_confirmed": true,
+        "private_window_seen": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "source_preservation_failures": [],
+      "original_result": {
+        "file": "verification.json",
+        "bytes": 2188,
+        "sha256": "592821606069b4ef284e148d082028a0a0993ce3108fe1dcd936637703a9e9ff"
+      },
+      "scope": "Actual marker retained separately from aggregator0; no passing GUI or appearance claim. Camera framing attribution is Root-reported, not a private capture copied into this draft."
+    }
+  ],
+  "centroid_or_pixel_threshold_weakened": false,
+  "newer_gui_pass_claimed": false,
+  "subsequent_rerun": "No subsequent rerun result is credited by this draft."
+}

@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "draft_path": "independent/native_guide_rest.json",
+      "source_stage": "output",
+      "file": "native-reconstruction-peer-result.json",
+      "bytes": 623,
+      "sha256": "29fbde611ddcead5e68365c8bb50aec6e4801bec2b467f2ff38500d518a10aa2"
+    },
+    {
+      "draft_path": "independent/synthetic_fk96.json",
+      "source_stage": "output",
+      "file": "reconstruction-synthetic-peer-result.json",
+      "bytes": 330,
+      "sha256": "02505a4549fc2a5b51f60b5ddd9af22f8f5b353a5529310b1d4c5abf647ab9b1"
+    },
+    {
+      "draft_path": "public56/test_secondary_helpers.py.stderr",
+      "source_stage": "reconstruction-public-regressions-1795297264758223400",
+      "file": "test_secondary_helpers.py.stderr",
+      "bytes": 124,
+      "sha256": "d4dba1505e2d05fa4b36749e5bcea3860e0a9a0037d2521a032481f6d88eaab0"
+    },
+    {
+      "draft_path": "public56/test_secondary_helpers_batch.py.stderr",
+      "source_stage": "reconstruction-public-regressions-1795297264758223400",
+      "file": "test_secondary_helpers_batch.py.stderr",
+      "bytes": 130,
+      "sha256": "dfd893bd74e0a06d1b6635fd772b9785816d139aa8fd63b7266a994251175d6f"
+    },
+    {
+      "draft_path": "public56/test_helper_morphs.py.stderr",
+      "source_stage": "reconstruction-public-regressions-1795297264758223400",
+      "file": "test_helper_morphs.py.stderr",
+      "bytes": 114,
+      "sha256": "dacc7de1392e389cef3529e95a3a4ba309601061a2ea1dfaa9ac2ed0514baca4"
+    },
+    {
+      "draft_path": "public56/verification.json",
+      "source_stage": "reconstruction-public-regressions-1795297264758223400",
+      "file": "verification.json",
+      "bytes": 913,
+      "sha256": "cb9ea139e5ab306dffa9188f33ad73b746fc8c2f436261954bef7058bc47bc21"
+    },
+    {
+      "draft_path": "native12/child-receipt.json",
+      "source_stage": "native",
+      "file": "child-receipt.json",
+      "bytes": 241,
+      "sha256": "a05f860fa1b8e07a01219bd3ea82b583ec24b91362d351cce54030d796ab67e6"
+    },
+    {
+      "draft_path": "native12/result_projection.json",
+      "source_stage": "reconstruction-native-1795297342882766900/native",
+      "file": "result.json",
+      "bytes": 1010,
+      "sha256": "3ef10fa1ae6599a57a41399baff6dca3578834072716600d4e6f7f4578b32b04",
+      "projection": "Wrapper numeric/closure fields and report numeric whitelist; profile removed."
+    },
+    {
+      "draft_path": "native12/metrics_projection.json",
+      "source_stage": "reconstruction-native-1795297342882766900/native/Data",
+      "file": "metrics.json",
+      "bytes": 590,
+      "sha256": "9b21d512fe1c6f77908a0e715b1f8122a18380c4da34da4c69f44aa897ed1906",
+      "projection": "Exact numeric metric fields only; no user_profile or geometry."
+    }
+  ],
+  "original_private_model_or_spec_paths_included": false,
+  "scope": "Safe original reports are pinned by stage/file/hash only; no native asset/spec locations or data."
+}
