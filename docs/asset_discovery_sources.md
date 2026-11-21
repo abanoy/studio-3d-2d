@@ -2,8 +2,10 @@
 
 This extends the November 12 research catalogue without rewriting its historical
 claims. Current code is in `src/discovery`; these notes separate a documented
-interface from an actual successful live app retrieval. No models or thumbnails
-were downloaded during research or verification.
+interface from an actual successful live app retrieval. The original research
+and metadata verification downloaded no models or thumbnails. The continuing
+optional-preview probe later loaded one public CDN thumbnail into memory after
+explicit opt-in; no model files or thumbnail artifacts were stored in Git.
 
 | Directory | Language / scope | Actual search or API method | First-version boundary |
 | --- | --- | --- | --- |
@@ -92,3 +94,19 @@ in-session cooldown and numeric Retry-After; without the header use 60 seconds.
 Unrecognized/date-form hints pause that provider for the session rather than
 guessing a shorter delay. Provider failures remain visible alongside partial
 results; website-only sources never become synthetic asset rows.
+
+## Optional image policy
+
+Only a selected listing's supplied Poly Haven or Sketchfab CDN image is eligible,
+and only after both online access and Thumbnail preview are enabled. The loader
+accepts `cdn.polyhaven.com/asset_img/thumbs/` or Sketchfab's model-thumbnail path on
+`media.sketchfab.com`, with PNG/JPEG/WebP extensions. It does not visit arbitrary
+uploader websites, source pages, item-download endpoints or protected providers.
+The same application User-Agent is supplied. No redirects/cookies/auth are used.
+
+Eight in-memory images/errors, one selected-item request, minimum 600 ms spacing,
+8 seconds, 1 MiB encoded and 1024x1024 pre-decode dimensions bound this path.
+Server 429 pauses image requests for the browser session; other failures remain
+placeholders without automatic retries. Disabling network, Cancel, changing tabs
+or closing the browser discards obsolete work. Thumbnails do not change format,
+download, password, login, license or ownership labels.

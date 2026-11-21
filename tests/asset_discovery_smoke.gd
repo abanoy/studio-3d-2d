@@ -144,7 +144,7 @@ func _run() -> void:
 	background = Panel.new(); background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	background.add_theme_stylebox_override("panel", StudioTheme.surface("f4f7fb", "dce5ee")); root.add_child(background)
 	var margin := MarginContainer.new(); margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); root.add_child(margin)
-	browser = Browser.new(); margin.add_child(browser)
+	browser = Browser.new(); browser.preferences_path = ""; margin.add_child(browser)
 	browser.online.transport = fake_transport
 	browser.page_opener = func(url): opened.append(url); return OK
 	browser.local_file_selected.connect(func(path): used.append(path))
@@ -271,7 +271,7 @@ func _run() -> void:
 	# No files were interpreted or changed by scanning/selecting/filtering.
 	check(FileAccess.get_file_as_string(fixture.path_join("avatar.vrm")) == "synthetic filename fixture; never loaded", "local original fixture remains unchanged")
 	# Public host wrapper launches/cancels independently of app.gd.
-	var popup: Window = DiscoveryWindow.open(root)
+	var popup: Window = DiscoveryWindow.open(root, Callable(), {"preferences_path":""})
 	await settle()
 	var panel = popup.get_meta("discovery_panel")
 	check(panel.tabs.current_tab == 0 and not panel.online.network_enabled, "standalone integration window starts offline")

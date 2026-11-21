@@ -60,6 +60,11 @@ static func _sketch(data: Dictionary) -> Dictionary:
 		if not value.get("uid") is String or not value.get("name") is String or not value.get("viewerUrl") is String: invalid += 1; continue
 		if not value.viewerUrl.begins_with("https://sketchfab.com/3d-models/") or not Catalog.safe_page(value.viewerUrl): invalid += 1; continue
 		var row := _record(value.uid, value.name, "sketchfab", value.viewerUrl, _words(value.get("tags", [])))
+		var thumbnails = value.get("thumbnails")
+		if thumbnails is Dictionary and thumbnails.get("images") is Array:
+			for candidate in thumbnails.images.slice(0, 20):
+				if candidate is Dictionary and candidate.get("url") is String and (candidate.get("width") is int or candidate.get("width") is float) and (candidate.get("height") is int or candidate.get("height") is float) and candidate.width > 0 and candidate.width <= 512 and candidate.height > 0 and candidate.height <= 512:
+					row.thumbnail_url = candidate.url; break
 		row.access = ["Preview"]
 		row.evidence = "viewerUrl supplied by the model search API. Preview means a source-site 3D viewer."
 		if value.get("isDownloadable") is bool and value.isDownloadable:

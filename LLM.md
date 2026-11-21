@@ -7907,3 +7907,38 @@ BowlRoll historical RSS actually returns HTML; its website fallback is explicit.
 Steam/SFMLab/BOOTH/VRoid remain website-only. Initial DNS/private-desktop and
 layout-fixture failures remain recorded, not relabelled. No full-suite claim.
 See docs/asset_discovery.md and its safe benchmark JSON for integration/limits.
+
+
+## 2026-11-21 — Persistent discovery and guarded Studio integration
+
+Continued e1383a38 on worker/asset-browser-live-20261121. Personal JSON now
+retains selected directories, provider, independent Local/Online formats, tab
+and expansion across restart; network access, query, credentials and images
+are never saved. Bounded schema validation and temporary rename protect prior
+choices; corrupt settings show defaults/error without startup overwrite.
+Online known-format hints explicitly say inferred, and Unknown stays Unknown.
+
+Optional selected-item Poly Haven/Sketchfab thumbnails default off, with CDN
+allowlists, no redirects/accounts, byte/header dimension/time/rate/cache bounds,
+placeholder failures, 429 pause and cancellation. No model download was added.
+A separate Studio bridge plus two-line reviewable app patch adds Simple Add and
+Advanced Discover actions. It guards session/revision/sequence/selection changes,
+active operations and bundle_active, then defers to existing ImportActions.
+Tracked app.gd and all primary shared application files remain unchanged.
+
+Actual separate scopes: 21 generated-thumbnail/transport checks; 17 persistence
+controls across two fresh processes; real patched Studio 22/theme headless and
+23/theme on private Windows desktops, including synthetic GLB import and Undo;
+100 standalone private interaction/layout controls. Two Studio and six standalone
+layouts inspected, with owned private child/job/desktop closure and no foreground.
+Final actual provider probe retrieved 100 then 200 mixed listings, English and
+Japanese hits, a filtered MMD Sketchfab subset, one explicit public CDN image
+and real request cancellation. Safe exact counts are in the new benchmark JSON.
+Original 88/100 and 54/21 results remain historical, not one combined new batch.
+
+Fixed numeric-JSON tab validation, NUL validation literal and Windows fixture
+path comparison failures; no application tolerance weakened. No model/artwork
+binary was committed. Website-only provider, inferred-format and optional cache
+limits remain explicit. No full-suite, owner acceptance, merge or main push claim.
+See docs/asset_discovery.md, asset_discovery_integration.patch and the
+asset_discovery_persistence_integration_2026-11-21 safe benchmark.

@@ -3,7 +3,7 @@ extends RefCounted
 const Browser = preload("res://src/discovery/browser.gd")
 const StudioTheme = preload("res://src/studio_theme.gd")
 
-static func open(owner: Node, on_local: Callable = Callable()) -> Window:
+static func open(owner: Node, on_local: Callable = Callable(), options: Dictionary = {}) -> Window:
 	var window := Window.new()
 	window.title = "Asset discovery"
 	window.min_size = Vector2i(960, 700)
@@ -15,7 +15,9 @@ static func open(owner: Node, on_local: Callable = Callable()) -> Window:
 	var margin := MarginContainer.new(); margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	for side in ["left", "top", "right", "bottom"]: margin.add_theme_constant_override("margin_" + side, 12)
 	window.add_child(margin)
-	var browser := Browser.new(); browser.name = "Discovery"; margin.add_child(browser)
+	var browser := Browser.new(); browser.name = "Discovery"
+	if options.has("preferences_path"): browser.preferences_path = options.preferences_path
+	margin.add_child(browser)
 	window.set_meta("discovery_panel", browser)
 	browser.local_file_selected.connect(func(path):
 		if on_local.is_valid():

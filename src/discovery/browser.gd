@@ -5,6 +5,9 @@ signal source_page_opened(url: String)
 const Catalog = preload("res://src/discovery/catalog.gd")
 const Service = preload("res://src/discovery/service.gd")
 const LocalScan = preload("res://src/discovery/local_scan.gd")
+const Preferences = preload("res://src/discovery/preferences.gd")
+const Thumbnail = preload("res://src/discovery/thumbnail.gd")
+var preferences_path := Preferences.DEFAULT_PATH
 var online: Node
 var local: Node
 var tabs: TabBar
@@ -23,6 +26,10 @@ var use_button: Button
 var tree: Tree
 var status: Label
 var activity: ProgressBar
+var thumbnails: CheckButton
+var preview: TextureRect
+var preview_note: Label
+var thumbnail: Node
 var disclosure: Label
 var details: Label
 var provider_status: Label
@@ -38,6 +45,11 @@ var _refresh_pending := false
 var _render_signature := ""
 var _display_keys: Array = []
 var _open_error := ""
+var _settings_error := ""
+var _restoring := true
+var _last_tab := 0
+var _local_format := "All"
+var _online_format := "All"
 # Tests inject a browser opener, never launch a real browser during automation.
 var page_opener: Callable
 
@@ -46,6 +58,10 @@ func _ready() -> void:
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
 	online = Service.new(); add_child(online)
 	local = LocalScan.new(); add_child(local)
+	thumbnail = Thumbnail.new(); add_child(thumbnail)
+	thumbnail.changed.connect(func():
+		if is_instance_valid(preview): preview.texture = thumbnail.texture; preview_note.text = thumbnail.message
+		_schedule_refresh())
 	online.changed.connect(_schedule_refresh); local.changed.connect(_schedule_refresh)
 	var heading := Label.new(); heading.text = "Asset discovery"; heading.add_theme_font_size_override("font_size", 22); add_child(heading)
 	tabs = TabBar.new(); tabs.add_tab("Local"); tabs.add_tab("Online"); add_child(tabs)
@@ -66,9 +82,9 @@ func _ready() -> void:
 	search_button = _button(filters, "Search", run_search)
 	var controls := HFlowContainer.new(); add_child(controls)
 	choose_button = _button(controls, "Choose directory…", func(): picker.popup_centered(Vector2i(800, 540)))
-	clear_button = _button(controls, "Clear directories", func(): directories.clear(); local.start([]); _schedule_refresh())
+	clear_button = _button(controls, "Clear directories", func(): directories.clear(); local.start([]); save_preferences(); _schedule_refresh())
 	network = CheckButton.new(); network.text = "Enable online access"; controls.add_child(network)
-	network.toggled.connect(func(enabled): online.set_network(enabled); _schedule_refresh())
+	network.toggled.connect(func(enabled): online.set_network(enabled); _update_thumbnail(); _schedule_refresh())
 	expand = CheckButton.new(); expand.text = "Expand names"; expand.button_pressed = true; controls.add_child(expand)
 	expand.tooltip_text = "Full name, reordered words, documented aliases and individual keywords. No translation service."
 	expand.toggled.connect(func(_enabled): run_search())
@@ -76,6 +92,9 @@ func _ready() -> void:
 	more_button = _button(controls, "Load another batch", func(): online.fetch_more())
 	website_button = _button(controls, "Open website search", func(): open_page(Catalog.website_url(_site_ids[website.selected], search.text)))
 	website_button.tooltip_text = "Choose a website filter, then open its search page in your default browser."
+	thumbnails = CheckButton.new(); thumbnails.text = "Thumbnail preview"; controls.add_child(thumbnails)
+	thumbnails.tooltip_text = "Optional selected-item image only. At most 1 MiB per image; no model files. Online access must also be enabled."
+	thumbnails.toggled.connect(func(_value): _update_thumbnail())
 	directory_label = _label(); add_child(directory_label)
 	disclosure = _label(); disclosure.add_theme_font_size_override("font_size", 12); add_child(disclosure)
 	status = _label(); add_child(status)
@@ -93,7 +112,11 @@ func _ready() -> void:
 			var item := tree.get_item_at_position(event.position)
 			if item: selected = item.get_metadata(0); open_page(selected.get("url", ""))
 		elif event is InputEventKey and event.keycode in [KEY_ENTER, KEY_KP_ENTER] and event.pressed and not event.echo: open_selected())
-	details = _label(); details.custom_minimum_size.y = 48; add_child(details)
+	var detail_row := HBoxContainer.new(); add_child(detail_row)
+	details = _label(); details.custom_minimum_size.y = 48; details.size_flags_horizontal = Control.SIZE_EXPAND_FILL; detail_row.add_child(details)
+	var preview_box := VBoxContainer.new(); detail_row.add_child(preview_box)
+	preview = TextureRect.new(); preview.custom_minimum_size = Vector2(96, 96); preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE; preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED; preview_box.add_child(preview)
+	preview_note = _label(); preview_note.custom_minimum_size.x = 150; preview_note.add_theme_font_size_override("font_size", 11); preview_box.add_child(preview_note)
 	use_button = _button(self, "Use selected local file", _use_local)
 	use_button.tooltip_text = "Passes the filename to the parent. This panel never loads or converts the model."
 	var providers_toggle := CheckButton.new(); providers_toggle.text = "Show provider details and website searches"; add_child(providers_toggle)
@@ -114,7 +137,27 @@ func _ready() -> void:
 	picker = FileDialog.new(); picker.title = "Choose a local model directory"; picker.file_mode = FileDialog.FILE_MODE_OPEN_DIR
 	picker.access = FileDialog.ACCESS_FILESYSTEM; picker.use_native_dialog = false; add_child(picker)
 	picker.dir_selected.connect(add_directory)
-	_tab_changed(0)
+	load_preferences()
+	_tab_changed(tabs.current_tab)
+	_restoring = false
+	if tabs.current_tab == 0 and not directories.is_empty(): local.start(directories)
+
+func load_preferences() -> void:
+	var result := Preferences.read_file(preferences_path)
+	_settings_error = result.get("error", "")
+	var data: Dictionary = result.get("data", Preferences.defaults())
+	directories = data.directories
+	_local_format = data.local_format; _online_format = data.online_format
+	website.select(_site_ids.find(data.website))
+	expand.set_pressed_no_signal(data.expand)
+	_last_tab = data.tab; tabs.current_tab = data.tab
+	format_filter.select(Catalog.FORMATS.find(_local_format if data.tab == 0 else _online_format))
+
+func save_preferences() -> void:
+	if _restoring: return
+	if tabs.current_tab == 0: _local_format = Catalog.FORMATS[format_filter.selected]
+	else: _online_format = Catalog.FORMATS[format_filter.selected]
+	_settings_error = Preferences.write_file(preferences_path, {"version":1, "directories":directories, "website":_site_ids[website.selected], "local_format":_local_format, "online_format":_online_format, "expand":expand.button_pressed, "tab":tabs.current_tab})
 
 func _label() -> Label:
 	var label := Label.new(); label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -125,20 +168,36 @@ func _button(parent: Node, text: String, action: Callable) -> Button:
 	return button
 
 func add_directory(path: String) -> void:
+	if directories.size() >= Preferences.MAX_DIRECTORIES and path not in directories:
+		_settings_error = "Keep at most 32 local directories. Clear directories to start over."
+		_schedule_refresh(); return
 	if path not in directories: directories.append(path)
 	local.start(directories)
+	save_preferences()
 
 func _tab_changed(index: int) -> void:
+	if not _restoring and _last_tab != index:
+		if _last_tab == 0: _local_format = Catalog.FORMATS[format_filter.selected]
+		else: _online_format = Catalog.FORMATS[format_filter.selected]
+		format_filter.select(Catalog.FORMATS.find(_local_format if index == 0 else _online_format))
+	_last_tab = index
 	cancel()
 	var is_online := index == 1
 	website.visible = is_online; network.visible = is_online; expand.visible = is_online; more_button.visible = is_online
 	website_button.visible = is_online
+	thumbnails.visible = is_online
 	choose_button.visible = not is_online; clear_button.visible = not is_online; use_button.visible = not is_online
 	directory_label.visible = not is_online
 	selected = {}; _render_signature = ""; _schedule_refresh()
+	_update_thumbnail()
+	if not _restoring:
+		save_preferences()
+		if index == 0 and not directories.is_empty() and local.rows.is_empty(): local.start(directories)
 	# Opening the tab alone never opts into networking.
 
 func run_search() -> void:
+	if _restoring: return
+	save_preferences()
 	_open_error = ""
 	selected = {}; _render_signature = ""
 	if tabs.current_tab == 0:
@@ -147,6 +206,7 @@ func run_search() -> void:
 		online.search(search.text, _site_ids[website.selected], Catalog.FORMATS[format_filter.selected], expand.button_pressed)
 
 func cancel() -> void:
+	if is_instance_valid(thumbnail): thumbnail.cancel()
 	if is_instance_valid(online): online.cancel()
 	if is_instance_valid(local): local.cancel()
 	_schedule_refresh()
@@ -183,7 +243,7 @@ func _refresh() -> void:
 			var item := tree.create_item(root); item.set_metadata(0, row)
 			item.set_text(0, row.title)
 			item.set_text(1, Catalog.provider(row.provider).get("name", "Local") if is_online else row.path.get_base_dir())
-			item.set_text(2, ", ".join(row.formats) if not row.formats.is_empty() else "Unknown")
+			item.set_text(2, (", ".join(row.formats) + (" (inferred)" if is_online else "")) if not row.formats.is_empty() else "Unknown")
 			item.set_text(3, ", ".join(row.access))
 			for column in 4: item.set_tooltip_text(column, row.get("url", "") + "\n" + row.evidence)
 			if Catalog.identity(row) == key: item.select(0)
@@ -202,15 +262,18 @@ func _refresh() -> void:
 		if not online.tried.is_empty(): disclosure.text += "\nAPI queries sent: " + "; ".join(online.tried)
 		disclosure.text += "\nPoly Haven and BowlRoll match these variations against fetched metadata; BowlRoll covers recent feed entries only."
 	else: disclosure.text = "Filename extensions only. No model loading, conversion or execution. Source MDL compatibility is Unknown."
-	cancel_button.disabled = not (online.loading or local.loading)
+	cancel_button.disabled = not (online.loading or local.loading or thumbnail.loading)
 	activity.visible = online.loading if is_online else local.loading
 	more_button.disabled = online.loading or not online.has_more or not online.network_enabled
 	website_button.disabled = website.selected == 0
 	if not _open_error.is_empty(): status.text += "\n" + _open_error
+	if not _settings_error.is_empty(): status.text += "\n" + _settings_error
 	search_button.disabled = false
 	use_button.disabled = selected.is_empty() or is_online
 	details.text = "Select a filename for its full path." if not is_online else "Access labels describe source metadata, not a verified download or permission to use the model."
 	if not selected.is_empty(): details.text = str(selected.get("path", selected.get("url", ""))) + "\n" + str(selected.get("evidence", ""))
+	if is_online and not selected.get("formats", []).is_empty(): details.text += "\nFormat hints are inferred from title/tags; file contents were not inspected."
+	_update_thumbnail()
 	var lines: Array = []
 	for source in Catalog.PROVIDERS:
 		lines.append(source.name + " — " + source.mode + ": " + str(online.statuses.get(source.id, source.note)))
@@ -226,6 +289,13 @@ func _select() -> void:
 	var item := tree.get_selected()
 	selected = item.get_metadata(0) if item else {}
 	_schedule_refresh()
+
+func _update_thumbnail() -> void:
+	if not is_instance_valid(preview): return
+	var enabled := tabs.current_tab == 1 and network.button_pressed and thumbnails.button_pressed
+	preview.get_parent().visible = enabled
+	thumbnail.set_enabled(enabled)
+	if enabled: thumbnail.load_url(str(selected.get("thumbnail_url", "")))
 
 func open_selected() -> void:
 	_select()
@@ -245,5 +315,6 @@ func _use_local() -> void:
 	if tabs.current_tab == 0 and not selected.is_empty(): local_file_selected.emit(selected.path)
 
 func _exit_tree() -> void:
+	if is_instance_valid(thumbnail): thumbnail.set_enabled(false)
 	if is_instance_valid(online): online.cancel()
 	if is_instance_valid(local): local.cancel()

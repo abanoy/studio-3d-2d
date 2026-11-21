@@ -1,4 +1,4 @@
-# Asset discovery — first working increment
+# Asset discovery browser
 
 Implemented on `worker/asset-browser-live-20261121`, based on GitHub `main`
 `243e6a1edf1aee5cd07f107a34775db49a2caa01` (checked November 21, 2026).
@@ -24,7 +24,15 @@ the list, and the format menu combines with it. Clear directories starts over.
 Selecting a filename shows its full path and extension-only evidence. **Use
 selected local file** emits a path to the parent; the standalone demo reports
 that selection without importing anything. Cancellation keeps partial filenames.
-Directories are session-only, not written to projects or personal preferences.
+Directories, provider, separate Local/Online format filters, the last tab and name
+expansion choice survive restart in a personal JSON file. The standalone default
+is `output/discovery-preferences.json`; the Studio bridge places it beside the
+existing display preferences. It is not embedded in HAS projects. Network access
+always restarts off; queries, accounts, credentials and images are never saved.
+Returning to Local rescans saved directories; missing directories report errors.
+Settings are schema-checked, limited to 32 directories / 64 KiB, and replaced by
+temporary-file rename. Failed writes retain the previous file. Malformed settings
+show defaults and a useful error without being overwritten on startup.
 
 Online has independent website and format menus. Enable online access and press
 Search (or Enter). An empty query starts discovery. The first batch targets 100
@@ -38,17 +46,19 @@ website search** is available directly beside the paging controls, even with
 online access disabled. Other website/query variations are under provider details.
 
 Click a listing to open its source page through the default browser. Enter also
-opens the selected online listing. There are no asset downloads, subscriptions,
+opens the selected online listing. There are no model downloads, subscriptions,
 account flows, conversion, model execution or automatic thumbnail requests.
-Optional thumbnail URLs can be retained as metadata; this version has no image
-renderer. A thumbnail never establishes a 3D preview or access permission.
+**Thumbnail preview** is a separate opt-in, off by default. With online access
+enabled, it loads only the selected result's supplied Poly Haven/Sketchfab CDN
+image. No model data is fetched. A thumbnail never establishes a 3D preview or
+access permission. Other providers do not gain image requests via website links.
 
 ## Implemented boundaries
 
 | Area | Behavior |
 | --- | --- |
 | Local enumeration | PMX/PMD, VRM, MDL, GLB/glTF, FBX, OBJ and Blend filenames; recursive selected directories; hidden entries and links skipped. No archive or model parsing. |
-| Format labels | MMD, SFM, VRM, GMod, glTF, FBX, OBJ, Blend, Source MDL and Unknown. Online labels use explicit title/tag terms, not provider identity. They are ecosystem/format hints, not compatibility certification. |
+| Format labels | MMD, SFM, VRM, GMod, glTF, FBX, OBJ, Blend, Source MDL and Unknown. Online labels use title/tag terms and visibly say **(inferred)**. The selected-row details explain that file contents were not inspected. Provider identity alone never supplies a format. |
 | Local MDL | Labelled Source MDL. SFM/GMod cannot be distinguished from the extension; neither compatibility is invented. |
 | Access | Sketchfab viewerUrl gives Preview (source-site viewer); isDownloadable=true gives Downloadable, not a tested retrieval; explicit isProtected=true gives Password. Missing download/login/password information remains Unknown in labels/evidence. No current adapter has evidence for an item-specific Login required badge. |
 | Names | Original query, ASCII width/case/spacing normalization, reverse word order, explicit aliases, individual words. Expand names can be disabled. Original titles are retained. |
@@ -59,6 +69,7 @@ renderer. A thumbnail never establishes a 3D preview or access permission.
 | Requests | One metadata request at a time, at least 600 ms apart, at most six requests per batch, 12-second timeout, 4 MiB response limit, no redirects/cookies/authentication. Normal editing never opts into networking. |
 | Throttling | HTTP 429 stops that provider, preserves partial results and observes numeric Retry-After (at least 60 seconds). Without the header, wait 60 seconds; unrecognized/date-form hints pause that provider for the session. No automatic retry. Search can retry other failures. |
 | Cache | Poly Haven metadata in memory for ten minutes; no persistent network cache or downloaded artwork. |
+| Thumbnail bounds | Approved HTTPS image endpoints only; no redirects/auth/cookies. One image request at a time, at least 600 ms apart, 8-second timeout, 1 MiB encoded limit, dimensions checked before decoding (maximum 1024x1024), 96x96 display, eight cached images/errors in memory. Failures show a placeholder; 429 pauses image requests for this browser session. |
 | Cancellation | Search/filter changes, Cancel, disabling network, switching tabs and closing the wrapper stop obsolete work. Generation checks reject late responses. |
 | Local limits | 50,000 entries, 10,000 matching filenames, 32 directory levels; scan slices at most 128 entries / about 3 ms per frame. Errors and limits are reported. Slow filesystem calls themselves can still stall; arbitrary network-drive latency is not solved by this cooperative scanner. |
 
@@ -66,47 +77,38 @@ renderer. A thumbnail never establishes a 3D preview or access permission.
 
 No edits to app.gd, renderer.gd, model.gd, source_import.gd, world_runtime.gd,
 world_selection.gd, project.godot or the canonical verifier are part of this branch.
-The only changed existing text file is an appended history entry in this checkout's LLM.md.
+Apply the reviewable **two-line shell patch** in
+`docs/asset_discovery_integration.patch` after adopting `src/discovery`:
 
-Add an optional toolbar/menu action to the existing shell:
-
-```gdscript
-# App member:
-var discovery_window: Window
-
-func open_discovery() -> void:
-    if is_instance_valid(discovery_window):
-        discovery_window.popup_centered()
-        return
-    stop()
-    finish_stroke()
-    pose_editor.finish_drag()
-    release_mouse()
-    discovery_window = preload("res://src/discovery/window.gd").open(self,
-        func(path: String):
-            # Use is explicit; defer ordinary import until discovery has closed.
-            if path.get_extension().to_lower() == "blend":
-                message("This browser lists Blender files; export GLB before adding one.")
-                return
-            import_actions.add(path, true, 0))
-
-# For example, beside Installed in build toolbar:
-header_button(toolbar, "Discover", "package", open_discovery,
-    "Browse local model filenames or optional online listings")
+```powershell
+git apply --check docs/asset_discovery_integration.patch
+git apply docs/asset_discovery_integration.patch
 ```
 
-`import_actions.add(path, true, 0)` is the existing model import entry point;
-it retains its busy checks, placement, import policy and project ownership.
-This example uses frame 0, consistent with the existing ordinary model picker.
-Choosing the current playhead instead is a shell policy choice, not hidden browser
-behavior. Discovery does not import from online result clicks. No .has schema
-changes are needed. Standard-only discovery integration can omit the callback.
+One line adds **Asset discovery…** to Simple's Add menu. The other calls
+`preload("res://src/discovery/studio_bridge.gd").install(self, toolbar)` beside
+Installed in Advanced. The module owns its button/window and needs no app member.
+Both hooks were actually applied/tested in a disposable copy of real Studio;
+the tracked app.gd and other shared files remained byte-identical.
+
+The bridge captures recovery session/revision, sequence owner/generation and
+world/joint selections when opened. The deferred local callback checks them again,
+checks active import/export/project/dialog/height-review/sequence operations and
+**source_import.bundle_active**, validates the file and supported extension, then
+calls the ordinary `import_actions.add(path, true, 0)`. The window is closed before
+that call. Stale or busy callbacks report an error and preserve the scene; they
+never silently retarget another scene or selection. Online actions remain browser
+only. No HAS schema changes or alternate import pipeline are introduced.
 
 For embedding, instantiate `browser.gd` in an existing Control, inherit the parent
 theme, and connect `local_file_selected(path)`. `source_page_opened(url)` is an
 optional notification. Call `cancel()` before hiding a retained panel; freeing
 the panel also cancels work. `window.gd` already does this when closed. The wrapper
 returns a Window and exposes its panel via `get_meta("discovery_panel")`.
+Embedded panels may set `preferences_path` before adding them to the tree; use an
+empty string for session-only behavior. The wrapper accepts the same setting in
+its optional third options dictionary. The guarded Studio bridge is the preferred
+import integration; the raw panel signal does not itself enforce host ownership.
 
 ## Actual verification and limits
 
@@ -126,7 +128,7 @@ The initial run found truncated RSS accepted by Godot's parser; explicit nesting
 and closure checks fixed it. Pointer testing also exposed reselect activation;
 the final Tree handler opens directly from the clicked row and supports Enter.
 
-`python tests/verify_asset_discovery.py --live --require-listings` passed using
+The earlier `e1383a38` live probe (`--live --require-listings`) passed using
 the actual production HTTPRequest and UI paths with host network access. Initial
 discovery returned **100 real individual listings** (76 Poly Haven / 24 Sketchfab),
 then **200 total** (152 / 48) with no repeated identities or lost earlier entries.
@@ -153,13 +155,63 @@ No application tolerance was relaxed. Captures stay ignored in output, outside
 Git. See `docs/benchmarks/asset_discovery_2026-11-21.json` for safe run observations.
 Only focused discovery checks ran; no complete-suite or owner-acceptance claim.
 
-Remaining limitations: several providers are website-only, BowlRoll is a recent
-mixed-content feed rather than a full model catalogue, known-type filtering can
-exclude useful Unknown entries, aliases are deliberately small, and thumbnail/
-local 3D previews, persistent locations, sounds and account APIs are later work.
+Remaining limitations: several providers are website-only, BowlRoll's historical
+mixed-content feed is not currently RSS, known-type filtering can exclude useful
+Unknown entries, and aliases are deliberately small. Local 3D previews, sounds
+and account APIs are later work. Thumbnails are selected-item previews rather
+than an image grid; cache and opt-in last for the current browser instance.
 There are no blocking owner decisions for this increment.
 
 The live BowlRoll endpoint returned HTML instead of RSS (HTTP 200). Its historical
 RSS adapter remains available if RSS returns, but current BowlRoll discovery is
 website-only in practice. No HTML scraping fallback was added. Steam, SFMLab,
 BOOTH and VRoid likewise have website actions rather than fabricated result rows.
+
+## Persistence, thumbnails and guarded integration follow-up
+
+The continuing increment is based on the preserved `e1383a38` browser; normal
+Studio startup remains unchanged until the primary applies the shell patch.
+
+```powershell
+# New checks: thumbnail limits + two-process persistence + patched real Studio
+python tests/verify_asset_discovery_additions.py
+python tests/verify_asset_discovery_additions.py --graphical
+# Thumbnail/persistence scopes without another Studio run
+python tests/verify_asset_discovery_additions.py --persistence-only
+# Actual public provider/filter/image retrieval, separate from fixture tests
+python tests/verify_asset_discovery.py --live --require-listings
+```
+
+Executed scopes, kept separate:
+
+- **21 thumbnail checks:** generated PNG/JPEG/WebP decoding, pre-decode dimension
+  and encoded-byte limits, approved URLs, offline default, selected-row opt-in,
+  eight-entry cache bound, 503/429, cancellation/stale image rejection and visible
+  inferred-format labels. Fixture images/transport do not prove provider access.
+- **17 persistence checks in two fresh processes:** actual Unicode directories,
+  independent filters/provider/tab/expansion, network opt-in not saved, clear-list
+  persistence, malformed/oversized/invalid values, failed-write preservation and
+  no startup rewrite of corrupt settings. These are actual JSON writes/readbacks.
+- **22 patched real-Studio checks per theme headlessly**, then **23 per theme
+  on private Windows desktops** (extra capture check): Simple menu, Advanced
+  toolbar, offline opening, online-only source action, bundle queue and active
+  operation guards, stale document/world/joint/sequence refusal, missing and
+  unsupported files, real generated-GLB import and Undo. The patch is applied only
+  to a disposable source copy; the root app.gd hash is checked before/after.
+- **100 standalone private-desktop checks** rerun after the additions, including
+  six inspected theme/size layouts. Two real-Studio captures were also inspected.
+- Updated **live provider probe** retrieved 100 then 200 real mixed listings,
+  English/Japanese hits, an MMD-filtered Sketchfab subset, and one public Poly
+  Haven thumbnail after explicit opt-in. It checked actual in-flight cancellation.
+  Current counts and safe evidence are in
+  `docs/benchmarks/asset_discovery_persistence_integration_2026-11-21.json`.
+
+Observed failures were fixed rather than waived: JSON numeric tabs deserialize
+as floats (the preference reader now validates/canonicalizes them); the initial
+integration fixture compared doubled Windows argument separators with normalized
+scanner paths (the launcher now passes forward-slash paths); a NUL literal in a
+validation check emitted parser warnings (validation now checks UTF-8 bytes).
+Initial attempts and local captures remain in ignored output; no private model,
+generated binary or thumbnail image was added to Git. Earlier 88/100 checks and
+100→200 / 54-English / 21-Japanese retrieval remain historical scopes, not a new
+single aggregate run. No complete-suite or owner-acceptance claim is made.

@@ -1,0 +1,19 @@
+diff --git a/src/app.gd b/src/app.gd
+--- a/src/app.gd
++++ b/src/app.gd
+@@ -3115,6 +3115,7 @@
+ 		["Poseable model…", func(): pose_editor.import_dialog()],
+ 		["Character parts…", func(): character_parts_editor.open_folder()],
+ 		["Installed content…", func(): source_browser.open()],
++		["Asset discovery…", func(): get_node("AssetDiscoveryBridge").open()],
+ 		["Audio (WAV, MP3, Ogg)…", func(): choose_audio_at_playhead()]],
+ 		"Add a scene, a model, installed content or audio"))
+ 	header_spacer = Control.new()
+@@ -3183,6 +3184,7 @@
+ 	header_button(toolbar, "Add model", "figure", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment")
+ 	header_button(toolbar, "Add character", "figure", func(): character_parts_editor.open_folder(), "Load aligned model parts together under one character root")
+ 	header_button(toolbar, "Installed", "package", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts")
++	preload("res://src/discovery/studio_bridge.gd").install(self, toolbar)
+ 	header_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead")
+ 	header_button(toolbar,"Options","grid",show_project_options,"Project settings, including visibility fades. Saved with this HAS project.")
+ 	header_button(toolbar, "About", "help", show_notices, "Credits and open source notices")

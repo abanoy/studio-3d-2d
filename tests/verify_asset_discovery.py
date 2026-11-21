@@ -48,6 +48,8 @@ def main():
             assert report["name_search"]["listings"] > 0 and report["japanese_search"]["listings"] > 0, "Need real name and original-script hits"
             assert report["source_click_intercepted"], "Need a real listing opened through the source-page boundary"
             assert report["cancel"]["request_existed"] and report["cancel"]["http_released"] and not report["cancel"]["loading"], "Need actual in-flight cancellation and HTTP cleanup"
+            assert report["mmd_filter"]["listings"] > 0 and set(report["mmd_filter"]["sources"]) == {"sketchfab"}, "Need actual filtered model metadata"
+            assert report.get("thumbnail", {}).get("loaded"), "Need one explicitly enabled live thumbnail preview"
         print("Live metadata observations recorded; required listing checks passed." if options.require_listings else "Live provider observations recorded; availability is not asserted.")
         return 0
     print(f"Discovery: {report['checks']} runtime checks, {len(report['failures'])} failures; {report['display_driver']}")
