@@ -1,5 +1,12 @@
 extends "res://tests/scene_indirect_smoke.gd"
 
+class FailedRebake extends "res://src/scene_voxel_runtime.gd":
+	var fail_bake:=false
+	func bake_probe(from_node: Node) -> void:
+		# Match native bake's documented early-return failure: return no data and
+		# emit no engine error. All ordinary successful attempts use the real bake.
+		if not fail_bake:super.bake_probe(from_node)
+
 func fixtures() -> void:
 	var room:=Node3D.new();room.name="VoxelRoom"
 	SceneIO.box(room,"Floor",Vector3(0,-.2,0),Vector3(6,.4,8),Color(.8,.8,.8))
@@ -46,6 +53,7 @@ func run() -> void:
 	fixtures()
 	for theme in ["neon","light"]:
 		var app=await make_app(theme)
+		app.renderer.scene_lighting.indirect.voxel=FailedRebake.new()
 		check(app.load_scene(folder.path_join("room.glb")).is_empty(),"Import original bounded room in "+theme)
 		var room=app.renderer.world_runtime.instance(app.last_import_id)
 		check(app.pose_editor.add_model(folder.path_join("actor.glb")).is_empty(),"Import original skinned moving blocker")
@@ -75,11 +83,18 @@ func run() -> void:
 		var gi=app.renderer.scene_lighting.indirect;var voxel=gi.voxel
 		check(app.history.size()==history+1 and Document.indirect(Document.document(app.video)).method=="voxelgi","Apply VoxelGI is one saved video transaction")
 		check(voxel.error.is_empty() and voxel.probe.data!=null and voxel.bake_count==1,"Deferred room bake produces runtime probe data")
+		var successful_data: VoxelGIData=voxel.probe.data;var successful_count: int=voxel.bake_count
+		voxel.fail_bake=true;gi.rebuild();await wait_bake(app)
+		check(voxel.probe.data==null and not voxel.probe.visible,"Failed rebake removes and hides the earlier successful probe data")
+		check(voxel.bake_count==successful_count and not voxel.baking and not voxel.dirty,"Failed rebake never increments the successful bake count")
+		check(voxel.error.contains("produced no data") and gi.capture_error(app.video)==voxel.error,"Failed rebake reports an actionable error and refuses export admission")
+		voxel.fail_bake=false;gi.rebuild();await wait_bake(app)
+		check(voxel.error.is_empty() and voxel.probe.visible and voxel.probe.data!=null and voxel.probe.data!=successful_data and voxel.bake_count==successful_count+1 and gi.capture_error(app.video).is_empty(),"A later real rebuild recovers with newly baked data")
 		check(not app.renderer.world_environment.environment.sdfgi_enabled and actor.opacity_materials.meshes[0].gi_mode==GeometryInstance3D.GI_MODE_DYNAMIC,"VoxelGI replaces SDFGI and model participates dynamically")
 		check(app.renderer.world_state()==world and app.keys==keys and material==actor.opacity_materials.authored_material(actor.opacity_materials.meshes[0],0),"Bake preserves world, animation, camera and authored materials")
 		var exact_room: Dictionary=Document.voxel(Document.indirect(Document.document(app.video))).duplicate(true)
 		editor.refresh();editor.indirect_energy.get_line_edit().text="1.1";editor.apply_indirect();await wait_bake(app)
-		check(saved_equal(Document.voxel(Document.indirect(Document.document(app.video))),exact_room) and voxel.bake_count==1,"Strength-only edit preserves hidden room precision without rebaking")
+		check(saved_equal(Document.voxel(Document.indirect(Document.document(app.video))),exact_room) and voxel.bake_count==successful_count+1,"Strength-only edit preserves hidden room precision without rebaking")
 		app.undo();await wait_bake(app)
 		app.undo();await settled();check(not voxel.probe.visible and actor.opacity_materials.meshes[0].gi_mode==GeometryInstance3D.GI_MODE_STATIC,"Undo hides room probe and restores GI flags")
 		app.redo();await wait_bake(app);check(voxel.probe.visible,"Redo restores room VoxelGI")
