@@ -108,6 +108,13 @@ func run() -> void:
 	panel.tabs.current_tab = 0; panel.picker.dir_selected.emit(folder)
 	while panel.local.loading: await process_frame
 	await settle()
+	var blend_item: TreeItem = panel.tree.get_root().get_first_child()
+	while blend_item and blend_item.get_text(0) != "source.blend": blend_item = blend_item.get_next()
+	check(blend_item != null, "unsupported Blend file stays listed")
+	blend_item.select(0); panel.tree.item_selected.emit(); await settle()
+	check(panel.use_button.disabled and panel.use_button.text.contains("unavailable") and panel.details.text.contains(".blend"), "unsupported Studio import is disabled and explained before close")
+	panel.use_button.pressed.emit(); await settle()
+	check(is_instance_valid(bridge.window) and bridge.window.visible and app.current_world() == before and app.source_import.pid <= 0, "forcing unsupported Use preserves browser and Studio scene")
 	var selected_item: TreeItem = panel.tree.get_root().get_first_child()
 	while selected_item and str(selected_item.get_metadata(0).path).simplify_path() != path.simplify_path(): selected_item = selected_item.get_next()
 	check(selected_item != null, "integrated local scan finds generated cube")

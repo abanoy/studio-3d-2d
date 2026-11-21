@@ -9,6 +9,8 @@ const Preferences = preload("res://src/discovery/preferences.gd")
 const Thumbnail = preload("res://src/discovery/thumbnail.gd")
 const LocalPreview = preload("res://src/discovery/local_preview.gd")
 var preferences_path := Preferences.DEFAULT_PATH
+var local_import_extensions: Array = [] # Empty: parent-defined standalone callbacks.
+var import_target_name := "Studio"
 var online: Node
 var local: Node
 var tabs: TabBar
@@ -296,10 +298,14 @@ func _refresh() -> void:
 	if not _open_error.is_empty(): status.text += "\n" + _open_error
 	if not _settings_error.is_empty(): status.text += "\n" + _settings_error
 	search_button.disabled = false
-	use_button.disabled = selected.is_empty() or is_online
+	var import_error := local_import_error(selected) if not is_online else ""
+	use_button.disabled = selected.is_empty() or is_online or not import_error.is_empty()
+	use_button.text = import_target_name + " import unavailable" if not import_error.is_empty() else "Use selected local file"
+	use_button.tooltip_text = import_error if not import_error.is_empty() else "Passes the filename to the parent for explicit import. Browsing does not load models."
 	preview_button.disabled = selected.is_empty() or is_online or str(selected.get("path", "")).get_extension().to_lower() != "glb"
 	details.text = "Select a filename for its full path." if not is_online else "Access labels describe source metadata, not a verified download or permission to use the model."
 	if not selected.is_empty(): details.text = str(selected.get("path", selected.get("url", ""))) + "\n" + str(selected.get("evidence", ""))
+	if not import_error.is_empty(): details.text += "\n" + import_error
 	if is_online and not selected.get("formats", []).is_empty(): details.text += "\nFormat hints are inferred from title/tags; file contents were not inspected."
 	_update_thumbnail()
 	var lines: Array = []
@@ -345,8 +351,18 @@ func current_local_selection() -> Dictionary:
 	_reconcile_selection(_current_visible_rows())
 	return selected if tabs.current_tab == 0 else {}
 
-func _use_local() -> void:
+func local_import_error(row: Dictionary) -> String:
+	if row.is_empty() or local_import_extensions.is_empty(): return ""
+	var extension := str(row.get("path", "")).get_extension().to_lower()
+	if extension in local_import_extensions: return ""
+	return "%s cannot add .%s files here. Export a supported GLB first." % [import_target_name, extension]
+
+func current_local_import() -> Dictionary:
 	var row := current_local_selection()
+	return row if local_import_error(row).is_empty() else {}
+
+func _use_local() -> void:
+	var row := current_local_import()
 	if not row.is_empty(): local_file_selected.emit(row.path)
 
 func _preview_local() -> void:

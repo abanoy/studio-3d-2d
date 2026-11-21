@@ -8053,3 +8053,20 @@ docs/benchmarks/asset_discovery_selection_2026-11-21.json. Subsequent requested
 unsupported-import gating, automatic bottom batches and remembered retrieval
 notices remain separate upcoming work; button-only/manual website flow is not
 claimed to deliver those additions.
+
+
+## 2026-11-21 — Discovery follow-up: unsupported Studio imports
+
+New worker/asset-browser-followup-20261121 starts at the separately published
+92c65708 selection correction, keeping the ready PR branch stable for primary
+adoption. Studio now supplies its import extensions before opening discovery.
+Blend files stay browsable but show a disabled Studio import unavailable action
+and a GLB-export explanation, before close. Forced signals/delayed callbacks
+respect the same policy. Standalone parent callbacks retain their old semantics.
+Actual107browser and117headless additions controls pass, with31real Studio
+controls per theme, valid GLB import/Undo and rejected Blend forced-use. No
+shared app/renderer/import/world files changed. Evidence is
+docs/benchmarks/asset_discovery_import_policy_2026-11-21.json. Auto-bottom paging
+and remembered retrieval notices remain the next requested work, not claimed
+by this checkpoint. Sibling introductions/role coordination were sent to both
+Follow Windows Codex goal and Add editable scene lighting at the owner's request.

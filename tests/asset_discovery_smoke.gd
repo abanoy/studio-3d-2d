@@ -222,6 +222,15 @@ func _run() -> void:
 	check(used.size() == uses_before and not is_instance_valid(browser.geometry_window), "Clear directories starts no deferred stale action")
 	await deferred_local_rejection(fixture, false)
 	await deferred_local_rejection(fixture, true)
+	# Standalone parents retain their own callback policy for listed extensions.
+	var blend_path := fixture.path_join("source.blend")
+	var blend_file := FileAccess.open(blend_path, FileAccess.WRITE); blend_file.store_string("synthetic standalone selection"); blend_file.close()
+	browser.picker.dir_selected.emit(fixture)
+	while browser.local.loading: await process_frame
+	await settle(); await select_local_title("source.blend")
+	check(not browser.use_button.disabled, "standalone callback policy still permits Blend selection")
+	browser.use_button.pressed.emit()
+	check(used[-1] == blend_path, "standalone callback receives Blend path without interpreting it")
 	browser.local.start([fixture]); browser.cancel_button.pressed.emit(); await settle()
 	check(not browser.local.loading and browser.local.message.contains("cancelled"), "Cancel stops local enumeration")
 	browser.local.start([fixture.path_join("missing")]); await settle()

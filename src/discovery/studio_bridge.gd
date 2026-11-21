@@ -2,6 +2,7 @@ extends Node
 ## Tiny shell hook. All imports remain in the ordinary ImportActions pipeline.
 const DiscoveryWindow = preload("res://src/discovery/window.gd")
 const Preferences = preload("res://src/discovery/preferences.gd")
+const IMPORT_EXTENSIONS := ["glb", "gltf", "fbx", "obj", "pmd", "pmx", "vrm", "mdl"]
 var owner_ref: WeakRef
 var window: Window
 var button: Button
@@ -37,7 +38,7 @@ func open() -> void:
 	if is_instance_valid(window): window.popup_centered(); return
 	app.stop(); app.finish_stroke(); app.pose_editor.finish_drag(); app.release_mouse()
 	var requesting := context()
-	window = DiscoveryWindow.open(app, func(path: String): accept_local(path, requesting), {"preferences_path":preferences_path})
+	window = DiscoveryWindow.open(app, func(path: String): accept_local(path, requesting), {"preferences_path":preferences_path, "local_import_extensions":IMPORT_EXTENSIONS})
 
 func accept_local(path: String, requesting: Dictionary) -> void:
 	var app = owner_ref.get_ref()
@@ -48,7 +49,7 @@ func accept_local(path: String, requesting: Dictionary) -> void:
 		app.message("The scene or selection changed while browsing. Reopen Discover before adding this file."); return
 	if not path.is_absolute_path() or path.begins_with("res://") or path.begins_with("user://") or not FileAccess.file_exists(path):
 		app.message("The selected local file is missing. Choose its directory again."); return
-	if path.get_extension().to_lower() not in ["glb", "gltf", "fbx", "obj", "pmd", "pmx", "vrm", "mdl"]:
+	if path.get_extension().to_lower() not in IMPORT_EXTENSIONS:
 		app.message("This browser lists filenames. Export a supported GLB before adding this file."); return
 	# The wrapper has closed before this deferred callback. ImportActions checks
 	# busy state again and owns placement, conversion, errors and project lifetime.

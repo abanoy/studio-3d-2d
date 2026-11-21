@@ -293,3 +293,15 @@ Focused checks pass: 104 browser controls (including both stale-action routes)
 and the separate 111 headless additions controls, with valid import/Undo retained.
 No shared application source changed in this corrective increment. See
 `docs/benchmarks/asset_discovery_selection_2026-11-21.json`.
+
+## Follow-up Studio import policy
+
+On `worker/asset-browser-followup-20261121`, the Studio bridge supplies its
+supported local extensions to the panel. A selected `.blend` stays listed, but
+its button reads **Studio import unavailable**, remains disabled and explains
+that a supported GLB export is needed. Forced button signals and delayed
+callbacks also check this policy, keeping the browser open and the scene intact.
+Standalone panels without a host restriction keep their existing path-callback
+semantics. Focused headless checks pass: 107 browser and 117 additions controls,
+including 31 actual Studio checks per theme. Shared app/render/import/world
+sources are unchanged by this follow-up.
