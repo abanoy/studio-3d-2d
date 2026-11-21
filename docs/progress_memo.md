@@ -17591,3 +17591,16 @@ models, saved owner projects and calibration arrays are excluded from Git.
 Formal implementation52/54 and acceptance55/62 remain unchanged. Publish/retrieve
 this increment before a fresh full Windows run. Qualified worker VoxelGI96e5d50b
 is a separate upcoming integration; it is not part of the results above.
+
+
+## 2026-11-21 — Generated hair gravity and wind frames (feature branch)
+
+Implemented the explicit Keep hair shape / Natural gravity choice beside Hair & clothes. Missing metadata keeps historical tuning. Natural can relax a recognized loose first joint while preserving its attachment position; declared humanoid and familiar core/limb chains retain their setup. The optional setting is one world-history edit, saved with the model; all live/pending owners and wind review block replacement. Original source weights/rest/settings remain unchanged. Generated world gravity and fan force now follow world axes when the selected attachment center is rotated. Natural skin correction first tries a clear downward weighted orbit without changing capsule sizes or tolerances.
+
+Both temporary wind callers now opt into a source/candidate/filtered-definition-bound tuning context carrying only the validated choice and minimal exclusion/helper flags. Unopted private/native definitions keep old semantics. Source/root/settings/definition replacement invalidates a preview; disposal retains original owners and authored data. Existing filtered contact participation remains explicit.
+
+Actual current focused headless controls: 73 PASS (22 policy/math, 11 geometry/direction, 18 preview consistency/staleness, 18 ordinary editor/history, 4 fresh reader). Standard unchanged protected Miku CPU wrapper: 54 PASS in the approved hidden host, including the original989-vertex/480-tick zero-pair surface contract. An earlier CreateDesktop Errno5 launch refusal credited0 checks and is preserved. No GPU/whole-suite result is claimed for this feature branch.
+
+The real Junko request remains OPEN: original file has no configured chains. One reviewed existing four-joint chain preserves source skin/bones and adds only an unweighted endpoint. The retained current-tuning native trial passed13/14 and failed its unchanged1cm whole-affected-geometry centroid criterion: terminal down0.0695m, centroid down0.00757m. Twenty known core frames and attachment stay fixed; Off/Undo restore authored state. Final contactpairs0 does not erase transient64 pairs/minimum gap about-0.021m or measured CPU cost. That chain touches903 of5600 hair-material vertices (mean15.6% weight share), so additional explicit multi-part setup/reconstruction is required. No full-hair or visual acceptance promotion.
+
+See docs/generated_hair_settling.md and docs/benchmarks/generated_hair_settling_20261121.json for scoped results/source hashes. Private prepared Junko .has and all owner art/calibration arrays remain only under ignored output. New feature work is on codex/hair-settling-20261121 from published5d37647c; no Main edits or formal ledger/owner acceptance promotion. Next: graphical controls/preview and full-body appearance, then reviewed extra hair groups rather than automatic source rewrites.

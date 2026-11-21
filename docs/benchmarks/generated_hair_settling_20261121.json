@@ -1,0 +1,246 @@
+{
+  "format": "has_generated_hair_settling_benchmark_1",
+  "base_commit": "5d37647c0004849247239817364e093c010eddd6",
+  "feature_branch": "codex/hair-settling-20261121",
+  "status": "PARTIAL_FEATURE_CPU_VERIFIED",
+  "whole_full_claimed": false,
+  "graphical_verification_claimed": false,
+  "full_junko_hair_request_solved": false,
+  "formal_ledger_promoted": false,
+  "source_arrays_or_art_published": false,
+  "current_focused": {
+    "status": "PASS",
+    "checks": 73,
+    "receipt_sha256": "3585c188e2bd67d5194bd0e8ad7c1107999866432e6c087398e28cdaea640743",
+    "local_receipt": "output/generated-settling-1795292371690247900/verification.json",
+    "cases": 5,
+    "all_owned_jobs_closed": true,
+    "graphics_used": false,
+    "source_preserved": true,
+    "parent_environment_preserved": true,
+    "case_checks": {
+      "unit": 22,
+      "geometry": 11,
+      "preview": 18,
+      "editor": 18,
+      "reader": 4
+    }
+  },
+  "current_standard_miku": {
+    "status": "PASS",
+    "checks": 54,
+    "receipt_sha256": "4a94583a20f7e494993aeb82e8f720c3c28bb77f2b32b9e3adfc1814fa2f9748",
+    "local_receipt": "output/secondary-body-contact/1795292718381798000/verification.json",
+    "all_private_resources_closed": true,
+    "source_preserved": true,
+    "original_inputs_preserved": true,
+    "ticks": 480,
+    "hair_vertices": 989,
+    "penetrating_skin_vertex_pairs": 0,
+    "minimum_skin_clearance": -2.23144888877869e-06
+  },
+  "retained_native_junko_trial": {
+    "status": "FAIL",
+    "checks": 14,
+    "failures": 1,
+    "passed": 13,
+    "log_sha256": "ca924f229d41ad1f1f5ba23424e4bede88a9c70923d2baf230400eb145f5c71a",
+    "local_log": "output/generated-settling-1795291866824959600/existing/engine-stdout.log",
+    "scope": "Before the explicit preview-context wiring; ordinary live settling algorithm unchanged by that wiring.",
+    "criterion_unchanged": {
+      "terminal_drop_m_greater_than": 0.05,
+      "all_affected_geometry_centroid_drop_m_greater_than": 0.01
+    },
+    "natural": {
+      "average_tick_usec": 11908.7875,
+      "centroid_drop": 0.00757378339767456,
+      "checked_core_joints": 20,
+      "core_joints_held": true,
+      "error": "",
+      "final_remaining_contact_pairs": 0,
+      "majority_weighted_centroid_drop": 0.00782561302185059,
+      "majority_weighted_vertices": 1691,
+      "maximum_remaining_contact_pairs": 64,
+      "minimum_contact_gap": -0.021029339261632,
+      "restored": true,
+      "root_fixed": true,
+      "rotating_joints": 4,
+      "sampled_weighted_vertices": 1752,
+      "tip_drop": 0.06950843334198,
+      "tip_travel": 0.447272568941116
+    },
+    "keep_shape": {
+      "average_tick_usec": 70981.3916666667,
+      "centroid_drop": 0.00564497709274292,
+      "checked_core_joints": 20,
+      "core_joints_held": true,
+      "error": "",
+      "final_remaining_contact_pairs": 37,
+      "majority_weighted_centroid_drop": 0.00586938858032227,
+      "majority_weighted_vertices": 1691,
+      "maximum_remaining_contact_pairs": 37,
+      "minimum_contact_gap": -0.0158723464706442,
+      "restored": true,
+      "root_fixed": true,
+      "rotating_joints": 4,
+      "sampled_weighted_vertices": 1752,
+      "tip_drop": -0.011750340461731,
+      "tip_travel": 0.474680215120316
+    },
+    "source_preserved": true,
+    "majority_weighted_subset_is_diagnostic_only": true,
+    "contact_disabled_in_delivered_path": false
+  },
+  "retained_distal_only_trial": {
+    "status": "PASS",
+    "checks": 14,
+    "log_sha256": "cdb33f991ae6d81c866d4b428abbb46cad062bd2deb3b477d8371df7fdc25b31",
+    "natural": {
+      "centroid_drop": 0.0110255479812622,
+      "error": "",
+      "restored": true,
+      "root_fixed": true,
+      "rotating_joints": 4,
+      "sampled_weighted_vertices": 1752,
+      "tip_drop": 0.0608542561531067,
+      "tip_travel": 0.496470093727112
+    },
+    "scope": "Historical conservative first-joint tuning; superseded, not the final preset."
+  },
+  "causal_counterexamples": {
+    "rotated_center_gravity": {
+      "status": "FAIL",
+      "checks": 9,
+      "failures": 1,
+      "log_sha256": "b835f6a5bd9185cbaa0fbfa11fcb6392f4d668ab7e018882e364194d952e7c10"
+    },
+    "rotated_center_front_back_airflow": {
+      "status": "FAIL",
+      "checks": 11,
+      "failures": 2,
+      "log_sha256": "c0a148dff600b25c38198b78d17b2ea13803987a199deccc567f4d5fc50a8bd8"
+    }
+  },
+  "influence_scope": {
+    "format": "has_junko_supported_chain_influence_scope_1",
+    "source_sha256": "a329cd47bd74b05278a6e501b9503d8e0b9231bf6adc647307d573170166a3ec",
+    "selection": {
+      "node": 131,
+      "primitive": 1,
+      "component": 4
+    },
+    "configured_rotating_joints": 4,
+    "material_scope": "Source primitives with material names containing hair; no name-based reweighting",
+    "hair_primitives": 3,
+    "hair_vertices": 5600,
+    "hair_vertices_touched_by_selected_chain": 903,
+    "hair_vertices_majority_selected_chain": 879,
+    "mean_selected_chain_weight_over_hair": 0.15565718071402185,
+    "all_hair_configured": false,
+    "source_arrays_published": false
+  },
+  "known_limits": [
+    "Only the explicitly configured chain is simulated; the other Junko hair requires reviewed additional setup or reconstruction.",
+    "Final sampled zero contact pairs does not erase transient penetrations; the retained trial reached64 pairs and a minimum gap near-0.021m.",
+    "Natural trial average CPU tick cost was about11.9ms including authored/model evaluation on this run; no universal real-time performance guarantee.",
+    "Temporary preview tuning and direction are CPU-qualified; its graphical display and filtered collider participation still need visual checks."
+  ],
+  "component_source_files": [
+    {
+      "path": "src/generated_secondary_editor.gd",
+      "bytes": 3881,
+      "sha256": "a9f5d8c85ae163b8d030d92fdd3784b443f0776a3c03b25e4ae8e8ad376c6d4d",
+      "sha256_lf": "a9f5d8c85ae163b8d030d92fdd3784b443f0776a3c03b25e4ae8e8ad376c6d4d"
+    },
+    {
+      "path": "src/generated_secondary_motion.gd",
+      "bytes": 7135,
+      "sha256": "c151f76afea65b22d33693deb6d0b6e58ba8219bb3d30df64e1ad0a6460643cb",
+      "sha256_lf": "c151f76afea65b22d33693deb6d0b6e58ba8219bb3d30df64e1ad0a6460643cb"
+    },
+    {
+      "path": "src/pending_helper_wind_player.gd",
+      "bytes": 8845,
+      "sha256": "64ed00a5a83563b3675a8dbffdcbcd7e0520bb17cbb623bc1ca707050b1c42a0",
+      "sha256_lf": "20e13932247022680e60305bc68549ce3b606384aea350f5cbabfdfe7a1af801"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "bytes": 24162,
+      "sha256": "120d62b2d89c0df9d0bc806a18b7671f4008449f2e70e98891e1facf68a8aea5",
+      "sha256_lf": "bf2df56bbcb9078af4704d3ed075887f56c22eca7da8f1dc0299b5445d101f6f"
+    },
+    {
+      "path": "src/secondary_skin_contact.gd",
+      "bytes": 17317,
+      "sha256": "baf8211fd28a9e0acb844fad2c469cc6cf274ccbf139b4465bc996102f4c3bd2",
+      "sha256_lf": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "bytes": 14858,
+      "sha256": "21b6c41615a4cd0cd48020ce4568716ec61d3c1d0ab79dd4cf5a85eefe9ab47b",
+      "sha256_lf": "72cd58c85e6090a764cd56c195bed0326040afd5fa13cbd2b31a332d3e4e25aa"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "bytes": 18638,
+      "sha256": "91f1fa53f9957fc07296f5bfb4b1e9ac22c916ca94a477be11d743465bd115de",
+      "sha256_lf": "e69de68cb809c4d6b1c7b15dd37863fc08121bb639d29478b1e86c02a31d96d8"
+    },
+    {
+      "path": "tests/generated_secondary_editor_smoke.gd",
+      "bytes": 5823,
+      "sha256": "d424ea6bb992ac7dc80867db55880be49d1164f25890f06711e48242258c1d5b",
+      "sha256_lf": "d424ea6bb992ac7dc80867db55880be49d1164f25890f06711e48242258c1d5b"
+    },
+    {
+      "path": "tests/generated_secondary_existing_smoke.gd",
+      "bytes": 10789,
+      "sha256": "dc665b474ea9920077f59a25f10bd1a06dc3887343700437716512cffd98097f",
+      "sha256_lf": "dc665b474ea9920077f59a25f10bd1a06dc3887343700437716512cffd98097f"
+    },
+    {
+      "path": "tests/generated_secondary_fixture.gd",
+      "bytes": 795,
+      "sha256": "dee7cf0453ec901d540a1ddf6777438c22f98bc230fbef0716b249a5d459b204",
+      "sha256_lf": "dee7cf0453ec901d540a1ddf6777438c22f98bc230fbef0716b249a5d459b204"
+    },
+    {
+      "path": "tests/generated_secondary_motion_unit.gd",
+      "bytes": 4051,
+      "sha256": "9b5d36bb29fbc2f8c292f9a55b322c96fe8c6b6e7edf1ec8fde88f6e0dc56f40",
+      "sha256_lf": "9b5d36bb29fbc2f8c292f9a55b322c96fe8c6b6e7edf1ec8fde88f6e0dc56f40"
+    },
+    {
+      "path": "tests/generated_secondary_preview_unit.gd",
+      "bytes": 7613,
+      "sha256": "e574853000bd9573bc203fff968c2e107c6f61741d4dbb45399aaf79ad14be21",
+      "sha256_lf": "e574853000bd9573bc203fff968c2e107c6f61741d4dbb45399aaf79ad14be21"
+    },
+    {
+      "path": "tests/generated_secondary_reader_smoke.gd",
+      "bytes": 2568,
+      "sha256": "5b5de273be5bdcb81db47ac016b560ba00ca83eea851a8b5c58385380f5c81be",
+      "sha256_lf": "5b5de273be5bdcb81db47ac016b560ba00ca83eea851a8b5c58385380f5c81be"
+    },
+    {
+      "path": "tests/generated_secondary_settling_smoke.gd",
+      "bytes": 6734,
+      "sha256": "79289a5c36e368af9853ce2106d8fbf886d1dc3697473093011ce4f1a8a2a141",
+      "sha256_lf": "79289a5c36e368af9853ce2106d8fbf886d1dc3697473093011ce4f1a8a2a141"
+    },
+    {
+      "path": "tests/owned_headless_job.py",
+      "bytes": 5105,
+      "sha256": "9225d5d9289930b9a3c1a3a2b35c8ef49bcc20ea0dff159773026258c45a2fc4",
+      "sha256_lf": "929e43af07b2ca71bc4b41b28fddde7ee6e50c2b5fba7c83631138fd8ff7c3e6"
+    },
+    {
+      "path": "tests/verify_generated_secondary_motion.py",
+      "bytes": 11397,
+      "sha256": "cb79f8c4ff440aced5b64d968cc45f5da5a649a14500ede6dd6fc2012de7efb8",
+      "sha256_lf": "59bb1c8d93e8a1ea5f9d094a9705c6cc4339e1070e479edd346283054cde96bd"
+    }
+  ]
+}

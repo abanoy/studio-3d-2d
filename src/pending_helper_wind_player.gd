@@ -8,6 +8,7 @@ const Spring=preload("res://src/secondary_spring.gd")
 const Secondary=preload("res://src/secondary_live.gd")
 const Definition=preload("res://src/secondary_rig.gd")
 const Airflow=preload("res://src/airflow.gd")
+const GeneratedMotion=preload("res://src/generated_secondary_motion.gd")
 var app
 var phase:="stopped"
 var source: RefCounted
@@ -54,7 +55,9 @@ func start(actor: RefCounted,prepared: Dictionary,context_guard: Callable,speed:
 	candidate.root.visible=false;app.renderer.world.add_child(candidate.root);app.renderer.disable_cameras(candidate.root)
 	candidate.live_pose=baseline.duplicate(true);candidate.live_world_transform=source.root.global_transform;candidate.apply(app.frame,false,false,app.video,source.evaluated_opacity)
 	private_space=SubViewport.new();private_space.name="PendingHelperWindPhysics";private_space.own_world_3d=true;private_space.render_target_update_mode=SubViewport.UPDATE_DISABLED;private_space.size=Vector2i(1,1);add_child(private_space)
-	var result:=Spring.construct(candidate,filtered,private_space)
+	var tuning: Dictionary=GeneratedMotion.preview_context(source,candidate,filtered)
+	if tuning.has("error"):stop(tuning.error,false);return tuning.error
+	var result:=Spring.construct(candidate,filtered,private_space,tuning)
 	if result.has("error"):stop(result.error,false);return result.error
 	simulation=Secondary.new();simulation.rig=candidate;simulation.runner=result.runner;simulation.initial_pose=baseline.duplicate(true);simulation.latest=baseline.duplicate(true);simulation.initial_world=source.root.global_transform
 	var camera: Camera3D=app.renderer.camera

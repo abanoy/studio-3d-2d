@@ -120,6 +120,26 @@ static func create(actor: RefCounted,chains: Array) -> Dictionary:
 	result.stats.vertices=result.rows.size();return {"control":result}
 static func point_distance(point: Vector3,a: Vector3,b: Vector3) -> float:
 	var axis:=b-a;return point.distance_to(a+axis*clampf((point-a).dot(axis)/axis.length_squared(),0.,1.)) if axis.length_squared()>0 else point.distance_to(a)
+static func downward_rotation(center: Vector3,point: Vector3,a: Vector3,b: Vector3,radius: float) -> Dictionary:
+	# Natural settling prefers a clear downward route around an arm. The old
+	# nearest-away route can lift long hair even while its spring pulls down.
+	# Search only as far as the lowest point on this exact weighted orbit;
+	# every accepted endpoint still clears the original, unchanged capsule.
+	var lever:=point-center;var length:=lever.length()
+	if length<.000001:return {}
+	var axis:=lever.cross(Vector3.DOWN)
+	if axis.length_squared()<.0000000001:return {}
+	axis=axis.normalized();var limit:=acos(clampf(lever.normalized().dot(Vector3.DOWN),-1.,1.))
+	var lo:=0.;var hi:=minf(.01,limit)
+	while hi>lo:
+		if point_distance(center+Quaternion(axis,hi)*lever,a,b)>=radius:
+			for i in range(16):
+				var middle: float=(lo+hi)*.5
+				if point_distance(center+Quaternion(axis,middle)*lever,a,b)>=radius:hi=middle
+				else:lo=middle
+			return {"rotation":Quaternion(axis,hi)}
+		lo=hi;hi=minf(limit,hi*2.)
+	return {}
 static func rotation(center: Vector3,point: Vector3,a: Vector3,b: Vector3,radius: float,pole: Vector3,gentle: bool=true) -> Dictionary:
 	var lever:=point-center;var length:=lever.length()
 	if length<.000001:return {}
@@ -169,6 +189,10 @@ func constrain(actor: RefCounted,_chains: Array,pose: Dictionary) -> Dictionary:
 			if mesh.get_blend_shape_value(i)!=source.amounts[i]:return {"error":"Hair geometry changed; restart Hair & clothes to update its contact surface."}
 		origins.append(mesh.global_position)
 	var result: Dictionary=pose.duplicate(true);var skipped: Dictionary={};stats.refreshes+=1
+	var settling: Dictionary={}
+	for chain in _chains:
+		if chain.get("natural_gravity",false):
+			for id in chain.ids:settling[id]=true
 	var context:={"cache":{},"visiting":{},"error":""};var frames: Array[Transform3D]=[]
 	for id in bindings:frames.append(FK.world(actor,id,result,context))
 	if not context.error.is_empty():return {"error":context.error}
@@ -207,7 +231,8 @@ func constrain(actor: RefCounted,_chains: Array,pose: Dictionary) -> Dictionary:
 			if not selected.collider in driver.colliders:continue
 			var joint: Transform3D=FK.world(actor,driver.id,result,context);var lever:=Vector3.ZERO
 			for slot in driver.slots:lever+=(positions[slot]-joint.origin)*weights[slot]
-			var correction: Dictionary=rotation(selected.point-lever,selected.point,selected.start,selected.finish,selected.radius,joint.basis.x,iteration<2)
+			var correction: Dictionary=downward_rotation(selected.point-lever,selected.point,selected.start,selected.finish,selected.radius) if settling.has(driver.id) else {}
+			if correction.is_empty():correction=rotation(selected.point-lever,selected.point,selected.start,selected.finish,selected.radius,joint.basis.x,iteration<2)
 			if correction.is_empty():continue
 			var info: Dictionary=actor.bones[driver.id];var parent: String=actor.parent_id(driver.id)
 			var frame: Transform3D=info.skeleton.global_transform if parent=="@root" else FK.world(actor,parent,result,context)

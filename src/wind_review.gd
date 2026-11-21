@@ -8,6 +8,7 @@ const Spring=preload("res://src/secondary_spring.gd")
 const Secondary=preload("res://src/secondary_live.gd")
 const Airflow=preload("res://src/airflow.gd")
 const Definition=preload("res://src/secondary_rig.gd")
+const GeneratedMotion=preload("res://src/generated_secondary_motion.gd")
 var app
 var button: Button
 var window: Window
@@ -190,7 +191,9 @@ func begin_preview() -> void:
 	candidate=prepared.model;app.renderer.world.add_child(candidate.root);app.renderer.disable_cameras(candidate.root)
 	candidate.live_pose=data.pose.duplicate(true);candidate.live_world_transform=source.root.global_transform;candidate.apply(app.frame,false,false,app.video,source.evaluated_opacity)
 	private_space=SubViewport.new();private_space.name="LocalWindPrivateSpace";private_space.own_world_3d=true;private_space.render_target_update_mode=SubViewport.UPDATE_DISABLED;add_child(private_space)
-	var result:=Spring.construct(candidate,filtered,private_space)
+	var tuning: Dictionary=GeneratedMotion.preview_context(source,candidate,filtered)
+	if tuning.has("error"):fail(tuning.error);return
+	var result:=Spring.construct(candidate,filtered,private_space,tuning)
 	if result.has("error"):fail(result.error);return
 	simulation=Secondary.new();simulation.rig=candidate;simulation.runner=result.runner;simulation.initial_pose=data.pose.duplicate(true);simulation.latest=data.pose.duplicate(true);simulation.initial_world=source.root.global_transform
 	var camera: Camera3D=app.renderer.camera

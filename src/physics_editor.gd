@@ -12,6 +12,8 @@ const HelperEditor=preload("res://src/secondary_helper_editor.gd")
 const WindReview=preload("res://src/wind_review.gd")
 const ContactRanges=preload("res://src/contact_ranges.gd")
 const SourceMotion=preload("res://src/source_secondary.gd")
+const GeneratedMotionEditor=preload("res://src/generated_secondary_editor.gd")
+var generated_motion_editor: RefCounted
 var recording
 var app
 var toggle: CheckButton
@@ -37,6 +39,7 @@ func setup(parent: Node) -> void:
 	toggle.tooltip_text="Selected model: simulate a ragdoll or a solid prop. Off freezes its current pose and position without recording animation. A real imported floor/map is needed; the grid is only a guide."
 	toggle.toggled.connect(change)
 	hair_toggle=CheckButton.new();hair_toggle.text="Hair & clothes";parent.add_child(hair_toggle);hair_toggle.toggled.connect(change_hair)
+	generated_motion_editor=GeneratedMotionEditor.new();generated_motion_editor.app=app;generated_motion_editor.editor=self;generated_motion_editor.setup(parent)
 	recording=Recording.new();recording.editor=self;add_child(recording);recording.setup(parent)
 	fan_editor=FanEditor.new();fan_editor.app=app;fan_editor.setup(parent)
 	helper_editor=HelperEditor.new();helper_editor.app=app;add_child(helper_editor);helper_editor.setup(parent)
@@ -137,6 +140,7 @@ func sync() -> void:
 	hair_toggle.tooltip_text="Simulate hair/clothing joints while posed or with Physics. Off restores their authored pose; body Physics keeps running. Record explicitly keeps motion."
 	if imported:hair_toggle.tooltip_text="Use imported settings for three supported hair strands. Other loose parts can use Set up loose parts. Body Physics must be off. Off restores the authored pose; Record keeps motion."
 	elif missing_chains:hair_toggle.tooltip_text=definition.get("error","") if not definition.get("error","").is_empty() else "This model needs hair/clothing joints. Turn on to review a loose part and add weighted helpers; the original is kept." if can_setup else "Select a skinned model to review and add hair/clothing joints."
+	if generated_motion_editor:generated_motion_editor.sync()
 	if fan_editor:fan_editor.sync()
 	if recording:recording.sync()
 
