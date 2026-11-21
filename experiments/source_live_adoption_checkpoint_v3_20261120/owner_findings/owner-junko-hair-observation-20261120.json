@@ -1,0 +1,30 @@
+{
+  "format": "has_owner_review_observation_1",
+  "recorded_utc": "2026-11-21T04:42:06.177Z",
+  "review": "C:/a/Programming/cloudflare/HAS-Review-Neon-973039e-native",
+  "launcher": "Open Junko imported hair joints.bat",
+  "owner_words": "Okay, so in that Junko.bat, why aren't all the hairs are moving?",
+  "observed": "Owner reports not all Junko hair sections move.",
+  "settings_not_reported": [
+    "Hair & clothes state",
+    "fan configuration",
+    "specific static hair sections",
+    "pose or playback state"
+  ],
+  "independent_source_facts": {
+    "path": "Studio/src/source_secondary.gd",
+    "sha256": "2238e7546e556680ca5785cec581ad49668f812b56f437609aaab4e7355a68bd",
+    "selected_native_ids": [
+      8,
+      17,
+      18,
+      26,
+      27
+    ],
+    "qualified_joint_count": 5,
+    "retained_rule_count": 49
+  },
+  "interpretation": "The review has bounded five-joint live simulation. This explains incomplete hair coverage, but specific static sections and current UI settings were not observed by the worker.",
+  "acceptance_pass_claim": false,
+  "requires_followup": "Expand authenticated native joint coverage and verify actual hair/accessory chains; do not count this observation as full native appearance or motion acceptance."
+}

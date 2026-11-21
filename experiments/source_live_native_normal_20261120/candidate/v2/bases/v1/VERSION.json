@@ -1,0 +1,46 @@
+{
+  "format": "has_live_known_native_normal_bridge_candidate_version_1",
+  "status": "FROZEN_AWAITING_ROOT_19_AND_HIDDEN_LIVE_RUN",
+  "authored_tests": 19,
+  "toolkit_source_files": 18,
+  "source_original": "d8c8c76f53a567ecc8682ef7d0b5dd8d914118989a45e2b9020c4d8c3edd9f3d",
+  "current_app_source_edited": false,
+  "actual_native_execution": false,
+  "application_adoption_qualified": false,
+  "normal_criterion": {
+    "metric": "raw_unnormalized_euclidean_vector_distance",
+    "threshold": 0.00002,
+    "normalization_in_measurement": false
+  },
+  "route": {
+    "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "scale": 0.01905,
+    "appearance": null,
+    "source_member": null,
+    "unknown_profiles_use_legacy": true
+  },
+  "parts": {
+    "module": {
+      "file": "source_native_normal_export.py",
+      "bytes": 29852,
+      "sha256": "9e79cbb74a5d59707f58fdb042b6ea4033269459582e73d20d7b0381303cfbcf"
+    },
+    "bridge": {
+      "file": "blender_source_bridge_candidate.py",
+      "bytes": 30508,
+      "sha256": "4164cb6e264bfac1e3d7e6e9426370398eb6828ffe49735334893aff64f7f633"
+    },
+    "tests": {
+      "file": "test_source_native_normal_export.py",
+      "bytes": 22333,
+      "sha256": "dd9b06a2938ee828fe72b5c9853bb61fb3d84490851f0b882401c621f93113ff"
+    }
+  },
+  "peer_review": {
+    "lifecycle": "source/API/native-slot/collector/publication GO",
+    "oracles": "19 focused methods authored; module composition and actual dependency APIs reviewed",
+    "owner_author": "19 test API/source GO"
+  },
+  "next": "Root pure19, private live worker, final GLB/crosswalk69/jiggle49/currentIDs+hash/source readback, then separately qualified exact SourceSecondary target admission."
+}

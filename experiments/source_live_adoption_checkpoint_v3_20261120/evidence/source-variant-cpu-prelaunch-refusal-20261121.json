@@ -1,0 +1,12 @@
+{
+  "format": "has_root_prelaunch_cpu_refusal_1",
+  "coordinator_sha256": "1a87c3f01b0ebad740bc71366d3ef2ef0f9d6f8918a06fd0eadc20d9f2c1d61b",
+  "status": "FAIL_BEFORE_CHILD_LAUNCH",
+  "exit": 1,
+  "error": "FILE_CHANGED_BEFORE_READ",
+  "tests_run": 0,
+  "child_launched": false,
+  "admitted_input_files": 1,
+  "preservation_failures": [],
+  "root_followup": "Read-only independent lstat/open/fstat/end metadata for the completion and source-after proofs matched exactly; original failed attempt retained. A fresh attempt uses the same frozen coordinator and strict file guards."
+}

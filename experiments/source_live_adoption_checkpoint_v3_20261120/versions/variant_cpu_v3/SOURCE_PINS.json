@@ -1,0 +1,31 @@
+{
+  "format": "has_frozen_source_variant_pure_cpu_coordinator_3",
+  "status": "SOURCE_ONLY_UNRUN_REQUIRES_CLOSED_SUCCESSFUL_FULL360",
+  "entries": [
+    {
+      "path": "DEPENDENCIES.json",
+      "bytes": 2304,
+      "sha256": "9e17048deb364f31658f8be35d8f54375068bd95a785b9f347aa9cf429d7e6e7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4574,
+      "sha256": "076d4eabd97e8c5b76a026a21918200a9f2563073e57a87c7e34d59339621832"
+    },
+    {
+      "path": "run_variant_cpu.py",
+      "bytes": 18370,
+      "sha256": "8fef44e1e52d5f0af8244b0b19cc0d48582068d183964f97b43f15eefb675526"
+    }
+  ],
+  "test_dependency_files": 10,
+  "expected_suites": [
+    31,
+    26,
+    13
+  ],
+  "expected_total": 70,
+  "source_delta": "Exporter fixture paths and test pin only from Windows-mode-fixed v2; originals preserved",
+  "native_or_sdk_or_engine_execution_authorized": false,
+  "author_executed": false
+}

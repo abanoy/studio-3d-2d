@@ -1,0 +1,77 @@
+{
+  "format": "has_source_variant_preparatory_cpu_coordinator_1",
+  "status": "PASS",
+  "revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "dependency_files": 10,
+  "expected_tests": 70,
+  "suites": [
+    {
+      "suite": "planner",
+      "expected_tests": 31,
+      "launched": true,
+      "reaped": true,
+      "pid": 22144,
+      "exit": 0,
+      "seconds": 0.410755999997491,
+      "tests_run": 31,
+      "passed": true,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 4211,
+        "sha256": "599306422f9099895617d4c35d4a717172fca827f4cf405296578117732a7043"
+      }
+    },
+    {
+      "suite": "exporter",
+      "expected_tests": 26,
+      "launched": true,
+      "reaped": true,
+      "pid": 18660,
+      "exit": 0,
+      "seconds": 0.2597916000013356,
+      "tests_run": 26,
+      "passed": true,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 4026,
+        "sha256": "25a306512f7a99652f70dfc759f927bc1f91c60facac3f404418cc7e91c78ff7"
+      }
+    },
+    {
+      "suite": "project",
+      "expected_tests": 13,
+      "launched": true,
+      "reaped": true,
+      "pid": 28016,
+      "exit": 0,
+      "seconds": 0.20809659999940777,
+      "tests_run": 13,
+      "passed": true,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 2005,
+        "sha256": "e6e1e4ab0bb3e16d539d597866452080d0dd95d91c937d2e7d5f07a6c3b5a2c5"
+      }
+    }
+  ],
+  "native_or_engine_launched": false,
+  "sdk_or_native_assets_read": false,
+  "actual_variant_export_or_runtime_qualified": false,
+  "application_adopted": false,
+  "current_root_output_or_bytecode_writes_authorized": false,
+  "owned_child_cleanup_failures": [],
+  "preservation_failures": [],
+  "all_admitted_inputs_hash_size_identity_nsmtime_unchanged": true,
+  "admitted_input_files": 1107,
+  "owned_children_reaped": true,
+  "stage": "C:\\a\\Programming\\cloudflare\\has-source-variant-cpu-1795238436262374400"
+}

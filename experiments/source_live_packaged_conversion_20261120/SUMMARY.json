@@ -1,0 +1,74 @@
+{
+  "format": "has_packaged_live_source_conversion_evidence_1",
+  "date": "2026-11-20",
+  "status": "PACKAGED_ENTRYPOINT_ACTUAL_CONVERSION_PASSED",
+  "base": "165ebdfb3361e982666aa7355a432ba625f8d96a",
+  "packaged_runtime": {
+    "files": 118,
+    "bytes": 1434511,
+    "SOURCE_PINS_bytes": 19544,
+    "SOURCE_PINS_sha256": "56f3c49f99a2a2e34b8b5bc31fd81466ada9fd98ce5611b209739c279f13de38",
+    "legacy_tools_copied_from_immutable_full_catalogue": 92,
+    "reviewed_port_files": 25,
+    "port_manifest_sha256": "96c45dd7a0524a7809e971d864bfff41528e48db0ac0367d6f909754047d162a",
+    "root_legacy_tools_fallback": false
+  },
+  "component_controls": {
+    "methods": 25,
+    "passed": true,
+    "seconds": 0.114,
+    "wall_seconds": 0.35291439999855356,
+    "source_files_unchanged": 119,
+    "native_launch_attempted": false
+  },
+  "actual": {
+    "whole_coordinator_seconds": 12.6117904,
+    "root_exit": 0,
+    "root_retained_launcher_reaped": true,
+    "models": 2,
+    "points": 9661,
+    "bones": 69,
+    "jiggle_rules": 49,
+    "final_normal_metric": "raw_unnormalized_euclidean_vector_distance",
+    "final_normal_max_euclidean_error": 0,
+    "threshold": 0.00002,
+    "final_parameters_crosswalk_bound": true,
+    "B_loaded": false,
+    "readonly_mount_files": 79,
+    "source_runtime_native_and_mount_preserved": true,
+    "private_job_closed": true,
+    "physical_owned_processes": 0,
+    "owned_lock_removed": true,
+    "foreground_activation": false,
+    "artifacts": {
+      "carrier_glb": {
+        "bytes": 2361932,
+        "sha256": "44d6c00f80068a83b43cb9007de40a729418ed10b553f92738aa32e6b1dc67a5"
+      },
+      "dependencies_json": {
+        "bytes": 2248,
+        "sha256": "bd36f9af9a814cfd35d7a3ebee9a34672fd249fad8aeaed01e848144fee6e382"
+      },
+      "editable_blend": {
+        "bytes": 2423180,
+        "sha256": "57a8c5920949d41fd2ec88f246d9aa896d79182ff2e9fbe5470cad9f7c7e1b63"
+      },
+      "parameters_json": {
+        "bytes": 170388,
+        "sha256": "9b007f229d7b9dd837eb443cc31c6649620b17738481904aa7efd132164ae9dd"
+      },
+      "scene_glb": {
+        "bytes": 2478804,
+        "sha256": "b8436dea1d13a7cb4632c37c50b4cab123616ec574720fe4e764b844c5293e71"
+      }
+    }
+  },
+  "qualification_limits": {
+    "run_predates_tracked_source_adoption": true,
+    "functional_source_files_during_run": 1061,
+    "application_adoption_qualified": false,
+    "new_required_full_verification_pending": true,
+    "private_artifacts_published": false,
+    "generic_source_profiles_or_renderer_fidelity_qualified": false
+  }
+}

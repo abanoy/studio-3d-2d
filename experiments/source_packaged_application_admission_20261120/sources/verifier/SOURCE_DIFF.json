@@ -1,0 +1,39 @@
+{
+  "format": "has_packaged_native5_verifier_source_successor_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "base": {
+    "path": "tests/verify_source_native_five_corrected_live.py",
+    "bytes": 20024,
+    "sha256": "6e62e21c1aa10bec647354603e92b7f113b7c6de2b68c078ae7618b2b0fee4a0"
+  },
+  "qualified_packaged_receipt": {
+    "path": "output/source-live-normal-run-1795231337601347500/PUBLIC_LIVE_NORMAL_ROOT_RESULT.json",
+    "bytes": 2583,
+    "sha256": "71f9e8da5a88d4f4a7c997a30bad09afa399546a8934041863cece92877449f9"
+  },
+  "expected_parameters": {
+    "bytes": 170388,
+    "sha256": "9b007f229d7b9dd837eb443cc31c6649620b17738481904aa7efd132164ae9dd"
+  },
+  "expected_glb": {
+    "bytes": 2478804,
+    "sha256": "b8436dea1d13a7cb4632c37c50b4cab123616ec574720fe4e764b844c5293e71"
+  },
+  "crosswalk_proof_sha256": "fb677e1a5e196f964c3634abba009ff792e7af0ff6dda260abc2e3ee12dacc37",
+  "jiggle_wire_sha256": "34230c89c7cda4417a0f142b375f26fbb5cf15a7faf4d98b5424acd0bec621c2",
+  "edits": [
+    "ROOT resolves from ignored output namespace",
+    "Exact Rootreceipt and parameters fixture pins updated",
+    "UI source path resolves from adopted tests directory",
+    "Explicit native MDL and rule-wire assertions added"
+  ],
+  "all_named_assertions_and_capture_code_unchanged": true,
+  "expected_checks": {
+    "writer": 83,
+    "packed_reader": 11,
+    "linked_reader": 8,
+    "total": 102
+  },
+  "production_fixture_and_published_packets_unchanged": true,
+  "author_executed": false
+}

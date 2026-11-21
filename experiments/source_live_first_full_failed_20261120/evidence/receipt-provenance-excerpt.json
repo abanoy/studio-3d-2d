@@ -1,0 +1,32 @@
+{
+  "format": "has_first_live_full_receipt_failure_excerpt_1",
+  "original_receipt_provenance": {
+    "bytes": 2604910,
+    "sha256": "671f26537be9e9dea81674e480e550b59fca4cac084e909dfa9697bea208f1c1"
+  },
+  "conflicts": [],
+  "changed_original_archives": [
+    {
+      "kind": "added",
+      "path": "experiments/source_packaged_application_admission_20261120/evidence/editor102/reader-linked/private-receipt.json",
+      "before_sha256": null,
+      "after_sha256": "397032af9420e6661ce8c9240980c6c5a21222544cd9c0186fc1ac7c63b5b310"
+    },
+    {
+      "kind": "added",
+      "path": "experiments/source_packaged_application_admission_20261120/evidence/editor102/reader-packed/private-receipt.json",
+      "before_sha256": null,
+      "after_sha256": "377ab77286fa5c5df977511ed22e0aef94b3857cd314983c3774b1daf7ac9a63"
+    },
+    {
+      "kind": "added",
+      "path": "experiments/source_packaged_application_admission_20261120/evidence/editor102/writer/private-receipt.json",
+      "before_sha256": null,
+      "after_sha256": "f83e3d02742670be31b6fd3c558957b5ca14fae913131e25fa410563a8384b20"
+    }
+  ],
+  "current_jobs": 63,
+  "archived_copy_paths": 1156,
+  "unchanged_prior_paths": 3749,
+  "interpretation": "The classifier remained strict. Three packaged-GUI receipt copies added under experiments during the run changed the prior inventory; no new physical jobs are inferred from those copies."
+}

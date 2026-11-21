@@ -1,0 +1,23 @@
+{
+  "format": "has_exact_launcher_code_filename_alignment_1",
+  "reason": "Existing private_-prefix policy incorrectly classified two already-qualified source launcher filenames as private data",
+  "exceptions": [
+    {
+      "packet": "source_live_packaged_conversion_20261120",
+      "path": "runtime/tools/private_desktop.py",
+      "bytes": 12692,
+      "sha256": "c3bad5ab1792f7103a9bf31eef283ee8b928bd4557b6e53c18b9c0718d92ae61"
+    },
+    {
+      "packet": "source_live_packaged_conversion_20261120",
+      "path": "runtime/tools/private_krita_container.py",
+      "bytes": 12510,
+      "sha256": "c9c1da96e2524f7a38e7ce4dda9df23d53c73a4a745a9e92bfe0987ed63152fe"
+    }
+  ],
+  "exact_current_and_prior_1061_source_code_bytes": true,
+  "private_payload_or_array_or_log_admission_changed": false,
+  "other_pins_guards_and_namespaces_unchanged": true,
+  "V3_V4_sources_and_75_78_manifests_preserved": true,
+  "author_runtime_execution": false
+}

@@ -1,0 +1,36 @@
+test_asset_mismatch_refuses (test_variant_plan.VariantPlanTests.test_asset_mismatch_refuses) ... ok
+test_blank_hides_geometry_without_removing_it (test_variant_plan.VariantPlanTests.test_blank_hides_geometry_without_removing_it) ... ok
+test_blank_name_does_not_mean_zero_geometry (test_variant_plan.VariantPlanTests.test_blank_name_does_not_mean_zero_geometry) ... ok
+test_boolean_or_float_indices_are_not_integers (test_variant_plan.VariantPlanTests.test_boolean_or_float_indices_are_not_integers) ... ok
+test_combined_skin_and_blank_are_one_plan (test_variant_plan.VariantPlanTests.test_combined_skin_and_blank_are_one_plan) ... ok
+test_controlled_mesh_cannot_hide_a_different_mesh_descendant (test_variant_plan.VariantPlanTests.test_controlled_mesh_cannot_hide_a_different_mesh_descendant) ... ok
+test_default_plan_is_explicit (test_variant_plan.VariantPlanTests.test_default_plan_is_explicit) ... ok
+test_default_surface_must_match_actual_inventory (test_variant_plan.VariantPlanTests.test_default_surface_must_match_actual_inventory) ... ok
+test_duplicate_choice_node_ownership_refuses (test_variant_plan.VariantPlanTests.test_duplicate_choice_node_ownership_refuses) ... ok
+test_duplicate_skin_rows_remain_distinct_numeric_choices (test_variant_plan.VariantPlanTests.test_duplicate_skin_rows_remain_distinct_numeric_choices) ... ok
+test_duplicate_surface_refuses (test_variant_plan.VariantPlanTests.test_duplicate_surface_refuses) ... ok
+test_every_surface_is_required (test_variant_plan.VariantPlanTests.test_every_surface_is_required) ... ok
+test_foreign_material_index_refuses (test_variant_plan.VariantPlanTests.test_foreign_material_index_refuses) ... ok
+test_global_metadata_budget_refuses_complete_oversize_declaration (test_variant_plan.VariantPlanTests.test_global_metadata_budget_refuses_complete_oversize_declaration) ... ok
+test_independent_bodygroups_do_not_need_cartesian_exports (test_variant_plan.VariantPlanTests.test_independent_bodygroups_do_not_need_cartesian_exports) ... ok
+test_invalid_combined_change_is_atomic (test_variant_plan.VariantPlanTests.test_invalid_combined_change_is_atomic) ... ok
+test_inventory_material_count_is_bounded (test_variant_plan.VariantPlanTests.test_inventory_material_count_is_bounded) ... ok
+test_labels_preserve_spaces_unicode_and_case (test_variant_plan.VariantPlanTests.test_labels_preserve_spaces_unicode_and_case) ... ok
+test_manifest_and_plan_are_detached (test_variant_plan.VariantPlanTests.test_manifest_and_plan_are_detached) ... ok
+test_noncanonical_or_missing_selection_keys_refuse (test_variant_plan.VariantPlanTests.test_noncanonical_or_missing_selection_keys_refuse) ... ok
+test_noop_and_returned_state_do_not_alias (test_variant_plan.VariantPlanTests.test_noop_and_returned_state_do_not_alias) ... ok
+test_one_material_per_skin_required (test_variant_plan.VariantPlanTests.test_one_material_per_skin_required) ... ok
+test_parent_cycles_and_missing_mesh_parent_refuse (test_variant_plan.VariantPlanTests.test_parent_cycles_and_missing_mesh_parent_refuse) ... ok
+test_planning_never_opens_files (test_variant_plan.VariantPlanTests.test_planning_never_opens_files) ... ok
+test_runtime_all_blank_is_valid_on_retained_asset (test_variant_plan.VariantPlanTests.test_runtime_all_blank_is_valid_on_retained_asset) ... ok
+test_skins_only_manifest_does_not_touch_visibility (test_variant_plan.VariantPlanTests.test_skins_only_manifest_does_not_touch_visibility) ... ok
+test_surface_plan_order_is_deterministic (test_variant_plan.VariantPlanTests.test_surface_plan_order_is_deterministic) ... ok
+test_three_skins_use_declared_material_ids (test_variant_plan.VariantPlanTests.test_three_skins_use_declared_material_ids) ... ok
+test_true_blank_cannot_own_mesh_nodes (test_variant_plan.VariantPlanTests.test_true_blank_cannot_own_mesh_nodes) ... ok
+test_ungrouped_mesh_stays_out_of_visibility_writes (test_variant_plan.VariantPlanTests.test_ungrouped_mesh_stays_out_of_visibility_writes) ... ok
+test_unknown_fields_and_formats_refuse (test_variant_plan.VariantPlanTests.test_unknown_fields_and_formats_refuse) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.042s
+
+OK

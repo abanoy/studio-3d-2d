@@ -1,0 +1,42 @@
+{
+  "format": "has_owner_map_import_failure_observations_1",
+  "recorded_utc": "2026-11-21T04:57:20.382Z",
+  "review": "C:/a/Programming/cloudflare/HAS-Review-Neon-973039e-native",
+  "cases": [
+    {
+      "owner_name": "gm_construct",
+      "original_source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\garrysmod\\maps\\gm_construct.bsp",
+      "selected_member": null,
+      "request_source_sha256": "4d1c027f2b93fa9100bcc4cb08b1dfdda437cadf4cf7d01d4b515dc2caa5a6a2",
+      "result_path": "C:/a/Programming/cloudflare/HAS-Review-Neon-973039e-native/Studio/output/compatibility/source-1795236768-093-561940885-result.json",
+      "exact_error": "Conversion failed (exit 1): Invalid Source spotlight cone: light_spot",
+      "source_location": "tools/source_lights.py:50",
+      "read_only_entity_observation": {
+        "light_spot_count": 28,
+        "outer90_count": 6
+      },
+      "worker_status": "failed exit1"
+    },
+    {
+      "owner_name": "ttt_tinyspaceship",
+      "original_source": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\4000\\1121292736\\867369377045969097_legacy.bin",
+      "selected_member": "maps/ttt_tiny_spaceship_v3.bsp",
+      "request_source_sha256": "4848d3108c68b7e50d7762f8bf32b8a1391cbf2df198cbbdae9dd7a324e94eb3",
+      "result_path": "C:/a/Programming/cloudflare/HAS-Review-Neon-973039e-native/Studio/output/compatibility/source-1795236859-745-653593157-result.json",
+      "exact_error": "Conversion failed (exit 1): Source light color or brightness exceeds bounds: light_environment",
+      "source_location": "tools/source_lights.py:37",
+      "read_only_entity_observation": {
+        "ordinary_spot_environment_light_count_before_flags_style": 105,
+        "light_environment_light": "-1 -1 -1 -1",
+        "light_environment_lightHDR": "-1 -1 -1 1"
+      },
+      "worker_status": "failed exit1"
+    }
+  ],
+  "existing_success_observation": {
+    "member": "maps/greenscreen.bsp",
+    "result": "ok true in review output; not independently opened or visually accepted by worker"
+  },
+  "candidate_status": "source-only fix preparation; no actual map retest yet",
+  "acceptance_pass_claim": false
+}

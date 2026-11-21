@@ -1,0 +1,9 @@
+# Packaged live-model editor and cold-reader qualification
+
+Root ran the actual packaged conversion through the adopted Studio and passed all 102 inherited checks: ordinary editor writer83, packed cold reader11, and linked cold reader8. All private receipts passed, launchers exited0 and were reaped, error lists were empty, and every verifier preservation flag was true. This run did not reconvert native files. It consumed packaged GLB `b8436dea…` and its `9b007f22…` parameters, bound to exact conversion receipt `71f9e8da…` and final bone crosswalk `fb677e1a…`.
+
+The checks retain ordinary Add model, bounded five-joint native hair, fan strength/direction and wiggle, exact Off restoration, ordinary FK Record/Undo/Redo, and packed/linked persistence. Cold readers run after disposable source inputs and caches are taken offline, validate inactive reopening, poses and frame hashes, and exercise packed frame export. This partial native rig still explicitly refuses unsupported same-actor ragdoll allocation. Five solved rules do not imply a generic native solver for all49 retained rules.
+
+The packaged verifier source and predecessor are copied byte-for-byte. The earlier tracked `dbff99d5…` fixture verifier and frozen30-file candidate-admission packet remain unchanged. This archive contains finite Root/phase verification JSON, private-desktop receipts and command recipes only; it excludes images, HAS projects, native arrays, private expected poses, GLBs, parameters and Blender files.
+
+Root supplied local functional commit `1dc267df7bdef6a24e9298ab9d9ff15653f4b507` (25 adopted paths, parent `165ebdf…`,1084 functional files). The new full Windows verification is pending. The old1061-source full result is historical, and is not credited to these new bytes. All62 formal statuses and the52/54 implementation and55/62 acceptance scores remain unchanged by this archive.

@@ -1,0 +1,881 @@
+{
+  "format": "has_post_full_authorized_generated_output_baseline_1",
+  "revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "old_baseline_sha256": "c40dfc182df6907acf1be74f46f49441e0c2a5f1ee388bb3a4e0c246f1b448e3",
+  "intermediate_baseline_sha256": "022827d1938f6b6b46f99061cbccd7d5020ffc5ebde8d1cbd0e5aefc7b290535",
+  "closed_full_completion_sha256": "2ca293d180751d8d219c0371665cb64a0a9212cc7a2bb3ae20f1fbdd4e5a0471",
+  "authorizing_full_launch_sha256": "713117d65d057aa74f329e776126dd5c886819d3b97412a8a434a970b9b4bb16",
+  "full_source_after_sha256": "ae338017a4a0ac3483bfeb9bc8d1ab40355780bdeb235e29c104d9cf94c5f2f9",
+  "original_completion_path": "output/windows-reference-body-1795233568436471500/completion.json",
+  "original_completion_mtime_ns": "1795237579028773400",
+  "captured_at_ns": "1795237638123825700",
+  "closed_process_point": {
+    "verifier_pid": 12896,
+    "verifier_reaped": true,
+    "all_private_jobs_closed": true,
+    "root_exclusive_lane_quiescent": true,
+    "owned_processes_remaining": 0
+  },
+  "paths": 171,
+  "complete_set_reread_stable": true,
+  "logical_bytes": 4493475,
+  "entries": {
+    "output/animated-channels-result.json": {
+      "bytes": 535,
+      "mtime_ns": "1795233896183514500",
+      "sha256": "65f0a5f2500f6ce134b17632636a27387553a98c5dbb8a624df81533a801b767"
+    },
+    "output/animated_channels-ffprobe.json": {
+      "bytes": 3845,
+      "mtime_ns": "1795237272556233200",
+      "sha256": "867d5cc51e6958ddb18d4cc80a02d77aea938ef1ccf968ff71b049b76bbc4a84"
+    },
+    "output/animated_channels-stdout.log": {
+      "bytes": 4536,
+      "mtime_ns": "1795233896578389200",
+      "sha256": "362d8bcdb65083291d21fc99c4e18c8b0b52f10c6f085049bb13bd4e13e9d1de"
+    },
+    "output/animated_channels_smoke-engine.log": {
+      "bytes": 4483,
+      "mtime_ns": "1795233896183514500",
+      "sha256": "1d7c30b7482bc43e019557e5347963b1cebacb8017d9e2c1b12093a39e078eb2"
+    },
+    "output/animation-clips-result.json": {
+      "bytes": 922,
+      "mtime_ns": "1795233857956744300",
+      "sha256": "74c89cabfd1fe558441ce886f344aef0f87f43dddf520741b0c4f01c6947da28"
+    },
+    "output/animation_clips-ffprobe.json": {
+      "bytes": 3844,
+      "mtime_ns": "1795237272308225200",
+      "sha256": "d896505fc58b460e0c24d6b0b532cf982da149dcc8c8a7c08966147b4c47266e"
+    },
+    "output/animation_clips-stdout.log": {
+      "bytes": 5253,
+      "mtime_ns": "1795233858326361200",
+      "sha256": "e45a5bfc8b38d21c87ee384cc25fddf41ea084934cb30b31adcfdd71b7811528"
+    },
+    "output/animation_clips_smoke-engine.log": {
+      "bytes": 5198,
+      "mtime_ns": "1795233857956744300",
+      "sha256": "b8808266203957281ae54a332b4547400b969879accbc0889a83bce2e75ad1a5"
+    },
+    "output/audio_dummy-stdout.log": {
+      "bytes": 1289,
+      "mtime_ns": "1795233686788092800",
+      "sha256": "12bcb21d8a63aeecbd21fd677d0f30b53f56e32079f3a4d271d4a1984ea690d0"
+    },
+    "output/audio_editor-stdout.log": {
+      "bytes": 1854,
+      "mtime_ns": "1795233682047609300",
+      "sha256": "79cb93e2e126743af9fb2c79f16a8656bb9788ef1939a56bd697d555b2c3bc5e"
+    },
+    "output/autokey-ffprobe.json": {
+      "bytes": 2421,
+      "mtime_ns": "1795237271471744800",
+      "sha256": "204ce8d9b14ad7a94bda5264f389a10815565525ac734dc25f850c4a7a102c77"
+    },
+    "output/autokey-result.json": {
+      "bytes": 343,
+      "mtime_ns": "1795233733239453900",
+      "sha256": "f161136973262e93b188de8f5a9952a7a39ca7033d8d58bc90c300df37c3214c"
+    },
+    "output/autokey-stdout.log": {
+      "bytes": 2608,
+      "mtime_ns": "1795233733693625400",
+      "sha256": "9a5481d15893cfcec373f94b1cf35ce78f227ae2b72ef60c02526d4f252778dd"
+    },
+    "output/autokey_smoke-engine.log": {
+      "bytes": 2575,
+      "mtime_ns": "1795233733239453900",
+      "sha256": "adb5cc2090e29b51e99106cb779ff481bce18325ae9e75f497c06cc3b792bee2"
+    },
+    "output/base-shapes-verification.json": {
+      "bytes": 949,
+      "mtime_ns": "1795234940231056700",
+      "sha256": "bab292e7943d8b05612e1f5b50227864a9b5802c7e71990ec7be0810718b62a1"
+    },
+    "output/base_shape_smoke-engine.log": {
+      "bytes": 4240,
+      "mtime_ns": "1795234939727375600",
+      "sha256": "6bdaf589c1b21badf962385586925a8feeaafa912ecdb06e1f9fed6b70977790"
+    },
+    "output/body-animation-verification.json": {
+      "bytes": 119472,
+      "mtime_ns": "1795235518987109700",
+      "sha256": "5a380c7f1de5d99afc9480a3eabe098e40f2cf87bd551aa4875e310a393cf128"
+    },
+    "output/body-curves-verification.json": {
+      "bytes": 125190,
+      "mtime_ns": "1795235481015095700",
+      "sha256": "332856d0d49b58cebf634b4be689f51816c43ab808dc9628b2e3bcd535fa4c57"
+    },
+    "output/body_animation_smoke-engine.log": {
+      "bytes": 6277,
+      "mtime_ns": "1795235518401242000",
+      "sha256": "bca83bde2a14bb5edcb4ce22f88fae4056a0c3ddbb9fc0ccb46f2e88cc658c4d"
+    },
+    "output/body_curves_smoke-engine.log": {
+      "bytes": 8395,
+      "mtime_ns": "1795235480421605400",
+      "sha256": "4324bcc7036b6223a07c110b0a97b936636b52dc97f5d2cab912875476e189a3"
+    },
+    "output/body_curves_unit-engine.log": {
+      "bytes": 2513,
+      "mtime_ns": "1795235454141663700",
+      "sha256": "89a3bd39366e669bca93baad6c09b170279b01b39d6762f8f2642422cb11e9fb"
+    },
+    "output/bone-labels-result.json": {
+      "bytes": 143,
+      "mtime_ns": "1795233833200462500",
+      "sha256": "4eba5efeba8cd4ee922060426c85341305a74f9b56324b1a627e0a94f1853c96"
+    },
+    "output/bone_labels-stdout.log": {
+      "bytes": 2071,
+      "mtime_ns": "1795233833557925100",
+      "sha256": "3ff9cf9a52825becc51033469a99f35d65bde9591e6d542a415afd09e4cb9cef"
+    },
+    "output/bone_labels_smoke-engine.log": {
+      "bytes": 2042,
+      "mtime_ns": "1795233833200462500",
+      "sha256": "da5a3a0eea60af48bd4f0582977f53b7e77123dfc706223e2e0db1077e932b35"
+    },
+    "output/camera-range-verification.json": {
+      "bytes": 116872,
+      "mtime_ns": "1795235629913967200",
+      "sha256": "64daaf7b602d22ab549bd4a95fbd91b2a9e90c50d8a6fd552d7e74bd8b84cf5d"
+    },
+    "output/camera_range_smoke-engine.log": {
+      "bytes": 4743,
+      "mtime_ns": "1795235629214675900",
+      "sha256": "1ad2808187d398907d7b52cd2413fd64b0db866bb369090eed0ec48fad9534e8"
+    },
+    "output/character-height-verification.json": {
+      "bytes": 7153,
+      "mtime_ns": "1795235201250483200",
+      "sha256": "452f6a3b474409e63f1d40f2faa005fb2d208bffd648ae0e699002ae0b2275ef"
+    },
+    "output/color-sampler-verification.json": {
+      "bytes": 115263,
+      "mtime_ns": "1795235649532607700",
+      "sha256": "84df23f516958ea64d62c5117ba92037e1acbfa68b4b2a21ec87f11ecfcec881"
+    },
+    "output/color_sampler_smoke-engine.log": {
+      "bytes": 4117,
+      "mtime_ns": "1795235649079574300",
+      "sha256": "fde2c9bcd9b231c762ae50bf0da999f450d1ddc9018983c213b0e2c697a26f1b"
+    },
+    "output/contact-persistence-verification.json": {
+      "bytes": 4534,
+      "mtime_ns": "1795235868213121700",
+      "sha256": "db9d5d6b35c8a00b53d70069226cd2d397ef947401450dbc57a757058ef09042"
+    },
+    "output/contact-physics-verification.json": {
+      "bytes": 557,
+      "mtime_ns": "1795235745987054000",
+      "sha256": "813a27e66afbb4782becb49c1371a8ba21f5b5d2becc7d175417d064345fcb03"
+    },
+    "output/contact-selection-verification.json": {
+      "bytes": 10248,
+      "mtime_ns": "1795236015925553700",
+      "sha256": "31e086b2d6bf7355bd53a29567d11041b40e691877c15d927adbb0816678412f"
+    },
+    "output/contact-viewport-verification.json": {
+      "bytes": 63950,
+      "mtime_ns": "1795236174512829300",
+      "sha256": "e05b00ea34687ed83f5e5a89b26ffacc9f320f2be6b7de3ff61aa4520ef3aba7"
+    },
+    "output/contact_persistence_smoke-engine.log": {
+      "bytes": 5052,
+      "mtime_ns": "1795235825530698700",
+      "sha256": "8c607e2f2f07fcf5de727fdfd9f09cd5657b96877bd14944b61333dc5aeec756"
+    },
+    "output/contact_physics_smoke-engine.log": {
+      "bytes": 4514,
+      "mtime_ns": "1795235769907029000",
+      "sha256": "802e11452fb89a9f1c991f6880e73e1f0007fab697154231c8064fe2662e569f"
+    },
+    "output/contact_selection_smoke-engine.log": {
+      "bytes": 11933,
+      "mtime_ns": "1795236015466635300",
+      "sha256": "b84a502264e36c002c493b05d887013a1eaeb7ce0aca37bd2a7ef45351b41efc"
+    },
+    "output/contact_viewport_read-engine.log": {
+      "bytes": 625,
+      "mtime_ns": "1795236174129014300",
+      "sha256": "61a4b36268bb9818f5c5d054b20a2d91c4be454b94728bd691879781254a32e9"
+    },
+    "output/contact_viewport_smoke-engine.log": {
+      "bytes": 14960,
+      "mtime_ns": "1795236165831226700",
+      "sha256": "84fcd04826323b7d7cbec885a5287ee9c89281c7b4aa1504114331d169d3d47b"
+    },
+    "output/editor-stdout.log": {
+      "bytes": 2203,
+      "mtime_ns": "1795233671399043200",
+      "sha256": "d1e8baf7f32a9d2250a714edaf650a2ea10dfbaedf5e1eac643f39ed7267d5a7"
+    },
+    "output/editor_audio-ffprobe.json": {
+      "bytes": 3829,
+      "mtime_ns": "1795237271337542300",
+      "sha256": "eb032e116f284461a6c19818415cf9193b24b9ebf372dd33443fe23bec11aca8"
+    },
+    "output/export_failures-engine.log": {
+      "bytes": 551,
+      "mtime_ns": "1795233672186919500",
+      "sha256": "2ee31d9c172a88e1a6d6e77fccd7eae0611ba513a648931e10bf8b34201b888c"
+    },
+    "output/export_failures-stdout.log": {
+      "bytes": 560,
+      "mtime_ns": "1795233672353737900",
+      "sha256": "76b2c9aa0a06460b7a7124a39dd0ffeffb5a017d7fce96ae6ff7542364bae4ed"
+    },
+    "output/expression-presets-verification.json": {
+      "bytes": 929,
+      "mtime_ns": "1795235130037577000",
+      "sha256": "589c29048ff9fa9e345ac88f967295237b7a1f6fae80a3240a8884bf7c5b6b25"
+    },
+    "output/fan-motion-result.json": {
+      "bytes": 347,
+      "mtime_ns": "1795233951689165500",
+      "sha256": "87c35014d88f002ca32965d83cd0a9e73768cf27596b547e54bdec9e3bd35fdb"
+    },
+    "output/fan_motion-ffprobe.json": {
+      "bytes": 2423,
+      "mtime_ns": "1795237273249251700",
+      "sha256": "b9735105be24b421e0eb8f86b61aa0f23febdf4a0af842d2114e219c4c68577e"
+    },
+    "output/fan_motion-stdout.log": {
+      "bytes": 3028,
+      "mtime_ns": "1795233952075069800",
+      "sha256": "32c43e0e0a1ee29bb25ffd9b451ec1dd56461beeb02eb67f5c7bd63c012a7c3a"
+    },
+    "output/fan_motion_smoke-engine.log": {
+      "bytes": 2993,
+      "mtime_ns": "1795233951689165500",
+      "sha256": "a80102372718a7bf6ca243f0dcf4a2743b7b4c867f9cc88c3a5718ec8616360d"
+    },
+    "output/fill-verification.json": {
+      "bytes": 115284,
+      "mtime_ns": "1795236526268938500",
+      "sha256": "fbec352dbbe4b8744b7d406d3dd8bad90f9158b8b0c12da43835025f2bf0c89d"
+    },
+    "output/fill_smoke-engine.log": {
+      "bytes": 3357,
+      "mtime_ns": "1795236525683123800",
+      "sha256": "33683468dc56979333c2660cbd383caff42c580bda9da86839cedc2d93561e93"
+    },
+    "output/fill_unit-engine.log": {
+      "bytes": 1053,
+      "mtime_ns": "1795236490112121700",
+      "sha256": "1aa211721896abf9e80bbb7c46f0b3b1e4a4bab2523a1b7ecd61d30d94fc1546"
+    },
+    "output/first-movie-verification.json": {
+      "bytes": 3028,
+      "mtime_ns": "1795237268069268300",
+      "sha256": "42df577cf8e3539d95f134fb611c42c7e6008af22e5147bb9bcd6cf88594d21d"
+    },
+    "output/foot-contacts-verification.json": {
+      "bytes": 11539,
+      "mtime_ns": "1795235674920762400",
+      "sha256": "92aaf50d66422835da3c152de46d5e8fac9d5ddb15e04cf9a4938462666ce83c"
+    },
+    "output/foot-hold-verification.json": {
+      "bytes": 905,
+      "mtime_ns": "1795235665709641500",
+      "sha256": "939baa56039b8f2674715c369f7b284b7aeeee661478db055b3fc468099e43db"
+    },
+    "output/foot_contacts_smoke-engine.log": {
+      "bytes": 11871,
+      "mtime_ns": "1795235674518670100",
+      "sha256": "301b35e948cef593e0d3a66d37fda79ab1260e5e063148b28c22fb4b10e6d2f2"
+    },
+    "output/foot_hold_smoke-engine.log": {
+      "bytes": 3886,
+      "mtime_ns": "1795235665250623600",
+      "sha256": "e1919dd4e439e0620678a7799df9c3f84995fa58d662003804c016088315b13e"
+    },
+    "output/helper-morphs-verification.json": {
+      "bytes": 1177,
+      "mtime_ns": "1795234894975771700",
+      "sha256": "e1f2e443a35d96c3a276822f7acc4c507ffde7c9530b9d6d3c31394db818de86"
+    },
+    "output/helper_morphs_render-engine.log": {
+      "bytes": 774,
+      "mtime_ns": "1795234894568277700",
+      "sha256": "750a7194c7f35e7a03b132558e1c588ac504cacf52328054876b77b920b83d65"
+    },
+    "output/home-verification.json": {
+      "bytes": 114930,
+      "mtime_ns": "1795237178883219500",
+      "sha256": "b8b0b3756a07fd955176651c69213227155f406c3e0519808d689e605c43eeb5"
+    },
+    "output/home_smoke-engine.log": {
+      "bytes": 2822,
+      "mtime_ns": "1795237168684336800",
+      "sha256": "1a5e9328a2e5304cafb6cad6ddc345f69e8a6c2d8c0d1b8c308c64fa9ca1c298"
+    },
+    "output/import-physics-verification.json": {
+      "bytes": 115297,
+      "mtime_ns": "1795235575967334000",
+      "sha256": "c74b2f52f7d0056b0c363eb8b89ebb8a3d35e3d763b1f7b9e2de949a4dd67cef"
+    },
+    "output/import-placement-result.json": {
+      "bytes": 535,
+      "mtime_ns": "1795234746052257100",
+      "sha256": "601501c447a42bc85826933609dc93b9f64bfb83922ffe9432c624130219ba36"
+    },
+    "output/import-placement-verification.json": {
+      "bytes": 115765,
+      "mtime_ns": "1795234746506606900",
+      "sha256": "b8a48c3cb19f834fbab2874f874bc56751429c0cd962bfb883412f39489af401"
+    },
+    "output/import-placement-verification.log": {
+      "bytes": 3497,
+      "mtime_ns": "1795234746353426400",
+      "sha256": "77d1b8e0ed6ace526a5f51c749d3cf21226d71838cf17616fe4b1360cbcf8870"
+    },
+    "output/layers-verification.json": {
+      "bytes": 584,
+      "mtime_ns": "1795236466519702600",
+      "sha256": "158c38412192517ab5f865f883726cbdcfcc1779452c90f22a6291cb7fe1b4ef"
+    },
+    "output/layers_smoke-engine.log": {
+      "bytes": 3087,
+      "mtime_ns": "1795236466086364700",
+      "sha256": "995a321a0cb163325361f7845ab878c1d4817e7939d18847f750ada92d9b9e08"
+    },
+    "output/lighting-verification.json": {
+      "bytes": 116699,
+      "mtime_ns": "1795235538347792300",
+      "sha256": "6a08c44995a6572b675d6c9adf7dc9d33adf679aafdd4b1d9106d63356b71474"
+    },
+    "output/limb-ik-result.json": {
+      "bytes": 709,
+      "mtime_ns": "1795233922727588000",
+      "sha256": "63513b60e4b952531d6c30e51bb75eecf214baca26db168608becab14b920c5f"
+    },
+    "output/limb_ik-ffprobe.json": {
+      "bytes": 3835,
+      "mtime_ns": "1795237272677878300",
+      "sha256": "f107620c01561fd1455155d74c49d7b66304469b807e1cad45f5215f55abb58d"
+    },
+    "output/limb_ik-stdout.log": {
+      "bytes": 6220,
+      "mtime_ns": "1795233923137982400",
+      "sha256": "7b043f7239c9f3cb1a78e93e3a7c9ef841795ebedc8aadea0a271d3332703d30"
+    },
+    "output/limb_ik_smoke-engine.log": {
+      "bytes": 6145,
+      "mtime_ns": "1795233922727588000",
+      "sha256": "6d580685d524fa2f1ac8bc6a58d2fe6d3bdc600d17426f65539b77dc7cc1fc2e"
+    },
+    "output/live-appearance-verification.json": {
+      "bytes": 1268,
+      "mtime_ns": "1795235549795048500",
+      "sha256": "6b170b4a076a368ca6d2a5b4179b6c5e521cca2156caefb2cdedb62ee4a7f898"
+    },
+    "output/live_appearance_smoke-engine.log": {
+      "bytes": 4146,
+      "mtime_ns": "1795235549485761800",
+      "sha256": "2f4e8ab80e2ba8fb9796f94587fee2160c4f1a47b36b1e2c7823eccc19cfda82"
+    },
+    "output/map-calibration-verification.json": {
+      "bytes": 845,
+      "mtime_ns": "1795235442101153100",
+      "sha256": "781d464926ec4b6444eb384ac3afbc771a1e7dbbe5f492133456842f2a00a6df"
+    },
+    "output/mmd-groups-verification.json": {
+      "bytes": 973,
+      "mtime_ns": "1795235154404475400",
+      "sha256": "ea8800707e69943220c59dede4d678488010ef2406374d60b87f16923b27d300"
+    },
+    "output/motion-animation-app-verification.json": {
+      "bytes": 35720,
+      "mtime_ns": "1795236396657062400",
+      "sha256": "3934af0f1c6227bd381e77121eb02986c009ae02cd41b26798def3caec7f7ffb"
+    },
+    "output/motion_animation_smoke-engine.log": {
+      "bytes": 10997,
+      "mtime_ns": "1795236390673269100",
+      "sha256": "8c2e3f2008939bb9e6d48900e0128c597c0374c32f25ad089e46a019c426e7ba"
+    },
+    "output/multi-audio-verification.json": {
+      "bytes": 10618,
+      "mtime_ns": "1795236277449663000",
+      "sha256": "e2d1fdf0666ba53e402b177f892906dc518b98420b41861662616c650116abb8"
+    },
+    "output/multi_audio_smoke-engine.log": {
+      "bytes": 637,
+      "mtime_ns": "1795236276210964800",
+      "sha256": "7a6d6910ca795112c5ce9de6fd5ac57e797d3678bcc18561956e8315c4cdc423"
+    },
+    "output/native-import-verification.json": {
+      "bytes": 1460,
+      "mtime_ns": "1794448107099861800",
+      "sha256": "b6a632eb086d77a9003c4998e91d2d880d694b0f6533ce18ab202176b8cc3ca9"
+    },
+    "output/new-scene-result.json": {
+      "bytes": 251,
+      "mtime_ns": "1795233742577230200",
+      "sha256": "8c5e8a8084394b08156a414f508d9128932a3face3c21e1dad77f641e4c935eb"
+    },
+    "output/new_scene-ffprobe.json": {
+      "bytes": 2420,
+      "mtime_ns": "1795237271589194000",
+      "sha256": "26ef6774aa23d8a725a4a179b08926a4439c14da684587c5411dbd4e07e1eaf0"
+    },
+    "output/new_scene-stdout.log": {
+      "bytes": 1873,
+      "mtime_ns": "1795233742855719000",
+      "sha256": "44438042361323d2f1fef1f3f751a99d50c8a1d52a26fe283bfc4c8531b13e9f"
+    },
+    "output/new_scene_smoke-engine.log": {
+      "bytes": 1849,
+      "mtime_ns": "1795233742577230200",
+      "sha256": "1077fe2f3afa1c4193b674d007a4d11b5fc775559ce91720181612ed442c6543"
+    },
+    "output/object-timing-result.json": {
+      "bytes": 634,
+      "mtime_ns": "1795233827989099500",
+      "sha256": "beba06bae8a2f1cd61c3d58fcb6ce2e025ef51acb22439ca4103bf36f7969db1"
+    },
+    "output/object_timing-ffprobe.json": {
+      "bytes": 2427,
+      "mtime_ns": "1795237272164185300",
+      "sha256": "cff37066f80b587f4da8d6fa2da8185562e8e91466665c681ba17acbb8e6592c"
+    },
+    "output/object_timing-stdout.log": {
+      "bytes": 3688,
+      "mtime_ns": "1795233828413155400",
+      "sha256": "dbef9a286c8c8852825c21013653dde892199b246d994d624d8b27f989bf7d6d"
+    },
+    "output/object_timing_smoke-engine.log": {
+      "bytes": 3645,
+      "mtime_ns": "1795233827989099500",
+      "sha256": "5d979c211b3c64b914f31fb67e009b00f4480e1b00c9ee3b2f5bee1ab766f675"
+    },
+    "output/onion-verification.json": {
+      "bytes": 598,
+      "mtime_ns": "1795236487196922500",
+      "sha256": "8304bdf79ff467f404fe0edb8e38d098ebe68dcfd714f1a1b2b7fe6cba7d5395"
+    },
+    "output/opacity-verification.json": {
+      "bytes": 764,
+      "mtime_ns": "1795236416081596000",
+      "sha256": "1434a25f24c2e2e061f9af7597b78188980210df36007cf03aac4d8bc6444445"
+    },
+    "output/opacity_smoke-engine.log": {
+      "bytes": 2897,
+      "mtime_ns": "1795236415617625200",
+      "sha256": "96791139c714a9a35c1e72b7c3d13bf312ee7b583e0727c0133dae0e75885a20"
+    },
+    "output/opacity_unit-engine.log": {
+      "bytes": 1297,
+      "mtime_ns": "1795236397736928600",
+      "sha256": "4197152b1c4fb50962f377cc684397bf26dcc7ffc245d845e4c32e7ebc3d5144"
+    },
+    "output/physics-contacts-result.json": {
+      "bytes": 42710,
+      "mtime_ns": "1795234075917773300",
+      "sha256": "847fb50816740413bdd6dfa29f209e026fba48846820e010a28f0f685926e41b"
+    },
+    "output/physics-ffprobe.json": {
+      "bytes": 2421,
+      "mtime_ns": "1795237272791356400",
+      "sha256": "da895d4b0efe37d1754e37c668b16b890fac260e4bdc6630d0ef17052aa32280"
+    },
+    "output/physics-props-result.json": {
+      "bytes": 462,
+      "mtime_ns": "1795234097920871500",
+      "sha256": "b7810d107575765e19833d3690d19c4b1bf9398cfc9c99fc62e380541d2051d8"
+    },
+    "output/physics-recording-result.json": {
+      "bytes": 958,
+      "mtime_ns": "1795234139390262500",
+      "sha256": "8eb27bf230f116ac69f1b36292a6963650f237951bb75753a50f23770c81906b"
+    },
+    "output/physics-result.json": {
+      "bytes": 1163,
+      "mtime_ns": "1795233992965749300",
+      "sha256": "9a8585bc1d7f343c339fe3abd050f4fdc3fd0cad86ffef8f98edb9f4a1891c66"
+    },
+    "output/physics-stdout.log": {
+      "bytes": 6467,
+      "mtime_ns": "1795233993347403600",
+      "sha256": "5cb857275b61a2d14d9a24c328b28d2ac242a90d63d212b78ed7cc8f9722638f"
+    },
+    "output/physics_contacts-stdout.log": {
+      "bytes": 92215,
+      "mtime_ns": "1795234076317376200",
+      "sha256": "03a9214092e40989630585fba876ce07ff416bbcc552d5eca98c884852692a65"
+    },
+    "output/physics_contacts_smoke-engine.log": {
+      "bytes": 92127,
+      "mtime_ns": "1795234075917773300",
+      "sha256": "51de4bb275c4f4803e8ae5a5bc5d15c85a1cf1b21e8cadb2a51024aeb0da8263"
+    },
+    "output/physics_props-ffprobe.json": {
+      "bytes": 3841,
+      "mtime_ns": "1795237273363219400",
+      "sha256": "cecfbd3750369f8c0651bdde218d853da70308f7e1ee3af5e3f0e0c6324bb0b8"
+    },
+    "output/physics_props-stdout.log": {
+      "bytes": 3251,
+      "mtime_ns": "1795234098282305200",
+      "sha256": "011cbf6d4397969e71ec43485bb6d2da6e8653b6efbb753254a6f7c943aa3921"
+    },
+    "output/physics_props_smoke-engine.log": {
+      "bytes": 3212,
+      "mtime_ns": "1795234097920871500",
+      "sha256": "fe8b6a76138983bea87ca1ab19987ad3533c4b40f383d5b9fbd5edb39e0edfc3"
+    },
+    "output/physics_recording-ffprobe.json": {
+      "bytes": 3847,
+      "mtime_ns": "1795237273493836300",
+      "sha256": "88f4485b30e8fae39ec18a019817d0ba2c5a922869d5fdde9553c765ed7a947f"
+    },
+    "output/physics_recording-stdout.log": {
+      "bytes": 6499,
+      "mtime_ns": "1795234139823625900",
+      "sha256": "6de7e8f4019b4a98eb589bcb05eda7b98d8f813714d785ce4acfa563316e4f48"
+    },
+    "output/physics_recording_smoke-engine.log": {
+      "bytes": 6429,
+      "mtime_ns": "1795234139390262500",
+      "sha256": "fb6e5366110d3e80b6b1990db51ae09c36a7865c548641f6b098fc32ebfc7497"
+    },
+    "output/physics_recording_unit-engine.log": {
+      "bytes": 1445,
+      "mtime_ns": "1795234098737055900",
+      "sha256": "858064136d4b2b646e8f4279727e8aa6ffc93a781d71792687de7ad34847923a"
+    },
+    "output/physics_recording_unit-stdout.log": {
+      "bytes": 1465,
+      "mtime_ns": "1795234098763732900",
+      "sha256": "761b269b1bfeb7f25732356dd18773a20e00b37e96caf6e6dcf0bb8d66c99ba2"
+    },
+    "output/physics_smoke-engine.log": {
+      "bytes": 6404,
+      "mtime_ns": "1795233992966731900",
+      "sha256": "e40e559cd552e2792bbdb36c4c7e45b19b158bd24381e1191d1aeb60d548e126"
+    },
+    "output/pose-bounds-verification.json": {
+      "bytes": 1458,
+      "mtime_ns": "1795235599342731400",
+      "sha256": "828e5529c26663e42e60a4e74b2cf9a73095e49b66d7bb655d714a1aee9d6919"
+    },
+    "output/pose-stdout.log": {
+      "bytes": 3202,
+      "mtime_ns": "1795233721580891600",
+      "sha256": "b648968b26ea7ca66f9c52a777c458c03c1935b4b2749bf2027934ea740b6676"
+    },
+    "output/pose_bounds_smoke-engine.log": {
+      "bytes": 3553,
+      "mtime_ns": "1795235598844904000",
+      "sha256": "b9248e1403eee007b30337eae5ca19781a9a532732be4255185acb6ef579378c"
+    },
+    "output/recovery-history-verification.json": {
+      "bytes": 119955,
+      "mtime_ns": "1795237097766724500",
+      "sha256": "f4788a75b4260aeac59906a88aee91fa3daf47d03ea3a8f49f6488c2a7eba54c"
+    },
+    "output/recovery-identity-verification.json": {
+      "bytes": 243,
+      "mtime_ns": "1795236778519529400",
+      "sha256": "1604ae7757c48dc9714e883d3311c1ae7b5f978b8cac5f5402f0623daf0ce50e"
+    },
+    "output/recovery-preview-verification.json": {
+      "bytes": 494,
+      "mtime_ns": "1795237153141454400",
+      "sha256": "3c1ba8faccc6bfd824463299ea55b917accceec86b3b6ec7c3913f6722607501"
+    },
+    "output/recovery-schedule-verification.json": {
+      "bytes": 450,
+      "mtime_ns": "1795237136959984400",
+      "sha256": "9a45477365f5c15cd1ffd481abcc28fb03a72269f3a7d27aac808944633c9b4c"
+    },
+    "output/recovery-startup-verification.json": {
+      "bytes": 17368,
+      "mtime_ns": "1795236927324541300",
+      "sha256": "5ba51b1118cb62c4fa128a61668c37b3402d973a5fa79c80e2c72206baa1183e"
+    },
+    "output/recovery-stdout.log": {
+      "bytes": 1101,
+      "mtime_ns": "1795233704656815000",
+      "sha256": "03819924c90078c1e42cb94a3768036ae7833112398c5bcd7b6be0d572314dcd"
+    },
+    "output/recovery_history_smoke-engine.log": {
+      "bytes": 2448,
+      "mtime_ns": "1795237066482719400",
+      "sha256": "aa142e715a275884018a7d66de3ed2bf2c5f061d2641a64da2a31e9fbe142231"
+    },
+    "output/recovery_identity_unit-engine.log": {
+      "bytes": 2851,
+      "mtime_ns": "1795236778435458700",
+      "sha256": "68dfd461cbe4f674b3b9df4cef96bb34576e66149e884a53d8e88f383f27aa57"
+    },
+    "output/recovery_journal_unit-engine.log": {
+      "bytes": 1766,
+      "mtime_ns": "1795236962156667500",
+      "sha256": "f3367ea0ad9245c94b7ef7fe122e0e2d335192aeaed06bb169572d01036a75c5"
+    },
+    "output/recovery_preview_smoke-engine.log": {
+      "bytes": 2202,
+      "mtime_ns": "1795237152845727000",
+      "sha256": "85495f101ea7296560652f74d6144303591db11d2a9159408ab338a3db2a1f46"
+    },
+    "output/secondary-helpers-result.json": {
+      "bytes": 402,
+      "mtime_ns": "1795234798073032400",
+      "sha256": "5f4192e524038e6dad3de5f674e933e2caa51e30d76d310ab254617da38b0b4f"
+    },
+    "output/secondary-helpers-verification.json": {
+      "bytes": 2415,
+      "mtime_ns": "1795234851203357900",
+      "sha256": "ee8f73a967108d3015c55398a00a040e6d21c5419c291e98210c9558b5f1d72a"
+    },
+    "output/secondary-helpers-verification.log": {
+      "bytes": 3511,
+      "mtime_ns": "1795234798455251300",
+      "sha256": "63bf47be4cea54f5d3b019e86db4f52ab14bd536b5f8160bea8952d0c3ef2551"
+    },
+    "output/secondary-motion-result.json": {
+      "bytes": 510,
+      "mtime_ns": "1795233932773642100",
+      "sha256": "83cc64260573dab9db689ee861f057905f01ce6e7236771187ef2e42f5b7bab3"
+    },
+    "output/secondary_helpers_multi-engine.log": {
+      "bytes": 4744,
+      "mtime_ns": "1795234831721429700",
+      "sha256": "f6e2089627e522252a9ed089668932603e63f6c9c8ffacbaa6c61fbc293a4d68"
+    },
+    "output/secondary_helpers_native-engine.log": {
+      "bytes": 1340,
+      "mtime_ns": "1795234808072181600",
+      "sha256": "45bbb73d4d2d82a07669e0a1cc733355814d65022a4a257eaddd32cf71132351"
+    },
+    "output/secondary_helpers_patch-engine.log": {
+      "bytes": 2826,
+      "mtime_ns": "1795234850756635300",
+      "sha256": "8b43ddde50da0f9d7972ebd5b06a5576dbe29804e50d9a7a70634c760cfcb57f"
+    },
+    "output/secondary_helpers_smoke-engine.log": {
+      "bytes": 3468,
+      "mtime_ns": "1795234798074032900",
+      "sha256": "0015678b167faad83cb400dfb8c2c255a37ee361735276efcc74f95e920eafbb"
+    },
+    "output/secondary_motion-ffprobe.json": {
+      "bytes": 2430,
+      "mtime_ns": "1795237272917274500",
+      "sha256": "41d99c17bf598ed148a9a8fff832b7d4acb48d91327f5b931c8832a6dfc286d3"
+    },
+    "output/secondary_motion-stdout.log": {
+      "bytes": 3542,
+      "mtime_ns": "1795233933030132500",
+      "sha256": "9b7e92aa62607196e5dd710bfac603bd22b66ea570f79eb4199e1eda0f8eff0f"
+    },
+    "output/secondary_motion_smoke-engine.log": {
+      "bytes": 3502,
+      "mtime_ns": "1795233932773642100",
+      "sha256": "8c02571faabb0d63527b72c9438bcf9e98ace608f0d5d4012bcdedd9c7f23e48"
+    },
+    "output/shape-animation-verification.json": {
+      "bytes": 1483,
+      "mtime_ns": "1795234979961294700",
+      "sha256": "e8eaa8a924ddd42c5c306982011dd5521291cd311bc7b14b252715d7d05776a2"
+    },
+    "output/shape-catalog-verification.json": {
+      "bytes": 897,
+      "mtime_ns": "1795235016372488800",
+      "sha256": "df774d8ac9212fd362746a585da285cba6a042b6133454f6ee2643e9e2242bef"
+    },
+    "output/shape-comparison-verification.json": {
+      "bytes": 2583,
+      "mtime_ns": "1795235106707971900",
+      "sha256": "f86ef041c249a99754388a0db2811cf2574f193b410ccc11be7cfe8c2f512dec"
+    },
+    "output/shape_animation_smoke-engine.log": {
+      "bytes": 5689,
+      "mtime_ns": "1795234979413720000",
+      "sha256": "0ac1ed10e406c1487f9e7338960ab4d62013fb2fcb6a2a7937b1da35017c921a"
+    },
+    "output/shape_catalog_unit-engine.log": {
+      "bytes": 2305,
+      "mtime_ns": "1795234980447054200",
+      "sha256": "b306ae8136c73e6b997ed62a1d589c24c6f137baa48a6e85404d472a2d4197be"
+    },
+    "output/shape_comparison_smoke-engine.log": {
+      "bytes": 488,
+      "mtime_ns": "1795235106282880000",
+      "sha256": "34b554e5bfe74985fcfdf8056c1c590d37dd7c562a6a7999c73c74836c2b1074"
+    },
+    "output/silent-ffprobe.json": {
+      "bytes": 2415,
+      "mtime_ns": "1795237270836768300",
+      "sha256": "54d658b6a91ed01074e71ddc44a70b8b20d94ff67bc8f5be9651c83ecedeef3b"
+    },
+    "output/source-shapes-verification.json": {
+      "bytes": 531,
+      "mtime_ns": "1795234908347912100",
+      "sha256": "510f68289419ae4b7c2a85c8a50ef0087519cfb4931b0cb2476dc4aad641e6b1"
+    },
+    "output/source_shapes_smoke-engine.log": {
+      "bytes": 3088,
+      "mtime_ns": "1795234907890504200",
+      "sha256": "4778c3a9baebc0a2443e12d9e481aa1306da833ab001c05ae4857931f88e9ecd"
+    },
+    "output/spikes-engine.log": {
+      "bytes": 1634,
+      "mtime_ns": "1795233661652925900",
+      "sha256": "b65a7622efeda5bffd313d301321c53b47a44e530f1c8e054dc04c981bec2c08"
+    },
+    "output/spikes-stdout.log": {
+      "bytes": 1697,
+      "mtime_ns": "1795233661834354900",
+      "sha256": "e9aa79c18faf5101f7659bdc1364448852bd9edb0155af510adede53b6856252"
+    },
+    "output/studio-engine.log": {
+      "bytes": 605,
+      "mtime_ns": "1795237178357520400",
+      "sha256": "453f2fcdd5312bddbc9d7210130c68969e36fb6862a35ce1a74b46832541111a"
+    },
+    "output/tone-ffprobe.json": {
+      "bytes": 3829,
+      "mtime_ns": "1795237271167245200",
+      "sha256": "a41832543bf78ddd59302c2a2f6d5e187b56e778e5fa8996455137bea55f7c77"
+    },
+    "output/tutorials-verification.json": {
+      "bytes": 930,
+      "mtime_ns": "1795237211207519200",
+      "sha256": "c9b3b4ef3ae11533f3afd997d8b9609f72fcf380b9a934e9225307abc059c843"
+    },
+    "output/verification.json": {
+      "bytes": 2510518,
+      "mtime_ns": "1795237273929421200",
+      "sha256": "6dca0f41932bab3a78bf0432bc24f11541b3dbfad14b7ca13b334527f785c8fc"
+    },
+    "output/visibility-ffprobe.json": {
+      "bytes": 3837,
+      "mtime_ns": "1795237272430416500",
+      "sha256": "3ef7ddf67254cf480f85382e0a72ee18947a5cf3f6ea3232d8b60e2904913ae5"
+    },
+    "output/visibility-result.json": {
+      "bytes": 512,
+      "mtime_ns": "1795233877695393600",
+      "sha256": "2285493aeaefa42478aba66b281f23722e55ee2414d7e5acc2b27b36bb022ae8"
+    },
+    "output/visibility-stdout.log": {
+      "bytes": 4128,
+      "mtime_ns": "1795233878042384000",
+      "sha256": "61d4012d0b2e137b509025a414307d0973dd87887626696c5f2b87fe0bd2c14e"
+    },
+    "output/visibility_smoke-engine.log": {
+      "bytes": 4071,
+      "mtime_ns": "1795233877695393600",
+      "sha256": "0e19da73ca5fa0134adb24f76bc709bb99eae5297dc7bf7aa1b5dc3acdfe8c9a"
+    },
+    "output/workspace-controls-verification.json": {
+      "bytes": 368,
+      "mtime_ns": "1795234154716143600",
+      "sha256": "a0f58eb1e6d19627dfba09612875ca7cc114a1412ac36d3eeec8699515daf5d4"
+    },
+    "output/workspace_controls_smoke-engine.log": {
+      "bytes": 4404,
+      "mtime_ns": "1795234154256996000",
+      "sha256": "5a332854df5c287e304204962cbf8a630b7410e24eb479e7f48268bc7d8b689f"
+    },
+    "output/world-document-result.json": {
+      "bytes": 1844,
+      "mtime_ns": "1795233758386880200",
+      "sha256": "ad5e2fa59cd0e2cb431b71732c6105751f7d07a4c82390f10c4dd39e62167760"
+    },
+    "output/world-edit-result.json": {
+      "bytes": 745,
+      "mtime_ns": "1795233795805040000",
+      "sha256": "c085d523edc7aed814f127c9fc77324ab5b920025179a4a05f3d662d43b9a2ab"
+    },
+    "output/world-runtime-result.json": {
+      "bytes": 1717,
+      "mtime_ns": "1795233769623834400",
+      "sha256": "6e00adf2049faceaeef969cb2663b16ac8b6b328376951eaa434eddca5eb0e39"
+    },
+    "output/world-selection-result.json": {
+      "bytes": 272,
+      "mtime_ns": "1795233753319980200",
+      "sha256": "29c9036cbc1b388829040ed6b4ad4668992806ff976fe4b8467dc88ce0cb0c4c"
+    },
+    "output/world-workflow-result.json": {
+      "bytes": 371,
+      "mtime_ns": "1795233808380728700",
+      "sha256": "efcd184c5e02538a5b1e795b86831a48b10698c27344bd27983ea9108359d8a2"
+    },
+    "output/world_document-stdout.log": {
+      "bytes": 4511,
+      "mtime_ns": "1795233758846176600",
+      "sha256": "6021928772c7de2d2adcb57633e104f7c07a1fb627cca6d26d4b7073275d6ccb"
+    },
+    "output/world_document_smoke-engine.log": {
+      "bytes": 4471,
+      "mtime_ns": "1795233758386880200",
+      "sha256": "7baaa38007ec4121923859dbabf930b917bb13f070b711939d3f8a754dc82c7f"
+    },
+    "output/world_edit-ffprobe.json": {
+      "bytes": 2424,
+      "mtime_ns": "1795237271866752700",
+      "sha256": "ca4f4830a2d16a6f35d793ad6def1bfe34231c055bbcb6c26bac4a1f7c23696e"
+    },
+    "output/world_edit-stdout.log": {
+      "bytes": 4182,
+      "mtime_ns": "1795233796189030000",
+      "sha256": "6bc8c6849c279702e1f340a44474a2e421646568d998883e072e6cceb9f1d4e7"
+    },
+    "output/world_edit_smoke-engine.log": {
+      "bytes": 4136,
+      "mtime_ns": "1795233795805040000",
+      "sha256": "9b6d55a36f46ca852bb391ca2131065f6e287f3419c673c4f81dddb6b0e447de"
+    },
+    "output/world_runtime-ffprobe.json": {
+      "bytes": 2406,
+      "mtime_ns": "1795237271731385100",
+      "sha256": "d8e00ea6a402961d9378559b2bcb57d4c65e5cbe393a884c45dfc2493406dc4e"
+    },
+    "output/world_runtime-stdout.log": {
+      "bytes": 4933,
+      "mtime_ns": "1795233769918304400",
+      "sha256": "96e4ffc3718d7b8594eb5c32ca589cb6898d3f26bcdc14472c9a77cc72d58cf4"
+    },
+    "output/world_runtime_smoke-engine.log": {
+      "bytes": 4886,
+      "mtime_ns": "1795233769623834400",
+      "sha256": "6cc632fedaa703744ceba7802abebe76dd56129924868ac689b1f53e9432a32c"
+    },
+    "output/world_selection-stdout.log": {
+      "bytes": 3428,
+      "mtime_ns": "1795233753684896700",
+      "sha256": "80d363387036cb4b5a0d60e6d0a9ce706549a3daedd832cf317f737c6ff6194f"
+    },
+    "output/world_selection_smoke-engine.log": {
+      "bytes": 3382,
+      "mtime_ns": "1795233753319980200",
+      "sha256": "baea5e4baa162fe7804aaa32433b1debdcac8fb576475209f7e9fc716830c3f6"
+    },
+    "output/world_workflow-ffprobe.json": {
+      "bytes": 3843,
+      "mtime_ns": "1795237272034867900",
+      "sha256": "7f7b5e90cfb6476d5ab6a8c18ae515824ced8ed2fce8dc430c97a7cf3c389dca"
+    },
+    "output/world_workflow-stdout.log": {
+      "bytes": 2429,
+      "mtime_ns": "1795233808691893200",
+      "sha256": "8ee73d20d08f589e65ef457fe51abef9016a039c67bfa04173e482c17c61e68e"
+    },
+    "output/world_workflow_smoke-engine.log": {
+      "bytes": 2398,
+      "mtime_ns": "1795233808380728700",
+      "sha256": "b652a9aa92684d1dce2647d3d6b147a751801c5be13ccda9832cc1310537f0f3"
+    }
+  },
+  "source_or_owner_inputs_modified_by_capture": false,
+  "preservation_scope": "Final owned generated outputs after authorized Full refresh; not original171 byte preservation."
+}

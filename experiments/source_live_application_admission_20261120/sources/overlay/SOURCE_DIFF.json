@@ -1,0 +1,30 @@
+{
+  "format": "has_exact_live_secondary_gui_overlay_1",
+  "actual_live_root_sha256": "db271160d54d5c2fa62089f928360015b80d8e08f8348a3ad3aeebd8c574bae7",
+  "source_secondary": {
+    "legacy_glb_sha_retained": true,
+    "additional_glb_sha256": "b8436dea1d13a7cb4632c37c50b4cab123616ec574720fe4e764b844c5293e71",
+    "additional_crosswalk_proof_sha256": "fb677e1a5e196f964c3634abba009ff792e7af0ff6dda260abc2e3ee12dacc37",
+    "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "jiggle_wire_sha256": "34230c89c7cda4417a0f142b375f26fbb5cf15a7faf4d98b5424acd0bec621c2",
+    "all_other_solver_body_unchanged": true
+  },
+  "gui": {
+    "source": "tests/source_native_five_live_ui.gd",
+    "only_line_change": "expected.source_sha256 uses exact job.expected_glb_sha256 instead of historical Native.GLB_SHA",
+    "named_assertions_changed": false,
+    "capture_changed": false
+  },
+  "driver": {
+    "source": "tests/verify_source_native_five_live.py",
+    "base_and_candidate_source_manifests_separate": true,
+    "overlay_paths": [
+      "src/source_secondary.gd",
+      "tests/source_native_five_live_ui.gd"
+    ],
+    "original_root_source_preserved": true,
+    "root_receipt_artifact_and_closure_bound": true
+  },
+  "application_adoption_qualified": false,
+  "author_executed_tests": false
+}

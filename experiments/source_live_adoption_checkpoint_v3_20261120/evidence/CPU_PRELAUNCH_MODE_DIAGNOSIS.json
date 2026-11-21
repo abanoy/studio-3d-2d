@@ -1,0 +1,28 @@
+{
+  "format": "has_attributed_Root_prelaunch_mode_diagnosis_1",
+  "origin": "Root reported independent read-only Python EXE lstat/open/fstat/end audit; publication author did not measure or execute it",
+  "original_cpu_coordinator_sha256": "1a87c3f01b0ebad740bc71366d3ef2ef0f9d6f8918a06fd0eadc20d9f2c1d61b",
+  "prelaunch_attempts": 2,
+  "children_launched": 0,
+  "tests_run": 0,
+  "error_code": "FILE_CHANGED_BEFORE_READ",
+  "path_stat_mode_decimal": 33279,
+  "opened_fstat_mode_decimal": 33206,
+  "difference_only_windows_filename_derived_execute_bits_octal": "0111",
+  "stable_fields": [
+    "dev",
+    "ino",
+    "size",
+    "mtime_ns",
+    "nlink",
+    "attributes",
+    "sha256"
+  ],
+  "python_bytes": 105840,
+  "python_mtime_ns": "1733277492000000000",
+  "python_nlink": 1,
+  "python_attributes": 32,
+  "normalization_scope": "Windows regular files only: mask0o111; retainfiletype/readwrite/identity/content/link/stamp/attribute guards",
+  "v2_actual_outcome": "31plannerPASS/13projectPASS; exporterimportERROR duefixture regex; all3children reaped/1107inputs preserved",
+  "v3_actual_outcome": "70syntheticPASS(31/26/13);3childrenreaped/1107inputs preserved; noSDK/native/appadoption"
+}

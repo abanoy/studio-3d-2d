@@ -1,0 +1,37 @@
+{
+  "format": "has_owner_live_motion_performance_observation_1",
+  "recorded_utc": "2026-11-21T04:45:20.781Z",
+  "owner_words": "Oh yeah, that hair & clothes movement thing when turned on is like laggy for some reason in that .bat",
+  "review": "C:/a/Programming/cloudflare/HAS-Review-Neon-973039e-native",
+  "qualitative_result": "Owner reports lag when Hair & clothes is on.",
+  "scene_currently_loaded_not_observed": true,
+  "live_resource_sample": {
+    "utc": "2026-11-21T04:44:07.0496599Z",
+    "sampled_seconds": 1.624038,
+    "owner_review": {
+      "pid": 26016,
+      "startup_example": "Mima head expressions.has",
+      "cpu_one_core_percent": 73.12,
+      "working_set_mb": 1102.3,
+      "gpu_3d_percent": 43
+    },
+    "concurrent_private_verifier": {
+      "pid": 9740,
+      "test": "multi_audio_smoke.gd",
+      "cpu_one_core_percent": 66.39,
+      "working_set_mb": 1296.5
+    },
+    "limitations": [
+      "A single system sample is not a solver benchmark.",
+      "Startup arguments do not identify the scene subsequently opened in the GUI.",
+      "Concurrent private graphics tests may contribute; this sample does not establish saturation or cause."
+    ]
+  },
+  "next_work": [
+    "Benchmark exact5 owner off/on in an isolated private review after current Full closes.",
+    "Measure validation, baseline capture, scalar solver and skeleton application separately.",
+    "Optimize repeated work while preserving120Hz output and fail-closed source/binding/Off/Record behavior.",
+    "Do not treat broader12/49-owner support as a performance fix or adopt before qualification."
+  ],
+  "acceptance_pass_claim": false
+}

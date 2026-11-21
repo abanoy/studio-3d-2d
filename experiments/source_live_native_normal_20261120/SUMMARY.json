@@ -1,0 +1,100 @@
+{
+  "format": "has_completed_live_native_normal_scope_1",
+  "date": "2026-11-20",
+  "status": "LIVE_VMT_NORMALS_BONES_AND_PARAMETERS_MATCHED_UNADOPTED",
+  "source_context_head": "165ebdfb3361e982666aa7355a432ba625f8d96a",
+  "tested_full_revision": "9e3b039039833adce4723bbb70681595cd4eef16",
+  "functional_source_files_preserved": 1061,
+  "actual_live": {
+    "seconds": 13.7460564,
+    "child_exit": 0,
+    "retained_launcher_reaped": true,
+    "models": 2,
+    "source_points": 9661,
+    "native_bones": 69,
+    "jiggle_rules": 49,
+    "live_VMT_pipeline": true,
+    "saved_B_loaded": false,
+    "ordinary_export_invocations": 1,
+    "final_normal_metric": "raw_unnormalized_euclidean_vector_distance",
+    "final_normal_threshold": 0.00002,
+    "final_normal_max_euclidean_error": 0,
+    "final_parameters_crosswalk_bound": true,
+    "crosswalk_proof_sha256": "fb677e1a5e196f964c3634abba009ff792e7af0ff6dda260abc2e3ee12dacc37",
+    "artifacts": {
+      "carrier_glb": {
+        "bytes": 2361932,
+        "sha256": "44d6c00f80068a83b43cb9007de40a729418ed10b553f92738aa32e6b1dc67a5"
+      },
+      "dependencies_json": {
+        "bytes": 2248,
+        "sha256": "bd36f9af9a814cfd35d7a3ebee9a34672fd249fad8aeaed01e848144fee6e382"
+      },
+      "editable_blend": {
+        "bytes": 2423176,
+        "sha256": "3c97e4edce080e7f4f80409b890f26c8f5d2d3cbe9f2f47efea7e0bec5142b64"
+      },
+      "parameters_json": {
+        "bytes": 170388,
+        "sha256": "dbff99d5e84042812dc75edc3135727efc40eee62fa554b23746e0cb4ea6d69d"
+      },
+      "scene_glb": {
+        "bytes": 2478804,
+        "sha256": "b8436dea1d13a7cb4632c37c50b4cab123616ec574720fe4e764b844c5293e71"
+      }
+    },
+    "readonly_resource_mount_files": 79,
+    "readonly_resource_mount_catalogue_sha256": "4fd10340bde63a61ff42c2f98e091cbf4501ef50f1dc1f138403ae83dfc580fb",
+    "full_source_runtime_SDK_native_originals_and_mount_preserved": true,
+    "private_job_closed": true,
+    "foreground_activation": false,
+    "physical_owned_processes": 0,
+    "owned_lock_removed": true
+  },
+  "previous_failure": {
+    "status": "UNQUALIFIED_FAILED_RUN",
+    "cause": "Native DATA slot assertion encountered ordinary default-skin0 OBJECT links with same Material references",
+    "preservation_checks": 30,
+    "all_preservation_checks_true": true,
+    "launcher_reaped": true,
+    "physical_closure_confirmed": true,
+    "owned_lock_retained": false,
+    "immutable_evidence_preserved": true
+  },
+  "stage_aware_fix": {
+    "native_import_callbacks_and_returned_require": "DATA",
+    "ordinary_default_skin0_setter_authenticated_and_called_once": true,
+    "post_default_phase_requires": "OBJECT",
+    "same_native_material_refs_mesh_slots_and_full_face_stream_required": true,
+    "arbitrary_slot_link_modes_not_admitted": true,
+    "nonzero_and_unknown_skin_profiles_not_qualified": true
+  },
+  "source_tests": {
+    "latest_methods": 25,
+    "passed": true,
+    "seconds": 0.143,
+    "wall_seconds": 0.452125,
+    "source_inputs_exact": 22,
+    "historical_v2_19PASS_and_v1_16PASS_3fixtureERRORS_preserved_separately": true,
+    "not_additive_with_448_carrier_scopes": true
+  },
+  "manifest_prelaunch_alignment": {
+    "old_manifest_mismatch_refused_before_stage_lock_or_native": true,
+    "alignment_seconds": 1.3745106,
+    "whole_frozen_candidate_pathset_and_literals_checked": true
+  },
+  "qualification_limits": {
+    "application_adoption_qualified": false,
+    "SourceSecondary_unit_GUI_native_cold_checks_pending": true,
+    "generic_Source_or_renderer_fidelity_qualified": false,
+    "PMX_or_native_solver_reconstruction_qualified": false,
+    "historical_saved_B_point_identity_inferred": false,
+    "private_native_arrays_or_artifact_bytes_published": false,
+    "formal62statuses_and_scores_52of54_55of62_unchanged": true
+  },
+  "prior_checkpoint": {
+    "head": "165ebdfb3361e982666aa7355a432ba625f8d96a",
+    "all943_remote_files_independently_verified": true,
+    "completed932_file_packet_immutable": true
+  }
+}

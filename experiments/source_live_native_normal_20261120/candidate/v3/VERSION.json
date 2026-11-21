@@ -1,0 +1,95 @@
+{
+  "format": "has_live_known_native_normal_bridge_candidate_version_1",
+  "status": "FROZEN_STAGE_AWARE_DEFAULT_SKIN_AWAITING_ROOT_25_AND_LIVE_RETRY",
+  "authored_tests": 25,
+  "toolkit_source_files": 18,
+  "source_original": "d8c8c76f53a567ecc8682ef7d0b5dd8d914118989a45e2b9020c4d8c3edd9f3d",
+  "current_app_source_edited": false,
+  "actual_native_execution": false,
+  "application_adoption_qualified": false,
+  "normal_criterion": {
+    "metric": "raw_unnormalized_euclidean_vector_distance",
+    "threshold": 0.00002,
+    "normalization_in_measurement": false
+  },
+  "route": {
+    "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "scale": 0.01905,
+    "appearance": null,
+    "source_member": null,
+    "unknown_profiles_use_legacy": true
+  },
+  "parts": {
+    "module": {
+      "file": "source_native_normal_export.py",
+      "bytes": 33413,
+      "sha256": "41a908d3a9b27923c94822009ec1bf4653c2467af130c0ad6f4f7bf92f372ac3"
+    },
+    "bridge": {
+      "file": "blender_source_bridge_candidate.py",
+      "bytes": 30710,
+      "sha256": "a668b91a8d0da4d3f22ea4afacc7a500f2c895a8b5cc9d45fef5ae1f6251b45a"
+    },
+    "tests": {
+      "file": "test_source_native_normal_export.py",
+      "bytes": 30205,
+      "sha256": "d9d0997a10f261d2be9390a7eac7729643b7e817af01be9e1a294931a91524f0"
+    }
+  },
+  "peer_review": {
+    "lifecycle": "V3 helper/bridge source GO",
+    "owner_author": "V3 focused25 test source/API GO",
+    "oracles": "V3 focused25 authored and executable freeze; genuine SDK source-only fixture"
+  },
+  "next": "Root pure19, private live worker, final GLB/crosswalk69/jiggle49/currentIDs+hash/source readback, then separately qualified exact SourceSecondary target admission.",
+  "fixture_successor": 2,
+  "production_source_changed": false,
+  "test_methods": 19,
+  "Root_CPU_19_passed": true,
+  "only_fixture_delta": "Add fake bpy.types namespace before resource constructor; all assertions preserved.",
+  "predecessor_sources": "bases/v1",
+  "predecessor_failed_CPU": "predecessor_failed_cpu",
+  "version": 3,
+  "predecessor": {
+    "folder": "output/source-live-normal-bridge-v2-prep-20261120",
+    "files": 61,
+    "logical_bytes": 1200802,
+    "manifest": {
+      "path": "SOURCE_PINS.json",
+      "bytes": 10047,
+      "sha256": "8c806d82152cdbbf21e36edda86c57b6c4c1d5acf6c0c3a7d04ce0f39a357d18"
+    },
+    "preserved_in_place": true
+  },
+  "historical_live_v2": {
+    "status": "REFUSED_UNQUALIFIED",
+    "stage": "source-live-normal-run-1795229916410163200",
+    "reason": "LIVE_OBJECT_DATA_MATERIAL_SLOT_DIFFERS",
+    "ordinary_default_skin_changed_links_to_OBJECT": true,
+    "shader_pipeline_completed": true,
+    "editable_saved": true,
+    "export_attempted": false,
+    "preservation_checks": 30,
+    "all_preservation_true": true,
+    "physical_owned_processes": 0,
+    "owned_lock_removed": true,
+    "coordinator_reaped": true,
+    "whole_seconds": 17.1671
+  },
+  "default_skin_lifecycle": {
+    "native_phase": "NATIVE_DATA",
+    "post_default_phase": "DEFAULT_SKIN_OBJECT",
+    "known_skin": 0,
+    "actual_setter_calls": 1,
+    "skin_source_bytes": 2555,
+    "skin_source_sha256": "94e98fded05b7ee9e0dc51f9da84aefdeca5fe04f2ca60b427aa2a5e99cd6c41",
+    "arbitrary_DATA_or_OBJECT_alternative_allowed": false,
+    "material_ID_or_native_face_waiver": false
+  },
+  "extra_cpu_source": {
+    "path": "SourceIO/blender_bindings/shared/skins.py",
+    "bytes": 2555,
+    "sha256": "94e98fded05b7ee9e0dc51f9da84aefdeca5fe04f2ca60b427aa2a5e99cd6c41"
+  }
+}

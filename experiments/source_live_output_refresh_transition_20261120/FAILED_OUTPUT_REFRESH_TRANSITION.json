@@ -1,0 +1,1058 @@
+{
+  "format": "has_explicit_authorized_failed_full_output_refresh_transition_1",
+  "status": "POST_FAILED_FULL_AND_TARGETED_RUN_CAPTURED_RETRY_AUTHORIZED",
+  "old_baseline": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/experiments/source_material_carrier_checkpoint_20261120/evidence/source-carrier-preserved-tracked-output-baseline-20261120.json",
+    "bytes": 33665,
+    "sha256": "c40dfc182df6907acf1be74f46f49441e0c2a5f1ee388bb3a4e0c246f1b448e3",
+    "paths": 171
+  },
+  "post_failed_and_targeted_baseline": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/post-failed-full-output-preservation-20261120/GENERATED_OUTPUT_BASELINE.json",
+    "bytes": 39784,
+    "sha256": "022827d1938f6b6b46f99061cbccd7d5020ffc5ebde8d1cbd0e5aefc7b290535",
+    "paths": 171,
+    "all_contents_privately_backed_up": true,
+    "logical_bytes": 4414382,
+    "content_changed": 66,
+    "mtime_changed": 71,
+    "original_path_old_invariance_claim": false
+  },
+  "previous_old_contents_recovered": 153,
+  "old_backup_contents": [
+    {
+      "old_path": "output/animated_channels_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/animated_channels_smoke-engine.log",
+      "bytes": 4483,
+      "sha256": "26f66f585081c48eddaa45c065d13fa88338d9231056824132115ed3a41b55c9"
+    },
+    {
+      "old_path": "output/animated_channels-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/animated_channels-ffprobe.json",
+      "bytes": 3845,
+      "sha256": "90371b27dbe214381c9b51a23feea6d749598e81b03e950eaaa59a694a5d307f"
+    },
+    {
+      "old_path": "output/animated_channels-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/animated_channels-stdout.log",
+      "bytes": 4536,
+      "sha256": "fc1e3c80eaa4a7459b986e223b46c5e52a1b393b36fe0014694b3b28d3db24f5"
+    },
+    {
+      "old_path": "output/animated-channels-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/animated-channels-result.json",
+      "bytes": 535,
+      "sha256": "7d92d89382849acbb2a2cefce658ae028c14d31ea9ece51656bf05f7d74a6e75"
+    },
+    {
+      "old_path": "output/animation_clips_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/animation_clips_smoke-engine.log",
+      "bytes": 5198,
+      "sha256": "6e64ecef8ce8a8f7299c053738610994cd2e9548b5159d8a86152492ec123c96"
+    },
+    {
+      "old_path": "output/animation_clips-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/animation_clips-ffprobe.json",
+      "bytes": 3844,
+      "sha256": "3fc92fb211290f3a9c7d550011c703db49c17dec7ba613df6ddb31912766679a"
+    },
+    {
+      "old_path": "output/animation_clips-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/animation_clips-stdout.log",
+      "bytes": 5253,
+      "sha256": "1574e344f7d1a89c8cd6c2e6fd80050c3f90a0e600b1b23d78250f471fa3fbfc"
+    },
+    {
+      "old_path": "output/animation-clips-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/animation-clips-result.json",
+      "bytes": 922,
+      "sha256": "8048f24ff4c7b937a3c66e7c25bdcc4d50cce6be1eac3814f68bf1b8ef0e4c68"
+    },
+    {
+      "old_path": "output/autokey-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/autokey-ffprobe.json",
+      "bytes": 2421,
+      "sha256": "33be26a83f65921ccd6c5403de68dccaa723428101859c082e832b2779848afd"
+    },
+    {
+      "old_path": "output/base_shape_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/base_shape_smoke-engine.log",
+      "bytes": 4240,
+      "sha256": "89d82c988aab8537940192369ac7cb160d66f9cbcc502ce94de9b283897abc7a"
+    },
+    {
+      "old_path": "output/base-shapes-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/base-shapes-verification.json",
+      "bytes": 949,
+      "sha256": "61d2b7211de73803ee76fe449fbb754e6c1c1ff4c7877503cae35c43ba14c267"
+    },
+    {
+      "old_path": "output/body_animation_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/body_animation_smoke-engine.log",
+      "bytes": 6279,
+      "sha256": "585a7b87a35bf5f377fd684e0be7abc5bb49c14e93fb140a30fb2f3507fab9c2"
+    },
+    {
+      "old_path": "output/body_curves_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/body_curves_smoke-engine.log",
+      "bytes": 8397,
+      "sha256": "0feb29806ec2da90031986a020be694767f0af2f293ce422121d359728399ef1"
+    },
+    {
+      "old_path": "output/body_curves_unit-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/body_curves_unit-engine.log",
+      "bytes": 2513,
+      "sha256": "b10fa7ad1dd97e6678396bfd0f3b323ee29ce63c7f7753dbfed1008eaa281484"
+    },
+    {
+      "old_path": "output/body-animation-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/body-animation-verification.json",
+      "bytes": 116491,
+      "sha256": "5d606446d7929c5178e22e97c345ee8f629619f9975dc6589a558f1f618b2929"
+    },
+    {
+      "old_path": "output/body-curves-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/body-curves-verification.json",
+      "bytes": 122209,
+      "sha256": "48ec8bb4f719c5bce529de5706ce6807c0d3edf07a6adef66ea89c880ce2466c"
+    },
+    {
+      "old_path": "output/bone_labels_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/bone_labels_smoke-engine.log",
+      "bytes": 2042,
+      "sha256": "9aa6730b7d096585ff5a4953bf67ad8849bda9562ce2f417093fb9a17d4b2929"
+    },
+    {
+      "old_path": "output/bone_labels-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/bone_labels-stdout.log",
+      "bytes": 2071,
+      "sha256": "53a2d511ab958e5a0e3b1f20ffcb07bb27024686b9f580265102a21f4cc65669"
+    },
+    {
+      "old_path": "output/bone-labels-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/bone-labels-result.json",
+      "bytes": 143,
+      "sha256": "4c573ba214f23c39095882f32d77ad6ee1f8128f29dc1c7f590fac8373fd10a9"
+    },
+    {
+      "old_path": "output/camera_range_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/camera_range_smoke-engine.log",
+      "bytes": 4743,
+      "sha256": "053da27d01ea95835c6593b25f642dc71a0bab6a649d0018ca356cab781ee9de"
+    },
+    {
+      "old_path": "output/camera-range-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/camera-range-verification.json",
+      "bytes": 113887,
+      "sha256": "8c299e154925345a2ee46edf1a180645b0c51975093ad326477623a230997e43"
+    },
+    {
+      "old_path": "output/character-height-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/character-height-verification.json",
+      "bytes": 7153,
+      "sha256": "5fa12c29fb28794ac4cc62f99f43092dcbbf42f06f956a0095c3c2b89dbb8c53"
+    },
+    {
+      "old_path": "output/color_sampler_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/color_sampler_smoke-engine.log",
+      "bytes": 4117,
+      "sha256": "e181ee8d0866f581aab1c1a3fb4cdd80b59c4ba85df96ef8ecde4f211c117c01"
+    },
+    {
+      "old_path": "output/color-sampler-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/color-sampler-verification.json",
+      "bytes": 112278,
+      "sha256": "f4b5c6dfd9c245bea59afab675eef0fc3958f049a353e34d6de9e0d26fbfb05b"
+    },
+    {
+      "old_path": "output/contact_persistence_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact_persistence_smoke-engine.log",
+      "bytes": 5051,
+      "sha256": "9dff25da6c96d6822ac6d915995d46171746b3aefea5d811fd64b80dc1380c02"
+    },
+    {
+      "old_path": "output/contact_physics_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact_physics_smoke-engine.log",
+      "bytes": 4514,
+      "sha256": "03acd37b8f6503c6c7c18f19e47e1071c1c9351e138bc8dd1e76d9e1547621a7"
+    },
+    {
+      "old_path": "output/contact_selection_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact_selection_smoke-engine.log",
+      "bytes": 11933,
+      "sha256": "8f7cd3d27f2517f038ced28ad6a34725550973f6505bc5fab5432ee1802fb86c"
+    },
+    {
+      "old_path": "output/contact_viewport_read-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact_viewport_read-engine.log",
+      "bytes": 625,
+      "sha256": "61a4b36268bb9818f5c5d054b20a2d91c4be454b94728bd691879781254a32e9"
+    },
+    {
+      "old_path": "output/contact_viewport_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact_viewport_smoke-engine.log",
+      "bytes": 14960,
+      "sha256": "28dcf89fdf1514e4e38593dfe88839479598da1eca4813f6100a2ff2200e85b0"
+    },
+    {
+      "old_path": "output/contact-persistence-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact-persistence-verification.json",
+      "bytes": 4533,
+      "sha256": "02e89edb8c741d23aabd3d6d91c234cf984d6ce2c7ccbfbb2f56ece33ba57a73"
+    },
+    {
+      "old_path": "output/contact-physics-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact-physics-verification.json",
+      "bytes": 557,
+      "sha256": "3513a60c4426122043c2761807f455c501b68a7835562bf5444d94c3aa15b982"
+    },
+    {
+      "old_path": "output/contact-selection-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact-selection-verification.json",
+      "bytes": 10248,
+      "sha256": "fb6192825fd9a73cac4b76f6be05ea3a6bac4cbc34624625883683d0f16fd725"
+    },
+    {
+      "old_path": "output/contact-viewport-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/contact-viewport-verification.json",
+      "bytes": 63947,
+      "sha256": "50e0045b5fdec8ac83fc997e6bc4662cb8bb75357a60e53b40648bb5acf81db1"
+    },
+    {
+      "old_path": "output/editor_audio-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/editor_audio-ffprobe.json",
+      "bytes": 3829,
+      "sha256": "dbe09db3046e7dba0914e587f92e1bffe383620ff6f8218a243f00bb30dfce7a"
+    },
+    {
+      "old_path": "output/export_failures-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/export_failures-engine.log",
+      "bytes": 551,
+      "sha256": "2ee31d9c172a88e1a6d6e77fccd7eae0611ba513a648931e10bf8b34201b888c"
+    },
+    {
+      "old_path": "output/export_failures-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/export_failures-stdout.log",
+      "bytes": 560,
+      "sha256": "76b2c9aa0a06460b7a7124a39dd0ffeffb5a017d7fce96ae6ff7542364bae4ed"
+    },
+    {
+      "old_path": "output/expression-presets-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/expression-presets-verification.json",
+      "bytes": 929,
+      "sha256": "4bf739a2975f61b93d6e20b4f8e8b9fc86122f8dce943a5ecfa91717e43bc547"
+    },
+    {
+      "old_path": "output/fan_motion_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/fan_motion_smoke-engine.log",
+      "bytes": 2993,
+      "sha256": "e2fb45834d031a4408bc44b2d1b77bc1fa74fe8ec94b5433138bcef5c4ceb9a5"
+    },
+    {
+      "old_path": "output/fan_motion-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/fan_motion-ffprobe.json",
+      "bytes": 2423,
+      "sha256": "754b3dce254fbf71060f69975946c41c84621452e1068d383d14c10425c8d336"
+    },
+    {
+      "old_path": "output/fan_motion-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/fan_motion-stdout.log",
+      "bytes": 3028,
+      "sha256": "645afce7af186ceb0d2285f52573d3a7d662818eb717697566419511125a6455"
+    },
+    {
+      "old_path": "output/fan-motion-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/fan-motion-result.json",
+      "bytes": 347,
+      "sha256": "7038d2d150e4d742164a1df910ea8b2efe8f783cb244d1bd0ba12f70e66c87c0"
+    },
+    {
+      "old_path": "output/fill_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/fill_smoke-engine.log",
+      "bytes": 3357,
+      "sha256": "87ad163217a23af6aab61aa595ba9a09aa9f55cb8dd7b6224f75e8a403fd2673"
+    },
+    {
+      "old_path": "output/fill_unit-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/fill_unit-engine.log",
+      "bytes": 1053,
+      "sha256": "0b43f35122e6b9cc2fbe5335bc84f50ee04bd365b551f982d9bc00e4086daedb"
+    },
+    {
+      "old_path": "output/fill-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/fill-verification.json",
+      "bytes": 112299,
+      "sha256": "5cbea39d5ebcf681bd4ec4cfc6cac13fc4742e4a7444395d9b7aa80be51fda52"
+    },
+    {
+      "old_path": "output/first-movie-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/first-movie-verification.json",
+      "bytes": 3028,
+      "sha256": "545913eeb569b4a971b791fbf08bc1f1a27abf4c360b57b5de6f4c7da8c8c448"
+    },
+    {
+      "old_path": "output/foot_contacts_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/foot_contacts_smoke-engine.log",
+      "bytes": 11871,
+      "sha256": "57077b286e05c1305ef28bcffcdd3e342eb8dcc6b4fdf7d2e794f8deb7b84f31"
+    },
+    {
+      "old_path": "output/foot_hold_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/foot_hold_smoke-engine.log",
+      "bytes": 3886,
+      "sha256": "793789e10a31f81aac8e38b1a97c8bf2ec06532e49c17e102498e2023e3e973e"
+    },
+    {
+      "old_path": "output/foot-contacts-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/foot-contacts-verification.json",
+      "bytes": 11539,
+      "sha256": "e5c1d68661c600e1c833bfeaa80b1c557db4aaaaa7fa69eed2c63d1c4b06ccec"
+    },
+    {
+      "old_path": "output/foot-hold-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/foot-hold-verification.json",
+      "bytes": 905,
+      "sha256": "15c2950b1c063dcd46fca8a881d83da9d005da555f077ad2ed0adabcb4ffcbac"
+    },
+    {
+      "old_path": "output/helper_morphs_render-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/helper_morphs_render-engine.log",
+      "bytes": 774,
+      "sha256": "750a7194c7f35e7a03b132558e1c588ac504cacf52328054876b77b920b83d65"
+    },
+    {
+      "old_path": "output/helper-morphs-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/helper-morphs-verification.json",
+      "bytes": 1177,
+      "sha256": "74aab5c66132b856dae9045ed4f80a22811d6754d73f775ea051cf6839eeb254"
+    },
+    {
+      "old_path": "output/home_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/home_smoke-engine.log",
+      "bytes": 2822,
+      "sha256": "377884d2f258fc323d0101540a0cc9618dff5898f6b2b7f8af179454de24f076"
+    },
+    {
+      "old_path": "output/home-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/home-verification.json",
+      "bytes": 111945,
+      "sha256": "bc25dd432ca77446304f8370e8a95cd77811af4a1bef856a5d24176e00b22ca0"
+    },
+    {
+      "old_path": "output/import-physics-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/import-physics-verification.json",
+      "bytes": 112312,
+      "sha256": "9d91a024ee63ced4722e40396523b71c8d15bb81c9497c7d47acd57f02956a49"
+    },
+    {
+      "old_path": "output/import-placement-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/import-placement-result.json",
+      "bytes": 535,
+      "sha256": "3783b9714e32c472b0ce854298efe6dd3531020ae5a0eeea1c60221528a29c57"
+    },
+    {
+      "old_path": "output/import-placement-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/import-placement-verification.json",
+      "bytes": 112780,
+      "sha256": "682abe28a6262d26ceee253e3c8d9ef37f065ba2e2eb564734ac71c0d2a51c9b"
+    },
+    {
+      "old_path": "output/import-placement-verification.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/import-placement-verification.log",
+      "bytes": 3497,
+      "sha256": "ea03f3518639c1cbfdfbab0a08152dccbb67c8a2dbabc4ac33231e92f1a7e113"
+    },
+    {
+      "old_path": "output/layers_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/layers_smoke-engine.log",
+      "bytes": 3087,
+      "sha256": "9b7d4a7f82f8aa05f2c1a7450c5b9db3ca7d764e919fbeb8b8f52e1961d22e0d"
+    },
+    {
+      "old_path": "output/layers-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/layers-verification.json",
+      "bytes": 584,
+      "sha256": "41a5938ae665f6caf5eb4268ca8cd6999499ae18343313ff506df152594c03ba"
+    },
+    {
+      "old_path": "output/lighting-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/lighting-verification.json",
+      "bytes": 113714,
+      "sha256": "798623ac5c3e20d5497b4d58b0495e6265e704a640de5b1b69cc4d6b59a9079a"
+    },
+    {
+      "old_path": "output/limb_ik_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/limb_ik_smoke-engine.log",
+      "bytes": 6145,
+      "sha256": "b1c0d19fc9d9a93cf37a7e14d93b21595788572d4118ed7d5904bec81a3f2242"
+    },
+    {
+      "old_path": "output/limb_ik-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/limb_ik-ffprobe.json",
+      "bytes": 3835,
+      "sha256": "6a56e312e8703fd90294085d6891142fbefe64c36c6d6541ac5917510831e376"
+    },
+    {
+      "old_path": "output/limb_ik-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/limb_ik-stdout.log",
+      "bytes": 6220,
+      "sha256": "965975fa09008f48117c61ab3e9de11398f7b4bdcf1ef0833bd13d874915b0a2"
+    },
+    {
+      "old_path": "output/limb-ik-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/limb-ik-result.json",
+      "bytes": 709,
+      "sha256": "700bf1b005a15776f1bc64aa0e68be2829a92cb8268c8c652c2b14d82e95b0a1"
+    },
+    {
+      "old_path": "output/live_appearance_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/live_appearance_smoke-engine.log",
+      "bytes": 4146,
+      "sha256": "edd72b34fa718da48dc58d01b65a35a54a10e614d3373913817233048caf1f63"
+    },
+    {
+      "old_path": "output/live-appearance-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/live-appearance-verification.json",
+      "bytes": 1268,
+      "sha256": "ddc0c7d0538be5f9bf7afc0d7a15ae24366b4dc666d2a9d10b21aa5772bf83af"
+    },
+    {
+      "old_path": "output/map-calibration-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/map-calibration-verification.json",
+      "bytes": 845,
+      "sha256": "402807654874b121d30a4b79dc877236ee1dcd597ed86d56c14d5f851ed8de25"
+    },
+    {
+      "old_path": "output/mmd-groups-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/mmd-groups-verification.json",
+      "bytes": 973,
+      "sha256": "2ce47fd122658efaf4f0b2ca1db9a22597da4bd67b666bb05c9ef02bf92f7b3f"
+    },
+    {
+      "old_path": "output/motion_animation_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/motion_animation_smoke-engine.log",
+      "bytes": 10997,
+      "sha256": "ddfbd8a02f97d813499ca74d9a51a9b1fdb199b659df493618c23e2c26b64062"
+    },
+    {
+      "old_path": "output/motion-animation-app-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/motion-animation-app-verification.json",
+      "bytes": 35720,
+      "sha256": "581130424dc3df4d7a91c1dbe169b0e4f30d1be9545891ee96724ae07605308e"
+    },
+    {
+      "old_path": "output/multi_audio_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/multi_audio_smoke-engine.log",
+      "bytes": 637,
+      "sha256": "7a6d6910ca795112c5ce9de6fd5ac57e797d3678bcc18561956e8315c4cdc423"
+    },
+    {
+      "old_path": "output/multi-audio-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/multi-audio-verification.json",
+      "bytes": 10616,
+      "sha256": "a6e9c06f9eee749c04dc9dd23e7d2c2fe73c11abf164c0800178871f29c3eb73"
+    },
+    {
+      "old_path": "output/native-import-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/native-import-verification.json",
+      "bytes": 1460,
+      "sha256": "b6a632eb086d77a9003c4998e91d2d880d694b0f6533ce18ab202176b8cc3ca9"
+    },
+    {
+      "old_path": "output/new_scene-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/new_scene-ffprobe.json",
+      "bytes": 2420,
+      "sha256": "df0cbf2d2b02ba4b4ce63189a4f0a554a7a5849297a0a2b309211c19a37800e5"
+    },
+    {
+      "old_path": "output/object_timing_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/object_timing_smoke-engine.log",
+      "bytes": 3645,
+      "sha256": "21d34854785b945309387daf595b2845d78e83a39e8e4bbc9f6159dbede71ea3"
+    },
+    {
+      "old_path": "output/object_timing-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/object_timing-ffprobe.json",
+      "bytes": 2427,
+      "sha256": "25814c88d2d50ab6c060e5b8af3809ac4c9cf1709fda0c21cc30f969c1103184"
+    },
+    {
+      "old_path": "output/object_timing-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/object_timing-stdout.log",
+      "bytes": 3688,
+      "sha256": "59d51c969a27529efd3d59a47f7ab246ef165c9ba5ce9be3dd12c86cbf699f59"
+    },
+    {
+      "old_path": "output/object-timing-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/object-timing-result.json",
+      "bytes": 634,
+      "sha256": "7f31ae2a24eb1b497c6a6e8406c44dc435df5ad278ee5b6951f3c52453e5808c"
+    },
+    {
+      "old_path": "output/onion-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/onion-verification.json",
+      "bytes": 598,
+      "sha256": "927ecdac3d520b9a5372b24069ee44fb60ccc8839f3660e178e9a3ed26af22d2"
+    },
+    {
+      "old_path": "output/opacity_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/opacity_smoke-engine.log",
+      "bytes": 2897,
+      "sha256": "3f84cf446ab6e93bf829b65442f378c1d2fc2bf1d65c64c73f30186636b6c16f"
+    },
+    {
+      "old_path": "output/opacity_unit-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/opacity_unit-engine.log",
+      "bytes": 1297,
+      "sha256": "19e79d5cf193bd77837e291860ba4dce3ddc64a76246f3dd843caf44dd842d4f"
+    },
+    {
+      "old_path": "output/opacity-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/opacity-verification.json",
+      "bytes": 764,
+      "sha256": "b0e932476b47915df54b3a004166907f3011b9e74546df5dbd4f5f731df8b863"
+    },
+    {
+      "old_path": "output/physics_contacts_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_contacts_smoke-engine.log",
+      "bytes": 92141,
+      "sha256": "acde2b7eeb7bcb2a32251a1bf8c647a43dde634396c556b09d3497020bde955d"
+    },
+    {
+      "old_path": "output/physics_contacts-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_contacts-stdout.log",
+      "bytes": 92229,
+      "sha256": "89c9dccf176169358c89b2704bb4f373b2004e275452502516a3fa232c54d66d"
+    },
+    {
+      "old_path": "output/physics_props_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_props_smoke-engine.log",
+      "bytes": 3212,
+      "sha256": "cd4dd26af0d30438ec06912a44969aa64cabb6db3a6fb8574009ff6d86851242"
+    },
+    {
+      "old_path": "output/physics_props-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_props-ffprobe.json",
+      "bytes": 3841,
+      "sha256": "fda8c291e83a3a99061bfe5afeddcd94981cced8eadc21a9ae6cb8135ecf9e51"
+    },
+    {
+      "old_path": "output/physics_props-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_props-stdout.log",
+      "bytes": 3251,
+      "sha256": "dad5c4039608b3af8505bdd5a1e5a82e7e0552c2c206274558cf829ee7dcaf6d"
+    },
+    {
+      "old_path": "output/physics_recording_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_recording_smoke-engine.log",
+      "bytes": 6428,
+      "sha256": "74c593393a960312e3e043be18bae42da3847df345948d875d87513656c525c7"
+    },
+    {
+      "old_path": "output/physics_recording_unit-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_recording_unit-engine.log",
+      "bytes": 1445,
+      "sha256": "858064136d4b2b646e8f4279727e8aa6ffc93a781d71792687de7ad34847923a"
+    },
+    {
+      "old_path": "output/physics_recording_unit-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_recording_unit-stdout.log",
+      "bytes": 1465,
+      "sha256": "761b269b1bfeb7f25732356dd18773a20e00b37e96caf6e6dcf0bb8d66c99ba2"
+    },
+    {
+      "old_path": "output/physics_recording-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_recording-ffprobe.json",
+      "bytes": 3847,
+      "sha256": "ff2ba8fa6641ce0425d078763132f1e00d302c9f0a2120f3e47c5019712a7a01"
+    },
+    {
+      "old_path": "output/physics_recording-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_recording-stdout.log",
+      "bytes": 6498,
+      "sha256": "a1788c5c126e68e0137c8dec7fadcbb2c9c860dcc6544993b04ddad4a5390264"
+    },
+    {
+      "old_path": "output/physics_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics_smoke-engine.log",
+      "bytes": 6404,
+      "sha256": "07b74b51c85e8ad5299ca159a518881c5a1dd299f2a8f48f080b7afb26c9fb5f"
+    },
+    {
+      "old_path": "output/physics-contacts-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics-contacts-result.json",
+      "bytes": 42717,
+      "sha256": "d0db33cbc9d691f0128acfcb5b3798ab18546a4ce7313804527ad1edafdc3938"
+    },
+    {
+      "old_path": "output/physics-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics-ffprobe.json",
+      "bytes": 2421,
+      "sha256": "14692c0fdd49f1aa06a861eaeabe53cd3160f6af7e5ebfa299b64f0cdb46f969"
+    },
+    {
+      "old_path": "output/physics-props-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics-props-result.json",
+      "bytes": 462,
+      "sha256": "e837253add991ed6ab1e281bfbd59985a35b32f0cb995c3d66c4b8c7abd22ff7"
+    },
+    {
+      "old_path": "output/physics-recording-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics-recording-result.json",
+      "bytes": 958,
+      "sha256": "c300f223835f081f3b0ccad48bb8724a984e15be39a57794c24c167315d53ca0"
+    },
+    {
+      "old_path": "output/physics-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics-result.json",
+      "bytes": 1163,
+      "sha256": "954f8b8838b8c7a9977654d3f1971bf54427ceede23870915d325d6e454c6978"
+    },
+    {
+      "old_path": "output/physics-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/physics-stdout.log",
+      "bytes": 6467,
+      "sha256": "8492868554379525d56a088cff829ad5a0d955c53928c6b63aa15f8f25d85990"
+    },
+    {
+      "old_path": "output/pose_bounds_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/pose_bounds_smoke-engine.log",
+      "bytes": 3553,
+      "sha256": "bb6ea72984fec86006637030eaaf4cd1539d21307634202f8cb156759ca6793b"
+    },
+    {
+      "old_path": "output/pose-bounds-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/pose-bounds-verification.json",
+      "bytes": 1458,
+      "sha256": "27966d7c9de18351b7a914da24fd936f6be24ee6ec407529250a22e6cd9dfc1a"
+    },
+    {
+      "old_path": "output/recovery_history_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery_history_smoke-engine.log",
+      "bytes": 2448,
+      "sha256": "ae38fd09564e37ed5e51e2f460a4ebe6484d9a097f0567e575eed9b75f27de75"
+    },
+    {
+      "old_path": "output/recovery_identity_unit-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery_identity_unit-engine.log",
+      "bytes": 2851,
+      "sha256": "732d72b9c17349d05606d909c0097efcbb83233e6a46fe70f0754e4fb5d54908"
+    },
+    {
+      "old_path": "output/recovery_journal_unit-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery_journal_unit-engine.log",
+      "bytes": 1766,
+      "sha256": "f9a7177c1d3f8ce1cd3a081ff7dd2724c95ffada2e18cee2f7400b949dd073bc"
+    },
+    {
+      "old_path": "output/recovery_preview_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery_preview_smoke-engine.log",
+      "bytes": 2202,
+      "sha256": "748f392f386655087d794dabe081a3c7fb2120447266404aae5fbfad9eb4072a"
+    },
+    {
+      "old_path": "output/recovery-history-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery-history-verification.json",
+      "bytes": 116971,
+      "sha256": "feb1a5fac41955c8c868141e3a931be001cd82023fcde647bdf626cdaef10459"
+    },
+    {
+      "old_path": "output/recovery-identity-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery-identity-verification.json",
+      "bytes": 243,
+      "sha256": "d9bd47fceb282255835aa22255830e97e5da87a0b578f11f23551042b7d58537"
+    },
+    {
+      "old_path": "output/recovery-preview-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery-preview-verification.json",
+      "bytes": 494,
+      "sha256": "6cb829c0c8ec07b6382a2de3de32ee922c5058fa1db7be1046f0576fc36b8c13"
+    },
+    {
+      "old_path": "output/recovery-schedule-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery-schedule-verification.json",
+      "bytes": 450,
+      "sha256": "87b9ba3b89ba71e89cc7b41e8dbfcc1aceddfe0ee368cd49685cb79815058446"
+    },
+    {
+      "old_path": "output/recovery-startup-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/recovery-startup-verification.json",
+      "bytes": 17372,
+      "sha256": "4fe5c015247b57db4ac31567b7af9e5ab7b26a1b58b3dfd7baa978abaf7a0cf8"
+    },
+    {
+      "old_path": "output/secondary_helpers_multi-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary_helpers_multi-engine.log",
+      "bytes": 4744,
+      "sha256": "c6944d3ebb5d4ea5f7aae28f3ed4fe82a6764d0b4dd7394a23a59623f8f6550f"
+    },
+    {
+      "old_path": "output/secondary_helpers_native-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary_helpers_native-engine.log",
+      "bytes": 1340,
+      "sha256": "45bbb73d4d2d82a07669e0a1cc733355814d65022a4a257eaddd32cf71132351"
+    },
+    {
+      "old_path": "output/secondary_helpers_patch-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary_helpers_patch-engine.log",
+      "bytes": 2826,
+      "sha256": "d9968f952b78a6f9fb434615e681fe2c98eed77b45a35dc03953d7ec12c35a5b"
+    },
+    {
+      "old_path": "output/secondary_helpers_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary_helpers_smoke-engine.log",
+      "bytes": 3468,
+      "sha256": "f38597ec85e36ad09dc34aa711f2a50bfd4edb2e9bc5b6b97cd67b368263ef58"
+    },
+    {
+      "old_path": "output/secondary_motion_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary_motion_smoke-engine.log",
+      "bytes": 3502,
+      "sha256": "98b0e043a8164314d87137ca53d9536d2b1a1b5860e3f3124159bf1b78ba055e"
+    },
+    {
+      "old_path": "output/secondary_motion-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary_motion-ffprobe.json",
+      "bytes": 2430,
+      "sha256": "c63516e1b6af81d6556f54b899aef891e0ceec485d166b283d8abc5d0177a995"
+    },
+    {
+      "old_path": "output/secondary_motion-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary_motion-stdout.log",
+      "bytes": 3542,
+      "sha256": "eaf3be23020c56614074dd4b14a1580259d6c2bb559eb44af964714145476b1b"
+    },
+    {
+      "old_path": "output/secondary-helpers-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary-helpers-result.json",
+      "bytes": 402,
+      "sha256": "fdc14e609ee102967f7a52c875ecb9d35dbbc38538ceb37960dbbe3b2289c03e"
+    },
+    {
+      "old_path": "output/secondary-helpers-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary-helpers-verification.json",
+      "bytes": 2415,
+      "sha256": "a203c58f45dd58af7a83480526aca498a6255d3e0ff785d4e5f4029ccbff5a8f"
+    },
+    {
+      "old_path": "output/secondary-helpers-verification.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary-helpers-verification.log",
+      "bytes": 3511,
+      "sha256": "8ace51af2a74105a10d36b46fa912adbdb81de3dcd5714f41d7d15ce2d47f602"
+    },
+    {
+      "old_path": "output/secondary-motion-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/secondary-motion-result.json",
+      "bytes": 510,
+      "sha256": "daee28c9ee6294892026014e95be42fde302ad7e939c72af69a2adde262f3539"
+    },
+    {
+      "old_path": "output/shape_animation_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/shape_animation_smoke-engine.log",
+      "bytes": 5688,
+      "sha256": "794e8e2095f90d93df545264aca3e832011e9853795f9463c6fee5b7e80b4eed"
+    },
+    {
+      "old_path": "output/shape_catalog_unit-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/shape_catalog_unit-engine.log",
+      "bytes": 2305,
+      "sha256": "b306ae8136c73e6b997ed62a1d589c24c6f137baa48a6e85404d472a2d4197be"
+    },
+    {
+      "old_path": "output/shape_comparison_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/shape_comparison_smoke-engine.log",
+      "bytes": 488,
+      "sha256": "34b554e5bfe74985fcfdf8056c1c590d37dd7c562a6a7999c73c74836c2b1074"
+    },
+    {
+      "old_path": "output/shape-animation-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/shape-animation-verification.json",
+      "bytes": 1482,
+      "sha256": "35b64a1595fb0f5262d53c1d83886dd26ef8854db280d306a912254cc048d7da"
+    },
+    {
+      "old_path": "output/shape-catalog-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/shape-catalog-verification.json",
+      "bytes": 897,
+      "sha256": "eb8c3d3b19e0e316dc27ada528acfb2a25423350e1e06cc22d5301e0785b128a"
+    },
+    {
+      "old_path": "output/shape-comparison-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/shape-comparison-verification.json",
+      "bytes": 2583,
+      "sha256": "36a9e8873fe1a1e364c8b8319f8291841522f4f5264ce21adcfc237d635b0256"
+    },
+    {
+      "old_path": "output/silent-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/silent-ffprobe.json",
+      "bytes": 2415,
+      "sha256": "ba1a56bde0355f791513d4c7fe832a2061386121fbc3516bd8e1a633878f4901"
+    },
+    {
+      "old_path": "output/source_shapes_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/source_shapes_smoke-engine.log",
+      "bytes": 3088,
+      "sha256": "1a815bd41f6779cb681c79cf0c9ccc4a8760626bcee963828db28b623a24afd5"
+    },
+    {
+      "old_path": "output/source-shapes-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/source-shapes-verification.json",
+      "bytes": 531,
+      "sha256": "17c7be97a2c5a49ab22a0bb0ad47fd9997304d9cd404dbe9b0b180523bd020d2"
+    },
+    {
+      "old_path": "output/studio-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-recovery-20261120/recovered/output/studio-engine.log",
+      "bytes": 605,
+      "sha256": "453f2fcdd5312bddbc9d7210130c68969e36fb6862a35ce1a74b46832541111a"
+    },
+    {
+      "old_path": "output/tone-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/tone-ffprobe.json",
+      "bytes": 3829,
+      "sha256": "7214efc3745817339cbcba5264835f95fcbde64fe91148243060f5fa6eeb970a"
+    },
+    {
+      "old_path": "output/tutorials-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/tutorials-verification.json",
+      "bytes": 930,
+      "sha256": "cb9a1963c994d45f737b91511489eee8af209e31599a69e10457b5fc82637a9a"
+    },
+    {
+      "old_path": "output/verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/verification.json",
+      "bytes": 2458720,
+      "sha256": "50ad195e21e14242e1f6fc5ce4279987c768473d36f9f9e25f982adbd741ca72"
+    },
+    {
+      "old_path": "output/visibility_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/visibility_smoke-engine.log",
+      "bytes": 4071,
+      "sha256": "451f069abeef0223baccd8112d93e227321c1c888c95d4a6c98c1fa3b85dda55"
+    },
+    {
+      "old_path": "output/visibility-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/visibility-ffprobe.json",
+      "bytes": 3837,
+      "sha256": "f51a25ef2641ff7552ce854fa5dc4da6175c689ea75076f8ad9a8473300f427e"
+    },
+    {
+      "old_path": "output/visibility-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/visibility-result.json",
+      "bytes": 512,
+      "sha256": "7180c05f5405cb0c702d0feec570fd63b03b29f3238bbddbd47cd56104b76ea6"
+    },
+    {
+      "old_path": "output/visibility-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/visibility-stdout.log",
+      "bytes": 4128,
+      "sha256": "8ccc66d73080a6a725126033a42ab9f397663d78a4096691d8d2125d264f25f0"
+    },
+    {
+      "old_path": "output/workspace_controls_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/workspace_controls_smoke-engine.log",
+      "bytes": 4404,
+      "sha256": "5a332854df5c287e304204962cbf8a630b7410e24eb479e7f48268bc7d8b689f"
+    },
+    {
+      "old_path": "output/workspace-controls-verification.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/workspace-controls-verification.json",
+      "bytes": 368,
+      "sha256": "d66d54850b6668b017711b0a2a67b4bae9cc776a479859d1d18bd7dfa5ffd320"
+    },
+    {
+      "old_path": "output/world_document-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_document-stdout.log",
+      "bytes": 4511,
+      "sha256": "7600a0024de2261c57ad5eb2581f4cd1e6bf9d2d3c1b5e7019b83a9c77bd3778"
+    },
+    {
+      "old_path": "output/world_edit_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_edit_smoke-engine.log",
+      "bytes": 4136,
+      "sha256": "2a35850128338e3eba459bbd0a821f477741795f2f6d4921baee8b36b3153bb2"
+    },
+    {
+      "old_path": "output/world_edit-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_edit-ffprobe.json",
+      "bytes": 2424,
+      "sha256": "d96c9e78314ab4a863937aed1a0536e5cd61bd99058b3bd824564fb6833a4109"
+    },
+    {
+      "old_path": "output/world_edit-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_edit-stdout.log",
+      "bytes": 4182,
+      "sha256": "c0fd02b417d768bf81345ba90d8a96c2a06b5dd87b1de788f2abc46b2f78ec75"
+    },
+    {
+      "old_path": "output/world_runtime_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_runtime_smoke-engine.log",
+      "bytes": 4886,
+      "sha256": "4276c06242bf0ca6fa358a48e961f10bc9c1da291e389f54c25d52ef87678546"
+    },
+    {
+      "old_path": "output/world_runtime-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_runtime-ffprobe.json",
+      "bytes": 2406,
+      "sha256": "e9551ee57edce9e6eec48c7845cc08abbb81c38739701333ba565e7431752263"
+    },
+    {
+      "old_path": "output/world_runtime-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_runtime-stdout.log",
+      "bytes": 4933,
+      "sha256": "8343b7f798bfacc2cb195e1a421b45b1dba9f2ddd52ee7a1025fc976a07e4f04"
+    },
+    {
+      "old_path": "output/world_workflow_smoke-engine.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_workflow_smoke-engine.log",
+      "bytes": 2398,
+      "sha256": "c7c5644e9c7173b829902ed2d67ef7351f669ebbbea6dcd7625267dd7d56b0d7"
+    },
+    {
+      "old_path": "output/world_workflow-ffprobe.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_workflow-ffprobe.json",
+      "bytes": 3843,
+      "sha256": "2db246b84a0abe39ea819add50570ac199816919cc923866fe1facc6e226a404"
+    },
+    {
+      "old_path": "output/world_workflow-stdout.log",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world_workflow-stdout.log",
+      "bytes": 2429,
+      "sha256": "4ee54629ceeecb95111c05db4bc24b0b07b8f30b3eab44660ffac2ec0fbcba84"
+    },
+    {
+      "old_path": "output/world-edit-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world-edit-result.json",
+      "bytes": 745,
+      "sha256": "882c45a1cd76513d2547abe780c4cbafd112c3e795f64a6a003596dca1c9a1e1"
+    },
+    {
+      "old_path": "output/world-runtime-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world-runtime-result.json",
+      "bytes": 1717,
+      "sha256": "017d6b9ba34995968259fef5d2921c3477ab4379ea1c98f4c94c734f87e26e72"
+    },
+    {
+      "old_path": "output/world-workflow-result.json",
+      "backup_path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-preservation-20261120/output/world-workflow-result.json",
+      "bytes": 371,
+      "sha256": "4c552e12bcf1c4c15b16e431714d03169c35463330589ec9928da90bdd2f924c"
+    }
+  ],
+  "old_contents_not_recovered": [
+    {
+      "path": "output/audio_dummy-stdout.log",
+      "bytes": 1289,
+      "sha256": "0f123ae6903febf52d70cd20e144feca1172aa8f90c55f12b229b14af0524616"
+    },
+    {
+      "path": "output/audio_editor-stdout.log",
+      "bytes": 1854,
+      "sha256": "10911a2ff6298838de25ca58d5cf6d2b265d1d446d004e080f2e566cd461d59e"
+    },
+    {
+      "path": "output/autokey-result.json",
+      "bytes": 343,
+      "sha256": "659f43b8044b9487e92e26409df6834ef5b63d1bb5ae83afaa1f9a462034e3f3"
+    },
+    {
+      "path": "output/autokey-stdout.log",
+      "bytes": 2608,
+      "sha256": "584b65cf2a26e55fe63a6cb417b2ff1ec9971ac02aa25b35ca18edb963cd3722"
+    },
+    {
+      "path": "output/autokey_smoke-engine.log",
+      "bytes": 2575,
+      "sha256": "e505666f61cd1009ab87c20302644ba209514006445f129a454d8cdeabfa8fc9"
+    },
+    {
+      "path": "output/editor-stdout.log",
+      "bytes": 2203,
+      "sha256": "520e2a7eb5a63d3c48db26dfdfa5978da47167c3d12546c2416afe290ca66c66"
+    },
+    {
+      "path": "output/new-scene-result.json",
+      "bytes": 251,
+      "sha256": "9ea665d1c3ffdf1ebb0780fb050b9dea0cc8a4ded10142bc330e57ebb82df76c"
+    },
+    {
+      "path": "output/new_scene-stdout.log",
+      "bytes": 1873,
+      "sha256": "9f0d7a7971652169187f42a32b5267248ac566c0823b8e2871394bf1bc3629d5"
+    },
+    {
+      "path": "output/new_scene_smoke-engine.log",
+      "bytes": 1849,
+      "sha256": "2246055340685477f6d58d1bc32c5c475fb2942ca4296bde4520669929255777"
+    },
+    {
+      "path": "output/pose-stdout.log",
+      "bytes": 3201,
+      "sha256": "954df70b2523ad11d29c94982b5fb4ef464c9ad256125d554644e8dc68d91d03"
+    },
+    {
+      "path": "output/recovery-stdout.log",
+      "bytes": 1101,
+      "sha256": "5ab3bf3c102b73658e5bd9399d0edfddec93be24fe3ddac906c460607ff76096"
+    },
+    {
+      "path": "output/spikes-engine.log",
+      "bytes": 1634,
+      "sha256": "4203aa3871cf6bfc5918b997a728de49a2b26ba0f36e3cf60164c9207064fee9"
+    },
+    {
+      "path": "output/spikes-stdout.log",
+      "bytes": 1697,
+      "sha256": "0e18b1f960c4bd25731b0ccf3d3fd7752af1df61b6a3352f93f348a2e24675df"
+    },
+    {
+      "path": "output/world-document-result.json",
+      "bytes": 1844,
+      "sha256": "e747c7f3b2e63ca8712053d641f0f2c5170bfc521e8924d5b8ba506514475d6f"
+    },
+    {
+      "path": "output/world-selection-result.json",
+      "bytes": 272,
+      "sha256": "a6ea3cd32eba3f60edebe351676b8b35d08cfb5b40ede1472faf612f50d096cb"
+    },
+    {
+      "path": "output/world_document_smoke-engine.log",
+      "bytes": 4471,
+      "sha256": "deba5da007c72f787ffdd337a8ffff720e6e5102040b59e2c7a6bcc60337b9b3"
+    },
+    {
+      "path": "output/world_selection-stdout.log",
+      "bytes": 3428,
+      "sha256": "42aeb9688005b156714077917a703bcf8b8136000d8bed3082aeea069e501c5b"
+    },
+    {
+      "path": "output/world_selection_smoke-engine.log",
+      "bytes": 3382,
+      "sha256": "875758e169f3f5eeaa3fcb1880fcc2f35c99e7b1b40023bb09fe439b391efd42"
+    }
+  ],
+  "bounded_search_and_remote_reports": [
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-recovery-20261120/CURRENT_ROOT_SEARCH.json",
+      "sha256": "f9a6794e7e9065d50400b975e40e822da66b8663961daab53bc044d1895cd7c4"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-recovery-20261120/STUDIO_RECOVERY.json",
+      "sha256": "8b26297d5be5a5aef7a83da6cd4e00a86cbc1967077f061a6b88d331f150b3bf"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/pre-full-generated-output-recovery-20261120/REMOTE_165_AUDIT.json"
+    }
+  ],
+  "scope": {
+    "authorized_generated_output_refresh": true,
+    "first_1dc_full_passed": false,
+    "retry_360_full_passed": false,
+    "first_full_source_1084_and_HEAD_preserved": true,
+    "fixture_29_and_foundation_167_passed": true,
+    "outputs_staged_or_restored": false,
+    "owner_assets_modified_by_capture": false,
+    "old_frozen_baseline_or_checkers_modified": false,
+    "raw_backups_or_private_old_aggregate_publication_authorized": false
+  }
+}

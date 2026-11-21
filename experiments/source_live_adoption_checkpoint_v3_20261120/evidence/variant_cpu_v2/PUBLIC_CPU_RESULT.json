@@ -1,0 +1,79 @@
+{
+  "format": "has_source_variant_preparatory_cpu_coordinator_1",
+  "status": "FAIL",
+  "revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "dependency_files": 10,
+  "expected_tests": 70,
+  "suites": [
+    {
+      "suite": "planner",
+      "expected_tests": 31,
+      "launched": true,
+      "reaped": true,
+      "pid": 8988,
+      "exit": 0,
+      "seconds": 0.7655196999985492,
+      "tests_run": 31,
+      "passed": true,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 4211,
+        "sha256": "1a07aa851fd9cae0a887ec43f3040c525e9070ca96e841ee6a67466e834c7b48"
+      }
+    },
+    {
+      "suite": "exporter",
+      "expected_tests": 26,
+      "launched": true,
+      "reaped": true,
+      "pid": 25476,
+      "exit": 1,
+      "seconds": 0.15955769999709446,
+      "tests_run": 1,
+      "passed": false,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 1174,
+        "sha256": "f60f2760c3ff58f9046493af245e45d2beeb490520321cecc743bac4ca757ed9"
+      }
+    },
+    {
+      "suite": "project",
+      "expected_tests": 13,
+      "launched": true,
+      "reaped": true,
+      "pid": 21916,
+      "exit": 0,
+      "seconds": 0.2099231999964104,
+      "tests_run": 13,
+      "passed": true,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 2005,
+        "sha256": "3187aeac765ae1b093e579c51994eae8538d8db5afc64ea5b8be2da7f6f743bc"
+      }
+    }
+  ],
+  "native_or_engine_launched": false,
+  "sdk_or_native_assets_read": false,
+  "actual_variant_export_or_runtime_qualified": false,
+  "application_adopted": false,
+  "current_root_output_or_bytecode_writes_authorized": false,
+  "error_type": "Refusal",
+  "error_code": "CPU_SUITE_FAILED",
+  "owned_child_cleanup_failures": [],
+  "preservation_failures": [],
+  "all_admitted_inputs_hash_size_identity_nsmtime_unchanged": true,
+  "admitted_input_files": 1107,
+  "owned_children_reaped": true,
+  "stage": "C:\\a\\Programming\\cloudflare\\has-source-variant-cpu-1795238006420924500"
+}

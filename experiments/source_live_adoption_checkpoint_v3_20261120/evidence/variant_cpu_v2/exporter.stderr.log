@@ -1,0 +1,22 @@
+test_retained_variants (unittest.loader._FailedTest.test_retained_variants) ... ERROR
+
+======================================================================
+ERROR: test_retained_variants (unittest.loader._FailedTest.test_retained_variants)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_retained_variants
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Program Files\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\a\Programming\cloudflare\has-source-variant-cpu-1795238006420924500\output\source-sfm-variant-export-prep-20261120\test_retained_variants.py", line 323
+    with self.assertRaisesRegex(R.Refusal,'^final_resource_reconciliation_required
+                                          ^
+SyntaxError: unterminated string literal (detected at line 323)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

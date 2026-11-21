@@ -1,0 +1,83 @@
+{
+  "format": "has_source_native_corrected_five_live_actual_verification_1",
+  "passed": true,
+  "checks_expected": 102,
+  "checks_observed": 102,
+  "phase_expected": {
+    "writer": 83,
+    "reader-packed": 11,
+    "reader-linked": 8
+  },
+  "results": [
+    {
+      "passed": true,
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "seconds": 38.307866700000886,
+      "execution_error": null,
+      "error_markers": [],
+      "metadata_errors": [],
+      "result_binding": true,
+      "domain_checks_passed": true,
+      "domain_failure_count": 0,
+      "private_receipt_passed": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-secondary-packaged-native5-20261120-01\\writer\\private-receipt.json",
+      "checks": 83,
+      "result_sha256": "e076e0ed93afa96138e4aa0b18eecf0096736b6aea53808d5077b15de1e29537"
+    },
+    {
+      "passed": true,
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "seconds": 9.621778400003677,
+      "execution_error": null,
+      "error_markers": [],
+      "metadata_errors": [],
+      "result_binding": true,
+      "domain_checks_passed": true,
+      "domain_failure_count": 0,
+      "private_receipt_passed": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-secondary-packaged-native5-20261120-01\\reader-packed\\private-receipt.json",
+      "checks": 11,
+      "result_sha256": "d53652ce5898bec4be0d6bbe78ceaf14eb55ceb91abb6e4f03022a8b88c4558b"
+    },
+    {
+      "passed": true,
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "seconds": 5.086182500002906,
+      "execution_error": null,
+      "error_markers": [],
+      "metadata_errors": [],
+      "result_binding": true,
+      "domain_checks_passed": true,
+      "domain_failure_count": 0,
+      "private_receipt_passed": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-secondary-packaged-native5-20261120-01\\reader-linked\\private-receipt.json",
+      "checks": 8,
+      "result_sha256": "ec04f14c1ef2463f38ad96375b753b886f0d1d7b3c906a8bb0bde7061aea88a4"
+    }
+  ],
+  "error": null,
+  "preservation": {
+    "current_functional_source": true,
+    "original_native_GLB_report_and_baseline": true,
+    "approved_Godot": true,
+    "frozen_functional_source": true,
+    "candidate_sources_unchanged": true
+  },
+  "baseline_conversion": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-live-normal-run-1795231337601347500\\PUBLIC_LIVE_NORMAL_ROOT_RESULT.json",
+    "bytes": 2583,
+    "mtime_ns": 1795231349418856500,
+    "sha256": "71f9e8da5a88d4f4a7c997a30bad09afa399546a8934041863cece92877449f9"
+  },
+  "native_conversion_performed_by_this_driver": false,
+  "native5_editor_backend_tested": true,
+  "same_actor_reverse_body_qualification": "UNQUALIFIED_PARTIAL_SOURCE_RIG",
+  "private_arrays_in_public_result": false,
+  "output": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-secondary-packaged-native5-20261120-01"
+}

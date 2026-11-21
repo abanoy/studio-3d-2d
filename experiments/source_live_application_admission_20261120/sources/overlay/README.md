@@ -1,0 +1,9 @@
+# Exact live target admission and GUI/cold verifier successor
+
+Source-only overlay, not adopted. The new exact target is bound to actual successful private live Root result db271160: scene b8436dea, parameters dbff99d5 and emitted crosswalk fb677e1a, with unchanged34230c89 wire/native8da. The earlier correction-only result was insufficient; this later live result additionally proves actual69-bone/49-rule final publication and complete preservation/private closure. Original source/old verifier files are preserved under bases/. No app source, runtime or native input was changed and no engine/test ran by this author.
+
+The proposed SourceSecondary change preserves original GLB_SHA and the exact old route. A new exact final GLB additionally requires the exact emitted crosswalk proof SHA, original native MDL, profile and unchanged jiggle wire. Existing offered/create bounds,69bindings/49rules, prefixes, parent checks and all physical/runtime guards remain. New source comparisons use the already admitted actor asset SHA rather than replacing the historical constant. Full Bindings.resolve still authenticates creation.
+
+The new native5 live verifier retains every named writer/fan/on-off/body/refusal/Record/undo/redo/FK/packed/linked/cold/export assertion and the unchanged capture. It pins the actual immutable Root live result plus exact scene/parameters artifacts, then overlays only the candidate SourceSecondary and the one GUI expected-SHA line in a newly owned Studio copy. Root application files remain unchanged. Both base and candidate frozen source manifests are retained and checked after all jobs. No test predicate or historical file is overwritten.
+
+Actual live pins are filled. Target unit, native5 writer/packed/linked cold checks and appropriate functional/full verification remain required before adoption. Future tracked placement restores the normal tests/ relative ROOT calculation.
