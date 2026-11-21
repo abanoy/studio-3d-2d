@@ -8594,3 +8594,33 @@ Source/tests/findings/safeevidence saved together; no privateassets/arrays/media
 uploaded. See docs/secondary_reconstruction.md and reconstructed_rest_views_20261121
 benchmark/packet. Originalassets/tools/Steam protected; blockedcleanupuntouched.
 Formal52/54 implementation and55/62 acceptance remainunchanged.
+
+
+## 2026-11-21 — Portable reconstructed-rest keys and four-frame movie
+
+After runtime checkpoint7d15daf3, the new optional native portable/movie driver
+passes30: writer19, fresh reader10, retained hidden FFprobe1. Four authored1080p24
+frames are rest, edited positively-weighted GUIDE FK twice, rest, preserving a
+constant nonzero native Head pose. Ordinary packed Save and Standard export work;
+actual H264 stream contains exactly4frames. All4uncompressed export inputs equal
+previews, and all4cold captures/resource modes/native Head+GUIDE Transform3D match
+exactly. Complete pose/key values compare in the normal JSON-number domain.
+WriterStudio/Data/User/ownedInput are unavailable during the2-file cold handoff,
+then restored. Original input, owned inputs, source/runtime and parentenvironment
+are preserved; both private jobs and probe process are reaped/handlesclosed.
+
+Retain three actual failures: Options was not initialized before shortening,
+producing48frames andwriter18/19; strict FFprobe metadata read refused beforechild
+withunknown internalidentitydelta; writer19+probe1+reader9/10 rejected74numeric
+int/float types despiteZERO changedvalues/structure/nativequaternions. Final test
+uses the exact JSON-number representation plus independent native transforms;
+no pixel/pose tolerance or authorfield removed. Old results stay adverse.
+
+Only2public testfiles plus scalar EVIDENCE.json/inventory are prepared here.
+Native HAS/expectedVAR, source/candidate, pictures and movie remain private/local.
+See experiments/reconstructed_rest_movie_20261121 and docs/secondary_reconstruction.md.
+This is a one-component authored-FK portable/movie result, not a new physicsbake,
+wholehair/outline completion, all-framecontact/performance or human acceptance.
+Existing live-owner/final-mode boundary remains as documented. Continue reviewed
+backhair groups/outline correspondence and CPUcost; formal52/54implementation and
+55/62acceptance remain unchanged. No cleanup, installedtool or Main edit here.
