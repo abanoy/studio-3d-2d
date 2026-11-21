@@ -8032,3 +8032,24 @@ only, with no model/image download. The initial close fixture WeakRef inference
 annotation failure was corrected before its actual run. Safe evidence is
 docs/benchmarks/asset_discovery_shutdown_2026-11-21.json. Updated feature-branch
 publication/readback follows; overall goal remains active for primary adoption.
+
+
+## 2026-11-21 — Primary review: stale discovery selection fixed
+
+Primary is adopting the published browser. Review found filtered-out/cleared
+local selections retained their old dictionary and actions. Browser now shares
+one current-row predicate across rendering and selection/action reconciliation.
+Use, geometry preview, source actions and thumbnail selection check current
+membership; missing identities clear the Tree and record. The window also
+revalidates the chosen path before its delayed local callback, preventing an
+import when filtering/Clear happens after Use was clicked.
+
+Actual104headless browser controls pass, including select→filter-zero and
+select→Clear with immediate/queued Use/Preview, plus real wrapper close-delay
+callback rejection. Separate111headless additions pass with normal Studio GLB
+import/Undo preserved in both themes. No shared app/renderer/model/import/world
+source or primary checkout changed in this increment. Safe evidence is
+docs/benchmarks/asset_discovery_selection_2026-11-21.json. Subsequent requested
+unsupported-import gating, automatic bottom batches and remembered retrieval
+notices remain separate upcoming work; button-only/manual website flow is not
+claimed to deliver those additions.

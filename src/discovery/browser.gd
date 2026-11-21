@@ -113,7 +113,9 @@ func _ready() -> void:
 		if tabs.current_tab != 1: return
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and not event.double_click:
 			var item := tree.get_item_at_position(event.position)
-			if item: selected = item.get_metadata(0); open_page(selected.get("url", ""))
+			if item:
+				selected = item.get_metadata(0); _reconcile_selection(_current_visible_rows())
+				if not selected.is_empty(): open_page(selected.get("url", ""))
 		elif event is InputEventKey and event.keycode in [KEY_ENTER, KEY_KP_ENTER] and event.pressed and not event.echo: open_selected())
 	var detail_row := HBoxContainer.new(); add_child(detail_row)
 	details = _label(); details.custom_minimum_size.y = 48; details.size_flags_horizontal = Control.SIZE_EXPAND_FILL; detail_row.add_child(details)
@@ -223,17 +225,35 @@ func _schedule_refresh() -> void:
 	_refresh_pending = true
 	_refresh.call_deferred()
 
+func _current_visible_rows() -> Array:
+	var is_online := tabs.current_tab == 1
+	var query := search.text.strip_edges()
+	var choices := Catalog.variations(query, expand.button_pressed if is_online else false)
+	var rows: Array = []
+	for row in online.rows if is_online else local.rows:
+		# Online rows already belong to the submitted query. Do not refilter them
+		# against unsubmitted text and misrepresent the provider request context.
+		if is_online or Catalog.matches(row, query, choices, Catalog.FORMATS[format_filter.selected]): rows.append(row)
+	return rows
+
+func _reconcile_selection(rows: Array) -> void:
+	if selected.is_empty(): return
+	var key := Catalog.identity(selected)
+	for row in rows:
+		if Catalog.identity(row) == key:
+			selected = row
+			return
+	selected = {}
+	if is_instance_valid(tree): tree.deselect_all()
+
 func _refresh() -> void:
 	_refresh_pending = false
 	if not is_inside_tree() or not is_instance_valid(tree): return
 	var is_online := tabs.current_tab == 1
 	var query := search.text.strip_edges()
 	var choices := Catalog.variations(query, expand.button_pressed if is_online else false)
-	visible_rows = []
-	for row in online.rows if is_online else local.rows:
-		# Online rows already belong to the submitted query. Do not refilter them
-		# against unsubmitted text and misrepresent the provider request context.
-		if is_online or Catalog.matches(row, query, choices, Catalog.FORMATS[format_filter.selected]): visible_rows.append(row)
+	visible_rows = _current_visible_rows()
+	_reconcile_selection(visible_rows)
 	var signature := str(visible_rows) + str(is_online)
 	if signature != _render_signature:
 		_render_signature = signature
@@ -296,10 +316,12 @@ func _refresh() -> void:
 func _select() -> void:
 	var item := tree.get_selected()
 	selected = item.get_metadata(0) if item else {}
+	_reconcile_selection(_current_visible_rows())
 	_schedule_refresh()
 
 func _update_thumbnail() -> void:
 	if not is_instance_valid(preview): return
+	_reconcile_selection(_current_visible_rows())
 	var enabled := tabs.current_tab == 1 and network.button_pressed and thumbnails.button_pressed
 	preview.get_parent().visible = enabled
 	thumbnail.set_enabled(enabled)
@@ -319,13 +341,19 @@ func open_page(url: String) -> void:
 	if error != OK: status.text = _open_error
 	else: source_page_opened.emit(url)
 
+func current_local_selection() -> Dictionary:
+	_reconcile_selection(_current_visible_rows())
+	return selected if tabs.current_tab == 0 else {}
+
 func _use_local() -> void:
-	if tabs.current_tab == 0 and not selected.is_empty(): local_file_selected.emit(selected.path)
+	var row := current_local_selection()
+	if not row.is_empty(): local_file_selected.emit(row.path)
 
 func _preview_local() -> void:
-	if tabs.current_tab != 0 or selected.is_empty(): return
+	var row := current_local_selection()
+	if row.is_empty(): return
 	if is_instance_valid(geometry_window): geometry_window.queue_free()
-	var result := LocalPreview.open(self, str(selected.get("path", "")))
+	var result := LocalPreview.open(self, str(row.get("path", "")))
 	if result.has("error"): _open_error = result.error; status.text = _open_error
 	else: geometry_window = result.window; _open_error = ""; _schedule_refresh()
 
