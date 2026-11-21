@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-21",
+  "continues": "19dbb89415113d195d0a4d3bb07ed939a48994e5",
+  "branch": "worker/asset-browser-live-20261121",
+  "before_fix": "Real browser close freed window/service/request but Godot reported ObjectDB instances leaked and one resource still in use at exit.",
+  "fix": "Cancel/hide immediately; allow coroutine unwind before destruction; defer imports until close completes; reject imports while Studio closes; drain browser in quit_studio.",
+  "close_live": {
+    "loading_before_close": true,
+    "native_http_phase_before_close": 1,
+    "native_request_existed": true,
+    "request_freed": true,
+    "scope": "Real production window closed during a native HTTPRequest. Metadata only; no model/image download or source-page launch.",
+    "seconds": 0.182,
+    "service_freed": true,
+    "studio_quit": false,
+    "window_freed": true
+  },
+  "quit_live": {
+    "loading_before_close": true,
+    "native_http_phase_before_close": 3,
+    "native_request_existed": true,
+    "request_freed": true,
+    "scope": "Real production window closed during a native HTTPRequest. Metadata only; no model/image download or source-page launch.",
+    "seconds": 5.788,
+    "service_freed": true,
+    "studio_quit": true,
+    "window_freed": true
+  },
+  "focused_headless": {
+    "cases": {
+      "geometry_preview": {
+        "checks": 17,
+        "failures": [],
+        "scope": "Generated local GLB geometry only; no external files, network, conversion or owner artwork."
+      },
+      "thumbnails": {
+        "checks": 21,
+        "failures": [],
+        "scope": "Generated image buffers and injected image transport; no live artwork downloaded."
+      },
+      "write": {
+        "checks": 4,
+        "failures": [],
+        "phase": "write"
+      },
+      "read": {
+        "checks": 13,
+        "failures": [],
+        "phase": "read"
+      },
+      "neon": {
+        "checks": 28,
+        "display_driver": "headless",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "neon"
+      },
+      "classic": {
+        "checks": 28,
+        "display_driver": "headless",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "classic"
+      }
+    },
+    "checks": 111,
+    "failures": []
+  },
+  "diagnostics": "Both native lifecycle commands exited0 with no SCRIPT ERROR, ObjectDB instances leaked, or resources still in use diagnostics.",
+  "scope": "CPU/headless/native metadata connection lifecycle only; no new GPU run, model/image download, install or main update. Prior visual/provider evidence remains separate."
+}

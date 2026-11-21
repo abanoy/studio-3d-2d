@@ -4,8 +4,8 @@ Implemented on `worker/asset-browser-live-20261121`, based on GitHub `main`
 `243e6a1edf1aee5cd07f107a34775db49a2caa01` (checked November 21, 2026).
 Continues the preserved initial `worker/asset-browser-20261121` / `85d07df0`
 implementation; that earlier branch and its checkout outputs are retained.
-This feature checkout now integrates the browser into normal Studio with two
-small app.gd hooks. Other checkouts and installed Studio remain unchanged.
+This feature checkout integrates the browser into normal Studio with two menu
+hooks and one shutdown hook. Other checkouts and installed Studio remain unchanged.
 
 ## Launch
 
@@ -84,7 +84,7 @@ access permission. Other providers do not gain image requests via website links.
 
 ## Integration hooks (primary worker applies separately)
 
-The **two-line app.gd hook is already applied on this feature branch**. It is the
+The **three-line app.gd integration is already applied on this feature branch**. It is the
 only shared application source changed. Renderer/model/import/world files,
 project.godot and the canonical verifier remain untouched. The independent patch
 is retained for the primary to review or apply when adopting modules separately:
@@ -97,9 +97,11 @@ git apply docs/asset_discovery_integration.patch
 Do not apply that patch again after adopting this branch's integrated app.gd.
 The patch keeps app.gd's original CRLF source context and line endings.
 
-One line adds **Asset discovery…** to Simple's Add menu. The other calls
+One line adds **Asset discovery…** to Simple's Add menu. Another calls
 `preload("res://src/discovery/studio_bridge.gd").install(self, toolbar)` beside
 Installed in Advanced. The module owns its button/window and needs no app member.
+A third line awaits the bridge's `finish()` in `quit_studio`, after setting
+`closing_studio`. It drains pending browser requests before the SceneTree quits.
 The earlier patch-only increment was tested in a disposable copy. Current tests
 copy the already integrated application source, verify exactly one bridge install
 and exercise both real entry points. They never modify the primary's checkout.
@@ -252,3 +254,29 @@ The preview hierarchy validator initially needed an explicit GDScript int type;
 that compile failure occurred before graphical launch and was fixed. Materials,
 animation/morph fidelity, preview conversion of other formats and large GLBs
 remain unsupported. The full HAS suite and owner acceptance are separate work.
+
+## Native shutdown follow-up
+
+An additional live lifecycle audit found a real leak: closing a browser during
+its native HTTPRequest freed its nodes, but Godot reported one resource still
+in use at exit. The wrapper now hides/cancels immediately, allows a frame for
+nested service work to unwind, then frees the window. Explicit local imports
+wait until that close completes and recheck ownership/busy/closing state.
+
+Studio's shutdown hook similarly awaits the bridge before quitting. New live
+checks close the actual window during a native connection and quit actual Studio
+with one pending. Both free the window/service/request without ScriptError,
+ObjectDB-leak or resources-still-in-use diagnostics. Run them independently:
+
+```powershell
+python tests/verify_asset_discovery.py --close-live
+python tests/verify_asset_discovery.py --quit-live
+```
+
+The current headless additions run passes **111 checks**, including 28 real
+Studio controls per theme, with new refusal checks for a closing application
+and a scene change during deferred close. Earlier 109/private graphical results
+remain historical; no new GPU run was performed while the primary owns that
+slot. Safe evidence is `docs/benchmarks/asset_discovery_shutdown_2026-11-21.json`.
+The primary should adopt the current three-hook patch rather than the older
+two-menu-hook checkpoint alone.

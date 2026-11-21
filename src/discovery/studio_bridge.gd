@@ -18,6 +18,7 @@ static func install(app: Node, toolbar: Node, settings_path: String = "") -> Nod
 func guard_reason() -> String:
 	var app = owner_ref.get_ref() if owner_ref else null
 	if not is_instance_valid(app) or not app.is_inside_tree(): return "The requesting Studio scene is no longer open."
+	if app.closing_studio: return "Studio is closing. No discovered file was imported."
 	if app.source_import.bundle_active: return "Finish or cancel the character-parts queue before importing a discovered file."
 	if app.import_actions.busy(): return "Finish the current import, project operation or dialog first."
 	if app.sequence_editor and (app.sequence_editor.installing or app.sequence_editor.preview_busy): return "Finish changing the current sequence first."
@@ -55,3 +56,9 @@ func accept_local(path: String, requesting: Dictionary) -> void:
 
 func _exit_tree() -> void:
 	if is_instance_valid(window): window.queue_free()
+
+func finish() -> void:
+	if not is_instance_valid(window): return
+	var panel = window.get_meta("discovery_panel")
+	DiscoveryWindow._finish_close(window, panel)
+	while is_instance_valid(window): await get_tree().process_frame

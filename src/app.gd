@@ -5287,6 +5287,7 @@ var closing_studio:=false
 func quit_studio() -> void:
 	if closing_studio:return
 	closing_studio=true
+	if has_node("AssetDiscoveryBridge"):await get_node("AssetDiscoveryBridge").finish()
 	if tutorials and tutorials.active:tutorials.save_resume()
 	if sequence_editor:await sequence_editor.finish()
 	get_tree().quit()

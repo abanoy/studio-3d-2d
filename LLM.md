@@ -7972,3 +7972,26 @@ error in new hierarchy validation was fixed before graphical launch. Source
 and safe counts: docs/benchmarks/asset_discovery_integrated_preview_2026-11-21.json.
 Publication/readback follows on this feature branch only, with no main merge,
 force push, installed update or private artwork publication.
+
+
+## 2026-11-21 — Discovery native-close leak fixed
+
+The post-publication goal audit found a real resource leak on browser close
+during a native HTTPRequest: nodes freed but Godot retained one resource at
+exit. The wrapper now hides/cancels immediately and allows pending service
+coroutines to unwind before destruction. Explicit local callbacks run only
+after close and still recheck scene/selection/operation context. Studio closing
+now refuses new/deferred imports and awaits bridge.finish before Tree quit.
+The exact shell integration is three added app.gd lines (two menu hooks plus
+one shutdown hook); Renderer/Model/SourceImport/world sources remain untouched.
+
+Actual native --close-live and --quit-live cases both observe a live native
+connection, then freed window/service/request with no ScriptError/ObjectDB leak/
+resources-still-in-use diagnostics. Focused111headless additions pass, including
+28Studio controls per theme, new closing refusal and scene-change-during-close
+controls. Earlier109private visual evidence is historical; Root owns the GPU
+slot, so no competing graphical run was started. Native probes fetch metadata
+only, with no model/image download. The initial close fixture WeakRef inference
+annotation failure was corrected before its actual run. Safe evidence is
+docs/benchmarks/asset_discovery_shutdown_2026-11-21.json. Updated feature-branch
+publication/readback follows; overall goal remains active for primary adoption.

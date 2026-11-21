@@ -21,10 +21,20 @@ static func open(owner: Node, on_local: Callable = Callable(), options: Dictiona
 	window.set_meta("discovery_panel", browser)
 	browser.local_file_selected.connect(func(path):
 		if on_local.is_valid():
-			browser.cancel(); window.hide(); window.queue_free()
-			# Let the window close before the ordinary import pipeline's busy check.
-			on_local.call_deferred(path)
+			_finish_close(window, browser, on_local, path)
 		else: browser.status.text = "Selected local filename: " + path)
-	window.close_requested.connect(func(): browser.cancel(); window.hide(); window.queue_free())
+	window.close_requested.connect(func(): _finish_close(window, browser))
 	window.popup_centered(Vector2i(1200, 820))
 	return window
+
+static func _finish_close(window: Window, browser: Node, on_local: Callable = Callable(), path: String = "") -> void:
+	if window.has_meta("discovery_closing"): return
+	window.set_meta("discovery_closing", true)
+	var tree := window.get_tree()
+	browser.cancel(); window.hide()
+	# Native requests and the nested service coroutines need a frame to unwind.
+	# Freeing their owner within the click callback can leave FunctionState resources.
+	await tree.process_frame
+	if is_instance_valid(window): window.queue_free()
+	await tree.process_frame
+	if on_local.is_valid(): on_local.call_deferred(path)

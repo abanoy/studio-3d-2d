@@ -67,6 +67,11 @@ func run() -> void:
 	bridge.window.close_requested.emit(); await settle()
 	var path := folder.path_join("cube.glb"); make_model(path)
 	var token: Dictionary = bridge.context()
+	app.closing_studio = true; bridge.accept_local(path, token)
+	check(app.current_world() == before and app.status.text.contains("closing"), "closing Studio refuses a deferred local import")
+	bridge.button.pressed.emit()
+	check(not is_instance_valid(bridge.window), "closing Studio cannot reopen discovery")
+	app.closing_studio = false
 	app.source_import.bundle_active = true
 	bridge.accept_local(path, token)
 	check(app.current_world() == before and app.status.text.contains("queue"), "bundle queue blocks local callback even without a process")
@@ -120,6 +125,17 @@ func run() -> void:
 		var view: SubViewport = panel.geometry_window.get_meta("preview_viewport")
 		check(view.get_texture().get_image().save_png(folder.path_join("geometry-preview.png")) == OK, "capture real geometry preview pixels")
 	panel.geometry_window.close_requested.emit(); await settle()
+	# Scene changes during the new graceful-close frame must still reject import.
+	panel.use_button.pressed.emit(); app.recovery_revision += 1; await settle()
+	check(app.current_world() == before and app.status.text.contains("changed"), "scene change during deferred close refuses import")
+	app.recovery_revision -= 1
+	bridge.button.pressed.emit(); await settle()
+	panel = bridge.window.get_meta("discovery_panel")
+	while panel.local.loading: await process_frame
+	await settle()
+	selected_item = panel.tree.get_root().get_first_child()
+	while selected_item and str(selected_item.get_metadata(0).path).simplify_path() != path.simplify_path(): selected_item = selected_item.get_next()
+	selected_item.select(0); panel.tree.item_selected.emit(); await settle()
 	panel.use_button.pressed.emit(); await settle()
 	check(not is_instance_valid(bridge.window), "Use closes the browser before the callback")
 	check(app.current_world().objects.size() == before.objects.size() + 1, "real ordinary import pipeline adds generated model")
