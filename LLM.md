@@ -8346,3 +8346,8 @@ claimed here. Schedule primary Voxel graphics first after it releases GPU, then 
 lighting worker's distinct22 graphics on an exact integrated-source copy. Natural
 gravity work remains isolated; synthetic and ordinary controls pass, but the real
 Junko section is still being refined. Formal52/54 and55/62 remain unchanged.
+
+
+## 2026-11-21 lighting worker: integrated VoxelGI graphics complete
+
+Exact published28db0902 functional source remained unchanged across serial private GPU tests. Primary physical68 independently inspected; own actual empty-room/export refusal/recovery22 passed in Neon and Classic. Recovery H264 movies are two frames1080p24; primary moving Neon movie four frames. All private jobs closed without foreground, no new source failures. GPU explicitly released after exec21816 exit0. See docs/voxel_integrated_verification.md and its compact JSON for exact source, measurements, scopes and limits. Documentation/evidence only; no runtime, installed tools, original assets or other checkouts changed.

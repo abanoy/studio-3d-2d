@@ -1,0 +1,222 @@
+{
+  "source_revision": "28db0902825721626b17b218aa2a4554ab6da552",
+  "git_tree": "f8ba87293d1f2e3bfce2087535507779c1b4af22",
+  "functional_source_postflight": {
+    "files": 1212,
+    "bytes": 10336157,
+    "inventory_sha256": "d2230b519e52285267ff2e770e58ed55bac73edf38592f6d9134d27e361f2aac"
+  },
+  "all_functional_files_unchanged": true,
+  "gpu": "Intel Arc 140V; Godot 4.6 Forward+",
+  "independent_empty_room_run": {
+    "checks": 22,
+    "failures": 0,
+    "verification_sha256": "f8be91166e5f244ae698db5e15f3ed4ec749d9ebbe1877c5d8b0644a71e9f7f2",
+    "source_sha256": {
+      "src/scene_voxel_runtime.gd": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a",
+      "tests/scene_voxel_empty_rebake.gd": "2d214774645a39a8f7e44bf90b1353f4c942179952a9879f16a299aed9899125",
+      "tests/scene_voxel_smoke.gd": "4e4f6a47e38d2dfdc25263405b103402937ebceb41ce2e05ab2fecf83217fffb",
+      "tests/verify_voxel_empty_rebake.py": "5a512860d436fa7f400a0c78e14e5e0c22a14ea5b7080130637fb3eeab7b9673"
+    },
+    "private_desktop": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_abf6719b0bbe4ff4a13c1abdc678ff1b",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 11,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 31988,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.801
+    },
+    "videos": {
+      "light": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "2"
+      },
+      "neon": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "2"
+      }
+    },
+    "movie_sha256": {
+      "light": "b7421f2ca257ad686db546a28e5d22660fb97e8cb671c84ec422b515f57516d2",
+      "neon": "b7421f2ca257ad686db546a28e5d22660fb97e8cb671c84ec422b515f57516d2"
+    }
+  },
+  "primary_physical_run_independently_inspected": {
+    "checks": 68,
+    "failures": 0,
+    "verification_sha256": "db5be228617a30d9b7c92effc789264c1512f687284c464831da25480deb7b3f",
+    "themes": {
+      "neon": {
+        "bake_ms": 75,
+        "blocked_rgb": [
+          18.8671932220459,
+          0.0,
+          0.0
+        ],
+        "export_mean_0": 0.0,
+        "export_mean_1": 0.0,
+        "export_mean_3": 0.0,
+        "export_patch_mean_0": 0.0,
+        "export_patch_mean_1": 0.0,
+        "export_patch_mean_3": 0.0,
+        "open_rgb": [
+          22.382827758789062,
+          0.0,
+          0.0
+        ],
+        "preview_errors": {
+          "0": {
+            "mean": 0.0,
+            "model_after": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.6, -0.8)]",
+            "model_before": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.6, -0.8)]",
+            "patch_mean": 0.0,
+            "preview_rgb": "(22.38283, 0.0, 0.0)"
+          },
+          "1": {
+            "mean": 0.0,
+            "model_after": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.6, -0.8)]",
+            "model_before": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.6, -0.8)]",
+            "patch_mean": 0.0,
+            "preview_rgb": "(18.86719, 0.0, 0.0)"
+          },
+          "3": {
+            "mean": 0.0,
+            "model_after": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.6, -0.8)]",
+            "model_before": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.6, -0.8)]",
+            "patch_mean": 0.0,
+            "preview_rgb": "(22.38283, 0.0, 0.0)"
+          }
+        },
+        "returned_rgb": [
+          22.382827758789062,
+          0.0,
+          0.0
+        ],
+        "scene_setup_red": [
+          22.750032424926758,
+          19.08987045288086,
+          22.750032424926758
+        ]
+      },
+      "light": {
+        "bake_ms": 72,
+        "blocked_rgb": [
+          18.8671932220459,
+          0.0,
+          0.0
+        ],
+        "open_rgb": [
+          22.382827758789062,
+          0.0,
+          0.0
+        ],
+        "preview_errors": {
+          "0": {
+            "mean": 0.0,
+            "model_after": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.6, -0.8)]",
+            "model_before": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.6, -0.8)]",
+            "patch_mean": 0.0,
+            "preview_rgb": "(22.38283, 0.0, 0.0)"
+          },
+          "1": {
+            "mean": 0.0,
+            "model_after": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.6, -0.8)]",
+            "model_before": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.6, -0.8)]",
+            "patch_mean": 0.0,
+            "preview_rgb": "(18.86719, 0.0, 0.0)"
+          },
+          "3": {
+            "mean": 0.0,
+            "model_after": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.6, -0.8)]",
+            "model_before": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.6, -0.8)]",
+            "patch_mean": 0.0,
+            "preview_rgb": "(22.38283, 0.0, 0.0)"
+          }
+        },
+        "returned_rgb": [
+          22.382827758789062,
+          0.0,
+          0.0
+        ],
+        "scene_setup_red": [
+          22.699254989624023,
+          19.05080795288086,
+          22.699254989624023
+        ]
+      }
+    },
+    "cold_reopen": {
+      "light_cold_0": 0.0,
+      "light_cold_1": 0.0,
+      "light_cold_3": 0.0,
+      "light_cold_patch_0": 0.0,
+      "light_cold_patch_1": 0.0,
+      "light_cold_patch_3": 0.0,
+      "neon_cold_0": 0.0,
+      "neon_cold_1": 0.0,
+      "neon_cold_3": 0.0,
+      "neon_cold_patch_0": 0.0,
+      "neon_cold_patch_1": 0.0,
+      "neon_cold_patch_3": 0.0
+    },
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "4"
+    },
+    "private_desktops": [
+      {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0dda3ed3cade46109209d249e679616d",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 11,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 35868,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 39.642
+      },
+      {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_58c054694aa946729c39d29d39236c1e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 11,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19552,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 15.282
+      }
+    ]
+  },
+  "scope": [
+    "Primary: native bake early-return after success and real recovery, live Scene Setup/Camera Focus and portable HAS cold reopen in both themes; moving PNG/movie comparison in Neon.",
+    "Independent: empty room after successful bake, three later syncs, stale data cleared and hidden, actual movie refusal/no MP4, Undo fresh bake and two-frame H264 recovery export in both themes."
+  ],
+  "limitations": [
+    "One bounded 64-subdivision fixture and one Intel Arc GPU; arbitrary maps, multi-probe and bone deformation are unqualified.",
+    "Static environment changes require rebuild; bake recipe regenerates in memory on reopen.",
+    "Forward+ only; coarse voxel indirect occlusion, not path tracing or exact contact shadows.",
+    "PNG comparisons qualify pre-encode pixels; H264 is lossy. No owner manual acceptance claimed."
+  ]
+}
