@@ -36,7 +36,7 @@ from source_archive import resource_path, write_resource
 from source_texture import blender_rgba
 from source_case import CaseResolver
 from source_eyes import plan as neutral_eye_plan
-from source_lights import plan as light_plan, create as create_lights
+from source_lights import plan_batches as light_plan, create as create_lights
 from source_lightmaps import capture as capture_lightmaps, bake as bake_lightmaps, tag_glb as tag_lightmap_glb
 
 from SourceIO.library.utils import TinyPath, FileBuffer, MemoryBuffer
@@ -353,15 +353,17 @@ else:
         defaults.update({k: prop.keywords["default"] for k, prop in getattr(cls, "__annotations__", {}).items()})
     defaults.update(scale=request["scale"], import_textures=False, load_lights=False, load_decals=False)
     import_bsp(TinyPath(str(source)), FileBuffer(TinyPath(str(source))), cm, SimpleNamespace(**defaults), SteamAppId.GARRYS_MOD)
+    entity_batches = []
     for text in bpy.data.texts:
         if not text.name.endswith("_entities.json"): continue
-        entities = json.loads(text.as_string())
-        planned_lights = light_plan(entities, request["scale"])
-        create_lights(bpy, planned_lights)
-        map_lights.extend(planned_lights["lights"])
-        if len(map_lights)>64:raise ValueError("Source map exceeds64supported static lights")
-        warnings.extend(planned_lights["warnings"])
-        (out / "entities.json").write_text(json.dumps(entities, indent=2), encoding="utf-8")
+        entity_batches.append(json.loads(text.as_string()))
+    # One global budget; optional lighting never discards valid map geometry.
+    planned_lights = light_plan(entity_batches, request["scale"], optional_omissions=True)
+    (out / "entities.json").write_text(json.dumps(planned_lights["entities"], indent=2), encoding="utf-8")
+    create_lights(bpy, planned_lights)
+    map_lights.extend(planned_lights["lights"])
+    warnings.extend(planned_lights["warnings"])
+    for entities in entity_batches:
         for entity in entities:
             if not entity.get("classname", "").startswith("info_player_"): continue
             xyz = [float(x) for x in entity.get("origin", "0 0 0").split()]
@@ -399,7 +401,7 @@ else:
             props_loaded += 1
         except Exception as error:
             warnings.append("Prop failed: " + str(path) + ": " + str(error))
-    native_parameters = {"props_found": len(placeholders), "props_loaded": props_loaded, "removed_tool_faces": removed_tool_faces, "static_entity_lights": map_lights}
+    native_parameters = {"props_found": len(placeholders), "props_loaded": props_loaded, "removed_tool_faces": removed_tool_faces, "static_entity_lights": map_lights, "static_entity_light_omissions": planned_lights["omissions"]}
 
 
 images = {}

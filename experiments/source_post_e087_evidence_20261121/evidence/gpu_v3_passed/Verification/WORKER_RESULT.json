@@ -1,0 +1,52 @@
+{
+  "format": "has_exact_five_import_off_worker_result_1",
+  "status": "PASS",
+  "jobs": [
+    {
+      "name": "job-0",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 9164,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-1",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 22952,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "ffprobe",
+      "reaped": true,
+      "private_job_required": false
+    }
+  ],
+  "checks": 54,
+  "failures": 0,
+  "native_profiles_observed": 5,
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "24/1",
+    "nb_read_frames": "48",
+    "duration": "2.000000"
+  },
+  "gpu_private_receipt": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Studio\\output\\private-desktop\\import_physics_smoke_91aa14bb955c4f5088eab6fdac11031c.json",
+  "existing_verifier_completed": true,
+  "all_owned_launchers_reaped": true,
+  "all_private_jobs_closed": true,
+  "all_worker_read_inputs_preserved": true,
+  "preservation_failures": []
+}

@@ -1,0 +1,28 @@
+{
+  "format": "has_junko_bundle_planning_root_cpu_result_1",
+  "status": "PASS",
+  "source_folder": "output/source-junko-root-bundle-prep-20261121",
+  "source_manifest_sha256": "12db7dd229ca60f453520f6233190697eee22c0ee5974d96b1809da8009c122d",
+  "command": [
+    "C:/Program Files/Python313/python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "output/source-junko-root-bundle-prep-20261121",
+    "-p",
+    "test_bundle_plan.py",
+    "-v"
+  ],
+  "tests_passed": 25,
+  "tests_failed": 0,
+  "test_seconds": 0.019,
+  "root_command_reaped": true,
+  "root_command_exit": 0,
+  "actual_model_loading_or_alignment_qualified": false,
+  "skeleton_linking_qualified": false,
+  "world_persistence_or_ui_qualified": false,
+  "current_application_adopted": false,
+  "owner_assets_modified": false
+}

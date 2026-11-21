@@ -1,0 +1,69 @@
+{
+  "format": "has_static_model_variant_runtime_authored_sources_1",
+  "status": "FROZEN_SOURCE_ONLY_UNRUN",
+  "files": [
+    {
+      "path": "PATCHES.json",
+      "bytes": 15830,
+      "sha256": "9144cc31433006353f506cfbfb874fc165c60fbbb5eda9eeb608aa798052b683"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8707,
+      "sha256": "2c688b4bb7bb97e056ff361cc34572c88ea59e949715a71a573f2d557b929546"
+    },
+    {
+      "path": "apply_overlay.py",
+      "bytes": 4859,
+      "sha256": "23526c0db28e8008917414d64650b2e43c3161343b6519e7631786ad95876ecb"
+    },
+    {
+      "path": "src/model_variants.gd",
+      "bytes": 17141,
+      "sha256": "6c4da5c8a695ea8e7a7f0490fde2f847b02a6471df006d77a86055efaf4ac2cf"
+    },
+    {
+      "path": "src/model_variant_runtime.gd",
+      "bytes": 14198,
+      "sha256": "34ca4ad71e8a4149f75b69b0511de0c4d97f6d05074f606dd21b84be488e0b87"
+    },
+    {
+      "path": "src/model_variant_editor.gd",
+      "bytes": 4852,
+      "sha256": "42631b1d1cc74ddd7cee4b1d642aab27a747fed76e9a47d785791fd54898d4d9"
+    },
+    {
+      "path": "tools/model_variant_plan.py",
+      "bytes": 10002,
+      "sha256": "41cc24c4d8b8ee953bb5b229e668d92daba4f9dd6b317e2f7c0decd30290aded"
+    },
+    {
+      "path": "tools/model_variant_project.py",
+      "bytes": 6621,
+      "sha256": "197bd072cffdd8b7702b5bc6fcac6dd80688bab2f87824d7186b22f1b908c98a"
+    },
+    {
+      "path": "tests/model_variant_runtime_unit.gd",
+      "bytes": 12407,
+      "sha256": "77c56eea9b84d849d6b09b953b289c5cdbc534c2e18720b7d523633cd358770b"
+    },
+    {
+      "path": "tests/test_model_variant_project.py",
+      "bytes": 5147,
+      "sha256": "f3dc05cc00da1f77514b47e5de99d09a625654a94b697a787cf51cf2ca5ba1ee"
+    }
+  ],
+  "expected_target_modified_paths": 10,
+  "expected_target_new_paths": 7,
+  "expected_target_functional_count_if_based_on1084": 1091,
+  "authored_GDS_named_controls": 48,
+  "authored_Python_methods": 13,
+  "peer_read_only_reviews": [
+    "Transaction/reference/visibility/opacity/weak-owner/Undo source review: GO",
+    "Schema10/Storage/old-basis/Python-HAS/sequence source review: GO"
+  ],
+  "formal_scores_or_statuses_changed": false,
+  "current_functional_files_changed": false,
+  "author_executed_tests": false,
+  "author_launched_runtime": false
+}

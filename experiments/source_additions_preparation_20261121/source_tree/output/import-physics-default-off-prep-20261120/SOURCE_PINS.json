@@ -1,0 +1,61 @@
+{
+  "format": "has_owner_requested_import_default_off_source_pins_1",
+  "status": "FROZEN_SOURCE_ONLY_UNPARSED_UNRUN",
+  "base_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "entries": [
+    {
+      "path": "bases/import_actions.gd",
+      "bytes": 3869,
+      "sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b"
+    },
+    {
+      "path": "bases/import_physics_smoke.gd",
+      "bytes": 11993,
+      "sha256": "a76a854a46e470624e677110e9d20c99075fbe9de001359b005eeb23ed9519dc"
+    },
+    {
+      "path": "bases/verify_import_physics.py",
+      "bytes": 4708,
+      "sha256": "909c0ced4f2eeae05c268e45b01e6055bc4f657213b5fa26ab896179abf4f691"
+    },
+    {
+      "path": "PATCHES.json",
+      "bytes": 1762,
+      "sha256": "fc4727e8bab3fc9b76f071e2d7aedc7f28d33016ca63718b92b984cb5d00635a"
+    },
+    {
+      "path": "payload/src/import_actions.gd",
+      "bytes": 3870,
+      "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2"
+    },
+    {
+      "path": "payload/tests/import_physics_defaults_unit.gd",
+      "bytes": 4701,
+      "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7"
+    },
+    {
+      "path": "payload/tests/import_physics_smoke.gd",
+      "bytes": 14981,
+      "sha256": "85893da331f1e45eb85c5e1e17893c2ac236d2931290b28dc6106953992aa465"
+    },
+    {
+      "path": "payload/tests/verify_import_physics.py",
+      "bytes": 4708,
+      "sha256": "b7a5df65220801fd4adbe6886b62b65356aa8ab06dd2e97e45f11eef02620438"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4889,
+      "sha256": "d4fdad20383a45e829b613d25d1e6a4fed5a05298fb7ce7829682588e033e538"
+    }
+  ],
+  "authored_unit_checks": 16,
+  "smoke_assertion_sites": 42,
+  "source_review": "Lifecycle read-only GO; actual runtime/native/Record/save/cold/movie remain unrun",
+  "owner_requested_default_off": true,
+  "retained_native_setup_preserved": true,
+  "existing_save_open_code_changed": false,
+  "current_source_modified": false,
+  "engine_or_tests_executed": false,
+  "application_adopted": false
+}

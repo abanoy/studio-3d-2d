@@ -1,0 +1,103 @@
+{
+  "format": "has_source_only_junko_all49_feasibility_1",
+  "executed": false,
+  "engine_qualified": false,
+  "current_source_modified": false,
+  "parameter_input": {
+    "path": "output/source-live-normal-run-1795231337601347500/result/parameters.json",
+    "bytes": 170388,
+    "sha256": "9b007f229d7b9dd837eb443cc31c6649620b17738481904aa7efd132164ae9dd"
+  },
+  "counts": {
+    "native_bones": 69,
+    "owners": 49,
+    "passive_ancestor_anchors": 20,
+    "ancestor_closure": 69,
+    "owner_chains": 26,
+    "owner_chain_lengths": {
+      "1": 13,
+      "2": 5,
+      "3": 6,
+      "4": 2
+    },
+    "max_owner_chain_length": 4,
+    "max_skeleton_depth": 12,
+    "prefix_families": 2
+  },
+  "coefficient_families": [
+    {
+      "owners": 17,
+      "prefix_sha256": "945d7fd433ddba7f7e8f90cb1cb2c2e7d4c1e26005684ac4a330b23a3691a3fd",
+      "yaw_stiffness": 100,
+      "pitch_stiffness": 100
+    },
+    {
+      "owners": 32,
+      "prefix_sha256": "f2add968c86ab5b5d6de6cc60586f1d57ecbbdd61b86b93eb2a90bcfbe0e06ba",
+      "yaw_stiffness": 50,
+      "pitch_stiffness": 50
+    }
+  ],
+  "common_active": {
+    "raw_rule_flags": 49,
+    "unknown_rule_flag_bits": 0,
+    "length": 20,
+    "tip_mass": 20,
+    "yaw_damping": 5,
+    "pitch_damping": 5,
+    "angle_limit": 0.7853981852531433
+  },
+  "recording": {
+    "metadata_limit_bytes": 1048576,
+    "total_control_keys_limit": 2048,
+    "pose_channels_are_sparse": true,
+    "bone_count_does_not_multiply_control_key_counter": true,
+    "all49_increases_pose_sample_bytes": true,
+    "maximum_duration_qualified": false
+  },
+  "source_pins": [
+    {
+      "path": "src/source_secondary.gd",
+      "bytes": 30597,
+      "sha256": "012d54ce1305b29bb24a1a58a5343f26aa7e7d5b27f2be30fc1975b5981c5b9d"
+    },
+    {
+      "path": "src/source_jiggle_math.gd",
+      "bytes": 10025,
+      "sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90"
+    },
+    {
+      "path": "src/source_chain_math.gd",
+      "bytes": 8794,
+      "sha256": "3245868060893b020c6caaf253bac9263d103fb299ac4dec81b9b62f8f7a0461"
+    },
+    {
+      "path": "src/source_bone_bindings.gd",
+      "bytes": 24681,
+      "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "bytes": 6426,
+      "sha256": "600f30f9801f50b2e58e8d09ad8f758e62f6a8418723497bba1baeadaa4b1eac"
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "bytes": 24512,
+      "sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c"
+    },
+    {
+      "path": "src/animation_clips.gd",
+      "bytes": 14386,
+      "sha256": "5408c7b7cd4db347d461d5c4ba56f2aa2e8646bfea7f86967e2eec459a9503cf"
+    }
+  ],
+  "scope": {
+    "native_name_arrays_published": false,
+    "native_word_arrays_published": false,
+    "geometry_published": false,
+    "native_engine_equivalence_claim": false,
+    "full_rule_layout_verified": false,
+    "performance_claim": false
+  }
+}

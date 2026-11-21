@@ -1,0 +1,45 @@
+{
+  "format": "has_cold_wire_oracle_root_1",
+  "status": "PASS",
+  "stage": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800",
+  "jobs": [
+    {
+      "name": "import",
+      "reaped": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "foreground_child_observed": false,
+      "status": "PASS",
+      "pid": 27880,
+      "child_desktop_observed": false
+    },
+    {
+      "name": "controls",
+      "reaped": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "foreground_child_observed": false,
+      "status": "PASS",
+      "pid": 18860,
+      "child_desktop_observed": false
+    }
+  ],
+  "application_adopted": false,
+  "actual_model_import_or_gpu_started": false,
+  "complements_actual_54_gpu_checks": true,
+  "oracle_checks": 20,
+  "oracle_failures": 0,
+  "scope_marker": {
+    "actual_native_asset_tested": false,
+    "application_adopted": false,
+    "checks": 20,
+    "failed_labels": [],
+    "failures": 0,
+    "format": "has_off_import_cold_wire_controls_1"
+  },
+  "all_owned_launchers_reaped": true,
+  "all_private_jobs_closed": true,
+  "all_admitted_inputs_preserved": true,
+  "preservation_failures": [],
+  "head_unchanged": true
+}

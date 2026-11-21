@@ -1,0 +1,42 @@
+{
+  "format": "has_owner_requested_import_physics_default_off_candidate_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN",
+  "base_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "owner_request": "New model imports start with body Physics and Hair & clothes OFF; retain all imported setup and explicit activation. Existing saved authored state and restored live-peer intent are preserved.",
+  "files": [
+    {
+      "path": "src/import_actions.gd",
+      "operation": "replace",
+      "source": "payload/src/import_actions.gd",
+      "base_bytes": 3869,
+      "base_sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b",
+      "bytes": 3870,
+      "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2"
+    },
+    {
+      "path": "tests/import_physics_smoke.gd",
+      "operation": "replace",
+      "source": "payload/tests/import_physics_smoke.gd",
+      "base_bytes": 11993,
+      "base_sha256": "a76a854a46e470624e677110e9d20c99075fbe9de001359b005eeb23ed9519dc",
+      "bytes": 14981,
+      "sha256": "85893da331f1e45eb85c5e1e17893c2ac236d2931290b28dc6106953992aa465"
+    },
+    {
+      "path": "tests/verify_import_physics.py",
+      "operation": "replace",
+      "source": "payload/tests/verify_import_physics.py",
+      "base_bytes": 4708,
+      "base_sha256": "909c0ced4f2eeae05c268e45b01e6055bc4f657213b5fa26ab896179abf4f691",
+      "bytes": 4708,
+      "sha256": "b7a5df65220801fd4adbe6886b62b65356aa8ab06dd2e97e45f11eef02620438"
+    },
+    {
+      "path": "tests/import_physics_defaults_unit.gd",
+      "operation": "new",
+      "source": "payload/tests/import_physics_defaults_unit.gd",
+      "bytes": 4701,
+      "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+IMPORT_OFF_COLD_ORACLE_CONTROLS {"actual_native_asset_tested":false,"application_adopted":false,"checks":20,"failed_labels":[],"failures":0,"format":"has_off_import_cold_wire_controls_1"}
+PASS empty Simple startup contains no spontaneous simulation
+PASS low-level asset setup does not invent an interactive import request
+PASS normal Add model opens the real file picker
+PASS interactive compatible import defaults both Physics and Hair & clothes off with no queued activation
+PASS explicit Physics on starts the retained compatible rig against the map
+PASS normal aerial import starts above the floor for the gravity probe
+PASS explicitly enabled imported ragdoll actually falls under gravity
+PASS explicit live motion creates no pose keys, history or camera changes
+PASS immediate Physics off freezes the fallen pose without recording
+PASS Undo/Redo of frozen pose never rearms import physics
+PASS existing project restores its frozen pose and retained setup without fresh simulation
+PASS adding a second model keeps it off and resumes the explicitly running peer
+PASS explicit activation of the second model leaves both independent bodies running
+PASS peer restart retains new selection and the inspection camera
+PASS adding an environment rebuilds collision and resumes bodies without simulating the map
+PASS starting unselected peers never steals map selection
+PASS unsupported import stays off while explicitly running peers resume
+PASS explicit unsupported Physics retains its validation reason and valid peers
+PASS unrigged props are not forced into automatic ragdolls
+PASS new import remains off even after a warning dialog is shown
+PASS explicit queued intent still waits for its warning dialog
+PASS dismissal starts the explicitly queued ragdoll once
+PASS Physics off can cancel a queued start immediately
+PASS seeking cancels pending starts instead of unexpectedly simulating playback
+PASS authored secondary-only motion is active before structural import
+PASS new off-by-default model preserves a peer's explicit secondary-only mode
+PASS Record cannot implicitly enable physics on a new off-by-default import
+PASS explicit Physics on can use explicit Local Record
+PASS explicit Record alone creates an editable take after explicit Physics on
+PASS HAS reopens the authored take and exact drawing without fresh simulation
+PASS MP4 uses saved authored motion and overlay rather than new live physics
+PASS native standard rig defaults off with exact retained setup and provenance: MMD
+PASS native standard rig explicitly simulates from retained setup without recording: MMD
+PASS native import freezes with exact provenance and no generated keys: MMD
+PASS native standard rig defaults off with exact retained setup and provenance: GMod
+PASS native standard rig explicitly simulates from retained setup without recording: GMod
+PASS native import freezes with exact provenance and no generated keys: GMod
+PASS native standard rig defaults off with exact retained setup and provenance: SFM
+PASS native standard rig explicitly simulates from retained setup without recording: SFM
+PASS native import freezes with exact provenance and no generated keys: SFM
+PASS native standard rig defaults off with exact retained setup and provenance: VRM1.0
+PASS native standard rig explicitly simulates from retained setup without recording: VRM1.0
+PASS native import freezes with exact provenance and no generated keys: VRM1.0
+PASS native body and hair are combined before another import
+PASS structural import restores explicit native combined body/hair while the new model stays off
+PASS native standard rig defaults off with exact retained setup and provenance: VRM0.x
+PASS native standard rig explicitly simulates from retained setup without recording: VRM0.x
+PASS native import freezes with exact provenance and no generated keys: VRM0.x
+PASS timeline import keeps its chosen frame and starts with both simulations off
+PASS timeline model retains explicit Physics activation at its chosen frame
+PASS new import has no delayed start for Save to accidentally persist
+PASS Save before the next UI frame cancels its pending live start
+PASS New cancels late explicit queued starts and leaves an empty world
+PASS interactive simulation never modifies its original GLB
+IMPORT_PHYSICS {"checks":54,"failures":0,"fall":5.69334983825684,"folder":"C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\smoke","movie":"C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\smoke/render_1795242754_10959841_0/movie.mp4","native_models":5}

@@ -1,0 +1,2685 @@
+{
+  "format": "has_post_e087_source_evidence_contents_1",
+  "status": "FROZEN_PENDING_ROOT_READ_ONLY_CHECK",
+  "proposed_repository_prefix": "experiments/source_post_e087_evidence_20261121",
+  "new_full_1086_claimed": false,
+  "application_increment_adopted": true,
+  "unrun_preparations_not_adopted": true,
+  "private_art_copied": false,
+  "frozen_source_folders": [
+    {
+      "folder": "output/source-import-default-off-gpu-prep-20261121",
+      "manifest_path": "source_tree/output/source-import-default-off-gpu-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 1063,
+      "manifest_sha256": "511530e75a6397dd9d2cfc129f86aa0d06e8dc8bd3bff2488b6d1234dc31ac64",
+      "format": "has_source_only_default_off_gpu_pins_1",
+      "files": 7
+    },
+    {
+      "folder": "output/source-import-default-off-gpu-v2-prep-20261121",
+      "manifest_path": "source_tree/output/source-import-default-off-gpu-v2-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 1063,
+      "manifest_sha256": "b41d56fbabdaaa00939edf4f13c12618adef1b42437a5ad48adcab9679194133",
+      "format": "has_source_only_default_off_gpu_pins_1",
+      "files": 7
+    },
+    {
+      "folder": "output/source-import-default-off-gpu-v3-prep-20261121",
+      "manifest_path": "source_tree/output/source-import-default-off-gpu-v3-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 1063,
+      "manifest_sha256": "3968a2d450cb306c34ce13c9bad71de9b0fca06fe79595dc732668d95239c21d",
+      "format": "has_source_only_default_off_gpu_pins_1",
+      "files": 7
+    },
+    {
+      "folder": "output/source-import-default-off-gpu-v4-prep-20261121",
+      "manifest_path": "source_tree/output/source-import-default-off-gpu-v4-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 1063,
+      "manifest_sha256": "440ec9a804d6d12cbbfc3c0f56ef4941cc0aea02d1350541a489875d2b73229e",
+      "format": "has_source_only_default_off_gpu_pins_1",
+      "files": 7
+    },
+    {
+      "folder": "output/import-physics-default-off-cold-diagnostic-prep-20261121",
+      "manifest_path": "source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 759,
+      "manifest_sha256": "eeb2791870fc6bfe9175e82ffa034a7ceaf20cea03760380fbc6a224d7fc654a",
+      "format": "has_source_only_cold_import_diagnostic_pins_1",
+      "files": 5
+    },
+    {
+      "folder": "output/import-physics-default-off-cold-wire-prep-20261121",
+      "manifest_path": "source_tree/output/import-physics-default-off-cold-wire-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 603,
+      "manifest_sha256": "e3439b265dd9090fabeb5ffc21ee6d4d6f6a10fc5fb5f9e194ddd374cc68272f",
+      "format": "has_import_off_cold_wire_sources_1",
+      "files": 4
+    },
+    {
+      "folder": "output/import-physics-default-off-cold-wire-v2-prep-20261121",
+      "manifest_path": "source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 602,
+      "manifest_sha256": "c77c1bfbdfd57abd0268ef462f2a2f3e4e9e680dc1f3286af10f48e9601aef5d",
+      "format": "has_import_off_cold_wire_sources_1",
+      "files": 4
+    },
+    {
+      "folder": "output/import-physics-default-off-cold-wire-v3-prep-20261121",
+      "manifest_path": "source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 604,
+      "manifest_sha256": "c816ffde56d6b0271d24fe82b6379b7c6e94061bf34b3ec9641e59997533b778",
+      "format": "has_import_off_cold_wire_sources_1",
+      "files": 4
+    },
+    {
+      "folder": "output/source-import-default-off-map-adoption-prep-20261121",
+      "manifest_path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 4207,
+      "manifest_sha256": "1a275f2582ffed3b7e53e36fa38d9e5b9561186d729cd6de0f6191ccd257fbfa",
+      "format": "has_conditional_import_off_map_adoption_source_pins_1",
+      "files": 25
+    },
+    {
+      "folder": "output/source-keyframe-easing-math-v2-prep-20261121",
+      "manifest_path": "source_tree/output/source-keyframe-easing-math-v2-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 545,
+      "manifest_sha256": "1146905fc8c9f0d8dd9705d70ec107935b7f18e0d4b0950e2b84600a353e33fc",
+      "format": "has_easing_math_type_fix_1",
+      "files": 3
+    },
+    {
+      "folder": "output/source-keyframe-easing-editor-prep-20261121",
+      "manifest_path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 4119,
+      "manifest_sha256": "83f1fa2990bceb6794879572caed5edb7f38da4fc80c85e903ba44738e538f16",
+      "format": "has_camera_easing_editor_source_preparation_1",
+      "files": 23
+    },
+    {
+      "folder": "output/source-miku-body-collision-probe-v2-prep-20261121",
+      "manifest_path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 1924,
+      "manifest_sha256": "e04220912e8002ef7d9f78e7de341c823b14a25af397ae0747de0bfb9b07475e",
+      "format": "has_source_only_miku_body_collision_probe_prep_2",
+      "files": 11
+    },
+    {
+      "folder": "output/source-miku-collision-geometry-prep-20261121",
+      "manifest_path": "source_tree/output/source-miku-collision-geometry-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 683,
+      "manifest_sha256": "64335f0e87d8dabb00d0343e19aab6017bad259dac48d171905cc33e197675ce",
+      "format": "has_unrun_miku_collision_geometry_controls_1",
+      "files": 4
+    },
+    {
+      "folder": "output/source-miku-collision-geometry-v2-prep-20261121",
+      "manifest_path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 1386,
+      "manifest_sha256": "4f84b7deffd47b1a815006c3b9b9003346aa0094dbf6c585759c5213e4008be2",
+      "format": "has_unrun_miku_collision_geometry_controls_2",
+      "files": 8
+    },
+    {
+      "folder": "output/source-junko-root-bundle-prep-20261121",
+      "manifest_path": "source_tree/output/source-junko-root-bundle-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 1204,
+      "manifest_sha256": "12db7dd229ca60f453520f6233190697eee22c0ee5974d96b1809da8009c122d",
+      "format": "has_source_only_junko_root_folder_bundle_prep_1",
+      "files": 7
+    },
+    {
+      "folder": "output/source-miku-collider-binding-prep-20261121",
+      "manifest_path": "source_tree/output/source-miku-collider-binding-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 751,
+      "manifest_sha256": "e62e7a2a3984e4951ed85890f0d4d021d2fe40d1a3f51650e9c644cd9401acf9",
+      "format": "has_private_miku_runtime_binding_sources_1",
+      "files": 4
+    },
+    {
+      "folder": "output/source-face-window-and-gizmo-prep-20261121",
+      "manifest_path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 3672,
+      "manifest_sha256": "809c14e28c5503f8c1cf956856f92313c5c491d989c1950de5c05e83d54a5b52",
+      "format": "has_face_window_pose_handle_sources_1",
+      "files": 20
+    },
+    {
+      "folder": "output/source-face-window-and-gizmo-v2-prep-20261121",
+      "manifest_path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/SOURCE_PINS.json",
+      "manifest_bytes": 4261,
+      "manifest_sha256": "425c00dc3167a577196b591ce555ad98d5f6716b86aee6c8b76a84268f666c97",
+      "format": "has_face_window_pose_handle_sources_2",
+      "files": 23
+    }
+  ],
+  "files": [
+    {
+      "path": "code_used/check_recoverability.py",
+      "bytes": 10763,
+      "sha256": "33185d0e36e743d45818237d1f00a318cebb304aad417f925cb2c9f647d59b76",
+      "kind": "read_only_recoverability_checker",
+      "origin": null,
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/code_used/check_recoverability.py"
+    },
+    {
+      "path": "documentation_recovery/bases/docs/benchmarks/reference_body_2026-11-20.json",
+      "bytes": 70605,
+      "sha256": "c58fec64e0666043107b8e2f439eb6cfa9a75d7c3067fd6975fd703918f727a3",
+      "kind": "historical_document_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\bases\\docs\\benchmarks\\reference_body_2026-11-20.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/bases/docs/benchmarks/reference_body_2026-11-20.json"
+    },
+    {
+      "path": "documentation_recovery/bases/docs/completion_checklist.json",
+      "bytes": 258564,
+      "sha256": "5d09bc550c66fa73aa3eb0cc268afd70932518d0bdad2bb91ec296d77fd7425f",
+      "kind": "historical_document_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\bases\\docs\\completion_checklist.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/bases/docs/completion_checklist.json"
+    },
+    {
+      "path": "documentation_recovery/bases/docs/completion_checklist.md",
+      "bytes": 28662,
+      "sha256": "6790641f88e2608d1ecb059db428fcf31910432ed69ed53a88544b32e7b282d4",
+      "kind": "historical_document_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\bases\\docs\\completion_checklist.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/bases/docs/completion_checklist.md"
+    },
+    {
+      "path": "documentation_recovery/bases/docs/NEXT_SESSION_PLAN_2026-11-20.md",
+      "bytes": 27955,
+      "sha256": "169f5bea0fa9d196c789337b2eec6abb44c5c0a20b5ad0984a64bf7307b34dd0",
+      "kind": "historical_document_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\bases\\docs\\NEXT_SESSION_PLAN_2026-11-20.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/bases/docs/NEXT_SESSION_PLAN_2026-11-20.md"
+    },
+    {
+      "path": "documentation_recovery/bases/docs/progress_memo.md",
+      "bytes": 1466731,
+      "sha256": "ee31c51983993355dd9ec76a50bcff4cbe6a1368c700ce7eb1ee7a0334e5cab2",
+      "kind": "historical_document_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\bases\\docs\\progress_memo.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/bases/docs/progress_memo.md"
+    },
+    {
+      "path": "documentation_recovery/bases/docs/RESUME_MASTER_PLAN.md",
+      "bytes": 153755,
+      "sha256": "8da1c5f8655ee3409be348bd274fb134c2e06cdbd769466925d0c556f37395b5",
+      "kind": "historical_document_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\bases\\docs\\RESUME_MASTER_PLAN.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/bases/docs/RESUME_MASTER_PLAN.md"
+    },
+    {
+      "path": "documentation_recovery/bases/LLM.md",
+      "bytes": 650152,
+      "sha256": "48ff535d1e471340f12816495e239876243bd9056ee60205050e2ba3eaff2773",
+      "kind": "historical_document_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\bases\\LLM.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/bases/LLM.md"
+    },
+    {
+      "path": "documentation_recovery/documentation-v2/CHECKPOINT_SUMMARY.json",
+      "bytes": 3407,
+      "sha256": "508956444c6922bb4a1aa23ad71c43241348f42ef8459bacabfe6d1ac2b32d0e",
+      "kind": "document_checkpoint_summary",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation-v2\\CHECKPOINT_SUMMARY.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/documentation-v2/CHECKPOINT_SUMMARY.json"
+    },
+    {
+      "path": "documentation_recovery/documentation-v2/DRAFT_MANIFEST.json",
+      "bytes": 5178,
+      "sha256": "94fcb2a00218d154dbe93ba17ce1893082a44802f0832d2d7322eb7202fc7815",
+      "kind": "document_draft_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation-v2\\DRAFT_MANIFEST.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/documentation-v2/DRAFT_MANIFEST.json"
+    },
+    {
+      "path": "documentation_recovery/documentation-v2/EDITS.json",
+      "bytes": 34003,
+      "sha256": "cddd15d328823d6b8c6884e50e590e2db4d4b67dd953eb4fee447cfa0a57286f",
+      "kind": "exact_document_reconstruction",
+      "origin": null,
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/documentation-v2/EDITS.json"
+    },
+    {
+      "path": "documentation_recovery/documentation/CHECKPOINT_SUMMARY.json",
+      "bytes": 3407,
+      "sha256": "508956444c6922bb4a1aa23ad71c43241348f42ef8459bacabfe6d1ac2b32d0e",
+      "kind": "document_checkpoint_summary",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\CHECKPOINT_SUMMARY.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/documentation/CHECKPOINT_SUMMARY.json"
+    },
+    {
+      "path": "documentation_recovery/documentation/DRAFT_MANIFEST.json",
+      "bytes": 3470,
+      "sha256": "eec61e3b3c392cedbd9edce5220d6f6dcdffe6a0b96a10421202c62f7a92c4c6",
+      "kind": "document_draft_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-post-e087-evidence-prep-20261121\\documentation\\DRAFT_MANIFEST.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/documentation/DRAFT_MANIFEST.json"
+    },
+    {
+      "path": "documentation_recovery/documentation/EDITS.json",
+      "bytes": 33812,
+      "sha256": "30e88ac5c4248d1a1037804daf0b4e1d8b2b8a33877dd39a0f9b02af5446757f",
+      "kind": "exact_document_reconstruction",
+      "origin": null,
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/documentation_recovery/documentation/EDITS.json"
+    },
+    {
+      "path": "evidence/adoption/bases/docs/import_physics.md",
+      "bytes": 3194,
+      "sha256": "aa6b851099247a9e6313a251499459b9c15d82faae89bc0e049ce4e8e58e25ab",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\docs\\import_physics.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/docs/import_physics.md"
+    },
+    {
+      "path": "evidence/adoption/bases/docs/lighting.md",
+      "bytes": 5048,
+      "sha256": "f6a7d7edb0393b49e725229dffeab1dc612edadb2cbea945c826c520c9156daa",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\docs\\lighting.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/docs/lighting.md"
+    },
+    {
+      "path": "evidence/adoption/bases/docs/source_import.md",
+      "bytes": 12361,
+      "sha256": "cba56d4e7461bbce34b2c2e7bbf409c6639c865b66b763e36f3c8d6a4b8f9a9d",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\docs\\source_import.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/docs/source_import.md"
+    },
+    {
+      "path": "evidence/adoption/bases/src/import_actions.gd",
+      "bytes": 3869,
+      "sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\src\\import_actions.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/src/import_actions.gd"
+    },
+    {
+      "path": "evidence/adoption/bases/tests/import_physics_smoke.gd",
+      "bytes": 11993,
+      "sha256": "a76a854a46e470624e677110e9d20c99075fbe9de001359b005eeb23ed9519dc",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\tests\\import_physics_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/tests/import_physics_smoke.gd"
+    },
+    {
+      "path": "evidence/adoption/bases/tests/test_source_lights.py",
+      "bytes": 2402,
+      "sha256": "3366407e377c53dc1688e1c529f3cc009e7e4cad6297abd5ca2d41b81f0ad562",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\tests\\test_source_lights.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/tests/test_source_lights.py"
+    },
+    {
+      "path": "evidence/adoption/bases/tests/verify_import_physics.py",
+      "bytes": 4708,
+      "sha256": "909c0ced4f2eeae05c268e45b01e6055bc4f657213b5fa26ab896179abf4f691",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\tests\\verify_import_physics.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/tests/verify_import_physics.py"
+    },
+    {
+      "path": "evidence/adoption/bases/tools/blender_source_bridge.py",
+      "bytes": 30542,
+      "sha256": "a0024efa46643aeb03dcd0ce0e2d717c5d2102347d1e424239802f11d9dff419",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\tools\\blender_source_bridge.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/tools/blender_source_bridge.py"
+    },
+    {
+      "path": "evidence/adoption/bases/tools/source_lights.py",
+      "bytes": 4457,
+      "sha256": "3937840da25b39ca505c00902b0da7192b8d02e67100ad282853a80bbc57281e",
+      "kind": "source_only_adoption_base",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\bases\\tools\\source_lights.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/bases/tools/source_lights.py"
+    },
+    {
+      "path": "evidence/adoption/FINAL_FUNCTIONAL_TARGETS.json",
+      "bytes": 4555,
+      "sha256": "5f8d6e9496448004ae66be2382523a1374fb4be24b54b144dedf94985c1ec25a",
+      "kind": "final_current_target_recovery",
+      "origin": null,
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/FINAL_FUNCTIONAL_TARGETS.json"
+    },
+    {
+      "path": "evidence/adoption/JOURNAL.json",
+      "bytes": 6878,
+      "sha256": "5457d44620b55d309a00a639874a9be3626db783e8afd2f5fb9319f54948cd85",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-off-map-adoption-1795243363949\\JOURNAL.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/adoption/JOURNAL.json"
+    },
+    {
+      "path": "evidence/classification/LATE_SOURCE_ADDENDUM.json",
+      "bytes": 796,
+      "sha256": "8db7e527024e4438f1409c4fe8256c716a36bf7f2dc066dbd0a72362d5eed980",
+      "kind": "scope_classification",
+      "origin": null,
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/classification/LATE_SOURCE_ADDENDUM.json"
+    },
+    {
+      "path": "evidence/classification/OUTCOMES.json",
+      "bytes": 2211,
+      "sha256": "ec3f503ef3cb2327f9333fd849df453556eec72e731d6ca21a6340e754a29d50",
+      "kind": "scope_classification",
+      "origin": null,
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/classification/OUTCOMES.json"
+    },
+    {
+      "path": "evidence/current_main_cpu_57/appearance-result.json",
+      "bytes": 5911,
+      "sha256": "01a9d809b0c288c7ca37fc335b78fca8f94fff80dee545e08f06f517025a0ffc",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-appearance-cpu\\runs\\1795243437856266300-cpu\\result.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/current_main_cpu_57/appearance-result.json"
+    },
+    {
+      "path": "evidence/current_main_cpu_57/appearance-unittest.log",
+      "bytes": 4199,
+      "sha256": "3311642b8c38b23b33e607b711b8eadf40041cb421e6592b107f95a7c55cc68c",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-appearance-cpu\\runs\\1795243437856266300-cpu\\unittest.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/current_main_cpu_57/appearance-unittest.log"
+    },
+    {
+      "path": "evidence/document_regeneration/current_canonical_overview.md",
+      "bytes": 28662,
+      "sha256": "6790641f88e2608d1ecb059db428fcf31910432ed69ed53a88544b32e7b282d4",
+      "kind": "canonical_document",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\docs\\completion_checklist.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/document_regeneration/current_canonical_overview.md"
+    },
+    {
+      "path": "evidence/document_regeneration/historical_appended_overview.md",
+      "bytes": 32146,
+      "sha256": "338551ddf8e7a00923e30f2f8abc2d371f101554b2d07c0e435d55590b1a450d",
+      "kind": "historical_document",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\completion-overview-before-regeneration-20261121.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/document_regeneration/historical_appended_overview.md"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/private_receipts/import_physics_smoke_e98742cba3df4ce0a457b5a4b9599870.json",
+      "bytes": 429,
+      "sha256": "09473e7801d7aa4a600ac1f4cf30b54ceec9a8b0e0cd072340509ddef6869350",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Studio\\output\\private-desktop\\import_physics_smoke_e98742cba3df4ce0a457b5a4b9599870.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/private_receipts/import_physics_smoke_e98742cba3df4ce0a457b5a4b9599870.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/private_receipts/import.json",
+      "bytes": 431,
+      "sha256": "13a13923b908249ebebf8e85933a3ff874f52549d2f8295663c997bc654113f4",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Studio\\output\\private-desktop\\import.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/private_receipts/import.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/PUBLIC_DEFAULT_OFF_GPU_RESULT.json",
+      "bytes": 2138,
+      "sha256": "a3f695a6e009662f59e1d76ed8a33a1ab4b14020eeabe96f2307e3efc6d765d1",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\PUBLIC_DEFAULT_OFF_GPU_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/PUBLIC_DEFAULT_OFF_GPU_RESULT.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/bootstrap-config.json",
+      "bytes": 1873,
+      "sha256": "9a18831b08587232b4551dc1bf66e4118804fd0743b4ca137579428840caba96",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\bootstrap-config.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/bootstrap-config.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/job-0-launch.json",
+      "bytes": 844,
+      "sha256": "87f7522137f1152e12611e40efa5ca37770e6923badf00b7b0b4c8f6bf27b9dd",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\job-0-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/job-0-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/job-0-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\job-0-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/job-0-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/job-0-stdout.log",
+      "bytes": 41275,
+      "sha256": "fc00b4f150fab0b90b217c09910015dedbe0691419c3fca304958bb81c66fc69",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\job-0-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/job-0-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/job-1-launch.json",
+      "bytes": 1299,
+      "sha256": "4e369199694b1682a8f18d7ae6c592ef246e630e261ba5fce13f16c1d469e3d8",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\job-1-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/job-1-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/job-1-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\job-1-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/job-1-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/job-1-stdout.log",
+      "bytes": 4654,
+      "sha256": "01a95d203f1dda54cc52afc9243e78c4ad03044d9844727e64c73929f1f5e8c8",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\job-1-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/job-1-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/outer-command.json",
+      "bytes": 396,
+      "sha256": "d0f3a28a7a0d057fab79504de8d78c26aaf2dc9c3ea16af31bca9add53dc3c88",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\outer-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/outer-command.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/outer-launch.json",
+      "bytes": 148,
+      "sha256": "d890d6ab9a460184e9a5e764355e0790d68c106d53143e2ad4b655270b291dd9",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\outer-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/outer-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/outer-placement.json",
+      "bytes": 687,
+      "sha256": "2d5ed8d8d870c9c7566c379a20208746d06e8acd0b4d8265130f74a982af87da",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\outer-placement.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/outer-placement.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/outer-private-command.json",
+      "bytes": 777,
+      "sha256": "f83ffe613fc1180daf85be36546e7e09e372e53c026583d3b789be03a6a25911",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\outer-private-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/outer-private-command.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/outer-private.json",
+      "bytes": 428,
+      "sha256": "131ecf8b10fc7ea4c3f8a9697356b6cdf9f5c9566265c19ef9d9e5c53b1a0750",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\outer-private.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/outer-private.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/outer-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\outer-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/outer-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/outer-stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\outer-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/outer-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/smoke/result.json",
+      "bytes": 328,
+      "sha256": "d4c2fbee04798982b1dd7afe3094bf06b605a223f783837ae5e668e92c827848",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\smoke\\result.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/smoke/result.json"
+    },
+    {
+      "path": "evidence/gpu_v1_failed/Verification/WORKER_RESULT.json",
+      "bytes": 942,
+      "sha256": "0072e1014657eadf7aa289acf90ca44120bb64335feabbc7e1cf94cba0c089b1",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795241633430076800\\Verification\\WORKER_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v1_failed/Verification/WORKER_RESULT.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/private_receipts/import_physics_smoke_b340364b421e4b109c60b1484ff24ded.json",
+      "bytes": 428,
+      "sha256": "412667c01262f7cb27b59f685b4a5fa9b6656f7cfabc2932f564941494111885",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Studio\\output\\private-desktop\\import_physics_smoke_b340364b421e4b109c60b1484ff24ded.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/private_receipts/import_physics_smoke_b340364b421e4b109c60b1484ff24ded.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/private_receipts/import.json",
+      "bytes": 431,
+      "sha256": "af13b4b3cc9d988355a4acec35ba0c13c3185663720a50cd8f539aa5fd62036a",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Studio\\output\\private-desktop\\import.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/private_receipts/import.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/PUBLIC_DEFAULT_OFF_GPU_RESULT.json",
+      "bytes": 2138,
+      "sha256": "479180b09fd09c16d6a8f1b3e339babc08b08d38c37effbbb37b7121f807bb8a",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\PUBLIC_DEFAULT_OFF_GPU_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/PUBLIC_DEFAULT_OFF_GPU_RESULT.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/bootstrap-config.json",
+      "bytes": 1873,
+      "sha256": "5f98f4ba4e2e380751a3634eaa32fbbab49428460c178e9032e7a811c035890c",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\bootstrap-config.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/bootstrap-config.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/job-0-launch.json",
+      "bytes": 844,
+      "sha256": "71c9b6809169dd665cf835b9599fadc995bf1c0ca46a3fcde5c4cdd9f90f529d",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\job-0-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/job-0-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/job-0-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\job-0-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/job-0-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/job-0-stdout.log",
+      "bytes": 41275,
+      "sha256": "fc00b4f150fab0b90b217c09910015dedbe0691419c3fca304958bb81c66fc69",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\job-0-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/job-0-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/job-1-launch.json",
+      "bytes": 1299,
+      "sha256": "003492d887aa33552f9ae55fd115a9c4d14b4779b0d4ecd751c67336108461b3",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\job-1-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/job-1-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/job-1-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\job-1-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/job-1-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/job-1-stdout.log",
+      "bytes": 5790,
+      "sha256": "c40f3300145d9980787a1169a52b9093666b76d2980a2c089d60a223e6080ce3",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\job-1-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/job-1-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/outer-command.json",
+      "bytes": 396,
+      "sha256": "d14f8392b22a118d8614de4aaa62a079884a392d85f8490d25ff952223396f5a",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\outer-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/outer-command.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/outer-launch.json",
+      "bytes": 148,
+      "sha256": "37a69df6d74c37a877d61f7982ebace88b298dd4ca4eec053b772c9035e2e3ca",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\outer-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/outer-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/outer-placement.json",
+      "bytes": 687,
+      "sha256": "2d5ed8d8d870c9c7566c379a20208746d06e8acd0b4d8265130f74a982af87da",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\outer-placement.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/outer-placement.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/outer-private-command.json",
+      "bytes": 777,
+      "sha256": "ae4a4d91768d11a127ac9af23aa59e38ce2796dee12da8653d792963f83f0f78",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\outer-private-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/outer-private-command.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/outer-private.json",
+      "bytes": 428,
+      "sha256": "2e127615e7f9ad7becc87fd8c36d3425064211781b488539e10d6480e25251f4",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\outer-private.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/outer-private.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/outer-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\outer-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/outer-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/outer-stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\outer-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/outer-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/smoke/result.json",
+      "bytes": 328,
+      "sha256": "c1c591ae5e6286da24b6bbc786a8ed944b7447258b012bd8d10f3592c5fca79e",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\smoke\\result.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/smoke/result.json"
+    },
+    {
+      "path": "evidence/gpu_v2_diagnostic_failed/Verification/WORKER_RESULT.json",
+      "bytes": 942,
+      "sha256": "de748687807863b7c6d6bcfb8c957fa5d99416c5c5d43e26cdc0034e551d8195",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242034706561800\\Verification\\WORKER_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v2_diagnostic_failed/Verification/WORKER_RESULT.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/private_receipts/import_physics_smoke_91aa14bb955c4f5088eab6fdac11031c.json",
+      "bytes": 428,
+      "sha256": "f12936e9640369bee585eeb5314cb49210b15382d24dbff03fab7a431d26f307",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Studio\\output\\private-desktop\\import_physics_smoke_91aa14bb955c4f5088eab6fdac11031c.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/private_receipts/import_physics_smoke_91aa14bb955c4f5088eab6fdac11031c.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/private_receipts/import.json",
+      "bytes": 430,
+      "sha256": "f71b37a6ba2da841c59661a69b8f193521edf6138d5d6b46adb1f9843eb983f0",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Studio\\output\\private-desktop\\import.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/private_receipts/import.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/PUBLIC_DEFAULT_OFF_GPU_RESULT.json",
+      "bytes": 3039,
+      "sha256": "bbb81b8a79c29908ed81f89d14491c4c72882e17ea15c4c1fb7690768dec6395",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\PUBLIC_DEFAULT_OFF_GPU_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/PUBLIC_DEFAULT_OFF_GPU_RESULT.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/bootstrap-config.json",
+      "bytes": 1873,
+      "sha256": "fd1354999e577b4ed3ec19816649f772a47c369e7872b5f870a18d25de2e726b",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\bootstrap-config.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/bootstrap-config.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/job-0-launch.json",
+      "bytes": 843,
+      "sha256": "4d82f1f21e403a88fb819fa0e227e69b1ace17da2c3bf6de9789beceff5a89e7",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\job-0-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/job-0-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/job-0-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\job-0-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/job-0-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/job-0-stdout.log",
+      "bytes": 41275,
+      "sha256": "fc00b4f150fab0b90b217c09910015dedbe0691419c3fca304958bb81c66fc69",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\job-0-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/job-0-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/job-1-launch.json",
+      "bytes": 1299,
+      "sha256": "c8b41b82c253c2f77f64e24fa8f3932d2af9fbdc7255e0deb9d3c1abb108a181",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\job-1-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/job-1-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/job-1-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\job-1-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/job-1-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/job-1-stdout.log",
+      "bytes": 4843,
+      "sha256": "b429c66ec2504ba8bc6f72b5efaf45c7bc7c2c58fd44ea6ab5d338072489f387",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\job-1-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/job-1-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/outer-command.json",
+      "bytes": 396,
+      "sha256": "800a6eabc0c48c57cf46a730b079eed8cb4ccf80ff889905b5cef099ef111d0c",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\outer-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/outer-command.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/outer-launch.json",
+      "bytes": 148,
+      "sha256": "8c7f6a522ac0d188c56fda18b7555db4cdb0b7e7f537a1d1a49dff5d38534623",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\outer-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/outer-launch.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/outer-placement.json",
+      "bytes": 687,
+      "sha256": "2d5ed8d8d870c9c7566c379a20208746d06e8acd0b4d8265130f74a982af87da",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\outer-placement.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/outer-placement.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/outer-private-command.json",
+      "bytes": 777,
+      "sha256": "ffd35d6715ad85895fba86ef562b7415e52a38ef8cd5c9b7ea7cf0841389fa12",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\outer-private-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/outer-private-command.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/outer-private.json",
+      "bytes": 428,
+      "sha256": "2ec4b0f854baf1fbf853dfff544c3318f4fc9efc1b1fc81d7a8cdf91abddf2c1",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\outer-private.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/outer-private.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/outer-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\outer-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/outer-stderr.log"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/outer-stdout.log",
+      "bytes": 840,
+      "sha256": "7b683aa2f094980c15ae94e26b41229b603cc18e7d8c20a95a71e94d71da78b4",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\outer-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/outer-stdout.log"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/smoke/result.json",
+      "bytes": 328,
+      "sha256": "3f930101fb284726fd29d1451dada6b440769e9b83b7421ee22f2b77f1feb0a3",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\smoke\\result.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/smoke/result.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/smoke/verification.json",
+      "bytes": 185580,
+      "sha256": "8c8f5a88b40f91fef3c36b556eb94bc73624bd58d564bc43d4939eff8f13df92",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\smoke\\verification.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/smoke/verification.json"
+    },
+    {
+      "path": "evidence/gpu_v3_passed/Verification/WORKER_RESULT.json",
+      "bytes": 1436,
+      "sha256": "c3861c23aa6b4c2f329fb43146a7f42010957cb695585de5601a989f9a778a31",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-import-default-off-gpu-1795242723569036200\\Verification\\WORKER_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/gpu_v3_passed/Verification/WORKER_RESULT.json"
+    },
+    {
+      "path": "evidence/pure_core_failed/easing/engine.log",
+      "bytes": 400,
+      "sha256": "27e6f6572f7f99b9ca82d7168b26486b24ab336ca74caae325a2b2166955d93a",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242553060038700\\easing\\engine.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_failed/easing/engine.log"
+    },
+    {
+      "path": "evidence/pure_core_failed/easing/unit-command.json",
+      "bytes": 871,
+      "sha256": "cbd59cb9db49366e3220bf846a9c7dd5f1a1bf5c1814af0875f90c210f87b326",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242553060038700\\easing\\unit-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_failed/easing/unit-command.json"
+    },
+    {
+      "path": "evidence/pure_core_failed/easing/unit-launch.json",
+      "bytes": 172,
+      "sha256": "50c79660604cf761f5278e47af3bba500c549b00d77de86fd1e9c7e561369df3",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242553060038700\\easing\\unit-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_failed/easing/unit-launch.json"
+    },
+    {
+      "path": "evidence/pure_core_failed/easing/unit-private.json",
+      "bytes": 430,
+      "sha256": "18e13d47cde3c29338ecb69a00e72e20240014ce66dd0d0427e670d752e19ff7",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242553060038700\\easing\\unit-private.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_failed/easing/unit-private.json"
+    },
+    {
+      "path": "evidence/pure_core_failed/easing/unit-stderr.log",
+      "bytes": 333,
+      "sha256": "3ae12df6b7aad0336808676fc43b3b9f5216fd4e95d1f2412aec443700556878",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242553060038700\\easing\\unit-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_failed/easing/unit-stderr.log"
+    },
+    {
+      "path": "evidence/pure_core_failed/easing/unit-stdout.log",
+      "bytes": 73,
+      "sha256": "8851bbe6309477b42336a7a66906b18cf14a957f6c7c5475a6a376061710c7de",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242553060038700\\easing\\unit-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_failed/easing/unit-stdout.log"
+    },
+    {
+      "path": "evidence/pure_core_failed/PUBLIC_RESULT.json",
+      "bytes": 932,
+      "sha256": "ceaa32ff0d14cd992002a7da3ff17b6b86e366a326cc8acba5fe2fef77ac994a",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242553060038700\\PUBLIC_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_failed/PUBLIC_RESULT.json"
+    },
+    {
+      "path": "evidence/pure_core_passed/contact_math/engine.log",
+      "bytes": 1654,
+      "sha256": "ae45986adaff2d242e01a3f112f2393d855e44948bf52e3b84b8f804ece058c9",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\contact_math\\engine.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/contact_math/engine.log"
+    },
+    {
+      "path": "evidence/pure_core_passed/contact_math/unit-command.json",
+      "bytes": 903,
+      "sha256": "9a3dc8c1b702f97ab73c25c9fc71c4561cfe1e371a581b376ef6f31c8cf54e11",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\contact_math\\unit-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/contact_math/unit-command.json"
+    },
+    {
+      "path": "evidence/pure_core_passed/contact_math/unit-launch.json",
+      "bytes": 178,
+      "sha256": "2f56affb26e2ca064f54f81e230b2aa751224258d44b4ff56aa163ac8b95c7c8",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\contact_math\\unit-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/contact_math/unit-launch.json"
+    },
+    {
+      "path": "evidence/pure_core_passed/contact_math/unit-private.json",
+      "bytes": 430,
+      "sha256": "25e78218dc1eab73b5d6dc4e00749ee701df15870f8e5ca4cd2f4de756bb64fe",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\contact_math\\unit-private.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/contact_math/unit-private.json"
+    },
+    {
+      "path": "evidence/pure_core_passed/contact_math/unit-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\contact_math\\unit-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/contact_math/unit-stderr.log"
+    },
+    {
+      "path": "evidence/pure_core_passed/contact_math/unit-stdout.log",
+      "bytes": 1683,
+      "sha256": "ff50289f4b0aeebca6125d0176d62fb1ecd32878c3cbf13f8453e34b5b61d1c9",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\contact_math\\unit-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/contact_math/unit-stdout.log"
+    },
+    {
+      "path": "evidence/pure_core_passed/easing/engine.log",
+      "bytes": 1614,
+      "sha256": "b6ac2bc7b25c051c1d1509b477f03b5e56628e02f363dce526c32c58a6cb17aa",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\easing\\engine.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/easing/engine.log"
+    },
+    {
+      "path": "evidence/pure_core_passed/easing/unit-command.json",
+      "bytes": 871,
+      "sha256": "d598a0b4ca3aa5b52dc19db9fa3841de99347480063a813a5de733fdec07d20c",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\easing\\unit-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/easing/unit-command.json"
+    },
+    {
+      "path": "evidence/pure_core_passed/easing/unit-launch.json",
+      "bytes": 172,
+      "sha256": "91e0822a62e36b309c28752c71f0c4193c28695a3d1dc368a0518715534ff6cf",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\easing\\unit-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/easing/unit-launch.json"
+    },
+    {
+      "path": "evidence/pure_core_passed/easing/unit-private.json",
+      "bytes": 430,
+      "sha256": "fe7d3985a4df359823f4ce2048550e8cee398d0929b3cb03574e8b66d6687fd6",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\easing\\unit-private.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/easing/unit-private.json"
+    },
+    {
+      "path": "evidence/pure_core_passed/easing/unit-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\easing\\unit-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/easing/unit-stderr.log"
+    },
+    {
+      "path": "evidence/pure_core_passed/easing/unit-stdout.log",
+      "bytes": 1641,
+      "sha256": "065611022a8120d10b7adda5f3e8d846d41b02d39317adf5972682a95b680621",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\easing\\unit-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/easing/unit-stdout.log"
+    },
+    {
+      "path": "evidence/pure_core_passed/PUBLIC_RESULT.json",
+      "bytes": 1280,
+      "sha256": "9099aca7eb5315d786a191622d41ece5896a62907df062db122ccecbecfbddc4",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\pure-gds-core-1795242604205997700\\PUBLIC_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/pure_core_passed/PUBLIC_RESULT.json"
+    },
+    {
+      "path": "evidence/root/COMPLETION_OVERVIEW_REGENERATION_20261121.json",
+      "bytes": 405,
+      "sha256": "9d546f318fd45968b57220a7e95f9f580fa11e839cb000b020832862fb64a929",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\COMPLETION_OVERVIEW_REGENERATION_20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/COMPLETION_OVERVIEW_REGENERATION_20261121.json"
+    },
+    {
+      "path": "evidence/root/IMPORT_OFF_MAP_ADOPTION_20261121.json",
+      "bytes": 7007,
+      "sha256": "5eeb8f6e46344d5858a9625d8d669bdb5b0bf353c70af6a516148c2a9bd1c4ed",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\IMPORT_OFF_MAP_ADOPTION_20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/IMPORT_OFF_MAP_ADOPTION_20261121.json"
+    },
+    {
+      "path": "evidence/root/POST_E087_DOC_ADOPTION_20261121.json",
+      "bytes": 554,
+      "sha256": "3db7d95153bac470377644e4484a1dbea1b1536fec4094e19bd93b42822894e1",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\POST_E087_DOC_ADOPTION_20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/POST_E087_DOC_ADOPTION_20261121.json"
+    },
+    {
+      "path": "evidence/root/POST_IMPORT_MAP_ADOPTION_REGRESSION_20261121.json",
+      "bytes": 1526,
+      "sha256": "133eea9c44fc067992bcb87cd465c1d96d25171dc8cb6cb9acb01102cf0c16a8",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\POST_IMPORT_MAP_ADOPTION_REGRESSION_20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/POST_IMPORT_MAP_ADOPTION_REGRESSION_20261121.json"
+    },
+    {
+      "path": "evidence/root/SOURCE_LIGHT_TEST_STYLE_DELTA_20261121.json",
+      "bytes": 514,
+      "sha256": "caeb375e7de07752a666c1b1b6a203d19a8f69ed9fe89807a6bd0e0583add505",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\SOURCE_LIGHT_TEST_STYLE_DELTA_20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/SOURCE_LIGHT_TEST_STYLE_DELTA_20261121.json"
+    },
+    {
+      "path": "evidence/root/SOURCE_LIGHT_TEST_STYLE_FINAL_20261121.json",
+      "bytes": 631,
+      "sha256": "f9387fd17ee587e3c4bfae5906533103d5cf9ef884deda12c1ea2ea98b259f49",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\SOURCE_LIGHT_TEST_STYLE_FINAL_20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/SOURCE_LIGHT_TEST_STYLE_FINAL_20261121.json"
+    },
+    {
+      "path": "evidence/root/source-additions-copy-root-20261121.json",
+      "bytes": 518,
+      "sha256": "83aee8b0a1914e4302b3012441e55c7f7765505854783b72c6fa70f4f794bf10",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-additions-copy-root-20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/source-additions-copy-root-20261121.json"
+    },
+    {
+      "path": "evidence/root/source-additions-recovery-root-reaped-20261121.json",
+      "bytes": 672,
+      "sha256": "b4b17e97e8f180cda63bee9dc36b355e87ec6b2f42b6ce88de9234c2cc6a5732",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-additions-recovery-root-reaped-20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/source-additions-recovery-root-reaped-20261121.json"
+    },
+    {
+      "path": "evidence/root/source-component-root-reaped-20261121.json",
+      "bytes": 1139,
+      "sha256": "90e6f7a53a8613c4d26794fe0f5275cb79cb07edf72fd1425b439f2e34138ce8",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-component-root-reaped-20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/source-component-root-reaped-20261121.json"
+    },
+    {
+      "path": "evidence/root/source-import-default-off-root-reaped-20261121.json",
+      "bytes": 1152,
+      "sha256": "b3dafdc0ec45dcaf52010a69c22534844e23a1be5af138a0d6c6485ae5124482",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-root-reaped-20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/source-import-default-off-root-reaped-20261121.json"
+    },
+    {
+      "path": "evidence/root/source-junko-bundle-root-cpu-result-20261121.json",
+      "bytes": 812,
+      "sha256": "453a99c80278c5c13415089b9200c7760a0501dda362abce7672e3ecfe510125",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-junko-bundle-root-cpu-result-20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/source-junko-bundle-root-cpu-result-20261121.json"
+    },
+    {
+      "path": "evidence/root/source-map-retest-root-reaped-20261121.json",
+      "bytes": 787,
+      "sha256": "10683ecced782bfbaf705ed1272092a91e38fd9adc47450d921f8a7a147fbc3f",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-map-retest-root-reaped-20261121.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/root/source-map-retest-root-reaped-20261121.json"
+    },
+    {
+      "path": "evidence/strong_cold_controls/controls-command.json",
+      "bytes": 888,
+      "sha256": "e013111c13ad17a2d336218326f4413d4d1c71ff8ca45f538935cf3646b0caf6",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\controls-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/controls-command.json"
+    },
+    {
+      "path": "evidence/strong_cold_controls/controls-launch.json",
+      "bytes": 173,
+      "sha256": "01a536ec3218305ea9667b43c34a6498dda64e1faa1514463bf200936c05fb74",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\controls-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/controls-launch.json"
+    },
+    {
+      "path": "evidence/strong_cold_controls/controls-private.json",
+      "bytes": 430,
+      "sha256": "02fd94547641bac9fa4ff0b28994179f6d1f1490822a6304b9f20262e0e7db02",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\controls-private.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/controls-private.json"
+    },
+    {
+      "path": "evidence/strong_cold_controls/controls-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\controls-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/controls-stderr.log"
+    },
+    {
+      "path": "evidence/strong_cold_controls/controls-stdout.log",
+      "bytes": 262,
+      "sha256": "d888588d406ad8f8e3cbfd88842d9e545975bb5c897335fb876cc590f6343b27",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\controls-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/controls-stdout.log"
+    },
+    {
+      "path": "evidence/strong_cold_controls/engine.log",
+      "bytes": 259,
+      "sha256": "eff62d18c0b5b07401075435afa3b629324d8fe2e3528f39ff647c0cd442d2d5",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\engine.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/engine.log"
+    },
+    {
+      "path": "evidence/strong_cold_controls/import-command.json",
+      "bytes": 699,
+      "sha256": "3f05f42d07f1e785fc14c810b5eb59144bb6f9523ec1bfef31c1d05e393733f4",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\import-command.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/import-command.json"
+    },
+    {
+      "path": "evidence/strong_cold_controls/import-launch.json",
+      "bytes": 171,
+      "sha256": "1b95cd10792809a610c38ab91e2c54a4a82de6e9964a0279dc2b45b917ef69b1",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\import-launch.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/import-launch.json"
+    },
+    {
+      "path": "evidence/strong_cold_controls/import-private.json",
+      "bytes": 429,
+      "sha256": "65559b7ad30b04d25a6930cd374a27eba8b029255ecf51c4db8478bd0c9b0f4b",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\import-private.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/import-private.json"
+    },
+    {
+      "path": "evidence/strong_cold_controls/import-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\import-stderr.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/import-stderr.log"
+    },
+    {
+      "path": "evidence/strong_cold_controls/import-stdout.log",
+      "bytes": 41216,
+      "sha256": "b851ab2f65945af8b56547f0a3f49117322b5c9b6c1eb0fadec6f6b39cf67bbb",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\import-stdout.log",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/import-stdout.log"
+    },
+    {
+      "path": "evidence/strong_cold_controls/PUBLIC_RESULT.json",
+      "bytes": 1254,
+      "sha256": "c7c2781de05d5e20c1cabaf59e29d5d1d8d9db359e1d46069ec8a3382706fd7c",
+      "kind": "compact_evidence",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\cold-wire-controls-1795243058547846800\\PUBLIC_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/strong_cold_controls/PUBLIC_RESULT.json"
+    },
+    {
+      "path": "evidence/style/test_source_lights_final.py",
+      "bytes": 8417,
+      "sha256": "a714eda74f3fc3d0ed06fef287dca740298e5d841ede236ae1370e60adfbc3c4",
+      "kind": "final_style_only_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\tests\\test_source_lights.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/evidence/style/test_source_lights_final.py"
+    },
+    {
+      "path": "owner_notes/HAIR_BUNDLE_EASING_PICKUP_2026-11-21.md",
+      "bytes": 7033,
+      "sha256": "465b7646f8fe675f6796bc99b08e46408c6b8bd0794d3ca42c7811605cc472fe",
+      "kind": "owner_pickup_note",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\HAIR_BUNDLE_EASING_PICKUP_2026-11-21.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/owner_notes/HAIR_BUNDLE_EASING_PICKUP_2026-11-21.md"
+    },
+    {
+      "path": "owner_notes/OWNER_JUNKO_BUNDLE_NOTE_2026-11-21.md",
+      "bytes": 2353,
+      "sha256": "b9d1819d8185ad6ccfd021d2f9d7f3a7efedb7bd6e878c578d7d338abc026f72",
+      "kind": "owner_pickup_note",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\OWNER_JUNKO_BUNDLE_NOTE_2026-11-21.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/owner_notes/OWNER_JUNKO_BUNDLE_NOTE_2026-11-21.md"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3024,
+      "sha256": "16c7527511d8c9880a78e677d38a6c5a2ad952a293eb1fbe2995f8d5da6c28c8",
+      "kind": "recovery_readme",
+      "origin": null,
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/apply_import_off_map_20261121.mjs",
+      "bytes": 5811,
+      "sha256": "d9c61cbd8bc78b45f29ec13d9c1659a90e328cc0f2a7e2b582b85a5d5c2f3dfd",
+      "kind": "root_driver_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\apply_import_off_map_20261121.mjs",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/apply_import_off_map_20261121.mjs"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/bases/import_physics_smoke.gd",
+      "bytes": 14981,
+      "sha256": "85893da331f1e45eb85c5e1e17893c2ac236d2931290b28dc6106953992aa465",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-diagnostic-prep-20261121\\bases\\import_physics_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/bases/import_physics_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/import_physics_smoke.gd",
+      "bytes": 19157,
+      "sha256": "0e60e0dc6a435c0b1e09b336086978fdf6a0306df52b946a7c804461913726d8",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-diagnostic-prep-20261121\\import_physics_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/import_physics_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/README.md",
+      "bytes": 1859,
+      "sha256": "1383e55d706b09484d255be57c310fc7f6076f7f007d52285eae3852d3f5e6c1",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-diagnostic-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/SOURCE_DIFF.json",
+      "bytes": 730,
+      "sha256": "d0420bb704381cb9661e0931ffee4f2fe96ab155c787d46d34bdd87e2c572af0",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-diagnostic-prep-20261121\\SOURCE_DIFF.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/SOURCE_DIFF.json"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/SOURCE_PINS.json",
+      "bytes": 759,
+      "sha256": "eeb2791870fc6bfe9175e82ffa034a7ceaf20cea03760380fbc6a224d7fc654a",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-diagnostic-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-diagnostic-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-prep-20261121/import_physics_smoke.gd",
+      "bytes": 21657,
+      "sha256": "edb9d0f3f79873dece720f54565dc1de6f6e1808a2b12d95fdf83372acf1b540",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-prep-20261121\\import_physics_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-prep-20261121/import_physics_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-prep-20261121/README.md",
+      "bytes": 2083,
+      "sha256": "fa56dce01c529d831c8949ad583dc61a9e17d57c22072c86091a4712ca195e02",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-prep-20261121/SOURCE_PINS.json",
+      "bytes": 603,
+      "sha256": "e3439b265dd9090fabeb5ffc21ee6d4d6f6a10fc5fb5f9e194ddd374cc68272f",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-prep-20261121/SOURCE_PROVENANCE.json",
+      "bytes": 796,
+      "sha256": "a57eac32fc692c02b4c7b67723829b296d62a74f71cfee627183a0a15b3c34bc",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-prep-20261121\\SOURCE_PROVENANCE.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-prep-20261121/SOURCE_PROVENANCE.json"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/import_physics_smoke.gd",
+      "bytes": 21778,
+      "sha256": "893bd5a9e3c1fd21dfff4afccb1ce5ac8d04545d4559266a2cfb38abbb870b7c",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-v2-prep-20261121\\import_physics_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/import_physics_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/README.md",
+      "bytes": 955,
+      "sha256": "6290649f0d5bff52505bcbec32b1e7493fe33d927155076ca1af4ef09ead6d86",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-v2-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/SOURCE_PINS.json",
+      "bytes": 602,
+      "sha256": "c77c1bfbdfd57abd0268ef462f2a2f3e4e9e680dc1f3286af10f48e9601aef5d",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-v2-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/SOURCE_PROVENANCE.json",
+      "bytes": 543,
+      "sha256": "7d2f03de8d3cd3030501f1a2bddf06154d779037da2137b32f392206bf6cc24a",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-v2-prep-20261121\\SOURCE_PROVENANCE.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-v2-prep-20261121/SOURCE_PROVENANCE.json"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/import_physics_smoke.gd",
+      "bytes": 21848,
+      "sha256": "9104065d55830781b07e47c358ddaa8c039d038b53780dcbeeafaad52c0d9be1",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-v3-prep-20261121\\import_physics_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/import_physics_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/README.md",
+      "bytes": 1393,
+      "sha256": "383ed50c07f5ef4bbb38a37f0ffd8096af0b4ba435f0bdfc6ec4dba88d8459ef",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-v3-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/SOURCE_PINS.json",
+      "bytes": 604,
+      "sha256": "c816ffde56d6b0271d24fe82b6379b7c6e94061bf34b3ec9641e59997533b778",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-v3-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/SOURCE_PROVENANCE.json",
+      "bytes": 1010,
+      "sha256": "3a57d9fd1604c59425f735596e2dfcd77638afc6ef21c704f82b99ba278d9d41",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-physics-default-off-cold-wire-v3-prep-20261121\\SOURCE_PROVENANCE.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/import-physics-default-off-cold-wire-v3-prep-20261121/SOURCE_PROVENANCE.json"
+    },
+    {
+      "path": "source_tree/output/run_cold_wire_controls_20261121.py",
+      "bytes": 3738,
+      "sha256": "19b77f8fc5bd32d1ea775bdf2c54288b931b1cdf779802a3f387418c439869d9",
+      "kind": "root_driver_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\run_cold_wire_controls_20261121.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/run_cold_wire_controls_20261121.py"
+    },
+    {
+      "path": "source_tree/output/run_pure_gds_cores_20261121_v2.py",
+      "bytes": 5936,
+      "sha256": "349912f1af9a9b82de7f3b2bf87a7f71b0c2045610b24644d0d43dfcb7b51139",
+      "kind": "root_driver_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\run_pure_gds_cores_20261121_v2.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/run_pure_gds_cores_20261121_v2.py"
+    },
+    {
+      "path": "source_tree/output/run_pure_gds_cores_20261121_v3.py",
+      "bytes": 5930,
+      "sha256": "c1f408c7668f291d942858e1fdef8d9873225b4b8745835ede8ff9b561d6a9ff",
+      "kind": "root_driver_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\run_pure_gds_cores_20261121_v3.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/run_pure_gds_cores_20261121_v3.py"
+    },
+    {
+      "path": "source_tree/output/run_pure_gds_cores_20261121.py",
+      "bytes": 5691,
+      "sha256": "95cd6a69ed3af211430c34f461e0517dfed4192dcc0cc51a0ecc618f23a895d4",
+      "kind": "root_driver_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\run_pure_gds_cores_20261121.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/run_pure_gds_cores_20261121.py"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/BASES.json",
+      "bytes": 1933,
+      "sha256": "6febe1f5629037d4c5ff21e1cdc3b1d9cae9427ac8f5f5945a5554da663f8afe",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\BASES.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/BASES.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/bases/src/app.gd",
+      "bytes": 314487,
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\bases\\src\\app.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/bases/src/app.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/bases/src/base_shape_editor.gd",
+      "bytes": 16788,
+      "sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\bases\\src\\base_shape_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/bases/src/base_shape_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/bases/src/pose_editor.gd",
+      "bytes": 67846,
+      "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\bases\\src\\pose_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/bases/src/pose_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/bases/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17395,
+      "sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\bases\\tests\\rotation_gizmo_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/bases/tests/rotation_gizmo_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/PATCHES.json",
+      "bytes": 10814,
+      "sha256": "333ed855681a00dc3d1c20f0929ba1a2e4677fd6dbbb8bf0cede78a82d034cf6",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\PATCHES.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/PATCHES.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/app.gd",
+      "bytes": 314530,
+      "sha256": "e56561a656be932fc54e025a36ac917f8ab835cf8f77e12c029f6044ae547a38",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\src\\app.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/app.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/base_shape_editor.gd",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\src\\base_shape_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/base_shape_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/editor_handle_metrics.gd",
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\src\\editor_handle_metrics.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/editor_handle_metrics.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/pose_editor.gd",
+      "bytes": 70140,
+      "sha256": "16ce6efc0756bd6e534a594b48da93c1979190369c2a3edbd5382bc62be6e600",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\src\\pose_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/pose_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/shape_window_layout.gd",
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\src\\shape_window_layout.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/src/shape_window_layout.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/tests/editor_geometry_unit.gd",
+      "bytes": 4289,
+      "sha256": "7235e5856316d26f6589f46ac81e29850a0baf909b3bebf09c76d63e9e85bd3d",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\tests\\editor_geometry_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/tests/editor_geometry_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/tests/face_window_layout_smoke.gd",
+      "bytes": 4728,
+      "sha256": "cce81146ae10e3a3757d38e806a977c056aaf3c0cdc9c60d4ada6b6b2711389a",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\tests\\face_window_layout_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/tests/face_window_layout_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/tests/pose_handle_size_smoke.gd",
+      "bytes": 7509,
+      "sha256": "b9f373b232e638388b2c17c6f6830028773a61e33cb323603a464750d9d1138a",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\tests\\pose_handle_size_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/tests/pose_handle_size_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\payload\\tests\\rotation_gizmo_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/payload/tests/rotation_gizmo_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/README.md",
+      "bytes": 8768,
+      "sha256": "b475e2c079a1e07d5957b243ca6807b76f720e18f03ce1f0386e6dcfc5b46165",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/SOURCE_PINS.json",
+      "bytes": 3672,
+      "sha256": "809c14e28c5503f8c1cf956856f92313c5c491d989c1950de5c05e83d54a5b52",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/TARGETS.json",
+      "bytes": 2572,
+      "sha256": "d736f3a0cdc15b7e6d714b293291b67c8ca8571e9257fc55facab42069ae6db5",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\TARGETS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/TARGETS.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/variants/face_pose_editor.gd",
+      "bytes": 68322,
+      "sha256": "0c54f879fdcbd32420324558b34bb4ca29bb462b3009dc402fa4ebf4e66a8a31",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\variants\\face_pose_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/variants/face_pose_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-prep-20261121/variants/handle_pose_editor.gd",
+      "bytes": 69664,
+      "sha256": "6737fd6433e3e0e1c33bafbe49dfb1dbc2e7d502fe1e6f3a704126ac3cf26b58",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-prep-20261121\\variants\\handle_pose_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-prep-20261121/variants/handle_pose_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/BASES.json",
+      "bytes": 1933,
+      "sha256": "6febe1f5629037d4c5ff21e1cdc3b1d9cae9427ac8f5f5945a5554da663f8afe",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\BASES.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/BASES.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/src/app.gd",
+      "bytes": 314487,
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\bases\\src\\app.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/src/app.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/src/base_shape_editor.gd",
+      "bytes": 16788,
+      "sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\bases\\src\\base_shape_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/src/base_shape_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/src/pose_editor.gd",
+      "bytes": 67846,
+      "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\bases\\src\\pose_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/src/pose_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17395,
+      "sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\bases\\tests\\rotation_gizmo_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/tests/rotation_gizmo_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/v1-SOURCE_PINS.json",
+      "bytes": 3672,
+      "sha256": "809c14e28c5503f8c1cf956856f92313c5c491d989c1950de5c05e83d54a5b52",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\bases\\v1-SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/bases/v1-SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/PATCHES.json",
+      "bytes": 11419,
+      "sha256": "b174f10e9788304075c59c0f7d1e2236beee13988d9ebbb9160759e87b243c8c",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\PATCHES.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/PATCHES.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/app.gd",
+      "bytes": 314530,
+      "sha256": "e56561a656be932fc54e025a36ac917f8ab835cf8f77e12c029f6044ae547a38",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\src\\app.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/app.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/base_shape_editor.gd",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\src\\base_shape_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/base_shape_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/editor_handle_metrics.gd",
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\src\\editor_handle_metrics.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/editor_handle_metrics.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/pose_editor.gd",
+      "bytes": 70623,
+      "sha256": "3ded115dedc479d58285ddeb3eeeed506aaf4247528ffd77652206a4390d3e9b",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\src\\pose_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/pose_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/shape_window_layout.gd",
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\src\\shape_window_layout.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/src/shape_window_layout.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/tests/editor_geometry_unit.gd",
+      "bytes": 4289,
+      "sha256": "7235e5856316d26f6589f46ac81e29850a0baf909b3bebf09c76d63e9e85bd3d",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\tests\\editor_geometry_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/tests/editor_geometry_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/tests/face_window_layout_smoke.gd",
+      "bytes": 8202,
+      "sha256": "4ea7c323c314fc40ae0c5eae1c6e400fb62ad962c84878fd22a73e27f4a69963",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\tests\\face_window_layout_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/tests/face_window_layout_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/tests/pose_handle_size_smoke.gd",
+      "bytes": 7509,
+      "sha256": "b9f373b232e638388b2c17c6f6830028773a61e33cb323603a464750d9d1138a",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\tests\\pose_handle_size_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/tests/pose_handle_size_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\payload\\tests\\rotation_gizmo_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/payload/tests/rotation_gizmo_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/PREDECESSOR.json",
+      "bytes": 891,
+      "sha256": "429cfa746abb4b94b5333b0748627d7a98038de84789292db8faa7d12930c0e3",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\PREDECESSOR.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/PREDECESSOR.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/README.md",
+      "bytes": 11331,
+      "sha256": "f49b7a40fbc9902c064e949477eb9eb59478df7809f05b868447caaa4ba17679",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/SOURCE_PINS.json",
+      "bytes": 4261,
+      "sha256": "425c00dc3167a577196b591ce555ad98d5f6716b86aee6c8b76a84268f666c97",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/SOURCE_REVIEW.md",
+      "bytes": 1185,
+      "sha256": "309ccc30a0d9785c0dc83ac5e3204be5c4a75757dc176eccbe3734e0fabacf65",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\SOURCE_REVIEW.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/SOURCE_REVIEW.md"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/TARGETS.json",
+      "bytes": 2673,
+      "sha256": "a94693bfbeb4807478ce2059d11cef409569f93938f555f96dc02bee1f4d1238",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\TARGETS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/TARGETS.json"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/variants/face_pose_editor.gd",
+      "bytes": 68805,
+      "sha256": "c3140c95fd0b2639651e0a14fc909ff0415cf2821a51fc212d36ae0bffe4ad5e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\variants\\face_pose_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/variants/face_pose_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/variants/handle_pose_editor.gd",
+      "bytes": 69664,
+      "sha256": "6737fd6433e3e0e1c33bafbe49dfb1dbc2e7d502fe1e6f3a704126ac3cf26b58",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-face-window-and-gizmo-v2-prep-20261121\\variants\\handle_pose_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-face-window-and-gizmo-v2-prep-20261121/variants/handle_pose_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-prep-20261121/default_off_worker.py",
+      "bytes": 6418,
+      "sha256": "5134a79ca34916c2c7a7d4f0992d1e4af65cfa4a585731cc42dadcbdb2db4db2",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-prep-20261121\\default_off_worker.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-prep-20261121/default_off_worker.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-prep-20261121/FIXTURE_PINS.json",
+      "bytes": 5973,
+      "sha256": "9ab3c9808faebd9cf31cd5d5c5645d3255d8bfb6907ad2a7e66b07732adf1fff",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-prep-20261121\\FIXTURE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-prep-20261121/FIXTURE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-prep-20261121/private_worker_bootstrap.py",
+      "bytes": 3709,
+      "sha256": "59c9b66e7ba62339127aa874abcc02cd0e568b6c641d9f0d1cefddbbd8e52b4e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-prep-20261121\\private_worker_bootstrap.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-prep-20261121/private_worker_bootstrap.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-prep-20261121/README.md",
+      "bytes": 4656,
+      "sha256": "b9760c6f745658027cc95f93b7575f07075b271b3155b8e5ed9079f01d2fe239",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-prep-20261121/run_default_off_gpu.py",
+      "bytes": 26459,
+      "sha256": "a52775e8cf89d34713b37e57c908ea645a3f1b9e2db42bd31f76933a2de2c29c",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-prep-20261121\\run_default_off_gpu.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-prep-20261121/run_default_off_gpu.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-prep-20261121/SOURCE_PINS.json",
+      "bytes": 1063,
+      "sha256": "511530e75a6397dd9d2cfc129f86aa0d06e8dc8bd3bff2488b6d1234dc31ac64",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-prep-20261121/SOURCE_PROVENANCE.json",
+      "bytes": 1909,
+      "sha256": "f52bb5bf682696acf47eee7b2cec3417b2c86046d110cf42080766f49e442c32",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-prep-20261121\\SOURCE_PROVENANCE.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-prep-20261121/SOURCE_PROVENANCE.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v2-prep-20261121/default_off_worker.py",
+      "bytes": 6418,
+      "sha256": "5134a79ca34916c2c7a7d4f0992d1e4af65cfa4a585731cc42dadcbdb2db4db2",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v2-prep-20261121\\default_off_worker.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v2-prep-20261121/default_off_worker.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v2-prep-20261121/FIXTURE_PINS.json",
+      "bytes": 5973,
+      "sha256": "9ab3c9808faebd9cf31cd5d5c5645d3255d8bfb6907ad2a7e66b07732adf1fff",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v2-prep-20261121\\FIXTURE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v2-prep-20261121/FIXTURE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v2-prep-20261121/private_worker_bootstrap.py",
+      "bytes": 3709,
+      "sha256": "59c9b66e7ba62339127aa874abcc02cd0e568b6c641d9f0d1cefddbbd8e52b4e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v2-prep-20261121\\private_worker_bootstrap.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v2-prep-20261121/private_worker_bootstrap.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v2-prep-20261121/README.md",
+      "bytes": 4957,
+      "sha256": "87fa209d387d34147a2df66d53d0d602a1eab488c9d1bbf3c924837e2288640a",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v2-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v2-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v2-prep-20261121/run_default_off_gpu.py",
+      "bytes": 26461,
+      "sha256": "d0ae02123020dd72d8ccf04576685175819a1e70ffa941297b63b64a36f67186",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v2-prep-20261121\\run_default_off_gpu.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v2-prep-20261121/run_default_off_gpu.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v2-prep-20261121/SOURCE_PINS.json",
+      "bytes": 1063,
+      "sha256": "b41d56fbabdaaa00939edf4f13c12618adef1b42437a5ad48adcab9679194133",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v2-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v2-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v2-prep-20261121/SOURCE_PROVENANCE.json",
+      "bytes": 2219,
+      "sha256": "ea88b983553937467e151a1d94a998d1ff6b0b27e26083d990e480412d900f4f",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v2-prep-20261121\\SOURCE_PROVENANCE.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v2-prep-20261121/SOURCE_PROVENANCE.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v3-prep-20261121/default_off_worker.py",
+      "bytes": 6418,
+      "sha256": "5134a79ca34916c2c7a7d4f0992d1e4af65cfa4a585731cc42dadcbdb2db4db2",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v3-prep-20261121\\default_off_worker.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v3-prep-20261121/default_off_worker.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v3-prep-20261121/FIXTURE_PINS.json",
+      "bytes": 5973,
+      "sha256": "9ab3c9808faebd9cf31cd5d5c5645d3255d8bfb6907ad2a7e66b07732adf1fff",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v3-prep-20261121\\FIXTURE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v3-prep-20261121/FIXTURE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v3-prep-20261121/private_worker_bootstrap.py",
+      "bytes": 3709,
+      "sha256": "59c9b66e7ba62339127aa874abcc02cd0e568b6c641d9f0d1cefddbbd8e52b4e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v3-prep-20261121\\private_worker_bootstrap.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v3-prep-20261121/private_worker_bootstrap.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v3-prep-20261121/README.md",
+      "bytes": 2081,
+      "sha256": "2f1347ea6dd9d00a40d21b634f46a9211bf3e8d5c99093eb912a959f176305da",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v3-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v3-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v3-prep-20261121/run_default_off_gpu.py",
+      "bytes": 26455,
+      "sha256": "990c37ddca7b1301613f5efc5a7e5a30ce2723369112ef274ee78d2d4dc34087",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v3-prep-20261121\\run_default_off_gpu.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v3-prep-20261121/run_default_off_gpu.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v3-prep-20261121/SOURCE_PINS.json",
+      "bytes": 1063,
+      "sha256": "3968a2d450cb306c34ce13c9bad71de9b0fca06fe79595dc732668d95239c21d",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v3-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v3-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v3-prep-20261121/SOURCE_PROVENANCE.json",
+      "bytes": 2461,
+      "sha256": "620d14d245f592deff70d6bd56a550add1d0baf24b7dfa6dc34fca90d3dddbf5",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v3-prep-20261121\\SOURCE_PROVENANCE.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v3-prep-20261121/SOURCE_PROVENANCE.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v4-prep-20261121/default_off_worker.py",
+      "bytes": 6418,
+      "sha256": "5134a79ca34916c2c7a7d4f0992d1e4af65cfa4a585731cc42dadcbdb2db4db2",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v4-prep-20261121\\default_off_worker.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v4-prep-20261121/default_off_worker.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v4-prep-20261121/FIXTURE_PINS.json",
+      "bytes": 5973,
+      "sha256": "9ab3c9808faebd9cf31cd5d5c5645d3255d8bfb6907ad2a7e66b07732adf1fff",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v4-prep-20261121\\FIXTURE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v4-prep-20261121/FIXTURE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v4-prep-20261121/private_worker_bootstrap.py",
+      "bytes": 3709,
+      "sha256": "59c9b66e7ba62339127aa874abcc02cd0e568b6c641d9f0d1cefddbbd8e52b4e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v4-prep-20261121\\private_worker_bootstrap.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v4-prep-20261121/private_worker_bootstrap.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v4-prep-20261121/README.md",
+      "bytes": 1183,
+      "sha256": "0233e554dbb4f97d6768b02eeb6e69635dc6ab94f36c5e3fcdd969e6c5a9d019",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v4-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v4-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v4-prep-20261121/run_default_off_gpu.py",
+      "bytes": 26458,
+      "sha256": "254732580a7ea90d23f862b57246b795b3851c1214d1f64c3ad35f40028f6dfc",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v4-prep-20261121\\run_default_off_gpu.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v4-prep-20261121/run_default_off_gpu.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v4-prep-20261121/SOURCE_PINS.json",
+      "bytes": 1063,
+      "sha256": "440ec9a804d6d12cbbfc3c0f56ef4941cc0aea02d1350541a489875d2b73229e",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v4-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v4-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-gpu-v4-prep-20261121/SOURCE_PROVENANCE.json",
+      "bytes": 2454,
+      "sha256": "2e0954bb8b6355b88b64372146f00712b37d4f5d5b5a5732991cb04314c7d613",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-gpu-v4-prep-20261121\\SOURCE_PROVENANCE.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-gpu-v4-prep-20261121/SOURCE_PROVENANCE.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/ADOPTION_MANIFEST.json",
+      "bytes": 5636,
+      "sha256": "22c2317e30546b46cc03bf0613bcbd57435376e1b0272c5f106ecd3e2576cc3a",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\ADOPTION_MANIFEST.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/ADOPTION_MANIFEST.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/docs/import_physics.md",
+      "bytes": 3194,
+      "sha256": "aa6b851099247a9e6313a251499459b9c15d82faae89bc0e049ce4e8e58e25ab",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\docs\\import_physics.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/docs/import_physics.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/docs/lighting.md",
+      "bytes": 5048,
+      "sha256": "f6a7d7edb0393b49e725229dffeab1dc612edadb2cbea945c826c520c9156daa",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\docs\\lighting.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/docs/lighting.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/docs/source_import.md",
+      "bytes": 12361,
+      "sha256": "cba56d4e7461bbce34b2c2e7bbf409c6639c865b66b763e36f3c8d6a4b8f9a9d",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\docs\\source_import.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/docs/source_import.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/src/import_actions.gd",
+      "bytes": 3869,
+      "sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\src\\import_actions.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/src/import_actions.gd"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/test_bridge_light_phase_prep.py",
+      "bytes": 4198,
+      "sha256": "6c74e12f45bd479fe3635c2f57fcbab3e41ba8c09b334baa39879fac5349a2eb",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\test_bridge_light_phase_prep.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/test_bridge_light_phase_prep.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tests/import_physics_smoke.gd",
+      "bytes": 11993,
+      "sha256": "a76a854a46e470624e677110e9d20c99075fbe9de001359b005eeb23ed9519dc",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\tests\\import_physics_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tests/import_physics_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tests/test_source_lights.py",
+      "bytes": 2402,
+      "sha256": "3366407e377c53dc1688e1c529f3cc009e7e4cad6297abd5ca2d41b81f0ad562",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\tests\\test_source_lights.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tests/test_source_lights.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tests/verify_import_physics.py",
+      "bytes": 4708,
+      "sha256": "909c0ced4f2eeae05c268e45b01e6055bc4f657213b5fa26ab896179abf4f691",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\tests\\verify_import_physics.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tests/verify_import_physics.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tools/blender_source_bridge.py",
+      "bytes": 30542,
+      "sha256": "a0024efa46643aeb03dcd0ce0e2d717c5d2102347d1e424239802f11d9dff419",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\tools\\blender_source_bridge.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tools/blender_source_bridge.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tools/source_lights.py",
+      "bytes": 4457,
+      "sha256": "3937840da25b39ca505c00902b0da7192b8d02e67100ad282853a80bbc57281e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\bases\\tools\\source_lights.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/bases/tools/source_lights.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/import_physics.md",
+      "bytes": 3567,
+      "sha256": "794117c8a5dda2cc30a5888cd02affdbddd98365e4043e62ef01fbd75b76b7e9",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\docs\\import_physics.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/import_physics.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/lighting.md",
+      "bytes": 5694,
+      "sha256": "bc95aacd4ecf755b1cc81f750a7f0b8f7321f30f13fdacbb9bf4c81e86c45132",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\docs\\lighting.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/lighting.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/source_import.md",
+      "bytes": 14113,
+      "sha256": "c398bc9dc32f09c9db09b00399acf9c5ea26e79965b79d113891384801de6113",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\docs\\source_import.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/source_import.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/src/import_actions.gd",
+      "bytes": 3870,
+      "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\src\\import_actions.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/src/import_actions.gd"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/import_physics_defaults_unit.gd",
+      "bytes": 4701,
+      "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\tests\\import_physics_defaults_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/import_physics_defaults_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/import_physics_smoke.gd",
+      "bytes": 14981,
+      "sha256": "85893da331f1e45eb85c5e1e17893c2ac236d2931290b28dc6106953992aa465",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\tests\\import_physics_smoke.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/import_physics_smoke.gd"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/test_bridge_light_phase.py",
+      "bytes": 4180,
+      "sha256": "aa612d14d9ce2e9d47b5da9cafd88c05a16232bf4923cfb931012f0662b788b4",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\tests\\test_bridge_light_phase.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/test_bridge_light_phase.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/test_source_lights.py",
+      "bytes": 8420,
+      "sha256": "554202926efd038d9916242d4353feae69ce6e43928c75826736354ac2dd3b22",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\tests\\test_source_lights.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/test_source_lights.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/verify_import_physics.py",
+      "bytes": 4708,
+      "sha256": "b7a5df65220801fd4adbe6886b62b65356aa8ab06dd2e97e45f11eef02620438",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\tests\\verify_import_physics.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/verify_import_physics.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tools/blender_source_bridge.py",
+      "bytes": 30697,
+      "sha256": "cc5a205772c83949bcc10f06633a73d83664c455e8daad163c06dba7a26dc60e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\tools\\blender_source_bridge.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tools/blender_source_bridge.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tools/source_lights.py",
+      "bytes": 8319,
+      "sha256": "284971f27040335b727c7a94639920cb6b1e37a37645ec8f553a704f1522eb5b",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\payload\\tools\\source_lights.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/payload/tools/source_lights.py"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/README.md",
+      "bytes": 2678,
+      "sha256": "1aae2b0c3945d2ce6c9906204b902189adb6b13a3c1321dadc176e8679a92c84",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/SOURCE_COMPARISON.json",
+      "bytes": 1184,
+      "sha256": "f3a65968a3439d578f0a9b37c5655a6a22098003dfd73b2d7907c30d77f0eb4d",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\SOURCE_COMPARISON.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/SOURCE_COMPARISON.json"
+    },
+    {
+      "path": "source_tree/output/source-import-default-off-map-adoption-prep-20261121/SOURCE_PINS.json",
+      "bytes": 4207,
+      "sha256": "1a275f2582ffed3b7e53e36fa38d9e5b9561186d729cd6de0f6191ccd257fbfa",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-import-default-off-map-adoption-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-import-default-off-map-adoption-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-junko-root-bundle-prep-20261121/BUNDLE_AUDIT.json",
+      "bytes": 17007,
+      "sha256": "42a44fadd57ab8b91ccf837cfdc4aed11f5a91f4b6d2bd96954ffee274b1c2ed",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-junko-root-bundle-prep-20261121\\BUNDLE_AUDIT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-junko-root-bundle-prep-20261121/BUNDLE_AUDIT.json"
+    },
+    {
+      "path": "source_tree/output/source-junko-root-bundle-prep-20261121/bundle_plan.py",
+      "bytes": 7302,
+      "sha256": "09b67ddd16f4e11a1a03f8cd3ad330fe91c6d6b0f300d7a1dbf45534aecb7adb",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-junko-root-bundle-prep-20261121\\bundle_plan.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-junko-root-bundle-prep-20261121/bundle_plan.py"
+    },
+    {
+      "path": "source_tree/output/source-junko-root-bundle-prep-20261121/PRESERVATION.json",
+      "bytes": 368,
+      "sha256": "c4f172c939a44c93223df8aee54c01b695c23dd541395d00d128a809bcf19c38",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-junko-root-bundle-prep-20261121\\PRESERVATION.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-junko-root-bundle-prep-20261121/PRESERVATION.json"
+    },
+    {
+      "path": "source_tree/output/source-junko-root-bundle-prep-20261121/READER_PINS.json",
+      "bytes": 785,
+      "sha256": "4b9e1998568f74a955c57673b8a5b23c6bf33040e18af1dd35b816c877dcac6a",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-junko-root-bundle-prep-20261121\\READER_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-junko-root-bundle-prep-20261121/READER_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-junko-root-bundle-prep-20261121/README.md",
+      "bytes": 9618,
+      "sha256": "7a818c11ad146e089a1fc13104f015525aafbc8d8937bde3a85f52b77482e488",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-junko-root-bundle-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-junko-root-bundle-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-junko-root-bundle-prep-20261121/SOURCE_PINS.json",
+      "bytes": 1204,
+      "sha256": "12db7dd229ca60f453520f6233190697eee22c0ee5974d96b1809da8009c122d",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-junko-root-bundle-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-junko-root-bundle-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-junko-root-bundle-prep-20261121/test_bundle_plan.py",
+      "bytes": 10299,
+      "sha256": "aa617efc289ee7125b15674f34e67c7e91075816e73498923d35d24b584c228f",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-junko-root-bundle-prep-20261121\\test_bundle_plan.py",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-junko-root-bundle-prep-20261121/test_bundle_plan.py"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/math_v2/keyframe_easing_math_unit.gd",
+      "bytes": 6295,
+      "sha256": "4ba26a8126313af273c5265932b4f3161a9f378400d63c622a9ef21419cfd406",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\math_v2\\keyframe_easing_math_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/math_v2/keyframe_easing_math_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/math_v2/README.md",
+      "bytes": 552,
+      "sha256": "9def27fe38680466ff95db63220b9fd3403269951f12ad3bb21478bee36e6a62",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\math_v2\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/math_v2/README.md"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/math_v2/SOURCE_PINS.json",
+      "bytes": 545,
+      "sha256": "1146905fc8c9f0d8dd9705d70ec107935b7f18e0d4b0950e2b84600a353e33fc",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\math_v2\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/math_v2/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/BASES.json",
+      "bytes": 512,
+      "sha256": "2f6e57931a1e33704b5ef09b7cb05944abb0f7d4c2d6312ae7957529b62c6556",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\BASES.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/BASES.json"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/bases/app.gd",
+      "bytes": 314487,
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\bases\\app.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/bases/app.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/bases/renderer.gd",
+      "bytes": 15453,
+      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\bases\\renderer.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/bases/renderer.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/bases/timeline.gd",
+      "bytes": 2878,
+      "sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\bases\\timeline.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/bases/timeline.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/CORE_SOURCE_PINS.json",
+      "bytes": 832,
+      "sha256": "579b19922d2e163c4e446db59728f6c0dd90c856dd1bf16070ccbbfe4d9b465b",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\CORE_SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/CORE_SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/PATCHES.json",
+      "bytes": 2550,
+      "sha256": "389dc997fa301321ef02ae24b1f3c809b7bff00bc7455181cfdda1983719a45e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\PATCHES.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/PATCHES.json"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/payload/src/camera_easing_editor.gd",
+      "bytes": 8342,
+      "sha256": "93cdee806155c457f12220ce53cfbc2377cc4ba3b15346fa9fbcc2d62f42df24",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\payload\\src\\camera_easing_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/payload/src/camera_easing_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/payload/src/keyframe_easing.gd",
+      "bytes": 7179,
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\payload\\src\\keyframe_easing.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/payload/src/keyframe_easing.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/payload/tests/keyframe_easing_math_unit.gd",
+      "bytes": 6289,
+      "sha256": "f329ea9d29f7eb346b43e0f804d9ca72421e6dc93fd598dd5c1772ed16d04b55",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\payload\\tests\\keyframe_easing_math_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/payload/tests/keyframe_easing_math_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/payload/tests/keyframe_easing_unit.gd",
+      "bytes": 10364,
+      "sha256": "a4ea85beeba768ef888846e2641a7d08765161a2198530528d06a82e883a4c45",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\payload\\tests\\keyframe_easing_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/payload/tests/keyframe_easing_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/README.md",
+      "bytes": 5574,
+      "sha256": "9b47255217801e3622cc2f38285e7bd39c9af170226fbedec52dfcaab3096d11",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/bases/original_preparation/README.md"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/PATCHES.json",
+      "bytes": 2550,
+      "sha256": "389dc997fa301321ef02ae24b1f3c809b7bff00bc7455181cfdda1983719a45e",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\PATCHES.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/PATCHES.json"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/payload/src/camera_easing_editor.gd",
+      "bytes": 8342,
+      "sha256": "93cdee806155c457f12220ce53cfbc2377cc4ba3b15346fa9fbcc2d62f42df24",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\payload\\src\\camera_easing_editor.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/payload/src/camera_easing_editor.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/payload/src/keyframe_easing.gd",
+      "bytes": 7179,
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\payload\\src\\keyframe_easing.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/payload/src/keyframe_easing.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/payload/tests/keyframe_easing_math_unit.gd",
+      "bytes": 6295,
+      "sha256": "4ba26a8126313af273c5265932b4f3161a9f378400d63c622a9ef21419cfd406",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\payload\\tests\\keyframe_easing_math_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/payload/tests/keyframe_easing_math_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/payload/tests/keyframe_easing_unit.gd",
+      "bytes": 10364,
+      "sha256": "a4ea85beeba768ef888846e2641a7d08765161a2198530528d06a82e883a4c45",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\payload\\tests\\keyframe_easing_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/payload/tests/keyframe_easing_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/README.md",
+      "bytes": 3328,
+      "sha256": "1638d7742640e2ace7f1d0387ab6a615d8157c8d047cab398d15b3c56feda96d",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/ROOT_CORE_RESULT.json",
+      "bytes": 1280,
+      "sha256": "9099aca7eb5315d786a191622d41ece5896a62907df062db122ccecbecfbddc4",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\ROOT_CORE_RESULT.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/ROOT_CORE_RESULT.json"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/SOURCE_PINS.json",
+      "bytes": 4119,
+      "sha256": "83f1fa2990bceb6794879572caed5edb7f38da4fc80c85e903ba44738e538f16",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-editor-prep-20261121/SOURCE_REVIEW.json",
+      "bytes": 1007,
+      "sha256": "bc20f59bc63ebdf50193fc33a3f69429c064662b66481f4559d08d528395a4f3",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\SOURCE_REVIEW.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-editor-prep-20261121/SOURCE_REVIEW.json"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-math-v2-prep-20261121/keyframe_easing_math_unit.gd",
+      "bytes": 6295,
+      "sha256": "4ba26a8126313af273c5265932b4f3161a9f378400d63c622a9ef21419cfd406",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-math-v2-prep-20261121\\keyframe_easing_math_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-math-v2-prep-20261121/keyframe_easing_math_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-math-v2-prep-20261121/README.md",
+      "bytes": 552,
+      "sha256": "9def27fe38680466ff95db63220b9fd3403269951f12ad3bb21478bee36e6a62",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-math-v2-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-math-v2-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-keyframe-easing-math-v2-prep-20261121/SOURCE_PINS.json",
+      "bytes": 545,
+      "sha256": "1146905fc8c9f0d8dd9705d70ec107935b7f18e0d4b0950e2b84600a353e33fc",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-math-v2-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-keyframe-easing-math-v2-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/INPUTS.json",
+      "bytes": 1763,
+      "sha256": "f34e241b8dfbac35c6d0b20597057b60edb2c75882e7b2ab5cb57b64efb79b60",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\bases\\INPUTS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/INPUTS.json"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/JUNKO_CASE.md",
+      "bytes": 4331,
+      "sha256": "3ad2c7770c372d9dd2b047577199c64c64c0b8f60782da3ebef8e80346d66677",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\bases\\JUNKO_CASE.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/JUNKO_CASE.md"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/README.md",
+      "bytes": 5536,
+      "sha256": "c72500275d3d00f2508738e289f90c5cabe5689304c4b634557e2d2657c9a8f7",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\bases\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/README.md"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/secondary_collision_probe_unit.gd",
+      "bytes": 6348,
+      "sha256": "83a1869bb9173e5ae0cebef7f92fd6b0ed4d481bbf7b0190b60eca17bb0e3ed6",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\bases\\secondary_collision_probe_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/secondary_collision_probe_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/secondary_collision_probe.gd",
+      "bytes": 12848,
+      "sha256": "78cdb5447cd376148f9a240c5da9cb11dc0ff4bd2d966b9a4d8d0184bfc5ee4c",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\bases\\secondary_collision_probe.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/secondary_collision_probe.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/SOURCE_PINS.json",
+      "bytes": 1011,
+      "sha256": "028033d6430105fee650eaca03926c562317f2792179ca83040831f1722d0f7c",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\bases\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/bases/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/CHANGES.json",
+      "bytes": 3248,
+      "sha256": "df040b855d82dc432de60e2b5fb1ddcfb873642b43d79eac848dffcd781e8d7b",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\CHANGES.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/CHANGES.json"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/README.md",
+      "bytes": 3246,
+      "sha256": "159fb4386aea6626ad04df732191e812ac1929903c905b937b146f77c38d3239",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/secondary_collision_probe_unit.gd",
+      "bytes": 8240,
+      "sha256": "0f579122671341a16b55260d44bfdebeb4d768f858abdeb6c1b130974e600fcb",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\secondary_collision_probe_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/secondary_collision_probe_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/secondary_collision_probe.gd",
+      "bytes": 13530,
+      "sha256": "f4aea0b34013065fd0e3ac17d55b2c241b4a88d5e235716402e79c12f681ecd4",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\secondary_collision_probe.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/secondary_collision_probe.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/SOURCE_PINS.json",
+      "bytes": 1924,
+      "sha256": "e04220912e8002ef7d9f78e7de341c823b14a25af397ae0747de0bfb9b07475e",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-body-collision-probe-v2-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-body-collision-probe-v2-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-miku-collider-binding-prep-20261121/miku_collider_binding_unit.gd",
+      "bytes": 5586,
+      "sha256": "84c0f1b46aa3a3f0be0926be2b7694c73a333ae0e323e1dd7ae0bdc925c7644c",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collider-binding-prep-20261121\\miku_collider_binding_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collider-binding-prep-20261121/miku_collider_binding_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-collider-binding-prep-20261121/miku_collider_binding.gd",
+      "bytes": 6935,
+      "sha256": "e58afb8325054315209c92c64504037642719f48ac05f0bbb0f1eab0d6bfdc2a",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collider-binding-prep-20261121\\miku_collider_binding.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collider-binding-prep-20261121/miku_collider_binding.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-collider-binding-prep-20261121/README.md",
+      "bytes": 3058,
+      "sha256": "518ae0f4ca553aec9eefc0ed83d10a53addc1553360ed6e2e9e0f8ca15e39371",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collider-binding-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collider-binding-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-miku-collider-binding-prep-20261121/SOURCE_PINS.json",
+      "bytes": 751,
+      "sha256": "e62e7a2a3984e4951ed85890f0d4d021d2fe40d1a3f51650e9c644cd9401acf9",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collider-binding-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collider-binding-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-prep-20261121/README.md",
+      "bytes": 2403,
+      "sha256": "1fc02aa72a194649f446e32b414075324b2e44a344f576228b0b5ddd40aa90ce",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-prep-20261121/secondary_collision_geometry_unit.gd",
+      "bytes": 4505,
+      "sha256": "ac983aa8e1001df944b4dbda616b814eb102bef20f7262cba1783b85da90eea0",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-prep-20261121\\secondary_collision_geometry_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-prep-20261121/secondary_collision_geometry_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-prep-20261121/secondary_collision_geometry.gd",
+      "bytes": 5190,
+      "sha256": "63f75e7cae189fad1dab190302c7218f94ae3d4910b3eb9319e4f0a1b54e6cc2",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-prep-20261121\\secondary_collision_geometry.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-prep-20261121/secondary_collision_geometry.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-prep-20261121/SOURCE_PINS.json",
+      "bytes": 683,
+      "sha256": "64335f0e87d8dabb00d0343e19aab6017bad259dac48d171905cc33e197675ce",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/bases/v1/README.md",
+      "bytes": 2403,
+      "sha256": "1fc02aa72a194649f446e32b414075324b2e44a344f576228b0b5ddd40aa90ce",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-v2-prep-20261121\\bases\\v1\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-v2-prep-20261121/bases/v1/README.md"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/bases/v1/secondary_collision_geometry_unit.gd",
+      "bytes": 4505,
+      "sha256": "ac983aa8e1001df944b4dbda616b814eb102bef20f7262cba1783b85da90eea0",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-v2-prep-20261121\\bases\\v1\\secondary_collision_geometry_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-v2-prep-20261121/bases/v1/secondary_collision_geometry_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/bases/v1/secondary_collision_geometry.gd",
+      "bytes": 5190,
+      "sha256": "63f75e7cae189fad1dab190302c7218f94ae3d4910b3eb9319e4f0a1b54e6cc2",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-v2-prep-20261121\\bases\\v1\\secondary_collision_geometry.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-v2-prep-20261121/bases/v1/secondary_collision_geometry.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/bases/v1/SOURCE_PINS.json",
+      "bytes": 683,
+      "sha256": "64335f0e87d8dabb00d0343e19aab6017bad259dac48d171905cc33e197675ce",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-v2-prep-20261121\\bases\\v1\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-v2-prep-20261121/bases/v1/SOURCE_PINS.json"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/README.md",
+      "bytes": 2738,
+      "sha256": "20515da438119eb3e7cf998dba62b1ae0aa7a3f58a99c9a0dcd4016cbd77ccbc",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-v2-prep-20261121\\README.md",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-v2-prep-20261121/README.md"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/secondary_collision_geometry_unit.gd",
+      "bytes": 4542,
+      "sha256": "6f23d6bf84beba91c6eb4237eeaa62ef71e86e0ec1f9dd4c072f8a54ad5f16de",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-v2-prep-20261121\\secondary_collision_geometry_unit.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-v2-prep-20261121/secondary_collision_geometry_unit.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/secondary_collision_geometry.gd",
+      "bytes": 5190,
+      "sha256": "63f75e7cae189fad1dab190302c7218f94ae3d4910b3eb9319e4f0a1b54e6cc2",
+      "kind": "frozen_source",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-v2-prep-20261121\\secondary_collision_geometry.gd",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-v2-prep-20261121/secondary_collision_geometry.gd"
+    },
+    {
+      "path": "source_tree/output/source-miku-collision-geometry-v2-prep-20261121/SOURCE_PINS.json",
+      "bytes": 1386,
+      "sha256": "4f84b7deffd47b1a815006c3b9b9003346aa0094dbf6c585759c5213e4008be2",
+      "kind": "frozen_source_manifest",
+      "origin": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-miku-collision-geometry-v2-prep-20261121\\SOURCE_PINS.json",
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/source_tree/output/source-miku-collision-geometry-v2-prep-20261121/SOURCE_PINS.json"
+    },
+    {
+      "path": "SUMMARY.json",
+      "bytes": 3291,
+      "sha256": "8c10ca86b4e0b0f7ed2a850614c6d6d8a4740af9b80bffc8429d1a5102ba3730",
+      "kind": "scope_summary",
+      "origin": null,
+      "proposed_repository_path": "experiments/source_post_e087_evidence_20261121/SUMMARY.json"
+    }
+  ]
+}

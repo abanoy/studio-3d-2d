@@ -1,0 +1,25 @@
+{
+  "format": "has_conditional_off_map_adoption_source_comparison_1",
+  "base_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "map_target_matches_native_tested_candidate_sha256": "cc5a205772c83949bcc10f06633a73d83664c455e8daad163c06dba7a26dc60e",
+  "known_and_unknown_load_model_function_byte_exact": true,
+  "shared_material_export_and_normal_finalization_suffix_byte_exact": true,
+  "load_model_function_sha256": "e3dd7a045505dd27a58ba1f56b6c937801328b4ccc9950a7047f55561a7fce6c",
+  "shared_export_suffix_sha256": "136fad575f67c9121e1998c0ccd6382107a81d3d4f14d6dc78607973586b10b2",
+  "bridge_fake_test_relocation": {
+    "original": {
+      "bytes": 4198,
+      "sha256": "6c74e12f45bd479fe3635c2f57fcbab3e41ba8c09b334baa39879fac5349a2eb"
+    },
+    "target": {
+      "bytes": 4180,
+      "sha256": "aa612d14d9ce2e9d47b5da9cafd88c05a16232bf4923cfb931012f0662b788b4"
+    },
+    "path_lookup_only_reverse_byte_exact": true,
+    "assertion_bodies_unchanged": true,
+    "named_test_methods": 4
+  },
+  "default_off_product_delta": "ImportActions.placement physics_on_import true to false only",
+  "current_application_modified": false,
+  "author_executed_tests_or_Git": false
+}

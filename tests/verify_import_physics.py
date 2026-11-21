@@ -1,4 +1,4 @@
-"""Interactive automatic ragdolls, existing live peers, explicit Record and hidden GPU."""
+"""Owner-requested OFF import defaults; explicit physics, peers, Record and hidden GPU."""
 from pathlib import Path
 from native_fixture_root import fixture_output
 import argparse,os,hashlib,json,shutil,subprocess,sys,time

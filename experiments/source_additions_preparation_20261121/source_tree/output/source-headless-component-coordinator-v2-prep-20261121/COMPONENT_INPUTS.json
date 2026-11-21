@@ -1,0 +1,134 @@
+{
+  "format": "has_isolated_headless_component_readset_2",
+  "status": "SOURCE_ONLY_UNRUN",
+  "revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "suites": [
+    {
+      "id": "default_off",
+      "unit": "tests/import_physics_defaults_unit.gd",
+      "checks": 16,
+      "marker": "Import OFF default controls: 16; failures: 0",
+      "marker_kind": "line"
+    },
+    {
+      "id": "selection",
+      "unit": "tests/loose_part_selection_unit.gd",
+      "checks": 32,
+      "marker": "LOOSE_PART_SELECTION_UNIT ",
+      "marker_kind": "json"
+    },
+    {
+      "id": "radial",
+      "unit": "tests/character_tools_unit.gd",
+      "checks": 49,
+      "marker": "CHARACTER_TOOLS_UNIT ",
+      "marker_kind": "json"
+    },
+    {
+      "id": "all49",
+      "unit": "tests/source_secondary_all49_unit.gd",
+      "checks": 26,
+      "marker": "ALL49 authored synthetic checks: 26; failures: 0",
+      "marker_kind": "line"
+    }
+  ],
+  "component_inputs": [
+    {
+      "suite": "default_off",
+      "source": "output/import-physics-default-off-prep-20261120/payload/src/import_actions.gd",
+      "target": "src/import_actions.gd",
+      "bytes": 3870,
+      "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2"
+    },
+    {
+      "suite": "default_off",
+      "source": "output/import-physics-default-off-prep-20261120/payload/tests/import_physics_defaults_unit.gd",
+      "target": "tests/import_physics_defaults_unit.gd",
+      "bytes": 4701,
+      "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7"
+    },
+    {
+      "suite": "selection",
+      "source": "output/source-loose-part-selection-prep-20261120/loose_part_selection.gd",
+      "target": "src/loose_part_selection.gd",
+      "bytes": 3351,
+      "sha256": "d34f10fac37fa108c3727d4aafe96989db6a76273b4815672141dae8ee195758"
+    },
+    {
+      "suite": "selection",
+      "source": "output/source-loose-part-selection-prep-20261120/loose_part_selector.gd",
+      "target": "src/loose_part_selector.gd",
+      "bytes": 8583,
+      "sha256": "c9d9ac270e8753092fea0c51eb1d65d765455187ba68907bcc5d33114f448624"
+    },
+    {
+      "suite": "selection",
+      "source": "output/source-loose-part-selection-prep-20261120/loose_part_selection_unit.gd",
+      "target": "tests/loose_part_selection_unit.gd",
+      "bytes": 9574,
+      "sha256": "41899631f0823c01ab4eddef220b9e65ef7a0b462f4a80cd08dffb14b0b90a4c"
+    },
+    {
+      "suite": "radial",
+      "source": "output/character-tools-radial-v2-prep-20261121/character_tools.gd",
+      "target": "src/character_tools.gd",
+      "bytes": 10455,
+      "sha256": "5659a09a6625af4ee52313852cb24bf9806fcb4f91b00f1954c5ac4f3becaae6"
+    },
+    {
+      "suite": "radial",
+      "source": "output/character-tools-radial-prep-20261121/payload/src/character_tool_policy.gd",
+      "target": "src/character_tool_policy.gd",
+      "bytes": 3297,
+      "sha256": "3e62019de547f9fb6900f17f5e7124d76dcb67a3553b65f877f6f6937bb7b294"
+    },
+    {
+      "suite": "radial",
+      "source": "output/character-tools-radial-prep-20261121/payload/src/shortcut_bindings.gd",
+      "target": "src/shortcut_bindings.gd",
+      "bytes": 4559,
+      "sha256": "c8ccc33ddf29aac16af627dcaa0b12214f8c1492abf0933d0ebbfb9a959e17cc"
+    },
+    {
+      "suite": "radial",
+      "source": "output/character-tools-radial-prep-20261121/payload/src/shortcut_editor.gd",
+      "target": "src/shortcut_editor.gd",
+      "bytes": 6385,
+      "sha256": "7cc71b21681ee9ff67046760a999dbcce75f1d44264998ecd2e73db99edc3ff4"
+    },
+    {
+      "suite": "radial",
+      "source": "output/character-tools-radial-prep-20261121/payload/tests/character_tools_unit.gd",
+      "target": "tests/character_tools_unit.gd",
+      "bytes": 13654,
+      "sha256": "b1d218369dc7884150abade272a68f715fcca06ca97b7f9884aa028eef276aeb"
+    },
+    {
+      "suite": "all49",
+      "source": "output/source-junko-all49-prep-20261120/source_secondary_all49.gd",
+      "target": "src/source_secondary_all49.gd",
+      "bytes": 32513,
+      "sha256": "ad34fd5d60a0224dc3274d75de53354cb1d0054ce37def64a4c519a053c90edc"
+    },
+    {
+      "suite": "all49",
+      "source": "output/source-junko-all49-prep-20261120/source_secondary_all49_unit.gd",
+      "target": "tests/source_secondary_all49_unit.gd",
+      "bytes": 10082,
+      "sha256": "6b4d4279f95c03d5c6b7425f62c3ddbe1669a914195f5a2d23c96439c64e4665"
+    }
+  ],
+  "radial_patch": {
+    "path": "output/character-tools-radial-prep-20261121/PATCHES.json",
+    "bytes": 5104,
+    "sha256": "5ca7d27cb8cd5f066e4074b8e9a17a05cf7424b8c83332c76d91e8eb5505f3f3"
+  },
+  "snapshot_reader": {
+    "path": "output/source-owner-review-builder-v3-prep-20261121/build_review.py",
+    "bytes": 22176,
+    "sha256": "d5ab807301d2b51b9ecea5fab1624b12addffe8247f5eafae60bf02c63c6dcec"
+  },
+  "author_execution": false,
+  "current_application_modified": false,
+  "source_delta": "Only radial controller source role path/bytes/hash changed; all123 tests and coordinator runtime gates preserved."
+}

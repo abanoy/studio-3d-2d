@@ -1,0 +1,53 @@
+{
+  "format": "has_post_e087_retained_outcome_classification_1",
+  "mini_drivers": {
+    "v1": {
+      "path": "source_tree/output/run_pure_gds_cores_20261121.py",
+      "status": "AUTHORED_UNRUN",
+      "reason": "Root noticed missing private_desktop source copy before execution."
+    },
+    "v2": {
+      "path": "source_tree/output/run_pure_gds_cores_20261121_v2.py",
+      "status": "ACTUAL_FAILURE_RETAINED",
+      "stage": "output/pure-gds-core-1795242553060038700",
+      "checks_completed": 0,
+      "reason": "Math unit type inference error; contact suite unrun.",
+      "private_jobs_closed": 1
+    },
+    "v3": {
+      "path": "source_tree/output/run_pure_gds_cores_20261121_v3.py",
+      "status": "ACTUAL_PASS_RETAINED",
+      "stage": "output/pure-gds-core-1795242604205997700",
+      "easing_math_checks": 24,
+      "contact_math_checks": 26,
+      "private_jobs_closed": 2
+    }
+  },
+  "gpu_host_v4": {
+    "status": "AUTHORED_UNRUN_NOT_NEEDED_FOR_GPU_REPEAT",
+    "reason": "Root qualified54 GPU assertions with v3/edb9; latest9104 retains that body byte-exact and qualifies strengthened20 pure controls separately."
+  },
+  "cold_failures": {
+    "retained_runs": 2,
+    "exact_numeric_and_type_differences_observed_in_second_run_only": true,
+    "product_persistence_code_modified": false
+  },
+  "adoption_preflight": {
+    "initial_attempt": "REFUSED_BEFORE_WRITES",
+    "reason": "JavaScript JSON parse lost nanosecond integer precision; source metadata input was corrected by exact lexical quoting of1084 mtime values.",
+    "product_or_source_mtime_failure": false
+  },
+  "overview_chronology": [
+    "Seven progress drafts v2 were applied/readback verified.",
+    "Canonical generator rejected append-only completion overview drift; original32146-byte draft preserved.",
+    "Unchanged canonical generator wrote Windows CRLF28806-byte overview.",
+    "Root normalized only line endings to LF after verifying exact28662-byte prior canonical content."
+  ],
+  "ui_v1": {
+    "status": "UNPARSED_UNRUN_PENDING_SOURCE_REVIEW",
+    "source_packet_frozen": true,
+    "possible_async_resize_concern": true,
+    "ui_v2_in_progress_excluded": true
+  },
+  "author_executed_runtime_or_Git": false
+}

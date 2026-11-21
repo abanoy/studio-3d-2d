@@ -1,0 +1,70 @@
+{
+  "format": "has_cpu_only_private_miku_collider_derivation_1",
+  "source_project_bytes": 5672389,
+  "source_project_sha256": "036eb37fcb17d71e6292751bb1af4b73350512c69a0c31a59efb4fa6a4341101",
+  "source_asset_sha256": "cc040e35f47280599ea083ac78d36855c99861791b0e66a28e091c12655c5aaf",
+  "private_config": {
+    "bytes": 3641,
+    "sha256": "e3ada9ac313b21919c3a0d35617d8ec1dbd8cdf6abfe5dec0d8af4f7dd699971"
+  },
+  "source_inputs": [
+    {
+      "path": "src/scene3d.gd",
+      "bytes": 11042,
+      "sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1"
+    },
+    {
+      "path": "src/limb_ik.gd",
+      "bytes": 8969,
+      "sha256": "5aaf67f2329cc71e8ed16e038f77a1c17f4a48da8fd8c2489719074d6c26d870"
+    },
+    {
+      "path": "src/model.gd",
+      "bytes": 30301,
+      "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7"
+    },
+    {
+      "path": "src/secondary_rig.gd",
+      "bytes": 12034,
+      "sha256": "e781bd6949ed32cd3b3bf27d6a881ef105ce84d05dff41370861de6c39344ba1"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "bytes": 9449,
+      "sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "bytes": 6426,
+      "sha256": "600f30f9801f50b2e58e8d09ad8f758e62f6a8418723497bba1baeadaa4b1eac"
+    }
+  ],
+  "declared_humanoid_mapping": false,
+  "standard_mmd_roles_checked": 6,
+  "independent_reported_gltf_parent_edges_checked": 5,
+  "all_roles_actual_skin_joints": true,
+  "skin_joints": 156,
+  "mesh_vertices": 13111,
+  "mesh_primitives": 17,
+  "actual_helper_skin_support_vertices": 989,
+  "helper_report_affected_count_matches": true,
+  "limbs": [
+    {
+      "role": "upper",
+      "support_vertices": 477,
+      "selected_skin_joint_count": 12,
+      "initial_rest_hair_vertices_inside_capsule": 0
+    },
+    {
+      "role": "lower",
+      "support_vertices": 458,
+      "selected_skin_joint_count": 5,
+      "initial_rest_hair_vertices_inside_capsule": 11
+    }
+  ],
+  "private_geometry_arrays_published": false,
+  "project_or_asset_written": false,
+  "app_or_native_or_gpu_started": false,
+  "runtime_binding_and_alignment_qualified": false,
+  "runtime_contact_qualified": false
+}

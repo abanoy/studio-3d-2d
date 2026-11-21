@@ -1,0 +1,24 @@
+{
+  "format": "has_import_off_cold_wire_provenance_1",
+  "base": {
+    "path": "output/import-physics-default-off-prep-20261120/payload/tests/import_physics_smoke.gd",
+    "bytes": 14981,
+    "sha256": "85893da331f1e45eb85c5e1e17893c2ac236d2931290b28dc6106953992aa465"
+  },
+  "existing_scalar_oracle": {
+    "path": "tests/rotation_gizmo_smoke.gd",
+    "bytes": 17395,
+    "sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+    "lines": "15-29",
+    "ceiling": 1e-12
+  },
+  "existing_wire_pattern": {
+    "path": "tests/world_document_smoke.gd",
+    "line": 70
+  },
+  "unchanged_static_assertion_sites": 42,
+  "original_runtime_assertions_expected": 54,
+  "additional_tagged_oracle_controls": 20,
+  "production_application_changed": false,
+  "source_executed": false
+}

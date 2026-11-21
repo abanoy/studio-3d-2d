@@ -1,0 +1,238 @@
+{
+  "format": "has_static_model_variant_runtime_overlay_1",
+  "status": "AUTHORED_UNRUN",
+  "base_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "patches": [
+    {
+      "path": "src/model.gd",
+      "operations": [
+        {
+          "anchor": "const ImportBasis=preload(\"res://src/import_basis.gd\")\r\n",
+          "replacement": "const ImportBasis=preload(\"res://src/import_basis.gd\")\r\nconst Variants=preload(\"res://src/model_variants.gd\")\r\nconst VariantRuntime=preload(\"res://src/model_variant_runtime.gd\")\r\nvar variants: RefCounted\r\n"
+        },
+        {
+          "anchor": "\tif not value is Dictionary: return \"Invalid model record.\"\r\n",
+          "replacement": "\tif not value is Dictionary: return \"Invalid model record.\"\r\n\tvar variant_error: String=Variants.record_error(value)\r\n\tif not variant_error.is_empty():return variant_error\r\n"
+        },
+        {
+          "anchor": "func check_bindings() -> String:\r\n",
+          "replacement": "func check_bindings() -> String:\r\n\tif variants!=null:\r\n\t\tvar variant_error: String=variants.check_record(data,opacity_materials)\r\n\t\tif not variant_error.is_empty():return variant_error\r\n\telif not Variants.manifest(data).is_empty():return \"Model appearance choices have no loaded asset binding.\"\r\n"
+        },
+        {
+          "anchor": "\t_appearance_video=video;_appearance_parent_opacity=parent_opacity\r\n",
+          "replacement": "\tif variants!=null:\r\n\t\tvar variant_error: String=variants.sync_record(data,opacity_materials)\r\n\t\tif not variant_error.is_empty():evaluation_error=variant_error;return\r\n\t_appearance_video=video;_appearance_parent_opacity=parent_opacity\r\n"
+        }
+      ],
+      "base_bytes": 30301,
+      "base_sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7",
+      "successor_bytes": 30992,
+      "successor_sha256": "793052f6a9fa3e21472e5f42707b7e2d68922df578d4607897049dd6e1c7346b"
+    },
+    {
+      "path": "src/renderer.gd",
+      "operations": [
+        {
+          "anchor": "var result := SceneIO.load_glb(data.source)",
+          "replacement": "var result := SceneIO.load_glb(data.source,Model.Variants.manifest(data))"
+        },
+        {
+          "anchor": "\tcandidate.inventory(candidate.root)\r\n",
+          "replacement": "\tcandidate.inventory(candidate.root)\r\n\tvar appearance: Dictionary=Model.VariantRuntime.attach(candidate)\r\n\tif appearance.has(\"error\"):candidate.root.free();return appearance\r\n\tcandidate.variants=appearance.runtime\r\n"
+        }
+      ],
+      "base_bytes": 15453,
+      "base_sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "successor_bytes": 15660,
+      "successor_sha256": "6304be484e0d2a4c53c8d03e4a3e7fea4587aaf0a6a7484b5148534ed19c7750"
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "operations": [
+        {
+          "anchor": "var decoded := SceneIO.load_glb(row.source)",
+          "replacement": "var decoded := SceneIO.load_glb(row.source,Model.Variants.manifest(row))"
+        },
+        {
+          "anchor": "\t\tinstance.inventory(instance.root)\n",
+          "replacement": "\t\tinstance.inventory(instance.root)\n\t\tvar appearance: Dictionary=Model.VariantRuntime.attach(instance)\n\t\tif appearance.has(\"error\"):instance.root.free();candidate.dispose();return appearance\n\t\tinstance.variants=appearance.runtime\n"
+        },
+        {
+          "anchor": "\t\tprobe.world_context=target.world_context;probe.motion_video=",
+          "replacement": "\t\tif not Model.Variants.manifest(target.data).is_empty():\n\t\t\tprobe.variants=target.variants;probe.opacity_materials=target.opacity_materials\n\t\tprobe.world_context=target.world_context;probe.motion_video="
+        },
+        {
+          "anchor": "\tfor id in values:instances[id].data=values[id].duplicate(true)\n",
+          "replacement": "\tvar applied_variants: Array=[]\n\tfor id in values:\n\t\tvar target: RefCounted=instances[id]\n\t\tif Model.Variants.manifest(target.data).is_empty():continue\n\t\tvar variant_error: String=target.variants.sync_record(values[id],target.opacity_materials)\n\t\tif not variant_error.is_empty():\n\t\t\tfor previous in applied_variants:\n\t\t\t\tvar rollback_error: String=previous.variants.sync_record(previous.data,previous.opacity_materials)\n\t\t\t\tif not rollback_error.is_empty():return variant_error+\" Previous appearance could not be restored: \"+rollback_error\n\t\t\treturn variant_error\n\t\tapplied_variants.append(target)\n\tfor id in values:instances[id].data=values[id].duplicate(true)\n"
+        }
+      ],
+      "base_bytes": 8424,
+      "base_sha256": "f155b7a2ae7b8a42f6ce14e88b485e14cdc3ac95855d0ab43575c4fe4f89b213",
+      "successor_bytes": 9386,
+      "successor_sha256": "ea724bc47a2c226a929bb898d648774ef6d93e847691a21aa439051df260de13"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "operations": [
+        {
+          "anchor": "var pose_library: Node\n",
+          "replacement": "var pose_library: Node\nvar appearance_choices: Node\n"
+        },
+        {
+          "anchor": "\tshape_button=app.button(panel,\"Shapes / expressions…\",open_shapes)\n",
+          "replacement": "\tshape_button=app.button(panel,\"Shapes / expressions…\",open_shapes)\n\tappearance_choices=preload(\"res://src/model_variant_editor.gd\").new();add_child(appearance_choices);appearance_choices.setup(self,panel)\n"
+        },
+        {
+          "anchor": "\tdata.metadata[\"source_shape\"]={\"format\":\"studio_source_shape_1\",\"enabled\":true}\n",
+          "replacement": "\tif data.metadata.get(\"native_parameters\",{}).has(\"model_variants\"):\n\t\tdata.metadata[\"model_variants\"]=data.metadata.native_parameters.model_variants\n\tdata.metadata[\"source_shape\"]={\"format\":\"studio_source_shape_1\",\"enabled\":true}\n"
+        },
+        {
+          "anchor": "\t\tactive_rig().data = data.duplicate(true)\n",
+          "replacement": "\t\tif not Model.Variants.manifest(active_rig().data).is_empty() or not Model.Variants.manifest(data).is_empty():\n\t\t\tif active_rig().variants==null:return \"Model appearance choices have no loaded asset binding.\"\n\t\t\tvar variant_error: String=active_rig().variants.sync_record(data,active_rig().opacity_materials)\n\t\t\tif not variant_error.is_empty():app.message(variant_error);return variant_error\n\t\tactive_rig().data = data.duplicate(true)\n"
+        }
+      ],
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "successor_bytes": 68556,
+      "successor_sha256": "462eee4dc62a475fbce55a7cf2f7959b32087f70f787ab587da4280aaaf8cb12"
+    },
+    {
+      "path": "src/scene3d.gd",
+      "operations": [
+        {
+          "anchor": "static func load_glb(path: String) -> Dictionary:",
+          "replacement": "static func load_glb(path: String, variant_manifest: Dictionary = {}) -> Dictionary:"
+        },
+        {
+          "anchor": "\tif scene == null:\r\n\t\treturn {\"error\": \"GLB contains no usable scene.\"}\r\n",
+          "replacement": "\tif scene == null:\r\n\t\treturn {\"error\": \"GLB contains no usable scene.\"}\r\n\tif not variant_manifest.is_empty():\r\n\t\t# Independent root composes actor visibility with per-part visibility.\r\n\t\tvar wrapper:=Node3D.new();wrapper.name=\"VariantActor\";wrapper.add_child(scene);scene=wrapper\r\n"
+        },
+        {
+          "anchor": "\tscene.set_meta(\"has_source_bones\",source_bones)\r\n",
+          "replacement": "\tscene.set_meta(\"has_source_bones\",source_bones)\r\n\tif not variant_manifest.is_empty():\r\n\t\tvar hasher:=HashingContext.new();hasher.start(HashingContext.HASH_SHA256);hasher.update(bytes)\r\n\t\tvar runtime=preload(\"res://src/model_variant_runtime.gd\")\r\n\t\tvar captured: Dictionary=runtime.capture(data,state,scene,hasher.finish().hex_encode(),variant_manifest)\r\n\t\tif captured.has(\"error\"):scene.free();return captured\r\n\t\tscene.set_meta(runtime.META,captured.descriptor)\r\n"
+        }
+      ],
+      "base_bytes": 11042,
+      "base_sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1",
+      "successor_bytes": 11699,
+      "successor_sha256": "0bfe9262beb461931bfb37ec685133ad904db9f9292fbe234efcf12a0100c59f"
+    },
+    {
+      "path": "src/pose_bounds.gd",
+      "operations": [
+        {
+          "anchor": "\t\tif current is MeshInstance3D and current.mesh:mesh_bounds(current,context)\n",
+          "replacement": "\t\tif current is MeshInstance3D and current.mesh and not preload(\"res://src/model_variant_runtime.gd\").hidden_for_bounds(current):mesh_bounds(current,context)\n"
+        }
+      ],
+      "base_bytes": 6430,
+      "base_sha256": "ca501807f2956a9cec85eda6ba197b6525ca0b3c2b855104ea25e65a68ccd2cf",
+      "successor_bytes": 6511,
+      "successor_sha256": "c2a1ccba936c8d6203bb911c49eeb15ca9e2dbf2aef26c331ed0b1a1723f83aa"
+    },
+    {
+      "path": "src/storage.gd",
+      "operations": [
+        {
+          "anchor": "const BasisProject=preload(\"res://src/import_basis_project.gd\")\n",
+          "replacement": "const BasisProject=preload(\"res://src/import_basis_project.gd\")\nconst Variants=preload(\"res://src/model_variants.gd\")\n"
+        },
+        {
+          "anchor": "\tvar encoded:=ImportBasis.encode_capability(candidate)\n",
+          "replacement": "\tvar lowered:=Variants.project_view(candidate,false,false)\n\tif lowered.has(\"error\"):return lowered.error\n\tvar encoded:=ImportBasis.encode_capability(lowered.document)\n"
+        },
+        {
+          "anchor": "\tvar basis_encoded:=ImportBasis.encode_capability(manifest)\n",
+          "replacement": "\tvar variant_lowered:=Variants.project_view(manifest,false,false)\n\tif variant_lowered.has(\"error\"):return variant_lowered.error\n\tvar basis_encoded:=ImportBasis.encode_capability(variant_lowered.document)\n"
+        },
+        {
+          "anchor": "\tmanifest=basis_encoded.document\n",
+          "replacement": "\tmanifest=basis_encoded.document\n\tvar variant_encoded:=Variants.encode_project(manifest)\n\tif variant_encoded.has(\"error\"):return variant_encoded.error\n\tmanifest=variant_encoded.document\n"
+        }
+      ],
+      "base_bytes": 37190,
+      "base_sha256": "54f503d4960e6bc7c1d7f28464208d9059789467056029a06ca823fe8e90ebfa",
+      "successor_bytes": 37653,
+      "successor_sha256": "3b676909105674b1f1b646c02c8eb2e835dfde870e5042409ee4c9c2b6c29706"
+    },
+    {
+      "path": "src/import_basis_project.gd",
+      "operations": [
+        {
+          "anchor": "const MARKERS=",
+          "replacement": "const Variants=preload(\"res://src/model_variants.gd\")\nconst MARKERS="
+        },
+        {
+          "anchor": "static func validation_view(document) -> Dictionary:\n",
+          "replacement": "static func validation_view(document) -> Dictionary:\n\tvar variant_view:=Variants.project_view(document,true,true)\n\treturn variant_view if variant_view.has(\"error\") else _validation_view_without_variants(variant_view.document)\n\nstatic func _validation_view_without_variants(document) -> Dictionary:\n"
+        },
+        {
+          "anchor": "static func decoded_content_schema(document) -> int:\n",
+          "replacement": "static func decoded_content_schema(document) -> int:\n\tvar variant_view:=Variants.project_view(document,true,true)\n\treturn -1 if variant_view.has(\"error\") else _decoded_content_schema_without_variants(variant_view.document)\n\nstatic func _decoded_content_schema_without_variants(document) -> int:\n"
+        },
+        {
+          "anchor": "if not validation_view(candidate).has(\"error\")",
+          "replacement": "if not _validation_view_without_variants(candidate).has(\"error\")"
+        },
+        {
+          "anchor": "var admitted:=validation_view(candidate)",
+          "replacement": "var admitted:=_validation_view_without_variants(candidate)"
+        },
+        {
+          "anchor": "static func restore_capabilities(original: Dictionary,decoded: Dictionary) -> Dictionary:\n",
+          "replacement": "static func restore_capabilities(original: Dictionary,decoded: Dictionary) -> Dictionary:\n\tvar variant_view:=Variants.project_view(original,true,true)\n\tif variant_view.has(\"error\"):return variant_view\n\tvar restored:=_restore_capabilities_without_variants(variant_view.document,decoded)\n\treturn restored if restored.has(\"error\") else Variants.restore_project(original,restored)\n\nstatic func _restore_capabilities_without_variants(original: Dictionary,decoded: Dictionary) -> Dictionary:\n"
+        },
+        {
+          "anchor": "var child:=restore_capabilities(source.scene,target.scene)",
+          "replacement": "var child:=_restore_capabilities_without_variants(source.scene,target.scene)"
+        }
+      ],
+      "base_bytes": 5446,
+      "base_sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "successor_bytes": 6437,
+      "successor_sha256": "50c61576b1f03fe19cead28e3c57323f5ed25136d6514a8671a7f4b69ff7b89a"
+    },
+    {
+      "path": "tools/has_project.py",
+      "operations": [
+        {
+          "anchor": "try:from . import import_basis as ImportBasis\nexcept ImportError:import import_basis as ImportBasis\n",
+          "replacement": "try:from . import import_basis as ImportBasis\nexcept ImportError:import import_basis as ImportBasis\ntry:from . import model_variant_project as Variants\nexcept ImportError:import model_variant_project as Variants\n"
+        },
+        {
+          "anchor": "return ImportBasis.members_with_capability(manifest,lambda view:_members_without_import_basis(view,extended_ok),runtime_basis_ready=True)",
+          "replacement": "return ImportBasis.members_with_capability(Variants.validation_view(manifest),lambda view:_members_without_import_basis(view,extended_ok),runtime_basis_ready=True)"
+        },
+        {
+          "anchor": "except ImportBasis.BasisError as error:\n        raise HasError(str(error)) from error",
+          "replacement": "except (ImportBasis.BasisError, Variants.VariantError) as error:\n        raise HasError(str(error)) from error"
+        }
+      ],
+      "base_bytes": 36848,
+      "base_sha256": "f693de3f83a56651ab15508ec36d2479215251d9c4a43012ec7668c20527e499",
+      "successor_bytes": 37011,
+      "successor_sha256": "a75118de6c201aa47ef79d980955bec94bc5e651419968fdca58d927339175b3"
+    },
+    {
+      "path": "src/extended_timing.gd",
+      "operations": [
+        {
+          "anchor": "const ImportBasis=preload(\"res://src/import_basis.gd\")\n",
+          "replacement": "const ImportBasis=preload(\"res://src/import_basis.gd\")\nconst Variants=preload(\"res://src/model_variants.gd\")\n"
+        },
+        {
+          "anchor": "\t\t\t\tvar scene=asset.get(\"scene\",{})\n",
+          "replacement": "\t\t\t\tvar scene=asset.get(\"scene\",{})\n\t\t\t\tif scene is Dictionary and scene.get(\"schema_version\")==Variants.PROJECT_VERSION:\n\t\t\t\t\tvar variant_view:=Variants.project_view(scene,false,false)\n\t\t\t\t\tif variant_view.has(\"error\"):return true\n\t\t\t\t\tscene=variant_view.document\n"
+        },
+        {
+          "anchor": "static func child_schema(scene: Dictionary) -> int:\n",
+          "replacement": "static func child_schema(scene: Dictionary) -> int:\n\tif scene.get(\"schema_version\")==Variants.PROJECT_VERSION:\n\t\tvar variant_view:=Variants.project_view(scene,true,true)\n\t\treturn -1 if variant_view.has(\"error\") else child_schema(variant_view.document)\n"
+        }
+      ],
+      "base_bytes": 3582,
+      "base_sha256": "1f1610018b65f7dead4afe029fb9923b6ef9d9b3cf8840d9502da3c3b9dfce68",
+      "successor_bytes": 4065,
+      "successor_sha256": "f38ba0c97ecd83907119d05b575b5c55ff74b169f53f9093a996c11e6314ed44"
+    }
+  ],
+  "author_executed_tests": false
+}

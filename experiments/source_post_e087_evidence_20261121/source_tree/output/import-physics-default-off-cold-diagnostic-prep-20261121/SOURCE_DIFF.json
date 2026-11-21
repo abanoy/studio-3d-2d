@@ -1,0 +1,21 @@
+{
+  "format": "has_import_off_cold_diagnostic_delta_1",
+  "base": {
+    "path": "output/import-physics-default-off-prep-20261120/payload/tests/import_physics_smoke.gd",
+    "bytes": 14981,
+    "sha256": "85893da331f1e45eb85c5e1e17893c2ac236d2931290b28dc6106953992aa465"
+  },
+  "candidate": {
+    "path": "import_physics_smoke.gd",
+    "bytes": 19157,
+    "sha256": "0e60e0dc6a435c0b1e09b336086978fdf6a0306df52b946a7c804461913726d8"
+  },
+  "changes": [
+    "Add safe bounded structural diagnostic helper functions.",
+    "Add one diagnostic call before the existing cold check."
+  ],
+  "all_original_assertion_calls_unchanged": true,
+  "cold_predicate_unchanged": true,
+  "application_adopted": false,
+  "source_executed": false
+}

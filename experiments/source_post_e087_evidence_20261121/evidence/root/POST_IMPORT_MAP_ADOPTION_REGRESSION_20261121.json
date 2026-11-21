@@ -1,0 +1,50 @@
+{
+  "format": "has_post_import_map_adoption_regression_1",
+  "status": "PASS",
+  "current_functional_count": 1086,
+  "tests": {
+    "source_lights": {
+      "passed": 24,
+      "failures": 0
+    },
+    "bridge_light_phase": {
+      "passed": 4,
+      "failures": 0
+    },
+    "source_appearance": {
+      "passed": 29,
+      "failures": 0,
+      "errors": 0,
+      "source_preserved": true,
+      "result": "output/source-appearance-cpu/runs/1795243437856266300-cpu/result.json",
+      "result_sha256": "01a9d809b0c288c7ca37fc335b78fca8f94fff80dee545e08f06f517025a0ffc"
+    }
+  },
+  "total_cpu_tests": 57,
+  "invalid_prior_invocation": {
+    "command": "python -B -m unittest discover -s tests -p test_source_appearance.py -v",
+    "exit": 1,
+    "setup_errors": 29,
+    "test_bodies_executed": 0,
+    "reason": "Suite main() must initialize its owned RUN directory; corrected canonical direct script passed all29."
+  },
+  "canonical_overview": {
+    "initial_draft_validation": "Overview drift after append; generator contract retained",
+    "draft_preserved": "output/completion-overview-before-regeneration-20261121.md",
+    "regeneration_command": "python -B tools/check_completion.py --write",
+    "exit": 0,
+    "bytes": 28806,
+    "sha256": "54eb2b0454277ac5efc08ccbebb2b0b42007b59b365d9cbbf6e6e656a6711625",
+    "equals_preincrement_baseline": false
+  },
+  "formal_requirements": 62,
+  "implementation": [
+    52,
+    54
+  ],
+  "acceptance": [
+    55,
+    62
+  ],
+  "complete_current_1086_full_suite_claimed": false
+}

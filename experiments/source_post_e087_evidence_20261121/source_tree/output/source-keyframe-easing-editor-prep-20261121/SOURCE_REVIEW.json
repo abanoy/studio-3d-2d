@@ -1,0 +1,27 @@
+{
+  "format": "has_easing_editor_independent_source_review_1",
+  "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "source_api_review": "GO",
+  "editor_authored_controls": 45,
+  "editor_controls_executed": false,
+  "root_core_controls_passed": 24,
+  "math_fixture_only_delta_verified": true,
+  "core_code_changed": false,
+  "app_source_adopted": false,
+  "reviewed_boundaries": [
+    "camera_section exists in Classic and Neon",
+    "setup is after Neon camera inspector restructure",
+    "current parent-scene session/video/source-key ownership",
+    "temporary sampler guarded and capture bypass explicit",
+    "Bake deep-copies ordinary keys history before/after",
+    "actual app applies keys history with duplicate(true)",
+    "45 test controls do not claim actual GUI/Undo/native/export"
+  ],
+  "remaining": [
+    "actual45 editor controls",
+    "real GUI and real Undo/Redo",
+    "cold saved keys",
+    "preview/movie equality after Bake",
+    "normal affected app regression"
+  ]
+}

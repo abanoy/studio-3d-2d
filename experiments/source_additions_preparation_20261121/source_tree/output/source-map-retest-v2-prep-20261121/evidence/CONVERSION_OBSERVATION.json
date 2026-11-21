@@ -1,0 +1,33 @@
+{
+  "format": "has_failed_map_placement_conversion_scalar_observation_1",
+  "qualification_passed": false,
+  "original_overall_status": "FAIL",
+  "ordinary_converter_status_ok": true,
+  "glb_bytes": 53235920,
+  "counts": {
+    "meshes": 314,
+    "textures": 74,
+    "bones": 0,
+    "static_lights": 64
+  },
+  "light_omissions": {
+    "format": "has_optional_source_map_light_omissions_1",
+    "policy": "omit_optional_lighting_preserve_geometry_and_raw_entities",
+    "light_entities": 137,
+    "created": 64,
+    "invalid": 0,
+    "budget": 42,
+    "starts_off": 0,
+    "animated_style": 31,
+    "unsupported_type": 0,
+    "global_limit": 64,
+    "remaining_budget_at_start": 64,
+    "raw_entities_preserved": true,
+    "warning_details_omitted": 0
+  },
+  "warning_count": 35,
+  "geometry_or_native_arrays_published": false,
+  "private_desktop_gate_passed": false,
+  "git_head_move_proven": false,
+  "git_check_failed_due_environment": true
+}

@@ -1,0 +1,36 @@
+{
+  "format": "has_loose_part_selection_static_source_comparison_1",
+  "only_14_unique_anchor_operations": true,
+  "current_source_written": false,
+  "base": {
+    "bytes": 46668,
+    "sha256": "5757e86b2f81a14ccd65ca3e91c2eedcecf2c03f653d08c9c5ead18aebe81f71"
+  },
+  "candidate": {
+    "bytes": 47901,
+    "sha256": "c91c8674535f2e763bf6db00c17364c8f33aaaaf514a98080608ab704dee28ec"
+  },
+  "unchanged_functions": [
+    {
+      "function": "part_pointer",
+      "byte_exact": true
+    },
+    {
+      "function": "patch_pointer",
+      "byte_exact": true
+    },
+    {
+      "function": "global_patch_event",
+      "byte_exact": true
+    },
+    {
+      "function": "install",
+      "byte_exact": true
+    },
+    {
+      "function": "can_install",
+      "byte_exact": true
+    }
+  ],
+  "tests_parsed_or_executed": false
+}

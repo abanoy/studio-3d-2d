@@ -1,0 +1,21 @@
+# Isolated actual map retest coordinator
+
+SOURCE-ONLY / UNRUN by the author. Root alone may execute after reviewing the exact source pin and confirming its exclusive native lane. No current1084 source, HEAD, oldreview, installed app, input map/archive or dependency source was modified during authoring.
+
+The coordinator requires the exact successful360 Full completion2ca293d1/sourceae338017, verifies every current1084 source size/SHA/nsmtime, and requires an explicit expected current HEAD. It verifies the existing immutable3bb7 runtime lock, all6 executable hashes,574 SourceIO source paths/hashes and120 installed exporter source paths/hashes. It uses the already installed approved runtime; no network, package installation or download exists.
+
+A fresh sibling has-source-map-retest-<id> owns all writes. Current tools are copied from the exact1084 catalogue, and only the two Root28-CPU-qualified map-light sources are overlaid. Their old copies are preserved in stage/bases. An exact fresh SourceIO source subset is derived from the original catalogue by explicitly excluding cache/git entries and avoids writing or consuming bytecode caches in the old review dependency. Both original-catalogue and derived-subset counts are recorded independently; the literal3bb7 lock currently has574 rows and no cache/git rows, so its source-only subset is574 without treating that as a generic SDK count rule. PYTHONDONTWRITEBYTECODE/isolated Blender config and userdata are set only in the coordinator environment and restored afterward.
+
+Each ordinary tools/prepare_source.py invocation uses the original installed gm_construct.bsp or Workshop legacy archive with the exact original member, scale.01905 and the same recorded external resource mounts. The old review's transient native/archive mount is excluded because the ordinary preparer stages the original again into its own fresh bundle; no old staged native data is relabelled. Request hashes and original hashes come from the recorded failures. The actual worker retains its own fresh archive selection, cancellation,600second conversion timeout, original-input hash check and128MiB GLB limit.
+
+The existing exact private_desktop.py wraps the complete Python preparer/Blender descendant tree in a never-switched desktop and kill-on-close Job with4GiB memory and720second outer timeout. Root Python desktop placement is independently recorded by that existing wrapper; descendant processes inherit that private desktop and Job. No claim of a new Blender window sentinel or GUI/render acceptance is made. Closure is required before a second map; an unknown/missing closure keeps the owned lane lock rather than claiming release. The wrapper always uses background/factory-startup/disable-autoexec/offline Blender through the unchanged ordinary preparer. User input is never injected.
+
+Conversion success requires both actual worker statuses, nonempty map meshes,serialized glTF punctual lights<=64 exactly matching the planner's created count, every omission category accounting to the raw light total, and preserved raw entities.json. Returned public scalar summary contains counts/hashes only, no raw maps, native/model arrays or material/entity names. Output GLB/parameters/logs are retained privately in the owned stage. This qualifies conversion only; opening/framing/render/visual/cold acceptance is a later Root job.
+
+All admitted source/runtime/request/original/owned-code hashes and identities are reread in finally, including complete noncache SDK/exporter pathsets. HEAD is rechecked. Existing old171/output-refresh/checkpoint artifacts are not rewritten. A cooperative private job receipt is ordinary newly owned evidence after Full closure; do not copy this new receipt into experiments during any future running Full.
+
+Prospective Root command from the primary workspace (replaceSELF andHEAD with independently reviewed exact values):
+
+    python -B output/source-map-retest-prep-20261121/run_map_retest.py --self-sha256 SELF --expected-head HEAD --root-exclusive-lane-confirmed
+
+The source module is nested under output/<candidate> and uses ROOT=parents[2]. Do not flatten it without updating its path binding. This coordinator source is preparatory and has no authored execution/pass credit. Root's pure map patch28/28 control result is separate from these pending real maps.

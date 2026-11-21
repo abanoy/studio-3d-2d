@@ -1,0 +1,16 @@
+{
+  "format": "has_source_map_light_candidate_root_cpu_result_1",
+  "source_packet": "output/source-map-light-compat-prep-20261120",
+  "source_pins_sha256": "955305ac3304ffe9e8cdc41366d34db20559d9871cc642f5fcb6b88a6617bb4a",
+  "source_pins_readback_match": true,
+  "command": "Python313 -B -m unittest discover -s output/source-map-light-compat-prep-20261120 -p test*.py -v",
+  "exit": 0,
+  "tests_run": 28,
+  "tests_passed": 28,
+  "unittest_seconds": 0.033,
+  "host_wall_seconds": 0.5112443,
+  "native_map_conversion_run": false,
+  "actual_gm_construct_fixed_claim": false,
+  "actual_tinyspaceship_fixed_claim": false,
+  "current_application_adopted": false
+}

@@ -1,0 +1,27 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS empty recipe admits without active segments
+PASS zero amounts preserve every old integer-frame sample
+PASS arrival and departure independently affect the correct time direction
+PASS authored endpoints remain exact camera values
+PASS unselected neighboring segment remains untouched
+PASS full numeric easing is an independently expected Hermite time map
+PASS all sampled control combinations are monotone and bounded
+PASS legacy fixed Ease keeps its old curve
+PASS numeric controls compose with the retained fixed Ease shape
+PASS untouched Hold stays a step
+PASS affected Hold refuses without rewriting interpolation
+PASS Bake inserts only missing selected frames and preserves all authored dictionaries
+PASS ordinary baked keys reproduce integer preview samples without a subframe claim
+PASS Recalculate and Bake are deterministic and do not accumulate helpers
+PASS returned Bake is independent of authored source and preview plan
+PASS recipe mutation after compile is refused
+PASS source mutation inside a frozen preview is refused
+PASS changed authored keys or duration invalidate the preview
+PASS nonfinite Boolean textual and out-of-range percentages refuse
+PASS non-key and duplicate control ownership refuses
+PASS unordered or duplicate authored frames refuse
+PASS invalid quaternion and fractional sample frame refuse
+PASS exact existing 241-key boundary is admitted
+PASS over-budget Bake refuses before changing source
+KEYFRAME_EASING_MATH_UNIT {"application_adopted":false,"checks":24,"failures":0,"native_or_gpu_started":false}

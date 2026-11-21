@@ -1,0 +1,43 @@
+{
+  "format": "has_source_only_camera_easing_patch_1",
+  "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "application_adopted": false,
+  "patches": [
+    {
+      "path": "src/app.gd",
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "var keys: Array = []\r\n",
+      "after": "var keys: Array = []\r\nvar camera_easing: Node\r\n"
+    },
+    {
+      "path": "src/app.gd",
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "\tif StudioTheme.is_neon(): build_camera_inspector()\r\n",
+      "after": "\tif StudioTheme.is_neon(): build_camera_inspector()\r\n\tcamera_easing=preload(\"res://src/camera_easing_editor.gd\").new();add_child(camera_easing);camera_easing.setup(self)\r\n\trenderer.camera_preview_sampler=camera_easing.sample_preview\r\n"
+    },
+    {
+      "path": "src/app.gd",
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "\tif mode.selected != 1: renderer.evaluate(keys, frame)\r\n",
+      "after": "\tif mode.selected != 1 or (camera_easing and camera_easing.preview_active()): renderer.evaluate(keys, frame)\r\n"
+    },
+    {
+      "path": "src/renderer.gd",
+      "base_sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "before": "var before_final_capture:=Callable()\r\n",
+      "after": "var before_final_capture:=Callable()\r\nvar camera_preview_sampler:=Callable() # Session-only; capture always bypasses it.\r\n"
+    },
+    {
+      "path": "src/renderer.gd",
+      "base_sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "before": "func evaluate(keys: Array, frame: int) -> void:\r\n\tapply_lighting()\r\n\tvar value := Timeline.sample(keys, frame)\r\n",
+      "after": "func evaluate(keys: Array, frame: int,allow_camera_preview:=true) -> void:\r\n\tapply_lighting()\r\n\tvar value: Dictionary={}\r\n\tif allow_camera_preview and camera_preview_sampler.is_valid():value=camera_preview_sampler.call(keys,frame)\r\n\tif value.is_empty():value=Timeline.sample(keys, frame)\r\n"
+    },
+    {
+      "path": "src/renderer.gd",
+      "base_sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "before": "\tevaluate(keys, frame)\r\n\tif world_runtime:world_runtime.evaluate(frame,final,\"\",video_settings)\r\n",
+      "after": "\tevaluate(keys, frame,false)\r\n\tif world_runtime:world_runtime.evaluate(frame,final,\"\",video_settings)\r\n"
+    }
+  ]
+}

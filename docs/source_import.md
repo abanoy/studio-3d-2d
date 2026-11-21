@@ -116,12 +116,16 @@ are listed. It needs additional content mounts for a complete scene. No assets a
 silently downloaded to fill those gaps. Other supplied archives are not certified.
 
 PBR materials approximate `$basetexture`, alpha and culling. Source shader proxies,
-animated VTF frames, material blending, water/refraction, HDR/styled/displacement lightmaps, decals, native
-lighting and composed 3D skyboxes are unsupported. Maps use the studio's lighting;
-skybox geometry may still exist at its original separate location. Tool surfaces
-are excluded. Native entity records survive as data, not running gameplay. Physics,
+animated VTF frames, material blending, water/refraction, HDR/styled/displacement
+lightmaps, decals, full Source lighting and composed 3D skyboxes are unsupported.
+Supported static entity lights and compatible LDR brush lightmaps are preserved
+separately; Studio light remains an explicit fallback. Skybox geometry may still
+exist at its original separate location. Tool surfaces are excluded. Native entity
+records survive as data, not running gameplay. Native ragdoll/collision physics,
 IK, native sequences, live flex/bodygroup/skin UI, VMF/Hammer authoring and lossless
 Source round-trip are deferred. Existing one-model/512-bone/128MiB-GLB limits apply.
+New models start with HAS Physics off; [explicit On and retained peer behavior](import_physics.md)
+remain separate from native-format physics fidelity.
 
 Archive bounds: 512MiB decompressed, 128MiB LZMA decoder memory, safe resource-only
 paths, case-insensitive duplicate/device-name rejection. The measured Steam sample
@@ -167,12 +171,24 @@ normal Z-up to Y-up export. Static point/spot brightness scales with squared uni
 scale; directional brightness does not. These are approximate intensity and
 falloff conversions, not Source renderer photometry or baked lightmaps.
 
-Starts-off entities and animated light styles remain in `entities.json` and get
-explicit warnings; they are not silently enabled. Other light entity types get
-unsupported diagnostics. No entity programs or gameplay switching are executed.
-Malformed colors, transforms, cones, flags/styles and more than64supported static
-lights refuse preparation. Native parameters retain the emitted light inventory.
-The installed-game preflight and original-source preservation rules remain.
+BSP preparation preserves geometry and every raw entity record when optional
+lighting cannot be represented. Starts-off and animated-style lights are not
+silently enabled; invalid/sentinel colors, transforms or cones and unsupported
+light types are omitted with counts and warnings. A valid spot accepts an outer
+half-cone through90 degrees, with an inner cone strictly smaller than the outer.
+No values are clamped to repair an invalid light.
+
+The global budget is64 emitted static lights across all entity text blocks, not64
+per block. Additional eligible lights are counted as budget omissions. Native
+parameters retain both the emitted inventory and
+`static_entity_light_omissions`, including created, invalid, budget, starts-off,
+animated-style and unsupported-type counts. The original `entities.json` remains
+complete. Warning examples are bounded; `warning_details_omitted` reports any
+remaining details, with an aggregate message directing inspection of raw entities.
+No entity programs or gameplay switching run. Malformed structural input or scale
+still refuses preparation. The planner strict/default API continues to reject
+malformed lights and overflow; this optional omission policy is explicit for BSP.
+Installed-game preflight and original-source preservation rules remain.
 
 Nine planner tests (including malformed and capacity cases), actual Blender4.3.2
 GLB export with verified types/axes/colors/spot angle, and nine private Studio
@@ -182,13 +198,24 @@ input; the actual48frame1080p24H264 movie passes inspection. The optional Draco
 module is absent in this Blender installation; the verified output is ordinary
 uncompressed GLB. A first harness parse needed an explicit GDScript Image type.
 
-This exercises the exact emitter on original entity records and geometry. The
-full pinned SourceIO/native BSP/GMod path still requires the installed-game and
-approved map fixture; it was not run here. Lightmaps, ambient sky/HDR, native
-shaders and game photometry remain unsupported. See
+Those earlier emitter tests used original entity records and geometry, without
+the full pinned SourceIO/native BSP/GMod path. Ambient sky/HDR, native shaders and
+game photometry remain unsupported. See
 [recorded evidence](benchmarks/source_entity_lights_2026-11-07.json) and
 `tests/verify_source_lights.py`.
 
 Static LDR brush lightmaps now have [bounded preservation and mode switching](source_brush_lightmaps.md).
-Earlier entity-light evidence excludes this later capability. Full installed-host
-BSP validation, HDR/styled/displacement lighting and Source photometry remain open.
+Earlier entity-light evidence excludes this later capability. HDR/styled/
+displacement lighting, complete native BSP visual acceptance and Source photometry
+remain open.
+
+The2026-11-21 read-only native retest converted both reported maps with the optional
+policy and exact omission accounting: `gm_construct` emitted64 lights from137
+light declarations (42 budget omissions and31 animated styles), while
+`ttt_tiny_spaceship_v3` emitted18 from105 (one invalid environment light, six
+starts-off and80 animated styles). Raw mesh summaries were314/252 and final GLB
+mesh tables310/234 respectively; these are different producer/serialization
+counts. Both owned private jobs and hidden preparer-placement checks closed, with
+all admitted inputs unchanged. This is conversion evidence only: editor/visual
+acceptance remains false, and it does not certify every mounted resource, shader
+or Source light behavior.

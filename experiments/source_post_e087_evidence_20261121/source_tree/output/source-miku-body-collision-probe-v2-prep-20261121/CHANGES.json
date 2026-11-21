@@ -1,0 +1,48 @@
+{
+  "format": "has_miku_probe_context_patch_1",
+  "base_probe_sha256": "78cdb5447cd376148f9a240c5da9cb11dc0ff4bd2d966b9a4d8d0184bfc5ee4c",
+  "probe_replacements": [
+    {
+      "before": "var frame := 0\n",
+      "after": "var frame := 0\nvar editing := false\n"
+    },
+    {
+      "before": "static func begin(rig: RefCounted, at_frame: int, request: Dictionary, owner: Node) -> Dictionary:\n",
+      "after": "static func sample_initial(rig: RefCounted, at_frame: int, editing_context) -> Dictionary:\n\tif not editing_context is bool: return {\"error\":\"explicit_editing_context_required\"}\n\treturn {\"pose\":rig.sample(at_frame,editing_context).duplicate(true),\"editing\":editing_context}\n\nstatic func begin(rig: RefCounted, at_frame: int, request: Dictionary, owner: Node, editing_context) -> Dictionary:\n"
+    },
+    {
+      "before": "\tvar probe = new()\n\tprobe.actor = rig; probe.frame = at_frame\n",
+      "after": "\tvar sampled: Dictionary = sample_initial(rig,at_frame,editing_context)\n\tif sampled.has(\"error\"): return sampled\n\tvar probe = new()\n\tprobe.actor = rig; probe.frame = at_frame; probe.editing = sampled.editing\n"
+    },
+    {
+      "before": "\tvar initial: Dictionary = rig.sample(at_frame,false)\n\t# Match SecondaryLive.create: construct from the requested authored sample.\n\trig.live_pose = initial.duplicate(true); rig.apply_current(at_frame,false)\n",
+      "after": "\tvar initial: Dictionary = sampled.pose\n\t# Match SecondaryLive.create: capture the current world before applying its\n\t# explicit draft-or-timeline sample, then preserve that context on cleanup.\n\tvar initial_world: Transform3D = rig.root.global_transform\n\trig.live_pose = initial.duplicate(true); rig.apply_current(at_frame,probe.editing)\n"
+    },
+    {
+      "before": "\t\trig.live_pose = null; rig.apply_current(at_frame,false); return result\n",
+      "after": "\t\trig.live_pose = null; rig.apply_current(at_frame,probe.editing); return result\n"
+    },
+    {
+      "before": "\tprobe.live.initial_world = rig.root.global_transform; probe.live.native_backend = false\n",
+      "after": "\tprobe.live.initial_world = initial_world; probe.live.native_backend = false\n"
+    },
+    {
+      "before": "\tprobe.metrics = {\"format\":\"has_miku_body_collision_probe_summary_1\",\"collision_enabled\":prepared.enabled,\n",
+      "after": "\tprobe.metrics = {\"format\":\"has_miku_body_collision_probe_summary_1\",\"collision_enabled\":prepared.enabled,\n\t\t\"initial_editing_context\":probe.editing,\"saved_draft_context_qualified\":false,\n"
+    },
+    {
+      "before": "\t\tif is_instance_valid(rig.root): rig.apply_current(at_frame,false)\n",
+      "after": "\t\tif is_instance_valid(rig.root): rig.apply_current(at_frame,probe.editing)\n"
+    },
+    {
+      "before": "\tif actor!=null and is_instance_valid(actor.root): actor.apply_current(frame)\n",
+      "after": "\tif actor!=null and is_instance_valid(actor.root): actor.apply_current(frame,editing)\n"
+    }
+  ],
+  "unit_change": "Preserve all old31 checks; add real Model sampling controls and strict editing-context type refusals.",
+  "old_controls": 31,
+  "new_controls": 9,
+  "total_controls": 40,
+  "application_adopted": false,
+  "source_executed": false
+}

@@ -1,0 +1,54 @@
+{
+  "format": "has_snapshot_only_native_preview_batch_candidate_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN",
+  "base_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "files": [
+    {
+      "path": "src/source_secondary_preview_batch.gd",
+      "operation": "new",
+      "source": "src/source_secondary_preview_batch.gd"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "operation": "replace",
+      "source": "src/secondary_live.gd",
+      "base_sha256": "600f30f9801f50b2e58e8d09ad8f758e62f6a8418723497bba1baeadaa4b1eac"
+    },
+    {
+      "path": "tests/source_native_preview_batch_unit.gd",
+      "operation": "new",
+      "source": "tests/source_native_preview_batch_unit.gd"
+    }
+  ],
+  "patches": [
+    {
+      "path": "src/physics_editor.gd",
+      "base_sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "before": "\tprocess_physics_priority=-10\n",
+      "after": "\tprocess_physics_priority=-10\n\tprocess_priority=-10 # Drain preview ticks before ordinary per-frame visual readers.\n"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "before": "\t\t\tvar error: String=simulation.advance(delta,app.frame,time,recording.active,fields,app.renderer.world_runtime)\n",
+      "after": "\t\t\tvar error: String=\"\"\n\t\t\tif simulation.native_backend and not recording.active:\n\t\t\t\terror=simulation.queue_native_preview(delta,app.frame,time,fields)\n\t\t\telse:\n\t\t\t\terror=simulation.advance(delta,app.frame,time,recording.active,fields,app.renderer.world_runtime)\n"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "before": "func _process(_delta: float) -> void:\n",
+      "after": "func flush_native_previews() -> String:\n\tfor id in simulations.keys():\n\t\tvar simulation: RefCounted=simulations[id]\n\t\tif not simulation is Secondary or not simulation.native_backend:continue\n\t\tvar error: String=simulation.flush_native_preview(app.frame,recording.active,app.renderer.world_runtime)\n\t\tif not error.is_empty():\n\t\t\tdisable_hair(id)\n\t\t\treturn error\n\treturn \"\"\n\nfunc _process(_delta: float) -> void:\n\tvar preview_error: String=flush_native_previews()\n\tif not preview_error.is_empty():app.message(preview_error)\n"
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "base_sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "before": "\tapp.stop();app.finish_stroke();app.pose_editor.finish_drag()\n",
+      "after": "\tapp.stop();app.finish_stroke();app.pose_editor.finish_drag()\n\tvar preview_error: String=editor.flush_native_previews()\n\tif not preview_error.is_empty():app.message(preview_error);return false\n"
+    }
+  ],
+  "constraints": [
+    "Only disposable snapshot after current Full closes; current source and old review remain untouched.",
+    "Existing inherited SourceSecondary.step and original SecondaryLive.advance remain unchanged.",
+    "Only unrecorded native independent preview enters the queue; all recording and generic/body paths remain per-tick.",
+    "Every queued tick retains its original fan fields; no downsampling, dropped ticks, weakened validation or authored writes.",
+    "All fields/pins/anchors must qualify before any overlay writes; engine parser and actual comparative performance remain UNRUN."
+  ]
+}

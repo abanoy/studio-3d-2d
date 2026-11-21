@@ -1,0 +1,115 @@
+{
+  "format": "has_face_window_pose_handle_sources_1",
+  "status": "SOURCE_FROZEN_UNPARSED_UNRUN_PENDING_PEER",
+  "application_adopted": false,
+  "base_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "files": [
+    {
+      "path": "BASES.json",
+      "bytes": 1933,
+      "sha256": "6febe1f5629037d4c5ff21e1cdc3b1d9cae9427ac8f5f5945a5554da663f8afe"
+    },
+    {
+      "path": "bases/src/app.gd",
+      "bytes": 314487,
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc"
+    },
+    {
+      "path": "bases/src/base_shape_editor.gd",
+      "bytes": 16788,
+      "sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0"
+    },
+    {
+      "path": "bases/src/pose_editor.gd",
+      "bytes": 67846,
+      "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358"
+    },
+    {
+      "path": "bases/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17395,
+      "sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39"
+    },
+    {
+      "path": "PATCHES.json",
+      "bytes": 10814,
+      "sha256": "333ed855681a00dc3d1c20f0929ba1a2e4677fd6dbbb8bf0cede78a82d034cf6"
+    },
+    {
+      "path": "payload/src/app.gd",
+      "bytes": 314530,
+      "sha256": "e56561a656be932fc54e025a36ac917f8ab835cf8f77e12c029f6044ae547a38"
+    },
+    {
+      "path": "payload/src/base_shape_editor.gd",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0"
+    },
+    {
+      "path": "payload/src/editor_handle_metrics.gd",
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48"
+    },
+    {
+      "path": "payload/src/pose_editor.gd",
+      "bytes": 70140,
+      "sha256": "16ce6efc0756bd6e534a594b48da93c1979190369c2a3edbd5382bc62be6e600"
+    },
+    {
+      "path": "payload/src/shape_window_layout.gd",
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5"
+    },
+    {
+      "path": "payload/tests/editor_geometry_unit.gd",
+      "bytes": 4289,
+      "sha256": "7235e5856316d26f6589f46ac81e29850a0baf909b3bebf09c76d63e9e85bd3d"
+    },
+    {
+      "path": "payload/tests/face_window_layout_smoke.gd",
+      "bytes": 4728,
+      "sha256": "cce81146ae10e3a3757d38e806a977c056aaf3c0cdc9c60d4ada6b6b2711389a"
+    },
+    {
+      "path": "payload/tests/pose_handle_size_smoke.gd",
+      "bytes": 7509,
+      "sha256": "b9f373b232e638388b2c17c6f6830028773a61e33cb323603a464750d9d1138a"
+    },
+    {
+      "path": "payload/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8768,
+      "sha256": "b475e2c079a1e07d5957b243ca6807b76f720e18f03ce1f0386e6dcfc5b46165"
+    },
+    {
+      "path": "TARGETS.json",
+      "bytes": 2572,
+      "sha256": "d736f3a0cdc15b7e6d714b293291b67c8ca8571e9257fc55facab42069ae6db5"
+    },
+    {
+      "path": "variants/face_pose_editor.gd",
+      "bytes": 68322,
+      "sha256": "0c54f879fdcbd32420324558b34bb4ca29bb462b3009dc402fa4ebf4e66a8a31"
+    },
+    {
+      "path": "variants/handle_pose_editor.gd",
+      "bytes": 69664,
+      "sha256": "6737fd6433e3e0e1c33bafbe49dfb1dbc2e7d502fe1e6f3a704126ac3cf26b58"
+    }
+  ],
+  "source_checks": {
+    "all18_exact_anchors_reversed": true,
+    "shape_authoring_suffix_byte_exact": true,
+    "existing_rotation_assertion_sites_unchanged": 36,
+    "current_eight_reference_files_unchanged": true
+  },
+  "authored_checks": {
+    "pure_geometry": 37,
+    "face_widgets": 15,
+    "handle_gui_pixels_and_picking": 27
+  },
+  "actual_tests_run": 0
+}

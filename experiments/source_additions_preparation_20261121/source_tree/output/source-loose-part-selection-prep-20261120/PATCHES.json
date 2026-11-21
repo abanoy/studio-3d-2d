@@ -1,0 +1,82 @@
+{
+  "format": "has_source_only_loose_part_multiselection_snapshot_patch_1",
+  "status": "AUTHORED_UNRUN",
+  "base_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "path": "src/secondary_helper_editor.gd",
+  "base_bytes": 46668,
+  "base_sha256": "5757e86b2f81a14ccd65ca3e91c2eedcecf2c03f653d08c9c5ead18aebe81f71",
+  "operations": [
+    {
+      "anchor": "var part_names: Array[String]=[]\n",
+      "replacement": "var part_names: Array[String]=[]\nvar row_selection: Node\n"
+    },
+    {
+      "anchor": "parts.item_selected.connect(select_part);parts.gui_input.connect(include_key);box.add_child(parts)\n",
+      "replacement": "parts.gui_input.connect(include_key);box.add_child(parts)\n\trow_selection=preload(\"res://src/loose_part_selector.gd\").new();window.add_child(row_selection);row_selection.setup(self,parts,box)\n"
+    },
+    {
+      "anchor": "\t\tparts.select(selected);parts.ensure_current_is_visible();select_part(selected)\n",
+      "replacement": "\t\trow_selection.bind_rows(selected)\n\t\tparts.select(selected);parts.ensure_current_is_visible();select_part(selected)\n"
+    },
+    {
+      "anchor": "\tvar row: Dictionary=assessment.regions[index]\n\tpoint_review_after=0\n",
+      "replacement": "\tvar row: Dictionary=assessment.regions[index]\n\tif is_instance_valid(row_selection):row_selection.external_focus(index)\n\tpoint_review_after=0\n"
+    },
+    {
+      "anchor": "\t\trestore_list_focus=false\n\telif stage==\"batch_build\":\n",
+      "replacement": "\t\trestore_list_focus=false\n\t\tif is_instance_valid(row_selection):row_selection.after_review(value)\n\telif stage==\"batch_build\":\n"
+    },
+    {
+      "anchor": "\t\t\tanchors.disabled=preview.is_empty();apply_button.disabled=stage!=\"build\" or preview.is_empty() or not preview.get(\"can_apply\",false)\n\t\t\trefresh_inclusions();return\n",
+      "replacement": "\t\t\tanchors.disabled=preview.is_empty();apply_button.disabled=stage!=\"build\" or preview.is_empty() or not preview.get(\"can_apply\",false)\n\t\t\tif is_instance_valid(row_selection):row_selection.abort_batch(\"One selected part could not be reviewed. Previous included groups were kept.\")\n\t\t\trefresh_inclusions();return\n"
+    },
+    {
+      "anchor": "\t\tapply_button.disabled=pid>0 or pending>0 or point_review_after>0\n",
+      "replacement": "\t\tapply_button.disabled=pid>0 or pending>0 or point_review_after>0\n\tif is_instance_valid(row_selection) and (row_selection.queue_active or row_selection.focus_due>0 or row_selection.model.dragging):apply_button.disabled=true;include_toggle.disabled=true\n"
+    },
+    {
+      "anchor": "\tfor i in range(assessment.regions.size()):parts.set_item_disabled(i,assessment.regions[i].already_rigged and not enabled)\n",
+      "replacement": "\tfor i in range(assessment.regions.size()):parts.set_item_disabled(i,assessment.regions[i].already_rigged and not enabled)\n\tif is_instance_valid(row_selection):row_selection.bind_rows(row_selection.model.focus)\n"
+    },
+    {
+      "anchor": "func close() -> void:\n\tstop_pending_preview(\"Closed\")\n",
+      "replacement": "func close() -> void:\n\tstop_pending_preview(\"Closed\")\n\tif is_instance_valid(row_selection):row_selection.shutdown()\n\trow_selection=null\n"
+    },
+    {
+      "anchor": "include_toggle.text=\"Include in setup\";",
+      "replacement": "include_toggle.text=\"Include focused part in setup\";"
+    },
+    {
+      "anchor": "func include_part(enabled: bool) -> void:\n\tstop_pending_preview(\"Reviewed setup changed\")\n",
+      "replacement": "func include_part(enabled: bool) -> void:\n\tstop_pending_preview(\"Reviewed setup changed\")\n\tif is_instance_valid(row_selection) and row_selection.focus_due>0:row_selection.focus_now();refresh_inclusions();return\n"
+    },
+    {
+      "anchor": "func apply() -> void:\n\tstop_pending_preview(\"Apply\")\n",
+      "replacement": "func apply() -> void:\n\tstop_pending_preview(\"Apply\")\n\tif is_instance_valid(row_selection) and row_selection.focus_due>0:row_selection.focus_now();return\n"
+    },
+    {
+      "anchor": "func reset_points() -> void:\n",
+      "replacement": "func reset_points() -> void:\n\tif is_instance_valid(row_selection) and row_selection.focus_due>0:row_selection.focus_now();return\n"
+    },
+    {
+      "anchor": "func reset_patch() -> void:\n",
+      "replacement": "func reset_patch() -> void:\n\tif is_instance_valid(row_selection) and row_selection.focus_due>0:row_selection.focus_now();return\n"
+    }
+  ],
+  "new_files": [
+    {
+      "path": "src/loose_part_selection.gd",
+      "source": "loose_part_selection.gd"
+    },
+    {
+      "path": "src/loose_part_selector.gd",
+      "source": "loose_part_selector.gd"
+    },
+    {
+      "path": "tests/loose_part_selection_unit.gd",
+      "source": "loose_part_selection_unit.gd"
+    }
+  ],
+  "application_adopted": false,
+  "author_executed": false
+}

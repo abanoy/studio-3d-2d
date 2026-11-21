@@ -1,0 +1,108 @@
+{
+  "format": "has_post_e087_seven_document_drafts_1",
+  "status": "DRAFTS_ONLY_ROOT_MUST_REVIEW_APPLY",
+  "actual_adoption_verified": true,
+  "files": [
+    {
+      "path": "LLM.md",
+      "baseline": {
+        "bytes": 650152,
+        "sha256": "48ff535d1e471340f12816495e239876243bd9056ee60205050e2ba3eaff2773"
+      },
+      "draft": {
+        "bytes": 653647,
+        "sha256": "52845b3cb1d2c559335363df0e8f172431210ce0de4612574126ccb43f3baad5"
+      },
+      "application_rule": "append_only_preserve_entire_raw_prefix",
+      "current_file_modified": false
+    },
+    {
+      "path": "docs/progress_memo.md",
+      "baseline": {
+        "bytes": 1466731,
+        "sha256": "ee31c51983993355dd9ec76a50bcff4cbe6a1368c700ce7eb1ee7a0334e5cab2"
+      },
+      "draft": {
+        "bytes": 1470226,
+        "sha256": "35960dfcbf6a4a799d0c34478db819e45c6da8cd15088187a85133f90677cbb1"
+      },
+      "application_rule": "append_only_preserve_entire_raw_prefix",
+      "current_file_modified": false
+    },
+    {
+      "path": "docs/RESUME_MASTER_PLAN.md",
+      "baseline": {
+        "bytes": 153755,
+        "sha256": "8da1c5f8655ee3409be348bd274fb134c2e06cdbd769466925d0c556f37395b5"
+      },
+      "draft": {
+        "bytes": 159897,
+        "sha256": "5bb1d1e6b898bfa94ceb0ad4f0a6364288804361fd966b0d3092ea0819b3dd13"
+      },
+      "application_rule": "append_only_preserve_entire_raw_prefix",
+      "current_file_modified": false
+    },
+    {
+      "path": "docs/NEXT_SESSION_PLAN_2026-11-20.md",
+      "baseline": {
+        "bytes": 27955,
+        "sha256": "169f5bea0fa9d196c789337b2eec6abb44c5c0a20b5ad0984a64bf7307b34dd0"
+      },
+      "draft": {
+        "bytes": 34121,
+        "sha256": "df46db0986a7d5886c57476230e84c4749204af8adb8980853de728c1929e270"
+      },
+      "application_rule": "append_only_preserve_entire_raw_prefix",
+      "current_file_modified": false
+    },
+    {
+      "path": "docs/completion_checklist.md",
+      "baseline": {
+        "bytes": 28662,
+        "sha256": "6790641f88e2608d1ecb059db428fcf31910432ed69ed53a88544b32e7b282d4"
+      },
+      "draft": {
+        "bytes": 32142,
+        "sha256": "42e553b2b4edee6c8067ce9ca14e9cad11093bab0cc6dc25f21469b9a3a1bf87"
+      },
+      "application_rule": "append_only_preserve_entire_raw_prefix",
+      "current_file_modified": false
+    },
+    {
+      "path": "docs/completion_checklist.json",
+      "baseline": {
+        "bytes": 258564,
+        "sha256": "5d09bc550c66fa73aa3eb0cc268afd70932518d0bdad2bb91ec296d77fd7425f"
+      },
+      "draft": {
+        "bytes": 262221,
+        "sha256": "93627b5c81a92514d6e30c78157dff46d0c50b1aa86c6ad2cb18b4b9357d855e"
+      },
+      "application_rule": "insert_one_new_top_level_field_preserving_all_historical_fields",
+      "current_file_modified": false
+    },
+    {
+      "path": "docs/benchmarks/reference_body_2026-11-20.json",
+      "baseline": {
+        "bytes": 70605,
+        "sha256": "c58fec64e0666043107b8e2f439eb6cfa9a75d7c3067fd6975fd703918f727a3"
+      },
+      "draft": {
+        "bytes": 74262,
+        "sha256": "0a1856e98ec3d79afcec7b7140b32016fe753378663b84bc8e419218739f5f3b"
+      },
+      "application_rule": "insert_one_new_top_level_field_preserving_all_historical_fields",
+      "current_file_modified": false
+    }
+  ],
+  "formal_requirement_statuses_unchanged": true,
+  "implementation_score": [
+    52,
+    54
+  ],
+  "acceptance_score": [
+    55,
+    62
+  ],
+  "source_or_current_docs_modified_by_author": false
+}

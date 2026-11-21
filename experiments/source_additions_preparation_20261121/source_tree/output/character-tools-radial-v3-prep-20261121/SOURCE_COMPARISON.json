@@ -1,0 +1,23 @@
+{
+  "format": "has_radial_fixture_typed_array_source_fix_3",
+  "statement_before": "value.order = [\"root\"]",
+  "statement_after": "value.order.assign([\"root\"])",
+  "old_unit": {
+    "bytes": 13654,
+    "sha256": "b1d218369dc7884150abade272a68f715fcca06ca97b7f9884aa028eef276aeb"
+  },
+  "new_unit": {
+    "bytes": 13660,
+    "sha256": "cd86d1ae0848a0f1a48ea968efc2d8cd4bdc1365ffdbbbada81abad50530197a"
+  },
+  "reverse_byte_exact": true,
+  "all_assertions_unchanged": true,
+  "generated_checks_expected": 49,
+  "model_api_reference": {
+    "path": "src/model.gd",
+    "bytes": 30301,
+    "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7"
+  },
+  "author_execution": false,
+  "application_adopted": false
+}

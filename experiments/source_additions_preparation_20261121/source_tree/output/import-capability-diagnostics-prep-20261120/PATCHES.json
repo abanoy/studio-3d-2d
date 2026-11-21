@@ -1,0 +1,61 @@
+{
+  "format": "has_snapshot_only_import_capability_patch_records_1",
+  "scope": "UNRUN_SOURCE_ONLY; apply only in a new disposable snapshot after current Full is closed",
+  "base_functional_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "files": [
+    {
+      "path": "src/import_capability_summary.gd",
+      "operation": "new",
+      "source": "import_capability_summary.gd"
+    },
+    {
+      "path": "src/import_capability_editor.gd",
+      "operation": "new",
+      "source": "import_capability_editor.gd"
+    },
+    {
+      "path": "tests/import_capability_summary_unit.gd",
+      "operation": "new",
+      "source": "test_import_capability_summary.gd"
+    }
+  ],
+  "patches": [
+    {
+      "path": "src/pose_editor.gd",
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "var shape_window: Window\n",
+      "after": "var shape_window: Window\nvar import_capabilities: Node\n"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "before": "\tshape_button=app.button(panel,\"Shapes / expressions…\",open_shapes)\n",
+      "after": "\tshape_button=app.button(panel,\"Shapes / expressions…\",open_shapes)\n\timport_capabilities=preload(\"res://src/import_capability_editor.gd\").new();add_child(import_capabilities);import_capabilities.setup(self,panel)\n\tapp.world_selection.add_import_info(import_capabilities)\n"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "base_sha256": "da1b36461976a521b27592bec818600937057522c783d3500c293448735be4cf",
+      "before": "func tree_font() -> Font:\r\n",
+      "after": "func add_import_info(info: Node) -> void:\r\n\t# Pose setup occurs after the World rail has been initialized.\r\n\tif info == null or not is_instance_valid(tree): return\r\n\tfor control in actions:\r\n\t\tif control.get_meta(\"import_capability_action\",false): return\r\n\tvar item: Button = info.add_button(tree.get_parent())\r\n\titem.set_meta(\"import_capability_action\",true)\r\n\titem.set_meta(\"rail\",[\"Import info\",\"help\",\"Import info\"])\r\n\tactions.append(item)\r\n\ttree.get_parent().move_child(item,help_label.get_index())\r\n\trefresh_actions()\r\n\r\nfunc tree_font() -> Font:\r\n"
+    },
+    {
+      "path": "src/source_import.gd",
+      "base_sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d",
+      "before": "\tvar count: int = report.get(\"warnings\", []).size() if report is Dictionary else 0\r\n\tvar skipped: int = report.get(\"mount_warnings\", []).size() if report is Dictionary else 0\r\n\tapp.message((\"3D asset\" if generic or not native_family.is_empty() else \"Source asset\") + \" imported through standard GLB. %d resource warnings; %d dependency packages skipped. Details: %s\" % [count, skipped, folder])\r\n\tif actor and app.height_review and app.height_review.pending:app.message(\"3D asset prepared. Review its height to finish adding the model. Details: \"+folder)\r\n\telif actor and app.renderer.active_model():app.message(app.status.text+app.placement_message(app.renderer.active_model().data))\r\n\tif count > 0:\r\n\t\tvar dialog := AcceptDialog.new()\r\n\t\tdialog.exclusive = false\r\n\t\tdialog.title = \"Imported with limitations\" if not native_family.is_empty() else \"Source import warnings\"\r\n\t\tvar summary := \"Import notes\"\r\n\t\tif report.get(\"missing_textures\") is Array:\r\n\t\t\tvar missing: int = report.missing_textures.size()\r\n\t\t\tsummary = \"Missing texture files: %d\" % missing\r\n\t\tdialog.dialog_text = \"%s\\n%s\\n\\nFull details: %s\" % [summary, \"\\n\".join(report.warnings.slice(0, 6)), folder.path_join(\"parameters.json\")]\r\n\t\tapp.add_child(dialog)\r\n\t\tdialog.confirmed.connect(dialog.queue_free)\r\n\t\tdialog.canceled.connect(dialog.queue_free)\r\n\t\tdialog.close_requested.connect(dialog.queue_free)\r\n\t\tdialog.popup_centered(Vector2i(740, 340))\r\n\r\n",
+      "after": "\tapp.pose_editor.import_capabilities.notify_import(report)\r\n\tif actor and app.height_review and app.height_review.pending:app.message(\"3D asset prepared. Review its height to finish adding the model. Import info is available after adding it. Details: \"+folder)\r\n\telif actor and app.renderer.active_model():app.message(app.status.text+app.placement_message(app.renderer.active_model().data))\r\n\r\n"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "before": "\tneon_outline(keys_box, shape_button, \"sparkle\")\n",
+      "after": "\tneon_outline(keys_box, shape_button, \"sparkle\")\n\tneon_outline(keys_box, import_capabilities.button, \"help\")\n"
+    }
+  ],
+  "constraints": [
+    "Every before anchor must occur exactly once; preserve every other source byte and original line endings.",
+    "Keep source_import failure/cancel handling, apply_view, placement and pending height review before/after this success-only replacement.",
+    "Existing raw warnings, limits, limitations, mount warnings, metadata and parameter files are not rewritten.",
+    "No project schema change: summaries are computed from already-retained metadata on demand.",
+    "Do not apply to the active checkout or while a verifier is running."
+  ],
+  "executed": false,
+  "qualified": false
+}

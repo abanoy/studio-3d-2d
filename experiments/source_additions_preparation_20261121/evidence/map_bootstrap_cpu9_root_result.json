@@ -1,0 +1,26 @@
+{
+  "format": "has_map_bootstrap_root_cpu_result_1",
+  "status": "PASS",
+  "command": [
+    "C:/Program Files/Python313/python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "output/source-map-retest-v2-prep-20261121",
+    "-p",
+    "test_map_bootstrap.py",
+    "-v"
+  ],
+  "tests_passed": 9,
+  "tests_failed": 0,
+  "test_seconds": 0.079,
+  "root_command_exit": 0,
+  "root_command_reaped": true,
+  "app_native_or_gpu_started": false,
+  "current_application_adopted": false,
+  "host_sha256": "199eed36d5c16606237e4a84a197bf1f9fe455d367cd657d62574ae15d9bf139",
+  "bootstrap_sha256": "59c9b66e7ba62339127aa874abcc02cd0e568b6c641d9f0d1cefddbbd8e52b4e",
+  "tests_sha256": "30a7d04dbf93e791b6208e220ae509c3d34f075b5c952e2dfcb133cfc1acbad3"
+}

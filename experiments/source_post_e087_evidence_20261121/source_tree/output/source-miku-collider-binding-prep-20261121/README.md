@@ -1,0 +1,15 @@
+# Private Miku collider runtime binding — source only
+
+This adapter closes the unresolved numeric-glTF-node to HAS-bone-ID boundary without guessing names or geometry. It is a private Root probe tool, not a product capability or automatic body-collider feature. No source here has been parsed or executed by its author.
+
+Stage miku_collider_binding.gd at res://src/ and its unit at res://tests/ beside the explicit-context v2 collision probe. The existing LimbIK, Model, SceneIO, SecondaryRig/Spring/Live remain unchanged.
+
+Root first cold-loads the protected 036e stuff2 project, verifies its project/asset/input hashes, selects the exact loaded Miku actor and confirms its saved draft/timeline mode. Pass the original private input bytes to Binder.from_bytes(actor,raw,["rightUpperArm"],false/true). The raw private input is fixed to its exact e3ad SHA256; it is never copied into this source packet. The initial upper-only comparison preserves the measured capsule. In the encoded GLTF rest pose, the full lower-arm sleeve envelope has11 initial hair overlaps and must be reported, not silently shrunk. That rest measurement is not an observation of the saved visible draft; Root must measure its explicit editing context separately.
+
+resolve_runtime uses SceneIO’s calculated has_source_bones map. It verifies real Skeleton3D ownership, index/name/path consistency, direct source/runtime parents, three distinct same-skeleton arm roles, and the independent existing LimbIK right-hand chain. JSON integral floats are accepted for source-node indices; booleans and fractional values are not. Only after exact binding does from_bytes build a detached private request and pass it through the existing probe admission. The actor, source metadata and private input remain unchanged.
+
+Identity resolution does not establish geometric alignment. Root must independently compare imported rest frames/actual capsules with the private measured runtime-alignment file, verify the draft context, and observe the real scene before interpreting contact measurements. Root must still prove the protected project actually produced this actor; the adapter cannot infer project identity from an asset hash alone. These flags stay false in its result.
+
+The synthetic unit uses actual Skeleton3D bones and the real LimbIK.chain routine, with fake actor storage. It has27 authored controls for direct identity, independent chain membership, parent/name/index/source drift, detached data, JSON indices, role choices and sealed-private-input refusals. It does not load private data or prove actual Miku contact. A strict10-second test watchdog is included. Root owns any private execution and job closure.
+
+No private coordinates, bone names from the actual model, positions, weights, matrices, images, GLB or HAS files are included. The two public hashes identify protected inputs already known to Root. New generated collider serialization, actual skin/segment contact, moving body/inertia, Undo/Record, cold storage and older-reader refusal remain separate pending work.

@@ -1,0 +1,161 @@
+{
+  "format": "has_source_only_native_preview_performance_review_1",
+  "scope": "READ_ONLY_STATIC_REVIEW_NOT_A_RUNTIME_MEASUREMENT",
+  "owner_review": "C:/a/Programming/cloudflare/HAS-Review-Neon-973039e-native",
+  "current_root": "C:/a/Programming/cloudflare/has-body-addition-20261120",
+  "per_tick_source_secondary_suffix_text_equal": true,
+  "suffix_start": "func binding_stamp()",
+  "sources": [
+    {
+      "path": "src/secondary_live.gd",
+      "current": {
+        "bytes": 6426,
+        "sha256": "600f30f9801f50b2e58e8d09ad8f758e62f6a8418723497bba1baeadaa4b1eac"
+      },
+      "owner_review": {
+        "bytes": 6551,
+        "sha256": "2613b19ce53b3a50fd001fe4e5b39bca2814165148b036993549490aa96c33a9"
+      },
+      "text_equal_except_eol": true
+    },
+    {
+      "path": "src/source_secondary.gd",
+      "current": {
+        "bytes": 30597,
+        "sha256": "012d54ce1305b29bb24a1a58a5343f26aa7e7d5b27f2be30fc1975b5981c5b9d"
+      },
+      "owner_review": {
+        "bytes": 29136,
+        "sha256": "2238e7546e556680ca5785cec581ad49668f812b56f437609aaab4e7355a68bd"
+      },
+      "text_equal_except_eol": false
+    },
+    {
+      "path": "src/source_chain_math.gd",
+      "current": {
+        "bytes": 8794,
+        "sha256": "3245868060893b020c6caaf253bac9263d103fb299ac4dec81b9b62f8f7a0461"
+      },
+      "owner_review": {
+        "bytes": 8975,
+        "sha256": "fcab96fbc9ffb4fadbfa21d06752454fe30f85178f5021a80debd34415aa6764"
+      },
+      "text_equal_except_eol": true
+    },
+    {
+      "path": "src/source_jiggle_math.gd",
+      "current": {
+        "bytes": 10025,
+        "sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90"
+      },
+      "owner_review": {
+        "bytes": 10222,
+        "sha256": "efc8faec825abe896ee6da91760bf51b5f7bb4042d41f710ad0e350912d0aef7"
+      },
+      "text_equal_except_eol": true
+    },
+    {
+      "path": "src/source_bone_bindings.gd",
+      "current": {
+        "bytes": 24681,
+        "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54"
+      },
+      "owner_review": {
+        "bytes": 25044,
+        "sha256": "5b06ef110625c5ddf56b32f584b3c3544e80f93315d5d689744a21eb8fd7946b"
+      },
+      "text_equal_except_eol": true
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "current": {
+        "bytes": 23446,
+        "sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801"
+      },
+      "owner_review": {
+        "bytes": 23821,
+        "sha256": "9ac5a60eb791021d3fb6cf8e062d98e14c151dd14eb8ca27ee813fd51a1a4fe0"
+      },
+      "text_equal_except_eol": true
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "current": {
+        "bytes": 24512,
+        "sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c"
+      },
+      "owner_review": {
+        "bytes": 19712,
+        "sha256": "34a9fe7da957b8ea5a54668c2e024c35a4e8e35d377a782eb9f38d49284533ac"
+      },
+      "text_equal_except_eol": false
+    },
+    {
+      "path": "src/model.gd",
+      "current": {
+        "bytes": 30301,
+        "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7"
+      },
+      "owner_review": {
+        "bytes": 28593,
+        "sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678"
+      },
+      "text_equal_except_eol": false
+    },
+    {
+      "path": "src/airflow.gd",
+      "current": {
+        "bytes": 6191,
+        "sha256": "e072ffeb4a5702a47ab413deb9be2305d35e46562887eb3464ca765654f9cfb4"
+      },
+      "owner_review": {
+        "bytes": 6276,
+        "sha256": "d6bb934440095553f70300609da70eb198c7ca1d45aae0403f0a6e749ad2b7b7"
+      },
+      "text_equal_except_eol": true
+    },
+    {
+      "path": "project.godot",
+      "current": {
+        "bytes": 970,
+        "sha256": "035837440da21e9a478b1edec8824410606e01666035aeb9e531531de482d372"
+      },
+      "owner_review": {
+        "bytes": 1000,
+        "sha256": "4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30"
+      },
+      "text_equal_except_eol": true
+    }
+  ],
+  "functions": {
+    "src/secondary_live.gd": [
+      "47: func start() -> void:",
+      "50: func advance(delta: float,frame: int,time: float,recording: bool,fields: Array,runtime: RefCounted) -> String:"
+    ],
+    "src/source_secondary.gd": [
+      "150: static func context_error(rig: RefCounted,sk: Skeleton3D) -> String:",
+      "278: func binding_stamp() -> PackedByteArray:",
+      "299: func configuration_stamp(value: RefCounted) -> PackedByteArray:",
+      "303: func state_error(snapshot: Dictionary, expected_tick: int) -> String:",
+      "311: func capture_baseline() -> Dictionary:",
+      "379: func step(delta: float,wind: Vector3,forces: Array = []) -> Dictionary:"
+    ],
+    "src/source_chain_math.gd": [
+      "35: static func compose(parent: Dictionary, local: Dictionary) -> Dictionary:",
+      "90: func baseline_worlds(locals: Dictionary, prefix: Dictionary) -> Dictionary:",
+      "134: func step(next_tick: Variant, locals: Dictionary, prefix: Dictionary, world_accelerations: Dictionary = {}) -> Dictionary:"
+    ],
+    "src/physics_editor.gd": [
+      "94: func _physics_process(delta: float) -> void:",
+      "143: func _process(_delta: float) -> void:"
+    ],
+    "src/model.gd": [
+      "471: func apply_current(frame: int, editing := false) -> void:",
+      "474: func apply(frame: int, editing := false, final := false, video: Dictionary = {}, parent_opacity := 1.0,editing_ancestor: String=\"\") -> void:"
+    ],
+    "src/physics_recording.gd": [
+      "169: func start() -> bool:",
+      "208: func _physics_process(_delta: float) -> void:"
+    ]
+  }
+}

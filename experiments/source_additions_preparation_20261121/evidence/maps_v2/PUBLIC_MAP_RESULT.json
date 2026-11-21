@@ -1,0 +1,83 @@
+{
+  "format": "has_actual_optional_map_light_retest_2",
+  "status": "PASS",
+  "revision_under_test": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "head": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "cases": [
+    {
+      "case": "gm_construct",
+      "conversion_passed": true,
+      "private_job_closed": true,
+      "hidden_root_sentinel_verified": true,
+      "geometry": {
+        "bytes": 53235920,
+        "sha256": "30b5866d00d3c7259cee1ef51b69a130e88c5bb5cd7d4e279cfcbae63b0aa137",
+        "meshes": 310,
+        "nodes": 569,
+        "materials": 222,
+        "lights": 64
+      },
+      "raw_entity_count": 1227,
+      "light_omissions": {
+        "format": "has_optional_source_map_light_omissions_1",
+        "policy": "omit_optional_lighting_preserve_geometry_and_raw_entities",
+        "light_entities": 137,
+        "created": 64,
+        "invalid": 0,
+        "budget": 42,
+        "starts_off": 0,
+        "animated_style": 31,
+        "unsupported_type": 0,
+        "global_limit": 64,
+        "remaining_budget_at_start": 64,
+        "raw_entities_preserved": true,
+        "warning_details_omitted": 0
+      },
+      "warning_count": 35,
+      "source_mesh_count": 314
+    },
+    {
+      "case": "ttt_tiny_spaceship_v3",
+      "conversion_passed": true,
+      "private_job_closed": true,
+      "hidden_root_sentinel_verified": true,
+      "geometry": {
+        "bytes": 47845932,
+        "sha256": "bcb7198877b1d9c75d7c3d4b503c3ce5af3e4ffa5b69396fc5b32a69e811213f",
+        "meshes": 234,
+        "nodes": 539,
+        "materials": 124,
+        "lights": 18
+      },
+      "raw_entity_count": 508,
+      "light_omissions": {
+        "format": "has_optional_source_map_light_omissions_1",
+        "policy": "omit_optional_lighting_preserve_geometry_and_raw_entities",
+        "light_entities": 105,
+        "created": 18,
+        "invalid": 1,
+        "budget": 0,
+        "starts_off": 6,
+        "animated_style": 80,
+        "unsupported_type": 0,
+        "global_limit": 64,
+        "remaining_budget_at_start": 64,
+        "raw_entities_preserved": true,
+        "warning_details_omitted": 55
+      },
+      "warning_count": 36,
+      "source_mesh_count": 252
+    }
+  ],
+  "actual_editor_or_visual_acceptance": false,
+  "current_application_modified": false,
+  "stage": "C:\\a\\Programming\\cloudflare\\has-source-map-retest-1795240741157655000",
+  "parent_environment_mutated": false,
+  "sdk_catalogue_files": 574,
+  "owned_sdk_source_subset_files": 574,
+  "preservation_failures": [],
+  "all_admitted_inputs_unchanged": true,
+  "head_unchanged": true,
+  "owned_private_job_closure_proven": true,
+  "lane_released": true
+}

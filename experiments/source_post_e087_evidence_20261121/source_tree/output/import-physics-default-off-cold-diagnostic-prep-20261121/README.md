@@ -1,0 +1,9 @@
+# OFF-default cold restore — diagnostic-only successor
+
+Root's first targeted GPU run executed all five prepared native profiles and54 actual assertions. Exactly one cold-restore assertion failed; the other53 passed. Its two inner private jobs and outer job closed, all2230 admitted inputs and the Root environment/HEAD were preserved, and the owned lock was removed. The verifier rejected before its separate ffprobe step. This is a retained failed result, not application adoption.
+
+This new smoke source preserves every original check call and the complete cold predicate. It inserts one observation immediately before that assertion. Booleans identify actor presence, stopped simulation, empty pending imports, SHA equality, pose equality, pose-key equality and metadata equality. Capped structural differences contain only schema-safe or hashed path components, type names, fixed reasons and finite numeric-error observations; no actual pose/metadata/string values or full arrays are printed. Limits are32 entries,4096 visited nodes and16 levels. No result from this diagnostic can make the assertion pass or repair state.
+
+The source is authored, not parsed/executed. Root must run it on the same five copied fixture profiles in the separate GPU-v2 coordinator. The failed v1 source and actual reports remain immutable. No current application or source fixture is changed. A read-only inspection of the saved test HAS found a valid project JSON and asset entries, but it did not establish the failing subcondition; JSON numeric precision is only a hypothesis until actual observations show it.
+
+The observation is printed for both outcomes. A successful cold restore emits true predicates and an empty differences list; the original assertion remains authoritative. The source helper’s historical failure-only comment does not change this behavior.

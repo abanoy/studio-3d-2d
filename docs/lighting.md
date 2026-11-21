@@ -75,6 +75,15 @@ VRM samples. It checks visible rendered color, settings, authored-data/shot/view
 isolation and original file hashes. See the latest progress entry for actual results.
 
 
-Source preparation now emits approximate static point/spot/sun entity lights;
+Source preparation emits approximate static point/spot/sun entity lights;
 see [implementation and limits](source_import.md#static-source-entity-lights).
-Baked BSP lightmaps and full native lighting fidelity remain open.
+BSP preparation preserves geometry and raw entities when optional light data is
+invalid, sentinel-valued, animated, starts off, unsupported or over the global64
+emitted-light limit. The report gives every omission count and bounded warning
+examples; it does not silently switch these lights on or clamp them. A valid
+90-degree outer spot half-cone is accepted. This conversion does not add a light
+creation/editing UI or reproduce Source photometry.
+
+Compatible static LDR brush lightmaps have [separate bounded preservation](source_brush_lightmaps.md).
+The two-map2026-11-21 conversion retest did not qualify editor/visual acceptance.
+HDR/styled/displacement lightmaps and full native lighting fidelity remain open.

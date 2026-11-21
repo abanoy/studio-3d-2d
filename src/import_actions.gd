@@ -13,7 +13,7 @@ func os_drop(files: PackedStringArray) -> void:
 	drop(files,canvas_point(Vector2(DisplayServer.mouse_get_position())))
 
 func placement() -> Dictionary:
-	return {"camera":app.renderer.camera.global_transform,"fov":app.renderer.camera.fov,"near":app.renderer.camera.near,"far":app.renderer.camera.far,"aspect":float(app.renderer.viewport.size.x)/app.renderer.viewport.size.y,"physics_on_import":true,"review_height":offer_height}
+	return {"camera":app.renderer.camera.global_transform,"fov":app.renderer.camera.fov,"near":app.renderer.camera.near,"far":app.renderer.camera.far,"aspect":float(app.renderer.viewport.size.x)/app.renderer.viewport.size.y,"physics_on_import":false,"review_height":offer_height}
 
 func busy() -> bool:
 	if app.exporting or app.source_import.pid>0 or app.has_project.pid>0 or app.height_review and app.height_review.pending:return true

@@ -1,0 +1,54 @@
+{
+  "format": "has_default_off_gpu_source_provenance_1",
+  "builder": {
+    "path": "output/source-owner-review-builder-v3-prep-20261121/build_review.py",
+    "bytes": 22176,
+    "sha256": "d5ab807301d2b51b9ecea5fab1624b12addffe8247f5eafae60bf02c63c6dcec"
+  },
+  "bootstrap": {
+    "path": "output/source-map-retest-v2-prep-20261121/map_prepare_bootstrap.py",
+    "bytes": 3709,
+    "sha256": "59c9b66e7ba62339127aa874abcc02cd0e568b6c641d9f0d1cefddbbd8e52b4e",
+    "copied_byte_exact": true
+  },
+  "coordinator_controls_source": {
+    "path": "output/source-headless-component-coordinator-v2-prep-20261121/run_components.py",
+    "bytes": 21630,
+    "sha256": "b7ad8c60aea5f533c074855064d780d7babdd7ed2a40b29614d3e08b8db1a79b"
+  },
+  "overlays": [
+    {
+      "source": "output/import-physics-default-off-prep-20261120/payload/src/import_actions.gd",
+      "target": "src/import_actions.gd",
+      "bytes": 3870,
+      "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2"
+    },
+    {
+      "source": "output/import-physics-default-off-prep-20261120/payload/tests/import_physics_defaults_unit.gd",
+      "target": "tests/import_physics_defaults_unit.gd",
+      "bytes": 4701,
+      "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7"
+    },
+    {
+      "source": "output/import-physics-default-off-cold-diagnostic-prep-20261121/import_physics_smoke.gd",
+      "target": "tests/import_physics_smoke.gd",
+      "bytes": 19157,
+      "sha256": "0e60e0dc6a435c0b1e09b336086978fdf6a0306df52b946a7c804461913726d8"
+    },
+    {
+      "source": "output/import-physics-default-off-prep-20261120/payload/tests/verify_import_physics.py",
+      "target": "tests/verify_import_physics.py",
+      "bytes": 4708,
+      "sha256": "b7a5df65220801fd4adbe6886b62b65356aa8ab06dd2e97e45f11eef02620438"
+    }
+  ],
+  "current_application_modified": false,
+  "source_executed": false,
+  "predecessor": {
+    "path": "output/source-import-default-off-gpu-prep-20261121/run_default_off_gpu.py",
+    "bytes": 26459,
+    "sha256": "a52775e8cf89d34713b37e57c908ea645a3f1b9e2db42bd31f76933a2de2c29c",
+    "actual_status": "FAILED_ONE_OF_54_COLD_ASSERTIONS",
+    "failed_source_immutable": true
+  }
+}

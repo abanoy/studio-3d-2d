@@ -1,0 +1,23 @@
+{
+  "format": "has_cold_wire_pure_selector_proof_1",
+  "passed_source": {
+    "path": "output/import-physics-default-off-cold-wire-prep-20261121/import_physics_smoke.gd",
+    "bytes": 21657,
+    "sha256": "edb9d0f3f79873dece720f54565dc1de6f6e1808a2b12d95fdf83372acf1b540",
+    "actual54_gpu_pass_reported_by_root": true
+  },
+  "control_predecessor": {
+    "path": "output/import-physics-default-off-cold-wire-v2-prep-20261121/import_physics_smoke.gd",
+    "bytes": 21778,
+    "sha256": "893bd5a9e3c1fd21dfff4afccb1ce5ac8d04545d4559266a2cfb38abbb870b7c"
+  },
+  "one_early_selector_only_since_control_predecessor": true,
+  "selector_removal_restores_predecessor_exactly": true,
+  "full_import_body_from_folder_argument_matches_passed_source_byte_exact": true,
+  "all_cold_comparison_functions_match_passed_source_byte_exact": true,
+  "static_original_check_sites": 42,
+  "original_runtime_assertions": 54,
+  "pure_oracle_controls": 20,
+  "author_executed_source": false,
+  "current_application_adopted": false
+}

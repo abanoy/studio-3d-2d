@@ -1,0 +1,36 @@
+{
+  "format": "has_exact_five_import_off_worker_result_1",
+  "status": "FAIL",
+  "jobs": [
+    {
+      "name": "job-0",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 27956,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-1",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "FAIL",
+      "pid": 21700,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    }
+  ],
+  "error_type": "Refusal",
+  "error_code": "ENGINE_OR_ASSERTION_ERROR",
+  "all_owned_launchers_reaped": true,
+  "all_private_jobs_closed": true,
+  "all_worker_read_inputs_preserved": true,
+  "preservation_failures": []
+}

@@ -1,0 +1,161 @@
+{
+  "format": "has_isolated_headless_gds_components_1",
+  "status": "FAIL",
+  "revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "qualified_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "checks_expected": 123,
+  "functional_sources": 1084,
+  "runtime_snapshot_files": 1087,
+  "stage": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240567956647400",
+  "suites": [
+    {
+      "suite": "default_off",
+      "checks_expected": 16,
+      "status": "PASS",
+      "overlays": [
+        {
+          "path": "src/import_actions.gd",
+          "bytes": 3870,
+          "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2"
+        },
+        {
+          "path": "tests/import_physics_defaults_unit.gd",
+          "bytes": 4701,
+          "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7"
+        }
+      ],
+      "jobs": [
+        {
+          "name": "import",
+          "reaped": true,
+          "private_job_closed": true,
+          "desktop_closed": true,
+          "foreground_child_observed": false,
+          "status": "PASS",
+          "pid": 33312,
+          "child_desktop_observed": false
+        },
+        {
+          "name": "unit",
+          "reaped": true,
+          "private_job_closed": true,
+          "desktop_closed": true,
+          "foreground_child_observed": false,
+          "status": "PASS",
+          "pid": 31396,
+          "child_desktop_observed": false
+        }
+      ],
+      "checks_passed": 16
+    },
+    {
+      "suite": "selection",
+      "checks_expected": 32,
+      "status": "PASS",
+      "overlays": [
+        {
+          "path": "src/loose_part_selection.gd",
+          "bytes": 3351,
+          "sha256": "d34f10fac37fa108c3727d4aafe96989db6a76273b4815672141dae8ee195758"
+        },
+        {
+          "path": "src/loose_part_selector.gd",
+          "bytes": 8583,
+          "sha256": "c9d9ac270e8753092fea0c51eb1d65d765455187ba68907bcc5d33114f448624"
+        },
+        {
+          "path": "tests/loose_part_selection_unit.gd",
+          "bytes": 9574,
+          "sha256": "41899631f0823c01ab4eddef220b9e65ef7a0b462f4a80cd08dffb14b0b90a4c"
+        }
+      ],
+      "jobs": [
+        {
+          "name": "import",
+          "reaped": true,
+          "private_job_closed": true,
+          "desktop_closed": true,
+          "foreground_child_observed": false,
+          "status": "PASS",
+          "pid": 26636,
+          "child_desktop_observed": false
+        },
+        {
+          "name": "unit",
+          "reaped": true,
+          "private_job_closed": true,
+          "desktop_closed": true,
+          "foreground_child_observed": false,
+          "status": "PASS",
+          "pid": 30996,
+          "child_desktop_observed": false
+        }
+      ],
+      "checks_passed": 32
+    },
+    {
+      "suite": "radial",
+      "checks_expected": 49,
+      "status": "FAIL",
+      "overlays": [
+        {
+          "path": "src/character_tools.gd",
+          "bytes": 10450,
+          "sha256": "3d6dc85c334360d2f7e2d948d95047eafe19f4b408191322441b83c47abc438f"
+        },
+        {
+          "path": "src/character_tool_policy.gd",
+          "bytes": 3297,
+          "sha256": "3e62019de547f9fb6900f17f5e7124d76dcb67a3553b65f877f6f6937bb7b294"
+        },
+        {
+          "path": "src/shortcut_bindings.gd",
+          "bytes": 4559,
+          "sha256": "c8ccc33ddf29aac16af627dcaa0b12214f8c1492abf0933d0ebbfb9a959e17cc"
+        },
+        {
+          "path": "src/shortcut_editor.gd",
+          "bytes": 6385,
+          "sha256": "7cc71b21681ee9ff67046760a999dbcce75f1d44264998ecd2e73db99edc3ff4"
+        },
+        {
+          "path": "tests/character_tools_unit.gd",
+          "bytes": 13654,
+          "sha256": "b1d218369dc7884150abade272a68f715fcca06ca97b7f9884aa028eef276aeb"
+        },
+        {
+          "path": "src/app.gd",
+          "bytes": 314713,
+          "sha256": "96d6f63ae2c6fbebe6b737292064a5d0f1926c56d4c16c4b3a905e1a5e070993",
+          "isolated_candidate_anchors": 3
+        }
+      ],
+      "jobs": [
+        {
+          "name": "import",
+          "reaped": true,
+          "private_job_closed": true,
+          "desktop_closed": true,
+          "foreground_child_observed": false,
+          "status": "FAIL",
+          "pid": 25248,
+          "child_desktop_observed": false
+        }
+      ]
+    }
+  ],
+  "application_adopted": false,
+  "native_assets_tested": false,
+  "sdk_or_blender_invoked": false,
+  "gui_or_render_qualified": false,
+  "recording_or_actual_motion_qualified": false,
+  "error_type": "Refusal",
+  "error_code": "COMPONENT_ENGINE_OR_ASSERTION_ERROR",
+  "all_owned_launchers_reaped": true,
+  "all_private_jobs_closed": true,
+  "input_count": 4405,
+  "all_input_hash_size_mtime_identity_unchanged": true,
+  "preservation_failures": [],
+  "head_unchanged": true,
+  "owned_lane_removed": true
+}

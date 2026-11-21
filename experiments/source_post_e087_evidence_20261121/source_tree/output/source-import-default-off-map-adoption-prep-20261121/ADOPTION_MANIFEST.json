@@ -1,0 +1,157 @@
+{
+  "format": "has_conditional_import_off_map_adoption_manifest_1",
+  "base_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "status": "PENDING_COLD_GPU_DIAGNOSTIC_NO_ADOPTION",
+  "adoption_allowed": false,
+  "functional_baseline_count": 1084,
+  "functional_target_count_if_exact_eight_adopted": 1086,
+  "existing_functional_targets_modified": 6,
+  "new_functional_targets": 2,
+  "old_functional_paths_remaining_untouched": 1078,
+  "functional_files": [
+    {
+      "path": "src/import_actions.gd",
+      "source": "output/import-physics-default-off-prep-20261120/payload/src/import_actions.gd",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 3869,
+        "sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b"
+      },
+      "target": {
+        "bytes": 3870,
+        "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2"
+      }
+    },
+    {
+      "path": "tests/import_physics_defaults_unit.gd",
+      "source": "output/import-physics-default-off-prep-20261120/payload/tests/import_physics_defaults_unit.gd",
+      "operation": "add",
+      "baseline": null,
+      "target": {
+        "bytes": 4701,
+        "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7"
+      }
+    },
+    {
+      "path": "tests/import_physics_smoke.gd",
+      "source": "output/import-physics-default-off-prep-20261120/payload/tests/import_physics_smoke.gd",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 11993,
+        "sha256": "a76a854a46e470624e677110e9d20c99075fbe9de001359b005eeb23ed9519dc"
+      },
+      "target": {
+        "bytes": 14981,
+        "sha256": "85893da331f1e45eb85c5e1e17893c2ac236d2931290b28dc6106953992aa465"
+      }
+    },
+    {
+      "path": "tests/verify_import_physics.py",
+      "source": "output/import-physics-default-off-prep-20261120/payload/tests/verify_import_physics.py",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 4708,
+        "sha256": "909c0ced4f2eeae05c268e45b01e6055bc4f657213b5fa26ab896179abf4f691"
+      },
+      "target": {
+        "bytes": 4708,
+        "sha256": "b7a5df65220801fd4adbe6886b62b65356aa8ab06dd2e97e45f11eef02620438"
+      }
+    },
+    {
+      "path": "tools/source_lights.py",
+      "source": "output/source-map-light-compat-prep-20261120/source_lights.py",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 4457,
+        "sha256": "3937840da25b39ca505c00902b0da7192b8d02e67100ad282853a80bbc57281e"
+      },
+      "target": {
+        "bytes": 8319,
+        "sha256": "284971f27040335b727c7a94639920cb6b1e37a37645ec8f553a704f1522eb5b"
+      }
+    },
+    {
+      "path": "tools/blender_source_bridge.py",
+      "source": "output/source-map-light-compat-prep-20261120/blender_source_bridge.py",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 30542,
+        "sha256": "a0024efa46643aeb03dcd0ce0e2d717c5d2102347d1e424239802f11d9dff419"
+      },
+      "target": {
+        "bytes": 30697,
+        "sha256": "cc5a205772c83949bcc10f06633a73d83664c455e8daad163c06dba7a26dc60e"
+      }
+    },
+    {
+      "path": "tests/test_source_lights.py",
+      "source": "output/source-map-light-compat-prep-20261120/test_source_lights.py",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 2402,
+        "sha256": "3366407e377c53dc1688e1c529f3cc009e7e4cad6297abd5ca2d41b81f0ad562"
+      },
+      "target": {
+        "bytes": 8420,
+        "sha256": "554202926efd038d9916242d4353feae69ce6e43928c75826736354ac2dd3b22"
+      }
+    },
+    {
+      "path": "tests/test_bridge_light_phase.py",
+      "source": "output/source-map-light-compat-prep-20261120/test_bridge_light_phase.py",
+      "operation": "add",
+      "baseline": null,
+      "target": {
+        "bytes": 4180,
+        "sha256": "aa612d14d9ce2e9d47b5da9cafd88c05a16232bf4923cfb931012f0662b788b4"
+      }
+    }
+  ],
+  "documentation_files": [
+    {
+      "path": "docs/import_physics.md",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 3194,
+        "sha256": "aa6b851099247a9e6313a251499459b9c15d82faae89bc0e049ce4e8e58e25ab"
+      },
+      "target": {
+        "bytes": 3567,
+        "sha256": "794117c8a5dda2cc30a5888cd02affdbddd98365e4043e62ef01fbd75b76b7e9"
+      }
+    },
+    {
+      "path": "docs/source_import.md",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 12361,
+        "sha256": "cba56d4e7461bbce34b2c2e7bbf409c6639c865b66b763e36f3c8d6a4b8f9a9d"
+      },
+      "target": {
+        "bytes": 14113,
+        "sha256": "c398bc9dc32f09c9db09b00399acf9c5ea26e79965b79d113891384801de6113"
+      }
+    },
+    {
+      "path": "docs/lighting.md",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 5048,
+        "sha256": "f6a7d7edb0393b49e725229dffeab1dc612edadb2cbea945c826c520c9156daa"
+      },
+      "target": {
+        "bytes": 5694,
+        "sha256": "bc95aacd4ecf755b1cc81f750a7f0b8f7321f30f13fdacbb9bf4c81e86c45132"
+      }
+    }
+  ],
+  "required_result_before_adoption": "Root-qualified final five-profile GPU smoke with zero failures, retained original assertions and complete closure/input/environment preservation; current run53/54 is not a pass.",
+  "path_relocation_qualification_pending": "Run unchanged24 light +4 bridge tests at their final tests/tools layout; no assertion changes.",
+  "new_full_checkpoint_claim": false,
+  "old_full360_1084_historical_proof_preserved": true,
+  "formal_status_or_scores_changed": false,
+  "human_acceptance_requirements_still_open": 7,
+  "headless_component123_qualifies_actual_all49_or_GUI": false,
+  "current_application_docs_index_or_HEAD_changed": false
+}

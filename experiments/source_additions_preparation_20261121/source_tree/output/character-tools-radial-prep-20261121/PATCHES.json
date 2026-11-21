@@ -1,0 +1,100 @@
+{
+  "format": "has_source_only_character_tools_radial_patch_1",
+  "status": "FROZEN_SOURCE_ONLY_UNPARSED_UNRUN",
+  "base_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "patches": [
+    {
+      "path": "src/app.gd",
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "var keyboard_shortcuts: Node\r\n",
+      "after": "var keyboard_shortcuts: Node\r\nvar character_tools: Node\r\n"
+    },
+    {
+      "path": "src/app.gd",
+      "before": "\tbuild_ui()\r\n",
+      "after": "\tcharacter_tools=preload(\"res://src/character_tools.gd\").new();add_child(character_tools);character_tools.setup(self)\r\n\tbuild_ui()\r\n"
+    },
+    {
+      "path": "src/app.gd",
+      "before": "\t\t\"camera\": key_dialog()\r\n",
+      "after": "\t\t\"camera\": key_dialog()\r\n\t\t\"character_tools\": if character_tools:character_tools.open_from_event(event)\r\n"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "base_sha256": "da1b36461976a521b27592bec818600937057522c783d3500c293448735be4cf",
+      "before": "\tactions = [frame,asset,size_map]\r\n",
+      "after": "\tvar character: Button=app.character_tools.add_button(parent)\r\n\tcharacter.set_meta(\"rail\",[\"Character tools\",\"figure\",\"Character tools\"])\r\n\tactions = [frame,asset,size_map,character]\r\n"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "\tif shape_button:shape_button.visible=active_rig()!=null and (not active_rig().root.get_meta(Model.Shape.META,{\"rows\":[]}).rows.is_empty() or preload(\"res://src/expression_presets.gd\").has_data(active_rig().root));shape_button.disabled=app.exporting or app.playing\n",
+      "after": "\tif shape_button:\n\t\tvar faces_available: bool=preload(\"res://src/character_tool_policy.gd\").has_faces(active_rig())\n\t\tshape_button.visible=preload(\"res://src/character_tool_policy.gd\").model(active_rig())\n\t\tshape_button.disabled=app.exporting or app.playing or not faces_available\n\t\tshape_button.tooltip_text=\"Open retained facial shapes and expression controls.\" if faces_available else \"This part has no retained facial controls. Select its head or full model; a hair-only asset may not include expressions.\"\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/character_tools.gd",
+      "operation": "new",
+      "source": "payload/src/character_tools.gd",
+      "bytes": 10450,
+      "sha256": "3d6dc85c334360d2f7e2d948d95047eafe19f4b408191322441b83c47abc438f"
+    },
+    {
+      "path": "src/character_tool_policy.gd",
+      "operation": "new",
+      "source": "payload/src/character_tool_policy.gd",
+      "bytes": 3297,
+      "sha256": "3e62019de547f9fb6900f17f5e7124d76dcb67a3553b65f877f6f6937bb7b294"
+    },
+    {
+      "path": "src/shortcut_bindings.gd",
+      "operation": "replace",
+      "source": "payload/src/shortcut_bindings.gd",
+      "base_sha256": "9cf14682af95399dafb96c6ee7cfb9d9dd47c90dd87054c1a8e2bff89cc34bdd",
+      "bytes": 4559,
+      "sha256": "c8ccc33ddf29aac16af627dcaa0b12214f8c1492abf0933d0ebbfb9a959e17cc",
+      "base_bytes": 2603
+    },
+    {
+      "path": "src/shortcut_editor.gd",
+      "operation": "replace",
+      "source": "payload/src/shortcut_editor.gd",
+      "base_sha256": "8b2455ee064f64b4df28917272545d9ee445f18afad12163722ada56b0dbf297",
+      "bytes": 6385,
+      "sha256": "7cc71b21681ee9ff67046760a999dbcce75f1d44264998ecd2e73db99edc3ff4",
+      "base_bytes": 6388
+    },
+    {
+      "path": "tests/shortcut_bindings_unit.gd",
+      "operation": "replace",
+      "source": "payload/tests/shortcut_bindings_unit.gd",
+      "bytes": 2881,
+      "sha256": "e6137cfc0c86cd21a7e7cd1533a37929064faaaa9fdb631d804808f3d1b79c5a",
+      "base_bytes": 2881,
+      "base_sha256": "ea71f070fe34fe6bf6148ab0c432aa5eaa5ebf2d65c4ada43d9c957cad25c06f"
+    },
+    {
+      "path": "tests/shortcut_editor_smoke.gd",
+      "operation": "replace",
+      "source": "payload/tests/shortcut_editor_smoke.gd",
+      "bytes": 13642,
+      "sha256": "a99b3ffb27a223a70f898c0eac54bd875c557f7082f264d2fe56075edb5cc490",
+      "base_bytes": 13627,
+      "base_sha256": "fca4b9c040d6a3760da16687a987cd00b4be080fefb13c4dcfe1e7b4ff83dc66"
+    },
+    {
+      "path": "tests/character_tools_unit.gd",
+      "operation": "new",
+      "source": "payload/tests/character_tools_unit.gd",
+      "bytes": 13654,
+      "sha256": "b1d218369dc7884150abade272a68f715fcca06ca97b7f9884aa028eef276aeb"
+    }
+  ],
+  "constraints": [
+    "No active checkout, current owner review or frozen proof writes. Root applies only to fresh isolated snapshot after matching all base hashes/unique anchors.",
+    "CharacterTools.setup is synchronous/read-only and precedes build_ui/World.setup; it does not dereference later Pose setup.",
+    "No camera/middle-click binding or existing face/hair/pose action implementation is replaced.",
+    "Project/model formats and material resources unchanged; generic per-material visibility is explicitly unavailable pending separate capability-qualified implementation."
+  ]
+}
