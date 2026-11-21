@@ -10,6 +10,7 @@ var stamp:=""
 var contributor_count:=0
 var receiver_count:=0
 var status:="Indirect light is off."
+var voxel:=preload("res://src/scene_voxel_runtime.gd").new()
 
 static func supported() -> bool:
 	return DisplayServer.get_name()=="headless" or RenderingServer.get_current_rendering_method()=="forward_plus"
@@ -20,10 +21,12 @@ func setup(renderer: Node) -> void:
 
 func invalidate() -> void:
 	dirty=true
+	voxel.invalidate()
 	if active:reset_draw=Engine.get_frames_drawn()
 
 func rebuild() -> void:
 	dirty=true;reset_draw=Engine.get_frames_drawn()
+	voxel.invalidate()
 
 func restore() -> void:
 	for entry in originals:
@@ -61,6 +64,7 @@ func sync(video: Dictionary,environment: Environment) -> void:
 	var settings: Dictionary=video.get("scene_lighting",{}).get("indirect",{})
 	var desired: bool=settings.get("enabled",false) and video.get("lighting_mode","studio")=="lit"
 	if not desired or not supported():
+		voxel.disable()
 		environment.sdfgi_enabled=false
 		if active or not originals.is_empty():restore()
 		active=false;dirty=true;stamp="";reset_draw=-1
@@ -69,6 +73,10 @@ func sync(video: Dictionary,environment: Environment) -> void:
 	var renderer=renderer_ref.get_ref() if renderer_ref else null
 	if not is_instance_valid(renderer):return
 	if dirty:inventory(renderer)
+	if settings.get("method","sdfgi")=="voxelgi":
+		environment.sdfgi_enabled=false;stamp="";active=true
+		voxel.sync(renderer,settings);status=voxel.status;return
+	voxel.disable()
 	if Engine.get_frames_drawn()<=reset_draw:
 		environment.sdfgi_enabled=false;active=false;stamp="";status="Rebuilding indirect lighting from the current environment…";return
 	var signature:=JSON.stringify(settings)
@@ -88,3 +96,10 @@ func capture_frames(video: Dictionary) -> int:
 	var settings: Dictionary=video.get("scene_lighting",{}).get("indirect",{})
 	if not supported() or video.get("lighting_mode","studio")!="lit" or not settings.get("enabled",false):return 0
 	return int(settings.get("settle_frames",32))
+
+func capture_error(video: Dictionary) -> String:
+	var config: Dictionary=video.get("scene_lighting",{}).get("indirect",{})
+	if supported() and video.get("lighting_mode")=="lit" and config.get("enabled",false) and config.get("method","sdfgi")=="voxelgi":
+		if voxel.baking or voxel.dirty:return "Room VoxelGI is not ready. Wait for the bake or use Rebuild in Lights."
+		return voxel.error
+	return ""

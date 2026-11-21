@@ -38,6 +38,11 @@ var indirect_energy: SpinBox
 var indirect_cell: SpinBox
 var indirect_settle: SpinBox
 var indirect_status: Label
+var indirect_method: OptionButton
+var voxel_fields: VBoxContainer
+var voxel_positions: Array=[]
+var voxel_sizes: Array=[]
+var voxel_quality: OptionButton
 
 func setup(owner_app: Control) -> void:
 	app=owner_app
@@ -108,17 +113,26 @@ func build() -> void:
 	add_buttons.append(app.button(probe_actions,"Fit near scene",fit_reflection))
 	add_buttons.append(app.button(probe_actions,"Apply reflections",apply_reflection))
 	var probe_note: Label=app.label(reflection_fields,"Launch with python run.py --forward-plus for this optional mode. Set Ambient fill above 0 (try 0.3). A live room cubemap approximates reflections and local ambient fill; it does not trace light bounces or mirrors. Put its center in open air. Imported probes remain.");probe_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	var indirect_toggle:=CheckButton.new();indirect_toggle.text="Environment bounce (SDFGI prototype, Forward+)";box.add_child(indirect_toggle)
+	var indirect_toggle:=CheckButton.new();indirect_toggle.text="Environment bounce (Forward+, experimental)";box.add_child(indirect_toggle)
 	var indirect_fields:=VBoxContainer.new();box.add_child(indirect_fields);indirect_fields.hide();indirect_toggle.toggled.connect(indirect_fields.set_visible)
 	indirect_enabled=CheckBox.new();indirect_enabled.text="Enable environment bounce (experimental)";indirect_fields.add_child(indirect_enabled)
+	indirect_method=OptionButton.new();indirect_method.add_item("Open scene — SDFGI (models receive only)");indirect_method.add_item("Bounded room — VoxelGI (dynamic models)");indirect_fields.add_child(indirect_method)
+	indirect_method.item_selected.connect(func(_index):update_indirect_fields())
 	var indirect_row:=HBoxContainer.new();indirect_fields.add_child(indirect_row)
 	indirect_energy=number(indirect_row,"Bounce strength",0,4,.05)
 	indirect_cell=number(indirect_row,"Cell size (scene units)",.05,4,.05)
 	indirect_settle=number(indirect_row,"Render settling frames",8,120,1)
+	voxel_fields=VBoxContainer.new();indirect_fields.add_child(voxel_fields)
+	var room_position:=HBoxContainer.new();voxel_fields.add_child(room_position)
+	for axis in ["Center X","Center Y","Center Z"]:voxel_positions.append(number(room_position,axis,-1e12,1e12,.01))
+	var room_size:=HBoxContainer.new();voxel_fields.add_child(room_size)
+	for axis in ["Room width","Room height","Room depth"]:voxel_sizes.append(number(room_size,axis,1,128,.1))
+	voxel_quality=OptionButton.new();voxel_quality.add_item("64 subdivisions (start here)");voxel_quality.add_item("128 subdivisions (slower, more detail)");voxel_fields.add_child(voxel_quality)
+	add_buttons.append(app.button(voxel_fields,"Fit scene / near view",fit_voxel))
 	var indirect_actions:=HBoxContainer.new();indirect_fields.add_child(indirect_actions)
 	add_buttons.append(app.button(indirect_actions,"Apply indirect light",apply_indirect))
 	add_buttons.append(app.button(indirect_actions,"Rebuild from current environment",rebuild_indirect))
-	var indirect_note: Label=app.label(indirect_fields,"Use Lit with python run.py --forward-plus. Static environments contribute approximate bounced light; moving models receive it but do not contribute dynamic occlusion. Rebuild after moving environment geometry. Export spends the settling budget on each exact timeline frame. More frames cost time and do not guarantee complete convergence. Unlit/custom materials keep their own response. This is not path tracing.");indirect_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var indirect_note: Label=app.label(indirect_fields,"Use Lit with python run.py --forward-plus. SDFGI: environments contribute; models receive only. VoxelGI: one bounded room, static environment bake and dynamic model GI. Apply starts a bake that can pause Studio; reopening regenerates it from the saved settings and assets. Rebuild after changing static geometry. Custom shaders cannot provide static bake colors; thin/cutout walls can leak. Export holds each exact frame for the settling budget. These are approximations, not path tracing.");indirect_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	indirect_status=app.label(indirect_fields,"");indirect_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	hint=app.label(box,"");hint.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 
@@ -181,6 +195,10 @@ func refresh() -> void:
 	for axis in range(3):load_number(reflection_positions[axis],probe.position[axis]);load_number(reflection_sizes[axis],probe.size[axis])
 	var gi:=Document.indirect(data)
 	indirect_enabled.set_pressed_no_signal(gi.enabled);load_number(indirect_energy,gi.energy);load_number(indirect_cell,gi.cell_size);load_number(indirect_settle,gi.settle_frames)
+	indirect_method.select(1 if gi.get("method","sdfgi")=="voxelgi" else 0)
+	var room:=Document.voxel(gi)
+	for axis in range(3):load_number(voxel_positions[axis],room.position[axis]);load_number(voxel_sizes[axis],room.size[axis])
+	voxel_quality.select(int(room.subdiv));update_indirect_fields()
 	var message:="Unshaded hides light effects. Choose Use Lit to see your lights." if app.video.get("lighting_mode")=="unshaded" else "Studio light adds its legacy lamp and ambient fill." if app.video.get("lighting_mode","studio")=="studio" else "Lit uses authored and imported lights, plus your ambient fill."
 	message+="\nCompatibility rendering supports 8 directional lights and normally 8 point + 8 spot lights per mesh, including imported lights. Reduce overlapping lights if one stops contributing."
 	var limits:=Runtime.material_limits(app.renderer)
@@ -253,12 +271,28 @@ func apply_indirect() -> void:
 		hint.text="Environment bounce requires Forward+. Launch python run.py --forward-plus and choose Lit."
 		app.message(hint.text);return
 	data["indirect"]={"enabled":indirect_enabled.button_pressed,"energy":typed(indirect_energy),"cell_size":typed(indirect_cell),"settle_frames":typed(indirect_settle)}
+	data.indirect.method="voxelgi" if indirect_method.selected==1 else "sdfgi"
+	data.indirect.voxel={"position":[],"size":[],"subdiv":voxel_quality.selected}
+	for axis in range(3):data.indirect.voxel.position.append(typed(voxel_positions[axis]));data.indirect.voxel.size.append(typed(voxel_sizes[axis]))
 	commit(data,"Indirect settings updated. Static environments contribute; models receive. Allow time to settle.")
+
+func update_indirect_fields() -> void:
+	voxel_fields.visible=indirect_method.selected==1
+	indirect_cell.get_parent().visible=indirect_method.selected==0
+
+func fit_voxel() -> void:
+	if blocked():return
+	var bounds: AABB=app.renderer.scene_bounds(app.renderer.world_runtime.root if app.renderer.world_runtime else app.renderer.environment_scene)
+	var center:=bounds.get_center();var size:=bounds.size+Vector3.ONE
+	if bounds.size.length_squared()==0 or size.x>128 or size.y>128 or size.z>128:
+		center=app.renderer.camera.global_position-app.renderer.camera.global_basis.z*4.;size=Vector3(12,8,12)
+	for axis in range(3):load_number(voxel_positions[axis],center[axis]);load_number(voxel_sizes[axis],clampf(size[axis],1,128))
+	app.message("Room bounds fitted. Review them, then Apply indirect light to bake.")
 
 func rebuild_indirect() -> void:
 	if blocked():return
 	app.renderer.scene_lighting.indirect.rebuild()
-	app.message("Rebuilding indirect light from the current environment. Geometry movement and camera cuts may need additional settling.")
+	app.message("Rebuilding indirect light from the current environment. VoxelGI rebakes the room; SDFGI resets its cascades. Allow time to settle.")
 
 func default_reflection() -> Dictionary:
 	var target:=placement_context();var center: Vector3=target.center

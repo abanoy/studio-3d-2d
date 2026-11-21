@@ -13,6 +13,9 @@ static func document(video: Dictionary) -> Dictionary:
 static func indirect(data: Dictionary) -> Dictionary:
 	return data.get("indirect",{"enabled":false,"energy":1.,"cell_size":.2,"settle_frames":32})
 
+static func voxel(gi: Dictionary) -> Dictionary:
+	return gi.get("voxel",{"position":[0,2,0],"size":[10,6,10],"subdiv":0})
+
 static func number(value: Variant,minimum: float,maximum: float) -> bool:
 	return (value is int or value is float) and is_finite(float(value)) and value>=minimum and value<=maximum
 
@@ -31,6 +34,11 @@ static func error(value: Variant) -> String:
 		if not gi is Dictionary or not gi.get("enabled") is bool:return "Invalid indirect-light setting."
 		if not number(gi.get("energy"),0,4) or not number(gi.get("cell_size"),.05,4):return "Indirect light needs strength 0–4 and cell size 0.05–4 scene units."
 		if not number(gi.get("settle_frames"),8,120) or float(gi.settle_frames)!=floor(float(gi.settle_frames)):return "Indirect settling must be 8–120 whole render frames."
+		if not gi.get("method","sdfgi") in ["sdfgi","voxelgi"]:return "Choose SDFGI or bounded-room VoxelGI."
+		if gi.has("voxel"):
+			var room=gi.voxel
+			if not room is Dictionary or not triple(room.get("position"),-1e12,1e12) or not triple(room.get("size"),1,128):return "VoxelGI needs a room center and size from 1 to 128 scene units per axis."
+			if not number(room.get("subdiv"),0,1) or float(room.subdiv)!=floor(float(room.subdiv)):return "Room VoxelGI supports 64 or 128 subdivisions."
 	if value.has("reflection"):
 		var probe=value.reflection
 		if not probe is Dictionary or not probe.get("enabled") is bool:return "Invalid room reflection settings."

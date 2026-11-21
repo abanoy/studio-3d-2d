@@ -8275,3 +8275,5 @@ models, saved owner projects and calibration arrays are excluded from Git.
 Formal implementation52/54 and acceptance55/62 remain unchanged. Publish/retrieve
 this increment before a fresh full Windows run. Qualified worker VoxelGI96e5d50b
 is a separate upcoming integration; it is not part of the results above.
+
+2026-11-21 bounded-room VoxelGI: own worker/voxel-room-20261121 branch based634f854d. Optional64/128subdiv boundedprobe, deferred in-memory staticenvironment bake, dynamicmodels, recipe-only portable persistence/rebakeonopen. FinalCPU34+SDFGIregression45+privateForwardPlusGPU60pass; bothactualSceneSetup/CameraFocuspreview, indirect-only moving skinnedrootocclusion/recovery, coldreopen and1080p24H264fourframes. CameraFocus/export/coldimage+patcherrors0 onIntelArc140V. Adoptedprimarynumericprecision/CompatibilityOfffixes inowneditor; noapp/worldruntime/model/storage/encoder/installedStudio/tools/originalasset/mainchanges. See docs/voxel_room_lighting.md andcompactbenchmark; privateart/video/binariesstayignored.

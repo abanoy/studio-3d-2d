@@ -2612,3 +2612,5 @@ preserving numeric snapshots and renderer capture-error checks. That worker's
 CPU34/GPU60 results are its own branch qualification, not this primary's adoption.
 Old completed2f Full cleanup is retained pending two unreadable owner-shell process
 references; all sources/receipts are backed up and no deletion was attempted.
+
+2026-11-21 bounded-room VoxelGI: own worker/voxel-room-20261121 branch based634f854d. Optional64/128subdiv boundedprobe, deferred in-memory staticenvironment bake, dynamicmodels, recipe-only portable persistence/rebakeonopen. FinalCPU34+SDFGIregression45+privateForwardPlusGPU60pass; bothactualSceneSetup/CameraFocuspreview, indirect-only moving skinnedrootocclusion/recovery, coldreopen and1080p24H264fourframes. CameraFocus/export/coldimage+patcherrors0 onIntelArc140V. Adoptedprimarynumericprecision/CompatibilityOfffixes inowneditor; noapp/worldruntime/model/storage/encoder/installedStudio/tools/originalasset/mainchanges. See docs/voxel_room_lighting.md andcompactbenchmark; privateart/video/binariesstayignored.
