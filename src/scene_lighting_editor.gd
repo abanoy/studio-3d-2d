@@ -142,7 +142,8 @@ func _process(_delta: float) -> void:
 	undo_button.disabled=blocked() or app.history.is_empty();redo_button.disabled=blocked() or app.redo_history.is_empty()
 	enabled.disabled=blocked()
 	reflection_enabled.disabled=blocked() or not Runtime.reflections_supported()
-	indirect_enabled.disabled=blocked() or not app.renderer.scene_lighting.indirect.supported()
+	# A project from Forward+ must still be able to save GI off on other GPUs.
+	indirect_enabled.disabled=blocked()
 	indirect_status.text=app.renderer.scene_lighting.indirect.status
 	apply_button.disabled=blocked() or selected.is_empty();remove_button.disabled=apply_button.disabled
 
@@ -233,7 +234,7 @@ func apply_fill() -> void:
 func apply_indirect() -> void:
 	var data:=current()
 	if data.is_empty():return
-	if not app.renderer.scene_lighting.indirect.supported():
+	if indirect_enabled.button_pressed and not app.renderer.scene_lighting.indirect.supported():
 		hint.text="Environment bounce requires Forward+. Launch python run.py --forward-plus and choose Lit."
 		app.message(hint.text);return
 	data["indirect"]={"enabled":indirect_enabled.button_pressed,"energy":typed(indirect_energy),"cell_size":typed(indirect_cell),"settle_frames":typed(indirect_settle)}
