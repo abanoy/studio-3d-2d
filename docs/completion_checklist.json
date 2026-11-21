@@ -1,7 +1,7 @@
 {
   "latest_voxel_room_20261121": {
-    "status": "INTEGRATED_CPU_PASS_EMPTY_ROOM_FIX_AND_PRIMARY_GPU_PENDING",
-    "evidence": "experiments/voxel_integration_20261121/summary.json",
+    "status": "INTEGRATED_CPU_FAILURE_PATHS_PASS_PRIMARY_GPU_PENDING",
+    "evidence": "experiments/voxel_empty_fix_integration_20261121/summary.json",
     "primary_headless_checks": {
       "voxel": 42,
       "sdfgi": 45,
@@ -9,7 +9,8 @@
     },
     "worker_graphics_scope": "60 on96e5d50b before primary failure-path fixes; not a primary GPU result",
     "formal_status_changed": false,
-    "next": "Resolve empty-contributor stale preview, refresh its binding leaf, run focused primary graphics after frozen5d Full releases GPU. Keep canonical Full and later feature source scopes distinct."
+    "next": "After frozen Full5d releases GPU, run integrated Voxel graphics and distinct actual failed-movie/recovered-movie controls. Keep all source scopes and pending natural-gravity work separate.",
+    "empty_room_cpu_checks": 18
   },
   "latest_integrated_additions_20261121": {
     "status": "PUBLISHED_RETRIEVED_FULL_RUNNING",
@@ -24,7 +25,8 @@
     "scores": "52/54 implementation;55/62 acceptance",
     "next": "Publish and independently retrieve this checkpoint, then run the canonical full Windows verifier on a fresh isolated copy. Adopt qualified bounded-room VoxelGI separately. Continue rest-hair settling and visual contact refinement; retain human/device/install gates without interrupting the busy owner.",
     "published_revision": "5d37647c0004849247239817364e093c010eddd6",
-    "publication_evidence": "experiments/voxel_integration_20261121/published5d/verification.json"
+    "publication_evidence": "experiments/voxel_integration_20261121/published5d/verification.json",
+    "stable_review": "C:/a/Programming/cloudflare/HAS-Review-Additions-5d37647c"
   },
   "latest_character_parts_follow_20261121": {
     "status": "IMPLEMENTED_FOCUSED_QUALIFIED",

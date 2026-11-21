@@ -1,0 +1,45 @@
+{
+  "format": "has_voxel_empty_fix_integration_evidence_1",
+  "cpu_empty_rebuild": {
+    "checks": 18,
+    "failures": 0,
+    "graphics": false
+  },
+  "cpu_voxel_authoritative": {
+    "checks": 42,
+    "failures": 0,
+    "graphics": false
+  },
+  "port_controls": 6,
+  "runtime_sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a",
+  "previous_packet_unchanged": "experiments/voxel_integration_20261121",
+  "remote34ac": {
+    "status": "PASS",
+    "revision": "34ac3f26f0b757d9af40153616849347f20b5dd4",
+    "changed_files": 41,
+    "raw_files": 1215,
+    "raw_bytes": 13094769,
+    "scope": "Independent bare remote publication verification, not current runtime/Full qualification."
+  },
+  "stable_review": {
+    "revision": "5d37647c0004849247239817364e093c010eddd6",
+    "source_files": 1197,
+    "prepared": true,
+    "source_unchanged_after_headless_startup": true,
+    "headless_startup": "PASS",
+    "graphics_tested": false,
+    "manual_review": false,
+    "source_import_conversion_tested": false,
+    "external_runtime_link": "Existing SourceIO/Blender paths and launcher metadata only; no runtime installation/copy/conversion test."
+  },
+  "dependencies_metadata": {
+    "bytes": 3628,
+    "sha256": "7d83d19854de4cdf50008614659f859505c3a2feffe0b9ec28cb0d1543190874",
+    "scope": "Descriptive listing of already-implemented optional metadata providers updated after these CPU checks; runtime behavior unchanged as reported by Root. Not reclassified as tested metadata bytes."
+  },
+  "full5d": {
+    "status_at_root_request": "LIVE",
+    "session": 76914,
+    "pass_claimed": false
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "driver": "tests/verify_wind_review.py",
+      "control": "exact_bindings",
+      "count": 55,
+      "status": "PASS"
+    },
+    {
+      "driver": "tests/verify_wind_review.py",
+      "control": "missing",
+      "status": "PASS",
+      "expected_refusal": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\voxel-empty-leaf-bindings-1795289620322265200\\\\wind\\\\src\\\\scene_voxel_runtime.gd'"
+    },
+    {
+      "driver": "tests/verify_wind_review.py",
+      "control": "drift",
+      "status": "PASS",
+      "expected_refusal": "Unreviewed main port bytes: src/scene_voxel_runtime.gd"
+    },
+    {
+      "driver": "tests/verify_helper_preview.py",
+      "control": "exact_bindings",
+      "count": 71,
+      "status": "PASS"
+    },
+    {
+      "driver": "tests/verify_helper_preview.py",
+      "control": "missing",
+      "status": "PASS",
+      "expected_refusal": "Missing reviewed helper main source: src/scene_voxel_runtime.gd"
+    },
+    {
+      "driver": "tests/verify_helper_preview.py",
+      "control": "drift",
+      "status": "PASS",
+      "expected_refusal": "Unreviewed helper main bytes: src/scene_voxel_runtime.gd"
+    }
+  ],
+  "control_count": 6,
+  "src_unchanged": true,
+  "drivers_unchanged": true,
+  "changes": [
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "leaf": "src/scene_voxel_runtime.gd",
+      "old": {
+        "path": "src/scene_voxel_runtime.gd",
+        "category": "runtime",
+        "sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816",
+        "lf_sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816"
+      },
+      "new": {
+        "path": "src/scene_voxel_runtime.gd",
+        "category": "runtime",
+        "sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a",
+        "lf_sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a"
+      }
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "leaf": "src/scene_voxel_runtime.gd",
+      "old": {
+        "path": "src/scene_voxel_runtime.gd",
+        "category": "runtime",
+        "sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816",
+        "lf_sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816"
+      },
+      "new": {
+        "path": "src/scene_voxel_runtime.gd",
+        "category": "runtime",
+        "sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a",
+        "lf_sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a"
+      }
+    }
+  ],
+  "pins": [
+    {
+      "path": "tests/wind_review_port_files.json",
+      "bytes": 19354,
+      "sha256": "5fca4a76ae64f54cb1bcce136bd1f1da54d6c9b8d79a34bc58a4b26a846b4e5c"
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "bytes": 22847,
+      "sha256": "f9d280e5f59792e7f64adc4dcdb2b9d73972a364c592d2d68b9fb9eb10998e05"
+    }
+  ]
+}

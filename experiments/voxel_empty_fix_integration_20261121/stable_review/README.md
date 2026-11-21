@@ -1,0 +1,3 @@
+Stable owner review preparation only. See PREPARATION.json. No engines/apps launched. Source 5d37647c0004849247239817364e093c010eddd6; original source checkout and its output were not written. Only source/recipe/hash metadata is archived here; prepared projects remain at C:\a\Programming\cloudflare\HAS-Review-Additions-5d37647c.
+
+The SourceIO link completion retained PREPARATION-before-sourceio.json and prepare_stable_review-before-sourceio.py. The current receipt protects the external approved SourceIO directory and existing Blender5.1 default executable while the stable review exists. No runtime was copied, installed, modified or launched. Studio source remains exact published5d.

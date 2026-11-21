@@ -329,8 +329,8 @@
     {
       "path": "src/scene_voxel_runtime.gd",
       "category": "runtime",
-      "sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816",
-      "lf_sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816"
+      "sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a",
+      "lf_sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a"
     }
   ],
   "main_integration_fix": "Canvas-first teardown: validate the canvas before pose redraw; preserve original830 predicates and add3dormant canvas-first closure assertions.",
@@ -402,6 +402,6 @@
       "src/scene_lighting_editor.gd"
     ],
     "scope": "Exact reviewed VoxelGI dependency and raw/LF leaf pins only. Existing membership, source-byte, lifecycle, native/refusal guards and assertion counts remain unchanged. This refresh supplies no inherited execution claim.",
-    "post_review_fix": "After integration38b39ec7, reviewed stale-bake-data visibility/error recovery fix; only scene_voxel_runtime.gd runtime leaf repinned. Prior38-control proof remains historical before this correction; new pure binding/missing/drift proof recorded separately. No inherited graphics PASS."
+    "post_review_fix": "After34ac3f26, adopteda904913d complementary empty-contributor data-clear and visibility guard; only scene_voxel_runtime.gd leaf repinned. Prior38 and6 proofs remain historical; new6 binding/missing/drift controls are separately recorded. No inherited primary graphics PASS."
   }
 }

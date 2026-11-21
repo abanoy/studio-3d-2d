@@ -1,0 +1,9 @@
+{
+  "status": "FAILED_BEFORE_COPY",
+  "error_type": "TypeError",
+  "error": "unhashable type: 'dict'",
+  "cause": "The first preparer assumed header.payload was a dictionary; the actual packed schema stores a list of path records.",
+  "target_created": false,
+  "source_or_original_mutations": false,
+  "correction": "Build a path-keyed map from the real header.payload list and retain closed-inventory plus individual payload hash checks."
+}

@@ -2648,3 +2648,38 @@ Formal52/54 implementation and55/62 acceptance remain unchanged. Main5d is the
 published focused-qualified source; this newer Voxel checkpoint remains work in
 progress until its remaining failure path and primary graphics are qualified.
 No original assets, installed Studio or shared tools changed; no cleanup here.
+
+
+## 2026-11-21 - Complementary room-bake fix and stable review
+
+The prior checkpoint's empty-contributor preview issue is now fixed in primary.
+Adopted exacta904913d two-line runtime delta: discard old data when no environment
+contributes, and keep errored probes hidden during later syncs. Primary headless18
+empty-room controls and42 native-boundary/recovery controls pass on runtimefa9d4e43.
+The unchanged authoritative test remains4e4f6a47. Six final55/71 port binding and
+missing/drift checks pass. Primary GPU remains pending; the prepared22-control
+actual movie-refusal/recovery scope is unrun. No earlier failed run was relabelled.
+
+The previous WIP34ac3f26 was pushed to its own branch and independently fetched
+into a separate bare store: all tree blobs/modes and1215 raw source/evidence files,
+13094769 bytes, match; tree89a11c115b93e74c3254c7ea1dcfc107e06f75ee. Main stays5d.
+See experiments/voxel_empty_fix_integration_20261121 for that receipt, new CPU
+reports, source pins and reproduction. Frozen earlier packets remain unchanged.
+dependencies.json now describes the already-implemented optional metadata services;
+this descriptive change followed the CPU runs and changes no consent/startup flow.
+
+Stable local review is C:/a/Programming/cloudflare/HAS-Review-Additions-5d37647c.
+Its1197 Studio files exactly match published5d, with two audited packed generated
+projects and three interactive shortcuts. SourceIO/Blender are reused from existing
+approved paths, never copied/installed/modified. Keep the approved SourceIO cache at
+has-neon-review-20261116-c2d52ff/output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647
+while this review depends on it. Per-shortcut profiles preserve USERPROFILE.
+Subsequent headless20-frame main startup exits0 with empty launcher/engine logs;
+all1197 source hashes/blob identities remain exact. This checks startup/compilation,
+not GUI, source conversion, project import, appearance or owner/manual acceptance.
+
+Canonical Full5d remains a separate live frozen run under76914; no Full PASS is
+claimed here. Schedule primary Voxel graphics first after it releases GPU, then the
+lighting worker's distinct22 graphics on an exact integrated-source copy. Natural
+gravity work remains isolated; synthetic and ordinary controls pass, but the real
+Junko section is still being refined. Formal52/54 and55/62 remain unchanged.

@@ -31,7 +31,7 @@ func sync(renderer: Node,config: Dictionary) -> void:
 		probe.position=Vector3(room.position[0],room.position[1],room.position[2])
 		probe.size=Vector3(room.size[0],room.size[1],room.size[2]);probe.subdiv=int(room.subdiv)
 		stamp=signature;invalidate()
-	probe.visible=not dirty and probe.data!=null
+	probe.visible=not dirty and probe.data!=null and error.is_empty()
 	if probe.data:probe.data.energy=config.energy
 	if dirty and not baking:
 		baking=true;error="";status="Baking room VoxelGI… This can pause Studio for several seconds."
@@ -52,6 +52,7 @@ func bake_room(ticket: int) -> void:
 		var mesh=entry.node.get_ref()
 		if is_instance_valid(mesh) and mesh.gi_mode==GeometryInstance3D.GI_MODE_STATIC and mesh.is_visible_in_tree() and bounds.intersects(mesh.global_transform*mesh.get_aabb()):contributors+=1
 	if contributors==0:
+		probe.data=null
 		error="No static environment meshes inside the room. Import an environment, fit the room bounds, then Rebuild."
 	else:
 		var start:=Time.get_ticks_msec()

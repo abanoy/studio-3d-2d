@@ -56,7 +56,35 @@
       "profile_installed": false
     }
   ],
-  "network_services": [],
+  "network_services": [
+    {
+      "name": "Optional asset discovery",
+      "default_enabled": false,
+      "activation": "Explicit Online metadata consent in Asset discovery; consent is off after restart",
+      "providers": [
+        {
+          "name": "Poly Haven",
+          "endpoint": "https://api.polyhaven.com/assets?type=models",
+          "use": "Public model metadata"
+        },
+        {
+          "name": "Sketchfab",
+          "endpoint": "https://api.sketchfab.com/v3/search",
+          "use": "Public search metadata; no account or download API"
+        },
+        {
+          "name": "BowlRoll",
+          "endpoint": "https://bowlroll.net/file/tag/MikuMikuDance.rss",
+          "use": "Recent RSS only; unsupported responses fall back to website search"
+        }
+      ],
+      "data_sent": "Search text and the explicitly enabled bounded name variations; no local file payloads",
+      "thumbnails": "Separate opt-in; bounded allowlisted public preview images",
+      "automatic_model_downloads": false,
+      "credentials_required": false,
+      "website_handoff": "Other catalogued sources open only on explicit confirmation in the default browser"
+    }
+  ],
   "downloaded_assets": [],
   "external_content": {
     "name": "Garry's Mod",

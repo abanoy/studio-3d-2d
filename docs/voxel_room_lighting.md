@@ -116,3 +116,12 @@ the frozen published5d full Windows run. A separately reported empty-contributor
 preview path is still open in this checkpoint; see the preserved evidence packet
 experiments/voxel_integration_20261121. This is work in progress, not a new primary
 GPU or complete-suite pass.
+
+
+### Complementary primary failure-path correction
+
+The previously open zero-contributor preview path is now resolved on runtime
+fa9d4e43: old data is discarded and later syncs cannot re-show errored probes.
+Primary CPU18 empty-room and42 native-boundary controls pass; actual graphics
+and movie-refusal/recovery remain pending. Earlier worker60 pixels are separate.
+See experiments/voxel_empty_fix_integration_20261121 for exact scope and pins.
