@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-21",
+  "continues": "634f25583da9cd41414d3cca22dad83157dfddb6",
+  "correction": "Reconcile selected identity against current rows/filters before rendering and actions; revalidate the local path before deferred window-close callbacks.",
+  "browser": {
+    "browser_opens_intercepted": 3,
+    "checks": 104,
+    "display_driver": "headless",
+    "failures": [],
+    "requests": 24,
+    "scope": "Production UI, filesystem scan and metadata fixtures; rendered layout captures only when graphical. No live-provider or native-model appearance claim."
+  },
+  "additions": {
+    "cases": {
+      "geometry_preview": {
+        "checks": 17,
+        "failures": [],
+        "scope": "Generated local GLB geometry only; no external files, network, conversion or owner artwork."
+      },
+      "thumbnails": {
+        "checks": 21,
+        "failures": [],
+        "scope": "Generated image buffers and injected image transport; no live artwork downloaded."
+      },
+      "write": {
+        "checks": 4,
+        "failures": [],
+        "phase": "write"
+      },
+      "read": {
+        "checks": 13,
+        "failures": [],
+        "phase": "read"
+      },
+      "neon": {
+        "checks": 28,
+        "display_driver": "headless",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "neon"
+      },
+      "classic": {
+        "checks": 28,
+        "display_driver": "headless",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "classic"
+      }
+    },
+    "checks": 111,
+    "failures": []
+  },
+  "scope": "Headless production controls and synthetic files only. Filter-to-zero and Clear directories reject immediate, queued and close-delayed stale Use/Preview. Valid normal Studio import/Undo remains tested. No new GPU or live-provider claim; no app/renderer/model/source-import/world edits in this increment."
+}

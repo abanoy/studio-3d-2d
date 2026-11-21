@@ -5,6 +5,7 @@ const Providers = preload("res://src/discovery/providers.gd")
 const Browser = preload("res://src/discovery/browser.gd")
 const StudioTheme = preload("res://src/studio_theme.gd")
 const DiscoveryWindow = preload("res://src/discovery/window.gd")
+const SceneIO = preload("res://src/scene3d.gd")
 var checks := 0
 var failures: Array = []
 var browser
@@ -42,6 +43,30 @@ func click_at(point: Vector2) -> void:
 
 func click_control(control: Control) -> void:
 	await click_at(control.get_global_rect().get_center())
+
+func select_local_title(title: String) -> void:
+	var item: TreeItem = browser.tree.get_root().get_first_child()
+	while item and item.get_text(0) != title: item = item.get_next()
+	check(item != null, "find local selection fixture " + title)
+	if item: item.select(0); browser.tree.item_selected.emit(); await settle()
+
+func deferred_local_rejection(fixture: String, clear: bool) -> void:
+	var accepted: Array = []
+	var popup: Window = DiscoveryWindow.open(root, func(path): accepted.append(path), {"preferences_path":""})
+	var panel = popup.get_meta("discovery_panel")
+	panel.picker.dir_selected.emit(fixture)
+	while panel.local.loading: await process_frame
+	await settle()
+	var item: TreeItem = panel.tree.get_root().get_first_child()
+	while item and item.get_text(0) != "room.glb": item = item.get_next()
+	check(item != null, "deferred-close fixture has a selectable GLB")
+	if not item: popup.close_requested.emit(); await settle(); return
+	item.select(0); panel.tree.item_selected.emit(); await settle()
+	panel.use_button.pressed.emit()
+	if clear: panel.clear_button.pressed.emit()
+	else: panel.search.text = "no-match"; panel.search.text_changed.emit(panel.search.text)
+	await settle(); await settle()
+	check(accepted.is_empty() and not is_instance_valid(popup), "deferred import rejected after " + ("Clear directories" if clear else "filter-to-zero"))
 
 func capture_layouts() -> void:
 	if DisplayServer.get_name() == "headless": return
@@ -172,6 +197,31 @@ func _run() -> void:
 	browser.use_button.pressed.emit()
 	check(used == [fixture.path_join("avatar.vrm")], "explicit local selection emits path without opening model")
 	check(opened.is_empty(), "local selection never opens or executes a file")
+	# Guard the action frame too: the Tree refresh is deliberately deferred.
+	check(SceneIO.make_fixture(fixture.path_join("nested/room.glb")) == OK, "generate valid GLB for stale-preview rejection")
+	browser.format_filter.select(0); browser.search.text = ""; browser.run_search(); await settle()
+	await select_local_title("room.glb")
+	check(not browser.use_button.disabled and not browser.preview_button.disabled, "visible selected GLB enables local actions")
+	var uses_before := used.size()
+	browser._open_error = ""
+	browser.search.text = "no-matching-model"; browser.search.text_changed.emit(browser.search.text)
+	browser.use_button.pressed.emit(); browser.preview_button.pressed.emit()
+	check(used.size() == uses_before and not is_instance_valid(browser.geometry_window), "filter-to-zero blocks Use and Preview before deferred refresh")
+	browser._use_local.call_deferred(); browser._preview_local.call_deferred(); await settle()
+	check(browser.visible_rows.is_empty() and browser.selected.is_empty() and browser.tree.get_selected() == null, "filter-to-zero reconciles dictionary and Tree selection")
+	check(browser.use_button.disabled and browser.preview_button.disabled, "filter-to-zero disables local actions")
+	check(used.size() == uses_before and not is_instance_valid(browser.geometry_window) and browser._open_error.is_empty(), "filter-to-zero starts no deferred import or preview")
+	browser.search.text = ""; browser.search.text_changed.emit(""); await settle()
+	await select_local_title("room.glb")
+	browser.clear_button.pressed.emit()
+	browser.use_button.pressed.emit(); browser.preview_button.pressed.emit()
+	check(used.size() == uses_before and not is_instance_valid(browser.geometry_window), "Clear directories blocks Use and Preview before deferred refresh")
+	browser._use_local.call_deferred(); browser._preview_local.call_deferred(); await settle()
+	check(browser.visible_rows.is_empty() and browser.selected.is_empty() and browser.tree.get_selected() == null, "Clear directories reconciles dictionary and Tree selection")
+	check(browser.use_button.disabled and browser.preview_button.disabled, "Clear directories disables local actions")
+	check(used.size() == uses_before and not is_instance_valid(browser.geometry_window), "Clear directories starts no deferred stale action")
+	await deferred_local_rejection(fixture, false)
+	await deferred_local_rejection(fixture, true)
 	browser.local.start([fixture]); browser.cancel_button.pressed.emit(); await settle()
 	check(not browser.local.loading and browser.local.message.contains("cancelled"), "Cancel stops local enumeration")
 	browser.local.start([fixture.path_join("missing")]); await settle()

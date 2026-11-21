@@ -280,3 +280,16 @@ remain historical; no new GPU run was performed while the primary owns that
 slot. Safe evidence is `docs/benchmarks/asset_discovery_shutdown_2026-11-21.json`.
 The primary should adopt the current three-hook patch rather than the older
 two-menu-hook checkpoint alone.
+
+## Primary-review selection correction
+
+Selections are reconciled against the current scanner/provider rows and active
+filters before rendering, source actions, preview or Use. Filtering to zero or
+clearing directories now deselects the Tree, clears the selected record and
+disables local actions. The actions also recheck before the deferred refresh can
+run. The wrapper revalidates the chosen path during its close delay, suppressing
+an import if the filter/directories/selection changed after Use was clicked.
+Focused checks pass: 104 browser controls (including both stale-action routes)
+and the separate 111 headless additions controls, with valid import/Undo retained.
+No shared application source changed in this corrective increment. See
+`docs/benchmarks/asset_discovery_selection_2026-11-21.json`.
