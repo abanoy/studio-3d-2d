@@ -2481,3 +2481,40 @@ being assigned to separate user-owned workers; integrate their branches later.
 Formal52/54 implementation and55/62 acceptance remain unchanged. Human/native
 appearance, novice, learner, tablet/audio and clean offline setup observations
 remain external; do not ask again while independent work is available.
+
+
+## 2026-11-21 — Feature source published; older experiments saved
+
+Feature commit243e6a1edf1aee5cd07f107a34775db49a2caa01 was pushed to main and
+independently fetched; all77changed raw files/3394729bytes and its tree matched.
+The source-only followup archive is commitcfe96e6e32dfff3c188607cacaa903ed84123663:
+862textfiles/12670886bytes,15frozen packets/31inner source-manifest closures,
+completed2f1 Full ownership/source evidence, adverse head-only face experiment,
+Junko failures/diagnostics and remaining unrun source ports. Root independently
+verified exact index blobs and source closures. No private arrays, assets or
+native-rich Full aggregate were included. See experiments/source_followup_20261121.
+
+Publication proof and the six failed-run terminal closures are retained in
+experiments/feature_publication_20261121. Exact six-target cleanup is PLANNED,
+not yet performed; original/private native cases, final review and current Full
+are protected. The collector's initial nested-regression-schema refusal changed
+no source and deleted nothing; it was corrected without loosening closure checks.
+
+A new complete suite is genuinely RUNNING against retrieved243 in
+C:/a/Programming/cloudflare/has-import-info-full-20261121-243e6a1e; outerRoot
+session85983, coordinator27028, verifier22224. It uses original13declaredlegacy
+fixturecopies/32095990bytes, original19-layer hecatia.kra and approved SourceIO;
+staging preserves originals. Repoll the actual owned process/session before
+deciding it stopped; no current PASS or complete-suite result is claimed yet.
+Do not run competing Windows GPU tests while it is live.
+
+Actual additions continue independently from243: has-parts-follow-20261121 is
+implementing opt-in body-to-part pose following; has-secondary-contact-20261121
+found the saved Miku generated helper has zero colliders, implemented four
+transient fitted arm capsules, passed its first8+8CPU controls and is fixing
+measured whole-link crossing. Those are unadopted worktree changes, not shipped
+or visually qualified. The user-owned local Asset Browser Implementation and
+lighting workers now explicitly report native continuous goals active. Their
+earlier ChatGPT/durable goal calls failed; the new local workers continue the
+existing implementations rather than discarding them. No sibling code is
+included in this checkpoint. No human/device acceptance or score change.

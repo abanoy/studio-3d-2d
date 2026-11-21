@@ -1,0 +1,25 @@
+{
+  "status": "FAIL",
+  "complete_canonical_suite": false,
+  "cases": {
+    "ui": {
+      "exit": 2,
+      "seconds": 43.785,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_35d568d5893e4d45a69fc49586215d40",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 2,
+        "child_pid": 33384,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 43.691
+      }
+    }
+  },
+  "error": "Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org\nOpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)\n\nPASS window title uses studio identity\nPASS default Godot boot image is disabled\nPASS new launch defaults to Simple\nPASS Simple Draw shows contextual drawing controls\nPASS Simple hides technical controls and diagnostics\nPASS basic brush and layer controls remain available\nPASS captured simple.png\nPASS Simple Scene shows camera controls\nPASS actual toggle click reveals advanced camera controls\nPASS Advanced exposes all panels and diagnostics\nPASS mode toggle preserves frame, temporary camera and undo\nPASS captured advanced.png\nPASS actual toggle click returns to Simple\nPASS hidden advanced FOV and hold interpolation remain active\nPASS switching preserves independent drawing and scene asset bytes\nPASS Simple and Advanced render identical project pixels\nFAIL WAV import works in Simple\nFAIL Simple reveals audio timing when a clip exists\nSCRIPT ERROR: Invalid access to property or key 'gain_db' on a base object of type 'Dictionary'.\n   at: run (res://tests/ui_smoke.gd:89)\n   GDScript backtrace (most recent call first):\n       [0] run (res://tests/ui_smoke.gd:89)\n       [1] capture (res://src/renderer.gd:350)\n       [2] dispatch_native_frame (res://src/renderer.gd:305)\nERROR: UI smoke watchdog expired\n   at: push_error (core/variant/variant_utility.cpp:1024)\n   GDScript backtrace (most recent call first):\n       [0] <anonymous lambda> (res://src/app.gd:582)\n"
+}
