@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\tests\verify_scenario_d.py", line 39, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\tests\verify_scenario_d.py", line 19, in main
+    assert r.returncode==0 and marker in text and not any(x in text for x in ['ERROR:','FAIL ','ObjectDB instances leaked']),text
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fresh D packed Open restores recorded editable world with physics off
+FAIL fresh D reverse seeks reproduce all49root/bone states for humanoid and three impacted props
+PASS fresh D retains exact independent drawing and timed PCM
+PASS fresh D final GPU frame equals original recorded preview exactly
+SCENARIO_D_READ {"checks":4,"failures":1}
+

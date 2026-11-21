@@ -1,0 +1,65 @@
+{
+  "format": "has_import_off_scenario_d_scoped_1",
+  "status": "FAIL",
+  "source_context": "main_working_source_snapshot",
+  "base_head": "435dc02426a7cdd313e43fe674c9008520845428",
+  "functional_sources": 1102,
+  "cases": [
+    {
+      "name": "scenario-d",
+      "pid": 12488,
+      "exit": 1,
+      "child_reaped": true,
+      "seconds": 27.0531715
+    }
+  ],
+  "whole_full_claimed": false,
+  "owner_device_or_human_claimed": false,
+  "error": "RuntimeError('Scoped wrapper failed: scenario-d')",
+  "seconds": 27.2199745,
+  "sources_unchanged": true,
+  "head_unchanged": true,
+  "parent_environment_preserved": true,
+  "prior_receipts_unchanged": true,
+  "current_private_jobs": 2,
+  "all_current_private_jobs_isolated_closed": true,
+  "all_current_jobs_exit0": false,
+  "private_jobs": [
+    {
+      "name": "scenario_d_smoke_4cff896592b74a0286457e865a5a57ab.json",
+      "sha256": "4f233441cf01e372e7293151fa85837f3aa894df9d1dbec437a9cbf60c46211f",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_065da672b3ad46a88253b68c09494cec",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 32324,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 22.296
+      }
+    },
+    {
+      "name": "scenario_d_smoke_db8304a23c05436486ce12601039e3f4.json",
+      "sha256": "f9c4f8aef9d55132bce60a0936b2be20a6e06edca8cd8f1f49fe0d35e3cef4f0",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_32006e2148974a71a858115350687637",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 26596,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.332
+      }
+    }
+  ]
+}

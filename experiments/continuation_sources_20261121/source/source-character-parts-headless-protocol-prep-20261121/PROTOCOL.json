@@ -1,0 +1,173 @@
+{
+  "format": "has_character_parts_headless_protocol_1",
+  "status": "PREPARED_NOT_EXECUTED_PENDING_FINAL_SOURCE_PEER",
+  "stage": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748",
+  "source_snapshot_sha256": "14c7c92028a45953d103c8795bad72541d9136d4b10b7060ffcd1970c9d6fc69",
+  "source_count_per_studio": 1108,
+  "owned_override_per_studio": 1,
+  "expected_total_checks": 105,
+  "jobs": [
+    {
+      "name": "unit",
+      "studio": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Studio",
+      "profile": "HAS Character Parts unit db498e92703f47cc9087c36247a78ea1",
+      "casefolder": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Studio/output/case",
+      "args": [
+        "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--path",
+        "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Studio",
+        "--log-file",
+        "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/engine.log",
+        "--script",
+        "res://tests/character_parts_unit.gd"
+      ],
+      "cwd": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Studio",
+      "timeout_seconds": 45,
+      "expected_marker": "CHARACTER_PARTS_UNIT ",
+      "expected_checks": 58,
+      "environment_overrides": {
+        "APPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Environment/APPDATA",
+        "LOCALAPPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Environment/LOCALAPPDATA",
+        "TEMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Environment/TEMP",
+        "TMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Environment/TMP",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "HYBRID_GODOT": "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+        "HYBRID_PYTHON": "C:/Program Files/Python313/python.exe"
+      },
+      "environment_remove": [
+        "HYBRID_NATIVE_INPUTS",
+        "HYBRID_NATIVE_FIXTURES",
+        "HYBRID_SOURCEIO",
+        "HYBRID_HECATIA_KRA",
+        "HYBRID_FAN_PROJECT"
+      ],
+      "override_pin": {
+        "bytes": 134,
+        "sha256": "0f14e9b68414097ea5c9fa1ead35f36e6822aa7db1db7b2f1ff8816ce729e90e"
+      }
+    },
+    {
+      "name": "controls",
+      "studio": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio",
+      "profile": "HAS Character Parts controls b0efcbf35ad0418ea822934527088a10",
+      "casefolder": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio/output/case",
+      "args": [
+        "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--path",
+        "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio",
+        "--log-file",
+        "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/engine.log",
+        "--script",
+        "res://tests/character_parts_editor_smoke.gd",
+        "--",
+        "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio/output/case",
+        "HAS Character Parts controls b0efcbf35ad0418ea822934527088a10"
+      ],
+      "cwd": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio",
+      "timeout_seconds": 180,
+      "expected_marker": "CHARACTER_PARTS_EDITOR ",
+      "expected_checks": 38,
+      "environment_overrides": {
+        "APPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Environment/APPDATA",
+        "LOCALAPPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Environment/LOCALAPPDATA",
+        "TEMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Environment/TEMP",
+        "TMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Environment/TMP",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "HYBRID_GODOT": "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+        "HYBRID_PYTHON": "C:/Program Files/Python313/python.exe"
+      },
+      "environment_remove": [
+        "HYBRID_NATIVE_INPUTS",
+        "HYBRID_NATIVE_FIXTURES",
+        "HYBRID_SOURCEIO",
+        "HYBRID_HECATIA_KRA",
+        "HYBRID_FAN_PROJECT"
+      ],
+      "override_pin": {
+        "bytes": 138,
+        "sha256": "41b9de9ddf90378aa6ef6d4b5b7cbba41dbf5538733ea7fbfea7ed0c9ed94551"
+      }
+    },
+    {
+      "name": "reader",
+      "studio": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Studio",
+      "profile": "HAS Character Parts reader 725264dbccc74b71bb917f98c81fea18",
+      "casefolder": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Studio/output/case",
+      "args": [
+        "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--path",
+        "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Studio",
+        "--log-file",
+        "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/engine.log",
+        "--script",
+        "res://tests/character_parts_reader.gd",
+        "--",
+        "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Studio/output/case",
+        "HAS Character Parts reader 725264dbccc74b71bb917f98c81fea18"
+      ],
+      "cwd": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Studio",
+      "timeout_seconds": 75,
+      "expected_marker": "CHARACTER_PARTS_READER ",
+      "expected_checks": 9,
+      "environment_overrides": {
+        "APPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Environment/APPDATA",
+        "LOCALAPPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Environment/LOCALAPPDATA",
+        "TEMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Environment/TEMP",
+        "TMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Environment/TMP",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "HYBRID_GODOT": "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+        "HYBRID_PYTHON": "C:/Program Files/Python313/python.exe"
+      },
+      "environment_remove": [
+        "HYBRID_NATIVE_INPUTS",
+        "HYBRID_NATIVE_FIXTURES",
+        "HYBRID_SOURCEIO",
+        "HYBRID_HECATIA_KRA",
+        "HYBRID_FAN_PROJECT"
+      ],
+      "override_pin": {
+        "bytes": 136,
+        "sha256": "9e9ecc6dcf6bed6e029e468774e406f568e7b3171770e29eeeb8b12f47e744a1"
+      }
+    }
+  ],
+  "order": [
+    "unit",
+    "controls",
+    "copy_reader_inputs_after_controls_exit0_closed",
+    "reader"
+  ],
+  "runner_requirements": [
+    "Root-owned hidden direct process, no desktop creation or graphical/editor/import launch",
+    "Enforce each outer timeout, retain exact process handle, reap before next case; own/close any startup recovery Python descendants",
+    "Capture complete stdout/stderr/engine logs and keep every failure",
+    "Require exactly one expected marker with exact integer checks, failures0 and exit0; reject engine errors/leaks",
+    "Snapshot/source/override/raw baseline/pinned candidate files and all copied reader inputs must preserve hash,size,identity,nsmtime",
+    "Do not require current Main to remain435 after Root intentionally advances a separate test checkpoint; this execution is bound to the sealed435 historical code",
+    "No adoption, graphics pixels, physical input, six-MDL conversion/alignment or posed following qualification"
+  ],
+  "reader_copy": {
+    "from": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio/output/case",
+    "to": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/reader/Studio/output/case",
+    "only": [
+      "snapshot/**",
+      "expected-world.json"
+    ],
+    "requirements": [
+      "controls job successful and fully reaped/owned descendants closed first",
+      "fresh reader output case must not already exist",
+      "reject source links/reparse/hardlink aliases and unexpected file types; never copy original group.glb/rig.glb or writer profile/cache",
+      "read every copied file hash+size+identity before/after and pin reader copies",
+      "copy into reader-owned Studio/output/case; reader uses its distinct profile/environment"
+    ]
+  }
+}

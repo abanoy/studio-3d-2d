@@ -1,0 +1,15 @@
+#435/1102 native successor host proposal — unrun
+
+The fresh canonical Full is running in a separate reserved checkout. Nothing here touches that checkout. The original1086 Miku coordinators and their refusals are retained unchanged.
+
+The separate source1102.py admission module requires exact435dc02426a7cdd313e43fe674c9008520845428,1102 functional files,182 Full groups, all existing strong completion flags and zero exit; all12 new editor/camera groups and exact counts must be present. Root must supply external SHA256 pins for completion.json, the byte-identical source-before/source-after catalogue, and the fresh canonical output/verification.json. The receipt folder must be beneath the reserved has-ui-camera-full-20261121-435dc02/output. No source qualification is inferred from a merely running Full.
+
+Fresh-clone source timestamps are preserved independently and are expected to differ from Main timestamps. Byte counts/SHA256/Git IDs must match the exact Main1102 baseline. Main's actual timestamps, source domain, source hashes and HEAD must remain stable; no old1086 guard is relaxed. The existing current snapshot builder can then reconstruct immutable435 Git blobs plus its literal resource closure, with all1096 nonexperiment functional files and no output/cache/experiment resource leakage.
+
+A native successor will compose13 new experiment files: the old ten Miku files with the two reviewed skin replacements, the exact weight-conversion module, conversion-unit24, and actual ArrayMesh packing/readback13 fixture. First qualify171 pure controls, then the13 exact actual-engine packing controls. Only then cold-load the protected saved Miku case in two explicit contexts and three unchanged capsule profiles, preserving all original private hashes, fan fields, authored156-channel/six-change domains and off/dispose/history/Record gates.
+
+Require all52444 source/runtime slots and resolved IDs to pass exact pinned engine conversion before whole-mesh rest/saved-pose palette calibration. Use actual imported weights for both independent CPU palettes only after that gate, preserve raw weights privately, and retain shader=false. Contact must still measure raw solver/FK, postblendFK, complete segments and skinned vertices; measured lower-capsule initial overlaps stay explicit. No radius/skin/source repair is allowed to make failures green.
+
+Use the already qualified retained-process/privateDesktop job helper with unique profiles, per-job timeout/memory bound and proof of closure before a next case. Keep private images/rows and original projects local, public projections to hashes/counts/gates, and require head/environment/source/private-input preservation and owned-token lock cleanup. No native run is authorized on this child's lane.
+
+Status: executable successor coordinator source is now authored, with thirteen exact experiment targets and externally supplied Full proof pins. It must refuse until Root supplies exact successful Full receipts. Standalone synthetic171 has its own minimal project/host and does not depend on Full.

@@ -1,0 +1,39 @@
+{
+  "format": "has_synthetic_render_bounds_cpu_1",
+  "cases": [
+    {
+      "script": "posed_render_envelope_unit.gd",
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "status": "PASS",
+      "result": {
+        "checks": 21,
+        "failures": 0,
+        "graphics_or_native_assets_used": false
+      },
+      "error_lines": [],
+      "stdout_sha256": "57674cdc8bcf6ae8bddc161a0369c877d000e052914e7de9dc453080de67c592"
+    },
+    {
+      "script": "posed_render_bounds_unit.gd",
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "status": "PASS",
+      "result": {
+        "checks": 22,
+        "failures": 0,
+        "graphics_or_native_assets_used": false
+      },
+      "error_lines": [],
+      "stdout_sha256": "48a1df0b3394a416fb915fac5a0f907c9ae758cd869d7dc00ab6a099feced636"
+    }
+  ],
+  "all_inputs_preserved": true,
+  "parent_environment_unchanged": true,
+  "graphics_or_native_assets_used": false,
+  "native_qualification": "UNRUN",
+  "stage": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-posed-head-render-bounds-prep-20261121\\cpu-stage-1795254562029164300",
+  "status": "PASS"
+}

@@ -1,0 +1,61 @@
+{
+  "format": "has_character_parts_source_check_plan_1",
+  "status": "AUTHORED_UNPARSED_UNRUN",
+  "baseline_revision_prefix": "435dc024",
+  "current_source_count": 1102,
+  "proposed_source_count": 1108,
+  "author_engine_or_native_runs": 0,
+  "main_or_Full_checkout_modified": false,
+  "checks": [
+    {
+      "script": "tests/character_parts_unit.gd",
+      "headless": true,
+      "authored_full_pass_count": 58,
+      "marker": "CHARACTER_PARTS_UNIT ",
+      "private_inputs": false
+    },
+    {
+      "script": "tests/character_parts_editor_smoke.gd",
+      "headless": true,
+      "authored_full_pass_count": 38,
+      "marker": "CHARACTER_PARTS_EDITOR ",
+      "arguments": [
+        "fresh owned runtime output case folder",
+        "exact isolated profile name"
+      ],
+      "synthetic_only": true,
+      "native_pixels_or_physical_input_qualified": false
+    },
+    {
+      "script": "tests/character_parts_reader.gd",
+      "headless": true,
+      "authored_full_pass_count": 9,
+      "marker": "CHARACTER_PARTS_READER ",
+      "arguments": [
+        "fresh reader folder containing only copied snapshot and expected-world.json",
+        "distinct exact isolated reader profile name"
+      ],
+      "separate_process": true,
+      "synthetic_only": true
+    }
+  ],
+  "authored_full_pass_checks": 105,
+  "count_scope": "Call-site/explicit-loop arithmetic only; all actual executions remain pending.",
+  "root_host_requirements": [
+    "fresh owned current435dc024 composition",
+    "exact8 targets and reversible5 literal integration anchors",
+    "current1102 source identity/hash/stamp preservation",
+    "all runtime/produced fixture inputs explicitly admitted",
+    "strict --headless direct hidden process; no editor/import/GPU/private-desktop creation",
+    "finite outer timeout and retained/reaped child for each case",
+    "no next job after unproven closure or failed controls",
+    "exact markers/counts/failures0 and strict engine-error/log/leak checks",
+    "reader gets portable snapshot plus expected-world.json without original synthetic GLBs",
+    "preserve every failure and do not claim actual six-MDL alignment"
+  ],
+  "native_family_conversion_qualified": false,
+  "original_model_alignment_qualified": false,
+  "bone_following_qualified": false,
+  "application_adopted": false,
+  "whole_Full_claimed": false
+}

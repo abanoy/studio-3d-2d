@@ -14,10 +14,20 @@ def main():
   out.setparams((1,2,48000,0,'NONE','not compressed'));out.writeframes(b''.join(struct.pack('<h',int(12000*math.sin(2*math.pi*1000*i/48000))) for i in range(24000)))
  tone=hashlib.sha256((folder/'tone.wav').read_bytes()).hexdigest();reports={};receipts=[]
  frozen={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for part in ['src','tests','tools'] for p in (ROOT/part).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc'}
+ unit_args=command('tests/scenario_d_wire_unit.gd',True,extra=['--audio-driver','Dummy'])
+ unit=subprocess.run(unit_args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=60)
+ unit_text=unit.stdout+unit.stderr;(folder/'wire-unit.log').write_text(unit_text,encoding='utf-8')
+ assert unit.returncode==0 and not any(x in unit_text for x in ['ERROR:','FAIL ','ObjectDB instances leaked','resources still in use']),unit_text
+ unit_lines=[line for line in unit_text.splitlines() if line.startswith('SCENARIO_D_SAMPLE_WIRE_UNIT ')]
+ assert len(unit_lines)==1,unit_text
+ assert sum(line.startswith('PASS ') for line in unit_text.splitlines())==28,unit_text
+ reports['wire_unit']=json.loads(unit_lines[0].split('SCENARIO_D_SAMPLE_WIRE_UNIT ',1)[1])
+ assert type(reports['wire_unit'].get('checks')) is int and reports['wire_unit']['checks']==28 and type(reports['wire_unit'].get('failures')) is int and reports['wire_unit']['failures']==0,reports['wire_unit']
  for label,extra,marker in [('writer',[],'SCENARIO_D_WRITE '),('reader',['--read'],'SCENARIO_D_READ ')]:
   args=command('tests/scenario_d_smoke.gd',extra=['--audio-driver','Dummy','--log-file',str(folder/(label+'-engine.log')),'--',str(folder),*extra]);r=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=390);text=r.stdout+r.stderr;(folder/(label+'.log')).write_text(text)
   assert r.returncode==0 and marker in text and not any(x in text for x in ['ERROR:','FAIL ','ObjectDB instances leaked']),text
   reports[label]=json.loads(next(line[len(marker):] for line in text.splitlines() if line.startswith(marker)));assert reports[label]['failures']==0
+  if label=='reader':assert reports[label].get('sampled_frames')==49 and reports[label].get('physical_frames_exact')==49 and reports[label].get('sample_wire_format')=='scenario_d_sample_wire_1',reports[label]
   if os.name=='nt':
    path=Path(args[args.index('--receipt')+1]);receipt=json.loads(path.read_bytes());assert receipt['exit']==0 and receipt['child_desktop_confirmed'] and not receipt['foreground_child_observed'] and receipt['job_closed'] and receipt['desktop_closed'];receipts.append(str(path))
   if label=='writer':

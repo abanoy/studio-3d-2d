@@ -1,0 +1,393 @@
+{
+  "format": "has_easing_root_synthetic_headless_1",
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "math",
+      "pid": 25200,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 0.3067061,
+      "result": {
+        "application_adopted": false,
+        "checks": 24,
+        "failures": 0,
+        "native_or_gpu_started": false
+      }
+    },
+    {
+      "name": "editor",
+      "pid": 3372,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 0.2897333,
+      "result": {
+        "application_adopted": false,
+        "camera_render_or_export_tested": false,
+        "checks": 45,
+        "failures": 0,
+        "native_asset_tested": false,
+        "real_app_undo_tested": false
+      }
+    }
+  ],
+  "checks": 69,
+  "error": null,
+  "inputs_and_runtime_sources_preserved": true,
+  "parent_environment_preserved": true,
+  "application_adopted": false,
+  "actual_app_undo_qualified": false,
+  "graphics_or_native_jobs_started": false,
+  "full_source_modified": false,
+  "source_manifest_sha256": "83f1fa2990bceb6794879572caed5edb7f38da4fc80c85e903ba44738e538f16",
+  "source_and_runtime_inputs": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\math_v2\\keyframe_easing_math_unit.gd",
+      "bytes": 6295,
+      "sha256": "4ba26a8126313af273c5265932b4f3161a9f378400d63c622a9ef21419cfd406",
+      "identity": [
+        14290083805553457215,
+        562949955974806,
+        6295,
+        1795242821376416000,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\math_v2\\README.md",
+      "bytes": 552,
+      "sha256": "9def27fe38680466ff95db63220b9fd3403269951f12ad3bb21478bee36e6a62",
+      "identity": [
+        14290083805553457215,
+        562949955974805,
+        552,
+        1795242821373415300,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\math_v2\\SOURCE_PINS.json",
+      "bytes": 545,
+      "sha256": "1146905fc8c9f0d8dd9705d70ec107935b7f18e0d4b0950e2b84600a353e33fc",
+      "identity": [
+        14290083805553457215,
+        562949955974804,
+        545,
+        1795242821370410000,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\BASES.json",
+      "bytes": 512,
+      "sha256": "2f6e57931a1e33704b5ef09b7cb05944abb0f7d4c2d6312ae7957529b62c6556",
+      "identity": [
+        14290083805553457215,
+        562949955974788,
+        512,
+        1795242821344215900,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\bases\\app.gd",
+      "bytes": 314487,
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "identity": [
+        14290083805553457215,
+        562949955974800,
+        314487,
+        1795242821364883300,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\bases\\renderer.gd",
+      "bytes": 15453,
+      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "identity": [
+        14290083805553457215,
+        562949955974801,
+        15453,
+        1795242821366881800,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\bases\\timeline.gd",
+      "bytes": 2878,
+      "sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+      "identity": [
+        14290083805553457215,
+        562949955974802,
+        2878,
+        1795242821368900200,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\CORE_SOURCE_PINS.json",
+      "bytes": 832,
+      "sha256": "579b19922d2e163c4e446db59728f6c0dd90c856dd1bf16070ccbbfe4d9b465b",
+      "identity": [
+        14290083805553457215,
+        562949955974789,
+        832,
+        1795242821347228000,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\PATCHES.json",
+      "bytes": 2550,
+      "sha256": "389dc997fa301321ef02ae24b1f3c809b7bff00bc7455181cfdda1983719a45e",
+      "identity": [
+        14290083805553457215,
+        562949955974790,
+        2550,
+        1795242821350360700,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\payload\\src\\camera_easing_editor.gd",
+      "bytes": 8342,
+      "sha256": "93cdee806155c457f12220ce53cfbc2377cc4ba3b15346fa9fbcc2d62f42df24",
+      "identity": [
+        14290083805553457215,
+        844424932685451,
+        8342,
+        1795242821358374100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\payload\\src\\keyframe_easing.gd",
+      "bytes": 7179,
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "identity": [
+        14290083805553457215,
+        844424932685450,
+        7179,
+        1795242821355373800,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\payload\\tests\\keyframe_easing_math_unit.gd",
+      "bytes": 6289,
+      "sha256": "f329ea9d29f7eb346b43e0f804d9ca72421e6dc93fd598dd5c1772ed16d04b55",
+      "identity": [
+        14290083805553457215,
+        562949955974797,
+        6289,
+        1795242821360880700,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\payload\\tests\\keyframe_easing_unit.gd",
+      "bytes": 10364,
+      "sha256": "a4ea85beeba768ef888846e2641a7d08765161a2198530528d06a82e883a4c45",
+      "identity": [
+        14290083805553457215,
+        562949955974798,
+        10364,
+        1795242821362885600,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\bases\\original_preparation\\README.md",
+      "bytes": 5574,
+      "sha256": "9b47255217801e3622cc2f38285e7bd39c9af170226fbedec52dfcaab3096d11",
+      "identity": [
+        14290083805553457215,
+        844424932685447,
+        5574,
+        1795242821353391700,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\PATCHES.json",
+      "bytes": 2550,
+      "sha256": "389dc997fa301321ef02ae24b1f3c809b7bff00bc7455181cfdda1983719a45e",
+      "identity": [
+        14290083805553457215,
+        562949955974814,
+        2550,
+        1795242821392489500,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\payload\\src\\camera_easing_editor.gd",
+      "bytes": 8342,
+      "sha256": "93cdee806155c457f12220ce53cfbc2377cc4ba3b15346fa9fbcc2d62f42df24",
+      "identity": [
+        14290083805553457215,
+        562949955974810,
+        8342,
+        1795242821382967300,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\payload\\src\\keyframe_easing.gd",
+      "bytes": 7179,
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "identity": [
+        14290083805553457215,
+        562949955974809,
+        7179,
+        1795242821379433700,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\payload\\tests\\keyframe_easing_math_unit.gd",
+      "bytes": 6295,
+      "sha256": "4ba26a8126313af273c5265932b4f3161a9f378400d63c622a9ef21419cfd406",
+      "identity": [
+        14290083805553457215,
+        562949955974813,
+        6295,
+        1795242821388969000,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\payload\\tests\\keyframe_easing_unit.gd",
+      "bytes": 10364,
+      "sha256": "a4ea85beeba768ef888846e2641a7d08765161a2198530528d06a82e883a4c45",
+      "identity": [
+        14290083805553457215,
+        562949955974812,
+        10364,
+        1795242821385968100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\README.md",
+      "bytes": 3328,
+      "sha256": "1638d7742640e2ace7f1d0387ab6a615d8157c8d047cab398d15b3c56feda96d",
+      "identity": [
+        14290083805553457215,
+        562949955974816,
+        3328,
+        1795242821397502500,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\ROOT_CORE_RESULT.json",
+      "bytes": 1280,
+      "sha256": "9099aca7eb5315d786a191622d41ece5896a62907df062db122ccecbecfbddc4",
+      "identity": [
+        14290083805553457215,
+        562949955974815,
+        1280,
+        1795242821394485100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing-editor-prep-20261121\\SOURCE_REVIEW.json",
+      "bytes": 1007,
+      "sha256": "bc20f59bc63ebdf50193fc33a3f69429c064662b66481f4559d08d528395a4f3",
+      "identity": [
+        14290083805553457215,
+        562949955974817,
+        1007,
+        1795242821398503900,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\src\\timeline.gd",
+      "bytes": 2878,
+      "sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+      "identity": [
+        14290083805553457215,
+        562949955810423,
+        2878,
+        1795192069429911200,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254145851799500\\Studio\\src\\camera_easing_editor.gd",
+      "bytes": 8342,
+      "sha256": "93cdee806155c457f12220ce53cfbc2377cc4ba3b15346fa9fbcc2d62f42df24",
+      "identity": [
+        14290083805553457215,
+        562949956024312,
+        8342,
+        1795254146115176000,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254145851799500\\Studio\\src\\keyframe_easing.gd",
+      "bytes": 7179,
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "identity": [
+        14290083805553457215,
+        562949956024313,
+        7179,
+        1795254146130726800,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254145851799500\\Studio\\tests\\keyframe_easing_math_unit.gd",
+      "bytes": 6295,
+      "sha256": "4ba26a8126313af273c5265932b4f3161a9f378400d63c622a9ef21419cfd406",
+      "identity": [
+        14290083805553457215,
+        562949956024315,
+        6295,
+        1795254146135296900,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254145851799500\\Studio\\tests\\keyframe_easing_unit.gd",
+      "bytes": 10364,
+      "sha256": "a4ea85beeba768ef888846e2641a7d08765161a2198530528d06a82e883a4c45",
+      "identity": [
+        14290083805553457215,
+        562949956024316,
+        10364,
+        1795254146138295800,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254145851799500\\Studio\\src\\timeline.gd",
+      "bytes": 2878,
+      "sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+      "identity": [
+        14290083805553457215,
+        562949956024317,
+        2878,
+        1795254146155163100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254145851799500\\Studio\\project.godot",
+      "bytes": 136,
+      "sha256": "0abe43185e9003cf260eeb4b28a22dcbac13f2956c7ce2a805122a56194164ff",
+      "identity": [
+        14290083805553457215,
+        562949956024318,
+        136,
+        1795254146158164000,
+        1
+      ]
+    }
+  ]
+}

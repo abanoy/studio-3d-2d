@@ -1,0 +1,135 @@
+{
+  "format": "has_import_off_followup_scoped_1",
+  "status": "FAIL",
+  "source_context": "main_working_source_snapshot",
+  "base_head": "435dc02426a7cdd313e43fe674c9008520845428",
+  "functional_sources": 1102,
+  "cases": [
+    {
+      "name": "height",
+      "pid": 32324,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 50.0461183,
+      "report_sha256": "3e17d8c8ba38109dc0b5908befee2967a71c27c8f669d9d7f636507364d57743"
+    },
+    {
+      "name": "import-physics",
+      "pid": 18504,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 28.5026268,
+      "report_sha256": "5d5411930402c4857be60fec3348e169b56654a80455a7a37158034ed82d778b"
+    },
+    {
+      "name": "first-movie",
+      "pid": 22036,
+      "exit": 1,
+      "child_reaped": true,
+      "seconds": 12.4714958
+    }
+  ],
+  "whole_full_claimed": false,
+  "owner_device_or_human_claimed": false,
+  "error": "RuntimeError('Scoped wrapper failed: first-movie')",
+  "seconds": 91.1967382,
+  "sources_unchanged": true,
+  "head_unchanged": true,
+  "parent_environment_preserved": true,
+  "prior_receipts_unchanged": true,
+  "current_private_jobs": 5,
+  "all_current_private_jobs_isolated_closed": true,
+  "all_current_jobs_exit0": false,
+  "private_jobs": [
+    {
+      "name": "character_height_smoke_27a1a5415ca641cab50e181af5c9727c.json",
+      "sha256": "ab271c50ffefacaee91d014033604feb2d17dae2bf38efa8c6d3e7c0a8e015d6",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_adf628aa6e054ad192290e65925d858d",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19888,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 36.195
+      }
+    },
+    {
+      "name": "character_height_smoke_696e9a5a725c4351a70c477fdd6f2f73.json",
+      "sha256": "9b63c5c665c4fe325bd65cc0a9226267781540924f282dbebf0da8b005796e88",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ed493e7a4d9d4c8889fcf9ac441ea1dd",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 29560,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.488
+      }
+    },
+    {
+      "name": "first_movie_smoke_b122e6f83c3f4f90b4081a70e81ece3c.json",
+      "sha256": "ebd7e895ca63a0d3a529858eeb3accbb2719719277a3b838e96cf92bdd8e99ce",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_89e316f8572c4f1d954b06e5ccf50c06",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 22980,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 12.252
+      }
+    },
+    {
+      "name": "height_import_native_smoke_d1cc73f5c7f94837b40606074ef49a21.json",
+      "sha256": "766a4156deda455e8d093d74c95915623dcf1c14081a8db8a96aecbdb1d5b9ed",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e5697096c4f64acfaba68dd91af65c04",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22856,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.613
+      }
+    },
+    {
+      "name": "import_physics_smoke_46de72a099b84ed498400537b6936019.json",
+      "sha256": "ee06a4520fc5a009f9eb268ffc81f35d73328ef6b4fd5b752df4c2cadffc7fb1",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_4ef8561c12a044c593f6c2df9f1b650e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27364,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 27.74
+      }
+    }
+  ]
+}

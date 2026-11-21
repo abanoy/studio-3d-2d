@@ -1,0 +1,40 @@
+{
+  "format": "has_scenario_d_cold_sample_source_inspection_1",
+  "date": "2026-11-21",
+  "expected_file_bytes": 446644,
+  "expected_sha256": "6a5aeae9746ac6f04851593183f6ca2541aca330fe2020747db13e2d07a2eca2",
+  "inspected_source": {
+    "path": "tests/scenario_d_smoke.gd",
+    "bytes": 15626,
+    "sha256": "02030fd165fbfd982fc693ae8e464eba91680b84ee577403e7fee83e0fa5f52c"
+  },
+  "expected_pre_save_sample_strings": {
+    "frames": 49,
+    "actors_per_frame": [
+      4
+    ],
+    "body_rows_per_frame": [
+      17
+    ],
+    "numeric_tokens": 7399,
+    "integer_lexemes": 0,
+    "decimal_or_exponent_lexemes": 7399,
+    "exponent_lexemes": 1978,
+    "exact_float32_numeric_values": 7399,
+    "non_float32_numeric_values": 0,
+    "numeric_tokens_per_frame": [
+      151
+    ]
+  },
+  "writer_domain": "sample_stamp full-precision JSON text before Save",
+  "saved_world_domain": "canonical parse(full-precision stringify(World.portable(currentWorld))) before outer expected.json write",
+  "reader_domain": "sample loaded World after HAS unpack and JSON parse; compare newly serialized raw sampler results to original pre-save strings",
+  "reverse_loop_short_circuit": true,
+  "diagnostic_requirement": "Unconditionally collect every one of49 current samples/type/numeric-diff records before aggregating original check; keep all4 assertions and do not infer cause from final-frame pixels.",
+  "actual_reader_sample_values_inspected": false,
+  "native_or_reader_execution": false,
+  "oracle_changed": false,
+  "product_changed": false,
+  "representation_failure_proven": false,
+  "actual_restore_failure_proven": false
+}

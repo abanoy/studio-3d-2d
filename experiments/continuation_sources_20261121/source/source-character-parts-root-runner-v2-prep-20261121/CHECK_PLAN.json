@@ -1,0 +1,38 @@
+{
+  "format": "has_junko105_identity_v2_check_plan_1",
+  "source_only": true,
+  "execution_owner": "Root only",
+  "synthetic_identity_controls": {
+    "count": 32,
+    "status": "UNRUN",
+    "script": "test_native_identity_bridge.py",
+    "headless_native_inputs": false
+  },
+  "sealed_cases": {
+    "unit": 58,
+    "controls": 38,
+    "reader": 9,
+    "total": 105,
+    "status": "UNRUN"
+  },
+  "expected_preflight": {
+    "original3327_seals_exact": true,
+    "root_native_witness3329_exact": true,
+    "source_and_byte_guards_unchanged": true
+  },
+  "required_final": [
+    "all_attempted_jobs_closed",
+    "parent_environment_unchanged",
+    "runtime_source_membership_preserved",
+    "full_native64_raw_mode_preserved",
+    "all_admitted_inputs_preserved",
+    "owned_lock_removed"
+  ],
+  "no_qualification_claims": [
+    "Full",
+    "native MDL alignment",
+    "bone following",
+    "graphics",
+    "adoption"
+  ]
+}

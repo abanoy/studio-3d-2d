@@ -1,0 +1,51 @@
+{
+  "baseline_revision": "435dc02426a7cdd313e43fe674c9008520845428",
+  "application_adopted": false,
+  "patches": [
+    {
+      "path": "tests/height_import_native_smoke.gd",
+      "before": "\tapp.source_import.start(input.source,true,0,context)\n",
+      "after": "\tcheck(context.has(\"physics_on_import\") and typeof(context.physics_on_import)==TYPE_BOOL and not context.physics_on_import,\"normal native import explicitly requests Physics Off\")\n\tapp.source_import.start(input.source,true,0,context)\n"
+    },
+    {
+      "path": "tests/height_import_native_smoke.gd",
+      "before": "\tcheck(actor!=null and app.physics_editor.active(id) and actor.authored_keys().is_empty(),\"default body physics starts only after accepting the fitted import, without recording keys\")\n",
+      "after": "\tcheck(actor!=null and not app.physics_editor.active(id) and not app.physics_editor.is_running() and app.physics_editor.pending.is_empty() and app.physics_editor.import_starts.is_empty() and not app.physics_editor.toggle.button_pressed and not app.physics_editor.hair_toggle.button_pressed and actor.authored_keys().is_empty(),\"accepted default native import keeps body and hair Physics Off without queued starts or recorded keys\")\n\tcheck(app.keys==keys,\"default-Off acceptance preserves authored camera keys\")\n"
+    },
+    {
+      "path": "tests/height_import_native_smoke.gd",
+      "before": "\t# A stale source file cannot be accepted after review. Only owned fixture bytes change.\n",
+      "after": "\t# Explicit opt-in stays supported, and must still wait for height acceptance.\n\tapp.new_project();var optin_context: Dictionary=app.import_actions.placement();optin_context.physics_on_import=true\n\tvar optin_keys: Array=app.keys.duplicate(true)\n\tapp.source_import.start(input.source,true,0,optin_context)\n\twhile app.source_import.pid>0:await process_frame\n\twhile app.height_review.pending and not app.height_review.prepared:await process_frame\n\tawait settled();review=app.height_review\n\tcheck(review.pending and review.prepared and review.assessment.get(\"complete\",false) and not app.physics_editor.is_running() and app.renderer.active_model()==null,\"explicit native Physics opt-in still waits for completed height acceptance\")\n\tif not review.pending:app.free();quit(1);return\n\tfor child in app.get_children():\n\t\tif child is AcceptDialog and child.visible:child.hide();child.queue_free()\n\tvar optin_data: Dictionary=review.data.duplicate(true);var optin_id: String=optin_data.id\n\treview.fit.button_pressed=true;review.apply();await settled()\n\tdeadline=Time.get_ticks_msec()+10000\n\twhile (not app.physics_editor.pending.is_empty() or not app.physics_editor.import_starts.is_empty()) and Time.get_ticks_msec()<deadline:await process_frame\n\tawait settled();var optin_actor: RefCounted=app.renderer.world_runtime.instance(optin_id)\n\tcheck(optin_actor!=null and optin_actor.data.scale>1 and optin_actor.data.metadata.import_height.source_sha256==optin_data.sha256,\"explicit native fit installs once with source provenance intact\")\n\tcheck(optin_actor!=null and app.physics_editor.body_active(optin_id) and optin_actor.authored_keys().is_empty() and app.keys==optin_keys,\"explicit Physics On starts after acceptance without recording pose or camera keys\")\n\tif optin_actor:\n\t\tvar optin_scale: float=optin_actor.data.scale;app.physics_editor.freeze_all();await settled()\n\t\tcheck(not app.physics_editor.is_running() and optin_actor.data.scale==optin_scale and optin_actor.authored_keys().is_empty(),\"explicit Physics Off freezes without losing chosen height or adding keys\")\n\t# A stale source file cannot be accepted after review. Only owned fixture bytes change.\n"
+    },
+    {
+      "path": "src/first_movie_lesson.gd",
+      "before": "\t\"Add the practice figure. Let Physics run, then switch Physics off to freeze it.\",\n",
+      "after": "\t\"Add the practice figure. Switch Physics on, let it move, then switch Physics off to freeze it.\",\n"
+    },
+    {
+      "path": "src/first_movie_lesson.gd",
+      "before": "\t\"Choose Practice figure.glb. Compatible imports begin with Physics on. Try grabbing it, then turn Physics off; nothing is recorded without Record.\",\n",
+      "after": "\t\"Choose Practice figure.glb. Imports start with Physics off. Select the figure and switch Physics on. Try grabbing it, then turn Physics off; nothing is recorded without Record.\",\n"
+    },
+    {
+      "path": "tests/first_movie_smoke.gd",
+      "before": "\tfor i in range(20):await physics_frame\n\tlesson.next_tick=0;lesson._process(0);await settled()\n\tcheck(lesson.step==1 and lesson.observed.get(\"physics_seen\",false) and app.physics_editor.body_active(rig.data.id),\"actual default-on ragdoll is observed without advancing or freezing it\")\n",
+      "after": "\tfor i in range(20):await physics_frame\n\tlesson.next_tick=0;lesson._process(0);await settled()\n\tcheck(lesson.step==1 and not lesson.observed.get(\"physics_seen\",false) and not app.physics_editor.is_running() and app.physics_editor.import_starts.is_empty() and not lesson.satisfied(),\"default-Off practice import cannot falsely satisfy the Physics exercise\")\n\tcheck(lesson.instruction.text==First.DEFINITION.steps[1] and \"Switch Physics on\" in lesson.instruction.text,\"practice explicitly teaches the opt-in Physics step\")\n\tapp.physics_editor.toggle.button_pressed=true\n\tfor i in range(20):await physics_frame\n\tlesson.next_tick=0;lesson._process(0);await settled()\n\tcheck(lesson.step==1 and lesson.observed.get(\"physics_seen\",false) and app.physics_editor.body_active(rig.data.id),\"explicit Physics On is observed without advancing or freezing it\")\n"
+    },
+    {
+      "path": "tests/scenario_d_smoke.gd",
+      "before": " check(actor.order.size()>=17 and physics.body_active(id) and not app.advanced_mode and physics.toggle.is_visible_in_tree() and recording.button.is_visible_in_tree(),\"D1 original humanoid imports with compatible Physics ON and Record visible in Simple\")\n",
+      "after": " check(actor.order.size()>=17 and not physics.body_active(id) and not physics.is_running() and physics.import_starts.is_empty() and actor.authored_keys().is_empty(),\"D1 normal humanoid import starts Physics Off without queued activation or recorded keys\")\n await enable(id)\n check(physics.body_active(id) and not app.advanced_mode and physics.toggle.is_visible_in_tree() and recording.button.is_visible_in_tree(),\"D1 explicit visible Physics toggle activates compatible humanoid and keeps Record available in Simple\")\n"
+    },
+    {
+      "path": "docs/physics.md",
+      "before": "Interactive imports of compatible ragdolls start with **Physics on** after the import\ndialogs close. The immediate on/off control is visible in Simple. Existing models\nand solid props can also use that toggle explicitly. Left-click a simulated body to grab it, move the\n",
+      "after": "Interactive model imports start with **Physics off** and **Hair & clothes off**.\nSelect a compatible ragdoll or solid prop and turn Physics on explicitly using\nthe control visible in Simple. Height review preserves that Off default; an\nexplicit import opt-in waits until the review is accepted. Left-click a simulated\nbody to grab it, move the\n"
+    },
+    {
+      "path": "docs/scenario_d.md",
+      "before": "# Physics scenario D: integrated software verification\n",
+      "after": "# Physics scenario D: integrated software verification\n\nCurrent behavior (2026-11-21): models import with Physics Off. The scenario now\nchecks that default and explicitly turns Physics On before the grab/record\nexercise. The recorded baseline measurements below used the earlier On default;\nthey remain historical observations. No contact, recording or replay assertion\nis removed by the default change.\n"
+    }
+  ]
+}

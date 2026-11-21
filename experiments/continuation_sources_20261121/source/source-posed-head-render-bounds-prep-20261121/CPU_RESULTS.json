@@ -1,0 +1,103 @@
+{
+  "format": "has_posed_head_bounds_cpu_summary_1",
+  "latest_status": "PASS",
+  "latest_checks": 43,
+  "math_checks": 21,
+  "controller_checks": 22,
+  "graphics_used": false,
+  "native_qualification": "UNRUN",
+  "application_adopted": false,
+  "first_attempt_strict_failure_retained": true,
+  "attempts": [
+    {
+      "stage": "cpu-stage-1795254068690461000",
+      "bytes": 1926,
+      "sha256": "ce6d9cc48b32864976d79f4bd9fe82e271eaea9ca3e53f94aceb0949ce18e8fb",
+      "status": "FAIL",
+      "cases": [
+        {
+          "script": "posed_render_envelope_unit.gd",
+          "exit_code": 0,
+          "reaped": true,
+          "timed_out": false,
+          "status": "PASS",
+          "checks": 21,
+          "failures": 0,
+          "error_line_count": 0
+        },
+        {
+          "script": "posed_render_bounds_unit.gd",
+          "exit_code": 0,
+          "reaped": true,
+          "timed_out": false,
+          "status": "FAIL",
+          "checks": 21,
+          "failures": 0,
+          "error_line_count": 6
+        }
+      ],
+      "all_inputs_preserved": true,
+      "parent_environment_unchanged": true
+    },
+    {
+      "stage": "cpu-stage-1795254107600161600",
+      "bytes": 1217,
+      "sha256": "a908f241792f9ee3716d131f8dba7af8c491dfaf781b5ae144379465fb562374",
+      "status": "PASS",
+      "cases": [
+        {
+          "script": "posed_render_envelope_unit.gd",
+          "exit_code": 0,
+          "reaped": true,
+          "timed_out": false,
+          "status": "PASS",
+          "checks": 21,
+          "failures": 0,
+          "error_line_count": 0
+        },
+        {
+          "script": "posed_render_bounds_unit.gd",
+          "exit_code": 0,
+          "reaped": true,
+          "timed_out": false,
+          "status": "PASS",
+          "checks": 22,
+          "failures": 0,
+          "error_line_count": 0
+        }
+      ],
+      "all_inputs_preserved": true,
+      "parent_environment_unchanged": true
+    },
+    {
+      "stage": "cpu-stage-1795254278743707300",
+      "bytes": 1217,
+      "sha256": "1f6f03d562db9e15a31d2b77cdb95edc380368afed82f8c330ff43f5a2ae73a5",
+      "status": "PASS",
+      "cases": [
+        {
+          "script": "posed_render_envelope_unit.gd",
+          "exit_code": 0,
+          "reaped": true,
+          "timed_out": false,
+          "status": "PASS",
+          "checks": 21,
+          "failures": 0,
+          "error_line_count": 0
+        },
+        {
+          "script": "posed_render_bounds_unit.gd",
+          "exit_code": 0,
+          "reaped": true,
+          "timed_out": false,
+          "status": "PASS",
+          "checks": 22,
+          "failures": 0,
+          "error_line_count": 0
+        }
+      ],
+      "all_inputs_preserved": true,
+      "parent_environment_unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "format": "has_scenario_d_wire_targets_1",
+  "status": "SOURCE_API_REVIEWED_UNRUN",
+  "expected_functional_source_count_before": 1102,
+  "expected_functional_source_count_after": 1103,
+  "unchanged_Full_result_group_count": 182,
+  "pure_controls": 28,
+  "writer_original_checks": 30,
+  "reader_original_checks": 4,
+  "targets": [
+    {
+      "path": "tests/scenario_d_smoke.gd",
+      "operation": "replace",
+      "bytes": 19518,
+      "sha256": "500ad8b31916767dbaa1307d2d6805da8fbec680e01218b5a65d6957eb2bb063",
+      "base_bytes": 15626,
+      "base_sha256": "02030fd165fbfd982fc693ae8e464eba91680b84ee577403e7fee83e0fa5f52c"
+    },
+    {
+      "path": "tests/scenario_d_wire_unit.gd",
+      "operation": "new",
+      "bytes": 6243,
+      "sha256": "f067318015f50c5002a172aea3e804e56175e6c094ae0b6802f14eff75adaa78",
+      "base_bytes": null,
+      "base_sha256": null
+    },
+    {
+      "path": "tests/verify_scenario_d.py",
+      "operation": "replace",
+      "bytes": 5855,
+      "sha256": "72c2d4dd9e942389672a6191726f10789a17c2cee6e2fd9facbff3ca02b48233",
+      "base_bytes": 4665,
+      "base_sha256": "3cd9f97a92ad9f66476417299f79a5394e3c1bfae2f030bf09165401b52626b2"
+    }
+  ]
+}

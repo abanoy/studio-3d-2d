@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\tests\verify_first_movie.py", line 34, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\tests\verify_first_movie.py", line 18, in main
+    assert p.returncode==0 and marker in log and '"failures":0' in log and not any(s in log for s in ('ERROR:','FAIL ','ObjectDB instances leaked','another exclusive child')),log
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS new animator can start the first movie directly from Home
+PASS Home opens practice with the first map instruction visible
+PASS beginner practice starts empty, black and unselected
+PASS empty scene cannot satisfy map import
+PASS visual hint outlines the actual import button without edits or input interception
+PASS lesson import opens real picker beside offline practice assets
+PASS normal map import creates a real environment in the empty world
+PASS observed real task advances to step 1
+PASS lesson import opens real picker beside offline practice assets
+PASS default-Off practice import cannot falsely satisfy the Physics exercise
+PASS practice explicitly teaches the opt-in Physics step
+PASS explicit Physics On is observed without advancing or freezing it
+PASS live imported physics creates no recorded motion keys
+PASS hint switches to the real Physics control after import
+PASS normal Physics off freezes imported practice figure
+PASS observed real task advances to step 2
+PASS Home offers the saved first-movie practice
+PASS Home shows the personal save beside the unfinished lesson
+PASS Home Continue restores the same lesson, frozen scene and observed physics step
+PASS resuming the lesson preserves the separate personal project
+PASS Previous restores map-only scene and removes later simulation evidence
+PASS lesson import opens real picker beside offline practice assets
+FAIL observed real task advances to step 2
+FIRST_MOVIE_STATE {"observed":{},"status":"Added Practice figure.glb. Other objects, drawing and shot keys are preserved.","step":1,"world":{"format":"studio_world_1","objects":[{"draft_frame":0.0,"format":"studio_model_1","id":"5563998306772089693","kind":"environment","metadata":{"import_source":"C:/a/Programming/cloudflare/has-body-addition-20261120/examples/tutorials/Practice room.glb","source_shape":{"enabled":true,"format":"studio_source_shape_1"}},"name":"Practice room.glb","parent_id":"","path":"assets/713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad.glb","pose":{},"pose_keys":[],"position":[0.0,0.0,0.0],"reference_only":false,"rotation_xyzw":[0.0,0.0,0.0,1.0],"scale":1.0,"sha256":"713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad","source":"C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\first-movie\\1795256383233565100/tutorial-progress/first-movie-v1/1795256386_6823189071227109642/step_01/assets/713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad.glb","start_frame":0.0,"visible":true},{"draft_frame":0,"format":"studio_model_1","id":"6141352904525779561","kind":"model","metadata":{"import_source":"C:/a/Programming/cloudflare/has-body-addition-20261120/examples/tutorials/Practice figure.glb","initial_placement":{"attempts":1,"overlap":false,"skipped_surfaces":0,"support":"mesh","triangles":36},"source_shape":{"enabled":true,"format":"studio_source_shape_1"}},"name":"Practice figure.glb","parent_id":"","pose":{},"pose_keys":[],"position":[0.680943250656128,-0.0499999634921551,1.20671498775482],"reference_only":false,"rotation_xyzw":[0,0,0,1],"scale":1.0,"sha256":"99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23","source":"C:/a/Programming/cloudflare/has-body-addition-20261120/output/imports/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb","start_frame":0,"visible":true}]}}
+

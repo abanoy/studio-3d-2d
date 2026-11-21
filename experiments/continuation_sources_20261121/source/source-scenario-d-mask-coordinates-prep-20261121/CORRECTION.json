@@ -1,0 +1,16 @@
+{
+  "format": "has_scenario_d_selection_coordinate_correction_1",
+  "status": "APPLIED_RUNTIME_UNRUN",
+  "before_sha256": "e9917d62779a39b31121cb47120343557d835ca7b2889ce76d7d1fcc5e66df3d",
+  "after_sha256": "02030fd165fbfd982fc693ae8e464eba91680b84ee577403e7fee83e0fa5f52c",
+  "failed_writer_checks": 29,
+  "failed_writer_failures": 3,
+  "old_world_contacts": 0,
+  "old_horizontal_displacement": 0.000204751137061976,
+  "correction": "Replace fixed x2 mask mapping with the inverse of actual scene_uv at a pixel centre; explicitly assert selected and active actor IDs.",
+  "contact_or_pose_assertions_removed": false,
+  "numeric_or_pixel_tolerances_changed": false,
+  "new_writer_expected_checks": 30,
+  "reader_expected_checks": 4,
+  "production_code_changed": false
+}

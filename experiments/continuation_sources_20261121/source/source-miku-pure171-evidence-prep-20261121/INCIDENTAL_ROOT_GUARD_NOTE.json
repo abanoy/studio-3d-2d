@@ -1,0 +1,10 @@
+{
+  "format": "has_miku171_root_incidental_guard_note_1",
+  "source": "Root message in this agent conversation",
+  "independently_reproduced": false,
+  "first_attempt": "Root reported the retirement script refused while reading FileInfo.Parent before mutation.",
+  "corrected_attempt": "Retained LOCK_RETIREMENT_SCRIPT.ps1 uses FileInfo.Directory and the exact guarded retirement succeeded.",
+  "first_attempt_mutation_reported": false,
+  "raw_first_attempt_tool_output_available_in_this_packet": false,
+  "original_prelaunch_refusal_reinterpreted": false
+}

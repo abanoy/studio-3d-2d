@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\tests\verify_scenario_d.py", line 39, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\tests\verify_scenario_d.py", line 19, in main
+    assert r.returncode==0 and marker in text and not any(x in text for x in ['ERROR:','FAIL ','ObjectDB instances leaked']),text
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS original included humanoid/room and generated box fixtures are prepared
+PASS real included map geometry supplies ragdoll and prop collision
+PASS D1 normal humanoid import starts Physics Off without queued activation or recorded keys
+PASS D1 explicit visible Physics toggle activates compatible humanoid and keeps Record available in Simple
+PASS D1 actual viewport press grabs a humanoid physical body
+PASS D3 live humanoid manipulation moves physical bodies without authored keys/history
+PASS D1 release drops the grab while unrecorded simulation continues
+PASS D2 Physics OFF freezes the actual fallen pose without adding simulation keys
+PASS D2 frozen humanoid stays in its current pose after physical proxies are removed
+PASS D2 frozen humanoid remains pickable for a context action
+PASS D2 actual context menu opens on the frozen humanoid
+FAIL D2 Reset pose context action restores the original neutral/T-pose controls
+PASS D original dynamic prop 0 joins the world
+PASS D original dynamic prop 1 joins the world
+PASS D original dynamic prop 2 joins the world
+PASS D independent drawing and sound are present before recording
+PASS D recording control locks Local actor only
+PASS D completed take reaches exact end in one Undo without leaving simulation live
+FAIL D5 Local records all49humanoid samples while actually impacted unselected props remain unkeyed
+PASS D5 Local Undo restores all original authored state
+PASS D5 Local Redo restores exact captured humanoid controls
+PASS D recording control locks World actor and props
+PASS D completed take reaches exact end in one Undo without leaving simulation live
+FAIL D4 World captures real humanoid impacts and horizontal movement of all three recorded props
+PASS D4 arbitrary seeks replay captured humanoid/prop motion without fresh simulation
+PASS D6 ordinary World take processes application frames, stays under metadata budget and preserves drawing/audio/camera
+PASS D recorded world saves as one editable packed HAS
+PASS D actual movie uses exact recorded preview and independent drawing
+PASS D original included/copied sources and manual HAS remain unchanged
+SCENARIO_D_WRITE {"checks":29,"contacts":0,"displacement":0.000204751137061976,"failures":3,"local":{"bytes":195402,"frames":43,"max_frame_gap_ms":47.383,"max_sample_ms":1.974},"local_contacts":0,"world":{"bytes":234625,"frames":43,"max_frame_gap_ms":43.566,"max_sample_ms":2.616}}
+

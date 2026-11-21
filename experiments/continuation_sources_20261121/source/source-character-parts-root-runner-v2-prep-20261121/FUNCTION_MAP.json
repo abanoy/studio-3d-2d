@@ -1,0 +1,26 @@
+{
+  "format": "has_junko105_identity_v2_function_map_1",
+  "files": {
+    "native_identity_bridge.py": [
+      "project: exact historical producer profile",
+      "NativeGuard.read: independent native64/rawmode read guard",
+      "validate_witnesses:3327+2 exact Root witness closure",
+      "NativeGuard.preserve: final raw tuple comparison"
+    ],
+    "protocol_checks.py": [
+      "admit: original seal comparison via explicit producer profile; all other admission unchanged"
+    ],
+    "run_root105.py": [
+      "install guard before H.read; validate all witnesses before Job; emit independent native identity gates"
+    ],
+    "test_native_identity_bridge.py": [
+      "32 pure synthetic controls, UNRUN"
+    ]
+  },
+  "unchanged_process_files": [
+    "root_native_job.py",
+    "gated_headless_worker.py",
+    "approved_job_layout.py"
+  ],
+  "original_source": "bases/v1"
+}

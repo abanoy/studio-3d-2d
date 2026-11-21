@@ -1,8 +1,10 @@
 # Live ragdolls and solid props
 
-Interactive imports of compatible ragdolls start with **Physics on** after the import
-dialogs close. The immediate on/off control is visible in Simple. Existing models
-and solid props can also use that toggle explicitly. Left-click a simulated body to grab it, move the
+Interactive model imports start with **Physics off** and **Hair & clothes off**.
+Select a compatible ragdoll or solid prop and turn Physics on explicitly using
+the control visible in Simple. Height review preserves that Off default; an
+explicit import opt-in waits until the review is accepted. Left-click a simulated
+body to grab it, move the
 cursor to lift/drag, use the wheel to change distance, and release to let it go
 with its current velocity. Ctrl+left remains free camera. Release outside the
 viewport, Escape and focus loss remove the grab constraint safely.

@@ -91,3 +91,22 @@ the owner's installed Studio or tools to simulate a clean environment.
 Fresh Windows abrupt-process recovery, fallback/history, background scheduling
 and injected storage/write failures have actual software receipts. They do not
 certify a physical power-loss event, and no such extra durability claim is made.
+
+
+## Windows retrieval note — 2026-11-21
+
+Use a new session-owned checkout with local Git options `core.autocrlf=false`
+and `core.longpaths=true` set before checkout. The accumulated historical source
+archive includes paths beyond Windows Git's default path limit. Do not change
+the owner's global Git settings. For example:
+
+    git -c core.autocrlf=false -c core.longpaths=true clone --config core.autocrlf=false --config core.longpaths=true https://github.com/abanoy/studio-3d-2d.git C:/a/Programming/cloudflare/has-new-session
+
+The configured-PC Full at435dc024 failed an old native-height expectation of
+automatic Physics On. It preserved1102 functional sources/HEAD and closed all113
+private jobs; its626 new editor/camera checks passed. Imports correctly default
+Off. The follow-up explicitly teaches/tests On then Off, preserves old failures,
+fixes the scenario test's variable-size selection coordinates, and adds28 exact
+sample-wire controls. Scoped height/import/lesson/scenario routes pass. A fresh
+committed1103-source Full is still required; no new human/device or clean-install
+acceptance is inferred. See the current ledger and follow-up benchmark.

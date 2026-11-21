@@ -1,0 +1,32 @@
+{
+  "format": "has_character_parts_editor_literal_patches_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "baseline_revision_prefix": "435dc024",
+  "patches": [
+    {
+      "path": "src/app.gd",
+      "before": "var world_selection\r\n",
+      "after": "var world_selection\r\nvar character_parts_editor: Node\r\n"
+    },
+    {
+      "path": "src/app.gd",
+      "before": "\tworld_selection = WorldSelection.new(); world_selection.app = self; add_child(world_selection)\r\n",
+      "after": "\tworld_selection = WorldSelection.new(); world_selection.app = self; add_child(world_selection)\r\n\tcharacter_parts_editor=preload(\"res://src/character_parts_editor.gd\").new();character_parts_editor.app=self;add_child(character_parts_editor)\r\n"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "before": "\t\tmenu.add_separator(); menu.add_item(\"Deselect\",3)\r\n",
+      "after": "\t\tif app.character_parts_editor.can_manage(kind):menu.add_item(\"Manage parts…\",4)\r\n\t\tmenu.add_separator(); menu.add_item(\"Deselect\",3)\r\n"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "before": "\t\t3: select_entity(\"\")\r\n",
+      "after": "\t\t3: select_entity(\"\")\r\n\t\t4: app.character_parts_editor.open(selected)\r\n"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "before": "\tactions = [frame,asset,size_map]\r\n",
+      "after": "\tvar parts: Button=app.button(parent,\"Manage parts…\",func():app.character_parts_editor.open(selected));parts.tooltip_text=\"Show or hide the selected character’s explicit bundled parts at this frame.\"\r\n\tparts.set_meta(\"rail\",[\"Manage parts…\",\"folder\",\"Parts\"])\r\n\tactions = [frame,asset,size_map,parts]\r\n"
+    }
+  ]
+}

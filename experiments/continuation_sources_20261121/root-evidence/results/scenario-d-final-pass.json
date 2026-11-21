@@ -1,0 +1,66 @@
+{
+  "format": "has_import_off_scenario_d_scoped_1",
+  "status": "PASS",
+  "source_context": "main_working_source_snapshot",
+  "base_head": "435dc02426a7cdd313e43fe674c9008520845428",
+  "functional_sources": 1103,
+  "cases": [
+    {
+      "name": "scenario-d",
+      "pid": 31152,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 28.3904256,
+      "report_sha256": "ad5190e3dc85eb1a9dde3f169322681d46b26f48c4be7d0424a68da61722f80a"
+    }
+  ],
+  "whole_full_claimed": false,
+  "owner_device_or_human_claimed": false,
+  "error": null,
+  "seconds": 28.5857618,
+  "sources_unchanged": true,
+  "head_unchanged": true,
+  "parent_environment_preserved": true,
+  "prior_receipts_unchanged": true,
+  "current_private_jobs": 2,
+  "all_current_private_jobs_isolated_closed": true,
+  "all_current_jobs_exit0": true,
+  "private_jobs": [
+    {
+      "name": "scenario_d_smoke_a91c47ba92ec481299134e4e6db13ca8.json",
+      "sha256": "89155d1aa3984d4f0ba93cba8f873e43ed63854eaf0386d1859769cc76c012a0",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ba5edf5366c448639a470f89136167a3",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 30520,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 22.721
+      }
+    },
+    {
+      "name": "scenario_d_smoke_dd7655622f3f4e9d84ad33c949e3b4e7.json",
+      "sha256": "dcb3c236c5dcfef7c7f6aea13b8bd42b81997860721f12f7e6f8c20e422828d5",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8fc98159803f4a408d767426c4e5570b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 10080,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.303
+      }
+    }
+  ]
+}

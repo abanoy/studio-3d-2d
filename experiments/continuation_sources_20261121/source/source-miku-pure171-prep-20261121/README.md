@@ -1,0 +1,13 @@
+# Minimal synthetic171 qualification — source authored, unrun
+
+Root authorized this child agent to execute CPU-only synthetic checks after independent source guard review. No execution has occurred in this preparation yet. Root owns the separate canonical Full and all graphical/native contact work.
+
+This coordinator admits the exact Main435dc02426a7cdd313e43fe674c9008520845428 functional1102 source set from its hard-pinned baseline, including sizes/SHA256/Git blob IDs and current Main timestamps. It does not read the reserved Full checkout or require an unfinished Full. Historical1084/1086 validators remain frozen and are never called. The unchanged historical helper definitions are reused solely for process/desktop closure and exact case/log checks.
+
+Its owned project contains59 GDScripts:11 experiment files and48 exact current production dependencies, plus the approved private-desktop launcher and a generated minimal project.godot. Static direct preload/load closure is pinned and permits only GDScript references. No global class_name cache or editor import is needed. No main scene, model asset, private input manifest, owner project, converter, ArrayMesh13 conformance or native contact fixture is staged or executed. Five separate jobs use --headless --script; every call sets graphical=False. The exact counts are40 probe+27 bindings+26 geometry+24 conversion+54 skin=171.
+
+Every job has retained process ownership, timeout/memory bound, kill-on-close private job, no desktop activation, unique user/profile/temp paths and full raw launcher/engine logs. Any failure stops before the next job. Finally checks require all attempted job/desktop closures and launchers reaped, unchanged parent environment, exact Main HEAD/domain, admitted input byte/identity preservation and owned-token lock removal. The public result cannot become PASS on assertions alone if closure or preservation fails.
+
+Only the existing declared Python/Pythonw/Godot executables are read/pinned. The approved runtime manifest and launcher remain unchanged. All outputs go to a new has-miku-pure171 timestamped folder under the shared workspace. The source preparation itself is preserved and is never used as the running project.
+
+This is synthetic qualification only. It does not prove the same single measured private Miku row generalizes to all52444 influence slots, independent source/runtime palette calibration, actual skin or segment contact, shader equivalence, or an owner-visible repair. The13 engine ArrayMesh packing/readback controls and six private native contact cases remain on Root's later graphics lane after completed1102 Full admission.

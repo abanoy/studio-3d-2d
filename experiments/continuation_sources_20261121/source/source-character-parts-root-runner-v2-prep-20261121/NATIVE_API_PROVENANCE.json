@@ -1,0 +1,26 @@
+{
+  "format": "has_root_headless_job_abi_provenance_1",
+  "product_owner": {
+    "path": "tools/wind_preview_owned.py",
+    "bytes": 20828,
+    "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f",
+    "product_modified": false
+  },
+  "native_layout": {
+    "path": "approved_job_layout.py",
+    "bytes": 12692,
+    "sha256": "c3bad5ab1792f7103a9bf31eef283ee8b928bd4557b6e53c18b9c0718d92ae61",
+    "source": "sealed435 Base1102/tools/private_desktop.py",
+    "graphical_launcher_called": false
+  },
+  "root_limits": {
+    "active_process_limit": 16,
+    "job_memory_bytes": 4294967296,
+    "kill_on_close": true,
+    "breakaway_allowed": false
+  },
+  "primary_api_sources": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_basic_accounting_information",
+    "https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-queryinformationjobobject"
+  ]
+}

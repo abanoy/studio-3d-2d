@@ -1,0 +1,77 @@
+{
+  "format": "has_easing435_actual_app_headless_1",
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "classic-simple",
+      "pid": 7776,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 3.2389124,
+      "result": {
+        "application_adopted": false,
+        "checks": 22,
+        "failures": 0,
+        "headless_only": true,
+        "pixels_or_export_tested": false,
+        "real_app_undo_tested": true
+      }
+    },
+    {
+      "name": "classic-advanced",
+      "pid": 8324,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 3.8072472,
+      "result": {
+        "application_adopted": false,
+        "checks": 22,
+        "failures": 0,
+        "headless_only": true,
+        "pixels_or_export_tested": false,
+        "real_app_undo_tested": true
+      }
+    },
+    {
+      "name": "neon-simple",
+      "pid": 9896,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 3.7021884,
+      "result": {
+        "application_adopted": false,
+        "checks": 22,
+        "failures": 0,
+        "headless_only": true,
+        "pixels_or_export_tested": false,
+        "real_app_undo_tested": true
+      }
+    },
+    {
+      "name": "neon-advanced",
+      "pid": 18556,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 3.4380356,
+      "result": {
+        "application_adopted": false,
+        "checks": 22,
+        "failures": 0,
+        "headless_only": true,
+        "pixels_or_export_tested": false,
+        "real_app_undo_tested": true
+      }
+    }
+  ],
+  "error": null,
+  "checks": 88,
+  "source_revision": "435dc02426a7cdd313e43fe674c9008520845428",
+  "sources_preserved": true,
+  "parent_environment_preserved": true,
+  "graphics_or_native_jobs_started": false,
+  "application_adopted": false,
+  "pixels_export_cold_save_qualified": false,
+  "source_port_pins_sha256": "67209aa269396319e0baba26079ddd2572bd04cdba60b033d3bc552ff23e3cd7",
+  "fixture_sha256": "ec84c9b9b0fd38dfce3847c452e29d47e89b8fc45021a0c2d197debf36fa3887",
+  "source_file_count": 1111
+}

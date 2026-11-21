@@ -4,7 +4,7 @@ const ID:="first-movie-v1"
 const Timeline=preload("res://src/timeline.gd")
 const DEFINITION={"title":"Basic · Your first movie","steps":[
 	"Add the included practice map to this empty scene.",
-	"Add the practice figure. Let Physics run, then switch Physics off to freeze it.",
+	"Add the practice figure. Switch Physics on, let it move, then switch Physics off to freeze it.",
 	"Select the figure. Right-click it and choose Reset pose to stand it up.",
 	"At frame 0, move the camera a little with Ctrl + left-drag and WASD.",
 	"Save this new camera view at frame 0 with Save camera key.",
@@ -15,7 +15,7 @@ const DEFINITION={"title":"Basic · Your first movie","steps":[
 	"Split the figure’s block at frame 12. Drag its right-hand piece to frame 28.",
 	"Save if you want to keep this practice. Export movie to finish; saving is optional."],"hints":[
 	"Add practice map opens the normal file picker in the included examples folder. Choose Practice room.glb.",
-	"Choose Practice figure.glb. Compatible imports begin with Physics on. Try grabbing it, then turn Physics off; nothing is recorded without Record.",
+	"Choose Practice figure.glb. Imports start with Physics off. Select the figure and switch Physics on. Try grabbing it, then turn Physics off; nothing is recorded without Record.",
 	"Use the left World tree to select the figure. Right-click its visible surface and choose Reset pose. This records a neutral pose at frame 0.",
 	"Choose Scene / camera. Hold Ctrl and the left mouse button, then use WASD for a short move. Release the mouse to stop.",
 	"Choose Scene / camera and Save camera key. Confirm replacing the frame 0 key. Navigation alone changes only your temporary view.",

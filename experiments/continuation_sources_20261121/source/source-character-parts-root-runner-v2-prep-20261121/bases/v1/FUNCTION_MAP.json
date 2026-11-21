@@ -1,0 +1,15 @@
+{
+  "format": "has_junko105_root_runner_function_map_1",
+  "entry": "run_root105.py:main",
+  "ownership": "root_native_job.py:RootJob",
+  "gated_worker": "gated_headless_worker.py:main",
+  "admission": "protocol_checks.py:admit",
+  "reader_handoff": "protocol_checks.py:copy_reader",
+  "result_checks": "protocol_checks.py:validate_logs",
+  "preservation": "qualified_helpers.py:read/preserve and protocol_checks.py:preserve_runtime_membership",
+  "expected_checks": 105,
+  "jobs": 3,
+  "source_and_override_inputs": 3327,
+  "sourceOnly": true,
+  "execution_owner": "Root only"
+}

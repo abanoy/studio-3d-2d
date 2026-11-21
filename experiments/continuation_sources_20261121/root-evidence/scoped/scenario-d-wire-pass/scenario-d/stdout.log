@@ -1,0 +1,107 @@
+{
+  "reports": {
+    "wire_unit": {
+      "checks": 28,
+      "failures": 0
+    },
+    "writer": {
+      "checks": 30,
+      "contacts": 6,
+      "displacement": 1.48990666866302,
+      "failures": 0,
+      "local": {
+        "bytes": 201453,
+        "frames": 40,
+        "max_frame_gap_ms": 52.604,
+        "max_sample_ms": 3.114
+      },
+      "local_contacts": 12,
+      "world": {
+        "bytes": 239351,
+        "frames": 43,
+        "max_frame_gap_ms": 44.696,
+        "max_sample_ms": 2.753
+      }
+    },
+    "reader": {
+      "checks": 4,
+      "failures": 0,
+      "physical_frames_exact": 49,
+      "sample_wire_format": "scenario_d_sample_wire_1",
+      "sampled_frames": 49
+    }
+  },
+  "video": {
+    "index": 0,
+    "codec_name": "h264",
+    "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+    "profile": "High",
+    "codec_type": "video",
+    "codec_tag_string": "avc1",
+    "codec_tag": "0x31637661",
+    "width": 1920,
+    "height": 1080,
+    "coded_width": 1920,
+    "coded_height": 1080,
+    "has_b_frames": 2,
+    "pix_fmt": "yuv420p",
+    "level": 40,
+    "color_range": "tv",
+    "color_transfer": "iec61966-2-1",
+    "color_primaries": "bt709",
+    "chroma_location": "left",
+    "field_order": "progressive",
+    "refs": 1,
+    "is_avc": "true",
+    "nal_length_size": "4",
+    "id": "0x1",
+    "r_frame_rate": "24/1",
+    "avg_frame_rate": "24/1",
+    "time_base": "1/12288",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 24576,
+    "duration": "2.000000",
+    "bit_rate": "230364",
+    "bits_per_raw_sample": "8",
+    "nb_frames": "48",
+    "extradata_size": 50,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0,
+      "multilayer": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "VideoHandler",
+      "vendor_id": "[0][0][0][0]",
+      "encoder": "Lavc61.33.100 libx264"
+    }
+  },
+  "audio_onset_sample": 48001,
+  "manual_has_unchanged": true,
+  "originals_and_writer_cache_unavailable_for_cold_open": true,
+  "functional_source_unchanged": true,
+  "private_receipts": [
+    "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\private-desktop\\scenario_d_smoke_a91c47ba92ec481299134e4e6db13ca8.json",
+    "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\private-desktop\\scenario_d_smoke_dd7655622f3f4e9d84ad33c949e3b4e7.json"
+  ],
+  "isolated_display": null,
+  "scope": "All six mechanical scenarioD software steps on an original included humanoid and generated props; final Windows target/native fidelity/physical input remain separate."
+}

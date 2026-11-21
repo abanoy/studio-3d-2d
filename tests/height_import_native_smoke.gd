@@ -14,6 +14,7 @@ func run() -> void:
 	var folder: String=OS.get_cmdline_user_args()[0];var input: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("raw-vrm.json")))
 	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("native-recovery");root.add_child(app);await settled();app.autosave_enabled.button_pressed=false;app.import_actions.offer_height=true
 	var context: Dictionary=app.import_actions.placement();var keys: Array=app.keys.duplicate(true);var view: Dictionary=app.renderer.view_state()
+	check(context.has("physics_on_import") and typeof(context.physics_on_import)==TYPE_BOOL and not context.physics_on_import,"normal native import explicitly requests Physics Off")
 	app.source_import.start(input.source,true,0,context)
 	while app.source_import.pid>0:await process_frame
 	while app.height_review.pending and not app.height_review.prepared:await process_frame
@@ -31,9 +32,31 @@ func run() -> void:
 	while not app.physics_editor.pending.is_empty() and Time.get_ticks_msec()<deadline:await process_frame
 	await settled();var actor: RefCounted=app.renderer.world_runtime.instance(id)
 	check(actor!=null and actor.data.scale>1 and actor.data.metadata.import_height.source_sha256==pending.sha256,"fitted native model installs once with retained source provenance")
-	check(actor!=null and app.physics_editor.active(id) and actor.authored_keys().is_empty(),"default body physics starts only after accepting the fitted import, without recording keys")
+	check(actor!=null and not app.physics_editor.active(id) and not app.physics_editor.is_running() and app.physics_editor.pending.is_empty() and app.physics_editor.import_starts.is_empty() and not app.physics_editor.toggle.button_pressed and not app.physics_editor.hair_toggle.button_pressed and actor.authored_keys().is_empty(),"accepted default native import keeps body and hair Physics Off without queued starts or recorded keys")
+	check(app.keys==keys,"default-Off acceptance preserves authored camera keys")
 	if actor:
 		var scale: float=actor.data.scale;app.physics_editor.freeze_all();await settled();check(actor.data.scale==scale,"physics stop keeps chosen standardized root scale")
+	# Explicit opt-in stays supported, and must still wait for height acceptance.
+	app.new_project();var optin_context: Dictionary=app.import_actions.placement();optin_context.physics_on_import=true
+	var optin_keys: Array=app.keys.duplicate(true)
+	app.source_import.start(input.source,true,0,optin_context)
+	while app.source_import.pid>0:await process_frame
+	while app.height_review.pending and not app.height_review.prepared:await process_frame
+	await settled();review=app.height_review
+	check(review.pending and review.prepared and review.assessment.get("complete",false) and not app.physics_editor.is_running() and app.renderer.active_model()==null,"explicit native Physics opt-in still waits for completed height acceptance")
+	if not review.pending:app.free();quit(1);return
+	for child in app.get_children():
+		if child is AcceptDialog and child.visible:child.hide();child.queue_free()
+	var optin_data: Dictionary=review.data.duplicate(true);var optin_id: String=optin_data.id
+	review.fit.button_pressed=true;review.apply();await settled()
+	deadline=Time.get_ticks_msec()+10000
+	while (not app.physics_editor.pending.is_empty() or not app.physics_editor.import_starts.is_empty()) and Time.get_ticks_msec()<deadline:await process_frame
+	await settled();var optin_actor: RefCounted=app.renderer.world_runtime.instance(optin_id)
+	check(optin_actor!=null and optin_actor.data.scale>1 and optin_actor.data.metadata.import_height.source_sha256==optin_data.sha256,"explicit native fit installs once with source provenance intact")
+	check(optin_actor!=null and app.physics_editor.body_active(optin_id) and optin_actor.authored_keys().is_empty() and app.keys==optin_keys,"explicit Physics On starts after acceptance without recording pose or camera keys")
+	if optin_actor:
+		var optin_scale: float=optin_actor.data.scale;app.physics_editor.freeze_all();await settled()
+		check(not app.physics_editor.is_running() and optin_actor.data.scale==optin_scale and optin_actor.authored_keys().is_empty(),"explicit Physics Off freezes without losing chosen height or adding keys")
 	# A stale source file cannot be accepted after review. Only owned fixture bytes change.
 	app.new_project();context.physics_on_import=false
 	var path:=folder.path_join("mutable.glb");var original:=FileAccess.get_file_as_bytes("res://examples/tutorials/Practice figure.glb");FileAccess.open(path,FileAccess.WRITE).store_buffer(original)

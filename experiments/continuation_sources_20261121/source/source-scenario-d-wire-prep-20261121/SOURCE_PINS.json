@@ -1,0 +1,64 @@
+{
+  "format": "has_scenario_d_wire_source_manifest_1",
+  "status": "FROZEN_SOURCE_API_REVIEWED_UNRUN",
+  "modified_files": 2,
+  "new_test_files": 1,
+  "proposed_functional_source_count": 1103,
+  "Full_result_group_count": 182,
+  "pure_checks": 28,
+  "original_writer_checks": 30,
+  "original_reader_checks": 4,
+  "original_media_contact_pixel_pcm_and_source_gates_preserved": true,
+  "epsilon_introduced": false,
+  "product_persistence_changed": false,
+  "source_peer": "face_gizmo GO; stricter exact PASS count and integer failure type added before freeze",
+  "author_Godot_reader_or_GPU_runs": 0,
+  "application_adopted": false,
+  "files": [
+    {
+      "path": "bases/tests/scenario_d_smoke.gd",
+      "bytes": 15626,
+      "sha256": "02030fd165fbfd982fc693ae8e464eba91680b84ee577403e7fee83e0fa5f52c"
+    },
+    {
+      "path": "bases/tests/verify_scenario_d.py",
+      "bytes": 4665,
+      "sha256": "3cd9f97a92ad9f66476417299f79a5394e3c1bfae2f030bf09165401b52626b2"
+    },
+    {
+      "path": "PATCHES.json",
+      "bytes": 7873,
+      "sha256": "85ca1230b3161b7dd790062a944103c6a987d05e9b6208f23e3983c022202314"
+    },
+    {
+      "path": "payload/tests/scenario_d_smoke.gd",
+      "bytes": 19518,
+      "sha256": "500ad8b31916767dbaa1307d2d6805da8fbec680e01218b5a65d6957eb2bb063"
+    },
+    {
+      "path": "payload/tests/scenario_d_wire_unit.gd",
+      "bytes": 6243,
+      "sha256": "f067318015f50c5002a172aea3e804e56175e6c094ae0b6802f14eff75adaa78"
+    },
+    {
+      "path": "payload/tests/verify_scenario_d.py",
+      "bytes": 5855,
+      "sha256": "72c2d4dd9e942389672a6191726f10789a17c2cee6e2fd9facbff3ca02b48233"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3921,
+      "sha256": "ca1a118646cc1c7d569b14c297781c0d0f0068020021bcfb93bea7e01f36a63e"
+    },
+    {
+      "path": "STRUCTURAL_PROOF.json",
+      "bytes": 763,
+      "sha256": "e35f6c1221f56ec968791106ea65f44fe83ddd39ad6283f8a15bc8f075eafd07"
+    },
+    {
+      "path": "TARGETS.json",
+      "bytes": 1195,
+      "sha256": "f74c378329bf9d764252316e5eaf2ac5acdffdd49e8433d20e5c7e0922ecb7a6"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "format": "has_source1102_contracts_cpu_1",
+  "status": "PASS",
+  "executor": "hair_bundles child CPU lane",
+  "expected_checks": 24,
+  "native_or_graphical_jobs": false,
+  "actual_Full_checkout_accessed": false,
+  "actual_Full_admission_called": false,
+  "application_adopted": false,
+  "Full1102_claimed": false,
+  "source_pins": {
+    "source1102": {
+      "bytes": 11485,
+      "sha256": "1cc8384a4ad167b336eaccd819559b11a754c66ed2f0bc8ef4b7778cd7b063ce"
+    },
+    "test": {
+      "bytes": 4123,
+      "sha256": "3980bf6464261d026af14ae399bb611b98c73a22b980818bf393a1967d13092a"
+    }
+  },
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source1102-contracts-cpu-1795255071802-be59cd39\\test_source1102_contracts.py"
+  ],
+  "started_ns": 1795255137113550800,
+  "pid": 23132,
+  "exit": 0,
+  "checks": 24,
+  "strict_summary": true,
+  "reaped": true,
+  "inputs_preserved": true,
+  "source_before_after_equal": true,
+  "child_tree_scope": "Reviewed test imports only stdlib and copied reader; it never launches subprocesses.",
+  "finished_ns": 1795255137232929200,
+  "stdout_log_sha256": "40d65de1767c47a2d555c570d21fd7c205f3adb2a89aace6f951f9a04cf2a9e9",
+  "stderr_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

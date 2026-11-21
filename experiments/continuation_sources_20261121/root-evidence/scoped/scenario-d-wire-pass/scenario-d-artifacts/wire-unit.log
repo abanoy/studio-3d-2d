@@ -1,0 +1,31 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS control starts with distinct raw float64 values constructed from exact bits
+PASS historical raw sample text mismatch remains observable
+PASS one equal full-precision JSON parse domain resolves measured wire representation
+PASS independent per-field float32 bits retain the original physical sample
+PASS both exact canonical text and independent physical bits are required
+PASS wire helpers preserve both original inputs bit-for-bit
+PASS measured fixture canonical stamp remains stable on reopen
+PASS adjacent float32 sample change refuses: scale
+PASS adjacent float32 sample change refuses: position
+PASS adjacent float32 sample change refuses: quaternion
+PASS float32 equality alone cannot hide a distinct canonical float64 sample
+PASS missing bone state refuses
+PASS changed actor identity refuses
+PASS boolean versus numeric identity refuses
+PASS array component order remains exact
+PASS extra array component refuses
+PASS extra sampled field refuses
+PASS string fields remain exact
+PASS large integer identity is not weakened by a float conversion
+PASS lossy mixed integer/float identity refuses
+PASS exact integer/float JSON number identity remains supported
+PASS NaN cannot collapse into a passing null stamp
+PASS infinity refuses before JSON encoding
+PASS unsupported typed object cannot become a JSON string surrogate
+PASS malformed or non-object sample text refuses without parse-string error logging
+PASS non-string object keys refuse
+PASS excessive recursive input refuses
+PASS negative controls also preserve original pose/root inputs
+SCENARIO_D_SAMPLE_WIRE_UNIT {"checks":28,"failures":0}

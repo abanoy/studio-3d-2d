@@ -15,10 +15,62 @@ func samples(ids: Array,at: int) -> Dictionary:
  for id in ids:
   var actor: RefCounted=app.renderer.world_runtime.instance(id);result[id]={"root":actor.sample_transform(at),"body":actor.sample(at)}
  return result
+const SAMPLE_WIRE_FORMAT:="scenario_d_sample_wire_1"
+# Test-only wire domain. No persisted model, physics, media or sampler is changed.
+static func _sample_wire_value(value, depth: int=0) -> bool:
+ if depth>16:return false
+ if value is Dictionary:
+  if value.size()>512:return false
+  for key in value:
+   if not key is String or not _sample_wire_value(value[key],depth+1):return false
+  return true
+ if value is Array:
+  if value.size()>512:return false
+  for item in value:
+   if not _sample_wire_value(item,depth+1):return false
+  return true
+ if value is int or value is float:return is_finite(float(value))
+ return value==null or value is bool or value is String
+static func sample_text_value(text):
+ if not text is String or text.length()>2*1024*1024:return null
+ var parser:=JSON.new()
+ if parser.parse(text)!=OK or not parser.data is Dictionary or not _sample_wire_value(parser.data):return null
+ return parser.data
+static func sample_wire_stamp(value) -> String:
+ if not value is Dictionary or not _sample_wire_value(value):return ""
+ # Exactly one identical full-precision JSON parse on each sampled side.
+ var parsed=sample_text_value(JSON.stringify(value,"",true,true))
+ return "" if parsed==null else JSON.stringify(parsed,"",true,true)
+static func _sample_f32_bits(value) -> PackedByteArray:
+ var bytes:=PackedByteArray();bytes.resize(4);bytes.encode_float(0,float(value))
+ return bytes if is_finite(bytes.decode_float(0)) else PackedByteArray()
+static func _sample_integer_identity(a,b) -> bool:
+ if a is int and b is int:return a==b
+ var integer: int=a if a is int else b
+ var number: float=float(b if a is int else a)
+ if number< -9223372036854775808.0 or number>=9223372036854775808.0 or number!=floor(number):return false
+ return int(number)==integer and float(integer)==number
+static func _sample_f32_values_same(a,b) -> bool:
+ if a is Dictionary:
+  if not b is Dictionary or a.size()!=b.size():return false
+  for key in a:
+   if not b.has(key) or not _sample_f32_values_same(a[key],b[key]):return false
+  return true
+ if a is Array:
+  if not b is Array or a.size()!=b.size():return false
+  for i in range(a.size()):
+   if not _sample_f32_values_same(a[i],b[i]):return false
+  return true
+ if a is int or a is float:
+  if not (b is int or b is float):return false
+  if (a is int or b is int) and not _sample_integer_identity(a,b):return false
+  var left: PackedByteArray=_sample_f32_bits(a);var right: PackedByteArray=_sample_f32_bits(b)
+  return not left.is_empty() and left==right
+ return typeof(a)==typeof(b) and a==b
+static func sample_f32_same(a,b) -> bool:
+ return a is Dictionary and b is Dictionary and _sample_wire_value(a) and _sample_wire_value(b) and _sample_f32_values_same(a,b)
 func sample_stamp(ids: Array,at: int) -> String:
- # Keep the oracle as text: reparsing already-normalized tiny JSON floats can
- # introduce another decimal-roundtrip shift before comparison.
- return JSON.stringify(samples(ids,at),"",true,true)
+ return sample_wire_stamp(samples(ids,at))
 func enable(id: String) -> void:
  app.world_selection.select_entity(id);await settled()
  if not app.physics_editor.body_active(id):await click(app.physics_editor.toggle)
@@ -42,19 +94,33 @@ func pick_point(id: String) -> Vector2:
  for y in range(20,image.get_height()-20):
   for x in range(20,image.get_width()-20):
    var pixel:=image.get_pixel(x,y)
-   if Vector3(pixel.r,pixel.g,pixel.b).distance_squared_to(color)<.001:return Vector2(x*2+1,y*2+1)
+   if Vector3(pixel.r,pixel.g,pixel.b).distance_squared_to(color)<.001:
+    # Scene setup uses its actual variable mask extent; Camera focus uses half HD.
+    # Convert a mask-pixel centre through scene UV and the current film rectangle.
+    var uv: Vector2=(Vector2(x,y)+Vector2.ONE*.5)/Vector2(image.get_size())
+    var area: Rect2=app.canvas.scene_rect();var film: Rect2=app.canvas.image_rect()
+    return (area.position+uv*area.size-film.position)/film.size*app.canvas.resolution
  return Vector2(-1,-1)
 func run() -> void:
  var args:=OS.get_cmdline_user_args();folder=args[0];app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("reader-recovery" if "--read" in args else "recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in args else "writer-cache")
  if "--read" in args:
   var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")));app.has_project.open_file(folder.path_join("scenario-d.has"));await wait_job()
   check(app.has_project.path==folder.path_join("scenario-d.has") and not app.physics_editor.is_running() and canonical(World.portable(app.current_world()))==expected.world,"fresh D packed Open restores recorded editable world with physics off")
-  var exact:=true
-  for at in range(48,-1,-1):exact=exact and sample_stamp(expected.ids,at)==expected.samples[str(at)]
+  var wire_stamps: Dictionary=expected.samples if expected.get("samples") is Dictionary else {}
+  var raw_stamps: Dictionary=expected.raw_samples if expected.get("raw_samples") is Dictionary else {}
+  var exact: bool=expected.get("sample_wire_format")==SAMPLE_WIRE_FORMAT and wire_stamps.size()==49 and raw_stamps.size()==49
+  var sampled_frames:=0;var physical_frames_exact:=0
+  for at in range(48,-1,-1):
+   # Always sample all49 frames and apply the independent guard, even after a mismatch.
+   var actual: Dictionary=samples(expected.ids,at);var stamp: String=sample_wire_stamp(actual);sampled_frames+=1
+   var raw=sample_text_value(raw_stamps.get(str(at),""));var physical_exact: bool=sample_f32_same(raw,actual)
+   if physical_exact:physical_frames_exact+=1
+   var frame_exact: bool=not stamp.is_empty() and stamp==wire_stamps.get(str(at),"") and physical_exact
+   exact=frame_exact and exact
   check(exact,"fresh D reverse seeks reproduce all49root/bone states for humanoid and three impacted props")
   check(Storage.image_hash(Drawing.image(app.layers[1].cels[0]))==expected.paint and Storage.RasterReader.digest_bytes(app.audio_mix.pcm)==expected.pcm,"fresh D retains exact independent drawing and timed PCM")
   var picture: Image=await app.renderer.capture(app.keys,app.layers,24,true);check(picture.get_data()==Image.load_from_file(folder.path_join("expected-frame24.png")).get_data(),"fresh D final GPU frame equals original recorded preview exactly")
-  print("SCENARIO_D_READ "+JSON.stringify({"checks":checks,"failures":failures}));await app.quit_studio();quit(0 if failures==0 else 1);return
+  print("SCENARIO_D_READ "+JSON.stringify({"checks":checks,"failures":failures,"sampled_frames":sampled_frames,"physical_frames_exact":physical_frames_exact,"sample_wire_format":SAMPLE_WIRE_FORMAT}));await app.quit_studio();quit(0 if failures==0 else 1);return
  var asset:=folder.path_join("figure.glb");var map:=folder.path_join("room.glb");var box:=folder.path_join("box.glb");var sources:={}
  for pair in [["Practice figure.glb",asset],["Practice room.glb",map]]:
   var original: String=ProjectSettings.globalize_path("res://examples/tutorials/"+pair[0]);sources[original]=FileAccess.get_sha256(original);var file:=FileAccess.open(pair[1],FileAccess.WRITE);file.store_buffer(FileAccess.get_file_as_bytes(original));file.close()
@@ -63,7 +129,9 @@ func run() -> void:
  check(app.load_scene(map).is_empty(),"real included map geometry supplies ragdoll and prop collision")
  app.mode.select(1);app.change_mode(1);app.renderer.camera.position=Vector3(4,3,7);app.renderer.camera.look_at(Vector3(0,1,0));app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,60)]
  app.import_actions.add(asset,true,0);await settled();var id: String=app.last_import_id;var actor: RefCounted=app.renderer.world_runtime.instance(id);var physics=app.physics_editor;var recording=physics.recording
- check(actor.order.size()>=17 and physics.body_active(id) and not app.advanced_mode and physics.toggle.is_visible_in_tree() and recording.button.is_visible_in_tree(),"D1 original humanoid imports with compatible Physics ON and Record visible in Simple")
+ check(actor.order.size()>=17 and not physics.body_active(id) and not physics.is_running() and physics.import_starts.is_empty() and actor.authored_keys().is_empty(),"D1 normal humanoid import starts Physics Off without queued activation or recorded keys")
+ await enable(id)
+ check(physics.body_active(id) and not app.advanced_mode and physics.toggle.is_visible_in_tree() and recording.button.is_visible_in_tree(),"D1 explicit visible Physics toggle activates compatible humanoid and keeps Record available in Simple")
  if not physics.body_active(id):print(app.status.text);await app.quit_studio();quit(1);return
  var before: Dictionary=actor.data.duplicate(true);var history: int=app.history.size();var live: RefCounted=physics.simulations[id];var body: PhysicalBone3D=live.bodies.values()[0];var start:=body.global_position
  var press:=InputEventMouseButton.new();press.button_index=MOUSE_BUTTON_LEFT;press.pressed=true;app.canvas_input(press,app.renderer.camera.unproject_position(start));await settled()
@@ -81,7 +149,8 @@ func run() -> void:
  if point.x>=0:
   var right:=InputEventMouseButton.new();right.button_index=MOUSE_BUTTON_RIGHT;right.pressed=true;app.canvas_input(right,point);right.pressed=false;app.canvas_input(right,point);await settled()
  check(app.world_selection.menu.visible,"D2 actual context menu opens on the frozen humanoid")
- app.world_selection.menu.id_pressed.emit(1);await settled();var neutral:=true
+ check(app.world_selection.selected==id and app.renderer.active_instance_id==id,"D2 context menu targets the intended frozen humanoid after actual mask-coordinate conversion")
+ app.world_selection.menu.id_pressed.emit(1);await settled();actor=app.renderer.world_runtime.instance(id);var neutral:=true
  for value in actor.sample(0,true).values():neutral=neutral and Timeline.vector(value.position).length()<.00001 and Timeline.quaternion(value.rotation_xyzw).get_angle()<.0001
  check(neutral,"D2 Reset pose context action restores the original neutral/T-pose controls")
  app.pose_editor.selected="@root";app.pose_editor.operation.select(1);app.pose_editor.refresh_values()
@@ -109,10 +178,15 @@ func run() -> void:
   for key in prop.authored_keys():
    var delta: Vector3=Timeline.vector(key.transform.position)-starts[prop_id];displacement=maxf(displacement,Vector2(delta.x,delta.z).length())
  check(keyed and not contacts.is_empty() and displacement>.25,"D4 World captures real humanoid impacts and horizontal movement of all three recorded props")
- var all_ids: Array=ids.duplicate();all_ids.append(id);var expected_samples:={}
- for at in range(49):expected_samples[str(at)]=sample_stamp(all_ids,at)
- var replay:=true
- for at in [0,47,12,36,24]:app.set_frame(at);replay=replay and sample_stamp(all_ids,at)==expected_samples[str(at)]
+ var all_ids: Array=ids.duplicate();all_ids.append(id);var expected_samples:={};var raw_samples:={};var expected_valid:=true
+ for at in range(49):
+  var value: Dictionary=samples(all_ids,at);var stamp: String=sample_wire_stamp(value);var raw: String=JSON.stringify(value,"",true,true)
+  expected_samples[str(at)]=stamp;raw_samples[str(at)]=raw
+  expected_valid=not stamp.is_empty() and sample_f32_same(sample_text_value(raw),value) and expected_valid
+ var replay: bool=expected_valid
+ for at in [0,47,12,36,24]:
+  app.set_frame(at);var stamp: String=sample_stamp(all_ids,at)
+  replay=not stamp.is_empty() and stamp==expected_samples[str(at)] and replay
  check(replay and not physics.is_running(),"D4 arbitrary seeks replay captured humanoid/prop motion without fresh simulation")
  check(world_metrics.frames>10 and world_metrics.bytes<1024*1024 and Storage.image_hash(Drawing.image(app.layers[1].cels[0]))==paint and Storage.RasterReader.digest_bytes(app.audio_mix.pcm)==pcm and app.keys==keys,"D6 ordinary World take processes application frames, stays under metadata budget and preserves drawing/audio/camera")
  app.set_frame(24);var picture: Image=await app.renderer.capture(app.keys,app.layers,24,true);picture.save_png(folder.path_join("expected-frame24.png"));var world: Dictionary=canonical(World.portable(app.current_world()));app.has_project.save_file(folder.path_join("scenario-d.has"),"packed");await wait_job();check(app.has_project.path==folder.path_join("scenario-d.has"),"D recorded world saves as one editable packed HAS")
@@ -121,5 +195,5 @@ func run() -> void:
  var unchanged:=true
  for path in sources:unchanged=unchanged and FileAccess.get_sha256(path)==sources[path]
  check(unchanged and FileAccess.get_sha256(folder.path_join("scenario-d.has"))==manual,"D original included/copied sources and manual HAS remain unchanged")
- FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"world":world,"ids":all_ids,"samples":expected_samples,"paint":paint,"pcm":pcm,"sources":sources,"manual_sha":manual,"movie":app.last_export_folder.path_join("movie.mp4"),"local":local_metrics,"world_metrics":world_metrics,"local_contacts":local_contacts.size(),"contacts":contacts.size(),"horizontal_displacement":displacement},"",true,true))
+ FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"world":world,"ids":all_ids,"samples":expected_samples,"raw_samples":raw_samples,"sample_wire_format":SAMPLE_WIRE_FORMAT,"paint":paint,"pcm":pcm,"sources":sources,"manual_sha":manual,"movie":app.last_export_folder.path_join("movie.mp4"),"local":local_metrics,"world_metrics":world_metrics,"local_contacts":local_contacts.size(),"contacts":contacts.size(),"horizontal_displacement":displacement},"",true,true))
  print("SCENARIO_D_WRITE "+JSON.stringify({"checks":checks,"failures":failures,"local":local_metrics,"world":world_metrics,"local_contacts":local_contacts.size(),"contacts":contacts.size(),"displacement":displacement}));await app.quit_studio();quit(0 if failures==0 else 1)

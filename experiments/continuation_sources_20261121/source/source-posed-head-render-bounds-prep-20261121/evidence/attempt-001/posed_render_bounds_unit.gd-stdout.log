@@ -1,0 +1,50 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS explicit synthetic weighted mesh prepares without native assets
+PASS preparation writes no engine properties
+PASS posed palette derives a finite local margin
+PASS control never writes SourceShape custom bounds or metadata
+PASS fifty unchanged evaluations do not write or enlarge margins
+PASS warm refreshes perform no surface array or vertex scans
+PASS parent transform changes do not inflate mesh-local padding
+PASS returning to rest shrinks to original margin
+PASS morph-bound ownership survives a current-pose refresh
+PASS removing a morph returns to immutable intrinsic input without recursive custom bounds
+PASS detached mesh refuses before skeleton or viewport work
+PASS same mesh reattaches without replacing the control
+PASS external margin edits are detected
+PASS disposal preserves an external margin edit
+PASS disposed control cannot refresh
+PASS peer refusal leaves every prepared margin uncommitted
+PASS ordinary disposal restores only the two helper-owned margins
+PASS immutable resource changes invalidate cached weight admission
+PASS freed node identities refuse without dereferencing skeletons
+PASS freed control disposal completes without a scene-tree query
+SCRIPT ERROR: Attempt to call function '_disconnect_sources' in base 'null instance' on a null instance.
+   at: _notification (res://src/posed_render_bounds.gd:138)
+   GDScript backtrace (most recent call first):
+       [0] _notification (res://src/posed_render_bounds.gd:138)
+       [1] run (res://tests/posed_render_bounds_unit.gd:64)
+PASS invalid mesh refuses while an explicitly empty selection is inert
+SCRIPT ERROR: Attempt to call function '_disconnect_sources' in base 'null instance' on a null instance.
+   at: _notification (res://src/posed_render_bounds.gd:138)
+   GDScript backtrace (most recent call first):
+       [0] _notification (res://src/posed_render_bounds.gd:138)
+       [1] run (res://tests/posed_render_bounds_unit.gd:64)
+POSED_RENDER_BOUNDS {"checks":21,"failures":0,"graphics_or_native_assets_used":false}
+SCRIPT ERROR: Attempt to call function '_disconnect_sources' in base 'null instance' on a null instance.
+   at: _notification (res://src/posed_render_bounds.gd:138)
+   GDScript backtrace (most recent call first):
+       [0] _notification (res://src/posed_render_bounds.gd:138)
+SCRIPT ERROR: Attempt to call function '_disconnect_sources' in base 'null instance' on a null instance.
+   at: _notification (res://src/posed_render_bounds.gd:138)
+   GDScript backtrace (most recent call first):
+       [0] _notification (res://src/posed_render_bounds.gd:138)
+SCRIPT ERROR: Attempt to call function '_disconnect_sources' in base 'null instance' on a null instance.
+   at: _notification (res://src/posed_render_bounds.gd:138)
+   GDScript backtrace (most recent call first):
+       [0] _notification (res://src/posed_render_bounds.gd:138)
+SCRIPT ERROR: Attempt to call function '_disconnect_sources' in base 'null instance' on a null instance.
+   at: _notification (res://src/posed_render_bounds.gd:138)
+   GDScript backtrace (most recent call first):
+       [0] _notification (res://src/posed_render_bounds.gd:138)

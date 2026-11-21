@@ -1,0 +1,91 @@
+{
+  "format": "has_import_off_remaining_scoped_1",
+  "status": "FAIL",
+  "source_context": "main_working_source_snapshot",
+  "base_head": "435dc02426a7cdd313e43fe674c9008520845428",
+  "functional_sources": 1102,
+  "cases": [
+    {
+      "name": "first-movie",
+      "pid": 33296,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 45.9903506,
+      "report_sha256": "f2f1f7e3de64e3cab0c63527d455602b86bd0f824fbb947e56964b26cf6b8d6f"
+    },
+    {
+      "name": "scenario-d",
+      "pid": 25476,
+      "exit": 1,
+      "child_reaped": true,
+      "seconds": 22.0148542
+    }
+  ],
+  "whole_full_claimed": false,
+  "owner_device_or_human_claimed": false,
+  "error": "RuntimeError('Scoped wrapper failed: scenario-d')",
+  "seconds": 68.1499992,
+  "sources_unchanged": true,
+  "head_unchanged": true,
+  "parent_environment_preserved": true,
+  "prior_receipts_unchanged": true,
+  "current_private_jobs": 3,
+  "all_current_private_jobs_isolated_closed": true,
+  "all_current_jobs_exit0": false,
+  "private_jobs": [
+    {
+      "name": "first_movie_smoke_342f5dadaaf64dd9a28f6a07b8ae9520.json",
+      "sha256": "02a26cf631b3bfbb77cb7cf2c0bfc7ca47065bb64e2dcfccde85fea7b4d3e12a",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e58fdeefc51f48e18dc6293bbc3174b8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 33704,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 35.41
+      }
+    },
+    {
+      "name": "first_movie_smoke_4e665678aae74eb195aead0b34c0eedf.json",
+      "sha256": "32842b30f238ccf8c54406f016e199890e47334d43ab348f932cc5e5a09dbb5b",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_78ca8d27f924416496f0aa49d646d5b8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 7892,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.112
+      }
+    },
+    {
+      "name": "scenario_d_smoke_2f8d37eb9be645d8ba5e42c83c756058.json",
+      "sha256": "0ebd49b0acebc9ce1c70295ec007d7e6d6bc449c22bd3da036ba059489f2442e",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_7dbca944fae34d9baa4d6f4c2f332f99",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 26596,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 21.721
+      }
+    }
+  ]
+}

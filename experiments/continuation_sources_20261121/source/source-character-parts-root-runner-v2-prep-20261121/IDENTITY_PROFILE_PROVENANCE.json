@@ -1,0 +1,27 @@
+{
+  "format": "has_windows_node_python_identity_profile_sources_1",
+  "runtime_proof": "Exact pinned Root witnesses, not a source-to-binary build attestation",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/libuv/libuv/v1.51.0/src/win/fs.c",
+      "symbol": "fs__stat_assign_statbuf",
+      "facts": "VolumeSerialNumber.LowPart; readonly/readwrite mode only, no inferred executable bits"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Python/fileutils.c",
+      "symbol": "_Py_stat_basic_info_to_stat / _Py_attribute_data_to_stat",
+      "facts": "VolumeSerialNumber.QuadPart or FILE_ID_INFO volume serial retained"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Modules/posixmodule.c",
+      "symbol": "update_st_mode_from_path",
+      "facts": "Regular .exe/.bat/.cmd/.com path suffix sets0111; this candidate permits projection only for two exactly measured approved executable paths"
+    }
+  ],
+  "limits": "Historical Node seal never encoded the high32 volume serial. Separate immutable Root native witnesses now bind full64 device and raw mode; H.read wrapper preserves those raw fields independently of H.stamp. No broad file mode masking; no origin rewrites.",
+  "primary_source_locations": {
+    "libuv_v1_51_0": "src/win/fs.c1712–1777",
+    "cpython_v3_13_0_fileutils": "Python/fileutils.c1029–1100",
+    "cpython_v3_13_0_posix": "Modules/posixmodule.c1826–1846"
+  }
+}

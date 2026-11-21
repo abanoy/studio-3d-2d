@@ -1,0 +1,117 @@
+{
+  "format": "has_default_off_followup_qualified_1",
+  "status": "SCOPED_ROUTES_PASS_NEW_FULL_REQUIRED",
+  "base_head": "435dc02426a7cdd313e43fe674c9008520845428",
+  "functional_source_count": 1103,
+  "production_change": "Beginner guidance explicitly teaches Physics On then Off; import policy/simulator/parser remain unchanged.",
+  "modified_functional_files": [
+    "src/first_movie_lesson.gd",
+    "tests/height_import_native_smoke.gd",
+    "tests/first_movie_smoke.gd",
+    "tests/scenario_d_smoke.gd",
+    "tests/verify_scenario_d.py"
+  ],
+  "new_functional_file": "tests/scenario_d_wire_unit.gd",
+  "routes": {
+    "height": {
+      "writer_checks": 105,
+      "cold_reader": {
+        "checks": 4,
+        "failures": 0
+      },
+      "native_checks": 15,
+      "raw_result_pin": {
+        "bytes": 7154,
+        "sha256": "3e17d8c8ba38109dc0b5908befee2967a71c27c8f669d9d7f636507364d57743"
+      }
+    },
+    "import_physics": {
+      "checks": 54,
+      "native_models": 5,
+      "raw_result_pin": {
+        "bytes": 117254,
+        "sha256": "5d5411930402c4857be60fec3348e169b56654a80455a7a37158034ed82d778b"
+      }
+    },
+    "first_movie": {
+      "results": [
+        {
+          "checks": 83,
+          "failures": 0,
+          "folder": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\first-movie\\1795256474211781300",
+          "movie": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\first-movie\\1795256474211781300/render_1795256498_24251226_0/movie.mp4"
+        },
+        {
+          "checks": 8,
+          "failures": 0
+        }
+      ],
+      "cue_onset_sample": 80043,
+      "raw_result_pin": {
+        "bytes": 3028,
+        "sha256": "f2f1f7e3de64e3cab0c63527d455602b86bd0f824fbb947e56964b26cf6b8d6f"
+      }
+    },
+    "scenario_d": {
+      "wire_checks": 28,
+      "writer": {
+        "checks": 30,
+        "contacts": 6,
+        "displacement": 1.48990666866302,
+        "failures": 0,
+        "local": {
+          "bytes": 201453,
+          "frames": 40,
+          "max_frame_gap_ms": 52.604,
+          "max_sample_ms": 3.114
+        },
+        "local_contacts": 12,
+        "world": {
+          "bytes": 239351,
+          "frames": 43,
+          "max_frame_gap_ms": 44.696,
+          "max_sample_ms": 2.753
+        }
+      },
+      "reader": {
+        "checks": 4,
+        "failures": 0,
+        "physical_frames_exact": 49,
+        "sample_wire_format": "scenario_d_sample_wire_1",
+        "sampled_frames": 49
+      },
+      "audio_onset_sample": 48001,
+      "manual_has_unchanged": true,
+      "originals_and_writer_cache_unavailable_for_cold_open": true,
+      "raw_result_pin": {
+        "bytes": 118518,
+        "sha256": "ad5190e3dc85eb1a9dde3f169322681d46b26f48c4be7d0424a68da61722f80a"
+      }
+    }
+  },
+  "scope_composition": "Height/import passed before test-only first-movie repeat and scenario wire refinements; complete first-movie then final scenario passed separately. No single-batch or new WholeFull claim.",
+  "scope_completion_pins": {
+    "first_failed_batch": {
+      "bytes": 4597,
+      "sha256": "2acdb739df128fca511101a5e473020876500b1f0096068ff6d82fd370fc0a60"
+    },
+    "second_failed_batch": {
+      "bytes": 3028,
+      "sha256": "1c09992ef17e8a52a899eab8b4958cbe7d27a25075fff879f0218eb490bbfe76"
+    },
+    "final_scenario_pass": {
+      "bytes": 2182,
+      "sha256": "b247b46a05e141969e46aa71a7c22269d680578ebd43efc1efb66299acbcf386"
+    }
+  },
+  "all_executed_private_jobs_closed": true,
+  "historical_full435": "FAIL1961.792s/source1102andHEADunchanged/113closedjobs/new626checksPASS/no fresh aggregate",
+  "canonical_Full_result_groups_expected": 182,
+  "canonical_Full_for_1103": "NOT_RUN",
+  "required_implementation_score": "52/54",
+  "formal_acceptance_score": "55/62",
+  "human_device_acceptance_claimed": false,
+  "native_miku_face_qualification": "UNRUN: historical435 hosts require an explicit new-revision/catalogue port after successful Full.",
+  "junko105": "PREFLIGHT_REFUSED before any process/job/assertion; same bytes but Node32/Python64 device identity conventions need versioned bridge.",
+  "new_owner_review": "Not ready; prior435 prepared copy remains unverified and has old lesson instructions."
+}

@@ -1,0 +1,14 @@
+{
+  "format": "has_retained_root_lock_guard_refusal_1",
+  "status": "REFUSED_BEFORE_MOVE_OR_DELETE",
+  "exit": 1,
+  "message": "Lock boundary refused",
+  "cause": "The initial script used FileInfo.Parent instead of FileInfo.Directory for a file's parent path.",
+  "initial_expression": "$item.Parent.FullName -ceq $control",
+  "corrected_expression": "$item.Directory.FullName -ceq $control",
+  "lock_bytes_unchanged_at_refusal": true,
+  "retained_lock_sha256": "14df038cbaa2979881a833b6dec3b740d0ca07e0ce48eb388561f309bfccebd3",
+  "successful_followup": "MIKU171_PRELAUNCH_LOCK_RETIRED_20261121.json",
+  "historical_headless_attempt_status": "FAIL before any Godot child or assertion",
+  "success_does_not_replace_the_initial_failure": true
+}

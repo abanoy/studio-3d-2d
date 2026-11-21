@@ -1,0 +1,39 @@
+{
+  "format": "has_independent_scenario_d_bits_child_1",
+  "status": "PASS",
+  "counts": {
+    "frames": 49,
+    "numeric_values": 7399,
+    "float64_bit_differences": 1,
+    "float32_bit_differences": 0,
+    "structure_differences": 0,
+    "non_numeric_value_differences": 0,
+    "raw_text_differences": 1
+  },
+  "differences": [
+    {
+      "path": "frame47/actor#3/root/scale",
+      "expected": 0.9999998211860657,
+      "actual": 0.9999998211860656,
+      "absolute_delta": 1.1102230246251565e-16,
+      "expected_f64_le": "000000a0ffffef3f",
+      "actual_f64_le": "ffffff9fffffef3f",
+      "expected_f32_le": "fdff7f3f",
+      "actual_f32_le": "fdff7f3f"
+    }
+  ],
+  "inputs_unchanged": true,
+  "reader_or_Godot_execution": false,
+  "oracle_or_Main_changed": false,
+  "actual_cpu_run": {
+    "exit": 0,
+    "wall_seconds": 0.40768,
+    "interpreter": "C:/Program Files/Python313/python.exe",
+    "arguments": [
+      "-B",
+      "output/compare_scenario_d_sample_bits_20261121.py"
+    ],
+    "script_bytes": 4011,
+    "script_sha256": "f55d182341c9e33232431fe4ba945eefe5dd2c2bf268a112ef2c4a1d35221ffe"
+  }
+}

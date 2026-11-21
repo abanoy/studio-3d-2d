@@ -1,0 +1,29 @@
+{
+  "format": "has_character_parts_structural_readback_1",
+  "actual_engine_execution": false,
+  "tests_run": 0,
+  "modified_source_files": [
+    {
+      "path": "src/app.gd",
+      "base_bytes": 314927,
+      "base_sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f",
+      "literal_reverse_exact": true,
+      "currentMainMatchesBase": true
+    },
+    {
+      "path": "src/world_selection.gd",
+      "base_bytes": 32037,
+      "base_sha256": "da1b36461976a521b27592bec818600937057522c783d3500c293448735be4cf",
+      "literal_reverse_exact": true,
+      "currentMainMatchesBase": true
+    }
+  ],
+  "new_source_files": 6,
+  "proposed_source_count": 1108,
+  "full_pass_path_authored_counts": {
+    "character_parts_unit.gd": 58,
+    "character_parts_editor_smoke.gd": 38,
+    "character_parts_reader.gd": 9
+  },
+  "count_scope": "Source call-site and explicit-loop arithmetic only; not executed assertions."
+}

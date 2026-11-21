@@ -1,0 +1,40 @@
+{
+  "format": "has_scenario_d_wire_followup_patches_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "path": "tests/scenario_d_smoke.gd",
+  "patches": [
+    {
+      "before": "func sample_stamp(ids: Array,at: int) -> String:\n # Keep the oracle as text: reparsing already-normalized tiny JSON floats can\n # introduce another decimal-roundtrip shift before comparison.\n return JSON.stringify(samples(ids,at),\"\",true,true)\n",
+      "after": "const SAMPLE_WIRE_FORMAT:=\"scenario_d_sample_wire_1\"\n# Test-only wire domain. No persisted model, physics, media or sampler is changed.\nstatic func _sample_wire_value(value, depth: int=0) -> bool:\n if depth>16:return false\n if value is Dictionary:\n  if value.size()>512:return false\n  for key in value:\n   if not key is String or not _sample_wire_value(value[key],depth+1):return false\n  return true\n if value is Array:\n  if value.size()>512:return false\n  for item in value:\n   if not _sample_wire_value(item,depth+1):return false\n  return true\n if value is int or value is float:return is_finite(float(value))\n return value==null or value is bool or value is String\nstatic func sample_text_value(text):\n if not text is String or text.length()>2*1024*1024:return null\n var parser:=JSON.new()\n if parser.parse(text)!=OK or not parser.data is Dictionary or not _sample_wire_value(parser.data):return null\n return parser.data\nstatic func sample_wire_stamp(value) -> String:\n if not value is Dictionary or not _sample_wire_value(value):return \"\"\n # Exactly one identical full-precision JSON parse on each sampled side.\n var parsed=sample_text_value(JSON.stringify(value,\"\",true,true))\n return \"\" if parsed==null else JSON.stringify(parsed,\"\",true,true)\nstatic func _sample_f32_bits(value) -> PackedByteArray:\n var bytes:=PackedByteArray();bytes.resize(4);bytes.encode_float(0,float(value))\n return bytes if is_finite(bytes.decode_float(0)) else PackedByteArray()\nstatic func _sample_integer_identity(a,b) -> bool:\n if a is int and b is int:return a==b\n var integer: int=a if a is int else b\n var number: float=float(b if a is int else a)\n if number< -9223372036854775808.0 or number>=9223372036854775808.0 or number!=floor(number):return false\n return int(number)==integer and float(integer)==number\nstatic func _sample_f32_values_same(a,b) -> bool:\n if a is Dictionary:\n  if not b is Dictionary or a.size()!=b.size():return false\n  for key in a:\n   if not b.has(key) or not _sample_f32_values_same(a[key],b[key]):return false\n  return true\n if a is Array:\n  if not b is Array or a.size()!=b.size():return false\n  for i in range(a.size()):\n   if not _sample_f32_values_same(a[i],b[i]):return false\n  return true\n if a is int or a is float:\n  if not (b is int or b is float):return false\n  if (a is int or b is int) and not _sample_integer_identity(a,b):return false\n  var left: PackedByteArray=_sample_f32_bits(a);var right: PackedByteArray=_sample_f32_bits(b)\n  return not left.is_empty() and left==right\n return typeof(a)==typeof(b) and a==b\nstatic func sample_f32_same(a,b) -> bool:\n return a is Dictionary and b is Dictionary and _sample_wire_value(a) and _sample_wire_value(b) and _sample_f32_values_same(a,b)\nfunc sample_stamp(ids: Array,at: int) -> String:\n return sample_wire_stamp(samples(ids,at))\n"
+    },
+    {
+      "before": "  var exact:=true\n  for at in range(48,-1,-1):exact=exact and sample_stamp(expected.ids,at)==expected.samples[str(at)]\n",
+      "after": "  var wire_stamps: Dictionary=expected.samples if expected.get(\"samples\") is Dictionary else {}\n  var raw_stamps: Dictionary=expected.raw_samples if expected.get(\"raw_samples\") is Dictionary else {}\n  var exact: bool=expected.get(\"sample_wire_format\")==SAMPLE_WIRE_FORMAT and wire_stamps.size()==49 and raw_stamps.size()==49\n  var sampled_frames:=0;var physical_frames_exact:=0\n  for at in range(48,-1,-1):\n   # Always sample all49 frames and apply the independent guard, even after a mismatch.\n   var actual: Dictionary=samples(expected.ids,at);var stamp: String=sample_wire_stamp(actual);sampled_frames+=1\n   var raw=sample_text_value(raw_stamps.get(str(at),\"\"));var physical_exact: bool=sample_f32_same(raw,actual)\n   if physical_exact:physical_frames_exact+=1\n   var frame_exact: bool=not stamp.is_empty() and stamp==wire_stamps.get(str(at),\"\") and physical_exact\n   exact=frame_exact and exact\n"
+    },
+    {
+      "before": " var all_ids: Array=ids.duplicate();all_ids.append(id);var expected_samples:={}\n for at in range(49):expected_samples[str(at)]=sample_stamp(all_ids,at)\n var replay:=true\n for at in [0,47,12,36,24]:app.set_frame(at);replay=replay and sample_stamp(all_ids,at)==expected_samples[str(at)]\n",
+      "after": " var all_ids: Array=ids.duplicate();all_ids.append(id);var expected_samples:={};var raw_samples:={};var expected_valid:=true\n for at in range(49):\n  var value: Dictionary=samples(all_ids,at);var stamp: String=sample_wire_stamp(value);var raw: String=JSON.stringify(value,\"\",true,true)\n  expected_samples[str(at)]=stamp;raw_samples[str(at)]=raw\n  expected_valid=not stamp.is_empty() and sample_f32_same(sample_text_value(raw),value) and expected_valid\n var replay: bool=expected_valid\n for at in [0,47,12,36,24]:\n  app.set_frame(at);var stamp: String=sample_stamp(all_ids,at)\n  replay=not stamp.is_empty() and stamp==expected_samples[str(at)] and replay\n"
+    },
+    {
+      "before": "\"samples\":expected_samples,\"paint\":paint",
+      "after": "\"samples\":expected_samples,\"raw_samples\":raw_samples,\"sample_wire_format\":SAMPLE_WIRE_FORMAT,\"paint\":paint"
+    },
+    {
+      "before": "print(\"SCENARIO_D_READ \"+JSON.stringify({\"checks\":checks,\"failures\":failures}))",
+      "after": "print(\"SCENARIO_D_READ \"+JSON.stringify({\"checks\":checks,\"failures\":failures,\"sampled_frames\":sampled_frames,\"physical_frames_exact\":physical_frames_exact,\"sample_wire_format\":SAMPLE_WIRE_FORMAT}))"
+    }
+  ],
+  "wrapper": {
+    "path": "tests/verify_scenario_d.py",
+    "patches": [
+      {
+        "before": " for label,extra,marker in [('writer',[],'SCENARIO_D_WRITE '),('reader',['--read'],'SCENARIO_D_READ ')]:",
+        "after": " unit_args=command('tests/scenario_d_wire_unit.gd',True,extra=['--audio-driver','Dummy'])\n unit=subprocess.run(unit_args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=60)\n unit_text=unit.stdout+unit.stderr;(folder/'wire-unit.log').write_text(unit_text,encoding='utf-8')\n assert unit.returncode==0 and not any(x in unit_text for x in ['ERROR:','FAIL ','ObjectDB instances leaked','resources still in use']),unit_text\n unit_lines=[line for line in unit_text.splitlines() if line.startswith('SCENARIO_D_SAMPLE_WIRE_UNIT ')]\n assert len(unit_lines)==1,unit_text\n assert sum(line.startswith('PASS ') for line in unit_text.splitlines())==28,unit_text\n reports['wire_unit']=json.loads(unit_lines[0].split('SCENARIO_D_SAMPLE_WIRE_UNIT ',1)[1])\n assert type(reports['wire_unit'].get('checks')) is int and reports['wire_unit']['checks']==28 and type(reports['wire_unit'].get('failures')) is int and reports['wire_unit']['failures']==0,reports['wire_unit']\n for label,extra,marker in [('writer',[],'SCENARIO_D_WRITE '),('reader',['--read'],'SCENARIO_D_READ ')]:"
+      },
+      {
+        "before": "  reports[label]=json.loads(next(line[len(marker):] for line in text.splitlines() if line.startswith(marker)));assert reports[label]['failures']==0",
+        "after": "  reports[label]=json.loads(next(line[len(marker):] for line in text.splitlines() if line.startswith(marker)));assert reports[label]['failures']==0\n  if label=='reader':assert reports[label].get('sampled_frames')==49 and reports[label].get('physical_frames_exact')==49 and reports[label].get('sample_wire_format')=='scenario_d_sample_wire_1',reports[label]"
+      }
+    ]
+  }
+}

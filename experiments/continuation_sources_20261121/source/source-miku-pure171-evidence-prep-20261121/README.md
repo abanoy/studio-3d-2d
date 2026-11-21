@@ -1,0 +1,9 @@
+# Synthetic171 qualification: success and retained refusal
+
+Root executed the exact frozen synthetic coordinator from an approved host context:171 checks passed in five separately owned headless script jobs. This reviewer independently read back exact case markers/counts/PASS lines, clean stdout/stderr/engine logs, five unique zero-exit receipts with job/desktop closure, retained launcher reaping records,61 snapshot source files,59 pinned GDS dependencies, all20 frozen preparation files and current Main1102 hashes/timestamps/435 HEAD. No application or test was executed during this independent readback.
+
+The child's earlier attempt failed before Godot/job creation because CreateDesktop returned access denied. That result remains FAIL with zero assertions. Root independently retired its exact preserved lock after host process checks; raw original refusal and retirement receipts are copied unchanged here. The first Root retirement guard used FileInfo.Parent and refused before mutation; Root reported the corrected FileInfo.Directory version then succeeded. The incidental note explicitly distinguishes that report from a raw first-attempt transcript unavailable to this reviewer.
+
+Root's success is not a successful child execution, and retirement is not historical job-closure certification. No guard was weakened and the same frozen host was used for the successful retry. Complete raw logs/source snapshots remain in the local stages named by RETAINED_LOCAL_EVIDENCE_PINS.json; those pins do not themselves reproduce historical process execution.
+
+This packet contains scalar metadata, source and process receipts only. No owner projects, private skin rows, model arrays or imagery are included. Synthetic171 does not qualify full-mesh conversion, native palette calibration/contact, ArrayMesh13, renderer/shader equivalence, completed Full1102 or a product adoption.

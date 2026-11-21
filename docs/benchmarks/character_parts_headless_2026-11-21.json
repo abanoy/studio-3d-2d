@@ -1,0 +1,24 @@
+{
+  "format": "has_character_parts_headless_partial_1",
+  "status": "96_PASS_READER_NOT_LAUNCHED_HANDOFF_REFUSED",
+  "historical_revision": "435dc02426a7cdd313e43fe674c9008520845428",
+  "unit_checks": 58,
+  "editor_control_checks": 38,
+  "fresh_reader_checks": 0,
+  "failure": "ONLY_SYNTHETIC_PROJECT_INPUT_TYPES",
+  "cause": "Persistent zero-byte project.json.lock refused by bounded reader-copy input filter.",
+  "all_attempted_jobs_closed": true,
+  "source_and_native_identity_preserved": true,
+  "prototype_adopted": false,
+  "real_six_part_alignment_qualified": false,
+  "Full_qualification_claimed": false,
+  "public_result_sha256": "80f99373da85bce573f12cf56449c75cc4f2d3f6b83da7919feab88e0624095b",
+  "prior_identity_preflight_refusal_preserved": true,
+  "bridge_controls": {
+    "checks": 32,
+    "status": "PASS",
+    "synthetic_only": true,
+    "native_inputs_read": false
+  },
+  "next": "Versioned reader-only successor must strictly admit the prior96 and check a fresh reader separately."
+}

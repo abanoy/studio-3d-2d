@@ -1,0 +1,24 @@
+{
+  "format": "has_easing435_actual_app_headless_1",
+  "status": "FAIL",
+  "cases": [
+    {
+      "name": "classic-simple",
+      "pid": 30852,
+      "exit": 1,
+      "child_reaped": true,
+      "seconds": 3.6352276
+    }
+  ],
+  "error": "RuntimeError('Actual headless app case failed: classic-simple')",
+  "checks": 0,
+  "source_revision": "435dc02426a7cdd313e43fe674c9008520845428",
+  "sources_preserved": true,
+  "parent_environment_preserved": true,
+  "graphics_or_native_jobs_started": false,
+  "application_adopted": false,
+  "pixels_export_cold_save_qualified": false,
+  "source_port_pins_sha256": "67209aa269396319e0baba26079ddd2572bd04cdba60b033d3bc552ff23e3cd7",
+  "fixture_sha256": "44f6ec9d1310cfc4dd2701cfd5af71bd9e2715d8106b4009f1dd596f9c64bf74",
+  "source_file_count": 1111
+}

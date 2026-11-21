@@ -79,7 +79,12 @@ func run() -> void:
 	if not rig:check(false,"normal practice figure import must succeed");app.free();quit(1);return
 	for i in range(20):await physics_frame
 	lesson.next_tick=0;lesson._process(0);await settled()
-	check(lesson.step==1 and lesson.observed.get("physics_seen",false) and app.physics_editor.body_active(rig.data.id),"actual default-on ragdoll is observed without advancing or freezing it")
+	check(lesson.step==1 and not lesson.observed.get("physics_seen",false) and not app.physics_editor.is_running() and app.physics_editor.import_starts.is_empty() and not lesson.satisfied(),"default-Off practice import cannot falsely satisfy the Physics exercise")
+	check(lesson.instruction.text==First.DEFINITION.steps[1] and "Switch Physics on" in lesson.instruction.text,"practice explicitly teaches the opt-in Physics step")
+	app.physics_editor.toggle.button_pressed=true
+	for i in range(20):await physics_frame
+	lesson.next_tick=0;lesson._process(0);await settled()
+	check(lesson.step==1 and lesson.observed.get("physics_seen",false) and app.physics_editor.body_active(rig.data.id),"explicit Physics On is observed without advancing or freezing it")
 	check(rig.authored_keys().is_empty(),"live imported physics creates no recorded motion keys")
 	lesson.show_hint();await settled();check(lesson.marker.visible and lesson.marker.get_global_rect().encloses(app.physics_editor.toggle.get_global_rect()),"hint switches to the real Physics control after import")
 	app.physics_editor.toggle.button_pressed=false;await settled();check(not app.physics_editor.is_running(),"normal Physics off freezes imported practice figure")
@@ -100,8 +105,13 @@ func run() -> void:
 	check(lesson.active and lesson.session==session and lesson.observed.get("physics_seen",false) and not app.home.visible,"Home Continue restores the same lesson, frozen scene and observed physics step")
 	check(FileAccess.get_sha256(early_save)==early_hash,"resuming the lesson preserves the separate personal project")
 	lesson.previous();await settled();check(lesson.step==1 and First.object(lesson,"model")==null and not lesson.observed.has("physics_seen"),"Previous restores map-only scene and removes later simulation evidence")
-	await import_practice("Practice figure.glb");rig=First.object(lesson,"model");for i in range(20):await physics_frame
-	lesson.next_tick=0;lesson._process(0);app.physics_editor.toggle.button_pressed=false;await settled();if not await advance(2):return
+	await import_practice("Practice figure.glb");rig=First.object(lesson,"model")
+	check(not app.physics_editor.is_running() and not lesson.observed.get("physics_seen",false),"Previous and re-import preserve the Off default without reusing later Physics evidence")
+	app.physics_editor.toggle.button_pressed=true
+	for i in range(20):await physics_frame
+	lesson.next_tick=0;lesson._process(0)
+	check(lesson.observed.get("physics_seen",false) and app.physics_editor.body_active(rig.data.id),"repeated practice observes a new explicit Physics On session")
+	app.physics_editor.toggle.button_pressed=false;await settled();if not await advance(2):return
 	app.world_selection.select_entity(rig.data.id);app.world_selection.context_action(1);await settled();check(lesson.satisfied(),"ordinary object Reset pose satisfies neutral selected figure task")
 	if not await advance(3):return
 	check(not lesson.satisfied(),"unchanged camera cannot satisfy navigation task")

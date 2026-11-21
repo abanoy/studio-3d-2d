@@ -1,0 +1,73 @@
+{
+  "format": "has_character_parts_editor_prototype_targets_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN",
+  "baseline_revision": "435dc02426a7cdd313e43fe674c9008520845428",
+  "current_functional_sources": 1102,
+  "proposed_functional_sources": 1108,
+  "targets": [
+    {
+      "path": "src/app.gd",
+      "operation": "replace",
+      "bytes": 315105,
+      "sha256": "c1149603e932150412372f20f31662fe9260dfa3f899be9bc7217fabb725db2f",
+      "base_bytes": 314927,
+      "base_sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "operation": "replace",
+      "bytes": 32443,
+      "sha256": "3288201e35f55dca05765086d6948b93551acd4036827470f1e49a4dd44ee188",
+      "base_bytes": 32037,
+      "base_sha256": "da1b36461976a521b27592bec818600937057522c783d3500c293448735be4cf"
+    },
+    {
+      "path": "src/character_parts.gd",
+      "operation": "new",
+      "bytes": 8704,
+      "sha256": "809b97fa7cc92a3ec053ff43e53c206ff418c4e22b2f3ac767c0cde948bdca21",
+      "base_bytes": null,
+      "base_sha256": null
+    },
+    {
+      "path": "src/character_parts_editor.gd",
+      "operation": "new",
+      "bytes": 7289,
+      "sha256": "c98be197b3c5794baba5141aaa40ee12a3514750ccddb15e6e7901eb35775bd2",
+      "base_bytes": null,
+      "base_sha256": null
+    },
+    {
+      "path": "tests/character_parts_fixture.gd",
+      "operation": "new",
+      "bytes": 1201,
+      "sha256": "5d03d0ab8530c082474073651e427bf56c8548ce61a4940289f03a2b54a82ac8",
+      "base_bytes": null,
+      "base_sha256": null
+    },
+    {
+      "path": "tests/character_parts_unit.gd",
+      "operation": "new",
+      "bytes": 7754,
+      "sha256": "6f7fd538523df7457c86aed8502f99f298cbb02041943e6d5c9ef61ea7019265",
+      "base_bytes": null,
+      "base_sha256": null
+    },
+    {
+      "path": "tests/character_parts_editor_smoke.gd",
+      "operation": "new",
+      "bytes": 14332,
+      "sha256": "e65cd2b3a9eeb9fb15ebef1385d9d3eda76af67efd2d6c19203c1d507facaa2c",
+      "base_bytes": null,
+      "base_sha256": null
+    },
+    {
+      "path": "tests/character_parts_reader.gd",
+      "operation": "new",
+      "bytes": 4139,
+      "sha256": "8cbe9cec5a0c5860587e2bc0a2cc5998fcdfef329cdbc708d8ed4b6d47ac4fd8",
+      "base_bytes": null,
+      "base_sha256": null
+    }
+  ]
+}

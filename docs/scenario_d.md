@@ -1,5 +1,11 @@
 # Physics scenario D: integrated software verification
 
+Current behavior (2026-11-21): models import with Physics Off. The scenario now
+checks that default and explicitly turns Physics On before the grab/record
+exercise. The recorded baseline measurements below used the earlier On default;
+they remain historical observations. No contact, recording or replay assertion
+is removed by the default change.
+
 All six mechanical addendum§17D steps pass with the original included17bone
 humanoid, original practice room and three generated solid props. The actual
 application imports compatible physics ON, grabs/moves/releases the humanoid,

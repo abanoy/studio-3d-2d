@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-ui-camera-full-20261121-435dc02\tests\verify.py", line 692, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-ui-camera-full-20261121-435dc02\tests\verify.py", line 371, in main
+    height_log = run([sys.executable, '-u', 'tests/verify_character_height.py'], timeout=380)
+  File "C:\a\Programming\cloudflare\has-ui-camera-full-20261121-435dc02\tests\verify.py", line 24, in run
+    raise RuntimeError(f"Exit {result.returncode}: {args}\n{result.stdout}\n{result.stderr}")
+RuntimeError: Exit 1: ['C:\\Program Files\\Python313\\python.exe', '-u', 'tests/verify_character_height.py']
+
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-ui-camera-full-20261121-435dc02\tests\verify_character_height.py", line 48, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-ui-camera-full-20261121-435dc02\tests\verify_character_height.py", line 41, in main
+    assert p.returncode==0 and 'HEIGHT_IMPORT_NATIVE 'in log and not any(s in log for s in ['ERROR:','FAIL ','ObjectDB instances leaked','another exclusive child']),log[-5000:]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS actual raw VRM worker passes its import context into completed height review
+PASS native review precedes world mutation and automatic physics
+PASS native preparation/review leaves shot and temporary camera exact
+PASS another native start defers without replacing the pending review
+PASS fitted native model installs once with retained source provenance
+FAIL default body physics starts only after accepting the fitted import, without recording keys
+PASS physics stop keeps chosen standardized root scale
+PASS changed source refuses before installation or cached fit reuse
+PASS application teardown releases a pending height review cleanly
+HEIGHT_IMPORT_NATIVE {"checks":9,"failures":1}
+
+

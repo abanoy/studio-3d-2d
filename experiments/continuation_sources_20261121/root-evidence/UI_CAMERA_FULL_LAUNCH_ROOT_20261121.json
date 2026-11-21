@@ -1,0 +1,22 @@
+{
+  "format": "has_root_full_launch_20261121_1",
+  "revision": "435dc02426a7cdd313e43fe674c9008520845428",
+  "checkout": "C:/a/Programming/cloudflare/has-ui-camera-full-20261121-435dc02",
+  "root_exec_session": 87359,
+  "status": "RUNNING_NO_RESULT_YET",
+  "staged_fixture_files": 13,
+  "staged_fixture_bytes": 32095990,
+  "fixture_originals_unchanged": true,
+  "remote_verification": "UI_CAMERA_REMOTE_VERIFIED_20261121.json",
+  "checkout_recovery": {
+    "initial_verification": "FAIL: missing Git index after incomplete checkout",
+    "index_repair": "git read-tree HEAD, without changing working files",
+    "remaining_missing_files": 1,
+    "first_restore_attempt": "FAIL: Git filename too long",
+    "resolution": "core.longpaths=true only in disposable clone; restore exact committed archive blob",
+    "final_verification": "PASS: clean checkout, 1094 published paths and 1102 functional sources verified"
+  },
+  "expected_result_groups": 182,
+  "human_acceptance_claimed": false,
+  "installed_studio_unchanged": true
+}
