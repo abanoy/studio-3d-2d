@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-junko-native-stage-a-1795270452664135900\Studio\tools\junko_part_bridge_probe.py", line 118, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-junko-native-stage-a-1795270452664135900\Studio\tools\junko_part_bridge_probe.py", line 111, in main
+    runpy.run_path(str(HERE / 'blender_source_bridge.py'), run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\a\Programming\cloudflare\has-junko-native-stage-a-1795270452664135900\Studio\tools\blender_source_bridge.py", line 411, in <module>
+    crosswalk_observation, crosswalk_reason = source_bone_export.prepare(
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request, selected_mdl_capture, mdl if source.suffix.lower() == ".mdl" else None,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        container if source.suffix.lower() == ".mdl" else None, bpy, jiggle_inspection)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-junko-native-stage-a-1795270452664135900\Studio\tools\junko_part_bridge_probe.py", line 69, in prepare
+    return PartObservation(request, capture, mdl, container, bpy), None
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-junko-native-stage-a-1795270452664135900\Studio\tools\junko_part_bridge_probe.py", line 44, in __init__
+    self.proof = C.prove_native_blender(capture.raw, capture.native_sha256, mdl,
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                       container.armature, request['scale'],
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                       dict(C.SOURCEIO_PINS),
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+                                       C.Profile(capture.native_sha256, count))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-junko-native-stage-a-1795270452664135900\Studio\tools\source_jiggle_crosswalk.py", line 216, in prove_native_blender
+    require(close(actual, expected), "native_Blender_rest_matrix_mismatch")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-junko-native-stage-a-1795270452664135900\Studio\tools\source_jiggle_crosswalk.py", line 57, in require
+    raise CrosswalkError(code)
+source_jiggle_crosswalk.CrosswalkError: native_Blender_rest_matrix_mismatch
+
+Error: script failed, file: 'C:\a\Programming\cloudflare\has-junko-native-stage-a-1795270452664135900\Studio\tools\junko_part_bridge_probe.py', exiting.
+Blender 5.1.2 (hash ec6e62d40fa9 built 2026-05-19 01:37:34)
+
+Blender quit

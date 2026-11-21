@@ -1,0 +1,77 @@
+{
+  "format": "has_easing435_actual_app_headless_1",
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "classic-simple",
+      "pid": 22588,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 3.7110916,
+      "result": {
+        "application_adopted": false,
+        "checks": 24,
+        "failures": 0,
+        "headless_only": true,
+        "pixels_or_export_tested": false,
+        "real_app_undo_tested": true
+      }
+    },
+    {
+      "name": "classic-advanced",
+      "pid": 1976,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 3.909682,
+      "result": {
+        "application_adopted": false,
+        "checks": 24,
+        "failures": 0,
+        "headless_only": true,
+        "pixels_or_export_tested": false,
+        "real_app_undo_tested": true
+      }
+    },
+    {
+      "name": "neon-simple",
+      "pid": 33588,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 4.1799652,
+      "result": {
+        "application_adopted": false,
+        "checks": 24,
+        "failures": 0,
+        "headless_only": true,
+        "pixels_or_export_tested": false,
+        "real_app_undo_tested": true
+      }
+    },
+    {
+      "name": "neon-advanced",
+      "pid": 20320,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 4.3717925,
+      "result": {
+        "application_adopted": false,
+        "checks": 24,
+        "failures": 0,
+        "headless_only": true,
+        "pixels_or_export_tested": false,
+        "real_app_undo_tested": true
+      }
+    }
+  ],
+  "error": null,
+  "checks": 96,
+  "source_revision": "435dc02426a7cdd313e43fe674c9008520845428",
+  "sources_preserved": true,
+  "parent_environment_preserved": true,
+  "graphics_or_native_jobs_started": false,
+  "application_adopted": false,
+  "pixels_export_cold_save_qualified": false,
+  "source_port_pins_sha256": "472cd37a7dd4717880fe341fa1beea942e4d58f756038a4d78b00d16451b128b",
+  "fixture_sha256": "44f6ec9d1310cfc4dd2701cfd5af71bd9e2715d8106b4009f1dd596f9c64bf74",
+  "source_file_count": 1111
+}

@@ -1,0 +1,26 @@
+test_bool_matrix_refused (__main__.ScratchControls.test_bool_matrix_refused) ... ok
+test_close_source_pin_refused (__main__.ScratchControls.test_close_source_pin_refused) ... ok
+test_failed_representation_stays_failed (__main__.ScratchControls.test_failed_representation_stays_failed) ... ok
+test_finite_matrix_accepts_identity (__main__.ScratchControls.test_finite_matrix_accepts_identity) ... ok
+test_measured_row_uses_original_close (__main__.ScratchControls.test_measured_row_uses_original_close) ... FAIL
+test_missing_close_refused (__main__.ScratchControls.test_missing_close_refused) ... ok
+test_nonfinite_matrix_refused (__main__.ScratchControls.test_nonfinite_matrix_refused) ... ok
+test_pinned_close_ast_excludes_other_statements (__main__.ScratchControls.test_pinned_close_ast_excludes_other_statements) ... ok
+test_schedule_has22_unique_cases (__main__.ScratchControls.test_schedule_has22_unique_cases) ... ok
+test_schedule_preserves_baseline_and_lengths (__main__.ScratchControls.test_schedule_preserves_baseline_and_lengths) ... ok
+test_wrong_native_index_refused_after_mocked_hash (__main__.ScratchControls.test_wrong_native_index_refused_after_mocked_hash) ... ok
+test_wrong_private_sha_refused (__main__.ScratchControls.test_wrong_private_sha_refused) ... ok
+
+======================================================================
+FAIL: test_measured_row_uses_original_close (__main__.ScratchControls.test_measured_row_uses_original_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-junko-scratch-rest-v5-1795274686016416200\Studio\tests\test_junko_scratch_rest.py", line 57, in test_measured_row_uses_original_close
+    self.assertTrue(row['original_close_rest_native']);self.assertEqual(row['rest_to_native_reference_error'],0.)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.007s
+
+FAILED (failures=1)

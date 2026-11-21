@@ -1,0 +1,121 @@
+{
+  "format": "has_miku_2f1acbd_port_provenance_1",
+  "old_manifest": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-miku-contact-c315-1103-successor-prep-20261121/SOURCE_PINS.json",
+    "bytes": 6911,
+    "sha256": "7a7fa46b26ff626d6f3a157679523c92192bdc48af39649239eca770e95bc60b"
+  },
+  "new_revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "new_source_count": 1109,
+  "new_full_groups": 183,
+  "source_targets": 13,
+  "payload_hashes_unchanged": [
+    {
+      "path": "src/godot_skin_weight_conversion.gd",
+      "operation": "new",
+      "bytes": 2974,
+      "sha256": "deb82e95713aff54da15296a841f0241a59781b4300d8c869651e9449437cc92"
+    },
+    {
+      "path": "src/miku_collider_binding.gd",
+      "operation": "new",
+      "bytes": 6935,
+      "sha256": "e58afb8325054315209c92c64504037642719f48ac05f0bbb0f1eab0d6bfdc2a"
+    },
+    {
+      "path": "src/miku_saved_context.gd",
+      "operation": "new",
+      "bytes": 2289,
+      "sha256": "e80f3d8ade9ed5702a9204ad968c857979ccf2521a6696c7ade49fa41fe41a7b"
+    },
+    {
+      "path": "src/miku_skin_binding.gd",
+      "operation": "new",
+      "bytes": 27177,
+      "sha256": "9bd7bd9cc86da2b11ba2ba74664ee6efb22d72d54e227938555d2510b6e760d1"
+    },
+    {
+      "path": "src/secondary_collision_geometry.gd",
+      "operation": "new",
+      "bytes": 5190,
+      "sha256": "63f75e7cae189fad1dab190302c7218f94ae3d4910b3eb9319e4f0a1b54e6cc2"
+    },
+    {
+      "path": "src/secondary_collision_probe.gd",
+      "operation": "new",
+      "bytes": 13530,
+      "sha256": "f4aea0b34013065fd0e3ac17d55b2c241b4a88d5e235716402e79c12f681ecd4"
+    },
+    {
+      "path": "tests/godot_skin_weight_conversion_unit.gd",
+      "operation": "new",
+      "bytes": 4363,
+      "sha256": "bda14464e85e93083e7ea110ef62736aaadcf6842f61b50ec43939cfbd03cea5"
+    },
+    {
+      "path": "tests/godot_skin_weight_engine_conformance.gd",
+      "operation": "new",
+      "bytes": 1897,
+      "sha256": "bb340bc100539a3fb1f85585d17b508371cc444ead739ddd73cc10e88e4c98f3"
+    },
+    {
+      "path": "tests/miku_collider_binding_unit.gd",
+      "operation": "new",
+      "bytes": 5586,
+      "sha256": "84c0f1b46aa3a3f0be0926be2b7694c73a333ae0e323e1dd7ae0bdc925c7644c"
+    },
+    {
+      "path": "tests/miku_contact_qualification.gd",
+      "operation": "new",
+      "bytes": 18968,
+      "sha256": "150164129c69b76f03f6459e38c79238f40e1933a0092c3b8abfa5a27bb0bc76"
+    },
+    {
+      "path": "tests/miku_skin_binding_unit.gd",
+      "operation": "new",
+      "bytes": 12663,
+      "sha256": "af6eb752697538cdf9f62a0a1158ccec02b040e33f60d0f81c6bcfd9340a178e"
+    },
+    {
+      "path": "tests/secondary_collision_geometry_unit.gd",
+      "operation": "new",
+      "bytes": 4542,
+      "sha256": "6f23d6bf84beba91c6eb4237eeaa62ef71e86e0ec1f9dd4c072f8a54ad5f16de"
+    },
+    {
+      "path": "tests/secondary_collision_probe_unit.gd",
+      "operation": "new",
+      "bytes": 8240,
+      "sha256": "0f579122671341a16b55260d44bfdebeb4d768f858abdeb6c1b130974e600fcb"
+    }
+  ],
+  "private_manifest_pin_unchanged": {
+    "bytes": 1385,
+    "sha256": "ef0df6fdf61ef0baf95e5170a95b6c72e2ae934919e1d4191bfd156136b8bb8c"
+  },
+  "non_main_host_functions_AST_unchanged": 4,
+  "immutable_resources": 1112,
+  "owned_resources": 1125,
+  "plan": {
+    "import": 0,
+    "pure": [
+      40,
+      27,
+      26,
+      24,
+      54
+    ],
+    "pure_total": 171,
+    "ArrayMesh": 13,
+    "native_contexts": 6,
+    "checks_per_native_context": 14,
+    "native_total": 84,
+    "default_Root_ticks": 480,
+    "combined_checks": 268,
+    "jobs": 13
+  },
+  "new_feature_or_test_count_changes": false,
+  "old_separate_pure171_and_Array13_substituted_for_combined_pass": false,
+  "engine_native_or_candidate_program_execution": false,
+  "Main_or_original_assets_modified": false
+}

@@ -1,0 +1,49 @@
+{
+  "format": "has_junko_scratch_rest_v5_root_1",
+  "status": "FAIL",
+  "revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "checks": 0,
+  "jobs": {
+    "unit12": {
+      "status": "FAIL",
+      "wrapper_reaped": true,
+      "wrapper_handle_closed": true,
+      "job_closed": true,
+      "active_zero_before_close": true,
+      "assigned_before_START": true,
+      "owner": {
+        "pid": 22804,
+        "created_100ns": "134397482863288741"
+      },
+      "wrapper_exit": 1,
+      "pre_termination_accounting": {
+        "active": 0,
+        "total": 4,
+        "terminated_by_limit": 0
+      },
+      "accounting": {
+        "active": 0,
+        "total": 4,
+        "terminated_by_limit": 0
+      }
+    }
+  },
+  "measurement": {},
+  "scratch_cases": 0,
+  "SDK_or_native_models_loaded": false,
+  "original_model_repairs": 0,
+  "native_export_qualified": false,
+  "tolerance_changed": false,
+  "Full_claimed": false,
+  "graphics_executed": false,
+  "application_modified": false,
+  "private_matrices_published": false,
+  "error_type": "RuntimeError",
+  "all_jobs_closed": true,
+  "all_admitted_inputs_preserved": true,
+  "Main_and_runtime_preserved": true,
+  "parent_environment_preserved": true,
+  "lock_removed": true,
+  "preservation_failure_count": 0,
+  "source_input_file_count": 1144
+}

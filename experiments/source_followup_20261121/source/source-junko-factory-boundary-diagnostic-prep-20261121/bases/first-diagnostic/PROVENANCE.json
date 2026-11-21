@@ -1,0 +1,25 @@
+{
+  "format": "has_junko_rest_refusal_diagnostic_provenance_1",
+  "frozen_stage_a": {
+    "path": "bases/stage-a/SOURCE_PINS.json",
+    "bytes": 2615,
+    "sha256": "9989f3f2746e37666dc541ef44990a71d757f4d4d7eaa035e0525a81eb357913"
+  },
+  "actual_failed_stage": "C:/a/Programming/cloudflare/has-junko-native-stage-a-1795270452664135900",
+  "actual_failure_result": {
+    "path": "C:/a/Programming/cloudflare/has-junko-native-stage-a-1795270452664135900/PUBLIC_RESULT.json",
+    "bytes": 1880,
+    "sha256": "3c3e036d0acfb3af8354cb9775129b169cb49311a6ad11c54d28d59d88d76f97"
+  },
+  "safe_failure_evidence": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-junko-stage-a-failure-evidence-prep-20261121/SOURCE_PINS.json",
+    "bytes": 4063,
+    "sha256": "a6a9ae50b8c372b4fc88dda7f513344b8ffeec3ccbd09fe987ab5695f0483551"
+  },
+  "exact_proof_function": "tools/source_jiggle_crosswalk.py:prove_native_blender",
+  "reference_failed_require": "native_Blender_rest_matrix_mismatch",
+  "qualified_tolerance": "unchanged close()2e-5*max(1,abs(expected))",
+  "pinned_SourceIO_factory": "blender_bindings/models/mdl44/import_mdl.py:35-82",
+  "factory_operation_observed_without_edit": "Matrix.LocRotScale(Vector(bone.position)*scale,Quaternion((w,x,y,z)),(1,1,1)); parent edit bone matrix times local",
+  "actual_new_diagnostic_executed": false
+}
