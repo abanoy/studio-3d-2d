@@ -40,7 +40,7 @@ def main():
     reports = {}
     print("Source requirements notices and restart")
     for phase, extra in [("write", []), ("read", ["--read"])]:
-        execute("tests/asset_discovery_notices.gd", folder, extra)
+        execute("tests/asset_discovery_notices.gd", folder, extra, graphical=args.graphical)
         reports["notices_" + phase] = json.loads((folder / f"notices-{phase}.json").read_text(encoding="utf-8"))
     if args.notices_only:
         (folder / "result.json").write_text(json.dumps(reports, indent=2), encoding="utf-8")
