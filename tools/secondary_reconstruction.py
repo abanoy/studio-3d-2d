@@ -11,6 +11,48 @@ import secondary_helpers as H
 FORMAT='studio_secondary_reconstruction_1'
 MAX_REGIONS=32
 MAX_SELECTED=10000
+REST_KEY='has_secondary_rest_views_1'
+REST_FORMAT='studio_secondary_rest_views_1'
+SKIN_ATTRIBUTES=('JOINTS_0','WEIGHTS_0','JOINTS_1','WEIGHTS_1')
+
+
+def rest_surfaces(glb):
+    """Validate append-only original-weight references, never infer a rest view."""
+    value=glb.doc.get('extras',{}).get(REST_KEY)
+    if value is None:return []
+    if not isinstance(value,dict) or set(value)!={'format','surfaces'} or value.get('format')!=REST_FORMAT:
+        raise ValueError('Invalid original-weight view format')
+    rows=value.get('surfaces')
+    if not isinstance(rows,list) or not 1<=len(rows)<=128:raise ValueError('Invalid original-weight surface budget')
+    result=[];seen=set()
+    for row in rows:
+        if not isinstance(row,dict) or set(row)!={'node','mesh','primitive','attributes','helper_nodes'}:
+            raise ValueError('Invalid original-weight surface identity')
+        ni=H.integer(row['node'],len(glb.doc['nodes']));mi=H.integer(row['mesh'],len(glb.doc['meshes']))
+        if glb.doc['nodes'][ni].get('mesh')!=mi:raise ValueError('Original-weight surface mesh changed')
+        pi=H.integer(row['primitive'],len(glb.doc['meshes'][mi].get('primitives',[])))
+        key=(ni,pi)
+        if key in seen:raise ValueError('Duplicate original-weight surface')
+        seen.add(key)
+        attrs=row['attributes'];helpers=row['helper_nodes']
+        if not isinstance(attrs,dict) or set(attrs) not in ({'JOINTS_0','WEIGHTS_0'},set(SKIN_ATTRIBUTES)):
+            raise ValueError('Invalid original-weight attribute pairs')
+        for ref in attrs.values():H.integer(ref,len(glb.doc['accessors']))
+        if not isinstance(helpers,list) or not 1<=len(helpers)<=512 or any(type(n) is not int for n in helpers) or len(set(helpers))!=len(helpers):
+            raise ValueError('Invalid original-weight guide identities')
+        for node in helpers:
+            H.integer(node,len(glb.doc['nodes']))
+            if not str(glb.doc['nodes'][node].get('name','')).startswith('__HAS_Loose_Rebuilt_'):
+                raise ValueError('Original-weight view refers to a non-generated guide')
+        primitive=glb.doc['meshes'][mi]['primitives'][pi];saved=primitive['attributes']
+        original={k:v for k,v in saved.items() if k not in SKIN_ATTRIBUTES};original.update(attrs)
+        try:
+            primitive['attributes']=original;data=glb.skin(ni,pi)
+            if any(data[3]['joints'][j] in helpers for pairs in data[6] for j,w in pairs):
+                raise ValueError('Original-weight view already uses its added guides')
+        finally:primitive['attributes']=saved
+        result.append(copy.deepcopy(row))
+    return result
 
 
 def recipe(request):
@@ -72,6 +114,7 @@ def common_ancestor(nodes,parents):
 
 def prepare(source,request):
     glb=H.GLB(source)
+    rest_surfaces(glb)
     if not isinstance(request,dict) or request.get('format')!=FORMAT or request.get('source_sha256')!=glb.sha:
         raise ValueError('A matching explicit reconstruction recipe is required')
     regions=request.get('regions');count=request.get('segments',4)
@@ -167,6 +210,7 @@ def build(source,output,request):
     request=recipe(request)
     if not isinstance(request,dict) or request.get('reviewed') is not True:raise ValueError('Review the complete reconstruction before creating its candidate')
     plan=prepare(source,request);glb=plan['glb'];stamp=glb.source.stat().st_mtime_ns
+    originals={(row['node'],row['primitive']):row for row in rest_surfaces(glb)}
     nodes=glb.doc['nodes'];count=plan['segments'];controls=plan['controls'];guide_nodes={};local_controls={};skin_indices={}
     prefix='__HAS_Loose_Rebuilt_'+hashlib.sha256(json.dumps(request,sort_keys=True).encode()).hexdigest()[:12]
     for anchor in plan['anchors']:
@@ -192,6 +236,12 @@ def build(source,output,request):
     changed=0
     for (ni,pi),selected in plan['selected'].items():
         data=glb.skin(ni,pi);skin=data[3];pairs=data[6];mapping=skin_indices[data[0]['skin']];common=data[7][skin['joints'].index(plan['reference'])]
+        key=(ni,pi)
+        if key not in originals:
+            originals[key]={'node':ni,'mesh':data[0]['mesh'],'primitive':pi,
+                            'attributes':{k:data[2]['attributes'][k] for k in SKIN_ATTRIBUTES if k in data[2]['attributes']},
+                            'helper_nodes':[]}
+        originals[key]['helper_nodes']=sorted(set(originals[key]['helper_nodes'])|{n for anchor in mapping for n in guide_nodes[anchor]})
         for v in selected:
             u=plan['parameters'][(ni,pi,v)];free=max(0.,min(count-1.,u-1.))
             left=min(count-1,int(free));right=min(count-1,left+1);fraction=free-left
@@ -211,6 +261,7 @@ def build(source,output,request):
                 part=(row+[(0,0.)]*slots)[slot*4:slot*4+4];js.append([j for j,w in part]);ws.append([w for j,w in part])
             attributes['JOINTS_'+str(slot)]=glb.append(js,'VEC4',5123);attributes['WEIGHTS_'+str(slot)]=glb.append(ws,'VEC4')
     springs=glb.doc.setdefault('extras',{}).setdefault('has_secondary_helpers_1',{'specVersion':'1.0','springs':[]})['springs']
+    glb.doc['extras'][REST_KEY]={'format':REST_FORMAT,'surfaces':list(originals.values())}
     created_chains=[]
     for anchor in plan['anchors']:
         chain={'name':prefix+'_'+str(anchor),'center':anchor,'joints':[{'node':n,'stiffness':1.,'dragForce':.45,'hitRadius':.005} for n in guide_nodes[anchor]]}

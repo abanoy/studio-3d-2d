@@ -1,0 +1,98 @@
+{
+  "format": "has_reconstructed_rest_view_scoped_qualification_1",
+  "status": "SCOPED_PASS_WORKING_CODE_NOT_YET_COMMITTED",
+  "whole_back_hair_complete": false,
+  "whole_full_claimed": false,
+  "source_arrays_or_art_published": false,
+  "generated_headless": {
+    "status": "PASS",
+    "checks": 28,
+    "receipt_sha256": "43cd3a25fa4024adee9e9048d068a01465e7f1ece1a377c346cde4e7f3f81419",
+    "source_preserved": true,
+    "generated_inputs_preserved": true,
+    "all_owned_resources_closed": true,
+    "stats": {
+      "flex_meshes": 0,
+      "guide_checks": 306,
+      "inventory_array_reads": 2,
+      "rest_meshes": 1,
+      "transitions": 2
+    },
+    "unweighted_ancestor_counterexample_included": true
+  },
+  "protected_simple_gui": {
+    "status": "PASS",
+    "checks": 19,
+    "receipt_sha256": "7653bca28f88b4b998f23e8c410af677a8840cc1e0c01310e93dc70b23aa5482",
+    "actual_metrics": {
+      "advanced": false,
+      "captures": 4,
+      "checks": 19,
+      "failures": 0,
+      "maximum_channel_difference": 0,
+      "maximum_off_transform_error": 0.0,
+      "maximum_posed_vertex_difference": 0.0,
+      "rest_pixel_bytes_changed": 0,
+      "rest_pixels_changed": 0,
+      "sampled_posed_vertices": 37470,
+      "total_channel_difference": 0
+    },
+    "canonical_model_sources_match_qualified_runtime": true,
+    "source_preserved": true,
+    "runtime_preserved": true,
+    "protected_staged_source_preserved": true,
+    "all_private_resources_closed": true
+  },
+  "mechanism": "Original-weight imported ArrayMesh and flexible-weight ArrayMesh share canonical materials on one MeshInstance. Exact guide rest without owners selects original; manual/recorded/preview/live guide FK selects flexible. Spring keeps a scoped flexible lease before contact construction and releases after contact disposal.",
+  "live_final_boundary": {
+    "implemented_behavior": "A live contact owner intentionally retains its flexible mesh even during direct final authored-rest evaluation. The generated test explicitly requires this; no simulation is silently disposed.",
+    "exact_original_final_rest_with_live_owner_claimed": false,
+    "exact_original_authored_rest_without_owner_qualified": true,
+    "recorded_guide_FK_with_Hair_off_qualified": true
+  },
+  "visual_observation": "Reviewed before, rest and Natural private captures: whole character remains visible; checked section hangs down while unchecked curls/outlines retain their previous pose. Review dialog shows1292vertices/13groups, opt-in and inclusion. This is not owner appearance acceptance.",
+  "remaining": [
+    "Other back-hair components and matched outline masks.",
+    "Multi-chain real-time cost remains~12.5ms120Hz step in the prior scoped observation.",
+    "New rest metadata is required; no heuristic retrofit of old7f assets without the declaration.",
+    "Editor selection proxy has a separate Root8-control CPU result; native viewport19 does not establish editor-outline pixel equivalence.",
+    "No new whole-suite/Advanced/Classic UI/cold reconstructed save+reopen qualification here."
+  ],
+  "owned_source_files": [
+    {
+      "path": "src/reconstructed_rest_view.gd",
+      "bytes": 15874,
+      "sha256": "472338479adb4eafda388f0ecc223436f525a86eaffbc7555bf5efa5690fa8ee"
+    },
+    {
+      "path": "src/scene3d.gd",
+      "bytes": 11219,
+      "sha256": "e33efd728f90cc0c0c5b9a10b41c6de093b09a66947bd69c268931db6a861819"
+    },
+    {
+      "path": "src/model.gd",
+      "bytes": 35932,
+      "sha256": "7a8f2201cef6e5af4daa600c5d44da0b533d3ca9f1c0e37cf365e934ce83907a"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "bytes": 15556,
+      "sha256": "c24f3753ac8baa8475a9c9acc705dff9833ab14d78e2ab89f87d6a6f2152789f"
+    },
+    {
+      "path": "src/pose_thumbnail.gd",
+      "bytes": 3488,
+      "sha256": "2b363f5a5c0b43fab785f3e9150bfdf5c2fc8a71a5cc1add354b5b26001a9016"
+    },
+    {
+      "path": "tests/reconstructed_rest_view_smoke.gd",
+      "bytes": 11029,
+      "sha256": "e9f078798bf15343584fdb983393e86aae42cb858209d903167d8634a76bbd42"
+    },
+    {
+      "path": "tests/verify_reconstructed_rest_view.py",
+      "bytes": 2351,
+      "sha256": "a9e222e98cee81074a2434db9839ad2adf73d783466cc678c9292c9a7a5c3341"
+    }
+  ]
+}

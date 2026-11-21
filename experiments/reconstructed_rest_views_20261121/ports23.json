@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "label": "tests/verify_wind_review.py exact binding",
+      "count": 60,
+      "status": "PASS"
+    },
+    {
+      "label": "missing tests/verify_wind_review.py src/reconstructed_rest_view.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "missing source file"
+    },
+    {
+      "label": "drift tests/verify_wind_review.py src/reconstructed_rest_view.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Unreviewed main port bytes: src/reconstructed_rest_view.gd"
+    },
+    {
+      "label": "omitted tests/verify_wind_review.py src/reconstructed_rest_view.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "missing tests/verify_wind_review.py src/scene3d.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "missing source file"
+    },
+    {
+      "label": "drift tests/verify_wind_review.py src/scene3d.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Unreviewed main port bytes: src/scene3d.gd"
+    },
+    {
+      "label": "omitted tests/verify_wind_review.py src/scene3d.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "missing tests/verify_wind_review.py src/pose_thumbnail.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "missing source file"
+    },
+    {
+      "label": "drift tests/verify_wind_review.py src/pose_thumbnail.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Unreviewed main port bytes: src/pose_thumbnail.gd"
+    },
+    {
+      "label": "omitted tests/verify_wind_review.py src/pose_thumbnail.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "tests/verify_helper_preview.py exact binding",
+      "count": 77,
+      "status": "PASS"
+    },
+    {
+      "label": "missing tests/verify_helper_preview.py src/reconstructed_rest_view.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Missing reviewed helper main source: src/reconstructed_rest_view.gd"
+    },
+    {
+      "label": "drift tests/verify_helper_preview.py src/reconstructed_rest_view.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Unreviewed helper main bytes: src/reconstructed_rest_view.gd"
+    },
+    {
+      "label": "omitted tests/verify_helper_preview.py src/reconstructed_rest_view.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Reviewed helper port manifest omits required main runtime/test source"
+    },
+    {
+      "label": "missing tests/verify_helper_preview.py src/scene3d.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Missing reviewed helper main source: src/scene3d.gd"
+    },
+    {
+      "label": "drift tests/verify_helper_preview.py src/scene3d.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Unreviewed helper main bytes: src/scene3d.gd"
+    },
+    {
+      "label": "omitted tests/verify_helper_preview.py src/scene3d.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Reviewed helper port manifest omits required main runtime/test source"
+    },
+    {
+      "label": "missing tests/verify_helper_preview.py src/pose_thumbnail.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Missing reviewed helper main source: src/pose_thumbnail.gd"
+    },
+    {
+      "label": "drift tests/verify_helper_preview.py src/pose_thumbnail.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Unreviewed helper main bytes: src/pose_thumbnail.gd"
+    },
+    {
+      "label": "omitted tests/verify_helper_preview.py src/pose_thumbnail.gd",
+      "expected_refusal_observed": true,
+      "refusal_category": "Reviewed helper port manifest omits required main runtime/test source"
+    },
+    {
+      "label": "missing tests/verify_helper_preview.py tools/secondary_reconstruction.py",
+      "expected_refusal_observed": true,
+      "refusal_category": "Missing reviewed helper main source: tools/secondary_reconstruction.py"
+    },
+    {
+      "label": "drift tests/verify_helper_preview.py tools/secondary_reconstruction.py",
+      "expected_refusal_observed": true,
+      "refusal_category": "Unreviewed helper main bytes: tools/secondary_reconstruction.py"
+    },
+    {
+      "label": "omitted tests/verify_helper_preview.py tools/secondary_reconstruction.py",
+      "expected_refusal_observed": true,
+      "refusal_category": "Reviewed helper port manifest omits required main runtime/test source"
+    }
+  ],
+  "control_count": 23,
+  "application_source_unchanged": true,
+  "driver_changes": "Membership expressions only; reverse substitution recovers original bytes; validator code unchanged.",
+  "pins": {
+    "tests/verify_wind_review.py": "fd5f6b046e9bdda61d498b8749343324f614b3dd5f38d9f4238983376e5f28b4",
+    "tests/verify_helper_preview.py": "486a5aa1bb7d90606a4dabdbc4f2d18d052fcb5bdd8cfc73e0fd2d9338340159",
+    "tests/wind_review_port_files.json": "d102036fad1f3406fe6b7723d871ec85915b6b7d3d8bdfcea4e9a5ab2702c089",
+    "tests/helper_preview_port_files.json": "d6b459dbc6d399ced867e1d02ca9434e668f6d9ddcf22cfa5dc6b149bd72fcdf"
+  },
+  "original": {
+    "file": "result.json",
+    "bytes": 9284,
+    "sha256": "6947835a6a1f27129ec6ae9c88c8cb1fea69dcb25a34050c4bc49cc60364b022"
+  }
+}

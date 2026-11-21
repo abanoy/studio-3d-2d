@@ -16,7 +16,7 @@ def main():
         if not o.gui_only:
             process=subprocess.run([sys.executable,'-I','-S','-B',str(ROOT/'tests/test_secondary_reconstruction.py'),'-v'],cwd=ROOT,capture_output=True,timeout=45,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
             (folder/'unit-stdout.log').write_bytes(process.stdout);(folder/'unit-stderr.log').write_bytes(process.stderr)
-            V.need(process.returncode==0 and b'Ran 11 tests' in process.stderr and b'\nOK' in process.stderr,'Eleven pure reconstruction controls required');result['pure_checks']=11
+            V.need(process.returncode==0 and b'Ran 15 tests' in process.stderr and b'\nOK' in process.stderr,'Fifteen pure reconstruction controls required');result['pure_checks']=15
         if o.source:
             source=o.source.resolve(strict=True);protected=(CPU.stamp(source.stat()),hashlib.sha256(V.read(source)).hexdigest());g=R.H.GLB(source)
             if o.gui:V.need(o.region==[131,1,2] and g.sha=='a329cd47bd74b05278a6e501b9503d8e0b9231bf6adc647307d573170166a3ec','This optional UI fixture requires the protected Junko first-component source')

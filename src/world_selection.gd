@@ -414,6 +414,16 @@ func collect(node: Node, kind: String) -> void:
 		entries.append({"original":node,"copy":copy,"kind":kind,"materials":materials,"ghost_materials":[],"ghost":false,"color":color_for(kind)})
 	for child in node.get_children(): collect(child,kind)
 
+static func sync_mesh_view(entry: Dictionary) -> bool:
+	# Rest/flexible views share the surface layout, Skin and source identities.
+	# Keep ID/outline geometry current without borrowing the model materials.
+	if entry.copy.mesh==entry.original.mesh:return false
+	entry.copy.mesh=entry.original.mesh
+	var materials: Array=entry.ghost_materials if entry.ghost else entry.materials
+	for surface in range(materials.size()):entry.copy.set_surface_override_material(surface,materials[surface])
+	for i in range(entry.original.get_blend_shape_count()):entry.copy.set_blend_shape_value(i,entry.original.get_blend_shape_value(i))
+	return true
+
 func _process(_delta: float) -> void:
 	if is_instance_valid(parts_button):
 		var editor=app.get("character_parts_editor")
@@ -431,6 +441,7 @@ func _process(_delta: float) -> void:
 	camera.projection = current.projection; camera.size = current.size
 	for entry in entries:
 		if not is_instance_valid(entry.original): continue
+		sync_mesh_view(entry)
 		entry.copy.global_transform = entry.original.global_transform
 		entry.copy.custom_aabb=entry.original.custom_aabb
 		if entry.copy.extra_cull_margin!=entry.original.extra_cull_margin:entry.copy.extra_cull_margin=entry.original.extra_cull_margin

@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "checks": 208,
+  "mode": "cpu",
+  "native_requested": false,
+  "native_fidelity": false,
+  "graphics_used": false,
+  "source_context": "main_working_source_snapshot",
+  "overlay_files": 0,
+  "cases": [
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "transport",
+      "script": "tests/helper_preview_transport_cpu.py",
+      "expected_checks": 11,
+      "failures": [],
+      "checks": 11,
+      "result_source_context_bound": true,
+      "passed": true
+    },
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "adapter",
+      "script": "res://tests/wind_helper_candidate_cpu.gd",
+      "checks": 128,
+      "expected_checks": 128,
+      "failures": [],
+      "private_receipt": null,
+      "clean_private_receipt": null,
+      "result_source_context_bound": true,
+      "passed": true
+    },
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "host",
+      "script": "res://tests/helper_preview_integration_cpu.gd",
+      "checks": 69,
+      "expected_checks": 69,
+      "failures": [],
+      "private_receipt": null,
+      "clean_private_receipt": null,
+      "result_source_context_bound": true,
+      "passed": true
+    }
+  ],
+  "preservation": {
+    "main_sources": true,
+    "runtimes": true,
+    "head": true,
+    "native_originals": true,
+    "staged_native_inputs": true,
+    "published_requests": true,
+    "snapshot_sources": true,
+    "snapshot_extras": true,
+    "fixtures": true
+  },
+  "headless_boundary": "CPU wrappers retain/reap terminal processes; adapter/host private_receipt and clean_private_receipt are null, so no graphical desktop/window closure claim.",
+  "original": {
+    "file": "verification.json",
+    "bytes": 4218,
+    "sha256": "f51bfbf669594f078ba31188e56e5235458de1e1d44ee4743d54e79b6c120ae9"
+  }
+}

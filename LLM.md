@@ -8514,3 +8514,27 @@ weight geometry for rest and flexible geometry for live/manual/recorded guides,
 with material/morph/bind/cache/lease checks; no source models are overwritten.
 See experiments/reconstruction_weight_readback_20261121. Existing exact published
 7f remains intact; no formal55/62 acceptance promotion or cleanup action.
+
+
+## 2026-11-21 — Exact authored-rest rendering for reconstructed loose parts
+
+Implemented original-weight mesh references and a paired runtime view, preserving
+the first original references through repeated edits and scoping guides to each
+skin. Python15+wind16 pass. New public owned headless driver36 covers rest/manual/
+recorded/live poses, material/expression preservation, generated ancestors with no
+direct weights, cache leases, thumbnail clones, hidden-root reparenting/staleleases
+and editor ID/ghost proxy mesh changes. Native SimpleGUI19 passes the UNCHANGED
+exact-zero image check:0channelbytes differ and all37470 posed imported vertices
+match exactly; Offtransformerror0. Prior7f18/19 and165changedbytes remain historical
+failures, never relabelled. Livecontactowners retainflex untilcachedrunnersdispose,
+including directfinal-mode evaluationwhileowned; exactauthoredrestwithoutowner
+andmanual/recordedGUIDEFKwithHairOffareseparatelyqualified.
+Newmodule/importer/thumbnail/backendportclosures have60Wind/77Helperbindings;
+23puremissing/drift/omitted guards pass withoutweakeningvalidators. ExistingWind94
+CPU andHelper208CPU pass on currentworkingcodesnapshot, no new845/266GPU/fullclaim.
+One1292/3629 coloredsection only; outlines/othersections and~12.5ms/120Hz costopen.
+Portable newformat save/cold/movie qualification remainsUNRUN in this checkpoint.
+Source/tests/findings/safeevidence saved together; no privateassets/arrays/media
+uploaded. See docs/secondary_reconstruction.md and reconstructed_rest_views_20261121
+benchmark/packet. Originalassets/tools/Steam protected; blockedcleanupuntouched.
+Formal52/54 implementation and55/62 acceptance remainunchanged.

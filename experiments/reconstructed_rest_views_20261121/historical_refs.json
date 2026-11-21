@@ -1,0 +1,36 @@
+{
+  "historical7f_benchmark": {
+    "path": "docs/benchmarks/secondary_reconstruction_20261121.json",
+    "file": "secondary_reconstruction_20261121.json",
+    "bytes": 9594,
+    "sha256": "dd200fc90989be2611a76bbc035d248a92fae19100097dae66a6bf22aa700d01"
+  },
+  "historical_gui": {
+    "wrapper_status": "FAIL",
+    "observed_checks": 19,
+    "observed_failures": 1,
+    "observed_passes": 18,
+    "receipt_sha256": "592821606069b4ef284e148d082028a0a0993ce3108fe1dcd936637703a9e9ff",
+    "stdout_sha256": "57d12851c3acbb8289669175ddc495e75be595e9a5a3ffb5001ebe1d915d45f8",
+    "actual_metrics": {
+      "advanced": false,
+      "captures": 4,
+      "checks": 19,
+      "failures": 1,
+      "maximum_channel_difference": 240,
+      "maximum_off_transform_error": 0.0,
+      "maximum_posed_vertex_difference": 4.82201030536089e-05,
+      "rest_pixel_bytes_changed": 165,
+      "rest_pixels_changed": 144,
+      "sampled_posed_vertices": 37470,
+      "total_channel_difference": 918
+    },
+    "graphical_private_window_proven": true,
+    "all_resources_closed": true,
+    "known_failure": "Exact zero rest pixels fails. No tolerance substituted. Actual imported posed vertex drift observed; packing cause is unproven.",
+    "visual_observation": "Selected section extends downward; unchecked curls/outline surfaces retain original pose. Whole appearance remains open."
+  },
+  "scope": "Historical7f18/19FAIL exactpixels165channels/max240 remains retained. New original-weight rest-view selection qualifies a distinct source/metadata successor; no tolerance change or historical PASS reassignment.",
+  "public28_predecessor_note": "scoped_native19_predecessor28_note.json; not added to authoritativepublic36",
+  "portable_cold_and_movie_qualification": "UNRUN_PENDING_FACE_AT_THIS_CHECKPOINT"
+}

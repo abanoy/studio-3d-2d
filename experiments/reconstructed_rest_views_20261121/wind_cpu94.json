@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "checks": 94,
+  "mode": "headless",
+  "cases": [
+    {
+      "script": "tests/wind_review_unit.gd",
+      "exit": 0,
+      "result": {
+        "checks": 51,
+        "failures": 0
+      },
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_hooks_unit.gd",
+      "exit": 0,
+      "result": {
+        "checks": 14,
+        "failures": 0
+      },
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_review_unit.gd",
+      "exit": 0,
+      "result": {
+        "checks": 29,
+        "failures": 0
+      },
+      "error_markers": [],
+      "passed": true
+    }
+  ],
+  "functional_sources_hash_size_mtime_preserved": true,
+  "native_inputs_checked": false,
+  "graphics_used": false,
+  "graphical_desktop_placement_claimed": false,
+  "source_before": "ea1b83cb6126228684e457107641fb74c14758c4",
+  "source_after": "ea1b83cb6126228684e457107641fb74c14758c4",
+  "original": {
+    "file": "verification.json",
+    "bytes": 17758,
+    "sha256": "975b7780381ab59c7dd569bde9c87f8b6fce536c2ac8a7a9ee702c909e7ff2f5"
+  }
+}

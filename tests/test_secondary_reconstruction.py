@@ -25,6 +25,67 @@ class Reconstruction(unittest.TestCase):
         for key in ('materials','textures','images','scenes','animations','extensions'):
             self.assertEqual(g.doc.get(key),self.g.doc.get(key))
         self.assertEqual(g.doc['accessors'][:len(self.g.doc['accessors'])],self.g.doc['accessors'])
+
+    def test_rest_surface_retains_original_attributes_and_all_other_geometry(self):
+        g,value=self.build();rows=R.rest_surfaces(g)
+        self.assertEqual(len(rows),1);row=rows[0]
+        self.assertEqual((row['node'],row['mesh'],row['primitive']),(3,0,1))
+        attrs=self.g.skin(3,1)[2]['attributes']
+        self.assertEqual(row['attributes'],{key:attrs[key] for key in R.SKIN_ATTRIBUTES if key in attrs})
+        self.assertEqual(row['helper_nodes'],value['report']['helper_nodes'])
+        self.assertNotEqual(g.skin(3,1)[2]['attributes']['WEIGHTS_0'],row['attributes']['WEIGHTS_0'])
+        primitive=g.doc['meshes'][0]['primitives'][1]
+        current=copy.deepcopy(primitive['attributes'])
+        restored={k:v for k,v in current.items() if k not in R.SKIN_ATTRIBUTES};restored.update(row['attributes'])
+        primitive['attributes']=restored
+        self.assertEqual(g.skin(3,1)[4:7],self.g.skin(3,1)[4:7])
+
+    def test_subsequent_reconstruction_keeps_first_rest_view(self):
+        first,value=self.build();baseline=copy.deepcopy(R.rest_surfaces(first)[0])
+        request=dict(self.request,source_sha256=first.sha,component=1,
+                     points_in_anchor=[[-.55,.4,.1],[-.55,.7,.1],[-.55,1.,.1],[-.55,1.3,.1]])
+        next_value=R.build(first.source,self.folder/'next',request);second=R.H.GLB(next_value['glb'])
+        rows=R.rest_surfaces(second)
+        self.assertEqual(len(rows),1);self.assertEqual(rows[0]['attributes'],baseline['attributes'])
+        self.assertEqual(set(rows[0]['helper_nodes']),set(baseline['helper_nodes'])|set(next_value['report']['helper_nodes']))
+
+    def test_distinct_skin_joint_sets_keep_only_their_own_guides(self):
+        g=self.g;g.doc['nodes'].append({'name':'Arm'})
+        g.doc['nodes'][1]['children'].append(5)
+        g.doc['nodes'].append({'name':'Second','mesh':1,'skin':1})
+        g.doc['nodes'][0]['children'].append(6)
+        g.doc['meshes'].append(copy.deepcopy(g.doc['meshes'][0]))
+        skin={'joints':[1,5],'skeleton':1,'inverseBindMatrices':g.append([R.H.IDENTITY,R.H.translation((.15,0,0))],'MAT4')}
+        g.doc['skins'].append(skin)
+        for primitive in g.doc['meshes'][1]['primitives']:
+            count=g.doc['accessors'][primitive['attributes']['POSITION']]['count']
+            primitive['attributes']['JOINTS_0']=g.append([(0,1,0,0)]*count,'VEC4',5121)
+            primitive['attributes']['WEIGHTS_0']=g.append([(.25,.75,0.,0.)]*count,'VEC4')
+        write_glb(self.source,g.doc,bytes(g.binary))
+        request=R.recipe(self.request);request.update(source_sha256=R.H.GLB(self.source).sha,
+            regions=[{'node':3,'primitive':1,'component':0},{'node':6,'primitive':1,'component':0}])
+        value=R.build(self.source,self.folder/'separate-skins',request);candidate=R.H.GLB(value['glb'])
+        rows=R.rest_surfaces(candidate);self.assertEqual(len(rows),2)
+        for row in rows:
+            joints=candidate.doc['skins'][candidate.doc['nodes'][row['node']]['skin']]['joints']
+            self.assertTrue(set(row['helper_nodes']).issubset(set(joints)))
+        self.assertNotEqual(set(rows[0]['helper_nodes']),set(rows[1]['helper_nodes']))
+
+    def test_malformed_rest_views_refuse_without_output(self):
+        g,value=self.build();good=copy.deepcopy(g.doc['extras'][R.REST_KEY])
+        mutations=[lambda v:v.update(format='unknown'),
+                   lambda v:v['surfaces'].append(copy.deepcopy(v['surfaces'][0])),
+                   lambda v:v['surfaces'][0].update(mesh=99),
+                   lambda v:v['surfaces'][0]['attributes'].update(WEIGHTS_0=999999),
+                   lambda v:v['surfaces'][0].update(helper_nodes=[2]),
+                   lambda v:v['surfaces'][0]['attributes'].update(WEIGHTS_1=0)]
+        for index,mutate in enumerate(mutations):
+            with self.subTest(index=index):
+                bad=copy.deepcopy(good);mutate(bad);g.doc['extras'][R.REST_KEY]=bad
+                path=self.folder/f'bad-{index}.glb';write_glb(path,g.doc,bytes(g.binary))
+                request=dict(self.request,source_sha256=R.H.GLB(path).sha)
+                with self.assertRaises(ValueError):R.build(path,self.folder/f'refused-{index}',request)
+                self.assertFalse((self.folder/f'refused-{index}').exists())
     def test_original_fk_morph_and_unselected_surfaces(self):
         g,value=self.build();old=self.g.skin(3,1);new=g.skin(3,1);count=len(self.g.doc['nodes']);globals={}
         for i in range(count):
