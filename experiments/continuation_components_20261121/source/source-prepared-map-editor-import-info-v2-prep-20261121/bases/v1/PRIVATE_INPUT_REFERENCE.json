@@ -1,0 +1,77 @@
+{
+  "format": "has_prepared_map_private_input_reference_1",
+  "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/private-prepared-map-editor-inputs-20261121/INPUTS.json",
+  "bytes": 7328,
+  "sha256": "862ae496d0e4970bf38ff12fd7da31b7cf5423e64653d8aa81b0f8663271fb82",
+  "maps": [
+    {
+      "name": "gm_construct",
+      "expected": {
+        "mesh_nodes": 310,
+        "surfaces": 545,
+        "vertices": 203400,
+        "lights": 64,
+        "point_lights": 42,
+        "spot_lights": 22,
+        "directional_lights": 0,
+        "raw_entities": 1227,
+        "warnings": 35,
+        "source_sha256": "4d1c027f2b93fa9100bcc4cb08b1dfdda437cadf4cf7d01d4b515dc2caa5a6a2",
+        "omissions": {
+          "format": "has_optional_source_map_light_omissions_1",
+          "policy": "omit_optional_lighting_preserve_geometry_and_raw_entities",
+          "light_entities": 137,
+          "created": 64,
+          "invalid": 0,
+          "budget": 42,
+          "starts_off": 0,
+          "animated_style": 31,
+          "unsupported_type": 0,
+          "global_limit": 64,
+          "remaining_budget_at_start": 64,
+          "raw_entities_preserved": true,
+          "warning_details_omitted": 0
+        },
+        "source_meshes_before_export": 314
+      }
+    },
+    {
+      "name": "ttt_tiny_spaceship_v3",
+      "expected": {
+        "mesh_nodes": 234,
+        "surfaces": 322,
+        "vertices": 154079,
+        "lights": 18,
+        "point_lights": 16,
+        "spot_lights": 2,
+        "directional_lights": 0,
+        "raw_entities": 508,
+        "warnings": 36,
+        "source_sha256": "4848d3108c68b7e50d7762f8bf32b8a1391cbf2df198cbbdae9dd7a324e94eb3",
+        "omissions": {
+          "format": "has_optional_source_map_light_omissions_1",
+          "policy": "omit_optional_lighting_preserve_geometry_and_raw_entities",
+          "light_entities": 105,
+          "created": 18,
+          "invalid": 1,
+          "budget": 0,
+          "starts_off": 6,
+          "animated_style": 80,
+          "unsupported_type": 0,
+          "global_limit": 64,
+          "remaining_budget_at_start": 64,
+          "raw_entities_preserved": true,
+          "warning_details_omitted": 55
+        },
+        "source_meshes_before_export": 252
+      }
+    }
+  ],
+  "raw_native_arrays_or_assets_in_packet": false,
+  "copy_exactly_three_assets_per_runtime": [
+    "scene.glb",
+    "parameters.json",
+    "entities.json"
+  ],
+  "originals_or_retained_bundle_outputs_written": false
+}

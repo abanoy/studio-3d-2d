@@ -1,0 +1,64 @@
+{
+  "format": "has_root_junko_gated_request_1",
+  "nonce": "348749dea39745cd9a45e1deb42fb6a1",
+  "record_dir": "C:\\a\\Programming\\cloudflare\\has-character-parts-headless-435-1795255808748\\RootRun-1795259996694407600\\jobs\\controls",
+  "job": {
+    "name": "controls",
+    "studio": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio",
+    "profile": "HAS Character Parts controls b0efcbf35ad0418ea822934527088a10",
+    "casefolder": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio/output/case",
+    "args": [
+      "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+      "--headless",
+      "--audio-driver",
+      "Dummy",
+      "--path",
+      "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio",
+      "--log-file",
+      "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/engine.log",
+      "--script",
+      "res://tests/character_parts_editor_smoke.gd",
+      "--",
+      "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio/output/case",
+      "HAS Character Parts controls b0efcbf35ad0418ea822934527088a10"
+    ],
+    "cwd": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Studio",
+    "timeout_seconds": 180,
+    "expected_marker": "CHARACTER_PARTS_EDITOR ",
+    "expected_checks": 38,
+    "environment_overrides": {
+      "APPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Environment/APPDATA",
+      "LOCALAPPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Environment/LOCALAPPDATA",
+      "TEMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Environment/TEMP",
+      "TMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/controls/Environment/TMP",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "HYBRID_GODOT": "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+      "HYBRID_PYTHON": "C:/Program Files/Python313/python.exe"
+    },
+    "environment_remove": [
+      "HYBRID_NATIVE_INPUTS",
+      "HYBRID_NATIVE_FIXTURES",
+      "HYBRID_SOURCEIO",
+      "HYBRID_HECATIA_KRA",
+      "HYBRID_FAN_PROJECT"
+    ],
+    "override_pin": {
+      "bytes": 138,
+      "sha256": "41b9de9ddf90378aa6ef6d4b5b7cbba41dbf5538733ea7fbfea7ed0c9ed94551"
+    }
+  },
+  "godot_pin": {
+    "path": "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+    "bytes": 171924488,
+    "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+    "mtime_ns": "1769365853000000000",
+    "identity": [
+      "1351841855",
+      "19703248370132133",
+      "1",
+      "33206",
+      "171924488",
+      "1769365853000000000"
+    ]
+  }
+}

@@ -5,7 +5,16 @@ var checks := 0
 var failures := 0
 var cases: Array = []
 
+class InfoDouble extends RefCounted:
+	var reports: Array = []
+	func notify_import(report: Variant) -> void:
+		reports.append(report.duplicate(true) if report is Dictionary or report is Array else report)
+
+class SequenceDouble extends RefCounted:
+	var active_owner := ""
+
 class PoseDouble extends RefCounted:
+	var import_capabilities := InfoDouble.new()
 	var additions: Array = []
 	func finish_drag() -> void: pass
 	func add_model(path: String, frame: int, placement: Dictionary) -> String:
@@ -15,6 +24,8 @@ class RendererDouble extends RefCounted:
 	func active_model():return null
 
 class AppDouble extends Control:
+	var recovery_session := "authored-owner-fixture-session"
+	var sequence_editor := SequenceDouble.new()
 	var exporting := false
 	var height_review = null
 	var pose_editor := PoseDouble.new()

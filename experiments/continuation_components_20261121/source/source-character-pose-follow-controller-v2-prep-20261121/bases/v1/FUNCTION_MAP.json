@@ -1,0 +1,15 @@
+{
+  "format": "has_part_follow_controller_function_map_1",
+  "controller": {
+    "create_fixture": "explicit independent actual Model/Skeleton binding and fixture-only admission",
+    "create_native": "explicit unsupported native adapter",
+    "inventory": "actual Model base-pose and runtime index/parent ownership snapshots",
+    "capture_authored": "actual Model sampler readiness and pre-follow FK snapshot",
+    "apply_captured": "all goals preplanned, solved-parent locals, linked-only writes and actualFK readback",
+    "model_delta": "actual Model/PhysicsRig base-relative channel conversion",
+    "release_owned": "atomic exact owned-channel restoration without overwriting a new writer",
+    "dispose": "explicit restore/teardown; no predelete callbacks"
+  },
+  "tests": "55 assertions; actual Model, Skeleton3D andUndoRedo;54 generated links only",
+  "qualified_predecessor": "bases/math21"
+}

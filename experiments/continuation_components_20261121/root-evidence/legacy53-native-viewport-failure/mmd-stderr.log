@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import sys,runpy; token=sys.stdin.readline().strip(); assert token==sys.argv[1]; sys.argv=[sys.argv[2]]; runpy.run_path(sys.argv[0],run_name='__main__')
+                                                                                                             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\a\Programming\cloudflare\has-import-info-legacy-scopes-1795268756730492500\Studio\tests\verify_mmd_missing_texture.py", line 81, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-import-info-legacy-scopes-1795268756730492500\Studio\tests\verify_mmd_missing_texture.py", line 29, in main
+    verify_import(source, rows, absent, output, Path(destination))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-import-info-legacy-scopes-1795268756730492500\Studio\tests\verify_mmd_missing_texture.py", line 65, in verify_import
+    run(request, "MISSING_TEXTURE_REOPEN true")
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-import-info-legacy-scopes-1795268756730492500\Studio\tests\verify_mmd_missing_texture.py", line 39, in run
+    assert result.returncode == 0 and expected in trace and "ERROR" not in trace, trace
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+ERROR: Window 0 spawned at invalid position: (-298, -68).
+   at: _popup_base (scene/main/window.cpp:2123)
+   GDScript backtrace (most recent call first):
+       [0] launch (res://src/source_import.gd:277)
+       [1] start (res://src/source_import.gd:127)
+       [2] load_scene (res://src/app.gd:4816)
+       [3] run (res://tests/mmd_missing_texture_smoke.gd:38)
+ERROR: Window 0 spawned at invalid position: (-293, -48).
+   at: _popup_base (scene/main/window.cpp:2123)
+   GDScript backtrace (most recent call first):
+       [0] start (res://src/has_project.gd:142)
+       [1] save_file (res://src/has_project.gd:69)
+       [2] run (res://tests/mmd_missing_texture_smoke.gd:70)
+ERROR: Window 0 spawned at invalid position: (-293, -48).
+   at: _popup_base (scene/main/window.cpp:2123)
+   GDScript backtrace (most recent call first):
+       [0] start (res://src/has_project.gd:142)
+       [1] open_file (res://src/has_project.gd:101)
+       [2] run (res://tests/mmd_missing_texture_smoke.gd:78)
+MISSING_TEXTURE_REOPEN true C:\a\Programming\cloudflare\has-import-info-legacy-scopes-1795268756730492500\Studio\output\tmp56pagbzc/app_97504/street.has
+

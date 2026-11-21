@@ -71,6 +71,73 @@ def receipts():
 def git(*args):return subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
 
 
+def _info_read(path,root,limit=4*1024*1024):
+    import stat
+    path=Path(path)
+    if not path.is_absolute() or not path.is_relative_to(root):raise ValueError('INFO_PATH_OUTSIDE_ROOT')
+    for ancestor in (path,*path.parents):
+        value=ancestor.lstat()
+        if stat.S_ISLNK(value.st_mode) or getattr(value,'st_file_attributes',0)&0x400:raise ValueError('INFO_ALIAS')
+        if ancestor==root:break
+    before=path.stat()
+    if not stat.S_ISREG(before.st_mode) or before.st_nlink!=1 or before.st_size>limit:raise ValueError('INFO_BOUNDED_REGULAR_FILE')
+    raw=path.read_bytes();after=path.stat()
+    def stamp(s):return (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns,s.st_nlink,s.st_mode,getattr(s,'st_file_attributes',0))
+    if stamp(before)!=stamp(after):raise ValueError('INFO_READ_DRIFT')
+    return raw,before.st_mtime_ns
+
+def import_info_headless_receipts(root,report,current,started_ns,finished_ns,before,expected_checks=267):
+    # Only this exact shipping component's five current CPU cases can omit HWNDs.
+    info=report.get('import_capability')
+    if info is None:return []
+    def require(value,code):
+        if not value:raise ValueError(code)
+    require(expected_checks in (163,267),'INFO_ADMITTED_SCOPE_PARAMETER')
+    require(type(info) is dict and info.get('format')=='has_current_import_capability_verification_1' and info.get('status')=='PASS','INFO_REPORT_FORMAT')
+    require(type(info.get('checks')) is int and info['checks']==expected_checks and info.get('scope')==('all' if expected_checks==267 else 'cpu'),'INFO_SCOPE')
+    require(all(info.get(k) is True for k in ('all_admitted_sources_unchanged','all_runtime_sources_unchanged','all_private_jobs_and_desktops_closed','all_writer_trees_restored','parent_environment_preserved')),'INFO_CLOSURE_FLAGS')
+    require(all(info.get(k) is False for k in ('whole_full_claimed','native_or_owner_assets_read','sourceio_or_conversion_requested','experimental_coordinator_used','prior_Full_required')),'INFO_SCOPE_FLAGS')
+    path=Path(info.get('report_path',''));component=path.parent
+    require(path.name=='verification.json' and component.parent==root/'output/import-capability-canonical' and component.name.isdecimal(),'INFO_CANONICAL_REPORT_PATH')
+    raw,mtime=_info_read(path,root);report_sha256=hashlib.sha256(raw).hexdigest()
+    require(started_ns<=mtime<=finished_ns and json.loads(raw)==info,'INFO_FRESH_EXACT_COMPONENT_REPORT')
+    cases=info.get('cases');require(type(cases) is list and len(cases)==(21 if expected_checks==267 else 5),'INFO_CASE_COUNT')
+    require(len({row.get('name') for row in cases if type(row) is dict})==len(cases),'INFO_CASE_IDENTITIES')
+    wanted={'legacy43':('tests/import_capability_summary_unit.gd',43,[])}
+    for theme in ('classic','neon'):
+        for mode in ('simple','advanced'):wanted['app-'+theme+'-'+mode]=('tests/import_capability_app_headless.gd',30,(['--classic'] if theme=='classic' else [])+(['--advanced'] if mode=='advanced' else []))
+    cpus=[row for row in cases if row.get('headless') is True]
+    require({row.get('name') for row in cpus}==set(wanted) and len(cpus)==5,'INFO_EXACT_FIVE_CPU_CASES')
+    cpu=component/'CPUStudio'
+    for name,source in before.items():
+        if name.startswith('experiments/'):continue
+        data,_=_info_read(cpu/name,root,128*1024*1024)
+        require(len(data)==source['bytes'] and hashlib.sha256(data).hexdigest()==source['sha256'],'INFO_COPIED_CURRENT_SOURCE')
+    admitted=[];desktops=set()
+    for row in cpus:
+        name=row['name'];script,count,flags=wanted[name];case=component/'Cases'/name;rp=case/'private-receipt.json'
+        require(row.get('status')=='PASS' and type(row.get('checks')) is int and row['checks']==count and type(row.get('expected_checks')) is int and row['expected_checks']==count,'INFO_CASE_RESULT')
+        require(all(row.get(k) is True for k in ('launcher_reaped','launcher_handle_closed','private_resources_closed')) and row.get('private_receipt_mode')=='headless_lifecycle_only' and row.get('graphical_placement_proven') is False,'INFO_CASE_LIFECYCLE')
+        require(type(row.get('launcher_exit')) is int and row['launcher_exit']==0 and type(row.get('launcher_pid')) is int and row['launcher_pid']>0,'INFO_LAUNCHER')
+        require(Path(row.get('private_receipt',''))==rp and Path(row.get('data',''))==case/'Data' and Path(row.get('user',''))==case/'User','INFO_CASE_PATH')
+        command=row.get('engine_command');require(type(command) is list and command and all(type(x) is str for x in command),'INFO_ENGINE_COMMAND')
+        require(command.count('--')==1,'INFO_ARGUMENT_BOUNDARY');cut=command.index('--');engine=command[:cut];user=command[cut+1:]
+        require(engine.count('--headless')==1 and engine.count('--path')==1 and engine.count('--script')==1,'INFO_HEADLESS_COMMAND')
+        require(engine[engine.index('--path')+1]==str(cpu) and engine[engine.index('--script')+1]==script and user==[str(case/'Data'),*flags],'INFO_EXACT_CASE_COMMAND')
+        profile=Path(row.get('report',{}).get('user_profile',''))
+        require(profile.is_relative_to(case/'User/Roaming') and type(row.get('report',{}).get('checks')) is int and row['report']['checks']==count and type(row.get('report',{}).get('failures')) is int and row['report']['failures']==0,'INFO_ACTUAL_USER_PROFILE')
+        proof_raw,proof_mtime=_info_read(rp,root);proof=json.loads(proof_raw);digest=hashlib.sha256(proof_raw).hexdigest();relative=rp.relative_to(root).as_posix()
+        require(started_ns<=proof_mtime<=mtime and digest==row.get('private_receipt_sha256'),'INFO_RECEIPT_BYTES_AND_FRESHNESS')
+        witness=[r for r in current if r.get('path')==relative]
+        require(len(witness)==1 and witness[0].get('sha256')==digest and witness[0].get('value')==proof,'INFO_CURRENT_PHYSICAL_RECEIPT')
+        require(proof.get('format')=='studio_private_desktop_1' and type(proof.get('exit')) is int and proof['exit']==0 and type(proof.get('child_pid')) is int and proof['child_pid']>0 and type(row.get('private_child_pid')) is int and proof['child_pid']==row['private_child_pid'],'INFO_CHILD_IDENTITY')
+        require(all(proof.get(k) is True for k in ('job_closed','desktop_closed')) and all(proof.get(k) is False for k in ('foreground_child_observed','desktop_switch_requested','private_window_seen')),'INFO_PHYSICAL_CLOSURE')
+        require(type(proof.get('child_desktop_confirmed')) is bool and type(proof.get('maximum_owned_windows')) is int and proof['maximum_owned_windows']==0,'INFO_NO_GRAPHICAL_CLAIM')
+        require(type(proof.get('job_memory_limit_bytes')) is int and proof['job_memory_limit_bytes']==4096*1024*1024 and not any(k in proof for k in ('error','monitor_error','desktop_enumeration_error','cancelled')),'INFO_JOB_ERROR_OR_LIMIT')
+        desktop=proof.get('desktop');require(type(desktop) is str and len(desktop)==41 and desktop.startswith('HAS_Test_') and all(x in '0123456789abcdef' for x in desktop[9:]) and desktop not in desktops,'INFO_UNIQUE_DESKTOP')
+        desktops.add(desktop);admitted.append({'path':relative,'sha256':digest,'desktop':desktop,'component_report_sha256':report_sha256,'headless_lifecycle_only':True})
+    return admitted
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--revision', required=True)
@@ -124,23 +191,28 @@ def main():
             assert all(previous['value'].get(key) == row['value'].get(key) for key in physical)
             duplicates.append(dict(desktop=desktop,paths=[previous['path'],row['path']]))
         else:unique[desktop] = row
-    isolation = all(row['value'].get('job_closed') is True and row['value'].get('desktop_closed') is True
-            and row['value'].get('child_desktop_confirmed') is True
-            and row['value'].get('foreground_child_observed') is False
-            and row['value'].get('desktop_switch_requested') is False for row in unique.values())
-    nonzero = [row for row in unique.values() if row['value'].get('exit') != 0]
-    expected_cancels = len(nonzero) == 1 and all(row['value'].get('exit') == 2 and row['value'].get('cancelled') is True
-            and row['value'].get('error') == 'Owned converter cancelled' for row in nonzero)
     report_path = ROOT/'output/verification.json'
     fresh_report = report_path.is_file() and report_path.stat().st_mtime_ns >= start
     report = json.loads(report_path.read_bytes()) if fresh_report else {}
+    info_admitted=[];info_admission_error=None
+    try:info_admitted=import_info_headless_receipts(ROOT,report,current,start,time.time_ns(),before)
+    except (OSError,ValueError,KeyError,TypeError,IndexError) as error:info_admission_error=str(error)
+    info_paths={row['path'] for row in info_admitted}
+    isolation = info_admission_error is None and all(row['path'] in info_paths or (row['value'].get('job_closed') is True and row['value'].get('desktop_closed') is True
+            and row['value'].get('child_desktop_confirmed') is True
+            and row['value'].get('foreground_child_observed') is False
+            and row['value'].get('desktop_switch_requested') is False) for row in unique.values())
+    nonzero = [row for row in unique.values() if row['value'].get('exit') != 0]
+    expected_cancels = len(nonzero) == 1 and all(row['value'].get('exit') == 2 and row['value'].get('cancelled') is True
+            and row['value'].get('error') == 'Owned converter cancelled' for row in nonzero)
     result = dict(format='has_reference_body_full_coordinator_1',revision=revision,exit=process.returncode,
             child_reaped=process.poll() is not None,seconds=(time.time_ns()-start)/1e9,
             functional_source_count=len(before),functional_sources_unchanged=before==after,
             revision_unchanged=git('rev-parse','HEAD')==revision,fresh_final_report=fresh_report,
             result_groups=len(report),movie_groups=[key for key in report if key.endswith('_video') or key.startswith('posed_model_video_')],
             unique_current_private_jobs=len(unique),new_receipt_paths=len(current),duplicates=duplicates,
-            all_private_jobs_isolated_closed=isolation,nonzero_private_jobs=nonzero,
+            all_private_jobs_isolated_closed=isolation,import_info_headless_receipts=info_admitted,
+            import_info_headless_admission_error=info_admission_error,nonzero_private_jobs=nonzero,
             nonzero_jobs_are_expected_cancellations=expected_cancels,current_jobs=list(unique.values()),
             byte_proven_archived_copy_paths=len(classification['archived_copies']),
             unchanged_prior_receipt_paths=len(classification['unchanged_prior_paths']),

@@ -1,0 +1,61 @@
+{
+  "format": "has_root_junko_gated_request_1",
+  "nonce": "9b715e805a584edda7022748d03bde76",
+  "record_dir": "C:\\a\\Programming\\cloudflare\\has-character-parts-headless-435-1795255808748\\RootRun-1795259996694407600\\jobs\\unit",
+  "job": {
+    "name": "unit",
+    "studio": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Studio",
+    "profile": "HAS Character Parts unit db498e92703f47cc9087c36247a78ea1",
+    "casefolder": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Studio/output/case",
+    "args": [
+      "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+      "--headless",
+      "--audio-driver",
+      "Dummy",
+      "--path",
+      "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Studio",
+      "--log-file",
+      "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/engine.log",
+      "--script",
+      "res://tests/character_parts_unit.gd"
+    ],
+    "cwd": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Studio",
+    "timeout_seconds": 45,
+    "expected_marker": "CHARACTER_PARTS_UNIT ",
+    "expected_checks": 58,
+    "environment_overrides": {
+      "APPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Environment/APPDATA",
+      "LOCALAPPDATA": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Environment/LOCALAPPDATA",
+      "TEMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Environment/TEMP",
+      "TMP": "C:/a/Programming/cloudflare/has-character-parts-headless-435-1795255808748/unit/Environment/TMP",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "HYBRID_GODOT": "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+      "HYBRID_PYTHON": "C:/Program Files/Python313/python.exe"
+    },
+    "environment_remove": [
+      "HYBRID_NATIVE_INPUTS",
+      "HYBRID_NATIVE_FIXTURES",
+      "HYBRID_SOURCEIO",
+      "HYBRID_HECATIA_KRA",
+      "HYBRID_FAN_PROJECT"
+    ],
+    "override_pin": {
+      "bytes": 134,
+      "sha256": "0f14e9b68414097ea5c9fa1ead35f36e6822aa7db1db7b2f1ff8816ce729e90e"
+    }
+  },
+  "godot_pin": {
+    "path": "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+    "bytes": 171924488,
+    "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+    "mtime_ns": "1769365853000000000",
+    "identity": [
+      "1351841855",
+      "19703248370132133",
+      "1",
+      "33206",
+      "171924488",
+      "1769365853000000000"
+    ]
+  }
+}

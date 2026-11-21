@@ -1,0 +1,49 @@
+{
+  "format": "has_prepared_map_editor_headless_plan_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "cases": [
+    "gm_construct",
+    "ttt_tiny_spaceship_v3"
+  ],
+  "checks_per_case": 32,
+  "total_checks": 64,
+  "marker": "PREPARED_MAP_EDITOR ",
+  "entry": "tests/prepared_map_editor_smoke.gd",
+  "runtime_source_rows": 327,
+  "current_rows": 325,
+  "new_test_rows": 2,
+  "assets_per_case": 3,
+  "config_and_override_generated_by_Root": 2,
+  "final_runtime_inputs_per_case": 332,
+  "root_graphics_execution": false,
+  "new_conversion_execution": false,
+  "actual_SourceImport_completion_replay": true,
+  "actual_app_Model_world_installation": true,
+  "headless_actual_Lit_Unshaded_state_only": true,
+  "artist_visual_acceptance": false,
+  "current_Main_changed": false,
+  "completed_Full_claimed": false,
+  "independent_review": "SOURCE_API_GO_WITH_WINDOWS_ENGINE_ADMISSION_AND_EXPLICIT_UNSHADED_STATE_CLARIFICATION",
+  "strict_log_error_predicates": [
+    "SCRIPT ERROR",
+    "ERROR:",
+    "Parse Error",
+    "WARNING:.*(leaked|orphan|still in use|resources)"
+  ],
+  "required_closure": [
+    "retained wrapper and child handles",
+    "all descendants contained",
+    "all reaped",
+    "Job active0 before close",
+    "no next case on unproven closure"
+  ],
+  "required_preservation": [
+    "all327 admitted source rows",
+    "all private manifest inputs/originals",
+    "owned assets/config/override source inputs",
+    "current Main/source-domain and HEAD",
+    "parent environment"
+  ],
+  "required_platform": "Windows",
+  "required_engine_hash": "89cea143987d564363e15d207438530651d943ac"
+}

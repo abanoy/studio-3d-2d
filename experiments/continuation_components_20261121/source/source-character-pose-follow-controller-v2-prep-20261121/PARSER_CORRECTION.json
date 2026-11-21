@@ -1,0 +1,295 @@
+{
+  "format": "has_part_follow_controller_annotation_correction_2",
+  "status": "SOURCE_ONLY_UNRUN",
+  "observed_parse_failures": 5,
+  "source_discovered_additional_annotation": 1,
+  "changed_lines": [
+    {
+      "path": "payload/src/part_pose_follow_controller.gd",
+      "line": 157,
+      "before": "\tvar wanted:=Transform3D(Basis(Timeline.quaternion(transform.rotation_xyzw)).scaled(Vector3.ONE*transform.scale),Timeline.vector(transform.position))*actor.base_root",
+      "after": "\tvar wanted: Transform3D=Transform3D(Basis(Timeline.quaternion(transform.rotation_xyzw)).scaled(Vector3.ONE*transform.scale),Timeline.vector(transform.position))*actor.base_root",
+      "measured_parser_failure": false
+    },
+    {
+      "path": "payload/tests/part_pose_follow_controller_unit.gd",
+      "line": 88,
+      "before": "\tvar initial:=raw(bsk);var master_initial:=raw(ask);var ad:=a.data.duplicate(true);var bd:=b.data.duplicate(true)",
+      "after": "\tvar initial:=raw(bsk);var master_initial:=raw(ask);var ad: Dictionary=a.data.duplicate(true);var bd: Dictionary=b.data.duplicate(true)",
+      "measured_parser_failure": true
+    },
+    {
+      "path": "payload/tests/part_pose_follow_controller_unit.gd",
+      "line": 103,
+      "before": "\tvar authored:=raw(bsk);var master_authored:=raw(ask);var target_data:=b.data.duplicate(true);var master_data:=a.data.duplicate(true)",
+      "after": "\tvar authored:=raw(bsk);var master_authored:=raw(ask);var target_data: Dictionary=b.data.duplicate(true);var master_data: Dictionary=a.data.duplicate(true)",
+      "measured_parser_failure": true
+    },
+    {
+      "path": "payload/tests/part_pose_follow_controller_unit.gd",
+      "line": 155,
+      "before": "\tvar history_size:=history.get_history_count();var refined_data:=b.data.duplicate(true)",
+      "after": "\tvar history_size:=history.get_history_count();var refined_data: Dictionary=b.data.duplicate(true)",
+      "measured_parser_failure": true
+    }
+  ],
+  "exact_reverse_recovers_v1_sources": true,
+  "math_byte_exact": true,
+  "assertions_or_predicates_changed": false,
+  "all_three_candidate_inferred_declarations_audited": true,
+  "audit_conclusion": "Remaining := declarations originate from concrete literals/constructors, explicit casts, typed own-return functions, or typed engine API returns. This is source review only; Root check-only remains required.",
+  "candidate_scripts": [
+    {
+      "path": "payload/src/part_pose_follow_controller.gd",
+      "bytes": 19376,
+      "sha256": "60a34ac665c0f3e3cd24f5c401adcade44bd0946af2cd909be73f04bf08000b5",
+      "inferred_declarations": [
+        {
+          "line": 6,
+          "source": "const PHASE:=\"authored_fk_ready_before_secondary\""
+        },
+        {
+          "line": 7,
+          "source": "const EPS:=0.00002"
+        },
+        {
+          "line": 15,
+          "source": "var master_rest_frame:=Transform3D.IDENTITY"
+        },
+        {
+          "line": 19,
+          "source": "var last_epoch:=-1"
+        },
+        {
+          "line": 20,
+          "source": "var disposed:=false"
+        },
+        {
+          "line": 21,
+          "source": "var stats:={\"captures\":0,\"applications\":0,\"pose_writes\":0,\"restores\":0,\"repeated_noops\":0}"
+        },
+        {
+          "line": 56,
+          "source": "var progressed:=false"
+        },
+        {
+          "line": 67,
+          "source": "var a:=inventory(master_actor);var b:=inventory(target_actor)"
+        },
+        {
+          "line": 77,
+          "source": "var seen:={}"
+        },
+        {
+          "line": 102,
+          "source": "var simulator:=child as PhysicalBoneSimulator3D"
+        },
+        {
+          "line": 107,
+          "source": "func binding_error(target_only:=false) -> String:"
+        },
+        {
+          "line": 133,
+          "source": "var result:=[]"
+        },
+        {
+          "line": 145,
+          "source": "var locals:=[]"
+        },
+        {
+          "line": 162,
+          "source": "var expected:=Transform3D(Basis(base.basis.get_rotation_quaternion()*Timeline.quaternion(delta.rotation_xyzw))*Basis.from_scale(base.basis.get_scale()),base.origin+Timeline.vector(delta.position))"
+        },
+        {
+          "line": 167,
+          "source": "var why:=binding_error()"
+        },
+        {
+          "line": 173,
+          "source": "var ap:=poses(a);var bp:=poses(b);var ag:=[];var bg:=[]"
+        },
+        {
+          "line": 176,
+          "source": "var locals:=[]"
+        },
+        {
+          "line": 193,
+          "source": "var rebuilt:=Transform3D(Basis(base.basis.get_rotation_quaternion()*rotation)*Basis.from_scale(base.basis.get_scale()),base.origin+offset)"
+        },
+        {
+          "line": 201,
+          "source": "var why:=binding_error()"
+        },
+        {
+          "line": 207,
+          "source": "var before:=poses(b)"
+        },
+        {
+          "line": 219,
+          "source": "var solved: Array=[];solved.resize(before.size());var desired:={};var staged_channels:={}"
+        },
+        {
+          "line": 234,
+          "source": "b.force_update_all_bone_transforms();var actual:=poses(b);var good:=true"
+        },
+        {
+          "line": 248,
+          "source": "var why:=binding_error(true)"
+        },
+        {
+          "line": 251,
+          "source": "var sk: Skeleton3D=target_rig.skeleton;var current:=poses(sk)"
+        },
+        {
+          "line": 254,
+          "source": "var count:=owned.size()"
+        },
+        {
+          "line": 263,
+          "source": "var released:=release_owned()"
+        }
+      ]
+    },
+    {
+      "path": "payload/src/part_pose_follow_math.gd",
+      "bytes": 1454,
+      "sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf",
+      "inferred_declarations": []
+    },
+    {
+      "path": "payload/tests/part_pose_follow_controller_unit.gd",
+      "bytes": 19878,
+      "sha256": "f1c0d7bf44dcda99fef9406141db8bf53abc8ff579255b02a48385e4a5f26acf",
+      "inferred_declarations": [
+        {
+          "line": 4,
+          "source": "var checks:=0"
+        },
+        {
+          "line": 5,
+          "source": "var failures:=0"
+        },
+        {
+          "line": 17,
+          "source": "var sk:=Skeleton3D.new();sk.name=\"Rig\""
+        },
+        {
+          "line": 27,
+          "source": "var bundle:=Node3D.new();root.add_child(bundle);fixtures.append(bundle)"
+        },
+        {
+          "line": 33,
+          "source": "var bundle:=Node3D.new();root.add_child(bundle);fixtures.append(bundle)"
+        },
+        {
+          "line": 34,
+          "source": "var parents:=[];var names:=[];var am:=[];var bm:=[];var pairs:=[]"
+        },
+        {
+          "line": 44,
+          "source": "var result:=[]"
+        },
+        {
+          "line": 66,
+          "source": "var f:=fixture();var a: RefCounted=f.a;var b: RefCounted=f.b;var ask: Skeleton3D=f[\"as\"];var bsk: Skeleton3D=f.bs"
+        },
+        {
+          "line": 75,
+          "source": "var user_modifier:=PhysicalBoneSimulator3D.new();user_modifier.active=false;bsk.add_child(user_modifier)"
+        },
+        {
+          "line": 79,
+          "source": "var nested:=fixture();nested.b.root.reparent(nested.a.root)"
+        },
+        {
+          "line": 88,
+          "source": "var initial:=raw(bsk);var master_initial:=raw(ask);var ad: Dictionary=a.data.duplicate(true);var bd: Dictionary=b.data.duplicate(true)"
+        },
+        {
+          "line": 97,
+          "source": "var q:=Quaternion(Vector3.BACK,PI/2.)"
+        },
+        {
+          "line": 103,
+          "source": "var authored:=raw(bsk);var master_authored:=raw(ask);var target_data: Dictionary=b.data.duplicate(true);var master_data: Dictionary=a.data.duplicate(true)"
+        },
+        {
+          "line": 104,
+          "source": "var history:=UndoRedo.new();var version:=history.get_version()"
+        },
+        {
+          "line": 114,
+          "source": "var derived:=raw(bsk);var derived_channels: Dictionary=c.channels.duplicate(true)"
+        },
+        {
+          "line": 120,
+          "source": "var expected_tip:=Transform3D(Basis(derived[0][1])*Basis.from_scale(derived[0][2]),derived[0][0])"
+        },
+        {
+          "line": 121,
+          "source": "var expected_anchor:=Transform3D(Basis(derived[2][1])*Basis.from_scale(derived[2][2]),derived[2][0])"
+        },
+        {
+          "line": 133,
+          "source": "var before_global_first:=raw(bsk)"
+        },
+        {
+          "line": 155,
+          "source": "var history_size:=history.get_history_count();var refined_data: Dictionary=b.data.duplicate(true)"
+        },
+        {
+          "line": 157,
+          "source": "c.release_owned();var undone:=history.undo()"
+        },
+        {
+          "line": 159,
+          "source": "c.release_owned();var redone:=history.redo()"
+        },
+        {
+          "line": 162,
+          "source": "var before_repeat_global:=raw(bsk);var repeat_writes: int=c.stats.pose_writes"
+        },
+        {
+          "line": 168,
+          "source": "var foreign:=bsk.get_bone_pose_position(2)+Vector3(.1,0,0);bsk.set_bone_pose_position(2,foreign);bsk.force_update_all_bone_transforms()"
+        },
+        {
+          "line": 169,
+          "source": "var conflict:=raw(bsk)"
+        },
+        {
+          "line": 173,
+          "source": "var deleted:=fixture();deleted.a.apply(0,true);deleted.b.apply(0,true)"
+        },
+        {
+          "line": 175,
+          "source": "var delete_authored:=raw(deleted.bs)"
+        },
+        {
+          "line": 181,
+          "source": "var late:=fixture();late.a.apply(0,true);late.b.apply(0,true)"
+        },
+        {
+          "line": 183,
+          "source": "var before_late:=raw(late.bs);capture(lc,1);late.b.bones[\"Rig::Tip\"].index=3"
+        },
+        {
+          "line": 187,
+          "source": "var context:=fixture();context.a.apply(0,true);context.b.apply(0,true)"
+        },
+        {
+          "line": 189,
+          "source": "var context_rest:=raw(context.bs)"
+        },
+        {
+          "line": 202,
+          "source": "var large:=capacity_fixture(54);large.a.apply(0,true);large.b.apply(0,true)"
+        },
+        {
+          "line": 203,
+          "source": "var large_before:=raw(large.bs);var large_data: Dictionary=large.b.data.duplicate(true)"
+        }
+      ]
+    }
+  ]
+}

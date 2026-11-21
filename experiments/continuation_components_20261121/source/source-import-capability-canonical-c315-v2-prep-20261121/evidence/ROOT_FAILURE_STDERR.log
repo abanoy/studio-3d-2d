@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-import-info-canonical267-1795267340933340400\Studio\tests\verify_import_capability.py", line 195, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-import-info-canonical267-1795267340933340400\Studio\tests\verify_import_capability.py", line 193, in main
+    if primary is not None:raise primary
+                           ^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-import-info-canonical267-1795267340933340400\Studio\tests\verify_import_capability.py", line 157, in main
+    run_case(root,'legacy43',cpu,'tests/import_capability_summary_unit.gd','IMPORT_CAPABILITY_SUMMARY ',43,[],True,result,o.isolated_display)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-import-info-canonical267-1795267340933340400\Studio\tests\verify_import_capability.py", line 120, in run_case
+    need(proof.get('format')=='studio_private_desktop_1' and type(proof.get('exit')) is int and proof['exit']==row['launcher_exit'] and row['private_resources_closed'] and (headless or proof.get('private_window_seen') is True),'Private Job/window closure proof failed')
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-import-info-canonical267-1795267340933340400\Studio\tests\verify_camera_interactions.py", line 20, in need
+    raise RuntimeError(message)
+RuntimeError: Private Job/window closure proof failed

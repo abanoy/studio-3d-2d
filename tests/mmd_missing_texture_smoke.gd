@@ -16,6 +16,8 @@ func run() -> void:
 	DirAccess.make_dir_recursive_absolute(folder)
 	var app = load("res://main.tscn").instantiate()
 	app.recovery_root = folder.path_join("recovery")
+	root.size = Vector2i(1400,900)
+	root.gui_embed_subwindows = true
 	root.add_child(app)
 	await process_frame
 	app.autosave_enabled.button_pressed = false
@@ -39,14 +41,27 @@ func run() -> void:
 	while app.source_import.pid > 0: await process_frame
 	var warning := false
 	var closed_dialog: WeakRef
-	for child in app.get_children():
-		if child is AcceptDialog and child.title == "Imported with limitations":
-			warning = child.visible and not child.exclusive and child.dialog_text.begins_with("Missing texture files: 1\n") and meta.absent in child.dialog_text
-			closed_dialog = weakref(child)
-			child.close_requested.emit()
-	await process_frame
-	await process_frame
-	warning = warning and closed_dialog.get_ref() == null
+	var info = app.pose_editor.import_capabilities
+	if app.renderer.world_runtime.instances.size() == 1:
+		app.world_selection.select_entity(app.last_import_id,false)
+		var imported: RefCounted = app.renderer.active_model()
+		var report: Dictionary = info.report_for(imported)
+		var before: Dictionary = app.current_world().duplicate(true)
+		var before_keys: Array = app.keys.duplicate(true)
+		var before_history: int = app.history.size()
+		info.open(false)
+		warning = meta.absent in report.get("missing_textures",[]) and report == imported.data.metadata.native_parameters
+		warning = warning and is_instance_valid(info.window) and info.matches()
+		if is_instance_valid(info.window):
+			warning = warning and not info.window.exclusive and not info.window.unresizable
+			warning = warning and ("Missing texture: "+str(meta.absent)) in info.summary_text.text
+			warning = warning and "Restore the named texture files beside the original model, then import again." in info.summary_text.text
+			closed_dialog = weakref(info.window)
+			info.window.close_requested.emit()
+		await process_frame
+		await process_frame
+		warning = warning and closed_dialog != null and closed_dialog.get_ref() == null
+		warning = warning and app.current_world() == before and app.keys == before_keys and app.history.size() == before_history
 	if not warning or app.renderer.world_runtime.instances.size() != 1:
 		print("Import failed: ", app.status.text, " warning=", warning)
 		app.free()

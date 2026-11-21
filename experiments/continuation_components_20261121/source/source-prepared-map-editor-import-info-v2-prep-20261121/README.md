@@ -1,0 +1,9 @@
+# Prepared-map Import info composition, version2
+
+SOURCE ONLY / UNRUN. The original unmodified-c315 map fixture actually passed64 checks; its frozen66a091 source is preserved under bases/v1 and the exact Root result is copied under evidence. That pass is not composition credit for this successor.
+
+This successor overlays exactly five frozen production sources from the canonical c315 ImportInfo candidate, preserving each source size/SHA and original baseline. Only the fixture request-context capture and report-view assertion change: request_context=import_context mirrors actual SourceImport.launch; the old modal-warning assertion becomes a persistent resizable nonexclusive Import info widget owning the exact report and displaying every nonzero omitted-light category. info.open(false) constructs the actual headless report widget without native popup or pixel claims. Same32checks per map; all geometry/light inventories, managed cache, input preservation, UndoRedo and lighting-state checks remain. The status relay is byte-exact and still never converts.
+
+Runtime closure329 =322 unchanged current files +five production overlay targets +two map test additions. CURRENT_BASELINE separately preserves all325 current files, including the three replaced only inside owned runtimes. With three private asset copies plus config and override, each owned runtime has334 input files. Use unchanged private input manifest and exact Windows engine/Python pins. Root first checks parsing, then runs two fresh32-check headless cases through retained Job ownership.
+
+No Main/original/retained-output changes, converter/SDK execution, GPU rendering, artist approval, completed Full or adoption is claimed. The exact real spaceship fixture remains ttt_tiny_spaceship_v3. Current c31564PASS remains independently valid; composed64 stays UNRUN until Root executes this successor.

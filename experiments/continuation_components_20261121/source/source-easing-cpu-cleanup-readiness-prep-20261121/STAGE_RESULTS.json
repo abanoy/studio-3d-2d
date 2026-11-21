@@ -1,0 +1,247 @@
+{
+  "format": "has_easing_cpu_retained_result_scopes_1",
+  "reports": [
+    {
+      "stage": "has-easing-headless-1795254145851799500",
+      "result_path": "PUBLIC_RESULT.json",
+      "bytes": 13493,
+      "sha256": "3429989e49fea8e7bc712c9615e87bac6d0b89b726b7d1a2ce2de26c0e0bd3c8",
+      "status": "PASS",
+      "checks": 69,
+      "case_summaries": [
+        {
+          "name": "math",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 24,
+            "failures": 0,
+            "native_or_gpu_started": false
+          }
+        },
+        {
+          "name": "editor",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "camera_render_or_export_tested": false,
+            "checks": 45,
+            "failures": 0,
+            "native_asset_tested": false,
+            "real_app_undo_tested": false
+          }
+        }
+      ],
+      "graphics_or_native_started": false,
+      "application_adopted": false
+    },
+    {
+      "stage": "has-easing435-app-cpu-1795254384845561100",
+      "result_path": "PUBLIC_RESULT.json",
+      "bytes": 2094,
+      "sha256": "d9e5a17ace1c2d86a42f485444f0b7ca1a6491706c487ed70882041b5e45fe8f",
+      "status": "PASS",
+      "checks": 88,
+      "case_summaries": [
+        {
+          "name": "classic-simple",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 22,
+            "failures": 0,
+            "headless_only": true,
+            "pixels_or_export_tested": false,
+            "real_app_undo_tested": true
+          }
+        },
+        {
+          "name": "classic-advanced",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 22,
+            "failures": 0,
+            "headless_only": true,
+            "pixels_or_export_tested": false,
+            "real_app_undo_tested": true
+          }
+        },
+        {
+          "name": "neon-simple",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 22,
+            "failures": 0,
+            "headless_only": true,
+            "pixels_or_export_tested": false,
+            "real_app_undo_tested": true
+          }
+        },
+        {
+          "name": "neon-advanced",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 22,
+            "failures": 0,
+            "headless_only": true,
+            "pixels_or_export_tested": false,
+            "real_app_undo_tested": true
+          }
+        }
+      ],
+      "graphics_or_native_started": false,
+      "application_adopted": false
+    },
+    {
+      "stage": "has-easing435-app-cpu-1795254695259497400",
+      "result_path": "PUBLIC_RESULT.json",
+      "bytes": 815,
+      "sha256": "543e3ad5bc36986b175bf84635885e827ede12f6c7675aa691a3ba4385ee08f8",
+      "status": "FAIL",
+      "checks": 0,
+      "case_summaries": [
+        {
+          "name": "classic-simple",
+          "exit": 1,
+          "child_reaped": true
+        }
+      ],
+      "graphics_or_native_started": false,
+      "application_adopted": false
+    },
+    {
+      "stage": "has-easing435-app-cpu-1795254761995523000",
+      "result_path": "PUBLIC_RESULT.json",
+      "bytes": 2095,
+      "sha256": "50dc79413052fec470f6d82ed3c75b000007e35d30928f25fc846ba27418b73d",
+      "status": "PASS",
+      "checks": 96,
+      "case_summaries": [
+        {
+          "name": "classic-simple",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 24,
+            "failures": 0,
+            "headless_only": true,
+            "pixels_or_export_tested": false,
+            "real_app_undo_tested": true
+          }
+        },
+        {
+          "name": "classic-advanced",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 24,
+            "failures": 0,
+            "headless_only": true,
+            "pixels_or_export_tested": false,
+            "real_app_undo_tested": true
+          }
+        },
+        {
+          "name": "neon-simple",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 24,
+            "failures": 0,
+            "headless_only": true,
+            "pixels_or_export_tested": false,
+            "real_app_undo_tested": true
+          }
+        },
+        {
+          "name": "neon-advanced",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 24,
+            "failures": 0,
+            "headless_only": true,
+            "pixels_or_export_tested": false,
+            "real_app_undo_tested": true
+          }
+        }
+      ],
+      "graphics_or_native_started": false,
+      "application_adopted": false
+    },
+    {
+      "stage": "has-easing-headless-1795254831934151300",
+      "result_path": "PUBLIC_RESULT.json",
+      "bytes": 12486,
+      "sha256": "55f0f3d98f24efabff29389dc6560ed7b6cde45e4087276c7ef2d8f02ffe086c",
+      "status": "PASS",
+      "checks": 69,
+      "case_summaries": [
+        {
+          "name": "math",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "checks": 24,
+            "failures": 0,
+            "native_or_gpu_started": false
+          }
+        },
+        {
+          "name": "editor",
+          "exit": 0,
+          "child_reaped": true,
+          "result": {
+            "application_adopted": false,
+            "camera_render_or_export_tested": false,
+            "checks": 45,
+            "failures": 0,
+            "native_asset_tested": false,
+            "real_app_undo_tested": false
+          }
+        }
+      ],
+      "graphics_or_native_started": false,
+      "application_adopted": false
+    },
+    {
+      "stage": "has-easing435-graphics-parse-1795258322734840400",
+      "result_path": "RESULT.json",
+      "bytes": 370,
+      "sha256": "08962388ce8b1c376d8df622f7328f64e501b72ca811c187f5112d39965e5340",
+      "status": "PASS",
+      "checks": null,
+      "case_summaries": [],
+      "graphics_or_native_started": false,
+      "application_adopted": false
+    },
+    {
+      "stage": "has-easing-c315-graphics-parse-1795260866931895900",
+      "result_path": "RESULT.json",
+      "bytes": 687,
+      "sha256": "a9c2e3442df59649d5123fc976271171ae1a7ee9ee3a2a66d4d4080a0622794d",
+      "status": "PASS",
+      "checks": null,
+      "case_summaries": [],
+      "graphics_or_native_started": false,
+      "application_adopted": false
+    }
+  ],
+  "failed_and_partial_result_statuses_not_rewritten": true,
+  "parse_only_zero_assertions_not_graphical_qualification": true,
+  "current_process_closure_not_inferred_from_old_results": true
+}

@@ -1,0 +1,16 @@
+PASS exact_four_inputs_exclude_only_known_zero_lock
+PASS nonzero_lock_refused
+PASS boolean_zero_lock_refused
+PASS different_lock_name_refused
+PASS wrong_empty_lock_hash_refused
+PASS lock_directory_type_refused
+PASS lock_hardlink_refused
+PASS extra_payload_refused
+PASS missing_project_refused
+PASS asset_name_hash_mismatch_refused
+PASS copied_lock_payload_refused
+PASS foreign_source_refused
+PASS zero_asset_bytes_refused
+PASS boolean_asset_bytes_refused
+PASS oversized_asset_refused
+READER_HANDOFF_RESULT {"checks": 15, "failures": 0, "synthetic_only": true, "native_inputs_read": false}

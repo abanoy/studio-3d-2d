@@ -1,0 +1,99 @@
+{
+  "format": "has_junko_composed_independent_readback_1",
+  "author_role": "read-only independent evidence inspection; Root executed all controls",
+  "cpu_runs": [
+    {
+      "label": "bridge32",
+      "checks": 32,
+      "status": "PASS",
+      "reaped": true,
+      "pass_lines": 32,
+      "stderr_empty": true,
+      "source_sha256": "c795bf11e555adf279921c6bc1daa930fbce8a98b3096df0a1c1930fbfacef8d"
+    },
+    {
+      "label": "handoff15",
+      "checks": 15,
+      "status": "PASS",
+      "reaped": true,
+      "pass_lines": 15,
+      "stderr_empty": true,
+      "source_sha256": "8ee162e3eea72927b8f61849a42b4c414893562138ecedcee6fe297215f629a1"
+    },
+    {
+      "label": "handoff_and_schema25",
+      "checks": 25,
+      "status": "PASS",
+      "reaped": true,
+      "pass_lines": 25,
+      "stderr_empty": true,
+      "source_sha256": "4fae719478906dd039a4feb65822881d27b292129d51761de03aa1fefb735331"
+    }
+  ],
+  "native_cases": [
+    {
+      "label": "unit58",
+      "checks": 58,
+      "status": "PASS",
+      "pass_lines": 58,
+      "raw_case_equals_result": true,
+      "job_closed_active_zero": true,
+      "graphical": false
+    },
+    {
+      "label": "controls38",
+      "checks": 38,
+      "status": "PASS",
+      "pass_lines": 38,
+      "raw_case_equals_result": true,
+      "job_closed_active_zero": true,
+      "graphical": false
+    },
+    {
+      "label": "reader9",
+      "checks": 9,
+      "status": "PASS",
+      "pass_lines": 9,
+      "raw_case_equals_result": true,
+      "job_closed_active_zero": true,
+      "graphical": false
+    }
+  ],
+  "prior_native_assertions": 96,
+  "fresh_native_assertions": 9,
+  "composed_native_assertions": 105,
+  "fresh_105_batch_claimed": false,
+  "policy15_is_subset_of_policy25": true,
+  "original_fail96_status_preserved": true,
+  "original_source_and_output_inputs_mutated": false,
+  "raw_synthetic_glb_or_has_copied": false,
+  "application_adopted": false,
+  "native_alignment_qualified": false,
+  "bone_following_qualified": false,
+  "Full_qualification_claimed": false,
+  "strict_native_marker_and_error_checks": [
+    {
+      "label": "unit58",
+      "marker_exact": true,
+      "no_strict_engine_error": true,
+      "saved_result_equals_marker": "unit has no saved case by design"
+    },
+    {
+      "label": "controls38",
+      "marker_exact": true,
+      "no_strict_engine_error": true,
+      "saved_result_equals_marker": true
+    },
+    {
+      "label": "reader9",
+      "marker_exact": true,
+      "no_strict_engine_error": true,
+      "saved_result_equals_marker": true
+    }
+  ],
+  "original_runtime_seal_independent_readback": {
+    "files": 3327,
+    "sha_and_six_Node_profile_identity_fields_match": true,
+    "failures": 0
+  }
+}

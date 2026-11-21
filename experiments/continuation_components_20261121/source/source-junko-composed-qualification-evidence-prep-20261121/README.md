@@ -1,0 +1,11 @@
+# Junko composed synthetic qualification
+
+Root executed and passed58 unit +38 headless app/World/history controls, then9 fresh-process reader assertions. This is105 COMPOSED assertions across the original96 run and one reader-only successor. It is not a fresh105 batch, a new Full pass, actual six-MDL alignment, bone following, graphical input, or application adoption. Those flags remain false in the retained exact results.
+
+This packet keeps safe raw stdout/stderr/engine logs, exact case results, gated requests, launch records, wrapper receipts, Job closure receipts and coordinator results. Independent readback verified all3 exact markers/PASS counts/results, no strict engine error, all3 reaped/closed Jobs with active0, and all3327 original runtime byte hashes plus six Node-profile identity fields. Root's native64/rawmode/source/output/environment preservation is retained in the exact result evidence. Large native identity maps stay external and pinned.
+
+The original run remains FAIL96 because copying the empty persistent project.json.lock was refused. The initial device-profile0-assertion refusal is summarized with its full original report pinned externally. The first reader successor also refused before any Job because it incorrectly expected the print-only unit's case directory. That refusal existed only in Root's tool transcript: its exact text is recorded with Root-reported provenance, not represented as a persisted stdout/stderr file. Neither refusal nor partial failure was rewritten.
+
+CPU-only bridge32, original handoff15 and revised handoff/schema25 raw logs/results are preserved separately. The15 tests are a subset of25 and are not counted as40 distinct policy controls. No author/reviewer runtime execution is claimed.
+
+No synthetic GLB, HAS, model asset, artwork, source-model vertex/weight arrays or image is copied here. Runtime handoff metadata and external hashes remain; raw model payloads stay in the owned local stages. EVIDENCE_ORIGINS pins every copied raw text artifact; ARTIFACTS_EXTERNAL pins omitted original metadata and source closures. This compact packet references those retained external artifacts rather than claiming complete standalone rerun recoverability.

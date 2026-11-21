@@ -1,0 +1,137 @@
+{
+  "format": "has_import_capability_c315_qualification_inputs_1",
+  "revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "files": [
+    {
+      "path": "qualified_ui_host.py",
+      "bytes": 21967,
+      "sha256": "dfb0cf83cef6dc455d5da9f1c1631f1f0ee053b6e4a646c9045e90e7e9967a3e"
+    },
+    {
+      "path": "qualified_helpers.py",
+      "bytes": 26455,
+      "sha256": "990c37ddca7b1301613f5efc5a7e5a30ce2723369112ef274ee78d2d4dc34087"
+    },
+    {
+      "path": "source1103.py",
+      "bytes": 17881,
+      "sha256": "e32e8b70696fb355eb624424cab0222a51f80041ac14563df9328557b7e387c3"
+    },
+    {
+      "path": "BASELINE_SOURCE1103.json",
+      "bytes": 284660,
+      "sha256": "a2fd8aa45d82e5820a30686c84247f6b1f69833b7e45b7fe5c35f2d1a309f062"
+    },
+    {
+      "path": "FULL182_GROUP_CONTRACT.json",
+      "bytes": 5673,
+      "sha256": "83c97507425ce7e886044fdb934711ef50fc55b95fd1f804f0da09cada0eccc6"
+    },
+    {
+      "path": "offline_reader_helpers.py",
+      "bytes": 22293,
+      "sha256": "8890b6ce7ace4bc05adee05c575c021d1c906e3375f5736ae4367f44c50dbeb5"
+    },
+    {
+      "path": "PATCHES.json",
+      "bytes": 4902,
+      "sha256": "5de9d805068f76f33efa48673b1e73a9943a398fe9f83db149a809d4763a0ca8"
+    },
+    {
+      "path": "payload/src/pose_editor.gd",
+      "bytes": 71326,
+      "sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565"
+    },
+    {
+      "path": "payload/src/world_selection.gd",
+      "bytes": 32551,
+      "sha256": "4aad0b860df30e598f560c784308380fd217e7ac02fe70467456125f20cb3c3f"
+    },
+    {
+      "path": "payload/src/source_import.gd",
+      "bytes": 18129,
+      "sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2"
+    },
+    {
+      "path": "payload/src/import_capability_summary.gd",
+      "bytes": 9894,
+      "sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81"
+    },
+    {
+      "path": "payload/src/import_capability_editor.gd",
+      "bytes": 6027,
+      "sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35"
+    },
+    {
+      "path": "payload/tests/import_capability_summary_unit.gd",
+      "bytes": 12601,
+      "sha256": "d1ad8bea5f2eadbe3a0c242d444eb831aace3fc30900e570befb5d6c001ad4db"
+    },
+    {
+      "path": "payload/tests/import_capability_app_headless.gd",
+      "bytes": 9369,
+      "sha256": "e291293f7f778333a76e3507429feef0b7b863bbd201ae3835cbc7cfe9f27426"
+    },
+    {
+      "path": "payload/tests/import_capability_gui_smoke.gd",
+      "bytes": 4818,
+      "sha256": "7dd901336c0c91b633f69dc80581a968d852d424035199f3380ebd75420195f2"
+    }
+  ],
+  "targets": [
+    {
+      "path": "src/pose_editor.gd",
+      "bytes": 71326,
+      "sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "operation": "replace",
+      "base_bytes": 71033,
+      "base_sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "bytes": 32551,
+      "sha256": "4aad0b860df30e598f560c784308380fd217e7ac02fe70467456125f20cb3c3f",
+      "operation": "replace",
+      "base_bytes": 32037,
+      "base_sha256": "da1b36461976a521b27592bec818600937057522c783d3500c293448735be4cf"
+    },
+    {
+      "path": "src/source_import.gd",
+      "bytes": 18129,
+      "sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2",
+      "operation": "replace",
+      "base_bytes": 18620,
+      "base_sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d"
+    },
+    {
+      "path": "src/import_capability_summary.gd",
+      "bytes": 9894,
+      "sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81",
+      "operation": "new"
+    },
+    {
+      "path": "src/import_capability_editor.gd",
+      "bytes": 6027,
+      "sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35",
+      "operation": "new"
+    },
+    {
+      "path": "tests/import_capability_summary_unit.gd",
+      "bytes": 12601,
+      "sha256": "d1ad8bea5f2eadbe3a0c242d444eb831aace3fc30900e570befb5d6c001ad4db",
+      "operation": "new"
+    },
+    {
+      "path": "tests/import_capability_app_headless.gd",
+      "bytes": 9369,
+      "sha256": "e291293f7f778333a76e3507429feef0b7b863bbd201ae3835cbc7cfe9f27426",
+      "operation": "new"
+    },
+    {
+      "path": "tests/import_capability_gui_smoke.gd",
+      "bytes": 4818,
+      "sha256": "7dd901336c0c91b633f69dc80581a968d852d424035199f3380ebd75420195f2",
+      "operation": "new"
+    }
+  ]
+}

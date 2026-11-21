@@ -1,0 +1,36 @@
+{
+  "format": "has_import_info_full_receipt_targets_1",
+  "status": "SOURCE_API_GO_UNRUN",
+  "baseline_revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "targets": [
+    {
+      "path": "experiments/reference_body_20261120/run_full.py",
+      "operation": "replace",
+      "base_scope": "current c315 Main",
+      "bytes": 16371,
+      "sha256": "417b510a19df069c4af3eeaa5951ef1ef95541f4be3158732f3ab64fae6e2037",
+      "base_bytes": 8711,
+      "base_sha256": "74231a770fa282aee11326b05661063c2662c261bad33c1c58d63b696a018f34"
+    },
+    {
+      "path": "experiments/reference_body_20261120/test_receipt_provenance.py",
+      "operation": "replace",
+      "base_scope": "current c315 Main",
+      "bytes": 18592,
+      "sha256": "5f91f493a98ecec7ad4c1eae0b05e419bc9f18f3ed2471ee5e3c408cfa974524",
+      "base_bytes": 10529,
+      "base_sha256": "e7737aab7387038623c1e8ffd69ed3290f54ab2481fdc7e9d8423baea4e0fb83"
+    },
+    {
+      "path": "tests/verify_import_capability.py",
+      "operation": "replace",
+      "base_scope": "after canonical v2 overlay e4f98030",
+      "bytes": 17410,
+      "sha256": "74519b81bb7fd65940ce73a4e24f06d21e0d445cf55a304b781460294d45591d",
+      "base_bytes": 17154,
+      "base_sha256": "e4f980300efeb86a884b60967a28fdd2ed6a7763c73ee096499152dd3e98fe81"
+    }
+  ],
+  "new_functional_paths": 0,
+  "expected_functional_count_after_canonical_six_new_files": 1109
+}

@@ -1,0 +1,69 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS real Skeleton API fixture remains headless
+PASS identical names remain owned by two distinct Skeletons
+PASS Model inventory captures actual imported base pose instead of Skeleton rest
+PASS synthetic actors use actual valid Model records
+PASS explicit runtime pairs create only a synthetic controller
+PASS even an inactive user-added simulator is outside the fixture-owned phase
+PASS native source-index admission remains explicitly unsupported
+PASS nested actor roots cannot double inherit the master object transform
+PASS one actor cannot alias both owners
+PASS duck-typed substitute is not admitted as the actual Model script
+PASS missing runtime ID is never guessed from a nearby name
+PASS duplicate target ownership refuses
+PASS target procedural ownership excludes a followed channel
+PASS master procedural ownership is also explicit
+PASS unknown procedural ID cannot silently waive ownership
+PASS both actual applied Models admit their authored frame
+PASS following at master rest leaves both actual rigs unchanged
+PASS same captured epoch performs no second pose write or accumulation
+PASS Off restores exact captured position quaternion and scale channels
+PASS unsupported secondary phase refuses capture
+PASS stale epochs cannot reuse a released snapshot
+PASS changed master data without Model.apply detects stale dependency order
+PASS capture verifies current Models independent of sibling evaluation order
+PASS actual controller writes exactly the two linked target bones
+PASS actual target anchor follows the independently expected translated quarter-turn
+PASS actual child world goal keeps its different rest offset
+PASS linked child does not apply its linked parent's master delta twice
+PASS unlinked loose child keeps its own exact local channels while its anchor moves
+PASS derived following never writes master channels or either authored Model record
+PASS derived evaluation creates no Undo action or recorded key
+PASS inspection channels remain owned by explicit target IDs only
+PASS Off restores the target's refined pre-follow pose exactly
+PASS derived base-relative channels roundtrip through actual Model.apply
+PASS actual Model roundtrip retains imported per-bone base scale
+PASS ordinary authored Model.apply restores its own channels after the roundtrip probe
+PASS same explicit bundle root can move rotate and scale once
+PASS actual Skeleton result receives the common bundle transform exactly once
+PASS repeated moved-bundle frame still performs no additional writes
+PASS moved-bundle Off still restores local authored channels
+PASS new epoch snapshots both ready actors
+PASS master global-only override after capture refuses before first writes
+PASS target global-only override after capture also refuses before first writes
+PASS master changes after capture refuse before any target write
+PASS released failed epoch can recapture under a new epoch
+PASS actual SecondaryLive-style live_pose entry refuses the unsupported phase
+PASS interactive preview overrides need an explicit integration adapter
+PASS fixture marker admission remains mandatory across epochs
+PASS native parameters cannot enter through an existing fixture controller
+PASS real UndoRedo owns refinement while follow remains a derived layer
+PASS Undo reapplies authored target data before a fresh following epoch
+PASS Redo restores its own refinement without recording followed channels
+PASS follow adds no hidden history entry or pose key during UndoRedo
+PASS master global-only writer cannot bypass repeated-epoch no-op
+PASS target global-only writer cannot bypass repeated-epoch no-op
+PASS Off cannot overwrite a new writer and restores no partial subset
+PASS freed target teardown and repeated dispose avoid stale Node access
+PASS master deletion still permits exact target-owned restoration
+PASS master-deleted controller disposes after releasing its target
+PASS late runtime binding drift refuses atomically before either target write
+PASS unrepresentable per-bone scale change is not silently serialized
+PASS actual timeline pose cannot masquerade as a different saved draft context
+PASS explicit edited context follows the actual applied draft rather than timeline rest
+PASS explicit timeline context returns to rest without retaining draft following
+PASS 54 generated explicit bindings exercise the body-dress-sized capacity without native data
+PASS all54 generated channels follow one same-frame delta without accumulating ancestor motion
+PASS 54-channel Off and disposal preserve exact imported/authored locals
+PART_POSE_FOLLOW_CONTROLLER {"SecondaryLive_integration_qualified":false,"actual_Model_API_used":true,"actual_Skeleton3D_used":true,"actual_native_alignment_qualified":false,"actual_native_bindings_qualified":false,"application_adopted":false,"checks":66,"failures":0,"synthetic_only":true}

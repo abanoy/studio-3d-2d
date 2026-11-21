@@ -1,0 +1,35 @@
+{
+  "format": "has_import_capability_canonical_source_validation_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "literal_checks": [
+    {
+      "path": "src/pose_editor.gd",
+      "literalExact": true,
+      "currentMainBaseExact": true
+    },
+    {
+      "path": "src/world_selection.gd",
+      "literalExact": true,
+      "currentMainBaseExact": true
+    },
+    {
+      "path": "src/source_import.gd",
+      "literalExact": true,
+      "currentMainBaseExact": true
+    },
+    {
+      "path": "tests/verify.py",
+      "literalExact": true,
+      "currentMainBaseExact": true
+    }
+  ],
+  "Python_AST_files": 2,
+  "Python_AST_pass": true,
+  "ordinary_wrapper_executed": false,
+  "GUI_executed": false,
+  "uses_prior_Full": false,
+  "expected_component_checks": 267,
+  "expected_cases": 21,
+  "expected_new_group_key": "import_capability",
+  "expected_aggregate_groups_if_unchanged": 183
+}

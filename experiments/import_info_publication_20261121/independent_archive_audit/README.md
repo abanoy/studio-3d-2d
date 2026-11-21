@@ -1,0 +1,7 @@
+# Independent continuation components archive audit
+
+PASS on the externally pinned CONTENTS435641/SHA7c55df063b99ecef1b0634690f884a2233ae9ead6a8218d8fa2f24c8de06b83d. Read-only traversal verified1108payload files/14,700,087bytes plus the inventory;35 complete nested SOURCE_PINS closures and863 declared payload references.34 use files; exactly one historical named format uses entries. No aliases, hardlinks, case collisions, unexpected members, raw-hash failures, invalid UTF8, duplicate/nonfinite JSON, asset/binary extensions/magic, embedded binary strings, private array keys or numeric JSON arrays over32 were found.
+
+The archived final1109-source catalogue equals Root output and every current Main byte length, SHA256 and Git blob identity. README claims match the inspected scalar receipts:267/eight cold pairs, final metadata163/47 policy,53/native wrapper, maps64,129 contact,29 wrappers and21 movies. Separate zero-assertion parse and66 actual synthetic checks remain distinct. The failed c315 Full, initial classifier/startup/viewport/postcheck/schema failures and UNRUN native binding/old Full-gated hosts remain explicit. Formal52/54 and55/62 are unchanged.
+
+Only this independently authored CPU auditor executed. It did not execute archived application programs or change the archive, Main or docs. Output is a compact local peer receipt. Privacy screening plus explicit source/evidence boundary review does not certify every possible confidential phrase in arbitrary source text. No original native/artist, human/device or new Full approval is inferred.

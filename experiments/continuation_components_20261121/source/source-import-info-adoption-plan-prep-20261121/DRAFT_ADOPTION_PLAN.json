@@ -1,0 +1,249 @@
+{
+  "format": "has_import_info_adoption_plan_1",
+  "status": "DRAFT_WAITING_OWNER_NATIVE_COMBINED_QUALIFICATION",
+  "ready_for_execution": false,
+  "revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "functional_sources_before": 1103,
+  "functional_sources_after": 1109,
+  "target_count": 16,
+  "modified_existing": 10,
+  "new_paths": 6,
+  "unrelated_existing_preserved": 1093,
+  "driver_reviewed": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/adopt_import_info_increment_20261121.py",
+    "bytes": 13141,
+    "sha256": "c5091e098051b6169e9740b7af13c061a4ef6a4af2bec2fbb2351a86c45b5285"
+  },
+  "packets": [
+    {
+      "folder": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "sha256": "0cc2240218def0037cfe0377d22a0c22f772805dc07f967c5144b0d0dce66977"
+    },
+    {
+      "folder": "source-import-info-full-receipts-prep-20261121",
+      "sha256": "a460d911b587e17251fa4bade39ec11a3b44f6b5ee47fe2ad31bf9b6fc1c3bdb"
+    },
+    {
+      "folder": "source-import-info-legacy-tests-v2-prep-20261121",
+      "sha256": "879849943eda7f6fb036dd126db81020f49dea162a6f41889148b9ecc760187c"
+    },
+    {
+      "folder": "source-import-info-missing-texture-v3-prep-20261121",
+      "sha256": "57db4f1a5d8ee9951f51716deba0de1cdd2130cd6a3345de0697ef3c3afabcf3"
+    },
+    {
+      "folder": "source-contact-rotation-gesture-v2-prep-20261121",
+      "sha256": "5c8eef061c8e025197899db01292a3d7b5f1a21a6f7c0246e5565c11576a6f51"
+    }
+  ],
+  "targets": [
+    {
+      "path": "src/pose_editor.gd",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/src/pose_editor.gd",
+      "bytes": 71326,
+      "sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "operation": "replace",
+      "base_bytes": 71033,
+      "base_sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/src/world_selection.gd",
+      "bytes": 32551,
+      "sha256": "4aad0b860df30e598f560c784308380fd217e7ac02fe70467456125f20cb3c3f",
+      "operation": "replace",
+      "base_bytes": 32037,
+      "base_sha256": "da1b36461976a521b27592bec818600937057522c783d3500c293448735be4cf"
+    },
+    {
+      "path": "src/source_import.gd",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/src/source_import.gd",
+      "bytes": 18129,
+      "sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2",
+      "operation": "replace",
+      "base_bytes": 18620,
+      "base_sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d"
+    },
+    {
+      "path": "src/import_capability_summary.gd",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/src/import_capability_summary.gd",
+      "bytes": 9894,
+      "sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81",
+      "operation": "new",
+      "base_absent": true
+    },
+    {
+      "path": "src/import_capability_editor.gd",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/src/import_capability_editor.gd",
+      "bytes": 6027,
+      "sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35",
+      "operation": "new",
+      "base_absent": true
+    },
+    {
+      "path": "tests/import_capability_summary_unit.gd",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/tests/import_capability_summary_unit.gd",
+      "bytes": 12639,
+      "sha256": "1159305500262f153bbc72c6d7c0a9cf9c895a9fa77ded2b4f93fab8949b547d",
+      "operation": "new",
+      "base_absent": true
+    },
+    {
+      "path": "tests/import_capability_app_headless.gd",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/tests/import_capability_app_headless.gd",
+      "bytes": 9407,
+      "sha256": "7bee3dafd30e0b2d6a6e45fbf818a4d8840b34a8ff638a989cd58d2f51d389b8",
+      "operation": "new",
+      "base_absent": true
+    },
+    {
+      "path": "tests/import_capability_gui_smoke.gd",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/tests/import_capability_gui_smoke.gd",
+      "bytes": 4886,
+      "sha256": "259c79cb4f60498debeb1c652c082a6c2a76468085b13e624495b24bbf985c79",
+      "operation": "new",
+      "base_absent": true
+    },
+    {
+      "path": "tests/verify_import_capability.py",
+      "packet": "source-import-info-full-receipts-prep-20261121",
+      "payload": "payload/tests/verify_import_capability.py",
+      "bytes": 17410,
+      "sha256": "74519b81bb7fd65940ce73a4e24f06d21e0d445cf55a304b781460294d45591d",
+      "operation": "new",
+      "base_absent": true
+    },
+    {
+      "path": "tests/verify.py",
+      "packet": "source-import-capability-canonical-c315-v2-prep-20261121",
+      "payload": "payload/tests/verify.py",
+      "bytes": 61909,
+      "sha256": "28bc3153a0bd765dfc0366014d5d482ec1f320d5457106333c0db66e2ec61840",
+      "operation": "replace",
+      "base_bytes": 60572,
+      "base_sha256": "e374d97aa7f727644b1554f3a1fd795408d5720a5dbae797ca0327fb99b0b7e9"
+    },
+    {
+      "path": "experiments/reference_body_20261120/run_full.py",
+      "packet": "source-import-info-full-receipts-prep-20261121",
+      "payload": "payload/experiments/reference_body_20261120/run_full.py",
+      "bytes": 16371,
+      "sha256": "417b510a19df069c4af3eeaa5951ef1ef95541f4be3158732f3ab64fae6e2037",
+      "operation": "replace",
+      "base_bytes": 8711,
+      "base_sha256": "74231a770fa282aee11326b05661063c2662c261bad33c1c58d63b696a018f34"
+    },
+    {
+      "path": "experiments/reference_body_20261120/test_receipt_provenance.py",
+      "packet": "source-import-info-full-receipts-prep-20261121",
+      "payload": "payload/experiments/reference_body_20261120/test_receipt_provenance.py",
+      "bytes": 18592,
+      "sha256": "5f91f493a98ecec7ad4c1eae0b05e419bc9f18f3ed2471ee5e3c408cfa974524",
+      "operation": "replace",
+      "base_bytes": 10529,
+      "base_sha256": "e7737aab7387038623c1e8ffd69ed3290f54ab2481fdc7e9d8423baea4e0fb83"
+    },
+    {
+      "path": "tests/source_import_owner_unit.gd",
+      "packet": "source-import-info-legacy-tests-v2-prep-20261121",
+      "payload": "payload/tests/source_import_owner_unit.gd",
+      "bytes": 9381,
+      "sha256": "db18244a70ef3934db6478915e77c9de188e370dab84d73073222e7fcf41779e",
+      "operation": "replace",
+      "base_bytes": 8962,
+      "base_sha256": "257459016a9cb83f0b65acfbc5b2bb706e4334cebbcb33a7fa9b42c059a5ac9e"
+    },
+    {
+      "path": "tests/mmd_missing_texture_smoke.gd",
+      "packet": "source-import-info-missing-texture-v3-prep-20261121",
+      "payload": "payload/tests/mmd_missing_texture_smoke.gd",
+      "bytes": 4015,
+      "sha256": "72d80b683017d90277d4cecb8d161581b27d4eda9c376918ba37018b9d2dfe6d",
+      "operation": "replace",
+      "base_bytes": 3060,
+      "base_sha256": "29a316a5b18ea0a4c7acac2aa3c99bff10de7082a3a90b5cb9d6ee586f8497f2"
+    },
+    {
+      "path": "tests/contact_transform_smoke.gd",
+      "packet": "source-contact-rotation-gesture-v2-prep-20261121",
+      "payload": "payload/tests/contact_transform_smoke.gd",
+      "bytes": 15872,
+      "sha256": "5dd33d78e1bea32ea05178efc12c3891577902150675f5bdd7cdeb5c4da2c536",
+      "operation": "replace",
+      "base_bytes": 14596,
+      "base_sha256": "8dae771a346311586af7809316afb41baf08f73457a6a0f1cb89ccaf616944fb"
+    },
+    {
+      "path": "tests/verify_contact_transform.py",
+      "packet": "source-contact-rotation-gesture-v2-prep-20261121",
+      "payload": "payload/tests/verify_contact_transform.py",
+      "bytes": 2042,
+      "sha256": "625b0edb75239a5b58611e0aed3212d026c2ca9fa7abe3c656773f7be0261b08",
+      "operation": "replace",
+      "base_bytes": 1880,
+      "base_sha256": "a1674877323bb131dabf3c66fc2b3dce0586f0a7c519709f1e44d5314435e661"
+    }
+  ],
+  "required_qualification": {
+    "component267": {
+      "status": "PINNED_PASS",
+      "path": "C:/a/Programming/cloudflare/has-import-info-canonical267-v2-1795268189715451800/ROOT_RESULT.json",
+      "bytes": 1111,
+      "sha256": "049fcfe846b9a990fa7ff0d489a1d8797143a157b375382502beae2e2973b424"
+    },
+    "contact129": {
+      "status": "PINNED_PASS",
+      "path": "C:/a/Programming/cloudflare/has-contact-rotation-scoped-1795264307051952500/PUBLIC_RESULT.json",
+      "bytes": 1300,
+      "sha256": "a868752b8f299408c93968d12ffcae11f8530d01a9eb38bb80275082ceb9c53a"
+    },
+    "map_info64": {
+      "status": "PINNED_PASS",
+      "path": "C:/a/Programming/cloudflare/has-prepared-map-editor-info64-1795268686541791900/ROOT_RESULT.json",
+      "bytes": 4612,
+      "sha256": "bca5a5adb56ed34c34e4d3fb81267b51c040ff290b7045d54a33ae4019df61a8"
+    },
+    "coordinator_policy": {
+      "status": "PINNED_PASS",
+      "path": "C:/a/Programming/cloudflare/has-import-info-metadata163-v3-1795269001576627300/POLICY47_RESULT.json",
+      "bytes": 303,
+      "sha256": "4411c52209b8538278e36e113c27ca0c776f86eabc75c551bc45ece382455a06"
+    },
+    "coordinator_cpu163": {
+      "status": "PINNED_PASS",
+      "path": "C:/a/Programming/cloudflare/has-import-info-metadata163-v3-1795269001576627300/ROOT_RESULT.json",
+      "bytes": 1292,
+      "sha256": "69ba59b4685d1431ef56ca460c89ab5f19fbecdf77541d669b746508cfb82c26"
+    },
+    "owner53": {
+      "status": "PENDING_COMBINED_OWNER53_AND_NATIVE_TEXTURE_V4_ROOT_CLOSURE",
+      "path": null,
+      "bytes": null,
+      "sha256": null,
+      "reason": "Owner53 passed separately; prior combined scopes FAILED on fixture viewport then Root transport assertion. Await fresh v4 combined PASS; do not reuse the failed top-level record."
+    }
+  },
+  "limits": {
+    "whole_Full_pass_claimed": false,
+    "final_metadata_version267_pass_claimed": false,
+    "native_or_artist_fidelity_claimed": false,
+    "human_acceptance_promoted": false,
+    "Main_modified": false
+  },
+  "composition": [
+    "Canonical v2 ten targets.",
+    "Full receipt packet overrides wrapper payload on its NEW final path; adds two existing coordinator replacements.",
+    "Legacy v2 adds owner unit and MMD test; MMD v3 explicitly replaces the v2 fixture payload on the existing Main path.",
+    "Contact correction adds two existing regression targets.",
+    "Six actual qualification records required; current five are pinned, combined owner/native v4 still pending."
+  ],
+  "Root_finalize_in_new_plan": "Read closed v4 owner/native actual result and pin exact bytes. Recheck all six records, packet closures, driver hash and current c315 source. Only then create a distinct READY_FOR_ROOT_ADOPTION plan with ready_for_execution=true and an external SHA256 for the driver. Never execute this DRAFT."
+}

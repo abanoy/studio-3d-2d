@@ -1,0 +1,9 @@
+# Independent source/API review
+
+Face sibling read the complete original controller/fixture, identified a real uncovered global-only writer path after capture, then reviewed the corrected final controller19364/f0d6790a99236a3b4d4b985f95e5997b22f825a1ecd6f9e3f274b72ae672a95b and66-control fixture19823/9c4d6a09c2435138f013a43616be949770cb8cc87ed022204760f28e89039414. Independent final byte/hash readback matched. SOURCE/API GO; no remaining concrete blocker.
+
+Final review confirmed fk_matches updates and compares every actual Skeleton global against local FK before initial AND repeated writes. Four persistent global-only override negatives leave locals unchanged and require refusal/no writes. Actual Model script/fixture/no-native admission persists across epochs; three actual timeline/draft contexts test sampler readiness. The engine-owned internal simulator exception is limited to a non-visible, typed PhysicalBoneSimulator that is scriptless/inactive/nonsimulating/childless, while explicit user modifiers still refuse. The cast avoids depending on flow inference. Earlier runtime ID/atomic local/base-relative/ownership restoration paths remain unchanged.
+
+Primary-source self-review also caught that Godot's default internal compatibility simulator would make blanket modifier rejection refuse a stock Skeleton. The fixture now disables physical-bone animation before tree entry; the explicit inert-stub policy remains part of the actual runtime test scope. No controller output was executed before these source corrections.
+
+No engine execution by author or reviewer. All66 assertions, actual Model/Skeleton API behavior and internal-stub assumptions remain UNRUN at freeze. No native alignment, SecondaryLive integration, saved feature capability, Main adoption or new Full qualification is implied. Qualified math21 and its Root result remain separate preserved evidence.

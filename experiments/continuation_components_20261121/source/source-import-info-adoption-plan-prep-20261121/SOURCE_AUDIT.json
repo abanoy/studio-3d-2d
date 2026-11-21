@@ -1,0 +1,94 @@
+{
+  "format": "has_import_info_adoption_plan_source_audit_1",
+  "status": "SOURCE_REVIEW_READY_NOT_EXECUTED",
+  "driver": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/adopt_import_info_increment_20261121.py",
+    "bytes": 13141,
+    "sha256": "c5091e098051b6169e9740b7af13c061a4ef6a4af2bec2fbb2351a86c45b5285"
+  },
+  "draft_plan": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-info-adoption-plan-prep-20261121/DRAFT_ADOPTION_PLAN.json",
+    "bytes": 10939,
+    "sha256": "b6d6eeb1e2d3202b049f0d07178a25e5976a4ac9afb76993571b3f0680c5ec06"
+  },
+  "ready_plan": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-info-adoption-plan-prep-20261121/READY_ADOPTION_PLAN.json",
+    "bytes": 10755,
+    "sha256": "40a218e075be3a297fd359cb60258d65ae1f0b6e19ce1e5faf889f53505fd03c"
+  },
+  "actual_pin_checks": [
+    {
+      "name": "component267",
+      "path": "C:/a/Programming/cloudflare/has-import-info-canonical267-v2-1795268189715451800/ROOT_RESULT.json",
+      "bytes": 1111,
+      "sha256": "049fcfe846b9a990fa7ff0d489a1d8797143a157b375382502beae2e2973b424",
+      "status": "PASS",
+      "format": "has_import_info_canonical267_root_v2_1",
+      "checks": 267
+    },
+    {
+      "name": "contact129",
+      "path": "C:/a/Programming/cloudflare/has-contact-rotation-scoped-1795264307051952500/PUBLIC_RESULT.json",
+      "bytes": 1300,
+      "sha256": "a868752b8f299408c93968d12ffcae11f8530d01a9eb38bb80275082ceb9c53a",
+      "status": "PASS",
+      "format": "has_contact_rotation_scoped_root_1",
+      "checks": 129
+    },
+    {
+      "name": "map_info64",
+      "path": "C:/a/Programming/cloudflare/has-prepared-map-editor-info64-1795268686541791900/ROOT_RESULT.json",
+      "bytes": 4612,
+      "sha256": "bca5a5adb56ed34c34e4d3fb81267b51c040ff290b7045d54a33ae4019df61a8",
+      "status": "PASS",
+      "format": "has_prepared_map_info64_root_1",
+      "checks": 64
+    },
+    {
+      "name": "coordinator_policy",
+      "path": "C:/a/Programming/cloudflare/has-import-info-metadata163-v3-1795269001576627300/POLICY47_RESULT.json",
+      "bytes": 303,
+      "sha256": "4411c52209b8538278e36e113c27ca0c776f86eabc75c551bc45ece382455a06",
+      "status": "PASS",
+      "format": "has_import_info_coordinator_policy47_1",
+      "checks": 47
+    },
+    {
+      "name": "coordinator_cpu163",
+      "path": "C:/a/Programming/cloudflare/has-import-info-metadata163-v3-1795269001576627300/ROOT_RESULT.json",
+      "bytes": 1292,
+      "sha256": "69ba59b4685d1431ef56ca460c89ab5f19fbecdf77541d669b746508cfb82c26",
+      "status": "PASS",
+      "format": "has_import_info_metadata163_root_v3_1",
+      "checks": 163
+    },
+    {
+      "name": "owner53",
+      "path": "C:/a/Programming/cloudflare/has-import-info-legacy-v4-scopes-1795269105700452700/ROOT_RESULT.json",
+      "bytes": 2053,
+      "sha256": "f578c2fa887426870a35775cbd5846827134fb97f805dd1184e320a8c38f17f2",
+      "status": "PASS",
+      "format": "has_import_info_legacy_v4_scopes_1",
+      "checks": 53
+    }
+  ],
+  "current_main_functional_count": 1103,
+  "current_main_raw_catalogue_failures": 0,
+  "final_targets": 16,
+  "existing_modified": 10,
+  "new": 6,
+  "expected_after": 1109,
+  "unrelated_existing_preserved_expected": 1093,
+  "all_five_source_packets_payload_SHA_readback": true,
+  "qualified_owner_and_MMD_fixture_versions_match_targets": true,
+  "wrapper_final_target_is_new_with_absent_base": true,
+  "relative_fixed_target_whitelist": true,
+  "python_AST_only": true,
+  "driver_executed": false,
+  "Main_or_docs_modified": false,
+  "whole_Full_claimed": false,
+  "final_metadata_version267_claimed": false,
+  "artist_or_original_native_appearance_claimed": false,
+  "read_scope": "Source and scalar qualification metadata only; no new native arrays/artwork copied.",
+  "driver_limit": "Source review/AST only; Root must execute the pinned READY plan and inspect actual adoption readback. Atomic replaces do not provide a filesystem-wide concurrent-writer lock; observed concurrent drift is refused and owned applied targets are selectively rolled back."
+}

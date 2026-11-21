@@ -1,0 +1,46 @@
+{
+  "format": "has_import_capability_source_peer_receipt_1",
+  "status": "SOURCE_API_GO_NO_EXECUTION",
+  "reviewer": "/root/cold_import_fix",
+  "candidate": {
+    "folder": "output/source-import-capability-c315-prep-20261121",
+    "manifest_bytes": 5540,
+    "manifest_sha256": "5cb9ea727f550857ccb005a1a6c47bdda2eb1979ec4e11c6cae64903062f0812",
+    "files": 33,
+    "payloads": 32
+  },
+  "headless": {
+    "folder": "output/source-import-capability-headless163-c315-prep-20261121",
+    "manifest_bytes": 2113,
+    "manifest_sha256": "913b27870fe44329f2a271f743ce132eb405a87176f7a209787e085f2b084561",
+    "files": 13,
+    "payloads": 12,
+    "driver_bytes": 13488,
+    "driver_sha256": "9fad2ba8b22c2eacf99daa3e482e2a07a7663f0d50fed01dd2f61832ee2acbfc",
+    "authored_jobs": 5,
+    "authored_checks": 163
+  },
+  "review_scope": [
+    "8 literal anchors/current setup order",
+    "Source/report/root/session/sequence ownership and staleness",
+    "No selected-actor borrowing in asynchronous notification",
+    "Epoch guard before converted-data installation",
+    "Read-only original/unknown losses and resource/light omission actions",
+    "Scratch authenticated native backend disposal only, no report or pose writes",
+    "Retained43/actual-app30/futureGUI7+6 fixture source",
+    "Exact1103canonicalMain andimmutableGit3replacements5new targets",
+    "UniqueStudio/data/profiles and gatedRootJob/worker ownership",
+    "Strict stdout/engine/error/count/receipt/reap/active0/handle closure",
+    "Exact hash/size/single-link whole source packet readback"
+  ],
+  "concrete_blockers_found": [],
+  "execution": {
+    "module_imports": false,
+    "Godot": false,
+    "native_inputs": false,
+    "GPU": false,
+    "Full": false
+  },
+  "old_Full_gated_host_unchanged": true,
+  "Main_or_ledger_modified": false
+}

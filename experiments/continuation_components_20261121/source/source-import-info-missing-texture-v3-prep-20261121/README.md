@@ -1,0 +1,1 @@
+Fixture-only viewport setup successor. Original v2 optional native run remains failed; its REOPEN true marker alone does not override strict window errors. Actual owner53 passed separately and needs no repeat. This successor preserves all v2 persistent-info and packed/cold/offline checks byte-exact. Native successor remains UNRUN pending Root execution. No production change.

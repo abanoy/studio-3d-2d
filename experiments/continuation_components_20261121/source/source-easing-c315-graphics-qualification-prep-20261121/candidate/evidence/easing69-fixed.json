@@ -1,0 +1,369 @@
+{
+  "format": "has_easing_root_synthetic_headless_1",
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "math",
+      "pid": 26432,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 0.185556,
+      "result": {
+        "application_adopted": false,
+        "checks": 24,
+        "failures": 0,
+        "native_or_gpu_started": false
+      }
+    },
+    {
+      "name": "editor",
+      "pid": 30568,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 0.3098987,
+      "result": {
+        "application_adopted": false,
+        "camera_render_or_export_tested": false,
+        "checks": 45,
+        "failures": 0,
+        "native_asset_tested": false,
+        "real_app_undo_tested": false
+      }
+    }
+  ],
+  "checks": 69,
+  "error": null,
+  "inputs_and_runtime_sources_preserved": true,
+  "parent_environment_preserved": true,
+  "application_adopted": false,
+  "actual_app_undo_qualified": false,
+  "graphics_or_native_jobs_started": false,
+  "full_source_modified": false,
+  "source_manifest_sha256": "472cd37a7dd4717880fe341fa1beea942e4d58f756038a4d78b00d16451b128b",
+  "source_and_runtime_inputs": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\bases\\original_port_SOURCE_PINS.json",
+      "bytes": 2270,
+      "sha256": "67209aa269396319e0baba26079ddd2572bd04cdba60b033d3bc552ff23e3cd7",
+      "identity": [
+        14290083805553457215,
+        562949956047656,
+        2270,
+        1795254761613849000,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\bases\\src\\app.gd",
+      "bytes": 314927,
+      "sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f",
+      "identity": [
+        14290083805553457215,
+        562949956047641,
+        314927,
+        1795254761587797100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\bases\\src\\renderer.gd",
+      "bytes": 15453,
+      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "identity": [
+        14290083805553457215,
+        562949956047642,
+        15453,
+        1795254761589796500,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\evidence\\classic-simple\\engine.log",
+      "bytes": 1359,
+      "sha256": "7d9d6e9fe9d56125f2d31a5253021c2968afeb08b52e43310d5892223ec6a049",
+      "identity": [
+        14290083805553457215,
+        844424932758319,
+        1359,
+        1795254761680461100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\evidence\\classic-simple\\result.json",
+      "bytes": 135,
+      "sha256": "1cba85ed3241c508cb77e04e73c9edfb8f1c493990f6c9e8bfdf813507d04239",
+      "identity": [
+        14290083805553457215,
+        562949956047660,
+        135,
+        1795254761675449700,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\evidence\\classic-simple\\stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "identity": [
+        14290083805553457215,
+        562949956047662,
+        0,
+        1795254761678958000,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\evidence\\classic-simple\\stdout.log",
+      "bytes": 1386,
+      "sha256": "d5550187a8030d9d61c11cac1fa6d1ac4b9be39fd57ac9db35cb7e4091e2f300",
+      "identity": [
+        14290083805553457215,
+        562949956047661,
+        1386,
+        1795254761677958100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\evidence\\PUBLIC_RESULT.json",
+      "bytes": 815,
+      "sha256": "543e3ad5bc36986b175bf84635885e827ede12f6c7675aa691a3ba4385ee08f8",
+      "identity": [
+        14290083805553457215,
+        562949956047658,
+        815,
+        1795254761674450000,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\evidence\\reproduction_fixture.gd",
+      "bytes": 5761,
+      "sha256": "44f6ec9d1310cfc4dd2701cfd5af71bd9e2715d8106b4009f1dd596f9c64bf74",
+      "identity": [
+        14290083805553457215,
+        844424932758320,
+        5761,
+        1795254761682468800,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\PATCHES.json",
+      "bytes": 3293,
+      "sha256": "35b72596e9fef3c6dd1a0cdb513ece29a77dec33c99820f15653cc50c7796714",
+      "identity": [
+        14290083805553457215,
+        562949956047643,
+        3293,
+        1795254761665934900,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\payload\\src\\app.gd",
+      "bytes": 315293,
+      "sha256": "d743764c07fb2bd26a7f15797bbb4ad4fec72d545b183f58ef1baf565233e2b7",
+      "identity": [
+        14290083805553457215,
+        562949956047646,
+        315293,
+        1795254761638888800,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\payload\\src\\camera_easing_editor.gd",
+      "bytes": 8368,
+      "sha256": "9a6e0fbde3819450b1d7f911760528fc793ef036b76e9295b66d58ce791445f4",
+      "identity": [
+        14290083805553457215,
+        562949956047647,
+        8368,
+        1795254761654915100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\payload\\src\\keyframe_easing.gd",
+      "bytes": 7179,
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "identity": [
+        14290083805553457215,
+        562949956047648,
+        7179,
+        1795254761599823500,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\payload\\src\\renderer.gd",
+      "bytes": 15720,
+      "sha256": "2db5d3869b8ccbb82854a95c9c9de87da7c0a6ac1b38ee1bfcb24b19a2581f8e",
+      "identity": [
+        14290083805553457215,
+        562949956047649,
+        15720,
+        1795254761601828400,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\payload\\tests\\keyframe_easing_math_unit.gd",
+      "bytes": 6295,
+      "sha256": "4ba26a8126313af273c5265932b4f3161a9f378400d63c622a9ef21419cfd406",
+      "identity": [
+        14290083805553457215,
+        562949956047651,
+        6295,
+        1795254761603832800,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\payload\\tests\\keyframe_easing_unit.gd",
+      "bytes": 10364,
+      "sha256": "a4ea85beeba768ef888846e2641a7d08765161a2198530528d06a82e883a4c45",
+      "identity": [
+        14290083805553457215,
+        562949956047652,
+        10364,
+        1795254761604831800,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\README.md",
+      "bytes": 1681,
+      "sha256": "784caa8737db67223b18a22d30e96b99c3d6f0923ca97af450a10ad49101de90",
+      "identity": [
+        14290083805553457215,
+        562949956047653,
+        1681,
+        1795254761607340500,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\ROOT_SYNTHETIC_HOST.py",
+      "bytes": 5529,
+      "sha256": "fbea9dbcf602207c186825b267b2019921cf98ed2ebb1e394d1bb50d9c0a51f9",
+      "identity": [
+        14290083805553457215,
+        562949956047654,
+        5529,
+        1795254761610848400,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\ROOT_SYNTHETIC_RESULT.json",
+      "bytes": 13493,
+      "sha256": "3429989e49fea8e7bc712c9615e87bac6d0b89b726b7d1a2ce2de26c0e0bd3c8",
+      "identity": [
+        14290083805553457215,
+        562949956047655,
+        13493,
+        1795254761611848600,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\source-keyframe-easing435-undo-fix-prep-20261121\\UNDO_CORRECTION.md",
+      "bytes": 1386,
+      "sha256": "7167cbd75a107d4314f22f09eb0588f2a9af699a0d621d57be640706c8d4dc25",
+      "identity": [
+        14290083805553457215,
+        562949956047665,
+        1386,
+        1795254761683468900,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\src\\timeline.gd",
+      "bytes": 2878,
+      "sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+      "identity": [
+        14290083805553457215,
+        562949955810423,
+        2878,
+        1795192069429911200,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254831934151300\\Studio\\src\\camera_easing_editor.gd",
+      "bytes": 8368,
+      "sha256": "9a6e0fbde3819450b1d7f911760528fc793ef036b76e9295b66d58ce791445f4",
+      "identity": [
+        14290083805553457215,
+        562949956049026,
+        8368,
+        1795254832067478200,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254831934151300\\Studio\\src\\keyframe_easing.gd",
+      "bytes": 7179,
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "identity": [
+        14290083805553457215,
+        562949956049027,
+        7179,
+        1795254832081556900,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254831934151300\\Studio\\tests\\keyframe_easing_math_unit.gd",
+      "bytes": 6295,
+      "sha256": "4ba26a8126313af273c5265932b4f3161a9f378400d63c622a9ef21419cfd406",
+      "identity": [
+        14290083805553457215,
+        562949956049029,
+        6295,
+        1795254832083537100,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254831934151300\\Studio\\tests\\keyframe_easing_unit.gd",
+      "bytes": 10364,
+      "sha256": "a4ea85beeba768ef888846e2641a7d08765161a2198530528d06a82e883a4c45",
+      "identity": [
+        14290083805553457215,
+        562949956049030,
+        10364,
+        1795254832084543300,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254831934151300\\Studio\\src\\timeline.gd",
+      "bytes": 2878,
+      "sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+      "identity": [
+        14290083805553457215,
+        562949956049031,
+        2878,
+        1795254832097624600,
+        1
+      ]
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-easing-headless-1795254831934151300\\Studio\\project.godot",
+      "bytes": 136,
+      "sha256": "0abe43185e9003cf260eeb4b28a22dcbac13f2956c7ce2a805122a56194164ff",
+      "identity": [
+        14290083805553457215,
+        562949956049032,
+        136,
+        1795254832100123700,
+        1
+      ]
+    }
+  ]
+}

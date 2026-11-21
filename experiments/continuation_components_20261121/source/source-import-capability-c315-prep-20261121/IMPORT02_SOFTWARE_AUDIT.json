@@ -1,0 +1,189 @@
+{
+  "format": "has_import02_03_software_closure_source_audit_1",
+  "status": "READ_ONLY_ASSESSMENT_NO_LEDGER_PROMOTION",
+  "revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "current_formal_ledger": {
+    "stable_ids": 62,
+    "implemented": 52,
+    "required_implementation_groups": 54,
+    "accepted": 55,
+    "required_acceptance": 62,
+    "changed": false
+  },
+  "current_software": {
+    "optional_map_lighting": "ADOPTED",
+    "policy": "BSP optional unsupported lighting is omitted with explicit diagnostics; raw entities and valid conversion geometry are retained. Strict default API still rejects malformed/overflow light input.",
+    "global_static_light_budget": 64,
+    "scoped_cpu_tests": {
+      "planner": 24,
+      "bridge_phase": 4,
+      "total": 28,
+      "actual_record": "output/POST_IMPORT_MAP_ADOPTION_REGRESSION_20261121.json"
+    },
+    "adopted_source_readback": [
+      {
+        "path": "tools/source_lights.py",
+        "current_matches_adopted_bytes": true
+      },
+      {
+        "path": "tools/blender_source_bridge.py",
+        "current_matches_adopted_bytes": true
+      },
+      {
+        "path": "tests/test_bridge_light_phase.py",
+        "current_matches_adopted_bytes": true
+      }
+    ],
+    "canonical_Import_info_action": "NOT_IN_MAIN; new c315 source-only port authored; unexecuted and unadopted."
+  },
+  "actual_owner_map_evidence": {
+    "public_result_pin": {
+      "path": "C:/a/Programming/cloudflare/has-source-map-retest-1795240741157655000/PUBLIC_MAP_RESULT.json",
+      "bytes": 2734,
+      "sha256": "757fb45bfdbad4abacaed604941bd787d3deac5862f44c42fb889e18ada56123"
+    },
+    "root_wrapper_reaped": true,
+    "private_jobs_closed": true,
+    "all_admitted_inputs_preserved": true,
+    "cases": [
+      {
+        "case": "gm_construct",
+        "conversion_passed": true,
+        "raw_entities": 1227,
+        "light_declarations": 137,
+        "created": 64,
+        "invalid": 0,
+        "budget": 42,
+        "starts_off": 0,
+        "animated_style": 31,
+        "warning_details_omitted": 0,
+        "source_mesh_summary": 314,
+        "GLB_meshes": 310
+      },
+      {
+        "case": "ttt_tiny_spaceship_v3",
+        "conversion_passed": true,
+        "raw_entities": 508,
+        "light_declarations": 105,
+        "created": 18,
+        "invalid": 1,
+        "budget": 0,
+        "starts_off": 6,
+        "animated_style": 80,
+        "warning_details_omitted": 55,
+        "source_mesh_summary": 252,
+        "GLB_meshes": 234
+      }
+    ],
+    "editor_or_visual_acceptance": false,
+    "qualification_limit": "Conversion and hidden-preparer placement only. Source producer mesh summaries differ from serialized GLB mesh tables; no equal-mesh-count or perfect-original-appearance claim."
+  },
+  "earlier_native_app_evidence": {
+    "receipt": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+    "writer_checks": 19,
+    "cold_reader_checks": 5,
+    "scope": "Two independent Flatgrass BSP roots, one referenced native prop, supported29 LDR brush faces,12textures/two staticlights; posedVRM and complete texturedStreetPMX; Lit/Unshaded cold and movie input with caches withheld.",
+    "artist_approval": false
+  },
+  "stale_documentation": [
+    {
+      "path": "docs/native_profile_acceptance_review.md",
+      "scope": "The top Windows follow-up resolves inputs, but the old profile table and ending still say complete BSP/atlases absent."
+    },
+    {
+      "path": "docs/source_brush_lightmaps.md",
+      "scope": "Ending still says a complete approved BSP and installed host are absent; later native Windows evidence exists."
+    },
+    {
+      "path": "docs/windows_acceptance_followup.md",
+      "scope": "Transit64-light refusal is historical now that optional BSP omission policy was adopted; no fresh Transit retry is inferred."
+    },
+    {
+      "path": "docs/completion_checklist.md",
+      "scope": "Priority note still asks to qualify the map compatibility fix although code/28tests/native conversion have been adopted/recorded. The Import info gap remains real."
+    }
+  ],
+  "promotion_plan": [
+    "Keep all62 IDs,52/54 and55/62 unchanged now.",
+    "Qualify the c315 Import info port: inherited43 authored controls,120 actual-app headless controls,104 future private GUI/cold controls, then relevant existing import/defaultOff/height/source-appearance regressions. No inherited test gets automatic execution credit.",
+    "Validate actual owner-map GLB/app ingress and persistent report/action display in a separate owned private snapshot if needed; conversion PASS alone does not prove model/editor rendering acceptance. Preserve native bundles and original maps.",
+    "Only after actual adoption/tests, reconcile software implementation fields against supported-profile requirements and update stale CURRENT prose with explicit historical labeling. Retain human appearance ACCEPT-B and physical/user gates as external; source-original artist comparison remains open.",
+    "Register qualified ordinary shipping tests before relying on future Full coverage. Rebase/port explicit source pins if Main revision changes; never waive the current Full or source admission."
+  ],
+  "not_added_as_required_gates": [
+    "All49 native-jiggle coverage",
+    "Universal original Source shaders/photometry or every BSP surface",
+    "PMX-like200-item reconstruction",
+    "RTX lighting or future discovery browser"
+  ],
+  "evidence_pins": [
+    {
+      "path": "tools/source_lights.py",
+      "bytes": 8319,
+      "sha256": "284971f27040335b727c7a94639920cb6b1e37a37645ec8f553a704f1522eb5b"
+    },
+    {
+      "path": "tools/blender_source_bridge.py",
+      "bytes": 30697,
+      "sha256": "cc5a205772c83949bcc10f06633a73d83664c455e8daad163c06dba7a26dc60e"
+    },
+    {
+      "path": "tests/test_source_lights.py",
+      "bytes": 8417,
+      "sha256": "a714eda74f3fc3d0ed06fef287dca740298e5d841ede236ae1370e60adfbc3c4"
+    },
+    {
+      "path": "tests/test_bridge_light_phase.py",
+      "bytes": 4180,
+      "sha256": "aa612d14d9ce2e9d47b5da9cafd88c05a16232bf4923cfb931012f0662b788b4"
+    },
+    {
+      "path": "output/IMPORT_OFF_MAP_ADOPTION_20261121.json",
+      "bytes": 7007,
+      "sha256": "5eeb8f6e46344d5858a9625d8d669bdb5b0bf353c70af6a516148c2a9bd1c4ed"
+    },
+    {
+      "path": "output/POST_IMPORT_MAP_ADOPTION_REGRESSION_20261121.json",
+      "bytes": 1526,
+      "sha256": "133eea9c44fc067992bcb87cd465c1d96d25171dc8cb6cb9acb01102cf0c16a8"
+    },
+    {
+      "path": "output/source-map-retest-root-reaped-20261121.json",
+      "bytes": 787,
+      "sha256": "10683ecced782bfbaf705ed1272092a91e38fd9adc47450d921f8a7a147fbc3f"
+    },
+    {
+      "path": "docs/source_import.md",
+      "bytes": 14113,
+      "sha256": "c398bc9dc32f09c9db09b00399acf9c5ea26e79965b79d113891384801de6113"
+    },
+    {
+      "path": "docs/source_brush_lightmaps.md",
+      "bytes": 2588,
+      "sha256": "dc5f17224103c87e1567c8f1f5e0370909dc85831f40d626088530b1c3d239a1"
+    },
+    {
+      "path": "docs/native_profile_acceptance_review.md",
+      "bytes": 6856,
+      "sha256": "ea20d5d38e9503676e3ddbc35928f0888e842cb84e7e2304e89f70834951eece"
+    },
+    {
+      "path": "docs/windows_acceptance_followup.md",
+      "bytes": 6847,
+      "sha256": "11eea84e0d60649f32b1c21a3565d8463a5f2bc992d541ad203254761339f934"
+    },
+    {
+      "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+      "bytes": 405238,
+      "sha256": "2cc29328968b48f4fb8b2d0b4e62ef862ae6b0bdbc30e4951fc958844757d8a2"
+    },
+    {
+      "path": "docs/completion_checklist.json",
+      "bytes": 268515,
+      "sha256": "8837b4594c337aea0b69ab6e1ebc128e244c432ea4d50bf1bde714759ec2684d"
+    }
+  ],
+  "execution_by_reviewer": false,
+  "Main_or_ledger_mutated": false,
+  "private_arrays_or_assets_copied": false
+}

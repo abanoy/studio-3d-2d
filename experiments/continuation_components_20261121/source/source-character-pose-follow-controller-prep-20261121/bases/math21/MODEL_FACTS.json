@@ -1,0 +1,125 @@
+{
+  "format": "has_actual_junko_pose_follow_source_facts_1",
+  "inspection": "Read-only Node RAM MDL49 header/bone-table inspection using pinned existing primary layout; no parser SDK/tool import/execution",
+  "source_root": "C:/a/Programming/cloudflare/junko",
+  "source_files": 99,
+  "source_bytes": 32525911,
+  "all99_sha_bytes_mtime_preserved": true,
+  "models": [
+    {
+      "role": "mask",
+      "bytes": 9088,
+      "sha256": "8cb588d2e45268c79d83632cae4e0545d953025c9ea48a3bf42a1975a74db0f2",
+      "bones": 19,
+      "procedural": 0
+    },
+    {
+      "role": "dress",
+      "bytes": 285020,
+      "sha256": "be03e608fc7fc0316a5441e65d01cef355e076b4eff17dd5b57fbf4defb35fdf",
+      "bones": 112,
+      "procedural": 28
+    },
+    {
+      "role": "hair",
+      "bytes": 37644,
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "bones": 69,
+      "procedural": 49
+    },
+    {
+      "role": "miniskirt",
+      "bytes": 165688,
+      "sha256": "55d13238fe67c4ead4ac6c2cb6c4ac43d7f2275d722021af5ce030e93cf1745d",
+      "bones": 136,
+      "procedural": 102
+    },
+    {
+      "role": "skirt",
+      "bytes": 199424,
+      "sha256": "b753091a9e32e84cb81ae182df0b6c7c341feb0e51e5b2e190eccff2f92b397b",
+      "bones": 136,
+      "procedural": 102
+    },
+    {
+      "role": "body",
+      "bytes": 1290252,
+      "sha256": "d916863f801d0894009fad43c587ae630bf05556f484ebae4803734bd15c8af7",
+      "bones": 145,
+      "procedural": 2
+    }
+  ],
+  "body_to_part": [
+    {
+      "role": "mask",
+      "shared": 7,
+      "exact_parent_and_rest_and_bind": 1,
+      "nonprocedural_exact": 1,
+      "shared_target_procedural": 0,
+      "parent_mismatch": 4
+    },
+    {
+      "role": "dress",
+      "shared": 56,
+      "exact_parent_and_rest_and_bind": 56,
+      "nonprocedural_exact": 54,
+      "shared_target_procedural": 2,
+      "parent_mismatch": 0
+    },
+    {
+      "role": "hair",
+      "shared": 6,
+      "exact_parent_and_rest_and_bind": 0,
+      "nonprocedural_exact": 0,
+      "shared_target_procedural": 0,
+      "parent_mismatch": 0
+    },
+    {
+      "role": "miniskirt",
+      "shared": 10,
+      "exact_parent_and_rest_and_bind": 6,
+      "nonprocedural_exact": 6,
+      "shared_target_procedural": 0,
+      "parent_mismatch": 0
+    },
+    {
+      "role": "skirt",
+      "shared": 10,
+      "exact_parent_and_rest_and_bind": 1,
+      "nonprocedural_exact": 1,
+      "shared_target_procedural": 0,
+      "parent_mismatch": 0
+    }
+  ],
+  "existing_converted_dependency": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/owner-review-Junko-1795238245976690000/Assets/Junko/scene.glb",
+    "bytes": 2478804,
+    "sha256": "b8436dea1d13a7cb4632c37c50b4cab123616ec574720fe4e764b844c5293e71",
+    "source_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "bones": 69,
+    "conversion_scale": 0.01905,
+    "axes": "Source Z-up to glTF Y-up via Blender exporter",
+    "source_crosswalk_glb_hash_matches": true,
+    "native_bindings_require_requalification": true,
+    "six_foot_normalization_applied": false,
+    "other_five_converted_dependencies_qualified": false,
+    "search_scope": "Two retained Junko owner-review assets and the inspected source-bone-bindings four-case native run; not a global machine absence claim"
+  },
+  "approved_layouts": [
+    {
+      "path": "experiments/native_point_expectation_bone_state_fix_20261118/native_point_expectation.py",
+      "bytes": 27615,
+      "sha256": "cbb4eca98a6cf5045211dc10bd8e060b79492ec306d61a4d29679fc0d5cc184d"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/library/models/mdl/structs/bone.py",
+      "bytes": 8415,
+      "sha256": "a61a3e0378e7b2d2d070f2b9ef138b78516db4a9830144cd6a6d907295b7d085"
+    }
+  ],
+  "full_native_alignment_qualified": false,
+  "pose_following_qualified": false,
+  "actual_six_models_converted_now": false,
+  "original_model_arrays_published": false,
+  "Main_modified": false
+}

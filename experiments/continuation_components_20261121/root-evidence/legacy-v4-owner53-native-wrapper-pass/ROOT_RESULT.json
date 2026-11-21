@@ -1,0 +1,70 @@
+{
+  "format": "has_import_info_legacy_v4_scopes_1",
+  "status": "PASS",
+  "checks": 53,
+  "jobs": [
+    {
+      "name": "unit",
+      "status": "PASS",
+      "expected_checks": 53,
+      "graphical": false,
+      "wrapper_created": true,
+      "job_created": true,
+      "wrapper_reaped": true,
+      "wrapper_handle_closed": true,
+      "job_assigned_before_START": true,
+      "START_released": true,
+      "active_zero_before_close": true,
+      "job_closed": true,
+      "owner": {
+        "pid": 25812,
+        "created_100ns": "134397427149549686"
+      },
+      "wrapper_exit": 0,
+      "pre_termination_accounting": {
+        "active": 0,
+        "total": 15,
+        "terminated_by_limit": 0
+      },
+      "terminate_owned_job_called": true,
+      "final_accounting": {
+        "active": 0,
+        "total": 15,
+        "terminated_by_limit": 0
+      },
+      "checks": 53,
+      "godot_identity": {
+        "pid": 31700,
+        "created_100ns": "134397427151387727"
+      }
+    }
+  ],
+  "native_texture_wrapper_passed": true,
+  "graphics_executed": false,
+  "Full_claimed": false,
+  "application_adopted": false,
+  "stage": "C:\\a\\Programming\\cloudflare\\has-import-info-legacy-v4-scopes-1795269105700452700",
+  "native_job": {
+    "name": "optional_native_missing_texture",
+    "status": "PASS",
+    "owner": {
+      "pid": 23052,
+      "created_100ns": "134397427161580689"
+    },
+    "assigned_before_start": true,
+    "exit": 0,
+    "reaped": true,
+    "handle_closed": true,
+    "accounting": {
+      "active": 0,
+      "total": 19,
+      "terminated_by_limit": 0
+    },
+    "active_zero": true,
+    "job_closed": true
+  },
+  "native_wrapper_validated_both_engine_log_markers": true,
+  "native_marker_source": "Unchanged tests/verify_mmd_missing_texture.py assertions read both engine logs before ordinary temporary cleanup; raw windowed-engine stdout is not inherited on Windows.",
+  "all_jobs_closed": true,
+  "Main_runtime_inputs_environment_preserved": true
+}

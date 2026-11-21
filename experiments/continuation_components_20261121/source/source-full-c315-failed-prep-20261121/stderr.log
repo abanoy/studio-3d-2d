@@ -1,0 +1,152 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-import-off-full-20261121-c31576d\tests\verify.py", line 692, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-import-off-full-20261121-c31576d\tests\verify.py", line 464, in main
+    contact_text = run([sys.executable, '-u', f'tests/verify_contact_{name}.py'], timeout=deadline)
+  File "C:\a\Programming\cloudflare\has-import-off-full-20261121-c31576d\tests\verify.py", line 24, in run
+    raise RuntimeError(f"Exit {result.returncode}: {args}\n{result.stdout}\n{result.stderr}")
+RuntimeError: Exit 1: ['C:\\Program Files\\Python313\\python.exe', '-u', 'tests/verify_contact_transform.py']
+
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-import-off-full-20261121-c31576d\tests\verify_contact_transform.py", line 14, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-import-off-full-20261121-c31576d\tests\verify_contact_transform.py", line 10, in main
+    assert p.returncode==0 and 'CONTACT_TRANSFORM ' in text and not any(x in text for x in ['ERROR:','FAIL ','ObjectDB instances leaked','_set_transient_exclusive_child']),text
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS five prepared native rigs available for nested rotation/scale acceptance
+PASS ancestor numeric rotation keys once while native feet stay planted: Miku_Hatsune.pmd
+PASS ancestor rotation preserves child controls/poles, peers and explicit shot keys: Miku_Hatsune.pmd
+PASS rotation Undo restores exact ancestor: Miku_Hatsune.pmd
+PASS rotation Redo restores exact ancestor: Miku_Hatsune.pmd
+PASS ancestor uniform scale keys once without baking native child controls: Miku_Hatsune.pmd
+PASS scale Undo restores exact ancestor: Miku_Hatsune.pmd
+PASS scale Redo restores exact ancestor: Miku_Hatsune.pmd
+PASS unreachable scale refuses before changing native child or history: Miku_Hatsune.pmd
+PASS unreachable ancestor rotation refuses atomically with native name: Miku_Hatsune.pmd
+PASS actual world-axis ancestor rotation ring begins its intended drag: Miku_Hatsune.pmd
+PASS rotation preview holds feet with current feedback while read-only sampling retains authored ancestors: Miku_Hatsune.pmd
+FAIL unreachable rotation drag keeps last valid native preview: Miku_Hatsune.pmd
+PASS returning to valid rotation clears stale reach feedback: Miku_Hatsune.pmd
+PASS Escape restores exact pre-drag ancestor without history: Miku_Hatsune.pmd
+PASS releasing a valid ancestor rotation commits one key/Undo without baking the native child: Miku_Hatsune.pmd
+PASS rotation gesture Undo restores its exact original key: Miku_Hatsune.pmd
+PASS rotation gesture Redo restores the committed key exactly: Miku_Hatsune.pmd
+PASS all49 frames remain reachable after ancestor rotation/scale: Miku_Hatsune.pmd
+PASS Apply model scale works with a planted foot selected and preserves its target: Miku_Hatsune.pmd
+PASS root scale Undo restores exact native contact/body data: Miku_Hatsune.pmd
+PASS ancestor scale defers pending native physics without consuming its ticket: Miku_Hatsune.pmd
+PASS actual native body simulation starts for scale lifecycle: Miku_Hatsune.pmd
+PASS ancestor scale defers live native physics without freezing or changing contacts: Miku_Hatsune.pmd
+PASS actual Local recording begins before ancestor scale: Miku_Hatsune.pmd
+PASS ancestor scale cannot silently finish a live native recording: Miku_Hatsune.pmd
+PASS ancestor numeric rotation keys once while native feet stay planted: reimu_hakurei_bikini_ragdoll.mdl
+PASS ancestor rotation preserves child controls/poles, peers and explicit shot keys: reimu_hakurei_bikini_ragdoll.mdl
+PASS rotation Undo restores exact ancestor: reimu_hakurei_bikini_ragdoll.mdl
+PASS rotation Redo restores exact ancestor: reimu_hakurei_bikini_ragdoll.mdl
+PASS ancestor uniform scale keys once without baking native child controls: reimu_hakurei_bikini_ragdoll.mdl
+PASS scale Undo restores exact ancestor: reimu_hakurei_bikini_ragdoll.mdl
+PASS scale Redo restores exact ancestor: reimu_hakurei_bikini_ragdoll.mdl
+PASS unreachable scale refuses before changing native child or history: reimu_hakurei_bikini_ragdoll.mdl
+PASS unreachable ancestor rotation refuses atomically with native name: reimu_hakurei_bikini_ragdoll.mdl
+PASS actual world-axis ancestor rotation ring begins its intended drag: reimu_hakurei_bikini_ragdoll.mdl
+PASS rotation preview holds feet with current feedback while read-only sampling retains authored ancestors: reimu_hakurei_bikini_ragdoll.mdl
+PASS unreachable rotation drag keeps last valid native preview: reimu_hakurei_bikini_ragdoll.mdl
+PASS returning to valid rotation clears stale reach feedback: reimu_hakurei_bikini_ragdoll.mdl
+PASS Escape restores exact pre-drag ancestor without history: reimu_hakurei_bikini_ragdoll.mdl
+PASS releasing a valid ancestor rotation commits one key/Undo without baking the native child: reimu_hakurei_bikini_ragdoll.mdl
+PASS rotation gesture Undo restores its exact original key: reimu_hakurei_bikini_ragdoll.mdl
+PASS rotation gesture Redo restores the committed key exactly: reimu_hakurei_bikini_ragdoll.mdl
+PASS all49 frames remain reachable after ancestor rotation/scale: reimu_hakurei_bikini_ragdoll.mdl
+PASS Apply model scale works with a planted foot selected and preserves its target: reimu_hakurei_bikini_ragdoll.mdl
+PASS root scale Undo restores exact native contact/body data: reimu_hakurei_bikini_ragdoll.mdl
+PASS ancestor scale defers pending native physics without consuming its ticket: reimu_hakurei_bikini_ragdoll.mdl
+PASS actual native body simulation starts for scale lifecycle: reimu_hakurei_bikini_ragdoll.mdl
+PASS ancestor scale defers live native physics without freezing or changing contacts: reimu_hakurei_bikini_ragdoll.mdl
+PASS actual Local recording begins before ancestor scale: reimu_hakurei_bikini_ragdoll.mdl
+PASS ancestor scale cannot silently finish a live native recording: reimu_hakurei_bikini_ragdoll.mdl
+PASS ancestor numeric rotation keys once while native feet stay planted: scout.mdl
+PASS ancestor rotation preserves child controls/poles, peers and explicit shot keys: scout.mdl
+PASS rotation Undo restores exact ancestor: scout.mdl
+PASS rotation Redo restores exact ancestor: scout.mdl
+PASS ancestor uniform scale keys once without baking native child controls: scout.mdl
+PASS scale Undo restores exact ancestor: scout.mdl
+PASS scale Redo restores exact ancestor: scout.mdl
+PASS unreachable scale refuses before changing native child or history: scout.mdl
+PASS unreachable ancestor rotation refuses atomically with native name: scout.mdl
+PASS actual world-axis ancestor rotation ring begins its intended drag: scout.mdl
+PASS rotation preview holds feet with current feedback while read-only sampling retains authored ancestors: scout.mdl
+FAIL unreachable rotation drag keeps last valid native preview: scout.mdl
+PASS returning to valid rotation clears stale reach feedback: scout.mdl
+PASS Escape restores exact pre-drag ancestor without history: scout.mdl
+PASS releasing a valid ancestor rotation commits one key/Undo without baking the native child: scout.mdl
+PASS rotation gesture Undo restores its exact original key: scout.mdl
+PASS rotation gesture Redo restores the committed key exactly: scout.mdl
+PASS all49 frames remain reachable after ancestor rotation/scale: scout.mdl
+PASS Apply model scale works with a planted foot selected and preserves its target: scout.mdl
+PASS root scale Undo restores exact native contact/body data: scout.mdl
+PASS ancestor scale defers pending native physics without consuming its ticket: scout.mdl
+PASS actual native body simulation starts for scale lifecycle: scout.mdl
+PASS ancestor scale defers live native physics without freezing or changing contacts: scout.mdl
+PASS actual Local recording begins before ancestor scale: scout.mdl
+PASS ancestor scale cannot silently finish a live native recording: scout.mdl
+PASS ancestor numeric rotation keys once while native feet stay planted: AvatarSample_A.vrm
+PASS ancestor rotation preserves child controls/poles, peers and explicit shot keys: AvatarSample_A.vrm
+PASS rotation Undo restores exact ancestor: AvatarSample_A.vrm
+PASS rotation Redo restores exact ancestor: AvatarSample_A.vrm
+PASS ancestor uniform scale keys once without baking native child controls: AvatarSample_A.vrm
+PASS scale Undo restores exact ancestor: AvatarSample_A.vrm
+PASS scale Redo restores exact ancestor: AvatarSample_A.vrm
+PASS unreachable scale refuses before changing native child or history: AvatarSample_A.vrm
+PASS unreachable ancestor rotation refuses atomically with native name: AvatarSample_A.vrm
+PASS actual world-axis ancestor rotation ring begins its intended drag: AvatarSample_A.vrm
+PASS rotation preview holds feet with current feedback while read-only sampling retains authored ancestors: AvatarSample_A.vrm
+FAIL unreachable rotation drag keeps last valid native preview: AvatarSample_A.vrm
+PASS returning to valid rotation clears stale reach feedback: AvatarSample_A.vrm
+PASS Escape restores exact pre-drag ancestor without history: AvatarSample_A.vrm
+PASS releasing a valid ancestor rotation commits one key/Undo without baking the native child: AvatarSample_A.vrm
+PASS rotation gesture Undo restores its exact original key: AvatarSample_A.vrm
+PASS rotation gesture Redo restores the committed key exactly: AvatarSample_A.vrm
+PASS all49 frames remain reachable after ancestor rotation/scale: AvatarSample_A.vrm
+PASS Apply model scale works with a planted foot selected and preserves its target: AvatarSample_A.vrm
+PASS root scale Undo restores exact native contact/body data: AvatarSample_A.vrm
+PASS ancestor scale defers pending native physics without consuming its ticket: AvatarSample_A.vrm
+PASS actual native body simulation starts for scale lifecycle: AvatarSample_A.vrm
+PASS ancestor scale defers live native physics without freezing or changing contacts: AvatarSample_A.vrm
+PASS actual Local recording begins before ancestor scale: AvatarSample_A.vrm
+PASS ancestor scale cannot silently finish a live native recording: AvatarSample_A.vrm
+PASS ancestor numeric rotation keys once while native feet stay planted: AvatarSample_Avrm0.vrm
+PASS ancestor rotation preserves child controls/poles, peers and explicit shot keys: AvatarSample_Avrm0.vrm
+PASS rotation Undo restores exact ancestor: AvatarSample_Avrm0.vrm
+PASS rotation Redo restores exact ancestor: AvatarSample_Avrm0.vrm
+PASS ancestor uniform scale keys once without baking native child controls: AvatarSample_Avrm0.vrm
+PASS scale Undo restores exact ancestor: AvatarSample_Avrm0.vrm
+PASS scale Redo restores exact ancestor: AvatarSample_Avrm0.vrm
+PASS unreachable scale refuses before changing native child or history: AvatarSample_Avrm0.vrm
+PASS unreachable ancestor rotation refuses atomically with native name: AvatarSample_Avrm0.vrm
+PASS actual world-axis ancestor rotation ring begins its intended drag: AvatarSample_Avrm0.vrm
+PASS rotation preview holds feet with current feedback while read-only sampling retains authored ancestors: AvatarSample_Avrm0.vrm
+FAIL unreachable rotation drag keeps last valid native preview: AvatarSample_Avrm0.vrm
+PASS returning to valid rotation clears stale reach feedback: AvatarSample_Avrm0.vrm
+PASS Escape restores exact pre-drag ancestor without history: AvatarSample_Avrm0.vrm
+PASS releasing a valid ancestor rotation commits one key/Undo without baking the native child: AvatarSample_Avrm0.vrm
+PASS rotation gesture Undo restores its exact original key: AvatarSample_Avrm0.vrm
+PASS rotation gesture Redo restores the committed key exactly: AvatarSample_Avrm0.vrm
+PASS all49 frames remain reachable after ancestor rotation/scale: AvatarSample_Avrm0.vrm
+PASS Apply model scale works with a planted foot selected and preserves its target: AvatarSample_Avrm0.vrm
+PASS root scale Undo restores exact native contact/body data: AvatarSample_Avrm0.vrm
+PASS ancestor scale defers pending native physics without consuming its ticket: AvatarSample_Avrm0.vrm
+PASS actual native body simulation starts for scale lifecycle: AvatarSample_Avrm0.vrm
+PASS ancestor scale defers live native physics without freezing or changing contacts: AvatarSample_Avrm0.vrm
+PASS actual Local recording begins before ancestor scale: AvatarSample_Avrm0.vrm
+PASS ancestor scale cannot silently finish a live native recording: AvatarSample_Avrm0.vrm
+PASS packed HAS reopens exact native pose under rotated/scaled nested ancestors
+PASS nested transforms and editable cyan paint match own preview/MP4 pixels
+PASS all original prepared native source bytes remain unchanged
+CONTACT_TRANSFORM {"checks":129,"failures":4,"folder":"C:\\a\\Programming\\cloudflare\\has-import-off-full-20261121-c31576d\\output\\contact-transform\\1795263195550742500","movie":"C:\\a\\Programming\\cloudflare\\has-import-off-full-20261121-c31576d\\output\\contact-transform\\1795263195550742500/render_1795263243_47881391_0/movie.mp4","native_reports":[{"bones":126,"checks":25,"diagnostics":{"preview":{"authored_exact":true,"changed":true,"peak":0.000000168587391158326,"status":"Planted feet held. Release to apply; Escape cancels."},"rotation":{"changed":true,"history_delta":1,"peak":0.000000493541222112981,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."},"scale":{"changed":true,"history_delta":1,"peak":0.000000476837158203125,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."}},"failures":1,"name":"Miku_Hatsune.pmd","peak_error":0.000000476837158203125},{"bones":77,"checks":25,"diagnostics":{"preview":{"authored_exact":true,"changed":true,"peak":0.000000283611797158301,"status":"Planted feet held. Release to apply; Escape cancels."},"rotation":{"changed":true,"history_delta":1,"peak":0.00000032951450634755,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."},"scale":{"changed":true,"history_delta":1,"peak":0.000000365686162240308,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."}},"failures":0,"name":"reimu_hakurei_bikini_ragdoll.mdl","peak_error":0.000000365686162240308},{"bones":83,"checks":25,"diagnostics":{"preview":{"authored_exact":true,"changed":true,"peak":0.000000485146642859036,"status":"Planted feet held. Release to apply; Escape cancels."},"rotation":{"changed":true,"history_delta":1,"peak":0.00000034377788438178,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."},"scale":{"changed":true,"history_delta":1,"peak":0.000000549729691101675,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."}},"failures":1,"name":"scout.mdl","peak_error":0.000000549729691101675},{"bones":91,"checks":25,"diagnostics":{"preview":{"authored_exact":true,"changed":true,"peak":0.00000019670096662594,"status":"Planted feet held. Release to apply; Escape cancels."},"rotation":{"changed":true,"history_delta":1,"peak":0.000000241311425952517,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."},"scale":{"changed":true,"history_delta":1,"peak":0.000000479680863918475,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."}},"failures":1,"name":"AvatarSample_A.vrm","peak_error":0.000000479680863918475},{"bones":91,"checks":25,"diagnostics":{"preview":{"authored_exact":true,"changed":true,"peak":0.000000533172226369061,"status":"Planted feet held. Release to apply; Escape cancels."},"rotation":{"changed":true,"history_delta":1,"peak":0.00000013677447441296,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."},"scale":{"changed":true,"history_delta":1,"peak":0.000000483829012409842,"status":"Pose key saved automatically at frame 12. Undo restores the edit and its key."}},"failures":1,"name":"AvatarSample_Avrm0.vrm","peak_error":0.000000483829012409842}],"project":"C:\\a\\Programming\\cloudflare\\has-import-off-full-20261121-c31576d\\output\\contact-transform\\1795263195550742500/rotated-scaled-contacts.has"}
+
+

@@ -1,0 +1,23 @@
+{
+  "format": "has_import_info_pose_pin_refresh_1",
+  "status": "PASS",
+  "scope": "Only the raw/LF SHA fields for the qualified four-line pose-editor Import info setup change. All memberships/other hashes and verifier assertions exact.",
+  "paths": [
+    {
+      "path": "tests/wind_review_port_files.json",
+      "before_sha256": "29de7fae9d216d50c4df242bcc60a009656d83d398434e571c9853226f896fb1",
+      "after_sha256": "d3319214a212796d593abb3d2f4d813d253b5fcac1673a5744594b9350ecf986",
+      "changed_fields": 2,
+      "membership_and_other_rows_preserved": true
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "before_sha256": "f933952d337cc7656abb984afaf149cfadf2626d5cdc9cd3d187a6205fbd77e9",
+      "after_sha256": "8dd90e929c2bdc61b3c70eea069ae6f7eddc508516a34c6973a47009ab2e52d5",
+      "changed_fields": 2,
+      "membership_and_other_rows_preserved": true
+    }
+  ],
+  "full_regression_required": true,
+  "recorded_ns": 1795269370581740000
+}

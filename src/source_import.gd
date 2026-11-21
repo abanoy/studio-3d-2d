@@ -23,6 +23,14 @@ var generic := false
 var native_family := ""
 var import_frame := 0
 var placement_context := {}
+var request_context: Dictionary={}
+
+func import_context() -> Dictionary:
+	var sequence=app.get("sequence_editor")
+	return {"session":str(app.get("recovery_session")),"owner":str(sequence.active_owner) if sequence else ""}
+
+func completion_matches() -> bool:
+	return not request_context.is_empty() and import_context()==request_context
 
 func _ready() -> void:
 	load_paths()
@@ -212,6 +220,7 @@ func launch(path: String, member: String, as_model: bool, scale: float, content 
 	actor = as_model
 	import_frame = at_frame
 	placement_context = placement.duplicate(true)
+	request_context=import_context()
 	cancelled = false
 	app.stop(); app.finish_stroke(); app.pose_editor.finish_drag(); app.release_mouse()
 	folder = ProjectSettings.globalize_path("res://output/compatibility/source-" + str(Time.get_unix_time_from_system()).replace(".", "-") + "-" + str(Time.get_ticks_usec()))
@@ -285,6 +294,8 @@ func _process(_delta: float) -> void:
 	if not result is Dictionary or not result.get("ok", false):
 		app.message(str(result.get("error", "Preparation ended without a result")) if result is Dictionary else "Local preparation failed. Check the installed tools and the import log.")
 		return
+	if not completion_matches():
+		app.message("Preparation finished for an earlier scene. Current scene preserved; prepared files remain in "+folder);return
 	var error := ""
 	if actor: error = app.pose_editor.add_model(str(result.glb),import_frame,placement_context)
 	else:
@@ -294,25 +305,9 @@ func _process(_delta: float) -> void:
 	if not error.is_empty(): return
 	var report = JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("parameters.json")))
 	if not actor and report is Dictionary: apply_view(report)
-	var count: int = report.get("warnings", []).size() if report is Dictionary else 0
-	var skipped: int = report.get("mount_warnings", []).size() if report is Dictionary else 0
-	app.message(("3D asset" if generic or not native_family.is_empty() else "Source asset") + " imported through standard GLB. %d resource warnings; %d dependency packages skipped. Details: %s" % [count, skipped, folder])
-	if actor and app.height_review and app.height_review.pending:app.message("3D asset prepared. Review its height to finish adding the model. Details: "+folder)
+	app.pose_editor.import_capabilities.notify_import(report)
+	if actor and app.height_review and app.height_review.pending:app.message("3D asset prepared. Review its height to finish adding the model. Import info is available after adding it. Details: "+folder)
 	elif actor and app.renderer.active_model():app.message(app.status.text+app.placement_message(app.renderer.active_model().data))
-	if count > 0:
-		var dialog := AcceptDialog.new()
-		dialog.exclusive = false
-		dialog.title = "Imported with limitations" if not native_family.is_empty() else "Source import warnings"
-		var summary := "Import notes"
-		if report.get("missing_textures") is Array:
-			var missing: int = report.missing_textures.size()
-			summary = "Missing texture files: %d" % missing
-		dialog.dialog_text = "%s\n%s\n\nFull details: %s" % [summary, "\n".join(report.warnings.slice(0, 6)), folder.path_join("parameters.json")]
-		app.add_child(dialog)
-		dialog.confirmed.connect(dialog.queue_free)
-		dialog.canceled.connect(dialog.queue_free)
-		dialog.close_requested.connect(dialog.queue_free)
-		dialog.popup_centered(Vector2i(740, 340))
 
 func apply_view(report: Dictionary) -> bool:
 	var view = report.get("suggested_view")

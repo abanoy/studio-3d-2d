@@ -320,6 +320,23 @@ def main():
         results['camera_interactions_'+camera_label] = camera_report
     print('PASS camera wire29/key26/lens12 controls and eight style-scale-workspace timeline34/lens22 variants (515 checks)')
 
+    # Independent generated-fixture component; never requires an earlier Full.
+    import_info_folder = output / 'import-capability-canonical' / str(time.time_ns())
+    import_info_log = run([sys.executable, '-B', '-u', 'tests/verify_import_capability.py',
+                           '--output', str(import_info_folder)], timeout=4200)
+    (output / 'import-capability-suite.log').write_text(import_info_log, encoding='utf-8')
+    import_info_report = json.loads((import_info_folder / 'verification.json').read_bytes())
+    if (import_info_report.get('status') != 'PASS' or type(import_info_report.get('checks')) is not int
+            or import_info_report['checks'] != 267
+            or import_info_report.get('all_admitted_sources_unchanged') is not True
+            or import_info_report.get('all_runtime_sources_unchanged') is not True
+            or import_info_report.get('all_private_jobs_and_desktops_closed') is not True
+            or import_info_report.get('all_writer_trees_restored') is not True
+            or import_info_report.get('parent_environment_preserved') is not True):
+        raise RuntimeError('Import information component failed')
+    results['import_capability'] = import_info_report
+    print('PASS import information:43 summary/120 actual-app/104 private GUI and packed-cold controls')
+
     # Composite suite launches four separately bounded GPU jobs serially. Do not
     # apply a single-engine deadline to their combined runtime on a busy machine.
     helper_log = run([sys.executable, '-u', 'tests/verify_secondary_helpers.py'], timeout=600)

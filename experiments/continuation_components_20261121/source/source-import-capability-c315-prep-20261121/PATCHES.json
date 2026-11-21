@@ -1,0 +1,47 @@
+{
+  "format": "has_import_capability_c315_literal_port_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "patches": [
+    {
+      "path": "src/pose_editor.gd",
+      "before": "var shape_window: Window\n",
+      "after": "var shape_window: Window\nvar import_capabilities: Node\n"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "before": "\tshape_button=app.button(panel,\"Shapes / expressions…\",open_shapes)\n",
+      "after": "\tshape_button=app.button(panel,\"Shapes / expressions…\",open_shapes)\n\timport_capabilities=preload(\"res://src/import_capability_editor.gd\").new();add_child(import_capabilities);import_capabilities.setup(self,panel)\n\tapp.world_selection.add_import_info(import_capabilities)\n"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "before": "\tneon_outline(keys_box, shape_button, \"sparkle\")\n",
+      "after": "\tneon_outline(keys_box, shape_button, \"sparkle\")\n\tneon_outline(keys_box, import_capabilities.button, \"help\")\n"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "before": "func tree_font() -> Font:\r\n",
+      "after": "func add_import_info(info: Node) -> void:\r\n\tif info==null or not is_instance_valid(tree):return\r\n\tfor control in actions:\r\n\t\tif is_instance_valid(control) and control.get_meta(\"import_capability_action\",false):return\r\n\tvar item: Button=info.add_button(tree.get_parent())\r\n\tinfo.bind_world_action(self)\r\n\titem.set_meta(\"import_capability_action\",true)\r\n\titem.set_meta(\"rail\",[\"Import info\",\"help\",\"Import info\"])\r\n\tactions.append(item);tree.get_parent().move_child(item,help_label.get_index());refresh_actions()\r\n\r\nfunc tree_font() -> Font:\r\n"
+    },
+    {
+      "path": "src/source_import.gd",
+      "before": "var placement_context := {}\r\n",
+      "after": "var placement_context := {}\r\nvar request_context: Dictionary={}\r\n\r\nfunc import_context() -> Dictionary:\r\n\tvar sequence=app.get(\"sequence_editor\")\r\n\treturn {\"session\":str(app.get(\"recovery_session\")),\"owner\":str(sequence.active_owner) if sequence else \"\"}\r\n\r\nfunc completion_matches() -> bool:\r\n\treturn not request_context.is_empty() and import_context()==request_context\r\n"
+    },
+    {
+      "path": "src/source_import.gd",
+      "before": "\tplacement_context = placement.duplicate(true)\r\n",
+      "after": "\tplacement_context = placement.duplicate(true)\r\n\trequest_context=import_context()\r\n"
+    },
+    {
+      "path": "src/source_import.gd",
+      "before": "\tvar error := \"\"\r\n\tif actor: error = app.pose_editor.add_model",
+      "after": "\tif not completion_matches():\r\n\t\tapp.message(\"Preparation finished for an earlier scene. Current scene preserved; prepared files remain in \"+folder);return\r\n\tvar error := \"\"\r\n\tif actor: error = app.pose_editor.add_model"
+    },
+    {
+      "path": "src/source_import.gd",
+      "before": "\tvar count: int = report.get(\"warnings\", []).size() if report is Dictionary else 0\r\n\tvar skipped: int = report.get(\"mount_warnings\", []).size() if report is Dictionary else 0\r\n\tapp.message((\"3D asset\" if generic or not native_family.is_empty() else \"Source asset\") + \" imported through standard GLB. %d resource warnings; %d dependency packages skipped. Details: %s\" % [count, skipped, folder])\r\n\tif actor and app.height_review and app.height_review.pending:app.message(\"3D asset prepared. Review its height to finish adding the model. Details: \"+folder)\r\n\telif actor and app.renderer.active_model():app.message(app.status.text+app.placement_message(app.renderer.active_model().data))\r\n\tif count > 0:\r\n\t\tvar dialog := AcceptDialog.new()\r\n\t\tdialog.exclusive = false\r\n\t\tdialog.title = \"Imported with limitations\" if not native_family.is_empty() else \"Source import warnings\"\r\n\t\tvar summary := \"Import notes\"\r\n\t\tif report.get(\"missing_textures\") is Array:\r\n\t\t\tvar missing: int = report.missing_textures.size()\r\n\t\t\tsummary = \"Missing texture files: %d\" % missing\r\n\t\tdialog.dialog_text = \"%s\\n%s\\n\\nFull details: %s\" % [summary, \"\\n\".join(report.warnings.slice(0, 6)), folder.path_join(\"parameters.json\")]\r\n\t\tapp.add_child(dialog)\r\n\t\tdialog.confirmed.connect(dialog.queue_free)\r\n\t\tdialog.canceled.connect(dialog.queue_free)\r\n\t\tdialog.close_requested.connect(dialog.queue_free)\r\n\t\tdialog.popup_centered(Vector2i(740, 340))\r\n",
+      "after": "\tapp.pose_editor.import_capabilities.notify_import(report)\r\n\tif actor and app.height_review and app.height_review.pending:app.message(\"3D asset prepared. Review its height to finish adding the model. Import info is available after adding it. Details: \"+folder)\r\n\telif actor and app.renderer.active_model():app.message(app.status.text+app.placement_message(app.renderer.active_model().data))\r\n"
+    }
+  ]
+}

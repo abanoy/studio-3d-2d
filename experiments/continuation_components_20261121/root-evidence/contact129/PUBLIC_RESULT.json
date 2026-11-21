@@ -1,0 +1,36 @@
+{
+  "format": "has_contact_rotation_scoped_root_1",
+  "status": "PASS",
+  "baseline_revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "purpose": "Existing planted-foot regression correction only",
+  "source_manifest_sha256": "5c8eef061c8e025197899db01292a3d7b5f1a21a6f7c0246e5565c11576a6f51",
+  "Full_qualification_claimed": false,
+  "application_changed": false,
+  "original_reference_sha256": "29abba1d80398128a07d9a2215a7be744821984037cf9d225b7955f0b7576066",
+  "protected_original_reference": "C:\\a\\Programming\\cloudflare\\has-import-off-full-20261121-c31576d\\output\\contact-persistence\\1795263020174950200\\native-packed.has",
+  "stage": "C:\\a\\Programming\\cloudflare\\has-contact-rotation-scoped-1795264307051952500",
+  "probe": {
+    "pid": 4796,
+    "exit": 0,
+    "reaped": true,
+    "hidden": true
+  },
+  "checks": 129,
+  "native_contexts": 5,
+  "all_owned_launchers_reaped": true,
+  "all_private_jobs_closed_isolated": true,
+  "parent_environment_unchanged": true,
+  "main_source_and_head_unchanged": true,
+  "all_admitted_inputs_preserved": true,
+  "cases": [
+    {
+      "name": "contact-transform",
+      "status": "PASS",
+      "expected_checks": 129,
+      "graphical": true,
+      "checks": 129
+    }
+  ],
+  "preservation_failure_count": 0,
+  "private_job_count": 1
+}

@@ -1,0 +1,53 @@
+{
+  "format": "has_import_capability_headless163_1",
+  "status": "PASS",
+  "revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "current_functional_sources": 1103,
+  "runtime_base_files": 1106,
+  "runtime_overlay_files": 1111,
+  "expected_checks": 163,
+  "expected_jobs": 5,
+  "checks": 163,
+  "cases": [
+    {
+      "name": "legacy43",
+      "checks": 43,
+      "status": "PASS"
+    },
+    {
+      "name": "classic-simple",
+      "checks": 30,
+      "status": "PASS"
+    },
+    {
+      "name": "classic-advanced",
+      "checks": 30,
+      "status": "PASS"
+    },
+    {
+      "name": "neon-simple",
+      "checks": 30,
+      "status": "PASS"
+    },
+    {
+      "name": "neon-advanced",
+      "checks": 30,
+      "status": "PASS"
+    }
+  ],
+  "source_manifest_sha256": "ada960adee5a02eeb29b42c0ac82df6ddc43209303b931883db51c059039d6c4",
+  "candidate_manifest_sha256": "5cb9ea727f550857ccb005a1a6c47bdda2eb1979ec4e11c6cae64903062f0812",
+  "Full_claimed": false,
+  "failed_Full_waived": false,
+  "graphical_qualification_claimed": false,
+  "native_inputs_used": false,
+  "owner_assets_used": false,
+  "adopted": false,
+  "all_owned_jobs_closed": true,
+  "parent_environment_preserved": true,
+  "all_admitted_inputs_preserved": true,
+  "Main_source_preserved": true,
+  "owned_lock_removed": true,
+  "owned_job_count": 5,
+  "preservation_failure_count": 0
+}

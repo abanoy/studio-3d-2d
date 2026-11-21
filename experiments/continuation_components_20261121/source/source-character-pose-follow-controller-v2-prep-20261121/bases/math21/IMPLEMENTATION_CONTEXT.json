@@ -1,0 +1,43 @@
+{
+  "format": "has_part_pose_follow_readonly_implementation_context_1",
+  "files": [
+    {
+      "path": "src/model.gd",
+      "bytes": 30301,
+      "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7"
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "bytes": 8424,
+      "sha256": "f155b7a2ae7b8a42f6ce14e88b485e14cdc3ac95855d0ab43575c4fe4f89b213"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "bytes": 6426,
+      "sha256": "600f30f9801f50b2e58e8d09ad8f758e62f6a8418723497bba1baeadaa4b1eac"
+    },
+    {
+      "path": "src/source_bone_bindings.gd",
+      "bytes": 24681,
+      "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54"
+    },
+    {
+      "path": "output/source-character-parts-editor-prep-20261121/payload/src/character_parts.gd",
+      "bytes": 8704,
+      "sha256": "809b97fa7cc92a3ec053ff43e53c206ff418c4e22b2f3ac767c0cde948bdca21"
+    }
+  ],
+  "current_source_written": false,
+  "limitations": [
+    "World object parent topology does not imply body-before-part dependency",
+    "Model.apply_current is also called by SecondaryLive outside WorldRuntime.evaluate",
+    "Model serialized bone deltas use base.origin additive position and base.rotation postmultiplied rotation with retained base scale",
+    "SourceBoneBindings currently authenticates one69-bone hair profile; body/dress need explicit qualified converter/source-node/runtime mappings",
+    "Current static bundle metadata requires independent_rigs=true and bone_following=false"
+  ],
+  "native_owner_original_inventory": {
+    "path": "output/private-junko-folder-audit-20261121/ORIGINAL_INPUT_PINS.json",
+    "bytes": 21773,
+    "sha256": "6927cbe759c86a6400efb895de77340c8ea89d706c3bcab5670557ae933f20c7"
+  }
+}

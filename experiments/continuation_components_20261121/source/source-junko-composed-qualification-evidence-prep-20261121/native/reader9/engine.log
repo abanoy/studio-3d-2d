@@ -1,0 +1,12 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS fresh process loads the packed synthetic assembly snapshot
+PASS all saved static World/member/native/visibility fields match expected wire
+PASS fresh process recovers exact six-member bundle from member selection
+PASS all source paths resolve inside copied snapshot assets, not writer sources
+PASS fresh runtime independently prepares all seven saved records
+PASS saved group owns no member bone inventory
+PASS fresh source loading keeps six distinct rigs despite repeated bone names
+PASS fresh reader retains keyed per-part/outfit visibility
+PASS fresh reader preserves one root scale without per-part normalization
+CHARACTER_PARTS_READER {"actual_six_MDL_alignment_qualified":false,"bone_following_qualified":false,"checks":9,"failures":0,"synthetic_only":true}

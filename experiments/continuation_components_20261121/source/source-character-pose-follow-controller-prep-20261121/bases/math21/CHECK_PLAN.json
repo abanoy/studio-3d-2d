@@ -1,0 +1,20 @@
+{
+  "format": "has_part_pose_follow_source_proposal_plan_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "targets": [
+    "payload/src/part_pose_follow_math.gd",
+    "payload/tests/part_pose_follow_unit.gd",
+    "payload/project.godot"
+  ],
+  "expected_synthetic_checks": 21,
+  "marker": "PART_POSE_FOLLOW_MATH ",
+  "headless_only": true,
+  "native_assets_required": false,
+  "Full_admission_required_for_synthetic_math": false,
+  "author_execution": false,
+  "actual_native_alignment_qualified": false,
+  "actual_pose_following_qualified": false,
+  "application_adopted": false,
+  "next_feature": "separate non-adopted two-Skeleton follow controller and real source-index-bound body/dress alignment probe",
+  "actual_model_admission_candidates": 54
+}

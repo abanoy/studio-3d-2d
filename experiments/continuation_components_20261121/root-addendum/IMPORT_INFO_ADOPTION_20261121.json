@@ -1,0 +1,34 @@
+{
+  "format": "has_import_info_scoped_adoption_1",
+  "status": "PASS",
+  "base_revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "functional_sources_before": 1103,
+  "functional_sources_after": 1109,
+  "modified": [
+    "experiments/reference_body_20261120/run_full.py",
+    "experiments/reference_body_20261120/test_receipt_provenance.py",
+    "src/pose_editor.gd",
+    "src/source_import.gd",
+    "src/world_selection.gd",
+    "tests/contact_transform_smoke.gd",
+    "tests/mmd_missing_texture_smoke.gd",
+    "tests/source_import_owner_unit.gd",
+    "tests/verify.py",
+    "tests/verify_contact_transform.py"
+  ],
+  "added": [
+    "src/import_capability_editor.gd",
+    "src/import_capability_summary.gd",
+    "tests/import_capability_app_headless.gd",
+    "tests/import_capability_gui_smoke.gd",
+    "tests/import_capability_summary_unit.gd",
+    "tests/verify_import_capability.py"
+  ],
+  "all_unrelated_functional_files_preserved": true,
+  "ordinary_component267_pass": true,
+  "final_metadata_version267_pass_claimed": false,
+  "whole_Full_pass_claimed": false,
+  "source_plan_sha256": "40a218e075be3a297fd359cb60258d65ae1f0b6e19ce1e5faf889f53505fd03c",
+  "durable_backup": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\import-info-adoption-backup-1795269302701513600-8194115a3c264a4ba9c7d67ec531a2bd",
+  "recorded_ns": 1795269303260976800
+}

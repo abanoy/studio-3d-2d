@@ -1,0 +1,59 @@
+{
+  "format": "has_prepared_map_import_info_overlay_2",
+  "source_manifest": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-capability-canonical-c315-v2-prep-20261121/SOURCE_PINS.json",
+    "bytes": 4835,
+    "sha256": "0cc2240218def0037cfe0377d22a0c22f772805dc07f967c5144b0d0dce66977"
+  },
+  "targets": [
+    {
+      "path": "src/pose_editor.gd",
+      "bytes": 71326,
+      "sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "operation": "replace",
+      "base_bytes": 71033,
+      "base_sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "bytes": 32551,
+      "sha256": "4aad0b860df30e598f560c784308380fd217e7ac02fe70467456125f20cb3c3f",
+      "operation": "replace",
+      "base_bytes": 32037,
+      "base_sha256": "da1b36461976a521b27592bec818600937057522c783d3500c293448735be4cf"
+    },
+    {
+      "path": "src/source_import.gd",
+      "bytes": 18129,
+      "sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2",
+      "operation": "replace",
+      "base_bytes": 18620,
+      "base_sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d"
+    },
+    {
+      "path": "src/import_capability_summary.gd",
+      "bytes": 9894,
+      "sha256": "4d0dd7fd93c0f7c2372bad8c365abbbfb0b11e011ed6309022b1de46a32fde81",
+      "operation": "new"
+    },
+    {
+      "path": "src/import_capability_editor.gd",
+      "bytes": 6027,
+      "sha256": "942b1d984e081883a2f3ab269ffb079bcba959fd6c091967eff1db7c0d4a9e35",
+      "operation": "new"
+    }
+  ],
+  "production_overlay_targets": 5,
+  "no_current_Main_edits": true,
+  "original_map_pass": {
+    "path": "C:/a/Programming/cloudflare/has-prepared-map-editor64-1795268002799951700/ROOT_RESULT.json",
+    "bytes": 4604,
+    "sha256": "5d3ada904d9c5dcd3bb96636faf4b498bae30e0dbd01d1e70c0a1aaaeb9ee480"
+  },
+  "original_source_manifest": {
+    "path": "bases/v1/SOURCE_PINS.json",
+    "sha256": "66a091596faa2c4531a2e27c4ba95c6ca7118f62bddaf1fb6753ffe1a44cb804"
+  },
+  "version2_runtime_status": "UNRUN",
+  "original_inputs_and_all_geometry_light_history_checks_retained": true
+}

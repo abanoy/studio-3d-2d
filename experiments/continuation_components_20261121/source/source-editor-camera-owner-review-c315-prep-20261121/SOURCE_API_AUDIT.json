@@ -1,0 +1,24 @@
+{
+  "format": "has_owner_review_preparation_source_api_audit_1",
+  "status": "SOURCE_API_SELF_AUDIT_GO_PREPARATION_ONLY",
+  "script": "prepare_owner_review.py",
+  "script_sha256": "663e6447c1aaba19e55db720df087fc7686df452ce62a5797f25aa98e0f81fd6",
+  "source_ast_passed": true,
+  "reviewed_flow": [
+    "Only exact Gitc315 runtime_scope freeze_source is called;1106 expected file count and post-copy source hashes checked.",
+    "Archive preflight is data-only Python; no native importer or engine call. Protected originals compared to retained435 manifest bytes and exact Python integer/string stamps, then preserved after copies.",
+    "No run.command/launch.pyw/Godot/import/profile startup is invoked. Only source snapshot Git subprocesses run.",
+    "Four owner-operated CRLF launchers use existing Pythonw and normal Studio/launch.pyw optional positional project argument. Quoted mixed path separators are supported by Python Windows paths; no test flags/private launcher/cancelled jobs are introduced.",
+    "New UUID custom_user_dir_name and overridecfg are isolated from old reviews and Full profiles.",
+    "Main1103 raw hashes/blobIDs/identity pins and old manifest+project copies are read-only preserved; installed Pythonw pin/environment unchanged.",
+    "Fresh review-only reservation refuses existing target; no delete, move, installed-tool modification or experimental overlays.",
+    "Self-audit admits exact1116 files and refuses any unexpected source/cache/output file before first launch."
+  ],
+  "limitations": [
+    "Preparation and file/API audit only. Normal startup, native package replay, graphical input and owner observations remain unverified.",
+    "Canonical Full still pending at authoring; scoped111+515 is not Full qualification."
+  ],
+  "authoring_refusals": [
+    "Two source literal/syntax issues were caught by AST/static inspection before the builder ran; no review files existed at those source checks. Corrected final script then built successfully."
+  ]
+}

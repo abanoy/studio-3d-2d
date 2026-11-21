@@ -57,6 +57,7 @@ var base_shapes: Node
 var animated_shapes: Node
 var shape_button: Button
 var shape_window: Window
+var import_capabilities: Node
 var shape_close: Button
 var shape_user_size:=Vector2i.ZERO
 var shape_geometry_busy:=false
@@ -95,6 +96,8 @@ func setup(owner_app, parent: Node) -> void:
 	app.advanced(import_control)
 	frame_button=app.button(panel, "Frame model", frame_model)
 	shape_button=app.button(panel,"Shapes / expressions…",open_shapes)
+	import_capabilities=preload("res://src/import_capability_editor.gd").new();add_child(import_capabilities);import_capabilities.setup(self,panel)
+	app.world_selection.add_import_info(import_capabilities)
 	alt_hint=app.label(panel,"Hold Alt to reveal bones.");alt_hint.add_theme_font_size_override("font_size",12)
 	record_button=app.button(panel, "Record pose key", record_dialog)
 	pose_library=preload("res://src/pose_library_editor.gd").new();add_child(pose_library);pose_library.setup(self,panel)
@@ -1114,6 +1117,7 @@ func build_neon_inspector() -> void:
 	neon_outline(keys_box, motion.button, "wave")
 	neon_outline(keys_box, movement_path.button, "path")
 	neon_outline(keys_box, shape_button, "sparkle")
+	neon_outline(keys_box, import_capabilities.button, "help")
 	var importer = app.get("mmd_pose_importer")
 	if importer:
 		for control in [importer.import_button, importer.motion_button]:

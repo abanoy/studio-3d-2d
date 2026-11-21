@@ -1,0 +1,1542 @@
+{
+  "format": "has_c315_remaining_scopes_1",
+  "status": "SCOPED_29_WRAPPERS_PASS_NOT_FULL",
+  "revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "cases": [
+    {
+      "name": "contact_viewport",
+      "exit": 0,
+      "pid": 17984,
+      "reaped": true,
+      "seconds": 68.4792864,
+      "report_sha256": "660c51987494c00ae8b45fe86bedd9231996bb446e7f9e11073fb845ed685d5e",
+      "status": "PASS"
+    },
+    {
+      "name": "multi_audio",
+      "exit": 0,
+      "pid": 29508,
+      "reaped": true,
+      "seconds": 76.5755431,
+      "report_sha256": "e62d0c02962f254265dae99ae51e1ba1cdfde8ab740f73728a7b2f3c8e1909be",
+      "status": "PASS"
+    },
+    {
+      "name": "project_duration",
+      "exit": 0,
+      "pid": 31668,
+      "reaped": true,
+      "seconds": 29.2731928,
+      "report_sha256": "1de81b9285eeec79b83e9f84018a135d5dcc0d720b745d7e25a4e5d17facc190",
+      "status": "PASS"
+    },
+    {
+      "name": "motion_assist",
+      "exit": 0,
+      "pid": 16060,
+      "reaped": true,
+      "seconds": 0.3937503,
+      "report_sha256": "116683f502fcb6de3472f8c5bcb881487180c52b7eea3fa5b92dc0675094ea65",
+      "status": "PASS"
+    },
+    {
+      "name": "motion_tracks",
+      "exit": 0,
+      "pid": 24256,
+      "reaped": true,
+      "seconds": 0.6863317,
+      "report_sha256": "2d4115a54b1ac6c9eab87d07cd2058dab991c8763ef50c5bce40d8c1807e03cb",
+      "status": "PASS"
+    },
+    {
+      "name": "motion_native_preview",
+      "exit": 0,
+      "pid": 21632,
+      "reaped": true,
+      "seconds": 30.9282994,
+      "report_sha256": "90eae7b67c5bb0651aad7830ce1a6cd7c3c56b16cc732aa2bcddcff077371c7b",
+      "status": "PASS"
+    },
+    {
+      "name": "motion_model",
+      "exit": 0,
+      "pid": 19972,
+      "reaped": true,
+      "seconds": 0.5847285,
+      "report_sha256": "90164f15b7aeb1a3481672f83423bab97b89149a0cb47fa0027758ab45d7307c",
+      "status": "PASS"
+    },
+    {
+      "name": "motion_editor",
+      "exit": 0,
+      "pid": 26836,
+      "reaped": true,
+      "seconds": 32.0321744,
+      "report_sha256": "0169a8af76dca86c266bf8ea7f1e173b3f473a2ab7403835750bc8a48248b241",
+      "status": "PASS"
+    },
+    {
+      "name": "opacity",
+      "exit": 0,
+      "pid": 29028,
+      "reaped": true,
+      "seconds": 17.5158246,
+      "report_sha256": "771229fa16eeb3293afd75e09f3b9a5c3c3633a6fd034689b6a53ba8c49be069",
+      "status": "PASS"
+    },
+    {
+      "name": "brush_opacity",
+      "exit": 0,
+      "pid": 27984,
+      "reaped": true,
+      "seconds": 13.7696615,
+      "report_sha256": "c3c02deb0dbfd2113eac04c2bd437d2931cfc01b9e73a44f84710bbb2a3fea0a",
+      "status": "PASS"
+    },
+    {
+      "name": "brush_pressure",
+      "exit": 0,
+      "pid": 29468,
+      "reaped": true,
+      "seconds": 14.5941214,
+      "report_sha256": "a9a95a1209c2b7b2b12ba050a53844bef12f06f83b447a00e317e75f7235d90a",
+      "status": "PASS"
+    },
+    {
+      "name": "layers",
+      "exit": 0,
+      "pid": 13148,
+      "reaped": true,
+      "seconds": 16.7500814,
+      "report_sha256": "c1f63ac1571ec7b02c5d2d51108ea32d2b6e8bc1631632d9d90525bab466836f",
+      "status": "PASS"
+    },
+    {
+      "name": "onion",
+      "exit": 0,
+      "pid": 25556,
+      "reaped": true,
+      "seconds": 18.8635406,
+      "report_sha256": "f3e0a23d0e40ecd4ba499dab1cda6e4d26c37a0ab4b4be40fe9ff36821915727",
+      "status": "PASS"
+    },
+    {
+      "name": "fill",
+      "exit": 0,
+      "pid": 30632,
+      "reaped": true,
+      "seconds": 34.5396114,
+      "report_sha256": "24acf641dc0adff307ebd1e48de7e7f3682015fb7e4861f454218ee50a568b3a",
+      "status": "PASS"
+    },
+    {
+      "name": "fill_gaps",
+      "exit": 0,
+      "pid": 15744,
+      "reaped": true,
+      "seconds": 40.8290062,
+      "report_sha256": "91dd7ebe9c42334d71fc98fe1157576afeb9cfffe4a921ca4e3dbee8b2207140",
+      "status": "PASS"
+    },
+    {
+      "name": "fill_expand",
+      "exit": 0,
+      "pid": 21496,
+      "reaped": true,
+      "seconds": 27.2698368,
+      "report_sha256": "93ef065e8646092b8d92fe622a0478daedb5eb9eaf2ca80673fd6e4f8d31ef98",
+      "status": "PASS"
+    },
+    {
+      "name": "fill_connections",
+      "exit": 0,
+      "pid": 33544,
+      "reaped": true,
+      "seconds": 28.942365,
+      "report_sha256": "41aad3c1c6fffe1922f7de4506ad93e8b1fa705f6f9fee356fef08fb8f382a83",
+      "status": "PASS"
+    },
+    {
+      "name": "palette",
+      "exit": 0,
+      "pid": 19844,
+      "reaped": true,
+      "seconds": 37.7694283,
+      "report_sha256": "30359696007c62008cc92db39a0e332dd084c2a6fd13430fdf2af26c2828264b",
+      "status": "PASS"
+    },
+    {
+      "name": "drawing_history",
+      "exit": 0,
+      "pid": 21968,
+      "reaped": true,
+      "seconds": 13.8688972,
+      "report_sha256": "ea3c91965e2cfbcb616d5fb3615a30989c5a322d8ea9bac5952766d50cdcb90e",
+      "status": "PASS"
+    },
+    {
+      "name": "drawing_selection",
+      "exit": 0,
+      "pid": 21740,
+      "reaped": true,
+      "seconds": 18.2163935,
+      "report_sha256": "5a161472e8b32ce4a25e5f55b784962fc5c0cdd0c98ed8364922ff182118647e",
+      "status": "PASS"
+    },
+    {
+      "name": "drawing_transform",
+      "exit": 0,
+      "pid": 25116,
+      "reaped": true,
+      "seconds": 26.5875776,
+      "report_sha256": "1af9d4d12132a046c3c04c0f0e25dba2bb077380c59c7a56a04305892ef9f647",
+      "status": "PASS"
+    },
+    {
+      "name": "recovery_identity",
+      "exit": 0,
+      "pid": 3916,
+      "reaped": true,
+      "seconds": 2.2914205,
+      "report_sha256": "2cdadf24df37586c39d51550992c5565afeb71613815985d05fa15a4071e8cac",
+      "status": "PASS"
+    },
+    {
+      "name": "recovery_startup",
+      "exit": 0,
+      "pid": 10080,
+      "reaped": true,
+      "seconds": 109.1079132,
+      "report_sha256": "66103c8b283d2a7628570777bb1b7daba98da36bc5eb8b12ec75a963bb45aeb8",
+      "status": "PASS"
+    },
+    {
+      "name": "recovery_history",
+      "exit": 0,
+      "pid": 8164,
+      "reaped": true,
+      "seconds": 125.481047,
+      "report_sha256": "369b7ba31dbb9d8b85335b46b5b9d6a18c2f0fe2452f29bb78ee2bbb7ff940c0",
+      "status": "PASS"
+    },
+    {
+      "name": "recovery_schedule",
+      "exit": 0,
+      "pid": 11176,
+      "reaped": true,
+      "seconds": 25.7822674,
+      "report_sha256": "fc9c8077fe563f2cb2dcf27e78209e33457c2f7b225ae66f2d7679e5f9e6191d",
+      "status": "PASS"
+    },
+    {
+      "name": "recovery_preview",
+      "exit": 0,
+      "pid": 3916,
+      "reaped": true,
+      "seconds": 11.5730678,
+      "report_sha256": "9c8fc596d29ed25796f4ca1125c4de8c92c9bf38890505057f30e564ddc0acce",
+      "status": "PASS"
+    },
+    {
+      "name": "home",
+      "exit": 0,
+      "pid": 33044,
+      "reaped": true,
+      "seconds": 20.6442243,
+      "report_sha256": "8ebf0d48983bf831e242b32f0e14f070ead1237a22ce9f1377455c952fbafd81",
+      "status": "PASS"
+    },
+    {
+      "name": "tutorials",
+      "exit": 0,
+      "pid": 18176,
+      "reaped": true,
+      "seconds": 26.9712177,
+      "report_sha256": "f32fae919eb0d2c422753097cd76e414327e460807cad670084b31512a6dd651",
+      "status": "PASS"
+    },
+    {
+      "name": "first_movie",
+      "exit": 0,
+      "pid": 17656,
+      "reaped": true,
+      "seconds": 47.2499511,
+      "report_sha256": "37997a0922608ca1cab4572553a8cde554131005148e0f5b084afd7d37f451dd",
+      "status": "PASS"
+    }
+  ],
+  "expected_wrapper_count": 29,
+  "failed_Full_reclassified": false,
+  "whole_verifier_pass_claimed": false,
+  "human_device_acceptance_claimed": false,
+  "functional_source_count": 1103,
+  "source_and_head_unchanged": true,
+  "parent_environment_unchanged": true,
+  "all_private_jobs_isolated_closed": true,
+  "current_private_jobs": 70,
+  "all_current_private_jobs_exit0": true,
+  "prior_receipts_preserved": true,
+  "private_jobs": [
+    {
+      "path": "output/private-desktop/brush_opacity_smoke_973d94261d434daa8bbd8d11bde6d2f2.json",
+      "sha256": "fd02a8cb97c996ead90c3fffd70007dd5cc45b70224a923785bdddc1fb082b31",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_96d2be0f3e834c0f933d7ced33a91ae4",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 14084,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.099
+      }
+    },
+    {
+      "path": "output/private-desktop/brush_opacity_smoke_c2f504eb8f944cf09e1d5258e693ec80.json",
+      "sha256": "fc5be82757a60f958846627970312931c4c5cb979e5d3c4a701c74beb6c03075",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a81527bdf85d4ae8863f614d067bba97",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22976,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.891
+      }
+    },
+    {
+      "path": "output/private-desktop/brush_pressure_smoke_0831e73485e746819025b65c1689d9dd.json",
+      "sha256": "269e239d0ae9e0fb3cfa8bdcfce3a2c4cfafc7de1b18d9beb84303f09edfbbdd",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b86368baad6144a4b6831c97760b07d3",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 14992,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.838
+      }
+    },
+    {
+      "path": "output/private-desktop/brush_pressure_smoke_5164cf9eb0d145e9b8c670aeef5038bf.json",
+      "sha256": "783e0a3c3caa43e7b7ec6cbe57f7f3f90c8b88984e91ab1365603259fb70df05",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_57309a8ca5f746aaa93e676bd0d02811",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24276,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.72
+      }
+    },
+    {
+      "path": "output/private-desktop/contact_viewport_read_af9c785215c14539857abe36409513bb.json",
+      "sha256": "9ddcf7a9a430b3b31893f18392cb9614bc98b60f0bd14d713be840a2bf706046",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_731b5a2438ff479f8043b384737d7246",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 9384,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.503
+      }
+    },
+    {
+      "path": "output/private-desktop/contact_viewport_smoke_a35015338060479592893a2ed55beb69.json",
+      "sha256": "01aa0245cc9e4a16d6c94eb498e31b39b59c8db0aa876ef00779f891e0365dd5",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5b7a4fddb4794a72b326fa8050454782",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27396,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 62.505
+      }
+    },
+    {
+      "path": "output/private-desktop/drawing_history_smoke_c78b8966179645e5aa43660db7f8fb2b.json",
+      "sha256": "fc94d52acb6108d8f85fbd07d519c62b4a405b14ab849bf24def8d57f565e74d",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_384db534c1d242539e2c4791a9f9554a",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20420,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.304
+      }
+    },
+    {
+      "path": "output/private-desktop/drawing_history_smoke_d62e8beb30144c83922a78a0eba23bdb.json",
+      "sha256": "4811fc61a5966d42319bb1cc3211b31796d80001404eb14382a0a76d28322431",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_caa71b9122934803a1190fb33a8f1ebb",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 15884,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.015
+      }
+    },
+    {
+      "path": "output/private-desktop/drawing_selection_smoke_18176cbbbe754510846441b987f34917.json",
+      "sha256": "4427ba8f2eef478d3b3235a3c9d0abdb89399dc3f7a56081741bd7ebbfecdec0",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5cab5c3a8e594952865ada83e2ac6d24",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24844,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.968
+      }
+    },
+    {
+      "path": "output/private-desktop/drawing_selection_smoke_b185e02a48204f82a72829fe37f65c90.json",
+      "sha256": "49bf5bc3afd44a30f271989bd4f0e63588fa924d274194456fb41a5c9405af4d",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_4f6f6fe80906407b8a2389746ead2c2f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 32284,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 13.467
+      }
+    },
+    {
+      "path": "output/private-desktop/drawing_transform_smoke_241fbd69ba904b8d99a2e38464700eec.json",
+      "sha256": "d648ed90748ccbeba8813c1c794ae33bb132a0bbd474b24532c2e59a04cb739e",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5d2d63bdd4cc437587ce6262a9b050da",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25576,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 21.664
+      }
+    },
+    {
+      "path": "output/private-desktop/drawing_transform_smoke_cdfc68bfa3004e07991daa640e64d748.json",
+      "sha256": "845042a551698e809556c65ca74d79047db799e84bbfff06f3effff828df9b48",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_7dbd3e9c336a4517bdb623251e5e2379",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 4088,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.932
+      }
+    },
+    {
+      "path": "output/private-desktop/fill_connections_smoke_87b51e1661a3496fb18bb8f92267c14a.json",
+      "sha256": "1cc031351001f574788101ba1fdd453c391a01ac1407e6c24896166393b186fc",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e20e68e047a745798149f72b40117bd8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 31096,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.045
+      }
+    },
+    {
+      "path": "output/private-desktop/fill_connections_smoke_8c05427e0bcb4ab7b78cc6c77721e2ab.json",
+      "sha256": "35e5dc04fc7eb175da68065c03f3bc7146c067b0a5dfd8ef617a8ccc8c8f896e",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_790fcf3a2f644b83ac2cffa913302f05",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 2680,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 21.15
+      }
+    },
+    {
+      "path": "output/private-desktop/fill_expand_smoke_4f7a20dfa03d453292aab43cd20442b3.json",
+      "sha256": "9a1b151bc171fb3133140371c7af0b2918b6de305dd7abe8b5661ef3f793ec0e",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c3c91f29961941a1a2815b6e7eefe24e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27052,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 19.844
+      }
+    },
+    {
+      "path": "output/private-desktop/fill_expand_smoke_d31e05e5a6764ef8b7e03230c0430e41.json",
+      "sha256": "65193a7a69eccab5d0ece0ea7825835877a1e0bb6a7bb21e8b14a46b9b28ddd5",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_aefdc0b07db845949a6c6f8ec5ade17c",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 28888,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.862
+      }
+    },
+    {
+      "path": "output/private-desktop/fill_gaps_smoke_a151943a4d764404afc61e2812df28da.json",
+      "sha256": "76b321acfcd09d21dc6e0060f8a1db04ddeef1f09658d8544b920b878ffa75f1",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8bf32d0026a445bca28d7bfcddcd7bf7",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22312,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.897
+      }
+    },
+    {
+      "path": "output/private-desktop/fill_gaps_smoke_e570c9d3731c40df86460891b2809eb4.json",
+      "sha256": "e02c6b6e1af0f30f431ab16eee8eb45ec66eaefd6dab3f5872b0d7ffaa85f170",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_880a7ccbeda94a50bc7759e62d68c279",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 32828,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 33.527
+      }
+    },
+    {
+      "path": "output/private-desktop/fill_smoke_2d645dd0a00d431f8248ba61eb5de05e.json",
+      "sha256": "ece8d1ac673465c21afd1d45654e15d6bf0ee4fb00bb1697c69fa1b1b9bff785",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_4f30a9d5c1ef42a2b911e14428007300",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 5816,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 31.752
+      }
+    },
+    {
+      "path": "output/private-desktop/first_movie_smoke_92dd666e1bab49b0a8b8616aac9e874b.json",
+      "sha256": "26772a3dae8e24f8739b7945160fed4bd06f8eb41157dfcf0d7cc254190c4edb",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_6b9c0bfd24464b0aa39c2a85b09cde0e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22320,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 36.569
+      }
+    },
+    {
+      "path": "output/private-desktop/first_movie_smoke_ecfd9ac80db94a9a821fd5443816b9e4.json",
+      "sha256": "8b5da4b0e50c61b45f8504e5d6e2c7117b359b69df75b8e2483ed7edb1b12d30",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8ddc6623adbd46cda1e3eea64d5c6db0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 31944,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.19
+      }
+    },
+    {
+      "path": "output/private-desktop/home_smoke_2deaccacec34437ea33c8651b51aaa01.json",
+      "sha256": "0ff04fe082a61050e2f40328a6b6a0ccdca514cbfb98305b044e3c9d4c69e02c",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0e0e8ba80ac746d7ab2e6b35ef13c1ed",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27980,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 13.143
+      }
+    },
+    {
+      "path": "output/private-desktop/layers_smoke_defb6a21447b47c89335a3cd866a2bba.json",
+      "sha256": "b6523d55d045b11fe32d0360e0a8193e35986433be4800e884d955640e5eb7fb",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c4a66bcbd5ba483c9111602a52a807d7",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8020,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 16.441
+      }
+    },
+    {
+      "path": "output/private-desktop/motion_animation_read_5723164baa3748c58a018ca7ec0b3a66.json",
+      "sha256": "53aa726a217f5351eb761d48281f02ca91662eb129db206386019d88a699eba6",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_93b2b30825204cb6a3b08731d8d65bab",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 30840,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.834
+      }
+    },
+    {
+      "path": "output/private-desktop/motion_animation_smoke_d230b75b4e0b452987a38abd6c169188.json",
+      "sha256": "39ce84f24ab5bf5ff00646af75ea82d7c143fe1bf259793471b02fd8a071e04f",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f40ef13063614154adc9517b2a2549f1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 7484,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 26.786
+      }
+    },
+    {
+      "path": "output/private-desktop/motion_assist_native_8ed058730aee4bf7a6b44cef52907b60.json",
+      "sha256": "215b0588c9f60bf97a6ee14b0b454a7d4fa03bf60526b6f1b4dc8028863a6220",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a02e22976ad842668fb3a4c0ffcba941",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 28748,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 30.636
+      }
+    },
+    {
+      "path": "output/private-desktop/multi_audio_smoke_1be1e8655e7a46969aad68445847b07a.json",
+      "sha256": "dee8c46c478654d7ef6a7905668c9c134e65caeb2b9e2fd9e15b8609e117d00f",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8e33b0401e9f4587b7eba9daf3015b60",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 10080,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.177
+      }
+    },
+    {
+      "path": "output/private-desktop/multi_audio_smoke_5b0238df4d1745cc82c925c383ad332b.json",
+      "sha256": "d4160b34b7d7c8972acb63357ff037718d4710a4c7e28cbf9456a9dbb147eb74",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_83a0b0ec99e04c239932ec0518280ffd",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 16636,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.254
+      }
+    },
+    {
+      "path": "output/private-desktop/multi_audio_smoke_7db355285ff7403899894797c23b0612.json",
+      "sha256": "162516d3c589170c289fde944c38009b16e75f599aec9a4053812465841b7ff4",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_3ca5ed66ec2b483d8bb0068a2343fbf5",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 33372,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.159
+      }
+    },
+    {
+      "path": "output/private-desktop/multi_audio_smoke_b1c24453ca524aa6b03334a8ace0205b.json",
+      "sha256": "d5b0afe1a4e5c3dc7a163c10bb8500d7e08872a76eb78fb9026b6dc4fc43e784",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1e28d7c29aa0452b8d930d49b89c80fe",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 23660,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 34.032
+      }
+    },
+    {
+      "path": "output/private-desktop/multi_audio_smoke_b412e7c373d44b898fe08b7fa0212175.json",
+      "sha256": "d9d56f09257def5e5613b2dcc5ce8bb47ad2b642864bf89eed6e6dc7f275021f",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2282fa9806a94159a8e32a579c39382e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 21176,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.411
+      }
+    },
+    {
+      "path": "output/private-desktop/onion_smoke_ff861ea786aa447791e003317f8ef7de.json",
+      "sha256": "fe21e952ae059b25b6cd6f74ff9e90d58511cb25a706ac78daad1dec0f2c3520",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f91dd1b68019409eb2b7a6e08f856bef",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 3380,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 18.556
+      }
+    },
+    {
+      "path": "output/private-desktop/opacity_smoke_82263746b609428485f54a68f0eca1bc.json",
+      "sha256": "13a5724d11a1720d70f2b43064b67633f823aca873e3f7f0a3bcba3a0df639c1",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_81e36610f4ab4a94ad2c9ac837d31e47",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25408,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 16.322
+      }
+    },
+    {
+      "path": "output/private-desktop/palette_smoke_34ee53168256472cae456816ecdd45cb.json",
+      "sha256": "7bfc3e3813ce4614aacbee1daf12de0e92ff6e941595106e3c9a2a8d397e2235",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_4e9dd10a8f6745f0acd59803dc0767c0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27672,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.524
+      }
+    },
+    {
+      "path": "output/private-desktop/palette_smoke_67673239f52f40c5b0b0aa3cb7f071c3.json",
+      "sha256": "2e5a4789e483dc718722a9ac901c1a2dcd53b3635f65a4335039cc4b081ad6ee",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ef4650fad68d4cc69eeebc7788ddcb6c",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27524,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.648
+      }
+    },
+    {
+      "path": "output/private-desktop/palette_smoke_aa5ce5961b0b45379a7646528289aa8d.json",
+      "sha256": "9905281ec2a5e5b34cac39e779e5146492e87c75b2507b2b5a566a39b6dba693",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_eab80a4f5e4c4b75bf8609c21301aabc",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27980,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 16.153
+      }
+    },
+    {
+      "path": "output/private-desktop/palette_smoke_c000f36389a8466a98102851a699de5e.json",
+      "sha256": "53f0b10dcd4aadcb8fa21bab50551c3576242d0bd93c72794b3fedd8150713c2",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a4112c5405da4cf3bd42b5ff1db02778",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 32952,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.669
+      }
+    },
+    {
+      "path": "output/private-desktop/palette_smoke_c2d686627f1f4e02a0ff43283113bb12.json",
+      "sha256": "96aef39a7e269b3d9ce2d916f8dee2f53d3d9d574b663f8cd03d920f7ca63af8",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_17a461d1dbf143148149267042b72bc3",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 26996,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.056
+      }
+    },
+    {
+      "path": "output/private-desktop/palette_smoke_de55038e03844307b9fc8c84002237c4.json",
+      "sha256": "9392aa36afdc0b8f9262f3efa2ac8039b7637ac903559b1ec97ee265dff5b033",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5591dc81de124799a316d8662ca126c4",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 23568,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.977
+      }
+    },
+    {
+      "path": "output/private-desktop/project_duration_smoke_24713b28758f4905a74d0b37eafe88c6.json",
+      "sha256": "76fef6ace181e02012a35c0c416ca047853a71bfcd4d61f1db699b5213c90bf5",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_530e2ff14d874e6ba78148ed454ed5b8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 30944,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.374
+      }
+    },
+    {
+      "path": "output/private-desktop/project_duration_smoke_60ad306df7d343858451062bb7d68718.json",
+      "sha256": "83e22251a7e38ce35b8207065b793f29e885fe8f5a37527d4ce0ea4c5265c43e",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1c04dec884ce41af9cb788df96cfb8c8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 33048,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.84
+      }
+    },
+    {
+      "path": "output/private-desktop/project_duration_smoke_6738d5be0bb54e84ab0911d39ae58c4a.json",
+      "sha256": "e0d56f823ed5545dccff9d2c73902be7ce02c05482607bdb98aa1f9d680fc647",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e707866b332046bab194ca66dc63df40",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 14440,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.329
+      }
+    },
+    {
+      "path": "output/private-desktop/project_duration_smoke_80b7e3cd1a4a467b98c188b14c4d622e.json",
+      "sha256": "c66ab04b3ff664d55ab96b66776f35c042ec07138b711df10b12aa504fce13f2",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2fe561a94f5c4a628cf2181bf9d6299e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 32308,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.447
+      }
+    },
+    {
+      "path": "output/private-desktop/project_duration_smoke_81c35c1b0c6b467f8300dfcc28c5d476.json",
+      "sha256": "4899aa05f68d2cebd2ba3946cbb6d248c8e7f7f8e1882c8005033f1a4fb07649",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2d323076ba8f48b8b33ab9738737666f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27656,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.792
+      }
+    },
+    {
+      "path": "output/private-desktop/recovery_history_smoke_459e58cdec5348579a8c85f79984e90e.json",
+      "sha256": "e28e3cfc6ecbdcef4e34de8bf402f38b79f51d77afe50f07bf32b5fa10af0152",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_43c04c56b82348419596a0d0b47b0797",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 26968,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 82.154
+      }
+    },
+    {
+      "path": "output/private-desktop/recovery_preview_smoke_6137b25ff0e746de85552ce47a32b41a.json",
+      "sha256": "ffa51453837122b2a29af32100c0c7eb47e875732f51108c9315a620c5378726",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5121809bc2a34c559c476c8a2c16b034",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 32308,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.371
+      }
+    },
+    {
+      "path": "output/private-desktop/recovery_schedule_smoke_b301bf5624a84f04be6e0e56f9f23808.json",
+      "sha256": "d5706a5b2b20ecd9af16233af5cb49bd8431be172913aabe504125cd0e5475ee",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_35cfd7f753c141ac9fe08bb5738ab5b2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22508,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 25.563
+      }
+    },
+    {
+      "path": "output/private-desktop/recovery_startup_writer_3ebbddd4ff564247a6144f8421187730.json",
+      "sha256": "b7d59f7c3196a331c98c2f78e36e9ac4beb712aab22351eac27061c223e31e07",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_9c71202b0c304cb9a59679e6813f31f1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 28200,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 18.182
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_0b3fefd1683f4210816a687517195c63.json",
+      "sha256": "c4546a7ca679eb8e59e25705a3a21c7047dee329f19850db3629f266b6e657db",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_7fda554fe6234c9ea0ed0bdaf7c9856c",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22264,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.875
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_0eea6fd5cdd34a5dbbd9a734cca0ffd5.json",
+      "sha256": "0189b0117b72a6a4591b2837da77d30518f381bac363ab3ff343e32243da874f",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_fb25377213e5451fa93d20993d2758dc",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 31932,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.729
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_15ab233a79004fd6a068eb8d1d5346ae.json",
+      "sha256": "8ca49f19d0189b5dee0a9f81aceea14d94b33ff98cf3e7c4732f17ceae0ea3f5",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f9f325e64df7421ca7b16817d58f7328",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 23672,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.501
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_39e6278673f1479cb4d033e5d2559fd4.json",
+      "sha256": "13dc2b1f0d1cd56b2fbbfaae3d1dbde22e0ffcddb860172a4873cdb7e884f562",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_3f7da24d6ae14ea997647dbb0f59a003",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 28744,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.405
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_5a60a17e609e4eb99496d0cc672db1a5.json",
+      "sha256": "b7347004897747195d3e15735a58ebbb5dc9a44645f39057806359544949a3fa",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_dbb68c0165064a8fa3f07fd717cee960",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 33304,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.424
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_735b4675c5c94ac79b8964315f06d2b7.json",
+      "sha256": "b3c30ef30599e47c755c3d92ed6c4695038ab3700bee996f913819fc284ea321",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a0b70f5a0ebd490fbf06c98ddd709d04",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 29380,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.432
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_75839185e0994c1b950f1f04f98934d0.json",
+      "sha256": "d36725fc8cb964449c8760da9ccfacec46fab6dab5bc1d5dec31a9cda10bff12",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_78a45c1f029d4bdea140ae1f54a641d3",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 31276,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.693
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_760a0c9b594e473ba2075fdcb9515b96.json",
+      "sha256": "3af3c2837a2d7731046068d3a797d7a5300ade531c9c7fcaf53dfbf00f7169a5",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_9d264b9e30b54c81a005d808fa6ed2f5",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22960,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.928
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_7cb4233f186a4bee86b5c1ef7542e947.json",
+      "sha256": "b0b679bbcbf474939e96f687a8b5bd9642aed5af234fee0534a20047e0499a39",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_84066254e5b847d199945f51c63465ef",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 29376,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.409
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_7ce3167056a246889db046d5dbb5883a.json",
+      "sha256": "021ce86ad082bb2ee4040361c78cde47ba0917086270dbc2a5aab96d4bbd0e19",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_be22e0ed95c04b54b0a4a757cf4561df",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8508,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.866
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_8119f5b3d2b947e29f2a189e0064331a.json",
+      "sha256": "a99f5732ccabe415be5722583636b07df8479891ed8a45f3b61c31990d3c9fba",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_783dc27d97d8485ca5eb16c76c745b01",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 33012,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.673
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_828d6cff640c4ef8b2b3cd5d2d0af8c8.json",
+      "sha256": "1238f4429f7fda3e6faa128e47103042a9b7e1c09f093f56c540727b28931e8d",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_6828d0efa3d446b6b6d820e70a9d0af6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20404,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.533
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_8dcd311c9f5640d097ae3d48b8b3b5c1.json",
+      "sha256": "e5ecdb9823e3410889b80b82f83c3bc43a7dfcb303ee82d8a5600a3ee8ef29bb",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1de044133c38476e8a37da8bfd0c62c2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 29584,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.417
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_adf0ca382ea84230a722d21f1df0166f.json",
+      "sha256": "6765e2705335ddd910a48c6ec846b487b452265d2d24c0996128f6ff4f05b492",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e6f103476b4247038e215d440bc38485",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19664,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.917
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_b4dd8d7ba4db4cc7808ef18b8bc6feed.json",
+      "sha256": "130a1c81bb0c661696497bcce61e25a8d154ce8f9f12ad353d79b4bd41549307",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5d15befa0e91403d9b05f66c4f4e853e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 31616,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.054
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_bd5ed99bb42d40d4aeaecae3575215a4.json",
+      "sha256": "8e8a3b2fbc7532c63e6bffb1420a8f61613c90988554f7c055ec8c387ab043fe",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_30d4f4d736bf47079dfeb6e6a3739c20",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 33104,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.899
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_c23b174fc04440ffad747d3e5d0c2438.json",
+      "sha256": "827de28ccfc83eb550f936a3e03aa44542a2dae48c96ddc846014283dff00d17",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_24c7c4f0c4c344eaaf9f635a9a008d76",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 32968,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.677
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_f1569701a5464af2aa13e2a8db91f543.json",
+      "sha256": "67bf44cbea85b5b45f4f50d995811057c286970aebc1ea2cc989f16f8cf28224",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c02f5b221bde447d9bbbda515264e1b3",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22476,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.367
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_f99304adc4674a5aab2b09bba362c5af.json",
+      "sha256": "1596a7af369f182eba473d7616ea813d0bee33d714e3ddb785c12c4ea835d8de",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_62424e991c8949728b951eac09b65b51",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 23136,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.07
+      }
+    },
+    {
+      "path": "output/private-desktop/studio_fb0806e6037a4b5dbea6fa47efe9008e.json",
+      "sha256": "9fef8f5975a3566543a75e912d99237c2b1c4766d2fc1cf7eca378b78af42263",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_181e01f43e2c4e39a03f8baa6fef61ae",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 9052,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.032
+      }
+    },
+    {
+      "path": "output/private-desktop/tutorial_smoke_5e5dd522ad6b46549a68c849bac2a0fe.json",
+      "sha256": "b5a987cdb33a19b46a7f02fa43539941850bb217a86c3c9cc0330ce8585faf44",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_275328befc3a4d6f9d9b8f617b806556",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 33104,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 22.814
+      }
+    },
+    {
+      "path": "output/private-desktop/tutorial_smoke_90f18033b8c04e9496e35476d42acbdc.json",
+      "sha256": "d0d246a956e0611cce9ce058d7cc1b7e735cf587e7e208ff621bdc675b7bf3e4",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b419305fff9142c990fdcf89963a28ee",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25528,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.807
+      }
+    }
+  ],
+  "seconds": 988.3618559
+}

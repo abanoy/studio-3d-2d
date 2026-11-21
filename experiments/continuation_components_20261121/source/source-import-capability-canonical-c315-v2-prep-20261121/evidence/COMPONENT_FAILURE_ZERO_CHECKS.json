@@ -1,0 +1,35 @@
+{
+  "format": "has_current_import_capability_verification_1",
+  "status": "FAIL",
+  "scope": "all",
+  "cases": [
+    {
+      "name": "legacy43",
+      "headless": true,
+      "expected_checks": 43,
+      "status": "FAIL",
+      "launcher_reaped": true,
+      "private_resources_closed": false,
+      "launcher_pid": 23076,
+      "launcher_exit": 0,
+      "launcher_handle_closed": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-import-info-canonical267-1795267340933340400\\Studio\\output\\component267\\Cases\\legacy43\\private-receipt.json"
+    }
+  ],
+  "pairs": [],
+  "checks": 0,
+  "whole_full_claimed": false,
+  "native_or_owner_assets_read": false,
+  "sourceio_or_conversion_requested": false,
+  "experimental_coordinator_used": false,
+  "prior_Full_required": false,
+  "error_type": "RuntimeError",
+  "error": "Private Job/window closure proof failed",
+  "source_preservation_failures": [],
+  "all_admitted_sources_unchanged": true,
+  "runtime_source_preservation_failures": [],
+  "all_runtime_sources_unchanged": true,
+  "parent_environment_preserved": true,
+  "all_private_jobs_and_desktops_closed": false,
+  "all_writer_trees_restored": true
+}

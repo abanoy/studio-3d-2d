@@ -1,0 +1,10 @@
+{
+  "status": "ARCHIVE_AUDIT_FAILED_BEFORE_FINALIZATION",
+  "tool_result": "ea42e4 exit1",
+  "error_type": "KeyError",
+  "missing_key": "files",
+  "cause": "One fully preserved historical source manifest declares its five exact payloads under entries. No payload was missing or altered.",
+  "repair": "Recognize only that explicit historical format/entries schema and retain all exact membership/SHA/privacy checks. Prior inventory and auditor source preserved.",
+  "Full_claimed": false,
+  "recorded_ns": 1795269706320785500
+}

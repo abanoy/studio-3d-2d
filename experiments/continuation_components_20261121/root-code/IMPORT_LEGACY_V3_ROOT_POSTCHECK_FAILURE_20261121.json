@@ -1,0 +1,11 @@
+{
+  "status": "ROOT_POSTCHECK_FAILED",
+  "owner_checks_passed": 53,
+  "native_wrapper_exit": 0,
+  "native_wrapper_final_PASS_observed": true,
+  "stage": "C:/a/Programming/cloudflare/has-import-info-legacy-v3-scopes-1795269018717888300",
+  "tool_result": "e48178 exit1",
+  "cause": "Root redundantly expected Godot stdout markers in Python wrapper stdout, although the unchanged wrapper validates the actual engine log files and Windows GUI engine does not inherit that stdout.",
+  "successor": "Preserve strict wrapper exit0/finalPASS and all source/process/error checks. Attribute both marker validations to the unchanged wrapper rather than inventing raw inherited stdout. No application or test source change.",
+  "recorded_ns": 1795269104125535400
+}

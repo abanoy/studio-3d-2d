@@ -1,0 +1,64 @@
+{
+  "format": "has_c315_owner_replay_source_inputs_1",
+  "revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+  "files": [
+    {
+      "path": "qualified_ui_host.py",
+      "bytes": 21967,
+      "sha256": "dfb0cf83cef6dc455d5da9f1c1631f1f0ee053b6e4a646c9045e90e7e9967a3e"
+    },
+    {
+      "path": "qualified_helpers.py",
+      "bytes": 26455,
+      "sha256": "990c37ddca7b1301613f5efc5a7e5a30ce2723369112ef274ee78d2d4dc34087"
+    },
+    {
+      "path": "source1103.py",
+      "bytes": 17881,
+      "sha256": "e32e8b70696fb355eb624424cab0222a51f80041ac14563df9328557b7e387c3"
+    },
+    {
+      "path": "BASELINE_SOURCE1103.json",
+      "bytes": 284660,
+      "sha256": "a2fd8aa45d82e5820a30686c84247f6b1f69833b7e45b7fe5c35f2d1a309f062"
+    },
+    {
+      "path": "FULL182_GROUP_CONTRACT.json",
+      "bytes": 5673,
+      "sha256": "83c97507425ce7e886044fdb934711ef50fc55b95fd1f804f0da09cada0eccc6"
+    },
+    {
+      "path": "reference/verify_owner_review.py",
+      "bytes": 20108,
+      "sha256": "3311880608febf7ecc4ec45d393e631cd18e0cf0fa91ba4c8ff35888ab54dcca"
+    },
+    {
+      "path": "reference/owner_review_replay.gd",
+      "bytes": 11650,
+      "sha256": "f4a168af04bbb748178322492a9f826e027567b30eeba5d5e29bae2e9578fd6c"
+    },
+    {
+      "path": "review_state_compare.py",
+      "bytes": 1937,
+      "sha256": "84cc3aa72709c827787c19a8173a6114f54020f3f96aa8903a4fa92cc82f4591"
+    }
+  ],
+  "preparation_pin": {
+    "bytes": 123121,
+    "sha256": "41f9cb3ff0bd38083f2f1ff990ab5ec83b922db0bbfbd30db33090206b64a410"
+  },
+  "private_seal_pin": {
+    "bytes": 381563,
+    "sha256": "80db2e273e1b583040d0db9f52f27b23c7f632943dee7431ff9df17af2c99a7a"
+  },
+  "expected_cases": 3,
+  "expected_total_checks": 69,
+  "review_source_files": 1106,
+  "review_total_files": 1116,
+  "launcher_count": 4,
+  "committed_replay_script_pin": {
+    "bytes": 11650,
+    "sha256": "f4a168af04bbb748178322492a9f826e027567b30eeba5d5e29bae2e9578fd6c"
+  },
+  "no_request_expected_observed_project_metadata_or_images_in_source_packet": true
+}

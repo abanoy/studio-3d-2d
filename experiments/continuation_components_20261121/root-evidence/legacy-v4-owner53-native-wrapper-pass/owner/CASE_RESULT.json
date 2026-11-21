@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "value": {
+    "authored_single_process_Python_only": true,
+    "cases": [
+      {
+        "bypass_base_creator": false,
+        "checks": 9,
+        "completed_teardown": false,
+        "expected_exit": 0,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-import-info-legacy-v4-scopes-1795269105700452700/Studio/output/compatibility/source-1795269115-336-165785",
+        "getter_proves_map_disappearance": true,
+        "mode": "normal",
+        "owned_pid": 26068,
+        "release_audit": {
+          "cached_exit_at_release": [
+            0
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      },
+      {
+        "bypass_base_creator": false,
+        "checks": 9,
+        "completed_teardown": false,
+        "expected_exit": 1,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-import-info-legacy-v4-scopes-1795269105700452700/Studio/output/compatibility/source-1795269115-43-260075",
+        "getter_proves_map_disappearance": true,
+        "mode": "refusal",
+        "owned_pid": 29332,
+        "release_audit": {
+          "cached_exit_at_release": [
+            1
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      },
+      {
+        "bypass_base_creator": false,
+        "checks": 9,
+        "completed_teardown": false,
+        "expected_exit": 2,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-import-info-legacy-v4-scopes-1795269105700452700/Studio/output/compatibility/source-1795269115-543-373715",
+        "getter_proves_map_disappearance": true,
+        "mode": "cancel",
+        "owned_pid": 11012,
+        "release_audit": {
+          "cached_exit_at_release": [
+            2
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      },
+      {
+        "bypass_base_creator": false,
+        "checks": 9,
+        "completed_teardown": false,
+        "expected_exit": -1,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-import-info-legacy-v4-scopes-1795269105700452700/Studio/output/compatibility/source-1795269115-655-484716",
+        "getter_proves_map_disappearance": false,
+        "mode": "exit_minus_one",
+        "owned_pid": 27848,
+        "release_audit": {
+          "cached_exit_at_release": [
+            -1
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      },
+      {
+        "bypass_base_creator": true,
+        "checks": 10,
+        "completed_teardown": false,
+        "expected_exit": 0,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-import-info-legacy-v4-scopes-1795269105700452700/Studio/output/compatibility/source-1795269115-78-610038",
+        "getter_proves_map_disappearance": false,
+        "mode": "normal",
+        "owned_pid": 33032,
+        "release_audit": {
+          "cached_exit_at_release": [],
+          "release_calls": 0,
+          "release_returns": []
+        }
+      },
+      {
+        "bypass_base_creator": false,
+        "checks": 5,
+        "completed_teardown": true,
+        "expected_exit": 0,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-import-info-legacy-v4-scopes-1795269105700452700/Studio/output/compatibility/source-1795269115-9-729909",
+        "getter_proves_map_disappearance": true,
+        "mode": "normal",
+        "owned_pid": 15120,
+        "release_audit": {
+          "cached_exit_at_release": [
+            0
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      }
+    ],
+    "checks": 53,
+    "failures": 0,
+    "native_converter_or_GPU": false,
+    "negative_exit_getter_limitation": "-1 before and after does not independently prove map disappearance; sole creator/reservation/real release and pinned implementation are required",
+    "source_sha256": "a02217ee5084122c729f33f33754db32bea0762b3430616ffaec90264bcfddd2"
+  },
+  "wrapper_receipt_sha256": "c90fa3ebbf372266f14560ceefb61dd73b8be4a89dfb56c152a268e42af588f9"
+}

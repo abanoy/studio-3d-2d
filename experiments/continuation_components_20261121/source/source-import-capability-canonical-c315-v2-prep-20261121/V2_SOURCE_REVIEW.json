@@ -1,0 +1,25 @@
+{
+  "format": "has_import_info_canonical_v2_source_review_1",
+  "status": "FROZEN_SOURCE_API_GO_UNRUN",
+  "wrapper": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-capability-canonical-c315-v2-prep-20261121/payload/tests/verify_import_capability.py",
+    "bytes": 17154,
+    "sha256": "e4f980300efeb86a884b60967a28fdd2ed6a7763c73ee096499152dd3e98fe81"
+  },
+  "unit": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-capability-canonical-c315-v2-prep-20261121/code_used/test_receipt_classifier.py",
+    "bytes": 3557,
+    "sha256": "5c57c6dfdf1b2771b3de96c12c2d5331dd026bd68e3368ee756bbba1ffaf4eed"
+  },
+  "peer": "cold_import_fix",
+  "peer_scope": "Narrow classifier,use,actual pinned helper schema and30 authored controls. No execution.",
+  "all_other_target_files_byte_exact_predecessor": 9,
+  "exact_reverse_of_only_classifier_and_receipt_use_recovers_predecessor": true,
+  "python_AST_only_files": 2,
+  "controls_authored": 30,
+  "controls_executed_by_author": 0,
+  "component_checks_executed_by_author": 0,
+  "old_component_result": "FAIL0_PRESERVED",
+  "new_component_result": "UNRUN",
+  "prior_Full_required": false
+}

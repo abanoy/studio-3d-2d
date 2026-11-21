@@ -1,0 +1,337 @@
+{
+  "format": "has_isolated_part_follow_fixture_source_closure_1",
+  "algorithm": "Literal res:// GDScript dependencies recursively, including deferred load branches, plus two literal JSON lookup resources; no execution/import",
+  "files": [
+    {
+      "path": "data/bone_names.en.json",
+      "source": "data/bone_names.en.json",
+      "source_domain": "current_readonly_source",
+      "bytes": 12268,
+      "sha256": "def290b36766ae54f4e18c6fb70f46af0d47a0ce319264bbcea560f4c597e97b"
+    },
+    {
+      "path": "data/shape_names.en.json",
+      "source": "data/shape_names.en.json",
+      "source_domain": "current_readonly_source",
+      "bytes": 636,
+      "sha256": "e6c2418addf0280832a48b4b95ec787e908c61199ab300a29b3aa8efc7bf131e"
+    },
+    {
+      "path": "src/airflow.gd",
+      "source": "src/airflow.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 6191,
+      "sha256": "e072ffeb4a5702a47ab413deb9be2305d35e46562887eb3464ca765654f9cfb4"
+    },
+    {
+      "path": "src/animated_channels.gd",
+      "source": "src/animated_channels.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 10184,
+      "sha256": "0ea45c03afcd0e8bb5d9f7f6b685ba11a0b7d8674494940ba6dec7f42996a6b0"
+    },
+    {
+      "path": "src/animation_clips.gd",
+      "source": "src/animation_clips.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 14386,
+      "sha256": "5408c7b7cd4db347d461d5c4ba56f2aa2e8646bfea7f86967e2eec459a9503cf"
+    },
+    {
+      "path": "src/body_animation.gd",
+      "source": "src/body_animation.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 8824,
+      "sha256": "aae1891ae15f7e7d79c4a963aed967e73dfdcb56dcfd1431fa73e8755cdff763"
+    },
+    {
+      "path": "src/body_curve_runtime.gd",
+      "source": "src/body_curve_runtime.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 4840,
+      "sha256": "2ab81a207b3afbb2f88ae1f4b10fdb9aae1b41f982bdef845a793ed47fa08db2"
+    },
+    {
+      "path": "src/body_curves.gd",
+      "source": "src/body_curves.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 18527,
+      "sha256": "8c227a2093f117d66544ee597dade2163f6859f55fabaa72987f02abed280a62"
+    },
+    {
+      "path": "src/bone_labels.gd",
+      "source": "src/bone_labels.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 3426,
+      "sha256": "c2578be56876c26dcb7b9bbf373bd5c0d54c47b255c67ad2d125103f3afbf6c2"
+    },
+    {
+      "path": "src/contact_animation.gd",
+      "source": "src/contact_animation.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 3782,
+      "sha256": "03d56343e67064c3994632d326fce8608caff6b190e340452253370f1d97d4ba"
+    },
+    {
+      "path": "src/contact_bend.gd",
+      "source": "src/contact_bend.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 1202,
+      "sha256": "5f10c4810a50ede195b40f014e4c547ce2ea9d0e6542ffc5105ed286d77a9721"
+    },
+    {
+      "path": "src/drawing_limits.gd",
+      "source": "src/drawing_limits.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 900,
+      "sha256": "d62518750895cc368d7bc1b3826335d369dfc26344daf70f30037208c7499ffa"
+    },
+    {
+      "path": "src/drawing_origin.gd",
+      "source": "src/drawing_origin.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 5393,
+      "sha256": "6aa6d775f105ee67f4f280db6adf0d3668566c8aa324a2e56286b6cde95ca64d"
+    },
+    {
+      "path": "src/expression_presets.gd",
+      "source": "src/expression_presets.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 11635,
+      "sha256": "d184a8c16c8e7947e9eedbe445e40c86cdbec6c0f497ce18720432a20c2698b6"
+    },
+    {
+      "path": "src/extended_timing.gd",
+      "source": "src/extended_timing.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 3582,
+      "sha256": "1f1610018b65f7dead4afe029fb9923b6ef9d9b3cf8840d9502da3c3b9dfce68"
+    },
+    {
+      "path": "src/foot_contacts.gd",
+      "source": "src/foot_contacts.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 9762,
+      "sha256": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607"
+    },
+    {
+      "path": "src/foot_hold.gd",
+      "source": "src/foot_hold.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 2687,
+      "sha256": "5fe8d8023e2d74aa99c92e402e90a6a1506fee396767d21e32a408fb398244ea"
+    },
+    {
+      "path": "src/import_basis.gd",
+      "source": "src/import_basis.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 21417,
+      "sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072"
+    },
+    {
+      "path": "src/joint_constraints.gd",
+      "source": "src/joint_constraints.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 10183,
+      "sha256": "159b6ca53b1167bc646ebc01f599811c497664f20e87b69da3405dd3f0bd02f3"
+    },
+    {
+      "path": "src/limb_ik.gd",
+      "source": "src/limb_ik.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 8969,
+      "sha256": "5aaf67f2329cc71e8ed16e038f77a1c17f4a48da8fd8c2489719074d6c26d870"
+    },
+    {
+      "path": "src/model_opacity.gd",
+      "source": "src/model_opacity.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 3076,
+      "sha256": "2408cda6f011132be1cffbfd1446c76a4b21631338e83957164c127241192dde"
+    },
+    {
+      "path": "src/model.gd",
+      "source": "src/model.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 30301,
+      "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7"
+    },
+    {
+      "path": "src/motion_animation.gd",
+      "source": "src/motion_animation.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 6546,
+      "sha256": "c0116a027a9828f799dcfd9b825cecf887730b58f01afc27be5b77ef716c64d3"
+    },
+    {
+      "path": "src/motion_assist_tracks.gd",
+      "source": "src/motion_assist_tracks.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 11765,
+      "sha256": "fd9f3e530683d6e19df957decfa990987ab71a5a53cca47dcb3b1969dfbc72e0"
+    },
+    {
+      "path": "src/motion_assist.gd",
+      "source": "src/motion_assist.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 8924,
+      "sha256": "8dc52ae7b61859ec6874e18a4119716594a4d7f8e4291c1b6fba81f74f5be953"
+    },
+    {
+      "path": "src/movement_path.gd",
+      "source": "src/movement_path.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 4754,
+      "sha256": "777123851803dfb2fda5c0a311c7c91d4e7e161593deda31cf7032d24ca63770"
+    },
+    {
+      "path": "src/part_pose_follow_controller.gd",
+      "source": "payload/src/part_pose_follow_controller.gd",
+      "source_domain": "candidate",
+      "bytes": 19376,
+      "sha256": "60a34ac665c0f3e3cd24f5c401adcade44bd0946af2cd909be73f04bf08000b5"
+    },
+    {
+      "path": "src/part_pose_follow_math.gd",
+      "source": "payload/src/part_pose_follow_math.gd",
+      "source_domain": "candidate",
+      "bytes": 1454,
+      "sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf"
+    },
+    {
+      "path": "src/path_locomotion.gd",
+      "source": "src/path_locomotion.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 19710,
+      "sha256": "e66da5a1ef421621be01ff5be230a098ebbb0464b5e1b25437ed539596859f31"
+    },
+    {
+      "path": "src/pose_library.gd",
+      "source": "src/pose_library.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 4338,
+      "sha256": "4b0afbe38f4c9392bb89927f43b3ea1b8f5827f020823b50169e7586a139d931"
+    },
+    {
+      "path": "src/root_component_assistance.gd",
+      "source": "src/root_component_assistance.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 3027,
+      "sha256": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f"
+    },
+    {
+      "path": "src/root_component_clips.gd",
+      "source": "src/root_component_clips.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 2577,
+      "sha256": "c956b4b4014fbc2e6efbdd0f6afda49ce32230b8d0c1c845d74ac9709f280f64"
+    },
+    {
+      "path": "src/root_component_curves.gd",
+      "source": "src/root_component_curves.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 2965,
+      "sha256": "a0b718daffcc1285d29e3ead559746305bd5cd7d813f95788015d527e2e0235d"
+    },
+    {
+      "path": "src/root_component_document.gd",
+      "source": "src/root_component_document.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 19509,
+      "sha256": "98530f2cd95ec6a82bfc8f7d0362e429f264078cef62f3d529ff44a39d66128f"
+    },
+    {
+      "path": "src/root_component_motion.gd",
+      "source": "src/root_component_motion.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 2454,
+      "sha256": "befef7ed4d7343ccba705e9e6676b9658566e37c3ad417ef67a9f50a007226b9"
+    },
+    {
+      "path": "src/root_component_runtime.gd",
+      "source": "src/root_component_runtime.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 667,
+      "sha256": "ace6b71ebdc931a05fe2468a4042dc797a90836b5bd4c99e082ea3202c5d51ff"
+    },
+    {
+      "path": "src/scene3d.gd",
+      "source": "src/scene3d.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 11042,
+      "sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1"
+    },
+    {
+      "path": "src/secondary_rig.gd",
+      "source": "src/secondary_rig.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 12034,
+      "sha256": "e781bd6949ed32cd3b3bf27d6a881ef105ce84d05dff41370861de6c39344ba1"
+    },
+    {
+      "path": "src/shape_animation.gd",
+      "source": "src/shape_animation.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 13627,
+      "sha256": "0192db43abcef661aadfe897d827ddc47f1db44b9abd2c48f4b3c7efbab41148"
+    },
+    {
+      "path": "src/shape_labels.gd",
+      "source": "src/shape_labels.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 703,
+      "sha256": "6e86df1cbef9463ab41165db1964b92ee04881858da95b8a747e1c49103706d3"
+    },
+    {
+      "path": "src/source_shape.gd",
+      "source": "src/source_shape.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 15340,
+      "sha256": "ec653786838c5b1a16e1c4463e16a47904e3f1045755b095996f1df356af2c8c"
+    },
+    {
+      "path": "src/timeline.gd",
+      "source": "src/timeline.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 2878,
+      "sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835"
+    },
+    {
+      "path": "src/video_timing.gd",
+      "source": "src/video_timing.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 869,
+      "sha256": "27501e86b9330da16a340f46af2cb703749136e011a806e2cac828856f040c13"
+    },
+    {
+      "path": "src/visibility_track.gd",
+      "source": "src/visibility_track.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 2124,
+      "sha256": "a79ae20e354d2b5f4436e6dc98186e69be41b72c71e9d3180917a586f6d37152"
+    },
+    {
+      "path": "src/walking_animation.gd",
+      "source": "src/walking_animation.gd",
+      "source_domain": "current_readonly_source",
+      "bytes": 4417,
+      "sha256": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb"
+    },
+    {
+      "path": "tests/part_pose_follow_controller_unit.gd",
+      "source": "payload/tests/part_pose_follow_controller_unit.gd",
+      "source_domain": "candidate",
+      "bytes": 19878,
+      "sha256": "f1c0d7bf44dcda99fef9406141db8bf53abc8ff579255b02a48385e4a5f26acf"
+    }
+  ],
+  "file_count": 46,
+  "gdscript_count": 44,
+  "lookup_json_count": 2,
+  "global_class_name_declarations": 0,
+  "missing_literal_dependencies": [],
+  "current_Main_written": false,
+  "actual_native_assets_required": false,
+  "completedFull_required_for_synthetic_fixture": false,
+  "owned_harness_must_generate_project_and_fresh_profile": true
+}

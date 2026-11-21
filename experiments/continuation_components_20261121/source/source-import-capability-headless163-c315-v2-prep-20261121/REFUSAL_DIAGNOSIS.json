@@ -1,0 +1,27 @@
+{
+  "format": "has_headless163_path_refusal_diagnosis_1",
+  "status": "READ_ONLY_OBSERVED_ZERO_JOB_FAILURE",
+  "prior_packet_manifest": "913b27870fe44329f2a271f743ce132eb405a87176f7a209787e085f2b084561",
+  "prior_driver": "9fad2ba8b22c2eacf99daa3e482e2a07a7663f0d50fed01dd2f61832ee2acbfc",
+  "public_result": {
+    "path": "C:/a/Programming/cloudflare/has-import-info-headless163-1795264650399290900/PUBLIC_RESULT.json",
+    "bytes": 971,
+    "sha256": "c10b79fc7fa0932c5929732607b05adf7b3925943660a00f080202c4c52c9f13"
+  },
+  "request": {
+    "path": "C:/a/Programming/cloudflare/has-import-info-headless163-1795264650399290900/Cases/legacy43/jobs/unit/request.json",
+    "bytes": 2235,
+    "sha256": "cdfcce6f4258eb767f8f9eca438b1deb037493335f3054d5e3f21d9e9c8b685c"
+  },
+  "observed": {
+    "error": "StopIteration",
+    "checks": 0,
+    "jobs": 0,
+    "all_inputs_Main_environment_preserved": true,
+    "owned_lock_removed": true
+  },
+  "cause": "Godot lookup succeeded (request.json exists), then the preserved run_case consumer searched for /python.exe while the exact input-lock Python pathname uses backslashes. This happens before row append or Job/child construction.",
+  "fix": "Normalize only the COPIED Python-used-pin pathname to forward separators for that existing consumer. Preserve raw pin hashes/size/mtime, installed files, raw Godot path/argv, all controller/test payloads and all ownership guards.",
+  "test_credit": 0,
+  "old_source_or_stage_modified": false
+}

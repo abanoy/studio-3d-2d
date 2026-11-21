@@ -1,0 +1,55 @@
+{
+  "format": "has_import_info_receipt_schema_correction_1",
+  "status": "SOURCE_ONLY_UNRUN_SUCCESSOR_FAILURE_PRESERVED",
+  "predecessor": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-capability-canonical-c315-prep-20261121/SOURCE_PINS.json",
+    "bytes": 3243,
+    "sha256": "2bb5e13801a10583d72470bcc58ab87b696248946fdc961c83a5f7e894155643"
+  },
+  "actual_failed_component": {
+    "path": "C:/a/Programming/cloudflare/has-import-info-canonical267-1795267340933340400/ROOT_RESULT.json",
+    "bytes": 1100,
+    "sha256": "dc888067b041255c5363ba990550b83e34d82537300691d6e64d7d3da5e6b509"
+  },
+  "actual_receipt": {
+    "path": "C:/a/Programming/cloudflare/has-import-info-canonical267-1795267340933340400/Studio/output/component267/Cases/legacy43/private-receipt.json",
+    "bytes": 429,
+    "sha256": "1dea92bd21ee825d56907415785b22788a76d26d7c37f235afcebdb420a8fa83"
+  },
+  "actual_helper": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/tools/private_desktop.py",
+    "bytes": 12692,
+    "sha256": "c3bad5ab1792f7103a9bf31eef283ee8b928bd4557b6e53c18b9c0718d92ae61"
+  },
+  "actual_run_command": {
+    "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/run.py",
+    "bytes": 8148,
+    "sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1"
+  },
+  "source_evidence": {
+    "helper_GUI_only_observation_guard_line": 163,
+    "headless_window_count": 0,
+    "headless_private_window_seen": false,
+    "headless_child_desktop_confirmed": false,
+    "headless_job_closed": true,
+    "headless_desktop_closed": true,
+    "launcher_exit": 0,
+    "headless_stdout_checks_observed": 43,
+    "old_component_checks_stay": 0,
+    "old_component_status_stays": "FAIL"
+  },
+  "change": "Use exact engine argv boundary to distinguish headless lifecycle closure from GUI private-window placement. No closure is waived. Headless requires zero observed windows; GUI retains positive window/desktop proof. All modes retain format/exit/PID/Job limit/Job+desktop closure/no foreground/no switch/no helper errors.",
+  "unchanged": {
+    "production_files": 3,
+    "all_other_target_files": 9,
+    "component_checks": 267,
+    "CPU": 163,
+    "GUI": 104,
+    "registered_group": "import_capability",
+    "prior_Full_required": false,
+    "Main_source_untouched": true,
+    "old_failure_unchanged": true
+  },
+  "authored_unit_controls": 30,
+  "author_executed_runtime": false
+}

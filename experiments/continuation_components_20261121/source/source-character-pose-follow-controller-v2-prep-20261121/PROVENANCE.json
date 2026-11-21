@@ -1,0 +1,64 @@
+{
+  "format": "has_part_follow_controller_source_api_provenance_2",
+  "local_source_conventions": [
+    {
+      "path": "src/model.gd",
+      "functions": [
+        "inventory",
+        "apply",
+        "sample",
+        "sample_transform"
+      ],
+      "facts": "base captures actual get_bone_pose; applied position=base.origin+delta; rotation=baseQ*deltaQ; base scale retained"
+    },
+    {
+      "path": "src/physics_rig.gd",
+      "functions": [
+        "capture_pose",
+        "pose"
+      ],
+      "facts": "actual BoneRig capture computes inverse(baseQ)*localQ and local.origin-base.origin"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "functions": [
+        "create",
+        "advance"
+      ],
+      "facts": "live_pose/live_world_transform plus apply_current can overwrite derived local poses; candidate explicitly rejects that phase"
+    }
+  ],
+  "primary_engine_context": [
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.6/scene/3d/skeleton_3d.cpp",
+      "lines": "499–542;858–862;1028–1044",
+      "facts": "Enabled global bone pose is parent global times actual local pose; get_pose reads pose cache, separate from rest; global setter solves parent-inverse local"
+    },
+    {
+      "url": "https://docs.godotengine.org/en/4.6/classes/class_undoredo.html",
+      "facts": "Callable do/undo methods, history count/version and explicit commit/undo/redo APIs"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.6/scene/3d/skeleton_3d.cpp",
+      "lines": "255–275;1215–1248",
+      "facts": "Enter-tree setup creates internal compatibility PhysicalBoneSimulator; animate_physical_bones=false keeps it inactive. Persistent global-pose override changes globals independently of local pose."
+    },
+    {
+      "url": "https://docs.godotengine.org/en/4.6/classes/class_node.html",
+      "facts": "find_children includes internal nodes; get_children default excludes them. This distinction is explicit in the allowed inert stub predicate."
+    }
+  ],
+  "qualified_math_result": {
+    "path": "C:/a/Programming/cloudflare/has-part-follow-math21-1795262753455184600/RESULT.json",
+    "bytes": 635,
+    "sha256": "e12df9c0e2bda80e6f371985c4c9e1d74f93147116c66e51c3bbdf8d3445396e"
+  },
+  "qualified_math_manifest": {
+    "path": "bases/math21/SOURCE_PINS.json",
+    "bytes": 2217,
+    "sha256": "9070c635a32b7379adbece0236e5cfa4b76532d3c5b30f95b031c17b977f4232"
+  },
+  "controller_execution_status": "V2_UNRUN_V1_ACTUAL_FAIL0_PARSE",
+  "original_failure": "PARSE_FAILURE_ORIGINS.json",
+  "annotation_only_correction": "PARSER_CORRECTION.json"
+}

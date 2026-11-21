@@ -54,6 +54,22 @@ func ring_point(editor,index: int) -> Vector2:
 			for j in range(curve.size()-1):distance=minf(distance,point.distance_to(Geometry2D.get_closest_point_to_segment(point,curve[j],curve[j+1])))
 		if distance>margin:margin=distance;best=point
 	return best
+func rotation_points(editor,start: Vector2) -> Dictionary:
+	# Request real world-Y angles, independent of ring size, screen tangent or
+	# the obsolete pixels-to-angle sensitivity. Numeric +90 already refuses above.
+	var camera: Camera3D=app.renderer.camera
+	var origin: Vector3=editor.drag_world.origin
+	var direction:=camera.project_ray_normal(start)
+	var invalid:={"valid":start,"invalid":start,"error":"No supported world-Y ray/plane gesture"}
+	if absf(direction.dot(Vector3.UP))<0.08:return invalid
+	var hit=Plane(Vector3.UP,origin).intersects_ray(camera.project_ray_origin(start),direction)
+	if hit==null:return invalid
+	var radial: Vector3=hit-origin
+	if radial.length_squared()<0.00000001:return invalid
+	var one:=camera.unproject_position(origin+Quaternion(Vector3.UP,deg_to_rad(1))*radial)
+	var ninety:=camera.unproject_position(origin+Quaternion(Vector3.UP,deg_to_rad(90))*radial)
+	if not one.is_finite() or not ninety.is_finite():return invalid
+	return {"valid":one,"invalid":ninety}
 func case_for(plan: Dictionary) -> Dictionary:
 	var first_check:=checks;var first_failure:=failures;var child:=setup(plan);var peer: Dictionary=actor("peer").data.duplicate(true);var original: Dictionary=actor("group").data.duplicate(true);var shots: Array=app.keys.duplicate(true);var history: int=app.history.size();var editor=app.pose_editor
 	rotate_by(2);await settled();var rotated: Dictionary=actor("group").data.duplicate(true);var diagnostics:={"rotation":{"status":app.status.text,"changed":rotated!=original,"history_delta":app.history.size()-history,"peak":peak()}}
@@ -68,16 +84,18 @@ func case_for(plan: Dictionary) -> Dictionary:
 	rotate_by(90)
 	check(actor("group").data==scaled and actor("child").data==child and app.history.size()==history and app.status.text.contains(plan.name),"unreachable ancestor rotation refuses atomically with native name: "+plan.name)
 	app.set_frame(12);app.world_selection.frame_selected();await settled();editor.operation.select(0);editor.space.select(1);editor.update_gizmo();var point:=ring_point(editor,1);var press:=InputEventMouseButton.new();press.button_index=MOUSE_BUTTON_LEFT;press.pressed=true;editor.input(press,point)
-	check(editor.dragging and absf(editor.drag_axis.normalized().dot(Vector3.UP))>.99,"actual world-axis ancestor rotation ring begins its intended drag: "+plan.name)
-	var authored: Dictionary=actor("child").sample(12);var motion:=InputEventMouseMotion.new();editor.input(motion,point+Vector2(1,-1)*deg_to_rad(1)/.02);var preview: Dictionary=actor("group").data.duplicate(true)
+	var gesture:=rotation_points(editor,point)
+	check(editor.dragging and absf(editor.drag_axis.normalized().dot(Vector3.UP))>.99 and not gesture.has("error"),"actual world-axis ancestor rotation ring begins its intended drag: "+plan.name)
+	var authored: Dictionary=actor("child").sample(12);var motion:=InputEventMouseMotion.new();editor.input(motion,gesture.valid);var preview: Dictionary=actor("group").data.duplicate(true)
 	diagnostics["preview"]={"status":app.status.text,"changed":preview!=scaled,"peak":peak(),"authored_exact":actor("child").sample(12)==authored}
 	check(preview!=scaled and peak()<.0002 and actor("child").sample(12)==authored and app.status.text.contains("held"),"rotation preview holds feet with current feedback while read-only sampling retains authored ancestors: "+plan.name)
-	editor.input(motion,point+Vector2(1,-1)*deg_to_rad(90)/.02)
-	check(actor("group").data==preview and peak()<.0002,"unreachable rotation drag keeps last valid native preview: "+plan.name)
-	editor.input(motion,point+Vector2(1,-1)*deg_to_rad(1)/.02)
+	editor.input(motion,gesture.invalid)
+	diagnostics["unreachable_drag"]={"status":app.status.text,"kept_last_valid":actor("group").data==preview,"peak":peak(),"requested_degrees":90.,"measured_ring_degrees":rad_to_deg(editor.drag_ring_angle)}
+	check(actor("group").data==preview and peak()<.0002 and app.status.text.contains(plan.name) and app.status.text.contains("out of reach"),"unreachable rotation drag keeps last valid native preview: "+plan.name)
+	editor.input(motion,gesture.valid)
 	check(actor("group").data==preview and peak()<.0002 and app.status.text.contains("held") and not app.status.text.contains("out of reach"),"returning to valid rotation clears stale reach feedback: "+plan.name)
 	editor.finish_drag(true);check(actor("group").data==scaled and app.history.size()==history,"Escape restores exact pre-drag ancestor without history: "+plan.name)
-	editor.update_gizmo();point=ring_point(editor,1);press.pressed=true;editor.input(press,point);editor.input(motion,point+Vector2(1,-1)*deg_to_rad(1)/.02);press.pressed=false;editor.input(press,point+Vector2(1,-1)*deg_to_rad(1)/.02)
+	editor.update_gizmo();point=ring_point(editor,1);press.pressed=true;editor.input(press,point);gesture=rotation_points(editor,point);editor.input(motion,gesture.valid);press.pressed=false;editor.input(press,gesture.valid)
 	var released: Dictionary=actor("group").data.duplicate(true)
 	check(released!=scaled and app.history.size()==history+1 and peak()<.0002 and actor("child").data==child,"releasing a valid ancestor rotation commits one key/Undo without baking the native child: "+plan.name)
 	app.undo();check(actor("group").data==scaled,"rotation gesture Undo restores its exact original key: "+plan.name)

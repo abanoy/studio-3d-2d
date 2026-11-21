@@ -110,3 +110,13 @@ fixes the scenario test's variable-size selection coordinates, and adds28 exact
 sample-wire controls. Scoped height/import/lesson/scenario routes pass. A fresh
 committed1103-source Full is still required; no new human/device or clean-install
 acceptance is inferred. See the current ledger and follow-up benchmark.
+
+
+## Import information follow-up, 2026-11-21
+
+Import info is adopted with scoped267 GUI/CPU/cold checks, final-metadata163,
+policy47, lifecycle53 and supported map editor64 checks. Source is1109 files;
+canonical Full is183 groups and must run on the new retrieved commit. The c315
+Full remains failed; separate scoped continuations do not replace it. See
+[current evidence](benchmarks/import_info_increment_2026-11-21.json). The seven
+actual human/device/setup gates above remain open; no owner exercise is claimed.

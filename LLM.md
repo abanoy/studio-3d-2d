@@ -7681,3 +7681,95 @@ Root's first Junko105 runtime attempt refused preflight before Job/Godot/any ass
 ## 2026-11-21 Junko assembly partial run retained
 
 Root ran32 synthetic identity-bridge controls: PASS, no native inputs read. Versioned Junko v2 then passed58 domain and38 actual headless editor/control checks (96 total). The fresh reader was NOT launched: bounded handoff correctly refused a persistent zero-byte project.json.lock alongside the expected project and two synthetic GLBs. Both attempted jobs were reaped/closed; all4526 admitted native identities and sources were preserved, and the owned lock removed. This is a partial failed batch, not105passes. Original identity refusal and frozen seals remain. A versioned reader-only successor is in preparation; no Main adoption, real six-MDL alignment, GPU appearance or Full qualification is claimed. See docs/benchmarks/character_parts_headless_2026-11-21.json and archived public results.
+
+## 2026-11-21 c315 retrieved and Full1103 running
+
+Published checkpoint c31576d0c1d84030d51ec886f2f3976a60a70c7b (parent435dc024, treea7a580e3fb645293748337172f775fc8d2b47f89). Freshremote copy has-import-off-full-20261121-c31576d independently verified541changed paths/12570575B/all1103functional rawbytes+Gitblobs+modes; clean before staging. LocalGitlongpaths/autocrlf options are true/false, with globalpreferences unchanged. Thirteen legacy inputs32095990B staged with originals unchanged. Rootexec1322 is active: outerroot-full-launch-1795260488526602700; retainedcoordinator22996,verifier23816; fullfolderoutput/windows-reference-body-1795260488673286600. Four isolated user folders are under the outerrun; parentenvironment unchanged. Do not start competing graphics or edit the Fullcheckout. Canonical182 groups and626newchecks/21moviegroups still require actual successful completion+independentpostflight. Full-IN-PROGRESS is not an aggregatePASS. Continuationarchive525files inventory88d17c37c2c4e80f524775622f08c1e35806ae613e8d75374d26395f823f0235 is pushed and three CPU/read-only audits clear. Agents prepare c315/1103 nativehosts while preserving historical435 hosts/failures; allnativecontact/face GPU work waits for successfulFull. Junko reader-only successor is separately source-reviewed; prior96PASS/reader-unlaunched failure stays. Human/device55/62 unchanged; no ownerprompt.
+
+## 2026-11-21 c315 Full failed; corrected contact scope passes
+
+This terminal entry supersedes the earlier live-running note. c315 Full ended FAIL2801.1817657seconds, Rootexec1322 completed/reaped exit1 (outer2845.1809629), coordinator22996/verifier23816 reaped. All1103functional sources+HEAD stayed unchanged; all167current private jobs closed/isolation proved;1601old receipt paths preserved. All626 new UI/camera and height/default-Off follow-up passed before four failures in129contact-transform assertions. No fresh final report/aggregate groups. FailedFull packet output/source-full-c315-failed-prep-20261121 retains exactsource/stdout/stderr/outerclosure/167rawreceipts; don't run the PASS postflight or admit any c315 Full-gated native/review host. Keep old435 and newc315 failures distinct. The attempted live-pickup writer refused before any history write once it found this completion; it is an unapplied draft.
+
+Root traced the failed contact test to its obsolete .02 radians/pixel assumption. The current ring correctly uses actual ray/plane angles. Source-only test correction output/source-contact-rotation-gesture-v2-prep-20261121 (5c8eef061c8e025197899db01292a3d7b5f1a21a6f7c0246e5565c11576a6f51) independently projects world-Y1degree/90degree radial rotations. Numeric90refusal precedes the gesture for allfive rigs. It keeps all129 assertions/all.0002 limits/exactlastvaliddata/49frames/Undo/physics/Record/HAS/movie checks and strengthens invalid feedback plus Python129/5x25count checks. Cold source/API GO. ACTUAL proposed-snapshot scope PASS129, five native contexts, one private Job closed/reaped, exact48frameH264/1920x1080/24fps/2s; Main/inputs/env unchanged. PUBLIC_RESULT: has-contact-rotation-scoped-1795264307051952500. Allfive measured requested90degrees and kept their last valid planted-foot preview. No production fix or tolerance relaxation. Main adoption of the two test files is still held so the independent component can admit exactc315 source.
+
+Root14309 is now running the29 remaining standalone canonical wrappers in the UNMODIFIED failedc315checkout, folder output/remaining-scopes-1795264927106378400. ContactViewport runs first, then audio/duration/motion/drawing/recovery/Home/tutorial/FirstMovie. It is explicitly a scoped continuation, not a repaired Full or182-group claim; every fresh report/process/private receipt/source/HEAD/profile is audited. Do not launch competing GPU work. The canonical verifier itself is unchanged. After this tail and source fixes/additions qualify, commit/push/verify fresh source then run a genuine new aggregate.
+
+Import info is required independent software (IMPORT03). Candidate output/source-import-capability-c315-prep-20261121 manifest5cb9ea727f550857ccb005a1a6c47bdda2eb1979ec4e11c6cae64903062f0812 has read-only limits/warnings/missing-resource UI, safe async target ownership, no app.gd edit; all original43 tests retained. Cold source/API peer GO. Separate nongraphical component output/source-import-capability-headless163-c315-prep-20261121 manifest913b27870fe44329f2a271f743ce132eb405a87176f7a209787e085f2b084561 aims43+30x4=163/five owned jobs, no owner assets/Full claim. Root5128 actually FAIL0 before any Job (StopIteration); allMain/inputs/env preserved and lock removed, result has-import-info-headless163-1795264650399290900. Face is inspecting path-encoding admission and preparing an explicit successor, not rewriting the frozen packet. Hold Main exactc315 until this independent scope closes. Its old full-GUI host remains CLOSED. The graphical fixture also needs the persistent World action (old Pose-button parent hidden in Draw); a new public acyclic component verifier/canonical group is being prepared separately so independent software can qualify before a future Full. No status promotion yet.
+
+Junko static assembly is105 COMPOSED (96prior+9fresh), not one fresh batch/native/adopted. Compact evidence db3df2204a5317bdd2f1966accb1ba6ddc32934f8f76d44c48fe622b395573f8 preserves oldFAIL96, identity/casefolder refusals and raw safe logs. Policy15 is a subset of25; bridge32 is separate. Real99files/32525911B preserved: body145/dress112/hair69/skirt136/mini136/mask19bones.54exactnonprocedural body-dress anchors still need actual binding. Rest-relative math21synthetic PASS at has-part-follow-math21-1795262753455184600; source9070c635a32b7379adbece0236e5cfa4b76532d3c5b30f95b031c17b977f4232. Hair is developing actual Model/Skeleton3D+UndoRedo55controls (unrun), with same-frame/phase/channel ownership and explicit native-factory refusal. Face flagged an uncovered global-pose override after capture; a versioned fix/test is underway. No Main hook or native follow claim.
+
+Additional actual nongraphical evidence: synthetic ArrayMesh13 PASS at has-weight-engine-synthetic13-1795263168895144200 (no native52444slots/shader/contact proof); shared1103admission60synthetic PASS output/source1103-synthetic60-1795261109398094500; three file-roundtrip policy checks PASS output/easing-gate-files3-1795262041497312700 (not new native checks). New Easing fixture parsed only at has-easing-c315-graphics-parse-1795260866931895900, zero runtime assertions; historical43569+96 remain separate. All executed children are reaped. These do not waive any full-GUI/native host gate.
+
+Frozen but UNRUN c315 hosts: Miku source7a7fa46b26ff626d6f3a157679523c92192bdc48af39649239eca770e95bc60b; face-bounds6830cf03f2432c75757bae67e88cfd1c6b518eef84ea600de2f8e01e5f2f4aba (114planned/16images/percontext85neutral); Easing71f1ea3af625b2032639ef4837c4a195d086b31e94a72d81a82aa7b31a9a8466 (254planned/16privatejobs); actual owner-review validator9fdf8e5dc25724816ea081b64305ab95e424cbc721080c96baeb36bfdb5eef2f (3plannednormalstartup/replays/69checks/12privateimages). All must reject the failedc315proof. Concrete HAS-Review-Editor-Camera-c31576d is PREPARED_NOT_RUNTIME_VERIFIED:1106Gitfiles/3protectedpackedscenes/4normalownerlaunchers, PREPARATION41f9cb3ff0bd38083f2f1ff990ab5ec83b922db0bbfbd30db33090206b64a410. No experimental overlays or normal startup. No ownerprompt.
+
+Cleanup readiness packet66e6b911c56f61b5adcc95ef1978e95578e74e74b2365eb4a9b204847d17ad29 preserves90textartifacts for seven source-only CPUstages,5640files/47366153logicalB. Root bound five720Bstudio.svg copies to committed435/c315, SHAfd9ec2eff6157f02d93e51f1f9e9e2040fe407aa13f5922ac7e2967c76b1d450, receiptEASING_CLEANUP_REPOSITORY_ART_BINDING_20261121.json. NO deletion yet: publish/remoteverify new evidence first, then fresh hostprocess/native identity/membership/boundary checks. Keep Junko/Full/reviews/private inputs/sharedtools. Sourceonly IMPORT02audit separates actual map conversions from editor/artist approval and oldmissingfixtures prose. Formal52/54 and55/62 stable; seven external IDs IMPORT02/03/A/B/E/TABLET/INSTALL still need genuine native appearance/novice/learner/tablet-audio/cleanoffline environment observations. Do not require universal49physics/200reconstruction/shaders as extra acceptance gates.
+
+## 2026-11-21 — Import info adopted; new complete verification required
+
+This entry supersedes the earlier running/pending notes. The exact c315 Full
+failed four obsolete fixed-pixel rotation gestures after 2,801.18 seconds; all
+167 private jobs closed and its source stayed unchanged. That run remains failed.
+The corrected ray/plane gesture test independently passed all129 native checks.
+The remaining29 standalone wrappers passed in70 private jobs, and all21 final
+movie/audio cases passed. These are separate scopes, not a repaired aggregate.
+
+The new user-facing addition is **Import info**, available for the selected World
+asset and in pose controls. It is resizable and read-only, explains available
+features versus retained data and limitations, names missing-resource actions,
+and preserves the complete report in packed HAS files. Async imports retain
+their requesting project/sequence ownership. Source remains standardized through
+the existing HAS representation; the panel does not promise native fidelity.
+See docs/import_info.md and docs/benchmarks/import_info_increment_2026-11-21.json.
+
+Actual qualification:267 ordinary component checks (163 CPU plus104 graphical/
+cold checks,21 cases and8 fresh reader pairs), across both themes/workspaces and
+100/150% scale. The final metadata-only wrapper successor separately passed163
+CPU checks and an independent audit of its five real headless receipts. The
+coordinator retains its17 original controls plus30 new negatives (47 pass),
+admits only those five authenticated no-window cases, and keeps graphical
+placement requirements strict. The final metadata version has not yet passed a
+complete267 batch; the new Full will execute it. Import lifecycle53 and optional
+native PMX missing-texture recovery/packed offline replay passed in owned headless
+jobs. Both gm_construct and ttt_tiny_spaceship_v3 passed32 actual editor checks
+each, first on c315 and then with all five Import info production overlays. These
+replay the earlier conversion outputs; they are not new conversions or visual
+appearance approval. Every attempted job is closed/reaped.
+
+Root adopted exactly16 reviewed files (10 replacements and6 new), then refreshed
+only the four PoseEditor digest fields in the two wind/helper port manifests.
+Final source count1109; the new canonical suite has183 groups. No other product
+source changed. All source packets, initial failed/refused launches, raw safe
+logs, the failed Full and corrected scoped results are preserved in the new
+experiments/continuation_components_20261121 archive. Root transport failures
+remain failures: the first component demanded a window from a headless case;
+metadata startup initially omitted the six coordinator files and then the
+isolated sibling import path; the optional PMX fixture needed an explicit
+headless viewport, followed by a Root stdout-vs-engine-log attribution fix.
+No application assertion, contact limit, pixel or audio tolerance was relaxed.
+
+Other completed independent work: Junko static assembly105 is composed96+9, with
+the original partial failure retained. Rest-relative math21 and actual separate
+Model/Skeleton3D controller66 pass, including54 generated links, ordering,
+restoration and Undo. Actual Junko body/dress binding and live secondary-motion
+integration remain unqualified. Synthetic ArrayMesh13 and source-policy60 pass.
+The old c315 Full-gated Miku/face/easing/review hosts remain CLOSED; do not feed
+them failed c315 evidence or silently relabel them for the new source. Hair is
+preparing a separate bounded actual body/dress conversion/binding diagnostic.
+
+Next: publish and independently verify this increment, then run a fresh genuine
+1109-source/183-group Full from the retrieved commit. Keep prior failed Fulls,
+44 unavailable historical-reader skips, private original assets and pending
+reviews. After remote verification, remove only audited disposable CPU stages;
+the seven-stage cleanup packet covers47,366,153 logical bytes, not a deletion
+already performed. No new cleanup is claimed here.
+
+Formal scores stay52/54 implementation and55/62 acceptance until the appropriate
+requirements qualify. The seven remaining external IDs are IMPORT-02, IMPORT-03,
+ACCEPT-A, ACCEPT-B, ACCEPT-E, ACCEPT-TABLET and ACCEPT-INSTALL. Required actual
+observations are native source appearance/rig/material comparison; a timed
+novice eight-step and drawing/audio exercise; a learner's real stuck/hint,
+Previous/Continue/Fresh exercise; physical tablet pressure/latency/comfort and
+audible sync; and a clean approved offline Windows setup/save/reopen/export.
+The original19-layer hecatia.kra is available and hash-verified. The missing old
+November4 backups are dead, not a request to repeat. Do not interrupt the owner
+for manual exercises while independent software work remains.

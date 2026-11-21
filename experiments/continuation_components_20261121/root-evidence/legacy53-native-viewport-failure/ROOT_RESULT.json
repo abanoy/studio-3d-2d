@@ -1,0 +1,70 @@
+{
+  "format": "has_import_info_legacy_scopes_1",
+  "status": "FAIL",
+  "checks": 53,
+  "jobs": [
+    {
+      "name": "unit",
+      "status": "PASS",
+      "expected_checks": 53,
+      "graphical": false,
+      "wrapper_created": true,
+      "job_created": true,
+      "wrapper_reaped": true,
+      "wrapper_handle_closed": true,
+      "job_assigned_before_START": true,
+      "START_released": true,
+      "active_zero_before_close": true,
+      "job_closed": true,
+      "owner": {
+        "pid": 27716,
+        "created_100ns": "134397423660041813"
+      },
+      "wrapper_exit": 0,
+      "pre_termination_accounting": {
+        "active": 0,
+        "total": 15,
+        "terminated_by_limit": 0
+      },
+      "terminate_owned_job_called": true,
+      "final_accounting": {
+        "active": 0,
+        "total": 15,
+        "terminated_by_limit": 0
+      },
+      "checks": 53,
+      "godot_identity": {
+        "pid": 30996,
+        "created_100ns": "134397423661946717"
+      }
+    }
+  ],
+  "native_texture_wrapper_passed": false,
+  "graphics_executed": false,
+  "Full_claimed": false,
+  "application_adopted": false,
+  "stage": "C:\\a\\Programming\\cloudflare\\has-import-info-legacy-scopes-1795268756730492500",
+  "native_job": {
+    "name": "optional_native_missing_texture",
+    "status": "FAIL",
+    "owner": {
+      "pid": 14268,
+      "created_100ns": "134397423671501169"
+    },
+    "assigned_before_start": true,
+    "exit": 1,
+    "reaped": true,
+    "handle_closed": true,
+    "accounting": {
+      "active": 0,
+      "total": 16,
+      "terminated_by_limit": 0
+    },
+    "active_zero": true,
+    "job_closed": true
+  },
+  "error_type": "AssertionError",
+  "error": "",
+  "all_jobs_closed": true,
+  "Main_runtime_inputs_environment_preserved": true
+}

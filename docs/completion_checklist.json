@@ -1,4 +1,14 @@
 {
+  "latest_import_info_increment_20261121": {
+    "status": "ADOPTED_SCOPED_QUALIFIED_FRESH_FULL_REQUIRED",
+    "base_revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
+    "functional_sources": 1109,
+    "canonical_groups": 183,
+    "evidence": "docs/benchmarks/import_info_increment_2026-11-21.json",
+    "formal_status_changed": false,
+    "scores": "52/54 implementation;55/62 acceptance",
+    "next": "Commit/push, verify a fresh remote checkout, stage original historical fixtures read-only, then run all183 groups on the committed source. Failed c315 Full remains failed."
+  },
   "latest_default_off_followup_20261121": {
     "source_base": "435dc02426a7cdd313e43fe674c9008520845428",
     "functional_sources": 1103,

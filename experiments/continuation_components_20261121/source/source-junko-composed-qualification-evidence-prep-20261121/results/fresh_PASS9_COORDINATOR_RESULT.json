@@ -1,0 +1,85 @@
+{
+  "format": "has_root_character_parts_reader9_resume_1",
+  "status": "PASS",
+  "historical_revision": "435dc02426a7cdd313e43fe674c9008520845428",
+  "producer_identity_admission": {
+    "producer_profile": "node_libuv_win32_regular_bigint_stat_1",
+    "runtime_witness_rows": 3327,
+    "executable_witness_rows": 2,
+    "original_seal_rewritten": false,
+    "native64_and_raw_mode_match_Root_witness": true
+  },
+  "protocol_sha256": "57acb0e3c9f90bc126bb0ab20b9ed8a8f6da601e793993181863ff60dc777b63",
+  "expected_checks": 9,
+  "jobs": [
+    {
+      "name": "reader",
+      "status": "PASS",
+      "expected_checks": 9,
+      "graphical": false,
+      "wrapper_created": true,
+      "job_created": true,
+      "wrapper_reaped": true,
+      "wrapper_handle_closed": true,
+      "job_assigned_before_START": true,
+      "START_released": true,
+      "active_zero_before_close": true,
+      "job_closed": true,
+      "owner": {
+        "pid": 13292,
+        "created_100ns": "134397348283202382"
+      },
+      "wrapper_exit": 0,
+      "pre_termination_accounting": {
+        "active": 0,
+        "total": 3,
+        "terminated_by_limit": 0
+      },
+      "terminate_owned_job_called": true,
+      "final_accounting": {
+        "active": 0,
+        "total": 3,
+        "terminated_by_limit": 0
+      },
+      "checks": 9,
+      "godot_identity": {
+        "pid": 28728,
+        "created_100ns": "134397348284902540"
+      }
+    }
+  ],
+  "checks": 9,
+  "prior_admission": {
+    "prior_checks_admitted": 96,
+    "prior_result_sha256": "80f99373da85bce573f12cf56449c75cc4f2d3f6b83da7919feab88e0624095b",
+    "prior_job_count": 2,
+    "prior_jobs_closed": true,
+    "prior_source_and_outputs_preserved": true,
+    "excluded_only_exact_zero_project_lock": true,
+    "fresh_105_batch_claimed": false
+  },
+  "prior_checks": 96,
+  "fresh_105_batch_claimed": false,
+  "execution_owner": "Root approved host",
+  "source_files_per_studio": 1108,
+  "source_input_files": 3327,
+  "current_Main_revision_unchanged_claimed": false,
+  "Full_qualification_claimed": false,
+  "native_alignment_qualified": false,
+  "bone_following_qualified": false,
+  "graphical_or_physical_input_qualified": false,
+  "application_adopted": false,
+  "private_arrays_published": false,
+  "combined_prior_and_fresh_checks": 105,
+  "all_attempted_jobs_closed": true,
+  "parent_environment_unchanged": true,
+  "prior96_source_and_output_scope_preserved": true,
+  "runtime_source_membership_preserved": true,
+  "preservation_failures": [],
+  "native_identity_failures": [],
+  "full_native64_raw_mode_preserved": true,
+  "native_identity_guarded_files": 4622,
+  "all_admitted_inputs_preserved": true,
+  "owned_lock_removed": true,
+  "owned_lock_retained": false
+}

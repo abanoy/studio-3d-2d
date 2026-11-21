@@ -77,6 +77,16 @@ func setup(parent: Node) -> void:
 	parent.add_child(rail_end)
 	set_rail(StudioTheme.is_neon(), true)
 
+func add_import_info(info: Node) -> void:
+	if info==null or not is_instance_valid(tree):return
+	for control in actions:
+		if is_instance_valid(control) and control.get_meta("import_capability_action",false):return
+	var item: Button=info.add_button(tree.get_parent())
+	info.bind_world_action(self)
+	item.set_meta("import_capability_action",true)
+	item.set_meta("rail",["Import info","help","Import info"])
+	actions.append(item);tree.get_parent().move_child(item,help_label.get_index());refresh_actions()
+
 func tree_font() -> Font:
 	# Neon: the interface font, with Yu Gothic UI kept as the fallback for Japanese object names.
 	# Retain both original profiles so docking reuses the same Font resources.
