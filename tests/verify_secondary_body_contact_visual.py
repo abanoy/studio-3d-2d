@@ -22,11 +22,13 @@ def main():
     args=command('tests/secondary_body_contact_visual.gd',extra=['--log-file',str(folder/'engine.log'),'--',str(data),str(options.project.resolve(strict=True)),str(options.collider_input.resolve(strict=True)),str(options.alignment.resolve(strict=True))])
     process=subprocess.run(args,cwd=ROOT,env=env,capture_output=True,timeout=230,creationflags=subprocess.CREATE_NO_WINDOW)
     (folder/'launcher.log').write_bytes(process.stdout+process.stderr)
-    receipt=json.loads(Path(args[args.index('--receipt')+1]).read_bytes())
-    text=(folder/'engine.log').read_text(encoding='utf-8',errors='replace')
+    receipt_path=Path(args[args.index('--receipt')+1])
+    receipt=json.loads(receipt_path.read_bytes()) if receipt_path.exists() else {}
+    engine=folder/'engine.log'
+    text=engine.read_text(encoding='utf-8',errors='replace') if engine.exists() else ''
     result={'status':'FAIL','exit':process.returncode,'private_receipt':receipt}
     try:
-        assert process.returncode==0,text
+        assert process.returncode==0 and engine.exists(),text or 'Private test launch ended before an engine log was created.'
         assert receipt['exit']==0 and receipt['child_desktop_confirmed'] and receipt['private_window_seen']
         assert not receipt['foreground_child_observed'] and not receipt['desktop_switch_requested']
         assert receipt['job_closed'] and receipt['desktop_closed']
@@ -35,7 +37,12 @@ def main():
         lines=[line for line in text.splitlines() if line.startswith(marker)];assert len(lines)==1,text
         report=json.loads(lines[0][len(marker):]);assert report['checks']==15 and report['failures']==0,report
         assert report['readbacks_balanced'] and Path(report['user_profile']).resolve().is_relative_to(folder/'User')
-        result.update(status='MEASURED_FOR_VISUAL_REVIEW',report=report,visual_review_required=True)
+        result.update(report=report,visual_review_required=True)
+        # A successful runtime measurement alone did not prove the original fix:
+        # its earlier15 controls passed while1059 actual skin pairs penetrated.
+        assert report['skin_surface_capsule_clear'] is True and report['penetrating_skin_vertex_pairs']==0,report
+        assert report['minimum_skin_clearance']>=-.00005 and 0<=report['maximum_palette_disagreement']<=.00001,report
+        result.update(status='CLEAR_CAPSULE_CONTACT_VISUAL_REVIEW_PENDING',contact_requirement_passed=True)
     finally:
         (folder/'verification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
         print(json.dumps({'folder':str(folder),**result},indent=2))

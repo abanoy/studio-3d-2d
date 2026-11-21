@@ -1,0 +1,160 @@
+{
+  "status": "PREPARED_NOT_RUNTIME_VERIFIED",
+  "studio_launched": false,
+  "network_requested": false,
+  "source_mode": "current_integration_checkout_not_standalone",
+  "source_root": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121",
+  "pythonw": {
+    "path": "C:\\Program Files\\Python313\\pythonw.exe",
+    "bytes": 104304,
+    "sha256": "2bea4fc941b7d9436afa1be8cb46551c0694deed23b3fec87b969054238be099"
+  },
+  "projects": [
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121\\output\\scene-lighting-1795285771388820600\\neon.has",
+      "bytes": 53599,
+      "sha256": "68f524b6f9a75cb97abf86d3b9a94690f5fe5d1ca33ae59e54170ebade29d802",
+      "storage": "packed",
+      "embedded_assets": [
+        {
+          "name": "environment.glb",
+          "path": "assets/5fbf321ea5b4af7fee4e52d76eeb25836c73cd82d9bda322abfecee68a52ec83.glb",
+          "nodes": 4,
+          "meshes": 2,
+          "images": 0,
+          "textures": 0,
+          "external_uris": 0,
+          "bytes": 3964,
+          "sha256": "5fbf321ea5b4af7fee4e52d76eeb25836c73cd82d9bda322abfecee68a52ec83"
+        },
+        {
+          "name": "model.glb",
+          "path": "assets/a99938779a15ffecbbc1de2e530b0827e095d27a4e3760108a9033e6592ba9a0.glb",
+          "nodes": 4,
+          "meshes": 3,
+          "images": 0,
+          "textures": 0,
+          "external_uris": 0,
+          "bytes": 136680,
+          "sha256": "a99938779a15ffecbbc1de2e530b0827e095d27a4e3760108a9033e6592ba9a0"
+        }
+      ],
+      "linked_assets": 0,
+      "portable_playback_references": true,
+      "historical_import_source_metadata_is_informational": true,
+      "generated_shapes_only": true,
+      "original_art_or_textures": false,
+      "runtime_verified_here": false
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121\\output\\scene-indirect-1795285826348840900\\neon.has",
+      "bytes": 4526,
+      "sha256": "aa63c0c5894092fddd166dde9f7aa57212b9638186f463ce3d00479b2e5bfebb",
+      "storage": "packed",
+      "embedded_assets": [
+        {
+          "name": "room.glb",
+          "path": "assets/942705021a07602dabd149fe09901bbf654c50f700e93d9c0cf6f42780974a8d.glb",
+          "nodes": 5,
+          "meshes": 4,
+          "images": 0,
+          "textures": 0,
+          "external_uris": 0,
+          "bytes": 5644,
+          "sha256": "942705021a07602dabd149fe09901bbf654c50f700e93d9c0cf6f42780974a8d"
+        },
+        {
+          "name": "actor.glb",
+          "path": "assets/daa38c4e5388248cdbafb758edfcf197bfbb1fd3dd718170344781afeca68bf1.glb",
+          "nodes": 3,
+          "meshes": 1,
+          "images": 0,
+          "textures": 0,
+          "external_uris": 0,
+          "bytes": 4180,
+          "sha256": "daa38c4e5388248cdbafb758edfcf197bfbb1fd3dd718170344781afeca68bf1"
+        }
+      ],
+      "linked_assets": 0,
+      "portable_playback_references": true,
+      "historical_import_source_metadata_is_informational": true,
+      "generated_shapes_only": true,
+      "original_art_or_textures": false,
+      "runtime_verified_here": false
+    }
+  ],
+  "launch_semantics": {
+    "entry": "launch.pyw -> run.main(quiet=True)",
+    "project_argument": "positional .has",
+    "direct_renderer": "default gl_compatibility",
+    "indirect_renderer": "--forward-plus",
+    "test_headless_script_or_private_desktop_flags": false,
+    "interactive_owner_launch": true,
+    "appdata_and_localappdata_separate_per_shortcut": true,
+    "userprofile_changed": false
+  },
+  "source_pins": [
+    {
+      "path": "launch.pyw",
+      "sha256": "deaccd67a204f883c3d14a2010512cf0b80e7c3f95633e18101577b1f7e51cf9"
+    },
+    {
+      "path": "run.py",
+      "sha256": "99767c6e5712b5319055a51a78019655976699a31bb73b2a1331e2201b05a821"
+    },
+    {
+      "path": "project.godot",
+      "sha256": "035837440da21e9a478b1edec8824410606e01666035aeb9e531531de482d372"
+    },
+    {
+      "path": "tests/scene_lighting_smoke.gd",
+      "sha256": "cd2900f406b8aec91d2ece3cf955e94e51838227770259c495dbefb13c4693ac"
+    },
+    {
+      "path": "tests/scene_indirect_smoke.gd",
+      "sha256": "5de09098fb8fbb67fff6b173a1b4ba4910194cd144ff2c79b050164163e98d12"
+    },
+    {
+      "path": "tests/posed_bounds_fixture.gd",
+      "sha256": "d96611b9316219f8d926f31b7f571a6c06c5613e006c62cec564fbb36c08bb87"
+    }
+  ],
+  "files": [
+    {
+      "path": "Open Direct lights.bat",
+      "bytes": 687,
+      "sha256": "bd85e716bd15a3a3df4fb69083638c09296ca1a07d42636e228f893dcbb21d41"
+    },
+    {
+      "path": "Open Environment bounce.bat",
+      "bytes": 722,
+      "sha256": "fe6a32a1744c7d043d6722fd88500030298f498844aacde4dc8eaefc52bba323"
+    },
+    {
+      "path": "Open Studio discovery.bat",
+      "bytes": 641,
+      "sha256": "c10a7ed08a6a759bff32a5b8c65d20888b79b16e7e50bb3d9e7b31f6a9f5ba73"
+    },
+    {
+      "path": "prepare_review.py",
+      "bytes": 11594,
+      "sha256": "6ac7801b9c796a5bd0fbf2e038ce8f7a433bf02c58c03f70d05a66e071182118"
+    },
+    {
+      "path": "Projects/Direct lights.has",
+      "bytes": 53599,
+      "sha256": "68f524b6f9a75cb97abf86d3b9a94690f5fe5d1ca33ae59e54170ebade29d802"
+    },
+    {
+      "path": "Projects/Environment bounce.has",
+      "bytes": 4526,
+      "sha256": "aa63c0c5894092fddd166dde9f7aa57212b9638186f463ce3d00479b2e5bfebb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2040,
+      "sha256": "e05f6455342563745e9e3ff9008c301d8f6e687a26e3d637fd574053362d96bb"
+    }
+  ],
+  "total_artifact_bytes_excluding_manifest": 73809
+}

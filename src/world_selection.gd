@@ -70,8 +70,8 @@ func setup(parent: Node) -> void:
 	frame.set_meta("rail",["Frame","frame-target"])
 	var asset: Button = app.button(parent,"Save asset .has...",func():preload("res://src/asset_package.gd").export_dialog(app)); asset.tooltip_text="Package the selected independent model or map with its editable controls and embedded dependencies."
 	asset.set_meta("rail",["Save asset .has...","save","Save asset"])
-	var size_map: Button = app.button(parent,"Size mapâ€¦",func():app.map_calibration.open()); size_map.tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
-	size_map.set_meta("rail",["Size mapâ€¦","ruler","Size map"])
+	var size_map: Button = app.button(parent,"Size map…",func():app.map_calibration.open()); size_map.tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
+	size_map.set_meta("rail",["Size map…","ruler","Size map"])
 	parts_button=app.button(parent,"Manage parts…",open_parts)
 	parts_button.tooltip_text="Choose the visible pieces bundled with this character."
 	parts_button.set_meta("rail",["Manage parts…","folder","Parts"]);parts_button.visible=false

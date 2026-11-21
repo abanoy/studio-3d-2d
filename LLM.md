@@ -8225,3 +8225,53 @@ The follow-up notice fixture now routes graphical Cancel/checkbox/Open through a
 Primary explicitly granted a serial private GPU slot after lighting released. Sandbox CreateDesktop failed before engine launch; approved host context retained private launcher/no visible fallback. First actual paging run session41123/child31088 failed seven controls: recursive scrollbar lookup selected a hidden TextEdit bar. Production now prefers a direct Tree VScrollBar. Corrected child23664 passes24 native wheel/guard/error checks (100→200→300→400→500, exhaustion/cancel/malformed/unavailable). Added a CPU direct-parent regression assertion:25 pass. Native summary is retained from runner stdout/closed receipt; standard report/log names were later overwritten by this final CPU run, not falsely claimed as immutable native raw evidence. The failed native report/log are separately retained.
 
 First native notice checks failed two confirmation/persistence controls because the fixture sent pointer input into the embedded child Window rather than root subwindow routing; production dialog was unchanged. Corrected root+offset routing passes18 native controls over fresh Neon11/Classic7 processes, actual Cancel/checkbox/Open clicks and inspected fitting notice captures. Failed fixture reports remain retained. Success children18844/15180 and paging23664 all close jobs/desktops, confirm private desktop and never reach owner foreground; first failed children31088/7888/36780 also close safely. GPU slot explicitly released to primary before CPU evidence work. Safe source/evidence only, no PNG/binary/private-art staging. See docs/benchmarks/asset_discovery_native_paging_notices_2026-11-21.json.
+
+## 2026-11-21 - Combined discovery, lighting and hair contacts
+
+Integrated the independently published discovery and lighting siblings into an
+isolated primary checkout based on cdc86f3b. Discovery now provides Local/Online
+sources, separately saved website/type filters, bounded optional geometry preview,
+guarded local import, automatic bottom batches and remembered Steam source notices.
+Online access remains opt-in; a directory is not proof of game ownership. Website
+fallbacks, inferred formats and unsupported Studio Blend import are labelled.
+
+Directional, point and spot lights are editable with presets, history and portable
+project persistence. Optional Forward+ SDFGI supplies static-room colored bounce.
+The primary fixed two actual controls defects: hidden numeric fields no longer
+reset/round exact geometry on intensity-only Apply, and saved reflection mode can
+be switched Off in Compatibility. Deferred picking/outline geometry is excluded
+from GI before insertion, fixing the previously persistent cold-reopen difference.
+
+Generated HAS loose-part rigs without imported colliders can fit arm capsules from
+weighted body geometry. Whole-link and actual-skinned-surface corrections clear
+the protected saved Miku case while retaining authored data, Off and Undo. This is
+bounded arm-proxy contact, not triangle/full-body cloth collision. The strong fan
+still produces an obvious root bend and upward/forward tail sweep: visual refinement
+and rest-hair settling remain work, not owner acceptance.
+
+Actual serial private-desktop graphics passed all eight scopes: direct lighting
+Compatibility125/Forward+119, SDFGI52, discovery-lighting interaction46, discovery
+additions143, contact15 plus strict zero-penetration Python gate, Wind845GPU plus
+94CPU/five parse cases, helper266GPU (generated fixture, not native fidelity).
+Separate final contact CPU54 preserves all1196 admitted sources, original inputs,
+environment and private-resource closure. Earlier private-launch denial and a
+54-check run invalidated by a concurrent unused test-source edit remain failed;
+the final frozen-source rerun passes without weakening preservation assertions.
+The older Full243 remains failed at stale reviewed port bytes. This eight-scope
+pass is not a new canonical Full or any human/device/setup acceptance.
+
+Both themes pass preview, packed cold reopening, history and actual H.264 export.
+Direct modes each rendered48 frames; SDFGI renderedfour, all1920x1080 at24fps.
+SDFGI rebuild/cold/export full-image and receiver errors are exactly zero in this
+fixture. Forward+ reflection still emits seven engine texture-RID shutdown warnings;
+ongoing-session leaks, other GPUs and general shader fidelity are not certified.
+After these graphics checks only two Size map caption literals were corrected;
+headless parse and exact reviewed manifest leaf refresh pass, with no layout or
+algorithm change. All private graphics jobs/desktops closed without foreground use.
+
+See docs/benchmarks/integrated_additions_2026-11-21.json and the compact text-only
+experiments/integrated_additions_20261121 packet. Private images, movies, native
+models, saved owner projects and calibration arrays are excluded from Git.
+Formal implementation52/54 and acceptance55/62 remain unchanged. Publish/retrieve
+this increment before a fresh full Windows run. Qualified worker VoxelGI96e5d50b
+is a separate upcoming integration; it is not part of the results above.

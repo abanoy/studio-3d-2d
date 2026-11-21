@@ -1,0 +1,17 @@
+{
+  "before_sha256": "c11ae6352eeae4df8c7572af84118efa9d1ade714ccab8fe44bc7e8bd6cd0ea7",
+  "after_sha256": "3eee5bb13d86940a5a4fafdf0f46ddf80be4815ad7346cd074845c2d5ae532c9",
+  "changed_lines": [
+    {
+      "line": 73,
+      "before": "\tvar size_map: Button = app.button(parent,\"Size mapâ€¦\",func():app.map_calibration.open()); size_map.tooltip_text=\"Use two map surfaces a known distance apart; review against a six-foot guide.\"",
+      "after": "\tvar size_map: Button = app.button(parent,\"Size map…\",func():app.map_calibration.open()); size_map.tooltip_text=\"Use two map surfaces a known distance apart; review against a six-foot guide.\""
+    },
+    {
+      "line": 74,
+      "before": "\tsize_map.set_meta(\"rail\",[\"Size mapâ€¦\",\"ruler\",\"Size map\"])",
+      "after": "\tsize_map.set_meta(\"rail\",[\"Size map…\",\"ruler\",\"Size map\"])"
+    }
+  ],
+  "scope": "Exact two changed source lines; original and final full source hashes verified locally."
+}

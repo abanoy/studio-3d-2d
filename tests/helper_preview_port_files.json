@@ -12,8 +12,8 @@
   "files": [
     {
       "path": "src/app.gd",
-      "sha256": "f21d17204d5f10477a496fe3e92ca19537f7c776ed22d8a5971493e1d3ec0125",
-      "lf_sha256": "d800dd1044f1f4fa09e15ae919c9f260c91c6a6064ad8ddc0eb4a5d23ddc3f79",
+      "sha256": "522e7ca0274bbbaaa92bb11f6dcab76da1f6b1e77c0dc64faf13f9af320da734",
+      "lf_sha256": "b85cc1346e59c22569a3c6e774cb95dc111d808c65cc149cc047fbc9a8c633b0",
       "category": "runtime"
     },
     {
@@ -150,8 +150,8 @@
     },
     {
       "path": "tests/verify_helper_preview.py",
-      "sha256": "1118bb8701acb2a2cf791af9d950ba1b9cfef7fb8df6dfbe94bf984a81d2c81a",
-      "lf_sha256": "1118bb8701acb2a2cf791af9d950ba1b9cfef7fb8df6dfbe94bf984a81d2c81a",
+      "sha256": "2b6d296fd1d11d579e023e94f07bb26c4ca857f7e81bb0b33b0aae5c5d528611",
+      "lf_sha256": "2b6d296fd1d11d579e023e94f07bb26c4ca857f7e81bb0b33b0aae5c5d528611",
       "category": "test"
     },
     {
@@ -169,8 +169,8 @@
     {
       "path": "src/renderer.gd",
       "category": "runtime",
-      "sha256": "2db5d3869b8ccbb82854a95c9c9de87da7c0a6ac1b38ee1bfcb24b19a2581f8e",
-      "lf_sha256": "cc51dbfcbe2b090912ac28d546593e15db41f0def30310c0e84dc1206fc8483d"
+      "sha256": "f04a87b31d62626e4d7a5258fa62e6a8e0c5b250fa6f4cc24ad6d56633b306f1",
+      "lf_sha256": "5470825b6f896c2dc0f92a1afa6e0773f9c1f64a0b50d5f4a42b472cc75f2a94"
     },
     {
       "path": "src/import_basis.gd",
@@ -246,8 +246,8 @@
     },
     {
       "path": "src/world_selection.gd",
-      "sha256": "4e8654e5d468bb97c2551006693b1b6aa5809a924396267007a62aecaaf6eb72",
-      "lf_sha256": "65cf0cb24c4241875f3e4db9c31619cfaec25e4476f4ea80168b0527ef116409",
+      "sha256": "3eee5bb13d86940a5a4fafdf0f46ddf80be4815ad7346cd074845c2d5ae532c9",
+      "lf_sha256": "8fafdabce4d70682854174f6af65bff5c88beccbdc9fcfc990f5ab7030830015",
       "category": "runtime"
     },
     {
@@ -297,6 +297,138 @@
       "category": "runtime",
       "sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf",
       "lf_sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf"
+    },
+    {
+      "path": "src/discovery/browser.gd",
+      "category": "runtime",
+      "sha256": "41dd41028669060fd1cc682245bfc9687b2ccb5e730495b6deabc2a716cbc683",
+      "lf_sha256": "41dd41028669060fd1cc682245bfc9687b2ccb5e730495b6deabc2a716cbc683"
+    },
+    {
+      "path": "src/discovery/catalog.gd",
+      "category": "runtime",
+      "sha256": "0a6c2174e1adc694dee7d4777c9fb0c7201efdef4fd6b6fcea0f67bcb04ee2e8",
+      "lf_sha256": "0a6c2174e1adc694dee7d4777c9fb0c7201efdef4fd6b6fcea0f67bcb04ee2e8"
+    },
+    {
+      "path": "src/discovery/local_preview.gd",
+      "category": "runtime",
+      "sha256": "21c789b7173765d3c2a4f5c3f60da5edf1506749c3307978f28f8586a9f96e89",
+      "lf_sha256": "21c789b7173765d3c2a4f5c3f60da5edf1506749c3307978f28f8586a9f96e89"
+    },
+    {
+      "path": "src/discovery/local_scan.gd",
+      "category": "runtime",
+      "sha256": "4e1285ed46490eac57e9eef082e78b517b845920f292fb77b6094076d8c6b9f4",
+      "lf_sha256": "4e1285ed46490eac57e9eef082e78b517b845920f292fb77b6094076d8c6b9f4"
+    },
+    {
+      "path": "src/discovery/preferences.gd",
+      "category": "runtime",
+      "sha256": "562608faed78b0d4defa518f70b6dbcb416dad110f87f13850ce5c27c315f650",
+      "lf_sha256": "562608faed78b0d4defa518f70b6dbcb416dad110f87f13850ce5c27c315f650"
+    },
+    {
+      "path": "src/discovery/providers.gd",
+      "category": "runtime",
+      "sha256": "021994ed3c151e220c7b670c9a3f39626c666ac58f74102cff46620b77cf3456",
+      "lf_sha256": "021994ed3c151e220c7b670c9a3f39626c666ac58f74102cff46620b77cf3456"
+    },
+    {
+      "path": "src/discovery/service.gd",
+      "category": "runtime",
+      "sha256": "0b24918a337632875f20d2aac64f5e7306c384c6ace15681226186ee60964985",
+      "lf_sha256": "0b24918a337632875f20d2aac64f5e7306c384c6ace15681226186ee60964985"
+    },
+    {
+      "path": "src/discovery/studio_bridge.gd",
+      "category": "runtime",
+      "sha256": "cb3c70c5039245f11a0fc42da4346ec50d44fe8dbeea5d5dea5a948f0d421869",
+      "lf_sha256": "cb3c70c5039245f11a0fc42da4346ec50d44fe8dbeea5d5dea5a948f0d421869"
+    },
+    {
+      "path": "src/discovery/thumbnail.gd",
+      "category": "runtime",
+      "sha256": "e1571bc3daa8306f4e1872fd13e142dc9cae8a403adbeb4ec825c71a0b3df925",
+      "lf_sha256": "e1571bc3daa8306f4e1872fd13e142dc9cae8a403adbeb4ec825c71a0b3df925"
+    },
+    {
+      "path": "src/discovery/window.gd",
+      "category": "runtime",
+      "sha256": "42841e40b793f379625359b269adc4f5305fe76bce524b0a33055a6d6753d43b",
+      "lf_sha256": "42841e40b793f379625359b269adc4f5305fe76bce524b0a33055a6d6753d43b"
+    },
+    {
+      "path": "src/lighting.gd",
+      "category": "runtime",
+      "sha256": "ec8f5d36eac5d3ba9230e29cdd17affa17b13dc5ed61c28d4ec27c70b9ba87bc",
+      "lf_sha256": "ec8f5d36eac5d3ba9230e29cdd17affa17b13dc5ed61c28d4ec27c70b9ba87bc"
+    },
+    {
+      "path": "src/scene_lighting_document.gd",
+      "category": "runtime",
+      "sha256": "2ae07d0a01034f586f4f3113d856b78005d42df26e21b805c77b1cd0f998c239",
+      "lf_sha256": "2ae07d0a01034f586f4f3113d856b78005d42df26e21b805c77b1cd0f998c239"
+    },
+    {
+      "path": "src/scene_lighting_runtime.gd",
+      "category": "runtime",
+      "sha256": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a",
+      "lf_sha256": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a"
+    },
+    {
+      "path": "src/scene_lighting_editor.gd",
+      "category": "runtime",
+      "sha256": "108725216c28c49e290a0aba2af4d2049c70f430d9356a8151b47d83391a9296",
+      "lf_sha256": "108725216c28c49e290a0aba2af4d2049c70f430d9356a8151b47d83391a9296"
+    },
+    {
+      "path": "run.py",
+      "category": "runtime",
+      "sha256": "99767c6e5712b5319055a51a78019655976699a31bb73b2a1331e2201b05a821",
+      "lf_sha256": "0df2da04334fb3fcbae69060fedfecc1d7bcc702dde8d8747572c58c443fd777"
+    },
+    {
+      "path": "src/discovery/retrieval_notice.gd",
+      "category": "runtime",
+      "sha256": "2861dd259d89cc72dba9ba66b541e5ede01aa5cb71afb470dbd392f544c64daf",
+      "lf_sha256": "2861dd259d89cc72dba9ba66b541e5ede01aa5cb71afb470dbd392f544c64daf"
+    },
+    {
+      "path": "src/scene_indirect_runtime.gd",
+      "category": "runtime",
+      "sha256": "9cadefc2149d33da5bde708c7ed560b637d151553ac9744bec9328181fa617fc",
+      "lf_sha256": "9cadefc2149d33da5bde708c7ed560b637d151553ac9744bec9328181fa617fc"
+    },
+    {
+      "path": "src/secondary_body_colliders.gd",
+      "category": "runtime",
+      "sha256": "9fd3008fb116762a9708b180eb2bd9fcceeb5fe3272f4e74c99b09ac4ae415af",
+      "lf_sha256": "eb8256dc05c23b7164cf2ca695e69c88cb63a2f4630604f23ef06d1a988a6f5d"
+    },
+    {
+      "path": "src/secondary_segment_contact.gd",
+      "category": "runtime",
+      "sha256": "0c5833af90c0a45436fbd582a567a4e5bb8593b65cf6cfb51b4e13581faad114",
+      "lf_sha256": "79521a65b2e91b2e561c3fee047cba1495f16a685a15c9eef3d0f003f9ce87bd"
+    },
+    {
+      "path": "src/secondary_skin_contact.gd",
+      "category": "runtime",
+      "sha256": "783953b6483a75f3a3d86666e348a8110ba43fb4e4f22aa8ab125f46db71e552",
+      "lf_sha256": "783953b6483a75f3a3d86666e348a8110ba43fb4e4f22aa8ab125f46db71e552"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "category": "runtime",
+      "sha256": "8cdbab61c0c33eece443d4257191a070133616245b681c6249141d3d6d0b0a87",
+      "lf_sha256": "dbf29692ab47d7bd68c7f394949b1066504b1f3921845280d9f42acdb170998d"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "category": "runtime",
+      "sha256": "3fe8ea005c07accf3c4a9cd4d2eeb6855035d7d47f23a58b05d8f6703b2efddc",
+      "lf_sha256": "82e436c702ac47980590d61e367f1de3410dacdad67835fa8a6bffe1485189ef"
     }
   ],
   "test_driver_scope": "Exact current-main source snapshots without overlays; labeled working-source checks require explicit opt-in. CPU defaults208; graphical defaults266 (original199+4UI+17popup endpoint+1long-job launch). Optional native adds23CPU/39graphical. Actual results recorded separately.",

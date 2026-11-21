@@ -2592,3 +2592,23 @@ material limits. No world-runtime edits, main merge or main push. Next diffuse G
 opt-in Forward+ SDFGI colored-room prototype; no path tracing claim.
 
 2026-11-21 lighting SDFGI follow-up: CPU45/private Forward+ GPU52 pass in Neon+Classic, imported room/skinned model colored bounce,32-frame rebuild and actual packed cold reopen/preview-video errors0 on IntelArc140V,1080p24 H264fourframes. Fixed deferred editor picking copies entering GI (world_selection two-line hunk). See docs/indirect_lighting_prototype.md and its compact benchmark; private evidence stays ignored; only own feature branch published, no main/installedStudio/tools/originalassets changes.
+
+
+## 2026-11-21 - Primary combined additions qualified
+
+Discovery (including paging/notices), editable direct lighting, optional static-room
+SDFGI and generated hair arm/skin contact are now integrated in the primary isolated
+checkout. Eight serial private graphics scopes and the final protected-case CPU54
+pass. Hidden lighting-field precision and Compatibility reflection-Off are fixed.
+See docs/benchmarks/integrated_additions_2026-11-21.json and its experiment packet.
+This supersedes the pending integration notes above; it does not relabel Full243
+or certify a fresh canonical Full. Formal52/54 implementation and55/62 acceptance
+remain unchanged. Strong-fan hair still has a sharp root bend; rest settling and
+visual refinement remain. No owner manual prompt is needed for independent work.
+
+Next: publish/retrieve this checkpoint, run the canonical full Windows verifier in
+a fresh frozen checkout, then integrate worker VoxelGI96e5d50b separately while
+preserving numeric snapshots and renderer capture-error checks. That worker's
+CPU34/GPU60 results are its own branch qualification, not this primary's adoption.
+Old completed2f Full cleanup is retained pending two unreadable owner-shell process
+references; all sources/receipts are backed up and no deletion was attempted.

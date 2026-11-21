@@ -1,0 +1,93 @@
+{
+  "format": "has_integrated_additions_1",
+  "date": "2026-11-21",
+  "scope": "Integrated primary source; focused checks, not full product completion",
+  "base": "cdc86f3b85491709774b1d88eca470869ef09482",
+  "tested_head": "669256060a34eba25610d6a7d46ea1aff2944237",
+  "working_changes_during_graphics": "Reviewed test port membership/manifests and stricter contact Python gate; source frozen while running",
+  "post_graphics_change": "Two literal Size map caption corrections, parsed; only matching world_selection manifest leaves refreshed",
+  "combined_status": "PASS",
+  "scopes": {
+    "direct_compatibility": 125,
+    "direct_forward_plus": 119,
+    "sdfgi": 52,
+    "cross_feature_interaction": 46,
+    "discovery_additions": 143,
+    "contact_engine": 15,
+    "wind_gpu": 845,
+    "wind_cpu": 94,
+    "wind_parse_cases": 5,
+    "helper_gpu_generated": 266,
+    "contact_cpu_protected_saved_case": 54
+  },
+  "contact": {
+    "actual_skin_vertices": 989,
+    "penetrating_skin_vertex_pairs": 0,
+    "minimum_skin_clearance": -1.89617276191711e-06,
+    "maximum_palette_disagreement": 0.0,
+    "visual_review_required": true,
+    "limitation": "Arm capsules and finite weighted-surface correction; strong-fan root bend remains visually rough"
+  },
+  "movies": [
+    {
+      "renderer": "Compatibility",
+      "codec": "h264",
+      "width": 1920,
+      "height": 1080,
+      "fps": "24/1",
+      "frames": 48
+    },
+    {
+      "renderer": "Forward+ direct",
+      "codec": "h264",
+      "width": 1920,
+      "height": 1080,
+      "fps": "24/1",
+      "frames": 48
+    },
+    {
+      "renderer": "Forward+ SDFGI",
+      "codec": "h264",
+      "width": 1920,
+      "height": 1080,
+      "fps": "24/1",
+      "frames": 4
+    }
+  ],
+  "sdfgi_fixture_mean_errors": {
+    "rebuild": 0,
+    "cold_reopen": 0,
+    "preview_export": 0,
+    "receiver_rebuild": 0,
+    "receiver_cold_reopen": 0,
+    "receiver_preview_export": 0
+  },
+  "remaining": [
+    "Fresh canonical full Windows verification on retrieved integrated commit",
+    "Separate bounded-room VoxelGI integration",
+    "Rest-hair settling and visual contact refinement",
+    "Native artist, novice/learner, tablet/audible-sync and clean-install observations"
+  ],
+  "warnings": [
+    "Forward+ reflections: seven engine texture-RID shutdown warnings; ongoing-session behavior not qualified",
+    "SDFGI static environments and receive-only models; no moving-model GI occlusion or path tracing claimed here",
+    "Helper266 uses generated fixtures, not native model fidelity",
+    "Existing failed Full243 and earlier failed/scoped observations remain failed"
+  ],
+  "formal_scores": {
+    "implementation": "52/54",
+    "acceptance": "55/62",
+    "changed": false
+  },
+  "evidence_packet": "experiments/integrated_additions_20261121/summary.json",
+  "private_art_or_media_published": false,
+  "cleanup": {
+    "completed_old_full_candidate": "has-import-info-full-20261121-2f1acbd",
+    "files": 70733,
+    "logical_bytes": 6842654230,
+    "status": "RETAINED_PROCESS_REVIEW_PENDING",
+    "sources_and_archived_receipts_verified": true,
+    "actual_hardlinks": 0,
+    "unresolved": "Two Explorer-owned shells have unreadable command lines; no deletion was attempted. One known internal test junction must be unlinked before any future root removal."
+  }
+}
