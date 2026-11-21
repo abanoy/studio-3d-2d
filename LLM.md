@@ -8412,3 +8412,57 @@ See docs/generated_hair_settling.md and docs/benchmarks/generated_hair_settling_
 ### Generated hair follow-up — private controls checked
 
 Published feature a43beca451bd332f967a427bed4f78a5aa102dd6 and independently retrieved all 20 committed text files. Initial automatic push review rejection was resolved through the exact user-invoked publication instruction and verified repository identity; no bypass or Main push. Added focused ordinary GUI control routes for Classic/Neon and Simple/Advanced: actual 64 PASS, all four private Jobs/desktops closed, source/runtime/environment preserved. Screenshots show readable preset placement and running temporary wind windows; generated geometry only. First GUI attempt passed ten observed routes then failed because synthetic glTF JSON emitted integer references as floats. Corrected only the generated fixture's integer tokens; strict real helper checks unchanged. CPU 73 re-passed with that fixture. Production sources remain exactly the a43 feature; no native Junko quality or whole-suite claim is added. Junko 13/14/limited-chain reconstruction and native visual checks remain OPEN. GPU slot explicitly released; Root owns subsequent combined regressions.
+
+
+## 2026-11-21 - Natural generated-hair motion and consistent previews
+
+Integrated sourcea43beca4 and fixture/GUI-only followup9c146cbc into the primary
+after4c. Keep hair shape remains the old default; explicit Natural gravity lowers
+rest bias and uses world-down force while preserving the attachment origin. Known
+core/humanoid joints remain protected. Generated world airflow is converted to the
+selected center frame, fixing front/back response on rotated attachment axes.
+Native declarations, original rest/skin data and unopted private definitions keep
+their semantics. Both Review local wind and Try a local blow explicitly receive
+validated owner/candidate/filtered-definition-bound tuning; no arbitrary metadata
+is unstripped. Stale settings/core/source/target/group changes stop/rollback it.
+The editor guards other live/pending owners, ordinary history, recording and source
+revision. Natural-only surface escape preserves capsule sizes and tolerances.
+
+Primary actual finalCPU73 and four-theme/workspaceGUI64 pass, including both wind
+routes, live On/Off, captures, source/runtime/environment preservation and closed
+private jobs. Unchanged protected Miku54 passes on the combined production source.
+Existing Wind845GPU+94CPU/five parse cases and helper266GPU (generated fixtures,
+not native fidelity) pass before the test-only followup. Pure dependency controls41
+pass; exact bindings57/73. All owned jobs are reaped and private desktops close
+without foreground use. No complete183-group pass on this newer source is claimed;
+that separate canonical result remains exact5d. Voxel68+22 remains its own scope.
+
+The first worker GUI run passed ten controls before a synthetic fixture failed
+strict helper admission: JSON reserialization had changed integer GLB fields to
+float tokens. Fixing only the fixture serialization retained the strict importer;
+all four actual variants then passed, and primary reproduced64. Earlier failed
+attempts remain recorded, as does an Errno5 headless lifecycle launch refusal
+before a child existed; the unchanged Miku wrapper succeeds in approved context.
+
+Full Junko settling is still OPEN. The original has no configured helpers; one
+existing four-joint setup touches903 of5600 hair-material vertices (about16% of
+total weight). A trial lowers its terminal about7cm but whole affected geometry
+only7.6mm, failing the retained1cm criterion:13/14 native controls. Final sampled
+contact pairs reach0 but transient penetration/CPU cost remain. This is not an
+all-hair reconstruction or native appearance approval. Preserve that adverse result
+and pursue reviewed additional groups/degrees of freedom rather than changing its
+quality target. Original stuff2/calibration inputs and private prepared review stay.
+
+Compact primary evidence is under experiments/generated_motion_integration_20261121,
+generated_motion_regressions_20261121 and generated_motion_controls_20261121.
+The source-pinned moving-light review4c remains independent and starts headlessly;
+its recipe/startup and exact cleanup outcomes are in local_review_cleanup_20261121.
+Browser staging cleanup removed21595files/269840589 logical bytes; allocated-space
+gain was not measured. Remaining53.6MB browser Git residue and6.88GB Full5d clone
+were NOT removed: automatic approval review rejected those exact actions before
+execution for requiring direct user authorization. One combined approval question
+is pending; do not retry/work around rejection or infer approval from elapsed time.
+Originals, reviews, shared runtimes and other checkouts remain protected.
+
+Formal52/54 implementation and55/62 acceptance stay unchanged. Publish/retrieve
+this completed scoped increment, then continue the specifically open rig coverage.

@@ -1,0 +1,93 @@
+{
+  "format": "has_generated_motion_regression_evidence_1",
+  "status": "SCOPED_REGRESSIONS_PASS",
+  "source_revision": "e79f7989380390362ee8ec59d51e43bfe0312c69",
+  "natural_source_commit": "a43beca451bd332f967a427bed4f78a5aa102dd6",
+  "working_port_manifest_rows": {
+    "wind": 57,
+    "helper": 73
+  },
+  "execution_source_context": "e79 production plus explicitly reviewed four working port files before subsequent test-only9c; helper used a0overlay exact working-source snapshot, not a committed-source-only claim.",
+  "wind": {
+    "gpu_checks": 845,
+    "headless_checks": 94,
+    "parse_cases": 5,
+    "source_preserved": true,
+    "native_prepared_inputs_unchanged": true,
+    "scope": "Phase1: temporary preview of already declared groups; original830 checks plus12 explicit main-root/startup guards and3 canvas-first closure checks. PNG export, in-memory recovery sink, original-only start/cancel recording; no movie or persisted recovery-worker claim. Pending helper-before-Apply has separate verification and is outside these845 checks. Permanent exclusions, native jiggle/assembly, artist/device/installation acceptance remain open."
+  },
+  "helper": {
+    "gpu_checks": 266,
+    "focused": 221,
+    "peers": 45,
+    "native_requested": false,
+    "native_fidelity": false,
+    "source_context": "main_working_source_snapshot",
+    "preservation": {
+      "main_sources": true,
+      "runtimes": true,
+      "head": true,
+      "native_originals": true,
+      "staged_native_inputs": true,
+      "published_requests": true,
+      "snapshot_sources": true,
+      "snapshot_extras": true,
+      "fixtures": true
+    }
+  },
+  "coordinator": [
+    {
+      "name": "wind",
+      "pid": 2120,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 138.72250370000256
+    },
+    {
+      "name": "helper",
+      "pid": 34412,
+      "exit": 0,
+      "child_reaped": true,
+      "seconds": 94.31811529998959
+    }
+  ],
+  "source_binding_review": [
+    {
+      "wrapper": "wind",
+      "rows": 57,
+      "manifest": {
+        "source": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121\\tests\\wind_review_port_files.json",
+        "bytes": 20663,
+        "sha256": "38a3ca6345ad18a582dfc1420a4dc5c95b00a4c1e846629c8112cc5fced9f063"
+      },
+      "bound_source_root": "Exact main source",
+      "all_declared_raw_sha256_independently_rechecked": true
+    },
+    {
+      "wrapper": "helper",
+      "rows": 73,
+      "manifest": {
+        "source": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121\\tests\\helper_preview_port_files.json",
+        "bytes": 24199,
+        "sha256": "8cc83a60195d85fd6bd6a684b677aa2c97331f3ca22f72a7ba7206ae75f34b76"
+      },
+      "bound_source_root": "Exact working-source snapshot with0overlays",
+      "all_declared_raw_sha256_independently_rechecked": true
+    }
+  ],
+  "separate_pending_at_root_request": {
+    "Root64": {
+      "session": 49808,
+      "status": "RUNNING_NO_PASS_CLAIM"
+    },
+    "final_cpu73": {
+      "session": 99159,
+      "status": "RUNNING_NO_PASS_CLAIM"
+    }
+  },
+  "separate_layout44_pass_claimed": false,
+  "whole_full_new_increment_claimed": false,
+  "human_acceptance_claimed": false,
+  "private_arrays_published": false,
+  "blocked_cleanup_touched": false
+}

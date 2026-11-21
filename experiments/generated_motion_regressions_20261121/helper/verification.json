@@ -1,0 +1,116 @@
+{
+  "format": "has_helper_preview_main_verification_1",
+  "source_context": "main_working_source_snapshot",
+  "source_state": {
+    "revision": "e79f7989380390362ee8ec59d51e43bfe0312c69",
+    "working_status": [
+      {
+        "status": " M",
+        "paths": [
+          "tests/helper_preview_port_files.json"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/verify_helper_preview.py"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/verify_wind_review.py"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/wind_review_port_files.json"
+        ]
+      }
+    ],
+    "ignored_generated_status": [],
+    "source_context": "main_working_source_snapshot"
+  },
+  "main_root": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121",
+  "actual_res_root": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121\\output\\helper-preview\\graphical-1795294914517227100-999773f5\\Studio",
+  "overlay_files": 0,
+  "mode": "graphical",
+  "native_requested": false,
+  "native_inputs_checked": false,
+  "native_fidelity": false,
+  "graphical_process_attempted": true,
+  "gpu_used": true,
+  "checks": 266,
+  "results": [
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "focused",
+      "script": "res://tests/helper_preview_gpu.gd",
+      "checks": 221,
+      "expected_checks": 221,
+      "failures": 0,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_d03fc05269554da7a91453926cdbc494",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 29884,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 72.004
+      },
+      "clean_private_receipt": true,
+      "result_source_context_bound": true,
+      "passed": true
+    },
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "peers",
+      "script": "res://tests/helper_preview_gpu_peers.gd",
+      "checks": 45,
+      "expected_checks": 45,
+      "failures": 0,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_204b72f62fbf4c488bf00b4ec081bf8f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 36056,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.788
+      },
+      "clean_private_receipt": true,
+      "result_source_context_bound": true,
+      "passed": true
+    }
+  ],
+  "error": null,
+  "preservation": {
+    "main_sources": true,
+    "runtimes": true,
+    "head": true,
+    "native_originals": true,
+    "staged_native_inputs": true,
+    "published_requests": true,
+    "snapshot_sources": true,
+    "snapshot_extras": true,
+    "fixtures": true
+  },
+  "passed": true
+}

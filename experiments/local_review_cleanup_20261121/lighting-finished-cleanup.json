@@ -1,0 +1,67 @@
+{
+  "created_at": "2026-11-21T20:37:33.376316+00:00",
+  "worker": "editable scene lighting",
+  "completed_source_commit": "398eb740d4e62710411c7688dd940effbe1dfb49",
+  "published_source_and_compact_evidence_backup": {
+    "revision": "398eb740d4e62710411c7688dd940effbe1dfb49",
+    "remote_independently_fetched": true,
+    "complete_tree_matches_local_commit": true,
+    "functional_and_evidence_files": 1215,
+    "bytes": 11076550,
+    "inventory_sha256": "0d2dafda3d88d0b34eb305eb84434f8cf3903194ba67669e07d314239d1e90d6"
+  },
+  "process_audit": {
+    "host_context": "approved host Win32_Process",
+    "processes": 384,
+    "matching_owned_runtime_processes": 0,
+    "unreadable_godot_python_ffmpeg_blender_candidates": 0,
+    "last_own_graphics_session": 21816,
+    "last_own_graphics_exit": 0,
+    "private_job_and_desktop_closed": true,
+    "gpu_explicitly_released_to_primary": true
+  },
+  "deleted": [],
+  "deleted_files": 0,
+  "deleted_logical_bytes": 0,
+  "physical_space_reclaimed": "not measured; no deletion",
+  "retained": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-lighting-integrated-gpu-20261121",
+      "action": "retained",
+      "output_files": 840,
+      "output_logical_bytes": 57691993,
+      "reason": "Qualified published source preserved; raw logs, movies, generated portable projects, original/private inputs and failed-run evidence are not fully backed up by the public compact receipts. No whole-checkout deletion is qualified."
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-lighting-rebake-review-20261121",
+      "action": "retained",
+      "output_files": 896,
+      "output_logical_bytes": 54522054,
+      "reason": "Qualified published source preserved; raw logs, movies, generated portable projects, original/private inputs and failed-run evidence are not fully backed up by the public compact receipts. No whole-checkout deletion is qualified."
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-editable-lights-20261121",
+      "action": "retained",
+      "output_files": 3605,
+      "output_logical_bytes": 175257012,
+      "reason": "Qualified published source preserved; raw logs, movies, generated portable projects, original/private inputs and failed-run evidence are not fully backed up by the public compact receipts. No whole-checkout deletion is qualified."
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-lighting-integrated-gpu-20261121\\__pycache__\\run.cpython-313.pyc",
+      "action": "retained",
+      "bytes": 6985,
+      "reason": "Initially considered rebuildable cache, but git ls-files confirms it is tracked in the frozen published source. Do not delete tracked content or alter the qualified checkout."
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-lighting-20261121",
+      "action": "preserved without mutation",
+      "reason": "Earlier paused rebase and original assets explicitly protected; outside safe finished-output cleanup scope."
+    }
+  ],
+  "boundaries": [
+    "No primary source/tests/docs/Git changes; only this requested ignored output receipt is written.",
+    "No installed Studio, shared tools, source archives, private deliverables, originals or shared Git were modified.",
+    "All completed functional source and compact evidence were published and independently fetched; this does not imply raw-media backup."
+  ],
+  "next_cleanup_condition": "Back up and verify exact raw logs/deliverables and prove external dependency absence before considering remaining output deletion."
+}

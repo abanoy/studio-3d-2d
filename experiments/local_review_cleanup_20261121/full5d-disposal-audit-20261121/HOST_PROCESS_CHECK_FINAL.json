@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-21T15:41:41.1790748-05:00",
+  "prior_unreadable_owner_shells": [
+    {
+      "pid": 6016,
+      "present": false
+    },
+    {
+      "pid": 4704,
+      "present": false
+    }
+  ],
+  "requires_fresh_check_before_removal": true,
+  "self_query_literal_references": [
+    {
+      "reason": "This exact retained read-only query contains the target literal; not a process using its files",
+      "name": "pwsh.exe",
+      "pid": 34904
+    }
+  ],
+  "arguments_saved": false,
+  "unreadable_runtime_candidates": [
+    {
+      "pid": 15152,
+      "name": "codex-windows-sandbox-service.exe"
+    }
+  ],
+  "processes_checked": 369,
+  "status": "REVIEW_REQUIRED",
+  "target_references": []
+}

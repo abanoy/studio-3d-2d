@@ -1,4 +1,24 @@
 {
+  "latest_generated_motion_20261121": {
+    "status": "INTEGRATED_FOCUSED_QUALIFIED_JUNKO_RECONSTRUCTION_OPEN",
+    "feature_source": "a43beca451bd332f967a427bed4f78a5aa102dd6",
+    "test_followup": "9c146cbc265271b4d4681cc644d47e87f5cfb630",
+    "merged_source": "e8c395b3064a888009907813b13e9c0640509036",
+    "evidence": "docs/benchmarks/generated_hair_settling_20261121.json",
+    "primary_checks": {
+      "generated_cpu": 73,
+      "four_interface_variants": 64,
+      "unchanged_protected_miku": 54,
+      "wind_graphics": 845,
+      "wind_cpu": 94,
+      "wind_parse_cases": 5,
+      "helper_generated_graphics": 266,
+      "pure_port_controls": 41
+    },
+    "native_junko_quality": "13/14; failed whole-affected-centroid target retained. Chain touches903/5600 hair vertices; all-hair reconstruction remains open.",
+    "formal_status_changed": false,
+    "next": "Publish/retrieve source and compact evidence. Continue explicit multi-group/derived-rig reconstruction for missing Junko hair coverage; preserve original weights/assets and make adoption reviewable. Keep human/device/install gates separate and do not interrupt the busy owner while independent work remains."
+  },
   "latest_voxel_room_20261121": {
     "status": "PRIMARY_FOCUSED_GRAPHICS_QUALIFIED",
     "source_revision": "28db0902825721626b17b218aa2a4554ab6da552",
@@ -4277,7 +4297,7 @@
     {
       "priority": 1,
       "requirement": "IMPORT-03",
-      "action": "Publish/retrieve this completed increment. Continue separately isolated Natural gravity and world-airflow/preview consistency; Junko whole-hair reconstruction remains open. Human/device/native-appearance/install observations remain separate. The canonical183 pass covers5d source; later Voxel uses focused68+22, not a new183 aggregate. Do not interrupt the busy owner for manual review while independent work remains."
+      "action": "Publish/retrieve source and compact evidence. Continue explicit multi-group/derived-rig reconstruction for missing Junko hair coverage; preserve original weights/assets and make adoption reviewable. Keep human/device/install gates separate and do not interrupt the busy owner while independent work remains. Earlier183-group Full covers5d only; later Voxel and generated-motion have separate actual focused qualification."
     },
     {
       "priority": 2,

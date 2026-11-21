@@ -1,0 +1,308 @@
+{
+  "status": "PASS",
+  "control_count": 41,
+  "controls": [
+    {
+      "label": "tests/verify_wind_review.py exact binding",
+      "count": 57,
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/physics_editor.gd",
+      "expected_refusal": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\natural-motion-port-bindings-1795294300399723000\\\\wind\\\\src\\\\physics_editor.gd'",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/physics_editor.gd",
+      "expected_refusal": "Unreviewed main port bytes: src/physics_editor.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/physics_editor.gd",
+      "expected_refusal": "Wrong reviewed port source membership",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/secondary_spring.gd",
+      "expected_refusal": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\natural-motion-port-bindings-1795294300399723000\\\\wind\\\\src\\\\secondary_spring.gd'",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/secondary_spring.gd",
+      "expected_refusal": "Unreviewed main port bytes: src/secondary_spring.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/secondary_spring.gd",
+      "expected_refusal": "Wrong reviewed port source membership",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/wind_review.gd",
+      "expected_refusal": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\natural-motion-port-bindings-1795294300399723000\\\\wind\\\\src\\\\wind_review.gd'",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/wind_review.gd",
+      "expected_refusal": "Unreviewed main port bytes: src/wind_review.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/wind_review.gd",
+      "expected_refusal": "Wrong reviewed port source membership",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/secondary_skin_contact.gd",
+      "expected_refusal": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\natural-motion-port-bindings-1795294300399723000\\\\wind\\\\src\\\\secondary_skin_contact.gd'",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/secondary_skin_contact.gd",
+      "expected_refusal": "Unreviewed main port bytes: src/secondary_skin_contact.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/secondary_skin_contact.gd",
+      "expected_refusal": "Wrong reviewed port source membership",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/generated_secondary_motion.gd",
+      "expected_refusal": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\natural-motion-port-bindings-1795294300399723000\\\\wind\\\\src\\\\generated_secondary_motion.gd'",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/generated_secondary_motion.gd",
+      "expected_refusal": "Unreviewed main port bytes: src/generated_secondary_motion.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/generated_secondary_motion.gd",
+      "expected_refusal": "Wrong reviewed port source membership",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/generated_secondary_editor.gd",
+      "expected_refusal": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\natural-motion-port-bindings-1795294300399723000\\\\wind\\\\src\\\\generated_secondary_editor.gd'",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/generated_secondary_editor.gd",
+      "expected_refusal": "Unreviewed main port bytes: src/generated_secondary_editor.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/generated_secondary_editor.gd",
+      "expected_refusal": "Wrong reviewed port source membership",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py exact binding",
+      "count": 73,
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/physics_editor.gd",
+      "expected_refusal": "Missing reviewed helper main source: src/physics_editor.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/physics_editor.gd",
+      "expected_refusal": "Unreviewed helper main bytes: src/physics_editor.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/physics_editor.gd",
+      "expected_refusal": "Reviewed helper port manifest omits required main runtime/test source",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/wind_review.gd",
+      "expected_refusal": "Missing reviewed helper main source: src/wind_review.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/wind_review.gd",
+      "expected_refusal": "Unreviewed helper main bytes: src/wind_review.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/wind_review.gd",
+      "expected_refusal": "Reviewed helper port manifest omits required main runtime/test source",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/pending_helper_wind_player.gd",
+      "expected_refusal": "Missing reviewed helper main source: src/pending_helper_wind_player.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/pending_helper_wind_player.gd",
+      "expected_refusal": "Unreviewed helper main bytes: src/pending_helper_wind_player.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/pending_helper_wind_player.gd",
+      "expected_refusal": "Reviewed helper port manifest omits required main runtime/test source",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/secondary_skin_contact.gd",
+      "expected_refusal": "Missing reviewed helper main source: src/secondary_skin_contact.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/secondary_skin_contact.gd",
+      "expected_refusal": "Unreviewed helper main bytes: src/secondary_skin_contact.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/secondary_skin_contact.gd",
+      "expected_refusal": "Reviewed helper port manifest omits required main runtime/test source",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/secondary_spring.gd",
+      "expected_refusal": "Missing reviewed helper main source: src/secondary_spring.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/secondary_spring.gd",
+      "expected_refusal": "Unreviewed helper main bytes: src/secondary_spring.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/secondary_spring.gd",
+      "expected_refusal": "Reviewed helper port manifest omits required main runtime/test source",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/generated_secondary_motion.gd",
+      "expected_refusal": "Missing reviewed helper main source: src/generated_secondary_motion.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/generated_secondary_motion.gd",
+      "expected_refusal": "Unreviewed helper main bytes: src/generated_secondary_motion.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/generated_secondary_motion.gd",
+      "expected_refusal": "Reviewed helper port manifest omits required main runtime/test source",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/generated_secondary_editor.gd",
+      "expected_refusal": "Missing reviewed helper main source: src/generated_secondary_editor.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/generated_secondary_editor.gd",
+      "expected_refusal": "Unreviewed helper main bytes: src/generated_secondary_editor.gd",
+      "status": "PASS"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/generated_secondary_editor.gd",
+      "expected_refusal": "Reviewed helper port manifest omits required main runtime/test source",
+      "status": "PASS"
+    }
+  ],
+  "src_unchanged": true,
+  "driver_only_change": "Exactly one membership assignment line per driver; reverse recovers original bytes.",
+  "dependency_review": {
+    "editor": "physics_editor.gd directly preloads generated_secondary_editor.gd; editor preloads generated_secondary_motion.gd",
+    "motion": "secondary_spring.gd directly preloads generated_secondary_motion.gd; motion uses pre-existing LimbIK dependency already used by Spring",
+    "existing_changed_pending_helper": "pending_helper_wind_player.gd is already a declared Helper dependency; absent from existing Wind manifest scope, not newly added."
+  },
+  "changes": [
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "src/physics_editor.gd",
+      "before": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "after": "bf2df56bbcb9078af4704d3ed075887f56c22eca7da8f1dc0299b5445d101f6f"
+    },
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "src/secondary_spring.gd",
+      "before": "3fe8ea005c07accf3c4a9cd4d2eeb6855035d7d47f23a58b05d8f6703b2efddc",
+      "after": "21b6c41615a4cd0cd48020ce4568716ec61d3c1d0ab79dd4cf5a85eefe9ab47b"
+    },
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "src/wind_review.gd",
+      "before": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "after": "e69de68cb809c4d6b1c7b15dd37863fc08121bb639d29478b1e86c02a31d96d8"
+    },
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "tests/verify_wind_review.py",
+      "before": "16525f39806190c06040d979191fb68037cdbab77a437136ae6b4d13480f1195",
+      "after": "9b5e6566a28726810e9c6061d1e024c64c62d9bf6b2ba7513c1bf81c93f0e1f8"
+    },
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "src/secondary_skin_contact.gd",
+      "before": "783953b6483a75f3a3d86666e348a8110ba43fb4e4f22aa8ab125f46db71e552",
+      "after": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/physics_editor.gd",
+      "before": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "after": "bf2df56bbcb9078af4704d3ed075887f56c22eca7da8f1dc0299b5445d101f6f"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/wind_review.gd",
+      "before": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "after": "e69de68cb809c4d6b1c7b15dd37863fc08121bb639d29478b1e86c02a31d96d8"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/pending_helper_wind_player.gd",
+      "before": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+      "after": "20e13932247022680e60305bc68549ce3b606384aea350f5cbabfdfe7a1af801"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "tests/verify_helper_preview.py",
+      "before": "dbc2c7538213843ec5ba1c553ecb7d9879c0f75e0ff43502e9a4a742da47f367",
+      "after": "ce1fc4a09513c8f6b8348825dd35600eac23d4ca6dacbf1ecc4883819bf7c9b7"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/secondary_skin_contact.gd",
+      "before": "783953b6483a75f3a3d86666e348a8110ba43fb4e4f22aa8ab125f46db71e552",
+      "after": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/secondary_spring.gd",
+      "before": "3fe8ea005c07accf3c4a9cd4d2eeb6855035d7d47f23a58b05d8f6703b2efddc",
+      "after": "21b6c41615a4cd0cd48020ce4568716ec61d3c1d0ab79dd4cf5a85eefe9ab47b"
+    }
+  ],
+  "pins": [
+    {
+      "path": "tests/verify_wind_review.py",
+      "bytes": 17677,
+      "sha256": "9b5e6566a28726810e9c6061d1e024c64c62d9bf6b2ba7513c1bf81c93f0e1f8"
+    },
+    {
+      "path": "tests/verify_helper_preview.py",
+      "bytes": 24941,
+      "sha256": "ce1fc4a09513c8f6b8348825dd35600eac23d4ca6dacbf1ecc4883819bf7c9b7"
+    },
+    {
+      "path": "tests/wind_review_port_files.json",
+      "bytes": 20663,
+      "sha256": "38a3ca6345ad18a582dfc1420a4dc5c95b00a4c1e846629c8112cc5fced9f063"
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "bytes": 24199,
+      "sha256": "8cc83a60195d85fd6bd6a684b677aa2c97331f3ca22f72a7ba7206ae75f34b76"
+    }
+  ]
+}

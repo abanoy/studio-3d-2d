@@ -1,0 +1,148 @@
+{
+  "graphical": [
+    {
+      "case": "neon-simple",
+      "receipt_sha256": "ffb268b1f5c44437df8fe5683fa1df94469227c8716f329a8f477ff8fd0a99f8",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_desktop_confirmed": true,
+        "private_window_seen": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "seconds": 10.097
+      },
+      "launcher_reaped": true,
+      "launcher_handle_closed": true
+    },
+    {
+      "case": "neon-advanced",
+      "receipt_sha256": "f3fe4dad6f2a81c8c3580e7f32ae498dc869041fd7601819022355f5f2ab2f8d",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_desktop_confirmed": true,
+        "private_window_seen": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "seconds": 8.707
+      },
+      "launcher_reaped": true,
+      "launcher_handle_closed": true
+    },
+    {
+      "case": "classic-simple",
+      "receipt_sha256": "ec623459cf033c3cc7052823d69687c66a203f68cbdcdd5dd1b7d9201bf89990",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_desktop_confirmed": true,
+        "private_window_seen": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "seconds": 7.681
+      },
+      "launcher_reaped": true,
+      "launcher_handle_closed": true
+    },
+    {
+      "case": "classic-advanced",
+      "receipt_sha256": "3020c24092efbc78d97397b86b4a795ca236920c10df35ce5809df0da61042c1",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_desktop_confirmed": true,
+        "private_window_seen": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false,
+        "seconds": 7.895
+      },
+      "launcher_reaped": true,
+      "launcher_handle_closed": true
+    }
+  ],
+  "headless": [
+    {
+      "name": "unit",
+      "checks": 22,
+      "failures": 0,
+      "desktop_created": false,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "engine_reaped": true,
+      "engine_handle_closed": true,
+      "active_job_processes": 0,
+      "job_closed": true,
+      "report_flags": {}
+    },
+    {
+      "name": "geometry",
+      "checks": 11,
+      "failures": 0,
+      "desktop_created": false,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "engine_reaped": true,
+      "engine_handle_closed": true,
+      "active_job_processes": 0,
+      "job_closed": true,
+      "report_flags": {}
+    },
+    {
+      "name": "preview",
+      "checks": 18,
+      "failures": 0,
+      "desktop_created": false,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "engine_reaped": true,
+      "engine_handle_closed": true,
+      "active_job_processes": 0,
+      "job_closed": true,
+      "report_flags": {
+        "graphics_used": false
+      }
+    },
+    {
+      "name": "editor",
+      "checks": 18,
+      "failures": 0,
+      "desktop_created": false,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "engine_reaped": true,
+      "engine_handle_closed": true,
+      "active_job_processes": 0,
+      "job_closed": true,
+      "report_flags": {
+        "actual_app": true,
+        "source_preserved": true
+      }
+    },
+    {
+      "name": "reader",
+      "checks": 4,
+      "failures": 0,
+      "desktop_created": false,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "engine_reaped": true,
+      "engine_handle_closed": true,
+      "active_job_processes": 0,
+      "job_closed": true,
+      "report_flags": {
+        "fresh_process": true,
+        "original_tuning_preserved": true,
+        "reader_cache_owned": true
+      }
+    }
+  ]
+}

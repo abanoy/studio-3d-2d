@@ -1,0 +1,180 @@
+{
+  "format": "has_miku_contact_safe_cpu_projection_1",
+  "status": "PASS",
+  "checks": 54,
+  "graphics_used": false,
+  "scope": "protected_saved_case",
+  "source_files": 1211,
+  "source_hash_manifest_sha256": "92a208223ebd79110074ebb915bd32107d005a83b4c473304abc69a9e9018e10",
+  "preservation": {
+    "all_admitted_sources_unchanged": true,
+    "all_runtime_sources_unchanged": true,
+    "original_inputs_preserved": true,
+    "parent_environment_preserved": true,
+    "all_private_jobs_and_desktops_closed": true
+  },
+  "cases": [
+    {
+      "name": "math",
+      "status": "PASS",
+      "checks": 17,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "private_receipt_sha256": "e7195e6afc364b5b624f66ccb6535e5a7aba128d19ffedd94b7b42c2b186b90e",
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "measurements": {
+        "checks": 17,
+        "failures": 0,
+        "native_or_graphics_used": false
+      }
+    },
+    {
+      "name": "budget",
+      "status": "PASS",
+      "checks": 8,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "private_receipt_sha256": "5207191684b58ae15a464ba28d3d3b34ffbf057bf6960ef251f75060789b1ec1",
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "measurements": {
+        "checks": 8,
+        "failures": 0,
+        "synthetic_only": true
+      }
+    },
+    {
+      "name": "construct",
+      "status": "PASS",
+      "checks": 8,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "private_receipt_sha256": "8b63a6128213e23888c9b1d3104a7ae8bc127fe3f6d6e42cac222c8cf67e59e3",
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "measurements": {
+        "checks": 8,
+        "failures": 0,
+        "fitted_colliders": 4,
+        "graphics_or_contact_response_qualified": false,
+        "inspected_vertices": 13111,
+        "matched_vertices": 116,
+        "source_arrays_published": false
+      }
+    },
+    {
+      "name": "flow",
+      "status": "PASS",
+      "checks": 11,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "private_receipt_sha256": "8aae130c0b5cd6b94497f3d1ab92e3a345f636329f5f303da6820c2db6aad8bd",
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "measurements": {
+        "active_minimum_segment_clearance": 0.0569030787050724,
+        "checks": 11,
+        "contact_clearance_tolerance_changed": false,
+        "failures": 0,
+        "final": {
+          "particle_clearance": 0.0632954685389996,
+          "particle_pairs": 28,
+          "segment_clearance": 0.0575389261543751,
+          "segment_pairs": 24
+        },
+        "graphics_or_skin_surface_contact_qualified": false,
+        "initial": {
+          "particle_clearance": 0.0135131657123566,
+          "particle_pairs": 28,
+          "segment_clearance": -0.0219707049429417,
+          "segment_pairs": 24
+        },
+        "minimum_segment_clearance": -0.0219707049429417,
+        "runs": 2,
+        "ticks_per_run": 480
+      }
+    },
+    {
+      "name": "surface",
+      "status": "PASS",
+      "checks": 10,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "private_receipt_sha256": "5f02e248c318b1a6574cd71d254ab1141b303b0b3ec643ae4b3cd4ae20b9ccad",
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "measurements": {
+        "blocked_attachments": 0,
+        "checks": 10,
+        "contact_stats": {
+          "array_reads": 17,
+          "blocked_points": 0,
+          "corrections": 877,
+          "hot_array_reads": 0,
+          "iteration_limit_hits": 0,
+          "max_usec": 8754,
+          "minimum_gap": 0.0,
+          "refreshes": 480,
+          "remaining_pairs": 0,
+          "total_usec": 1430482,
+          "vertices": 989
+        },
+        "failures": 0,
+        "graphics_used": false,
+        "hair_vertices": 989,
+        "maximum_palette_disagreement": 0.0,
+        "minimum_skin_clearance": -2.23144888877869e-06,
+        "penetrating_skin_vertex_pairs": 0,
+        "source_arrays_published": false,
+        "ticks": 480
+      }
+    }
+  ],
+  "original_report": {
+    "source": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121\\output\\secondary-body-contact\\1795294349153298900\\verification.json",
+    "bytes": 15115,
+    "sha256": "70030278b33af234772c7b538b34192fdae750d37045d874228ad0c68e067d62"
+  },
+  "projection_scope": "Whitelisted scalars, nested aggregate statistics and lifecycle flags only; engine commands, user/data paths, raw/private arrays and requests excluded."
+}

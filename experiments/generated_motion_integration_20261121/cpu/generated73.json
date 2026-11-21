@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "unit",
+      "status": "PASS",
+      "checks": 22,
+      "desktop_created": false,
+      "worker_exit": 0,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "accounting": {
+        "active": 0,
+        "total": 3,
+        "terminated_by_limit": 0
+      },
+      "job_closed": true,
+      "report": {
+        "checks": 22,
+        "failures": 0,
+        "user_profile": "C:/a/Programming/cloudflare/has-discovery-lights-integration-20261121/output/generated-settling-1795294345338245100/unit/User/Roaming/Godot/app_userdata/Hybrid Animation Studio"
+      }
+    },
+    {
+      "name": "geometry",
+      "status": "PASS",
+      "checks": 11,
+      "desktop_created": false,
+      "worker_exit": 0,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "accounting": {
+        "active": 0,
+        "total": 3,
+        "terminated_by_limit": 0
+      },
+      "job_closed": true,
+      "report": {
+        "checks": 11,
+        "failures": 0,
+        "metrics": {
+          "attachment_drift": 0.460809111595154,
+          "authored_preserved": true,
+          "error": "",
+          "first_segment_length_error": 8.94069671630859e-08,
+          "last_segment_down": 0.999999940395355,
+          "restored": true,
+          "root_held": true,
+          "source_rig_preserved": true,
+          "tip_drop": 0.830465197563171,
+          "wind_along_direction": 0.0730126276612282,
+          "wind_response": true
+        },
+        "user_profile": "C:/a/Programming/cloudflare/has-discovery-lights-integration-20261121/output/generated-settling-1795294345338245100/geometry/User/Roaming/Godot/app_userdata/Hybrid Animation Studio"
+      }
+    },
+    {
+      "name": "preview",
+      "status": "PASS",
+      "checks": 18,
+      "desktop_created": false,
+      "worker_exit": 0,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "accounting": {
+        "active": 0,
+        "total": 3,
+        "terminated_by_limit": 0
+      },
+      "job_closed": true,
+      "report": {
+        "checks": 18,
+        "failures": 0,
+        "graphics_used": false,
+        "user_profile": "C:/a/Programming/cloudflare/has-discovery-lights-integration-20261121/output/generated-settling-1795294345338245100/preview/User/Roaming/Godot/app_userdata/Hybrid Animation Studio"
+      }
+    },
+    {
+      "name": "editor",
+      "status": "PASS",
+      "checks": 18,
+      "desktop_created": false,
+      "worker_exit": 0,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "accounting": {
+        "active": 0,
+        "total": 9,
+        "terminated_by_limit": 0
+      },
+      "job_closed": true,
+      "report": {
+        "actual_app": true,
+        "checks": 18,
+        "failures": 0,
+        "source_preserved": true,
+        "user_profile": "C:/a/Programming/cloudflare/has-discovery-lights-integration-20261121/output/generated-settling-1795294345338245100/editor/User/Roaming/Godot/app_userdata/Hybrid Animation Studio"
+      }
+    },
+    {
+      "name": "reader",
+      "status": "PASS",
+      "checks": 4,
+      "desktop_created": false,
+      "worker_exit": 0,
+      "worker_reaped": true,
+      "worker_handle_closed": true,
+      "accounting": {
+        "active": 0,
+        "total": 5,
+        "terminated_by_limit": 0
+      },
+      "job_closed": true,
+      "report": {
+        "checks": 4,
+        "failures": 0,
+        "fresh_process": true,
+        "original_tuning_preserved": true,
+        "reader_cache_owned": true,
+        "user_profile": "C:/a/Programming/cloudflare/has-discovery-lights-integration-20261121/output/generated-settling-1795294345338245100/reader/User/Roaming/Godot/app_userdata/Hybrid Animation Studio"
+      }
+    }
+  ],
+  "graphics_used": false,
+  "desktop_created": false,
+  "source_preservation_failures": [],
+  "parent_environment_preserved": true,
+  "protected_source_preserved": true,
+  "checks": 73
+}

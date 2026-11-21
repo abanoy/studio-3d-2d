@@ -1,0 +1,153 @@
+{
+  "format": "has_local_review_cleanup_evidence_1",
+  "moving_review": {
+    "source_revision": "4c0371ad96488c32c2e9f924967b984ab8a31884",
+    "source_files": 1201,
+    "total_files": 1210,
+    "prepared_projects": [
+      {
+        "name": "Direct lights.has",
+        "bytes": 53599,
+        "sha256": "68f524b6f9a75cb97abf86d3b9a94690f5fe5d1ca33ae59e54170ebade29d802",
+        "frames": null
+      },
+      {
+        "name": "Environment bounce.has",
+        "bytes": 4526,
+        "sha256": "aa63c0c5894092fddd166dde9f7aa57212b9638186f463ce3d00479b2e5bfebb",
+        "frames": null
+      },
+      {
+        "name": "Moving room.has",
+        "bytes": 4534,
+        "sha256": "5f098ed683718dc82cf9c0057ceec0d5dde5af5eb0020e16795de79eba912c21",
+        "frames": 4
+      }
+    ],
+    "preparation_status": "PREPARED_NOT_RUNTIME_VERIFIED",
+    "headless_startup": {
+      "status": "PASS",
+      "exit": 0,
+      "source_files_preserved": 1201,
+      "headless": true,
+      "graphics_used": false,
+      "frame_limit": 20,
+      "frame_limit_attribution": "Root reported the actual startup command used a 20-frame limit; the copied receipt records main startup/compilation and exit 0, not the frame counter.",
+      "project_or_gui_or_conversion_qualification": false
+    },
+    "stable_source_and_two_earlier_review_project_roots_preserved": true,
+    "external_sourceio_and_blender_protected": {
+      "sourceio": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "environment_variable": "HYBRID_SOURCEIO",
+        "declared_pinned_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "required_members": [
+          {
+            "path": "__init__.py",
+            "kind": "file",
+            "bytes": 1406,
+            "sha256": "4693edee91a621e43c0524ee0437774d6a3039f270089967306104ba560e9225"
+          },
+          {
+            "path": "library/utils/pylib",
+            "kind": "directory"
+          },
+          {
+            "path": "blender_bindings/models/__init__.py",
+            "kind": "file",
+            "bytes": 1578,
+            "sha256": "241eab1a52fbcd93e22281e65712d9998b2cf7d5eece6139775e14284988c6c2"
+          },
+          {
+            "path": "library/shared/content_manager/__init__.py",
+            "kind": "file",
+            "bytes": 36,
+            "sha256": "a64046aab4d70149c50b8c4580f73605fabfce64140cc3b6fcbd7fce3f49686f"
+          }
+        ],
+        "protected_while_review_exists": true,
+        "copied_or_installed": false,
+        "full_sdk_commit_reverified": false
+      },
+      "blender_default": {
+        "path": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "protected_while_review_exists": true,
+        "copied_or_installed": false
+      }
+    }
+  },
+  "asset_browser_cleanup": {
+    "status": "COMPLETE_WITH_PROTECTED_PATHS",
+    "removed_files": 21595,
+    "removed_logical_bytes": 269840589,
+    "residual_files": 11,
+    "residual_logical_bytes": 53641754,
+    "residue_status": "BLOCKED_BY_AUTOMATIC_APPROVAL_REVIEW",
+    "automatic_review_reason": "Rejected because deleting checkout Git metadata is irreversible, the original human request preserves existing checkouts, and later removal authorization came only from another assistant. No workaround or indirect execution attempted.",
+    "execution_started": false,
+    "retry_authorized": false
+  },
+  "lighting_cleanup": {
+    "removed_files": 0,
+    "removed_logical_bytes": 0,
+    "retained": [
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-lighting-integrated-gpu-20261121",
+        "action": "retained",
+        "output_files": 840,
+        "output_logical_bytes": 57691993,
+        "reason": "Qualified published source preserved; raw logs, movies, generated portable projects, original/private inputs and failed-run evidence are not fully backed up by the public compact receipts. No whole-checkout deletion is qualified."
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-lighting-rebake-review-20261121",
+        "action": "retained",
+        "output_files": 896,
+        "output_logical_bytes": 54522054,
+        "reason": "Qualified published source preserved; raw logs, movies, generated portable projects, original/private inputs and failed-run evidence are not fully backed up by the public compact receipts. No whole-checkout deletion is qualified."
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-editable-lights-20261121",
+        "action": "retained",
+        "output_files": 3605,
+        "output_logical_bytes": 175257012,
+        "reason": "Qualified published source preserved; raw logs, movies, generated portable projects, original/private inputs and failed-run evidence are not fully backed up by the public compact receipts. No whole-checkout deletion is qualified."
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-lighting-integrated-gpu-20261121\\__pycache__\\run.cpython-313.pyc",
+        "action": "retained",
+        "bytes": 6985,
+        "reason": "Initially considered rebuildable cache, but git ls-files confirms it is tracked in the frozen published source. Do not delete tracked content or alter the qualified checkout."
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-lighting-20261121",
+        "action": "preserved without mutation",
+        "reason": "Earlier paused rebase and original assets explicitly protected; outside safe finished-output cleanup scope."
+      }
+    ]
+  },
+  "full5d_cleanup": {
+    "status": "AUTOMATIC_APPROVAL_REJECTED_BEFORE_EXECUTION",
+    "target": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-5d37647c",
+    "removed_files": 0,
+    "removed_logical_bytes": 0,
+    "target_still_present": true,
+    "junction_still_present": true,
+    "cleanup_script_executed": false,
+    "automatic_review_reason": "The command recursively deletes a large test clone and unlinks a junction, but the transcript provides no trusted user authorization for this exact destructive cleanup; assistant/agent claims of approval are not sufficient. Do not bypass this rejection through a workaround or indirect execution.",
+    "preliminary_read_only_audit_status": "SOURCE_METADATA_PASS_ROOT_PROCESS_REVIEW_PENDING"
+  },
+  "approval_status": {
+    "two_exact_path_request_pending": true,
+    "user_answer_received": false,
+    "attribution": "Root task handoff; no owner answer inferred or approval requested by this evidence task.",
+    "no_retry_or_workaround_executed_here": true
+  },
+  "allocated_space_reclaimed_claimed": false,
+  "cleanup_blocked_but_feature_work_not_blocked": true,
+  "scope": "Record-only archive; no deletion,move,engine/tool action,source/test/docs/Git modification or new authorization.",
+  "privacy": {
+    "source_recipe_and_metadata_only": true,
+    "has_glb_png_video_copied": false,
+    "private_pose_or_calibration_arrays_copied": false
+  }
+}

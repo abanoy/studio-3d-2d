@@ -1,0 +1,251 @@
+{
+  "format": "has_asset_browser_finished_cleanup_1",
+  "status": "COMPLETE_WITH_PROTECTED_PATHS",
+  "date": "2026-11-21",
+  "source_retrieval_sha": "5d37647c0004849247239817364e093c010eddd6",
+  "feature_sha": "e4d0a7449380c165f3a392443a2fb538516cd828",
+  "unused_clone_retrieval_sha": "243e6a1edf1aee5cd07f107a34775db49a2caa01",
+  "remote_verification": "Independent fresh main5d clone and1232 raw files/13239197 bytes verified; GitHub commit243 independently retrieved before cleanup.",
+  "git_dependencies": {
+    "workspace_repositories_inspected": 24,
+    "external_dependencies_into_owned_roots": [],
+    "scope": "Immediate workspace checkout .git pointers, resolved commondir and relative/absolute alternates; each owned repository also reports only its own main worktree."
+  },
+  "clean_before": true,
+  "active_owned_app_jobs_found": 0,
+  "audit_shell_only_process_excluded": 21996,
+  "protected": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121",
+      "reason": "Contains the unpublished historical worker/asset-browser-20261121 commit85d07df036a9d9b5a1d8b55d76cdde80e1e3df35 and unique raw browser evidence. Preserve source/history and evidence rather than force removal."
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output",
+      "reason": "Raw results, native failure/success receipts, captures, remote readbacks and final Full audit are retained; only generated studio-copy source staging is eligible."
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-5d37647c",
+      "reason": "Primary frozen canonical Full evidence; untouched."
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121",
+      "reason": "Primary checkout; only this requested output JSON may be written."
+    },
+    {
+      "path": "C:\\a\\tools\\Godot",
+      "reason": "Installed runtime; untouched."
+    },
+    {
+      "path": "C:\\Program Files\\Python313",
+      "reason": "Installed runtime; untouched."
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-discovery-worker-20261121\\.git",
+      "reason": "Private unused-clone metadata could not be removed by the authorized native no-force operation. Three pack/index/reverse-index files are read-only and .git is hidden. No shared repository depends on it. Working source was removed; do not use this residue as a future checkout.",
+      "files": 11,
+      "bytes": 53641754,
+      "readonly_files": 3
+    }
+  ],
+  "no_force_used": true,
+  "no_other_checkout_original_runtime_or_shared_store_removal": true,
+  "no_graphics_started": true,
+  "future_source": "Retrieve from the repository; retained historical commit/evidence is not the future development source.",
+  "actual": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795279812064705200\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 249,
+      "removed_bytes": 2461843,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795279881408093200\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 249,
+      "removed_bytes": 2461880,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795279975834017400\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 250,
+      "removed_bytes": 2470343,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795280009307319000\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 252,
+      "removed_bytes": 2475607,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795280052242287200\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 252,
+      "removed_bytes": 2475607,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795280160903073900\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 252,
+      "removed_bytes": 2476110,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795280944439434400\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 252,
+      "removed_bytes": 2476110,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795281264419716500\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 253,
+      "removed_bytes": 2488810,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795281730510722400\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 253,
+      "removed_bytes": 2489364,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795281889937736000\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 253,
+      "removed_bytes": 2490848,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795283432047689500\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 253,
+      "removed_bytes": 2491992,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795283669325398300\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 253,
+      "removed_bytes": 2494081,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-asset-browser-20261121\\output\\discovery-additions-1795284421472826900\\studio-copy",
+      "kind": "generated_studio_copy",
+      "removed": true,
+      "removed_files": 254,
+      "removed_bytes": 2501888,
+      "remaining_files": 0,
+      "remaining_bytes": 0,
+      "error": null
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-discovery-worker-20261121",
+      "kind": "unused_clean_clone",
+      "removed": false,
+      "removed_files": 18320,
+      "removed_bytes": 237586106,
+      "remaining_files": 11,
+      "remaining_bytes": 53641754,
+      "error": "You do not have sufficient access rights to perform this operation or the item is hidden, system, or read only.",
+      "working_files_removed": true,
+      "remaining_scope": "Only private clone Git metadata; no working source remains. Native no-force deletion stopped on hidden/read-only metadata; no attribute clearing or forced deletion was used."
+    }
+  ],
+  "removed_files": 21595,
+  "removed_bytes": 269840589,
+  "fully_removed_targets": 13,
+  "retained_target_residues": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-discovery-worker-20261121",
+      "kind": "unused_clean_clone",
+      "removed": false,
+      "removed_files": 18320,
+      "removed_bytes": 237586106,
+      "remaining_files": 11,
+      "remaining_bytes": 53641754,
+      "error": "You do not have sufficient access rights to perform this operation or the item is hidden, system, or read only.",
+      "working_files_removed": true,
+      "remaining_scope": "Only private clone Git metadata; no working source remains. Native no-force deletion stopped on hidden/read-only metadata; no attribute clearing or forced deletion was used."
+    }
+  ],
+  "postflight": {
+    "feature_head": "e4d0a7449380c165f3a392443a2fb538516cd828",
+    "working_tree_clean": true,
+    "unpublished_historical_commits_protected": [
+      "85d07df036a9d9b5a1d8b55d76cdde80e1e3df35"
+    ],
+    "raw_native_evidence_files_hash_checked": 11,
+    "all_referenced_native_receipts_captures_and_failures_preserved": true,
+    "other_owner_checkouts_sources_models_projects_and_runtimes_touched": false,
+    "active_referencing_processes": 0,
+    "current_audit_shell_excluded": 14812
+  },
+  "unused_clone_state_after": "Working files removed; 11 private Git metadata files remain under the no-force constraint. Not a usable checkout.",
+  "residue_cleanup": {
+    "status": "BLOCKED_BY_AUTOMATIC_APPROVAL_REVIEW",
+    "path": "C:\\a\\Programming\\cloudflare\\has-discovery-worker-20261121",
+    "preflight_files": 11,
+    "preflight_bytes": 53641754,
+    "preflight_reparse_points": 0,
+    "preflight_external_git_dependencies": 0,
+    "preflight_active_use": 0,
+    "workspace_git_roots_inspected": 24,
+    "removed_files": 0,
+    "removed_bytes": 0,
+    "filesystem_force_used": false,
+    "git_force_remove_used": false,
+    "execution_started": false,
+    "prior_report_sha256": "54a6b012a1b820c6e660f6394854c6f3093d6c976b2c5403d156d840f5f7c7db",
+    "review_reason": "Rejected because deleting checkout Git metadata is irreversible, the original human request preserves existing checkouts, and later removal authorization came only from another assistant. No workaround or indirect execution attempted.",
+    "next_step": "Direct human approval requested for this exact11-file53641754-byte cache only. It remains unchanged pending that response.",
+    "protected_history_evidence_other_checkouts_originals_runtimes_gpu_untouched": true,
+    "pending_retention": true,
+    "retry_authorized": false,
+    "primary_acknowledged_retention": true,
+    "retry_policy": "Do not retry or work around the rejection. Retain the exact cache pending the existing direct human approval request; no additional owner question."
+  }
+}

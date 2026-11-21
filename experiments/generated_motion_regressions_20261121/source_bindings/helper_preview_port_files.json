@@ -1,0 +1,524 @@
+{
+  "format": "has_helper_preview_main_port_files_1",
+  "baseline": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+  "runtime_source_packet": "experiments/local_wind_review/helper_pending_display_candidate_20261113",
+  "main_refinements": [
+    "helper window680px bounded by viewport",
+    "initial focus on an actually checked wind group",
+    "popup window input forwards keys only for pending-preview Escape",
+    "Windows worker uses checked shorter work_root as cwd; absolute job paths and Job/start gate remain unchanged; actual >=260-character job regression added",
+    "Show additional wind-group and strength controls only once temporary groups are prepared, preserving refinement space beforehand"
+  ],
+  "files": [
+    {
+      "path": "src/app.gd",
+      "sha256": "522e7ca0274bbbaaa92bb11f6dcab76da1f6b1e77c0dc64faf13f9af320da734",
+      "lf_sha256": "b85cc1346e59c22569a3c6e774cb95dc111d808c65cc149cc047fbc9a8c633b0",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "sha256": "bf2df56bbcb9078af4704d3ed075887f56c22eca7da8f1dc0299b5445d101f6f",
+      "lf_sha256": "bf2df56bbcb9078af4704d3ed075887f56c22eca7da8f1dc0299b5445d101f6f",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "lf_sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "category": "runtime"
+    },
+    {
+      "path": "src/secondary_helper_editor.gd",
+      "sha256": "5757e86b2f81a14ccd65ca3e91c2eedcecf2c03f653d08c9c5ead18aebe81f71",
+      "lf_sha256": "5757e86b2f81a14ccd65ca3e91c2eedcecf2c03f653d08c9c5ead18aebe81f71",
+      "category": "runtime"
+    },
+    {
+      "path": "src/source_bone_bindings.gd",
+      "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54",
+      "lf_sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "sha256": "e69de68cb809c4d6b1c7b15dd37863fc08121bb639d29478b1e86c02a31d96d8",
+      "lf_sha256": "e69de68cb809c4d6b1c7b15dd37863fc08121bb639d29478b1e86c02a31d96d8",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pending_helper_preview.gd",
+      "sha256": "151d5394a1955361d612d66325b8bd64bdeedeebfb836e2e18b405fac2b1dfdb",
+      "lf_sha256": "151d5394a1955361d612d66325b8bd64bdeedeebfb836e2e18b405fac2b1dfdb",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pending_helper_wind_player.gd",
+      "sha256": "20e13932247022680e60305bc68549ce3b606384aea350f5cbabfdfe7a1af801",
+      "lf_sha256": "20e13932247022680e60305bc68549ce3b606384aea350f5cbabfdfe7a1af801",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_helper_bridge.gd",
+      "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "lf_sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_helper_runtime.gd",
+      "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "lf_sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_helper_candidate.gd",
+      "sha256": "434063885bc9525b4c5ab4cfe8138b1d255c83820eab97f73eee9a1b766ebc30",
+      "lf_sha256": "434063885bc9525b4c5ab4cfe8138b1d255c83820eab97f73eee9a1b766ebc30",
+      "category": "runtime"
+    },
+    {
+      "path": "tools/wind_helper_preview.py",
+      "sha256": "11e059c05514bebe74def3e64d9618a2567f022a19a59563c6950a9cd19037fb",
+      "lf_sha256": "11e059c05514bebe74def3e64d9618a2567f022a19a59563c6950a9cd19037fb",
+      "category": "runtime"
+    },
+    {
+      "path": "tools/wind_preview_controller.py",
+      "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac",
+      "lf_sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac",
+      "category": "runtime"
+    },
+    {
+      "path": "tools/wind_preview_owned.py",
+      "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f",
+      "lf_sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f",
+      "category": "runtime"
+    },
+    {
+      "path": "tools/wind_preview_worker.py",
+      "sha256": "2366ea8a400101292788c14df1e5ff7615cf9d5c7dae60589fb0578830755cb9",
+      "lf_sha256": "2366ea8a400101292788c14df1e5ff7615cf9d5c7dae60589fb0578830755cb9",
+      "category": "runtime"
+    },
+    {
+      "path": "tests/helper_preview_fixtures.py",
+      "sha256": "d7e0372cf3cdd96abc9d195aed43e37126f3f7ea7560cbe4b695a143fc85fa36",
+      "lf_sha256": "d7e0372cf3cdd96abc9d195aed43e37126f3f7ea7560cbe4b695a143fc85fa36",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_gpu.gd",
+      "sha256": "f78ea14531cd0e86795feb9448626b6620ab299eacec7a0875478df87b86bb7f",
+      "lf_sha256": "f78ea14531cd0e86795feb9448626b6620ab299eacec7a0875478df87b86bb7f",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_gpu_common.gd",
+      "sha256": "9f6adb3ce974e3b21a1982808285c8a5b9a7edc879e5a086180f2efb9cda3bc9",
+      "lf_sha256": "9f6adb3ce974e3b21a1982808285c8a5b9a7edc879e5a086180f2efb9cda3bc9",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_gpu_native.gd",
+      "sha256": "83b15369e130364e425804dfa3af5b5b11612b03085a3da86b261b1ba7982fc8",
+      "lf_sha256": "83b15369e130364e425804dfa3af5b5b11612b03085a3da86b261b1ba7982fc8",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_gpu_peers.gd",
+      "sha256": "e7acd248bcc0a989e454553815c747aaa2ca85dda2ef86f04e270b0ef5219f4f",
+      "lf_sha256": "e7acd248bcc0a989e454553815c747aaa2ca85dda2ef86f04e270b0ef5219f4f",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_integration_cpu.gd",
+      "sha256": "d7ef435c3c4e34d24fc675f293aa96d8eb72d50dc8a26a33b69a518af9e9ef72",
+      "lf_sha256": "d7ef435c3c4e34d24fc675f293aa96d8eb72d50dc8a26a33b69a518af9e9ef72",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_transport_cpu.py",
+      "sha256": "53f7ec64efe4b0125cdccf1053f6f7ce5d5669b33476dc0f7bfea42baaa73348",
+      "lf_sha256": "53f7ec64efe4b0125cdccf1053f6f7ce5d5669b33476dc0f7bfea42baaa73348",
+      "category": "test"
+    },
+    {
+      "path": "tests/test_helper_preview_driver.py",
+      "sha256": "6b0b6a9a5a7bc7f0e48f7b3a020d2b36128c50ec76b45bb108b59686ab8245a7",
+      "lf_sha256": "6b0b6a9a5a7bc7f0e48f7b3a020d2b36128c50ec76b45bb108b59686ab8245a7",
+      "category": "test"
+    },
+    {
+      "path": "tests/verify_helper_preview.py",
+      "sha256": "ce1fc4a09513c8f6b8348825dd35600eac23d4ca6dacbf1ecc4883819bf7c9b7",
+      "lf_sha256": "ce1fc4a09513c8f6b8348825dd35600eac23d4ca6dacbf1ecc4883819bf7c9b7",
+      "category": "test"
+    },
+    {
+      "path": "tests/wind_helper_candidate_cpu.gd",
+      "sha256": "bd2fac67850fb63cee46a35c9e7390b401756933499b5273a803714b3c24e22b",
+      "lf_sha256": "bd2fac67850fb63cee46a35c9e7390b401756933499b5273a803714b3c24e22b",
+      "category": "test"
+    },
+    {
+      "path": "src/model.gd",
+      "category": "runtime",
+      "sha256": "73ecf64d9d855e24dabe925bd33afff81b424071ce3a6fed43ba73970b34dcd1",
+      "lf_sha256": "2f17c0e43ac3e53daa314015a0e9c595182385f50118d2032552e05e2f7a9522"
+    },
+    {
+      "path": "src/renderer.gd",
+      "category": "runtime",
+      "sha256": "0f2c616f8f3df84ff2c1a6a88665f9bdd9d0a3fb1639381fbe4da8915359f89d",
+      "lf_sha256": "2f2132eb2733fb088fc9e38bba9df18e8aa49b7083d9340e629270c99406092a"
+    },
+    {
+      "path": "src/import_basis.gd",
+      "category": "runtime",
+      "sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "lf_sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072"
+    },
+    {
+      "path": "src/import_basis_helpers.gd",
+      "category": "runtime",
+      "sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "lf_sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482"
+    },
+    {
+      "path": "src/import_basis_project.gd",
+      "category": "runtime",
+      "sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "lf_sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab"
+    },
+    {
+      "path": "tools/secondary_helper_worker.py",
+      "category": "runtime",
+      "sha256": "00bdc955d309a01c62d871b70b985ced8df020b80bcb242d878582f07116e8d3",
+      "lf_sha256": "00bdc955d309a01c62d871b70b985ced8df020b80bcb242d878582f07116e8d3"
+    },
+    {
+      "path": "tools/secondary_helpers.py",
+      "category": "runtime",
+      "sha256": "c9d56bf770c19ea4e117fb36849548d36676f2f75c6a19006084e815b0ec5f20",
+      "lf_sha256": "c9d56bf770c19ea4e117fb36849548d36676f2f75c6a19006084e815b0ec5f20"
+    },
+    {
+      "path": "tools/secondary_helpers_batch.py",
+      "category": "runtime",
+      "sha256": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+      "lf_sha256": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2"
+    },
+    {
+      "path": "tools/import_basis_helper.py",
+      "category": "runtime",
+      "sha256": "819362729f741f08a6e93bc99ff3f10e14bde38f8d7010080688fc93d9604418",
+      "lf_sha256": "819362729f741f08a6e93bc99ff3f10e14bde38f8d7010080688fc93d9604418"
+    },
+    {
+      "path": "tools/private_desktop.py",
+      "category": "runtime",
+      "sha256": "c3bad5ab1792f7103a9bf31eef283ee8b928bd4557b6e53c18b9c0718d92ae61",
+      "lf_sha256": "c3bad5ab1792f7103a9bf31eef283ee8b928bd4557b6e53c18b9c0718d92ae61"
+    },
+    {
+      "path": "src/has_project.gd",
+      "sha256": "80a22d5b8a680c504122823e62fb116792f03cefc2b56926c61b16cdfdafdb92",
+      "lf_sha256": "80a22d5b8a680c504122823e62fb116792f03cefc2b56926c61b16cdfdafdb92",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_rig.gd",
+      "sha256": "ca981a8d91670839a89e897e4c34917a291a6d865bf19770affdb85775e9d72b",
+      "lf_sha256": "ca981a8d91670839a89e897e4c34917a291a6d865bf19770affdb85775e9d72b",
+      "category": "runtime"
+    },
+    {
+      "path": "src/source_import.gd",
+      "sha256": "629f8f7b1443aa14e51513ffb75b7b3b5744254579afb1b815fdf4a3f131c024",
+      "lf_sha256": "aa8e2a30682bed585d16a13a4cffb86d5fb5f6b11e48f0bc1df04f5ad9e8c172",
+      "category": "runtime"
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "sha256": "05f6152e6c2003949523e0783b2a8e77a26ed3a1398218a4757554b1c1624db1",
+      "lf_sha256": "803c02ed799f4d1a0d113c510c260991715b19c91cc6ac78f799b40b8d5982f5",
+      "category": "runtime"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "sha256": "3eee5bb13d86940a5a4fafdf0f46ddf80be4815ad7346cd074845c2d5ae532c9",
+      "lf_sha256": "8fafdabce4d70682854174f6af65bff5c88beccbdc9fcfc990f5ab7030830015",
+      "category": "runtime"
+    },
+    {
+      "path": "src/camera_easing_editor.gd",
+      "sha256": "cc1ef515a5c868bfc200ed7fa743c6d70f6b43614169492799827442cfff8e1a",
+      "lf_sha256": "cc1ef515a5c868bfc200ed7fa743c6d70f6b43614169492799827442cfff8e1a",
+      "category": "runtime"
+    },
+    {
+      "path": "src/keyframe_easing.gd",
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "lf_sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_parts.gd",
+      "sha256": "ca4a4610ba8abf6f0842c22c08146c7e4820cdfee270d86876920a65f59d39ef",
+      "lf_sha256": "ffde710edf951d1b844db4664eb2159d7e97cb14212dca0c5bd29b9351b25cf9",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_parts_editor.gd",
+      "sha256": "02b7e17b87aaa9131ff7a01960d2b09e470f41391dd8291fc86aaf9bef9eebda",
+      "lf_sha256": "56f7619e2a73ebf76f60f6d1c2e98aaa79aa8cfae622366dd611ef6c0e59f7ef",
+      "category": "runtime"
+    },
+    {
+      "path": "src/posed_render_bounds.gd",
+      "sha256": "2f6268f018c0f275c6a549be01a5ef80fa48f7a361f8d194c863f5ac4df3edbe",
+      "lf_sha256": "dcc9afb9f3db677ba1c40530abae883b60f8518dd89eb190aedaa4c799683f45",
+      "category": "runtime"
+    },
+    {
+      "path": "src/posed_render_envelope.gd",
+      "sha256": "af6e65a8db6cf2907edc2541dc58add1c5eea3cfea5dfa19a286046c6b3785d7",
+      "lf_sha256": "af6e65a8db6cf2907edc2541dc58add1c5eea3cfea5dfa19a286046c6b3785d7",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_part_follow.gd",
+      "category": "runtime",
+      "sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb",
+      "lf_sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb"
+    },
+    {
+      "path": "src/part_pose_follow_math.gd",
+      "category": "runtime",
+      "sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf",
+      "lf_sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf"
+    },
+    {
+      "path": "src/discovery/browser.gd",
+      "category": "runtime",
+      "sha256": "41dd41028669060fd1cc682245bfc9687b2ccb5e730495b6deabc2a716cbc683",
+      "lf_sha256": "41dd41028669060fd1cc682245bfc9687b2ccb5e730495b6deabc2a716cbc683"
+    },
+    {
+      "path": "src/discovery/catalog.gd",
+      "category": "runtime",
+      "sha256": "0a6c2174e1adc694dee7d4777c9fb0c7201efdef4fd6b6fcea0f67bcb04ee2e8",
+      "lf_sha256": "0a6c2174e1adc694dee7d4777c9fb0c7201efdef4fd6b6fcea0f67bcb04ee2e8"
+    },
+    {
+      "path": "src/discovery/local_preview.gd",
+      "category": "runtime",
+      "sha256": "21c789b7173765d3c2a4f5c3f60da5edf1506749c3307978f28f8586a9f96e89",
+      "lf_sha256": "21c789b7173765d3c2a4f5c3f60da5edf1506749c3307978f28f8586a9f96e89"
+    },
+    {
+      "path": "src/discovery/local_scan.gd",
+      "category": "runtime",
+      "sha256": "4e1285ed46490eac57e9eef082e78b517b845920f292fb77b6094076d8c6b9f4",
+      "lf_sha256": "4e1285ed46490eac57e9eef082e78b517b845920f292fb77b6094076d8c6b9f4"
+    },
+    {
+      "path": "src/discovery/preferences.gd",
+      "category": "runtime",
+      "sha256": "562608faed78b0d4defa518f70b6dbcb416dad110f87f13850ce5c27c315f650",
+      "lf_sha256": "562608faed78b0d4defa518f70b6dbcb416dad110f87f13850ce5c27c315f650"
+    },
+    {
+      "path": "src/discovery/providers.gd",
+      "category": "runtime",
+      "sha256": "021994ed3c151e220c7b670c9a3f39626c666ac58f74102cff46620b77cf3456",
+      "lf_sha256": "021994ed3c151e220c7b670c9a3f39626c666ac58f74102cff46620b77cf3456"
+    },
+    {
+      "path": "src/discovery/service.gd",
+      "category": "runtime",
+      "sha256": "0b24918a337632875f20d2aac64f5e7306c384c6ace15681226186ee60964985",
+      "lf_sha256": "0b24918a337632875f20d2aac64f5e7306c384c6ace15681226186ee60964985"
+    },
+    {
+      "path": "src/discovery/studio_bridge.gd",
+      "category": "runtime",
+      "sha256": "cb3c70c5039245f11a0fc42da4346ec50d44fe8dbeea5d5dea5a948f0d421869",
+      "lf_sha256": "cb3c70c5039245f11a0fc42da4346ec50d44fe8dbeea5d5dea5a948f0d421869"
+    },
+    {
+      "path": "src/discovery/thumbnail.gd",
+      "category": "runtime",
+      "sha256": "e1571bc3daa8306f4e1872fd13e142dc9cae8a403adbeb4ec825c71a0b3df925",
+      "lf_sha256": "e1571bc3daa8306f4e1872fd13e142dc9cae8a403adbeb4ec825c71a0b3df925"
+    },
+    {
+      "path": "src/discovery/window.gd",
+      "category": "runtime",
+      "sha256": "42841e40b793f379625359b269adc4f5305fe76bce524b0a33055a6d6753d43b",
+      "lf_sha256": "42841e40b793f379625359b269adc4f5305fe76bce524b0a33055a6d6753d43b"
+    },
+    {
+      "path": "src/lighting.gd",
+      "category": "runtime",
+      "sha256": "ec8f5d36eac5d3ba9230e29cdd17affa17b13dc5ed61c28d4ec27c70b9ba87bc",
+      "lf_sha256": "ec8f5d36eac5d3ba9230e29cdd17affa17b13dc5ed61c28d4ec27c70b9ba87bc"
+    },
+    {
+      "path": "src/scene_lighting_document.gd",
+      "category": "runtime",
+      "sha256": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75",
+      "lf_sha256": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75"
+    },
+    {
+      "path": "src/scene_lighting_runtime.gd",
+      "category": "runtime",
+      "sha256": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a",
+      "lf_sha256": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a"
+    },
+    {
+      "path": "src/scene_lighting_editor.gd",
+      "category": "runtime",
+      "sha256": "5a3d5ad046634269e9424df1ef5dfe712f5ec4f4d50730737657b0230eafab06",
+      "lf_sha256": "5a3d5ad046634269e9424df1ef5dfe712f5ec4f4d50730737657b0230eafab06"
+    },
+    {
+      "path": "run.py",
+      "category": "runtime",
+      "sha256": "99767c6e5712b5319055a51a78019655976699a31bb73b2a1331e2201b05a821",
+      "lf_sha256": "0df2da04334fb3fcbae69060fedfecc1d7bcc702dde8d8747572c58c443fd777"
+    },
+    {
+      "path": "src/discovery/retrieval_notice.gd",
+      "category": "runtime",
+      "sha256": "2861dd259d89cc72dba9ba66b541e5ede01aa5cb71afb470dbd392f544c64daf",
+      "lf_sha256": "2861dd259d89cc72dba9ba66b541e5ede01aa5cb71afb470dbd392f544c64daf"
+    },
+    {
+      "path": "src/scene_indirect_runtime.gd",
+      "category": "runtime",
+      "sha256": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732",
+      "lf_sha256": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732"
+    },
+    {
+      "path": "src/secondary_body_colliders.gd",
+      "category": "runtime",
+      "sha256": "9fd3008fb116762a9708b180eb2bd9fcceeb5fe3272f4e74c99b09ac4ae415af",
+      "lf_sha256": "eb8256dc05c23b7164cf2ca695e69c88cb63a2f4630604f23ef06d1a988a6f5d"
+    },
+    {
+      "path": "src/secondary_segment_contact.gd",
+      "category": "runtime",
+      "sha256": "0c5833af90c0a45436fbd582a567a4e5bb8593b65cf6cfb51b4e13581faad114",
+      "lf_sha256": "79521a65b2e91b2e561c3fee047cba1495f16a685a15c9eef3d0f003f9ce87bd"
+    },
+    {
+      "path": "src/secondary_skin_contact.gd",
+      "category": "runtime",
+      "sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13",
+      "lf_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "category": "runtime",
+      "sha256": "8cdbab61c0c33eece443d4257191a070133616245b681c6249141d3d6d0b0a87",
+      "lf_sha256": "dbf29692ab47d7bd68c7f394949b1066504b1f3921845280d9f42acdb170998d"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "category": "runtime",
+      "sha256": "21b6c41615a4cd0cd48020ce4568716ec61d3c1d0ab79dd4cf5a85eefe9ab47b",
+      "lf_sha256": "72cd58c85e6090a764cd56c195bed0326040afd5fa13cbd2b31a332d3e4e25aa"
+    },
+    {
+      "path": "src/scene_voxel_runtime.gd",
+      "category": "runtime",
+      "sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a",
+      "lf_sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a"
+    },
+    {
+      "path": "src/generated_secondary_motion.gd",
+      "category": "runtime",
+      "sha256": "c151f76afea65b22d33693deb6d0b6e58ba8219bb3d30df64e1ad0a6460643cb",
+      "lf_sha256": "c151f76afea65b22d33693deb6d0b6e58ba8219bb3d30df64e1ad0a6460643cb"
+    },
+    {
+      "path": "src/generated_secondary_editor.gd",
+      "category": "runtime",
+      "sha256": "a9f5d8c85ae163b8d030d92fdd3784b443f0776a3c03b25e4ae8e8ad376c6d4d",
+      "lf_sha256": "a9f5d8c85ae163b8d030d92fdd3784b443f0776a3c03b25e4ae8e8ad376c6d4d"
+    }
+  ],
+  "test_driver_scope": "Exact current-main source snapshots without overlays; labeled working-source checks require explicit opt-in. CPU defaults208; graphical defaults266 (original199+4UI+17popup endpoint+1long-job launch). Optional native adds23CPU/39graphical. Actual results recorded separately.",
+  "native_binding_integration_revision": {
+    "source_baseline": "c4d767489a43a7e8e38c5251be07814b1795d1a9",
+    "changed_runtime_row": "src/secondary_helper_editor.gd",
+    "added_runtime_dependency": "src/source_bone_bindings.gd",
+    "driver_change": "Require the new preload in RUNTIME_FILES and in this reviewed manifest; exact byte checks remain enabled.",
+    "scope": "Read-only native identity validation may prefer a verified existing-joint preview in Simple mode. Unsupported or absent crosswalks keep existing choices. Explicit Apply, manual choices and Advanced mode remain available; native simulation is not implemented.",
+    "source_review_evidence": "output/helper-preview-provenance-review-20261114/SOURCE_REVIEW.json",
+    "test_scope": "Preserve the original CPU208 and graphical266 assertions. Fresh results are recorded separately; this manifest does not claim a test pass."
+  },
+  "source_native_leaf_successor_provenance": "experiments/source_native_live_independent_review_20261115/manifest-successor-20261116/PROVENANCE.json",
+  "human_reference_integration_revision": {
+    "baseline": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+    "previous_manifest_sha256": "5dd70e5d05d7fadf0839b391e95c6e0320e956c6a6c400d4873d435583132113",
+    "added_runtime_rows": [
+      "src/model.gd",
+      "src/renderer.gd",
+      "src/import_basis.gd",
+      "src/import_basis_helpers.gd",
+      "src/import_basis_project.gd",
+      "tools/secondary_helper_worker.py",
+      "tools/secondary_helpers.py",
+      "tools/secondary_helpers_batch.py",
+      "tools/import_basis_helper.py",
+      "tools/private_desktop.py"
+    ],
+    "changed_existing_rows": [
+      "src/app.gd",
+      "src/pose_editor.gd",
+      "src/secondary_helper_editor.gd",
+      "src/wind_review.gd",
+      "src/pending_helper_preview.gd",
+      "src/wind_helper_candidate.gd",
+      "tools/wind_helper_preview.py",
+      "tools/wind_preview_worker.py",
+      "tests/helper_preview_fixtures.py",
+      "tests/helper_preview_transport_cpu.py",
+      "tests/verify_helper_preview.py"
+    ],
+    "scope": "Six-foot intrinsic import basis, schema9 capability validation, and independently checked existing-joint helper preservation. Preserve all historical rows and metadata; old experiment packets are unchanged.",
+    "driver_scope": "Required basis/runtime dependency membership and exact SHA/LF pins; original assertion counts and all safety predicates retained. Wind membership now rejects duplicates and requires the exact named source set.",
+    "test_scope": "This source refresh claims manifest preflight only. Fresh CPU/GPU results must be recorded separately; no historical PASS is reassigned to this successor."
+  },
+  "voxel_runtime_integration_revision": {
+    "source_commit": "96e5d50b63964c1782515a0c70d22a5f0ed59e9e",
+    "integration_commit": "38b39ec7a057ad6c8a0ec8aaf557574cb5ce5706",
+    "added_runtime_row": "src/scene_voxel_runtime.gd",
+    "changed_runtime_rows": [
+      "src/renderer.gd",
+      "src/scene_indirect_runtime.gd",
+      "src/scene_lighting_document.gd",
+      "src/scene_lighting_editor.gd"
+    ],
+    "scope": "Exact reviewed VoxelGI dependency and raw/LF leaf pins only. Existing membership, source-byte, lifecycle, native/refusal guards and assertion counts remain unchanged. This refresh supplies no inherited execution claim.",
+    "post_review_fix": "After34ac3f26, adopteda904913d complementary empty-contributor data-clear and visibility guard; only scene_voxel_runtime.gd leaf repinned. Prior38 and6 proofs remain historical; new6 binding/missing/drift controls are separately recorded. No inherited primary graphics PASS."
+  },
+  "generated_secondary_integration_revision": {
+    "source_commit": "a43beca451bd332f967a427bed4f78a5aa102dd6",
+    "integration_commit": "e79f7989380390362ee8ec59d51e43bfe0312c69",
+    "added_runtime_rows": [
+      "src/generated_secondary_motion.gd",
+      "src/generated_secondary_editor.gd"
+    ],
+    "changed_existing_rows": [
+      "src/physics_editor.gd",
+      "src/wind_review.gd",
+      "src/pending_helper_wind_player.gd",
+      "src/secondary_skin_contact.gd",
+      "src/secondary_spring.gd"
+    ],
+    "scope": "Generated natural motion/editor dependencies via SecondarySpring and PhysicsEditor. Membership and exact raw/LF successor pins only; prior provenance, all other driver bytes, assertion counts, native/refusal and lifecycle checks preserved. This refresh supplies no inherited execution claim."
+  }
+}

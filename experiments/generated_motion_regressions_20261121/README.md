@@ -1,0 +1,11 @@
+# Natural-motion broad regressions
+
+Actual serial regressions completed on e79f7989380390362ee8ec59d51e43bfe0312c69 production (natural-source a43beca451bd332f967a427bed4f78a5aa102dd6) plus the four reviewed working port-binding files: Wind845 graphical assertions,94 headless unit assertions and5 parse cases; helper266 graphical assertions (221 focused+45 peers). The coordinator reaped both wrappers with exit0: Wind138.72250370000256s, helper94.31811529998959s.
+
+These checks ran before subsequent test-only9c. Wind used exact main source; helper used its correctly labeled0-overlay main_working_source_snapshot, not a committed-only claim. Source/runtime/input/snapshot preservation flags are preserved as reported. Both current57/73 declared manifest row sets were independently rehashed against Wind main bytes and helper's actual Studio snapshot. The large before/after source catalogues are hash-referenced rather than duplicated.
+
+All8 graphical private receipts are retained exactly and independently checked: exit0, observed private windows/child desktop, closed Job+desktop, no foreground or desktop switch. Helper's retainedPopen reap flags and coordinator reaps remain explicit. Wind's3 headless units and5 parser cases retain their own exit/error/passed scope without graphical placement inference.
+
+Wind covers temporary preview of existing declared groups and its original startup/teardown guards, not native jiggle/assembly fidelity, movies or persisted recovery workers. Helper used generated fixtures with native_requested=false and native_fidelity=false. This packet does not claim a separate44-layout result. At Root's request Root64(session49808) and finalCPU73(session99159) were still running; neither is credited here. No new whole-Full, appearance/human/device acceptance or previously-open nativeJunko success is inferred.
+
+Only UTF-8 scalar reports, source/hash bindings, small process receipts and coordinator code are copied. No assets, images/movies, projects, native pose/bone/vertex/calibration/collider arrays, child requests/environment or SDK/binaries are copied. Source metadata may list paths to assets but not their contents. Earlier failures retain their original status. Blocked cleanup targets remain untouched. No source/tests/docs/Git changes or engine launches were performed by this packet author.

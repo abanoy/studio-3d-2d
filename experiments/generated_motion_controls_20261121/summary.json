@@ -1,0 +1,170 @@
+{
+  "format": "has_generated_motion_controls_primary_1",
+  "status": "PASS",
+  "root_revision": "e8c395b3064a888009907813b13e9c0640509036",
+  "source_composition": {
+    "production": "a43beca4 generated hair addition integrated with published4c Voxel/direct/discovery source",
+    "test_followup": "9c146cbc265271b4d4681cc644d47e87f5cfb630",
+    "test_followup_production_delta": false,
+    "fixture_fix": "Exact integer JSON tokens for GLB structural fields; strict helper schema unchanged.",
+    "working_ports": "Wind57/helper73 wrapper and manifest refresh; exact source hash inventory retained."
+  },
+  "graphical": {
+    "checks": 64,
+    "cases": [
+      {
+        "name": "neon-simple",
+        "checks": 16,
+        "failures": 0,
+        "actual_classic": false,
+        "actual_advanced": false,
+        "captures": 3,
+        "owner_assets_used": false
+      },
+      {
+        "name": "neon-advanced",
+        "checks": 16,
+        "failures": 0,
+        "actual_classic": false,
+        "actual_advanced": true,
+        "captures": 3,
+        "owner_assets_used": false
+      },
+      {
+        "name": "classic-simple",
+        "checks": 16,
+        "failures": 0,
+        "actual_classic": true,
+        "actual_advanced": false,
+        "captures": 3,
+        "owner_assets_used": false
+      },
+      {
+        "name": "classic-advanced",
+        "checks": 16,
+        "failures": 0,
+        "actual_classic": true,
+        "actual_advanced": true,
+        "captures": 3,
+        "owner_assets_used": false
+      }
+    ],
+    "actual_captures": 12,
+    "source_preserved": true,
+    "runtime_snapshot_preserved": true,
+    "parent_environment_preserved": true,
+    "all_private_jobs_closed": true,
+    "no_foreground_child": true,
+    "no_desktop_switch": true
+  },
+  "headless": {
+    "checks": 73,
+    "cases": [
+      {
+        "name": "unit",
+        "checks": 22,
+        "failures": 0,
+        "desktop_created": false,
+        "worker_reaped": true,
+        "worker_handle_closed": true,
+        "engine_reaped": true,
+        "engine_handle_closed": true,
+        "active_job_processes": 0,
+        "job_closed": true,
+        "report_flags": {}
+      },
+      {
+        "name": "geometry",
+        "checks": 11,
+        "failures": 0,
+        "desktop_created": false,
+        "worker_reaped": true,
+        "worker_handle_closed": true,
+        "engine_reaped": true,
+        "engine_handle_closed": true,
+        "active_job_processes": 0,
+        "job_closed": true,
+        "report_flags": {}
+      },
+      {
+        "name": "preview",
+        "checks": 18,
+        "failures": 0,
+        "desktop_created": false,
+        "worker_reaped": true,
+        "worker_handle_closed": true,
+        "engine_reaped": true,
+        "engine_handle_closed": true,
+        "active_job_processes": 0,
+        "job_closed": true,
+        "report_flags": {
+          "graphics_used": false
+        }
+      },
+      {
+        "name": "editor",
+        "checks": 18,
+        "failures": 0,
+        "desktop_created": false,
+        "worker_reaped": true,
+        "worker_handle_closed": true,
+        "engine_reaped": true,
+        "engine_handle_closed": true,
+        "active_job_processes": 0,
+        "job_closed": true,
+        "report_flags": {
+          "actual_app": true,
+          "source_preserved": true
+        }
+      },
+      {
+        "name": "reader",
+        "checks": 4,
+        "failures": 0,
+        "desktop_created": false,
+        "worker_reaped": true,
+        "worker_handle_closed": true,
+        "engine_reaped": true,
+        "engine_handle_closed": true,
+        "active_job_processes": 0,
+        "job_closed": true,
+        "report_flags": {
+          "fresh_process": true,
+          "original_tuning_preserved": true,
+          "reader_cache_owned": true
+        }
+      }
+    ],
+    "source_preserved": true,
+    "parent_environment_preserved": true,
+    "protected_source_preserved": true,
+    "graphics_used": false
+  },
+  "source_hash_count": 1213,
+  "visual_review": {
+    "captures": [
+      "neon-simple/controls",
+      "neon-advanced/local-wind",
+      "classic-simple/controls",
+      "classic-advanced/pending-wind"
+    ],
+    "findings": [
+      "Natural gravity control is readable beside Hair & clothes in both reviewed themes.",
+      "Neon Advanced local-wind window and Classic Advanced pending helper window keep their toggles,labels and Close/Cancel controls readable.",
+      "Classic helper attachment field crosses a scroll viewport boundary and continues below it; this is scrollable content,not proof of full panel visibility.",
+      "Large root gizmo arcs are partly below the scene crop in the control captures; this is separate from the new preset control and is not declared fixed here."
+    ],
+    "owner_or_native_appearance_acceptance": false
+  },
+  "limits": [
+    "Generated fixture only; no original artwork or native poses included.",
+    "Earlier partial Junko13/14 trial remains unresolved and is not promoted by these controls.",
+    "The standard Miku54 regression is separate and is not added to64 or73.",
+    "No complete-suite or new native-physics-fidelity claim."
+  ],
+  "privacy": {
+    "child_requests_or_environment_values_copied": false,
+    "assets_or_media_copied": false,
+    "native_poses_or_calibration_arrays_copied": false
+  }
+}

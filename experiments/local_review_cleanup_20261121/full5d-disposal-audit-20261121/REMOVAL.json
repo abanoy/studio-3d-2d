@@ -1,0 +1,26 @@
+{
+  "format": "has_completed_full5d_removal_1",
+  "status": "AUTOMATIC_APPROVAL_REJECTED_BEFORE_EXECUTION",
+  "target": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-5d37647c",
+  "requested_script": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121\\output\\full5d-disposal-audit-20261121\\remove_approved_full5d.ps1",
+    "bytes": 11163,
+    "sha256": "3ccba4d68e7a0e16e9c8c1d1eda7019cdab98782eb0a769a97f11737f8877bb0",
+    "source_parse": "PASS; no execution"
+  },
+  "approval_review_reason": "The command recursively deletes a large test clone and unlinks a junction, but the transcript provides no trusted user authorization for this exact destructive cleanup; assistant/agent claims of approval are not sufficient. Do not bypass this rejection through a workaround or indirect execution.",
+  "process_created": false,
+  "cleanup_script_executed": false,
+  "fresh_cleanup_preflight_executed": false,
+  "removal_attempted": false,
+  "junction_unlinked": false,
+  "target_removed": false,
+  "target_still_present": true,
+  "junction_still_present": true,
+  "other_processes_terminated": false,
+  "source_or_tools_modified": false,
+  "retry_or_workaround_performed": false,
+  "logical_bytes_removed": 0,
+  "allocated_space_savings_claimed": false,
+  "next": "Root notified to communicate the exact rejection; no alternate execution or owner question by this child."
+}

@@ -1,0 +1,237 @@
+{
+  "format": "has_completed_full5d_disposal_read_only_audit_1",
+  "target": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-5d37647c",
+  "resolved_target": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-5d37647c",
+  "removal_performed": false,
+  "status": "SOURCE_METADATA_PASS_ROOT_PROCESS_REVIEW_PENDING",
+  "time_ns": "1795293578462396600",
+  "repository": {
+    "revision": "5d37647c0004849247239817364e093c010eddd6",
+    "standalone_git": true,
+    "common_git": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-5d37647c\\.git",
+    "worktrees": 1,
+    "main_equals_origin_main": true,
+    "unpublished_local_refs_or_reflog_commits": false,
+    "operation_or_alternate_state": []
+  },
+  "preservation": {
+    "archive_contents": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-discovery-lights-integration-20261121\\experiments\\integrated_full5d_20261121\\CONTENTS.json",
+      "bytes": 2370,
+      "sha256": "f359cc9b95710d6e8556c0c92e9c14b5cf6041147fb4ff8907caba1bc9803098"
+    },
+    "source_paths": 1189,
+    "source_hash_blob_size_nsmtime_preserved": true,
+    "source_before_equals_after_equals_archived": true,
+    "closed_unique_jobs_rechecked": 259,
+    "receipt_paths": 260,
+    "fixture_originals": 13,
+    "fixture_bytes": 32095990,
+    "all_originals_outside_target_preserved": true
+  },
+  "inventory": {
+    "regular_files": 75274,
+    "logical_bytes": 6882272784,
+    "directories_enumerated": 9614,
+    "groups": {
+      ".gitattributes": {
+        "files": 1,
+        "logical_bytes": 770
+      },
+      ".gitignore": {
+        "files": 1,
+        "logical_bytes": 151
+      },
+      "AGENTS.md": {
+        "files": 1,
+        "logical_bytes": 1850
+      },
+      "CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md": {
+        "files": 1,
+        "logical_bytes": 43930
+      },
+      "CREDITS.md": {
+        "files": 1,
+        "logical_bytes": 3386
+      },
+      "dependencies.json": {
+        "files": 1,
+        "logical_bytes": 2542
+      },
+      "launch.pyw": {
+        "files": 1,
+        "logical_bytes": 743
+      },
+      "LLM.md": {
+        "files": 1,
+        "logical_bytes": 722863
+      },
+      "main.tscn": {
+        "files": 1,
+        "logical_bytes": 254
+      },
+      "project.godot": {
+        "files": 1,
+        "logical_bytes": 970
+      },
+      "README.md": {
+        "files": 1,
+        "logical_bytes": 52132
+      },
+      "run.py": {
+        "files": 1,
+        "logical_bytes": 8460
+      },
+      "SOURCE-SNAPSHOT.json": {
+        "files": 1,
+        "logical_bytes": 16942
+      },
+      "Start Studio.bat": {
+        "files": 1,
+        "logical_bytes": 197
+      },
+      "THIRD_PARTY_NOTICES.md": {
+        "files": 1,
+        "logical_bytes": 4736
+      },
+      "__pycache__": {
+        "files": 1,
+        "logical_bytes": 6985
+      },
+      "web": {
+        "files": 11,
+        "logical_bytes": 26572
+      },
+      "tools": {
+        "files": 122,
+        "logical_bytes": 1505281
+      },
+      "tests": {
+        "files": 835,
+        "logical_bytes": 6233037
+      },
+      "src": {
+        "files": 237,
+        "logical_bytes": 2350487
+      },
+      "output": {
+        "files": 56705,
+        "logical_bytes": 6583316736
+      },
+      "experiments": {
+        "files": 16800,
+        "logical_bytes": 221672089
+      },
+      "examples": {
+        "files": 7,
+        "logical_bytes": 176548
+      },
+      "docs": {
+        "files": 508,
+        "logical_bytes": 16280622
+      },
+      "demos": {
+        "files": 1,
+        "logical_bytes": 1484
+      },
+      "data": {
+        "files": 3,
+        "logical_bytes": 26632
+      },
+      ".git": {
+        "files": 29,
+        "logical_bytes": 49816385
+      }
+    },
+    "generated_payloads_hashed": false,
+    "dirty_generated_paths": 172,
+    "dirty_nongenerated": [],
+    "unknown_nongenerated": [],
+    "reparse_points": [
+      {
+        "path": "output/private-metadata-windows/1795288228974978200/owned metadata \u2014 \u0442\u0435\u0441\u0442/redirect",
+        "target": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-5d37647c\\output\\private-metadata-windows\\1795288228974978200\\outside-managed",
+        "inside_exact_disposal_root": true,
+        "destination_is_reparse": false,
+        "traversed": false
+      }
+    ],
+    "fast_nlink_suspects_rechecked_with_Path_stat": 75274,
+    "actual_hardlinks": [],
+    "unverified_nlinks": [],
+    "AGENTS_explicit_nlink": 1
+  },
+  "dependent_git": {
+    "git_metadata_locations_checked": 23,
+    "scope": "workspace parent, direct sibling repositories, sibling Studio repositories and their resolved common Git metadata",
+    "reparse_siblings_not_followed": 0,
+    "dependent_git_directories_or_alternates": []
+  },
+  "owner_review_independence": {
+    "independent_review_root": "C:\\a\\Programming\\cloudflare\\HAS-Review-Additions-5d37647c",
+    "exact_published_source_files_rechecked": 1197,
+    "packed_projects_rechecked": [
+      {
+        "path": "Projects/Direct lights.has",
+        "bytes": 53599,
+        "sha256": "68f524b6f9a75cb97abf86d3b9a94690f5fe5d1ca33ae59e54170ebade29d802"
+      },
+      {
+        "path": "Projects/Environment bounce.has",
+        "bytes": 4526,
+        "sha256": "aa63c0c5894092fddd166dde9f7aa57212b9638186f463ce3d00479b2e5bfebb"
+      }
+    ],
+    "sourceio_external_to_target": true,
+    "sourceio_path": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "source_root_field_is_preparation_provenance_only": true,
+    "local_review_Studio_is_regular_independent_copies": true
+  },
+  "current_product_references": [],
+  "processes": {
+    "checked_at": "2026-11-21T15:41:41.1790748-05:00",
+    "prior_unreadable_owner_shells": [
+      {
+        "pid": 6016,
+        "present": false
+      },
+      {
+        "pid": 4704,
+        "present": false
+      }
+    ],
+    "requires_fresh_check_before_removal": true,
+    "self_query_literal_references": [
+      {
+        "reason": "This exact retained read-only query contains the target literal; not a process using its files",
+        "name": "pwsh.exe",
+        "pid": 34904
+      }
+    ],
+    "arguments_saved": false,
+    "unreadable_runtime_candidates": [
+      {
+        "pid": 15152,
+        "name": "codex-windows-sandbox-service.exe"
+      }
+    ],
+    "processes_checked": 369,
+    "status": "REVIEW_REQUIRED",
+    "target_references": []
+  },
+  "published_backup_binding": {
+    "status": "PASS",
+    "published_revision": "4c0371ad96488c32c2e9f924967b984ab8a31884",
+    "archive": "experiments/integrated_full5d_20261121",
+    "files": 15,
+    "exact_committed_blob_bytes_match_current_archive": true,
+    "remote_verification": "Root reports this checkpoint independently retrieved and verified; no network call by this audit."
+  },
+  "remaining_uncertainties": [
+    "Approved host query sees no target reference except its own literal-path command; codex-windows-sandbox-service.exe PID15152 has unreadable command/executable and is retained as a Root review uncertainty.",
+    "Process snapshot is time-bounded and not an exhaustive systemwide open-file-handle audit; fresh Root review required before disposal.",
+    "Generated snapshots, test renders and caches are not hashed or individually backed; published source/curated evidence and13 external originals are preserved. Root decides retirement of generated private diagnostic copies.",
+    "Historical source-gated hosts or future Full test archaeology are not automatically reusable after disposal; this audit does not reauthorize them."
+  ],
+  "prior_unreadable_shells": "PIDs6016/4704 absent in approved current snapshot; no process was terminated."
+}
