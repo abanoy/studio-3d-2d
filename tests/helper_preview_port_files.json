@@ -469,8 +469,8 @@
     {
       "path": "tools/secondary_reconstruction.py",
       "category": "runtime",
-      "sha256": "4c761e6b635aef3b59790117c5107a410f99e027ada0f8c51ec23b0808e10278",
-      "lf_sha256": "4c761e6b635aef3b59790117c5107a410f99e027ada0f8c51ec23b0808e10278"
+      "sha256": "903da2864cea516df8e85ca74e7c535fe9647c297f166dd83ab47a9bacc1a88d",
+      "lf_sha256": "903da2864cea516df8e85ca74e7c535fe9647c297f166dd83ab47a9bacc1a88d"
     }
   ],
   "test_driver_scope": "Exact current-main source snapshots without overlays; labeled working-source checks require explicit opt-in. CPU defaults208; graphical defaults266 (original199+4UI+17popup endpoint+1long-job launch). Optional native adds23CPU/39graphical. Actual results recorded separately.",
@@ -567,5 +567,16 @@
       "src/secondary_spring.gd"
     ],
     "scope": "Explicit rest/flexible mesh selection and auxiliary importer/thumbnail dependencies; helper reconstruction backend included. Membership/pins only, unchanged assertions/refusals/lifecycle checks and historical provenance; no inherited execution credit."
+  },
+  "reviewed_reference_fix_20261121": {
+    "base": "0c159b43348361f9aea33142537804c850c93709",
+    "changed_row": "tools/secondary_reconstruction.py",
+    "previous_row": {
+      "path": "tools/secondary_reconstruction.py",
+      "category": "runtime",
+      "sha256": "4c761e6b635aef3b59790117c5107a410f99e027ada0f8c51ec23b0808e10278",
+      "lf_sha256": "4c761e6b635aef3b59790117c5107a410f99e027ada0f8c51ec23b0808e10278"
+    },
+    "scope": "Preserve explicit attachment reference during editor recipe translation. Exact leaf pin only; no inherited native or GPU execution claim."
   }
 }

@@ -1,0 +1,51 @@
+{
+  "stage": "whole-backhair-assessment-1795302842299901000",
+  "status": "FAIL",
+  "individually_passed_assertions": 11,
+  "engine_marker_checks": 12,
+  "engine_marker_failures": 1,
+  "wrapper_checks": 0,
+  "scope": "Five colored back-hair regions only; outline/front/ribbon excluded",
+  "metrics": {
+    "anchor_error": 0.0,
+    "average_tick_usec": 62287.7625,
+    "centroid_drop": 0.0044437050819397,
+    "chains": 13,
+    "checks": 12,
+    "collider_instances": 52,
+    "failures": 1,
+    "final_remaining_contact_pairs": 5,
+    "maximum_off_vertex_error": 0.0,
+    "maximum_remaining_contact_pairs": 6,
+    "minimum_contact_gap": -0.00951811032541434,
+    "natural_chains": 13,
+    "original_joint_error": 0.0,
+    "selected_vertices": 3629,
+    "skin_refreshes": 720,
+    "skin_vertices": 3049
+  },
+  "source_preservation_failures": [],
+  "inputs_preserved": true,
+  "environment_preserved": true,
+  "headless_closure": {
+    "desktop_created": false,
+    "worker_exit": 1,
+    "worker_reaped": true,
+    "worker_handle_closed": true,
+    "accounting": {
+      "active": 0,
+      "total": 3,
+      "terminated_by_limit": 0
+    },
+    "job_closed": true
+  },
+  "engine_closure": {
+    "status": "FAIL",
+    "headless": true,
+    "desktop_created": false,
+    "exit": 1,
+    "engine_reaped": true,
+    "engine_handle_closed": true
+  },
+  "interpretation": "Actual12 assertions/1failure retained even though failed worker wrapper reports0checks. Original>1cm centroid criterion unchanged."
+}

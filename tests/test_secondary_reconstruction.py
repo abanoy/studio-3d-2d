@@ -19,6 +19,27 @@ class Reconstruction(unittest.TestCase):
             w=struct.unpack('<f',struct.pack('<f',w))[0]
             for f in (0.,.13,.5,.99,1.):
                 a,b=R.split_weight(w,f);self.assertEqual(a+b,w);self.assertEqual(a,struct.unpack('<f',struct.pack('<f',a))[0]);self.assertEqual(b,struct.unpack('<f',struct.pack('<f',b))[0])
+    def test_reviewed_reference_survives_editor_translation_and_build(self):
+        # Head is deliberately different from the mixed influences' common Hips
+        # ancestor. Controls reviewed in Head space must stay in that space.
+        explicit=R.recipe(self.request);explicit['anchor_node']=2
+        plan=R.prepare(self.source,explicit)
+        ordinary=dict(self.request,anchor_node=2,points_in_anchor=copy.deepcopy(plan['controls']))
+        translated=R.recipe(ordinary)
+        self.assertEqual(translated['anchor_node'],2)
+        self.assertEqual(R.prepare(self.source,translated)['reference'],2)
+        one=R.H.GLB(R.build(self.source,self.folder/'ordinary-reference',ordinary)['glb'])
+        explicit['points_in_anchor']=copy.deepcopy(plan['controls'])
+        two=R.H.GLB(R.build(self.source,self.folder/'explicit-reference',explicit)['glb'])
+        self.assertEqual(one.raw,two.raw)
+        self.assertEqual(ordinary['points_in_anchor'],plan['controls'])
+    def test_invalid_reviewed_reference_is_refused_before_output(self):
+        for index,anchor in enumerate((True,-1,999999,'Head',3)):
+            with self.subTest(anchor=anchor):
+                output=self.folder/f'invalid-reference-{index}'
+                with self.assertRaises(ValueError):
+                    R.build(self.source,output,dict(self.request,anchor_node=anchor))
+                self.assertFalse(output.exists())
     def test_source_and_binary_prefix(self):
         raw=self.source.read_bytes();stamp=self.source.stat().st_mtime_ns;g,value=self.build()
         self.assertEqual(self.source.read_bytes(),raw);self.assertEqual(self.source.stat().st_mtime_ns,stamp);self.assertEqual(g.binary[:len(self.g.binary)],self.g.binary)
