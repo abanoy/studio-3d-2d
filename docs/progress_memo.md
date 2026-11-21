@@ -17662,3 +17662,46 @@ claimed here. Schedule primary Voxel graphics first after it releases GPU, then 
 lighting worker's distinct22 graphics on an exact integrated-source copy. Natural
 gravity work remains isolated; synthetic and ordinary controls pass, but the real
 Junko section is still being refined. Formal52/54 and55/62 remain unchanged.
+
+
+## 2026-11-21 - Full5d and integrated moving-model room lighting pass
+
+Frozen published5d37647c completed the canonical Windows verifier:183 groups,
+1189 functional sources raw/Gitblob/hash/size/nsmtime unchanged,259 unique private
+jobs closed (260 physical receipt paths, one duplicate with equivalent values),
+five authenticated headless cases, and one expected converter cancellation only.
+All13 declared fixture originals (32095990 bytes) remain hash/size/nsmtime exact.
+All21 movie groups pass. Inner4416.9654274s, outer4493.8499263s; exec76914 reaped0.
+Root independently rechecked source, originals and every current physical receipt.
+See experiments/integrated_full5d_20261121. Earlier Full243 remains failed.
+
+Later integrated source28db0902 separately passes actual primary Voxel68 plus the
+assigned lighting worker's22 on an independently fetched exact-source copy. Both
+themes pass moving preview/cold regeneration; moving movie comparison is Neon
+only (four frames). Actual failed-export refusal and recovered two-frame movies
+pass in both themes. This clarifies any earlier wording implying a moving export
+in both themes. Direct/SDFGI earlier movies likewise used the Neon UI; both themes
+have their stated preview/control/cold coverage, not an invented second export.
+
+Generated floor red is22.38282776→18.86719322→22.38282776 under moving occlusion
+with direct shadows disabled; direct-only receiver is black. Full-image and patch
+preview/capture/cold differences are exactly0 in the controlled fixture; Neon
+moving export comparisons are0. Actual H2641920x1080/24 movies contain4 moving
+frames and2 recovered frames per theme. Primary child35868/19552 and assigned
+worker child31988 all exit0/private jobs+desktops closed/no foreground. Native
+early-return and no-contributor failures discard old data, stay hidden and refuse
+export; real rebuild/Undo recover. No original material/model data is replaced.
+
+See docs/voxel_integrated_verification.md and its benchmark, plus the compact
+experiments/voxel_primary_graphics_20261121 packet. Coarse64-subdivision room GI
+on one GPU is qualified; arbitrary maps/materials, multiple probes and bone-only
+occlusion remain unqualified. This is not path tracing. Source28 Voxel results
+do not relabel the183-group5d pass as a complete-suite pass on newer source.
+
+Stable local5d review remains HAS-Review-Additions-5d37647c, with separate profiles
+and approved external SourceIO/Blender dependencies protected. Natural-gravity
+and corrected generated world-airflow/preview work remains in its isolated branch;
+the selected Junko chain controls only about16% of hair weight, and full back-hair
+settling remains open. No owner/manual, tablet, audible-sync or clean-install
+certification is inferred. Formal52/54 implementation and55/62 acceptance stay.
+Publish and independently retrieve this completed source/evidence before cleanup.

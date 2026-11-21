@@ -1,0 +1,195 @@
+{
+  "format": "has_primary_voxel_graphics_1",
+  "status": "PASS",
+  "revision": "28db0902825721626b17b218aa2a4554ab6da552",
+  "checks": 68,
+  "phases": [
+    {
+      "phase": "writer",
+      "checks": 56,
+      "failures": 0,
+      "measurements": {
+        "light": {
+          "bake_ms": 72,
+          "blocked_rgb": [
+            18.8671932220459,
+            0,
+            0
+          ],
+          "open_rgb": [
+            22.382827758789062,
+            0,
+            0
+          ],
+          "preview_errors": {
+            "0": {
+              "mean": 0,
+              "patch_mean": 0,
+              "preview_rgb": [
+                22.38283,
+                0,
+                0
+              ]
+            },
+            "1": {
+              "mean": 0,
+              "patch_mean": 0,
+              "preview_rgb": [
+                18.86719,
+                0,
+                0
+              ]
+            },
+            "3": {
+              "mean": 0,
+              "patch_mean": 0,
+              "preview_rgb": [
+                22.38283,
+                0,
+                0
+              ]
+            }
+          },
+          "returned_rgb": [
+            22.382827758789062,
+            0,
+            0
+          ],
+          "scene_setup_red": [
+            22.699254989624023,
+            19.05080795288086,
+            22.699254989624023
+          ]
+        },
+        "neon": {
+          "bake_ms": 75,
+          "blocked_rgb": [
+            18.8671932220459,
+            0,
+            0
+          ],
+          "export_mean_0": 0,
+          "export_mean_1": 0,
+          "export_mean_3": 0,
+          "export_patch_mean_0": 0,
+          "export_patch_mean_1": 0,
+          "export_patch_mean_3": 0,
+          "open_rgb": [
+            22.382827758789062,
+            0,
+            0
+          ],
+          "preview_errors": {
+            "0": {
+              "mean": 0,
+              "patch_mean": 0,
+              "preview_rgb": [
+                22.38283,
+                0,
+                0
+              ]
+            },
+            "1": {
+              "mean": 0,
+              "patch_mean": 0,
+              "preview_rgb": [
+                18.86719,
+                0,
+                0
+              ]
+            },
+            "3": {
+              "mean": 0,
+              "patch_mean": 0,
+              "preview_rgb": [
+                22.38283,
+                0,
+                0
+              ]
+            }
+          },
+          "returned_rgb": [
+            22.382827758789062,
+            0,
+            0
+          ],
+          "scene_setup_red": [
+            22.750032424926758,
+            19.08987045288086,
+            22.750032424926758
+          ]
+        }
+      }
+    },
+    {
+      "phase": "reader",
+      "checks": 12,
+      "failures": 0,
+      "measurements": {
+        "light_cold_0": 0,
+        "light_cold_1": 0,
+        "light_cold_3": 0,
+        "light_cold_patch_0": 0,
+        "light_cold_patch_1": 0,
+        "light_cold_patch_3": 0,
+        "neon_cold_0": 0,
+        "neon_cold_1": 0,
+        "neon_cold_3": 0,
+        "neon_cold_patch_0": 0,
+        "neon_cold_patch_1": 0,
+        "neon_cold_patch_3": 0
+      }
+    }
+  ],
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "24/1",
+    "avg_frame_rate": "24/1",
+    "nb_frames": "4",
+    "nb_read_frames": "4"
+  },
+  "private_jobs": 2,
+  "all_jobs_and_desktops_closed": true,
+  "foreground_child_observed": false,
+  "desktop_switch_requested": false,
+  "source_hash_entries": 227,
+  "source_readback_unchanged": true,
+  "source_count_note": "Authoritative result contains227 source_sha256 entries; no238-entry claim is inferred.",
+  "scope": "Primary integration GPU run, distinct from prior worker GPU60 and the independent Full183 run.",
+  "full_suite_qualification": false,
+  "native_fidelity_or_owner_acceptance": false,
+  "visual_review": {
+    "reviewer": "Codex hair_bundles read-only image inspection",
+    "captures": [
+      {
+        "name": "neon-scene-setup-0.png",
+        "description": "Very dark generated room with red wall hotspot and blocker offset left."
+      },
+      {
+        "name": "neon-scene-setup-1.png",
+        "description": "Same generated room with black blocker moved into the central bounce path; red wall hotspot still visible."
+      }
+    ],
+    "conclusion": "Blocker movement is visible; floor bounce change is subtle at full-frame scale and is supported by the measured receiver patch. No photorealism or general native appearance acceptance."
+  },
+  "privacy": {
+    "png_or_video_or_asset_copied": false,
+    "raw_pose_or_matrix_strings_copied": false,
+    "native_art_or_calibration_copied": false
+  },
+  "movie_scope": {
+    "moving_scene_theme": "neon",
+    "movie_count": 1,
+    "decoded_frames": 4,
+    "compared_timeline_frames": [
+      0,
+      1,
+      3
+    ],
+    "classic_moving_movie_export_qualified": false,
+    "classic_scope": "Moving live preview, capture and fresh-process cold reopen; no moving movie comparison in this Root68 fixture."
+  }
+}

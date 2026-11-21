@@ -125,3 +125,12 @@ fa9d4e43: old data is discarded and later syncs cannot re-show errored probes.
 Primary CPU18 empty-room and42 native-boundary controls pass; actual graphics
 and movie-refusal/recovery remain pending. Earlier worker60 pixels are separate.
 See experiments/voxel_empty_fix_integration_20261121 for exact scope and pins.
+
+
+## Final primary qualification
+
+Exact integrated28db0902 passes primary68 graphics and assigned-worker22 graphics.
+Both themes have moving preview/cold regeneration; moving4-frame video comparison
+is Neon only. Actual failed-export refusal and recovered2-frame videos pass in
+both themes. See voxel_integrated_verification.md for exact source/evidence and
+remaining one-room/one-GPU/root-movement limits. The separate Full183 is on5d.

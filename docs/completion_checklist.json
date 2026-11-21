@@ -1,19 +1,20 @@
 {
   "latest_voxel_room_20261121": {
-    "status": "INTEGRATED_CPU_FAILURE_PATHS_PASS_PRIMARY_GPU_PENDING",
-    "evidence": "experiments/voxel_empty_fix_integration_20261121/summary.json",
-    "primary_headless_checks": {
+    "status": "PRIMARY_FOCUSED_GRAPHICS_QUALIFIED",
+    "source_revision": "28db0902825721626b17b218aa2a4554ab6da552",
+    "primary_graphics_checks": 68,
+    "assigned_worker_graphics_checks": 22,
+    "primary_cpu_checks": {
       "voxel": 42,
-      "sdfgi": 45,
-      "direct": 103
+      "empty_room": 18
     },
-    "worker_graphics_scope": "60 on96e5d50b before primary failure-path fixes; not a primary GPU result",
+    "evidence": "docs/benchmarks/voxel_integrated_verification_2026-11-21.json",
+    "primary_packet": "experiments/voxel_primary_graphics_20261121/summary.json",
     "formal_status_changed": false,
-    "next": "After frozen Full5d releases GPU, run integrated Voxel graphics and distinct actual failed-movie/recovered-movie controls. Keep all source scopes and pending natural-gravity work separate.",
-    "empty_room_cpu_checks": 18
+    "next": "Publish/retrieve this completed increment. Continue separately isolated Natural gravity and world-airflow/preview consistency; Junko whole-hair reconstruction remains open. Human/device/native-appearance/install observations remain separate."
   },
   "latest_integrated_additions_20261121": {
-    "status": "PUBLISHED_RETRIEVED_FULL_RUNNING",
+    "status": "PUBLISHED_RETRIEVED_FULL183_PASS",
     "evidence": "docs/benchmarks/integrated_additions_2026-11-21.json",
     "features": [
       "Local/Online discovery, guarded preview/import, automatic batches and retrieval notices",
@@ -26,7 +27,9 @@
     "next": "Publish and independently retrieve this checkpoint, then run the canonical full Windows verifier on a fresh isolated copy. Adopt qualified bounded-room VoxelGI separately. Continue rest-hair settling and visual contact refinement; retain human/device/install gates without interrupting the busy owner.",
     "published_revision": "5d37647c0004849247239817364e093c010eddd6",
     "publication_evidence": "experiments/voxel_integration_20261121/published5d/verification.json",
-    "stable_review": "C:/a/Programming/cloudflare/HAS-Review-Additions-5d37647c"
+    "stable_review": "C:/a/Programming/cloudflare/HAS-Review-Additions-5d37647c",
+    "full_evidence": "experiments/integrated_full5d_20261121/root_postflight/verification.json",
+    "full_source_revision": "5d37647c0004849247239817364e093c010eddd6"
   },
   "latest_character_parts_follow_20261121": {
     "status": "IMPLEMENTED_FOCUSED_QUALIFIED",
@@ -4274,7 +4277,7 @@
     {
       "priority": 1,
       "requirement": "IMPORT-03",
-      "action": "Publish and independently retrieve this checkpoint, then run the canonical full Windows verifier on a fresh isolated copy. Adopt qualified bounded-room VoxelGI separately. Continue rest-hair settling and visual contact refinement; retain human/device/install gates without interrupting the busy owner. Actual saved Miku contact clears the arm proxies but has an abrupt root bend under the strong fan; do not call this polished cloth/hair physics."
+      "action": "Publish/retrieve this completed increment. Continue separately isolated Natural gravity and world-airflow/preview consistency; Junko whole-hair reconstruction remains open. Human/device/native-appearance/install observations remain separate. The canonical183 pass covers5d source; later Voxel uses focused68+22, not a new183 aggregate. Do not interrupt the busy owner for manual review while independent work remains."
     },
     {
       "priority": 2,

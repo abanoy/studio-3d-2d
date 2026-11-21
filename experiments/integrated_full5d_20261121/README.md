@@ -1,0 +1,11 @@
+# Completed integrated Full verification on5d
+
+Frozen published revision5d37647c0004849247239817364e093c010eddd6 is identified by the exact40-character revision in summary.json and every original completion receipt. The whole verifier completed successfully:183 groups,1189 functional source paths unchanged,21 movie groups,259 unique private jobs across260 receipt paths. The extra path is an already-verified duplicate of one physical job. Inner time4416.9654274s; outer retained coordinator time4493.8499263s. Both retained children were reaped with exit0.
+
+The separate Root postflight rechecked exact source bytes/Gitblob IDs/sizes/nsmtimes, current physical receipts and13 original fixtures totaling32,095,990 bytes. This packet independently repeats those bounded source/original/receipt checks without launching the engine. One expected owned Krita conversion cancellation exits2; it is an intentional tested cancellation, not an unreported failure. All259 private Jobs/desktops are closed, no foreground or desktop switch occurred, and five explicitly classified import-info headless receipts carry lifecycle-only scope.
+
+source-before.json is archived once because it is byte-identical to source-after.json. The inner completion is a declared projection omitting its duplicate current_jobs array; the original is hash-referenced. Root's safe259-job projection is copied once, with raw physical receipt hashes. The2.9MB native-rich verification aggregate, large prior-receipt/provenance maps and staged-fixture inventory remain local and are hash-referenced only. No native poses, calibration/skin/collider arrays, projects, models, images, movies, artwork, SDKs or binaries are copied.
+
+This result applies only to frozen published5d. Later VoxelGI—including subsequent28 work—and natural-gravity additions are separate and are not covered. The prior243 Full failure retains its failure status. Scope is automated software verification, not human/artist appearance acceptance or device/installation certification.
+
+Code-used records identify the existing coordinator, outer launch recipe and independent Root postflight; they are provenance, not a new verification framework or execution performed by this archivist. No source, tests, docs, Git or engine state was changed.

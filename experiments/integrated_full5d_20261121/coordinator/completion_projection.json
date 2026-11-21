@@ -1,0 +1,119 @@
+{
+  "format": "has_reference_body_full_coordinator_1",
+  "revision": "5d37647c0004849247239817364e093c010eddd6",
+  "exit": 0,
+  "child_reaped": true,
+  "seconds": 4416.9654274,
+  "functional_source_count": 1189,
+  "functional_sources_unchanged": true,
+  "revision_unchanged": true,
+  "fresh_final_report": true,
+  "result_groups": 183,
+  "movie_groups": [
+    "silent_video",
+    "spike_silent_video",
+    "tone_video",
+    "editor_audio_video",
+    "autokey_video",
+    "new_scene_video",
+    "world_runtime_video",
+    "world_edit_video",
+    "world_workflow_video",
+    "object_timing_video",
+    "animation_clips_video",
+    "visibility_video",
+    "animated_channels_video",
+    "limb_ik_video",
+    "physics_video",
+    "secondary_motion_video",
+    "fan_motion_video",
+    "physics_props_video",
+    "physics_recording_video",
+    "posed_model_video_0",
+    "posed_model_video_1"
+  ],
+  "unique_current_private_jobs": 259,
+  "new_receipt_paths": 260,
+  "duplicates": [
+    {
+      "desktop": "HAS_Test_4a99c36bc4d04c30a79e5d787012e33e",
+      "paths": [
+        "output/private-desktop/import_placement_smoke_d9a47fadfc574c869b9c595a914bfad7.json",
+        "output/canonical-spikes/1795288220352226600/import-placement/private-desktop.json"
+      ]
+    }
+  ],
+  "all_private_jobs_isolated_closed": true,
+  "import_info_headless_admission_error": null,
+  "nonzero_private_jobs": [
+    {
+      "path": "output/krita-imports/34936-38760197/prepared/private-desktop.json",
+      "sha256": "0805715e3017f6391735f2978e4c8ca9fefea52b3c7899dc83f080d23142458b",
+      "value": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e66c1a67550048ab934b63c477cd8ffc",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 3,
+        "foreground_child_observed": false,
+        "exit": 2,
+        "job_memory_limit_bytes": 3221225472,
+        "child_pid": 28908,
+        "cancelled": true,
+        "error": "Owned converter cancelled",
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.272
+      }
+    }
+  ],
+  "nonzero_jobs_are_expected_cancellations": true,
+  "byte_proven_archived_copy_paths": 2060,
+  "unchanged_prior_receipt_paths": 2060,
+  "receipt_provenance_verified": true,
+  "whole_verifier_pass": true,
+  "import_info_headless_receipts": [
+    {
+      "path": "output/import-capability-canonical/1795289993563629000/Cases/legacy43/private-receipt.json",
+      "sha256": "1ac3cd203edcc4abbb782dc0bd1cd30e1a68e91e1219e80c3bada47204ee1e64",
+      "desktop": "HAS_Test_6c47531daad54ac8a5c2c08a7ced2dae",
+      "component_report_sha256": "f5ae666242aae8eab6eb5b48d29360a61b4426de73bf88bbc63698cee891c980",
+      "headless_lifecycle_only": true
+    },
+    {
+      "path": "output/import-capability-canonical/1795289993563629000/Cases/app-classic-simple/private-receipt.json",
+      "sha256": "dead25c02d877c8649e32e4428b0138e25c0be1435505337d56c0f8ff344a6e4",
+      "desktop": "HAS_Test_c6041f1d31fd415ea92528ea7f73004c",
+      "component_report_sha256": "f5ae666242aae8eab6eb5b48d29360a61b4426de73bf88bbc63698cee891c980",
+      "headless_lifecycle_only": true
+    },
+    {
+      "path": "output/import-capability-canonical/1795289993563629000/Cases/app-classic-advanced/private-receipt.json",
+      "sha256": "433fabd893abc6a47586e1755854538ee1670f98477f24d4dd9061c8348fe9e5",
+      "desktop": "HAS_Test_3d5fd76cf79f49798fe2f284a192e88f",
+      "component_report_sha256": "f5ae666242aae8eab6eb5b48d29360a61b4426de73bf88bbc63698cee891c980",
+      "headless_lifecycle_only": true
+    },
+    {
+      "path": "output/import-capability-canonical/1795289993563629000/Cases/app-neon-simple/private-receipt.json",
+      "sha256": "1f3958c98483c6127d83affca2ebd99eaa62c1135324f38ca4404257e5477e99",
+      "desktop": "HAS_Test_1164766b2ca14037b76fcd7a5e6fcac6",
+      "component_report_sha256": "f5ae666242aae8eab6eb5b48d29360a61b4426de73bf88bbc63698cee891c980",
+      "headless_lifecycle_only": true
+    },
+    {
+      "path": "output/import-capability-canonical/1795289993563629000/Cases/app-neon-advanced/private-receipt.json",
+      "sha256": "204fc5814101a259fb5116f0e4ea0c73ea031b55a198b0e1f5066ebf852e17e9",
+      "desktop": "HAS_Test_a577d91c30e5422ba42d4b27d355ded4",
+      "component_report_sha256": "f5ae666242aae8eab6eb5b48d29360a61b4426de73bf88bbc63698cee891c980",
+      "headless_lifecycle_only": true
+    }
+  ],
+  "projection_scope": "Every original completion field retained except current_jobs; exact compact Root projection of all259 jobs is archived once in root_postflight/current_private_jobs.json.",
+  "original_completion": {
+    "source": "C:\\a\\Programming\\cloudflare\\has-import-info-full-20261121-5d37647c\\output\\windows-reference-body-1795288143754941900\\completion.json",
+    "bytes": 185010,
+    "sha256": "f80df31624dcc99f11dacceeccf938d2e905882302c49c8560756736fdf93a3e"
+  }
+}
