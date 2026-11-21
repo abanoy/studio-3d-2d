@@ -2565,3 +2565,17 @@ implementation and55/62acceptance stay unchanged; the seven actual human/native/
 device/clean-install prerequisites remain. Push/retrieve this source increment
 before cleaning its disposable files; no publication of this entry is inferred
 until the actual push and independent readback complete.
+
+
+## 2026-11-21 — Following increment remotely verified
+
+Published edffb651181825517dc6bc5d9c536027c11b6e14 to main and independently
+fetched it:81changed files/3562349raw bytes, Git blob identities and tree
+96ea20dcfd6f0db5c9cf088fa91538993bd7d02d match. The proof is saved under
+experiments/parts_follow_publication_20261121. Application source is unchanged
+in this publication follow-up. No additional cleanup or complete-suite pass.
+Keep private owner review, active source checkouts and pending native inputs.
+Miku now has a separate zero-penetration graphical measurement but an adverse
+sharp root bend; retain both findings and refine before adopting it. Continue
+reviewed discovery/direct-light integration. Formal55/62 acceptance and its
+seven actual external prerequisites remain unchanged; no manual owner prompt.
