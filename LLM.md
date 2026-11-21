@@ -7488,3 +7488,67 @@ caps, all historical failures and strict resource/non-NORMAL/normal/export gates
 All62statuses/52of54implementation/55of62acceptance stay unchanged. This raw
 append preserves the exact0ffa prefix and every previous byte. New two-packet
 checkpoint commit/push/remote proof is not claimed yet; independent work continues.
+
+
+## 2026-11-20 — Read-only native material-path fix actually qualified
+
+The concrete resolved-path successor now PASSES170CPU:focused57 (old34 default
+plus23 opt-in) in0.319s and host113 (77driver/36worker) in1.461s. All six focused
+and38host source SHA/size/nsmtime identities remain exact. The original0e bare
+binder/default34 and every prior bare/inspection/CPU refusal remain preserved;
+this is an explicit read-only witness profile rather than a relaxed path string.
+
+Root actual v3 exits0 after7.555s; retained parent exits0/reaped, job/desktop
+close/noFG and independent fresh physical owned0. Two new native models/9661
+points/42702corners,69groups each/four stages,14234faces/two slots per model
+and MATERIAL_ID skins reuse all four exact inspected B Material refs. Fresh
+creation/current ordered RNA weight and whole face/skin relations match their
+independent native facts. All596retained input identities (574SDK+22other, not
+all OS reads), sourceHEAD9b/1061, originals/staged hashes-size-nsmtime and
+approved runtime preserve exactly. No metadata/property/name/skin swap occurred.
+
+The new actual observation finds four existing full_path strings, four unique
+native-candidate/global matches, no conflicts in a six-Material live domain.
+Eight finite candidates produce eight genuine resolver queries4False/4True,
+four exact cache entries, eight creation-boundary witnesses and return. Three
+ordinary resolver/lookup functions from two SDK files pass full-code/globals/
+alias attestation. Provider True acknowledges an already-inspected in-memory
+Material, not physical VMT existence. No SourceIO material file was opened or
+new SourceIO Image created. Four B graphs/two Images/two shared refs/one owned
+Library retain1709130packed PNG bytes and83886080prospective RGBA-F32 bytes.
+This does not retroactively alter the historical bare job's unknown diagnostics.
+
+Frozen experiments/source_material_resolved_20261120:59files/1194691B, exact38
+sources/CPU10/six safe actual JSONs plus scope/review/input notes.
+CONTENTS70ed4e934401440f9be3b077574f98569e02101589c0d57869682b48bbe89ab8;
+SUMMARYef88e9973ee04e0d39e6762852f45bca40511737873b1dea94702f27ecaa5f23.
+Worker20679B SHA9ed96c403e09353515b65fbf12dcf4145a9fbd39949125769ff637157292380a;
+worker/placement/desktop hashes bind to final Root receipt. Standalone physical
+receipt is prelaunch; final physical-after is embedded in Root's result.
+
+The already-pushed9b08545019ac52bc761d6d99caacc4138a3a46fb checkpoint has exact
+124-file/4665757-byte remote raw SHA256/GitSHA1/length plus Node-crypto/main-ref
+proof, receipta0ab39fdf218adfd2e7a2441aba74acfd21ddbb267c41bee6f39839af71d289f.
+Only afterward Root removed the one exact failed combined stage:19files/
+4360751logical bytes; absent and six protected-original hashes/sizes exact,
+no measured free-space gain. Three regular-launcher technical failures preceded
+process creation and removed nothing; an early Node audit ENOENT preceded its
+expected result. Actual approved-host cleanup then independent Node audit PASS
+remain distinct. Pending preps/full proof/originals/prior packets stay retained.
+Frozen source_material_combined_cleanup_20261120:16files/182175B,
+CONTENTS658914eb7dcef8eb011fbf62969e059049683a5cfc3192913cb3b8706470f772;
+SUMMARY7d0692855594255328943c20a0f9f4b0f6ef570af76810428645c8f712182efa.
+
+The publication author copied/hash-checked source/metadata only: no tests,
+Git/native/API/process queries or removal executed. Native/image bytes, arrays,
+requests, PRIVATE logs and process listings are excluded. Neither new packet
+claims its own later commit/push/remote proof yet. The separate four-file Root
+verification/cold-readiness control packet is provenance, not a feature result.
+
+Next qualify actual bounded cold image-buffer/resource encoding and shared-
+carrier export. Shared73 CPU remains preparatory. No rendering, full shader/
+resource/non-NORMAL equivalence, original2e-5normal fidelity or app adoption
+passes are inferred from material-ref success. That number is a threshold, not
+a newly measured native error. Full9e/1061software and all62formal statuses/
+52of54implementation/55of62acceptance remain unchanged. This exact9b raw-prefix
+and all-previous-byte-preserving append records the verified fix; work continues.

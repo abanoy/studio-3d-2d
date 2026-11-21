@@ -1,6 +1,43 @@
 # HAS — consolidated master reference for resuming work
 
-Latest research checkpoint: main0ffadead15d41a098c8ab2248d625486e94f8a39 now has
+Verified native-material fix: the controlled resolved-path successor now PASSES
+170CPU (57profile,113host) and actual7.555s/exit0/reaped/private closure/noFG/
+physical owned0. Two fresh models/9661points/42702corners,69groups/four stages,
+14234faces/two slots per model and MATERIAL_ID skins reuse all four inspected
+B Material refs. All596retained input identities, sourceHEAD9b/1061, original/
+staged hashes-size-nsmtime and approved runtime are preserved.
+
+All four existing full_path values are now directly observed as present strings,
+with four unique native/global matches and zero conflicts in domain6. The
+ordinary three-function resolver/lookup surface is full-code/alias-attested;
+eight native candidates produce eight queries4False/4True, four exact cache
+entries, eight phase records and return. No B metadata, material name or skin
+was rewritten; no SourceIO material file was opened or VMT existence claimed.
+Four B graphs/two Images/two shared refs/one owned Library stay inspected.
+Frozen source_material_resolved_20261120:59files/1,194,691B, CONTENTS70ed4e93/
+SUMMARYef88e997. The old bare refusal and original0e/default34 remain separate.
+
+This fixes the exact-family creation/weight/face/skin/material-reference bridge;
+rendering, normal/non-NORMAL/resource equivalence, exporter and app adoption
+remain unqualified. Next qualify bounded actual cold image-buffer/resource
+encoding, then shared-carrier export under the original2e-5normal gate. Shared
+73CPU is preparatory, not actual export. Full9e/1061software and all62statuses/
+52of54implementation/55of62acceptance remain unchanged.
+
+Publication/cleanup: main9b08545019ac52bc761d6d99caacc4138a3a46fb has
+independent exact124file/4,665,757B remote SHA256/GitSHA1/length and Node-crypto
+local proof, main-ref match, receipta0ab39fd. Only after proof, the exact failed
+combined stage was removed:19files/4,360,751logical bytes, absence confirmed and
+six protected-original hashes/sizes verified; no free-space gain measured.
+Three regular-launcher technical failures happened before process creation and
+removed nothing; an early Node audit failed ENOENT before its expected result
+existed. Approved-host cleanup and the later independent Node audit PASS are
+the actual completion. No approval-review rejection is implied. Frozen
+source_material_combined_cleanup_20261120:16files/182,175B, CONTENTS658914eb/
+SUMMARY7d069285. V3 now passes the separate reference-binding profile; originals,
+preparations/full proof/public packets, functional1061 and all formal gates remain.
+
+Preceding research checkpoint: main0ffadead15d41a098c8ab2248d625486e94f8a39 now has
 exact independent25file/2,751,622B remote readback, raw SHA256/GitSHA1/length plus
 Node-crypto local equality and main-ref match, receipt05ba7586. Previous six-stage
 cleanup remains87files/19,072,844logical bytes; no free-space gain was measured.
@@ -27,8 +64,8 @@ name/search-path preloaded-material provider and opt-in binder witness, retainin
 original0e/default34. Provider acknowledgement would mean an already-admitted
 in-memory B Material, not physical VMT existence. The missing-key adapter remains
 an unrun alternative; metadata overwrites, material/skin swaps and B point labels
-were not used. V3 remains source-only/PENDING; strict resource/non-NORMAL/original
-2e-5normal gates and unchanged full9e/1061software scope remain. All62statuses
+were not used by that failed attempt. The separate v3 bridge now passes; strict
+resource/non-NORMAL/original2e-5normal gates and unchanged full9e/1061software scope remain. All62statuses
 and52/54implementation,55/62acceptance scores stay unchanged.
 **November20 Body Physics addition complete; full Windows9e PASS.**
 Exact9e3b039 completes in3546.0819016s with170result/36core/21final-media groups
@@ -125,9 +162,9 @@ All590reads, native3, six runtimes,574SDK/120exporter files and1061sources are
 preserved; job/desktop close, parent is reaped, no foreground activation and
 fresh owned process count0. This is the exact Junko profile, not generic storage,
 historical-B causality, normal/fidelity, export or HAS-adoption qualification.
-Next qualify the read-only finite native-path/provider and opt-in binder witness,
-retry combined binding, then actual shared-Image exporter provenance separately,
-retaining strict non-NORMAL semantics and original2e-5normal gate. No full rerun absent
+Next qualify bounded actual image-buffer/resource encoding and shared-carrier
+export provenance separately, retaining strict non-NORMAL semantics and the
+original2e-5normal gate. No full rerun absent
 functional changes. The five frozen experiments/ packets include full/hook10/9,
 failed native8 and clone-cleanup6files. source_current_native_ids_20261120 is
 frozen at148files/1,159,717bytes,86CPU/actual success; CONTENTS dbb470fd and SUMMARY

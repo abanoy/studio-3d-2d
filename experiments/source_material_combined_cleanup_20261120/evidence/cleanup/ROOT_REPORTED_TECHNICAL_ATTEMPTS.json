@@ -1,0 +1,35 @@
+{
+  "format": "has_Root_reported_source_cleanup_technical_attempts_1",
+  "authority": "Root session report; not raw native/process logs",
+  "regular_launcher_error": "0x8007000F",
+  "regular_launcher_failures_before_process_creation": [
+    {
+      "phase": "cleanup_source_writer",
+      "process_created": false,
+      "deletion_performed": false
+    },
+    {
+      "phase": "cleanup_plan",
+      "process_created": false,
+      "deletion_performed": false
+    },
+    {
+      "phase": "cleanup_Execute",
+      "process_created": false,
+      "deletion_performed": false
+    }
+  ],
+  "automatic_approval_review_rejected": false,
+  "user_approval_required": false,
+  "earlier_independent_Node_audit": {
+    "same_saved_source": true,
+    "result_file_not_yet_created": true,
+    "error": "ENOENT",
+    "cleanup_success_inferred": false
+  },
+  "completed_execution": {
+    "approved_host_cleanup": true,
+    "subsequent_independent_Node_audit": "PASS"
+  },
+  "packet_author_executed_launcher_audit_or_cleanup": false
+}
