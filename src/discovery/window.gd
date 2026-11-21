@@ -17,10 +17,13 @@ static func open(owner: Node, on_local: Callable = Callable(), options: Dictiona
 	window.add_child(margin)
 	var browser := Browser.new(); browser.name = "Discovery"
 	if options.has("preferences_path"): browser.preferences_path = options.preferences_path
+	if options.get("local_import_extensions") is Array: browser.local_import_extensions = options.local_import_extensions
+	if options.get("retrieval_context") is Callable: browser.retrieval_context = options.retrieval_context
 	margin.add_child(browser)
 	window.set_meta("discovery_panel", browser)
 	browser.local_file_selected.connect(func(path):
 		if on_local.is_valid():
+			if str(browser.current_local_import().get("path", "")) != path: return
 			_finish_close(window, browser, on_local, path)
 		else: browser.status.text = "Selected local filename: " + path)
 	window.close_requested.connect(func(): _finish_close(window, browser))
@@ -37,7 +40,7 @@ static func _finish_close(window: Window, browser: Node, on_local: Callable = Ca
 	await tree.process_frame
 	# The file must still be selected/visible when the deferred close commits.
 	var accept_local := on_local.is_valid() and is_instance_valid(browser)
-	if accept_local: accept_local = str(browser.current_local_selection().get("path", "")) == path
+	if accept_local: accept_local = str(browser.current_local_import().get("path", "")) == path
 	if is_instance_valid(window): window.queue_free()
 	await tree.process_frame
 	if accept_local and on_local.is_valid(): on_local.call_deferred(path)

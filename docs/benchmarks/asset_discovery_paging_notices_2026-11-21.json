@@ -1,0 +1,135 @@
+{
+  "date": "2026-11-21",
+  "scope": "Automatic batches and remembered source notices on worker/asset-browser-followup-20261121; CPU and live metadata qualification. Native graphical scrollbar/notice qualification pending coordinated GPU slot.",
+  "browser": {
+    "browser_opens_intercepted": 3,
+    "checks": 108,
+    "display_driver": "headless",
+    "failures": [],
+    "requests": 24,
+    "scope": "Production UI, filesystem scan and metadata fixtures; rendered layout captures only when graphical. No live-provider or native-model appearance claim."
+  },
+  "paging": {
+    "checks": 24,
+    "display_driver": "headless",
+    "failures": [],
+    "requests": 3,
+    "scope": "Production wheel-input and paging guards with synthetic metadata. Headless ranges are explicitly supplied because Tree draws no scrollbars; native graphical scrolling is qualified only with --graphical."
+  },
+  "additions": {
+    "cases": {
+      "notices_write": {
+        "checks": 9,
+        "failures": [],
+        "phase": "write",
+        "scope": "Actual notice controls, intercepted source opener, and personal preferences across fresh processes; no Steam account or game launched."
+      },
+      "notices_read": {
+        "checks": 5,
+        "failures": [],
+        "phase": "read",
+        "scope": "Actual notice controls, intercepted source opener, and personal preferences across fresh processes; no Steam account or game launched."
+      },
+      "geometry_preview": {
+        "checks": 17,
+        "failures": [],
+        "scope": "Generated local GLB geometry only; no external files, network, conversion or owner artwork."
+      },
+      "thumbnails": {
+        "checks": 21,
+        "failures": [],
+        "scope": "Generated image buffers and injected image transport; no live artwork downloaded."
+      },
+      "write": {
+        "checks": 4,
+        "failures": [],
+        "phase": "write"
+      },
+      "read": {
+        "checks": 13,
+        "failures": [],
+        "phase": "read"
+      },
+      "neon": {
+        "checks": 33,
+        "display_driver": "headless",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "neon"
+      },
+      "classic": {
+        "checks": 33,
+        "display_driver": "headless",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "classic"
+      }
+    },
+    "checks": 135,
+    "failures": []
+  },
+  "live": {
+    "cold_start_offline": true,
+    "cancel": {
+      "http_released": true,
+      "loading": false,
+      "message": "Cancelled. Partial results are kept; Search retries this query.",
+      "request_existed": true
+    },
+    "thumbnail": {
+      "loaded": true,
+      "message": "Thumbnail from source metadata.",
+      "source": "polyhaven",
+      "url": "https://cdn.polyhaven.com/asset_img/thumbs/adjustable_wrench.png?width=256&height=256&format=webp&v=f8fd5a64"
+    },
+    "failures": [],
+    "scope": "Actual metadata/UI and one explicitly enabled public CDN thumbnail; browser opening intercepted. No model download, native appearance or ownership claim. Provider availability is an observation.",
+    "seconds": 10.928
+  },
+  "provider_observations": {
+    "initial": {
+      "listings": 100,
+      "sources": {
+        "polyhaven": 76,
+        "sketchfab": 24
+      },
+      "unique_ids": 100
+    },
+    "second_batch": {
+      "listings": 200,
+      "sources": {
+        "polyhaven": 152,
+        "sketchfab": 48
+      },
+      "unique_ids": 200
+    },
+    "name_search": {
+      "listings": 55,
+      "sources": {
+        "sketchfab": 55
+      },
+      "unique_ids": 55
+    },
+    "japanese_search": {
+      "listings": 22,
+      "sources": {
+        "sketchfab": 22
+      },
+      "unique_ids": 22
+    },
+    "mmd_filter": {
+      "listings": 8,
+      "sources": {
+        "sketchfab": 8
+      },
+      "unique_ids": 8
+    }
+  },
+  "limitations": [
+    "BowlRoll feed returns HTML rather than RSS; website fallback only currently.",
+    "Steam/SFMLab/BOOTH/VRoid remain website-only; no credentials or restriction bypass.",
+    "Headless Tree has no drawn scrollbar range; paging guard fixture supplies a range explicitly.",
+    "Source-browser cached game-folder detection can be stale and is not ownership/access proof.",
+    "No full HAS suite or owner acceptance claim."
+  ]
+}
