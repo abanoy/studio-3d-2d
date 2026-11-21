@@ -80,6 +80,8 @@ static func _sketch(data: Dictionary) -> Dictionary:
 
 static func _bowl(body: PackedByteArray) -> Dictionary:
 	var text := body.get_string_from_utf8()
+	if text.to_lower().contains("<html") or text.to_lower().contains("<!doctype html"):
+		return {"error":"BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search."}
 	if text.contains("<!DOCTYPE") or text.contains("<!ENTITY"): return {"error":"RSS declarations/entities are not supported."}
 	var xml := XMLParser.new()
 	if xml.open_buffer(body) != OK: return {"error":"Malformed BowlRoll RSS."}

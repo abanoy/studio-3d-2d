@@ -8,6 +8,7 @@ const DiscoveryWindow = preload("res://src/discovery/window.gd")
 var checks := 0
 var failures: Array = []
 var browser
+var background: Panel
 var requests: Array = []
 var opened: Array = []
 var used: Array = []
@@ -41,6 +42,21 @@ func click_at(point: Vector2) -> void:
 
 func click_control(control: Control) -> void:
 	await click_at(control.get_global_rect().get_center())
+
+func capture_layouts() -> void:
+	if DisplayServer.get_name() == "headless": return
+	for style in ["neon", "light", "dark"]:
+		StudioTheme.set_style(style); root.theme = StudioTheme.make_theme()
+		background.add_theme_stylebox_override("panel", StudioTheme.surface("f4f7fb", "dce5ee"))
+		for dimensions in [Vector2i(1240, 860), Vector2i(960, 700)]:
+			root.size = dimensions; await settle()
+			await RenderingServer.frame_post_draw
+			var image := root.get_texture().get_image()
+			check(image.save_png("res://output/discovery-%s-%d.png" % [style, dimensions.x]) == OK, "capture %s layout at %d" % [style, dimensions.x])
+			var boundary := root.get_visible_rect().end.x
+			check(browser.tree.get_global_rect().end.x <= boundary + 1 and browser.more_button.get_global_rect().end.x <= boundary + 1, "results and paging fit %s at %d" % [style, dimensions.x])
+	root.size = Vector2i(1240, 860); StudioTheme.set_style("neon"); root.theme = StudioTheme.make_theme(); await settle()
+	background.add_theme_stylebox_override("panel", StudioTheme.surface("f4f7fb", "dce5ee"))
 
 func wait_idle() -> void:
 	var deadline := Time.get_ticks_msec() + 10000
@@ -108,6 +124,7 @@ func _run() -> void:
 	check(Providers.parse("polyhaven", "{broken".to_utf8_buffer()).has("error"), "reject malformed JSON")
 	check(Providers.parse("polyhaven", bytes({"x":{"name":"Invalid type", "type":{}}})).has("error"), "malformed field type does not reach unsafe numeric cast")
 	check(Providers.parse("bowlroll", "<html>challenge</html>".to_utf8_buffer()).has("error"), "RSS challenge is unavailable, not zero results")
+	check(Providers.parse("bowlroll", "<!DOCTYPE html><html>directory</html>".to_utf8_buffer()).error.contains("web page instead of RSS"), "retired feed gives a plain website fallback error")
 	check(Providers.parse("bowlroll", "<rss><item>".to_utf8_buffer()).has("error"), "truncated RSS is rejected")
 	check(Providers.parse("bowlroll", bowl_fixture()).get("rows", []).size() == 25, "parse Japanese RSS titles/links")
 	var metadata: Dictionary = Providers.parse("sketchfab", bytes(sketch_fixture(Providers.SKETCH_URL)))
@@ -124,6 +141,8 @@ func _run() -> void:
 	check(Catalog.website_url("bowlroll", "初音ミク").contains("%E5"), "Japanese website query encoded")
 	root.size = Vector2i(1240, 860)
 	root.theme = StudioTheme.make_theme()
+	background = Panel.new(); background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	background.add_theme_stylebox_override("panel", StudioTheme.surface("f4f7fb", "dce5ee")); root.add_child(background)
 	var margin := MarginContainer.new(); margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); root.add_child(margin)
 	browser = Browser.new(); margin.add_child(browser)
 	browser.online.transport = fake_transport
@@ -171,6 +190,7 @@ func _run() -> void:
 	check(sources.size() == 3, "initial discovery mixes all working metadata providers")
 	check(identities.size() == 100, "source identities suppress duplicated provider entries")
 	check(browser.online.statuses.steam_sfm.contains("key") and browser.online.statuses.sfmlab.contains("scraping"), "website-only providers disclose restrictions")
+	await capture_layouts()
 	var first_batch: Array = browser.online.rows.duplicate(true)
 	var previous_last: TreeItem = browser.tree.get_root().get_child(70)
 	browser.tree.scroll_to_item(previous_last); await settle()
@@ -198,6 +218,10 @@ func _run() -> void:
 	check(browser.visible_rows.is_empty(), "combined website and format filters can honestly return no listings")
 	browser.website.select(4); browser.website.item_selected.emit(4); await wait_idle()
 	check(browser.visible_rows.is_empty() and not browser.online.has_more, "Steam website-only does not invent model results")
+	check(browser.status.text.contains("website search only") and not browser.website_button.disabled, "website-only provider exposes immediate search action")
+	var opens_before := opened.size()
+	await click_control(browser.website_button)
+	check(opened.size() == opens_before + 1 and opened[-1].contains("appid=1840"), "website search action uses selected provider and query")
 	browser.open_page(Catalog.website_url("steam_sfm", browser.search.text))
 	check(opened[-1].contains("appid=1840"), "website-only source search opens through same safe boundary")
 	# Unavailable/malformed providers leave partial results and actionable errors.
@@ -210,11 +234,25 @@ func _run() -> void:
 	# Cancellation during an awaited response, then supersede before it can return.
 	mode = "slow"; browser.website.select(2); browser.search.text = "old"; browser.search_button.pressed.emit()
 	while not browser.online.loading: await process_frame
+	await settle()
+	check(browser.activity.visible, "loading has a real indeterminate activity indicator")
 	browser.cancel_button.pressed.emit(); await settle()
 	check(not browser.online.loading and browser.status.text.contains("Cancelled"), "Cancel immediately leaves loading state")
+	check(not browser.activity.visible, "Cancel hides the activity indicator")
 	mode = "normal"; browser.search.text = "Hatsune Miku"; browser.search_button.pressed.emit(); await wait_idle()
 	await create_timer(0.4).timeout; await settle()
 	check(browser.online.query == "Hatsune Miku" and not browser.visible_rows.is_empty() and browser.visible_rows[0].title == "Hatsune Miku", "late cancelled response cannot replace newer search")
+	# A later batch's exact hit must outrank the broad matches already displayed.
+	var broad := {"id":"old-broad", "title":"Miku accessory", "provider":"sketchfab", "url":"https://sketchfab.com/3d-models/old-broad", "formats":[], "access":["Unknown"], "evidence":"fixture"}
+	browser.online.rows = [broad]; browser.online._seen.clear()
+	browser.online._pool.clear(); browser.online._offsets.clear()
+	browser.online._sketch_streams = [{"query":"Hatsune Miku", "url":Providers.sketch_url("Hatsune Miku")}]
+	browser.online.has_more = true; browser.more_button.pressed.emit(); await wait_idle()
+	check(browser.visible_rows[0].title == "Hatsune Miku" and broad in browser.visible_rows, "later exact hits move ahead of earlier broad matches")
+	browser.page_opener = func(_url): return ERR_CANT_OPEN
+	browser.open_page("https://sketchfab.com/3d-models/test"); browser._schedule_refresh(); await settle()
+	check(browser.status.text.contains("Could not open your default browser"), "browser launch error survives deferred UI refresh")
+	browser.page_opener = func(url): opened.append(url); return OK
 	mode = "timeout"; browser.search_button.pressed.emit(); await wait_idle()
 	check(browser.visible_rows.is_empty() and browser.status.text.contains("timeout"), "timeout has an actionable unavailable state")
 	mode = "throttled"; browser.search_button.pressed.emit(); await wait_idle()

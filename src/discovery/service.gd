@@ -104,16 +104,27 @@ func fetch_more() -> void:
 		rounds += 1
 		if not progress: break
 	if token != _generation: return
-	# Rank the new batch; preserve previous batches and their scroll order.
+	# Insert newly found exact matches ahead of earlier broad matches. Keep the
+	# relative order of existing rows; the panel restores its visible row anchor.
 	var batch := rows.slice(start_count)
 	batch.sort_custom(func(a, b):
 		var ar := Catalog.rank(a, query, variants); var br := Catalog.rank(b, query, variants)
 		return ar < br if ar != br else str(a.title).naturalnocasecmp_to(str(b.title)) < 0)
-	rows = rows.slice(0, start_count) + batch
+	rows = rows.slice(0, start_count)
+	for row in batch:
+		var position := rows.size()
+		var priority := Catalog.rank(row, query, variants)
+		for index in rows.size():
+			if Catalog.rank(rows[index], query, variants) > priority:
+				position = index
+				break
+		rows.insert(position, row)
 	loading = false
 	has_more = false
 	for source in sources: has_more = has_more or _can_request(source) or _has_pool(source)
 	message = "%d listings loaded (%d new; target about 100). %s" % [rows.size(), rows.size() - start_count, "More metadata is available." if has_more else "No more results from the available sources. Website-only sources are not counted."]
+	if sources.is_empty():
+		message = "This provider supports website search only. Open its website below; no individual listings were fetched."
 	changed.emit()
 
 func _has_pool(source: String) -> bool:

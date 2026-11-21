@@ -16,11 +16,13 @@ var network: CheckButton
 var search_button: Button
 var cancel_button: Button
 var more_button: Button
+var website_button: Button
 var choose_button: Button
 var clear_button: Button
 var use_button: Button
 var tree: Tree
 var status: Label
+var activity: ProgressBar
 var disclosure: Label
 var details: Label
 var provider_status: Label
@@ -35,6 +37,7 @@ var _site_ids: Array = ["All"]
 var _refresh_pending := false
 var _render_signature := ""
 var _display_keys: Array = []
+var _open_error := ""
 # Tests inject a browser opener, never launch a real browser during automation.
 var page_opener: Callable
 
@@ -71,9 +74,13 @@ func _ready() -> void:
 	expand.toggled.connect(func(_enabled): run_search())
 	cancel_button = _button(controls, "Cancel", cancel)
 	more_button = _button(controls, "Load another batch", func(): online.fetch_more())
+	website_button = _button(controls, "Open website search", func(): open_page(Catalog.website_url(_site_ids[website.selected], search.text)))
+	website_button.tooltip_text = "Choose a website filter, then open its search page in your default browser."
 	directory_label = _label(); add_child(directory_label)
 	disclosure = _label(); disclosure.add_theme_font_size_override("font_size", 12); add_child(disclosure)
 	status = _label(); add_child(status)
+	activity = ProgressBar.new(); activity.indeterminate = true; activity.show_percentage = false
+	activity.custom_minimum_size.y = 6; add_child(activity)
 	tree = Tree.new(); tree.columns = 4; tree.hide_root = true; tree.column_titles_visible = true
 	tree.set_column_title(0, "Title / filename"); tree.set_column_title(1, "Source website / location")
 	tree.set_column_title(2, "Format labels"); tree.set_column_title(3, "Access")
@@ -125,12 +132,14 @@ func _tab_changed(index: int) -> void:
 	cancel()
 	var is_online := index == 1
 	website.visible = is_online; network.visible = is_online; expand.visible = is_online; more_button.visible = is_online
+	website_button.visible = is_online
 	choose_button.visible = not is_online; clear_button.visible = not is_online; use_button.visible = not is_online
 	directory_label.visible = not is_online
 	selected = {}; _render_signature = ""; _schedule_refresh()
 	# Opening the tab alone never opts into networking.
 
 func run_search() -> void:
+	_open_error = ""
 	selected = {}; _render_signature = ""
 	if tabs.current_tab == 0:
 		_schedule_refresh()
@@ -194,7 +203,10 @@ func _refresh() -> void:
 		disclosure.text += "\nPoly Haven and BowlRoll match these variations against fetched metadata; BowlRoll covers recent feed entries only."
 	else: disclosure.text = "Filename extensions only. No model loading, conversion or execution. Source MDL compatibility is Unknown."
 	cancel_button.disabled = not (online.loading or local.loading)
+	activity.visible = online.loading if is_online else local.loading
 	more_button.disabled = online.loading or not online.has_more or not online.network_enabled
+	website_button.disabled = website.selected == 0
+	if not _open_error.is_empty(): status.text += "\n" + _open_error
 	search_button.disabled = false
 	use_button.disabled = selected.is_empty() or is_online
 	details.text = "Select a filename for its full path." if not is_online else "Access labels describe source metadata, not a verified download or permission to use the model."
@@ -221,10 +233,12 @@ func open_selected() -> void:
 
 func open_page(url: String) -> void:
 	if not Catalog.safe_page(url):
-		status.text = "Cannot open this source URL. Only known HTTPS provider pages are allowed."
+		_open_error = "Cannot open this source URL. Only known HTTPS provider pages are allowed."
+		status.text = _open_error
 		return
 	var error: int = page_opener.call(url) if page_opener.is_valid() else OS.shell_open(url)
-	if error != OK: status.text = "Could not open your default browser (%d)." % error
+	_open_error = "Could not open your default browser (%d)." % error if error != OK else ""
+	if error != OK: status.text = _open_error
 	else: source_page_opened.emit(url)
 
 func _use_local() -> void:
