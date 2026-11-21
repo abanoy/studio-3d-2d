@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-21",
+  "branch": "worker/editable-lights-20261121",
+  "base_commit": "243e6a1edf1aee5cd07f107a34775db49a2caa01",
+  "scope": "editable lighting; focused tests only",
+  "cpu": {
+    "checks": 101,
+    "failures": 0,
+    "source_unchanged": true,
+    "folder": "scene-lighting-1795279225389596900"
+  },
+  "initial_graphics": {
+    "checks": 96,
+    "failures": 0,
+    "folder": "scene-lighting-1795278809198567300",
+    "gpu": "Intel Arc 140V, OpenGL Compatibility",
+    "measurements": {
+      "light": {
+        "environment_light_gain": 696.9132690429688,
+        "model_light_gain": 633.80712890625,
+        "shadow_difference": 486440.0
+      },
+      "neon": {
+        "environment_light_gain": 696.9132690429688,
+        "model_light_gain": 633.80712890625,
+        "shadow_difference": 486440.0
+      }
+    },
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "48",
+      "duration": "2.000000"
+    },
+    "receipts": [
+      {
+        "exit": 0,
+        "private_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      {
+        "exit": 0,
+        "private_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      }
+    ],
+    "includes_optional_reflections": false
+  },
+  "final_reflection_native_graphics": "QUEUED_AFTER_PRIMARY_VERIFICATION",
+  "limitations": [
+    "No full suite or cross-driver claim",
+    "Cubemap reflections approximate room geometry; no diffuse bounce or path tracing",
+    "Unlit/custom materials retain authored response",
+    "Imported lamps/probes remain independent"
+  ]
+}

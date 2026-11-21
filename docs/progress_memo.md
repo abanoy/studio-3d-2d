@@ -17369,3 +17369,28 @@ being assigned to separate user-owned workers; integrate their branches later.
 Formal52/54 implementation and55/62 acceptance remain unchanged. Human/native
 appearance, novice, learner, tablet/audio and clean offline setup observations
 remain external; do not ask again while independent work is available.
+
+
+## 2026-11-21 - Editable lighting on current main
+
+Isolated worker/editable-lights-20261121 at has-editable-lights-20261121, based on
+origin/main243e6a1e. Earlier has-lighting checkout and its paused rebase preserved;
+its source additions carried forward with small integration hooks. Directional,
+point and spot editor, nearby placement, list/name/visibility/removal, all relevant
+properties, atomic history, optional video data and portable HAS reopening work.
+Imported lamps/materials/model/world/shot data remain independent. Four editable
+presets; explicit uniform ambient fill. Optional live room cubemap is a reflection
+approximation, not diffuse GI/path tracing. No world-runtime/material/export edits.
+
+Current focused CPU101 passes in Neon/Classic, including panel Undo/Redo and
+reflection persistence. Initial private GPU96 passes (before optional reflections):
+all three lights illuminate imported model/environment, shadows/color/intensity/
+direction alter pixels, packed reopening and 48-frame1080p24H264 export pass with
+exact preview/PNG and fresh-reader pixels. Native/reflection/routed-click final
+GPU checks are queued behind the primary worker's complete verification. No
+full-suite or native appearance claim. See editable_scene_lighting.md and its
+compact benchmark for source hooks, official research and exact current scope.
+
+Installed Studio, original assets and shared tools remain unchanged. Private
+captures/media stay in output; no merge or push to main. Next diffuse GI step is
+an opt-in Forward+ SDFGI colored-room prototype with controlled settling/export.
