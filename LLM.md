@@ -8522,3 +8522,75 @@ colored sections and explicit outline masks, then performance. Raw source origin
 private arrays/art and failed/unrun evidence remain protected. Source working CRLF
 equivalence is declared; remote raw blobs/tree match without claiming every working
 byte equal. Rejected cleanup stays pending direct permission. Formal52/54+55/62 unchanged.
+
+
+## 2026-11-21 — explicit first-component back-hair reconstruction
+
+Feature branch codex/backhair-reconstruction-20261121 starts at43dbdecc. Adds an
+explicit Make this part flexible option, per-original-influence appended guides,
+reviewed source-vertex highlights/checked inclusion, temporary wind binding and
+one reversible owned-asset Apply. Originals/native rest/morph/material tables and
+unchecked weights remain intact. Natural remains an explicit subsequent choice.
+Cross-skin frame/budget/ownership refusals and generated node/parent/bind tamper
+checks remain strict. This is not an automatic native asset replacement.
+
+Actual generated tests11+16PASS; existing helper/batch/morph56PASS (Root scope).
+Protected native first-component12PASS: all1292 reviewed vertices lower12.24cm,
+13chains/65newnodes,52colliderinstances/1236skinrows/720refreshes; all original
+joints/attachments held and every reviewed vertex restored exactly with Off.
+Loop~12.5ms per120Hz step exceeds its8.33ms budget. Protected Miku54PASS unchanged.
+Private Simple UI18/19: temporary13-group wind, Apply/Undo/Redo, nonzero native
+Head FK+pose key and Natural/Off/source preservation pass. Exact rest pixelsFAIL
+(165channelbytes; actual imported geometry max48.23micrometers). No invented
+pixel tolerance replaces the failure. Packing/normalization cause is unproven.
+Prior no-warmup, denied-desktop/source-freeze, Theme parse and tiny-framing
+attempts remain explicit failures. No whole-suite/human/ledger promotion.
+
+Only one colored component1292of3629 is configured; unchecked outline curls,
+other back-hair components, bangs and ribbons remain separate. Next: diagnose
+imported precision, review missing groups/shared outlines, improve CPU cost and
+cold reconstructed persistence. Native art/spec arrays/captures stay private.
+Formal52/54 implementation and55/62 acceptance remain unchanged. See
+docs/secondary_reconstruction.md and scalar benchmark for actual receipt hashes.
+
+
+## 2026-11-21 — Actual eight-slot readback and reconstruction error attribution
+
+At exact published7f source, an owned headless run measures64 authored4/8-slot
+meshes/10rows:260checks pass,6bounded proposal refusals remain unimported.
+Actual positive bone identities and f32 readback bits match the pinned engine
+normalization/UNORM16 profile. Half splitting sourceweight1 loses one packedunit.
+No shader/pixel or all525-row claim. Initial parse0 and JSONexpected-float39
+fixture mismatches remain recorded; uint32 bit transport fixes the latter without
+tolerance. Independent native10 attribution reproduces48.22micrometer drift:
+weight-only48.218micrometers; guide-palette-only0.126micrometers; original native
+palettes exact. Only scalar private-case evidence is published. Original GUI18/19
+and exact-zero rest-image failure remain adverse. Next repair retains original
+weight geometry for rest and flexible geometry for live/manual/recorded guides,
+with material/morph/bind/cache/lease checks; no source models are overwritten.
+See experiments/reconstruction_weight_readback_20261121. Existing exact published
+7f remains intact; no formal55/62 acceptance promotion or cleanup action.
+
+
+## 2026-11-21 — Exact authored-rest rendering for reconstructed loose parts
+
+Implemented original-weight mesh references and a paired runtime view, preserving
+the first original references through repeated edits and scoping guides to each
+skin. Python15+wind16 pass. New public owned headless driver36 covers rest/manual/
+recorded/live poses, material/expression preservation, generated ancestors with no
+direct weights, cache leases, thumbnail clones, hidden-root reparenting/staleleases
+and editor ID/ghost proxy mesh changes. Native SimpleGUI19 passes the UNCHANGED
+exact-zero image check:0channelbytes differ and all37470 posed imported vertices
+match exactly; Offtransformerror0. Prior7f18/19 and165changedbytes remain historical
+failures, never relabelled. Livecontactowners retainflex untilcachedrunnersdispose,
+including directfinal-mode evaluationwhileowned; exactauthoredrestwithoutowner
+andmanual/recordedGUIDEFKwithHairOffareseparatelyqualified.
+Newmodule/importer/thumbnail/backendportclosures have60Wind/77Helperbindings;
+23puremissing/drift/omitted guards pass withoutweakeningvalidators. ExistingWind94
+CPU andHelper208CPU pass on currentworkingcodesnapshot, no new845/266GPU/fullclaim.
+One1292/3629 coloredsection only; outlines/othersections and~12.5ms/120Hz costopen.
+Portable newformat save/cold/movie qualification remainsUNRUN in this checkpoint.
+Source/tests/findings/safeevidence saved together; no privateassets/arrays/media
+uploaded. See docs/secondary_reconstruction.md and reconstructed_rest_views_20261121
+benchmark/packet. Originalassets/tools/Steam protected; blockedcleanupuntouched.
+Formal52/54 implementation and55/62 acceptance remainunchanged.

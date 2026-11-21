@@ -30,6 +30,7 @@ def code_paths(main_root):
     return {'worker': here / 'wind_preview_worker.py', 'protocol': here / 'wind_helper_preview.py',
             'adapter': here / 'wind_preview_owned.py', 'native_job_layout': main_root / 'tools/private_desktop.py',
             'helpers': main_root / 'tools/secondary_helpers.py', 'batch': main_root / 'tools/secondary_helpers_batch.py',
+            'reconstruction': main_root / 'tools/secondary_reconstruction.py',
             'basis_helper': main_root / 'tools/import_basis_helper.py'}
 
 

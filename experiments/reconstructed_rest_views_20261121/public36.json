@@ -1,0 +1,71 @@
+{
+  "original": {
+    "file": "verification.json",
+    "bytes": 1938,
+    "sha256": "cff8d6d2dfe5f7089a82703b5bc2f7dfc6468152b3452c03ee2a7fc437fe1118"
+  },
+  "scope": "Authoritative public36=unit28+selection8. Earlier note28 is retained as predecessor scope, not added again.",
+  "result": {
+    "status": "PASS",
+    "cases": [
+      {
+        "name": "unit",
+        "status": "PASS",
+        "checks": 28,
+        "desktop_created": false,
+        "worker_exit": 0,
+        "worker_reaped": true,
+        "worker_handle_closed": true,
+        "accounting": {
+          "active": 0,
+          "total": 3,
+          "terminated_by_limit": 0
+        },
+        "job_closed": true,
+        "report": {
+          "checks": 28,
+          "failures": 0,
+          "graphics_used": false,
+          "rest_view": {
+            "active": true,
+            "error": "",
+            "stats": {
+              "flex_meshes": 0,
+              "guide_checks": 306,
+              "inventory_array_reads": 2,
+              "rest_meshes": 1,
+              "transitions": 2
+            }
+          },
+          "source_arrays_published": false
+        }
+      },
+      {
+        "name": "selection",
+        "status": "PASS",
+        "checks": 8,
+        "desktop_created": false,
+        "worker_exit": 0,
+        "worker_reaped": true,
+        "worker_handle_closed": true,
+        "accounting": {
+          "active": 0,
+          "total": 3,
+          "terminated_by_limit": 0
+        },
+        "job_closed": true,
+        "report": {
+          "checks": 8,
+          "failures": 0,
+          "graphics_used": false
+        }
+      }
+    ],
+    "graphics_used": false,
+    "owner_assets_used": false,
+    "source_preservation_failures": [],
+    "parent_environment_preserved": true,
+    "generated_inputs_preserved": true,
+    "checks": 36
+  }
+}

@@ -21,6 +21,8 @@ static func capture(rig: RefCounted,pose: Dictionary,parent: Node) -> Dictionary
 		var base: Transform3D=info.base;var delta: Dictionary=pose.get(id,Model.identity())
 		skeleton.set_bone_pose_position(info.index,base.origin+Timeline.vector(delta.position));skeleton.set_bone_pose_rotation(info.index,base.basis.get_rotation_quaternion()*Timeline.quaternion(delta.rotation_xyzw));skeleton.set_bone_pose_scale(info.index,base.basis.get_scale());skeletons[skeleton.get_instance_id()]=skeleton
 	for skeleton in skeletons.values():skeleton.remove_meta(Bounds.FINAL_META);skeleton.force_update_all_bone_transforms()
+	var rest_error:=preload("res://src/reconstructed_rest_view.gd").select_clone(rig,clone)
+	if not rest_error.is_empty():viewport.queue_free();return {"error":rest_error}
 	var queried:=Bounds.query(clone)
 	if not queried.error.is_empty():viewport.queue_free();return {"error":queried.error}
 	var bounds: AABB=queried.bounds;var radius:=bounds.size.length()*.5

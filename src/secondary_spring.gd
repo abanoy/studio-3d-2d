@@ -18,6 +18,8 @@ var skin_contact: RefCounted
 var defer_skin_contact:=false
 var preview_context: Dictionary={}
 var preview_definition: Dictionary={}
+var rest_view_token:=0
+var rest_view_controller:=0
 
 static func construct(rig: RefCounted,private_definition: Dictionary={},host_owner: Node=null,generated_context: Dictionary={}) -> Dictionary:
 	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{}) if private_definition.is_empty() else private_definition
@@ -35,6 +37,11 @@ static func construct(rig: RefCounted,private_definition: Dictionary={},host_own
 		if mode.has("error"):return mode
 	var natural: bool=generated and GeneratedMotion.natural(tuning,definition)
 	var runner=new();runner.actor=rig;runner.host=Node3D.new();runner.host.name="SecondaryMotionScratch"
+	if rig.has_method("acquire_reconstruction_flex"):
+		var lease: Dictionary=rig.acquire_reconstruction_flex(runner)
+		if lease.has("error"):runner.dispose();return lease
+		runner.rest_view_token=int(lease.token)
+		runner.rest_view_controller=int(lease.controller)
 	if not generated_context.is_empty():runner.preview_context=generated_context.duplicate(true);runner.preview_definition=definition
 	# Generated HAS helpers intentionally contain no imported collider records.
 	# Supply bounded runtime body envelopes without rewriting that provenance.
@@ -151,6 +158,7 @@ func update_colliders() -> void:
 				if axis.length()>0.000001:node.global_basis=Basis(Quaternion(Vector3.UP,axis.normalized()))
 
 func step(delta: float,wind: Vector3,forces: Array=[]) -> Dictionary:
+	if rest_view_token>0 and actor.reconstruction_view_diagnostics().controller!=rest_view_controller:return {"error":"The reconstructed simulation owner changed; restart Hair & clothes."}
 	if not is_instance_valid(host) or not is_instance_valid(actor.root) or not actor.root.is_inside_tree():return {"error":"Secondary runner is no longer attached to a model."}
 	if not preview_context.is_empty():
 		var issue: String=GeneratedMotion.preview_error(preview_context,actor,preview_definition)
@@ -214,6 +222,9 @@ func constrain_pose(value: Dictionary,include_skin: bool=true) -> Dictionary:
 func dispose() -> void:
 	preview_context.clear();preview_definition={}
 	if skin_contact:skin_contact.dispose();skin_contact=null
+	if rest_view_token>0 and actor!=null and is_instance_valid(actor.root):actor.release_reconstruction_flex(rest_view_token,rest_view_controller)
+	rest_view_token=0
+	rest_view_controller=0
 	chains.clear()
 	for collider in colliders:
 		if is_instance_valid(collider.node):collider.node.free()

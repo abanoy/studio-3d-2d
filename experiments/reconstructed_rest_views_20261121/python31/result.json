@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "checks": 31,
+  "rows": [
+    {
+      "file": "test_secondary_reconstruction.py",
+      "checks": 15,
+      "exit": 0,
+      "stderr_sha256": "ae0d15544fc3b6b4f93a2d8eca58f4d1dd2120d6b85095e59482b8aa6d244d94"
+    },
+    {
+      "file": "test_reconstruction_wind_mapping.py",
+      "checks": 16,
+      "exit": 0,
+      "stderr_sha256": "51b2fb4c81a96dd6d4df304e48f73c3697eb4277e183f436742b48c60a1c0d96"
+    }
+  ],
+  "source_hashes": {
+    "tools/secondary_reconstruction.py": "4c761e6b635aef3b59790117c5107a410f99e027ada0f8c51ec23b0808e10278",
+    "tools/secondary_helpers.py": "1a172458b27d25ac5c74a79004332f655d5778cf7f8d283e33507cb5e9004285",
+    "tools/secondary_helpers_batch.py": "27ed29361de1f9608654f1e549c258ab4642bb05a97f0aecb86b6b067d79ed76",
+    "tools/wind_helper_preview.py": "30899c40cfe1f0a2d1f1c70fddfbfe1a03b631468b5829f68928e24133f84d32",
+    "tests/test_secondary_reconstruction.py": "8db91b3766c91364f0750b13db4467122e51df506fb3f4d6b1d9d6af93ab543d",
+    "tests/test_reconstruction_wind_mapping.py": "bef2bac98998bee7bf6f43594ff29260d6ba398c350990b5eb1e7eadf22074a2"
+  },
+  "source_preserved": true
+}

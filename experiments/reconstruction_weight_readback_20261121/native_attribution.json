@@ -1,0 +1,62 @@
+{
+  "format": "has_native_reconstruction_rest_drift_attribution_1",
+  "status": "PASS",
+  "checks": 10,
+  "failures": 0,
+  "candidate_sha256": "74f0b49f1a1169ca85f88ac7e8569cbeb3a3b5714fdda7aecf4723e64e840b2a",
+  "attribution": {
+    "all": {
+      "maximum_aggregate_weight_error": 1.531839370727539e-05,
+      "maximum_attribution_identity_residual": 0.0,
+      "maximum_float64_total_error": 4.811485602602137e-05,
+      "maximum_guide_palette_element_error": 1.1920928955078125e-07,
+      "maximum_native_palette_element_error": 0.0,
+      "maximum_ordinary_vector3_error": 4.822010305360891e-05,
+      "maximum_palette_only_error": 1.2635551194652874e-07,
+      "maximum_vector3_accumulation_residual": 2.4548200141658796e-07,
+      "maximum_weight_only_error": 4.8218028626924695e-05,
+      "vertices": 37470,
+      "weight_changed_groups": 1975,
+      "weight_changed_vertices": 1131
+    },
+    "selected": {
+      "maximum_aggregate_weight_error": 1.531839370727539e-05,
+      "maximum_attribution_identity_residual": 0.0,
+      "maximum_float64_total_error": 4.811485602602137e-05,
+      "maximum_guide_palette_element_error": 1.1920928955078125e-07,
+      "maximum_native_palette_element_error": 0.0,
+      "maximum_ordinary_vector3_error": 4.822010305360891e-05,
+      "maximum_palette_only_error": 1.2635551194652874e-07,
+      "maximum_vector3_accumulation_residual": 2.4548200141658796e-07,
+      "maximum_weight_only_error": 4.8218028626924695e-05,
+      "vertices": 1292,
+      "weight_changed_groups": 1975,
+      "weight_changed_vertices": 1131
+    },
+    "surfaces": 24
+  },
+  "graphics_used": false,
+  "source_arrays_or_art_published": false,
+  "all_canonical_sources_preserved": true,
+  "all_protected_inputs_and_probe_identity_preserved": true,
+  "owned_worker_reaped": true,
+  "owned_handle_closed": true,
+  "owned_job_closed": true,
+  "remaining_descendants": 0,
+  "receipt_sha256": "33db77ae5e45346c4b44c4c7747c1563f7290f6c84b2448e30d6ef56b3bb59a9",
+  "actual_scalar_result_sha256": "2219549986d13779b47e7d26dc5b96c99abf7cb6b75490b96e58515108d1e4aa",
+  "probe_sha256": "8bbbacc4a9cd14e7ac42d0cdd20503f6fe6d0ccbe6af63785951b91ae9f9ceb6",
+  "driver_sha256": "0c89766c119c1af6447d039b33041b5b2f2317c16297313e3bdb63435d45182d",
+  "conclusion": "Dominant measured rest drift comes from changed aggregate imported weights; original native palettes are exact, with separate submicron guide-palette and Vector3 accumulation errors.",
+  "recommendation": "Use measured4/8 normalization and packing in a bounded per-original-influence splitter, retaining exact source-f32 sum and original normalization/readback group constraints. Refuse infeasible smooth splits rather than truncate or silently rewrite weights. Independently retest residual palette/accumulation and raster differences; packed integer mass alone is not a pixel equivalence proof.",
+  "limitations": [
+    "Counterfactual uses actual imported palette coefficients with float64 accumulation; ordinaryVector3 path is reported separately.",
+    "One saved nonzero Head pose and one owned candidate, no simulation/GPU/universal fidelity qualification.",
+    "Source-position buffer preservation is inherited from separate actual source-prefix/FK peer evidence; this probe checks surface cardinality and correspondence."
+  ],
+  "exact_actual_candidate_source_table_proof": {
+    "all_original_BIN_and_accessor_prefix_preserved": true,
+    "all_original_non_skin_attributes_and_morph_target_references_preserved": true,
+    "primitives_checked": 24
+  }
+}

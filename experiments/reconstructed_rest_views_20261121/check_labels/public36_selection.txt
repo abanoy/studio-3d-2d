@@ -1,0 +1,8 @@
+PASS unchanged selection geometry is a no-op
+PASS ID and outline proxy follows the flexible weight resource
+PASS ID shader survives the mesh resource change
+PASS selection geometry retains current expression amount
+PASS mesh changes preserve skin, isolated layer and GI/shadow exclusion
+PASS selection proxy returns to original rest weights
+PASS hidden-selection ghost shader and expression survive restoration
+PASS proxy updates never change original model materials

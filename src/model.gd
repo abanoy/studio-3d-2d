@@ -10,6 +10,10 @@ const Shape=preload("res://src/source_shape.gd")
 const ShapeAnimation=preload("res://src/shape_animation.gd")
 const ImportBasis=preload("res://src/import_basis.gd")
 const RenderBounds=preload("res://src/posed_render_bounds.gd")
+const RestViews=preload("res://src/reconstructed_rest_view.gd")
+var _rest_views: RefCounted
+var _rest_view_present:=false
+var reconstruction_view_error:=""
 var _render_meshes: Array[WeakRef]=[]
 var _render_bounds: RefCounted
 var _render_owner_id:=0
@@ -197,6 +201,7 @@ func capture_import_root(raw_root: Transform3D) -> String:
 
 func inventory(node: Node) -> void:
 	if node==root:
+		release_reconstruction_view()
 		_contact_cache_ready=false;release_render_bounds();_render_meshes.clear()
 		_render_owner_id=root.get_instance_id()
 		var closing: Callable=_render_root_exited.bind(_render_owner_id)
@@ -211,6 +216,10 @@ func inventory(node: Node) -> void:
 			bones[id] = {"skeleton": node, "index": i, "name": str(node.get_bone_name(i)), "base": node.get_bone_pose(i), "path": str(root.get_path_to(node))}
 			order.append(id)
 	for child in node.get_children(): inventory(child)
+	if node==root:
+		var made: Dictionary=RestViews.create(self)
+		if made.has("error"):reconstruction_view_error=str(made.error)
+		else:_rest_views=made.control;_rest_view_present=_rest_views!=null
 
 func contact_legs() -> Array:
 	# Bone identities are immutable between inventories, but verify exact cached
@@ -528,7 +537,43 @@ func _render_root_exited(owner_id: int) -> void:
 	# Node.duplicate copies signal connections. A detached thumbnail clone must
 	# never release the still-attached original model's cache.
 	if is_instance_valid(root) and root.is_inside_tree():return
+	release_reconstruction_view()
 	release_render_bounds()
+
+func release_reconstruction_view() -> void:
+	if _rest_views!=null:_rest_views.dispose()
+	_rest_views=null;reconstruction_view_error=""
+
+func refresh_reconstruction_view() -> void:
+	if not is_instance_valid(root) or not root.is_inside_tree() or not reconstruction_view_error.is_empty():return
+	# Hidden wind candidates are parked/reparented without a new bone inventory.
+	# Rebind an owned controller after attachment; old runner scopes stay invalid.
+	if _rest_views==null and _rest_view_present:
+		var made: Dictionary=RestViews.create(self)
+		if made.has("error"):reconstruction_view_error=str(made.error);return
+		_rest_views=made.control;_rest_view_present=_rest_views!=null
+	if _rest_views==null:return
+	var proposal: Dictionary=_rest_views.plan()
+	if proposal.has("error"):reconstruction_view_error=str(proposal.error);return
+	if not proposal.changes.is_empty():
+		release_render_bounds()
+		var issue: String=_rest_views.commit(proposal)
+		if not issue.is_empty():reconstruction_view_error=issue
+
+func acquire_reconstruction_flex(owner: RefCounted) -> Dictionary:
+	refresh_reconstruction_view()
+	if not reconstruction_view_error.is_empty():return {"error":reconstruction_view_error}
+	if _rest_views==null:return {"token":0,"controller":0}
+	var token: int=_rest_views.acquire(owner);refresh_render_bounds()
+	if not reconstruction_view_error.is_empty():_rest_views.release(token);return {"error":reconstruction_view_error}
+	return {"token":token,"controller":_rest_views.get_instance_id()}
+
+func release_reconstruction_flex(token: int,controller_id:=0) -> void:
+	if _rest_views==null or token==0 or controller_id!=0 and _rest_views.get_instance_id()!=controller_id:return
+	_rest_views.release(token);refresh_render_bounds()
+
+func reconstruction_view_diagnostics() -> Dictionary:
+	return {"active":_rest_views!=null,"controller":_rest_views.get_instance_id() if _rest_views!=null else 0,"error":reconstruction_view_error,"stats":_rest_views.stats.duplicate(true) if _rest_views!=null else {}}
 
 func release_render_bounds() -> void:
 	if _render_bounds!=null:
@@ -537,6 +582,7 @@ func release_render_bounds() -> void:
 	_render_bounds=null;_render_bounds_blocked=false;render_bounds_error=""
 
 func refresh_render_bounds() -> void:
+	refresh_reconstruction_view()
 	if _render_refreshing or _render_bounds_blocked:return
 	if not is_instance_valid(root) or not root.is_inside_tree():return
 	if root.get_instance_id()!=_render_owner_id:

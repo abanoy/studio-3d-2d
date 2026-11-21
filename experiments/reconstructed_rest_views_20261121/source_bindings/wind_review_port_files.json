@@ -1,0 +1,467 @@
+{
+  "format": "has_wind_review_main_port_files_1",
+  "source_packet": "experiments/local_wind_review/production_port_candidate_20261112",
+  "files": [
+    {
+      "path": "src/app.gd",
+      "sha256": "522e7ca0274bbbaaa92bb11f6dcab76da1f6b1e77c0dc64faf13f9af320da734",
+      "lf_sha256": "b85cc1346e59c22569a3c6e774cb95dc111d808c65cc149cc047fbc9a8c633b0",
+      "category": "runtime"
+    },
+    {
+      "path": "src/has_project.gd",
+      "sha256": "80a22d5b8a680c504122823e62fb116792f03cefc2b56926c61b16cdfdafdb92",
+      "lf_sha256": "80a22d5b8a680c504122823e62fb116792f03cefc2b56926c61b16cdfdafdb92",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "sha256": "bf2df56bbcb9078af4704d3ed075887f56c22eca7da8f1dc0299b5445d101f6f",
+      "lf_sha256": "bf2df56bbcb9078af4704d3ed075887f56c22eca7da8f1dc0299b5445d101f6f",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "lf_sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "lf_sha256": "75e9754e0c5b1d7a423340b4d5c62dafe40a167945999d9af2d4720c3e7c2565",
+      "category": "runtime"
+    },
+    {
+      "path": "src/renderer.gd",
+      "sha256": "0f2c616f8f3df84ff2c1a6a88665f9bdd9d0a3fb1639381fbe4da8915359f89d",
+      "lf_sha256": "2f2132eb2733fb088fc9e38bba9df18e8aa49b7083d9340e629270c99406092a",
+      "category": "runtime"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "sha256": "c24f3753ac8baa8475a9c9acc705dff9833ab14d78e2ab89f87d6a6f2152789f",
+      "lf_sha256": "ed78578ba92d2ec896ed5909d5e03bc377aba57bcceac77f3569e714a0f8a99c",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "sha256": "e69de68cb809c4d6b1c7b15dd37863fc08121bb639d29478b1e86c02a31d96d8",
+      "lf_sha256": "e69de68cb809c4d6b1c7b15dd37863fc08121bb639d29478b1e86c02a31d96d8",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review_groups.gd",
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "lf_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "category": "runtime"
+    },
+    {
+      "path": "tests/wind_review_unit.gd",
+      "sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "lf_sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_hooks_unit.gd",
+      "sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "lf_sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_review_unit.gd",
+      "sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "lf_sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_gpu_common.gd",
+      "sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "lf_sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_motion.gd",
+      "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "lf_sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_lifecycle.gd",
+      "sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "lf_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_primary.gd",
+      "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "lf_sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "category": "gpu_test"
+    },
+    {
+      "path": "src/model.gd",
+      "category": "runtime",
+      "sha256": "7a8f2201cef6e5af4daa600c5d44da0b533d3ca9f1c0e37cf365e934ce83907a",
+      "lf_sha256": "db3effaf08db69be7beadcfa85f39def253bc6c2c398ce07b1d76670fc516c13"
+    },
+    {
+      "path": "src/import_basis.gd",
+      "category": "runtime",
+      "sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "lf_sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072"
+    },
+    {
+      "path": "src/import_basis_helpers.gd",
+      "category": "runtime",
+      "sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "lf_sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482"
+    },
+    {
+      "path": "src/import_basis_project.gd",
+      "category": "runtime",
+      "sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "lf_sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab"
+    },
+    {
+      "path": "tests/verify_wind_review.py",
+      "category": "test",
+      "sha256": "fd5f6b046e9bdda61d498b8749343324f614b3dd5f38d9f4238983376e5f28b4",
+      "lf_sha256": "fd5f6b046e9bdda61d498b8749343324f614b3dd5f38d9f4238983376e5f28b4"
+    },
+    {
+      "path": "src/physics_rig.gd",
+      "sha256": "ca981a8d91670839a89e897e4c34917a291a6d865bf19770affdb85775e9d72b",
+      "lf_sha256": "ca981a8d91670839a89e897e4c34917a291a6d865bf19770affdb85775e9d72b",
+      "category": "runtime"
+    },
+    {
+      "path": "src/source_import.gd",
+      "sha256": "629f8f7b1443aa14e51513ffb75b7b3b5744254579afb1b815fdf4a3f131c024",
+      "lf_sha256": "aa8e2a30682bed585d16a13a4cffb86d5fb5f6b11e48f0bc1df04f5ad9e8c172",
+      "category": "runtime"
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "sha256": "05f6152e6c2003949523e0783b2a8e77a26ed3a1398218a4757554b1c1624db1",
+      "lf_sha256": "803c02ed799f4d1a0d113c510c260991715b19c91cc6ac78f799b40b8d5982f5",
+      "category": "runtime"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "sha256": "ffd626c8e9c69a51e3568357b10ef4723d2010ad85161eb40c7542c0128b0f84",
+      "lf_sha256": "0f39391d07225e8b2c21a5ad203e9c37e70df6981d71b87620bd6dad16286c07",
+      "category": "runtime"
+    },
+    {
+      "path": "src/camera_easing_editor.gd",
+      "sha256": "cc1ef515a5c868bfc200ed7fa743c6d70f6b43614169492799827442cfff8e1a",
+      "lf_sha256": "cc1ef515a5c868bfc200ed7fa743c6d70f6b43614169492799827442cfff8e1a",
+      "category": "runtime"
+    },
+    {
+      "path": "src/keyframe_easing.gd",
+      "sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "lf_sha256": "08aacb9df9317ce2dd8329e5d9f6de35d771e8b3b07e1cabf58bf621891a65b7",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_parts.gd",
+      "sha256": "ca4a4610ba8abf6f0842c22c08146c7e4820cdfee270d86876920a65f59d39ef",
+      "lf_sha256": "ffde710edf951d1b844db4664eb2159d7e97cb14212dca0c5bd29b9351b25cf9",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_parts_editor.gd",
+      "sha256": "02b7e17b87aaa9131ff7a01960d2b09e470f41391dd8291fc86aaf9bef9eebda",
+      "lf_sha256": "56f7619e2a73ebf76f60f6d1c2e98aaa79aa8cfae622366dd611ef6c0e59f7ef",
+      "category": "runtime"
+    },
+    {
+      "path": "src/posed_render_bounds.gd",
+      "sha256": "2f6268f018c0f275c6a549be01a5ef80fa48f7a361f8d194c863f5ac4df3edbe",
+      "lf_sha256": "dcc9afb9f3db677ba1c40530abae883b60f8518dd89eb190aedaa4c799683f45",
+      "category": "runtime"
+    },
+    {
+      "path": "src/posed_render_envelope.gd",
+      "sha256": "af6e65a8db6cf2907edc2541dc58add1c5eea3cfea5dfa19a286046c6b3785d7",
+      "lf_sha256": "af6e65a8db6cf2907edc2541dc58add1c5eea3cfea5dfa19a286046c6b3785d7",
+      "category": "runtime"
+    },
+    {
+      "path": "src/character_part_follow.gd",
+      "category": "runtime",
+      "sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb",
+      "lf_sha256": "2de5baf190925605ac058d2d587c9be0992050f3c7eaa5aca9e346576ec76dfb"
+    },
+    {
+      "path": "src/part_pose_follow_math.gd",
+      "category": "runtime",
+      "sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf",
+      "lf_sha256": "71dbb0a32fccd757338b14339d418739b4f4df3c0402ad9d4f39cf14e5bff2bf"
+    },
+    {
+      "path": "src/discovery/browser.gd",
+      "category": "runtime",
+      "sha256": "41dd41028669060fd1cc682245bfc9687b2ccb5e730495b6deabc2a716cbc683",
+      "lf_sha256": "41dd41028669060fd1cc682245bfc9687b2ccb5e730495b6deabc2a716cbc683"
+    },
+    {
+      "path": "src/discovery/catalog.gd",
+      "category": "runtime",
+      "sha256": "0a6c2174e1adc694dee7d4777c9fb0c7201efdef4fd6b6fcea0f67bcb04ee2e8",
+      "lf_sha256": "0a6c2174e1adc694dee7d4777c9fb0c7201efdef4fd6b6fcea0f67bcb04ee2e8"
+    },
+    {
+      "path": "src/discovery/local_preview.gd",
+      "category": "runtime",
+      "sha256": "21c789b7173765d3c2a4f5c3f60da5edf1506749c3307978f28f8586a9f96e89",
+      "lf_sha256": "21c789b7173765d3c2a4f5c3f60da5edf1506749c3307978f28f8586a9f96e89"
+    },
+    {
+      "path": "src/discovery/local_scan.gd",
+      "category": "runtime",
+      "sha256": "4e1285ed46490eac57e9eef082e78b517b845920f292fb77b6094076d8c6b9f4",
+      "lf_sha256": "4e1285ed46490eac57e9eef082e78b517b845920f292fb77b6094076d8c6b9f4"
+    },
+    {
+      "path": "src/discovery/preferences.gd",
+      "category": "runtime",
+      "sha256": "562608faed78b0d4defa518f70b6dbcb416dad110f87f13850ce5c27c315f650",
+      "lf_sha256": "562608faed78b0d4defa518f70b6dbcb416dad110f87f13850ce5c27c315f650"
+    },
+    {
+      "path": "src/discovery/providers.gd",
+      "category": "runtime",
+      "sha256": "021994ed3c151e220c7b670c9a3f39626c666ac58f74102cff46620b77cf3456",
+      "lf_sha256": "021994ed3c151e220c7b670c9a3f39626c666ac58f74102cff46620b77cf3456"
+    },
+    {
+      "path": "src/discovery/service.gd",
+      "category": "runtime",
+      "sha256": "0b24918a337632875f20d2aac64f5e7306c384c6ace15681226186ee60964985",
+      "lf_sha256": "0b24918a337632875f20d2aac64f5e7306c384c6ace15681226186ee60964985"
+    },
+    {
+      "path": "src/discovery/studio_bridge.gd",
+      "category": "runtime",
+      "sha256": "cb3c70c5039245f11a0fc42da4346ec50d44fe8dbeea5d5dea5a948f0d421869",
+      "lf_sha256": "cb3c70c5039245f11a0fc42da4346ec50d44fe8dbeea5d5dea5a948f0d421869"
+    },
+    {
+      "path": "src/discovery/thumbnail.gd",
+      "category": "runtime",
+      "sha256": "e1571bc3daa8306f4e1872fd13e142dc9cae8a403adbeb4ec825c71a0b3df925",
+      "lf_sha256": "e1571bc3daa8306f4e1872fd13e142dc9cae8a403adbeb4ec825c71a0b3df925"
+    },
+    {
+      "path": "src/discovery/window.gd",
+      "category": "runtime",
+      "sha256": "42841e40b793f379625359b269adc4f5305fe76bce524b0a33055a6d6753d43b",
+      "lf_sha256": "42841e40b793f379625359b269adc4f5305fe76bce524b0a33055a6d6753d43b"
+    },
+    {
+      "path": "src/lighting.gd",
+      "category": "runtime",
+      "sha256": "ec8f5d36eac5d3ba9230e29cdd17affa17b13dc5ed61c28d4ec27c70b9ba87bc",
+      "lf_sha256": "ec8f5d36eac5d3ba9230e29cdd17affa17b13dc5ed61c28d4ec27c70b9ba87bc"
+    },
+    {
+      "path": "src/scene_lighting_document.gd",
+      "category": "runtime",
+      "sha256": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75",
+      "lf_sha256": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75"
+    },
+    {
+      "path": "src/scene_lighting_runtime.gd",
+      "category": "runtime",
+      "sha256": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a",
+      "lf_sha256": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a"
+    },
+    {
+      "path": "src/scene_lighting_editor.gd",
+      "category": "runtime",
+      "sha256": "5a3d5ad046634269e9424df1ef5dfe712f5ec4f4d50730737657b0230eafab06",
+      "lf_sha256": "5a3d5ad046634269e9424df1ef5dfe712f5ec4f4d50730737657b0230eafab06"
+    },
+    {
+      "path": "run.py",
+      "category": "runtime",
+      "sha256": "99767c6e5712b5319055a51a78019655976699a31bb73b2a1331e2201b05a821",
+      "lf_sha256": "0df2da04334fb3fcbae69060fedfecc1d7bcc702dde8d8747572c58c443fd777"
+    },
+    {
+      "path": "src/discovery/retrieval_notice.gd",
+      "category": "runtime",
+      "sha256": "2861dd259d89cc72dba9ba66b541e5ede01aa5cb71afb470dbd392f544c64daf",
+      "lf_sha256": "2861dd259d89cc72dba9ba66b541e5ede01aa5cb71afb470dbd392f544c64daf"
+    },
+    {
+      "path": "src/scene_indirect_runtime.gd",
+      "category": "runtime",
+      "sha256": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732",
+      "lf_sha256": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732"
+    },
+    {
+      "path": "src/secondary_body_colliders.gd",
+      "category": "runtime",
+      "sha256": "9fd3008fb116762a9708b180eb2bd9fcceeb5fe3272f4e74c99b09ac4ae415af",
+      "lf_sha256": "eb8256dc05c23b7164cf2ca695e69c88cb63a2f4630604f23ef06d1a988a6f5d"
+    },
+    {
+      "path": "src/secondary_segment_contact.gd",
+      "category": "runtime",
+      "sha256": "0c5833af90c0a45436fbd582a567a4e5bb8593b65cf6cfb51b4e13581faad114",
+      "lf_sha256": "79521a65b2e91b2e561c3fee047cba1495f16a685a15c9eef3d0f003f9ce87bd"
+    },
+    {
+      "path": "src/secondary_skin_contact.gd",
+      "category": "runtime",
+      "sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13",
+      "lf_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "category": "runtime",
+      "sha256": "8cdbab61c0c33eece443d4257191a070133616245b681c6249141d3d6d0b0a87",
+      "lf_sha256": "dbf29692ab47d7bd68c7f394949b1066504b1f3921845280d9f42acdb170998d"
+    },
+    {
+      "path": "src/scene_voxel_runtime.gd",
+      "category": "runtime",
+      "sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a",
+      "lf_sha256": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a"
+    },
+    {
+      "path": "src/generated_secondary_motion.gd",
+      "category": "runtime",
+      "sha256": "c151f76afea65b22d33693deb6d0b6e58ba8219bb3d30df64e1ad0a6460643cb",
+      "lf_sha256": "c151f76afea65b22d33693deb6d0b6e58ba8219bb3d30df64e1ad0a6460643cb"
+    },
+    {
+      "path": "src/generated_secondary_editor.gd",
+      "category": "runtime",
+      "sha256": "a9f5d8c85ae163b8d030d92fdd3784b443f0776a3c03b25e4ae8e8ad376c6d4d",
+      "lf_sha256": "a9f5d8c85ae163b8d030d92fdd3784b443f0776a3c03b25e4ae8e8ad376c6d4d"
+    },
+    {
+      "path": "src/reconstructed_rest_view.gd",
+      "category": "runtime",
+      "sha256": "472338479adb4eafda388f0ecc223436f525a86eaffbc7555bf5efa5690fa8ee",
+      "lf_sha256": "472338479adb4eafda388f0ecc223436f525a86eaffbc7555bf5efa5690fa8ee"
+    },
+    {
+      "path": "src/scene3d.gd",
+      "category": "runtime",
+      "sha256": "e33efd728f90cc0c0c5b9a10b41c6de093b09a66947bd69c268931db6a861819",
+      "lf_sha256": "ac39488de081eeaf4d0dfd6d39b2fce6914587ec89c0597a766673df0a3f8906"
+    },
+    {
+      "path": "src/pose_thumbnail.gd",
+      "category": "runtime",
+      "sha256": "2b363f5a5c0b43fab785f3e9150bfdf5c2fc8a71a5cc1add354b5b26001a9016",
+      "lf_sha256": "2b363f5a5c0b43fab785f3e9150bfdf5c2fc8a71a5cc1add354b5b26001a9016"
+    }
+  ],
+  "main_integration_fix": "Canvas-first teardown: validate the canvas before pose redraw; preserve original830 predicates and add3dormant canvas-first closure assertions.",
+  "pending_helper_integration_revision": {
+    "baseline": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+    "source_packet": "experiments/local_wind_review/helper_pending_display_candidate_20261113",
+    "changed_runtime_rows": [
+      "src/app.gd",
+      "src/physics_editor.gd",
+      "src/pose_editor.gd",
+      "src/wind_review.gd"
+    ],
+    "unit_double_rows": [
+      "tests/wind_review_unit.gd",
+      "tests/wind_review_hooks_unit.gd",
+      "tests/wind_review_review_unit.gd"
+    ],
+    "unit_predicates": "Original 51/14/29 assertions preserved; coherent no-pending-preview doubles and real Review stop delegation only. Fresh headless result 94/0, all functional source identities unchanged.",
+    "scope": "Historical16-row Phase1 boundary retained. Pending-helper preview has its own verifier and evidence. app.gd retains original CRLF style."
+  },
+  "snapshot_launch_order_revision": {
+    "baseline": "1236796865e677b150a2d7e2add20f2aac5325fe",
+    "changed_row": "src/has_project.gd",
+    "scope": "Capture immutable snapshot before project worker creation, start own filesystem Thread afterward. Original16-row scope and all old94unit/845graphics predicates retained; separate32ordering unit and actual background-save tests cover new ordering/failure lifecycle. Precise originalWindows launch-error cause remains unknown."
+  },
+  "source_native_leaf_successor_provenance": "experiments/source_native_live_independent_review_20261115/manifest-successor-20261116/PROVENANCE.json",
+  "neon_redesign_runtime_successor_provenance": "experiments/neon_redesign_review_20261116/SOURCE_PROOF.json",
+  "human_reference_integration_revision": {
+    "baseline": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+    "previous_manifest_sha256": "987fb4b717b084034c0f9c1801d63435b478aceebf6aef176a1a14ca0c8384b9",
+    "added_runtime_rows": [
+      "src/model.gd",
+      "src/import_basis.gd",
+      "src/import_basis_helpers.gd",
+      "src/import_basis_project.gd",
+      "tests/verify_wind_review.py"
+    ],
+    "changed_existing_rows": [
+      "src/app.gd",
+      "src/has_project.gd",
+      "src/pose_editor.gd",
+      "src/renderer.gd",
+      "src/secondary_spring.gd",
+      "src/wind_review.gd"
+    ],
+    "scope": "Six-foot intrinsic import basis, schema9 capability validation, and independently checked existing-joint helper preservation. Preserve all historical rows and metadata; old experiment packets are unchanged.",
+    "driver_scope": "Required basis/runtime dependency membership and exact SHA/LF pins; original assertion counts and all safety predicates retained. Wind membership now rejects duplicates and requires the exact named source set.",
+    "test_scope": "This source refresh claims manifest preflight only. Fresh CPU/GPU results must be recorded separately; no historical PASS is reassigned to this successor."
+  },
+  "reference_body_recording_revision": {
+    "baseline": "ab62adff5f6961d8605f15c79a01a0215c9c5425",
+    "source_commit": "0329c4ff9876486e6f437e8c86402308ca5be4d7",
+    "previous_manifest_sha256": "d6c934a4a9c09736739703d322ced6e16b6799f1bd3af2e0a06f378336884b40",
+    "changed_row": "src/physics_recording.gd",
+    "old_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+    "new_sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+    "review": "Functional successor, not EOL drift. Exact held affine world frame outside C*B0, destination-frame animated-parent compensation, representability/data/root/ancestor guards and lifecycle cleanup; fourteen other pre-existing function blocks and wind-start stop boundary remain exact. Independent review found only this one stale row; other20pins match exactly.",
+    "source_evidence": "experiments/reference_body_20261120/SCOPED_RESULTS.json",
+    "scope": "Refresh one reviewed runtime row only. Keep exact membership, duplicate/path/byte/EOL controls and94unit/845graphics predicates unchanged. This mapping supplies no inherited execution claim; fresh successor results are recorded separately."
+  },
+  "voxel_runtime_integration_revision": {
+    "source_commit": "96e5d50b63964c1782515a0c70d22a5f0ed59e9e",
+    "integration_commit": "38b39ec7a057ad6c8a0ec8aaf557574cb5ce5706",
+    "added_runtime_row": "src/scene_voxel_runtime.gd",
+    "changed_runtime_rows": [
+      "src/renderer.gd",
+      "src/scene_indirect_runtime.gd",
+      "src/scene_lighting_document.gd",
+      "src/scene_lighting_editor.gd"
+    ],
+    "scope": "Exact reviewed VoxelGI dependency and raw/LF leaf pins only. Existing membership, source-byte, lifecycle, native/refusal guards and assertion counts remain unchanged. This refresh supplies no inherited execution claim.",
+    "post_review_fix": "After34ac3f26, adopteda904913d complementary empty-contributor data-clear and visibility guard; only scene_voxel_runtime.gd leaf repinned. Prior38 and6 proofs remain historical; new6 binding/missing/drift controls are separately recorded. No inherited primary graphics PASS."
+  },
+  "generated_secondary_integration_revision": {
+    "source_commit": "a43beca451bd332f967a427bed4f78a5aa102dd6",
+    "integration_commit": "e79f7989380390362ee8ec59d51e43bfe0312c69",
+    "added_runtime_rows": [
+      "src/generated_secondary_motion.gd",
+      "src/generated_secondary_editor.gd"
+    ],
+    "changed_existing_rows": [
+      "src/physics_editor.gd",
+      "src/secondary_spring.gd",
+      "src/wind_review.gd",
+      "src/secondary_skin_contact.gd"
+    ],
+    "scope": "Generated natural motion/editor dependencies via SecondarySpring and PhysicsEditor. Membership and exact raw/LF successor pins only; prior provenance, all other driver bytes, assertion counts, native/refusal and lifecycle checks preserved. This refresh supplies no inherited execution claim."
+  },
+  "reconstructed_rest_integration_20261121": {
+    "base": "7f1d85d7ea57a3bafd16e5be085e18609830c304",
+    "added_runtime_rows": [
+      "src/reconstructed_rest_view.gd",
+      "src/scene3d.gd",
+      "src/pose_thumbnail.gd"
+    ],
+    "changed_rows": [
+      "src/secondary_spring.gd",
+      "src/model.gd",
+      "tests/verify_wind_review.py",
+      "src/world_selection.gd"
+    ],
+    "scope": "Explicit rest/flexible mesh selection and auxiliary importer/thumbnail dependencies; helper reconstruction backend included. Membership/pins only, unchanged assertions/refusals/lifecycle checks and historical provenance; no inherited execution credit."
+  }
+}

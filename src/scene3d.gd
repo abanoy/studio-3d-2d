@@ -152,6 +152,9 @@ static func load_glb(path: String) -> Dictionary:
 		var skeleton: Skeleton3D=source_skeletons[item.skeleton].get_godot_skeleton()
 		if skeleton.find_bone(item.resource_name)>=0:source_bones[i]=str(scene.get_path_to(skeleton))+"::"+item.resource_name
 	scene.set_meta("has_source_bones",source_bones)
+	var rest_views:=preload("res://src/reconstructed_rest_view.gd").attach(data,bytes,state,scene)
+	if rest_views.has("error"):
+		scene.free();return {"error":rest_views.error}
 	var asset=data.get("asset",{})
 	if asset is Dictionary and asset.get("extras",{}) is Dictionary:
 		scene.set_meta(preload("res://src/joint_constraints.gd").META,asset.get("extras",{}).get("studio_ik_constraints",{}))

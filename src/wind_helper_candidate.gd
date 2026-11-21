@@ -276,8 +276,8 @@ static func catalogue(candidate: RefCounted,operations: Array,old_count: int,sha
 		if not operation is Dictionary or not operation.get("operation_id") is String or operation.operation_id.length()!=64 or not operation.operation_id.is_valid_hex_number(false) or ids.has(operation.operation_id) or not operation.get("candidate_helper_nodes") is Array or operation.candidate_helper_nodes.is_empty() or not operation.get("configured_source_nodes") is Array:return error("Invalid reviewed helper identity.")
 		ids[operation.operation_id]=true
 		var nodes: Array=[];var configured:={}
-		if not operation.get("mode") in ["existing_joints","weighted"]:return error("Invalid reviewed helper mode.")
-		if operation.mode=="weighted" and not operation.configured_source_nodes.is_empty() or operation.mode=="existing_joints" and operation.configured_source_nodes.is_empty():return error("Invalid reviewed existing-joint identity.")
+		if not operation.get("mode") in ["existing_joints","weighted","reconstructed_weights"]:return error("Invalid reviewed helper mode.")
+		if operation.mode in ["weighted","reconstructed_weights"] and not operation.configured_source_nodes.is_empty() or operation.mode=="existing_joints" and operation.configured_source_nodes.is_empty():return error("Invalid reviewed existing-joint identity.")
 		for index in operation.configured_source_nodes:
 			if not whole(index,old_count) or configured.has(int(index)):return error("Invalid or repeated original joint identity.")
 			configured[int(index)]=true;nodes.append(int(index))
@@ -288,9 +288,15 @@ static func catalogue(candidate: RefCounted,operations: Array,old_count: int,sha
 		for i in definition.get("chains",[]).size():
 			var actual: Array=[]
 			for joint in definition.chains[i].joints:actual.append(int(joint.binding.source_node))
-			if actual==nodes:matching.append(i)
-		if matching.size()!=1 or selected.has(matching[0]):return error("A reviewed setup does not identify one actual candidate chain.")
-		selected[matching[0]]=true;chains_by_operation[operation.operation_id]=matching[0]
+			if actual==nodes or operation.mode=="reconstructed_weights" and not actual.is_empty() and actual.all(func(node):return node in nodes):matching.append(i)
+		if matching.is_empty() or operation.mode!="reconstructed_weights" and matching.size()!=1:return error("A reviewed setup does not identify its actual candidate chains.")
+		var partition: Array=[]
+		for index in matching:
+			if selected.has(index):return error("Reviewed setups share a candidate chain.")
+			selected[index]=true
+			for joint in definition.chains[index].joints:partition.append(int(joint.binding.source_node))
+		if partition!=nodes:return error("Reviewed guide nodes do not partition the actual candidate chains.")
+		chains_by_operation[operation.operation_id]=matching
 	var parents:=Groups.parents(candidate);var linked:=Groups.vertex_links(candidate,definition.chains,parents)
 	var links: Array=linked.get("links",[]);var notice:=""
 	if not linked.get("error","").is_empty():
@@ -301,7 +307,7 @@ static func catalogue(candidate: RefCounted,operations: Array,old_count: int,sha
 	var checked: Array=[];var by_operation:={}
 	for group in result.groups:
 		for operation in chains_by_operation:
-			if chains_by_operation[operation] in group.chain_indices:
+			if chains_by_operation[operation].any(func(index):return index in group.chain_indices):
 				by_operation[operation]=group.id
 				if not group.id in checked:checked.append(group.id)
 	if by_operation.size()!=operations.size():return error("A checked helper setup has no actual motion group.")

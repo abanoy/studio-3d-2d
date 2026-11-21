@@ -1,0 +1,35 @@
+{
+  "original": {
+    "file": "verification.json",
+    "bytes": 768,
+    "sha256": "7dc2aa0e42fc12367af4b045b61e15fba6027e08db40874cf6d0ce18254e697c"
+  },
+  "scope": "Earlier separate8-control proxy run; same8 also repeated inside authoritative public36. Not additive unique coverage.",
+  "result": {
+    "status": "PASS",
+    "cases": [
+      {
+        "name": "unit",
+        "status": "PASS",
+        "checks": 8,
+        "desktop_created": false,
+        "worker_exit": 0,
+        "worker_reaped": true,
+        "worker_handle_closed": true,
+        "accounting": {
+          "active": 0,
+          "total": 3,
+          "terminated_by_limit": 0
+        },
+        "job_closed": true,
+        "report": {
+          "checks": 8,
+          "failures": 0,
+          "graphics_used": false
+        }
+      }
+    ],
+    "source_preservation_failures": [],
+    "environment_preserved": true
+  }
+}

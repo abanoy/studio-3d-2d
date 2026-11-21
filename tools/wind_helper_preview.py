@@ -11,6 +11,7 @@ import json
 import math
 import os
 import stat
+import struct
 import uuid
 
 import secondary_helpers_batch as batch
@@ -184,6 +185,42 @@ def operation_map(plan, result, before, after):
             region = report.get('region', {})
             if [region.get(k) for k in ('node', 'primitive', 'component')] != [operation['request'].get(k) for k in ('node', 'primitive', 'component')]: continue
             rebased = copy.deepcopy(operation['request']); rebased['source_sha256'] = report.get('source_sha256')
+            if operation['mode']=='reconstructed_weights':
+                import secondary_reconstruction as reconstruction
+                recipe=reconstruction.recipe(rebased)
+                prefix='__HAS_Loose_Rebuilt_'+hashlib.sha256(json.dumps(recipe,sort_keys=True).encode()).hexdigest()[:12]
+                checked_recipe=copy.deepcopy(recipe);checked_recipe['source_sha256']=before.sha
+                geometry=reconstruction.prepare(before.source,checked_recipe)
+                nodes=report.get('helper_nodes',[]);chains=report.get('guide_chains',[])
+                if report.get('mode')!='reconstructed_weights' or report.get('guide_prefix')!=prefix or len(nodes)!=expected['added_nodes']:continue
+                if encoded(report.get('points_in_anchor'))!=encoded(expected['points_in_anchor']):continue
+                if not chains or len(chains)!=expected['added_chains'] or len(set(nodes))!=len(nodes):continue
+                if any(type(n) is not int or not len(before.doc['nodes'])<=n<len(after.doc['nodes']) for n in nodes):continue
+                if [joint['node'] for chain in chains for joint in chain['joints']]!=nodes:continue
+                valid=True;guide_nodes={};cursor=0;actual_parents=parents(after.doc['nodes'])
+                for anchor in geometry['anchors']:
+                    guide_nodes[anchor]=nodes[cursor:cursor+geometry['segments']+1];cursor+=geometry['segments']+1
+                    data=next(data for _item,data,_selected,_summary in geometry['views'] if anchor in data[3]['joints'])
+                    joints=data[3]['joints'];change=batch.helpers.multiply(data[7][joints.index(anchor)],reconstruction.inverse(data[7][joints.index(geometry['reference'])]))
+                    points=[batch.helpers.point(change,p) for p in geometry['controls']]
+                    for i,node in enumerate(guide_nodes[anchor]):
+                        expected_node={'name':prefix+'_'+str(anchor)+'_'+str(i),'translation':[points[i][k]-(points[i-1][k] if i else 0) for k in range(3)]}
+                        if i+1<len(points):expected_node['children']=[guide_nodes[anchor][i+1]]
+                        if after.doc['nodes'][node]!=expected_node or actual_parents.get(node)!=(anchor if i==0 else guide_nodes[anchor][i-1]):valid=False
+                    for _item,skin_data,_selected,_summary in geometry['views']:
+                        if anchor not in skin_data[3]['joints']:continue
+                        target_skin=after.doc['skins'][skin_data[0]['skin']];actual_binds=after.accessor(target_skin['inverseBindMatrices'],'MAT4')
+                        original_bind=skin_data[7][skin_data[3]['joints'].index(anchor)]
+                        for point,node in zip(points,guide_nodes[anchor]):
+                            expected_bind=batch.helpers.multiply(batch.helpers.translation([-v for v in point]),original_bind)
+                            expected_bind=tuple(struct.unpack('<16f',struct.pack('<16f',*expected_bind)))
+                            if node not in target_skin['joints'] or actual_binds[target_skin['joints'].index(node)]!=expected_bind:valid=False
+                for chain in chains:
+                    if chain.get('name')!=prefix+'_'+str(chain.get('center')) or after.springs().count(chain)!=1:valid=False;break
+                    for i,joint in enumerate(chain['joints']):
+                        if after.doc['nodes'][joint['node']].get('name')!=chain['name']+'_'+str(i):valid=False;break
+                if valid:found.append(report)
+                continue
             prefix = ('__HAS_Existing_' if operation['mode'] == 'existing_joints' else '__HAS_Loose_') + hashlib.sha256(json.dumps(rebased, sort_keys=True).encode()).hexdigest()[:12]
             nodes = report.get('helper_nodes')
             if not isinstance(nodes, list) or not nodes or any(type(n) is not int or not len(before.doc['nodes']) <= n < len(after.doc['nodes']) for n in nodes): continue
