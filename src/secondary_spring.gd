@@ -7,6 +7,7 @@ const IK=preload("res://src/limb_ik.gd")
 const BodyColliders=preload("res://src/secondary_body_colliders.gd")
 const SegmentContact=preload("res://src/secondary_segment_contact.gd")
 const SkinContact=preload("res://src/secondary_skin_contact.gd")
+const GeneratedMotion=preload("res://src/generated_secondary_motion.gd")
 var actor: RefCounted
 var host: Node3D
 var chains: Array=[]
@@ -15,12 +16,26 @@ var error:=""
 var contact_info: Dictionary={}
 var skin_contact: RefCounted
 var defer_skin_contact:=false
+var preview_context: Dictionary={}
+var preview_definition: Dictionary={}
 
-static func construct(rig: RefCounted,private_definition: Dictionary={},host_owner: Node=null) -> Dictionary:
+static func construct(rig: RefCounted,private_definition: Dictionary={},host_owner: Node=null,generated_context: Dictionary={}) -> Dictionary:
 	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{}) if private_definition.is_empty() else private_definition
 	if not definition.get("error","").is_empty():return {"error":definition.error}
 	if definition.get("chains",[]).is_empty():return {"error":"This model has no declared secondary chains."}
+	var tuning: Dictionary=rig.data
+	var generated: bool=private_definition.is_empty() and definition.get("source_family","")=="HAS"
+	if not generated_context.is_empty():
+		if private_definition.is_empty():return {"error":"Generated preview tuning needs checked, filtered groups."}
+		var issue: String=GeneratedMotion.preview_error(generated_context,rig,definition)
+		if not issue.is_empty():return {"error":issue}
+		tuning=generated_context.policy;generated=true
+	if generated:
+		var mode: Dictionary=GeneratedMotion.setting(tuning)
+		if mode.has("error"):return mode
+	var natural: bool=generated and GeneratedMotion.natural(tuning,definition)
 	var runner=new();runner.actor=rig;runner.host=Node3D.new();runner.host.name="SecondaryMotionScratch"
+	if not generated_context.is_empty():runner.preview_context=generated_context.duplicate(true);runner.preview_definition=definition
 	# Generated HAS helpers intentionally contain no imported collider records.
 	# Supply bounded runtime body envelopes without rewriting that provenance.
 	if private_definition.is_empty() and definition.get("source_family","")=="HAS" and definition.get("colliders",[]).is_empty():
@@ -76,8 +91,12 @@ static func construct(rig: RefCounted,private_definition: Dictionary={},host_own
 			center=Node3D.new();runner.host.add_child(center);center.global_transform=Definition.binding_transform(rig,source.center)
 			spring.set_center_from(0,SpringBoneSimulator3D.CENTER_FROM_NODE);spring.set_center_node(0,spring.get_path_to(center))
 		var scale: float=poses[0].basis.get_scale().x
+		var chain_natural: bool=natural
+		for id in ids:
+			if GeneratedMotion.core(tuning,rig.bones[id].name):chain_natural=false
+		var first_flexible: bool=chain_natural and GeneratedMotion.flexible_first(tuning,rig.bones[ids[0]].name,int(source.joints[0].binding.get("source_node",-1)))
 		for j in range(spring.get_joint_count(0)):
-			var config: Dictionary=source.joints[mini(j,source.joints.size()-1)]
+			var config: Dictionary=GeneratedMotion.values(source.joints[mini(j,source.joints.size()-1)],chain_natural,j,first_flexible)
 			spring.set_joint_stiffness(0,j,config.stiffness);spring.set_joint_drag(0,j,config.drag);spring.set_joint_radius(0,j,config.radius*scale)
 			var gravity_direction:=Vector3(config.gravity_direction[0],config.gravity_direction[1],config.gravity_direction[2])
 			spring.set_joint_gravity(0,j,config.gravity if gravity_direction.length_squared()>0 else 0)
@@ -87,7 +106,7 @@ static func construct(rig: RefCounted,private_definition: Dictionary={},host_own
 		for ci in source.colliders:
 			var c: Dictionary=runner.colliders[ci];var copy: Node3D=c.node.duplicate();spring.add_child(copy);collision_nodes.append({"definition":c.definition,"node":copy})
 		spring.set_enable_all_child_collisions(0,true)
-		runner.chains.append({"source":source,"scratch":scratch,"spring":spring,"ids":ids,"parent":parent,"center":center,"colliders":collision_nodes})
+		runner.chains.append({"source":source,"scratch":scratch,"spring":spring,"ids":ids,"parent":parent,"center":center,"colliders":collision_nodes,"natural_gravity":chain_natural,"natural_start":0 if first_flexible else 1,"world_airflow":generated})
 	for c in runner.colliders:c.node.free()
 	runner.colliders.clear()
 	if not runner.error.is_empty():runner.dispose();return {"error":runner.error}
@@ -133,6 +152,9 @@ func update_colliders() -> void:
 
 func step(delta: float,wind: Vector3,forces: Array=[]) -> Dictionary:
 	if not is_instance_valid(host) or not is_instance_valid(actor.root) or not actor.root.is_inside_tree():return {"error":"Secondary runner is no longer attached to a model."}
+	if not preview_context.is_empty():
+		var issue: String=GeneratedMotion.preview_error(preview_context,actor,preview_definition)
+		if not issue.is_empty():return {"error":issue}
 	if not is_finite(delta) or delta<=0 or delta>1.0/60 or not wind.is_finite():return {"error":"Secondary runner needs bounded fixed steps and finite wind."}
 	update_colliders()
 	var result: Dictionary={}
@@ -147,8 +169,15 @@ func step(delta: float,wind: Vector3,forces: Array=[]) -> Dictionary:
 			var world: Transform3D=actor.bone_transform(chain.ids[i]);var current:=Transform3D(world.basis.orthonormalized(),world.origin)
 			sk.set_bone_pose(i+1,previous.affine_inverse()*current);previous=current
 		if chain.center:chain.center.global_transform=Definition.binding_transform(actor,chain.source.center)
+		if chain.get("natural_gravity",false):
+			# The engine integrates tails in the chosen center frame. Imported
+			# attachment axes need not point up. Keep this explicit preset world-down
+			# as that center moves; original declarations/configuration stay intact.
+			var down: Vector3=chain.center.global_basis.orthonormalized().inverse()*Vector3.DOWN if chain.center else Vector3.DOWN
+			for joint in range(int(chain.get("natural_start",1)),chain.spring.get_joint_count(0)):chain.spring.set_joint_gravity_direction(0,joint,down)
 		var force: Vector3=forces[chain_index] if chain_index<forces.size() else wind
 		if not force.is_finite():return {"error":"Invalid local airflow."}
+		if chain.get("world_airflow",false) and chain.center:force=chain.center.global_basis.orthonormalized().inverse()*force
 		chain.spring.external_force=force;chain_index+=1
 		var captured: Array[Transform3D]=[]
 		var callback:=func():
@@ -183,6 +212,7 @@ func constrain_pose(value: Dictionary,include_skin: bool=true) -> Dictionary:
 	return guarded
 
 func dispose() -> void:
+	preview_context.clear();preview_definition={}
 	if skin_contact:skin_contact.dispose();skin_contact=null
 	chains.clear()
 	for collider in colliders:
