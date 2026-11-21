@@ -22,6 +22,7 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, str(OVERLAY / "tools"))
 sys.path.insert(1, str(OVERLAY / "tests"))
 import source_appearance as A
+import source_native_normal_export as N
 import prepare_source as P
 import source_choice_io as IO
 from test_source_mdl_choices import fixture
@@ -323,7 +324,8 @@ class WorkerAndSourceSeams(AuthoredCase):
             fake_skins.set_model_skin = lambda actor, skin: skin_calls.append(skin)
             node = next(n for n in ast.parse(source).body if isinstance(n, ast.FunctionDef) and n.name == "load_model")
             ns = {"import_model": lambda *args: value, "TinyPath": str, "cm": None, "model_options": lambda scale: scale,
-                  "SteamAppId": types.SimpleNamespace(GARRYS_MOD=0), "put_into_collections": lambda *args: None, "Path": Path, "source_appearance": A}
+                  "SteamAppId": types.SimpleNamespace(GARRYS_MOD=0), "put_into_collections": lambda *args: None, "Path": Path, "source_appearance": A,
+                  "source_native_normal_export": N, "native_normal_workflow": None, "request": {}}
             exec(compile(ast.Module(body=[node], type_ignores=[]), label, "exec"), ns)
             with mock.patch.dict(sys.modules, {module_name: fake_skins}):
                 ns["load_model"]("test.mdl", object(), .01905, parent="prop-parent", skin=2)
@@ -337,7 +339,8 @@ class WorkerAndSourceSeams(AuthoredCase):
         fake_skins = types.ModuleType(module_name); fake_skins.set_model_skin = mock.Mock()
         node = next(n for n in ast.parse(path.read_text(encoding="utf-8")).body if isinstance(n, ast.FunctionDef) and n.name == "load_model")
         ns = {"import_model": lambda *args: value, "TinyPath": str, "cm": None, "model_options": lambda scale: scale,
-              "SteamAppId": types.SimpleNamespace(GARRYS_MOD=0), "put_into_collections": lambda *args: None, "Path": Path, "source_appearance": A}
+              "SteamAppId": types.SimpleNamespace(GARRYS_MOD=0), "put_into_collections": lambda *args: None, "Path": Path, "source_appearance": A,
+                  "source_native_normal_export": N, "native_normal_workflow": None, "request": {}}
         exec(compile(ast.Module(body=[node], type_ignores=[]), str(path), "exec"), ns)
         with mock.patch.dict(sys.modules, {module_name: fake_skins}):
             ns["load_model"]("authored.mdl", object(), .01905, appearance=request(2, {"1": 1}))
@@ -368,7 +371,7 @@ def main():
         "source_appearance.py", "source_mdl_choices.py", "source_choice_io.py",
         "source_jiggle_values.py", "source_jiggle_metadata.py", "source_mdl_snapshot.py",
         "source_jiggle_crosswalk.py", "source_bone_metadata.py", "source_bone_export.py",
-        "prepare_source.py", "blender_source_bridge.py", "asset_audit.py",
+        "prepare_source.py", "blender_source_bridge.py", "source_native_normal_export.py", "asset_audit.py",
         "source_archive.py", "source_content.py", "source_case.py", "source_paths.py",
         "source_installation.py", "source_texture.py", "source_eyes.py", "source_lights.py", "source_lightmaps.py")]
     protected += [OVERLAY / "tests/test_source_appearance.py", OVERLAY / "tests/test_source_mdl_choices.py"]
