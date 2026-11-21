@@ -7,6 +7,11 @@ const Bindings = preload("res://src/source_bone_bindings.gd")
 const Model = preload("res://src/model.gd")
 const Bounds = preload("res://src/pose_bounds.gd")
 const GLB_SHA := "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d"
+# Exact live bridge result db271160: native normals, actual69-bone/49-rule
+# final-SHA publication and private/source/runtime preservation all verified.
+const LIVE_GLB_SHA := "b8436dea1d13a7cb4632c37c50b4cab123616ec574720fe4e764b844c5293e71"
+const LIVE_CROSSWALK_PROOF_SHA := "fb677e1a5e196f964c3634abba009ff792e7af0ff6dda260abc2e3ee12dacc37"
+const LIVE_NATIVE_MDL_SHA := "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
 const WIRE_SHA := "34230c89c7cda4417a0f142b375f26fbb5cf15a7faf4d98b5424acd0bec621c2"
 const PREFIX_SHA := "945d7fd433ddba7f7e8f90cb1cb2c2e7d4c1e26005684ac4a330b23a3691a3fd"
 const SOURCE_SCALE := 0.01905
@@ -45,10 +50,32 @@ var _source_modified := 0
 var _source_length := 0
 var _source_header := PackedByteArray()
 
+static func _qualified_sha(value: Variant) -> bool:
+	if not value is String or value.length() != 64: return false
+	for character in value:
+		if not "0123456789abcdef".contains(character): return false
+	return true
+
+static func qualified_asset_data(data: Dictionary) -> bool:
+	var digest_value: Variant = data.get("sha256")
+	if not digest_value is String: return false
+	# Preserve the historical exact asset route; ordinary full admission follows.
+	if digest_value == GLB_SHA: return true
+	if not _qualified_sha(LIVE_GLB_SHA) or not _qualified_sha(LIVE_CROSSWALK_PROOF_SHA) or digest_value != LIVE_GLB_SHA: return false
+	var metadata: Variant = data.get("metadata",{})
+	if not metadata is Dictionary: return false
+	var report: Variant = metadata.get("native_parameters",{})
+	if not report is Dictionary: return false
+	var native: Variant = report.get("native_parameters",{})
+	if not native is Dictionary: return false
+	var crosswalk: Variant = native.get("source_export_crosswalk",{})
+	if not crosswalk is Dictionary: return false
+	return crosswalk.get("format") == "studio_source_bone_crosswalk_1" and crosswalk.get("status") == "retained_inert" and crosswalk.get("profile") == Bindings.PROFILE and crosswalk.get("native_mdl_sha256") == LIVE_NATIVE_MDL_SHA and crosswalk.get("glb_sha256") == LIVE_GLB_SHA and crosswalk.get("proof_sha256") == LIVE_CROSSWALK_PROOF_SHA and crosswalk.get("jiggle_wire_sha256") == WIRE_SHA
+
 static func offered(rig: RefCounted) -> bool:
 	# UI capability hint only. Full source hashing/binding validation happens at
 	# creation, never once per render/physics tick. Explicit helpers take priority.
-	if rig == null or not is_instance_valid(rig.root) or rig.data.get("sha256") != GLB_SHA: return false
+	if rig == null or not is_instance_valid(rig.root) or not qualified_asset_data(rig.data): return false
 	var secondary = rig.root.get_meta("has_secondary_rig",{})
 	if not secondary is Dictionary or not str(secondary.get("error","")).is_empty(): return false
 	var generic = secondary.get("chains",[])
@@ -64,7 +91,7 @@ static func offered(rig: RefCounted) -> bool:
 	if not crosswalk is Dictionary or not jiggle is Dictionary: return false
 	var bones = crosswalk.get("bones")
 	var rules = jiggle.get("rules")
-	return bones is Array and bones.size() == 69 and rules is Array and rules.size() == 49 and crosswalk.get("profile") == Bindings.PROFILE and crosswalk.get("glb_sha256") == GLB_SHA and crosswalk.get("jiggle_wire_sha256") == WIRE_SHA and jiggle.get("applied") is bool and jiggle.applied == false and jiggle.get("full_native_rule_layout_verified") is bool and jiggle.full_native_rule_layout_verified == false
+	return bones is Array and bones.size() == 69 and rules is Array and rules.size() == 49 and crosswalk.get("profile") == Bindings.PROFILE and crosswalk.get("glb_sha256") == rig.data.get("sha256") and crosswalk.get("jiggle_wire_sha256") == WIRE_SHA and jiggle.get("applied") is bool and jiggle.applied == false and jiggle.get("full_native_rule_layout_verified") is bool and jiggle.full_native_rule_layout_verified == false
 
 static func anchors(rig: RefCounted) -> Array:
 	if not offered(rig): return []
@@ -146,7 +173,7 @@ static func context_error(rig: RefCounted,sk: Skeleton3D) -> String:
 static func create(rig: RefCounted) -> Dictionary:
 	if not offered(rig): return {"error":"Imported hair motion is not qualified for this model. Use the loose-part setup instead."}
 	var bound: RefCounted = Bindings.resolve(rig)
-	if bound.status != "bound_inactive" or bound.bindings.size() != 69 or bound.rule_owner_ids.size() != 49 or bound.source_sha256 != GLB_SHA or bound.jiggle_wire_sha256 != WIRE_SHA: return {"error":"The imported hair bindings changed. Reopen the original model or use loose-part setup."}
+	if bound.status != "bound_inactive" or bound.bindings.size() != 69 or bound.rule_owner_ids.size() != 49 or bound.source_sha256 != rig.data.get("sha256") or bound.jiggle_wire_sha256 != WIRE_SHA: return {"error":"The imported hair bindings changed. Reopen the original model or use loose-part setup."}
 	var sk: Skeleton3D = bound.bindings[SELECTED_NATIVE].skeleton
 	var error := context_error(rig,sk)
 	if not error.is_empty(): return {"error":error}

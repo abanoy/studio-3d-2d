@@ -28,6 +28,9 @@ import source_appearance
 import source_jiggle_metadata
 import source_mdl_snapshot
 import source_bone_export
+# NEW candidate module; unknown native profiles keep the original import/export path.
+import source_native_normal_export
+native_normal_workflow = None
 from asset_audit import gma_index, AssetError
 from source_archive import resource_path, write_resource
 from source_texture import blender_rgba
@@ -244,14 +247,28 @@ def model_options(scale):
 
 
 def load_model(path, buffer, scale, parent=None, skin=0, appearance=None):
-    container = import_model(TinyPath(str(path)), buffer, cm, model_options(scale), SteamAppId.GARRYS_MOD)
+    global native_normal_workflow
+    def normal_sidecar(selected, suffix):
+        return CaseResolver(selected.parent).find(selected.with_suffix(suffix).name)
+    candidate_capture = globals().get('selected_mdl_capture')
+    if parent is None and Path(str(path)).suffix.lower() == '.mdl' and source_native_normal_export.eligible(request, candidate_capture):
+        if native_normal_workflow is not None:
+            raise ValueError('Known native NORMAL import may run only once')
+        native_normal_workflow = source_native_normal_export.prepare_import(
+            request, candidate_capture, bpy, cm, model_options(scale), Path(str(path)), normal_sidecar)
+        container = native_normal_workflow.container
+    else:
+        container = import_model(TinyPath(str(path)), buffer, cm, model_options(scale), SteamAppId.GARRYS_MOD)
     put_into_collections(container, Path(str(path)).stem)
     from SourceIO.blender_bindings.shared.skins import set_model_skin
     if appearance is not None:
         container.has_selected_appearance = source_appearance.apply(container, appearance, set_model_skin)
     else:
         # Preserve the original default and BSP-prop path byte-for-byte in meaning.
-        set_model_skin(container, skin)
+        if native_normal_workflow is not None and native_normal_workflow.container is container:
+            native_normal_workflow.apply_default_skin(container, skin, set_model_skin)
+        else:
+            set_model_skin(container, skin)
         active = set()
         for variants in container.bodygroups.values():
             if variants and variants[0] is not None:
@@ -484,20 +501,29 @@ for obj in bpy.context.scene.objects:
         exported.append(obj)
 if not any(o.type == "MESH" and len(o.data.polygons) for o in exported):
     raise ValueError("No renderable geometry imported")
-if crosswalk_observation is None:
-    bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", use_selection=True,
-                              export_animations=False, export_cameras=False, export_lights=True,
-                              export_extras=False, export_yup=True, export_image_format="AUTO")
+if native_normal_workflow is not None:
+    # editable.blend was saved above, before temporary carrier attributes.
+    # Standalone known MDL has no brush lightmap jobs; the legacy no-op tag
+    # rewrites GLB JSON, so it must not run after final checksum/bone binding.
+    if lightmap_jobs or lightmap_report['materials']:
+        raise ValueError('Known native NORMAL profile does not admit brush lightmap rewriting')
+    crosswalk_inspection, native_normal_report = native_normal_workflow.export_final(
+        out, crosswalk_observation, source_bone_export)
 else:
-    crosswalk_observation.export(bpy.ops.export_scene.gltf, {
-        "filepath": str(out / "scene.glb"), "export_format": "GLB", "use_selection": True,
-        "export_animations": False, "export_cameras": False, "export_lights": True,
-        "export_extras": False, "export_yup": True, "export_image_format": "AUTO"})
-tag_lightmap_glb(out / "scene.glb", lightmap_report["materials"])
-crosswalk_inspection = None
-if crosswalk_observation is not None or crosswalk_reason is not None:
-    crosswalk_inspection = {"observation": crosswalk_observation, "reason": crosswalk_reason,
-                            "observed": crosswalk_observation.complete(out / "scene.glb") if crosswalk_observation is not None else None}
+    if crosswalk_observation is None:
+        bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", use_selection=True,
+                                  export_animations=False, export_cameras=False, export_lights=True,
+                                  export_extras=False, export_yup=True, export_image_format="AUTO")
+    else:
+        crosswalk_observation.export(bpy.ops.export_scene.gltf, {
+            "filepath": str(out / "scene.glb"), "export_format": "GLB", "use_selection": True,
+            "export_animations": False, "export_cameras": False, "export_lights": True,
+            "export_extras": False, "export_yup": True, "export_image_format": "AUTO"})
+    tag_lightmap_glb(out / "scene.glb", lightmap_report["materials"])
+    crosswalk_inspection = None
+    if crosswalk_observation is not None or crosswalk_reason is not None:
+        crosswalk_inspection = {"observation": crosswalk_observation, "reason": crosswalk_reason,
+                                "observed": crosswalk_observation.complete(out / "scene.glb") if crosswalk_observation is not None else None}
 report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_source": request["original_source"],
           "source_file": source.name, "source_member": request.get("source_member"),
           "case_resolved_sidecars": request.get("case_resolved_sidecars", {}),
@@ -513,6 +539,8 @@ report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_
                      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"],
           "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images) + lightmap_report["atlases"],
                      "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE"), "static_lights": len(map_lights)}}
+if native_normal_workflow is not None:
+    report['native_normal_export'] = native_normal_report
 report = publish_parameters(report, selected_mdl_capture, jiggle_inspection, crosswalk_inspection)
 (out / "dependencies.json").write_text(json.dumps({"resolved": list(dependencies.values()), "missing_requests": sorted(missing)}, indent=2), encoding="utf-8")
 print("STUDIO_SOURCE_READY", json.dumps(report["counts"]), flush=True)
