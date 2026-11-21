@@ -7959,3 +7959,137 @@ Miku now has a separate zero-penetration graphical measurement but an adverse
 sharp root bend; retain both findings and refine before adopting it. Continue
 reviewed discovery/direct-light integration. Formal55/62 acceptance and its
 seven actual external prerequisites remain unchanged; no manual owner prompt.
+
+## 2026-11-21 — Isolated asset discovery worker
+
+Implemented a standalone discovery panel/demo on worker/asset-browser-20261121,
+based on independently checked GitHub main 2f1acbd. Local directory filename
+scanning/search/type filters work offline; Online is explicit opt-in metadata
+only. Public Poly Haven/Sketchfab adapters and a bounded Japanese BowlRoll RSS
+adapter coexist with clearly labelled browser-only Steam/SFMLab/BOOTH/VRoid
+entries. Query variations/aliases, evidence-based labels, source-page opening,
+100-item batch targets, ID/URL deduplication, cancellation/stale guards, request
+limits and 429 cooldown are implemented. No model/thumbnail downloads or imports
+occur in discovery. An optional separate Window wrapper provides the integration
+hook; app.gd, renderer.gd, model.gd, source_import.gd, world_runtime.gd,
+world_selection.gd, project.godot and the canonical suite were not edited.
+
+Actual final focused result: 80 Godot4.6 headless runtime checks PASS, including
+real viewport pointer events, local fixture enumeration, production controls,
+malformed metadata, partial-provider failure, cancellation and rate limiting.
+The initial truncated-RSS failure and pointer/reselection defects were corrected.
+Real HTTPRequest probe returned zero listings: all three hosts could not resolve
+in this restricted shell. Independent web research read current Poly Haven JSON;
+that is not a successful app fetch. Hidden graphical attempt was refused before
+Godot launch (Create private test desktop, Errno5); no visible fallback or GPU
+claim. Full suite/native artwork/import tests were not run for this separate
+increment. See docs/asset_discovery.md and docs/asset_discovery_sources.md for
+launch, exact hooks, current provider research and remaining limitations.
+
+## 2026-11-21 — Asset browser live follow-up
+
+Continued the preserved85d07df0 browser on worker/asset-browser-live-20261121,
+rebased onto current origin/main243e6a1e in the isolated browser checkout. No
+primary integration/renderer/model/import files changed. Added real loading
+activity, immediate website-search action, persistent browser-launch errors,
+plain BowlRoll HTML-versus-RSS feedback and ranking that promotes later exact
+hits above earlier broad matches while retaining existing relative order.
+
+Actual focused verification:88headless and100private-Windows-desktop controls,
+with six inspected layouts across Neon/Classic light/dark at1240x860/960x700.
+Host-network production HTTPRequest/UI returned100then200real mixed listings
+(76/24then152/48Poly Haven/Sketchfab);54English-name and21original-Japanese
+results. Real in-flight cancellation released the request. Cold start remains
+offline; source-page opening was intercepted, with no artwork/model downloads.
+BowlRoll historical RSS actually returns HTML; its website fallback is explicit.
+Steam/SFMLab/BOOTH/VRoid remain website-only. Initial DNS/private-desktop and
+layout-fixture failures remain recorded, not relabelled. No full-suite claim.
+See docs/asset_discovery.md and its safe benchmark JSON for integration/limits.
+
+
+## 2026-11-21 — Persistent discovery and guarded Studio integration
+
+Continued e1383a38 on worker/asset-browser-live-20261121. Personal JSON now
+retains selected directories, provider, independent Local/Online formats, tab
+and expansion across restart; network access, query, credentials and images
+are never saved. Bounded schema validation and temporary rename protect prior
+choices; corrupt settings show defaults/error without startup overwrite.
+Online known-format hints explicitly say inferred, and Unknown stays Unknown.
+
+Optional selected-item Poly Haven/Sketchfab thumbnails default off, with CDN
+allowlists, no redirects/accounts, byte/header dimension/time/rate/cache bounds,
+placeholder failures, 429 pause and cancellation. No model download was added.
+A separate Studio bridge plus two-line reviewable app patch adds Simple Add and
+Advanced Discover actions. It guards session/revision/sequence/selection changes,
+active operations and bundle_active, then defers to existing ImportActions.
+Tracked app.gd and all primary shared application files remain unchanged.
+
+Actual separate scopes: 21 generated-thumbnail/transport checks; 17 persistence
+controls across two fresh processes; real patched Studio 22/theme headless and
+23/theme on private Windows desktops, including synthetic GLB import and Undo;
+100 standalone private interaction/layout controls. Two Studio and six standalone
+layouts inspected, with owned private child/job/desktop closure and no foreground.
+Final actual provider probe retrieved 100 then 200 mixed listings, English and
+Japanese hits, a filtered MMD Sketchfab subset, one explicit public CDN image
+and real request cancellation. Safe exact counts are in the new benchmark JSON.
+Original 88/100 and 54/21 results remain historical, not one combined new batch.
+
+Fixed numeric-JSON tab validation, NUL validation literal and Windows fixture
+path comparison failures; no application tolerance weakened. No model/artwork
+binary was committed. Website-only provider, inferred-format and optional cache
+limits remain explicit. No full-suite, owner acceptance, merge or main push claim.
+See docs/asset_discovery.md, asset_discovery_integration.patch and the
+asset_discovery_persistence_integration_2026-11-21 safe benchmark.
+
+
+## 2026-11-21 — Discovery integrated in feature checkout
+
+The continuous goal remains active through publication and primary adoption.
+The feature branch now applies the two reviewed app.gd hooks: Simple Add → Asset
+discovery and Advanced Discover. Only this isolated app.gd changes (two added
+lines, original CRLF retained); other checkouts, installed Studio, Renderer,
+Model, SourceImport and world files remain untouched. The existing guarded
+bridge owns all import callbacks and preserves active operations/bundle queues.
+
+An explicit GLB geometry preview now uses a separate viewport/world/camera and
+orbit slider, without changing the Studio world or original file. Preview strips
+images/materials/animations/morphs/extras/extensions from an in-memory glTF copy,
+refuses external geometry buffers/required extensions/compression, and bounds
+file bytes, accessor/instanced geometry, hierarchy, buffers and joints. Other
+formats still use normal explicit import; no preview converter/network was added.
+
+Actual current focused execution:109 controls in one additions invocation:17
+preview,21thumbnail,17two-process persistence and27real integrated Studio per
+Neon/Classic on private Windows desktops. Preview captures visibly show the
+generated cube, and import/Undo follows preview through ordinary ImportActions.
+Normal main.tscn entry also starts headlessly/exit0 with recovery disabled for
+the startup smoke. Live current probe again retrieves100→200 mixed listings,
+55English/22Japanese/8MMD-filtered hits, a permitted thumbnail and cancellation.
+No unrelated full suite or owner acceptance. The initial int-inference compile
+error in new hierarchy validation was fixed before graphical launch. Source
+and safe counts: docs/benchmarks/asset_discovery_integrated_preview_2026-11-21.json.
+Publication/readback follows on this feature branch only, with no main merge,
+force push, installed update or private artwork publication.
+
+
+## 2026-11-21 — Discovery native-close leak fixed
+
+The post-publication goal audit found a real resource leak on browser close
+during a native HTTPRequest: nodes freed but Godot retained one resource at
+exit. The wrapper now hides/cancels immediately and allows pending service
+coroutines to unwind before destruction. Explicit local callbacks run only
+after close and still recheck scene/selection/operation context. Studio closing
+now refuses new/deferred imports and awaits bridge.finish before Tree quit.
+The exact shell integration is three added app.gd lines (two menu hooks plus
+one shutdown hook); Renderer/Model/SourceImport/world sources remain untouched.
+
+Actual native --close-live and --quit-live cases both observe a live native
+connection, then freed window/service/request with no ScriptError/ObjectDB leak/
+resources-still-in-use diagnostics. Focused111headless additions pass, including
+28Studio controls per theme, new closing refusal and scene-change-during-close
+controls. Earlier109private visual evidence is historical; Root owns the GPU
+slot, so no competing graphical run was started. Native probes fetch metadata
+only, with no model/image download. The initial close fixture WeakRef inference
+annotation failure was corrected before its actual run. Safe evidence is
+docs/benchmarks/asset_discovery_shutdown_2026-11-21.json. Updated feature-branch
+publication/readback follows; overall goal remains active for primary adoption.

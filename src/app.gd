@@ -3115,6 +3115,7 @@ func build_ui() -> void:
 		["Poseable model…", func(): pose_editor.import_dialog()],
 		["Character parts…", func(): character_parts_editor.open_folder()],
 		["Installed content…", func(): source_browser.open()],
+		["Asset discovery…", func(): get_node("AssetDiscoveryBridge").open()],
 		["Audio (WAV, MP3, Ogg)…", func(): choose_audio_at_playhead()]],
 		"Add a scene, a model, installed content or audio"))
 	header_spacer = Control.new()
@@ -3183,6 +3184,7 @@ func build_ui() -> void:
 	header_button(toolbar, "Add model", "figure", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment")
 	header_button(toolbar, "Add character", "figure", func(): character_parts_editor.open_folder(), "Load aligned model parts together under one character root")
 	header_button(toolbar, "Installed", "package", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts")
+	preload("res://src/discovery/studio_bridge.gd").install(self, toolbar)
 	header_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead")
 	header_button(toolbar,"Options","grid",show_project_options,"Project settings, including visibility fades. Saved with this HAS project.")
 	header_button(toolbar, "About", "help", show_notices, "Credits and open source notices")
@@ -5285,6 +5287,7 @@ var closing_studio:=false
 func quit_studio() -> void:
 	if closing_studio:return
 	closing_studio=true
+	if has_node("AssetDiscoveryBridge"):await get_node("AssetDiscoveryBridge").finish()
 	if tutorials and tutorials.active:tutorials.save_resume()
 	if sequence_editor:await sequence_editor.finish()
 	get_tree().quit()

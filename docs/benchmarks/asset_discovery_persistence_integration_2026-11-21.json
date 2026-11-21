@@ -1,0 +1,523 @@
+{
+  "date": "2026-11-21",
+  "continues": "e1383a3812d3d1efca09433fc644d6fcecf32a6a",
+  "branch": "worker/asset-browser-live-20261121",
+  "base_application": "243e6a1edf1aee5cd07f107a34775db49a2caa01",
+  "scopes": {
+    "latest_thumbnail_and_persistence": {
+      "cases": {
+        "thumbnails": {
+          "checks": 21,
+          "failures": [],
+          "scope": "Generated image buffers and injected image transport; no live artwork downloaded."
+        },
+        "write": {
+          "checks": 4,
+          "failures": [],
+          "phase": "write"
+        },
+        "read": {
+          "checks": 13,
+          "failures": [],
+          "phase": "read"
+        }
+      },
+      "checks": 38,
+      "failures": []
+    },
+    "patched_studio_private": {
+      "neon": {
+        "checks": 23,
+        "display_driver": "Windows",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "neon"
+      },
+      "classic": {
+        "checks": 23,
+        "display_driver": "Windows",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "classic"
+      }
+    },
+    "standalone_private": {
+      "browser_opens_intercepted": 3,
+      "checks": 100,
+      "display_driver": "Windows",
+      "failures": [],
+      "requests": 24,
+      "scope": "Production UI, filesystem scan and metadata fixtures; rendered layout captures only when graphical. No live-provider or native-model appearance claim."
+    },
+    "live_provider_ui_and_optional_image": {
+      "cancel": {
+        "http_released": true,
+        "loading": false,
+        "message": "Cancelled. Partial results are kept; Search retries this query.",
+        "request_existed": true
+      },
+      "cold_start_offline": true,
+      "failures": [],
+      "initial": {
+        "listings": 100,
+        "message": "100 listings loaded (100 new; target about 100). More metadata is available.\nBowlRoll: BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+        "queries": [
+          "Sketchfab: discovery feed"
+        ],
+        "samples": [
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "2nd 3d2",
+            "url": "https://sketchfab.com/3d-models/none-bd5d179db1a6410f829b28cee38a2041"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "8686",
+            "url": "https://sketchfab.com/3d-models/none-18734475ae6244f2a4626c5c1b2d2757"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "38558",
+            "url": "https://sketchfab.com/3d-models/none-415fe26b3e794b15a1613a43e42365c0"
+          },
+          {
+            "access": [
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "polyhaven",
+            "title": "Adjustable Wrench",
+            "url": "https://polyhaven.com/a/adjustable_wrench"
+          },
+          {
+            "access": [
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "polyhaven",
+            "title": "Alarm Clock 01",
+            "url": "https://polyhaven.com/a/alarm_clock_01"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Alex",
+            "url": "https://sketchfab.com/3d-models/none-3620a5d4ebb845be981934306545f420"
+          }
+        ],
+        "sources": {
+          "polyhaven": 76,
+          "sketchfab": 24
+        },
+        "statuses": {
+          "booth": "Japanese/English marketplace search; no verified public catalogue API. Listings can be paid or require login; check each page.",
+          "bowlroll": "BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+          "polyhaven": "522 metadata entries. ",
+          "sfmlab": "Terms restrict scraping; Anubis protection observed. Search in your browser. API catalogue access has not been established.",
+          "sketchfab": "24 metadata entries. ",
+          "steam_gmod": "Official QueryFiles API needs a key. Access and retrieval depend on the app/item; check its source page.",
+          "steam_sfm": "Official QueryFiles API needs a key. Open website search; no scraping, subscriptions or ownership assumptions.",
+          "vroid": "Japanese/English VRM directory. API needs registered application/OAuth. Public preview does not prove download permission."
+        },
+        "unique_ids": 100
+      },
+      "japanese_search": {
+        "listings": 22,
+        "message": "22 listings loaded (22 new; target about 100). No more results from the available sources. Website-only sources are not counted.",
+        "queries": [
+          "Sketchfab: 初音ミク",
+          "Sketchfab: 初音ミク"
+        ],
+        "samples": [
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "初音ミク",
+            "url": "https://sketchfab.com/3d-models/none-19ca79ea15e3466081296c1f4208526c"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "初音ミク",
+            "url": "https://sketchfab.com/3d-models/none-3d0285f40c1a44628c7035a284c6a616"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "初音ミク",
+            "url": "https://sketchfab.com/3d-models/none-286c7808f4d146b2b0009b363505b617"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "初音ミク",
+            "url": "https://sketchfab.com/3d-models/none-31099f179c934306b05077879dfb992c"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Hatsune Miku Fanart - 初音ミク ファンアート",
+            "url": "https://sketchfab.com/3d-models/none-c59476da354b4260ab6694a0ba0519d2"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [
+              "MMD"
+            ],
+            "source": "sketchfab",
+            "title": "Miku Hatsune / Wasabi式初音ミク",
+            "url": "https://sketchfab.com/3d-models/none-8c57c4b6314e40e2a70b474d721c2735"
+          }
+        ],
+        "sources": {
+          "sketchfab": 22
+        },
+        "statuses": {
+          "sketchfab": "16 metadata entries. "
+        },
+        "unique_ids": 22
+      },
+      "mmd_filter": {
+        "listings": 8,
+        "message": "8 listings loaded (8 new; target about 100). More metadata is available.",
+        "queries": [
+          "Sketchfab: Hatsune Miku",
+          "Sketchfab: hatsune miku",
+          "Sketchfab: miku hatsune",
+          "Sketchfab: 初音ミク",
+          "Sketchfab: 初音未来"
+        ],
+        "samples": [
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [
+              "MMD"
+            ],
+            "source": "sketchfab",
+            "title": "Hatsune Miku V4Xβ",
+            "url": "https://sketchfab.com/3d-models/none-7d911ffbee3a4184b0fb9753eba4675c"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [
+              "MMD"
+            ],
+            "source": "sketchfab",
+            "title": "ボーカロイド 初音ミク／VOCALOID HATSUNE MIKU（二次創作）",
+            "url": "https://sketchfab.com/3d-models/none-757c8a68c0a9405bb8045055fedefe12"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [
+              "MMD"
+            ],
+            "source": "sketchfab",
+            "title": "Miku Hatsune - Volcaloid - 3D Printable Model",
+            "url": "https://sketchfab.com/3d-models/none-c8d4a53d4c924901bca8f22a2f6f1abc"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [
+              "MMD"
+            ],
+            "source": "sketchfab",
+            "title": "Miku Hatsune / Wasabi式初音ミク",
+            "url": "https://sketchfab.com/3d-models/none-8c57c4b6314e40e2a70b474d721c2735"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [
+              "MMD"
+            ],
+            "source": "sketchfab",
+            "title": "Miku Hatsune Race TDA",
+            "url": "https://sketchfab.com/3d-models/none-4a41d2cdbc23404885d8ebcc9c9bd6f1"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [
+              "MMD"
+            ],
+            "source": "sketchfab",
+            "title": "Miku Hatsune rig",
+            "url": "https://sketchfab.com/3d-models/none-a393a4f3613143f09834705eb6a61d31"
+          }
+        ],
+        "sources": {
+          "sketchfab": 8
+        },
+        "statuses": {
+          "sketchfab": "3 metadata entries. "
+        },
+        "unique_ids": 8
+      },
+      "name_search": {
+        "listings": 55,
+        "message": "55 listings loaded (55 new; target about 100). More metadata is available.",
+        "queries": [
+          "Sketchfab: Hatsune Miku",
+          "Sketchfab: hatsune miku",
+          "Sketchfab: miku hatsune",
+          "Sketchfab: 初音ミク",
+          "Sketchfab: 初音未来"
+        ],
+        "samples": [
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Hatsune Miku",
+            "url": "https://sketchfab.com/3d-models/none-dfae2c6fc8e54c7c832708c40db55be3"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Hatsune Miku",
+            "url": "https://sketchfab.com/3d-models/none-70a7b23a5e2b4abe8c84f393fa51f4b5"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Hatsune Miku",
+            "url": "https://sketchfab.com/3d-models/none-413dffcb80ef4bf789d637c207b950a9"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Hatsune Miku",
+            "url": "https://sketchfab.com/3d-models/none-ee8ad20e5dbe4353883e483b314f7995"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Hatsune Miku",
+            "url": "https://sketchfab.com/3d-models/none-34f3e7daa4c64c8a8000ae7f90b01ceb"
+          },
+          {
+            "access": [
+              "Preview",
+              "Downloadable"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Hatsune Miku",
+            "url": "https://sketchfab.com/3d-models/none-a25f6548a8684500ac0004559484a4f9"
+          }
+        ],
+        "sources": {
+          "sketchfab": 55
+        },
+        "statuses": {
+          "sketchfab": "3 metadata entries. "
+        },
+        "unique_ids": 55
+      },
+      "scope": "Actual metadata/UI and one explicitly enabled public CDN thumbnail; browser opening intercepted. No model download, native appearance or ownership claim. Provider availability is an observation.",
+      "second_batch": {
+        "listings": 200,
+        "message": "200 listings loaded (100 new; target about 100). More metadata is available.\nBowlRoll: BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+        "queries": [
+          "Sketchfab: discovery feed",
+          "Sketchfab: discovery feed"
+        ],
+        "samples": [
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "2nd 3d2",
+            "url": "https://sketchfab.com/3d-models/none-bd5d179db1a6410f829b28cee38a2041"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "8686",
+            "url": "https://sketchfab.com/3d-models/none-18734475ae6244f2a4626c5c1b2d2757"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "38558",
+            "url": "https://sketchfab.com/3d-models/none-415fe26b3e794b15a1613a43e42365c0"
+          },
+          {
+            "access": [
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "polyhaven",
+            "title": "Adjustable Wrench",
+            "url": "https://polyhaven.com/a/adjustable_wrench"
+          },
+          {
+            "access": [
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "polyhaven",
+            "title": "Alarm Clock 01",
+            "url": "https://polyhaven.com/a/alarm_clock_01"
+          },
+          {
+            "access": [
+              "Preview",
+              "Unknown"
+            ],
+            "formats": [],
+            "source": "sketchfab",
+            "title": "Alex",
+            "url": "https://sketchfab.com/3d-models/none-3620a5d4ebb845be981934306545f420"
+          }
+        ],
+        "sources": {
+          "polyhaven": 152,
+          "sketchfab": 48
+        },
+        "statuses": {
+          "booth": "Japanese/English marketplace search; no verified public catalogue API. Listings can be paid or require login; check each page.",
+          "bowlroll": "BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+          "polyhaven": "522 metadata entries. ",
+          "sfmlab": "Terms restrict scraping; Anubis protection observed. Search in your browser. API catalogue access has not been established.",
+          "sketchfab": "24 metadata entries. ",
+          "steam_gmod": "Official QueryFiles API needs a key. Access and retrieval depend on the app/item; check its source page.",
+          "steam_sfm": "Official QueryFiles API needs a key. Open website search; no scraping, subscriptions or ownership assumptions.",
+          "vroid": "Japanese/English VRM directory. API needs registered application/OAuth. Public preview does not prove download permission."
+        },
+        "unique_ids": 200
+      },
+      "seconds": 10.847,
+      "source_click_intercepted": [
+        "https://sketchfab.com/3d-models/none-bd5d179db1a6410f829b28cee38a2041"
+      ],
+      "thumbnail": {
+        "loaded": true,
+        "message": "Thumbnail from source metadata.",
+        "source": "polyhaven",
+        "url": "https://cdn.polyhaven.com/asset_img/thumbs/adjustable_wrench.png?width=256&height=256&format=webp&v=f8fd5a64"
+      }
+    }
+  },
+  "private_desktops": [
+    {
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "job_closed": true,
+      "desktop_closed": true
+    }
+  ],
+  "app_unchanged_sha256": "f21d17204d5f10477a496fe3e92ca19537f7c776ed22d8a5971493e1d3ec0125",
+  "test_composition": "Independent executed scopes, not one aggregate run. Earlier headless Studio22/theme and private23/theme remain separate.",
+  "fixed_failures": [
+    "JSON numeric tab deserialized as float; validated and canonicalized to int.",
+    "Initial test compared doubled Windows argument separators with normalized scanner paths; launcher now passes forward-slash user paths.",
+    "NUL string literal emitted parser warnings; path validator checks encoded bytes instead."
+  ],
+  "limitations": [
+    "BowlRoll published RSS currently returns HTML; no scraping fallback.",
+    "Steam/SFMLab/BOOTH/VRoid remain website-only.",
+    "Online formats are inferred from title/tags, not inspected files.",
+    "Optional thumbnails are selected-item only, eight-entry in-memory cache.",
+    "Primary must apply the two-line reviewable shell patch; tracked app.gd is unchanged.",
+    "No complete suite, native model fidelity, manual owner testing or release claim."
+  ]
+}

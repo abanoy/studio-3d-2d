@@ -1,0 +1,528 @@
+{
+  "date": "2026-11-21",
+  "continues": "4bd75e5a8a7092a328fb56e7d085d8ec1a2768c5",
+  "branch": "worker/asset-browser-live-20261121",
+  "integration": "Two app.gd hooks already applied in this feature checkout; other checkouts and installation untouched.",
+  "focused_tests": {
+    "cases": {
+      "geometry_preview": {
+        "checks": 17,
+        "failures": [],
+        "scope": "Generated local GLB geometry only; no external files, network, conversion or owner artwork."
+      },
+      "thumbnails": {
+        "checks": 21,
+        "failures": [],
+        "scope": "Generated image buffers and injected image transport; no live artwork downloaded."
+      },
+      "write": {
+        "checks": 4,
+        "failures": [],
+        "phase": "write"
+      },
+      "read": {
+        "checks": 13,
+        "failures": [],
+        "phase": "read"
+      },
+      "neon": {
+        "checks": 27,
+        "display_driver": "Windows",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "neon"
+      },
+      "classic": {
+        "checks": 27,
+        "display_driver": "Windows",
+        "failures": [],
+        "scope": "Patched real Studio in disposable source copy; synthetic GLB only, no native artwork or online downloads.",
+        "theme": "classic"
+      }
+    },
+    "checks": 109,
+    "failures": []
+  },
+  "live_probe": {
+    "cancel": {
+      "http_released": true,
+      "loading": false,
+      "message": "Cancelled. Partial results are kept; Search retries this query.",
+      "request_existed": true
+    },
+    "cold_start_offline": true,
+    "failures": [],
+    "initial": {
+      "listings": 100,
+      "message": "100 listings loaded (100 new; target about 100). More metadata is available.\nBowlRoll: BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+      "queries": [
+        "Sketchfab: discovery feed"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "3",
+          "url": "https://sketchfab.com/3d-models/none-c2a7e32056bc4dd3838cfc1a3aced20c"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "10",
+          "url": "https://sketchfab.com/3d-models/none-5c254fc316534dc08587cb2776430fba"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "2023 08 07 Test - uden Møbler",
+          "url": "https://sketchfab.com/3d-models/none-1676d2384997422da31eb4647ef975e1"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "15109_Ручки магнолия_v2",
+          "url": "https://sketchfab.com/3d-models/none-32c35579afc0498786b4b6d152ed5057"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "47840",
+          "url": "https://sketchfab.com/3d-models/none-9668a21db8bb4ef284d54beb6af4e6ce"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "48273",
+          "url": "https://sketchfab.com/3d-models/none-fc817d8984ab43a385386820d20f7ef4"
+        }
+      ],
+      "sources": {
+        "polyhaven": 76,
+        "sketchfab": 24
+      },
+      "statuses": {
+        "booth": "Japanese/English marketplace search; no verified public catalogue API. Listings can be paid or require login; check each page.",
+        "bowlroll": "BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+        "polyhaven": "522 metadata entries. ",
+        "sfmlab": "Terms restrict scraping; Anubis protection observed. Search in your browser. API catalogue access has not been established.",
+        "sketchfab": "24 metadata entries. ",
+        "steam_gmod": "Official QueryFiles API needs a key. Access and retrieval depend on the app/item; check its source page.",
+        "steam_sfm": "Official QueryFiles API needs a key. Open website search; no scraping, subscriptions or ownership assumptions.",
+        "vroid": "Japanese/English VRM directory. API needs registered application/OAuth. Public preview does not prove download permission."
+      },
+      "unique_ids": 100
+    },
+    "japanese_search": {
+      "listings": 22,
+      "message": "22 listings loaded (22 new; target about 100). No more results from the available sources. Website-only sources are not counted.",
+      "queries": [
+        "Sketchfab: 初音ミク",
+        "Sketchfab: 初音ミク"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-19ca79ea15e3466081296c1f4208526c"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-3d0285f40c1a44628c7035a284c6a616"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-286c7808f4d146b2b0009b363505b617"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-31099f179c934306b05077879dfb992c"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku Fanart - 初音ミク ファンアート",
+          "url": "https://sketchfab.com/3d-models/none-c59476da354b4260ab6694a0ba0519d2"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [
+            "MMD"
+          ],
+          "source": "sketchfab",
+          "title": "Miku Hatsune / Wasabi式初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-8c57c4b6314e40e2a70b474d721c2735"
+        }
+      ],
+      "sources": {
+        "sketchfab": 22
+      },
+      "statuses": {
+        "sketchfab": "16 metadata entries. "
+      },
+      "unique_ids": 22
+    },
+    "mmd_filter": {
+      "listings": 8,
+      "message": "8 listings loaded (8 new; target about 100). More metadata is available.",
+      "queries": [
+        "Sketchfab: Hatsune Miku",
+        "Sketchfab: hatsune miku",
+        "Sketchfab: miku hatsune",
+        "Sketchfab: 初音ミク",
+        "Sketchfab: 初音未来"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [
+            "MMD"
+          ],
+          "source": "sketchfab",
+          "title": "Hatsune Miku V4Xβ",
+          "url": "https://sketchfab.com/3d-models/none-7d911ffbee3a4184b0fb9753eba4675c"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [
+            "MMD"
+          ],
+          "source": "sketchfab",
+          "title": "ボーカロイド 初音ミク／VOCALOID HATSUNE MIKU（二次創作）",
+          "url": "https://sketchfab.com/3d-models/none-757c8a68c0a9405bb8045055fedefe12"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [
+            "MMD"
+          ],
+          "source": "sketchfab",
+          "title": "Miku Hatsune - Volcaloid - 3D Printable Model",
+          "url": "https://sketchfab.com/3d-models/none-c8d4a53d4c924901bca8f22a2f6f1abc"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [
+            "MMD"
+          ],
+          "source": "sketchfab",
+          "title": "Miku Hatsune / Wasabi式初音ミク",
+          "url": "https://sketchfab.com/3d-models/none-8c57c4b6314e40e2a70b474d721c2735"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [
+            "MMD"
+          ],
+          "source": "sketchfab",
+          "title": "Miku Hatsune Race TDA",
+          "url": "https://sketchfab.com/3d-models/none-4a41d2cdbc23404885d8ebcc9c9bd6f1"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [
+            "MMD"
+          ],
+          "source": "sketchfab",
+          "title": "Miku Hatsune rig",
+          "url": "https://sketchfab.com/3d-models/none-a393a4f3613143f09834705eb6a61d31"
+        }
+      ],
+      "sources": {
+        "sketchfab": 8
+      },
+      "statuses": {
+        "sketchfab": "3 metadata entries. "
+      },
+      "unique_ids": 8
+    },
+    "name_search": {
+      "listings": 55,
+      "message": "55 listings loaded (55 new; target about 100). More metadata is available.",
+      "queries": [
+        "Sketchfab: Hatsune Miku",
+        "Sketchfab: hatsune miku",
+        "Sketchfab: miku hatsune",
+        "Sketchfab: 初音ミク",
+        "Sketchfab: 初音未来"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-70a7b23a5e2b4abe8c84f393fa51f4b5"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-dfae2c6fc8e54c7c832708c40db55be3"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-413dffcb80ef4bf789d637c207b950a9"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-34f3e7daa4c64c8a8000ae7f90b01ceb"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-a25f6548a8684500ac0004559484a4f9"
+        },
+        {
+          "access": [
+            "Preview",
+            "Downloadable"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "Hatsune Miku",
+          "url": "https://sketchfab.com/3d-models/none-efc3c69c22334f95be39c096cf5f476f"
+        }
+      ],
+      "sources": {
+        "sketchfab": 55
+      },
+      "statuses": {
+        "sketchfab": "3 metadata entries. "
+      },
+      "unique_ids": 55
+    },
+    "scope": "Actual metadata/UI and one explicitly enabled public CDN thumbnail; browser opening intercepted. No model download, native appearance or ownership claim. Provider availability is an observation.",
+    "second_batch": {
+      "listings": 200,
+      "message": "200 listings loaded (100 new; target about 100). More metadata is available.\nBowlRoll: BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+      "queries": [
+        "Sketchfab: discovery feed",
+        "Sketchfab: discovery feed"
+      ],
+      "samples": [
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "3",
+          "url": "https://sketchfab.com/3d-models/none-c2a7e32056bc4dd3838cfc1a3aced20c"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "10",
+          "url": "https://sketchfab.com/3d-models/none-5c254fc316534dc08587cb2776430fba"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "2023 08 07 Test - uden Møbler",
+          "url": "https://sketchfab.com/3d-models/none-1676d2384997422da31eb4647ef975e1"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "15109_Ручки магнолия_v2",
+          "url": "https://sketchfab.com/3d-models/none-32c35579afc0498786b4b6d152ed5057"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "47840",
+          "url": "https://sketchfab.com/3d-models/none-9668a21db8bb4ef284d54beb6af4e6ce"
+        },
+        {
+          "access": [
+            "Preview",
+            "Unknown"
+          ],
+          "formats": [],
+          "source": "sketchfab",
+          "title": "48273",
+          "url": "https://sketchfab.com/3d-models/none-fc817d8984ab43a385386820d20f7ef4"
+        }
+      ],
+      "sources": {
+        "polyhaven": 152,
+        "sketchfab": 48
+      },
+      "statuses": {
+        "booth": "Japanese/English marketplace search; no verified public catalogue API. Listings can be paid or require login; check each page.",
+        "bowlroll": "BowlRoll returned a web page instead of RSS. The published feed may have changed; use website search. Use the website link or Search to retry.",
+        "polyhaven": "522 metadata entries. ",
+        "sfmlab": "Terms restrict scraping; Anubis protection observed. Search in your browser. API catalogue access has not been established.",
+        "sketchfab": "24 metadata entries. ",
+        "steam_gmod": "Official QueryFiles API needs a key. Access and retrieval depend on the app/item; check its source page.",
+        "steam_sfm": "Official QueryFiles API needs a key. Open website search; no scraping, subscriptions or ownership assumptions.",
+        "vroid": "Japanese/English VRM directory. API needs registered application/OAuth. Public preview does not prove download permission."
+      },
+      "unique_ids": 200
+    },
+    "seconds": 10.799,
+    "source_click_intercepted": [
+      "https://sketchfab.com/3d-models/none-c2a7e32056bc4dd3838cfc1a3aced20c"
+    ],
+    "thumbnail": {
+      "loaded": true,
+      "message": "Thumbnail from source metadata.",
+      "source": "polyhaven",
+      "url": "https://cdn.polyhaven.com/asset_img/thumbs/adjustable_wrench.png?width=256&height=256&format=webp&v=f8fd5a64"
+    }
+  },
+  "normal_entry_startup": {
+    "main_scene": "main.tscn",
+    "headless": true,
+    "quit_after_frames": 5,
+    "exit": 0,
+    "recover_existing_project": false
+  },
+  "private_desktops": [
+    {
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "job_closed": true,
+      "desktop_closed": true
+    }
+  ],
+  "source_paths": [
+    "src/app.gd",
+    "src/discovery/browser.gd",
+    "src/discovery/local_preview.gd",
+    "tests/asset_discovery_preview.gd",
+    "tests/asset_discovery_studio_smoke.gd",
+    "tests/verify_asset_discovery_additions.py"
+  ],
+  "limits": [
+    "GLB geometry preview only; no materials/images/morphs/animation, conversion or external resource fetch.",
+    "8 MiB file, 250000 accessor/instanced-vertex elements, 512 primitives/draws, 256 joints per skin, 2000 entries per group and acyclic depth64.",
+    "Preview parsing is synchronous after explicit click; arbitrary network-filesystem latency is not bounded.",
+    "Other formats use the existing explicit import pipeline.",
+    "No full-suite, native appearance, manual owner testing or installed Studio update claim."
+  ],
+  "retained_failure": "The new hierarchy check initially needed an explicit int annotation before graphical launch. Fixed; current17 preview checks and both27-control Studio cases pass."
+}
