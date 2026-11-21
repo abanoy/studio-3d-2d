@@ -8496,3 +8496,21 @@ imported precision, review missing groups/shared outlines, improve CPU cost and
 cold reconstructed persistence. Native art/spec arrays/captures stay private.
 Formal52/54 implementation and55/62 acceptance remain unchanged. See
 docs/secondary_reconstruction.md and scalar benchmark for actual receipt hashes.
+
+
+## 2026-11-21 — Actual eight-slot readback and reconstruction error attribution
+
+At exact published7f source, an owned headless run measures64 authored4/8-slot
+meshes/10rows:260checks pass,6bounded proposal refusals remain unimported.
+Actual positive bone identities and f32 readback bits match the pinned engine
+normalization/UNORM16 profile. Half splitting sourceweight1 loses one packedunit.
+No shader/pixel or all525-row claim. Initial parse0 and JSONexpected-float39
+fixture mismatches remain recorded; uint32 bit transport fixes the latter without
+tolerance. Independent native10 attribution reproduces48.22micrometer drift:
+weight-only48.218micrometers; guide-palette-only0.126micrometers; original native
+palettes exact. Only scalar private-case evidence is published. Original GUI18/19
+and exact-zero rest-image failure remain adverse. Next repair retains original
+weight geometry for rest and flexible geometry for live/manual/recorded guides,
+with material/morph/bind/cache/lease checks; no source models are overwritten.
+See experiments/reconstruction_weight_readback_20261121. Existing exact published
+7f remains intact; no formal55/62 acceptance promotion or cleanup action.

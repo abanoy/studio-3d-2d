@@ -1,0 +1,25 @@
+{
+  "format": "has_reconstruction_packed_weight_readback_1",
+  "status": "PASS_MEASUREMENT_NOT_REPAIR",
+  "source_revision": "7f1d85d7ea57a3bafd16e5be085e18609830c304",
+  "engine_commit": "89cea143987d564363e15d207438530651d943ac",
+  "checks": 260,
+  "source_rows": 10,
+  "actual_mesh_cases": 64,
+  "solver_refusals_not_imported": 6,
+  "actual_four_and_eight_slot_readback_matches_prediction": true,
+  "actual_positive_bone_identities_match": true,
+  "actual_split_can_lose_weight_mass": true,
+  "all_sources_programs_public_inputs_and_environment_preserved": true,
+  "graphics_used": false,
+  "desktop_created": false,
+  "private_assets_in_measurement": false,
+  "original_gui_rest_image_failure_resolved": false,
+  "actual_result_sha256": "6dd0450493f9381cfcacf99ed6472c2e9ee13cbab6371cd43d8c60bbe0940dae",
+  "whole_receipt_sha256": "249fbb9c12a1ddf95a3222c3da57bc5e7ffedc92fe8f0cf92dbf9d4b8afe0676",
+  "fixture_corrections": [
+    "Initial GDScript inferred-Variant boolean parse failed before assertions; added explicit bool type.",
+    "Initial direct JSON-decimal expected-f32 comparison reported39 mismatches despite Python comparing actual/predicted rows exactly. Expected bits now use uint32 transport and decode_float; no numeric tolerance added."
+  ],
+  "next": "Retain original-weight meshes for authored rest; use flexible meshes for live, recorded and manually posed guides. Validate exact original rest pixels, shapes, materials, cache transitions and Off."
+}
