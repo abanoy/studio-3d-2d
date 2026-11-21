@@ -1,0 +1,7 @@
+{
+  "status": "REFUSED_BEFORE_DELETION",
+  "error": "Archived result changed",
+  "explanation": "First archive was a closure receipt referencing the raw initial result hash, not that raw result itself. Neither verified source packet contained the raw first result. Preserve that first directory until the exact raw result and refusal receipt are separately pushed and verified. Other three archives match their raw results exactly.",
+  "files_deleted": 0,
+  "first_stage_retained": true
+}

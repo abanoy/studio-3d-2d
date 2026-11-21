@@ -1,0 +1,153 @@
+{
+  "format": "has_miku_contact_source_inputs_1",
+  "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "application_adopted": false,
+  "files": [
+    {
+      "path": "qualified_ui_host.py",
+      "bytes": 21967,
+      "sha256": "dfb0cf83cef6dc455d5da9f1c1631f1f0ee053b6e4a646c9045e90e7e9967a3e"
+    },
+    {
+      "path": "qualified_helpers.py",
+      "bytes": 26455,
+      "sha256": "990c37ddca7b1301613f5efc5a7e5a30ce2723369112ef274ee78d2d4dc34087"
+    },
+    {
+      "path": "qualified_snapshot_reader.py",
+      "bytes": 22176,
+      "sha256": "d5ab807301d2b51b9ecea5fab1624b12addffe8247f5eafae60bf02c63c6dcec"
+    },
+    {
+      "path": "inputs/IMPORT_OFF_MAP_ADOPTION.json",
+      "bytes": 7007,
+      "sha256": "5eeb8f6e46344d5858a9625d8d669bdb5b0bf353c70af6a516148c2a9bd1c4ed"
+    },
+    {
+      "path": "inputs/SOURCE_LIGHT_TEST_STYLE_FINAL.json",
+      "bytes": 631,
+      "sha256": "f9387fd17ee587e3c4bfae5906533103d5cf9ef884deda12c1ea2ea98b259f49"
+    },
+    {
+      "path": "REUSED_SOURCE_PINS.json",
+      "bytes": 3119,
+      "sha256": "401d1dd95a9c20eb609d37eee73d09ce1cf07ea60fda3074ea2669a9e853697d"
+    },
+    {
+      "path": "PRIVATE_INPUT_CONTRACT.json",
+      "bytes": 950,
+      "sha256": "6550fb226be781554138dde79876903f87409f8a6f9eea1011b2def231538666"
+    },
+    {
+      "path": "FUNCTION_MAP.json",
+      "bytes": 1452,
+      "sha256": "cc1699ff99d33e99f057ce9cc7f0ba1b5eac1747262bbafa724b24f98b82ac5d"
+    },
+    {
+      "path": "CHECK_PLAN.json",
+      "bytes": 957,
+      "sha256": "a6b05ba31a8b17c7fb829237f2941b5249e4c2cef46b04c15cf1ed86ac428276"
+    },
+    {
+      "path": "payload/src/miku_collider_binding.gd",
+      "bytes": 6935,
+      "sha256": "e58afb8325054315209c92c64504037642719f48ac05f0bbb0f1eab0d6bfdc2a"
+    },
+    {
+      "path": "payload/src/miku_skin_binding.gd",
+      "bytes": 19686,
+      "sha256": "a3e28809126efab902595ec5804d99ea3a989926de201d55b4f833c947bfd21d"
+    },
+    {
+      "path": "payload/src/secondary_collision_geometry.gd",
+      "bytes": 5190,
+      "sha256": "63f75e7cae189fad1dab190302c7218f94ae3d4910b3eb9319e4f0a1b54e6cc2"
+    },
+    {
+      "path": "payload/src/secondary_collision_probe.gd",
+      "bytes": 13530,
+      "sha256": "f4aea0b34013065fd0e3ac17d55b2c241b4a88d5e235716402e79c12f681ecd4"
+    },
+    {
+      "path": "payload/tests/miku_collider_binding_unit.gd",
+      "bytes": 5586,
+      "sha256": "84c0f1b46aa3a3f0be0926be2b7694c73a333ae0e323e1dd7ae0bdc925c7644c"
+    },
+    {
+      "path": "payload/tests/miku_contact_qualification.gd",
+      "bytes": 18301,
+      "sha256": "7a262c67e31269f70690bb9573e6696f3548377a932ff45ea6f08a9eeca986c5"
+    },
+    {
+      "path": "payload/tests/miku_skin_binding_unit.gd",
+      "bytes": 3361,
+      "sha256": "2f541ba770c43f3d8262b9c9e249120febb3a2a683db79d15ebed1844635a7cb"
+    },
+    {
+      "path": "payload/tests/secondary_collision_geometry_unit.gd",
+      "bytes": 4542,
+      "sha256": "6f23d6bf84beba91c6eb4237eeaa62ef71e86e0ec1f9dd4c072f8a54ad5f16de"
+    },
+    {
+      "path": "payload/tests/secondary_collision_probe_unit.gd",
+      "bytes": 8240,
+      "sha256": "0f579122671341a16b55260d44bfdebeb4d768f858abdeb6c1b130974e600fcb"
+    }
+  ],
+  "targets": [
+    {
+      "path": "src/miku_collider_binding.gd",
+      "operation": "new",
+      "bytes": 6935,
+      "sha256": "e58afb8325054315209c92c64504037642719f48ac05f0bbb0f1eab0d6bfdc2a"
+    },
+    {
+      "path": "src/miku_skin_binding.gd",
+      "operation": "new",
+      "bytes": 19686,
+      "sha256": "a3e28809126efab902595ec5804d99ea3a989926de201d55b4f833c947bfd21d"
+    },
+    {
+      "path": "src/secondary_collision_geometry.gd",
+      "operation": "new",
+      "bytes": 5190,
+      "sha256": "63f75e7cae189fad1dab190302c7218f94ae3d4910b3eb9319e4f0a1b54e6cc2"
+    },
+    {
+      "path": "src/secondary_collision_probe.gd",
+      "operation": "new",
+      "bytes": 13530,
+      "sha256": "f4aea0b34013065fd0e3ac17d55b2c241b4a88d5e235716402e79c12f681ecd4"
+    },
+    {
+      "path": "tests/miku_collider_binding_unit.gd",
+      "operation": "new",
+      "bytes": 5586,
+      "sha256": "84c0f1b46aa3a3f0be0926be2b7694c73a333ae0e323e1dd7ae0bdc925c7644c"
+    },
+    {
+      "path": "tests/miku_contact_qualification.gd",
+      "operation": "new",
+      "bytes": 18301,
+      "sha256": "7a262c67e31269f70690bb9573e6696f3548377a932ff45ea6f08a9eeca986c5"
+    },
+    {
+      "path": "tests/miku_skin_binding_unit.gd",
+      "operation": "new",
+      "bytes": 3361,
+      "sha256": "2f541ba770c43f3d8262b9c9e249120febb3a2a683db79d15ebed1844635a7cb"
+    },
+    {
+      "path": "tests/secondary_collision_geometry_unit.gd",
+      "operation": "new",
+      "bytes": 4542,
+      "sha256": "6f23d6bf84beba91c6eb4237eeaa62ef71e86e0ec1f9dd4c072f8a54ad5f16de"
+    },
+    {
+      "path": "tests/secondary_collision_probe_unit.gd",
+      "operation": "new",
+      "bytes": 8240,
+      "sha256": "0f579122671341a16b55260d44bfdebeb4d768f858abdeb6c1b130974e600fcb"
+    }
+  ]
+}

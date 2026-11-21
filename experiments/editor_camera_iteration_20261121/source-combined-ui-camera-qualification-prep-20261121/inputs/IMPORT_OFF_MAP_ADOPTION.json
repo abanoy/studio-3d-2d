@@ -1,0 +1,183 @@
+{
+  "format": "has_exact_import_off_map_adoption_1",
+  "status": "APPLIED_READBACK_VERIFIED",
+  "base_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "functional_baseline_count": 1084,
+  "functional_target_count": 1086,
+  "targets": [
+    {
+      "path": "src/import_actions.gd",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/src/import_actions.gd",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 3869,
+        "sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b"
+      },
+      "target": {
+        "bytes": 3870,
+        "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2"
+      },
+      "kind": "functional"
+    },
+    {
+      "path": "tests/import_physics_defaults_unit.gd",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/import_physics_defaults_unit.gd",
+      "operation": "add",
+      "baseline": null,
+      "target": {
+        "bytes": 4701,
+        "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7"
+      },
+      "kind": "functional"
+    },
+    {
+      "path": "tests/import_physics_smoke.gd",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/import-physics-default-off-cold-wire-v3-prep-20261121/import_physics_smoke.gd",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 11993,
+        "sha256": "a76a854a46e470624e677110e9d20c99075fbe9de001359b005eeb23ed9519dc"
+      },
+      "target": {
+        "bytes": 21848,
+        "sha256": "9104065d55830781b07e47c358ddaa8c039d038b53780dcbeeafaad52c0d9be1"
+      },
+      "kind": "functional"
+    },
+    {
+      "path": "tests/verify_import_physics.py",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/verify_import_physics.py",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 4708,
+        "sha256": "909c0ced4f2eeae05c268e45b01e6055bc4f657213b5fa26ab896179abf4f691"
+      },
+      "target": {
+        "bytes": 4708,
+        "sha256": "b7a5df65220801fd4adbe6886b62b65356aa8ab06dd2e97e45f11eef02620438"
+      },
+      "kind": "functional"
+    },
+    {
+      "path": "tools/source_lights.py",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/tools/source_lights.py",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 4457,
+        "sha256": "3937840da25b39ca505c00902b0da7192b8d02e67100ad282853a80bbc57281e"
+      },
+      "target": {
+        "bytes": 8319,
+        "sha256": "284971f27040335b727c7a94639920cb6b1e37a37645ec8f553a704f1522eb5b"
+      },
+      "kind": "functional"
+    },
+    {
+      "path": "tools/blender_source_bridge.py",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/tools/blender_source_bridge.py",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 30542,
+        "sha256": "a0024efa46643aeb03dcd0ce0e2d717c5d2102347d1e424239802f11d9dff419"
+      },
+      "target": {
+        "bytes": 30697,
+        "sha256": "cc5a205772c83949bcc10f06633a73d83664c455e8daad163c06dba7a26dc60e"
+      },
+      "kind": "functional"
+    },
+    {
+      "path": "tests/test_source_lights.py",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/test_source_lights.py",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 2402,
+        "sha256": "3366407e377c53dc1688e1c529f3cc009e7e4cad6297abd5ca2d41b81f0ad562"
+      },
+      "target": {
+        "bytes": 8420,
+        "sha256": "554202926efd038d9916242d4353feae69ce6e43928c75826736354ac2dd3b22"
+      },
+      "kind": "functional"
+    },
+    {
+      "path": "tests/test_bridge_light_phase.py",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/tests/test_bridge_light_phase.py",
+      "operation": "add",
+      "baseline": null,
+      "target": {
+        "bytes": 4180,
+        "sha256": "aa612d14d9ce2e9d47b5da9cafd88c05a16232bf4923cfb931012f0662b788b4"
+      },
+      "kind": "functional"
+    },
+    {
+      "path": "docs/import_physics.md",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 3194,
+        "sha256": "aa6b851099247a9e6313a251499459b9c15d82faae89bc0e049ce4e8e58e25ab"
+      },
+      "target": {
+        "bytes": 3567,
+        "sha256": "794117c8a5dda2cc30a5888cd02affdbddd98365e4043e62ef01fbd75b76b7e9"
+      },
+      "kind": "documentation",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/import_physics.md"
+    },
+    {
+      "path": "docs/source_import.md",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 12361,
+        "sha256": "cba56d4e7461bbce34b2c2e7bbf409c6639c865b66b763e36f3c8d6a4b8f9a9d"
+      },
+      "target": {
+        "bytes": 14113,
+        "sha256": "c398bc9dc32f09c9db09b00399acf9c5ea26e79965b79d113891384801de6113"
+      },
+      "kind": "documentation",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/source_import.md"
+    },
+    {
+      "path": "docs/lighting.md",
+      "operation": "modify",
+      "baseline": {
+        "bytes": 5048,
+        "sha256": "f6a7d7edb0393b49e725229dffeab1dc612edadb2cbea945c826c520c9156daa"
+      },
+      "target": {
+        "bytes": 5694,
+        "sha256": "bc95aacd4ecf755b1cc81f750a7f0b8f7321f30f13fdacbb9bf4c81e86c45132"
+      },
+      "kind": "documentation",
+      "source": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/source-import-default-off-map-adoption-prep-20261121/payload/docs/lighting.md"
+    }
+  ],
+  "applied": [
+    "src/import_actions.gd",
+    "tests/import_physics_defaults_unit.gd",
+    "tests/import_physics_smoke.gd",
+    "tests/verify_import_physics.py",
+    "tools/source_lights.py",
+    "tools/blender_source_bridge.py",
+    "tests/test_source_lights.py",
+    "tests/test_bridge_light_phase.py",
+    "docs/import_physics.md",
+    "docs/source_import.md",
+    "docs/lighting.md"
+  ],
+  "qualification": {
+    "gpu_checks": 54,
+    "native_profiles": 5,
+    "strong_oracle_controls": 20,
+    "map_conversions": 2,
+    "relocated_map_cpu_tests": 28,
+    "full_current_suite_rerun": false
+  },
+  "owner_installation_or_assets_modified": false,
+  "untouched_original_functional_files": 1078,
+  "functional_files_modified": 6,
+  "functional_files_added": 2,
+  "journal": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/import-off-map-adoption-1795243363949/JOURNAL.json"
+}

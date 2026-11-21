@@ -1,0 +1,146 @@
+{
+  "format": "has_camera_source_snapshot_qualification_1",
+  "status": "FAIL",
+  "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "expected_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "qualified_historical_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "current_functional_source_count": 1086,
+  "current_changed_functional_files": 8,
+  "owned_runtime_files": 1096,
+  "camera_targets": 10,
+  "candidate_manifest_sha256": "6fa07005ce67dfa3d48e0abdde5c8570f7d95d6e28865a339fc5d029c6c4b8b7",
+  "mode": "eight_style_scale_workspace_variants",
+  "expected_assertion_checks": 486,
+  "new_whole_full_claimed": false,
+  "application_adopted": false,
+  "owner_acceptance_claimed": false,
+  "native_owner_assets_read": false,
+  "sourceio_or_native_conversion_started": false,
+  "jobs": [
+    {
+      "name": "job-0",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 19844,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-1",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 10632,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-2",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 33052,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-3",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 24644,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-4",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "FAIL",
+      "pid": 11452,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    }
+  ],
+  "cases": [
+    {
+      "name": "import",
+      "status": "PASS",
+      "expected_checks": 0,
+      "graphical": false,
+      "custom_user_profile": "HAS Camera Qualification has-camera-qualification-1795247502327073200 import 53b737b5fbe041dc876a2ff7afd14db5"
+    },
+    {
+      "name": "key-edits",
+      "status": "PASS",
+      "expected_checks": 26,
+      "graphical": false,
+      "custom_user_profile": "HAS Camera Qualification has-camera-qualification-1795247502327073200 key-edits fa60b6d29bef42a48805920f56736be3",
+      "checks": 26,
+      "result": {
+        "checks": 26,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-planning",
+      "status": "PASS",
+      "expected_checks": 12,
+      "graphical": false,
+      "custom_user_profile": "HAS Camera Qualification has-camera-qualification-1795247502327073200 lens-planning 7a4b419d92b94fb49fae771dd1256549",
+      "checks": 12,
+      "result": {
+        "checks": 12,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-classic-100-simple",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-qualification-1795247502327073200 timeline-classic-100-simple 18d303b4211143ef860f7c6d4941af35",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-classic-100-simple",
+      "status": "FAIL",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-qualification-1795247502327073200 lens-classic-100-simple fa64a44cdc2b47ea820ff6dc332595f6"
+    }
+  ],
+  "error_type": "Refusal",
+  "error_code": "ENGINE_OR_ASSERTION_ERROR",
+  "all_owned_launchers_reaped": true,
+  "all_attempted_private_jobs_closed": true,
+  "parent_environment_unchanged": true,
+  "head_unchanged": true,
+  "preservation_failures": [],
+  "all_admitted_inputs_preserved": true,
+  "current_functional_domain_preserved": true,
+  "admitted_inputs": 2253,
+  "owned_lock_removed": true,
+  "owned_lock_retained": false
+}

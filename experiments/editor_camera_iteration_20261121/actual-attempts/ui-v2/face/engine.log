@@ -1,0 +1,75 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS face_window.owned_morph_fixture_exists
+PASS face_window.normal_model_import_preserves_fixture
+PASS face_window.ordinary_imported_model_has_real_shape_controls
+PASS face_window.resizable_expression_window_keeps_its_title_accessible
+PASS face_window.first_open_uses_practical_bounded_dimensions
+PASS face_window.real_control_list_can_use_the_remaining_height
+PASS face_window.widening_the_usable_window_height_grows_the_actual_list
+PASS face_window.closing_and_reopening_keeps_the_user_resize
+PASS face_window.reopening_does_not_reset_the_filter_or_selected_control
+PASS face_window.layout_change_does_not_reinterpret_or_clamp_shape_amounts
+PASS face_window.Close_and_existing_shape_commands_remain_available
+PASS face_window.Advanced_organization_remains_available_with_scroll_fallback
+PASS face_window.Simple_mode_keeps_the_existing_organization_visibility
+PASS face_window.opening_resizing_and_mode_switching_do_not_modify_authored_data
+PASS face_window.original_fixture_bytes_remain_unchanged
+PASS face_window.manual_large_resize_is_remembered_at_interface_scale_1.0
+PASS face_window.late_programmatic_clamp_does_not_replace_user_size_at_interface_scale_1.0
+PASS face_window.restoring_parent_restores_original_user_size_at_interface_scale_1.0
+PASS face_window.genuine_compact_manual_resize_is_not_ignored_at_interface_scale_1.0
+PASS face_window.latest_manual_resize_survives_parent_restore_at_interface_scale_1.0
+PASS face_window.compact_Advanced_controls_keep_scroll_and_Close_at_interface_scale_1.0
+PASS face_window.compact_Simple_controls_remain_accessible_at_interface_scale_1.0
+PASS face_window.manual_large_resize_is_remembered_at_interface_scale_1.5
+PASS face_window.late_programmatic_clamp_does_not_replace_user_size_at_interface_scale_1.5
+PASS face_window.restoring_parent_restores_original_user_size_at_interface_scale_1.5
+PASS face_window.genuine_compact_manual_resize_is_not_ignored_at_interface_scale_1.5
+PASS face_window.latest_manual_resize_survives_parent_restore_at_interface_scale_1.5
+PASS face_window.compact_Advanced_controls_keep_scroll_and_Close_at_interface_scale_1.5
+PASS face_window.compact_Simple_controls_remain_accessible_at_interface_scale_1.5
+PASS face_window.DPI_and_parent_resize_cases_preserve_all_authored_state_and_original_skin
+FACE_WINDOW_LAYOUT {"application_adopted":false,"checks":30,"failures":0,"list_heights":[160.0,368.0],"owner_layout_acceptance":false,"resize_cases":[{"compact_host":"(960, 600)","controlled_late_size_signal":true,"expected_clamp":"(650, 536)","interface_scale":1.0,"manual_size":"(610, 496)","observed_clamp":"(650, 536)","preference_after_clamp":"(650, 800)"},{"compact_host":"(640, 400)","controlled_late_size_signal":true,"expected_clamp":"(608, 336)","interface_scale":1.5,"manual_size":"(568, 320)","observed_clamp":"(608, 336)","preference_after_clamp":"(650, 800)"}]}
+SCRIPT ERROR: Attempt to call function 'get_screen_transform' in base 'null instance' on a null instance.
+   at: handle_metrics (res://src/pose_editor.gd:714)
+   GDScript backtrace (most recent call first):
+       [0] handle_metrics (res://src/pose_editor.gd:714)
+       [1] update_gizmo (res://src/pose_editor.gd:745)
+       [2] stop_preview (res://src/wind_review.gd:280)
+       [3] close (res://src/wind_review.gd:288)
+       [4] _exit_tree (res://src/wind_review.gd:295)
+       [5] run (res://tests/face_window_layout_smoke.gd:93)
+       [6] settled (res://tests/face_window_layout_smoke.gd:17)
+SCRIPT ERROR: Attempt to call function 'get_screen_transform' in base 'null instance' on a null instance.
+   at: handle_metrics (res://src/pose_editor.gd:714)
+   GDScript backtrace (most recent call first):
+       [0] handle_metrics (res://src/pose_editor.gd:714)
+       [1] update_gizmo (res://src/pose_editor.gd:745)
+       [2] stop (res://src/pending_helper_wind_player.gd:132)
+       [3] _exit_tree (res://src/pending_helper_wind_player.gd:134)
+       [4] run (res://tests/face_window_layout_smoke.gd:93)
+       [5] settled (res://tests/face_window_layout_smoke.gd:17)
+SCRIPT ERROR: Attempt to call function 'get_screen_transform' in base 'null instance' on a null instance.
+   at: handle_metrics (res://src/pose_editor.gd:714)
+   GDScript backtrace (most recent call first):
+       [0] handle_metrics (res://src/pose_editor.gd:714)
+       [1] update_gizmo (res://src/pose_editor.gd:745)
+       [2] stop (res://src/pending_helper_wind_player.gd:132)
+       [3] stop (res://src/pending_helper_preview.gd:282)
+       [4] _exit_tree (res://src/pending_helper_preview.gd:294)
+       [5] run (res://tests/face_window_layout_smoke.gd:93)
+       [6] settled (res://tests/face_window_layout_smoke.gd:17)
+SCRIPT ERROR: Attempt to call function 'get_screen_transform' in base 'null instance' on a null instance.
+   at: handle_metrics (res://src/pose_editor.gd:714)
+   GDScript backtrace (most recent call first):
+       [0] handle_metrics (res://src/pose_editor.gd:714)
+       [1] update_gizmo (res://src/pose_editor.gd:745)
+       [2] stop (res://src/pending_helper_wind_player.gd:132)
+       [3] stop (res://src/pending_helper_preview.gd:282)
+       [4] stop_pending_preview (res://src/secondary_helper_editor.gd:708)
+       [5] close (res://src/secondary_helper_editor.gd:691)
+       [6] _exit_tree (res://src/secondary_helper_editor.gd:719)
+       [7] run (res://tests/face_window_layout_smoke.gd:93)
+       [8] settled (res://tests/face_window_layout_smoke.gd:17)

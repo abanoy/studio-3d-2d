@@ -1,0 +1,16 @@
+{
+  "format": "has_exact_four_headless_host_process_check_1",
+  "utc": "2026-11-21T07:41:37.8411520Z",
+  "method": "Get-CimInstance Win32_Process; own audit PID excluded; no unrelated command lines retained",
+  "host_process_count": 384,
+  "stage_roots": [
+    "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240469769670600",
+    "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240567956647400",
+    "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240843368455500",
+    "C:\\a\\Programming\\cloudflare\\has-headless-components-1795241062433191300"
+  ],
+  "matches": [],
+  "unreadable_runtime_candidates": [],
+  "no_target_process_observed": true,
+  "deletion_performed": false
+}

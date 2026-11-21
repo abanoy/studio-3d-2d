@@ -25,6 +25,7 @@ var picture: Control
 var duration := 48
 var frame := 0
 var dragging := false
+var camera_editor
 var audio_clip := {}
 var audio_clips: Array = []
 var audio_selected := 0
@@ -284,12 +285,27 @@ func finish_move(cancel:=false) -> void:
 			var piece: Dictionary=before.animation_clips[Clips.index_id(before,piece_id)]
 			piece_moved.emit(id,piece_id,int(piece.start)+delta,before)
 
+func camera_gesture_active() -> bool:
+	return is_instance_valid(camera_editor) and camera_editor.active()
+
+func cancel_pointer_gestures() -> void:
+	dragging=false;cancel_audio();cancel_cel();finish_move(true)
+	if is_instance_valid(camera_editor):camera_editor.cancel()
+
+func _input(event: InputEvent) -> void:
+	# Registered on this actual viewport, including a floated Timeline window.
+	if is_instance_valid(camera_editor) and camera_editor.global_event(event):get_viewport().set_input_as_handled()
+
+func _notification(what: int) -> void:
+	if what in [NOTIFICATION_WM_WINDOW_FOCUS_OUT,NOTIFICATION_APPLICATION_FOCUS_OUT]:cancel_pointer_gestures()
+
+func _exit_tree() -> void:cancel_pointer_gestures()
+
 func _ready() -> void:
 	picture=preload("res://src/timeline_picture.gd").new();picture.timeline=self;picture.clip_contents=true;picture.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(picture)
 	resized.connect(layout_picture);layout_picture()
 	focus_mode = Control.FOCUS_ALL
-	focus_exited.connect(cancel_audio)
-	focus_exited.connect(cancel_cel)
+	focus_exited.connect(cancel_pointer_gestures)
 	channel_font.font_names=PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"])
 	mouse_filter=Control.MOUSE_FILTER_STOP
 	tooltip_text="Drag an object's block to move its presence and all animation keys together."
@@ -361,6 +377,7 @@ func draw_content(painter: Control) -> void:
 		for key in keys:
 			var p := Vector2(x(key.frame), 38)
 			painter.draw_colored_polygon(PackedVector2Array([p + Vector2(0, -6), p + Vector2(6, 0), p + Vector2(0, 6), p + Vector2(-6, 0)]), Color("ce922e"))
+		if is_instance_valid(camera_editor):camera_editor.draw_overlay(painter,Color("193d6b"),Color("a02424"))
 	if header_only:
 		painter.draw_line(Vector2(x(frame),0),Vector2(x(frame),size.y),Color("bf613c"),2);return
 	var shift: float=visual_rows.size()*ROW_HEIGHT if not object_rows.is_empty() else (24 if has_model else 0)
@@ -628,6 +645,7 @@ func neon_content(painter: Control) -> void:
 		painter.draw_rect(Rect2(LEFT,51,end_x-LEFT,1),ROW_LINE)
 		neon_ticks(painter)
 		neon_keys(painter,keys.map(func(key):return float(key.frame)),38,StudioTheme.CAMERA,Color(1,0.373,0.682,0.3),6)
+		if is_instance_valid(camera_editor):camera_editor.draw_overlay(painter,Color.WHITE,StudioTheme.PROBLEM)
 	if header_only:
 		neon_playhead(painter,22,size.y,StudioTheme.BLUE,StudioTheme.MID)
 		neon_tag(painter)
@@ -733,6 +751,7 @@ func neon_content(painter: Control) -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if not interactive:accept_event();return
+	if is_instance_valid(camera_editor) and camera_editor.input(event):accept_event();return
 	if event is InputEventMouseButton and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN] and (event.ctrl_pressed or event.shift_pressed):
 		if event.pressed:navigation_requested.emit(("in" if event.button_index==MOUSE_BUTTON_WHEEL_UP else "out") if event.ctrl_pressed else ("left" if event.button_index==MOUSE_BUTTON_WHEEL_UP else "right"),frame_at(event.position))
 		accept_event();return
@@ -850,5 +869,6 @@ func _gui_input(event: InputEvent) -> void:
 		var hit:=hit_row(event.position);var hover:=int(hit.get("index",-1))
 		if hover>=0 and hover<object_rows.size():tooltip_text=str(object_rows[hover].name)+" • drag a piece; Shift-drag moves all its animation."
 
+	if event is InputEventMouseMotion and is_instance_valid(camera_editor):camera_editor.hover(event.position)
 	if event is InputEventMouse and (dragging or event is InputEventMouseButton and event.pressed):
 		seek.emit(frame_at(event.position))

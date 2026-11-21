@@ -1,0 +1,210 @@
+{
+  "format": "has_root_ui_qualification_v5_actual_closed_1",
+  "session_id": 75957,
+  "root_reaped": true,
+  "root_exit_code": 1,
+  "result": {
+    "format": "has_face_gizmo_source_snapshot_qualification_1",
+    "status": "FAIL",
+    "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+    "expected_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+    "qualified_historical_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+    "current_functional_source_count": 1086,
+    "current_changed_functional_files": 8,
+    "owned_runtime_files": 1094,
+    "ui_targets": 9,
+    "expected_assertion_checks": 413,
+    "new_whole_full_claimed": false,
+    "application_adopted": false,
+    "owner_acceptance_claimed": false,
+    "native_owner_assets_read": false,
+    "sourceio_or_native_conversion_started": false,
+    "jobs": [
+      {
+        "name": "job-0",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 11524,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-1",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 28356,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-2",
+        "window_required": true,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 31284,
+        "child_desktop_observed": true,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-3",
+        "window_required": true,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "FAIL",
+        "pid": 29320,
+        "child_desktop_observed": true,
+        "foreground_child_observed": false
+      }
+    ],
+    "cases": [
+      {
+        "name": "import",
+        "status": "PASS",
+        "expected_checks": 0,
+        "graphical": false,
+        "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795248325974308500 import a144c55bac0342e88047269f4aa16f7a"
+      },
+      {
+        "name": "geometry",
+        "status": "PASS",
+        "expected_checks": 37,
+        "graphical": false,
+        "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795248325974308500 geometry a2c03097130c45339335977c54119860",
+        "checks": 37,
+        "result": {
+          "application_adopted": false,
+          "checks": 37,
+          "failures": 0,
+          "gui_or_render_qualified": false,
+          "native_assets_tested": false
+        }
+      },
+      {
+        "name": "face",
+        "status": "PASS",
+        "expected_checks": 36,
+        "graphical": true,
+        "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795248325974308500 face 03ef09e785af45eb9b7198d0e51ad541",
+        "checks": 36,
+        "result": {
+          "application_adopted": false,
+          "checks": 36,
+          "failures": 0,
+          "lifecycle_checks": 6,
+          "list_heights": [
+            160,
+            368
+          ],
+          "owner_layout_acceptance": false,
+          "resize_cases": [
+            {
+              "compact_host": "(960, 600)",
+              "controlled_late_size_signal": true,
+              "expected_clamp": "(650, 536)",
+              "interface_scale": 1,
+              "manual_size": "(610, 496)",
+              "observed_clamp": "(650, 536)",
+              "preference_after_clamp": "(650, 800)"
+            },
+            {
+              "compact_host": "(640, 400)",
+              "controlled_late_size_signal": true,
+              "expected_clamp": "(608, 336)",
+              "interface_scale": 1.5,
+              "manual_size": "(568, 320)",
+              "observed_clamp": "(608, 336)",
+              "preference_after_clamp": "(650, 800)"
+            }
+          ]
+        }
+      },
+      {
+        "name": "handles",
+        "status": "FAIL",
+        "expected_checks": 27,
+        "graphical": true,
+        "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795248325974308500 handles 5722c79f43e54e8c98570241c2821f0b"
+      }
+    ],
+    "error_type": "Refusal",
+    "error_code": "ENGINE_OR_ASSERTION_ERROR",
+    "all_owned_launchers_reaped": true,
+    "all_attempted_private_jobs_closed": true,
+    "parent_environment_unchanged": true,
+    "head_unchanged": true,
+    "handle_diagnostic_artifacts": {
+      "report": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795248325974308500\\Handles\\handle-size-result.json",
+      "report_sha256": "5b09481d071387e49a08445154c2c646b376cdc70199568f4a4e64bd94a20f20",
+      "checks": 27,
+      "failures": 2,
+      "images": [
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795248325974308500\\Handles\\handle-case-0.png",
+          "bytes": 182441,
+          "sha256": "aa560766e780c063018bf3608ec35dfc08d302c649b9ce29bf82cf6db9467136",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "window": "(1600, 1000)",
+          "interface_scale": 1
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795248325974308500\\Handles\\handle-case-1.png",
+          "bytes": 246764,
+          "sha256": "240a59128fea4cf892427a35b1d0dde525b86b683262e8388465a70fc97536fb",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "window": "(1600, 1000)",
+          "interface_scale": 1.5
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795248325974308500\\Handles\\handle-case-2.png",
+          "bytes": 236326,
+          "sha256": "0ad07c4696dff4c958ff7dfa8bb7850dfcd97f36dfd423652e6e28ca5dc71b67",
+          "dimensions": [
+            3440,
+            1440
+          ],
+          "window": "(3440, 1440)",
+          "interface_scale": 1
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795248325974308500\\Handles\\handle-case-3.png",
+          "bytes": 370318,
+          "sha256": "b6e306d7e3b92633203f171960dcaa76b68932c34acde415e4e48a479daea1a2",
+          "dimensions": [
+            3440,
+            1440
+          ],
+          "window": "(3440, 1440)",
+          "interface_scale": 1.5
+        }
+      ],
+      "diagnosis_proven": false,
+      "qualification_status_overridden": false
+    },
+    "preservation_failures": [],
+    "all_admitted_inputs_preserved": true,
+    "current_functional_domain_preserved": true,
+    "admitted_inputs": 2235,
+    "owned_lock_removed": true,
+    "owned_lock_retained": false
+  },
+  "scope": "Original27handleassertions retained and failed2 asbefore. Measuredcompact1600/UI150 scene267physicalpxhigh clips360pxdiameterring. All3visible fixedsamples arewhite; all3out-of-scene samples absent. Originalnear click has nativey=-26.321<0, scene_containsfalse; ignoring it is correct. Production transform/picking is consistent in measured cases; fixture needs visible arc targets and separate clipped-arc assertions. No UI adoption."
+}

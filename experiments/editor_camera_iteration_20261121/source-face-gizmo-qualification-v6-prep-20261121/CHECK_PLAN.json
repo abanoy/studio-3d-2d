@@ -1,0 +1,103 @@
+{
+  "format": "has_ui_qualification_check_plan_1",
+  "status": "UNRUN",
+  "execution_owner": "Root",
+  "source_snapshot_runtime_files": 1094,
+  "whole_full_claim": false,
+  "assertion_total": 424,
+  "jobs": [
+    {
+      "name": "import",
+      "graphical": false,
+      "timeout_seconds": 90,
+      "checks": 0,
+      "arguments": [
+        "--headless",
+        "--editor",
+        "--import",
+        "--quit"
+      ]
+    },
+    {
+      "name": "geometry",
+      "graphical": false,
+      "timeout_seconds": 20,
+      "checks": 37,
+      "script": "tests/editor_geometry_unit.gd",
+      "marker": "EDITOR_GEOMETRY_UNIT "
+    },
+    {
+      "name": "face",
+      "graphical": true,
+      "timeout_seconds": 90,
+      "checks": 36,
+      "script": "tests/face_window_layout_smoke.gd",
+      "marker": "FACE_WINDOW_LAYOUT ",
+      "dpi": [
+        1,
+        1.5
+      ],
+      "fixture": "Synthetic owned morph GLB; no native input",
+      "lifecycle_assertions": 6
+    },
+    {
+      "name": "handles",
+      "graphical": true,
+      "timeout_seconds": 120,
+      "checks": 38,
+      "script": "tests/pose_handle_size_smoke.gd",
+      "marker": "HANDLE_SIZE_SMOKE ",
+      "physical_windows": [
+        [
+          1600,
+          1000
+        ],
+        [
+          3440,
+          1440
+        ]
+      ],
+      "dpi": [
+        1,
+        1.5
+      ],
+      "visible_arc_controls": 8,
+      "clipped_arc_controls": 3
+    },
+    {
+      "name": "rotation-write",
+      "graphical": true,
+      "timeout_seconds": 130,
+      "checks": 309,
+      "script": "tests/rotation_gizmo_smoke.gd",
+      "marker": "ROTATION_GIZMO ",
+      "axis_cases": 24,
+      "view_cases": 24
+    },
+    {
+      "name": "rotation-read",
+      "graphical": true,
+      "timeout_seconds": 130,
+      "checks": 4,
+      "script": "tests/rotation_gizmo_smoke.gd",
+      "marker": "ROTATION_GIZMO_COLD ",
+      "fresh_process": true
+    }
+  ],
+  "required": [
+    "Exactly six sequential retained private launches",
+    "Private actual HWND/child desktop observed for four graphical jobs",
+    "Zero owner foreground or desktop switch; no visible fallback",
+    "Exact assertions, PASS lines, marker/result equality; no engine/shader/leak errors",
+    "Current1086, all admitted inputs, runtime pins, environment and HEAD preserved",
+    "Owned lock removal only after proven closure/reap"
+  ],
+  "bootstrap_cpu_guard": {
+    "script": "test_bootstrap_identity.py",
+    "test_methods": 18,
+    "status": "UNRUN",
+    "before_private_jobs": true,
+    "synthetic_only": true,
+    "qualification_main_called": false
+  }
+}

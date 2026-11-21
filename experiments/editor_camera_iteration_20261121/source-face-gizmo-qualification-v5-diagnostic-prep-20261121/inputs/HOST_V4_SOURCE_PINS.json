@@ -1,0 +1,175 @@
+{
+  "format": "has_face_gizmo_qualification_source_pins_4",
+  "status": "SOURCE_READY_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "whole_full_claimed": false,
+  "execution_owner": "Root exclusive GUI/native lane",
+  "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "publication_head_at_preparation": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "predecessor_manifest_sha256": "ff37da1ed47bb2b752671f3479f79871d22baaa7563eb947c760b21cc3b922ee",
+  "predecessor_frozen_files_preserved": 26,
+  "UI_v4_manifest_sha256": "dc3382cd7d2b5b3e2551869735c0129a167fc049fb7a8a616123ead8f08ef113",
+  "driver": {
+    "path": "run_ui_qualification.py",
+    "bytes": 22017,
+    "sha256": "1393ca3f635fb582b6ae2a688c853f3c76c0a4be07636b50f80482452ed5fc43"
+  },
+  "focused_cpu_tests": {
+    "path": "test_bootstrap_identity.py",
+    "bytes": 5448,
+    "sha256": "7d79af2f25bac9686472c85e399bfa2dac68f74c763292eb9dc8cb8aba045dce",
+    "test_methods": 18
+  },
+  "source_peer_review": {
+    "agents": [
+      "/root/hair_bundles",
+      "/root"
+    ],
+    "status": "SOURCE_API_GO_NO_CONCRETE_BLOCKER",
+    "execution_performed": false
+  },
+  "structural_readback": {
+    "predecessor_files_unchanged": 26,
+    "only_driver_INPUT_PIN_changed": true,
+    "input_rows_changed": 3,
+    "all15_input_pins_match": true,
+    "all_production_UI_v3_bytes_unchanged": true,
+    "handle_fixture_only_one_Vector2_annotation_changed": true,
+    "all_assertion_counts_and_strict_guards_unchanged": true
+  },
+  "authored_private_jobs": 6,
+  "authored_ui_assertions": 413,
+  "actual_v4_tests_run_by_author": 0,
+  "files": [
+    {
+      "path": "CHECK_PLAN.json",
+      "bytes": 2528,
+      "sha256": "5cd08e9ed9dfd94e450145c9b440504e3fc83d03b172e90ad13b74fac3792c89"
+    },
+    {
+      "path": "FUNCTION_MAP.json",
+      "bytes": 2443,
+      "sha256": "412c6af8d56f91bc260a81a77faac1842ed47e8f8148fcdbee1fa7f961269a9e"
+    },
+    {
+      "path": "INPUT_PINS.json",
+      "bytes": 2815,
+      "sha256": "0ed82c557ae62118d08ab601645dd6719e562c382b40d6cd86200b84a65c8d95"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9364,
+      "sha256": "11b5860b9a2af08f8e1c690b429c140851b36bb33644fa3dd5a3b7a43a338aa9"
+    },
+    {
+      "path": "SOURCE_REVIEW.md",
+      "bytes": 796,
+      "sha256": "9ade0acdbba0309a43f261a8b153a04163002787adb247f893b52cc5eb54456e"
+    },
+    {
+      "path": "V2_CHANGE.json",
+      "bytes": 1725,
+      "sha256": "35ed552bfbf05e0efbcd3cc1d0a6ec20ebe0dcfc27218e9fd29fb9378f372c6b"
+    },
+    {
+      "path": "inputs/HOST_V2_SOURCE_PINS.json",
+      "bytes": 5569,
+      "sha256": "602d0fbb0d62525777a6c1fe86d8c4a2eb0f893f898ebc3c0089056a7b2364ac"
+    },
+    {
+      "path": "inputs/HOST_V3_SOURCE_PINS.json",
+      "bytes": 5651,
+      "sha256": "ff37da1ed47bb2b752671f3479f79871d22baaa7563eb947c760b21cc3b922ee"
+    },
+    {
+      "path": "inputs/IMPORT_OFF_MAP_ADOPTION.json",
+      "bytes": 7007,
+      "sha256": "5eeb8f6e46344d5858a9625d8d669bdb5b0bf353c70af6a516148c2a9bd1c4ed"
+    },
+    {
+      "path": "inputs/PREDECESSOR_SOURCE_PINS.json",
+      "bytes": 4622,
+      "sha256": "77204f3a1d6abef09e799c3d56c6c901393a2abe4b997f4d33cbf6bd193e576b"
+    },
+    {
+      "path": "inputs/SOURCE_LIGHT_TEST_STYLE_FINAL.json",
+      "bytes": 631,
+      "sha256": "f9387fd17ee587e3c4bfae5906533103d5cf9ef884deda12c1ea2ea98b259f49"
+    },
+    {
+      "path": "inputs/UI_SOURCE_PINS.json",
+      "bytes": 4963,
+      "sha256": "dc3382cd7d2b5b3e2551869735c0129a167fc049fb7a8a616123ead8f08ef113"
+    },
+    {
+      "path": "inputs/UI_TARGETS.json",
+      "bytes": 2674,
+      "sha256": "7b0eb7487d6e244cc860d9379608315e839796d5ffda6dcbeba939cde65adb0d"
+    },
+    {
+      "path": "payload/src/app.gd",
+      "bytes": 314530,
+      "sha256": "e56561a656be932fc54e025a36ac917f8ab835cf8f77e12c029f6044ae547a38"
+    },
+    {
+      "path": "payload/src/base_shape_editor.gd",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0"
+    },
+    {
+      "path": "payload/src/editor_handle_metrics.gd",
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48"
+    },
+    {
+      "path": "payload/src/pose_editor.gd",
+      "bytes": 71033,
+      "sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "payload/src/shape_window_layout.gd",
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5"
+    },
+    {
+      "path": "payload/tests/editor_geometry_unit.gd",
+      "bytes": 4289,
+      "sha256": "7235e5856316d26f6589f46ac81e29850a0baf909b3bebf09c76d63e9e85bd3d"
+    },
+    {
+      "path": "payload/tests/face_window_layout_smoke.gd",
+      "bytes": 10371,
+      "sha256": "2dab842aa92e1e2a1151f00a9c136bd45c628efb7ec58df28e9d920f1dd10f5b"
+    },
+    {
+      "path": "payload/tests/pose_handle_size_smoke.gd",
+      "bytes": 7517,
+      "sha256": "1843bd7a4cb531c821c484bffc36552ad78e9a800ac0eba4d8ef92c90a789d7d"
+    },
+    {
+      "path": "payload/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad"
+    },
+    {
+      "path": "qualified_helpers.py",
+      "bytes": 26455,
+      "sha256": "990c37ddca7b1301613f5efc5a7e5a30ce2723369112ef274ee78d2d4dc34087"
+    },
+    {
+      "path": "qualified_snapshot_reader.py",
+      "bytes": 22176,
+      "sha256": "d5ab807301d2b51b9ecea5fab1624b12addffe8247f5eafae60bf02c63c6dcec"
+    },
+    {
+      "path": "run_ui_qualification.py",
+      "bytes": 22017,
+      "sha256": "1393ca3f635fb582b6ae2a688c853f3c76c0a4be07636b50f80482452ed5fc43"
+    },
+    {
+      "path": "test_bootstrap_identity.py",
+      "bytes": 5448,
+      "sha256": "7d79af2f25bac9686472c85e399bfa2dac68f74c763292eb9dc8cb8aba045dce"
+    }
+  ]
+}

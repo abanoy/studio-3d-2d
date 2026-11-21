@@ -6,6 +6,10 @@ playhead; **Ctrl + wheel** over the ruler or tracks zooms around the pointer.
 The caption shows the visible frame boundaries. Zoom is bounded to a minimum
 12frame range (or the whole scene when shorter).
 
+Camera diamonds can be selected, dragged to an empty frame, or double-clicked to
+add/remove a key. The last camera key is kept, and an occupied destination refuses
+retiming. See [camera key and lens gestures](camera_interactions.md).
+
 The ruler and all tracks share the same range. Camera and model keys, drawing
 holds, animation pieces, sound blocks, waveform positions and trim handles use
 that same mapping. Track names stay fixed at the left. A hidden block cannot grab

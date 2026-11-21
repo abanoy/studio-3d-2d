@@ -1,0 +1,19 @@
+{
+  "format": "has_editor_controls_shipping_patch_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN",
+  "baseline_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "patches": [
+    {
+      "path": "tests/verify.py",
+      "base_bytes": 57338,
+      "base_sha256": "32a65792188dcbf7b65f287ac1204808827075ec68c9bd73cb8de9f5afbeaf3e",
+      "before": "    results['rotation_gizmo'] = json.loads((output / 'rotation-gizmo-verification.json').read_bytes())\r\n",
+      "after": "    results['rotation_gizmo'] = json.loads((output / 'rotation-gizmo-verification.json').read_bytes())\r\n\r\n    # Editor usability groups run against ordinary current sources. The existing\r\n    # rotation group above still owns its309 writer and4 cold-reader assertions.\r\n    editor_control_root = output / 'editor-controls-canonical' / str(time.time_ns())\r\n    for editor_scope, editor_count, editor_deadline in [('geometry', 37, 120), ('face', 36, 200), ('handles', 38, 230)]:\r\n        editor_folder = editor_control_root / editor_scope\r\n        editor_text = run([sys.executable, '-B', '-u', 'tests/verify_editor_controls.py',\r\n                           '--scope', editor_scope, '--output', str(editor_folder)], timeout=editor_deadline)\r\n        (output / ('editor-controls-'+editor_scope+'-suite.log')).write_text(editor_text, encoding='utf-8')\r\n        editor_report = json.loads((editor_folder / 'verification.json').read_bytes())\r\n        if (editor_report.get('status') != 'PASS' or type(editor_report.get('checks')) is not int\r\n                or editor_report['checks'] != editor_count or editor_report.get('all_admitted_sources_unchanged') is not True\r\n                or editor_report.get('generated_fixture_preserved') is not True):\r\n            raise RuntimeError('Editor control group failed: '+editor_scope)\r\n        results['editor_controls_'+editor_scope] = editor_report\r\n    print('PASS editor geometry37, face36/lifecycle6, handles38 visible/clipped arcs (111 new checks)')\r\n"
+    }
+  ],
+  "existing_full_assertions_changed": false,
+  "existing_rotation_wrapper_and_registration_unchanged": true,
+  "new_result_groups": 3,
+  "new_checks": 111,
+  "shared_camera_registration_anchor_is_distinct": true
+}

@@ -1,0 +1,42 @@
+{
+  "format": "has_editor_camera_archive_audit_source_manifest_2",
+  "status": "FROZEN_READ_ONLY_CPU_AUDIT_SOURCE_PENDING_SUCCESSOR_RUN",
+  "predecessor_source_pins_sha256": "c914c201e624a35e8831a99f1286c284b972dec5a60c4783e9019d79e087ee83",
+  "delta": "Only checker executable changes are raising walk_error helper and os.walk onerror=walk_error; original complete four-file source packet retained.",
+  "actual_v2_runs": 0,
+  "source_peer_review": "Pending independently at freeze; later peer findings reported externally.",
+  "native_execution": false,
+  "Full1102_claimed": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3781,
+      "sha256": "7091b5d3ea9897da28ed7db91718e4c4d6202d1925ea2f33abee6fe4891c9db0"
+    },
+    {
+      "path": "check_archive.py",
+      "bytes": 11787,
+      "sha256": "52d7bc45fcca5d00755910537c74dc2dd2418b6bd039fba10e1016665afb20e6"
+    },
+    {
+      "path": "bases/v1/ACTUAL_CPU_AUDIT.json",
+      "bytes": 1523,
+      "sha256": "e75636f56a783b2c5d8d206e15555673356883443363a2d3b27181ec99aa8239"
+    },
+    {
+      "path": "bases/v1/README.md",
+      "bytes": 3360,
+      "sha256": "2e2f8e650fdbe61f61569e15f7aa5bc9577ec613d2049c07eb032f98a53f5756"
+    },
+    {
+      "path": "bases/v1/check_archive.py",
+      "bytes": 11726,
+      "sha256": "bbf8595c5dc4779b6d97758832d9a299cf98342710185bcbae64bcd3e05a8cf7"
+    },
+    {
+      "path": "bases/v1/SOURCE_PINS.json",
+      "bytes": 1111,
+      "sha256": "c914c201e624a35e8831a99f1286c284b972dec5a60c4783e9019d79e087ee83"
+    }
+  ]
+}

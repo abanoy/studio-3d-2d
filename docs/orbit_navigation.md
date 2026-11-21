@@ -12,6 +12,11 @@ preference, not another scene engine or a project setting.
   an orbit drag without losing that gesture.
 - **Escape, focus loss, or releasing Ctrl:** release the captured mouse.
 
+An unmodified **right button + wheel** changes the temporary lens without moving
+the camera. Use **Save camera key** to keep it. During orbit navigation, Ctrl +
+wheel keeps its nearer/farther behavior and Ctrl + right drag remains pan; see
+[camera key and lens gestures](camera_interactions.md).
+
 Ordinary selection/context clicks, Alt bone reveal, middle-click Move/Rotate
 switching and the existing unmodified camera gestures remain. WASD translation
 is suspended during an orbit/pan gesture; normal fly movement retains its prior

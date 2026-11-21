@@ -165,6 +165,22 @@ def main():
     rotation_log = run([sys.executable, '-u', 'tests/verify_rotation_gizmo.py'], timeout=160)
     (output / 'rotation-gizmo-suite.log').write_text(rotation_log, encoding='utf-8')
     results['rotation_gizmo'] = json.loads((output / 'rotation-gizmo-verification.json').read_bytes())
+
+    # Editor usability groups run against ordinary current sources. The existing
+    # rotation group above still owns its309 writer and4 cold-reader assertions.
+    editor_control_root = output / 'editor-controls-canonical' / str(time.time_ns())
+    for editor_scope, editor_count, editor_deadline in [('geometry', 37, 120), ('face', 36, 200), ('handles', 38, 230)]:
+        editor_folder = editor_control_root / editor_scope
+        editor_text = run([sys.executable, '-B', '-u', 'tests/verify_editor_controls.py',
+                           '--scope', editor_scope, '--output', str(editor_folder)], timeout=editor_deadline)
+        (output / ('editor-controls-'+editor_scope+'-suite.log')).write_text(editor_text, encoding='utf-8')
+        editor_report = json.loads((editor_folder / 'verification.json').read_bytes())
+        if (editor_report.get('status') != 'PASS' or type(editor_report.get('checks')) is not int
+                or editor_report['checks'] != editor_count or editor_report.get('all_admitted_sources_unchanged') is not True
+                or editor_report.get('generated_fixture_preserved') is not True):
+            raise RuntimeError('Editor control group failed: '+editor_scope)
+        results['editor_controls_'+editor_scope] = editor_report
+    print('PASS editor geometry37, face36/lifecycle6, handles38 visible/clipped arcs (111 new checks)')
     scene_view_log = run([sys.executable, '-u', 'tests/verify_scene_view.py'], timeout=300)
     (output / 'scene-view-suite.log').write_text(scene_view_log, encoding='utf-8')
     results['scene_view'] = json.loads((output / 'scene-view-verification.json').read_bytes())
@@ -281,6 +297,28 @@ def main():
     (output / 'numeric-camera-suite.log').write_text(numeric_camera_log, encoding='utf-8')
     results['numeric_camera'] = json.loads((output / 'camera-transform-verification.json').read_text(encoding='utf-8'))
     print('PASS numeric temporary camera view, explicit keys, stale draft guards, cold HAS and exact movie')
+
+    # Camera interactions are ordinary current-checkout groups: no historical Full
+    # receipt or experimental immutable-host dependency is needed after adoption.
+    camera_interaction_root = output / 'camera-interactions-canonical' / str(time.time_ns())
+    camera_interaction_specs = [('pure', ['--scope', 'pure'], 67, 210)]
+    for camera_theme in ('classic', 'neon'):
+        for camera_scale in (100, 150):
+            for camera_workspace in ('simple', 'advanced'):
+                camera_label = camera_theme+'-'+str(camera_scale)+'-'+camera_workspace
+                camera_interaction_specs.append((camera_label, ['--scope', 'variant', '--theme', camera_theme,
+                    '--scale', str(camera_scale), '--workspace', camera_workspace], 56, 470))
+    for camera_label, camera_flags, camera_count, camera_deadline in camera_interaction_specs:
+        camera_folder = camera_interaction_root / camera_label
+        camera_text = run([sys.executable, '-B', '-u', 'tests/verify_camera_interactions.py',
+                           '--output', str(camera_folder), *camera_flags], timeout=camera_deadline)
+        (output / ('camera-interactions-'+camera_label+'-suite.log')).write_text(camera_text, encoding='utf-8')
+        camera_report = json.loads((camera_folder / 'verification.json').read_bytes())
+        if (camera_report.get('status') != 'PASS' or type(camera_report.get('checks')) is not int
+                or camera_report['checks'] != camera_count or camera_report.get('all_admitted_sources_unchanged') is not True):
+            raise RuntimeError('Camera interaction group failed: '+camera_label)
+        results['camera_interactions_'+camera_label] = camera_report
+    print('PASS camera wire29/key26/lens12 controls and eight style-scale-workspace timeline34/lens22 variants (515 checks)')
 
     # Composite suite launches four separately bounded GPU jobs serially. Do not
     # apply a single-engine deadline to their combined runtime on a busy machine.

@@ -1,0 +1,92 @@
+{
+  "format": "has_root_camera_cold_wire_v2_actual_closed_1",
+  "session_id": 30245,
+  "root_reaped": true,
+  "root_exit_code": 0,
+  "result": {
+    "format": "has_camera_cold_wire_source_qualification_1",
+    "status": "PASS",
+    "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+    "expected_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+    "qualified_historical_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+    "current_functional_source_count": 1086,
+    "current_changed_functional_files": 8,
+    "owned_runtime_files": 1098,
+    "camera_targets": 10,
+    "wire_test_targets": 3,
+    "candidate_manifest_sha256": "6fa07005ce67dfa3d48e0abdde5c8570f7d95d6e28865a339fc5d029c6c4b8b7",
+    "mode": "cold_oracle_only",
+    "expected_assertion_checks": 29,
+    "original_camera_regressions_expected": 0,
+    "synthetic_oracle_controls_expected": 29,
+    "product_persistence_changed": false,
+    "arbitrary_tolerance_used": false,
+    "new_whole_full_claimed": false,
+    "application_adopted": false,
+    "owner_acceptance_claimed": false,
+    "native_owner_assets_read": false,
+    "sourceio_or_native_conversion_started": false,
+    "jobs": [
+      {
+        "name": "job-0",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 33576,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-1",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 1888,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      }
+    ],
+    "cases": [
+      {
+        "name": "import",
+        "status": "PASS",
+        "expected_checks": 0,
+        "graphical": false,
+        "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248494794933400 import 67dbb633f17940e3911f6ecdb04c36de"
+      },
+      {
+        "name": "cold-oracle",
+        "status": "PASS",
+        "expected_checks": 29,
+        "graphical": false,
+        "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248494794933400 cold-oracle 119e497c1073446bb93e6e0c8253bd42",
+        "checks": 29,
+        "result": {
+          "checks": 29,
+          "failures": 0
+        }
+      }
+    ],
+    "checks": 29,
+    "app_variant_count": 0,
+    "synthetic_oracle_controls": 29,
+    "original_camera_regressions": 0,
+    "all_owned_launchers_reaped": true,
+    "all_attempted_private_jobs_closed": true,
+    "parent_environment_unchanged": true,
+    "head_unchanged": true,
+    "preservation_failures": [],
+    "all_admitted_inputs_preserved": true,
+    "current_functional_domain_preserved": true,
+    "admitted_inputs": 2244,
+    "owned_lock_removed": true,
+    "owned_lock_retained": false
+  },
+  "scope": "29synthetic cold-wire/engine guards PASS,2headlessjobsclosed. No actual app variants or product adoption qualified by this scope. Prior failed actual lens runs retained; fullmatrix pending."
+}

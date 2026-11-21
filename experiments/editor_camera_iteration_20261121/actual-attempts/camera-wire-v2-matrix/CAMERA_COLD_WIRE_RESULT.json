@@ -1,0 +1,525 @@
+{
+  "format": "has_camera_cold_wire_source_qualification_1",
+  "status": "PASS",
+  "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "expected_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "qualified_historical_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "current_functional_source_count": 1086,
+  "current_changed_functional_files": 8,
+  "owned_runtime_files": 1098,
+  "camera_targets": 10,
+  "wire_test_targets": 3,
+  "candidate_manifest_sha256": "6fa07005ce67dfa3d48e0abdde5c8570f7d95d6e28865a339fc5d029c6c4b8b7",
+  "mode": "oracle_then_eight_style_scale_workspace_variants",
+  "expected_assertion_checks": 515,
+  "original_camera_regressions_expected": 486,
+  "synthetic_oracle_controls_expected": 29,
+  "product_persistence_changed": false,
+  "arbitrary_tolerance_used": false,
+  "new_whole_full_claimed": false,
+  "application_adopted": false,
+  "owner_acceptance_claimed": false,
+  "native_owner_assets_read": false,
+  "sourceio_or_native_conversion_started": false,
+  "jobs": [
+    {
+      "name": "job-0",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 22276,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-1",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 33744,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-2",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 27468,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-3",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 33316,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-4",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 15744,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-5",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 30692,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-6",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 13352,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-7",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 13340,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-8",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 14464,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-9",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 20280,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-10",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 19536,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-11",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 2276,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-12",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 16144,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-13",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 9960,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-14",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 9052,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-15",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 30932,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-16",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 23264,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-17",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 27588,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-18",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 26432,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-19",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 25260,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    }
+  ],
+  "cases": [
+    {
+      "name": "import",
+      "status": "PASS",
+      "expected_checks": 0,
+      "graphical": false,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 import 788b2e7fb01541ebb9820834f1d2e326"
+    },
+    {
+      "name": "cold-oracle",
+      "status": "PASS",
+      "expected_checks": 29,
+      "graphical": false,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 cold-oracle 4b6362c701114c389f0c7e4af2df7693",
+      "checks": 29,
+      "result": {
+        "checks": 29,
+        "failures": 0
+      }
+    },
+    {
+      "name": "key-edits",
+      "status": "PASS",
+      "expected_checks": 26,
+      "graphical": false,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 key-edits f568ae3cb58640a58cc5ff508e68048c",
+      "checks": 26,
+      "result": {
+        "checks": 26,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-planning",
+      "status": "PASS",
+      "expected_checks": 12,
+      "graphical": false,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-planning 552ed630e9494bc79e6d0e082f234719",
+      "checks": 12,
+      "result": {
+        "checks": 12,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-classic-100-simple",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 timeline-classic-100-simple 007c52faa5964bb19a7e37955d8600e2",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-classic-100-simple",
+      "status": "PASS",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-classic-100-simple 4baad547cd68468ea6e5ab1b030c75b9",
+      "checks": 22,
+      "result": {
+        "checks": 22,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-classic-100-advanced",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 timeline-classic-100-advanced b5728065d9744e92a217772b0d301f68",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-classic-100-advanced",
+      "status": "PASS",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-classic-100-advanced 00370da8bd624084b3e12804eb94758d",
+      "checks": 22,
+      "result": {
+        "checks": 22,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-classic-150-simple",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 timeline-classic-150-simple 5b4ec9f0af5940559f745148c034a043",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-classic-150-simple",
+      "status": "PASS",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-classic-150-simple 6de61c72e47640b48a426fa38c0f7629",
+      "checks": 22,
+      "result": {
+        "checks": 22,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-classic-150-advanced",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 timeline-classic-150-advanced c8418dc0a5a141358a677d10e70a8cc7",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-classic-150-advanced",
+      "status": "PASS",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-classic-150-advanced 2fd2eb3251b74eb2af0404628a258b23",
+      "checks": 22,
+      "result": {
+        "checks": 22,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-neon-100-simple",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 timeline-neon-100-simple 4bcd1d219f6e4e668259f42fc07f35aa",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-neon-100-simple",
+      "status": "PASS",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-neon-100-simple a6c65fb19b9b4367988e90c1714abb1c",
+      "checks": 22,
+      "result": {
+        "checks": 22,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-neon-100-advanced",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 timeline-neon-100-advanced cb5e2afe0dd54aafb2011326062172fd",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-neon-100-advanced",
+      "status": "PASS",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-neon-100-advanced 3a8d02ffd31f4c559046bcff9b1e543a",
+      "checks": 22,
+      "result": {
+        "checks": 22,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-neon-150-simple",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 timeline-neon-150-simple 0c2e935a010441b9b47a4279bb7bc007",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-neon-150-simple",
+      "status": "PASS",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-neon-150-simple 0627d04ba03c46b89f0121c43430a0cf",
+      "checks": 22,
+      "result": {
+        "checks": 22,
+        "failures": 0
+      }
+    },
+    {
+      "name": "timeline-neon-150-advanced",
+      "status": "PASS",
+      "expected_checks": 34,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 timeline-neon-150-advanced f2e15e69d7fd4d8dbfb9f20ed40ae6b8",
+      "checks": 34,
+      "result": {
+        "checks": 34,
+        "controlled_focus_loss_notification": true,
+        "failures": 0
+      }
+    },
+    {
+      "name": "lens-neon-150-advanced",
+      "status": "PASS",
+      "expected_checks": 22,
+      "graphical": true,
+      "custom_user_profile": "HAS Camera Qualification has-camera-cold-wire-v2-1795248569928439400 lens-neon-150-advanced 71d5c7d3696b4bbd8d558fc739f7dc75",
+      "checks": 22,
+      "result": {
+        "checks": 22,
+        "failures": 0
+      }
+    }
+  ],
+  "checks": 515,
+  "app_variant_count": 8,
+  "synthetic_oracle_controls": 29,
+  "original_camera_regressions": 486,
+  "all_owned_launchers_reaped": true,
+  "all_attempted_private_jobs_closed": true,
+  "parent_environment_unchanged": true,
+  "head_unchanged": true,
+  "preservation_failures": [],
+  "all_admitted_inputs_preserved": true,
+  "current_functional_domain_preserved": true,
+  "admitted_inputs": 2342,
+  "owned_lock_removed": true,
+  "owned_lock_retained": false
+}

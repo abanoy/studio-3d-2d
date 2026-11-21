@@ -1,0 +1,55 @@
+{
+  "format": "has_ui_qualification_bootstrap_identity_correction_1",
+  "status": "SOURCE_READY_UNPARSED_UNRUN",
+  "predecessor_manifest": {
+    "path": "inputs/PREDECESSOR_SOURCE_PINS.json",
+    "bytes": 4622,
+    "sha256": "77204f3a1d6abef09e799c3d56c6c901393a2abe4b997f4d33cbf6bd193e576b"
+  },
+  "predecessor_actual_attempt_reported_by": "Root",
+  "predecessor_actual_attempt": {
+    "outcome": "TERMINAL_PREFLIGHT_REFUSAL",
+    "error": "HELPER_BYTES_OR_IDENTITY_CHANGED",
+    "stage_created": false,
+    "owned_lane_created": false,
+    "ui_jobs_started": 0,
+    "only_observed_identity_difference": "atimeNs advanced during a read; dev/inode/size/mtime/nlink/mode unchanged",
+    "helpers_atime_ns": [
+      "1795246394838695900",
+      "1795246394965078900"
+    ],
+    "reader_atime_ns": [
+      "1795246394846717800",
+      "1795246394966078000"
+    ]
+  },
+  "source_delta": {
+    "before": "before != after",
+    "after": "bootstrap_identity(before) != bootstrap_identity(after)",
+    "identity_fields": [
+      "st_dev",
+      "st_ino",
+      "st_size",
+      "st_mtime_ns",
+      "st_nlink",
+      "st_mode",
+      "st_file_attributes"
+    ],
+    "excluded_field": "access time only",
+    "retained_gates": [
+      "Ancestor and file symlink/reparse refusal",
+      "Regular file and one link",
+      "Exact declared size",
+      "Read length",
+      "Pinned SHA256 before compiling helper bytes"
+    ]
+  },
+  "predecessor_files_preserved": 22,
+  "ui_payload_targets_unchanged": 9,
+  "qualified_helper_modules_unchanged": 2,
+  "qualification_jobs_unchanged": 6,
+  "qualification_assertions_unchanged": 407,
+  "new_focused_cpu_test_methods": 18,
+  "current_application_changed": false,
+  "tests_run_by_author": 0
+}

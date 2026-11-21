@@ -1,0 +1,83 @@
+{
+  "format": "has_saved_close_face_source_inspection_1",
+  "status": "READ_ONLY_INSPECTION_NOT_RENDER_REPRODUCED",
+  "fixture_bytes": 5194461,
+  "fixture_sha256": "d304744dea70a05e7176b668bc10b0058b8cb4e6b1ffe5fc9fab05303da60efb",
+  "embedded_glb_bytes": 7734476,
+  "embedded_glb_sha256": "e3e233004f2ce1aed3c2f221f7d92d9218c0de1f133cad88557f8181644e6e8c",
+  "actor_name": "youmu_konpaku_school.mdl",
+  "mesh_count": 9,
+  "skin_count": 1,
+  "skin_joint_count": 71,
+  "material_count": 19,
+  "head_primitives": 6,
+  "head_targets_per_primitive": 85,
+  "head_default_morph_weights_all_zero": true,
+  "shape_pose_empty": true,
+  "shape_base_empty": true,
+  "editor_frame": 0,
+  "saved_draft_frame": 43,
+  "camera_key_frames": [
+    0,
+    24,
+    43,
+    48
+  ],
+  "camera_fov_all": 60,
+  "camera_near_all": 0.05000000074505806,
+  "camera_far_all": 2000,
+  "head_materials": [
+    {
+      "material_name": "eye2",
+      "alpha_mode": "BLEND",
+      "double_sided": true
+    },
+    {
+      "material_name": "eye",
+      "alpha_mode": "BLEND",
+      "double_sided": true
+    },
+    {
+      "material_name": "emoji",
+      "alpha_mode": "BLEND",
+      "double_sided": true
+    },
+    {
+      "material_name": "face",
+      "alpha_mode": "BLEND",
+      "double_sided": false
+    },
+    {
+      "material_name": "emoji2",
+      "alpha_mode": "BLEND",
+      "double_sided": true
+    },
+    {
+      "material_name": "emoji3",
+      "alpha_mode": "BLEND",
+      "double_sided": true
+    }
+  ],
+  "face_png_alpha": {
+    "min": 0,
+    "max": 255,
+    "zero": 44342,
+    "partial": 14883,
+    "opaque": 202919
+  },
+  "geometry_sanity": {
+    "headVertices": 5361,
+    "faceVertices": 1489,
+    "nonfiniteHeadPositions": 0,
+    "nonfiniteHeadWeights": 0,
+    "negativeHeadWeights": 0,
+    "invalidHeadJointIndices": 0,
+    "headWeightsOutsideNormalizationTolerance": 0,
+    "nonfiniteInverseBindValues": 0,
+    "headMorphDefaultsNonzero": 0
+  },
+  "no_raw_arrays_or_images_recorded": true,
+  "diagnosis": "Unproven. Material alpha sorting, face sidedness, near clipping, and posed bounds remain independent hypotheses. Nonempty texture alpha means an opaque probe changes cutouts and cannot itself be a product fix.",
+  "saved_morph_overflow_excluded_as_recorded_cause": true,
+  "previous_sakuya_case_equivalence": false
+}

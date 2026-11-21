@@ -1,0 +1,37 @@
+{
+  "format": "has_combined_qualification_function_map_1",
+  "upstream_camera_driver_sha256": "282973d27423c95c6926599e3a44a50cdc749da5c5679ceb9ade0e56260e55f0",
+  "ui_v6_definitions_sha256": "834baeed38738483935780807adb6a296bfd79585b89cd3ee0df55bf6105fe20",
+  "shared": [
+    {
+      "name": "bootstrap_identity",
+      "byte_exact": true
+    },
+    {
+      "name": "load_pinned",
+      "byte_exact": true
+    },
+    {
+      "name": "source_domain",
+      "byte_exact": true
+    },
+    {
+      "name": "validate_composite",
+      "byte_exact": true
+    },
+    {
+      "name": "run_case",
+      "exact_except_case_profile_label": true
+    }
+  ],
+  "ui_functions_reused": [
+    "generated_shape",
+    "face_contract",
+    "handle_contract",
+    "rotation_contract",
+    "handle_diagnostic_artifacts"
+  ],
+  "no_qualified_helper_main_called": true,
+  "main_delta": "Pin53inputs, apply23combinedtargets into1105, run25privatejobs and require939split424+515; ordinary wrapper/verifier bytes retained but entry points remain unrun",
+  "finalization": "Existing owned launch reaping/job+desktop closure/parent environment/current HEAD/admitted-input identity/hash/time/source-domain/own-token lock removal preserved"
+}

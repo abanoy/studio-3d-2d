@@ -1,0 +1,33 @@
+{
+  "format": "has_editor_camera_archive_audit_source_manifest_1",
+  "status": "FROZEN_READ_ONLY_CPU_AUDIT_SOURCE",
+  "native_execution": false,
+  "Full1102_claimed": false,
+  "source_peer_review": "Requested independently; pending at freeze. Any later review is reported externally, without changing this frozen packet.",
+  "actual_first_cpu_audit": {
+    "status": "PASS",
+    "exit_code": 0,
+    "contents_sha256": "e80148dd3183f0b7b59f2e2153072f12346c8da1df03943ec3821d798aca338d",
+    "payload_files": 1046,
+    "frozen_inner_manifests": 45,
+    "current_functional_targets": 25,
+    "does_not_qualify_successor_inventories": true
+  },
+  "files": [
+    {
+      "path": "ACTUAL_CPU_AUDIT.json",
+      "bytes": 1523,
+      "sha256": "e75636f56a783b2c5d8d206e15555673356883443363a2d3b27181ec99aa8239"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3360,
+      "sha256": "2e2f8e650fdbe61f61569e15f7aa5bc9577ec613d2049c07eb032f98a53f5756"
+    },
+    {
+      "path": "check_archive.py",
+      "bytes": 11726,
+      "sha256": "bbf8595c5dc4779b6d97758832d9a299cf98342710185bcbae64bcd3e05a8cf7"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Camera cold-wire test correction
+
+SOURCE ONLY, peer-reviewed, unparsed/unrun. Root measured the retained diagnostic: beforeSave and afterSave are exact; FOV57 is exact; full-precision expected-wire equals reopened keys with zero wire differences. The raw original differs only in integral JSON number types and two quaternion scalar doubles by2.7755575615628914e-17. This correction changes test expectations for that measured serialization boundary and leaves product persistence untouched.
+
+The fixture has three edits: preload a pure RefCounted oracle; capture JSON.parse_string(JSON.stringify(after,"",true,true)) BEFORE Save; use that full-field wire expectation AND original engine-input guard in the22ndassertion. Other21assertions and test actions remain byte exact. Removing those three edits recovers original6239/072d32exactly. Original failed and diagnostic versions remain separate.
+
+The oracle checks all reopened key fields/domain recursively with exact finite numeric equality, strict bool/string types, and no epsilon. Independently it validates ordered whole frames and EXACT original/reloaded Timeline.vector, normalized Timeline.quaternion, FOV, near/far inputs. Its24synthetic controls include five isolated original-engine changes while candidate and wire stay identical, proving that the independent engine guard matters. No SceneTree initializer is preloaded by the oracle. Root runs the standalone unit first, then the original full486camera assertions.

@@ -1,0 +1,56 @@
+{
+  "format": "has_isolated_headless_gds_components_1",
+  "status": "FAIL",
+  "revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "qualified_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "checks_expected": 123,
+  "functional_sources": 1084,
+  "runtime_snapshot_files": 1087,
+  "stage": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240469769670600",
+  "suites": [
+    {
+      "suite": "default_off",
+      "checks_expected": 16,
+      "status": "FAIL",
+      "overlays": [
+        {
+          "path": "src/import_actions.gd",
+          "bytes": 3870,
+          "sha256": "3f280041d2f09a6fbd956d0e56d2bc6f8ced11453bbf794fbde0c223495dd8f2"
+        },
+        {
+          "path": "tests/import_physics_defaults_unit.gd",
+          "bytes": 4701,
+          "sha256": "dbee24031470b4b779d636ba7225ccb86959391813ed26610362877e4a3e2dc7"
+        }
+      ],
+      "jobs": [
+        {
+          "name": "import",
+          "reaped": true,
+          "private_job_closed": false,
+          "desktop_closed": false,
+          "foreground_child_observed": false,
+          "status": "FAIL",
+          "pid": 31720,
+          "child_desktop_observed": false
+        }
+      ]
+    }
+  ],
+  "application_adopted": false,
+  "native_assets_tested": false,
+  "sdk_or_blender_invoked": false,
+  "gui_or_render_qualified": false,
+  "recording_or_actual_motion_qualified": false,
+  "error_type": "Refusal",
+  "error_code": "PRIVATE_CLOSURE_UNPROVEN",
+  "all_owned_launchers_reaped": true,
+  "all_private_jobs_closed": false,
+  "input_count": 2201,
+  "all_input_hash_size_mtime_identity_unchanged": true,
+  "preservation_failures": [],
+  "head_unchanged": true,
+  "owned_lane_removed": false,
+  "lane_error_type": "Refusal"
+}

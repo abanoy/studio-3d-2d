@@ -1,0 +1,11 @@
+# Protected close-face finding — 2026-11-21
+
+The protected Youmu case shows a reproducible sensitivity to the face mesh’s render-culling bounds. At the saved view and the two smaller backoffs, the face is absent in both saved playback and selected-actor draft contexts. Changing only that face mesh’s extra culling margin restores the face in all six close groups. At the largest backoff the baseline face is already visible, and its margin-control image is byte-identical to baseline.
+
+Reducing the near clip distance tenfold, disabling face backface culling, or making the face opaque does not restore any of the six close groups. The original material controls at those distances are byte-identical to baseline; the near-distance control sometimes changes image hashes without restoring the face. The independently queried current face-mesh depth interval lies between the camera near and far planes in all forty captures. The bounds query examines 5,361 vertices with no conservative fallback or error in every cell.
+
+This establishes a bounded render-culling-bounds lead for this protected fixture. It does not identify which engine or HAS bound is wrong, validate a production repair, reproduce a later resaved owner-original, or explain Summer Sakuya’s Amount 12 behavior. The Youmu fixture exposes no expression channels. No product files, native input, saved pose/key, camera, material, or margin were changed by this inspection.
+
+The forty private images, working GLB, transforms, mesh bounds, and bone data remain local. FINDING.json contains scalar observations and hashes of retained proof documents, without those contents. Some tool previews show only changed regions. A read-only PNG decode confirms the representative close draft baseline/margin pair differs in 10,370 of 2,073,600 pixels, while the entire lower half is identical. Findings concern the face region and full image bytes, not apparent disappearance of unchanged body regions in those previews.
+
+RUNTIME_BOUNDS_PROPOSAL.md is an implementation and qualification proposal only. No candidate code or graphics tests were run by this agent. The completed Root-owned capture job is separate from the newly adopted UI/camera increment.

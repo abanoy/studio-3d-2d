@@ -1,0 +1,30 @@
+{
+  "format": "has_camera_shipping_registration_source_proof_1",
+  "wrapper": {
+    "bytes": 9858,
+    "sha256": "3e6623a1eb0d2f221bd2446e3d6b4660db1b355f8efbbdc8bb648cfbb2a112f7"
+  },
+  "verify_baseline": {
+    "bytes": 57338,
+    "sha256": "32a65792188dcbf7b65f287ac1204808827075ec68c9bd73cb8de9f5afbeaf3e"
+  },
+  "verify_patched": {
+    "bytes": 59181,
+    "sha256": "dd86dfd4fd9611ed108d2fad3746b7ca64a764c5c5c6605fec783a5199d0a437"
+  },
+  "one_anchor_unique": true,
+  "forward_payload_exact": true,
+  "reverse_original_exact": true,
+  "existing_full_bytes_outside_insertion_unchanged": true,
+  "complete_composition_target_pins_validated": 14,
+  "ordinary_scopes": {
+    "pure_controls": 67,
+    "variant_checks": 56,
+    "variants": 8,
+    "total": 515
+  },
+  "graphical_launcher": "Existing run.command Windows private desktop; explicit private Linux display only",
+  "owner_art_or_external_model_fixtures_added": false,
+  "source_only": true,
+  "python_parser_or_engine_executed": false
+}

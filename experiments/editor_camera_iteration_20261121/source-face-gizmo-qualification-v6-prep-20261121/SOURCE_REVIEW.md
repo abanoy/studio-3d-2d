@@ -1,0 +1,3 @@
+# Qualification host v6 source review
+
+The v5 measurement-supported fixture correction retains production, fixed200%/180/205px and20px band distances. Host binds UI v6 and handle38/full424, requires all6 visible white samples with zero205, actual visible near/far picks and three compact clipped-arc negatives. Readback supports the38-control report and retains four images. Bootstrap, run_case, strict error/closure/source/runtime/environment/HEAD logic stay unchanged. Independent /root/hair_bundles source/API review passed:424/six-job arithmetic, all6white/zero205 strictness, fixed180/20 metrics, visible near/far, compact clipped absence/refusal/inside-band distance and read-only artifact audit had no concrete blocker; no execution was performed by author.

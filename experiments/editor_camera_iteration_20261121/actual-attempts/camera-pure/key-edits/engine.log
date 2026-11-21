@@ -1,0 +1,29 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS ordinary authored camera range validates
+PASS retime changes the intended whole frame
+PASS retime preserves every authored key property
+PASS pure planning never mutates the source
+PASS planned nested metadata is independent
+PASS same-frame release is a no-op
+PASS occupied target refuses without overwrite
+PASS missing source key refuses
+PASS fractional target refuses
+PASS target is inside the scene including end boundary
+PASS valid legacy off-scene keys remain editable
+PASS double-click add accepts scene end boundary and current lens
+PASS add preserves visibility range without mutating capture
+PASS remove changes only the selected key
+PASS last camera key has a clear refusal
+PASS adding without a valid capture refuses
+PASS 241-key cap refuses growth
+PASS full track still permits removal
+PASS duplicate baseline frames refuse
+PASS unsorted baseline frames refuse
+PASS nonfinite lens refuses
+PASS zero quaternion refuses
+PASS invalid clipping range refuses
+PASS duration limits match the existing project limits
+PASS context digest binds exact key contents
+PASS all refused and successful plans preserve their inputs
+CAMERA_KEY_EDITS_UNIT {"checks":26,"failures":0}

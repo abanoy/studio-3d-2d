@@ -1,0 +1,4992 @@
+{
+  "format": "has_face_gizmo_source_snapshot_qualification_1",
+  "status": "PASS",
+  "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "expected_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "qualified_historical_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+  "current_functional_source_count": 1086,
+  "current_changed_functional_files": 8,
+  "owned_runtime_files": 1094,
+  "ui_targets": 9,
+  "expected_assertion_checks": 424,
+  "new_whole_full_claimed": false,
+  "application_adopted": false,
+  "owner_acceptance_claimed": false,
+  "native_owner_assets_read": false,
+  "sourceio_or_native_conversion_started": false,
+  "jobs": [
+    {
+      "name": "job-0",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 7492,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-1",
+      "window_required": false,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 19432,
+      "child_desktop_observed": false,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-2",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 32300,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-3",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 30620,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-4",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 21348,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    },
+    {
+      "name": "job-5",
+      "window_required": true,
+      "reaped": true,
+      "private_job_required": true,
+      "private_job_closed": true,
+      "desktop_closed": true,
+      "status": "PASS",
+      "pid": 29584,
+      "child_desktop_observed": true,
+      "foreground_child_observed": false
+    }
+  ],
+  "cases": [
+    {
+      "name": "import",
+      "status": "PASS",
+      "expected_checks": 0,
+      "graphical": false,
+      "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795249474779798500 import 195411be20d04060b66840653f805af6"
+    },
+    {
+      "name": "geometry",
+      "status": "PASS",
+      "expected_checks": 37,
+      "graphical": false,
+      "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795249474779798500 geometry af1a0041057b43e187444944e76c2ff2",
+      "checks": 37,
+      "result": {
+        "application_adopted": false,
+        "checks": 37,
+        "failures": 0,
+        "gui_or_render_qualified": false,
+        "native_assets_tested": false
+      }
+    },
+    {
+      "name": "face",
+      "status": "PASS",
+      "expected_checks": 36,
+      "graphical": true,
+      "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795249474779798500 face 87f67d92cb8d4b34a301a2dafa85570b",
+      "checks": 36,
+      "result": {
+        "application_adopted": false,
+        "checks": 36,
+        "failures": 0,
+        "lifecycle_checks": 6,
+        "list_heights": [
+          160.0,
+          368.0
+        ],
+        "owner_layout_acceptance": false,
+        "resize_cases": [
+          {
+            "compact_host": "(960, 600)",
+            "controlled_late_size_signal": true,
+            "expected_clamp": "(650, 536)",
+            "interface_scale": 1.0,
+            "manual_size": "(610, 496)",
+            "observed_clamp": "(650, 536)",
+            "preference_after_clamp": "(650, 800)"
+          },
+          {
+            "compact_host": "(640, 400)",
+            "controlled_late_size_signal": true,
+            "expected_clamp": "(608, 336)",
+            "interface_scale": 1.5,
+            "manual_size": "(568, 320)",
+            "observed_clamp": "(608, 336)",
+            "preference_after_clamp": "(650, 800)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "handles",
+      "status": "PASS",
+      "expected_checks": 38,
+      "graphical": true,
+      "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795249474779798500 handles 53f327afc8584bb5ac7f0525b02312f8",
+      "checks": 38,
+      "result": {
+        "application_adopted": false,
+        "cases": [
+          {
+            "interface_scale": 1.0,
+            "measurement": {
+              "canvas_global_with_canvas": {
+                "determinant": 1.0,
+                "origin": [
+                  64.0,
+                  56.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "canvas_pan": [
+                0.0,
+                0.0
+              ],
+              "canvas_to_image": {
+                "determinant": 1.0,
+                "origin": [
+                  64.0,
+                  56.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "canvas_viewport_screen_transform": {
+                "determinant": 1.0,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "canvas_zoom": 1.0,
+              "center_image": [
+                688.0,
+                445.0
+              ],
+              "center_native": [
+                960.0,
+                540.0
+              ],
+              "center_screen": [
+                688.0,
+                445.0
+              ],
+              "clipped_test": {},
+              "clipping": {
+                "ancestor_controls": [
+                  {
+                    "clip_contents": true,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113/StageCanvas/@Control@232",
+                    "physical_rect": {
+                      "end": [
+                        1312.0,
+                        834.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        1248.0,
+                        778.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113/StageCanvas",
+                    "physical_rect": {
+                      "end": [
+                        1312.0,
+                        834.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        1248.0,
+                        778.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113",
+                    "physical_rect": {
+                      "end": [
+                        1312.0,
+                        834.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        1248.0,
+                        778.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage",
+                    "physical_rect": {
+                      "end": [
+                        1312.0,
+                        834.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        1248.0,
+                        778.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        834.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        1536.0,
+                        778.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        834.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        1536.0,
+                        778.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        1536.0,
+                        944.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        56.0
+                      ],
+                      "size": [
+                        1600.0,
+                        944.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        56.0
+                      ],
+                      "size": [
+                        1600.0,
+                        944.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        56.0
+                      ],
+                      "size": [
+                        1600.0,
+                        944.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        1600.0,
+                        1000.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": true,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        1600.0,
+                        1000.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        1600.0,
+                        1000.0
+                      ]
+                    }
+                  }
+                ],
+                "canvas_image_rect": {
+                  "end": [
+                    1312.0,
+                    834.0
+                  ],
+                  "position": [
+                    64.0,
+                    56.0
+                  ],
+                  "size": [
+                    1248.0,
+                    778.0
+                  ]
+                },
+                "canvas_local_size": [
+                  1248.0,
+                  778.0
+                ],
+                "frame_image_rect": {
+                  "end": [
+                    1187.55554199219,
+                    726.0
+                  ],
+                  "position": [
+                    188.444458007813,
+                    164.0
+                  ],
+                  "size": [
+                    999.111083984375,
+                    562.0
+                  ]
+                },
+                "frame_local_rect": {
+                  "end": [
+                    1123.55554199219,
+                    670.0
+                  ],
+                  "position": [
+                    124.444458007813,
+                    108.0
+                  ],
+                  "size": [
+                    999.111083984375,
+                    562.0
+                  ]
+                },
+                "image_rect": {
+                  "end": [
+                    1600.0,
+                    1000.0
+                  ],
+                  "position": [
+                    0.0,
+                    0.0
+                  ],
+                  "size": [
+                    1600.0,
+                    1000.0
+                  ]
+                },
+                "scene_image_rect": {
+                  "end": [
+                    1187.55554199219,
+                    726.0
+                  ],
+                  "position": [
+                    188.444458007813,
+                    164.0
+                  ],
+                  "size": [
+                    999.111083984375,
+                    562.0
+                  ]
+                },
+                "scene_local_rect": {
+                  "end": [
+                    1123.55554199219,
+                    670.0
+                  ],
+                  "position": [
+                    124.444458007813,
+                    108.0
+                  ],
+                  "size": [
+                    999.111083984375,
+                    562.0
+                  ]
+                },
+                "visible_canvas_image_rect": {
+                  "end": [
+                    1312.0,
+                    834.0
+                  ],
+                  "position": [
+                    64.0,
+                    56.0
+                  ],
+                  "size": [
+                    1248.0,
+                    778.0
+                  ]
+                },
+                "visible_scene_image_rect": {
+                  "end": [
+                    1187.55554199219,
+                    726.0
+                  ],
+                  "position": [
+                    188.444458007813,
+                    164.0
+                  ],
+                  "size": [
+                    999.111083984375,
+                    562.0
+                  ]
+                }
+              },
+              "far_native": [
+                1353.77307128906,
+                551.816772460938
+              ],
+              "far_scene_contains": true,
+              "image": "handle-case-0.png",
+              "image_save_error": 0,
+              "image_size": [
+                1600,
+                1000
+              ],
+              "metric_axis_screen_pixels": 140.0,
+              "metric_hit_pixels": 20.0,
+              "metric_radius_native": 269.039149103256,
+              "metric_view_radius_native": 345.907477418472,
+              "metric_view_screen_pixels": 180.0,
+              "native_resolution": [
+                1920.0,
+                1080.0
+              ],
+              "native_to_screen": {
+                "determinant": 0.270785301923752,
+                "origin": [
+                  188.444458007813,
+                  164.0
+                ],
+                "x": [
+                  0.520370364189148,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  0.520370364189148
+                ]
+              },
+              "near_canvas": [
+                821.910949707031,
+                394.939147949219
+              ],
+              "near_image": [
+                885.910949707031,
+                450.939147949219
+              ],
+              "near_inside_visible_scene": true,
+              "near_minimum_ring_distance_screen": 18.180835723877,
+              "near_native": [
+                1340.3271484375,
+                551.413330078125
+              ],
+              "near_scene_contains": true,
+              "near_screen": [
+                885.911010742188,
+                450.939147949219
+              ],
+              "near_started_drag": true,
+              "pick_angle": 0.03,
+              "pixels_per_native": 0.520370364189148,
+              "ring_image_points": [
+                [
+                  868.0,
+                  445.0
+                ],
+                [
+                  867.133239746094,
+                  427.35693359375
+                ],
+                [
+                  864.541381835938,
+                  409.883728027344
+                ],
+                [
+                  860.249267578125,
+                  392.748779296875
+                ],
+                [
+                  854.29833984375,
+                  376.116973876953
+                ],
+                [
+                  846.745849609375,
+                  360.148590087891
+                ],
+                [
+                  837.66455078125,
+                  344.997375488281
+                ],
+                [
+                  827.141906738281,
+                  330.809204101563
+                ],
+                [
+                  815.279235839844,
+                  317.720764160156
+                ],
+                [
+                  802.190795898438,
+                  305.858123779297
+                ],
+                [
+                  788.002685546875,
+                  295.33544921875
+                ],
+                [
+                  772.851440429688,
+                  286.254150390625
+                ],
+                [
+                  756.882995605469,
+                  278.70166015625
+                ],
+                [
+                  740.251220703125,
+                  272.750732421875
+                ],
+                [
+                  723.116271972656,
+                  268.458648681641
+                ],
+                [
+                  705.64306640625,
+                  265.866729736328
+                ],
+                [
+                  688.0,
+                  265.0
+                ],
+                [
+                  670.35693359375,
+                  265.866729736328
+                ],
+                [
+                  652.883728027344,
+                  268.458648681641
+                ],
+                [
+                  635.748779296875,
+                  272.750732421875
+                ],
+                [
+                  619.116943359375,
+                  278.70166015625
+                ],
+                [
+                  603.148559570313,
+                  286.254150390625
+                ],
+                [
+                  587.997375488281,
+                  295.33544921875
+                ],
+                [
+                  573.809204101563,
+                  305.858123779297
+                ],
+                [
+                  560.720825195313,
+                  317.720764160156
+                ],
+                [
+                  548.858154296875,
+                  330.809204101563
+                ],
+                [
+                  538.33544921875,
+                  344.997375488281
+                ],
+                [
+                  529.254150390625,
+                  360.148590087891
+                ],
+                [
+                  521.70166015625,
+                  376.116973876953
+                ],
+                [
+                  515.750732421875,
+                  392.748779296875
+                ],
+                [
+                  511.458648681641,
+                  409.883728027344
+                ],
+                [
+                  508.866729736328,
+                  427.35693359375
+                ],
+                [
+                  508.0,
+                  445.0
+                ],
+                [
+                  508.866729736328,
+                  462.64306640625
+                ],
+                [
+                  511.458648681641,
+                  480.116271972656
+                ],
+                [
+                  515.750732421875,
+                  497.251220703125
+                ],
+                [
+                  521.70166015625,
+                  513.883056640625
+                ],
+                [
+                  529.254150390625,
+                  529.851440429688
+                ],
+                [
+                  538.33544921875,
+                  545.002685546875
+                ],
+                [
+                  548.858154296875,
+                  559.190795898438
+                ],
+                [
+                  560.720825195313,
+                  572.279174804688
+                ],
+                [
+                  573.809204101563,
+                  584.141845703125
+                ],
+                [
+                  587.997375488281,
+                  594.66455078125
+                ],
+                [
+                  603.148559570313,
+                  603.745849609375
+                ],
+                [
+                  619.116943359375,
+                  611.29833984375
+                ],
+                [
+                  635.748779296875,
+                  617.249267578125
+                ],
+                [
+                  652.883728027344,
+                  621.541381835938
+                ],
+                [
+                  670.35693359375,
+                  624.13330078125
+                ],
+                [
+                  688.0,
+                  625.0
+                ],
+                [
+                  705.64306640625,
+                  624.13330078125
+                ],
+                [
+                  723.116271972656,
+                  621.541381835938
+                ],
+                [
+                  740.251220703125,
+                  617.249267578125
+                ],
+                [
+                  756.882995605469,
+                  611.29833984375
+                ],
+                [
+                  772.851440429688,
+                  603.745849609375
+                ],
+                [
+                  788.002685546875,
+                  594.66455078125
+                ],
+                [
+                  802.190795898438,
+                  584.141845703125
+                ],
+                [
+                  815.279235839844,
+                  572.279174804688
+                ],
+                [
+                  827.141906738281,
+                  559.190795898438
+                ],
+                [
+                  837.66455078125,
+                  545.002685546875
+                ],
+                [
+                  846.745849609375,
+                  529.851440429688
+                ],
+                [
+                  854.29833984375,
+                  513.883056640625
+                ],
+                [
+                  860.249267578125,
+                  497.251220703125
+                ],
+                [
+                  864.541381835938,
+                  480.116271972656
+                ],
+                [
+                  867.133239746094,
+                  462.64306640625
+                ],
+                [
+                  868.0,
+                  445.0
+                ]
+              ],
+              "ring_point8_native": [
+                1204.59350585938,
+                295.406494140625
+              ],
+              "root_content_scale_factor": 1.0,
+              "root_screen_transform": {
+                "determinant": 1.0,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "root_size": [
+                1600.0,
+                1000.0
+              ],
+              "root_stretch_transform": {
+                "determinant": 1.0,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "root_visible_rect": {
+                "end": [
+                  1600.0,
+                  1000.0
+                ],
+                "position": [
+                  0.0,
+                  0.0
+                ],
+                "size": [
+                  1600.0,
+                  1000.0
+                ]
+              },
+              "samples": [
+                {
+                  "angle": 0.03,
+                  "sample180_image": [
+                    867.919006347656,
+                    450.399200439453
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    892.907775878906,
+                    451.149078369141
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 1.0771975511966,
+                  "sample180_image": [
+                    773.28369140625,
+                    603.514038085938
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    785.128601074219,
+                    625.529846191406
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 2.1243951023932,
+                  "sample180_image": [
+                    593.364685058594,
+                    598.114868164063
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    580.220886230469,
+                    619.380798339844
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 3.17159265358979,
+                  "sample180_image": [
+                    508.080993652344,
+                    439.600799560547
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    483.092224121094,
+                    438.850921630859
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 4.21879020478639,
+                  "sample180_image": [
+                    602.71630859375,
+                    286.485961914063
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    590.871398925781,
+                    264.470153808594
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 5.26598775598299,
+                  "sample180_image": [
+                    782.635314941406,
+                    291.885162353516
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    795.779113769531,
+                    270.619201660156
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                }
+              ],
+              "scene_setup": false,
+              "visible_probe_angles": [
+                0.03,
+                1.0771975511966,
+                2.1243951023932,
+                3.17159265358979,
+                4.21879020478639,
+                5.26598775598299
+              ]
+            },
+            "ring_pixel_hits": 6,
+            "window": "(1600, 1000)",
+            "wrong_band_hits": 0
+          },
+          {
+            "interface_scale": 1.5,
+            "measurement": {
+              "canvas_global_with_canvas": {
+                "determinant": 1.0,
+                "origin": [
+                  64.0,
+                  56.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "canvas_pan": [
+                0.0,
+                0.0
+              ],
+              "canvas_to_image": {
+                "determinant": 2.25,
+                "origin": [
+                  96.0,
+                  84.0
+                ],
+                "x": [
+                  1.5,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.5
+                ]
+              },
+              "canvas_viewport_screen_transform": {
+                "determinant": 2.25,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.5,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.5
+                ]
+              },
+              "canvas_zoom": 1.0,
+              "center_image": [
+                631.5,
+                417.0
+              ],
+              "center_native": [
+                960.0,
+                540.0
+              ],
+              "center_screen": [
+                631.5,
+                417.0
+              ],
+              "clipped_test": {
+                "angle": 1.25,
+                "assertions": 3,
+                "image_point": [
+                  688.258056640625,
+                  587.817260742188
+                ],
+                "minimum_ring_distance_screen": 18.1652393341064,
+                "near_native": [
+                  1212.54162597656,
+                  1300.04077148438
+                ],
+                "scene_contains": false,
+                "started_drag": false,
+                "white_at_180": false
+              },
+              "clipping": {
+                "ancestor_controls": [
+                  {
+                    "clip_contents": true,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113/StageCanvas/@Control@232",
+                    "physical_rect": {
+                      "end": [
+                        1167.0,
+                        750.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        1071.0,
+                        666.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113/StageCanvas",
+                    "physical_rect": {
+                      "end": [
+                        1167.0,
+                        750.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        1071.0,
+                        666.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113",
+                    "physical_rect": {
+                      "end": [
+                        1167.0,
+                        750.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        1071.0,
+                        666.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage",
+                    "physical_rect": {
+                      "end": [
+                        1167.0,
+                        750.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        1071.0,
+                        666.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936",
+                    "physical_rect": {
+                      "end": [
+                        1599.0,
+                        750.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        1503.0,
+                        666.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932",
+                    "physical_rect": {
+                      "end": [
+                        1599.0,
+                        750.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        1503.0,
+                        666.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical",
+                    "physical_rect": {
+                      "end": [
+                        1599.0,
+                        999.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        1503.0,
+                        915.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934",
+                    "physical_rect": {
+                      "end": [
+                        1599.0,
+                        999.0
+                      ],
+                      "position": [
+                        0.0,
+                        84.0
+                      ],
+                      "size": [
+                        1599.0,
+                        915.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88",
+                    "physical_rect": {
+                      "end": [
+                        1599.0,
+                        999.0
+                      ],
+                      "position": [
+                        0.0,
+                        84.0
+                      ],
+                      "size": [
+                        1599.0,
+                        915.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87",
+                    "physical_rect": {
+                      "end": [
+                        1599.0,
+                        999.0
+                      ],
+                      "position": [
+                        0.0,
+                        84.0
+                      ],
+                      "size": [
+                        1599.0,
+                        915.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        1600.0,
+                        1000.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": true,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        1600.0,
+                        1000.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio",
+                    "physical_rect": {
+                      "end": [
+                        1600.0,
+                        1000.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        1600.0,
+                        1000.0
+                      ]
+                    }
+                  }
+                ],
+                "canvas_image_rect": {
+                  "end": [
+                    1167.0,
+                    750.0
+                  ],
+                  "position": [
+                    96.0,
+                    84.0
+                  ],
+                  "size": [
+                    1071.0,
+                    666.0
+                  ]
+                },
+                "canvas_local_size": [
+                  714.0,
+                  444.0
+                ],
+                "frame_image_rect": {
+                  "end": [
+                    868.833374023438,
+                    550.5
+                  ],
+                  "position": [
+                    394.166656494141,
+                    283.5
+                  ],
+                  "size": [
+                    474.666717529297,
+                    267.0
+                  ]
+                },
+                "frame_local_rect": {
+                  "end": [
+                    515.222229003906,
+                    311.0
+                  ],
+                  "position": [
+                    198.777770996094,
+                    133.0
+                  ],
+                  "size": [
+                    316.444458007813,
+                    178.0
+                  ]
+                },
+                "image_rect": {
+                  "end": [
+                    1600.0,
+                    1000.0
+                  ],
+                  "position": [
+                    0.0,
+                    0.0
+                  ],
+                  "size": [
+                    1600.0,
+                    1000.0
+                  ]
+                },
+                "scene_image_rect": {
+                  "end": [
+                    868.833374023438,
+                    550.5
+                  ],
+                  "position": [
+                    394.166656494141,
+                    283.5
+                  ],
+                  "size": [
+                    474.666717529297,
+                    267.0
+                  ]
+                },
+                "scene_local_rect": {
+                  "end": [
+                    515.222229003906,
+                    311.0
+                  ],
+                  "position": [
+                    198.777770996094,
+                    133.0
+                  ],
+                  "size": [
+                    316.444458007813,
+                    178.0
+                  ]
+                },
+                "visible_canvas_image_rect": {
+                  "end": [
+                    1167.0,
+                    750.0
+                  ],
+                  "position": [
+                    96.0,
+                    84.0
+                  ],
+                  "size": [
+                    1071.0,
+                    666.0
+                  ]
+                },
+                "visible_scene_image_rect": {
+                  "end": [
+                    868.833374023438,
+                    550.5
+                  ],
+                  "position": [
+                    394.166656494141,
+                    283.5
+                  ],
+                  "size": [
+                    474.666717529297,
+                    267.0
+                  ]
+                }
+              },
+              "far_native": [
+                1788.84069824219,
+                564.872802734375
+              ],
+              "far_scene_contains": true,
+              "image": "handle-case-1.png",
+              "image_save_error": 0,
+              "image_size": [
+                1600,
+                1000
+              ],
+              "metric_axis_screen_pixels": 140.0,
+              "metric_hit_pixels": 20.0,
+              "metric_radius_native": 566.292151518655,
+              "metric_view_radius_native": 728.089909095413,
+              "metric_view_screen_pixels": 180.0,
+              "native_resolution": [
+                1920.0,
+                1080.0
+              ],
+              "native_to_screen": {
+                "determinant": 0.0611188225448132,
+                "origin": [
+                  394.166656494141,
+                  283.5
+                ],
+                "x": [
+                  0.24722221493721,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  0.24722221493721
+                ]
+              },
+              "near_canvas": [
+                488.940643310547,
+                225.959411621094
+              ],
+              "near_image": [
+                829.410949707031,
+                422.939117431641
+              ],
+              "near_inside_visible_scene": true,
+              "near_minimum_ring_distance_screen": 18.1807098388672,
+              "near_native": [
+                1760.53869628906,
+                564.0234375
+              ],
+              "near_scene_contains": true,
+              "near_screen": [
+                829.410888671875,
+                422.939117431641
+              ],
+              "near_started_drag": true,
+              "pick_angle": 0.03,
+              "pixels_per_native": 0.24722221493721,
+              "ring_image_points": [
+                [
+                  811.500061035156,
+                  417.0
+                ],
+                [
+                  810.63330078125,
+                  399.35693359375
+                ],
+                [
+                  808.041381835938,
+                  381.883728027344
+                ],
+                [
+                  803.749328613281,
+                  364.748748779297
+                ],
+                [
+                  797.79833984375,
+                  348.116943359375
+                ],
+                [
+                  790.245910644531,
+                  332.148559570313
+                ],
+                [
+                  781.164611816406,
+                  316.997314453125
+                ],
+                [
+                  770.641906738281,
+                  302.809173583984
+                ],
+                [
+                  758.779296875,
+                  289.720764160156
+                ],
+                [
+                  745.690856933594,
+                  277.858093261719
+                ],
+                [
+                  731.502685546875,
+                  267.335418701172
+                ],
+                [
+                  716.351440429688,
+                  258.254119873047
+                ],
+                [
+                  700.383056640625,
+                  250.701644897461
+                ],
+                [
+                  683.751220703125,
+                  244.750701904297
+                ],
+                [
+                  666.616271972656,
+                  240.458618164063
+                ],
+                [
+                  649.143127441406,
+                  237.86669921875
+                ],
+                [
+                  631.5,
+                  236.999954223633
+                ],
+                [
+                  613.85693359375,
+                  237.86669921875
+                ],
+                [
+                  596.3837890625,
+                  240.458618164063
+                ],
+                [
+                  579.248779296875,
+                  244.750701904297
+                ],
+                [
+                  562.616943359375,
+                  250.701644897461
+                ],
+                [
+                  546.648559570313,
+                  258.254119873047
+                ],
+                [
+                  531.497314453125,
+                  267.335418701172
+                ],
+                [
+                  517.309143066406,
+                  277.858093261719
+                ],
+                [
+                  504.220733642578,
+                  289.720764160156
+                ],
+                [
+                  492.358093261719,
+                  302.809173583984
+                ],
+                [
+                  481.83544921875,
+                  316.997314453125
+                ],
+                [
+                  472.754089355469,
+                  332.148559570313
+                ],
+                [
+                  465.20166015625,
+                  348.116943359375
+                ],
+                [
+                  459.250701904297,
+                  364.748748779297
+                ],
+                [
+                  454.958618164063,
+                  381.883728027344
+                ],
+                [
+                  452.36669921875,
+                  399.35693359375
+                ],
+                [
+                  451.499938964844,
+                  417.0
+                ],
+                [
+                  452.36669921875,
+                  434.64306640625
+                ],
+                [
+                  454.958618164063,
+                  452.116271972656
+                ],
+                [
+                  459.250701904297,
+                  469.251251220703
+                ],
+                [
+                  465.20166015625,
+                  485.882995605469
+                ],
+                [
+                  472.754089355469,
+                  501.851440429688
+                ],
+                [
+                  481.83544921875,
+                  517.002685546875
+                ],
+                [
+                  492.358093261719,
+                  531.190795898438
+                ],
+                [
+                  504.220733642578,
+                  544.279296875
+                ],
+                [
+                  517.309143066406,
+                  556.141906738281
+                ],
+                [
+                  531.497314453125,
+                  566.66455078125
+                ],
+                [
+                  546.648559570313,
+                  575.745849609375
+                ],
+                [
+                  562.616943359375,
+                  583.29833984375
+                ],
+                [
+                  579.248779296875,
+                  589.249328613281
+                ],
+                [
+                  596.3837890625,
+                  593.541381835938
+                ],
+                [
+                  613.85693359375,
+                  596.13330078125
+                ],
+                [
+                  631.5,
+                  597.000061035156
+                ],
+                [
+                  649.143127441406,
+                  596.13330078125
+                ],
+                [
+                  666.616271972656,
+                  593.541381835938
+                ],
+                [
+                  683.751220703125,
+                  589.249328613281
+                ],
+                [
+                  700.383056640625,
+                  583.29833984375
+                ],
+                [
+                  716.351440429688,
+                  575.745849609375
+                ],
+                [
+                  731.502685546875,
+                  566.66455078125
+                ],
+                [
+                  745.690856933594,
+                  556.141906738281
+                ],
+                [
+                  758.779296875,
+                  544.279296875
+                ],
+                [
+                  770.641906738281,
+                  531.190795898438
+                ],
+                [
+                  781.164611816406,
+                  517.002685546875
+                ],
+                [
+                  790.245910644531,
+                  501.851440429688
+                ],
+                [
+                  797.79833984375,
+                  485.882995605469
+                ],
+                [
+                  803.749328613281,
+                  469.251251220703
+                ],
+                [
+                  808.041381835938,
+                  452.116271972656
+                ],
+                [
+                  810.63330078125,
+                  434.64306640625
+                ],
+                [
+                  811.500061035156,
+                  417.0
+                ]
+              ],
+              "ring_point8_native": [
+                1474.83740234375,
+                25.1625747680664
+              ],
+              "root_content_scale_factor": 1.5,
+              "root_screen_transform": {
+                "determinant": 2.25,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.5,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.5
+                ]
+              },
+              "root_size": [
+                1600.0,
+                1000.0
+              ],
+              "root_stretch_transform": {
+                "determinant": 2.25,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.5,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.5
+                ]
+              },
+              "root_visible_rect": {
+                "end": [
+                  1066.66662597656,
+                  666.666687011719
+                ],
+                "position": [
+                  0.0,
+                  0.0
+                ],
+                "size": [
+                  1066.66662597656,
+                  666.666687011719
+                ]
+              },
+              "samples": [
+                {
+                  "angle": 0.03,
+                  "sample180_image": [
+                    811.419006347656,
+                    422.399200439453
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    836.407775878906,
+                    423.149078369141
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 0.455424005173618,
+                  "sample180_image": [
+                    793.153442382813,
+                    496.171752929688
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    815.605285644531,
+                    507.167846679688
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 2.71344372494128,
+                  "sample180_image": [
+                    467.74755859375,
+                    491.733764648438
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    445.004150390625,
+                    502.113433837891
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 3.17159265358979,
+                  "sample180_image": [
+                    451.580993652344,
+                    411.600799560547
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    426.592224121094,
+                    410.850921630859
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 3.59701665876341,
+                  "sample180_image": [
+                    469.846557617188,
+                    337.828247070313
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    447.394714355469,
+                    326.832153320313
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 5.85503637853108,
+                  "sample180_image": [
+                    795.25244140625,
+                    342.266235351563
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    817.995849609375,
+                    331.886566162109
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                }
+              ],
+              "scene_setup": false,
+              "visible_probe_angles": [
+                0.03,
+                0.455424005173618,
+                2.71344372494128,
+                3.17159265358979,
+                3.59701665876341,
+                5.85503637853108
+              ]
+            },
+            "ring_pixel_hits": 6,
+            "window": "(1600, 1000)",
+            "wrong_band_hits": 0
+          },
+          {
+            "interface_scale": 1.0,
+            "measurement": {
+              "canvas_global_with_canvas": {
+                "determinant": 1.0,
+                "origin": [
+                  64.0,
+                  56.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "canvas_pan": [
+                0.0,
+                0.0
+              ],
+              "canvas_to_image": {
+                "determinant": 1.0,
+                "origin": [
+                  64.0,
+                  56.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "canvas_viewport_screen_transform": {
+                "determinant": 1.0,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "canvas_zoom": 1.0,
+              "center_image": [
+                1608.0,
+                665.0
+              ],
+              "center_native": [
+                960.0,
+                540.0
+              ],
+              "center_screen": [
+                1608.0,
+                665.0
+              ],
+              "clipped_test": {},
+              "clipping": {
+                "ancestor_controls": [
+                  {
+                    "clip_contents": true,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113/StageCanvas/@Control@232",
+                    "physical_rect": {
+                      "end": [
+                        3152.0,
+                        1274.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        3088.0,
+                        1218.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113/StageCanvas",
+                    "physical_rect": {
+                      "end": [
+                        3152.0,
+                        1274.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        3088.0,
+                        1218.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113",
+                    "physical_rect": {
+                      "end": [
+                        3152.0,
+                        1274.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        3088.0,
+                        1218.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage",
+                    "physical_rect": {
+                      "end": [
+                        3152.0,
+                        1274.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        3088.0,
+                        1218.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1274.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        3376.0,
+                        1218.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1274.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        3376.0,
+                        1218.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        64.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        64.0,
+                        56.0
+                      ],
+                      "size": [
+                        3376.0,
+                        1384.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        56.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1384.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        56.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1384.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        56.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        56.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1384.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1440.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": true,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1440.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 1.0,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.0,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "path": "/root/Studio",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1440.0
+                      ]
+                    }
+                  }
+                ],
+                "canvas_image_rect": {
+                  "end": [
+                    3152.0,
+                    1274.0
+                  ],
+                  "position": [
+                    64.0,
+                    56.0
+                  ],
+                  "size": [
+                    3088.0,
+                    1218.0
+                  ]
+                },
+                "canvas_local_size": [
+                  3088.0,
+                  1218.0
+                ],
+                "frame_image_rect": {
+                  "end": [
+                    2498.66650390625,
+                    1166.0
+                  ],
+                  "position": [
+                    717.333374023438,
+                    164.0
+                  ],
+                  "size": [
+                    1781.33312988281,
+                    1002.0
+                  ]
+                },
+                "frame_local_rect": {
+                  "end": [
+                    2434.66650390625,
+                    1110.0
+                  ],
+                  "position": [
+                    653.333374023438,
+                    108.0
+                  ],
+                  "size": [
+                    1781.33325195313,
+                    1002.0
+                  ]
+                },
+                "image_rect": {
+                  "end": [
+                    3440.0,
+                    1440.0
+                  ],
+                  "position": [
+                    0.0,
+                    0.0
+                  ],
+                  "size": [
+                    3440.0,
+                    1440.0
+                  ]
+                },
+                "scene_image_rect": {
+                  "end": [
+                    2498.66650390625,
+                    1166.0
+                  ],
+                  "position": [
+                    717.333374023438,
+                    164.0
+                  ],
+                  "size": [
+                    1781.33312988281,
+                    1002.0
+                  ]
+                },
+                "scene_local_rect": {
+                  "end": [
+                    2434.66650390625,
+                    1110.0
+                  ],
+                  "position": [
+                    653.333374023438,
+                    108.0
+                  ],
+                  "size": [
+                    1781.33325195313,
+                    1002.0
+                  ]
+                },
+                "visible_canvas_image_rect": {
+                  "end": [
+                    3152.0,
+                    1274.0
+                  ],
+                  "position": [
+                    64.0,
+                    56.0
+                  ],
+                  "size": [
+                    3088.0,
+                    1218.0
+                  ]
+                },
+                "visible_scene_image_rect": {
+                  "end": [
+                    2498.66650390625,
+                    1166.0
+                  ],
+                  "position": [
+                    717.333374023438,
+                    164.0
+                  ],
+                  "size": [
+                    1781.33312988281,
+                    1002.0
+                  ]
+                }
+              },
+              "far_native": [
+                1180.85864257813,
+                546.627685546875
+              ],
+              "far_scene_contains": true,
+              "image": "handle-case-2.png",
+              "image_save_error": 0,
+              "image_size": [
+                3440,
+                1440
+              ],
+              "metric_axis_screen_pixels": 140.0,
+              "metric_hit_pixels": 20.0,
+              "metric_radius_native": 150.898215010645,
+              "metric_view_radius_native": 194.011990727972,
+              "metric_view_screen_pixels": 180.0,
+              "native_resolution": [
+                1920.0,
+                1080.0
+              ],
+              "native_to_screen": {
+                "determinant": 0.860771536827087,
+                "origin": [
+                  717.333374023438,
+                  164.0
+                ],
+                "x": [
+                  0.927777707576752,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  0.927777767181396
+                ]
+              },
+              "near_canvas": [
+                1741.91088867188,
+                614.939086914063
+              ],
+              "near_image": [
+                1805.91088867188,
+                670.939086914063
+              ],
+              "near_inside_visible_scene": true,
+              "near_minimum_ring_distance_screen": 18.1807098388672,
+              "near_native": [
+                1173.31713867188,
+                546.4013671875
+              ],
+              "near_scene_contains": true,
+              "near_screen": [
+                1805.91088867188,
+                670.939025878906
+              ],
+              "near_started_drag": true,
+              "pick_angle": 0.03,
+              "pixels_per_native": 0.927777707576752,
+              "ring_image_points": [
+                [
+                  1788.0,
+                  665.0
+                ],
+                [
+                  1787.13330078125,
+                  647.35693359375
+                ],
+                [
+                  1784.54150390625,
+                  629.883728027344
+                ],
+                [
+                  1780.24926757813,
+                  612.748779296875
+                ],
+                [
+                  1774.29833984375,
+                  596.116943359375
+                ],
+                [
+                  1766.74584960938,
+                  580.148559570313
+                ],
+                [
+                  1757.66455078125,
+                  564.997314453125
+                ],
+                [
+                  1747.14196777344,
+                  550.809143066406
+                ],
+                [
+                  1735.279296875,
+                  537.720703125
+                ],
+                [
+                  1722.19091796875,
+                  525.858093261719
+                ],
+                [
+                  1708.00268554688,
+                  515.33544921875
+                ],
+                [
+                  1692.8515625,
+                  506.254119873047
+                ],
+                [
+                  1676.88305664063,
+                  498.70166015625
+                ],
+                [
+                  1660.25122070313,
+                  492.750671386719
+                ],
+                [
+                  1643.1162109375,
+                  488.458587646484
+                ],
+                [
+                  1625.64306640625,
+                  485.86669921875
+                ],
+                [
+                  1608.0,
+                  484.999908447266
+                ],
+                [
+                  1590.35693359375,
+                  485.86669921875
+                ],
+                [
+                  1572.8837890625,
+                  488.458587646484
+                ],
+                [
+                  1555.74877929688,
+                  492.750671386719
+                ],
+                [
+                  1539.11694335938,
+                  498.70166015625
+                ],
+                [
+                  1523.14855957031,
+                  506.254119873047
+                ],
+                [
+                  1507.99731445313,
+                  515.33544921875
+                ],
+                [
+                  1493.80908203125,
+                  525.858093261719
+                ],
+                [
+                  1480.720703125,
+                  537.720703125
+                ],
+                [
+                  1468.85815429688,
+                  550.809143066406
+                ],
+                [
+                  1458.33544921875,
+                  564.997314453125
+                ],
+                [
+                  1449.25402832031,
+                  580.148559570313
+                ],
+                [
+                  1441.70166015625,
+                  596.116943359375
+                ],
+                [
+                  1435.75073242188,
+                  612.748779296875
+                ],
+                [
+                  1431.45861816406,
+                  629.883728027344
+                ],
+                [
+                  1428.86669921875,
+                  647.35693359375
+                ],
+                [
+                  1428.0,
+                  665.0
+                ],
+                [
+                  1428.86669921875,
+                  682.64306640625
+                ],
+                [
+                  1431.45861816406,
+                  700.116271972656
+                ],
+                [
+                  1435.75073242188,
+                  717.251281738281
+                ],
+                [
+                  1441.70166015625,
+                  733.883056640625
+                ],
+                [
+                  1449.25402832031,
+                  749.851501464844
+                ],
+                [
+                  1458.33544921875,
+                  765.002624511719
+                ],
+                [
+                  1468.85815429688,
+                  779.190856933594
+                ],
+                [
+                  1480.720703125,
+                  792.279296875
+                ],
+                [
+                  1493.80908203125,
+                  804.141967773438
+                ],
+                [
+                  1507.99731445313,
+                  814.66455078125
+                ],
+                [
+                  1523.14855957031,
+                  823.745971679688
+                ],
+                [
+                  1539.11694335938,
+                  831.298400878906
+                ],
+                [
+                  1555.74877929688,
+                  837.249328613281
+                ],
+                [
+                  1572.8837890625,
+                  841.541381835938
+                ],
+                [
+                  1590.35693359375,
+                  844.133361816406
+                ],
+                [
+                  1608.0,
+                  845.000061035156
+                ],
+                [
+                  1625.64306640625,
+                  844.133361816406
+                ],
+                [
+                  1643.1162109375,
+                  841.541381835938
+                ],
+                [
+                  1660.25122070313,
+                  837.249328613281
+                ],
+                [
+                  1676.88305664063,
+                  831.298400878906
+                ],
+                [
+                  1692.8515625,
+                  823.745971679688
+                ],
+                [
+                  1708.00268554688,
+                  814.66455078125
+                ],
+                [
+                  1722.19091796875,
+                  804.141967773438
+                ],
+                [
+                  1735.279296875,
+                  792.279296875
+                ],
+                [
+                  1747.14196777344,
+                  779.190856933594
+                ],
+                [
+                  1757.66455078125,
+                  765.002624511719
+                ],
+                [
+                  1766.74584960938,
+                  749.851501464844
+                ],
+                [
+                  1774.29833984375,
+                  733.883056640625
+                ],
+                [
+                  1780.24926757813,
+                  717.251281738281
+                ],
+                [
+                  1784.54150390625,
+                  700.116271972656
+                ],
+                [
+                  1787.13330078125,
+                  682.64306640625
+                ],
+                [
+                  1788.0,
+                  665.0
+                ]
+              ],
+              "ring_point8_native": [
+                1097.18725585938,
+                402.812774658203
+              ],
+              "root_content_scale_factor": 1.0,
+              "root_screen_transform": {
+                "determinant": 1.0,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "root_size": [
+                3440.0,
+                1440.0
+              ],
+              "root_stretch_transform": {
+                "determinant": 1.0,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "root_visible_rect": {
+                "end": [
+                  3440.0,
+                  1440.0
+                ],
+                "position": [
+                  0.0,
+                  0.0
+                ],
+                "size": [
+                  3440.0,
+                  1440.0
+                ]
+              },
+              "samples": [
+                {
+                  "angle": 0.03,
+                  "sample180_image": [
+                    1787.9189453125,
+                    670.399169921875
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1812.90771484375,
+                    671.149047851563
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 1.0771975511966,
+                  "sample180_image": [
+                    1693.28369140625,
+                    823.514038085938
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1705.12866210938,
+                    845.529846191406
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 2.1243951023932,
+                  "sample180_image": [
+                    1513.36462402344,
+                    818.114868164063
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1500.22082519531,
+                    839.380798339844
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 3.17159265358979,
+                  "sample180_image": [
+                    1428.0810546875,
+                    659.600830078125
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1403.09228515625,
+                    658.850952148438
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 4.21879020478639,
+                  "sample180_image": [
+                    1522.71630859375,
+                    506.485961914063
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1510.87133789063,
+                    484.470153808594
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 5.26598775598299,
+                  "sample180_image": [
+                    1702.63537597656,
+                    511.885162353516
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1715.77917480469,
+                    490.619201660156
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                }
+              ],
+              "scene_setup": false,
+              "visible_probe_angles": [
+                0.03,
+                1.0771975511966,
+                2.1243951023932,
+                3.17159265358979,
+                4.21879020478639,
+                5.26598775598299
+              ]
+            },
+            "ring_pixel_hits": 6,
+            "window": "(3440, 1440)",
+            "wrong_band_hits": 0
+          },
+          {
+            "interface_scale": 1.5,
+            "measurement": {
+              "canvas_global_with_canvas": {
+                "determinant": 1.0,
+                "origin": [
+                  64.0,
+                  56.0
+                ],
+                "x": [
+                  1.0,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "canvas_pan": [
+                0.0,
+                0.0
+              ],
+              "canvas_to_image": {
+                "determinant": 2.25,
+                "origin": [
+                  96.0,
+                  84.0
+                ],
+                "x": [
+                  1.5,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.5
+                ]
+              },
+              "canvas_viewport_screen_transform": {
+                "determinant": 2.25,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.5,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.5
+                ]
+              },
+              "canvas_zoom": 1.0,
+              "center_image": [
+                1551.75,
+                637.5
+              ],
+              "center_native": [
+                960.0,
+                540.0
+              ],
+              "center_screen": [
+                1551.75,
+                637.5
+              ],
+              "clipped_test": {},
+              "clipping": {
+                "ancestor_controls": [
+                  {
+                    "clip_contents": true,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113/StageCanvas/@Control@232",
+                    "physical_rect": {
+                      "end": [
+                        3007.5,
+                        1191.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        2911.5,
+                        1107.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113/StageCanvas",
+                    "physical_rect": {
+                      "end": [
+                        3007.5,
+                        1191.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        2911.5,
+                        1107.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage/@VBoxContainer@113",
+                    "physical_rect": {
+                      "end": [
+                        3007.5,
+                        1191.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        2911.5,
+                        1107.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936/Stage",
+                    "physical_rect": {
+                      "end": [
+                        3007.5,
+                        1191.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        2911.5,
+                        1107.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932/@HSplitContainer@936",
+                    "physical_rect": {
+                      "end": [
+                        3439.5,
+                        1191.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        3343.5,
+                        1107.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical/@VSplitContainer@932",
+                    "physical_rect": {
+                      "end": [
+                        3439.5,
+                        1191.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        3343.5,
+                        1107.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        96.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934/WorkspaceVertical",
+                    "physical_rect": {
+                      "end": [
+                        3439.5,
+                        1440.0
+                      ],
+                      "position": [
+                        96.0,
+                        84.0
+                      ],
+                      "size": [
+                        3343.5,
+                        1356.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88/@HSplitContainer@934",
+                    "physical_rect": {
+                      "end": [
+                        3439.5,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        84.0
+                      ],
+                      "size": [
+                        3439.5,
+                        1356.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87/@VBoxContainer@88",
+                    "physical_rect": {
+                      "end": [
+                        3439.5,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        84.0
+                      ],
+                      "size": [
+                        3439.5,
+                        1356.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        84.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22/@MarginContainer@87",
+                    "physical_rect": {
+                      "end": [
+                        3439.5,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        84.0
+                      ],
+                      "size": [
+                        3439.5,
+                        1356.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21/@VBoxContainer@22",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1440.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": true,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio/@ScrollContainer@21",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1440.0
+                      ]
+                    }
+                  },
+                  {
+                    "clip_contents": false,
+                    "local_to_image": {
+                      "determinant": 2.25,
+                      "origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "x": [
+                        1.5,
+                        0.0
+                      ],
+                      "y": [
+                        0.0,
+                        1.5
+                      ]
+                    },
+                    "path": "/root/Studio",
+                    "physical_rect": {
+                      "end": [
+                        3440.0,
+                        1440.0
+                      ],
+                      "position": [
+                        0.0,
+                        0.0
+                      ],
+                      "size": [
+                        3440.0,
+                        1440.0
+                      ]
+                    }
+                  }
+                ],
+                "canvas_image_rect": {
+                  "end": [
+                    3007.5,
+                    1191.0
+                  ],
+                  "position": [
+                    96.0,
+                    84.0
+                  ],
+                  "size": [
+                    2911.5,
+                    1107.0
+                  ]
+                },
+                "canvas_local_size": [
+                  1941.0,
+                  738.0
+                ],
+                "frame_image_rect": {
+                  "end": [
+                    2247.75,
+                    1029.0
+                  ],
+                  "position": [
+                    855.75,
+                    246.0
+                  ],
+                  "size": [
+                    1392.0,
+                    783.0
+                  ]
+                },
+                "frame_local_rect": {
+                  "end": [
+                    1434.5,
+                    630.0
+                  ],
+                  "position": [
+                    506.5,
+                    108.0
+                  ],
+                  "size": [
+                    928.0,
+                    522.0
+                  ]
+                },
+                "image_rect": {
+                  "end": [
+                    3440.0,
+                    1440.0
+                  ],
+                  "position": [
+                    0.0,
+                    0.0
+                  ],
+                  "size": [
+                    3440.0,
+                    1440.0
+                  ]
+                },
+                "scene_image_rect": {
+                  "end": [
+                    2247.75,
+                    1029.0
+                  ],
+                  "position": [
+                    855.75,
+                    246.0
+                  ],
+                  "size": [
+                    1392.0,
+                    783.0
+                  ]
+                },
+                "scene_local_rect": {
+                  "end": [
+                    1434.5,
+                    630.0
+                  ],
+                  "position": [
+                    506.5,
+                    108.0
+                  ],
+                  "size": [
+                    928.0,
+                    522.0
+                  ]
+                },
+                "visible_canvas_image_rect": {
+                  "end": [
+                    3007.5,
+                    1191.0
+                  ],
+                  "position": [
+                    96.0,
+                    84.0
+                  ],
+                  "size": [
+                    2911.5,
+                    1107.0
+                  ]
+                },
+                "visible_scene_image_rect": {
+                  "end": [
+                    2247.75,
+                    1029.0
+                  ],
+                  "position": [
+                    855.75,
+                    246.0
+                  ],
+                  "size": [
+                    1392.0,
+                    783.0
+                  ]
+                }
+              },
+              "far_native": [
+                1242.63134765625,
+                548.4814453125
+              ],
+              "far_scene_contains": true,
+              "image": "handle-case-3.png",
+              "image_save_error": 0,
+              "image_size": [
+                3440,
+                1440
+              ],
+              "metric_axis_screen_pixels": 140.0,
+              "metric_hit_pixels": 20.0,
+              "metric_radius_native": 193.103457801266,
+              "metric_view_radius_native": 248.275874315913,
+              "metric_view_screen_pixels": 180.0,
+              "native_resolution": [
+                1920.0,
+                1080.0
+              ],
+              "native_to_screen": {
+                "determinant": 0.525624930858612,
+                "origin": [
+                  855.75,
+                  246.0
+                ],
+                "x": [
+                  0.724999964237213,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  0.724999964237213
+                ]
+              },
+              "near_canvas": [
+                1102.44067382813,
+                372.959411621094
+              ],
+              "near_image": [
+                1749.66101074219,
+                643.439086914063
+              ],
+              "near_inside_visible_scene": true,
+              "near_minimum_ring_distance_screen": 18.1807098388672,
+              "near_native": [
+                1232.98071289063,
+                548.19189453125
+              ],
+              "near_scene_contains": true,
+              "near_screen": [
+                1749.66088867188,
+                643.439086914063
+              ],
+              "near_started_drag": true,
+              "pick_angle": 0.03,
+              "pixels_per_native": 0.724999964237213,
+              "ring_image_points": [
+                [
+                  1731.75,
+                  637.5
+                ],
+                [
+                  1730.88330078125,
+                  619.85693359375
+                ],
+                [
+                  1728.29125976563,
+                  602.3837890625
+                ],
+                [
+                  1723.99926757813,
+                  585.248779296875
+                ],
+                [
+                  1718.04821777344,
+                  568.617004394531
+                ],
+                [
+                  1710.49584960938,
+                  552.648559570313
+                ],
+                [
+                  1701.41455078125,
+                  537.497314453125
+                ],
+                [
+                  1690.89184570313,
+                  523.309204101563
+                ],
+                [
+                  1679.02917480469,
+                  510.220733642578
+                ],
+                [
+                  1665.94079589844,
+                  498.358062744141
+                ],
+                [
+                  1651.75268554688,
+                  487.83544921875
+                ],
+                [
+                  1636.60144042969,
+                  478.754150390625
+                ],
+                [
+                  1620.63305664063,
+                  471.20166015625
+                ],
+                [
+                  1604.00122070313,
+                  465.250701904297
+                ],
+                [
+                  1586.8662109375,
+                  460.958587646484
+                ],
+                [
+                  1569.39306640625,
+                  458.36669921875
+                ],
+                [
+                  1551.75,
+                  457.499938964844
+                ],
+                [
+                  1534.10693359375,
+                  458.36669921875
+                ],
+                [
+                  1516.6337890625,
+                  460.958587646484
+                ],
+                [
+                  1499.49877929688,
+                  465.250701904297
+                ],
+                [
+                  1482.86694335938,
+                  471.20166015625
+                ],
+                [
+                  1466.89855957031,
+                  478.754150390625
+                ],
+                [
+                  1451.74731445313,
+                  487.83544921875
+                ],
+                [
+                  1437.55920410156,
+                  498.358062744141
+                ],
+                [
+                  1424.470703125,
+                  510.220733642578
+                ],
+                [
+                  1412.60815429688,
+                  523.309204101563
+                ],
+                [
+                  1402.08544921875,
+                  537.497314453125
+                ],
+                [
+                  1393.00415039063,
+                  552.648559570313
+                ],
+                [
+                  1385.45166015625,
+                  568.617004394531
+                ],
+                [
+                  1379.50073242188,
+                  585.248779296875
+                ],
+                [
+                  1375.20861816406,
+                  602.3837890625
+                ],
+                [
+                  1372.61669921875,
+                  619.85693359375
+                ],
+                [
+                  1371.74987792969,
+                  637.5
+                ],
+                [
+                  1372.61669921875,
+                  655.14306640625
+                ],
+                [
+                  1375.20861816406,
+                  672.6162109375
+                ],
+                [
+                  1379.50073242188,
+                  689.751220703125
+                ],
+                [
+                  1385.45166015625,
+                  706.383056640625
+                ],
+                [
+                  1393.00415039063,
+                  722.351440429688
+                ],
+                [
+                  1402.08544921875,
+                  737.502624511719
+                ],
+                [
+                  1412.60815429688,
+                  751.690795898438
+                ],
+                [
+                  1424.470703125,
+                  764.779296875
+                ],
+                [
+                  1437.55920410156,
+                  776.641967773438
+                ],
+                [
+                  1451.74731445313,
+                  787.164611816406
+                ],
+                [
+                  1466.89855957031,
+                  796.245910644531
+                ],
+                [
+                  1482.86694335938,
+                  803.798400878906
+                ],
+                [
+                  1499.49877929688,
+                  809.749328613281
+                ],
+                [
+                  1516.6337890625,
+                  814.041381835938
+                ],
+                [
+                  1534.10693359375,
+                  816.63330078125
+                ],
+                [
+                  1551.75,
+                  817.500061035156
+                ],
+                [
+                  1569.39306640625,
+                  816.63330078125
+                ],
+                [
+                  1586.8662109375,
+                  814.041381835938
+                ],
+                [
+                  1604.00122070313,
+                  809.749328613281
+                ],
+                [
+                  1620.63305664063,
+                  803.798400878906
+                ],
+                [
+                  1636.60144042969,
+                  796.245910644531
+                ],
+                [
+                  1651.75268554688,
+                  787.164611816406
+                ],
+                [
+                  1665.94079589844,
+                  776.641967773438
+                ],
+                [
+                  1679.02917480469,
+                  764.779296875
+                ],
+                [
+                  1690.89184570313,
+                  751.690795898438
+                ],
+                [
+                  1701.41455078125,
+                  737.502624511719
+                ],
+                [
+                  1710.49584960938,
+                  722.351440429688
+                ],
+                [
+                  1718.04821777344,
+                  706.383056640625
+                ],
+                [
+                  1723.99926757813,
+                  689.751220703125
+                ],
+                [
+                  1728.29125976563,
+                  672.6162109375
+                ],
+                [
+                  1730.88330078125,
+                  655.14306640625
+                ],
+                [
+                  1731.75,
+                  637.5
+                ]
+              ],
+              "ring_point8_native": [
+                1135.5576171875,
+                364.442413330078
+              ],
+              "root_content_scale_factor": 1.5,
+              "root_screen_transform": {
+                "determinant": 2.25,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.5,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.5
+                ]
+              },
+              "root_size": [
+                3440.0,
+                1440.0
+              ],
+              "root_stretch_transform": {
+                "determinant": 2.25,
+                "origin": [
+                  0.0,
+                  0.0
+                ],
+                "x": [
+                  1.5,
+                  0.0
+                ],
+                "y": [
+                  0.0,
+                  1.5
+                ]
+              },
+              "root_visible_rect": {
+                "end": [
+                  2293.33325195313,
+                  960.0
+                ],
+                "position": [
+                  0.0,
+                  0.0
+                ],
+                "size": [
+                  2293.33325195313,
+                  960.0
+                ]
+              },
+              "samples": [
+                {
+                  "angle": 0.03,
+                  "sample180_image": [
+                    1731.6689453125,
+                    642.899169921875
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1756.65771484375,
+                    643.649047851563
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 1.0771975511966,
+                  "sample180_image": [
+                    1637.03369140625,
+                    796.014038085938
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1648.87866210938,
+                    818.029846191406
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 2.1243951023932,
+                  "sample180_image": [
+                    1457.11462402344,
+                    790.614868164063
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1443.97082519531,
+                    811.880798339844
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 3.17159265358979,
+                  "sample180_image": [
+                    1371.8310546875,
+                    632.100830078125
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1346.84228515625,
+                    631.350952148438
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 4.21879020478639,
+                  "sample180_image": [
+                    1466.46630859375,
+                    478.985961914063
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1454.62133789063,
+                    456.970153808594
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                },
+                {
+                  "angle": 5.26598775598299,
+                  "sample180_image": [
+                    1646.38537597656,
+                    484.385162353516
+                  ],
+                  "sample180_inside_visible_scene": true,
+                  "sample205_image": [
+                    1659.52917480469,
+                    463.119201660156
+                  ],
+                  "sample205_inside_visible_scene": true,
+                  "white180": true,
+                  "white205": false
+                }
+              ],
+              "scene_setup": false,
+              "visible_probe_angles": [
+                0.03,
+                1.0771975511966,
+                2.1243951023932,
+                3.17159265358979,
+                4.21879020478639,
+                5.26598775598299
+              ]
+            },
+            "ring_pixel_hits": 6,
+            "window": "(3440, 1440)",
+            "wrong_band_hits": 0
+          }
+        ],
+        "checks": 38,
+        "clipped_arc_assertions": 3,
+        "failures": 0,
+        "historical_assertions": 27,
+        "owner_hand_comfort_certified": false,
+        "pixel_requirement": "six_visible_white180_zero_white205",
+        "visible_geometry_assertions": 8
+      }
+    },
+    {
+      "name": "rotation-write",
+      "status": "PASS",
+      "expected_checks": 309,
+      "graphical": true,
+      "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795249474779798500 rotation-write db1d1341f57c467c96b2934de3ebee82",
+      "checks": 309,
+      "result": {
+        "cases": [
+          {
+            "axis": 0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.000172633488546126,
+            "quadrant": 6
+          },
+          {
+            "axis": 0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 18
+          },
+          {
+            "axis": 0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 30
+          },
+          {
+            "axis": 0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.0,
+            "quadrant": 42
+          },
+          {
+            "axis": 1,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.000251654390012845,
+            "quadrant": 6
+          },
+          {
+            "axis": 1,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.000125827195006423,
+            "quadrant": 18
+          },
+          {
+            "axis": 1,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 30
+          },
+          {
+            "axis": 1,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.0,
+            "quadrant": 42
+          },
+          {
+            "axis": 2,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 6
+          },
+          {
+            "axis": 2,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 3.0517578125e-05,
+            "quadrant": 18
+          },
+          {
+            "axis": 2,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.0,
+            "quadrant": 30
+          },
+          {
+            "axis": 2,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 42
+          },
+          {
+            "axis": 0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.000415083952248096,
+            "quadrant": 6
+          },
+          {
+            "axis": 0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 18
+          },
+          {
+            "axis": 0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 30
+          },
+          {
+            "axis": 0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.0,
+            "quadrant": 42
+          },
+          {
+            "axis": 1,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.000251654390012845,
+            "quadrant": 6
+          },
+          {
+            "axis": 1,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.000125827195006423,
+            "quadrant": 18
+          },
+          {
+            "axis": 1,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 30
+          },
+          {
+            "axis": 1,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.0,
+            "quadrant": 42
+          },
+          {
+            "axis": 2,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 6
+          },
+          {
+            "axis": 2,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 3.0517578125e-05,
+            "quadrant": 18
+          },
+          {
+            "axis": 2,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.0,
+            "quadrant": 30
+          },
+          {
+            "axis": 2,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 6.103515625e-05,
+            "quadrant": 42
+          }
+        ],
+        "checks": 309,
+        "failures": 0,
+        "folder": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795249474779798500\\Rotation",
+        "view_cases": [
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": -1.0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 6.103515625e-05,
+            "selected": "@root",
+            "space": 0
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": 1.0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.0,
+            "selected": "@root",
+            "space": 0
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": -1.0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.000195407847058959,
+            "selected": "@root",
+            "space": 1
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": 1.0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.0,
+            "selected": "@root",
+            "space": 1
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": -1.0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 9.1552734375e-05,
+            "selected": "Skeleton3D::arm",
+            "space": 0
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": 1.0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.000125827195006423,
+            "selected": "Skeleton3D::arm",
+            "space": 0
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": -1.0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 9.1552734375e-05,
+            "selected": "Skeleton3D::arm",
+            "space": 1
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": 1.0,
+            "eye": "(3.0, 2.2, 4.0)",
+            "pixel_error": 0.000125827195006423,
+            "selected": "Skeleton3D::arm",
+            "space": 1
+          },
+          {
+            "circle_error": 5.7258439483121e-05,
+            "direction": -1.0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.0001220703125,
+            "selected": "@root",
+            "space": 0
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": 1.0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.0,
+            "selected": "@root",
+            "space": 0
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": -1.0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.000195407847058959,
+            "selected": "@root",
+            "space": 1
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": 1.0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.0,
+            "selected": "@root",
+            "space": 1
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": -1.0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 9.1552734375e-05,
+            "selected": "Skeleton3D::arm",
+            "space": 0
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": 1.0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.000125827195006423,
+            "selected": "Skeleton3D::arm",
+            "space": 0
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": -1.0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 9.1552734375e-05,
+            "selected": "Skeleton3D::arm",
+            "space": 1
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": 1.0,
+            "eye": "(-3.0, 1.7, -4.0)",
+            "pixel_error": 0.000125827195006423,
+            "selected": "Skeleton3D::arm",
+            "space": 1
+          },
+          {
+            "circle_error": 0.000122532146633603,
+            "direction": -1.0,
+            "eye": "(1.0, 3.0, 2.0)",
+            "pixel_error": 9.1552734375e-05,
+            "selected": "@root",
+            "space": 0
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": 1.0,
+            "eye": "(1.0, 3.0, 2.0)",
+            "pixel_error": 0.0,
+            "selected": "@root",
+            "space": 0
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": -1.0,
+            "eye": "(1.0, 3.0, 2.0)",
+            "pixel_error": 0.000195407847058959,
+            "selected": "@root",
+            "space": 1
+          },
+          {
+            "circle_error": 6.02342333877459e-05,
+            "direction": 1.0,
+            "eye": "(1.0, 3.0, 2.0)",
+            "pixel_error": 0.0,
+            "selected": "@root",
+            "space": 1
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": -1.0,
+            "eye": "(1.0, 3.0, 2.0)",
+            "pixel_error": 9.1552734375e-05,
+            "selected": "Skeleton3D::arm",
+            "space": 0
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": 1.0,
+            "eye": "(1.0, 3.0, 2.0)",
+            "pixel_error": 0.000125827195006423,
+            "selected": "Skeleton3D::arm",
+            "space": 0
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": -1.0,
+            "eye": "(1.0, 3.0, 2.0)",
+            "pixel_error": 9.1552734375e-05,
+            "selected": "Skeleton3D::arm",
+            "space": 1
+          },
+          {
+            "circle_error": 7.32889748178422e-05,
+            "direction": 1.0,
+            "eye": "(1.0, 3.0, 2.0)",
+            "pixel_error": 0.000125827195006423,
+            "selected": "Skeleton3D::arm",
+            "space": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "rotation-read",
+      "status": "PASS",
+      "expected_checks": 4,
+      "graphical": true,
+      "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795249474779798500 rotation-read 2b2febb3181949d6a57b461ac5aee5f6",
+      "checks": 4,
+      "result": {
+        "checks": 4,
+        "failures": 0,
+        "json_scalar_tolerance": 1e-12
+      }
+    }
+  ],
+  "checks": 424,
+  "all_owned_launchers_reaped": true,
+  "all_attempted_private_jobs_closed": true,
+  "parent_environment_unchanged": true,
+  "head_unchanged": true,
+  "handle_diagnostic_artifacts": {
+    "report": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795249474779798500\\Handles\\handle-size-result.json",
+    "report_sha256": "bc77169f69348448eb14a0bdb6d96e927552a145a3cc939abd0d826ed77cc169",
+    "checks": 38,
+    "failures": 0,
+    "images": [
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795249474779798500\\Handles\\handle-case-0.png",
+        "bytes": 182466,
+        "sha256": "66ca9b11492e80b359417472aee0ce8b7ae9c077f59c628ced7939392eb9b348",
+        "dimensions": [
+          1600,
+          1000
+        ],
+        "window": "(1600, 1000)",
+        "interface_scale": 1.0
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795249474779798500\\Handles\\handle-case-1.png",
+        "bytes": 246763,
+        "sha256": "7c83b8bb4781356df97371ca54d44cb73e634c81ab2131a8c29cf4ce1756d409",
+        "dimensions": [
+          1600,
+          1000
+        ],
+        "window": "(1600, 1000)",
+        "interface_scale": 1.5
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795249474779798500\\Handles\\handle-case-2.png",
+        "bytes": 236363,
+        "sha256": "1d9d324a95b3a21274baab797fe93d190488ef4202fcfc4d1e6a831088b1f66b",
+        "dimensions": [
+          3440,
+          1440
+        ],
+        "window": "(3440, 1440)",
+        "interface_scale": 1.0
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-face-gizmo-qualification-1795249474779798500\\Handles\\handle-case-3.png",
+        "bytes": 370318,
+        "sha256": "69ab913c803b5d0aa95156a87a2b0524448c0d5a28d89f32c7dd3e545ffc940f",
+        "dimensions": [
+          3440,
+          1440
+        ],
+        "window": "(3440, 1440)",
+        "interface_scale": 1.5
+      }
+    ],
+    "diagnosis_proven": false,
+    "qualification_status_overridden": false
+  },
+  "preservation_failures": [],
+  "all_admitted_inputs_preserved": true,
+  "current_functional_domain_preserved": true,
+  "admitted_inputs": 2248,
+  "owned_lock_removed": true,
+  "owned_lock_retained": false
+}

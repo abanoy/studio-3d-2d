@@ -1,0 +1,37 @@
+{
+  "format": "has_exact_three_verified_headless_removal_1",
+  "utc": "2026-11-21T07:44:33.2576501Z",
+  "remote_commit": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "remote_receipt_sha256": "cc70a5f821ff7be8b58a0c324b3233d4a95736232b39fe164de8e09ae9b76804",
+  "host_process_count": 383,
+  "target_process_matches": [],
+  "unreadable_runtime_candidates": [],
+  "inventory_sha256": "5e36d6299f6e056f7a5962555d0f2388e23eeaf9742cb4e9662072f16f9eddb5",
+  "stages": [
+    {
+      "stage": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240567956647400",
+      "files": 5316,
+      "subdirectories": 106,
+      "logical_bytes": 37292171,
+      "removed": true
+    },
+    {
+      "stage": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240843368455500",
+      "files": 5322,
+      "subdirectories": 108,
+      "logical_bytes": 37302236,
+      "removed": true
+    },
+    {
+      "stage": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795241062433191300",
+      "files": 7095,
+      "subdirectories": 144,
+      "logical_bytes": 49757913,
+      "removed": true
+    }
+  ],
+  "status": "REMOVED_THREE_REMOTE_VERIFIED_DISPOSABLE_STAGES",
+  "actual_disk_allocation_reclaimed_measured": false,
+  "total_files": 17733,
+  "total_logical_bytes": 124352320
+}

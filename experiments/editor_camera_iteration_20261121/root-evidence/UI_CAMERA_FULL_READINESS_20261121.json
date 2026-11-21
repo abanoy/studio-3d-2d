@@ -1,0 +1,116 @@
+{
+  "format": "has_ui_camera_full_readiness_audit_1",
+  "status": "READ_ONLY_SOURCE_AUDIT_FULL_NOT_RUN",
+  "qualified_scoped_integration": {
+    "combined": 939,
+    "ordinary_ui": 111,
+    "ordinary_camera": 515,
+    "full_claimed": false
+  },
+  "registration": {
+    "prior_actual_groups": 170,
+    "new_groups": [
+      "editor_controls_geometry",
+      "editor_controls_face",
+      "editor_controls_handles",
+      "camera_interactions_pure",
+      "camera_interactions_classic-100-simple",
+      "camera_interactions_classic-100-advanced",
+      "camera_interactions_classic-150-simple",
+      "camera_interactions_classic-150-advanced",
+      "camera_interactions_neon-100-simple",
+      "camera_interactions_neon-100-advanced",
+      "camera_interactions_neon-150-simple",
+      "camera_interactions_neon-150-advanced"
+    ],
+    "new_group_collisions": [],
+    "projected_current_groups": 182,
+    "new_checks": 626,
+    "existing_rotation_309_plus_4_unchanged": true
+  },
+  "helpers": [
+    {
+      "path": "experiments/reference_body_20261120/run_full.py",
+      "bytes": 8711,
+      "sha256": "74231a770fa282aee11326b05661063c2662c261bad33c1c58d63b696a018f34",
+      "unchanged_from_previous_actual_full": true
+    },
+    {
+      "path": "experiments/reference_body_20261120/stage_legacy_inputs.py",
+      "bytes": 4102,
+      "sha256": "f3b7fb04592d36324b046f8130c4bd4b74557321ba8e908385de697b94d18150",
+      "unchanged_from_previous_actual_full": true
+    },
+    {
+      "path": "experiments/reference_body_20261120/receipt_provenance.py",
+      "bytes": 6944,
+      "sha256": "24ec20ef3677f3ece89ba3f85a64060f1c2a40cddcc6fcae5042c866589e118a",
+      "unchanged_from_previous_actual_full": true
+    }
+  ],
+  "blocking_port_manifest_proposal": {
+    "path": "output/source-ui-camera-port-bindings-prep-20261121",
+    "manifest_sha256": "888865dbef41490855cc734a2258a29547a0e871a124cd8dadf36e8c946b51e8",
+    "qualification_pending": true,
+    "manifest_files": 2,
+    "pin_rows_per_manifest": 2,
+    "validators_unchanged": true
+  },
+  "execution_prerequisites": [
+    "Root qualifies and adopts the two exact pin-only manifest successors; retain original refusals and tested source packets.",
+    "Commit exact functional1102 source after all25targets. Fresh owned proper Git checkout must match requested HEAD and raw blob membership, with no override.cfg/project.binary or generated UID sidecars.",
+    "Stage only existing declared legacy fixtures BEFORE run_full and prior-receipt/source snapshots, then launch unchanged run_full.py with exact committed revision/fixture-root/sourceio arguments.",
+    "No source/commit/archive membership mutation while Full owns its lane. Do not run from the experimental combinedStudio with its override and absent .git.",
+    "Require fresh output/verification.json, exact182groups including all12new names, source-before==source-after, requested revision unchanged, all current private jobs isolated/closed and exactly expected existing converter cancellation."
+  ],
+  "approved_runtime": {
+    "python": "C:/Program Files/Python313/python.exe",
+    "godot": "C:/a/tools/Godot/Godot_v4.6-stable_win64.exe",
+    "ffmpeg": "C:/Program Files/ffmpeg/bin/ffmpeg.exe",
+    "hecatia": "C:/a/Programming/HAS/hecatia.kra",
+    "hecatia_sha256": "fff3599293023f41f05eb27c9d51d2af45d01493b8618c5da51067f3449ff758",
+    "fixture_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output",
+    "sourceio": "C:/a/Programming/cloudflare/has-neon-review-20261116-c2d52ff/output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "native_inputs": "C:/a/dump",
+    "new_tools_or_native_inputs_requested": false
+  },
+  "legacy_staging": {
+    "tool": "experiments/reference_body_20261120/stage_legacy_inputs.py",
+    "args": [
+      "--fixture-root",
+      "<existing approved fixture root>"
+    ],
+    "roles": [
+      "pose-smoke/miku-project",
+      "source-smoke/source-project",
+      "sfm-smoke/project",
+      "native-import-verification.json",
+      "compatibility/miku-tested/scene.glb",
+      "compatibility/miku-tested/parameters.json"
+    ],
+    "copy_semantics": "Only declared assets/cels/project manifests; source/copy hash-size-nsmtime equality, no source mutation. Existing native-import report has bounded backup exception."
+  },
+  "receipt_provenance": {
+    "inventory_roots": [
+      "output",
+      "experiments"
+    ],
+    "only_format": "studio_private_desktop_1",
+    "new_camera_graphical_private_jobs": 16,
+    "new_ui_graphical_private_jobs": 2,
+    "new_pure_cases_use_headless_run_command_no_private_receipts": true,
+    "prior_full_unique_private_jobs": 220,
+    "new_jobs_delta_if_all_existing_paths_retain_same_behavior": 18,
+    "risks": [
+      "New per-case user/profile directories and nested snapshots are inventoried recursively; do not restrict audit to output/private-desktop.",
+      "Archive byte-exact known old receipts before Full prior inventory. Reformatting a same-desktop old receipt yields unknown-byte conflict; do not fabricate fresh physical closure from summary objects.",
+      "All original experiments receipt paths must remain unchanged; new/missing/edited experiments receipts after prior inventory fail archive preservation.",
+      "New desktop duplicates remain current; independently compare physical keys then deduplicate; partial new receipts must fail closure, never be excluded.",
+      "Unchanged prior CreateDesktop refusals remain prior evidence, not current failed jobs; preserve original raw bytes and separate closure explanation.",
+      "Exactly one existing expected converter-cancel receipt is allowed; new UI/camera receipts must have zero exit.",
+      "Unchanged Full helper reports group count but does not itself assert182; Root postflight must verify the12newgroup names/counts and182total without weakening existing completion predicate."
+    ]
+  },
+  "no_native_or_gpu_execution_by_author": true,
+  "no_main_source_mutations_by_author": true
+}

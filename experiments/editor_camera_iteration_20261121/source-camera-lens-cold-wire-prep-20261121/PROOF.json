@@ -1,0 +1,27 @@
+{
+  "format": "has_camera_cold_wire_fixture_proof_1",
+  "status": "SOURCE_API_PEER_GO_UNPARSED_UNRUN",
+  "measured_root_stage": "has-camera-cold-diagnostic-1795247882936083000",
+  "measured_observation": {
+    "before_save_equals_after_save": true,
+    "wire_expected_equals_loaded": true,
+    "wire_differences": 0,
+    "loaded_frame12_fov": 57,
+    "raw_differences": "Only frame0/12 int→float and rotation_xyzw[0] -0.21796278655529022→-0.21796278655529025, delta -2.7755575615628914e-17"
+  },
+  "original_fixture": {
+    "bytes": 6239,
+    "sha256": "072d32cc7cdfce86c1070b3980ac5dae9cebbd9d90597f6b3eae90c89bfd275e"
+  },
+  "corrected_fixture": {
+    "bytes": 6532,
+    "sha256": "33237d55b6342fd416671f12bd4cd5eb3d2512e1952058f564aceba3b981d7da"
+  },
+  "reverse_three_fixture_edits_restores_original_exact": true,
+  "other_original_assertions_unchanged": 21,
+  "original_lens_assertions_retained": 22,
+  "synthetic_controls": 24,
+  "comparison": "Exact full-precision expected wire captured before Save plus independent exact original engine input preservation; strict bool/nonfinite/structural refusal; no tolerance",
+  "production_or_persistence_changes": false,
+  "source_peer": "face_gizmo GO; no execution"
+}

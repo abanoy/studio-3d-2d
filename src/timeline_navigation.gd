@@ -46,7 +46,7 @@ func apply_neon_style() -> void:
 	caption.custom_minimum_size.x=96;caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;caption.size_flags_vertical=Control.SIZE_SHRINK_CENTER
 	caption.add_theme_font_override("font",S.mono(400));caption.add_theme_font_size_override("font_size",11);caption.add_theme_color_override("font_color",S.TEXT3)
 func busy() -> bool:
-	return app.exporting or tracks.dragging or ruler.dragging or not tracks.moving_id.is_empty() or tracks.audio_gesture_active() or tracks.cel_gesture_active()
+	return app.exporting or tracks.dragging or ruler.dragging or not tracks.moving_id.is_empty() or tracks.audio_gesture_active() or tracks.cel_gesture_active() or (tracks.has_method("camera_gesture_active") and tracks.camera_gesture_active()) or (ruler.has_method("camera_gesture_active") and ruler.camera_gesture_active())
 func length() -> float:return float(maxi(1,int(app.video.duration_frames)))
 func visible() -> float:return length() if span<=0 else clampf(span,1,length())
 func publish() -> void:

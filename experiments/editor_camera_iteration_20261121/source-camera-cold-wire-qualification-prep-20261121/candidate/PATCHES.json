@@ -1,0 +1,99 @@
+{
+  "format": "has_unadopted_camera_timeline_ux_patch_1",
+  "base_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "status": "SOURCE_READY_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "patches": [
+    {
+      "path": "src/app.gd",
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "var timeline: Control\r\n",
+      "after": "var timeline: Control\r\nvar camera_key_editor: Node\r\n"
+    },
+    {
+      "path": "src/app.gd",
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "\ttimeline_navigation=preload(\"res://src/timeline_navigation.gd\").new();timeline_navigation.app=self;add_child(timeline_navigation);timeline_navigation.setup(ruler_holder,timeline,timeline_ruler)\r\n",
+      "after": "\ttimeline_navigation=preload(\"res://src/timeline_navigation.gd\").new();timeline_navigation.app=self;add_child(timeline_navigation);timeline_navigation.setup(ruler_holder,timeline,timeline_ruler)\r\n\tcamera_key_editor=preload(\"res://src/camera_timeline_editor.gd\").new();add_child(camera_key_editor);camera_key_editor.setup(self,timeline_ruler)\r\n"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "before": "var dragging := false\r\n",
+      "after": "var dragging := false\r\nvar camera_editor\r\n"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "before": "\tfocus_exited.connect(cancel_audio)\r\n\tfocus_exited.connect(cancel_cel)\r\n",
+      "after": "\tfocus_exited.connect(cancel_pointer_gestures)\r\n"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "before": "func _ready() -> void:\r\n",
+      "after": "func camera_gesture_active() -> bool:\r\n\treturn is_instance_valid(camera_editor) and camera_editor.active()\r\n\r\nfunc cancel_pointer_gestures() -> void:\r\n\tdragging=false;cancel_audio();cancel_cel();finish_move(true)\r\n\tif is_instance_valid(camera_editor):camera_editor.cancel()\r\n\r\nfunc _input(event: InputEvent) -> void:\r\n\t# Registered on this actual viewport, including a floated Timeline window.\r\n\tif is_instance_valid(camera_editor) and camera_editor.global_event(event):get_viewport().set_input_as_handled()\r\n\r\nfunc _notification(what: int) -> void:\r\n\tif what in [NOTIFICATION_WM_WINDOW_FOCUS_OUT,NOTIFICATION_APPLICATION_FOCUS_OUT]:cancel_pointer_gestures()\r\n\r\nfunc _exit_tree() -> void:cancel_pointer_gestures()\r\n\r\nfunc _ready() -> void:\r\n"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "before": "func _gui_input(event: InputEvent) -> void:\r\n\tif not interactive:accept_event();return\r\n",
+      "after": "func _gui_input(event: InputEvent) -> void:\r\n\tif not interactive:accept_event();return\r\n\tif is_instance_valid(camera_editor) and camera_editor.input(event):accept_event();return\r\n"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "before": "\t\t\tpainter.draw_colored_polygon(PackedVector2Array([p + Vector2(0, -6), p + Vector2(6, 0), p + Vector2(0, 6), p + Vector2(-6, 0)]), Color(\"ce922e\"))\r\n",
+      "after": "\t\t\tpainter.draw_colored_polygon(PackedVector2Array([p + Vector2(0, -6), p + Vector2(6, 0), p + Vector2(0, 6), p + Vector2(-6, 0)]), Color(\"ce922e\"))\r\n\t\tif is_instance_valid(camera_editor):camera_editor.draw_overlay(painter,Color(\"193d6b\"),Color(\"a02424\"))\r\n"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "before": "\t\tneon_keys(painter,keys.map(func(key):return float(key.frame)),38,StudioTheme.CAMERA,Color(1,0.373,0.682,0.3),6)\r\n",
+      "after": "\t\tneon_keys(painter,keys.map(func(key):return float(key.frame)),38,StudioTheme.CAMERA,Color(1,0.373,0.682,0.3),6)\r\n\t\tif is_instance_valid(camera_editor):camera_editor.draw_overlay(painter,Color.WHITE,StudioTheme.PROBLEM)\r\n"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "before": "\tif event is InputEventMouse and (dragging or event is InputEventMouseButton and event.pressed):\r\n",
+      "after": "\tif event is InputEventMouseMotion and is_instance_valid(camera_editor):camera_editor.hover(event.position)\r\n\tif event is InputEventMouse and (dragging or event is InputEventMouseButton and event.pressed):\r\n"
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "base_bytes": 5359,
+      "base_sha256": "cae17b6d4261049ac4ed64d640cef28901278b8913bfa278ad38f67092365c9e",
+      "before": "\treturn app.exporting or tracks.dragging or ruler.dragging or not tracks.moving_id.is_empty() or tracks.audio_gesture_active() or tracks.cel_gesture_active()\n",
+      "after": "\treturn app.exporting or tracks.dragging or ruler.dragging or not tracks.moving_id.is_empty() or tracks.audio_gesture_active() or tracks.cel_gesture_active() or (tracks.has_method(\"camera_gesture_active\") and tracks.camera_gesture_active()) or (ruler.has_method(\"camera_gesture_active\") and ruler.camera_gesture_active())\n"
+    },
+    {
+      "path": "src/app.gd",
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "func _input(event: InputEvent) -> void:\r\n",
+      "after": "func _input(event: InputEvent) -> void:\r\n\tif preload(\"res://src/camera_lens_gesture.gd\").handle(self,event):get_viewport().set_input_as_handled();return\r\n"
+    },
+    {
+      "path": "src/app.gd",
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "\tif exporting or playing: return\r\n\t# Only new editing presses are bounded.",
+      "after": "\tif exporting or playing: return\r\n\tif preload(\"res://src/camera_lens_gesture.gd\").handle(self,event):return\r\n\t# Only new editing presses are bounded."
+    },
+    {
+      "path": "src/app.gd",
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "Right drag: adjust view direction\r\n",
+      "after": "Right drag: adjust view direction\r\nRight + wheel: change lens zoom\r\n"
+    }
+  ]
+}

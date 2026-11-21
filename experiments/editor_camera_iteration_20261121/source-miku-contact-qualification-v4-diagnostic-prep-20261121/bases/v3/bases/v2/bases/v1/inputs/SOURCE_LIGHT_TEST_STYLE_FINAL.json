@@ -1,0 +1,18 @@
+{
+  "format": "has_source_light_test_style_delta_2",
+  "path": "tests/test_source_lights.py",
+  "original": {
+    "bytes": 8420,
+    "sha256": "554202926efd038d9916242d4353feae69ce6e43928c75826736354ac2dd3b22"
+  },
+  "intermediate": {
+    "bytes": 8419,
+    "sha256": "8cc558d9025bb18469827cd637f637a17fb72d94904198317acb98873f3a5ad7"
+  },
+  "final": {
+    "bytes": 8417,
+    "sha256": "a714eda74f3fc3d0ed06fef287dca740298e5d841ede236ae1370e60adfbc3c4"
+  },
+  "operation": "Remove only redundant terminal LF bytes, leaving exactly one final newline; every statement/assertion byte retained",
+  "production_source_changed": false
+}

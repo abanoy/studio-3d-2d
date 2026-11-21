@@ -1,0 +1,28 @@
+{
+  "format": "has_face_window_handle_source_predecessor_3",
+  "predecessor_folder": "output/source-face-window-and-gizmo-v3-prep-20261121",
+  "predecessor_manifest_sha256": "d62fb0aea18d544a0278ee0f44159b15addf246f04d9248e11ed8eade4d57523",
+  "predecessor_frozen_files_preserved": 24,
+  "actual_root_attempt": {
+    "stage": "C:/a/Programming/cloudflare/has-face-gizmo-qualification-1795247406949688500",
+    "status": "FAIL_HANDLE_FIXTURE_PARSE",
+    "import_pass": true,
+    "geometry_pass_assertions": 37,
+    "face_pass_assertions": 36,
+    "face_lifecycle_pass_assertions": 6,
+    "face_engine_errors": 0,
+    "handle_assertions_run": 0,
+    "attempted_private_jobs_closed": 4,
+    "error": "Cannot infer type center_image at handle smoke68"
+  },
+  "source_delta": {
+    "path": "tests/pose_handle_size_smoke.gd",
+    "before": "var center_image:=",
+    "after": "var center_image: Vector2=",
+    "production_files_changed": 0,
+    "assertions_unchanged": 27
+  },
+  "existing_rotation_dynamic_inference_review": "Concrete constructors/typed receivers/typed static returns; no additional concrete defect found; parser remains unrun by author",
+  "application_adopted": false,
+  "actual_v4_tests_run_by_author": 0
+}

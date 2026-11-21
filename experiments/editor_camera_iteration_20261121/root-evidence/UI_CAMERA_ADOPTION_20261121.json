@@ -1,0 +1,242 @@
+{
+  "format": "has_exact_ui_camera_adoption_1",
+  "status": "APPLIED_READBACK_VERIFIED",
+  "base_revision": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "functional_baseline_count": 1086,
+  "functional_target_count": 1102,
+  "functional_files_modified": 7,
+  "functional_files_added": 16,
+  "targets": [
+    {
+      "path": "src/app.gd",
+      "operation": "replace",
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "bytes": 314927,
+      "sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f"
+    },
+    {
+      "path": "src/base_shape_editor.gd",
+      "operation": "replace",
+      "base_bytes": 16788,
+      "base_sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0"
+    },
+    {
+      "path": "src/camera_key_edits.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 3812,
+      "sha256": "785bef72a010cb0f47086525a4c388ce9247e26b7c950f5ecb80991be463f949"
+    },
+    {
+      "path": "src/camera_lens_gesture.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 2340,
+      "sha256": "c695bda1b1d8c8c275c7646363d3d3d45b92cdc946bcf5cc0bb4c0b1a42a2baa"
+    },
+    {
+      "path": "src/camera_timeline_editor.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 8353,
+      "sha256": "c67a8a0f1da9ebae7d75dd061b59ae1aac8fc0e226b5fecdcf9806fb6356ec8e"
+    },
+    {
+      "path": "src/editor_handle_metrics.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "operation": "replace",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "bytes": 71033,
+      "sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "src/shape_window_layout.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5"
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "operation": "replace",
+      "base_bytes": 5359,
+      "base_sha256": "cae17b6d4261049ac4ed64d640cef28901278b8913bfa278ad38f67092365c9e",
+      "bytes": 5523,
+      "sha256": "80a1c4964ea0c97e5ea546f550e0ab84a4dc2e1254ffd65f79064295514e75be"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "operation": "replace",
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "bytes": 56136,
+      "sha256": "817a574f1f54f40f2936f9b1a9cc561c77e353408df691976a38c4ea853f84d1"
+    },
+    {
+      "path": "tests/camera_cold_wire_oracle.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 2467,
+      "sha256": "a6d378969e5b7955998b4ac6fbe21adc8d071054b2093bf547aa4e925259a1fe"
+    },
+    {
+      "path": "tests/camera_cold_wire_unit.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 5569,
+      "sha256": "2cca84db142ff438267b35e975e05dc328febd76b1687eb00f67295598a1f26d"
+    },
+    {
+      "path": "tests/camera_key_edits_unit.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 4203,
+      "sha256": "fdd3e62370d51d03c89c8153b381f8808eeabc6cf8e528351e2220881a0d0ee6"
+    },
+    {
+      "path": "tests/camera_lens_gesture_smoke.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 6532,
+      "sha256": "33237d55b6342fd416671f12bd4cd5eb3d2512e1952058f564aceba3b981d7da"
+    },
+    {
+      "path": "tests/camera_lens_gesture_unit.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 1831,
+      "sha256": "2de178d41491acd365fe9617511a72d96989a75c4e13222f39389b49e91eb152"
+    },
+    {
+      "path": "tests/camera_timeline_ux_smoke.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 10810,
+      "sha256": "270ac0ea53760dcca3b5b4b25220d915a6bfb6a556ea2d5f92dcf798811a394f"
+    },
+    {
+      "path": "tests/editor_geometry_unit.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 4289,
+      "sha256": "7235e5856316d26f6589f46ac81e29850a0baf909b3bebf09c76d63e9e85bd3d"
+    },
+    {
+      "path": "tests/face_window_layout_smoke.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 10371,
+      "sha256": "2dab842aa92e1e2a1151f00a9c136bd45c628efb7ec58df28e9d920f1dd10f5b"
+    },
+    {
+      "path": "tests/pose_handle_size_smoke.gd",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 16733,
+      "sha256": "bb5a65da41c98341c34b7bc5c25359f6611fd8d1c419b1725d56be618c99460b"
+    },
+    {
+      "path": "tests/rotation_gizmo_smoke.gd",
+      "operation": "replace",
+      "base_bytes": 17395,
+      "base_sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad"
+    },
+    {
+      "path": "tests/verify_camera_interactions.py",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 9858,
+      "sha256": "3e6623a1eb0d2f221bd2446e3d6b4660db1b355f8efbbdc8bb648cfbb2a112f7"
+    },
+    {
+      "path": "tests/verify_editor_controls.py",
+      "operation": "new",
+      "base_bytes": null,
+      "base_sha256": null,
+      "bytes": 7465,
+      "sha256": "623adddce6a991fbf7a56540d500980e5ab5f97dc6a0d1f38345f32dfd871529"
+    },
+    {
+      "path": "tests/verify.py",
+      "operation": "replace",
+      "base_bytes": 57338,
+      "base_sha256": "32a65792188dcbf7b65f287ac1204808827075ec68c9bd73cb8de9f5afbeaf3e",
+      "bytes": 60572,
+      "sha256": "e374d97aa7f727644b1554f3a1fd795408d5720a5dbae797ca0327fb99b0b7e9"
+    }
+  ],
+  "applied": [
+    "src/app.gd",
+    "src/base_shape_editor.gd",
+    "src/camera_key_edits.gd",
+    "src/camera_lens_gesture.gd",
+    "src/camera_timeline_editor.gd",
+    "src/editor_handle_metrics.gd",
+    "src/pose_editor.gd",
+    "src/shape_window_layout.gd",
+    "src/timeline_navigation.gd",
+    "src/timeline_view.gd",
+    "tests/camera_cold_wire_oracle.gd",
+    "tests/camera_cold_wire_unit.gd",
+    "tests/camera_key_edits_unit.gd",
+    "tests/camera_lens_gesture_smoke.gd",
+    "tests/camera_lens_gesture_unit.gd",
+    "tests/camera_timeline_ux_smoke.gd",
+    "tests/editor_geometry_unit.gd",
+    "tests/face_window_layout_smoke.gd",
+    "tests/pose_handle_size_smoke.gd",
+    "tests/rotation_gizmo_smoke.gd",
+    "tests/verify_camera_interactions.py",
+    "tests/verify_editor_controls.py",
+    "tests/verify.py"
+  ],
+  "qualification": {
+    "combined_checks": 939,
+    "ui_checks": 424,
+    "camera_checks": 515,
+    "combined_private_jobs": 25,
+    "ordinary_entrypoints": [
+      {
+        "folder": "ordinary-editor-controls-20261121",
+        "checks": 111
+      },
+      {
+        "folder": "ordinary-camera-interactions-20261121",
+        "checks": 515
+      }
+    ],
+    "new_whole_full_rerun": false,
+    "owner_acceptance_claimed": false
+  },
+  "generated_editor_uid_sidecars_adopted": false,
+  "owner_installation_or_assets_modified": false,
+  "untouched_original_functional_files": 1079,
+  "journal": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/ui-camera-adoption-1795251166768/JOURNAL.json"
+}

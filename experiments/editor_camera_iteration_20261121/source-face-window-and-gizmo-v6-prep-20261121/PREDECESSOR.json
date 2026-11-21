@@ -1,0 +1,50 @@
+{
+  "format": "has_face_window_handle_source_predecessor_5",
+  "predecessor_folder": "output/source-face-window-and-gizmo-v5-diagnostic-prep-20261121",
+  "predecessor_manifest_sha256": "d71acce0f4db8fa2b499f019b52609032fa2d7062c578192b09af5fb78ede093",
+  "predecessor_frozen_files_preserved": 26,
+  "actual_root_measurement": {
+    "stage": "C:/a/Programming/cloudflare/has-face-gizmo-qualification-1795248325974308500",
+    "ring_radius_pixels": 180,
+    "compact_visible_scene": {
+      "position": [
+        394.1667,
+        283.5
+      ],
+      "size": [
+        474.6667,
+        267
+      ],
+      "center": [
+        631.5,
+        417
+      ]
+    },
+    "historical_inside_samples": 3,
+    "inside_white": 3,
+    "historical_outside_samples": 3,
+    "outside_white": 0,
+    "historical_near_native": [
+      1526.321,
+      -26.321
+    ],
+    "historical_near_scene_contains": false,
+    "historical_near_ring_distance_pixels": 17.99998,
+    "classification": "FIXTURE_INVALID_VISIBILITY_ASSUMPTION; clipping and refusal correct"
+  },
+  "source_delta": {
+    "production_files_changed": 0,
+    "pixel_criteria": "all6 visible white180, zero white205",
+    "fixed_handle_percent": 200,
+    "fixed_hit_pixels": 20,
+    "near_offset": "hit_pixels - 2",
+    "far_offset": "hit_pixels + 5",
+    "visible_arc_controls": 4,
+    "visible_pick_controls": 4,
+    "explicit_clipped_arc_controls": 3,
+    "handle_assertions": 38,
+    "full_assertions": 424
+  },
+  "application_adopted": false,
+  "actual_v6_tests_run_by_author": 0
+}

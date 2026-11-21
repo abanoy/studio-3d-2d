@@ -1,0 +1,54 @@
+{
+  "format": "has_pinned_godot_skin_weight_source_1",
+  "repository": "godotengine/godot",
+  "tag": "4.6-stable",
+  "commit": "89cea143987d564363e15d207438530651d943ac",
+  "primary_source_files": [
+    {
+      "path": "servers/rendering/rendering_server.cpp",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/89cea143987d564363e15d207438530651d943ac/servers/rendering/rendering_server.cpp",
+      "bytes": 194067,
+      "sha256": "688b9023786e30603c95779e29ab21cedf43c7f5e723573df658cbbcd4bc88d7",
+      "git_blob_sha1": "6e0db2c8ce4e674fac23237cb84ac3c59ec6a093"
+    },
+    {
+      "path": "modules/gltf/gltf_document.cpp",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/89cea143987d564363e15d207438530651d943ac/modules/gltf/gltf_document.cpp",
+      "bytes": 298566,
+      "sha256": "a33185acc304524e99302244a652c295e9f201fcf9e8269223ea2e8df6fe803e",
+      "git_blob_sha1": "563d53d8b6dd9fb06c4b20ba226b0ec78a99ffae"
+    },
+    {
+      "path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/89cea143987d564363e15d207438530651d943ac/LICENSE.txt",
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80",
+      "git_blob_sha1": "0e3ba08d6b2e8cf435241829c96f10b74e4356fe"
+    }
+  ],
+  "relevant_lines": {
+    "import_float32_normalization": [
+      1622,
+      1643
+    ],
+    "pack_float32_to_uint16": [
+      834,
+      850
+    ],
+    "unpack_uint16_to_float32": [
+      1644,
+      1662
+    ]
+  },
+  "license": "MIT, retained upstream/LICENSE.txt",
+  "actual_v4_result_sha256": "993b149adc39d21524791b7cf55a6205aa6985ec2cd60f7c776c366853546e51",
+  "private_first_row_diagnostic_count": 6,
+  "all_six_exact_profile_predictions_match": true,
+  "all_six_exact_slot_identities_match": true,
+  "full_mesh_conversion_qualified": false,
+  "actual_contact_qualified": false,
+  "shader_equivalence_qualified": false,
+  "private_arrays_published": false,
+  "application_adopted": false,
+  "distinct_first_failed_source_rows": 1
+}

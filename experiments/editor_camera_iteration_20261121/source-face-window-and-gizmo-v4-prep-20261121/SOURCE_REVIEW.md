@@ -1,0 +1,3 @@
+# Version4 source review
+
+One explicit Vector2 annotation fixes the actual handle-fixture parse refusal. Replacing that annotation reverses to the exact v3 handle source. All production files, expressions,27 handle assertions,36 face/lifecycle controls and existing rotation source remain unchanged. Other inferred handle/rotation locals were inspected for the same dynamic-type pattern; no additional concrete defect was found. Independent /root/hair_bundles source/API peer passed: the annotation reverses exactly to v3, Vector2 matches the actual image coordinate type, and the expression/assertions remain unchanged. No execution was performed by this author.

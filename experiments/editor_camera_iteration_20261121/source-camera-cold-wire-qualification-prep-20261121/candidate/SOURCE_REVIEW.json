@@ -1,0 +1,60 @@
+{
+  "format": "has_camera_timeline_source_review_1",
+  "status": "SOURCE_API_GO_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "parsed": false,
+  "pure_execution": false,
+  "app_execution": false,
+  "native_asset_qualification": false,
+  "actual_owner_repro": false,
+  "source_input_files_preserved": 11,
+  "ordered_patches": 13,
+  "exact_unique_anchors": true,
+  "owned_payload_matches_patch_reconstruction": true,
+  "reconstructed_targets": [
+    {
+      "path": "src/app.gd",
+      "bytes": 314884,
+      "sha256": "f9633b08215826ea5af9f3e976cd47f56f717afeefb6a99f87880194eb9f1bf1",
+      "written_to_current": false
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "bytes": 56136,
+      "sha256": "817a574f1f54f40f2936f9b1a9cc561c77e353408df691976a38c4ea853f84d1",
+      "written_to_current": false
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "bytes": 5523,
+      "sha256": "80a1c4964ea0c97e5ea546f550e0ab84a4dc2e1254ffd65f79064295514e75be",
+      "written_to_current": false
+    }
+  ],
+  "authored_unrun_controls": {
+    "camera_key_edits_unit.gd": 26,
+    "camera_lens_gesture_unit.gd": 12,
+    "camera_timeline_ux_smoke.gd": 34,
+    "camera_lens_gesture_smoke.gd": 22
+  },
+  "peers": [
+    {
+      "agent": "/root/cold_import_fix",
+      "scope": "Pure camera edits and lens helper, actual Storage/Timeline/ExtendedTiming/app/world_selection APIs",
+      "result": "SOURCE_API_GO",
+      "execution_performed": false
+    },
+    {
+      "agent": "/root/face_gizmo",
+      "scope": "Camera Timeline controller and all thirteen patch anchors, viewport and physical hit mapping, focus cancellation, owner/session guards",
+      "result": "SOURCE_API_GO",
+      "execution_performed": false
+    }
+  ],
+  "limitations": [
+    "Owner Ctrl-wheel cause remains unconfirmed; controlled focus-loss notification is a deterministic lifecycle regression target.",
+    "Actual parsing, floating-window events, Undo/Redo, save/reopen and pixel/encoder regressions remain required.",
+    "No complete current-tree identity, new Whole/Full pass or owner usability acceptance claimed.",
+    "Compose any separate face Settings change through exact nonoverlapping anchors; never overwrite app.gd with a whole payload."
+  ]
+}

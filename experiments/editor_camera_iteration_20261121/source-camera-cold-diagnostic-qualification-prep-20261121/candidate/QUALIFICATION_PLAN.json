@@ -1,0 +1,73 @@
+{
+  "format": "has_camera_timeline_unrun_qualification_plan_1",
+  "source_ready": true,
+  "application_adopted": false,
+  "parsed": false,
+  "pure_execution": false,
+  "app_execution": false,
+  "native_asset_qualification": false,
+  "actual_owner_repro": false,
+  "tests": [
+    {
+      "script": "tests/camera_key_edits_unit.gd",
+      "checks": 26,
+      "headless": true,
+      "marker": "CAMERA_KEY_EDITS_UNIT "
+    },
+    {
+      "script": "tests/camera_lens_gesture_unit.gd",
+      "checks": 12,
+      "headless": true,
+      "marker": "CAMERA_LENS_GESTURE_UNIT "
+    },
+    {
+      "script": "tests/camera_timeline_ux_smoke.gd",
+      "checks": 34,
+      "headless": false,
+      "marker": "CAMERA_TIMELINE_UX_SMOKE "
+    },
+    {
+      "script": "tests/camera_lens_gesture_smoke.gd",
+      "checks": 22,
+      "headless": false,
+      "marker": "CAMERA_LENS_GESTURE_SMOKE "
+    }
+  ],
+  "ui_variants": [
+    [],
+    [
+      "--classic"
+    ],
+    [
+      "--150"
+    ],
+    [
+      "--classic",
+      "--150"
+    ],
+    [
+      "--advanced"
+    ],
+    [
+      "--classic",
+      "--advanced"
+    ],
+    [
+      "--150",
+      "--advanced"
+    ],
+    [
+      "--classic",
+      "--150",
+      "--advanced"
+    ]
+  ],
+  "regressions": [
+    "tests/verify_timeline_navigation.py",
+    "tests/verify_orbit_navigation.py",
+    "tests/verify_camera_transform.py",
+    "tests/verify_camera_range.py",
+    "tests/verify.py"
+  ],
+  "runtime_authority": "Parent only; approved private Windows desktop for app/GPU checks; no visible fallback."
+}

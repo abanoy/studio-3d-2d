@@ -1,0 +1,57 @@
+{
+  "format": "has_miku_contact_qualification_source_review_2",
+  "status": "SOURCE_API_GO_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "execution_owner": "Root exclusive native/GPU lane",
+  "parsed": false,
+  "author_execution": false,
+  "root_v1_result": {
+    "sha256": "9f9b432ced9f638a88ced70a43fb8667991aa905ce823dbe491a2e8e6c7c9400",
+    "pure_checks_passed": 109,
+    "native_refused": 6,
+    "native_ticks": 0,
+    "all_eleven_jobs_closed": true,
+    "all_admitted_inputs_preserved": true
+  },
+  "protected_metadata": {
+    "project_sha256": "036eb37fcb17d71e6292751bb1af4b73350512c69a0c31a59efb4fa6a4341101",
+    "project_json_sha256": "777a4fa3b5005f2f248d4415fda9a57ba4301a2b997d2ea8f61492f75bc85374",
+    "schema": 4,
+    "saved_editor_frame": 0,
+    "saved_draft_frame": 0,
+    "stored_pose_channels": 156,
+    "body_base_channels": 156,
+    "changed_channels": 6,
+    "piece_base_matches_body_base": true,
+    "bone_legacy_keys": 0,
+    "controls_root_only": true,
+    "private_arrays_written": false
+  },
+  "v1_files_preserved": 23,
+  "original_skin_assertions_retained": 16,
+  "new_context_assertions": 16,
+  "combined_pure_controls": 125,
+  "native_full_assertions_per_case": 14,
+  "native_cases": 6,
+  "owned_runtime_files": 1099,
+  "new_targets": 10,
+  "input_pin": {
+    "bytes": 5326,
+    "sha256": "1227034d89b88b469e0269c856c4cf60e684da2ea466030721eb7ef366e69693"
+  },
+  "peer": {
+    "agent": "/root/cold_import_fix",
+    "scope": "156 total versus6 changed saved-context helper and actual Model TRUE/FALSE sample/native guard delta",
+    "result": "SOURCE_API_GO",
+    "execution": false
+  },
+  "production_changes": false,
+  "project_changes": false,
+  "fan_or_capsule_changes": false,
+  "calibration_contact_qualified": false,
+  "limitations": [
+    "Only fixture admission and diagnostic/count bookkeeping changes.",
+    "Actual v2 runtime state is observed, not assumed from serialized editor metadata.",
+    "No calibration/contact/triangle/shader/inertia/gravity acceptance inferred from125 authored controls."
+  ]
+}

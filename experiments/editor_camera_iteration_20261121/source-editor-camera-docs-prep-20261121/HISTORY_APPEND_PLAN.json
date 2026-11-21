@@ -1,0 +1,83 @@
+{
+  "format": "has_editor_camera_history_append_plan_1",
+  "status": "DRAFT_SOURCE_ONLY_UNADOPTED",
+  "actual_result": {
+    "path": "C:/a/Programming/cloudflare/has-ui-camera-combined-1795250102351318500/COMBINED_UI_CAMERA_RESULT.json",
+    "bytes": 164430,
+    "sha256": "4b897aef0abbe977f99075365123c5f8ff0acfe233570bd331330e528eaf3b82",
+    "status": "PASS",
+    "checks": 939,
+    "ui_checks": 424,
+    "camera_checks": 515,
+    "private_jobs": 25,
+    "admitted_inputs_preserved": 2400,
+    "ordinary_wrapper_entry_points_run": false,
+    "application_adopted": false,
+    "new_whole_full_claimed": false,
+    "owner_acceptance_claimed": false
+  },
+  "targets": [
+    {
+      "path": "LLM.md",
+      "operation": "append_exact_fragment",
+      "base_bytes": 653651,
+      "base_sha256": "be9af9d1d55e0e4e4a1291a9476d131842eab290b57e6fb8531d4e03bad65362",
+      "source": "history/LLM.md.append.md",
+      "append_bytes": 5078,
+      "append_sha256": "333b902d51b67745393348007300f88f11a7078d6dd28bf0781dbc75bc6e60ca",
+      "line_endings": "CRLF"
+    },
+    {
+      "path": "docs/progress_memo.md",
+      "operation": "append_exact_fragment",
+      "base_bytes": 1470230,
+      "base_sha256": "687fcbeb38fb86eca10ce4ebc0395efd3935d6d409f28babea4e239bfbae21f6",
+      "source": "history/docs__progress_memo.md.append.md",
+      "append_bytes": 5078,
+      "append_sha256": "333b902d51b67745393348007300f88f11a7078d6dd28bf0781dbc75bc6e60ca",
+      "line_endings": "CRLF"
+    },
+    {
+      "path": "docs/RESUME_MASTER_PLAN.md",
+      "operation": "append_exact_fragment",
+      "base_bytes": 159985,
+      "base_sha256": "7188c2128ac43ec9b1728cd4f75d8df105b4ea1fc1896ba1ea10df7bb43f3251",
+      "source": "history/docs__RESUME_MASTER_PLAN.md.append.md",
+      "append_bytes": 5422,
+      "append_sha256": "945b2a868f35a23190c7f3e4b83a65843f44596bfd4c816e045e225ac43e6bcf",
+      "line_endings": "LF"
+    },
+    {
+      "path": "docs/NEXT_SESSION_PLAN_2026-11-20.md",
+      "operation": "append_exact_fragment",
+      "base_bytes": 34209,
+      "base_sha256": "9d823c054467425fd1d9f7d33ed49575c2dc055e02104a64a59469ad63d32f13",
+      "source": "history/docs__NEXT_SESSION_PLAN_2026-11-20.md.append.md",
+      "append_bytes": 5438,
+      "append_sha256": "70d4b6b58f3cea750b1c8244421539eab5d104589266795648aae786fd134134",
+      "line_endings": "CRLF"
+    }
+  ],
+  "subsequent_ordinary_results": {
+    "ui": {
+      "status": "PASS",
+      "checks": 111,
+      "cases": 3,
+      "bytes": 139625,
+      "sha256": "bb956168b26f38079a1a12d877e9506818f0d2b8249e151afb60baba9fee0e61",
+      "all_admitted_sources_unchanged": true,
+      "generated_fixture_preserved": true
+    },
+    "camera": {
+      "status": "PASS",
+      "checks": 515,
+      "cases": 19,
+      "bytes": 7731,
+      "sha256": "628977fb500949b3ff9ca1cd4da4c3899e3cf2ddb7a0db2afd44270bd7da4e60",
+      "all_admitted_sources_unchanged": true
+    },
+    "total_checks": 626,
+    "application_adoption_not_inferred": true,
+    "new_Full_not_claimed": true
+  }
+}

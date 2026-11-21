@@ -1,0 +1,15 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS wheel up narrows field of view
+PASS wheel down widens field of view
+PASS fractional wheel factor remains proportional
+PASS lens has bounded narrow limit
+PASS lens has bounded wide limit
+PASS limit steps are no-ops
+PASS nonwheel button refuses
+PASS nonfinite camera lens refuses
+PASS legacy lens outside editor range refuses without a jump
+PASS zero and negative wheel factors refuse
+PASS nonfinite and excessive wheel factors refuse
+PASS text values are not silently coerced
+CAMERA_LENS_GESTURE_UNIT {"checks":12,"failures":0}

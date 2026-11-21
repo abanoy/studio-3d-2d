@@ -1,0 +1,35 @@
+{
+  "format": "has_face_window_handle_source_predecessor_4",
+  "predecessor_folder": "output/source-face-window-and-gizmo-v4-prep-20261121",
+  "predecessor_manifest_sha256": "dc3382cd7d2b5b3e2551869735c0129a167fc049fb7a8a616123ead8f08ef113",
+  "predecessor_frozen_files_preserved": 25,
+  "actual_root_attempt": {
+    "stage": "C:/a/Programming/cloudflare/has-face-gizmo-qualification-1795247735229893200",
+    "status": "FAIL_TWO_OF_27_HANDLE_ASSERTIONS",
+    "geometry_pass_assertions": 37,
+    "face_pass_assertions": 36,
+    "face_lifecycle_pass_assertions": 6,
+    "handle_assertions": 27,
+    "handle_failures": 2,
+    "failed_case": {
+      "window": [
+        1600,
+        1000
+      ],
+      "interface_scale": 1.5,
+      "ring_white_hits": 3,
+      "original_samples": 6,
+      "near_pick_started_drag": false
+    },
+    "other_three_cases": {
+      "ring_white_hits": 6,
+      "near_pick_pass": true
+    },
+    "attempted_private_jobs_closed": 4,
+    "source_environment_HEAD_and_domain_preserved": true
+  },
+  "successor_scope": "Diagnostic measurements and four PNGs only; production and all original assertion statements/thresholds remain unchanged",
+  "diagnosis_proven": false,
+  "application_adopted": false,
+  "actual_v5_tests_run": 0
+}

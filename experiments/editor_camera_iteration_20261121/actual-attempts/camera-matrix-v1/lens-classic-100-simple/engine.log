@@ -1,0 +1,26 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS wheel alone does not change lens
+PASS right press remains normal pending context gesture
+PASS global wheel upgrades only pending canvas right press to lens gesture
+PASS lens gesture preserves camera position and orientation
+PASS lens gesture preserves original right-click cursor origin
+PASS captured global wheel adjusts lens without moving camera
+PASS right release returns cursor exactly once through existing capture cleanup
+PASS actual viewport wheel is handled once rather than by both global and canvas routes
+PASS left-drag WASD navigation keeps ordinary wheel behavior
+PASS two-button roll does not become lens zoom
+PASS middle-drag dolly remains distinct
+PASS Ctrl wheel keeps orbit dolly priority
+PASS existing Ctrl wheel changes orbit distance rather than lens
+PASS export refuses lens gesture
+PASS playback refuses lens gesture
+PASS Draw mode does not gain a lens gesture
+PASS all temporary gestures preserve authored keys Undo and dirty revision
+PASS ordinary Save camera key explicitly captures temporary lens with one Undo
+PASS Save camera key Undo restores previous exact keys
+PASS Save camera key Redo restores captured lens
+PASS ordinary packed HAS save completes
+FAIL packed HAS reopen preserves explicitly saved lens
+CAMERA_LENS_GESTURE_SMOKE {"checks":22,"failures":1}

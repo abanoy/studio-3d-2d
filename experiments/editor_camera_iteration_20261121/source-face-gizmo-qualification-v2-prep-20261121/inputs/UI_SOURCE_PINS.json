@@ -1,0 +1,131 @@
+{
+  "format": "has_face_window_pose_handle_sources_2",
+  "status": "SOURCE_FROZEN_SOURCE_PEER_GO_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "base_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "predecessor_manifest_sha256": "809c14e28c5503f8c1cf956856f92313c5c491d989c1950de5c05e83d54a5b52",
+  "files": [
+    {
+      "path": "BASES.json",
+      "bytes": 1933,
+      "sha256": "6febe1f5629037d4c5ff21e1cdc3b1d9cae9427ac8f5f5945a5554da663f8afe"
+    },
+    {
+      "path": "bases/src/app.gd",
+      "bytes": 314487,
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc"
+    },
+    {
+      "path": "bases/src/base_shape_editor.gd",
+      "bytes": 16788,
+      "sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0"
+    },
+    {
+      "path": "bases/src/pose_editor.gd",
+      "bytes": 67846,
+      "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358"
+    },
+    {
+      "path": "bases/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17395,
+      "sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39"
+    },
+    {
+      "path": "bases/v1-SOURCE_PINS.json",
+      "bytes": 3672,
+      "sha256": "809c14e28c5503f8c1cf956856f92313c5c491d989c1950de5c05e83d54a5b52"
+    },
+    {
+      "path": "PATCHES.json",
+      "bytes": 11419,
+      "sha256": "b174f10e9788304075c59c0f7d1e2236beee13988d9ebbb9160759e87b243c8c"
+    },
+    {
+      "path": "payload/src/app.gd",
+      "bytes": 314530,
+      "sha256": "e56561a656be932fc54e025a36ac917f8ab835cf8f77e12c029f6044ae547a38"
+    },
+    {
+      "path": "payload/src/base_shape_editor.gd",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0"
+    },
+    {
+      "path": "payload/src/editor_handle_metrics.gd",
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48"
+    },
+    {
+      "path": "payload/src/pose_editor.gd",
+      "bytes": 70623,
+      "sha256": "3ded115dedc479d58285ddeb3eeeed506aaf4247528ffd77652206a4390d3e9b"
+    },
+    {
+      "path": "payload/src/shape_window_layout.gd",
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5"
+    },
+    {
+      "path": "payload/tests/editor_geometry_unit.gd",
+      "bytes": 4289,
+      "sha256": "7235e5856316d26f6589f46ac81e29850a0baf909b3bebf09c76d63e9e85bd3d"
+    },
+    {
+      "path": "payload/tests/face_window_layout_smoke.gd",
+      "bytes": 8202,
+      "sha256": "4ea7c323c314fc40ae0c5eae1c6e400fb62ad962c84878fd22a73e27f4a69963"
+    },
+    {
+      "path": "payload/tests/pose_handle_size_smoke.gd",
+      "bytes": 7509,
+      "sha256": "b9f373b232e638388b2c17c6f6830028773a61e33cb323603a464750d9d1138a"
+    },
+    {
+      "path": "payload/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad"
+    },
+    {
+      "path": "PREDECESSOR.json",
+      "bytes": 891,
+      "sha256": "429cfa746abb4b94b5333b0748627d7a98038de84789292db8faa7d12930c0e3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11331,
+      "sha256": "f49b7a40fbc9902c064e949477eb9eb59478df7809f05b868447caaa4ba17679"
+    },
+    {
+      "path": "SOURCE_REVIEW.md",
+      "bytes": 1185,
+      "sha256": "309ccc30a0d9785c0dc83ac5e3204be5c4a75757dc176eccbe3734e0fabacf65"
+    },
+    {
+      "path": "TARGETS.json",
+      "bytes": 2673,
+      "sha256": "a94693bfbeb4807478ce2059d11cef409569f93938f555f96dc02bee1f4d1238"
+    },
+    {
+      "path": "variants/face_pose_editor.gd",
+      "bytes": 68805,
+      "sha256": "c3140c95fd0b2639651e0a14fc909ff0415cf2821a51fc212d36ae0bffe4ad5e"
+    },
+    {
+      "path": "variants/handle_pose_editor.gd",
+      "bytes": 69664,
+      "sha256": "6737fd6433e3e0e1c33bafbe49dfb1dbc2e7d502fe1e6f3a704126ac3cf26b58"
+    }
+  ],
+  "source_checks": {
+    "eighteen_exact_anchors_reverse_to_original": true,
+    "frozen_v1_all20files_unchanged": true,
+    "eight_current_UI_reference_files_unchanged": true,
+    "handle_only_implementation_and_tests_byte_identical": true
+  },
+  "authored_checks": {
+    "pure_geometry": 37,
+    "face_widgets": 30,
+    "handle_gui_pixels_and_picking": 27
+  },
+  "actual_tests_run": 0
+}

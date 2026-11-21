@@ -1,0 +1,169 @@
+{
+  "format": "has_close_face_visual_finding_1",
+  "status": "CONTROLLED_RENDER_BOUND_SENSITIVITY_OBSERVED",
+  "product_change": false,
+  "diagnosis_proven": false,
+  "inspection_scope": "Two protected saved contexts, four controlled camera backoffs, five one-variable controls; forty metadata rows and unique image appearances inspected. Hash-identical cells share appearance.",
+  "protected_fixture_sha256": "d304744dea70a05e7176b668bc10b0058b8cb4e6b1ffe5fc9fab05303da60efb",
+  "capture_count": 40,
+  "context_count": 2,
+  "backoff_count": 4,
+  "control_count": 5,
+  "face_absent_baseline_groups": 6,
+  "face_present_baseline_groups": 2,
+  "close_groups_restored_by_bounds_margin": 6,
+  "close_groups_restored_by_near_tenth": 0,
+  "close_groups_restored_by_double_sided": 0,
+  "close_groups_restored_by_opaque_face": 0,
+  "all_posed_face_mesh_depths_beyond_near": true,
+  "all_posed_face_mesh_depths_before_far": true,
+  "all_pose_bounds_query_errors_empty": true,
+  "pose_bounds_vertices_each": 5361,
+  "pose_bounds_conservative_count_each": 0,
+  "all_image_save_errors_zero": true,
+  "all_dimensions_1920_by_1080": true,
+  "saved_data_unchanged": true,
+  "protected_fixture_unchanged": true,
+  "source_fixture_has_expressions": false,
+  "separate_unresolved_case": "Summer Sakuya Amount 12 is a different model/control issue and was not exercised.",
+  "observations": [
+    {
+      "context": "saved_playback",
+      "backoff_control": 0,
+      "face_visible_baseline": false,
+      "face_visible_with_near_tenth": false,
+      "face_visible_double_sided": false,
+      "face_visible_opaque_face": false,
+      "face_visible_bounds_margin": true,
+      "raw_pixel_hash_equals_baseline": {
+        "near_tenth": false,
+        "double_sided": true,
+        "opaque_face": true,
+        "bounds_margin": false
+      }
+    },
+    {
+      "context": "saved_playback",
+      "backoff_control": 0.1,
+      "face_visible_baseline": false,
+      "face_visible_with_near_tenth": false,
+      "face_visible_double_sided": false,
+      "face_visible_opaque_face": false,
+      "face_visible_bounds_margin": true,
+      "raw_pixel_hash_equals_baseline": {
+        "near_tenth": true,
+        "double_sided": true,
+        "opaque_face": true,
+        "bounds_margin": false
+      }
+    },
+    {
+      "context": "saved_playback",
+      "backoff_control": 0.3,
+      "face_visible_baseline": false,
+      "face_visible_with_near_tenth": false,
+      "face_visible_double_sided": false,
+      "face_visible_opaque_face": false,
+      "face_visible_bounds_margin": true,
+      "raw_pixel_hash_equals_baseline": {
+        "near_tenth": false,
+        "double_sided": true,
+        "opaque_face": true,
+        "bounds_margin": false
+      }
+    },
+    {
+      "context": "saved_playback",
+      "backoff_control": 1,
+      "face_visible_baseline": true,
+      "face_visible_with_near_tenth": true,
+      "face_visible_double_sided": true,
+      "face_visible_opaque_face": true,
+      "face_visible_bounds_margin": true,
+      "raw_pixel_hash_equals_baseline": {
+        "near_tenth": false,
+        "double_sided": false,
+        "opaque_face": false,
+        "bounds_margin": true
+      }
+    },
+    {
+      "context": "saved_editing_draft",
+      "backoff_control": 0,
+      "face_visible_baseline": false,
+      "face_visible_with_near_tenth": false,
+      "face_visible_double_sided": false,
+      "face_visible_opaque_face": false,
+      "face_visible_bounds_margin": true,
+      "raw_pixel_hash_equals_baseline": {
+        "near_tenth": false,
+        "double_sided": true,
+        "opaque_face": true,
+        "bounds_margin": false
+      }
+    },
+    {
+      "context": "saved_editing_draft",
+      "backoff_control": 0.1,
+      "face_visible_baseline": false,
+      "face_visible_with_near_tenth": false,
+      "face_visible_double_sided": false,
+      "face_visible_opaque_face": false,
+      "face_visible_bounds_margin": true,
+      "raw_pixel_hash_equals_baseline": {
+        "near_tenth": true,
+        "double_sided": true,
+        "opaque_face": true,
+        "bounds_margin": false
+      }
+    },
+    {
+      "context": "saved_editing_draft",
+      "backoff_control": 0.3,
+      "face_visible_baseline": false,
+      "face_visible_with_near_tenth": false,
+      "face_visible_double_sided": false,
+      "face_visible_opaque_face": false,
+      "face_visible_bounds_margin": true,
+      "raw_pixel_hash_equals_baseline": {
+        "near_tenth": true,
+        "double_sided": true,
+        "opaque_face": true,
+        "bounds_margin": false
+      }
+    },
+    {
+      "context": "saved_editing_draft",
+      "backoff_control": 1,
+      "face_visible_baseline": true,
+      "face_visible_with_near_tenth": true,
+      "face_visible_double_sided": true,
+      "face_visible_opaque_face": true,
+      "face_visible_bounds_margin": true,
+      "raw_pixel_hash_equals_baseline": {
+        "near_tenth": false,
+        "double_sided": false,
+        "opaque_face": false,
+        "bounds_margin": true
+      }
+    }
+  ],
+  "private_evidence_pins": [
+    {
+      "role": "private_capture_metadata",
+      "bytes": 44664,
+      "sha256": "a6282215949e591855adb9ee7145dd7934c370bb9b85702ba55452e563b9503b"
+    },
+    {
+      "role": "public_closure_result",
+      "bytes": 900,
+      "sha256": "c459b1b08ffe7be9b7ebe8c2ea423ff437810e27f06f331069704070ab81aaaa"
+    }
+  ],
+  "representative_close_draft_pixel_comparison": {
+    "total_pixels": 2073600,
+    "identical_pixels": 2063230,
+    "changed_pixels": 10370,
+    "entire_lower_half_identical": true
+  }
+}

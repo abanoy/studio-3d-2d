@@ -1,0 +1,26 @@
+{
+  "format": "has_editor_camera_archive_audit_author_run_1",
+  "date": "2026-11-21",
+  "authorization": "Root explicitly requested CPU-only audit of finalized archive",
+  "checker_sha256": "bbf8595c5dc4779b6d97758832d9a299cf98342710185bcbae64bcd3e05a8cf7",
+  "interpreter": "C:/Program Files/Python313/python.exe",
+  "arguments": ["-B", "output/source-editor-camera-archive-audit-prep-20261121/check_archive.py", "--packet", "experiments/editor_camera_iteration_20261121", "--contents-sha256", "e80148dd3183f0b7b59f2e2153072f12346c8da1df03943ec3821d798aca338d", "--main-root", "C:/a/Programming/cloudflare/has-body-addition-20261120"],
+  "working_directory": "C:/a/Programming/cloudflare/has-body-addition-20261120",
+  "exit_code": 0,
+  "result": {
+    "format": "has_editor_camera_archive_audit_1",
+    "status": "PASS",
+    "contents_sha256": "e80148dd3183f0b7b59f2e2153072f12346c8da1df03943ec3821d798aca338d",
+    "payload_files": 1046,
+    "payload_bytes": 22082620,
+    "frozen_inner_manifests": 45,
+    "current_functional_targets": 25,
+    "privacy_scope": "text/extension/signature/structured-private-array screen; source review still required",
+    "origin_readback_requested": false,
+    "archive_and_current_targets_unchanged": true,
+    "native_execution": false,
+    "Full1102_claimed": false,
+    "historical_preparation_adoption_flags_reinterpreted": false
+  },
+  "scope": "This first inventory pass must not be reused as a pass for a later changed CONTENTS. Root will rerun after adding checker source."
+}

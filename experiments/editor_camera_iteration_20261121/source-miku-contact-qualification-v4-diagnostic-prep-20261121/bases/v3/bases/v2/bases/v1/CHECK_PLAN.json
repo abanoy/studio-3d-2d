@@ -1,0 +1,28 @@
+{
+  "format": "has_miku_contact_unrun_check_plan_1",
+  "status": "SOURCE_READY_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "jobs": 11,
+  "pure_controls": 109,
+  "native_complete_controls_per_case": 14,
+  "native_contexts": [
+    true,
+    false
+  ],
+  "native_profiles": [
+    "original_zero_colliders",
+    "upper_only",
+    "full_lower_envelope"
+  ],
+  "default_fixed_ticks": 480,
+  "maximum_fixed_ticks": 1200,
+  "full_success_scope_controls": 193,
+  "expected_broken_contact_behavior": "FAIL; keep measurements and original dimensions; no false partial pass",
+  "calibration_failure_behavior": "contact flags false; private diagnostic may be captured; preserve partial report",
+  "limitations": [
+    "surface/vertex correspondence is not triangle topology",
+    "CPU skin palette agreement is not GPU shader equivalence",
+    "capsule envelopes are not actual body triangles",
+    "moving actor inertia/gravity rest settling are separate"
+  ]
+}

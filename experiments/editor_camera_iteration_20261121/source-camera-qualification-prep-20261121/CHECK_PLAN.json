@@ -1,0 +1,75 @@
+{
+  "format": "has_camera_qualification_plan_1",
+  "status": "SOURCE_API_ROOT_REVIEWED_UNPARSED_UNRUN",
+  "current_functional_sources": 1086,
+  "immutable_baseline": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "current_source_composite": "Exact qualified eight import/map changes plus final test EOF style delta; unchanged1078 stamps retained",
+  "owned_runtime_files": 1096,
+  "target_count": 10,
+  "replaced": 3,
+  "new": 7,
+  "candidate_manifest_sha256": "6fa07005ce67dfa3d48e0abdde5c8570f7d95d6e28865a339fc5d029c6c4b8b7",
+  "pure_only": {
+    "jobs": 3,
+    "checks": 38,
+    "suites": [
+      {
+        "script": "tests/camera_key_edits_unit.gd",
+        "checks": 26,
+        "timeout_seconds": 30
+      },
+      {
+        "script": "tests/camera_lens_gesture_unit.gd",
+        "checks": 12,
+        "timeout_seconds": 30
+      }
+    ],
+    "import_timeout_seconds": 90,
+    "app_window_jobs": 0
+  },
+  "full": {
+    "jobs": 19,
+    "checks": 486,
+    "variants": 8,
+    "dimensions": {
+      "theme": [
+        "classic",
+        "neon"
+      ],
+      "scale": [
+        100,
+        150
+      ],
+      "workspace": [
+        "simple",
+        "advanced"
+      ]
+    },
+    "per_variant": [
+      {
+        "script": "tests/camera_timeline_ux_smoke.gd",
+        "checks": 34,
+        "timeout_seconds": 175
+      },
+      {
+        "script": "tests/camera_lens_gesture_smoke.gd",
+        "checks": 22,
+        "timeout_seconds": 165
+      }
+    ],
+    "maximum_total_child_timeout_seconds": 2870
+  },
+  "no_native_owner_assets": true,
+  "no_full_claim": true,
+  "adoption": false,
+  "source_tests_executed_by_author": 0,
+  "existing_regressions_deferred": [
+    "timeline_navigation",
+    "orbit_navigation",
+    "camera_transform",
+    "camera_range",
+    "workspace",
+    "animated channels",
+    "canonical Windows verify.py"
+  ]
+}

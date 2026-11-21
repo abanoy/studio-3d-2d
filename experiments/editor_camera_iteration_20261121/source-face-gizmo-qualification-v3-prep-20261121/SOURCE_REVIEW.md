@@ -1,0 +1,7 @@
+# Qualification host v3 source review
+
+This successor composes the separately frozen UI v3 lifecycle correction (manifest d62fb0aea18d544a0278ee0f44159b15addf246f04d9248e11ed8eade4d57523). The predecessor host v2 actual run passed import and geometry37 and emitted face30 PASS assertions, then the strict engine-error gate rejected real null-viewport errors in handle_metrics during ordinary app.free. The production guard and six real lifecycle assertions are in UI v3, independently source/API reviewed by /root/hair_bundles; no teardown errors are suppressed.
+
+Host changes are bounded to four original input pins, the INPUT_PIN constant, face36/total413 counts and the additional face lifecycle_checks==6 marker contract. The corrected bootstrap identity policy and18 focused CPU tests, retained private process ownership, unique profiles, strict engine/leak guards, source/runtime preservation, explicit HEAD and historical Full/source baseline are unchanged. All25 frozen host v2 files remain unchanged.
+
+The author has performed only filesystem readback and exact source comparisons. This v3 host has not been compiled or executed; no GPU/native/owner input or child process was started. Independent /root/hair_bundles source/API review passed before freeze: updated input pins, face36 plus lifecycle_checks==6, total413/six jobs and unchanged bootstrap/error/closure gates had no concrete blocker. The peer performed no execution. Root owns all actual execution and adoption; no new WholeFull or owner acceptance is claimed.

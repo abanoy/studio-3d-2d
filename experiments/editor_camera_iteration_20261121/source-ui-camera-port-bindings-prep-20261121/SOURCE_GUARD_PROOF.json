@@ -1,0 +1,306 @@
+{
+  "format": "has_ui_camera_port_source_guard_proof_1",
+  "status": "READ_ONLY_PIN_COMPARISON_ONLY_NOT_RUNTIME_QUALIFICATION",
+  "qualified_source_stage": "has-ui-camera-combined-1795250102351318500",
+  "combined_checks": 939,
+  "ordinary_ui_checks": 111,
+  "ordinary_camera_checks": 515,
+  "checks": [
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "rows": 21,
+      "all_combined_studio_rows_match": true,
+      "rows_checked": [
+        {
+          "path": "src/app.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/has_project.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/physics_editor.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/physics_recording.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/renderer.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/secondary_spring.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/wind_review.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/wind_review_groups.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/wind_review_unit.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/wind_review_hooks_unit.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/wind_review_review_unit.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/wind_review_gpu_common.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/wind_review_gpu_motion.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/wind_review_gpu_lifecycle.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/wind_review_gpu_primary.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/model.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/import_basis.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/import_basis_helpers.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/import_basis_project.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/verify_wind_review.py",
+          "raw_exact": true,
+          "lf_exact": true
+        }
+      ]
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "rows": 35,
+      "all_combined_studio_rows_match": true,
+      "rows_checked": [
+        {
+          "path": "src/app.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/physics_editor.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/secondary_helper_editor.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/source_bone_bindings.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/wind_review.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/pending_helper_preview.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/pending_helper_wind_player.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/wind_helper_bridge.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/wind_helper_runtime.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/wind_helper_candidate.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/wind_helper_preview.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/wind_preview_controller.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/wind_preview_owned.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/wind_preview_worker.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/helper_preview_fixtures.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/helper_preview_gpu.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/helper_preview_gpu_common.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/helper_preview_gpu_native.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/helper_preview_gpu_peers.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/helper_preview_integration_cpu.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/helper_preview_transport_cpu.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/test_helper_preview_driver.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/verify_helper_preview.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tests/wind_helper_candidate_cpu.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/model.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/renderer.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/import_basis.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/import_basis_helpers.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "src/import_basis_project.gd",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/secondary_helper_worker.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/secondary_helpers.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/secondary_helpers_batch.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/import_basis_helper.py",
+          "raw_exact": true,
+          "lf_exact": true
+        },
+        {
+          "path": "tools/private_desktop.py",
+          "raw_exact": true,
+          "lf_exact": true
+        }
+      ]
+    }
+  ],
+  "old_source_refusals_retained": true,
+  "validators_assertions_or_membership_changed": false
+}

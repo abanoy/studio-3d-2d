@@ -1,0 +1,9 @@
+# Camera cold-reopen diagnostic host
+
+SOURCE ONLY, unparsed/unrun, no product adoption. Derived from frozen camera host23400/faa25d50; original retained as UPSTREAM_CAMERA_HOST.py. Its26-file camera candidate remains byte exact; exactly one test fixture is replaced after all original source/anchor checks. INPUT_PINS.json binds34inputs, including a sealed diagnostic override and10558/74a99c72 fixture. No product source or comparator changed.
+
+Run only through Root using approved Python3.13/private Windows desktop/runtime and exclusive owned lane. Required arguments: --self-sha256 <driver SHA256>, --expected-head59a112a08373f12dcf771c21734b35391b757d4e, --root-exclusive-lane-confirmed, --lens-diagnostic-only. Use normal separate argument/value spacing. This host starts import plus26key+12lens pure controls, then ONLY the failing Classic100Simple lens case with all22originalassertions:60plannedchecks/4privatejobs. It does not replay the already-passed timeline34 or other variants.
+
+If the original cold equality still fails, the diagnostic run remains FAIL and nonzero. That is expected evidence, not a reason to weaken its checks. BeforeSave and afterReopen diagnostic JSON files remain under stage/Lens-classic-100-simple and are pinned in final result after resource closures even on test failure. Root must read their exact values/types before deciding whether the cause is representation, persistence, or something else. Expected-wire equality in that report is observational only.
+
+Stable helper bootstrap, current1086 composite/source-domain guard,19case host process machinery, exact logs/markers/PASScounts, parent environment/HEAD/stamps, and private job/desktop closure are preserved. This successor uses4jobs, each finite bounded: import90s, two pure30s each, lens165s (315s total child timeout budget). No GPU/CLI/parser/test was executed by author. No owner artwork is involved; generated saved camera state is confined to the new owned stage.

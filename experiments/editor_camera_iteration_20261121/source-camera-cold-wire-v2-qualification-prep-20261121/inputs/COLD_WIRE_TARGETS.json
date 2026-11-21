@@ -1,0 +1,35 @@
+{
+  "format": "has_camera_cold_wire_test_targets_1",
+  "product_persistence_changed": false,
+  "arbitrary_tolerance_used": false,
+  "targets": [
+    {
+      "path": "tests/camera_lens_gesture_smoke.gd",
+      "operation": "replace",
+      "input": "wire/camera_lens_gesture_smoke.gd",
+      "bytes": 6532,
+      "sha256": "33237d55b6342fd416671f12bd4cd5eb3d2512e1952058f564aceba3b981d7da",
+      "baseline": {
+        "bytes": 6239,
+        "sha256": "072d32cc7cdfce86c1070b3980ac5dae9cebbd9d90597f6b3eae90c89bfd275e"
+      }
+    },
+    {
+      "path": "tests/camera_cold_wire_oracle.gd",
+      "operation": "new",
+      "input": "wire/camera_cold_wire_oracle.gd",
+      "bytes": 2467,
+      "sha256": "a6d378969e5b7955998b4ac6fbe21adc8d071054b2093bf547aa4e925259a1fe"
+    },
+    {
+      "path": "tests/camera_cold_wire_unit.gd",
+      "operation": "new",
+      "input": "wire/camera_cold_wire_unit.gd",
+      "bytes": 5569,
+      "sha256": "2cca84db142ff438267b35e975e05dc328febd76b1687eb00f67295598a1f26d"
+    }
+  ],
+  "predecessor_oracle_controls": 24,
+  "oracle_controls": 29,
+  "precision_policy": "int/int exact; mixed finite-whole in int64 conversion domain with round-trip integer identity; float/float exact"
+}

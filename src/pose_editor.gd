@@ -6,7 +6,11 @@ const LimbIK=preload("res://src/limb_ik.gd")
 const Joints=preload("res://src/joint_constraints.gd")
 const FootHold=preload("res://src/foot_hold.gd")
 const StudioTheme=preload("res://src/studio_theme.gd")
+const HandleMetrics=preload("res://src/editor_handle_metrics.gd")
+const ShapeWindowLayout=preload("res://src/shape_window_layout.gd")
 var app
+var handle_size_percent:=HandleMetrics.DEFAULT_PERCENT
+var handle_size_controls: Array[OptionButton]=[]
 var panel: VBoxContainer
 var tree: Tree
 var search: LineEdit
@@ -54,6 +58,11 @@ var animated_shapes: Node
 var shape_button: Button
 var shape_window: Window
 var shape_close: Button
+var shape_user_size:=Vector2i.ZERO
+var shape_geometry_busy:=false
+var shape_opened:=false
+var shape_programmatic_sizes: Array[Vector2i]=[]
+var shape_resize_seen:=false
 var drag_chain:={}
 var drag_joints:={}
 var hold_feet: CheckButton
@@ -79,6 +88,8 @@ func active_rig() -> RefCounted:
 
 func setup(owner_app, parent: Node) -> void:
 	app = owner_app
+	var handle_prefs:=ConfigFile.new()
+	if handle_prefs.load(app.display_prefs_path)==OK:handle_size_percent=HandleMetrics.checked_percent(handle_prefs.get_value("pose","handle_percent",HandleMetrics.DEFAULT_PERCENT))
 	panel = app.section(parent, "Model / pose", "scene")
 	import_control = app.button(panel, "Add model…", import_dialog)
 	app.advanced(import_control)
@@ -186,12 +197,17 @@ func setup(owner_app, parent: Node) -> void:
 	source_shape.tooltip_text="Use declared model defaults underneath base-shape adjustments. Turning this off keeps your adjustments. This is a saved whole-project setting, not a pose key."
 	panel.add_child(app.advanced(source_shape));source_shape.toggled.connect(set_source_shape)
 	base_shapes=preload("res://src/base_shape_editor.gd").new();base_shapes.app=app;app.add_child(base_shapes);base_shapes.setup(panel)
-	shape_window=Window.new();shape_window.title="Shapes at this frame";shape_window.theme=app.theme;app.add_child(shape_window)
+	shape_window=Window.new();shape_window.title="Shapes at this frame";shape_window.theme=app.theme;shape_window.unresizable=false;shape_window.keep_title_visible=true;app.add_child(shape_window)
+	shape_window.size_changed.connect(func():
+		if shape_opened and shape_window.visible and not shape_geometry_busy:
+			# A native resize notification can arrive after popup_centered returns.
+			if shape_resize_seen or not shape_window.size in shape_programmatic_sizes:
+				shape_resize_seen=true;shape_user_size=shape_window.size)
 	shape_window.close_requested.connect(func():shape_window.hide())
 	var shape_panel:=PanelContainer.new();shape_window.add_child(shape_panel);shape_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var shape_column:=VBoxContainer.new();shape_panel.add_child(shape_column)
 	var shape_scroll:=ScrollContainer.new();shape_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;shape_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;shape_column.add_child(shape_scroll)
-	var shape_body:=VBoxContainer.new();shape_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL;shape_scroll.add_child(shape_body)
+	var shape_body:=VBoxContainer.new();shape_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL;shape_body.size_flags_vertical=Control.SIZE_EXPAND_FILL;shape_scroll.add_child(shape_body)
 	animated_shapes=preload("res://src/base_shape_editor.gd").new();animated_shapes.app=app;animated_shapes.animated=true;app.add_child(animated_shapes);animated_shapes.setup(shape_body)
 	shape_close=app.button(shape_column,"Close",func():shape_window.hide())
 	app.renderer.assets_changed.connect(func():shape_window.hide())
@@ -570,10 +586,16 @@ func set_visibility_key(value: bool) -> void:
 func open_shapes() -> void:
 	if not active_rig() or app.exporting:return
 	app.stop();finish_drag();app.finish_stroke()
-	var height:=mini(520,maxi(360,int(app.get_viewport_rect().size.y)-180))
-	shape_window.popup_centered(Vector2i(350,height))
-	# Keep the framed subject visible while choosing facial poses.
-	shape_window.position=Vector2i(maxi(12,int(app.get_viewport_rect().size.x)-shape_window.size.x-12),maxi(28,mini(150,int(app.get_viewport_rect().size.y)-shape_window.size.y-28)))
+	var host:=Vector2i(app.get_viewport_rect().size)
+	shape_geometry_busy=true;shape_resize_seen=false
+	var opening:=ShapeWindowLayout.opening_size(host,shape_user_size)
+	shape_programmatic_sizes.clear();shape_programmatic_sizes.append(shape_window.size);shape_programmatic_sizes.append(opening)
+	shape_window.min_size=ShapeWindowLayout.minimum(host)
+	shape_window.popup_centered(opening)
+	shape_programmatic_sizes.append(shape_window.size)
+	# Keep the subject visible, without discarding the user's resized dimensions.
+	shape_window.position=ShapeWindowLayout.position(host,shape_window.size)
+	shape_opened=true;shape_geometry_busy=false
 	animated_shapes.sync()
 
 func set_shape_amounts(values: Dictionary) -> String:
@@ -671,11 +693,37 @@ func frame_model() -> void:
 		app.message("Current model pose framed. This view is temporary; Advanced has Save view as camera key."+(" Large models may include extra space." if app.renderer.last_framing.conservative>0 else ""))
 	else:app.message(app.renderer.last_framing.get("error","No mesh geometry to frame."))
 
+func add_handle_size_control(parent: Node) -> void:
+	app.label(parent,"Pose handle size")
+	var choices:=OptionButton.new();parent.add_child(choices)
+	for percent in HandleMetrics.PERCENTS:choices.add_item(str(percent)+"%")
+	choices.select(HandleMetrics.PERCENTS.find(handle_size_percent))
+	choices.tooltip_text="Size and grabbing area of pose handles. The model, camera and movie do not change."
+	choices.item_selected.connect(func(index):set_handle_size_percent(HandleMetrics.PERCENTS[index]))
+	handle_size_controls.append(choices)
+
+func set_handle_size_percent(percent: int,persist:=true) -> void:
+	if not percent in HandleMetrics.PERCENTS:return
+	finish_drag();handle_size_percent=percent
+	for choices in handle_size_controls:
+		if is_instance_valid(choices):choices.select(HandleMetrics.PERCENTS.find(percent))
+	if persist:app.save_display_preference("pose","handle_percent",percent)
+	update_gizmo()
+
+func handle_metrics() -> Dictionary:
+	# Wind/setup owners can stop after Canvas has left the tree during close.
+	if not is_instance_valid(app) or not is_instance_valid(app.canvas) or not app.canvas.is_inside_tree():return {}
+	var viewport: Viewport=app.canvas.get_viewport()
+	if not is_instance_valid(viewport) or not viewport.is_inside_tree():return {}
+	var native_to_screen: Transform2D=viewport.get_screen_transform()*app.canvas.get_global_transform_with_canvas()
+	return HandleMetrics.measure(handle_size_percent,app.canvas.resolution,app.canvas.image_rect(),native_to_screen)
+
 func update_gizmo() -> void:
+	handles.clear(); joints.clear()
+	if not is_instance_valid(app) or not is_instance_valid(app.canvas) or not app.canvas.is_inside_tree():return
 	var had_helpers: bool=not app.canvas.pose_lines.is_empty() or not app.canvas.pose_joints.is_empty()
 	app.canvas.pose_lines = []
 	app.canvas.pose_joints = []
-	handles.clear(); joints.clear()
 	# Deselect, mode changes and behind-camera targets return before the normal
 	# redraw below. Clear their cached visible geometry in the same frame.
 	if had_helpers:app.canvas.queue_redraw()
@@ -699,7 +747,9 @@ func update_gizmo() -> void:
 	if camera.is_position_behind(transform.origin): return
 	var center := camera.unproject_position(transform.origin)
 	var depth := maxf(camera.near, -camera.to_local(transform.origin).z)
-	var radius := camera.project_position(center + Vector2(70, 0), depth).distance_to(transform.origin)
+	var metrics:=handle_metrics()
+	if metrics.is_empty():return
+	var radius := camera.project_position(center + Vector2(metrics.radius, 0), depth).distance_to(transform.origin)
 	var basis := transform.basis.orthonormalized() if space.selected == 0 else Basis.IDENTITY
 	var colors := [Color("ef5b50"), Color("6bd978"), Color("6c9eff")]
 	for axis in range(3):
@@ -739,13 +789,17 @@ func input(event: InputEvent, point: Vector2) -> void:
 	if contacts.viewport.active:contacts.viewport.input(event,point);return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed: finish_drag(); return
-		var threshold: float = 10.0 * app.video.width / maxf(1, app.canvas.image_rect().size.x)
+		var metrics:=handle_metrics()
+		if metrics.is_empty():return
+		var to_screen: Transform2D=metrics.native_to_screen
+		var screen_point:=to_screen*point
+		var threshold: float=metrics.hit_pixels
 		var best := threshold
 		var hit := {}
 		var hit_segment:=0
 		for handle in handles:
 			for i in range(handle.points.size() - 1):
-				var distance: float = point.distance_to(Geometry2D.get_closest_point_to_segment(point, handle.points[i], handle.points[i + 1]))
+				var distance: float = screen_point.distance_to(Geometry2D.get_closest_point_to_segment(screen_point, to_screen*handle.points[i], to_screen*handle.points[i + 1]))
 				if distance < best: best = distance; hit = handle;hit_segment=i
 		if not hit.is_empty():
 			if not hit.get("enabled",true):return
@@ -771,8 +825,8 @@ func input(event: InputEvent, point: Vector2) -> void:
 				drag_ring_previous=0.;drag_ring_angle=0.
 			return
 		for joint in joints:
-			if point.distance_to(joint.point) < best:
-				best = point.distance_to(joint.point)
+			if screen_point.distance_to(to_screen*joint.point) < best:
+				best = screen_point.distance_to(to_screen*joint.point)
 				selected = joint.id
 		if tree_items.has(selected): tree_items[selected].select(0); tree.scroll_to_item(tree_items[selected])
 		refresh_values()

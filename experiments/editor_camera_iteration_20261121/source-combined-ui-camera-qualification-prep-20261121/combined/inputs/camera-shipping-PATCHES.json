@@ -1,0 +1,17 @@
+{
+  "format": "has_camera_shipping_regressions_patch_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN",
+  "baseline_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "patches": [
+    {
+      "path": "tests/verify.py",
+      "base_bytes": 57338,
+      "base_sha256": "32a65792188dcbf7b65f287ac1204808827075ec68c9bd73cb8de9f5afbeaf3e",
+      "before": "    print('PASS numeric temporary camera view, explicit keys, stale draft guards, cold HAS and exact movie')\r\n",
+      "after": "    print('PASS numeric temporary camera view, explicit keys, stale draft guards, cold HAS and exact movie')\r\n\r\n    # Camera interactions are ordinary current-checkout groups: no historical Full\r\n    # receipt or experimental immutable-host dependency is needed after adoption.\r\n    camera_interaction_root = output / 'camera-interactions-canonical' / str(time.time_ns())\r\n    camera_interaction_specs = [('pure', ['--scope', 'pure'], 67, 210)]\r\n    for camera_theme in ('classic', 'neon'):\r\n        for camera_scale in (100, 150):\r\n            for camera_workspace in ('simple', 'advanced'):\r\n                camera_label = camera_theme+'-'+str(camera_scale)+'-'+camera_workspace\r\n                camera_interaction_specs.append((camera_label, ['--scope', 'variant', '--theme', camera_theme,\r\n                    '--scale', str(camera_scale), '--workspace', camera_workspace], 56, 470))\r\n    for camera_label, camera_flags, camera_count, camera_deadline in camera_interaction_specs:\r\n        camera_folder = camera_interaction_root / camera_label\r\n        camera_text = run([sys.executable, '-B', '-u', 'tests/verify_camera_interactions.py',\r\n                           '--output', str(camera_folder), *camera_flags], timeout=camera_deadline)\r\n        (output / ('camera-interactions-'+camera_label+'-suite.log')).write_text(camera_text, encoding='utf-8')\r\n        camera_report = json.loads((camera_folder / 'verification.json').read_bytes())\r\n        if (camera_report.get('status') != 'PASS' or type(camera_report.get('checks')) is not int\r\n                or camera_report['checks'] != camera_count or camera_report.get('all_admitted_sources_unchanged') is not True):\r\n            raise RuntimeError('Camera interaction group failed: '+camera_label)\r\n        results['camera_interactions_'+camera_label] = camera_report\r\n    print('PASS camera wire29/key26/lens12 controls and eight style-scale-workspace timeline34/lens22 variants (515 checks)')\r\n"
+    }
+  ],
+  "existing_full_assertions_edited": false,
+  "new_result_groups": 9,
+  "new_checks": 515
+}

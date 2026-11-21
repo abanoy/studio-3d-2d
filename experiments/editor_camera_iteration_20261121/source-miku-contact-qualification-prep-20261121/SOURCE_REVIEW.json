@@ -1,0 +1,81 @@
+{
+  "format": "has_miku_contact_qualification_source_review_1",
+  "status": "SOURCE_API_REVIEWED_UNPARSED_UNRUN",
+  "execution_owner": "Root exclusive native/GPU lane",
+  "application_adopted": false,
+  "parsed": false,
+  "tests_executed_by_author": false,
+  "native_assets_tested_by_author": false,
+  "source_domain": "immutable e087 runtime1087 + qualified8 changes(two adds) + nine probe targets =1098; current functional1086 separately bound",
+  "input_pin": {
+    "bytes": 4971,
+    "sha256": "7e86f8f78f413d117eef643b93d1888b2fcb6b882dbee1463aa2f2a22fdf82b0"
+  },
+  "private_manifest_raw_copied_into_source_packet": false,
+  "explicit_private_inputs_preserved_at_freeze": 4,
+  "reused_frozen_probe_binder_geometry_files": 6,
+  "authored_controls": {
+    "frozen_probe": 40,
+    "frozen_binding": 27,
+    "frozen_geometry": 26,
+    "new_skin": 16,
+    "pure_total": 109,
+    "native_complete_per_case": 14,
+    "native_cases": 6
+  },
+  "peers": [
+    {
+      "agent": "/root/cold_import_fix",
+      "scope": "source skin binding API, source-node identity/accessor bounds and source/imported per-vertex palette computation",
+      "result": "SOURCE_API_GO",
+      "limits": "No triangle index topology comparison; CPU palette agreement is not shader proof",
+      "execution": false
+    },
+    {
+      "agent": "/root/cold_import_fix",
+      "scope": "coordinator/native host actual APIs, corrected Node owner and cancellation/closure continuation controls",
+      "result": "SOURCE_API_GO_ON_REVIEWED_SCOPE",
+      "execution": false
+    }
+  ],
+  "corrected_before_freeze": [
+    "SceneTree is not Node: frozen Probe.begin now receives actual in-tree app owner",
+    "native retained errors catch Exception; cancellation leaves native loop",
+    "each attempted job/desktop and retained process must close before another native launch",
+    "once-per-Skeleton transform update bounds repeated palette work",
+    "raw gap<0 rest overlap is separate from5e-5 penetration tolerance",
+    "pre-exit measurement PASS cannot qualify a failed strict job/teardown"
+  ],
+  "source_files": [
+    {
+      "path": "run_miku_contact_qualification.py",
+      "bytes": 20042,
+      "sha256": "ef57cd48d48dce2566dbbceedaac13f5e9330b31e420b34464cdbebbff33d5c3"
+    },
+    {
+      "path": "payload/src/miku_skin_binding.gd",
+      "bytes": 19686,
+      "sha256": "a3e28809126efab902595ec5804d99ea3a989926de201d55b4f833c947bfd21d"
+    },
+    {
+      "path": "payload/tests/miku_contact_qualification.gd",
+      "bytes": 18301,
+      "sha256": "7a262c67e31269f70690bb9573e6696f3548377a932ff45ea6f08a9eeca986c5"
+    },
+    {
+      "path": "payload/tests/miku_skin_binding_unit.gd",
+      "bytes": 3361,
+      "sha256": "2f541ba770c43f3d8262b9c9e249120febb3a2a683db79d15ebed1844635a7cb"
+    }
+  ],
+  "not_qualified": [
+    "actual saved case reproduction",
+    "new capsule contact/product feature",
+    "GPU shader equivalence",
+    "body triangle/swept contact",
+    "moving actor inertia",
+    "Junko gravity/rest settling",
+    "full Windows regression",
+    "owner hand/manual acceptance"
+  ]
+}

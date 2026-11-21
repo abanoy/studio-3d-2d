@@ -1,0 +1,32 @@
+{
+  "format": "has_camera_cold_wire_test_targets_1",
+  "product_persistence_changed": false,
+  "arbitrary_tolerance_used": false,
+  "targets": [
+    {
+      "path": "tests/camera_lens_gesture_smoke.gd",
+      "operation": "replace",
+      "input": "wire/camera_lens_gesture_smoke.gd",
+      "bytes": 6532,
+      "sha256": "33237d55b6342fd416671f12bd4cd5eb3d2512e1952058f564aceba3b981d7da",
+      "baseline": {
+        "bytes": 6239,
+        "sha256": "072d32cc7cdfce86c1070b3980ac5dae9cebbd9d90597f6b3eae90c89bfd275e"
+      }
+    },
+    {
+      "path": "tests/camera_cold_wire_oracle.gd",
+      "operation": "new",
+      "input": "wire/camera_cold_wire_oracle.gd",
+      "bytes": 1949,
+      "sha256": "236845d0ed70c03ef577428f001c7edee261e473d95bb5b6df633d5d02753331"
+    },
+    {
+      "path": "tests/camera_cold_wire_unit.gd",
+      "operation": "new",
+      "input": "wire/camera_cold_wire_unit.gd",
+      "bytes": 4911,
+      "sha256": "cf90ebf57b9402cc7afe1e8c840c64f207e8ff07e3a26e5b8b1b0321965b50b6"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "format": "has_wind_review_main_port_files_1",
+  "source_packet": "experiments/local_wind_review/production_port_candidate_20261112",
+  "files": [
+    {
+      "path": "src/app.gd",
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "lf_sha256": "2f61abe99c25d3c613c924dea9e4606786c462d900d54783e642bb89c8377518",
+      "category": "runtime"
+    },
+    {
+      "path": "src/has_project.gd",
+      "sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
+      "lf_sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "lf_sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "lf_sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "lf_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "category": "runtime"
+    },
+    {
+      "path": "src/renderer.gd",
+      "sha256": "0a2191b9ee6c4a0be08c9eee4f2d10f27f30c5855fd799c658684d38ba8adb3f",
+      "lf_sha256": "c8594bb28251e8b5a13ab756ca8b9afd0f1d45a598c5f5fc8394bf04e9b31a48",
+      "category": "runtime"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "lf_sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "lf_sha256": "6196249d16c86c926ddccd171b1e9eeb7aaa8e34d7e604b23a2566c54f803724",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review_groups.gd",
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "lf_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "category": "runtime"
+    },
+    {
+      "path": "tests/wind_review_unit.gd",
+      "sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "lf_sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_hooks_unit.gd",
+      "sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "lf_sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_review_unit.gd",
+      "sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "lf_sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_gpu_common.gd",
+      "sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "lf_sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_motion.gd",
+      "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "lf_sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_lifecycle.gd",
+      "sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "lf_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_primary.gd",
+      "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "lf_sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "category": "gpu_test"
+    },
+    {
+      "path": "src/model.gd",
+      "category": "runtime",
+      "sha256": "4f56ecba338063771fe58603182fbbfe0b82d0674ebed234a143330b35e420f7",
+      "lf_sha256": "e290a8df11be2311a543543c8e7114446089ed5bf134459eb76d1d2e3b9e037b"
+    },
+    {
+      "path": "src/import_basis.gd",
+      "category": "runtime",
+      "sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072",
+      "lf_sha256": "60f1e4ad4182fcde3273198d37535d32172b5f7580acf903d76793981a1f3072"
+    },
+    {
+      "path": "src/import_basis_helpers.gd",
+      "category": "runtime",
+      "sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482",
+      "lf_sha256": "4ac51040a91f823439643417fe003fb2b1e5ceef55fd8195d2f35d8b3d944482"
+    },
+    {
+      "path": "src/import_basis_project.gd",
+      "category": "runtime",
+      "sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab",
+      "lf_sha256": "67f31f269749320e2dad17e2c590e3fbb8d493bf5797e3a42f7f8e353a0744ab"
+    },
+    {
+      "path": "tests/verify_wind_review.py",
+      "category": "test",
+      "sha256": "4aa54a2e54ffd1ab83d3dfdd7f1397eabede05592626a1e826a08e1182409c70",
+      "lf_sha256": "4aa54a2e54ffd1ab83d3dfdd7f1397eabede05592626a1e826a08e1182409c70"
+    }
+  ],
+  "main_integration_fix": "Canvas-first teardown: validate the canvas before pose redraw; preserve original830 predicates and add3dormant canvas-first closure assertions.",
+  "pending_helper_integration_revision": {
+    "baseline": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+    "source_packet": "experiments/local_wind_review/helper_pending_display_candidate_20261113",
+    "changed_runtime_rows": [
+      "src/app.gd",
+      "src/physics_editor.gd",
+      "src/pose_editor.gd",
+      "src/wind_review.gd"
+    ],
+    "unit_double_rows": [
+      "tests/wind_review_unit.gd",
+      "tests/wind_review_hooks_unit.gd",
+      "tests/wind_review_review_unit.gd"
+    ],
+    "unit_predicates": "Original 51/14/29 assertions preserved; coherent no-pending-preview doubles and real Review stop delegation only. Fresh headless result 94/0, all functional source identities unchanged.",
+    "scope": "Historical16-row Phase1 boundary retained. Pending-helper preview has its own verifier and evidence. app.gd retains original CRLF style."
+  },
+  "snapshot_launch_order_revision": {
+    "baseline": "1236796865e677b150a2d7e2add20f2aac5325fe",
+    "changed_row": "src/has_project.gd",
+    "scope": "Capture immutable snapshot before project worker creation, start own filesystem Thread afterward. Original16-row scope and all old94unit/845graphics predicates retained; separate32ordering unit and actual background-save tests cover new ordering/failure lifecycle. Precise originalWindows launch-error cause remains unknown."
+  },
+  "source_native_leaf_successor_provenance": "experiments/source_native_live_independent_review_20261115/manifest-successor-20261116/PROVENANCE.json",
+  "neon_redesign_runtime_successor_provenance": "experiments/neon_redesign_review_20261116/SOURCE_PROOF.json",
+  "human_reference_integration_revision": {
+    "baseline": "170abb788520d7708d0bfdbfdad52a8185211d1e",
+    "previous_manifest_sha256": "987fb4b717b084034c0f9c1801d63435b478aceebf6aef176a1a14ca0c8384b9",
+    "added_runtime_rows": [
+      "src/model.gd",
+      "src/import_basis.gd",
+      "src/import_basis_helpers.gd",
+      "src/import_basis_project.gd",
+      "tests/verify_wind_review.py"
+    ],
+    "changed_existing_rows": [
+      "src/app.gd",
+      "src/has_project.gd",
+      "src/pose_editor.gd",
+      "src/renderer.gd",
+      "src/secondary_spring.gd",
+      "src/wind_review.gd"
+    ],
+    "scope": "Six-foot intrinsic import basis, schema9 capability validation, and independently checked existing-joint helper preservation. Preserve all historical rows and metadata; old experiment packets are unchanged.",
+    "driver_scope": "Required basis/runtime dependency membership and exact SHA/LF pins; original assertion counts and all safety predicates retained. Wind membership now rejects duplicates and requires the exact named source set.",
+    "test_scope": "This source refresh claims manifest preflight only. Fresh CPU/GPU results must be recorded separately; no historical PASS is reassigned to this successor."
+  },
+  "reference_body_recording_revision": {
+    "baseline": "ab62adff5f6961d8605f15c79a01a0215c9c5425",
+    "source_commit": "0329c4ff9876486e6f437e8c86402308ca5be4d7",
+    "previous_manifest_sha256": "d6c934a4a9c09736739703d322ced6e16b6799f1bd3af2e0a06f378336884b40",
+    "changed_row": "src/physics_recording.gd",
+    "old_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+    "new_sha256": "22c7568e78ebd1083cf44361b6e2fa765b676d4e560acbba72a172ea1b522c7c",
+    "review": "Functional successor, not EOL drift. Exact held affine world frame outside C*B0, destination-frame animated-parent compensation, representability/data/root/ancestor guards and lifecycle cleanup; fourteen other pre-existing function blocks and wind-start stop boundary remain exact. Independent review found only this one stale row; other20pins match exactly.",
+    "source_evidence": "experiments/reference_body_20261120/SCOPED_RESULTS.json",
+    "scope": "Refresh one reviewed runtime row only. Keep exact membership, duplicate/path/byte/EOL controls and94unit/845graphics predicates unchanged. This mapping supplies no inherited execution claim; fresh successor results are recorded separately."
+  }
+}

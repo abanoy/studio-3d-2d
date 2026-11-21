@@ -49,6 +49,7 @@ func row() -> Dictionary:
 
 func setup(parent: Node) -> void:
 	panel=VBoxContainer.new();parent.add_child(panel if animated else app.advanced(panel))
+	if animated:panel.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	app.label(panel,"Shape at this frame" if animated else "Base shape · whole project").tooltip_text="Apply creates a shape key at the current frame when Auto-key is on." if animated else "These adjustments affect the model throughout the project. They do not create animation keys."
 	if animated:
 		presets=preload("res://src/expression_pose_editor.gd").new();add_child(presets);presets.setup(self,panel)
@@ -59,7 +60,8 @@ func setup(parent: Node) -> void:
 	area_filter.tooltip_text="Areas are estimates unless you assign them. Every control remains under All areas.";panel.add_child(area_filter)
 	area_filter.item_selected.connect(func(_index):rebuild())
 	search=LineEdit.new();search.placeholder_text="Find shape…";panel.add_child(search);search.text_changed.connect(func(_text):rebuild())
-	shapes=ItemList.new();shapes.custom_minimum_size=Vector2(220,105);panel.add_child(shapes)
+	shapes=ItemList.new();shapes.custom_minimum_size=Vector2(220,160 if animated else 105);panel.add_child(shapes)
+	if animated:shapes.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	var font:=SystemFont.new();font.font_names=PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"]);shapes.add_theme_font_override("font",font)
 	shapes.item_selected.connect(func(index):select_result(index);load_amount())
 	var line:=HBoxContainer.new();panel.add_child(line);app.label(line,"Amount")

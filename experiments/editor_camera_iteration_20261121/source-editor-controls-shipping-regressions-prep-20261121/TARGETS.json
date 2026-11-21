@@ -1,0 +1,30 @@
+{
+  "format": "has_editor_controls_shipping_targets_1",
+  "status": "SOURCE_ONLY_UNPARSED_UNRUN",
+  "current_base_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "upstream_UI_v6_manifest_sha256": "6d616111c748a27975eec5c8a75f7336d4000b12c0036273db854fa2c9dcc869",
+  "requires_ordinary_camera_wrapper": true,
+  "ordinary_camera_wrapper_sha256_at_preparation": "3e6623a1eb0d2f221bd2446e3d6b4660db1b355f8efbbdc8bb648cfbb2a112f7",
+  "shipping_only_targets": [
+    {
+      "path": "tests/verify_editor_controls.py",
+      "operation": "new",
+      "source": "payload/tests/verify_editor_controls.py",
+      "bytes": 7465,
+      "sha256": "623adddce6a991fbf7a56540d500980e5ab5f97dc6a0d1f38345f32dfd871529"
+    },
+    {
+      "path": "tests/verify.py",
+      "operation": "replace_via_unique_anchor",
+      "base_bytes": 57338,
+      "base_sha256": "32a65792188dcbf7b65f287ac1204808827075ec68c9bd73cb8de9f5afbeaf3e",
+      "source": "payload/tests/verify.py",
+      "bytes": 58729,
+      "sha256": "11d367f9be9dc2c1162191eedf3e2ee786877e252c1e1bb6ed3123be4af37024"
+    }
+  ],
+  "existing_rotation_wrapper_or_assertions_changed": false,
+  "new_result_groups": 3,
+  "new_checks": 111,
+  "application_adopted": false
+}

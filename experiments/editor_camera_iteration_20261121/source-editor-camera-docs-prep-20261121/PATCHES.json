@@ -1,0 +1,20 @@
+{
+  "format": "has_editor_camera_documentation_patch_1",
+  "status": "DRAFT_SOURCE_ONLY_UNADOPTED",
+  "patches": [
+    {
+      "path": "docs/timeline_navigation.md",
+      "base_bytes": 2846,
+      "base_sha256": "2c0bdcad551c00e0c796bf58fd7c13b5c0bd4cf6b2f3f87d95a69b018d5b776e",
+      "before": "The ruler and all tracks share the same range. Camera and model keys, drawing",
+      "after": "Camera diamonds can be selected, dragged to an empty frame, or double-clicked to\nadd/remove a key. The last camera key is kept, and an occupied destination refuses\nretiming. See [camera key and lens gestures](camera_interactions.md).\n\nThe ruler and all tracks share the same range. Camera and model keys, drawing"
+    },
+    {
+      "path": "docs/orbit_navigation.md",
+      "base_bytes": 3391,
+      "base_sha256": "1730dd5d63cd7f17b76b788b0ab41147bcc7c3a0a7af8282bde4621cd3c36944",
+      "before": "Ordinary selection/context clicks, Alt bone reveal, middle-click Move/Rotate",
+      "after": "An unmodified **right button + wheel** changes the temporary lens without moving\nthe camera. Use **Save camera key** to keep it. During orbit navigation, Ctrl +\nwheel keeps its nearer/farther behavior and Ctrl + right drag remains pan; see\n[camera key and lens gestures](camera_interactions.md).\n\nOrdinary selection/context clicks, Alt bone reveal, middle-click Move/Rotate"
+    }
+  ]
+}

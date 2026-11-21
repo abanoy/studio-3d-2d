@@ -95,7 +95,7 @@ func run() -> void:
 	check(editor.dragging and movement.dot(tangent)>0 and is_finite(movement.x),"edge-on drag uses the visible tangent with a finite matching direction")
 	editor.finish_drag(true)
 	# Off-frame handles may exist mathematically, but must not start a drag.
-	var depth: float=-camera.to_local(rig.root.global_position).z;var offscreen: Dictionary=baseline.duplicate(true);var position: Vector3=camera.project_position(Vector2(-160,540),depth)
+	var depth: float=-camera.to_local(rig.root.global_position).z;var offscreen: Dictionary=baseline.duplicate(true);var position: Vector3=camera.project_position(Vector2(-maxf(160.,editor.handle_metrics().radius*3.),540),depth)
 	offscreen.position=[position.x,position.y,position.z];rig.data=offscreen;editor.apply_frame();editor.update_gizmo();app.canvas.zoom=0.6
 	var outside: Vector2=editor.handles[0].points[6];check(outside.x<0,"off-frame handle setup is genuinely outside the output rectangle")
 	pointer(outside,true);check(not editor.dragging and rig.data==offscreen,"a letterbox-margin click cannot grab an invisible rotation handle")
@@ -131,7 +131,11 @@ func view_rotation(baseline: Dictionary) -> void:
 					check(views.size()==1 and editor.handles.filter(func(h):return not h.get("view",false)).size()==3,"three RGB handles remain alongside one view-relative ring")
 					if views.size()!=1:continue
 					var view: Dictionary=views[0];var transform: Transform3D=rig.bone_transform(selected);var center: Vector2=camera.unproject_position(transform.origin);var radius_error:=0.
-					for p in view.points:radius_error=maxf(radius_error,absf(p.distance_to(center)-90.))
+					var frame: Rect2=app.canvas.image_rect()
+					var canvas_to_screen: Transform2D=app.canvas.get_viewport().get_screen_transform()*app.canvas.get_global_transform_with_canvas()
+					var screen_per_native: float=canvas_to_screen.x.length()*frame.size.x/app.canvas.resolution.x
+					var wanted_screen_radius: float=90.*editor.handle_size_percent/100.
+					for p in view.points:radius_error=maxf(radius_error,absf(p.distance_to(center)*screen_per_native-wanted_screen_radius))
 					check(radius_error<0.05 and view.axis.is_equal_approx(camera.global_basis.z.normalized()),"outer ring stays circular and camera-facing in either axis mode")
 					var radial: Vector3=(camera.global_basis.x*cos(PI/4)+camera.global_basis.y*sin(PI/4))*view.units
 					var marker: Vector3=transform.affine_inverse()*(transform.origin+radial)

@@ -1,0 +1,35 @@
+{
+  "format": "has_ui_camera_port_qualification_plan_1",
+  "status": "UNPARSED_UNRUN_PENDING_ROOT",
+  "manifest_targets": 2,
+  "rows_changed_per_manifest": 2,
+  "fields_per_changed_row": [
+    "sha256",
+    "lf_sha256"
+  ],
+  "validators_or_test_counts_changed": false,
+  "current_functional_count_after_25_targets": 1102,
+  "wind": {
+    "unit_checks": 94,
+    "parse_checks": 5,
+    "graphical_checks": 845,
+    "modes": 6,
+    "native_roles": [
+      "vrm0",
+      "vrm1",
+      "backhair"
+    ]
+  },
+  "helper": {
+    "driver_cpu_tests": 120,
+    "cpu_assertions": 208,
+    "graphical_assertions": 266,
+    "native_requested": false
+  },
+  "context": {
+    "proper_git_checkout": true,
+    "no_startup_override": true,
+    "precommit_allow_working_source_label_only": true,
+    "full_requires_clean_committed_source": true
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "format": "has_face_window_handle_source_pins_4",
+  "status": "SOURCE_READY_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "base_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "predecessor_manifest_sha256": "d62fb0aea18d544a0278ee0f44159b15addf246f04d9248e11ed8eade4d57523",
+  "source_peer_review": {
+    "agent": "/root/hair_bundles",
+    "status": "SOURCE_API_GO_NO_CONCRETE_BLOCKER",
+    "execution_performed": false
+  },
+  "source_checks": {
+    "frozen_UI_v3_all24files_unchanged": true,
+    "one_type_annotation_reverses_exactly": true,
+    "all_five_production_UI_targets_byte_identical_to_v3": true,
+    "other_eight_UI_targets_byte_identical_to_v3": true,
+    "all_assertion_expressions_and_counts_unchanged": true,
+    "other_handle_and_rotation_dynamic_inference_reviewed": true
+  },
+  "authored_checks": {
+    "pure_geometry": 37,
+    "face_widgets": 36,
+    "face_lifecycle": 6,
+    "handle_gui_pixels_and_picking": 27,
+    "existing_rotation_writer": 309,
+    "existing_rotation_fresh_reader": 4,
+    "total": 413
+  },
+  "actual_v4_tests_run": 0,
+  "files": [
+    {
+      "path": "BASES.json",
+      "bytes": 1933,
+      "sha256": "6febe1f5629037d4c5ff21e1cdc3b1d9cae9427ac8f5f5945a5554da663f8afe"
+    },
+    {
+      "path": "PATCHES.json",
+      "bytes": 12237,
+      "sha256": "1b6734609583ca16d0e4a76ffe16e45b32e899d8d6641d56d066399da36b4644"
+    },
+    {
+      "path": "PREDECESSOR.json",
+      "bytes": 1220,
+      "sha256": "b556fb7e6cafe84a708e5d60a76030439cdea4df891d866e8de5e3b7a90ab330"
+    },
+    {
+      "path": "README.md",
+      "bytes": 14488,
+      "sha256": "b83ffdc9695e85f6e31b8b2f926bef61f82959fa97699c4aa1aad3dcd3745479"
+    },
+    {
+      "path": "SOURCE_REVIEW.md",
+      "bytes": 664,
+      "sha256": "ae5635fb5ab7bffc29e1f9d2b1441431fb751b7cbaa9900e2545620ac6b2b701"
+    },
+    {
+      "path": "TARGETS.json",
+      "bytes": 2674,
+      "sha256": "7b0eb7487d6e244cc860d9379608315e839796d5ffda6dcbeba939cde65adb0d"
+    },
+    {
+      "path": "bases/source_pins_v2.json",
+      "bytes": 4261,
+      "sha256": "425c00dc3167a577196b591ce555ad98d5f6716b86aee6c8b76a84268f666c97"
+    },
+    {
+      "path": "bases/source_pins_v3.json",
+      "bytes": 4656,
+      "sha256": "d62fb0aea18d544a0278ee0f44159b15addf246f04d9248e11ed8eade4d57523"
+    },
+    {
+      "path": "bases/src/app.gd",
+      "bytes": 314487,
+      "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc"
+    },
+    {
+      "path": "bases/src/base_shape_editor.gd",
+      "bytes": 16788,
+      "sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0"
+    },
+    {
+      "path": "bases/src/pose_editor.gd",
+      "bytes": 67846,
+      "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358"
+    },
+    {
+      "path": "bases/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17395,
+      "sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39"
+    },
+    {
+      "path": "bases/v1-SOURCE_PINS.json",
+      "bytes": 3672,
+      "sha256": "809c14e28c5503f8c1cf956856f92313c5c491d989c1950de5c05e83d54a5b52"
+    },
+    {
+      "path": "payload/src/app.gd",
+      "bytes": 314530,
+      "sha256": "e56561a656be932fc54e025a36ac917f8ab835cf8f77e12c029f6044ae547a38"
+    },
+    {
+      "path": "payload/src/base_shape_editor.gd",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0"
+    },
+    {
+      "path": "payload/src/editor_handle_metrics.gd",
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48"
+    },
+    {
+      "path": "payload/src/pose_editor.gd",
+      "bytes": 71033,
+      "sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "payload/src/shape_window_layout.gd",
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5"
+    },
+    {
+      "path": "payload/tests/editor_geometry_unit.gd",
+      "bytes": 4289,
+      "sha256": "7235e5856316d26f6589f46ac81e29850a0baf909b3bebf09c76d63e9e85bd3d"
+    },
+    {
+      "path": "payload/tests/face_window_layout_smoke.gd",
+      "bytes": 10371,
+      "sha256": "2dab842aa92e1e2a1151f00a9c136bd45c628efb7ec58df28e9d920f1dd10f5b"
+    },
+    {
+      "path": "payload/tests/pose_handle_size_smoke.gd",
+      "bytes": 7517,
+      "sha256": "1843bd7a4cb531c821c484bffc36552ad78e9a800ac0eba4d8ef92c90a789d7d"
+    },
+    {
+      "path": "payload/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad"
+    },
+    {
+      "path": "variants/face_pose_editor.gd",
+      "bytes": 68805,
+      "sha256": "c3140c95fd0b2639651e0a14fc909ff0415cf2821a51fc212d36ae0bffe4ad5e"
+    },
+    {
+      "path": "variants/handle_pose_editor.gd",
+      "bytes": 70074,
+      "sha256": "02e559e1c6223e33bab0b81a60f57cb42727e23f6bc6f037cf732c5d64937628"
+    }
+  ]
+}

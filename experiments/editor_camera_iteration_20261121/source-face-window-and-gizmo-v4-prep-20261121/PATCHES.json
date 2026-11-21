@@ -1,0 +1,153 @@
+{
+  "format": "has_source_only_face_window_and_handle_patch_1",
+  "status": "SOURCE_AUTHORED_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "base_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "patches": [
+    {
+      "scope": "face",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "const StudioTheme=preload(\"res://src/studio_theme.gd\")\n",
+      "after": "const StudioTheme=preload(\"res://src/studio_theme.gd\")\nconst ShapeWindowLayout=preload(\"res://src/shape_window_layout.gd\")\n"
+    },
+    {
+      "scope": "face",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "var shape_close: Button\n",
+      "after": "var shape_close: Button\nvar shape_user_size:=Vector2i.ZERO\nvar shape_geometry_busy:=false\nvar shape_opened:=false\nvar shape_programmatic_sizes: Array[Vector2i]=[]\nvar shape_resize_seen:=false\n"
+    },
+    {
+      "scope": "face",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "shape_window=Window.new();shape_window.title=\"Shapes at this frame\";shape_window.theme=app.theme;app.add_child(shape_window)\n",
+      "after": "shape_window=Window.new();shape_window.title=\"Shapes at this frame\";shape_window.theme=app.theme;shape_window.unresizable=false;shape_window.keep_title_visible=true;app.add_child(shape_window)\n\tshape_window.size_changed.connect(func():\n\t\tif shape_opened and shape_window.visible and not shape_geometry_busy:\n\t\t\t# A native resize notification can arrive after popup_centered returns.\n\t\t\tif shape_resize_seen or not shape_window.size in shape_programmatic_sizes:\n\t\t\t\tshape_resize_seen=true;shape_user_size=shape_window.size)\n"
+    },
+    {
+      "scope": "face",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "var shape_body:=VBoxContainer.new();shape_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL;shape_scroll.add_child(shape_body)\n",
+      "after": "var shape_body:=VBoxContainer.new();shape_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL;shape_body.size_flags_vertical=Control.SIZE_EXPAND_FILL;shape_scroll.add_child(shape_body)\n"
+    },
+    {
+      "scope": "face",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "\tvar height:=mini(520,maxi(360,int(app.get_viewport_rect().size.y)-180))\n\tshape_window.popup_centered(Vector2i(350,height))\n\t# Keep the framed subject visible while choosing facial poses.\n\tshape_window.position=Vector2i(maxi(12,int(app.get_viewport_rect().size.x)-shape_window.size.x-12),maxi(28,mini(150,int(app.get_viewport_rect().size.y)-shape_window.size.y-28)))\n",
+      "after": "\tvar host:=Vector2i(app.get_viewport_rect().size)\n\tshape_geometry_busy=true;shape_resize_seen=false\n\tvar opening:=ShapeWindowLayout.opening_size(host,shape_user_size)\n\tshape_programmatic_sizes.clear();shape_programmatic_sizes.append(shape_window.size);shape_programmatic_sizes.append(opening)\n\tshape_window.min_size=ShapeWindowLayout.minimum(host)\n\tshape_window.popup_centered(opening)\n\tshape_programmatic_sizes.append(shape_window.size)\n\t# Keep the subject visible, without discarding the user's resized dimensions.\n\tshape_window.position=ShapeWindowLayout.position(host,shape_window.size)\n\tshape_opened=true;shape_geometry_busy=false\n"
+    },
+    {
+      "scope": "face",
+      "path": "src/base_shape_editor.gd",
+      "base_bytes": 16788,
+      "base_sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+      "before": "\tpanel=VBoxContainer.new();parent.add_child(panel if animated else app.advanced(panel))\n",
+      "after": "\tpanel=VBoxContainer.new();parent.add_child(panel if animated else app.advanced(panel))\n\tif animated:panel.size_flags_vertical=Control.SIZE_EXPAND_FILL\n"
+    },
+    {
+      "scope": "face",
+      "path": "src/base_shape_editor.gd",
+      "base_bytes": 16788,
+      "base_sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+      "before": "\tshapes=ItemList.new();shapes.custom_minimum_size=Vector2(220,105);panel.add_child(shapes)\n",
+      "after": "\tshapes=ItemList.new();shapes.custom_minimum_size=Vector2(220,160 if animated else 105);panel.add_child(shapes)\n\tif animated:shapes.size_flags_vertical=Control.SIZE_EXPAND_FILL\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "const StudioTheme=preload(\"res://src/studio_theme.gd\")\n",
+      "after": "const StudioTheme=preload(\"res://src/studio_theme.gd\")\nconst HandleMetrics=preload(\"res://src/editor_handle_metrics.gd\")\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "var app\n",
+      "after": "var app\nvar handle_size_percent:=HandleMetrics.DEFAULT_PERCENT\nvar handle_size_controls: Array[OptionButton]=[]\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "\tapp = owner_app\n",
+      "after": "\tapp = owner_app\n\tvar handle_prefs:=ConfigFile.new()\n\tif handle_prefs.load(app.display_prefs_path)==OK:handle_size_percent=HandleMetrics.checked_percent(handle_prefs.get_value(\"pose\",\"handle_percent\",HandleMetrics.DEFAULT_PERCENT))\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "func update_gizmo() -> void:\n\tvar had_helpers: bool=not app.canvas.pose_lines.is_empty() or not app.canvas.pose_joints.is_empty()\n\tapp.canvas.pose_lines = []\n\tapp.canvas.pose_joints = []\n\thandles.clear(); joints.clear()\n",
+      "after": "func add_handle_size_control(parent: Node) -> void:\n\tapp.label(parent,\"Pose handle size\")\n\tvar choices:=OptionButton.new();parent.add_child(choices)\n\tfor percent in HandleMetrics.PERCENTS:choices.add_item(str(percent)+\"%\")\n\tchoices.select(HandleMetrics.PERCENTS.find(handle_size_percent))\n\tchoices.tooltip_text=\"Size and grabbing area of pose handles. The model, camera and movie do not change.\"\n\tchoices.item_selected.connect(func(index):set_handle_size_percent(HandleMetrics.PERCENTS[index]))\n\thandle_size_controls.append(choices)\n\nfunc set_handle_size_percent(percent: int,persist:=true) -> void:\n\tif not percent in HandleMetrics.PERCENTS:return\n\tfinish_drag();handle_size_percent=percent\n\tfor choices in handle_size_controls:\n\t\tif is_instance_valid(choices):choices.select(HandleMetrics.PERCENTS.find(percent))\n\tif persist:app.save_display_preference(\"pose\",\"handle_percent\",percent)\n\tupdate_gizmo()\n\nfunc handle_metrics() -> Dictionary:\n\t# Wind/setup owners can stop after Canvas has left the tree during close.\n\tif not is_instance_valid(app) or not is_instance_valid(app.canvas) or not app.canvas.is_inside_tree():return {}\n\tvar viewport: Viewport=app.canvas.get_viewport()\n\tif not is_instance_valid(viewport) or not viewport.is_inside_tree():return {}\n\tvar native_to_screen: Transform2D=viewport.get_screen_transform()*app.canvas.get_global_transform_with_canvas()\n\treturn HandleMetrics.measure(handle_size_percent,app.canvas.resolution,app.canvas.image_rect(),native_to_screen)\n\nfunc update_gizmo() -> void:\n\thandles.clear(); joints.clear()\n\tif not is_instance_valid(app) or not is_instance_valid(app.canvas) or not app.canvas.is_inside_tree():return\n\tvar had_helpers: bool=not app.canvas.pose_lines.is_empty() or not app.canvas.pose_joints.is_empty()\n\tapp.canvas.pose_lines = []\n\tapp.canvas.pose_joints = []\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "\tvar radius := camera.project_position(center + Vector2(70, 0), depth).distance_to(transform.origin)\n",
+      "after": "\tvar metrics:=handle_metrics()\n\tif metrics.is_empty():return\n\tvar radius := camera.project_position(center + Vector2(metrics.radius, 0), depth).distance_to(transform.origin)\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "\t\tvar threshold: float = 10.0 * app.video.width / maxf(1, app.canvas.image_rect().size.x)\n\t\tvar best := threshold\n",
+      "after": "\t\tvar metrics:=handle_metrics()\n\t\tif metrics.is_empty():return\n\t\tvar to_screen: Transform2D=metrics.native_to_screen\n\t\tvar screen_point:=to_screen*point\n\t\tvar threshold: float=metrics.hit_pixels\n\t\tvar best := threshold\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "\t\t\t\tvar distance: float = point.distance_to(Geometry2D.get_closest_point_to_segment(point, handle.points[i], handle.points[i + 1]))\n",
+      "after": "\t\t\t\tvar distance: float = screen_point.distance_to(Geometry2D.get_closest_point_to_segment(screen_point, to_screen*handle.points[i], to_screen*handle.points[i + 1]))\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/pose_editor.gd",
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "before": "\t\t\tif point.distance_to(joint.point) < best:\n\t\t\t\tbest = point.distance_to(joint.point)\n",
+      "after": "\t\t\tif screen_point.distance_to(to_screen*joint.point) < best:\n\t\t\t\tbest = screen_point.distance_to(to_screen*joint.point)\n"
+    },
+    {
+      "scope": "handles",
+      "path": "src/app.gd",
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "before": "\tbutton(box,\"Toggle fullscreen  [F11]\",toggle_fullscreen)\r\n",
+      "after": "\tpose_editor.add_handle_size_control(box)\r\n\tbutton(box,\"Toggle fullscreen  [F11]\",toggle_fullscreen)\r\n"
+    },
+    {
+      "scope": "handle_regression",
+      "path": "tests/rotation_gizmo_smoke.gd",
+      "base_bytes": 17395,
+      "base_sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+      "before": "\t\t\t\t\tfor p in view.points:radius_error=maxf(radius_error,absf(p.distance_to(center)-90.))\n",
+      "after": "\t\t\t\t\tvar frame: Rect2=app.canvas.image_rect()\n\t\t\t\t\tvar canvas_to_screen: Transform2D=app.canvas.get_viewport().get_screen_transform()*app.canvas.get_global_transform_with_canvas()\n\t\t\t\t\tvar screen_per_native: float=canvas_to_screen.x.length()*frame.size.x/app.canvas.resolution.x\n\t\t\t\t\tvar wanted_screen_radius: float=90.*editor.handle_size_percent/100.\n\t\t\t\t\tfor p in view.points:radius_error=maxf(radius_error,absf(p.distance_to(center)*screen_per_native-wanted_screen_radius))\n"
+    },
+    {
+      "scope": "handle_regression",
+      "path": "tests/rotation_gizmo_smoke.gd",
+      "base_bytes": 17395,
+      "base_sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+      "before": "var position: Vector3=camera.project_position(Vector2(-160,540),depth)",
+      "after": "var position: Vector3=camera.project_position(Vector2(-maxf(160.,editor.handle_metrics().radius*3.),540),depth)"
+    }
+  ],
+  "predecessor_manifest_sha256": "809c14e28c5503f8c1cf956856f92313c5c491d989c1950de5c05e83d54a5b52"
+}

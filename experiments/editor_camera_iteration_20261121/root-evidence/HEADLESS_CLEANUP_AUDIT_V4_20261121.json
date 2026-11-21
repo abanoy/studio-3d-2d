@@ -1,0 +1,305 @@
+{
+  "format": "has_exact_four_headless_cleanup_audit_2",
+  "audited_at_utc": "2026-11-21T07:35:24.2032823Z",
+  "mode": "READ_ONLY_NO_DELETION",
+  "workspace_boundary": "C:\\a\\Programming\\cloudflare",
+  "remote_commit": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "remote_receipt": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\output\\post-e087-remote-verification-20261121.json",
+  "remote_receipt_sha256": "cc70a5f821ff7be8b58a0c324b3233d4a95736232b39fe164de8e09ae9b76804",
+  "stages": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240469769670600",
+      "resolved_parent": "C:\\a\\Programming\\cloudflare",
+      "logical_bytes": 9020814,
+      "files": 1095,
+      "subdirectories": 20,
+      "compressed_files": 0,
+      "reparse_points": [],
+      "result_sha256": "6cf3c55964f6eea9eebda2cac1de8ec3ab5986de08476b18fd3271264d3bfac7",
+      "archive": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\experiments\\source_additions_preparation_20261121\\evidence\\component_initial_prelaunch_closed.json",
+      "archived_result_exact": false,
+      "source_driver": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\experiments\\source_additions_preparation_20261121\\source_tree\\output\\source-headless-component-coordinator-prep-20261121\\run_components.py",
+      "source_driver_sha256": "bd1e7cdc632ab52cbd8e5eb6946f3ee5e03abbe4e160f592462c9896615efd05",
+      "source_driver_recoverable": true,
+      "closure_proven": true,
+      "historical_status": "FAIL",
+      "checks_passed": null,
+      "receipts": [
+        {
+          "relative": "default_off\\import-private.json",
+          "sha256": "8295a6ee35c6bae8187b2f94f73f38cf79734f280f1af47d6301a726705aa2ad",
+          "child_pid": null,
+          "job_closed": null,
+          "desktop_closed": null
+        }
+      ],
+      "archive_role": "closure_receipt_referencing_raw_result_and_refusal_hashes",
+      "archive_is_raw_result": false,
+      "closure_receipt_sha256": "c7f8f2dcecb134c45eb26976dec5715a77ff44cf9cc3294d3334b92eaf64d7b9",
+      "raw_result_backup": "output/source-initial-prelaunch-evidence-prep-20261121/PUBLIC_COMPONENT_RESULT.json",
+      "raw_refusal_backup": "output/source-initial-prelaunch-evidence-prep-20261121/import-private.json",
+      "raw_backup_status": "LOCAL_EXACT_BACKUP_ONLY_PENDING_PUSH_REMOTE_VERIFICATION",
+      "raw_result_matches_closure_reference": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240567956647400",
+      "resolved_parent": "C:\\a\\Programming\\cloudflare",
+      "logical_bytes": 37292171,
+      "files": 5316,
+      "subdirectories": 106,
+      "compressed_files": 0,
+      "reparse_points": [],
+      "result_sha256": "93f1695cba677c138ce057d0b334ff4e87403fcacbb616fc7bbaa72c73b2a6d8",
+      "archive": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\experiments\\source_additions_preparation_20261121\\evidence\\components_v1_failed\\PUBLIC_COMPONENT_RESULT.json",
+      "archived_result_exact": true,
+      "source_driver": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\experiments\\source_additions_preparation_20261121\\source_tree\\output\\source-headless-component-coordinator-prep-20261121\\run_components.py",
+      "source_driver_sha256": "bd1e7cdc632ab52cbd8e5eb6946f3ee5e03abbe4e160f592462c9896615efd05",
+      "source_driver_recoverable": true,
+      "closure_proven": true,
+      "historical_status": "FAIL",
+      "checks_passed": null,
+      "receipts": [
+        {
+          "relative": "default_off\\import-private.json",
+          "sha256": "28a84045e2901742870078071f941ced74827af7cea249cc42f604d142636c98",
+          "child_pid": 26408,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "default_off\\unit-private.json",
+          "sha256": "ba7915dd5a7204973deb6fa58e1c529f5172e5ce581dbf41c3ae875c0268077a",
+          "child_pid": 33784,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "radial\\import-private.json",
+          "sha256": "7984943d59122c996bd309bbccc19ce0f71e69c825c7b6a657ee289cf511f4c2",
+          "child_pid": 33528,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "selection\\import-private.json",
+          "sha256": "6b22f4949295707ce328983825388394dc1cf35244bbe22a3ea760403a32cc91",
+          "child_pid": 2108,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "selection\\unit-private.json",
+          "sha256": "ae98d593c86bb2e52196c8c1c94a05ab6ca944044871e980374b991b5781936b",
+          "child_pid": 30932,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      ],
+      "archive_role": "exact_raw_public_component_result",
+      "archive_is_raw_result": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795240843368455500",
+      "resolved_parent": "C:\\a\\Programming\\cloudflare",
+      "logical_bytes": 37302236,
+      "files": 5322,
+      "subdirectories": 108,
+      "compressed_files": 0,
+      "reparse_points": [],
+      "result_sha256": "1a675c0d2b350b183f8f9ae949dff20645b6ffe993aba6fb4292552a37055b3d",
+      "archive": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\experiments\\source_additions_preparation_20261121\\evidence\\components_v2_failed\\PUBLIC_COMPONENT_RESULT.json",
+      "archived_result_exact": true,
+      "source_driver": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\experiments\\source_additions_preparation_20261121\\source_tree\\output\\source-headless-component-coordinator-v2-prep-20261121\\run_components.py",
+      "source_driver_sha256": "b7ad8c60aea5f533c074855064d780d7babdd7ed2a40b29614d3e08b8db1a79b",
+      "source_driver_recoverable": true,
+      "closure_proven": true,
+      "historical_status": "FAIL",
+      "checks_passed": null,
+      "receipts": [
+        {
+          "relative": "default_off\\import-private.json",
+          "sha256": "15c8873e5d5acbc6f68ed34f0115e494c8420bbfa25493b078e874cb733a8ec8",
+          "child_pid": 33556,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "default_off\\unit-private.json",
+          "sha256": "e5cdfc68f9db421363ab4071bdf64583a415837ea8404a157ac9607aa2d4d53c",
+          "child_pid": 33696,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "radial\\import-private.json",
+          "sha256": "c9bf4452b0d8625b212ab9b33c1aa644fd6a97e7f054e672a78be3d10e066be6",
+          "child_pid": 14720,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "radial\\unit-private.json",
+          "sha256": "8ece200814c955dfae260ad88be525523187893084897ee2546ac9418a182dee",
+          "child_pid": 31412,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "selection\\import-private.json",
+          "sha256": "61655645949a2e1c47dfbb2863a6b75e81a252d1fb5f23a2fe296a006c4b990d",
+          "child_pid": 33648,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "selection\\unit-private.json",
+          "sha256": "5d9926e52cafdb9262770a4cf93687efd638e76be9b4e0052b7f55390eb27fda",
+          "child_pid": 1908,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      ],
+      "archive_role": "exact_raw_public_component_result",
+      "archive_is_raw_result": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-headless-components-1795241062433191300",
+      "resolved_parent": "C:\\a\\Programming\\cloudflare",
+      "logical_bytes": 49757913,
+      "files": 7095,
+      "subdirectories": 144,
+      "compressed_files": 0,
+      "reparse_points": [],
+      "result_sha256": "68ab66b57639334cc0db6091e04d343e259fb128fe656549c523996b6f7ed6d1",
+      "archive": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\experiments\\source_additions_preparation_20261121\\evidence\\components_v3_passed\\PUBLIC_COMPONENT_RESULT.json",
+      "archived_result_exact": true,
+      "source_driver": "C:\\a\\Programming\\cloudflare\\has-body-addition-20261120\\experiments\\source_additions_preparation_20261121\\source_tree\\output\\source-headless-component-coordinator-v3-prep-20261121\\run_components.py",
+      "source_driver_sha256": "7b146fd5ad8aabb80f4b3542dd02ce6416d26ab36d209c1ca754a926d954c8ad",
+      "source_driver_recoverable": true,
+      "closure_proven": true,
+      "historical_status": "PASS",
+      "checks_passed": 123,
+      "receipts": [
+        {
+          "relative": "all49\\import-private.json",
+          "sha256": "679c36a86540f849522c23a54f5e6aa845938af97adbcddd168f6c2e0edfa30b",
+          "child_pid": 30696,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "all49\\unit-private.json",
+          "sha256": "94b8c57c4c72c8c6880fb2c6299425f443e90d8f1999c5ce9b1df59ef48360d6",
+          "child_pid": 27376,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "default_off\\import-private.json",
+          "sha256": "06c7efb2185b8c7c44c33f5146484a8bee4ac62c221fbdd280865b37b951771a",
+          "child_pid": 27880,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "default_off\\unit-private.json",
+          "sha256": "ed6e7967f3241de94e6bb21186b2da817451a1ff023a22f34c08444bb910290a",
+          "child_pid": 27668,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "radial\\import-private.json",
+          "sha256": "7d6de0432438e14397a5e631930f2483e1ed455ffc7b3dc88b2c3d087ce13d97",
+          "child_pid": 28284,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "radial\\unit-private.json",
+          "sha256": "510c419d60af85d9ae002a89b2a7d52ac67649b6b1e326d24ecb3a589136d4c5",
+          "child_pid": 20672,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "selection\\import-private.json",
+          "sha256": "0b8ed5d207c5dd7993b6cd59f0100cbd07730bd818bc4e0230dfac67aad0937c",
+          "child_pid": 8280,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "relative": "selection\\unit-private.json",
+          "sha256": "82079e2db55eab8f8cb72280a4ebcafad9d0ff1f713041b8b8af2449907ec30b",
+          "child_pid": 29380,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      ],
+      "archive_role": "exact_raw_public_component_result",
+      "archive_is_raw_result": true
+    }
+  ],
+  "known_historical_pids": [
+    33312,
+    31396,
+    26636,
+    30996,
+    25248,
+    26408,
+    33784,
+    33528,
+    2108,
+    30932,
+    33596,
+    9052,
+    30976,
+    23908,
+    30492,
+    28908,
+    33556,
+    33696,
+    14720,
+    31412,
+    33648,
+    1908,
+    6216,
+    7896,
+    8208,
+    32984,
+    33008,
+    19908,
+    27052,
+    6120,
+    30696,
+    27376,
+    27880,
+    27668,
+    28284,
+    20672,
+    8280,
+    29380
+  ],
+  "known_pids_currently_present": [],
+  "active_stage_path_matches": [],
+  "process_snapshot_count": 3,
+  "command_line_snapshot_available": false,
+  "cim_query_failure": "Access to a CIM resource was not available to the client.",
+  "unrelated_process_command_lines_recorded": false,
+  "total_logical_bytes": 133373134,
+  "total_files": 18828,
+  "total_subdirectories": 378,
+  "deletion_authorized_by_this_audit": false,
+  "root_review_required": true,
+  "excluded": "Owner review; original/private HAS/GLB; collider derivation; SourceIO/shared tools; Full360 proof stages; both map success bundles; every GPU54 stage",
+  "phase_note": "Clarifies archive role after original audit; traversal/counts are historical read-only observations, not a fresh re-enumeration. No removal by child.",
+  "predecessor": "output/HEADLESS_CLEANUP_AUDIT_V3_20261121.json",
+  "host_process_proof": {
+    "path": "output/HEADLESS_HOST_PROCESS_CHECK_20261121.json",
+    "sha256": "cf5267909b2012586f4a03b01b2a0459e42378e882251a2c16b79eb6cd602bc5",
+    "host_process_count": 384,
+    "no_target_process_observed": true,
+    "unreadable_runtime_candidates": 0
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "format": "has_ui_v6_camera_shipping_composition_1",
+  "status": "EXACT_SOURCE_COMPOSITION_NOT_RUNTIME_QUALIFICATION",
+  "literal_anchors": 33,
+  "standalone_ui_v6_manifest": "6d616111c748a27975eec5c8a75f7336d4000b12c0036273db854fa2c9dcc869",
+  "standalone_camera_shipping_manifest": "9d8cc63b04568c102cf8b2599494c5aa78172d73502d525bde07f98c36905521",
+  "source_proofs": [
+    {
+      "path": "src/pose_editor.gd",
+      "ui_anchors": 13,
+      "camera_and_registration_anchors": 0,
+      "standalone_payloads_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact": true,
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "bytes": 71033,
+      "sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "src/base_shape_editor.gd",
+      "ui_anchors": 2,
+      "camera_and_registration_anchors": 0,
+      "standalone_payloads_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact": true,
+      "base_bytes": 16788,
+      "base_sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0"
+    },
+    {
+      "path": "src/app.gd",
+      "ui_anchors": 1,
+      "camera_and_registration_anchors": 5,
+      "standalone_payloads_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact": true,
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "bytes": 314927,
+      "sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f"
+    },
+    {
+      "path": "tests/rotation_gizmo_smoke.gd",
+      "ui_anchors": 2,
+      "camera_and_registration_anchors": 0,
+      "standalone_payloads_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact": true,
+      "base_bytes": 17395,
+      "base_sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "ui_anchors": 0,
+      "camera_and_registration_anchors": 7,
+      "standalone_payloads_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact": true,
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "bytes": 56136,
+      "sha256": "817a574f1f54f40f2936f9b1a9cc561c77e353408df691976a38c4ea853f84d1"
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "ui_anchors": 0,
+      "camera_and_registration_anchors": 1,
+      "standalone_payloads_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact": true,
+      "base_bytes": 5359,
+      "base_sha256": "cae17b6d4261049ac4ed64d640cef28901278b8913bfa278ad38f67092365c9e",
+      "bytes": 5523,
+      "sha256": "80a1c4964ea0c97e5ea546f550e0ab84a4dc2e1254ffd65f79064295514e75be"
+    },
+    {
+      "path": "tests/verify.py",
+      "ui_anchors": 1,
+      "camera_and_registration_anchors": 1,
+      "standalone_payloads_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact": true,
+      "base_bytes": 57338,
+      "base_sha256": "32a65792188dcbf7b65f287ac1204808827075ec68c9bd73cb8de9f5afbeaf3e",
+      "bytes": 60572,
+      "sha256": "e374d97aa7f727644b1554f3a1fd795408d5720a5dbae797ca0327fb99b0b7e9",
+      "ui_and_camera_verifier_anchors_commute": true
+    }
+  ],
+  "no_runtime_execution": true,
+  "ui_shipping_manifest_sha256": "d8e308b6c61e34af5aab94fd3bbf92e3b4eb86eb823309a065f9aa0a780909fe",
+  "target_count": 23,
+  "modified": 7,
+  "new_files": 16,
+  "new_canonical_groups": 12,
+  "new_canonical_checks": 626,
+  "existing_rotation_313_and_all_previous_full_groups_unchanged": true
+}

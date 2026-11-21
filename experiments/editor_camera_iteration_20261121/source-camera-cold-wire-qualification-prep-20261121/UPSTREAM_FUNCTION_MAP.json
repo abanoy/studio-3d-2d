@@ -1,0 +1,40 @@
+{
+  "format": "has_camera_qualification_function_map_1",
+  "upstream_bytes": 21967,
+  "upstream_sha256": "dfb0cf83cef6dc455d5da9f1c1631f1f0ee053b6e4a646c9045e90e7e9967a3e",
+  "shared_functions": [
+    {
+      "function": "bootstrap_identity",
+      "byte_exact": true,
+      "sha256": "b77e0e810f450b2214886da6ced692542603be886537091f34444e87ef93c9b5"
+    },
+    {
+      "function": "load_pinned",
+      "byte_exact": true,
+      "sha256": "0c2f5c661160279a2e829076f48166aba2506a314109cb67a2f6cb0c20133cde"
+    },
+    {
+      "function": "source_domain",
+      "byte_exact": true,
+      "sha256": "4f344af1c3ffd58a46408373d159bb549854a39eec303fb5e476792791364cdf"
+    },
+    {
+      "function": "validate_composite",
+      "byte_exact": true,
+      "sha256": "ba803a88f2e9822328ec72df0439775c411f680bc4ec856c098fcaa22bda8ce1"
+    },
+    {
+      "function": "run_case",
+      "byte_exact_except_profile_label": true,
+      "profile_label_only_change": true
+    }
+  ],
+  "main_changes": [
+    "32 exact source inputs including all26 camera candidate files",
+    "exact13anchor reconstruction and10target integration",
+    "38pure selector then optional eight style-scale-workspace variants",
+    "486full assertions/19private jobs; current1086 remains read-only",
+    "camera source-snapshot/results names and19job budget, no synthetic shape generator or UI face/ring cases"
+  ],
+  "finalization": "Copied existing launcher reaping, private job/desktop closure, parent environment, exact HEAD, admitted file identity/hash/time and current source-domain preservation checks; own-lane token/stamp required before unlink."
+}

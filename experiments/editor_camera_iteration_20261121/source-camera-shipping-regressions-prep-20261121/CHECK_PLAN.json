@@ -1,0 +1,24 @@
+{
+  "format": "has_camera_shipping_wrapper_check_plan_1",
+  "status": "SOURCE_API_PEER_GO_UNPARSED_UNRUN",
+  "current_baseline": 1086,
+  "proposed_camera_shipping_functional": 1096,
+  "wrapper_scopes": {
+    "pure": 67,
+    "variant": 56,
+    "all": 515
+  },
+  "canonical_groups": 9,
+  "canonical_timeout_seconds": {
+    "pure": 210,
+    "each_variant": 470
+  },
+  "windows_graphical_private_jobs": 16,
+  "pure_headless_processes": 3,
+  "existing_full_assertions_modified": false,
+  "owner_inputs_added": false,
+  "historical_full_or_git_snapshot_required": false,
+  "source_mutation_by_author": false,
+  "peer": "face_gizmo",
+  "platform_limitation": "Canonical verify.py new groups follow existing Windows Full entry; they do not forward --isolated-display. Linux graphical standalone wrapper requires explicit private display; no shared fallback."
+}

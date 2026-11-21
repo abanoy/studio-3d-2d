@@ -1,0 +1,74 @@
+{
+  "format": "has_editor_controls_shipping_source_pins_1",
+  "status": "SOURCE_API_GO_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "baseline_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "upstream_UI_v6_manifest_sha256": "6d616111c748a27975eec5c8a75f7336d4000b12c0036273db854fa2c9dcc869",
+  "ordinary_camera_shipping_manifest_sha256": "9d8cc63b04568c102cf8b2599494c5aa78172d73502d525bde07f98c36905521",
+  "wrapper": {
+    "path": "payload/tests/verify_editor_controls.py",
+    "bytes": 7465,
+    "sha256": "623adddce6a991fbf7a56540d500980e5ab5f97dc6a0d1f38345f32dfd871529"
+  },
+  "source_peer_review": {
+    "agent": "/root/cold_import_fix",
+    "status": "SOURCE_API_GO_NO_CONCRETE_BLOCKER",
+    "execution_performed": false
+  },
+  "structural_checks": {
+    "UI_and_camera_registration_anchors_distinct": true,
+    "both_anchor_orders_byte_identical": true,
+    "combined_verify_bytes": 60572,
+    "combined_verify_sha256": "e374d97aa7f727644b1554f3a1fd795408d5720a5dbae797ca0327fb99b0b7e9",
+    "UI_patch_reverses_exactly_to57338byte_base": true,
+    "all_existing_Full_assertions_retained": true,
+    "rotation_wrapper_and_registration_unchanged": true
+  },
+  "new_canonical_groups": 3,
+  "new_UI_checks": 111,
+  "combined_camera_and_UI_new_groups": 12,
+  "combined_camera_and_UI_new_checks": 626,
+  "actual_tests_run_by_author": 0,
+  "files": [
+    {
+      "path": "CAMERA_COMPOSITION.json",
+      "bytes": 686,
+      "sha256": "c1ec50adbe805b59e90acea2e0b0e2c79a4b81c37568aa73e193bbac33f78d5e"
+    },
+    {
+      "path": "PATCHES.json",
+      "bytes": 2227,
+      "sha256": "d4bfee8e938db3a655b2922a084e2e25dcb8e07717bfb0f4a825d86f345b2c0f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2914,
+      "sha256": "cbeca727bd053386ccedb5fc6bd67d18b99bc7396cc9800b0a172aa300017fa5"
+    },
+    {
+      "path": "SOURCE_REVIEW.md",
+      "bytes": 591,
+      "sha256": "24f0ed9954162eafc986c4270e70d1a09f305e7f049171665b21c1f23411e641"
+    },
+    {
+      "path": "TARGETS.json",
+      "bytes": 1214,
+      "sha256": "c8a9bb31cd46de8f87ca6f5b969ab46914a4d3da2429bf6b39478390bdff3706"
+    },
+    {
+      "path": "bases/tests/verify.py",
+      "bytes": 57338,
+      "sha256": "32a65792188dcbf7b65f287ac1204808827075ec68c9bd73cb8de9f5afbeaf3e"
+    },
+    {
+      "path": "payload/tests/verify.py",
+      "bytes": 58729,
+      "sha256": "11d367f9be9dc2c1162191eedf3e2ee786877e252c1e1bb6ed3123be4af37024"
+    },
+    {
+      "path": "payload/tests/verify_editor_controls.py",
+      "bytes": 7465,
+      "sha256": "623adddce6a991fbf7a56540d500980e5ab5f97dc6a0d1f38345f32dfd871529"
+    }
+  ]
+}

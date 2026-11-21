@@ -1,0 +1,38 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS actual compact default has distinct ruler and tracks at48frames
+PASS actual diamond selects and seeks without getting stuck
+PASS selection creates no authored change
+PASS actual drag previews without authored mutation
+PASS Ctrl wheel cannot change a live key drag mapping
+PASS release retimes only selected key in one real Undo
+PASS retime preserves position rotation lens interpolation and range
+PASS actual Undo restores exact original keys
+PASS actual Redo restores exact retime
+PASS subthreshold gesture remains selection
+PASS occupied target refuses without replacing either key
+PASS actual Escape cancels the key ghost
+PASS empty Camera lane double-click captures current view with one Undo
+PASS existing Camera diamond double-click removes only that key
+PASS Undo removal restores the exact captured view
+PASS Redo removal restores remaining keys
+PASS last camera key double-click is refused without dirty or Undo
+PASS camera edits preserve video world and drawing content
+PASS 48-frame docked ruler routes real Ctrl wheel to both views
+PASS compact tracks route real Ctrl wheel down to12frames
+PASS Ctrl wheel down zooms out again
+PASS timeline ruler and zoom controls belong to actual floated window
+PASS floated48-frame ruler routes real Ctrl wheel
+PASS actual unreleased ruler seek enters zoom guard
+PASS floating view focus-loss notification clears stale generic seek
+PASS Ctrl wheel works after interrupted seek without an invented release
+PASS focus loss cancels a floated key retime without mutation
+PASS smaller redocked window retains real wheel route
+PASS zoom focus-loss and cancelled gestures author no history
+PASS all routed camera and zoom events preserve unrelated authored content
+PASS New clears session selection and drag context
+PASS independent ordinary camera edit invalidates ghost without overwrite
+PASS release after New cannot commit a previous project camera key
+PASS entering another scene clears selection even if both scenes have a frame-zero key
+CAMERA_TIMELINE_UX_SMOKE {"checks":34,"controlled_focus_loss_notification":true,"failures":0}

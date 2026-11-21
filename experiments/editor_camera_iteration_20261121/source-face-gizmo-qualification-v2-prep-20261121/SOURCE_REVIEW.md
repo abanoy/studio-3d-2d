@@ -1,0 +1,9 @@
+# Source review for bootstrap guard v2
+
+Root's actual predecessor attempt ended with HELPER_BYTES_OR_IDENTITY_CHANGED before a stage, owned lane or UI job existed. Root independently confirmed the helper and reader SHA256 pins and stable dev/inode/size/mtime/link/mode fields; access time alone advanced during reads. V2_CHANGE.json records this bounded report. This agent did not execute that attempt.
+
+The correction is limited to an explicit bootstrap_identity tuple and its use in the post-read comparison. Device, inode, size, nanosecond modification time, link count, mode and file attributes remain bound. Access time alone is excluded. The original regular-file, one-link, ancestor/file alias, exact length and SHA256 gates are unchanged. The 15 pinned inputs, nine UI payloads, existing six-job ownership/closure/preservation contracts and 407 UI assertion controls are unchanged. The previous frozen 22 files remain intact.
+
+Eighteen focused CPU tests are authored using in-memory stat objects and a constant module. They cover unchanged input and access-time-only admission, plus real identity, length, content, hardlink, symlink and reparse refusal. They import only coordinator definitions and never call its main, read native owner inputs or start a child process.
+
+The predecessor coordinator and its exact UI v2 payload had independent source/API GO from /root/hair_bundles. This successor's narrow delta and 18 synthetic CPU tests received independent source/API GO from /root/hair_bundles before freeze; the peer found no concrete blocker and performed no execution. No Python compilation, focused CPU test, Godot parser, widget/pixel/picking test, native conversion or GPU job has been run by this agent. Root owns execution and any later source adoption. No new WholeFull or owner acceptance is claimed.

@@ -1,0 +1,26 @@
+{
+  "format": "has_face_window_handle_source_predecessor_2",
+  "predecessor_folder": "output/source-face-window-and-gizmo-v2-prep-20261121",
+  "predecessor_manifest_bytes": 4261,
+  "predecessor_manifest_sha256": "425c00dc3167a577196b591ce555ad98d5f6716b86aee6c8b76a84268f666c97",
+  "predecessor_frozen_files_preserved": 23,
+  "actual_root_attempt": {
+    "stage": "C:/a/Programming/cloudflare/has-face-gizmo-qualification-1795246871959706000",
+    "status": "FAIL_STRICT_ENGINE_TEARDOWN_ERROR",
+    "import_pass": true,
+    "geometry_pass_assertions": 37,
+    "face_pass_assertions_before_teardown_error": 30,
+    "attempted_private_jobs": 3,
+    "all_attempted_private_jobs_closed": true,
+    "all_inputs_preserved": true,
+    "environment_and_HEAD_preserved": true,
+    "error": "Canvas valid but outside tree; get_viewport() null during wind/setup cleanup → handle_metrics get_screen_transform error"
+  },
+  "successor_changes": [
+    "Guard detached/freed Canvas and viewport before physical measurement",
+    "Clear derived gizmo caches before lifecycle early return",
+    "Six real-widget lifecycle assertions; face36 / all413"
+  ],
+  "application_adopted": false,
+  "actual_v3_tests_run_by_author": 0
+}

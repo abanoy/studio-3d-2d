@@ -1,0 +1,124 @@
+{
+  "format": "has_root_ui_camera_port_binding_qualification_1",
+  "status": "PASS_BINDINGS_ADOPTED",
+  "base_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "source_context": "main_working_source_snapshot_not_new_Full",
+  "functional_count": 1102,
+  "total_increment_modified": 9,
+  "total_increment_added": 16,
+  "wind": {
+    "root_session": 76151,
+    "root_reaped": true,
+    "root_exit_code": 0,
+    "headless_checks": 94,
+    "parse_cases": 5,
+    "graphical_checks": 845,
+    "graphical_modes": [
+      {
+        "mode": "procedural",
+        "checks": 62,
+        "failures": 0,
+        "passed": true
+      },
+      {
+        "mode": "vrm0",
+        "checks": 47,
+        "failures": 0,
+        "passed": true
+      },
+      {
+        "mode": "vrm1",
+        "checks": 47,
+        "failures": 0,
+        "passed": true
+      },
+      {
+        "mode": "backhair",
+        "checks": 49,
+        "failures": 0,
+        "passed": true
+      },
+      {
+        "mode": "lifecycle",
+        "checks": 549,
+        "failures": 0,
+        "passed": true
+      },
+      {
+        "mode": "primary",
+        "checks": 91,
+        "failures": 0,
+        "passed": true
+      }
+    ],
+    "all_source_hash_size_mtime_unchanged": true,
+    "native_prepared_inputs_unchanged": true
+  },
+  "helper_driver": {
+    "checks": 120,
+    "failures": 0,
+    "exit_code": 0
+  },
+  "helper_cpu": {
+    "root_session": 54527,
+    "root_reaped": true,
+    "root_exit_code": 0,
+    "checks": 208,
+    "passed": true,
+    "preservation": {
+      "main_sources": true,
+      "runtimes": true,
+      "head": true,
+      "native_originals": true,
+      "staged_native_inputs": true,
+      "published_requests": true,
+      "snapshot_sources": true,
+      "snapshot_extras": true,
+      "fixtures": true
+    }
+  },
+  "helper_graphical": {
+    "root_session": 1177,
+    "root_reaped": true,
+    "root_exit_code": 0,
+    "checks": 266,
+    "passed": true,
+    "preservation": {
+      "main_sources": true,
+      "runtimes": true,
+      "head": true,
+      "native_originals": true,
+      "staged_native_inputs": true,
+      "published_requests": true,
+      "snapshot_sources": true,
+      "snapshot_extras": true,
+      "fixtures": true
+    }
+  },
+  "private_graphical_jobs": 8,
+  "all_private_graphical_jobs_closed": true,
+  "report_pins": [
+    {
+      "role": "wind",
+      "source": "output/wind-review/graphical-1795251431010623800/verification.json",
+      "bytes": 11411,
+      "sha256": "f77e920606a00b2cb8bf9387d905bceb7d9fe02f19c683d907a4964ad3835640"
+    },
+    {
+      "role": "helper_cpu",
+      "source": "output/helper-preview/cpu-1795251541687046700-e6923299/verification.json",
+      "bytes": 5228,
+      "sha256": "fff2a95ce27f5c9825bd4dfb121631e023584ac9b87693555f332a8628530ca8"
+    },
+    {
+      "role": "helper_graphical",
+      "source": "output/helper-preview/graphical-1795251729625330100-65b7b430/verification.json",
+      "bytes": 5793,
+      "sha256": "47417a335f5d4b1189659e73090653cb4765be00b64420498d2d9a6a031c1f10"
+    }
+  ],
+  "assertions_validators_or_row_membership_changed": false,
+  "only_app_pose_raw_and_lf_binding_hashes_refreshed": true,
+  "new_whole_full_rerun": false,
+  "human_or_device_acceptance_claimed": false
+}

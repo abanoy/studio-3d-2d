@@ -1,0 +1,30 @@
+{
+  "format": "has_source_prep_documentation_corrections_1",
+  "code_or_runtime_policy_changed": false,
+  "corrections": [
+    {
+      "packet": "source-camera-cold-wire-v2-qualification-prep-20261121",
+      "document": "README.md",
+      "issue": "A broad24→29 documentation replacement corrupted the example old driver hash and inherited missing spaces between option/value.",
+      "correct_driver_bytes": 25458,
+      "correct_driver_sha256": "282973d27423c95c6926599e3a44a50cdc749da5c5679ceb9ade0e56260e55f0",
+      "source_pins_and_check_plan_already_correct": true
+    },
+    {
+      "packet": "source-combined-ui-camera-qualification-prep-20261121",
+      "document": "CHECK_PLAN.json",
+      "field": "maximum_child_timeout_seconds",
+      "recorded": 3390,
+      "correct": 3480,
+      "actual_driver_per_job_timeouts_unchanged": true,
+      "individual_correction": "COMBINED_939_HOST_BUDGET_CORRECTION_20261121.json"
+    },
+    {
+      "packet": "source-close-face-qualification-prep-20261121",
+      "document": "README.md",
+      "issue": "Sentence saying protected project was not opened by author is ambiguous/overbroad.",
+      "clarification": "No native renderer or Studio process was launched by author. The protected archive was earlier inspected as bytes read-only for SOURCE_INSPECTION.json; the host source preparation did not execute it. Owner-original metadata was read; no owner/protected archive was modified.",
+      "author_native_or_parser_execution": 0
+    }
+  ]
+}

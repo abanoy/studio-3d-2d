@@ -92,6 +92,7 @@ var cel_clipboard: Node
 var timeline_navigation: Node
 var timeline_ruler: Control
 var timeline: Control
+var camera_key_editor: Node
 var mode: OptionButton
 var lighting_choice: OptionButton
 var tool: OptionButton
@@ -459,6 +460,7 @@ func show_display_settings() -> void:
 		get_window().content_scale_factor = percent / 100.0
 		save_display_preference("display","percent",percent)
 		display_dialog.popup_centered())
+	pose_editor.add_handle_size_control(box)
 	button(box,"Toggle fullscreen  [F11]",toggle_fullscreen)
 	button(box,"Keyboard shortcuts…",keyboard_shortcuts.open)
 	var access:=VBoxContainer.new();box.add_child(advanced(access))
@@ -3519,6 +3521,7 @@ func build_ui() -> void:
 	camera_help_label = label(camera_section, "Ctrl + left: free camera / WASD
 Left drag: move sideways / up
 Right drag: adjust view direction
+Right + wheel: change lens zoom
 Middle drag: move forward / back
 Left + right drag: roll camera
 WASD / Q,E: fly while dragging
@@ -3656,6 +3659,7 @@ Draw returns to the animated shot.")
 	column.add_child(ruler_holder);ruler_holder.add_child(timeline_ruler);timeline_ruler.position.y=38
 	if StudioTheme.is_neon(): timeline_ruler.rate_fps=float(video.fps_num)/video.fps_den
 	timeline_navigation=preload("res://src/timeline_navigation.gd").new();timeline_navigation.app=self;add_child(timeline_navigation);timeline_navigation.setup(ruler_holder,timeline,timeline_ruler)
+	camera_key_editor=preload("res://src/camera_timeline_editor.gd").new();add_child(camera_key_editor);camera_key_editor.setup(self,timeline_ruler)
 	timeline.resized.connect(func():timeline_ruler.size=Vector2(timeline.size.x,52);timeline_ruler.queue_redraw())
 	var timeline_scroll:=ScrollContainer.new()
 	timeline_scroll.name="TimelineScroll";timeline_scroll.custom_minimum_size.y=144
@@ -4141,6 +4145,7 @@ func _process(delta: float) -> void:
 func canvas_input(event: InputEvent, point: Vector2) -> void:
 	if home and home.visible:return
 	if exporting or playing: return
+	if preload("res://src/camera_lens_gesture.gd").handle(self,event):return
 	# Only new editing presses are bounded. Captured camera motion, active drags,
 	# releases and cancellation must continue after leaving the displayed scene.
 	if mode.selected in [1,2] and event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not event.ctrl_pressed and not canvas.scene_contains(point):return
@@ -4551,6 +4556,7 @@ func frame_3d_scene() -> void:
 	else: message(renderer.last_framing.get("error","No renderable mesh to frame."))
 
 func _input(event: InputEvent) -> void:
+	if preload("res://src/camera_lens_gesture.gd").handle(self,event):get_viewport().set_input_as_handled();return
 	if local_wind_review and local_wind_review.global_event(event):get_viewport().set_input_as_handled();return
 	if keyboard_shortcuts and keyboard_shortcuts.capture(event):get_viewport().set_input_as_handled();return
 	# Redesign keyboard navigation: a focused button must not swallow studio shortcuts (Space, arrows, Home/End...).

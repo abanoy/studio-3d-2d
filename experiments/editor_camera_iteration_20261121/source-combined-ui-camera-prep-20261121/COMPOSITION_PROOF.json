@@ -1,0 +1,118 @@
+{
+  "format": "has_literal_ui_camera_composition_proof_1",
+  "status": "EXACT_SOURCE_COMPOSITION_NOT_RUNTIME_QUALIFICATION",
+  "ui_manifest_sha256": "d62fb0aea18d544a0278ee0f44159b15addf246f04d9248e11ed8eade4d57523",
+  "camera_manifest_sha256": "6fa07005ce67dfa3d48e0abdde5c8570f7d95d6e28865a339fc5d029c6c4b8b7",
+  "literal_anchor_count": 31,
+  "shared_path_only": "src/app.gd",
+  "replacements": 6,
+  "new_files": 12,
+  "targets": 18,
+  "input_documents": [
+    {
+      "path": "inputs/ui-SOURCE_PINS.json",
+      "bytes": 4656,
+      "sha256": "d62fb0aea18d544a0278ee0f44159b15addf246f04d9248e11ed8eade4d57523"
+    },
+    {
+      "path": "inputs/ui-PATCHES.json",
+      "bytes": 12237,
+      "sha256": "1b6734609583ca16d0e4a76ffe16e45b32e899d8d6641d56d066399da36b4644"
+    },
+    {
+      "path": "inputs/ui-TARGETS.json",
+      "bytes": 2674,
+      "sha256": "c60c072341028a641f0b272b5c2a2ba7e8efc77b97e105d0693d5de5c397ec03"
+    },
+    {
+      "path": "inputs/camera-SOURCE_PINS.json",
+      "bytes": 4202,
+      "sha256": "6fa07005ce67dfa3d48e0abdde5c8570f7d95d6e28865a339fc5d029c6c4b8b7"
+    },
+    {
+      "path": "inputs/camera-PATCHES.json",
+      "bytes": 6892,
+      "sha256": "6c2d50725a048cc8dc328e85e6a8a4d4866f1274c6696b00159e57607a1a5f99"
+    }
+  ],
+  "proofs": [
+    {
+      "path": "src/pose_editor.gd",
+      "ui_anchor_count": 13,
+      "camera_anchor_count": 0,
+      "standalone_ui_reproduced": true,
+      "standalone_camera_reproduced": null,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact_base": true,
+      "base_bytes": 67846,
+      "base_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+      "combined_bytes": 71033,
+      "combined_sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "src/base_shape_editor.gd",
+      "ui_anchor_count": 2,
+      "camera_anchor_count": 0,
+      "standalone_ui_reproduced": true,
+      "standalone_camera_reproduced": null,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact_base": true,
+      "base_bytes": 16788,
+      "base_sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+      "combined_bytes": 16938,
+      "combined_sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0"
+    },
+    {
+      "path": "src/app.gd",
+      "ui_anchor_count": 1,
+      "camera_anchor_count": 5,
+      "standalone_ui_reproduced": true,
+      "standalone_camera_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact_base": true,
+      "base_bytes": 314487,
+      "base_sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+      "combined_bytes": 314927,
+      "combined_sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f"
+    },
+    {
+      "path": "tests/rotation_gizmo_smoke.gd",
+      "ui_anchor_count": 2,
+      "camera_anchor_count": 0,
+      "standalone_ui_reproduced": true,
+      "standalone_camera_reproduced": null,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact_base": true,
+      "base_bytes": 17395,
+      "base_sha256": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+      "combined_bytes": 17823,
+      "combined_sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "ui_anchor_count": 0,
+      "camera_anchor_count": 7,
+      "standalone_ui_reproduced": null,
+      "standalone_camera_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact_base": true,
+      "base_bytes": 55010,
+      "base_sha256": "f2b3e712b8ff0d5c67914c3ef783ad770abab30c8745cc0bae40c445debcc48e",
+      "combined_bytes": 56136,
+      "combined_sha256": "817a574f1f54f40f2936f9b1a9cc561c77e353408df691976a38c4ea853f84d1"
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "ui_anchor_count": 0,
+      "camera_anchor_count": 1,
+      "standalone_ui_reproduced": null,
+      "standalone_camera_reproduced": true,
+      "both_orders_equal": true,
+      "both_orders_reverse_exact_base": true,
+      "base_bytes": 5359,
+      "base_sha256": "cae17b6d4261049ac4ed64d640cef28901278b8913bfa278ad38f67092365c9e",
+      "combined_bytes": 5523,
+      "combined_sha256": "80a1c4964ea0c97e5ea546f550e0ab84a4dc2e1254ffd65f79064295514e75be"
+    }
+  ]
+}

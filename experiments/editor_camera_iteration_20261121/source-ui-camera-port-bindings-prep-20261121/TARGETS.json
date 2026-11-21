@@ -1,0 +1,79 @@
+{
+  "format": "has_exact_ui_camera_port_binding_successor_1",
+  "status": "SOURCE_PROPOSAL_NOT_QUALIFIED_NOT_ADOPTED",
+  "base_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "qualified_combined_source_manifest": "0bb3179a2e0abe4dbfe6471a9de906176360d461e2b38f10ccb739da40872acd",
+  "proposed_current_functional_count_after_all25targets": 1102,
+  "targets": [
+    {
+      "path": "tests/wind_review_port_files.json",
+      "operation": "replace",
+      "base_bytes": 9723,
+      "base_sha256": "bdacb37a56d1667218a31771eff9e6f9187a20c8980aa8d00905103a952a2d87",
+      "bytes": 9723,
+      "sha256": "29de7fae9d216d50c4df242bcc60a009656d83d398434e571c9853226f896fb1",
+      "manifest_rows": 21,
+      "changed_runtime_rows": [
+        {
+          "path": "src/app.gd",
+          "old": {
+            "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+            "lf_sha256": "2f61abe99c25d3c613c924dea9e4606786c462d900d54783e642bb89c8377518"
+          },
+          "target": {
+            "sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f",
+            "lf_sha256": "5d6c98f8e6889fe7d42b352a16c9ea6e6fc5276da8ac99b789bdaca11f82c65d"
+          }
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "old": {
+            "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+            "lf_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358"
+          },
+          "target": {
+            "sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c",
+            "lf_sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+          }
+        }
+      ],
+      "all_other_fields_and_rows_unchanged": true
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "operation": "replace",
+      "base_bytes": 12715,
+      "base_sha256": "11eb285e13af0d38c26b181f2d91d55c169a3511d9e5c20cd7bf1eb49234081b",
+      "bytes": 12715,
+      "sha256": "f933952d337cc7656abb984afaf149cfadf2626d5cdc9cd3d187a6205fbd77e9",
+      "manifest_rows": 35,
+      "changed_runtime_rows": [
+        {
+          "path": "src/app.gd",
+          "old": {
+            "sha256": "8eaa992b625913f2b2c412dc764f90bb775abc7878f5e4d80ec29d35fe69f1fc",
+            "lf_sha256": "2f61abe99c25d3c613c924dea9e4606786c462d900d54783e642bb89c8377518"
+          },
+          "target": {
+            "sha256": "36a35c15c4e6766d7dc0cd99a597f86eb565cd54a97dc0e312f647a393aae35f",
+            "lf_sha256": "5d6c98f8e6889fe7d42b352a16c9ea6e6fc5276da8ac99b789bdaca11f82c65d"
+          }
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "old": {
+            "sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358",
+            "lf_sha256": "9254f748d6c3a53893fc4f1cfba98496adcba1899bc465a41f77d8ab1a13e358"
+          },
+          "target": {
+            "sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c",
+            "lf_sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+          }
+        }
+      ],
+      "all_other_fields_and_rows_unchanged": true
+    }
+  ],
+  "validators_or_assertions_changed": false,
+  "native_inputs_added": false
+}

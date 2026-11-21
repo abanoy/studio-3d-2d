@@ -1,0 +1,142 @@
+{
+  "format": "has_root_ui_qualification_v2_actual_closed_1",
+  "status": "FAIL",
+  "head": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "session_id": 68580,
+  "retained_root_exit_code": 1,
+  "root_reaped": true,
+  "identity_guard_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "stage": "C:/a/Programming/cloudflare/has-face-gizmo-qualification-1795246871959706000/",
+  "ui": {
+    "format": "has_face_gizmo_source_snapshot_qualification_1",
+    "status": "FAIL",
+    "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+    "expected_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+    "qualified_historical_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+    "current_functional_source_count": 1086,
+    "current_changed_functional_files": 8,
+    "owned_runtime_files": 1094,
+    "ui_targets": 9,
+    "expected_assertion_checks": 407,
+    "new_whole_full_claimed": false,
+    "application_adopted": false,
+    "owner_acceptance_claimed": false,
+    "native_owner_assets_read": false,
+    "sourceio_or_native_conversion_started": false,
+    "jobs": [
+      {
+        "name": "job-0",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 16500,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-1",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 33272,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-2",
+        "window_required": true,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 4044,
+        "child_desktop_observed": true,
+        "foreground_child_observed": false
+      }
+    ],
+    "cases": [
+      {
+        "name": "import",
+        "status": "PASS",
+        "expected_checks": 0,
+        "graphical": false,
+        "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795246871959706000 import 2933a956ef5d44b996ebc5be74d2490b"
+      },
+      {
+        "name": "geometry",
+        "status": "PASS",
+        "expected_checks": 37,
+        "graphical": false,
+        "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795246871959706000 geometry 95a5cfc3bfd24dd5804b03c1f87439fe",
+        "checks": 37,
+        "result": {
+          "application_adopted": false,
+          "checks": 37,
+          "failures": 0,
+          "gui_or_render_qualified": false,
+          "native_assets_tested": false
+        }
+      },
+      {
+        "name": "face",
+        "status": "FAIL",
+        "expected_checks": 30,
+        "graphical": true,
+        "custom_user_profile": "HAS UI Qualification has-face-gizmo-qualification-1795246871959706000 face c5d93ea6e32c4e8fb92c7e514cc5b252"
+      }
+    ],
+    "error_type": "Refusal",
+    "error_code": "ENGINE_OR_ASSERTION_ERROR",
+    "all_owned_launchers_reaped": true,
+    "all_attempted_private_jobs_closed": true,
+    "parent_environment_unchanged": true,
+    "head_unchanged": true,
+    "preservation_failures": [],
+    "all_admitted_inputs_preserved": true,
+    "current_functional_domain_preserved": true,
+    "admitted_inputs": 2224,
+    "owned_lock_removed": true,
+    "owned_lock_retained": false
+  },
+  "face_assertions": {
+    "application_adopted": false,
+    "checks": 30,
+    "failures": 0,
+    "list_heights": [
+      160,
+      368
+    ],
+    "owner_layout_acceptance": false,
+    "resize_cases": [
+      {
+        "compact_host": "(960, 600)",
+        "controlled_late_size_signal": true,
+        "expected_clamp": "(650, 536)",
+        "interface_scale": 1,
+        "manual_size": "(610, 496)",
+        "observed_clamp": "(650, 536)",
+        "preference_after_clamp": "(650, 800)"
+      },
+      {
+        "compact_host": "(640, 400)",
+        "controlled_late_size_signal": true,
+        "expected_clamp": "(608, 336)",
+        "interface_scale": 1.5,
+        "manual_size": "(568, 320)",
+        "observed_clamp": "(608, 336)",
+        "preference_after_clamp": "(650, 800)"
+      }
+    ]
+  },
+  "explanation": "37 geometry and 30 face assertions passed, but strict engine-log guard refused actual teardown null canvas dereference in pose_editor.handle_metrics. Handle pixels and rotation writer/reader were not run. No assertion/log guard waived; no UI adopted."
+}

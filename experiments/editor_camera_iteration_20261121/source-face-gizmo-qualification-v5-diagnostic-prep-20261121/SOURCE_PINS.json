@@ -1,0 +1,173 @@
+{
+  "format": "has_face_gizmo_qualification_source_pins_5",
+  "status": "DIAGNOSTIC_SOURCE_READY_UNPARSED_UNRUN",
+  "application_adopted": false,
+  "whole_full_claimed": false,
+  "diagnosis_proven": false,
+  "execution_owner": "Root exclusive GUI/native lane",
+  "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+  "publication_head_at_preparation": "59a112a08373f12dcf771c21734b35391b757d4e",
+  "predecessor_manifest_sha256": "b525e108330fb4f7e2af59ee255d9e61350bd74a1a03c1746b4d73187f591703",
+  "predecessor_frozen_files_preserved": 27,
+  "UI_v5_diagnostic_manifest_sha256": "d71acce0f4db8fa2b499f019b52609032fa2d7062c578192b09af5fb78ede093",
+  "driver": {
+    "path": "run_ui_qualification.py",
+    "bytes": 24593,
+    "sha256": "fd83583808eb3abc0370eec1fdace4d3889c4569e943b889dd2bc56a5a95a1f3"
+  },
+  "source_peer_review": {
+    "agent": "/root/hair_bundles",
+    "status": "SOURCE_API_GO_NO_CONCRETE_BLOCKER",
+    "execution_performed": false
+  },
+  "structural_readback": {
+    "predecessor_all27files_preserved": true,
+    "input_rows_changed": 3,
+    "all15_input_pins_match": true,
+    "bootstrap_run_case_and_all_original_qualification_predicates_byte_identical": true,
+    "production_UI_v3_bytes_unchanged": true,
+    "original27handle_assertions_and_all413counts_unchanged": true,
+    "diagnostic_only_readback_never_sets_PASS": true
+  },
+  "authored_private_jobs": 6,
+  "authored_qualification_assertions": 413,
+  "diagnostic_images_expected": 4,
+  "actual_v5_tests_run_by_author": 0,
+  "files": [
+    {
+      "path": "CHECK_PLAN.json",
+      "bytes": 2528,
+      "sha256": "5cd08e9ed9dfd94e450145c9b440504e3fc83d03b172e90ad13b74fac3792c89"
+    },
+    {
+      "path": "FUNCTION_MAP.json",
+      "bytes": 2634,
+      "sha256": "cbb5f6f85978b72a814c851a3d7d9a0a3c45a11e0457ed810fbf1b9a95faa130"
+    },
+    {
+      "path": "INPUT_PINS.json",
+      "bytes": 2816,
+      "sha256": "83ff4b2177d8a614f2956d97a3329792915dff00f14a01c1d160d734158663b3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10839,
+      "sha256": "0a00ff03fefbb9d02433c757be0dc36977f84fe8bfc610b7a4c348486fd030a1"
+    },
+    {
+      "path": "SOURCE_REVIEW.md",
+      "bytes": 818,
+      "sha256": "a6ff1b035d884602edbb7e88b58619da26c67b629e168ad8f069fec015daf24a"
+    },
+    {
+      "path": "V2_CHANGE.json",
+      "bytes": 1725,
+      "sha256": "35ed552bfbf05e0efbcd3cc1d0a6ec20ebe0dcfc27218e9fd29fb9378f372c6b"
+    },
+    {
+      "path": "inputs/HOST_V2_SOURCE_PINS.json",
+      "bytes": 5569,
+      "sha256": "602d0fbb0d62525777a6c1fe86d8c4a2eb0f893f898ebc3c0089056a7b2364ac"
+    },
+    {
+      "path": "inputs/HOST_V3_SOURCE_PINS.json",
+      "bytes": 5651,
+      "sha256": "ff37da1ed47bb2b752671f3479f79871d22baaa7563eb947c760b21cc3b922ee"
+    },
+    {
+      "path": "inputs/HOST_V4_SOURCE_PINS.json",
+      "bytes": 5837,
+      "sha256": "b525e108330fb4f7e2af59ee255d9e61350bd74a1a03c1746b4d73187f591703"
+    },
+    {
+      "path": "inputs/IMPORT_OFF_MAP_ADOPTION.json",
+      "bytes": 7007,
+      "sha256": "5eeb8f6e46344d5858a9625d8d669bdb5b0bf353c70af6a516148c2a9bd1c4ed"
+    },
+    {
+      "path": "inputs/PREDECESSOR_SOURCE_PINS.json",
+      "bytes": 4622,
+      "sha256": "77204f3a1d6abef09e799c3d56c6c901393a2abe4b997f4d33cbf6bd193e576b"
+    },
+    {
+      "path": "inputs/SOURCE_LIGHT_TEST_STYLE_FINAL.json",
+      "bytes": 631,
+      "sha256": "f9387fd17ee587e3c4bfae5906533103d5cf9ef884deda12c1ea2ea98b259f49"
+    },
+    {
+      "path": "inputs/UI_SOURCE_PINS.json",
+      "bytes": 5160,
+      "sha256": "d71acce0f4db8fa2b499f019b52609032fa2d7062c578192b09af5fb78ede093"
+    },
+    {
+      "path": "inputs/UI_TARGETS.json",
+      "bytes": 2675,
+      "sha256": "0fc25d48ac7aac609fc6abb2aece1517df78c606d14a952ed30647d5445bdbbb"
+    },
+    {
+      "path": "payload/src/app.gd",
+      "bytes": 314530,
+      "sha256": "e56561a656be932fc54e025a36ac917f8ab835cf8f77e12c029f6044ae547a38"
+    },
+    {
+      "path": "payload/src/base_shape_editor.gd",
+      "bytes": 16938,
+      "sha256": "2cc6cb53f0622df64d91c7dff1c595dcd2b012f6a92631cca9b1422a9c8dfaf0"
+    },
+    {
+      "path": "payload/src/editor_handle_metrics.gd",
+      "bytes": 1514,
+      "sha256": "ebecae42dcf1b42ae547e5e64be75ecfe94439895b55d78b12efbb0eafcd1b48"
+    },
+    {
+      "path": "payload/src/pose_editor.gd",
+      "bytes": 71033,
+      "sha256": "485179125adccc303c5064bd8812740c10499ffd0415990f08c6517d758fa01c"
+    },
+    {
+      "path": "payload/src/shape_window_layout.gd",
+      "bytes": 836,
+      "sha256": "93f3835206c2769bc19c4324e846dc7f84ff695c3ae198c2b46b43014fb464d5"
+    },
+    {
+      "path": "payload/tests/editor_geometry_unit.gd",
+      "bytes": 4289,
+      "sha256": "7235e5856316d26f6589f46ac81e29850a0baf909b3bebf09c76d63e9e85bd3d"
+    },
+    {
+      "path": "payload/tests/face_window_layout_smoke.gd",
+      "bytes": 10371,
+      "sha256": "2dab842aa92e1e2a1151f00a9c136bd45c628efb7ec58df28e9d920f1dd10f5b"
+    },
+    {
+      "path": "payload/tests/pose_handle_size_smoke.gd",
+      "bytes": 13211,
+      "sha256": "88a3efabc383ec526f97f226c6a29b19928b5a62e8c068ef2f8a7a3c11e0613d"
+    },
+    {
+      "path": "payload/tests/rotation_gizmo_smoke.gd",
+      "bytes": 17823,
+      "sha256": "de7dea88f63d3a6e2e305b33dd0a59ea310523cf55c05a47cc2095bd89bc43ad"
+    },
+    {
+      "path": "qualified_helpers.py",
+      "bytes": 26455,
+      "sha256": "990c37ddca7b1301613f5efc5a7e5a30ce2723369112ef274ee78d2d4dc34087"
+    },
+    {
+      "path": "qualified_snapshot_reader.py",
+      "bytes": 22176,
+      "sha256": "d5ab807301d2b51b9ecea5fab1624b12addffe8247f5eafae60bf02c63c6dcec"
+    },
+    {
+      "path": "run_ui_qualification.py",
+      "bytes": 24593,
+      "sha256": "fd83583808eb3abc0370eec1fdace4d3889c4569e943b889dd2bc56a5a95a1f3"
+    },
+    {
+      "path": "test_bootstrap_identity.py",
+      "bytes": 5448,
+      "sha256": "7d79af2f25bac9686472c85e399bfa2dac68f74c763292eb9dc8cb8aba045dce"
+    }
+  ]
+}

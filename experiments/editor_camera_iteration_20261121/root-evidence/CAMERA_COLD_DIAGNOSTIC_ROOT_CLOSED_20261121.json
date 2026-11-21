@@ -1,0 +1,158 @@
+{
+  "format": "has_root_camera_cold_diagnostic_actual_closed_1",
+  "session_id": 19153,
+  "root_reaped": true,
+  "root_exit_code": 1,
+  "result": {
+    "format": "has_camera_cold_diagnostic_qualification_1",
+    "status": "FAIL",
+    "baseline_revision": "e0879c7df74bc3704902bfdaf4ff74eee40c3aea",
+    "expected_head": "59a112a08373f12dcf771c21734b35391b757d4e",
+    "qualified_historical_full_revision": "36044471151a6e561d6d3a404859e76ddd05738d",
+    "current_functional_source_count": 1086,
+    "current_changed_functional_files": 8,
+    "owned_runtime_files": 1096,
+    "camera_targets": 10,
+    "candidate_manifest_sha256": "6fa07005ce67dfa3d48e0abdde5c8570f7d95d6e28865a339fc5d029c6c4b8b7",
+    "mode": "classic_100_simple_lens_cold_diagnostic",
+    "expected_assertion_checks": 60,
+    "diagnostic_override": {
+      "format": "has_camera_cold_diagnostic_override_1",
+      "path": "tests/camera_lens_gesture_smoke.gd",
+      "original": {
+        "bytes": 6239,
+        "sha256": "072d32cc7cdfce86c1070b3980ac5dae9cebbd9d90597f6b3eae90c89bfd275e"
+      },
+      "diagnostic": {
+        "input": "diagnostic/camera_lens_gesture_smoke.gd",
+        "bytes": 10558,
+        "sha256": "74a99c72ac79a03d1e12f0510fd4af1f0bbcbceb12b989a105c1bcb382afd407"
+      },
+      "original_assertion_count": 22,
+      "comparison_policy_changed": false,
+      "product_persistence_changed": false
+    },
+    "comparison_policy_changed": false,
+    "product_persistence_changed": false,
+    "new_whole_full_claimed": false,
+    "application_adopted": false,
+    "owner_acceptance_claimed": false,
+    "native_owner_assets_read": false,
+    "sourceio_or_native_conversion_started": false,
+    "jobs": [
+      {
+        "name": "job-0",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 31632,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-1",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 12176,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-2",
+        "window_required": false,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "PASS",
+        "pid": 12124,
+        "child_desktop_observed": false,
+        "foreground_child_observed": false
+      },
+      {
+        "name": "job-3",
+        "window_required": true,
+        "reaped": true,
+        "private_job_required": true,
+        "private_job_closed": true,
+        "desktop_closed": true,
+        "status": "FAIL",
+        "pid": 31416,
+        "child_desktop_observed": true,
+        "foreground_child_observed": false
+      }
+    ],
+    "cases": [
+      {
+        "name": "import",
+        "status": "PASS",
+        "expected_checks": 0,
+        "graphical": false,
+        "custom_user_profile": "HAS Camera Qualification has-camera-cold-diagnostic-1795247882936083000 import 53d71c9455934e62bb6873e8a65241de"
+      },
+      {
+        "name": "key-edits",
+        "status": "PASS",
+        "expected_checks": 26,
+        "graphical": false,
+        "custom_user_profile": "HAS Camera Qualification has-camera-cold-diagnostic-1795247882936083000 key-edits 329c8b44a1ca4eeab566d6a63551a5cb",
+        "checks": 26,
+        "result": {
+          "checks": 26,
+          "failures": 0
+        }
+      },
+      {
+        "name": "lens-planning",
+        "status": "PASS",
+        "expected_checks": 12,
+        "graphical": false,
+        "custom_user_profile": "HAS Camera Qualification has-camera-cold-diagnostic-1795247882936083000 lens-planning ac4ea3f72dce49dc8bb519bddcffe49d",
+        "checks": 12,
+        "result": {
+          "checks": 12,
+          "failures": 0
+        }
+      },
+      {
+        "name": "lens-classic-100-simple",
+        "status": "FAIL",
+        "expected_checks": 22,
+        "graphical": true,
+        "custom_user_profile": "HAS Camera Qualification has-camera-cold-diagnostic-1795247882936083000 lens-classic-100-simple 1136bde4f4da4ee484361c87e4b1bc1e"
+      }
+    ],
+    "error_type": "Refusal",
+    "error_code": "ENGINE_OR_ASSERTION_ERROR",
+    "all_owned_launchers_reaped": true,
+    "all_attempted_private_jobs_closed": true,
+    "diagnostic_reports": [
+      {
+        "name": "camera-lens-before-save.json",
+        "bytes": 2259,
+        "sha256": "b65d9073a9ea750e61f709a49c85c6895acc1f29dfc9da20ca52e3183cb92eb0"
+      },
+      {
+        "name": "camera-lens-cold-diagnostic.json",
+        "bytes": 6147,
+        "sha256": "58b19a23982efd69fcd1f72278b69799b15fc9583292c005d18f0bb17eaa6716"
+      }
+    ],
+    "parent_environment_unchanged": true,
+    "head_unchanged": true,
+    "preservation_failures": [],
+    "all_admitted_inputs_preserved": true,
+    "current_functional_domain_preserved": true,
+    "admitted_inputs": 2251,
+    "owned_lock_removed": true,
+    "owned_lock_retained": false
+  },
+  "scope": "Original22assertions unchanged:21pass/1fail. Actual pre/post-save keys exact; reopened frame12FOV57 exact and expected-wire data equal. Raw mismatch is2integer-frame types plus2quaternion components -2.7755575615628914e-17. No product persistence or comparison policy changed in diagnostic run."
+}

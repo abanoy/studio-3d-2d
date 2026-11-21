@@ -1,0 +1,31 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS handle_size.owned_legacy_preferences_are_created
+PASS handle_size.missing_or_invalid_handle_preference_uses_large_default
+PASS handle_size.reading_an_invalid_handle_preference_does_not_rewrite_it
+PASS handle_size.owned_skinned_fixture_is_generated
+PASS handle_size.normal_model_import_loads_fixture
+PASS handle_size.handle_size_setting_is_available_in_Simple_mode
+PASS handle_size.actual_setting_signal_changes_handles_without_interface_zoom
+PASS handle_size.saving_the_handle_choice_preserves_other_preference_fields
+PASS handle_size.a_view_rotation_ring_survives_window_and_scale_changes
+PASS handle_size.actual_white_ring_pixels_keep_180_screen_radius_at_(1600, 1000)_scale_1.0
+PASS handle_size.the_larger_visible_ring_accepts_its_physical_grabbing_band
+PASS handle_size.outside_the_physical_grabbing_band_does_not_start_rotation
+PASS handle_size.a_view_rotation_ring_survives_window_and_scale_changes
+FAIL handle_size.actual_white_ring_pixels_keep_180_screen_radius_at_(1600, 1000)_scale_1.5
+FAIL handle_size.the_larger_visible_ring_accepts_its_physical_grabbing_band
+PASS handle_size.outside_the_physical_grabbing_band_does_not_start_rotation
+PASS handle_size.a_view_rotation_ring_survives_window_and_scale_changes
+PASS handle_size.actual_white_ring_pixels_keep_180_screen_radius_at_(3440, 1440)_scale_1.0
+PASS handle_size.the_larger_visible_ring_accepts_its_physical_grabbing_band
+PASS handle_size.outside_the_physical_grabbing_band_does_not_start_rotation
+PASS handle_size.a_view_rotation_ring_survives_window_and_scale_changes
+PASS handle_size.actual_white_ring_pixels_keep_180_screen_radius_at_(3440, 1440)_scale_1.5
+PASS handle_size.the_larger_visible_ring_accepts_its_physical_grabbing_band
+PASS handle_size.outside_the_physical_grabbing_band_does_not_start_rotation
+PASS handle_size.interface_preferences_do_not_change_model_camera_video_or_history
+PASS handle_size.gizmo_size_never_rewrites_the_source_skin
+PASS handle_size.fresh_editor_instance_restores_saved_handle_preference
+HANDLE_SIZE_SMOKE {"application_adopted":false,"cases":[{"interface_scale":1.0,"ring_pixel_hits":6,"window":"(1600, 1000)","wrong_band_hits":0},{"interface_scale":1.5,"ring_pixel_hits":3,"window":"(1600, 1000)","wrong_band_hits":0},{"interface_scale":1.0,"ring_pixel_hits":6,"window":"(3440, 1440)","wrong_band_hits":0},{"interface_scale":1.5,"ring_pixel_hits":6,"window":"(3440, 1440)","wrong_band_hits":0}],"checks":27,"failures":2,"owner_hand_comfort_certified":false}
