@@ -34,7 +34,36 @@ A live simulation keeps its flexible resource while it owns contact caches,
 including a direct final-mode evaluation during that lease. The exact-rest result
 above covers ordinary authored rest without a live owner. Recorded/manual guide
 poses keep flexible geometry when Hair & clothes is off. Portable save/reopen and
-movie qualification of these new transitions are separate pending work.
+movie qualification now passes the bounded **30-check** scope below.
+
+## Portable project and four-frame movie
+
+One protected first-component candidate passes 19 writer checks, 10 fresh-process
+reader checks and one FFprobe contract. Its four authored frames are rest,
+edited guide FK, the same edited FK, and rest, with a constant nonzero native Head
+pose. Standard export produces actual H.264 at 1920 × 1080, 24 fps and exactly
+four frames. Every uncompressed movie-source PNG matches its preview exactly.
+
+The cold reader receives only the packed HAS and private expected-state file.
+The writer's Studio, data, profile and owned input copy are unavailable during
+that read, then restored. All four cold images, rest/flexible selections and
+native Head/guide transforms match exactly; the complete saved pose/key values
+match in the ordinary JSON-number representation. Original inputs, test sources
+and runtimes remain unchanged, and both private jobs and the inspection process
+close. The packed owner-review file and media stay local.
+
+Three failed attempts remain recorded: a fixture called scene-length controls
+before opening Project options and saved 48 frames; a strict FFprobe file-read
+guard refused before creating its child, with its internal identity change
+unproven; and a container comparison rejected 74 integer/float type differences
+with zero value or native-quaternion differences. The final fixture compares the
+complete JSON-number-domain state plus exact native transforms for every frame.
+No author field or pixel tolerance was removed. See the
+[scalar evidence](../experiments/reconstructed_rest_movie_20261121/EVIDENCE.json).
+
+This checks authored guide keys without a live simulation owner. It does not
+qualify a new physics bake, whole-hair coverage, all-frame collision, performance
+or owner appearance acceptance.
 
 ## First-component result and limitations
 
@@ -54,6 +83,11 @@ The supported authoring profile requires original float32 weights with at most f
 
 `python tests/verify_secondary_reconstruction.py` runs the generated-only checks. Optional `--source <read-only GLB> --region <node> <primitive> <component>` prepares a private candidate and checks actual imported weighted geometry headlessly. The protected Junko-only `--gui --gui-only` route requires the approved private Windows desktop and now passes its unchanged exact-image criterion on the new metadata-bearing candidate. No source assets, vertex arrays or screenshots are embedded in these tests or the scalar benchmark.
 
-The standalone `tools/secondary_reconstruction.py` accepts a source, explicit recipe and **new** output folder. A recipe uses `studio_secondary_reconstruction_1`, a matching source checksum, `reviewed: true`, `segments` and a list of `{node, primitive, component}` regions; optional vertex masks and reviewed controls remain explicit. Multi-region recipes can share guides, but only the one-section native result above is qualified. Next work: finish portable/movie transition checks, review the other colored back-hair groups, pair outline masks without crossing into bangs, and reduce the multi-chain contact cost.
+`python tests/verify_reconstructed_rest_movie.py --source <protected GLB>` runs
+the optional 30-check portable/movie scope on Windows with the existing approved
+private-desktop and encoder tools. It requires the pinned protected source; it
+does not distribute or download that asset.
+
+The standalone `tools/secondary_reconstruction.py` accepts a source, explicit recipe and **new** output folder. A recipe uses `studio_secondary_reconstruction_1`, a matching source checksum, `reviewed: true`, `segments` and a list of `{node, primitive, component}` regions; optional vertex masks and reviewed controls remain explicit. Multi-region recipes can share guides, but only the one-section native result above is qualified here. Next work: review the other colored back-hair groups, pair outline masks without crossing into bangs, and reduce the multi-chain contact cost.
 
 See [the compact benchmark](benchmarks/secondary_reconstruction_20261121.json). The prior existing-chain 13/14 settling failure is retained and is not relabelled by this result.

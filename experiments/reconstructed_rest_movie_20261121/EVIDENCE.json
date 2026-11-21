@@ -1,0 +1,139 @@
+{
+  "format": "has_reconstructed_rest_portable_movie_evidence_1",
+  "status": "PASS",
+  "checks": 30,
+  "code_base_commit": "7d15daf3a8b4b3fac85fd5b79bf8339ce13607c0",
+  "new_test_code_uncommitted_at_observation": true,
+  "whole_full_claimed": false,
+  "whole_back_hair_complete": false,
+  "owner_art_images_arrays_or_pose_values_published": false,
+  "actual_cases": [
+    {
+      "name": "writer",
+      "status": "PASS",
+      "checks": 19,
+      "private_resources_closed": true,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "graphical_placement_proven": true,
+      "private_receipt_sha256": "875a432d23730f815de2bdfc838720d644d546d0ddb5b10105ca61f446e4b6ba",
+      "stdout_sha256": "3b88d312a04f1aa35a386042886162908eeee90c7eb6a5a46dbba12a40a35bef",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "engine_log_sha256": "158e015aa2032f7eb958023a52af38e8c1ab04069c9d4cfabc634b5d32662a47"
+    },
+    {
+      "name": "reader",
+      "status": "PASS",
+      "checks": 10,
+      "private_resources_closed": true,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "graphical_placement_proven": true,
+      "private_receipt_sha256": "1bc3a03e841e32f18519ebad7f504b5989b11f4c73a8f2c0491d1163da5aebf0",
+      "stdout_sha256": "db5af9e0057222b6d428bd0052e1381082e9a99dc9062bb91034a90bcc720501",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "engine_log_sha256": "9a223ccaaa2ef15e5bac9666283abb24627cd6c1ea47e9731dd493c8dcd6101a"
+    }
+  ],
+  "movie_probe": {
+    "status": "PASS",
+    "exit": 0,
+    "reaped": true,
+    "checks": 1,
+    "stream": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "4",
+      "duration": "0.166667"
+    },
+    "handle_closed": true,
+    "tool_preserved": true
+  },
+  "verification_sha256": "1f040fd243de5d1f8ecb14d1eab2636bdd9615434f8a951b0b8231c77d215191",
+  "cold_boundary": {
+    "writer_studio_data_profile_and_owned_input_offline": true,
+    "writer_trees_restored": true,
+    "handoff_files": 2,
+    "packed_project_sha256": "6f91f31ecc0c6fd01b83633c6ba5036c3bf99c11cf0266f34a80766e692a7566",
+    "expected_private_variant_sha256": "c95c80794bc20d922aef3118f08f17ceacdfcc5a22ad87cb53c2027bbfbcb71b",
+    "reader_own_cache_asserted": true,
+    "all4pixel_hashes_and_resource_modes_exact": true,
+    "all4native_Head_and_guide_transforms_exact": true,
+    "pose_and_all4keys_exact_in_JSON_number_domain": true,
+    "int_float_runtime_variant_identity_claimed": false
+  },
+  "preservation": {
+    "parent_environment_preserved": true,
+    "original_source_preserved": true,
+    "owned_inputs_preserved": true,
+    "runtime_sources_preserved": true,
+    "all_private_resources_closed": true
+  },
+  "source_preservation_failures": [],
+  "retained_failures": [
+    {
+      "case": "reconstructed-rest-movie-1795302503387456800",
+      "status": "FAIL",
+      "wrapper_credited_checks": 0,
+      "label": "Writer18of19 scene length refusal",
+      "explanation": "Fixture called ProjectTiming before lazy Project options setup. Actual saved duration48, so the strict4frame check failed. Later fixture opens ordinary Options first; no duration/pixel tolerance weakened.",
+      "receipt_sha256": "06df8310ac99965c9cec0762df17fc12640fcf9f651a6238c12ff49f3d086dee",
+      "source_preserved": true,
+      "all_private_resources_closed": true
+    },
+    {
+      "case": "reconstructed-rest-movie-1795302666414157200",
+      "status": "FAIL",
+      "wrapper_credited_checks": 19,
+      "label": "Writer19 passed; FFprobe strict prechild read refusal",
+      "explanation": "Exact refused path was existing FFprobe.exe. V.read detected an identity change during read. Its internal before/after delta was not retained; cause is unproven. Subsequent unchanged strict reads stable. No probe child or reader started; no tool/guard modification.",
+      "receipt_sha256": "16670f046cd5eef65683f8c2f65f90da479921e6c5be18483fbd66f120e6b4d3",
+      "source_preserved": true,
+      "all_private_resources_closed": true
+    },
+    {
+      "case": "reconstructed-rest-movie-1795302847782374300",
+      "status": "FAIL",
+      "wrapper_credited_checks": 20,
+      "label": "Observed29of30 passed; exact container numeric type comparison failed",
+      "explanation": "Writer19+FFprobe1 pass, reader9of10: all4coldpixel/resource checks passed. Independent scalar diagnostic found74int/float representation differences and ZERO numeric-value, structure, other-type or native-quaternion differences. Final fixture compares complete exact JSON-number-domain pose/key dictionaries and additionally exact native Head/guide Transform3D in every frame; no epsilon or author field omitted.",
+      "receipt_sha256": "778724718a96d5db3a01039bf7059b9894bbf5069f3867a484971f4d3a4c3211",
+      "source_preserved": true,
+      "all_private_resources_closed": true
+    }
+  ],
+  "measured_numeric_type_diagnostic": {
+    "receipt_sha256": "b0e61481f6334f9b4d6199f5395ed1c48e75b6a4cd1d71f56003de748c5ef11b",
+    "result": {
+      "canonical_keys_equal": true,
+      "canonical_pose_equal": true,
+      "canonical_text_differences": 0,
+      "checks": 1,
+      "failures": 0,
+      "keys_equal": false,
+      "maximum_numeric_difference": 0.0,
+      "native_quaternion_differences": 0,
+      "non_numeric_type_differences": 0,
+      "numeric_type_differences": 74,
+      "numeric_value_differences": 0,
+      "pose_equal": false,
+      "structure_differences": 0
+    }
+  },
+  "test_sources": [
+    {
+      "path": "tests/reconstructed_rest_movie_smoke.gd",
+      "bytes": 10725,
+      "sha256": "a9d2ec6bff1ff9668a0de2dfd17519442f30dd5fe4775a2bcb282698f65fcb8a"
+    },
+    {
+      "path": "tests/verify_reconstructed_rest_movie.py",
+      "bytes": 6620,
+      "sha256": "50dd773020c301adbaf1b19ea6a572e1413ca198a282c0b107a2a82c67c18e7f"
+    }
+  ],
+  "scope": "One protected first-component reconstruction, four authored frames: rest, edited positively-weighted guide FK twice, rest. Constant authored nonzero native Head FK. Actual Standard H2641080p24fourframe output; all uncompressed sourcePNGs match previews exactly. No live owner during export, no natural/fullhair/collision/performance/human promotion.",
+  "private_owner_review_relative_path": "output/reconstructed-rest-movie-1795303212385922600/Cases/writer/Data/Reconstructed hair four frames.has"
+}
