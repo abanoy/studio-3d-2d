@@ -8719,3 +8719,27 @@ outline/whole-hair result. Five paired color/mask operations could reuse40 guide
 chains/200 nodes, but naive colored3241+outline3409 contact rows can exceed4096.
 Do not raise that limit or silently omit rows: design explicit physical-surface
 and visual-shell correspondence before adoption. Formal52/54+55/62 stay unchanged.
+
+
+## 2026-11-21 — Dense contact cache matches geometry but regresses speed
+
+Output-only candidatef1bfb39a passes generated38 and native15; all720 ticks match
+the unchanged0bea5b26 baseline's complete pose/FK dictionaries+bytes and nine
+non-time metrics. Protected inputs, source/runtime/proposal and parent environment
+remain exact; approved private-headless jobs/desktop close and handles reap.
+Earlier prelaunch, desktop-refusal and missing-profile failures remain separate.
+
+Do NOT adopt this candidate. Alternating same-input isolated constrain calls
+average44.858ms baseline versus65.426ms candidate,1.459x slower. The128.410ms
+comparison tick includes BOTH solvers and FK checks and is not viewportFPS or
+normal live feedback. Both end with123 contact pairs,17183 corrections and710
+iteration-limit hits; Off error0 and11.22cm centroid drop remain unchanged.
+Reducing broad tests alone did not improve elapsed time because dense summary
+iteration adds overhead. A separate sparse-active successor is being qualified;
+no speedup, collision fix or production adoption is inferred at this checkpoint.
+
+Exact executed code text, compact scalar receipts/provenance and retained failures:
+experiments/contact_cache_regression_20261121. No private model/spec/pose/weight
+arrays or artwork were copied. Original app source remains unchanged. Formal
+52/54 implementation and55/62 acceptance stay; movement-driven live hair inertia
+is separately open (ordinary pose edits still freeze live simulations).

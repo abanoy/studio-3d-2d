@@ -1,0 +1,52 @@
+{
+  "format": "has_native_cache_comparator_observation_1",
+  "status": "EXACT_EQUIVALENCE_PASS_PERFORMANCE_REGRESSION_NOT_ADOPTED",
+  "native_checks": 15,
+  "compared_ticks": 720,
+  "baseline_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13",
+  "candidate_sha256": "f1bfb39a3ec29db9d21581eb91569fb568d63f31939855548b63ab65fa2a60d5",
+  "exact_pose_fk_and_metric_equivalence": true,
+  "baseline_solver_mean_ms": 44.8580402777778,
+  "candidate_solver_mean_ms": 65.42607777777779,
+  "candidate_over_baseline_ratio": 1.4585139558624274,
+  "timing_scope": "Isolated constrain calls, alternatingorder. Whole comparison tick includes both solvers and fullFK comparisons, not fullSecondaryLive smoothing orviewportFPS.",
+  "residual_contacts_unchanged": {
+    "final_pairs": 123,
+    "maximum_pairs": 130,
+    "minimum_recorded_gap_m": -0.044478848572551,
+    "corrections": 17183,
+    "iteration_limit_hits": 710
+  },
+  "safe_result": {
+    "stage": "native-contact-cache-compare-1795304653309825300",
+    "bytes": 2420,
+    "sha256": "0674249a873693bbe1f20e6d762a03fca0931ecbffd4b758d047dc73fbca64a3"
+  },
+  "headless_closure": {
+    "exit": 0,
+    "job_closed": true,
+    "desktop_closed": true,
+    "private_window_seen": false,
+    "child_desktop_confirmed": false,
+    "foreground_child_observed": false,
+    "desktop_switch_requested": false
+  },
+  "launcher_reaped": true,
+  "launcher_handle_closed": true,
+  "private_resources_closed": true,
+  "all_source_runtime_proposal_input_environment_preservation": true,
+  "first_attempt": {
+    "stage": "native-contact-cache-compare-1795304600400691900",
+    "status": "FAIL_BEFORE_ENGINE",
+    "checks": 0,
+    "error": "[Errno 5] Create private test desktop",
+    "child_created": false,
+    "launcher_reaped": true,
+    "launcher_handle_closed": true,
+    "generic_all_jobs_closed_flag": false,
+    "scope": "Restrictedcontext CreateDesktopErrno5; no Job/desktop/engine created. Preservedunchanged, not a numerical failure."
+  },
+  "production_modified": false,
+  "optimizer_adopted": false,
+  "root_cpu_slot_released": true
+}

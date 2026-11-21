@@ -1,0 +1,176 @@
+{
+  "scope": "Same38 synthetic controls on two different candidate versions; not76independent requirements. Earlier failed/unstarted scopes remainFAIL.",
+  "attempts": [
+    {
+      "stage": "contact-row-cache-1795304055124825200",
+      "label": "initial_missing_case_directory",
+      "status": "FAIL",
+      "qualified_checks": 0,
+      "source_preservation_failures": [],
+      "proposal_preserved": true,
+      "runtime_preserved": true,
+      "environment_preserved": true,
+      "all_jobs_closed_flag": false,
+      "original": {
+        "file": "verification.json",
+        "bytes": 593,
+        "sha256": "c66440bdfb03d8f3131e3c709c6696adabfb61761fc9c316c43df7c2f9a45ebc"
+      },
+      "engine_started": false,
+      "case_started": false,
+      "error_category": "Missing owned Cases/equivalence directory before launching any case"
+    },
+    {
+      "stage": "contact-row-cache-1795304082075593000",
+      "label": "restricted_desktop_access_denied",
+      "status": "FAIL",
+      "qualified_checks": 0,
+      "source_preservation_failures": [],
+      "proposal_preserved": true,
+      "runtime_preserved": true,
+      "environment_preserved": true,
+      "all_jobs_closed_flag": false,
+      "original": {
+        "file": "verification.json",
+        "bytes": 2035,
+        "sha256": "d430b86f4a18157fa436f53be05c804489d26781b0ac4cb44f9b6ac9bd96de66"
+      },
+      "launcher_exit": 2,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": false,
+      "receipt_sha256": "41c4f3b4a5024588fef4bc30122d0ec4b3dc0d70518e5ec0dc5abe260b484d3a",
+      "receipt": {
+        "exit": 2,
+        "job_closed": null,
+        "desktop_closed": null,
+        "child_pid": null,
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "receipt_error": "[Errno 5] Create private test desktop",
+      "engine_started": false,
+      "error_category": "Errno5CreateDesktop before engine/Job/desktop; no passing batch"
+    },
+    {
+      "stage": "contact-row-cache-1795304140160423900",
+      "label": "marker38_but_missing_profile_FAIL",
+      "status": "FAIL",
+      "qualified_checks": 0,
+      "source_preservation_failures": [],
+      "proposal_preserved": true,
+      "runtime_preserved": true,
+      "environment_preserved": true,
+      "all_jobs_closed_flag": true,
+      "original": {
+        "file": "verification.json",
+        "bytes": 2023,
+        "sha256": "16ce551f2d18efc0202c7f9fa0071be5e3302b7e94c7ca0614eb41cd923ef9d8"
+      },
+      "launcher_exit": 0,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "receipt_sha256": "218a0839551079750d8194f78030c37e94d3763a0a92a2304c7257991656a196",
+      "receipt": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_pid": 21084,
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "engine_started": true,
+      "engine_marker": {
+        "checks": 38,
+        "failures": 0,
+        "synthetic_only": true,
+        "graphics_used": false
+      },
+      "missing_required_user_profile": true,
+      "error_category": "Actual user profile required; aggregateFAIL0retained despite38marker"
+    },
+    {
+      "stage": "contact-row-cache-1795304167718912100",
+      "label": "predecessor38_PASS",
+      "status": "PASS",
+      "qualified_checks": 38,
+      "source_preservation_failures": [],
+      "proposal_preserved": true,
+      "runtime_preserved": true,
+      "environment_preserved": true,
+      "all_jobs_closed_flag": true,
+      "original": {
+        "file": "verification.json",
+        "bytes": 7478,
+        "sha256": "af677ebbf222b80e5ea58458545e4857731916eb4df284e1037e5be63dc4b6fc"
+      },
+      "launcher_exit": 0,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "receipt_sha256": "4775449e9dcdecbcfecc9b44970031c6ab06349e4cfaa536f080e45a8a459adf",
+      "receipt": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_pid": 28744,
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "engine_started": true,
+      "engine_marker": {
+        "checks": 38,
+        "failures": 0,
+        "synthetic_only": true,
+        "graphics_used": false
+      },
+      "source_bound_candidate_sha256": "09ce77fb741aeb19b891e2ff8b5df8d4c3cc042182ee88355bf611bcda4949bb"
+    },
+    {
+      "stage": "contact-row-cache-1795304248874516900",
+      "label": "aggregated_successor38_PASS",
+      "status": "PASS",
+      "qualified_checks": 38,
+      "source_preservation_failures": [],
+      "proposal_preserved": true,
+      "runtime_preserved": true,
+      "environment_preserved": true,
+      "all_jobs_closed_flag": true,
+      "original": {
+        "file": "verification.json",
+        "bytes": 7511,
+        "sha256": "cc75b4ea920cd4ed46f9e440c55e3cf4099588ee250444295d8b101af456f1a7"
+      },
+      "launcher_exit": 0,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "receipt_sha256": "91fe4c2e601dd6fac0b43f523846d592c834e51723357c79b36515ff07d87c58",
+      "receipt": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "child_pid": 18812,
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      },
+      "engine_started": true,
+      "engine_marker": {
+        "checks": 38,
+        "failures": 0,
+        "synthetic_only": true,
+        "graphics_used": false
+      },
+      "source_bound_candidate_sha256": "f1bfb39a3ec29db9d21581eb91569fb568d63f31939855548b63ab65fa2a60d5"
+    }
+  ]
+}

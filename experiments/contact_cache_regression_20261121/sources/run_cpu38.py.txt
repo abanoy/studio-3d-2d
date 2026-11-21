@@ -1,0 +1,52 @@
+"""Output-only synthetic contact-cache runner. Root coordinates before execution."""
+from pathlib import Path
+import hashlib,json,os,sys,time
+
+sys.dont_write_bytecode=True
+HERE=Path(__file__).resolve().parent
+ROOT=HERE.parents[2]
+sys.path[:0]=[str(ROOT/'tests'),str(ROOT)]
+import verify_import_capability as V
+
+
+def main():
+    if os.name!='nt':raise RuntimeError('Owned Windows headless Job is required')
+    environment=dict(os.environ)
+    pin=json.loads((HERE/'SOURCE.json').read_bytes())
+    original=V.read(ROOT/pin['baseline']['path'])
+    V.need(hashlib.sha256(original).hexdigest()==pin['baseline']['sha256'],'Baseline changed; explicitly port the proposal')
+    names=('secondary_skin_contact_baseline.gd','secondary_skin_contact.gd','contact_cache_unit.gd','run_cpu.py','SOURCE.json')
+    owned={name:V.read(HERE/name) for name in names}
+    V.need(owned['secondary_skin_contact_baseline.gd']==original,'Baseline reference is not exact')
+    V.need(hashlib.sha256(owned['secondary_skin_contact.gd']).hexdigest()==pin['candidate']['sha256'],'Candidate pin differs')
+    frozen,blobs=V.source_blobs()
+    composite=dict(blobs)
+    composite['src/secondary_skin_contact_baseline.gd']=owned['secondary_skin_contact_baseline.gd']
+    composite['src/secondary_skin_contact_candidate.gd']=owned['secondary_skin_contact.gd']
+    composite['tests/contact_cache_unit.gd']=owned['contact_cache_unit.gd']
+    output=ROOT/'output'/('contact-row-cache-'+str(time.time_ns()))
+    output.mkdir();(output/'Cases').mkdir();runtime=V.studio(output,'CPUStudio',composite)
+    result=dict(status='FAIL',checks=0,cases=[],synthetic_only=True,graphics_used=False,private_assets_read=False)
+    problem=None
+    try:
+        row=V.run_case(output,'equivalence',runtime,'tests/contact_cache_unit.gd','CONTACT_ROW_CACHE ',38,[],True,result,None)
+        V.need(row['report'].get('synthetic_only') is True and row['report'].get('graphics_used') is False,'Fixture scope differs')
+        result['checks']=row['checks'];result['status']='PASS'
+    except BaseException as error:
+        problem=error;result['error']=str(error);result['error_type']=type(error).__name__
+    finally:
+        result['source_preservation_failures']=V.sources_unchanged(frozen)
+        current,_=V.source_blobs()
+        result['source_membership_preserved']=set(current)==set(frozen)
+        result['proposal_preserved']=all(V.read(HERE/name)==raw for name,raw in owned.items())
+        result['runtime_preserved']=all(V.read(runtime/name)==raw for name,raw in composite.items())
+        result['environment_preserved']=dict(os.environ)==environment
+        result['all_jobs_closed']=bool(result['cases']) and all(row.get('private_resources_closed') is True and row.get('launcher_reaped') is True and row.get('launcher_handle_closed') is True for row in result['cases'])
+        if result['source_preservation_failures'] or not all(result[key] is True for key in ('source_membership_preserved','proposal_preserved','runtime_preserved','environment_preserved','all_jobs_closed')):result['status']='FAIL'
+        V.new(output/'verification.json',(json.dumps(result,indent=2)+'\n').encode())
+        print(json.dumps({'status':result['status'],'checks':result['checks'],'result':str(output/'verification.json')}))
+    if problem is not None:raise problem
+    V.need(result['status']=='PASS','Equivalence/source/process gates failed')
+
+
+if __name__=='__main__':main()

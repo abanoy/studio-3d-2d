@@ -1,0 +1,69 @@
+{
+  "files": [
+    {
+      "archive_path": "sources/secondary_skin_contact_baseline.gd.txt",
+      "original_relative_role": "secondary_skin_contact.gd",
+      "bytes": 17056,
+      "sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+    },
+    {
+      "archive_path": "sources/secondary_skin_contact_f1b.gd.txt",
+      "original_relative_role": "secondary_skin_contact_native_candidate.gd",
+      "bytes": 21071,
+      "sha256": "f1bfb39a3ec29db9d21581eb91569fb568d63f31939855548b63ab65fa2a60d5"
+    },
+    {
+      "archive_path": "sources/native_cache_compare.gd.txt",
+      "original_relative_role": "native_cache_compare.gd",
+      "bytes": 14647,
+      "sha256": "cd5b3517b1ab3dace2d904d8f81d4ca7654349145f739ea482b82e94468456cb"
+    },
+    {
+      "archive_path": "sources/run_native_compare.py.txt",
+      "original_relative_role": "run_native_compare.py",
+      "bytes": 6985,
+      "sha256": "1c31375ed460a73e9e6df33a9c50c3ffa9375a2ab1cee0aa06364db89381b3bb"
+    },
+    {
+      "archive_path": "sources/secondary_skin_contact_09ce_predecessor.gd.txt",
+      "original_relative_role": "secondary_skin_contact_candidate.gd",
+      "bytes": 20904,
+      "sha256": "09ce77fb741aeb19b891e2ff8b5df8d4c3cc042182ee88355bf611bcda4949bb"
+    },
+    {
+      "archive_path": "sources/contact_cache_unit.gd.txt",
+      "original_relative_role": "contact_cache_unit.gd",
+      "bytes": 6158,
+      "sha256": "3d1b1fc8420fa7dbed3242df2888fbe739d6462d4b792eeecd9a2135f7bfe7d4"
+    },
+    {
+      "archive_path": "sources/run_cpu38.py.txt",
+      "original_relative_role": "run_cpu.py",
+      "bytes": 3427,
+      "sha256": "d857d5c21ac727235a002f4598b9c33b70069c78ff542ac63fc1867e53b5cf7c"
+    }
+  ],
+  "native15_observation": {
+    "file": "SAFE_RESULT.json",
+    "bytes": 2420,
+    "sha256": "0674249a873693bbe1f20e6d762a03fca0931ecbffd4b758d047dc73fbca64a3"
+  },
+  "required_existing_runner_dependencies": [
+    {
+      "path": "run.py",
+      "bytes": 8460,
+      "sha256": "99767c6e5712b5319055a51a78019655976699a31bb73b2a1331e2201b05a821"
+    },
+    {
+      "path": "tests/verify_import_capability.py",
+      "bytes": 17410,
+      "sha256": "74519b81bb7fd65940ce73a4e24f06d21e0d445cf55a304b781460294d45591d"
+    },
+    {
+      "path": "tools/private_desktop.py",
+      "bytes": 12692,
+      "sha256": "c3bad5ab1792f7103a9bf31eef283ee8b928bd4557b6e53c18b9c0718d92ae61"
+    }
+  ],
+  "historical_authorship_flags": "SOURCE snapshots saying engine_executedfalse and predecessorCPU notes saying nativeunrun describe authoring/pre-native phases. They are retainedexact, superseded in scope by actualnative15SAFE_RESULT, never rewritten."
+}
