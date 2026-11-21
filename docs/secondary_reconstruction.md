@@ -65,6 +65,26 @@ This checks authored guide keys without a live simulation owner. It does not
 qualify a new physics bake, whole-hair coverage, all-frame collision, performance
 or owner appearance acceptance.
 
+## Five-section settling trial
+
+Five independently guided colored back-hair sections pass 12 scoped CPU checks.
+All 3,629 selected vertices participate in the measurement; their centroid drops
+11.22 cm after 720 steps. Native joints and attachment positions stay fixed, and
+Off restores every selected vertex exactly. The batch creates 40 chains and
+200 guide nodes within the existing budgets.
+
+This candidate still needs work: 123 contact pairs remain at the end, the worst
+recorded gap is -4.45 cm, and a simulation step averages 60.5 ms. Outline shells,
+bangs and ribbons are excluded. These are CPU measurements, not viewport speed
+or artist appearance approval. The earlier shared 13-chain candidate remains
+11/12 FAIL because its centroid drops only 4.44 mm against the retained >1 cm
+target. See the [full scalar findings](../experiments/whole_five_backhair_20261121/summary.json).
+
+Explicit attachment references now survive the ordinary editor recipe route.
+Previously that translation silently dropped the selected reference and could
+interpret reviewed controls in another joint's frame. Invalid references now
+reach the existing validation and refuse before any derivative is created.
+
 ## First-component result and limitations
 
 The protected diagonal Junko model has 3,629 vertices on its colored back-hair surface, separate front/bangs and ribbon surfaces, and additional outline geometry. This first increment explicitly reviews one 1,292-vertex connected colored section. It builds 13 per-influence guide chains with 65 appended nodes. It does **not** configure the other back-hair sections or their outlines; those can visibly retain the old diagonal shape while the checked section moves. The full Junko request remains open.

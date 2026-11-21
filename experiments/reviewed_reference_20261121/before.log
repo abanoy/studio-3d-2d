@@ -1,0 +1,59 @@
+.....FFFFF......E....
+======================================================================
+ERROR: test_reviewed_reference_survives_editor_translation_and_build (test_secondary_reconstruction.Reconstruction.test_reviewed_reference_survives_editor_translation_and_build)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\tests\test_secondary_reconstruction.py", line 29, in test_reviewed_reference_survives_editor_translation_and_build
+    self.assertEqual(translated['anchor_node'],2)
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'anchor_node'
+
+======================================================================
+FAIL: test_invalid_reviewed_reference_is_refused_before_output (test_secondary_reconstruction.Reconstruction.test_invalid_reviewed_reference_is_refused_before_output) (anchor=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\tests\test_secondary_reconstruction.py", line 40, in test_invalid_reviewed_reference_is_refused_before_output
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_reviewed_reference_is_refused_before_output (test_secondary_reconstruction.Reconstruction.test_invalid_reviewed_reference_is_refused_before_output) (anchor=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\tests\test_secondary_reconstruction.py", line 40, in test_invalid_reviewed_reference_is_refused_before_output
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_reviewed_reference_is_refused_before_output (test_secondary_reconstruction.Reconstruction.test_invalid_reviewed_reference_is_refused_before_output) (anchor=999999)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\tests\test_secondary_reconstruction.py", line 40, in test_invalid_reviewed_reference_is_refused_before_output
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_reviewed_reference_is_refused_before_output (test_secondary_reconstruction.Reconstruction.test_invalid_reviewed_reference_is_refused_before_output) (anchor='Head')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\tests\test_secondary_reconstruction.py", line 40, in test_invalid_reviewed_reference_is_refused_before_output
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_reviewed_reference_is_refused_before_output (test_secondary_reconstruction.Reconstruction.test_invalid_reviewed_reference_is_refused_before_output) (anchor=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\tests\test_secondary_reconstruction.py", line 40, in test_invalid_reviewed_reference_is_refused_before_output
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.414s
+
+FAILED (failures=5, errors=1)

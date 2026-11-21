@@ -61,7 +61,7 @@ def recipe(request):
     if request.get('reconstruct_weights') is not True or request.get('use_existing_joints',False):
         raise ValueError('Explicit owned-weight reconstruction is required')
     item={k:copy.deepcopy(request[k]) for k in ('node','primitive','component','vertex_mask') if k in request}
-    value={k:copy.deepcopy(request[k]) for k in ('source_sha256','reviewed','segments','points_in_anchor','source_morph_defaults','morph_weights') if k in request}
+    value={k:copy.deepcopy(request[k]) for k in ('source_sha256','reviewed','segments','anchor_node','points_in_anchor','source_morph_defaults','morph_weights') if k in request}
     value.update(format=FORMAT,regions=[item]);return value
 
 

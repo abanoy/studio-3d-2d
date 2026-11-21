@@ -1,0 +1,51 @@
+{
+  "stage": "independent-backhair-assessment-1795303311099331500",
+  "status": "PASS",
+  "individually_passed_assertions": 12,
+  "engine_marker_checks": 12,
+  "engine_marker_failures": 0,
+  "wrapper_checks": 12,
+  "scope": "Five independently guided colored back-hair sections; no outlines/bangs/ribbon",
+  "metrics": {
+    "anchor_error": 0.0,
+    "average_tick_usec": 60465.1402777778,
+    "centroid_drop": 0.112245857715607,
+    "chains": 40,
+    "checks": 12,
+    "collider_instances": 160,
+    "failures": 0,
+    "final_remaining_contact_pairs": 123,
+    "maximum_off_vertex_error": 0.0,
+    "maximum_remaining_contact_pairs": 130,
+    "minimum_contact_gap": -0.044478848572551,
+    "natural_chains": 40,
+    "original_joint_error": 0.0,
+    "selected_vertices": 3629,
+    "skin_refreshes": 720,
+    "skin_vertices": 3241
+  },
+  "source_preservation_failures": [],
+  "inputs_preserved": true,
+  "environment_preserved": true,
+  "headless_closure": {
+    "desktop_created": false,
+    "worker_exit": 0,
+    "worker_reaped": true,
+    "worker_handle_closed": true,
+    "accounting": {
+      "active": 0,
+      "total": 3,
+      "terminated_by_limit": 0
+    },
+    "job_closed": true
+  },
+  "engine_closure": {
+    "status": "PASS",
+    "headless": true,
+    "desktop_created": false,
+    "exit": 0,
+    "engine_reaped": true,
+    "engine_handle_closed": true
+  },
+  "interpretation": "Passing fixture verifies scope-specific settling/preservation assertions; it does not assert collision-free/fullhair/performance acceptance."
+}

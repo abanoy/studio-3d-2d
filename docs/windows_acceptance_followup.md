@@ -306,3 +306,28 @@ colored sections and explicit outline masks, then performance. Raw source origin
 private arrays/art and failed/unrun evidence remain protected. Source working CRLF
 equivalence is declared; remote raw blobs/tree match without claiming every working
 byte equal. Rejected cleanup stays pending direct permission. Formal52/54+55/62 unchanged.
+
+
+## 2026-11-21 — Reviewed attachment reference and five-section findings
+
+Fixed a reproduced recipe translation defect: an explicit anchor_node was dropped
+before reconstruction, interpreting controls in the inferred common ancestor's
+frame. Preserve the reviewed reference and let existing strict validation reject
+invalid values. Generated regression first failed (five invalid-reference cases
+and one missing-reference error); final reconstruction17, batch26 and wind-mapping16
+tests all pass. Valid ordinary/full recipes produce byte-identical derivatives.
+Only the helper backend leaf pin changes; drift was rejected before refresh and
+77 exact source bindings pass afterward. No validator or safety predicate changed.
+Evidence: experiments/reviewed_reference_20261121.
+
+Independent five-section CPU trial passes12: all3629 colored back-hair vertices,
+40 chains/200 guides, 11.22cm centroid drop, original joints/attachment/Off errors0.
+Collision and speed remain OPEN:123 final contact pairs, worst recorded gap-4.45cm,
+60.5ms simulation step. Shells/bangs/ribbons excluded. Shared13-chain trial remains
+11/12 FAIL with4.44mm drop against >1cm target; failed raw results stay preserved.
+Both owned CPU jobs close; source/input/environment preservation passes. Safe
+scalar evidence is under experiments/whole_five_backhair_20261121. No complete
+whole-hair, renderer/movie, human or Full acceptance is inferred from these tests.
+Formal52/54 implementation and55/62 acceptance remain unchanged. Next: reduce
+repeated contact scans without changing correction order, then address residual
+collision and explicit outline correspondence. Publish/retrieve before cleanup.

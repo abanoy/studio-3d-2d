@@ -1,0 +1,69 @@
+{
+  "format": "has_whole_five_backhair_cpu_findings_1",
+  "status": "PARTIAL_CPU_FINDINGS_NOT_WHOLE_HAIR_COMPLETION",
+  "runs": [
+    {
+      "name": "independent",
+      "status": "PASS",
+      "passed": 12,
+      "checks": 12,
+      "metrics": {
+        "anchor_error": 0.0,
+        "average_tick_usec": 60465.1402777778,
+        "centroid_drop": 0.112245857715607,
+        "chains": 40,
+        "checks": 12,
+        "collider_instances": 160,
+        "failures": 0,
+        "final_remaining_contact_pairs": 123,
+        "maximum_off_vertex_error": 0.0,
+        "maximum_remaining_contact_pairs": 130,
+        "minimum_contact_gap": -0.044478848572551,
+        "natural_chains": 40,
+        "original_joint_error": 0.0,
+        "selected_vertices": 3629,
+        "skin_refreshes": 720,
+        "skin_vertices": 3241
+      }
+    },
+    {
+      "name": "shared",
+      "status": "FAIL",
+      "passed": 11,
+      "checks": 12,
+      "metrics": {
+        "anchor_error": 0.0,
+        "average_tick_usec": 62287.7625,
+        "centroid_drop": 0.0044437050819397,
+        "chains": 13,
+        "checks": 12,
+        "collider_instances": 52,
+        "failures": 1,
+        "final_remaining_contact_pairs": 5,
+        "maximum_off_vertex_error": 0.0,
+        "maximum_remaining_contact_pairs": 6,
+        "minimum_contact_gap": -0.00951811032541434,
+        "natural_chains": 13,
+        "original_joint_error": 0.0,
+        "selected_vertices": 3629,
+        "skin_refreshes": 720,
+        "skin_vertices": 3049
+      }
+    }
+  ],
+  "key_current_limits": {
+    "scope": "Five colored back-hair sections only; outline shells, front bangs and ribbons excluded.",
+    "independent_final_remaining_pairs": 123,
+    "independent_maximum_remaining_pairs": 130,
+    "independent_minimum_recorded_gap_m": -0.044478848572551,
+    "independent_average_step_ms": 60.4651402777778,
+    "off_vertex_error": 0,
+    "source_inputs_environment_preserved": true,
+    "actual_closed_headless_cpu_jobs": 2,
+    "graphics_or_appearance_qualified": false,
+    "whole_hair_complete": false
+  },
+  "shared_failed_centroid_target_retained": true,
+  "profiling_coordination": "Hair agent notified: read-only profiling/source inspection only, no uncoordinated runtime or source edits.",
+  "formal_or_whole_full_promotion": false
+}

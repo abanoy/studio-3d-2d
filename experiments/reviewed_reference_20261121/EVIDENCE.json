@@ -1,0 +1,23 @@
+{
+  "format": "has_reviewed_reference_fix_1",
+  "base": "0c159b43348361f9aea33142537804c850c93709",
+  "before": {
+    "tests": 17,
+    "failures": 5,
+    "errors": 1,
+    "requested_reference": 2,
+    "actual_reference": 1
+  },
+  "after": {
+    "reconstruction_tests": 17,
+    "batch_tests": 26,
+    "wind_mapping_tests": 16,
+    "all_pass": true
+  },
+  "helper_binding": {
+    "drift_rejected_before_refresh": "Unreviewed helper main bytes: tools/secondary_reconstruction.py",
+    "exact_files_after": 77,
+    "validator_modified": false
+  },
+  "scope": "Generated geometry only. Valid explicit reference produces byte-identical derivative to full recipe. Five invalid reference types/identities refuse before creating output. No native graphics, contact, movie or Full rerun claimed."
+}
