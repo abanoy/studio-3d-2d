@@ -7861,3 +7861,29 @@ being assigned to separate user-owned workers; integrate their branches later.
 Formal52/54 implementation and55/62 acceptance remain unchanged. Human/native
 appearance, novice, learner, tablet/audio and clean offline setup observations
 remain external; do not ask again while independent work is available.
+
+## 2026-11-21 — Isolated asset discovery worker
+
+Implemented a standalone discovery panel/demo on worker/asset-browser-20261121,
+based on independently checked GitHub main 2f1acbd. Local directory filename
+scanning/search/type filters work offline; Online is explicit opt-in metadata
+only. Public Poly Haven/Sketchfab adapters and a bounded Japanese BowlRoll RSS
+adapter coexist with clearly labelled browser-only Steam/SFMLab/BOOTH/VRoid
+entries. Query variations/aliases, evidence-based labels, source-page opening,
+100-item batch targets, ID/URL deduplication, cancellation/stale guards, request
+limits and 429 cooldown are implemented. No model/thumbnail downloads or imports
+occur in discovery. An optional separate Window wrapper provides the integration
+hook; app.gd, renderer.gd, model.gd, source_import.gd, world_runtime.gd,
+world_selection.gd, project.godot and the canonical suite were not edited.
+
+Actual final focused result: 80 Godot4.6 headless runtime checks PASS, including
+real viewport pointer events, local fixture enumeration, production controls,
+malformed metadata, partial-provider failure, cancellation and rate limiting.
+The initial truncated-RSS failure and pointer/reselection defects were corrected.
+Real HTTPRequest probe returned zero listings: all three hosts could not resolve
+in this restricted shell. Independent web research read current Poly Haven JSON;
+that is not a successful app fetch. Hidden graphical attempt was refused before
+Godot launch (Create private test desktop, Errno5); no visible fallback or GPU
+claim. Full suite/native artwork/import tests were not run for this separate
+increment. See docs/asset_discovery.md and docs/asset_discovery_sources.md for
+launch, exact hooks, current provider research and remaining limitations.
