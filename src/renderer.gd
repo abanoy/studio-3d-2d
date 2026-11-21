@@ -340,6 +340,9 @@ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 		await settling_notice.ready
 		finish_native_readback(false)
 		if not native_view_available():break
+	last_capture_error=scene_lighting.indirect.capture_error(video_settings)
+	if not last_capture_error.is_empty():
+		capturing_final=false;editor_grid.visible=empty_environment and not sequence_instance;return null
 	if not begin_native_readback():
 		capturing_final=false;editor_grid.visible=empty_environment and not sequence_instance
 		last_capture_error="Native render view is unavailable.";return null
