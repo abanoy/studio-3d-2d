@@ -1,0 +1,9 @@
+# Carrier checkpoint publication controls
+
+Metadata and source only. No native model, texture, private capture or protected output blob is included. The baseline is Root's exact preexisting tracked-output inventory: 171 paths, 4,411,867 logical bytes, SHA256 c40dfc182df6907acf1be74f46f49441e0c2a5f1ee388bb3a4e0c246f1b448e3. Root captured it before publishing this increment; it authorizes no application/source change.
+
+The publication candidate pins BASE 5f6 and only the carrier packet, this small control packet and the seven named docs. It verifies complete manifests, exact functional 1061 source bytes/size/nsmtime, all 62 requirement status tuples, unchanged 52/54 and 55/62 scores, generated checklist rendering, and raw history prefixes with append-only suffixes. Its sole preexisting-change exclusion is that exact baseline path set, with each raw file's bytes/hash/nsmtime rechecked and staged overlap refused. No broad output exemption or protected blob staging is allowed.
+
+The candidate and batching helper have not been executed by the packet author. Root reviews/runs the preflight only after native closure and final packet/doc freeze. Its result stays in ignored output rather than entering a circular self-authenticating manifest. The batch helper is for post-commit independent remote-proof preparation: one retained/reaped cat-file--batch child, exact working bytes/Git blob SHA1/SHA256/length, no Git mutation, native launch or installation. Node-crypto/remote readback remain separate Root work.
+
+Restore archived scripts to their recorded owned ROOT/output working namespace before running; their ROOT calculation is not a standalone installation. Per-call core.autocrlf=false changes no global Git configuration. All protected outputs, originals, previous public packets and full Windows proof remain in place.

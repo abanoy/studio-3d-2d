@@ -1,0 +1,193 @@
+{
+  "format": "has_fresh_source_native_carrier_export_preparation_v5_1",
+  "status": "FROZEN_WHOLE_MODULE_OBSERVER_SUCCESSOR_AWAITING_ROOT_86_149_AND_NATIVE_RETRY",
+  "current_native_execution": false,
+  "authored_child_retained_identity_rows": 605,
+  "sourceio_rows": 574,
+  "other_child_rows": 31,
+  "root_normal_metric": "raw_unnormalized_euclidean_vector_distance",
+  "root_normal_threshold": 0.00002,
+  "authored_methods": {
+    "worker": 45,
+    "driver": 104,
+    "carrier_export": 33,
+    "cold_images": 40,
+    "normal_gate": 20,
+    "export_hook": 86
+  },
+  "root_already_executed_frozen_scopes": {
+    "cold_images": 40,
+    "carrier_export": 33,
+    "normal_gate": 20
+  },
+  "frozen_predecessor": "bases/v3",
+  "unchanged_application_source": true,
+  "normal_repair_applied": false,
+  "application_adoption_qualified": false,
+  "literal_module_checks": [
+    {
+      "source": "run_carrier.py",
+      "role": "export_hook",
+      "file": "export_hook_proposal.py",
+      "bytes": 43512,
+      "sha256": "636a8d92d29b7c6a7118535cdea0e0ea3ba8a17f12ec30c680280755c6ba4f59"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "resource_gate",
+      "file": "resource_gate_proposal.py",
+      "bytes": 35869,
+      "sha256": "bc4fd1ff719e43618cd0984a73fc9c950d502e52c762ac4cb6e042ff1464fba3"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "shared_cache",
+      "file": "shared_image_cache_proposal.py",
+      "bytes": 23263,
+      "sha256": "e903c871d53769d7dfc92e1ecdec75f316cf34ea8e8c5113116861cafefe6c0e"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "extract_observer",
+      "file": "observer_instrumentation.py",
+      "bytes": 7829,
+      "sha256": "15145030fab5b662be490e519ff59f870c4e9c0352766ff59bf3da3f12198f7b"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "gather_binder",
+      "file": "gather_binding.py",
+      "bytes": 17534,
+      "sha256": "617c062b516ecefa5fab0a6ec8f98163a3b13f76896969cb22102f859323b850"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "semantic_compare",
+      "file": "semantic_compare.py",
+      "bytes": 22754,
+      "sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "cold_readiness",
+      "file": "cold_image_readiness.py",
+      "bytes": 14496,
+      "sha256": "eac159fa9c31f9a0bc600025f27a3e988dd486d1e38497698814f3121399bbd9"
+    },
+    {
+      "source": "run_carrier.py",
+      "role": "carrier_export",
+      "file": "carrier_export.py",
+      "bytes": 14661,
+      "sha256": "3325f52aa43117549af97a196009e65234abb262393242c30e82918b8deec04d"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "export_hook",
+      "file": "export_hook_proposal.py",
+      "bytes": 43512,
+      "sha256": "636a8d92d29b7c6a7118535cdea0e0ea3ba8a17f12ec30c680280755c6ba4f59"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "resource_gate",
+      "file": "resource_gate_proposal.py",
+      "bytes": 35869,
+      "sha256": "bc4fd1ff719e43618cd0984a73fc9c950d502e52c762ac4cb6e042ff1464fba3"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "shared_cache",
+      "file": "shared_image_cache_proposal.py",
+      "bytes": 23263,
+      "sha256": "e903c871d53769d7dfc92e1ecdec75f316cf34ea8e8c5113116861cafefe6c0e"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "extract_observer",
+      "file": "observer_instrumentation.py",
+      "bytes": 7829,
+      "sha256": "15145030fab5b662be490e519ff59f870c4e9c0352766ff59bf3da3f12198f7b"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "gather_binder",
+      "file": "gather_binding.py",
+      "bytes": 17534,
+      "sha256": "617c062b516ecefa5fab0a6ec8f98163a3b13f76896969cb22102f859323b850"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "semantic_compare",
+      "file": "semantic_compare.py",
+      "bytes": 22754,
+      "sha256": "c7e1e9d323bb7f35fffa38731a67b0099f173167bcb65d857a7cd6165698ff00"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "cold_readiness",
+      "file": "cold_image_readiness.py",
+      "bytes": 14496,
+      "sha256": "eac159fa9c31f9a0bc600025f27a3e988dd486d1e38497698814f3121399bbd9"
+    },
+    {
+      "source": "fresh_carrier_probe.py",
+      "role": "carrier_export",
+      "file": "carrier_export.py",
+      "bytes": 14661,
+      "sha256": "3325f52aa43117549af97a196009e65234abb262393242c30e82918b8deec04d"
+    }
+  ],
+  "version": 5,
+  "predecessor": "V5_PREDECESSOR.json",
+  "only_test_function_delta": "Whole-module observed-method authentication and FunctionType construction replace isolated-class comparison. Host sources change only exact H tuple.",
+  "original_predecessor_driver_cpu": {
+    "passed": 103,
+    "failed": 1,
+    "methods": 104
+  },
+  "historical_cold_failure": {
+    "status": "UNQUALIFIED_FAILED_RUN",
+    "source_stage": "source-material-carrier-run-1795220688291646000",
+    "error": "PACKED_IMAGE_READINESS_API_OR_ACQUISITION_FAILED",
+    "images_admitted": 0,
+    "image_buffer_getter_attempts": 0,
+    "operator_invocations": 0,
+    "preservation_checks": 42,
+    "all_checks_passed": true,
+    "physical_owned_processes": 0,
+    "coordinator_reaped": true,
+    "owned_lock_retained": false
+  },
+  "authored_expected_focused_total": 328,
+  "required_root_cpu": {
+    "changed_host": {
+      "methods": 149,
+      "status": "PENDING_AT_FREEZE"
+    },
+    "compiler_context_hook": {
+      "methods": 86,
+      "status": "PENDING_AT_FREEZE"
+    }
+  },
+  "unchanged_source_cpu": {
+    "cold_images": 40,
+    "carrier_export": 33,
+    "normal_gate": 20
+  },
+  "external_hook_test_source": {
+    "folder": "source-export-hook-compiler-context-v3-prep-20261120",
+    "new_methods": 13,
+    "old_methods_unchanged": 73,
+    "new_test_bytes": 17581,
+    "new_test_sha256": "e79fa21d465c37e7bad990c7452668f77a79aacfe958d4b5a384dd2ef12ea1e2"
+  },
+  "v4_helper_failure": {
+    "old_controls_passed": 73,
+    "focused_methods": 11,
+    "failing_subtests": 2,
+    "failing_methods": 1,
+    "native_attempted": false,
+    "code_source_retained": "a014dab02265b6ccb7f354c8f96eb8a212f569bfe0386ae99820fd6368e7102b"
+  }
+}

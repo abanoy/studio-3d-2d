@@ -1,0 +1,18 @@
+{
+  "format": "has_carrier_missing_proof_arguments_observation_1",
+  "status": "REFUSED_ARGUMENT_PARSE_BEFORE_MODEL_WORK",
+  "date_local": "2026-11-20",
+  "script": "run_carrier.py",
+  "observed_tool_exit_code": 1,
+  "missing_required_arguments": [
+    "--qualified-creation",
+    "--qualified-creation-sha256"
+  ],
+  "native_job_launched": false,
+  "source_or_model_input_work_started": false,
+  "scope_basis": "Driver parse_args refused before main admission/staging/runtime/native work.",
+  "raw_Python_process_exit_code_independently_observed": false,
+  "corrected_complete_command_started_separately": true,
+  "corrected_running_exec_session": 28283,
+  "not_a_model_or_export_result": true
+}

@@ -1,0 +1,34 @@
+{
+  "format": "has_cold_image_rna_api_successor_source_bases_1",
+  "scope": "Source and pure synthetic tests only; actual successor acquisition/export unrun",
+  "unchanged_bases": {
+    "bases/cold_image_readiness.py": {
+      "bytes": 11578,
+      "sha256": "dc7b917c78bf808c661c60bb33f437720e0fe787f04f293a8d14924d517d2aff"
+    },
+    "bases/test_cold_image_readiness.py": {
+      "bytes": 18202,
+      "sha256": "b0fdac23e77617a425852d4c5e3f9b58edbb4050b21cc377084db820ce0f7b8b"
+    },
+    "material_inspection.py": {
+      "bytes": 24579,
+      "sha256": "5efd488d7912e7b032f5590a85e1a20419913f5f6736d906b126c4e8a6280d17"
+    }
+  },
+  "authored_successor": {
+    "cold_image_readiness.py": {
+      "bytes": 14496,
+      "sha256": "eac159fa9c31f9a0bc600025f27a3e988dd486d1e38497698814f3121399bbd9"
+    },
+    "test_cold_image_readiness.py": {
+      "bytes": 22496,
+      "sha256": "8b8e9be06a1495a77ba5c13b35935151e695b61624964c7860075f94ec0a169f",
+      "authored_methods": 40,
+      "original_methods_retained": 31,
+      "new_methods": 9
+    }
+  },
+  "installed_or_original_files_changed": false,
+  "tests_executed_by_author": false,
+  "native_or_blender_executed_by_author": false
+}

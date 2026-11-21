@@ -1,0 +1,26 @@
+{
+  "benchmark_completed": true,
+  "benchmark_totals": {
+    "baseline_driver": {
+      "calls": 8,
+      "cpu_ns": 406250000,
+      "declared_request_bytes": 2147483656,
+      "returned_bytes": 113256,
+      "wall_ns": 408715500
+    },
+    "candidate_driver": {
+      "calls": 8,
+      "cpu_ns": 15625000,
+      "declared_request_bytes": 113264,
+      "returned_bytes": 113256,
+      "wall_ns": 11199300
+    }
+  },
+  "format": "has_bounded_read_cpu_root_1",
+  "native_launch_attempted": false,
+  "returncode": 0,
+  "source_count": 5,
+  "source_hash_size_mtime_unchanged": true,
+  "status": "PASS",
+  "tests": 13
+}

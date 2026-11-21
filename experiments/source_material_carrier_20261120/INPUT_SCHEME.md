@@ -1,0 +1,11 @@
+# Exact input and output scope
+
+The worker's 605 authenticated identity rows are 574 approved SourceIO files and 31 separately pinned files. They extend the earlier596-row resolved-material job by the exact committed creation prerequisite and 8 carrier modules. These are retained input identities, not a count of filesystem calls. Root-only comparison helpers and post-run reads are recorded separately.
+
+Only the three exact native MDL/VVD/VTX inputs and an owned copy of the protected material library are staged. The original GLB and other historical captures are prerequisite/hash context for the child; If the child export reaches its final binding, Root reads the pinned original GLB after the child/desktop close for the strict comparison. The historical B scene is never opened for native geometry or native IDs. Its independently selected four materials and graph-reached packed images are appended into owned RAM, then reused by ordinary SourceIO resolution without overwriting their metadata.
+
+Native IDs come from the new SourceIO object's actual four-stage creation chain and independent native parser. The FLOAT/POINT carrier writes ID + 1 on those actual meshes. Actual extractor/gather/exporter reference events bind each emitted primitive to that observed chain. Numeric carrier values are checked against that separate relation; they never establish correspondence by themselves. Names, proximity and historical index matching choose no IDs.
+
+One narrow ordinary GLB export may create carrier.glb in the owned private result directory. Its bytes and PRIVATE_PRIMITIVE_IDS.json remain private and are excluded from this packet, along with request files, model inputs, private native logs, geometry/normals/UV/weight arrays and private capture files. Public receipts contain only bounded counts, error metrics, source hashes and protocol evidence.
+
+The unchanged normal gate is raw, unnormalized Euclidean vector distance <=2e-5 after the admitted source-to-Yup signed axis permutation (x,z,-y). The maximum component error is diagnostic. Raw F32 source/GLB values are compared without rounding, normalization, nearest matching or repair. Strict non-NORMAL semantics and the measured native normal gate must both pass before Root can publish a qualified current-carrier result. Model/artist appearance and HAS adoption remain separate work.

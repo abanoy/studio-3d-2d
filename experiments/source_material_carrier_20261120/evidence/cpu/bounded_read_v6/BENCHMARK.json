@@ -1,0 +1,168 @@
+{
+  "candidate_to_baseline_wall_ratio": 0.027401211845403464,
+  "format": "has_bounded_read_source_only_comparison_1",
+  "physical_memory_or_disk_saving_measured": false,
+  "rows": [
+    {
+      "cpu_ns": 46875000,
+      "declared_request_bytes": 268435457,
+      "iteration": 0,
+      "reader": "baseline_driver",
+      "returned_bytes": 13818,
+      "source": "metadata_source",
+      "wall_ns": 50015600
+    },
+    {
+      "cpu_ns": 0,
+      "declared_request_bytes": 13819,
+      "iteration": 0,
+      "reader": "candidate_driver",
+      "returned_bytes": 13818,
+      "source": "metadata_source",
+      "wall_ns": 2474800
+    },
+    {
+      "cpu_ns": 46875000,
+      "declared_request_bytes": 268435457,
+      "iteration": 0,
+      "reader": "baseline_driver",
+      "returned_bytes": 14496,
+      "source": "cold_source",
+      "wall_ns": 50485000
+    },
+    {
+      "cpu_ns": 0,
+      "declared_request_bytes": 14497,
+      "iteration": 0,
+      "reader": "candidate_driver",
+      "returned_bytes": 14496,
+      "source": "cold_source",
+      "wall_ns": 1635400
+    },
+    {
+      "cpu_ns": 0,
+      "declared_request_bytes": 13819,
+      "iteration": 1,
+      "reader": "candidate_driver",
+      "returned_bytes": 13818,
+      "source": "metadata_source",
+      "wall_ns": 460200
+    },
+    {
+      "cpu_ns": 46875000,
+      "declared_request_bytes": 268435457,
+      "iteration": 1,
+      "reader": "baseline_driver",
+      "returned_bytes": 13818,
+      "source": "metadata_source",
+      "wall_ns": 46250300
+    },
+    {
+      "cpu_ns": 15625000,
+      "declared_request_bytes": 14497,
+      "iteration": 1,
+      "reader": "candidate_driver",
+      "returned_bytes": 14496,
+      "source": "cold_source",
+      "wall_ns": 1513200
+    },
+    {
+      "cpu_ns": 46875000,
+      "declared_request_bytes": 268435457,
+      "iteration": 1,
+      "reader": "baseline_driver",
+      "returned_bytes": 14496,
+      "source": "cold_source",
+      "wall_ns": 53814700
+    },
+    {
+      "cpu_ns": 46875000,
+      "declared_request_bytes": 268435457,
+      "iteration": 2,
+      "reader": "baseline_driver",
+      "returned_bytes": 13818,
+      "source": "metadata_source",
+      "wall_ns": 51393700
+    },
+    {
+      "cpu_ns": 0,
+      "declared_request_bytes": 13819,
+      "iteration": 2,
+      "reader": "candidate_driver",
+      "returned_bytes": 13818,
+      "source": "metadata_source",
+      "wall_ns": 1472100
+    },
+    {
+      "cpu_ns": 62500000,
+      "declared_request_bytes": 268435457,
+      "iteration": 2,
+      "reader": "baseline_driver",
+      "returned_bytes": 14496,
+      "source": "cold_source",
+      "wall_ns": 55673700
+    },
+    {
+      "cpu_ns": 0,
+      "declared_request_bytes": 14497,
+      "iteration": 2,
+      "reader": "candidate_driver",
+      "returned_bytes": 14496,
+      "source": "cold_source",
+      "wall_ns": 1676400
+    },
+    {
+      "cpu_ns": 0,
+      "declared_request_bytes": 13819,
+      "iteration": 3,
+      "reader": "candidate_driver",
+      "returned_bytes": 13818,
+      "source": "metadata_source",
+      "wall_ns": 420600
+    },
+    {
+      "cpu_ns": 62500000,
+      "declared_request_bytes": 268435457,
+      "iteration": 3,
+      "reader": "baseline_driver",
+      "returned_bytes": 13818,
+      "source": "metadata_source",
+      "wall_ns": 53978200
+    },
+    {
+      "cpu_ns": 0,
+      "declared_request_bytes": 14497,
+      "iteration": 3,
+      "reader": "candidate_driver",
+      "returned_bytes": 14496,
+      "source": "cold_source",
+      "wall_ns": 1546600
+    },
+    {
+      "cpu_ns": 46875000,
+      "declared_request_bytes": 268435457,
+      "iteration": 3,
+      "reader": "baseline_driver",
+      "returned_bytes": 14496,
+      "source": "cold_source",
+      "wall_ns": 47104300
+    }
+  ],
+  "totals": {
+    "baseline_driver": {
+      "calls": 8,
+      "cpu_ns": 406250000,
+      "declared_request_bytes": 2147483656,
+      "returned_bytes": 113256,
+      "wall_ns": 408715500
+    },
+    "candidate_driver": {
+      "calls": 8,
+      "cpu_ns": 15625000,
+      "declared_request_bytes": 113264,
+      "returned_bytes": 113256,
+      "wall_ns": 11199300
+    }
+  },
+  "whole_native_coordinator_speedup_measured": false
+}

@@ -1,0 +1,31 @@
+.FF.........
+======================================================================
+FAIL: test_actual_pinned_primitive_class_context_matches_retained_isolated_guard (test_export_hook_compiler_context.CompilerContextTests.test_actual_pinned_primitive_class_context_matches_retained_isolated_guard) (method='primitive_creation_shared')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-export-hook-compiler-context-v2-prep-20261120\test_export_hook_compiler_context.py", line 155, in test_actual_pinned_primitive_class_context_matches_retained_isolated_guard
+    self.assertEqual(direct(direct(full, 'PrimitiveCreator'), method),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     direct(direct(isolated, 'PrimitiveCreator'), method),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     'A concrete class-context mismatch requires fixing successor observed_methods before native retry')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: <code[43 chars]023016BA4860, file "C:\Program Files\Blender F[100 chars] 830> != <code[43 chars]023018FF9290, file "C:\Program Files\Blender F[100 chars] 830> : A concrete class-context mismatch requires fixing successor observed_methods before native retry
+
+======================================================================
+FAIL: test_actual_pinned_primitive_class_context_matches_retained_isolated_guard (test_export_hook_compiler_context.CompilerContextTests.test_actual_pinned_primitive_class_context_matches_retained_isolated_guard) (method='primitive_creation_not_shared')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-body-addition-20261120\output\source-export-hook-compiler-context-v2-prep-20261120\test_export_hook_compiler_context.py", line 155, in test_actual_pinned_primitive_class_context_matches_retained_isolated_guard
+    self.assertEqual(direct(direct(full, 'PrimitiveCreator'), method),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     direct(direct(isolated, 'PrimitiveCreator'), method),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     'A concrete class-context mismatch requires fixing successor observed_methods before native retry')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: <code[48 chars]23016BB7F90, file "C:\Program Files\Blender Fo[99 chars] 900> != <code[48 chars]23016C11450, file "C:\Program Files\Blender Fo[99 chars] 900> : A concrete class-context mismatch requires fixing successor observed_methods before native retry
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.323s
+
+FAILED (failures=2)

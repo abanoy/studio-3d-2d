@@ -1,0 +1,23 @@
+{
+  "format": "has_carrier_v5_root_public_source_error_chain_1",
+  "status": "ACTUAL_OPERATOR_REFUSAL",
+  "worker_status": "REFUSED",
+  "worker_error_type": "RuntimeError",
+  "worker_error_code": "PINNED_API_OR_SCHEMA_REFUSAL",
+  "actual_latched_refusal_observed_in_private_trace": "socket_not_in_preflight_reachable_graph",
+  "public_source_chain": [
+    "io_scene_gltf2/blender/exp/material/materials.py:gather_material",
+    "io_scene_gltf2/blender/exp/material/extensions/emission.py:export_emission_texture",
+    "io_scene_gltf2/blender/exp/material/texture_info.py:gather_texture_info",
+    "shared_image_cache_proposal.py:_admit_args(texture_info)",
+    "resource_gate_proposal.py:_socket_key"
+  ],
+  "interpretation": "The ordinary exporter probes an unlinked Principled emission input; the graph snapshot already retains all socket metadata, but the image-binding key admits only connected color/alpha inputs.",
+  "exporter_invoked": true,
+  "carrier_written": false,
+  "private_stderr_bytes": 22472,
+  "private_stderr_sha256": "03fb16adf451607ece4504b95316bed85d6716876cc34186a5bf52b6ffabe8e5",
+  "private_log_copied_or_published": false,
+  "outer_parent_final_audit_pending": true,
+  "normal_or_non_normal_measurement_attempted": false
+}
