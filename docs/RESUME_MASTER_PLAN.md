@@ -2802,3 +2802,52 @@ failure. Explicit multi-group/owned-derived reconstruction continues separately.
 Formal52/54 and55/62 stay. Cleanup53.6MB browser residue and6.88GB completed Full5d
 remain untouched after automatic review rejection; exact-path owner approval is
 pending, with no retry/workaround. This receipt update changes no application code.
+
+
+## 2026-11-21 — Reconstructed rest, portable movie and current review
+
+Published main b637fb10f8a78f1e03b137bfa8af4845296726bb is independently retrieved:
+1230 raw functional/changed-evidence files,12,442,934bytes, exact tree/blob/mode
+and raw-file comparison, no alternates. Source7d15 fixes Godot's packed-weight
+rest drift with original-weight/rest and flexible resource views of the same
+instance. Native Simple19 and public36 pass; all37470 posed vertices and resting
+pixel bytes match exactly. Live simulation leases deliberately retain the flexible
+view; old derivatives without original references are not guessed or rewritten.
+
+Portable/movie tests0c159b43 pass30: four authored guide-FK frames, actual1080p24
+H264, fresh packed-project reopening, exact pixel/resource/native-transform
+comparisons. Source5d967664 also preserves an explicit reviewed reference through
+the ordinary editor recipe; generated17+26+16 tests pass. Three movie failures,
+the old7f rest-render failure and the shared13-chain settling failure stay recorded.
+See docs/secondary_reconstruction.md and its linked compact evidence packets.
+
+All five colored back-hair sections now settle11.22cm in the scoped12-check CPU
+trial, with exact Off restoration and fixed original joints/attachments. This is
+not full-hair readiness:123 final contact pairs,-4.45cm worst recorded gap and
+60.5ms average simulation step remain. Outlines/bangs/ribbons are excluded.
+Current work compares a bounded per-row contact cache against the unchanged
+solver, then will address body penetration and explicit outline correspondence.
+Do not promote a source-only experiment to accepted collision or realtime quality.
+
+New stable review: C:/a/Programming/cloudflare/HAS-Review-Reconstructed-Hair-b637fb10.
+Open Reconstructed hair.bat launches the local private first-section four-frame
+project with its own profile.1221 exact committed runtime source files and the
+packed payloads were checked. Prepared without launching an owner window; the
+original project and installed Studio/tools are unchanged. Keep this review and
+its private artwork local. It supplements the existing discovery/lighting reviews.
+The busy owner has not been asked to interrupt work for another manual check.
+
+Formal52/54 implementation and55/62 acceptance stay unchanged. Remaining required
+observations: native appearance (IMPORT-02/03 and ACCEPT-B), timed noviceACCEPT-A,
+learnerACCEPT-E, actual tablet/audioACCEPT-TABLET and clean offlineACCEPT-INSTALL.
+CanonicalFull183 remains bound to exact5d37647c; no later Full pass is inferred.
+CompletedFull5d clone and browser Git residue remain untouched after automatic
+approval review rejected their deletion; exact-path permission is pending.
+
+
+Independent read-only review audit also passes:1221 immutable Git blob files,
+10,126,412 source bytes, exact runtime membership, both packed payloads and the
+private asset checksum, native Head/all four guide-key states, and normal launcher
+arguments/profile paths. The review and original packed-project bytes/nsmtime
+are unchanged. No engine was launched by this preparation/audit. Compact receipt:
+experiments/reconstructed_hair_review_20261121/verification.json.
