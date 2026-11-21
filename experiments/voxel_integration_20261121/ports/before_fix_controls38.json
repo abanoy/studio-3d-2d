@@ -1,0 +1,279 @@
+{
+  "status": "PASS",
+  "source_commit": "96e5d50b63964c1782515a0c70d22a5f0ed59e9e",
+  "controls": 38,
+  "results": [
+    {
+      "label": "tests/verify_wind_review.py actual exact bindings",
+      "passed": true
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/renderer.gd",
+      "expected_refusal": true,
+      "error": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\voxel-port-refresh-1795288361771932700\\\\wind\\\\src\\\\renderer.gd'"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/renderer.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed main port bytes: src/renderer.gd"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/renderer.gd",
+      "expected_refusal": true,
+      "error": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/scene_indirect_runtime.gd",
+      "expected_refusal": true,
+      "error": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\voxel-port-refresh-1795288361771932700\\\\wind\\\\src\\\\scene_indirect_runtime.gd'"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/scene_indirect_runtime.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed main port bytes: src/scene_indirect_runtime.gd"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/scene_indirect_runtime.gd",
+      "expected_refusal": true,
+      "error": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/scene_lighting_document.gd",
+      "expected_refusal": true,
+      "error": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\voxel-port-refresh-1795288361771932700\\\\wind\\\\src\\\\scene_lighting_document.gd'"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/scene_lighting_document.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed main port bytes: src/scene_lighting_document.gd"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/scene_lighting_document.gd",
+      "expected_refusal": true,
+      "error": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/scene_lighting_editor.gd",
+      "expected_refusal": true,
+      "error": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\voxel-port-refresh-1795288361771932700\\\\wind\\\\src\\\\scene_lighting_editor.gd'"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/scene_lighting_editor.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed main port bytes: src/scene_lighting_editor.gd"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/scene_lighting_editor.gd",
+      "expected_refusal": true,
+      "error": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "tests/verify_wind_review.py missing src/scene_voxel_runtime.gd",
+      "expected_refusal": true,
+      "error": "[Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-discovery-lights-integration-20261121\\\\output\\\\voxel-port-refresh-1795288361771932700\\\\wind\\\\src\\\\scene_voxel_runtime.gd'"
+    },
+    {
+      "label": "tests/verify_wind_review.py drift src/scene_voxel_runtime.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed main port bytes: src/scene_voxel_runtime.gd"
+    },
+    {
+      "label": "tests/verify_wind_review.py omitted row src/scene_voxel_runtime.gd",
+      "expected_refusal": true,
+      "error": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "tests/verify_wind_review.py duplicate",
+      "expected_refusal": true,
+      "error": "Wrong reviewed port source membership"
+    },
+    {
+      "label": "tests/verify_wind_review.py default EOL refused",
+      "expected_refusal": true,
+      "error": "Unreviewed main port bytes: src/scene_voxel_runtime.gd"
+    },
+    {
+      "label": "tests/verify_wind_review.py explicit EOL accepted",
+      "passed": true
+    },
+    {
+      "label": "tests/verify_helper_preview.py actual exact bindings",
+      "passed": true
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/renderer.gd",
+      "expected_refusal": true,
+      "error": "Missing reviewed helper main source: src/renderer.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/renderer.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed helper main bytes: src/renderer.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/renderer.gd",
+      "expected_refusal": true,
+      "error": "Reviewed helper port manifest omits required main runtime/test source"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/scene_indirect_runtime.gd",
+      "expected_refusal": true,
+      "error": "Missing reviewed helper main source: src/scene_indirect_runtime.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/scene_indirect_runtime.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed helper main bytes: src/scene_indirect_runtime.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/scene_indirect_runtime.gd",
+      "expected_refusal": true,
+      "error": "Reviewed helper port manifest omits required main runtime/test source"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/scene_lighting_document.gd",
+      "expected_refusal": true,
+      "error": "Missing reviewed helper main source: src/scene_lighting_document.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/scene_lighting_document.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed helper main bytes: src/scene_lighting_document.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/scene_lighting_document.gd",
+      "expected_refusal": true,
+      "error": "Reviewed helper port manifest omits required main runtime/test source"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/scene_lighting_editor.gd",
+      "expected_refusal": true,
+      "error": "Missing reviewed helper main source: src/scene_lighting_editor.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/scene_lighting_editor.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed helper main bytes: src/scene_lighting_editor.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/scene_lighting_editor.gd",
+      "expected_refusal": true,
+      "error": "Reviewed helper port manifest omits required main runtime/test source"
+    },
+    {
+      "label": "tests/verify_helper_preview.py missing src/scene_voxel_runtime.gd",
+      "expected_refusal": true,
+      "error": "Missing reviewed helper main source: src/scene_voxel_runtime.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py drift src/scene_voxel_runtime.gd",
+      "expected_refusal": true,
+      "error": "Unreviewed helper main bytes: src/scene_voxel_runtime.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py omitted row src/scene_voxel_runtime.gd",
+      "expected_refusal": true,
+      "error": "Reviewed helper port manifest omits required main runtime/test source"
+    },
+    {
+      "label": "tests/verify_helper_preview.py duplicate",
+      "expected_refusal": true,
+      "error": "Repeated reviewed port source: src/scene_voxel_runtime.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py default EOL refused",
+      "expected_refusal": true,
+      "error": "Unreviewed helper main bytes: src/scene_voxel_runtime.gd"
+    },
+    {
+      "label": "tests/verify_helper_preview.py explicit EOL accepted",
+      "passed": true
+    }
+  ],
+  "changes": [
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "src/renderer.gd",
+      "before": "f04a87b31d62626e4d7a5258fa62e6a8e0c5b250fa6f4cc24ad6d56633b306f1",
+      "after": "0f2c616f8f3df84ff2c1a6a88665f9bdd9d0a3fb1639381fbe4da8915359f89d"
+    },
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "tests/verify_wind_review.py",
+      "before": "e82fc4ccdf6b39cc5a12dc4c36f657fe4297abfff07695b43ca44414a81f4557",
+      "after": "16525f39806190c06040d979191fb68037cdbab77a437136ae6b4d13480f1195"
+    },
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "src/scene_lighting_document.gd",
+      "before": "2ae07d0a01034f586f4f3113d856b78005d42df26e21b805c77b1cd0f998c239",
+      "after": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75"
+    },
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "src/scene_lighting_editor.gd",
+      "before": "108725216c28c49e290a0aba2af4d2049c70f430d9356a8151b47d83391a9296",
+      "after": "5a3d5ad046634269e9424df1ef5dfe712f5ec4f4d50730737657b0230eafab06"
+    },
+    {
+      "manifest": "tests/wind_review_port_files.json",
+      "path": "src/scene_indirect_runtime.gd",
+      "before": "9cadefc2149d33da5bde708c7ed560b637d151553ac9744bec9328181fa617fc",
+      "after": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "tests/verify_helper_preview.py",
+      "before": "2b6d296fd1d11d579e023e94f07bb26c4ca857f7e81bb0b33b0aae5c5d528611",
+      "after": "dbc2c7538213843ec5ba1c553ecb7d9879c0f75e0ff43502e9a4a742da47f367"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/renderer.gd",
+      "before": "f04a87b31d62626e4d7a5258fa62e6a8e0c5b250fa6f4cc24ad6d56633b306f1",
+      "after": "0f2c616f8f3df84ff2c1a6a88665f9bdd9d0a3fb1639381fbe4da8915359f89d"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/scene_lighting_document.gd",
+      "before": "2ae07d0a01034f586f4f3113d856b78005d42df26e21b805c77b1cd0f998c239",
+      "after": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/scene_lighting_editor.gd",
+      "before": "108725216c28c49e290a0aba2af4d2049c70f430d9356a8151b47d83391a9296",
+      "after": "5a3d5ad046634269e9424df1ef5dfe712f5ec4f4d50730737657b0230eafab06"
+    },
+    {
+      "manifest": "tests/helper_preview_port_files.json",
+      "path": "src/scene_indirect_runtime.gd",
+      "before": "9cadefc2149d33da5bde708c7ed560b637d151553ac9744bec9328181fa617fc",
+      "after": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732"
+    }
+  ],
+  "src_unchanged": true,
+  "driver_change": "One runtime-membership assignment line per driver only; exact reverse checked.",
+  "pins": [
+    {
+      "path": "tests/verify_wind_review.py",
+      "bytes": 17617,
+      "sha256": "16525f39806190c06040d979191fb68037cdbab77a437136ae6b4d13480f1195"
+    },
+    {
+      "path": "tests/verify_helper_preview.py",
+      "bytes": 24881,
+      "sha256": "dbc2c7538213843ec5ba1c553ecb7d9879c0f75e0ff43502e9a4a742da47f367"
+    },
+    {
+      "path": "tests/wind_review_port_files.json",
+      "bytes": 19053,
+      "sha256": "95c30452fcd82f47a09f2dc474396990174abef36d0c36949f3fd6e7a805e89d"
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "bytes": 22546,
+      "sha256": "f5bdf5803f834094022f4a1948cbd505640599c04e5ffcb6add84408034064a0"
+    }
+  ]
+}

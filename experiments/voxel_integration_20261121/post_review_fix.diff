@@ -1,0 +1,72 @@
+diff --git a/src/scene_voxel_runtime.gd b/src/scene_voxel_runtime.gd
+index 49ce98ad..59da1573 100644
+--- a/src/scene_voxel_runtime.gd
++++ b/src/scene_voxel_runtime.gd
+@@ -38,6 +38,10 @@ func sync(renderer: Node,config: Dictionary) -> void:
+ 		# Imported nodes, transforms and materials must be ready before bake().
+ 		call_deferred("bake_room",generation)
+ 
++func bake_probe(from_node: Node) -> void:
++	# One native boundary, also used by the deterministic failed-rebake control.
++	probe.bake(from_node)
++
+ func bake_room(ticket: int) -> void:
+ 	var renderer=renderer_ref.get_ref() if renderer_ref else null
+ 	if ticket!=generation or not enabled:return
+@@ -51,7 +55,10 @@ func bake_room(ticket: int) -> void:
+ 		error="No static environment meshes inside the room. Import an environment, fit the room bounds, then Rebuild."
+ 	else:
+ 		var start:=Time.get_ticks_msec()
+-		probe.bake(renderer.world)
++		# Native bake() returns void and can leave previous data intact on failure.
++		# Only data produced by this attempt may qualify as a successful rebuild.
++		probe.data=null
++		bake_probe(renderer.world)
+ 		bake_ms=Time.get_ticks_msec()-start
+ 		if probe.data==null:error="VoxelGI bake produced no data. Check room bounds and supported environment materials, then Rebuild."
+ 		else:
+diff --git a/tests/scene_voxel_smoke.gd b/tests/scene_voxel_smoke.gd
+index 115abff3..f97086f3 100644
+--- a/tests/scene_voxel_smoke.gd
++++ b/tests/scene_voxel_smoke.gd
+@@ -1,5 +1,12 @@
+ extends "res://tests/scene_indirect_smoke.gd"
+ 
++class FailedRebake extends "res://src/scene_voxel_runtime.gd":
++	var fail_bake:=false
++	func bake_probe(from_node: Node) -> void:
++		# Match native bake's documented early-return failure: return no data and
++		# emit no engine error. All ordinary successful attempts use the real bake.
++		if not fail_bake:super.bake_probe(from_node)
++
+ func fixtures() -> void:
+ 	var room:=Node3D.new();room.name="VoxelRoom"
+ 	SceneIO.box(room,"Floor",Vector3(0,-.2,0),Vector3(6,.4,8),Color(.8,.8,.8))
+@@ -46,6 +53,7 @@ func run() -> void:
+ 	fixtures()
+ 	for theme in ["neon","light"]:
+ 		var app=await make_app(theme)
++		app.renderer.scene_lighting.indirect.voxel=FailedRebake.new()
+ 		check(app.load_scene(folder.path_join("room.glb")).is_empty(),"Import original bounded room in "+theme)
+ 		var room=app.renderer.world_runtime.instance(app.last_import_id)
+ 		check(app.pose_editor.add_model(folder.path_join("actor.glb")).is_empty(),"Import original skinned moving blocker")
+@@ -75,11 +83,18 @@ func run() -> void:
+ 		var gi=app.renderer.scene_lighting.indirect;var voxel=gi.voxel
+ 		check(app.history.size()==history+1 and Document.indirect(Document.document(app.video)).method=="voxelgi","Apply VoxelGI is one saved video transaction")
+ 		check(voxel.error.is_empty() and voxel.probe.data!=null and voxel.bake_count==1,"Deferred room bake produces runtime probe data")
++		var successful_data: VoxelGIData=voxel.probe.data;var successful_count: int=voxel.bake_count
++		voxel.fail_bake=true;gi.rebuild();await wait_bake(app)
++		check(voxel.probe.data==null and not voxel.probe.visible,"Failed rebake removes and hides the earlier successful probe data")
++		check(voxel.bake_count==successful_count and not voxel.baking and not voxel.dirty,"Failed rebake never increments the successful bake count")
++		check(voxel.error.contains("produced no data") and gi.capture_error(app.video)==voxel.error,"Failed rebake reports an actionable error and refuses export admission")
++		voxel.fail_bake=false;gi.rebuild();await wait_bake(app)
++		check(voxel.error.is_empty() and voxel.probe.visible and voxel.probe.data!=null and voxel.probe.data!=successful_data and voxel.bake_count==successful_count+1 and gi.capture_error(app.video).is_empty(),"A later real rebuild recovers with newly baked data")
+ 		check(not app.renderer.world_environment.environment.sdfgi_enabled and actor.opacity_materials.meshes[0].gi_mode==GeometryInstance3D.GI_MODE_DYNAMIC,"VoxelGI replaces SDFGI and model participates dynamically")
+ 		check(app.renderer.world_state()==world and app.keys==keys and material==actor.opacity_materials.authored_material(actor.opacity_materials.meshes[0],0),"Bake preserves world, animation, camera and authored materials")
+ 		var exact_room: Dictionary=Document.voxel(Document.indirect(Document.document(app.video))).duplicate(true)
+ 		editor.refresh();editor.indirect_energy.get_line_edit().text="1.1";editor.apply_indirect();await wait_bake(app)
+-		check(saved_equal(Document.voxel(Document.indirect(Document.document(app.video))),exact_room) and voxel.bake_count==1,"Strength-only edit preserves hidden room precision without rebaking")
++		check(saved_equal(Document.voxel(Document.indirect(Document.document(app.video))),exact_room) and voxel.bake_count==successful_count+1,"Strength-only edit preserves hidden room precision without rebaking")
+ 		app.undo();await wait_bake(app)
+ 		app.undo();await settled();check(not voxel.probe.visible and actor.opacity_materials.meshes[0].gi_mode==GeometryInstance3D.GI_MODE_STATIC,"Undo hides room probe and restores GI flags")
+ 		app.redo();await wait_bake(app);check(voxel.probe.visible,"Redo restores room VoxelGI")

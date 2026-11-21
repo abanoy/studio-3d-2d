@@ -38,6 +38,10 @@ func sync(renderer: Node,config: Dictionary) -> void:
 		# Imported nodes, transforms and materials must be ready before bake().
 		call_deferred("bake_room",generation)
 
+func bake_probe(from_node: Node) -> void:
+	# One native boundary, also used by the deterministic failed-rebake control.
+	probe.bake(from_node)
+
 func bake_room(ticket: int) -> void:
 	var renderer=renderer_ref.get_ref() if renderer_ref else null
 	if ticket!=generation or not enabled:return
@@ -51,7 +55,10 @@ func bake_room(ticket: int) -> void:
 		error="No static environment meshes inside the room. Import an environment, fit the room bounds, then Rebuild."
 	else:
 		var start:=Time.get_ticks_msec()
-		probe.bake(renderer.world)
+		# Native bake() returns void and can leave previous data intact on failure.
+		# Only data produced by this attempt may qualify as a successful rebuild.
+		probe.data=null
+		bake_probe(renderer.world)
 		bake_ms=Time.get_ticks_msec()-start
 		if probe.data==null:error="VoxelGI bake produced no data. Check room bounds and supported environment materials, then Rebuild."
 		else:

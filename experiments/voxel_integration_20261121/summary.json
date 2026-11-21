@@ -1,0 +1,115 @@
+{
+  "format": "has_voxel_integration_evidence_1",
+  "adoption_commit": "38b39ec7a057ad6c8a0ec8aaf557574cb5ce5706",
+  "adoption_parents": [
+    "5d37647c0004849247239817364e093c010eddd6",
+    "96e5d50b63964c1782515a0c70d22a5f0ed59e9e"
+  ],
+  "source_commit": "96e5d50b63964c1782515a0c70d22a5f0ed59e9e",
+  "primary_cpu": [
+    {
+      "name": "voxel42",
+      "checks": 42,
+      "failures": 0,
+      "graphics": false,
+      "phases": [
+        {
+          "checks": 34,
+          "failures": 0,
+          "graphics": false,
+          "measurements": {},
+          "phase": "writer"
+        },
+        {
+          "checks": 8,
+          "failures": 0,
+          "graphics": false,
+          "measurements": {},
+          "phase": "reader"
+        }
+      ],
+      "origin": "output/scene-voxel-1795288596901598000/verification.json"
+    },
+    {
+      "name": "sdfgi45",
+      "checks": 45,
+      "failures": 0,
+      "graphics": false,
+      "phases": [
+        {
+          "checks": 37,
+          "failures": 0,
+          "graphics": false,
+          "measurements": {},
+          "phase": "writer"
+        },
+        {
+          "checks": 8,
+          "failures": 0,
+          "graphics": false,
+          "measurements": {},
+          "phase": "reader"
+        }
+      ],
+      "origin": "output/scene-indirect-1795288669605958000/verification.json"
+    },
+    {
+      "name": "direct103",
+      "checks": 103,
+      "failures": 0,
+      "graphics": false,
+      "phases": [
+        {
+          "checks": 87,
+          "failures": 0,
+          "graphics": false,
+          "measurements": {},
+          "phase": "writer"
+        },
+        {
+          "checks": 16,
+          "failures": 0,
+          "graphics": false,
+          "measurements": {},
+          "phase": "reader"
+        }
+      ],
+      "origin": "output/scene-lighting-1795288669606225600/verification.json"
+    }
+  ],
+  "primary_cpu_total": 190,
+  "port_controls_before_fix": 38,
+  "port_controls_after_fix": 6,
+  "post_review_fix": {
+    "paths": [
+      "src/scene_voxel_runtime.gd",
+      "tests/scene_voxel_smoke.gd"
+    ],
+    "runtime_sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816",
+    "behavior": "Clear prior probe data before native bake; failed rebuild hides obsolete lighting, reports error/refuses export; later real rebuild recovers with fresh data.",
+    "new_cpu_assertions": 8
+  },
+  "worker_gpu": {
+    "checks": 60,
+    "failures": 0,
+    "branch": "worker/voxel-room-20261121",
+    "source_commit": "96e5d50b63964c1782515a0c70d22a5f0ed59e9e",
+    "covers_post_review_fix": false,
+    "not_primary_gpu_qualification": true
+  },
+  "primary_gpu_voxel": "PENDING; not run by this author",
+  "whole_full5d": {
+    "status_at_root_request": "LIVE",
+    "root_session": 76914,
+    "revision": "5d37647c0004849247239817364e093c010eddd6",
+    "no_success_claim": true
+  },
+  "native_art_or_private_arrays_copied": false,
+  "publication5d_verification": "Independent retrieved checkpoint publication verification; distinct from running its Full suite.",
+  "known_empty_room_preview_issue": {
+    "status": "OPEN_ROOT_REPORTED",
+    "scope": "After a successful bake, moving bounds outside all static contributors can retain previous probe data; a later sync can re-show stale GI despite export refusal.",
+    "covered_by_current42": false,
+    "worker_followup": "Worker is reproducing/fixing separately; no subsequent fix or GPU qualification included."
+  }
+}

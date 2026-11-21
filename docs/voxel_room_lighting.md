@@ -104,3 +104,15 @@ Official Godot 4.6 references checked November 21, 2026:
 [VoxelGI setup and limitations](https://docs.godotengine.org/en/4.6/tutorials/3d/global_illumination/using_voxel_gi.html),
 [runtime bake API](https://docs.godotengine.org/en/4.6/classes/class_voxelgi.html),
 [bake data properties](https://docs.godotengine.org/en/4.6/classes/class_voxelgidata.html).
+
+
+## Primary integration checkpoint
+
+The primary retains the worker60 graphics result as separate branch evidence.
+Its own final headless checks pass42 Voxel (including eight native early-return
+rebake failure/recovery controls),45 SDFGI and103 direct lighting. Old probe data
+is cleared before native bake admission. Primary graphics remain pending after
+the frozen published5d full Windows run. A separately reported empty-contributor
+preview path is still open in this checkpoint; see the preserved evidence packet
+experiments/voxel_integration_20261121. This is work in progress, not a new primary
+GPU or complete-suite pass.

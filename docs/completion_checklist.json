@@ -1,6 +1,18 @@
 {
+  "latest_voxel_room_20261121": {
+    "status": "INTEGRATED_CPU_PASS_EMPTY_ROOM_FIX_AND_PRIMARY_GPU_PENDING",
+    "evidence": "experiments/voxel_integration_20261121/summary.json",
+    "primary_headless_checks": {
+      "voxel": 42,
+      "sdfgi": 45,
+      "direct": 103
+    },
+    "worker_graphics_scope": "60 on96e5d50b before primary failure-path fixes; not a primary GPU result",
+    "formal_status_changed": false,
+    "next": "Resolve empty-contributor stale preview, refresh its binding leaf, run focused primary graphics after frozen5d Full releases GPU. Keep canonical Full and later feature source scopes distinct."
+  },
   "latest_integrated_additions_20261121": {
-    "status": "IMPLEMENTED_COMBINED_FOCUSED_PASS_FULL_PENDING",
+    "status": "PUBLISHED_RETRIEVED_FULL_RUNNING",
     "evidence": "docs/benchmarks/integrated_additions_2026-11-21.json",
     "features": [
       "Local/Online discovery, guarded preview/import, automatic batches and retrieval notices",
@@ -10,7 +22,9 @@
     "combined_graphics_scopes": 8,
     "formal_status_changed": false,
     "scores": "52/54 implementation;55/62 acceptance",
-    "next": "Publish and independently retrieve this checkpoint, then run the canonical full Windows verifier on a fresh isolated copy. Adopt qualified bounded-room VoxelGI separately. Continue rest-hair settling and visual contact refinement; retain human/device/install gates without interrupting the busy owner."
+    "next": "Publish and independently retrieve this checkpoint, then run the canonical full Windows verifier on a fresh isolated copy. Adopt qualified bounded-room VoxelGI separately. Continue rest-hair settling and visual contact refinement; retain human/device/install gates without interrupting the busy owner.",
+    "published_revision": "5d37647c0004849247239817364e093c010eddd6",
+    "publication_evidence": "experiments/voxel_integration_20261121/published5d/verification.json"
   },
   "latest_character_parts_follow_20261121": {
     "status": "IMPLEMENTED_FOCUSED_QUALIFIED",

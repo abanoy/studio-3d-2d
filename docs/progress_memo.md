@@ -17593,3 +17593,37 @@ this increment before a fresh full Windows run. Qualified worker VoxelGI96e5d50b
 is a separate upcoming integration; it is not part of the results above.
 
 2026-11-21 bounded-room VoxelGI: own worker/voxel-room-20261121 branch based634f854d. Optional64/128subdiv boundedprobe, deferred in-memory staticenvironment bake, dynamicmodels, recipe-only portable persistence/rebakeonopen. FinalCPU34+SDFGIregression45+privateForwardPlusGPU60pass; bothactualSceneSetup/CameraFocuspreview, indirect-only moving skinnedrootocclusion/recovery, coldreopen and1080p24H264fourframes. CameraFocus/export/coldimage+patcherrors0 onIntelArc140V. Adoptedprimarynumericprecision/CompatibilityOfffixes inowneditor; noapp/worldruntime/model/storage/encoder/installedStudio/tools/originalasset/mainchanges. See docs/voxel_room_lighting.md andcompactbenchmark; privateart/video/binariesstayignored.
+
+
+## 2026-11-21 - Published additions retrieved; VoxelGI CPU checkpoint
+
+Main5d37647c0004849247239817364e093c010eddd6 was independently cloned from
+GitHub into a separate Git store. All tree blob identities/modes and1232 raw
+source/evidence files (13239197 bytes) match; treea10bbeb1dae3b7c7cf15bf866c4a67c3ef87ed70.
+The receipt/verifier are now preserved in experiments/voxel_integration_20261121.
+The canonical Windows Full is LIVE on that frozen5d copy, session76914, coordinator5804,
+verifier35968, output/windows-reference-body-1795288143754941900. No new Full PASS
+is claimed. Its source is independent of ongoing primary changes.
+
+Bounded-room VoxelGI96e5d50b is integrated locally as38b39ec7, retaining the exact
+primary numeric/reflection functions. Review found native bake can return without
+replacing old probe data; the runtime now clears old data before the native call.
+A small overridable native boundary gives a deterministic failure after actual
+success, proving hidden/null data, unchanged successful-bake count, actionable
+export refusal and real recovery. Final primary headless42Voxel/45SDFGI/103direct
+checks pass. Wind/helper dependencies are55/71; initial38 pure controls and six
+post-fix binding/missing/drift controls pass. No primary Voxel GPU run yet; worker
+GPU60 is separate earlier evidence. See experiments/voxel_integration_20261121.
+
+Another complementary edge is OPEN at this checkpoint: moving bounds outside all
+environment contributors after success can leave data that the next sync re-shows.
+The lighting worker has qualified a separate18-control fix on an owned-copy
+overlay; its primary adoption is still pending. Do not call all failed rebakes resolved. The primary GPU slot remains reserved for the live Full.
+Junko's saved diagonal hair has no configured helper; the hair worker found new
+generated helpers omit gravityPower (default zero) and is implementing an explicit
+Natural gravity/Keep shape refinement without rewriting old/native rig data.
+
+Formal52/54 implementation and55/62 acceptance remain unchanged. Main5d is the
+published focused-qualified source; this newer Voxel checkpoint remains work in
+progress until its remaining failure path and primary graphics are qualified.
+No original assets, installed Studio or shared tools changed; no cleanup here.

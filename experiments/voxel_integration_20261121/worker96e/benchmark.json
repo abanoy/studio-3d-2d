@@ -1,0 +1,238 @@
+{
+  "date": "2026-11-21",
+  "branch": "worker/voxel-room-20261121",
+  "base": "634f854d15e12207089e856298c1a043a60d1a5b",
+  "status": "CPU_AND_PRIVATE_FORWARD_PLUS_PASS",
+  "cpu": {
+    "checks": 34,
+    "failures": 0,
+    "folder": "scene-voxel-1795286943582193600",
+    "phases": [
+      {
+        "checks": 26,
+        "failures": 0,
+        "graphics": false,
+        "measurements": {},
+        "phase": "writer"
+      },
+      {
+        "checks": 8,
+        "failures": 0,
+        "graphics": false,
+        "measurements": {},
+        "phase": "reader"
+      }
+    ]
+  },
+  "sdfgi_cpu_regression": {
+    "checks": 45,
+    "failures": 0,
+    "folder": "scene-indirect-1795286943580630700"
+  },
+  "graphics": {
+    "checks": 60,
+    "failures": 0,
+    "folder": "scene-voxel-1795286849967890600",
+    "runtime": "Godot4.6.stable.official.89cea1439",
+    "backend": "Forward+ Vulkan1.4.340",
+    "hardware": "IntelArc140V8GB",
+    "subdivisions": 64,
+    "phases": [
+      {
+        "checks": 48,
+        "failures": 0,
+        "graphics": true,
+        "measurements": {
+          "light": {
+            "bake_ms": 77,
+            "blocked_rgb": [
+              18.8671932220459,
+              0.0,
+              0.0
+            ],
+            "open_rgb": [
+              22.382827758789062,
+              0.0,
+              0.0
+            ],
+            "preview_errors": {
+              "0": {
+                "mean": 0.0,
+                "patch_mean": 0.0,
+                "preview_rgb": "(22.38283, 0.0, 0.0)"
+              },
+              "1": {
+                "mean": 0.0,
+                "patch_mean": 0.0,
+                "preview_rgb": "(18.86719, 0.0, 0.0)"
+              },
+              "3": {
+                "mean": 0.0,
+                "patch_mean": 0.0,
+                "preview_rgb": "(22.38283, 0.0, 0.0)"
+              }
+            },
+            "returned_rgb": [
+              22.382827758789062,
+              0.0,
+              0.0
+            ],
+            "scene_setup_red": [
+              22.699254989624023,
+              19.05080795288086,
+              22.699254989624023
+            ]
+          },
+          "movie": "render_1795286872_21934596_0/movie.mp4",
+          "neon": {
+            "bake_ms": 68,
+            "blocked_rgb": [
+              18.8671932220459,
+              0.0,
+              0.0
+            ],
+            "export_mean_0": 0.0,
+            "export_mean_1": 0.0,
+            "export_mean_3": 0.0,
+            "export_patch_mean_0": 0.0,
+            "export_patch_mean_1": 0.0,
+            "export_patch_mean_3": 0.0,
+            "open_rgb": [
+              22.382827758789062,
+              0.0,
+              0.0
+            ],
+            "preview_errors": {
+              "0": {
+                "mean": 0.0,
+                "patch_mean": 0.0,
+                "preview_rgb": "(22.38283, 0.0, 0.0)"
+              },
+              "1": {
+                "mean": 0.0,
+                "patch_mean": 0.0,
+                "preview_rgb": "(18.86719, 0.0, 0.0)"
+              },
+              "3": {
+                "mean": 0.0,
+                "patch_mean": 0.0,
+                "preview_rgb": "(22.38283, 0.0, 0.0)"
+              }
+            },
+            "returned_rgb": [
+              22.382827758789062,
+              0.0,
+              0.0
+            ],
+            "scene_setup_red": [
+              22.750032424926758,
+              19.08987045288086,
+              22.750032424926758
+            ]
+          }
+        },
+        "phase": "writer"
+      },
+      {
+        "checks": 12,
+        "failures": 0,
+        "graphics": true,
+        "measurements": {
+          "light_cold_0": 0.0,
+          "light_cold_1": 0.0,
+          "light_cold_3": 0.0,
+          "light_cold_patch_0": 0.0,
+          "light_cold_patch_1": 0.0,
+          "light_cold_patch_3": 0.0,
+          "neon_cold_0": 0.0,
+          "neon_cold_1": 0.0,
+          "neon_cold_3": 0.0,
+          "neon_cold_patch_0": 0.0,
+          "neon_cold_patch_1": 0.0,
+          "neon_cold_patch_3": 0.0
+        },
+        "phase": "reader"
+      }
+    ],
+    "pixel_units": "Average8bitRGB over16x16floorpatch; mean image/patch error includesRGBA channels.",
+    "direct_control": "Measured floorpatchblackwithGIoff atbothmodelpositions; lightshadowsdisabled.",
+    "private_desktops": [
+      {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b58157c3071445398dab25ecd6f5a0d1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 11,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 28924,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 42.771
+      },
+      {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f64c89b9cda74e0389e2132107a2521b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 11,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 32216,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 19.113
+      }
+    ],
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "4",
+      "duration": "0.166667"
+    },
+    "engine_errors": 0,
+    "warnings": 0
+  },
+  "source_sha256": {
+    "src/scene_voxel_runtime.gd": "11efb166ff6c27760325be4c5bbccfd10d60aa1c3cce9f22cdb1bb883cb54326",
+    "src/scene_indirect_runtime.gd": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732",
+    "src/scene_lighting_runtime.gd": "b171c5795808c4acf755d3c432ceb7d287f18e55e51311748fd73584b242326a",
+    "src/scene_lighting_document.gd": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75",
+    "src/scene_lighting_editor.gd": "37628df3f700ceb4c8e73e3b458c9520ce56263a8c237f752f104e61bbaf7c60",
+    "src/renderer.gd": "0f2c616f8f3df84ff2c1a6a88665f9bdd9d0a3fb1639381fbe4da8915359f89d",
+    "src/world_selection.gd": "c11ae6352eeae4df8c7572af84118efa9d1ade714ccab8fe44bc7e8bd6cd0ea7",
+    "tests/scene_voxel_smoke.gd": "140134f8dd15161503c97d9a38cdabc8ad6df34e3d5d96b2e68067f89e8dddf9",
+    "tests/verify_scene_lighting.py": "71861c3cac1dcfd2f7ef75eb8f34814eeae8a452491c6fea70eae621be432298"
+  },
+  "all_production_source_files_unchanged": 222,
+  "persistence": "Editable recipe+original assets in nativeHAS; bakedVoxelGIData regenerated in memory afterfreshopen, noexternalcache ornewbinaryassetformat.",
+  "earlier_failures": [
+    {
+      "folder": "scene-voxel-1795286364185404300",
+      "cause": "TestImage typeinference parseerror; fixed explicitImage type."
+    },
+    {
+      "folder": "scene-voxel-1795286653536065500",
+      "writer_checks": 46,
+      "failures": 2,
+      "cause": "Test readinactiveexportviewport whileSceneSetup wasactive. Wholeimage boundpassed butstrongerpatchboundcaughtstaleGI. CorrectedtesttoreadactualSceneSetup andCameraFocus; noappviewportchange/tolerancechange."
+    },
+    {
+      "folder": "scene-voxel-1795286739929749900",
+      "cause": "Recordedunchangedmodeltransformsandstaleviewportpixels; diagnosticconfirmsinactiveviewportcause."
+    }
+  ],
+  "limits": [
+    "Oneboundedroom,oneGPU,64subdivisionoriginalfixtures; noarbitrarynative-model/shader/large-scene/performanceclaim.",
+    "Staticenvironmentgeometrychangesrequireexplicitrebake; asynchronoussceneeditsnotautodetected.",
+    "Modelrootmovementgraphicallyverified; bones/morphs/particles/nestedsequencesnotqualified.",
+    "Voxelocclusionissoft/coarse andcanleakonthin/transparent/cutoutgeometry; customstaticshadersbakeblack/blockersonly.",
+    "Forward+only; Compatibilitykeepsrecipe, directlightingandOffcontrol.",
+    "BakingcanpauseUIonlargerimports; reopeningrebakesandexportsuseexplicit32defaultdrawsettling, notpathtracingsamples.",
+    "Originalassets/materials/modelrecordsarenotmodified; noRTX/pathtracingclaim."
+  ]
+}

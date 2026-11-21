@@ -150,8 +150,8 @@
     },
     {
       "path": "tests/verify_helper_preview.py",
-      "sha256": "2b6d296fd1d11d579e023e94f07bb26c4ca857f7e81bb0b33b0aae5c5d528611",
-      "lf_sha256": "2b6d296fd1d11d579e023e94f07bb26c4ca857f7e81bb0b33b0aae5c5d528611",
+      "sha256": "dbc2c7538213843ec5ba1c553ecb7d9879c0f75e0ff43502e9a4a742da47f367",
+      "lf_sha256": "dbc2c7538213843ec5ba1c553ecb7d9879c0f75e0ff43502e9a4a742da47f367",
       "category": "test"
     },
     {
@@ -169,8 +169,8 @@
     {
       "path": "src/renderer.gd",
       "category": "runtime",
-      "sha256": "f04a87b31d62626e4d7a5258fa62e6a8e0c5b250fa6f4cc24ad6d56633b306f1",
-      "lf_sha256": "5470825b6f896c2dc0f92a1afa6e0773f9c1f64a0b50d5f4a42b472cc75f2a94"
+      "sha256": "0f2c616f8f3df84ff2c1a6a88665f9bdd9d0a3fb1639381fbe4da8915359f89d",
+      "lf_sha256": "2f2132eb2733fb088fc9e38bba9df18e8aa49b7083d9340e629270c99406092a"
     },
     {
       "path": "src/import_basis.gd",
@@ -367,8 +367,8 @@
     {
       "path": "src/scene_lighting_document.gd",
       "category": "runtime",
-      "sha256": "2ae07d0a01034f586f4f3113d856b78005d42df26e21b805c77b1cd0f998c239",
-      "lf_sha256": "2ae07d0a01034f586f4f3113d856b78005d42df26e21b805c77b1cd0f998c239"
+      "sha256": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75",
+      "lf_sha256": "59adb48c4fcbfa97ddd08e21d7470a3b6d9c57ff6d43b5ecac3b8f2826e19a75"
     },
     {
       "path": "src/scene_lighting_runtime.gd",
@@ -379,8 +379,8 @@
     {
       "path": "src/scene_lighting_editor.gd",
       "category": "runtime",
-      "sha256": "108725216c28c49e290a0aba2af4d2049c70f430d9356a8151b47d83391a9296",
-      "lf_sha256": "108725216c28c49e290a0aba2af4d2049c70f430d9356a8151b47d83391a9296"
+      "sha256": "5a3d5ad046634269e9424df1ef5dfe712f5ec4f4d50730737657b0230eafab06",
+      "lf_sha256": "5a3d5ad046634269e9424df1ef5dfe712f5ec4f4d50730737657b0230eafab06"
     },
     {
       "path": "run.py",
@@ -397,8 +397,8 @@
     {
       "path": "src/scene_indirect_runtime.gd",
       "category": "runtime",
-      "sha256": "9cadefc2149d33da5bde708c7ed560b637d151553ac9744bec9328181fa617fc",
-      "lf_sha256": "9cadefc2149d33da5bde708c7ed560b637d151553ac9744bec9328181fa617fc"
+      "sha256": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732",
+      "lf_sha256": "0ca0b091a01f411e0f0b284afbd41d99c5509df11b9c7e64f0b3bb1152b92732"
     },
     {
       "path": "src/secondary_body_colliders.gd",
@@ -429,6 +429,12 @@
       "category": "runtime",
       "sha256": "3fe8ea005c07accf3c4a9cd4d2eeb6855035d7d47f23a58b05d8f6703b2efddc",
       "lf_sha256": "82e436c702ac47980590d61e367f1de3410dacdad67835fa8a6bffe1485189ef"
+    },
+    {
+      "path": "src/scene_voxel_runtime.gd",
+      "category": "runtime",
+      "sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816",
+      "lf_sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816"
     }
   ],
   "test_driver_scope": "Exact current-main source snapshots without overlays; labeled working-source checks require explicit opt-in. CPU defaults208; graphical defaults266 (original199+4UI+17popup endpoint+1long-job launch). Optional native adds23CPU/39graphical. Actual results recorded separately.",
@@ -473,5 +479,18 @@
     "scope": "Six-foot intrinsic import basis, schema9 capability validation, and independently checked existing-joint helper preservation. Preserve all historical rows and metadata; old experiment packets are unchanged.",
     "driver_scope": "Required basis/runtime dependency membership and exact SHA/LF pins; original assertion counts and all safety predicates retained. Wind membership now rejects duplicates and requires the exact named source set.",
     "test_scope": "This source refresh claims manifest preflight only. Fresh CPU/GPU results must be recorded separately; no historical PASS is reassigned to this successor."
+  },
+  "voxel_runtime_integration_revision": {
+    "source_commit": "96e5d50b63964c1782515a0c70d22a5f0ed59e9e",
+    "integration_commit": "38b39ec7a057ad6c8a0ec8aaf557574cb5ce5706",
+    "added_runtime_row": "src/scene_voxel_runtime.gd",
+    "changed_runtime_rows": [
+      "src/renderer.gd",
+      "src/scene_indirect_runtime.gd",
+      "src/scene_lighting_document.gd",
+      "src/scene_lighting_editor.gd"
+    ],
+    "scope": "Exact reviewed VoxelGI dependency and raw/LF leaf pins only. Existing membership, source-byte, lifecycle, native/refusal guards and assertion counts remain unchanged. This refresh supplies no inherited execution claim.",
+    "post_review_fix": "After integration38b39ec7, reviewed stale-bake-data visibility/error recovery fix; only scene_voxel_runtime.gd runtime leaf repinned. Prior38-control proof remains historical before this correction; new pure binding/missing/drift proof recorded separately. No inherited graphics PASS."
   }
 }
