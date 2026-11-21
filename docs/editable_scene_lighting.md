@@ -24,12 +24,14 @@ Daylight, Warm key + cool fill, Stage spotlight and Soft character append editab
 lights as one Undo action. Soft character is a low-contrast starting rig, not an
 MToon/MMD shader emulation. Unshaded remains the flat view. No RTX/path-tracing preset.
 
-Ambient fill is uniform illumination, explicitly an approximation of indirect light.
-Optional **Room reflections** adds one live, box-projected cubemap with center,
-size and strength. Fit near the scene, put its center in open air, enable and Apply.
-It costs extra rendering time and only affects materials already authored to reflect.
-It changes no roughness/metalness, adds no diffuse bounce, and is not an accurate
-mirror. Editor guide/picking layers are excluded; imported probes remain.
+Ambient fill normally supplies uniform illumination, an approximation of indirect light.
+For optional **Room reflections and local fill**, launch `python run.py --forward-plus`.
+Apply explicit ambient fill first (try 0.3), then enable the room mode. One live,
+box-projected cubemap has center/size/strength controls; put its center in open air.
+It approximates reflections/local image-based fill, costs extra render time,
+changes no materials and does not trace light bounces or accurate mirrors. Editor
+guide/picking layers are excluded; imported probes remain. Compatibility remains
+the default, retains saved probe data and shows an actionable Forward+ limitation.
 
 ## Contract and addendum comparison
 
@@ -52,7 +54,10 @@ The list contains authored lights. Imported lamps retain their transforms,
 visibility and energy inside assets. Unlit/custom/baked surfaces get actionable
 relink/shader warnings; none is silently replaced to receive lighting. Baked lighting
 is not rebaked. Compatibility normally permits 8 point + 8 spot lights per mesh,
-8 visible directional lights and 2 probes per mesh, including imported sources.
+8 visible directional lights, including imported sources. Current docs describe
+2 probes per mesh in Compatibility, but this pinned runtime/driver produced no
+reflection on the actual metallic prop. The authored probe is qualified only on
+Forward+, not Mobile or Compatibility; this is an observed runtime limitation.
 64 saved lights is an editing limit, not a promise that all affect one mesh.
 
 ## Focused checks
@@ -66,12 +71,21 @@ comparison; IDs, keys, booleans and lengths remain exact.
 launcher for actual pixels, shadows, routed clicks, packed reopening and H.264 export.
 Optional `--native-model PATH --native-environment PATH` tests prepared local GLBs
 read-only, without converters/downloads. Captures/media/raw receipts stay in ignored
-output. The first current-base GPU run passed 96 checks, including a 1920×1080,
-24fps, 48-frame H.264 movie, exact preview/export PNG agreement and fresh-process
-pixels. It predates optional reflections. Final results are recorded in
+output. Add `--forward-plus` for cubemap checks. Final CPU103, Compatibility107
+and Forward+119 pass. Each graphical mode exports a 1920×1080/24fps/48-frame H.264
+movie with exact preview/export PNG and fresh-reader pixels. Final results are in
 `benchmarks/editable_scene_lighting_2026-11-21.json`. No full-suite, cross-driver,
 arbitrary native-shader or artist acceptance claim. Earlier desktop-denied attempts
-remain historical; they are not the current graphics result.
+remain historical. The final tests retain unchanged thresholds. A tiny center
+patch initially faced empty black space; visual inspection corrected the prop
+sample to its lower hemisphere reflecting the lit floor. Whole-room brightness
+alone was insufficient to establish reflection support.
+
+Forward+ emits texture-RID warnings on engine shutdown:14 in the two-theme writer
+and7 in its reader; the minimal engine-only probe also emitted7. No ongoing-session
+leak or performance conclusion is established. Animated reflection timing,
+reference-only-object reflections, arbitrary imported probes and multiple GPUs
+remain unqualified. Cubemaps do not replace physically correct diffuse GI.
 
 ## Integration
 
@@ -83,6 +97,7 @@ only these hunks; never replace the primary worker's app/renderer files wholesal
 | src/app.gd | scene_lighting_editor member; setup after sequence_editor.setup; lighting tooltip/status wording |
 | src/renderer.gd | scene_lighting member; setup after world attachment; sync at start of apply_lighting; apply_ambient after mode switch |
 | src/lighting.gd | Delegate optional scene_lighting validation after existing mode validation |
+| run.py | Optional --forward-plus flag; insert renderer override before --path; default launch unchanged |
 
 No world-runtime/model/material/export edits. Scene setup shares the renderer world;
 nested sequence renderers already use their own video settings. Camera easing,
@@ -94,7 +109,7 @@ posed bounds and bundled parts hooks are preserved.
 | --- | --- |
 | Shadows | Directional/Omni/Spot raster shadow maps; no RTX requirement |
 | Ambient | Explicit uniform color/energy, not bounced light |
-| Reflections | Optional live room cubemap; no ray-traced mirrors |
+| Reflections | Optional Forward+ live room cubemap/local fill; no ray-traced mirrors |
 | Indirect diffuse | Not implemented; Forward+ SDFGI/VoxelGI or prepared LightmapGI are possible |
 | Slower offline | Existing sequential PNG/MP4 pipeline; extra encoding time alone adds no quality |
 | Path tracing | Not implemented; needs an actual separate renderer integration |

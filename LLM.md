@@ -7886,3 +7886,32 @@ compact benchmark for source hooks, official research and exact current scope.
 Installed Studio, original assets and shared tools remain unchanged. Private
 captures/media stay in output; no merge or push to main. Next diffuse GI step is
 an opt-in Forward+ SDFGI colored-room prototype with controlled settling/export.
+
+## 2026-11-21 - Editable lighting final focused result
+
+Supersedes the earlier queued/pending lighting note. Final current source passes
+CPU103 (87+16), Compatibility107 (103+4) and Forward+119 (115+4), across Neon and
+Classic. Actual directional/point/spot pixels illuminate both imported fixture
+objects; prepared native PMD model and PMX environment also respond without data
+or prepared-source changes. Shadows, direct edits, atomic history, directory and
+packed/linked fresh reopening pass. Both GPU modes export H2641080p24/48 frames;
+preview/export PNG and fresh-reader pixels are exact. All four final private GPU
+jobs close without foreground observation. No complete-suite claim.
+
+Four editable presets and the optional Forward+ room reflection/local-fill mode
+are usable. Launch python run.py --forward-plus; Compatibility remains default.
+A measured metallic lower-hemisphere gain627.92 exceeds the unchanged10 bound.
+Earlier whole-room-only success was insufficient; center patches faced empty
+black space and were corrected after actual image inspection. Compatibility's
+actual black-probe result is gated with an actionable message; imported probe
+settings remain saved. No material replacement, diffuse-bounce or path-tracing
+claim. Forward+ emits7 texture-RID shutdown warnings per app/probe world (minimal
+engine-only case too); ongoing-session behavior is not established. Dynamic and
+reference-only reflections, other GPUs and native-shader fidelity remain open.
+
+Integration: retain three lighting modules; small app.gd, renderer.gd, lighting.gd
+hooks plus optional run.py launch flag. No world-runtime/model/material/export
+edits. Original checkout/rebase, installed Studio, source assets and shared tools
+preserved. Private media/receipts stay in output. See editable_scene_lighting.md
+and its compact benchmark. Next diffuse-GI step: opt-in Forward+ colored-room
+SDFGI with environment-to-skinned-model tint and settled movie-frame comparison.

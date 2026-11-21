@@ -6,6 +6,11 @@ var stamp:=""
 var last_error:=""
 var reflection: ReflectionProbe
 
+static func reflections_supported() -> bool:
+	# CPU checks inspect data/nodes only. Actual probe pixels are qualified on
+	# Forward+; the pinned Compatibility runtime produced a black cubemap.
+	return DisplayServer.get_name()=="headless" or RenderingServer.get_current_rendering_method()=="forward_plus"
+
 func setup(parent: Node3D) -> void:
 	root=Node3D.new();root.name="AuthoredSceneLights";parent.add_child(root)
 
@@ -45,7 +50,7 @@ func sync(video: Dictionary) -> void:
 
 func sync_reflection(data: Dictionary) -> void:
 	var settings: Dictionary=data.get("reflection",{})
-	if not settings.get("enabled",false):
+	if not settings.get("enabled",false) or not reflections_supported():
 		if reflection:root.remove_child(reflection);reflection.queue_free();reflection=null
 		return
 	if not reflection:
@@ -53,7 +58,8 @@ func sync_reflection(data: Dictionary) -> void:
 		# One opt-in live cubemap, not ray tracing. Re-evaluate moving objects in
 		# preview and offline frames rather than baking a stale editor snapshot.
 		reflection.update_mode=ReflectionProbe.UPDATE_ALWAYS
-		reflection.ambient_mode=ReflectionProbe.AMBIENT_DISABLED
+		# The optional room mode uses this cubemap for reflections/local fill.
+		reflection.ambient_mode=ReflectionProbe.AMBIENT_ENVIRONMENT
 		reflection.box_projection=true;reflection.enable_shadows=true
 		# Layer 19 holds editor guides; layer 20 holds picking/outline copies.
 		reflection.cull_mask=(1<<18)-1
@@ -70,6 +76,8 @@ func apply_ambient(video: Dictionary,environment: Environment) -> void:
 	if not Document.error(data).is_empty():return
 	environment.ambient_light_color=Color(data.ambient_color[0],data.ambient_color[1],data.ambient_color[2])
 	environment.ambient_light_energy=data.ambient_energy
+	# Opt-in local image-based fill, not a diffuse bounce simulation.
+	environment.ambient_light_sky_contribution=1. if reflections_supported() and data.get("reflection",{}).get("enabled",false) else 0.
 
 static func material_limits(renderer: Node) -> String:
 	var unlit:=0;var custom:=0;var baked:=0

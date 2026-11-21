@@ -179,24 +179,10 @@ func run() -> void:
 		editor.refresh();count=Document.document(app.video).lights.size();editor.add_preset("soft_character")
 		check(Document.document(app.video).lights.size()==count+2,"Soft character preset adds two editable directional lights")
 		app.undo();await settled();editor.refresh()
-		editor.reflection_enabled.set_pressed_no_signal(true)
-		for axis in range(3):
-			editor.reflection_positions[axis].get_line_edit().text=str([0.,3.,2.][axis])
-			editor.reflection_sizes[axis].get_line_edit().text="20"
-		editor.reflection_strength.get_line_edit().text="1";editor.apply_reflection();await settled()
-		check(app.renderer.scene_lighting.reflection is ReflectionProbe and app.renderer.scene_lighting.reflection.update_mode==ReflectionProbe.UPDATE_ALWAYS,"Live room cubemap creates actual reflection probe")
-		check(app.renderer.scene_lighting.reflection.ambient_mode==ReflectionProbe.AMBIENT_DISABLED and app.renderer.scene_lighting.reflection.cull_mask & ((1<<18)|(1<<19))==0,"Reflections exclude editor copies and add no hidden ambient light")
-		if graphics:
-			for warmup in range(8):await settled()
-			var reflected: Image=await app.renderer.capture(app.keys,[],0,true)
-			editor.reflection_enabled.set_pressed_no_signal(false);editor.apply_reflection();await settled()
-			var plain: Image=await app.renderer.capture(app.keys,[],0,true)
-			var reflection_delta:=difference(reflected,plain);measurements[theme].reflection_difference=reflection_delta
-			check(reflection_delta>100,"Room cubemap visibly affects authored reflective material")
-			reflected.save_png(folder.path_join(theme+"-reflections.png"))
-			app.undo();await settled()
-		app.undo();await settled();check(app.renderer.scene_lighting.reflection==null,"Undo removes room reflections")
-		app.redo();await settled();check(app.renderer.scene_lighting.reflection!=null,"Redo restores room reflections")
+		if Runtime.reflections_supported():await reflection_controls(app,editor,theme)
+		else:
+			editor.reflection_enabled.set_pressed_no_signal(true);editor.apply_reflection()
+			check(app.renderer.scene_lighting.reflection==null and "Forward+" in editor.hint.text,"Compatibility gives an actionable Forward+ reflection limitation")
 		var saved:=Document.document(app.video).duplicate(true)
 		for kind in ["point","spot"]:
 			var extra:=Document.create(kind,Vector3(0,1,0));extra.visible=false;saved.lights.append(extra)
@@ -229,6 +215,35 @@ func run() -> void:
 		app.free();await process_frame
 	if graphics and FileAccess.file_exists(folder.path_join("native-inputs.json")):await native_pixels()
 	finish("writer")
+func reflection_controls(app,editor: Node,theme: String) -> void:
+	editor.reflection_enabled.set_pressed_no_signal(true);editor.apply_reflection()
+	check(app.renderer.scene_lighting.reflection==null and "Ambient fill above 0" in editor.hint.text,"Zero ambient has an actionable reflection limitation without injecting fill")
+	editor.ambient.get_line_edit().text="0.3";editor.apply_fill()
+	editor.reflection_enabled.set_pressed_no_signal(true)
+	for axis in range(3):
+		editor.reflection_positions[axis].get_line_edit().text=str([0.,3.,2.][axis])
+		editor.reflection_sizes[axis].get_line_edit().text="20"
+	editor.reflection_strength.get_line_edit().text="1";editor.apply_reflection();await settled()
+	check(app.renderer.scene_lighting.reflection is ReflectionProbe and app.renderer.scene_lighting.reflection.update_mode==ReflectionProbe.UPDATE_ALWAYS,"Live room cubemap creates actual reflection probe")
+	check(is_equal_approx(app.renderer.world_environment.environment.ambient_light_energy,.3) and app.renderer.scene_lighting.reflection.cull_mask & ((1<<18)|(1<<19))==0,"Reflections exclude editor copies and retain explicitly authored ambient fill")
+	if graphics:
+		for warmup in range(8):await settled()
+		var reflected: Image=await app.renderer.capture(app.keys,[],0,true)
+		editor.reflection_enabled.set_pressed_no_signal(false);editor.apply_reflection();await settled()
+		var plain: Image=await app.renderer.capture(app.keys,[],0,true)
+		var reflection_delta:=difference(reflected,plain);measurements[theme].reflection_difference=reflection_delta
+		check(reflection_delta>100,"Room cubemap visibly affects authored reflective material")
+		# The upper/center mirror patch faces the empty black side of this open
+		# fixture. Sample the visible lower hemisphere reflecting the lit floor.
+		var sphere_point: Vector2=app.renderer.camera.unproject_position(Vector3(1.5,.7,.3))
+		var sphere_gain:=sum_region(reflected,sphere_point).length()-sum_region(plain,sphere_point).length()
+		measurements[theme].reflective_sphere_gain=sphere_gain
+		check(sphere_gain>10,"Cubemap reflection brightens the metallic prop itself")
+		reflected.save_png(folder.path_join(theme+"-reflections.png"))
+		plain.save_png(folder.path_join(theme+"-reflections-off.png"))
+		app.undo();await settled()
+	app.undo();await settled();check(app.renderer.scene_lighting.reflection==null,"Undo removes room reflections")
+	app.redo();await settled();check(app.renderer.scene_lighting.reflection!=null,"Redo restores room reflections")
 func native_pixels() -> void:
 	var inputs: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("native-inputs.json")))
 	for kind in inputs:

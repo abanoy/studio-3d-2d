@@ -12,6 +12,7 @@ from run import command
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--cpu', action='store_true')
+    parser.add_argument('--forward-plus', action='store_true')
     parser.add_argument('--native-model', type=Path)
     parser.add_argument('--native-environment', type=Path)
     options = parser.parse_args()
@@ -48,7 +49,7 @@ def main():
                     opened = unpack({'path': str(archive), 'folder': str(folder / (theme + '-' + storage + '-unpacked'))})
                     assert opened['ok'], opened
         args = command('tests/scene_lighting_smoke.gd', headless=options.cpu,
-                       extra=['--audio-driver', 'Dummy', '--log-file', str(folder / (phase + '-engine.log')),
+                       extra= (['--rendering-method', 'forward_plus'] if options.forward_plus else []) + ['--audio-driver', 'Dummy', '--log-file', str(folder / (phase + '-engine.log')),
                               '--', str(folder), *(['--cpu'] if options.cpu else []),
                               *(['--read'] if phase == 'reader' else [])])
         result = subprocess.run(args, cwd=ROOT, env=env, capture_output=True, text=True,

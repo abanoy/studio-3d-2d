@@ -91,9 +91,9 @@ func build() -> void:
 	ambient_color=ColorPickerButton.new();ambient_color.edit_alpha=false;ambient_color.custom_minimum_size=Vector2(65,28);ambient_row.add_child(ambient_color)
 	var fill_button: Button=app.button(ambient_row,"Apply fill",apply_fill);add_buttons.append(fill_button)
 	var fill_note: Label=app.label(box,"Ambient fill is uniform illumination, an approximation of indirect light. Imported lights and baked lighting remain unchanged.");fill_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	var reflection_toggle:=CheckButton.new();reflection_toggle.text="Room reflections (optional)";box.add_child(reflection_toggle)
+	var reflection_toggle:=CheckButton.new();reflection_toggle.text="Room reflections and local fill (Forward+)";box.add_child(reflection_toggle)
 	reflection_fields=VBoxContainer.new();box.add_child(reflection_fields);reflection_fields.hide();reflection_toggle.toggled.connect(reflection_fields.set_visible)
-	reflection_enabled=CheckBox.new();reflection_enabled.text="Live room reflections (slower)";reflection_fields.add_child(reflection_enabled)
+	reflection_enabled=CheckBox.new();reflection_enabled.text="Live room reflections and local fill (slower)";reflection_fields.add_child(reflection_enabled)
 	var probe_position:=HBoxContainer.new();reflection_fields.add_child(probe_position)
 	for axis in ["Center X","Center Y","Center Z"]:reflection_positions.append(number(probe_position,axis,-1e12,1e12,.01))
 	var probe_size:=HBoxContainer.new();reflection_fields.add_child(probe_size)
@@ -102,7 +102,7 @@ func build() -> void:
 	var probe_actions:=HBoxContainer.new();reflection_fields.add_child(probe_actions)
 	add_buttons.append(app.button(probe_actions,"Fit near scene",fit_reflection))
 	add_buttons.append(app.button(probe_actions,"Apply reflections",apply_reflection))
-	var probe_note: Label=app.label(reflection_fields,"One live cubemap approximates the room on reflective lit materials. It does not simulate diffuse color bounce or ray-traced mirrors. Place the center in open air. Imported probes remain; Compatibility supports two probes per mesh.");probe_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var probe_note: Label=app.label(reflection_fields,"Launch with python run.py --forward-plus for this optional mode. Set Ambient fill above 0 (try 0.3). A live room cubemap approximates reflections and local ambient fill; it does not trace light bounces or mirrors. Put its center in open air. Imported probes remain.");probe_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	hint=app.label(box,"");hint.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 
 func number(parent: Control,title: String,minimum: float,maximum: float,step: float) -> SpinBox:
@@ -124,6 +124,7 @@ func _process(_delta: float) -> void:
 	for control in add_buttons:control.disabled=blocked()
 	undo_button.disabled=blocked() or app.history.is_empty();redo_button.disabled=blocked() or app.redo_history.is_empty()
 	enabled.disabled=blocked()
+	reflection_enabled.disabled=blocked() or not Runtime.reflections_supported()
 	apply_button.disabled=blocked() or selected.is_empty();remove_button.disabled=apply_button.disabled
 
 func refresh() -> void:
@@ -149,6 +150,8 @@ func refresh() -> void:
 	message+="\nCompatibility rendering supports 8 directional lights and normally 8 point + 8 spot lights per mesh, including imported lights. Reduce overlapping lights if one stops contributing."
 	var limits:=Runtime.material_limits(app.renderer)
 	if not limits.is_empty():message+="\n"+limits
+	if data.get("reflection",{}).get("enabled",false) and data.ambient_energy<=0:message+="\nRoom reflections need Ambient fill above 0 with this Compatibility setup. Try 0.3 and Apply fill."
+	if not Runtime.reflections_supported():message+="\nRoom reflections require Forward+: launch python run.py --forward-plus. Saved probe settings are retained; Compatibility continues to use authored direct lights and fill."
 	hint.text=message;refreshing=false
 
 func select(index: int) -> void:
@@ -218,10 +221,16 @@ func fit_reflection() -> void:
 func apply_reflection() -> void:
 	var data:=current()
 	if data.is_empty():return
+	if not Runtime.reflections_supported():
+		hint.text="Room reflections require Forward+. Launch python run.py --forward-plus. Direct lights remain available in Compatibility."
+		app.message(hint.text);return
+	if reflection_enabled.button_pressed and data.ambient_energy<=0:
+		hint.text="Set Ambient fill above 0 and Apply fill first (try 0.3) for the room reflection/local-fill approximation."
+		app.message(hint.text);return
 	var probe:={"enabled":reflection_enabled.button_pressed,"position":[],"size":[],"intensity":typed(reflection_strength)}
 	for axis in range(3):probe.position.append(typed(reflection_positions[axis]));probe.size.append(typed(reflection_sizes[axis]))
 	data["reflection"]=probe
-	commit(data,"Room reflections updated. Live cubemap reflections are approximate and cost extra render time.")
+	commit(data,"Room reflections/local fill updated. This live cubemap approximation costs extra render time.")
 
 func change_visibility(value: bool) -> void:
 	var data:=current();var index:=ids.find(selected)
