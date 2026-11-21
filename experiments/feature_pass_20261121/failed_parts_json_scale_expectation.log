@@ -1,0 +1,10 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fresh Open restores one character and both independent parts
+FAIL cold root keeps Scale 1 and its shared intrinsic height
+PASS cold assets belong to reader cache with separate child rigs
+PASS cold replay retains per-part visibility
+PASS cold Manage parts reflects the saved switches
+PASS cold render matches saved visible parts exactly
+CHARACTER_PARTS_GUI_READ {"checks":6,"failures":1}

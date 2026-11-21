@@ -20,6 +20,7 @@ var camera: Camera3D
 var outline: TextureRect
 var outline_material: ShaderMaterial
 var menu: PopupMenu
+var parts_button: Button
 var pending_button := 0
 var pending_motion := Vector2.ZERO
 var pending_cursor := Vector2.ZERO
@@ -69,9 +70,12 @@ func setup(parent: Node) -> void:
 	frame.set_meta("rail",["Frame","frame-target"])
 	var asset: Button = app.button(parent,"Save asset .has...",func():preload("res://src/asset_package.gd").export_dialog(app)); asset.tooltip_text="Package the selected independent model or map with its editable controls and embedded dependencies."
 	asset.set_meta("rail",["Save asset .has...","save","Save asset"])
-	var size_map: Button = app.button(parent,"Size map…",func():app.map_calibration.open()); size_map.tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
-	size_map.set_meta("rail",["Size map…","ruler","Size map"])
-	actions = [frame,asset,size_map]
+	var size_map: Button = app.button(parent,"Size mapâ€¦",func():app.map_calibration.open()); size_map.tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
+	size_map.set_meta("rail",["Size mapâ€¦","ruler","Size map"])
+	parts_button=app.button(parent,"Manage parts…",open_parts)
+	parts_button.tooltip_text="Choose the visible pieces bundled with this character."
+	parts_button.set_meta("rail",["Manage parts…","folder","Parts"]);parts_button.visible=false
+	actions = [frame,asset,size_map,parts_button]
 	help_label = app.label(parent,HELP); help_label.add_theme_font_size_override("font_size",12)
 	rail_end = Control.new(); rail_end.custom_minimum_size.y = 4; rail_end.mouse_filter = Control.MOUSE_FILTER_IGNORE; rail_end.visible = false
 	parent.add_child(rail_end)
@@ -86,6 +90,10 @@ func add_import_info(info: Node) -> void:
 	item.set_meta("import_capability_action",true)
 	item.set_meta("rail",["Import info","help","Import info"])
 	actions.append(item);tree.get_parent().move_child(item,help_label.get_index());refresh_actions()
+
+func open_parts() -> void:
+	var editor=app.get("character_parts_editor")
+	if is_instance_valid(editor) and editor.can_manage(selected):editor.open(selected)
 
 func tree_font() -> Font:
 	# Neon: the interface font, with Yu Gothic UI kept as the fallback for Japanese object names.
@@ -384,6 +392,7 @@ func collect(node: Node, kind: String) -> void:
 	if node is MeshInstance3D and node.mesh:
 		var copy := MeshInstance3D.new()
 		copy.mesh = node.mesh; copy.skin = node.skin; copy.layers = MASK_LAYER
+		copy.extra_cull_margin=node.extra_cull_margin
 		copy.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		copies_root.add_child(copy)
 		var skeleton := node.get_node_or_null(node.skeleton)
@@ -404,6 +413,9 @@ func collect(node: Node, kind: String) -> void:
 	for child in node.get_children(): collect(child,kind)
 
 func _process(_delta: float) -> void:
+	if is_instance_valid(parts_button):
+		var editor=app.get("character_parts_editor")
+		parts_button.visible=is_instance_valid(editor) and editor.can_manage(selected)
 	if viewport == null: return
 	if pending_button!=0:
 		for key in [KEY_W,KEY_A,KEY_S,KEY_D,KEY_Q,KEY_E]:
@@ -419,6 +431,7 @@ func _process(_delta: float) -> void:
 		if not is_instance_valid(entry.original): continue
 		entry.copy.global_transform = entry.original.global_transform
 		entry.copy.custom_aabb=entry.original.custom_aabb
+		if entry.copy.extra_cull_margin!=entry.original.extra_cull_margin:entry.copy.extra_cull_margin=entry.original.extra_cull_margin
 		var root: Node3D = entity_root(entry.kind)
 		var family:=belongs_to(entry.kind,selected)
 		var ghost: bool = family and root!=null and not root.is_visible_in_tree()
@@ -547,6 +560,8 @@ func complete_pick(pending: RefCounted) -> void:
 		if selected_rig() and (kind=="model" or app.renderer.world_runtime):
 			menu.add_item("Reset pose",1)
 			menu.add_item("Hide object" if selected_rig().visible_at(app.frame) else "Show object",2)
+		var parts=app.get("character_parts_editor")
+		if is_instance_valid(parts) and parts.can_manage(selected):menu.add_item("Manage parts…",4)
 		menu.add_separator(); menu.add_item("Deselect",3)
 		var rect: Rect2 = app.canvas.image_rect()
 		var position: Vector2 = app.canvas.global_position+rect.position+request.point/Vector2(app.video.width,app.video.height)*rect.size
@@ -571,3 +586,4 @@ func context_action(id: int) -> void:
 		2:
 			if selected_rig(): app.pose_editor.set_visibility_key(not selected_rig().visible_at(app.frame))
 		3: select_entity("")
+		4: open_parts()

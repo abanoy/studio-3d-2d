@@ -9,6 +9,15 @@ const Airflow=preload("res://src/airflow.gd")
 const Shape=preload("res://src/source_shape.gd")
 const ShapeAnimation=preload("res://src/shape_animation.gd")
 const ImportBasis=preload("res://src/import_basis.gd")
+const RenderBounds=preload("res://src/posed_render_bounds.gd")
+var _render_meshes: Array[WeakRef]=[]
+var _render_bounds: RefCounted
+var _render_owner_id:=0
+var _render_refreshing:=false
+var _render_bounds_blocked:=false
+var _render_bounds_builds:=0
+var _render_last_stats: Dictionary={}
+var render_bounds_error:=""
 var root: Node3D
 var base_root := Transform3D.IDENTITY
 var raw_import_root := Transform3D.IDENTITY
@@ -187,7 +196,15 @@ func capture_import_root(raw_root: Transform3D) -> String:
 	return ""
 
 func inventory(node: Node) -> void:
-	if node==root:_contact_cache_ready=false
+	if node==root:
+		_contact_cache_ready=false;release_render_bounds();_render_meshes.clear()
+		_render_owner_id=root.get_instance_id()
+		var closing: Callable=_render_root_exited.bind(_render_owner_id)
+		if not root.tree_exited.is_connected(closing):root.tree_exited.connect(closing)
+	if node is MeshInstance3D and node.mesh!=null:
+		for surface in range(node.mesh.get_surface_count()):
+			if node.mesh.surface_get_format(surface)&Mesh.ARRAY_FORMAT_BONES:
+				_render_meshes.append(weakref(node));break
 	if node is Skeleton3D:
 		for i in range(node.get_bone_count()):
 			var id := str(root.get_path_to(node)) + "::" + str(node.get_bone_name(i))
@@ -501,6 +518,54 @@ func apply(frame: int, editing := false, final := false, video: Dictionary = {},
 		if not skeleton in updated:
 			skeleton.force_update_all_bone_transforms()
 			updated.append(skeleton)
+
+	refresh_render_bounds()
+
+# Transient render-only bounds. SourceShape remains the custom_aabb owner;
+# no margin, cache or diagnostic field is part of serialized Model.data.
+func _render_root_exited(owner_id: int) -> void:
+	if owner_id!=_render_owner_id:return
+	# Node.duplicate copies signal connections. A detached thumbnail clone must
+	# never release the still-attached original model's cache.
+	if is_instance_valid(root) and root.is_inside_tree():return
+	release_render_bounds()
+
+func release_render_bounds() -> void:
+	if _render_bounds!=null:
+		_render_last_stats=_render_bounds.stats.duplicate(true)
+		_render_bounds.dispose()
+	_render_bounds=null;_render_bounds_blocked=false;render_bounds_error=""
+
+func refresh_render_bounds() -> void:
+	if _render_refreshing or _render_bounds_blocked:return
+	if not is_instance_valid(root) or not root.is_inside_tree():return
+	if root.get_instance_id()!=_render_owner_id:
+		release_render_bounds();render_bounds_error="Render bounds need the current model inventory.";_render_bounds_blocked=true;return
+	if _render_meshes.is_empty():return
+	_render_refreshing=true
+	var error: String=""
+	var owned: Array=[]
+	for ref in _render_meshes:
+		var mesh=ref.get_ref()
+		if not is_instance_valid(mesh) or not (mesh==root or root.is_ancestor_of(mesh)):
+			error="A render mesh left this model's inventory.";break
+		owned.append(mesh)
+	if error.is_empty() and _render_bounds==null:
+		var made: Dictionary=RenderBounds.create(owned)
+		_render_bounds_builds+=1
+		if made.has("error"):error=str(made.error)
+		else:_render_bounds=made.control
+	if error.is_empty():
+		var result: Dictionary=_render_bounds.refresh()
+		if result.has("error"):error=str(result.error)
+	if not error.is_empty():
+		# A source/ownership/profile refusal restores only our still-owned margin.
+		# Keep the original importer/posing behavior; do not rescan on every frame.
+		release_render_bounds();render_bounds_error=error;_render_bounds_blocked=true
+	_render_refreshing=false
+
+func render_bounds_diagnostics() -> Dictionary:
+	return {"active":_render_bounds!=null,"blocked":_render_bounds_blocked,"error":render_bounds_error,"builds":_render_bounds_builds,"meshes":_render_meshes.size(),"stats":_render_bounds.stats.duplicate(true) if _render_bounds!=null else _render_last_stats.duplicate(true)}
 
 func bone_transform(id: String) -> Transform3D:
 	if id == "@root": return root.global_transform

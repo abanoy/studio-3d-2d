@@ -3,6 +3,7 @@ extends RefCounted
 const Document = preload("res://src/world_document.gd")
 const Model = preload("res://src/model.gd")
 const SceneIO = preload("res://src/scene3d.gd")
+const Parts = preload("res://src/character_parts.gd")
 var root: Node3D
 var data := {}
 var instances := {}
@@ -47,6 +48,12 @@ static func prepare(document: Dictionary, duration: int,incoming_video: Dictiona
 		instance.data=row
 		error=instance.capture_import_root(instance.root.transform)
 		if not error.is_empty():instance.root.free();candidate.dispose();return {"error":error}
+		var shared: Dictionary=Parts.intrinsic_scale(row)
+		if shared.has("error"):
+			instance.root.free();candidate.dispose();return shared
+		if shared.factor!=1.:
+			instance.base_root=Transform3D(Basis.IDENTITY.scaled(Vector3.ONE*shared.factor),Vector3.ZERO)*instance.base_root
+			instance.root.transform=instance.base_root
 		# Inventory before attaching other instances: a parent's rig cannot absorb a child's.
 		instance.inventory(instance.root)
 		# Capture mesh ownership before parent/child instances are attached.
@@ -130,6 +137,7 @@ func restore_instances(values: Dictionary) -> String:
 		var target: RefCounted=instances[id]
 		for field in ["source","sha256","kind","parent_id","asset_basis"]:
 			if target.data.get(field)!=value.get(field):return "This edit cannot replace an asset or reparent an instance."
+		if Parts.intrinsic_scale(target.data)!=Parts.intrinsic_scale(value):return "Rebuild the character to change its shared height reference."
 		if target.data.get("metadata",{}).get("import_basis_lineage")!=value.get("metadata",{}).get("import_basis_lineage"):return "This edit cannot replace intrinsic import-basis lineage."
 		var probe:=Model.new();probe.data=value;probe.order=target.order;probe.bones=target.bones;probe.root=target.root
 		probe.base_root=target.base_root;probe.raw_import_root=target.raw_import_root;probe._import_root_captured=target._import_root_captured;probe._asset_basis_snapshot=target._asset_basis_snapshot.duplicate(true);probe._basis_lineage_snapshot=target._basis_lineage_snapshot.duplicate(true)

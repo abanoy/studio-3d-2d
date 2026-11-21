@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "groups": {
+    "parts": {
+      "writer": {
+        "checks": 12,
+        "failures": 0
+      },
+      "reader": {
+        "checks": 6,
+        "failures": 0
+      }
+    }
+  },
+  "private_receipts": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_142fcb1bcd764fae8456054c180514b2",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 20320,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 5.927
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_da3154dc0c0541b3ae3df1ae9964cb3f",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 33640,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.286
+    }
+  ]
+}

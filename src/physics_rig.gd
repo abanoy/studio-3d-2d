@@ -285,6 +285,7 @@ func capture() -> void:
 			var index: int=rig.bones[id].index;var transform:=skeleton.get_bone_global_pose(index)
 			latest[id]=transform;globals[index]=transform
 	skeleton.set_meta(PoseBounds.FINAL_META,{"owner":weakref(simulator),"poses":globals})
+	rig.refresh_render_bounds()
 
 func start() -> void:
 	rig.live_world_transform=rig.root.global_transform;rig.live_pose=initial_pose
@@ -326,6 +327,7 @@ func stop() -> Dictionary:
 	PoseBounds.clear_final(skeleton,simulator)
 	rig.live_world_transform=null;rig.live_pose=null
 	if is_instance_valid(simulator):simulator.physical_bones_stop_simulation()
+	if is_instance_valid(rig.root):rig.refresh_render_bounds()
 	return result
 
 func dispose() -> void:
@@ -335,3 +337,4 @@ func dispose() -> void:
 	if is_instance_valid(simulator):
 		simulator.physical_bones_stop_simulation();simulator.free()
 	bodies.clear();latest.clear();simulator=null
+	if is_instance_valid(rig.root):rig.refresh_render_bounds()

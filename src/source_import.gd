@@ -24,6 +24,50 @@ var native_family := ""
 var import_frame := 0
 var placement_context := {}
 var request_context: Dictionary={}
+var bundle_active:=false
+var bundle_queue: Array=[]
+var bundle_prepared: Array=[]
+var bundle_options: Dictionary={}
+var bundle_context: Dictionary={}
+var bundle_world: Dictionary={}
+var bundle_current: Dictionary={}
+var progress_bar: ProgressBar
+
+func start_bundle(requests: Array, options: Dictionary={}) -> void:
+	if pid>0 or bundle_active or app.exporting:return
+	if requests.is_empty() or requests.size()>32:app.message("Choose between 1 and 32 character parts.");return
+	if app.height_review and app.height_review.pending:app.message("Finish the pending height review first.");return
+	var parts=app.get("character_parts_editor")
+	if parts!=null and is_instance_valid(parts.dialog):parts.dialog.hide()
+	bundle_queue=requests.duplicate(true);bundle_prepared.clear();bundle_options=options.duplicate(true)
+	bundle_context=import_context();bundle_world=app.current_world().duplicate(true);bundle_active=true
+	app.stop();app.pose_editor.finish_drag();app.finish_stroke()
+	_bundle_next()
+
+func _bundle_fail(reason: String) -> void:
+	bundle_active=false;bundle_queue.clear();bundle_prepared.clear();bundle_current.clear()
+	app.message(reason+" Current scene preserved; prepared files remain in output/compatibility.")
+
+func _bundle_next() -> void:
+	if not bundle_active:return
+	if import_context()!=bundle_context or app.current_world()!=bundle_world:
+		_bundle_fail("The scene changed while preparing character parts.");return
+	if bundle_queue.is_empty():
+		bundle_active=false
+		var controller=app.get("character_parts_editor")
+		if controller==null:app.message("Character parts editor is unavailable.");return
+		var why: String=controller.install_prepared(bundle_prepared,bundle_options)
+		bundle_prepared.clear()
+		if not why.is_empty():app.message(why)
+		return
+	bundle_current=bundle_queue.pop_front()
+	var path:=str(bundle_current.get("path",""))
+	if path.get_extension().to_lower()=="glb":
+		bundle_prepared.append({"path":path,"role":str(bundle_current.get("role","part"))})
+		call_deferred("_bundle_next");return
+	launch(path,str(bundle_current.get("member","")),true,float(bundle_options.get("unit_scale",.01905)),str(bundle_options.get("content","")),null,"","Y",int(bundle_options.get("start_frame",0)),{})
+	if pid<=0:_bundle_fail("Could not start preparation for "+path.get_file()+".")
+	elif is_instance_valid(progress_label):progress_label.text="Preparing part %d of %d: %s\nConverting locally…" % [bundle_prepared.size()+1,bundle_prepared.size()+bundle_queue.size()+1,path.get_file()]
 
 func import_context() -> Dictionary:
 	var sequence=app.get("sequence_editor")
@@ -121,7 +165,7 @@ func _exit_tree() -> void:
 	_release_completed_preparation()
 
 func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void:
-	if pid > 0 or app.exporting: return
+	if pid > 0 or bundle_active or app.exporting: return
 	if app.height_review and app.height_review.pending:app.message("Finish the pending height review first.");return
 	if path.get_extension().to_lower() in ["pmd", "pmx", "vrm"]:
 		launch(path,"",as_model,0.08 if path.get_extension().to_lower() in ["pmd","pmx"] else 1.0,"",null,"","Y",at_frame,placement)
@@ -183,6 +227,14 @@ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void
 	content.placeholder_text = "Optional additional content directory or _dir.vpk"
 	content.tooltip_text = "Validated installed content is optional. Add a folder or VPK only when your model needs files from it."
 	box.add_child(content)
+	if as_model:
+		app.button(box,"Load sibling parts together…",func():
+			gmod_root=game_field.text.strip_edges();workshop_root=workshop_field.text.strip_edges();save_paths()
+			dialog.hide()
+			if appearance_ui!=null:appearance_ui.invalidate()
+			var controller=app.get("character_parts_editor")
+			if controller!=null:controller.open_sources(path,choices,scale.value,at_frame,content.text.strip_edges())
+			dialog.queue_free())
 	app.add_child(dialog)
 	dialog.confirmed.connect(func():
 		if appearance_ui != null and not appearance_ui.selection_valid(): return
@@ -272,6 +324,7 @@ func launch(path: String, member: String, as_model: bool, scale: float, content 
 	progress.add_child(box)
 	progress_label = app.label(box, "Converting locally… The editor will stay responsive.\n" + path.get_file() + "\nLarger maps can take several minutes.\n" + folder)
 	progress_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	progress_bar=ProgressBar.new();progress_bar.indeterminate=true;progress_bar.show_percentage=false;box.add_child(progress_bar)
 	cancel_button = app.button(box, "Cancel preparation", cancel)
 	app.add_child(progress)
 	progress.popup_centered(Vector2i(660, 200))
@@ -290,12 +343,20 @@ func _process(_delta: float) -> void:
 	pid = -1
 	if is_instance_valid(progress): progress.hide(); progress.queue_free()
 	var result = JSON.parse_string(FileAccess.get_file_as_string(result_path)) if FileAccess.file_exists(result_path) else null
-	if cancelled: app.message("Import cancelled. Current project preserved. Partial files: " + folder); return
+	if cancelled:
+		if bundle_active:_bundle_fail("Character import cancelled.")
+		else:app.message("Import cancelled. Current project preserved. Partial files: "+folder)
+		return
 	if not result is Dictionary or not result.get("ok", false):
+		if bundle_active:_bundle_fail(str(result.get("error","Part preparation failed")) if result is Dictionary else "Part preparation failed.");return
 		app.message(str(result.get("error", "Preparation ended without a result")) if result is Dictionary else "Local preparation failed. Check the installed tools and the import log.")
 		return
 	if not completion_matches():
+		if bundle_active:_bundle_fail("Preparation finished for an earlier scene.");return
 		app.message("Preparation finished for an earlier scene. Current scene preserved; prepared files remain in "+folder);return
+	if bundle_active:
+		bundle_prepared.append({"path":str(result.glb),"role":str(bundle_current.get("role","part"))})
+		call_deferred("_bundle_next");return
 	var error := ""
 	if actor: error = app.pose_editor.add_model(str(result.glb),import_frame,placement_context)
 	else:

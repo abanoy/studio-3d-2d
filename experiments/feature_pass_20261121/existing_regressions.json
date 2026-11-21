@@ -1,0 +1,204 @@
+{
+  "status": "PASS",
+  "complete_canonical_suite": false,
+  "cases": {
+    "ui": {
+      "exit": 0,
+      "seconds": 5.331,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_012f9c8289204f06aa178ce136a8536c",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 1368,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.264
+      },
+      "checks": 23,
+      "skips": [],
+      "status": "PASS"
+    },
+    "editor": {
+      "exit": 0,
+      "seconds": 10.347,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ec264fc7d9824fb985088f1f3445f91f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8452,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.273
+      },
+      "checks": 39,
+      "skips": [],
+      "status": "PASS"
+    },
+    "pose": {
+      "exit": 0,
+      "seconds": 11.645,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_578eaf5a30344cfeaa0adcf95eda241b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 34012,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.579
+      },
+      "checks": 37,
+      "skips": [
+        "SKIP actual MMD sample absent; original standard rig checks still required"
+      ],
+      "status": "PASS"
+    },
+    "world_selection": {
+      "exit": 0,
+      "seconds": 7.114,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b5c823ff5210446bbb89e4d36d1302b9",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 3008,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.022
+      },
+      "checks": 29,
+      "skips": [
+        "SKIP private selection fixture absent: pose-smoke/miku-project",
+        "SKIP private selection fixture absent: source-smoke/source-project",
+        "SKIP private selection fixture absent: sfm-smoke/project"
+      ],
+      "status": "PASS"
+    },
+    "recovery_write": {
+      "exit": 0,
+      "seconds": 13.565,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f57983e3b8ee49819d4afb27476864e0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 4404,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 13.463
+      },
+      "skips": [],
+      "status": "PASS"
+    },
+    "recovery": {
+      "exit": 0,
+      "seconds": 6.699,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_408651d6f2d347f59272423327ca2615",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 33628,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.574
+      },
+      "checks": 13,
+      "skips": [],
+      "status": "PASS"
+    },
+    "world_runtime": {
+      "exit": 0,
+      "seconds": 8.648,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1ced1ca8a5144cb68fe3356162d79779",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 2156,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.567
+      },
+      "checks": 33,
+      "skips": [
+        "SKIP private runtime fixture absent: pose-smoke/miku-project",
+        "SKIP private runtime fixture absent: source-smoke/source-project",
+        "SKIP private runtime fixture absent: sfm-smoke/project"
+      ],
+      "status": "PASS"
+    },
+    "secondary_motion": {
+      "exit": 0,
+      "seconds": 13.901,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a04e615216f04e8dbd398d14076471fa",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 34132,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 13.759
+      },
+      "checks": 35,
+      "skips": [],
+      "status": "PASS"
+    },
+    "fan_motion": {
+      "exit": 0,
+      "seconds": 22.26,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_353fc6fc26af4b0c9dc3ce50a83b2d48",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 14368,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 22.127
+      },
+      "checks": 31,
+      "skips": [],
+      "status": "PASS"
+    }
+  }
+}

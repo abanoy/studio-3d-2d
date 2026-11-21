@@ -1,0 +1,31 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS window title uses studio identity
+PASS default Godot boot image is disabled
+PASS new launch defaults to Simple
+PASS Simple Draw shows contextual drawing controls
+PASS Simple hides technical controls and diagnostics
+PASS basic brush and layer controls remain available
+PASS captured simple.png
+PASS Simple Scene shows camera controls
+PASS actual toggle click reveals advanced camera controls
+PASS Advanced exposes all panels and diagnostics
+PASS mode toggle preserves frame, temporary camera and undo
+PASS captured advanced.png
+PASS actual toggle click returns to Simple
+PASS hidden advanced FOV and hold interpolation remain active
+PASS switching preserves independent drawing and scene asset bytes
+PASS Simple and Advanced render identical project pixels
+FAIL WAV import works in Simple
+FAIL Simple reveals audio timing when a clip exists
+SCRIPT ERROR: Invalid access to property or key 'gain_db' on a base object of type 'Dictionary'.
+   at: run (res://tests/ui_smoke.gd:89)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/ui_smoke.gd:89)
+       [1] capture (res://src/renderer.gd:350)
+       [2] dispatch_native_frame (res://src/renderer.gd:305)
+ERROR: UI smoke watchdog expired
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://src/app.gd:582)

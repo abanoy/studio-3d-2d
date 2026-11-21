@@ -37,6 +37,7 @@ var sequence_instance:=false
 var sequence_runtime: Node
 var sequence_owner:=""
 var before_final_capture:=Callable()
+var camera_preview_sampler:=Callable() # Session-only; capture always bypasses it.
 var before_asset_replace:=Callable()
 
 func setup(width := 1920, height := 1080) -> void:
@@ -160,9 +161,11 @@ func disable_cameras(node: Node) -> void:
 	for child in node.get_children():
 		disable_cameras(child)
 
-func evaluate(keys: Array, frame: int) -> void:
+func evaluate(keys: Array, frame: int,allow_camera_preview:=true) -> void:
 	apply_lighting()
-	var value := Timeline.sample(keys, frame)
+	var value: Dictionary={}
+	if allow_camera_preview and camera_preview_sampler.is_valid():value=camera_preview_sampler.call(keys,frame)
+	if value.is_empty():value=Timeline.sample(keys, frame)
 	camera.transform = Transform3D(Basis(value.rotation), value.position)
 	camera.fov = value.fov
 	camera.near=value.near;camera.far=value.far
@@ -312,7 +315,7 @@ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 	if final and before_final_capture.is_valid():before_final_capture.call()
 	last_capture_error=""
 	if not native_view_available():last_capture_error="Native render view is unavailable.";return null
-	evaluate(keys, frame)
+	evaluate(keys, frame,false)
 	if world_runtime:world_runtime.evaluate(frame,final,"",video_settings)
 	elif model: model.apply(frame, false, final,video_settings)
 	if world_runtime and not world_runtime.evaluation_error.is_empty():

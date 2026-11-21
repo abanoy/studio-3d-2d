@@ -120,3 +120,23 @@ canonical Full is183 groups and must run on the new retrieved commit. The c315
 Full remains failed; separate scoped continuations do not replace it. See
 [current evidence](benchmarks/import_info_increment_2026-11-21.json). The seven
 actual human/device/setup gates above remain open; no owner exercise is claimed.
+
+## Completed import-info baseline, 2026-11-21
+
+The retrieved **2f1acbd7867087d9f18cfbc1122cc0c883c5f788** baseline completed
+all **183 groups** on its unchanged **1109 functional sources**, in
+3,991.586278 seconds. Independent Root postflight passed: all259 current private
+jobs closed, including five authenticated headless cases; all21 movie groups,
+267 Import info checks and626 editor/camera checks passed. This supersedes the
+pending-Full note above. Earlier435/c315 failed runs remain failed.
+
+After remote source/evidence verification and a fresh process check, Root also
+removed exactly seven audited owned CPU stages:5,640 files and47,366,153 logical
+bytes. This is a logical-byte count, not a measured allocated-space claim.
+Original assets, installed tools and the active Full checkout were unchanged.
+
+See the [scalar completion record](benchmarks/import_info_baseline_completion_2026-11-21.json)
+for the original receipt paths and SHA256 bindings. Formal scores remain
+52/54 implementation and55/62 acceptance. These results cover the completed
+baseline; later feature-branch additions have their own focused checks. Human,
+device, native appearance and clean-install observations remain separate.

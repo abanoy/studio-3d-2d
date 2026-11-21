@@ -1,0 +1,54 @@
+{
+  "format": "has_import_info_baseline_completion_1",
+  "date": "2026-11-21",
+  "status": "PASS",
+  "baseline_revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "scope": "Completed 2f1 import-info baseline and separately verified disposal of seven owned CPU stages. Later feature-branch additions are outside this Full result.",
+  "full": {
+    "functional_sources": 1109,
+    "canonical_groups": 183,
+    "import_info_checks": 267,
+    "editor_camera_checks": 626,
+    "movie_groups": 21,
+    "current_private_jobs": 259,
+    "headless_lifecycle_jobs": 5,
+    "seconds": 3991.586278,
+    "all_other_jobs_graphically_isolated": true,
+    "all_jobs_closed_and_receipts_persisted": true,
+    "source_raw_before_after_commit_exact": true,
+    "retained_outer_process_reaped_environment_preserved": true
+  },
+  "cleanup": {
+    "exact_named_roots": 7,
+    "files": 5640,
+    "logical_bytes": 47366153,
+    "allocated_bytes_freed_claimed": false,
+    "fresh_process_scan_clear": true,
+    "original_assets_or_installed_tools_modified": false,
+    "current_Full_checkout_modified": false
+  },
+  "evidence": {
+    "root_full_postflight": {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/IMPORT_INFO_FULL183_ROOT_POSTFLIGHT_20261121.json",
+      "bytes": 714,
+      "sha256": "b22f46ae0121cdb3bac085eceb0ca87dd1bbf660424639d10e957e5940510561"
+    },
+    "verified_cpu_cleanup": {
+      "path": "C:/a/Programming/cloudflare/has-body-addition-20261120/output/EASING_CLEANUP_REMOVED_20261121.json",
+      "bytes": 1592,
+      "sha256": "21d30f8e72e6f066ee1e0969682e921f8e878a0b6eaabf2e0c3eb032463e266e"
+    },
+    "prior_scoped_increment": "docs/benchmarks/import_info_increment_2026-11-21.json"
+  },
+  "prior_failed_fulls_preserved": true,
+  "formal_implementation": [
+    52,
+    54
+  ],
+  "formal_acceptance": [
+    55,
+    62
+  ],
+  "stable_requirement_statuses_changed": false,
+  "human_device_observations_substituted": false
+}

@@ -7773,3 +7773,91 @@ audible sync; and a clean approved offline Windows setup/save/reopen/export.
 The original19-layer hecatia.kra is available and hash-verified. The missing old
 November4 backups are dead, not a request to repeat. Do not interrupt the owner
 for manual exercises while independent software work remains.
+
+
+## 2026-11-21 — Camera timing added in feature branch
+
+The working feature branch now exposes Camera timing / easing in the real camera
+inspector in Simple/Advanced and Classic/Neon. Per-key Arrive/Leave percentages
+identify their neighboring frame intervals. Preview reads typed percentages and
+recalculates a temporary recipe; Bake writes ordinary integer-frame camera keys
+through one existing Undo transaction. Final capture bypasses unbaked preview.
+Original keys and independent world/drawing data remain separate. See
+docs/camera_easing.md for parent-scene, Hold, 241-key and subframe limitations.
+
+Focused actual checks: timing math24 and transaction45 passed headlessly; the
+new real-app controls/history test passed17 each in Classic and Neon (34). All
+processes were hidden and reaped; no GPU readback/native assets were used. The
+initial app fixture ran key selection and SpinBox typing within one event frame
+and expected one interval while both were staged; two failures are retained in
+output/camera-easing-app-1795275462530135500. Waiting one process frame for the
+new key's displayed values fixed the fixture; no production rule was weakened.
+Passing results are output/camera-easing-focused-1795275373332115800 and
+output/camera-easing-app-1795275514956628100. Final small usability refinement
+selects the preceding camera key when opening timing between authored keys.
+Focused graphical pixels/packed cold replay remain for Root's integrated test;
+this is not a new complete-suite or artist-review claim.
+
+Camera timing follow-up: the preceding-key selection now has an additional real
+app control. Final focused app checks pass18 per theme (36), including that
+case, at output/camera-easing-app-1795275659506750800. Together with math24 and
+transaction45, this increment has105 focused passing checks. No GPU claim.
+
+
+## 2026-11-21 — Usable camera, render-bounds and character-parts additions
+
+Owner steering supersedes the older qualification-first pickup instructions:
+implement usable features, then run focused tests/fix observed failures; keep
+broad regression separate. Do not require another complete Full before writing
+the next addition or interrupt the busy owner for manual checks.
+
+The feature branch based on2f1acbd implements camera Arrive/Leave timing with
+Preview/Recalculate and one-Undo Bake into ordinary keys; automatic per-instance
+posed render bounds with matching ID/outline copies; static character bundles
+with independent rigs, one shared six-foot body reference, visibility and
+Undo/Redo; and genuine indeterminate import/project activity bars. Simple Add→
+Character parts and Advanced Add character open the folder workflow. World and
+right-click Manage parts edit existing membership/visibility.
+
+Actual focused evidence: camera24math+45transaction+18real-app per theme, GUI31
+Neon Simple and37Classic Advanced with two48-frame1080p24fpsH264 movies; bounds
+17Model+20app CPU,20syntheticGUI per theme,13ordinary native Open checks plus four
+independently inspected close/whole-body captures. The isolated-profile native
+repeat has identical PNG bytes; it is the same13-control scope. Both face and
+whole character remain visible. Parts22generated/process-relay,13real six-MDL
+conversions,18syntheticGUI per theme and15nativeGUI/packed-cold checks pass.
+All six Junko bone inventories remain separate145/69/112/136/136/19; all673
+original/SDK inputs and owned-copy hashes remain unchanged. Import ownership53
+passes. Existing UI/editor/pose/selection/recovery/world/secondary/fan regression
+passes nine groups,240counted assertions and the recovery-write phase, with seven
+explicit missing optional native fixture messages. No complete new Full claimed.
+
+The base2f1 Full actually completed:183groups,1109unchanged functional sources,
+259closed private jobs (five real headless lifecycle cases),21movie groups and
+3991.586278s. Its safe receipt is archived. The previously remotely verified
+seven-stage CPU cleanup actually removed5640files/47366153logical bytes; allocated
+space gain was not measured. Earlier failed Fulls/skips remain historical facts.
+
+The new safe evidence is experiments/feature_pass_20261121; current scopes and
+limitations are docs/benchmarks/feature_pass_2026-11-21.json and the camera/bounds/
+character-parts guides. Raw native worlds, artwork and captures stay private.
+Failed fixture/input/launch attempts are retained, including the missing-audio
+standalone regression and exact-binary scale expectation correction. No tolerance
+was relaxed. Two legacy source files' original CRLF endings were restored; the
+Classic bounds/parts GUI scopes passed afterward.
+
+Local optional review: output/owner-review-feature-pass/Open Junko parts.bat.
+It opens a separate portable all-six-parts project using this feature checkout;
+installed Studio and originals are unchanged. Retain this private deliverable
+and source checkout while goal work continues. This entry does not yet claim a
+new pushed/retrieved commit or post-publication cleanup.
+
+Next additions: explicit safe body→clothing/hair pose following; Miku continuous
+hair/body contact and imported rest-hair settling. Static bundling does not
+implement those. Older HAS readers ignore the new group's intrinsic height
+metadata, and source clothing can hide intentionally absent skin. Do not invent
+missing geometry or claim universal native fidelity. Discovery and lighting are
+being assigned to separate user-owned workers; integrate their branches later.
+Formal52/54 implementation and55/62 acceptance remain unchanged. Human/native
+appearance, novice, learner, tablet/audio and clean offline setup observations
+remain external; do not ask again while independent work is available.

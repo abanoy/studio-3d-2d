@@ -138,8 +138,12 @@ func start(request: Dictionary,snapshot_state: Dictionary={}) -> void:
 	panel.add_theme_stylebox_override("panel", preload("res://src/studio_theme.gd").surface("f4f7fb","dce5ee")); progress.add_child(panel)
 	var box := VBoxContainer.new(); panel.add_child(box)
 	_progress_label=app.label(box, "Preparing editable project and verifying assets…\n" + str(request.path));_progress_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	var activity := ProgressBar.new()
+	activity.indeterminate = true; activity.show_percentage = false
+	activity.custom_minimum_size.y = 8; activity.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	box.add_child(activity)
 	app.button(box, "Cancel", cancel)
-	progress.popup_centered(Vector2i(650,160))
+	progress.popup_centered(Vector2i(650,180))
 
 func _write_cancel() -> void:
 	if cancel_path.is_empty():return

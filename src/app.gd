@@ -44,6 +44,7 @@ var particle_editor: Node
 var has_project
 var video := {"width": 1920, "height": 1080, "fps_num": 24, "fps_den": 1, "duration_frames": 48,"visibility_fade_ms":300}
 var keys: Array = []
+var camera_easing: Node
 var layers: Array = []
 var palette: Array=[]
 var palette_editor: Node
@@ -241,6 +242,7 @@ var clip_editor: Node
 var import_actions: Node
 var height_review: Node
 var map_calibration: Node
+var character_parts_editor: Node
 var height_choice: CheckBox
 var project_options: AcceptDialog
 var project_timing: Node
@@ -544,6 +546,8 @@ func _ready() -> void:
 	if StudioTheme.is_neon(): build_draw_inspector()
 	camera_transform_editor=preload("res://src/camera_transform_editor.gd").new();add_child(camera_transform_editor);camera_transform_editor.setup(self)
 	if StudioTheme.is_neon(): build_camera_inspector()
+	camera_easing=preload("res://src/camera_easing_editor.gd").new();add_child(camera_easing);camera_easing.setup(self)
+	renderer.camera_preview_sampler=camera_easing.sample_preview
 	sequence_editor=preload("res://src/sequence_editor.gd").new();add_child(sequence_editor);sequence_editor.setup(self)
 	if StudioTheme.is_neon(): compact_timeline_rows()
 	keyboard_shortcuts.refresh_labels()
@@ -552,6 +556,7 @@ func _ready() -> void:
 	import_actions=ImportActions.new();import_actions.app=self;add_child(import_actions)
 	height_review=preload("res://src/import_height_review.gd").new();height_review.app=self;add_child(height_review)
 	map_calibration=preload("res://src/map_calibration.gd").new();map_calibration.app=self;add_child(map_calibration)
+	character_parts_editor=preload("res://src/character_parts_editor.gd").new();character_parts_editor.app=self;add_child(character_parts_editor)
 	get_window().files_dropped.connect(import_actions.os_drop)
 	world_selection.initialize_mask()
 	var opened: bool = load_demo_room() if "--demo-room" in OS.get_cmdline_user_args() else new_project()
@@ -3108,6 +3113,7 @@ func build_ui() -> void:
 	simple_only(menu_button(title_row, "Add", "add", [
 		["3D scene or map…", pick_scene_file],
 		["Poseable model…", func(): pose_editor.import_dialog()],
+		["Character parts…", func(): character_parts_editor.open_folder()],
 		["Installed content…", func(): source_browser.open()],
 		["Audio (WAV, MP3, Ogg)…", func(): choose_audio_at_playhead()]],
 		"Add a scene, a model, installed content or audio"))
@@ -3175,6 +3181,7 @@ func build_ui() -> void:
 	header_button(toolbar, "Sample room", "building", demo_dialog, "Open the original camera/drawing example as a new unsaved project")
 	header_button(toolbar, "Add scene", "scene", pick_scene_file, "Add a 3D environment: GLB, glTF, FBX, OBJ, MMD or an installed Source map")
 	header_button(toolbar, "Add model", "figure", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment")
+	header_button(toolbar, "Add character", "figure", func(): character_parts_editor.open_folder(), "Load aligned model parts together under one character root")
 	header_button(toolbar, "Installed", "package", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts")
 	header_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead")
 	header_button(toolbar,"Options","grid",show_project_options,"Project settings, including visibility fades. Saved with this HAS project.")
@@ -3955,7 +3962,7 @@ func set_frame(value: int) -> void:
 	frame_box.set_block_signals(true);frame_box.max_value=video.duration_frames;frame_box.set_value_no_signal(frame);frame_box.set_block_signals(frame_signals_blocked)
 	refresh_transport_text()
 	if project_timing:project_timing.sync()
-	if mode.selected != 1: renderer.evaluate(keys, frame)
+	if mode.selected != 1 or (camera_easing and camera_easing.preview_active()): renderer.evaluate(keys, frame)
 	pose_editor.apply_frame()
 	pose_editor.refresh_values()
 	overlay_dirty = true
@@ -4371,6 +4378,7 @@ func apply_command(command: Dictionary, side: String) -> bool:
 	changed()
 	if drawing_command:refresh_layer();return true
 	set_frame(frame)
+	if command.type=="keys" and command.get("camera_timing_bake",false):renderer.evaluate(keys,frame,false)
 	if command.type=="video":renderer.restore_view(view)
 	return true
 

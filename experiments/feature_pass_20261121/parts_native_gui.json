@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "groups": {
+    "native_parts": {
+      "writer": {
+        "checks": 9,
+        "failures": 0,
+        "parts": 6
+      },
+      "reader": {
+        "checks": 6,
+        "failures": 0,
+        "parts": 6
+      }
+    }
+  },
+  "private_receipts": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_e297288db1324d60a731edff6e534fb7",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 28308,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.181
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_d568f6c598ad4d1ebf6b2a3e0ecf3d47",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 32092,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 6.14
+    }
+  ]
+}

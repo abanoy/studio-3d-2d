@@ -1,0 +1,25 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS two real independent rig GLBs created
+PASS ordinary New
+PASS prepared GLB queue completed
+PASS one character and two model parts installed
+PASS Scale1 applies one shared six-foot intrinsic reference
+PASS parent does not absorb independent part rigs
+PASS prepared sibling origins stay aligned
+PASS bundle installation is one Undo transaction
+PASS Undo removes complete character
+PASS Redo restores exact character and metadata
+PASS per-frame availability handles repeated calls without world snapshots
+PASS Manage parts exposes both parts
+PASS part visibility changes actual scene
+PASS visibility Undo restores source visibility
+PASS world rebuild preserves bundle metadata and independent visibility
+PASS serialized membership resolves after rebuild
+PASS ordinary project save accepts bundled assets and metadata
+PASS portable project reload retains character membership
+PASS original prepared inputs remain unchanged
+PASS real sequential preparer completions install both parts together
+PASS sequential preparation still installs one Undo transaction
+PASS finished Windows preparer entries are released
+CHARACTER_PARTS_FEATURE {"checks":22,"failures":0}

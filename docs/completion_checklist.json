@@ -1,13 +1,21 @@
 {
+  "latest_feature_pass_20261121": {
+    "status": "IMPLEMENTED_FOCUSED_QUALIFIED",
+    "base_revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+    "evidence": "docs/benchmarks/feature_pass_2026-11-21.json",
+    "formal_status_changed": false,
+    "scores": "52/54 implementation;55/62 acceptance",
+    "next": "Publish/retrieve the feature batch, continue pose following and continuous secondary contact; a complete-suite result for this source remains separate."
+  },
   "latest_import_info_increment_20261121": {
-    "status": "ADOPTED_SCOPED_QUALIFIED_FRESH_FULL_REQUIRED",
+    "status": "FULL183_BASELINE_PASS",
     "base_revision": "c31576d0c1d84030d51ec886f2f3976a60a70c7b",
     "functional_sources": 1109,
     "canonical_groups": 183,
-    "evidence": "docs/benchmarks/import_info_increment_2026-11-21.json",
+    "evidence": "docs/benchmarks/import_info_baseline_completion_2026-11-21.json",
     "formal_status_changed": false,
     "scores": "52/54 implementation;55/62 acceptance",
-    "next": "Commit/push, verify a fresh remote checkout, stage original historical fixtures read-only, then run all183 groups on the committed source. Failed c315 Full remains failed."
+    "next": "The committed 2f1 baseline passed all183 groups. Continue usable feature additions with focused checks on changed code; this baseline does not certify later feature-branch changes. Prior failed Fulls and remaining human/device observations remain separate."
   },
   "latest_default_off_followup_20261121": {
     "source_base": "435dc02426a7cdd313e43fe674c9008520845428",
@@ -137,7 +145,6 @@
       "Continue exact converted-weight calibration/contact and bounded per-instance render-culling repair"
     ]
   },
-
   "latest_owner_requested_increment_20261121": {
     "format": "has_import_off_map_owner_increment_1",
     "date": "2026-11-21",
@@ -285,7 +292,7 @@
       "final_glb_bytes": 2478804,
       "parameter_sha256": "9b007f229d7b9dd837eb443cc31c6649620b17738481904aa7efd132164ae9dd",
       "normal_metric": "raw_unnormalized_euclidean_vector_distance",
-      "normal_threshold": 0.00002,
+      "normal_threshold": 2e-05,
       "max_normal_error": 0,
       "normal_rows": 9661,
       "native_bone_bindings": 69,
@@ -3207,7 +3214,7 @@
       "implementation": "implemented",
       "verification": "verified",
       "acceptance_status": "verified",
-      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over.",
+      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10\u201330seconds without taking over.",
       "evidence": [
         {
           "kind": "source",
@@ -3817,7 +3824,7 @@
       ],
       "title": "Advanced selection, lasso/painted masks, glow, multiple palettes and proportion tools",
       "status": "conditional_refinement",
-      "rule": "Some are already implemented; pursue remaining refinements after stages1–4 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
+      "rule": "Some are already implemented; pursue remaining refinements after stages1\u20134 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
     },
     {
       "id": "O-RENDER",
@@ -4226,12 +4233,12 @@
     {
       "priority": 0,
       "requirement": "IMPORT-03",
-      "action": "Fresh360 complete Windows PASS:170groups/21movies/1084unchanged/220closed private jobs and provenance verified. Portable live known-Junko conversion, exact0.0 raw-L2 normals under2e-5,69final-checksum bone bindings, packaged25/15/102 controls and app adoption pass. Keep failed1dc/63closedjobs and fixture-only29/foundation167 history. Close the concrete supported-profile reporting gap: limits are retained only in JSON and displayed wording is stale; qualify the isolated43-control Import info candidate without inventing unsupported physics. Also qualify the bounded Source map-light compatibility fix against the two actual owner failures; rawentities and geometry must be preserved with actionable omissions. Artist comparison remains external; no universal49/shader or PMX200 gate is inferred. All62statuses/52of54/55of62 remain unchanged."
+      "action": "The 2f1 baseline completed183 Windows groups,1109 unchanged functional sources,259 closed private jobs and21 movie groups. Persistent Import info and the two supported Source-map editor routes are adopted; do not restart their old candidate gates. Preserve earlier failed Fulls and original native evidence. The later feature pass adds camera easing, automatic posed bounds and static character bundles with focused actual checks; see docs/benchmarks/feature_pass_2026-11-21.json. Artist comparison remains external; formal52/54 implementation and55/62 acceptance are unchanged."
     },
     {
       "priority": 1,
       "requirement": "IMPORT-03",
-      "action": "Continue owner followups after the verified360 baseline: old973review nativeHair is five owners/49retained, not all strands. Qualify grounded ALL49 known-Junko coverage and measure the separate preview batching proposal; lag sample is not a causal/FPS benchmark. Qualify OFF-default import, setup multi-selection32, explicit focus/inclusion/wind separation, expressions discovery and camera/radial behavior as scoped additions before adoption. Preserve six-foot Scale1, Off restoration, Undo/Record, poses, parented motion and source ownership. The authorized generated-output refresh preserves153old contents with18unrecovered old generated logs/results; final171snapshot09c920 is explicit and alloutputs/pyc stay out of the index."
+      "action": "Follow the owner's implementation-first workflow: build usable additions, then focused checks/fixes; complete-suite verification is separate. Continue explicit body-to-part pose following and continuous loose-hair/body contact, including Miku arm penetration and imported rest-hair settling. Static bundles keep independent rigs and do not yet follow body poses. Preserve six-foot Scale1, Off restoration, Undo/Record and source ownership. Retain failed/skipped evidence and exclude generated outputs/bytecode/private artwork from commits. Discovery and lighting are separate sibling assignments; do not interrupt the busy owner for manual reviews."
     },
     {
       "priority": 2,
@@ -4393,7 +4400,7 @@
       "actual_v3_retry_status": "REFUSED_RUNTIME_BYTECODE_DIFFERS_FROM_PINNED_SOURCE_BEFORE_OPERATOR",
       "actual_v3_export_or_normal_qualified": false,
       "original_raw_normal_metric": "raw_unnormalized_euclidean_vector_distance",
-      "original_raw_normal_threshold": 0.00002,
+      "original_raw_normal_threshold": 2e-05,
       "normalization_or_repair_permitted": false,
       "normal_non_NORMAL_resource_rendering_app_adoption_qualified": false,
       "packet": "experiments/source_material_carrier_20261120",
@@ -4602,7 +4609,7 @@
       "CONTENTS_sha256": "70ed4e934401440f9be3b077574f98569e02101589c0d57869682b48bbe89ab8",
       "SUMMARY_sha256": "ef88e9973ee04e0d39e6762852f45bca40511737873b1dea94702f27ecaa5f23",
       "actual_worker_sha256": "9ed96c403e09353515b65fbf12dcf4145a9fbd39949125769ff637157292380a",
-      "normal_threshold_unchanged": 0.00002,
+      "normal_threshold_unchanged": 2e-05,
       "normal_non_NORMAL_resource_rendering_export_and_app_adoption_qualified": false,
       "next": "Qualify bounded actual image-buffer/resource-encoding and shared carrier-export boundaries without relaxing the original gates.",
       "formal62_statuses_52of54_55of62_unchanged": true,
@@ -4717,7 +4724,7 @@
         "main_ref_matches": true,
         "receipt_sha256": "05ba758673bb8da33a0253da638936732c08ed8b07f302ee7a598dc9eeca05d3"
       },
-      "strict_normal_threshold": 0.00002,
+      "strict_normal_threshold": 2e-05,
       "resource_non_NORMAL_normal_export_and_adoption_gates_unchanged": true,
       "formal62_statuses_52of54_55of62_scores_unchanged": true,
       "new_two_packet_checkpoint_remote_proof_claimed": false
@@ -4862,7 +4869,7 @@
         ],
         "new_combined_or_shared_exporter_code_included": false
       },
-      "strict_normal_threshold": 0.00002,
+      "strict_normal_threshold": 2e-05,
       "non_NORMAL_resource_export_and_adoption_gates_unchanged": true,
       "formal_62_statuses_and_52_of_54_55_of_62_scores_unchanged": true
     },
@@ -5002,7 +5009,7 @@
       "B_dependency_closure_qualified": false,
       "non_NORMAL_B_semantic_equivalence_qualified": false,
       "normal_fidelity_qualified": false,
-      "original_strict_normal_threshold": 0.00002,
+      "original_strict_normal_threshold": 2e-05,
       "carrier_written_or_qualified": false,
       "exporter_invoked_or_qualified": false,
       "blend_saved": false,
@@ -5158,7 +5165,7 @@
         "strict_non_NORMAL_passed": true,
         "final_image_texture_material_extensions_absent": true,
         "raw_normal_metric": "raw_unnormalized_euclidean_vector_distance",
-        "raw_normal_threshold": 0.00002,
+        "raw_normal_threshold": 2e-05,
         "raw_normal_max_euclidean_error": 0.00121654672362075,
         "raw_normal_passed": false,
         "overall_carrier_qualified": false,
@@ -5178,7 +5185,7 @@
         "source_points": 9661,
         "normal_rows": 9661,
         "raw_L2_maximum": 0,
-        "raw_L2_threshold": 0.00002,
+        "raw_L2_threshold": 2e-05,
         "passed": true,
         "original_to_raw_strict_non_NORMAL_replayed": true,
         "raw_to_corrected_sealed_preservation": true,

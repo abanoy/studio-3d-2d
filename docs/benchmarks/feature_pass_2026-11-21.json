@@ -1,0 +1,92 @@
+{
+  "format": "has_feature_pass_1",
+  "date": "2026-11-21",
+  "status": "IMPLEMENTED_FOCUSED_QUALIFIED",
+  "base_revision": "2f1acbd7867087d9f18cfbc1122cc0c883c5f788",
+  "features": [
+    "Per-key camera Arrive/Leave, preview and ordinary-key Bake with one Undo",
+    "Automatic instance render bounds for posed/skinned meshes and selection copies",
+    "Static character-part bundles with shared six-foot reference, visibility and Undo",
+    "Indeterminate project/import activity bars"
+  ],
+  "scopes": {
+    "camera": {
+      "CPU_math": 24,
+      "CPU_transaction": 45,
+      "CPU_actual_app_each_theme": 18,
+      "Neon_Simple_GUI_and_reader": 31,
+      "Classic_Advanced_GUI_and_reader_with_movies": 37,
+      "movies": {
+        "count": 2,
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "24/1",
+        "frames_each": 48,
+        "seconds_each": 2
+      }
+    },
+    "bounds": {
+      "CPU_Model": 17,
+      "CPU_actual_app": 20,
+      "synthetic_GUI_writer_reader_each_theme": 20,
+      "native_ordinary_Open": 13,
+      "native_visual_captures": 4,
+      "isolated_profile_repeat_is_same_scope": true,
+      "face_and_whole_body_visually_retained": true
+    },
+    "parts": {
+      "CPU_generated_and_preparer_relay": 22,
+      "actual_six_MDL_conversion_and_assembly": 13,
+      "synthetic_GUI_writer_reader_each_theme": 18,
+      "native_GUI_writer_reader": 15,
+      "independent_bones": {
+        "body": 145,
+        "hair": 69,
+        "dress": 112,
+        "skirt": 136,
+        "miniskirt": 136,
+        "mask": 19
+      },
+      "original_and_SDK_files_preserved": 673
+    },
+    "existing_import_ownership": 53,
+    "existing_regressions": {
+      "groups": 9,
+      "counted_assertions": 240,
+      "additional_recovery_write_phase": true,
+      "optional_missing_fixture_messages": 7,
+      "complete_suite": false
+    }
+  },
+  "evidence": "experiments/feature_pass_20261121",
+  "workflow": "Owner requested usable implementation first, focused checks and fixes afterward; complete-suite qualification is separate.",
+  "limitations": [
+    "Body/clothes/hair skeletons are independent; automatic pose following remains unimplemented",
+    "Older readers ignore the new group height metadata",
+    "Source clothing can cover intentionally absent skin; hiding it reveals original gaps",
+    "Miku arm penetration and general imported jiggle gravity remain separate work",
+    "Native artist/source-renderer comparison, novice/learner/device/offline-install observations remain external",
+    "The 183-group PASS applies to base2f1; no complete-suite PASS is claimed for this feature source"
+  ],
+  "failed_iterations": [
+    "Parts test initially routed embedded-window input to the wrong viewport; its follow-on Undo then referenced a removed instance",
+    "The generated skinned-parts fixture used a mesh-node offset instead of source weighted-vertex offsets, so initial images were identical",
+    "JSON numeric expectation lost exact scale bits; the reader now compares their binary encoding without a relaxed tolerance",
+    "First bounded regression run omitted verify.py generated audio prerequisites; fixture creation now matches canonical",
+    "First native face launch put its log in a folder required empty; data and log folders were separated",
+    "Initial restricted face CPU launch could not create its private desktop; approved-host retry passed"
+  ],
+  "formal_implementation": [
+    52,
+    54
+  ],
+  "formal_acceptance": [
+    55,
+    62
+  ],
+  "requirement_statuses_changed": false,
+  "private_artwork_published": false,
+  "new_cleanup_claimed": false,
+  "review": "Local private output/owner-review-feature-pass/Open Junko parts.bat; source checkout retained while work continues"
+}
