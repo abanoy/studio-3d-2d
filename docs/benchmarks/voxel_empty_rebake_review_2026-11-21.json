@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-21",
+  "branch": "worker/lighting-rebake-review-20261121",
+  "base": "38b39ec7a057ad6c8a0ec8aaf557574cb5ce5706",
+  "primary_overlay_snapshot": "2ec0fd640137909570dd89d0e1f6f015d30d1581",
+  "primary_runtime_before_sha256": "a99f28128f963a84133e1e862f67b1d48b012bde6fb9865c17cb90598dcb1816",
+  "scope": "Empty room bounds after earlier successful real bake, later sync visibility, export admission and Undo recovery.",
+  "before": {
+    "checks": 18,
+    "failures": 4,
+    "folder": "voxel-empty-rebake-1795288939879838600"
+  },
+  "after": {
+    "checks": 18,
+    "failures": 0,
+    "folder": "voxel-empty-rebake-1795289136001929400"
+  },
+  "primary_native_boundary_regression": {
+    "checks": 42,
+    "failures": 0,
+    "folder": "scene-voxel-1795288988775087400",
+    "test_unchanged": true
+  },
+  "source_sha256": {
+    "src/scene_voxel_runtime.gd": "fa9d4e43b375a61ccbc3e5a653cc423a22c4c8a1f8d357ab3d5b7a90b1826a3a",
+    "tests/scene_voxel_empty_rebake.gd": "2d214774645a39a8f7e44bf90b1353f4c942179952a9879f16a299aed9899125",
+    "tests/scene_voxel_smoke.gd": "4e4f6a47e38d2dfdc25263405b103402937ebceb41ce2e05ab2fecf83217fffb",
+    "tests/verify_voxel_empty_rebake.py": "5a512860d436fa7f400a0c78e14e5e0c22a14ea5b7080130637fb3eeab7b9673"
+  },
+  "runtime_delta_lines": 2,
+  "graphics_status": "UNRUN_PRIMARY_GPU_SLOT_RESERVED_FOR_FULL5D",
+  "graphics_checks_prepared": 22,
+  "limits": [
+    "Headless bake/data/node flags do not establish graphical pixels.",
+    "Capture admission refusal was tested; actual failed movie and recovery movies remain pending the serial GPU slot.",
+    "Qualified worker96 previews/reopening/movies are a separate source scope."
+  ]
+}
