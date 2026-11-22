@@ -1,0 +1,39 @@
+{
+  "baseline_sparse_sha256": "8d7f95d388a2874a966c6098c6621e334784b65cf79782f91bd8344e9e597279",
+  "typed_sha256": "be8673e19c35bb09c69bdfb64e61169c7f954ea5b95e27c99f91aa3e3569faef",
+  "reverse_byte_exact": true,
+  "patches": [
+    {
+      "old": "const MAX_CORRECTIONS:=24",
+      "new": "const MAX_CORRECTIONS:=24\nclass CapsuleFrame:\n\textends RefCounted\n\tvar starts:=PackedVector3Array()\n\tvar finishes:=PackedVector3Array()\n\tvar axes:=PackedVector3Array()\n\tvar inverse_lengths:=PackedFloat64Array()\n\tvar radii:=PackedFloat64Array()\n\tvar radius_squared:=PackedFloat64Array()\n\tvar broad: Array[AABB]=[]\n"
+    },
+    {
+      "old": "func _capsules(actor: RefCounted,pose: Dictionary,context: Dictionary) -> Dictionary:",
+      "new": "func _capsules(actor: RefCounted,pose: Dictionary,context: Dictionary) -> CapsuleFrame:"
+    },
+    {
+      "old": "return {\"starts\":starts,\"finishes\":finishes,\"axes\":axes,\"inverse_lengths\":inverse_lengths,\"radii\":radii,\"radius_squared\":radius_squared,\"broad\":broad}",
+      "new": "var frame:=CapsuleFrame.new()\n\tframe.starts=starts;frame.finishes=finishes;frame.axes=axes;frame.inverse_lengths=inverse_lengths;frame.radii=radii;frame.radius_squared=radius_squared;frame.broad=broad\n\treturn frame"
+    },
+    {
+      "old": "func _row_summary(ri: int,points: PackedVector3Array,caps: Dictionary) -> Dictionary:",
+      "new": "func _row_summary(ri: int,points: PackedVector3Array,caps: CapsuleFrame) -> Dictionary:"
+    },
+    {
+      "old": "func _scan_original(points: PackedVector3Array,caps: Dictionary,skipped: Dictionary) -> Dictionary:",
+      "new": "func _scan_original(points: PackedVector3Array,caps: CapsuleFrame,skipped: Dictionary) -> Dictionary:"
+    },
+    {
+      "old": "func _scan_cached(points: PackedVector3Array,caps: Dictionary,skipped: Dictionary,active: Dictionary,dirty: Dictionary,initialized: bool) -> Dictionary:",
+      "new": "func _scan_cached(points: PackedVector3Array,caps: CapsuleFrame,skipped: Dictionary,active: Dictionary,dirty: Dictionary,initialized: bool) -> Dictionary:"
+    },
+    {
+      "old": "var caps: Dictionary={}",
+      "new": "var caps: CapsuleFrame=null"
+    },
+    {
+      "old": "caps.is_empty()",
+      "new": "caps==null"
+    }
+  ]
+}

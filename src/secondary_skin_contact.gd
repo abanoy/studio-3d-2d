@@ -9,6 +9,16 @@ const IK=preload("res://src/limb_ik.gd")
 const MAX_VERTICES:=200000
 const MAX_HAIR_VERTICES:=4096
 const MAX_CORRECTIONS:=24
+class CapsuleFrame:
+	extends RefCounted
+	var starts:=PackedVector3Array()
+	var finishes:=PackedVector3Array()
+	var axes:=PackedVector3Array()
+	var inverse_lengths:=PackedFloat64Array()
+	var radii:=PackedFloat64Array()
+	var radius_squared:=PackedFloat64Array()
+	var broad: Array[AABB]=[]
+
 var rows: Array=[]
 var sources: Array=[]
 var watches: Array=[]
@@ -20,6 +30,7 @@ var driver_slots: Dictionary={}
 var driver_rows: Dictionary={}
 var collider_defs: Array=[]
 var invalidated:=false
+var verify_row_cache:=false
 var stats:={"vertices":0,"array_reads":0,"refreshes":0,"corrections":0,"blocked_points":0,"hot_array_reads":0,"total_usec":0,"max_usec":0,"remaining_pairs":0,"minimum_gap":0.,"iteration_limit_hits":0}
 func changed() -> void:invalidated=true
 static func create(actor: RefCounted,chains: Array) -> Dictionary:
@@ -176,6 +187,89 @@ static func rotation(center: Vector3,point: Vector3,a: Vector3,b: Vector3,radius
 		else:lo=middle
 	if not closest.is_empty() and closest.rotation.get_angle()<hi:return closest
 	return {"rotation":Quaternion(turn,hi)}
+func _count(key: String,amount: int=1) -> void:stats[key]=int(stats.get(key,0))+amount
+func _invariant_capsules(actor: RefCounted,chains: Array) -> bool:
+	var drivers: Dictionary={}
+	for chain in chains:
+		for id in chain.ids:drivers[id]=true
+	for collider in collider_defs:
+		for key in ["binding","tail_binding"]:
+			var value=collider.get(key)
+			if not value is Dictionary or not value.get("kind","") in ["bone","offset"] or not value.get("id") is String:return false
+			var at: String=value.id;var visited: Dictionary={}
+			while at!="@root":
+				if visited.has(at) or visited.size()>=512 or not actor.bones.has(at) or drivers.has(at):return false
+				visited[at]=true;at=actor.parent_id(at)
+	return true
+func _capsules(actor: RefCounted,pose: Dictionary,context: Dictionary) -> CapsuleFrame:
+	var starts:=PackedVector3Array();var finishes:=PackedVector3Array();var axes:=PackedVector3Array();var inverse_lengths:=PackedFloat64Array();var radii:=PackedFloat64Array();var radius_squared:=PackedFloat64Array();var broad: Array[AABB]=[]
+	for c in collider_defs:
+		var a: Transform3D=FK.binding(actor,c.binding,pose,context);var b: Vector3=FK.binding(actor,c.tail_binding,pose,context).origin
+		var axis: Vector3=b-a.origin;var radius: float=c.radius*a.basis.get_scale().x
+		starts.append(a.origin);finishes.append(b);axes.append(axis);inverse_lengths.append(1./axis.length_squared() if axis.length_squared()>0 else 0.);radii.append(radius);radius_squared.append(radius*radius);broad.append(AABB(a.origin,Vector3.ZERO).expand(b).grow(radius))
+	_count("capsule_builds")
+	var frame:=CapsuleFrame.new()
+	frame.starts=starts;frame.finishes=finishes;frame.axes=axes;frame.inverse_lengths=inverse_lengths;frame.radii=radii;frame.radius_squared=radius_squared;frame.broad=broad
+	return frame
+func _row_summary(ri: int,points: PackedVector3Array,caps: CapsuleFrame) -> Dictionary:
+	var row: Dictionary=rows[ri];var point: Vector3=points[ri];var minimum:=0.;var count:=0;var worst:=0.;var collider:=-1
+	var narrow_count:=0
+	for ci in row.colliders:
+		if not caps.broad[ci].has_point(point):continue
+		narrow_count+=1
+		var from_start: Vector3=point-caps.starts[ci]
+		var distance_squared: float=(from_start-caps.axes[ci]*clampf(from_start.dot(caps.axes[ci])*caps.inverse_lengths[ci],0.,1.)).length_squared()
+		if distance_squared>=caps.radius_squared[ci]:continue
+		var gap: float=sqrt(distance_squared)-caps.radii[ci]
+		minimum=minf(minimum,gap);count+=1
+		if gap<worst:worst=gap;collider=ci
+	_count("broad_tests",row.colliders.size());_count("narrow_tests",narrow_count)
+	_count("cached_rows_evaluated")
+	return {"minimum":minimum,"remaining":count,"worst":worst,"collider":collider}
+func _scan_original(points: PackedVector3Array,caps: CapsuleFrame,skipped: Dictionary) -> Dictionary:
+	# Preserve the original ascending row/collider scan as the authority.
+	var worst:=0.;var minimum:=0.;var remaining:=0;var selected: Dictionary={}
+	var broad_count:=0;var narrow_count:=0
+	for ri in range(rows.size()):
+		var row: Dictionary=rows[ri];var point: Vector3=points[ri]
+		for ci in row.colliders:
+			broad_count+=1
+			if not caps.broad[ci].has_point(point):continue
+			narrow_count+=1
+			var from_start: Vector3=point-caps.starts[ci]
+			var distance_squared: float=(from_start-caps.axes[ci]*clampf(from_start.dot(caps.axes[ci])*caps.inverse_lengths[ci],0.,1.)).length_squared()
+			if distance_squared>=caps.radius_squared[ci]:continue
+			var gap: float=sqrt(distance_squared)-caps.radii[ci]
+			minimum=minf(minimum,gap);remaining+=1
+			if gap<worst and not skipped.has(ri):worst=gap;selected={"index":ri,"row":row,"point":point,"start":caps.starts[ci],"finish":caps.finishes[ci],"radius":caps.radii[ci],"collider":ci}
+	_count("broad_tests",broad_count);_count("narrow_tests",narrow_count)
+	_count("authoritative_scans")
+	return {"minimum":minimum,"remaining":remaining,"selected":selected}
+func _scan_cached(points: PackedVector3Array,caps: CapsuleFrame,skipped: Dictionary,active: Dictionary,dirty: Dictionary,initialized: bool) -> Dictionary:
+	# Nonpenetrating rows contribute only zero to the original summary. Revisit
+	# them only when their controlling driver moved, never change row tie order.
+	if not initialized:
+		for ri in range(rows.size()):
+			var summary: Dictionary=_row_summary(ri,points,caps)
+			if int(summary.remaining)>0:active[ri]=summary
+	else:
+		for ri in dirty:
+			var summary: Dictionary=_row_summary(int(ri),points,caps)
+			if int(summary.remaining)>0:active[ri]=summary
+			else:active.erase(ri)
+	dirty.clear()
+	var indices: Array=active.keys();indices.sort()
+	var worst:=0.;var minimum:=0.;var remaining:=0;var selected: Dictionary={}
+	for ri in indices:
+		var summary: Dictionary=active[ri]
+		minimum=minf(minimum,float(summary.minimum));remaining+=int(summary.remaining)
+		if float(summary.worst)<worst and not skipped.has(ri):
+			worst=float(summary.worst);var ci: int=int(summary.collider)
+			selected={"index":ri,"row":rows[ri],"point":points[ri],"start":caps.starts[ci],"finish":caps.finishes[ci],"radius":caps.radii[ci],"collider":ci}
+	_count("active_rows_scanned",indices.size());_count("cached_scans")
+	stats["maximum_active_rows"]=maxi(int(stats.get("maximum_active_rows",0)),indices.size())
+	return {"minimum":minimum,"remaining":remaining,"selected":selected}
+
 func constrain(actor: RefCounted,_chains: Array,pose: Dictionary) -> Dictionary:
 	var started:=Time.get_ticks_usec()
 	if invalidated:return {"error":"Generated skin geometry changed; restart Hair & clothes."}
@@ -203,27 +297,25 @@ func constrain(actor: RefCounted,_chains: Array,pose: Dictionary) -> Dictionary:
 		var point: Vector3=origins[rows[ri].origin_source]*rows[ri].origin_weight
 		for slot in rows[ri].slots:point+=positions[slot]*weights[slot]
 		current_points[ri]=point
-	# The last scan is read-only and records unresolved constraints if a bounded
-	# solve reaches its limit. A finite budget is not a completeness guarantee.
+	var use_cache: bool=_invariant_capsules(actor,_chains)
+	_count("cache_eligible_calls" if use_cache else "cache_fallback_calls")
+	var caps: CapsuleFrame=null;var summaries: Variant=null;var dirty: Variant=null;var cache_initialized:=false;var cache_started:=false
 	for iteration in range(MAX_CORRECTIONS+1):
-		var starts:=PackedVector3Array();var finishes:=PackedVector3Array();var axes:=PackedVector3Array();var inverse_lengths:=PackedFloat64Array();var radii:=PackedFloat64Array();var radius_squared:=PackedFloat64Array();var broad: Array[AABB]=[]
-		for c in collider_defs:
-			var a: Transform3D=FK.binding(actor,c.binding,result,context);var b: Vector3=FK.binding(actor,c.tail_binding,result,context).origin
-			var axis: Vector3=b-a.origin;var radius: float=c.radius*a.basis.get_scale().x
-			starts.append(a.origin);finishes.append(b);axes.append(axis);inverse_lengths.append(1./axis.length_squared() if axis.length_squared()>0 else 0.);radii.append(radius);radius_squared.append(radius*radius);broad.append(AABB(a.origin,Vector3.ZERO).expand(b).grow(radius))
+		if not use_cache or caps==null:caps=_capsules(actor,result,context)
 		if not context.error.is_empty():return {"error":context.error}
-		var worst:=0.;var minimum:=0.;var remaining:=0;var selected: Dictionary={}
-		for ri in range(rows.size()):
-			var row: Dictionary=rows[ri];var point: Vector3=current_points[ri]
-			for ci in row.colliders:
-				if not broad[ci].has_point(point):continue
-				var from_start: Vector3=point-starts[ci]
-				var distance_squared: float=(from_start-axes[ci]*clampf(from_start.dot(axes[ci])*inverse_lengths[ci],0.,1.)).length_squared()
-				if distance_squared>=radius_squared[ci]:continue
-				var gap: float=sqrt(distance_squared)-radii[ci]
-				minimum=minf(minimum,gap);remaining+=1
-				if gap<worst and not skipped.has(ri):worst=gap;selected={"index":ri,"row":row,"point":point,"start":starts[ci],"finish":finishes[ci],"radius":radii[ci],"collider":ci}
-		stats.remaining_pairs=remaining;stats.minimum_gap=minimum
+		var use_cached_scan: bool=use_cache and cache_started
+		if use_cached_scan and not cache_initialized:
+			summaries={};dirty={};_count("cache_initializations")
+		var scan: Dictionary=_scan_cached(current_points,caps,skipped,summaries,dirty,cache_initialized) if use_cached_scan else _scan_original(current_points,caps,skipped)
+		if use_cached_scan:cache_initialized=true
+		if use_cached_scan and (verify_row_cache or scan.selected.is_empty() or iteration==MAX_CORRECTIONS):
+			var authority: Dictionary=_scan_original(current_points,caps,skipped)
+			if verify_row_cache:
+				_count("cache_verification_scans")
+				if scan.minimum!=authority.minimum or scan.remaining!=authority.remaining or scan.selected!=authority.selected:return {"error":"Cached contact scan differs from original scan."}
+			if scan.selected.is_empty() or iteration==MAX_CORRECTIONS:scan=authority
+		var selected: Dictionary=scan.selected
+		stats.remaining_pairs=scan.remaining;stats.minimum_gap=scan.minimum
 		if selected.is_empty():break
 		if iteration==MAX_CORRECTIONS:stats.iteration_limit_hits+=1;break
 		var corrected:=false
@@ -246,10 +338,12 @@ func constrain(actor: RefCounted,_chains: Array,pose: Dictionary) -> Dictionary:
 			var basis:=Basis(correction.rotation);var delta:=Transform3D(basis,joint.origin-basis*joint.origin)
 			for slot in driver_slots[driver.id]:positions[slot]=delta*positions[slot]
 			for ri in driver_rows[driver.id]:
+				if cache_initialized:dirty[ri]=true
 				var point: Vector3=origins[rows[ri].origin_source]*rows[ri].origin_weight
 				for slot in rows[ri].slots:point+=positions[slot]*weights[slot]
 				current_points[ri]=point
 			context={"cache":{},"visiting":{},"error":""};stats.corrections+=1;corrected=true;break
+		if corrected and use_cache:cache_started=true
 		if not corrected:skipped[selected.index]=true;stats.blocked_points+=1
 	var elapsed:=Time.get_ticks_usec()-started
 	stats.total_usec+=elapsed;stats.max_usec=maxi(stats.max_usec,elapsed)

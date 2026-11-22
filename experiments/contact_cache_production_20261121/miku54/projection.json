@@ -1,0 +1,188 @@
+{
+  "format": "has_miku54_production_safe_projection_1",
+  "status": "PASS",
+  "checks": 54,
+  "scope": "protected_saved_case",
+  "graphics_used": false,
+  "source_hash_manifest_sha256": "b42546b80c3790876e6ca1939e36b7dba9272b0899a313ffc1f504719260c477",
+  "source_files": 1229,
+  "preservation": {
+    "all_admitted_sources_unchanged": true,
+    "all_runtime_sources_unchanged": true,
+    "original_inputs_preserved": true,
+    "parent_environment_preserved": true,
+    "all_private_jobs_and_desktops_closed": true
+  },
+  "cases": [
+    {
+      "name": "math",
+      "checks": 17,
+      "status": "PASS",
+      "headless": true,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "receipt_sha256": "f34f6eaae0170c424b4906dfd149f348a769667eac1e9a3db0a1c9ddd550a20b",
+      "case_result_sha256": "ccdc35c3f4cdd45fe3fc28dc85367a47a86f42c33738fb2cdd1cbe893caf45c8",
+      "report_scalars": {
+        "checks": 17,
+        "failures": 0,
+        "native_or_graphics_used": false
+      },
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      }
+    },
+    {
+      "name": "budget",
+      "checks": 8,
+      "status": "PASS",
+      "headless": true,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "receipt_sha256": "eb0abbd6704e67469af5204c791ae433e3ad57fdc8b5feb989be24f8c2678435",
+      "case_result_sha256": "7cd19522bd0c909291b57f0ebee5d53eeff1c636f191df5009a82c45113b6de9",
+      "report_scalars": {
+        "checks": 8,
+        "failures": 0,
+        "synthetic_only": true
+      },
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      }
+    },
+    {
+      "name": "construct",
+      "checks": 8,
+      "status": "PASS",
+      "headless": true,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "receipt_sha256": "02450e94a91271e1ad25ab716e1660d8e44f060960499f6433935639dae2082b",
+      "case_result_sha256": "dc7c3504a696746b15c97b4985ef929f7324feaf4270ab3ff5ed5a377c427026",
+      "report_scalars": {
+        "checks": 8,
+        "failures": 0,
+        "fitted_colliders": 4,
+        "graphics_or_contact_response_qualified": false,
+        "inspected_vertices": 13111,
+        "matched_vertices": 116,
+        "source_arrays_published": false
+      },
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      }
+    },
+    {
+      "name": "flow",
+      "checks": 11,
+      "status": "PASS",
+      "headless": true,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "receipt_sha256": "993a15fef59181b980378a5029be9766863657cc9397f26a9220cd8ac2786bec",
+      "case_result_sha256": "ce05f3d05757aef0d7f59fd6b4f3a8a2e6e649415ebc7562d7318adbcd49daae",
+      "report_scalars": {
+        "active_minimum_segment_clearance": 0.0569030787050724,
+        "checks": 11,
+        "contact_clearance_tolerance_changed": false,
+        "failures": 0,
+        "graphics_or_skin_surface_contact_qualified": false,
+        "minimum_segment_clearance": -0.0219707049429417,
+        "runs": 2,
+        "ticks_per_run": 480
+      },
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      }
+    },
+    {
+      "name": "surface",
+      "checks": 10,
+      "status": "PASS",
+      "headless": true,
+      "launcher_reaped": true,
+      "launcher_handle_closed": true,
+      "private_resources_closed": true,
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false,
+      "receipt_sha256": "043a81d9d2b8100eb4e27670b1b6ccb622b9b2fa0b9df678dd40129525b522bb",
+      "case_result_sha256": "cc691465e191aa6ecab661bdbae747f1e0421b43c8e230e4c3cba2401bf7684b",
+      "report_scalars": {
+        "blocked_attachments": 0,
+        "checks": 10,
+        "failures": 0,
+        "graphics_used": false,
+        "hair_vertices": 989,
+        "maximum_palette_disagreement": 0.0,
+        "minimum_skin_clearance": -2.23144888877869e-06,
+        "penetrating_skin_vertex_pairs": 0,
+        "source_arrays_published": false,
+        "ticks": 480,
+        "contact_stats": {
+          "active_rows_scanned": 432,
+          "array_reads": 17,
+          "authoritative_scans": 960,
+          "blocked_points": 0,
+          "broad_tests": 7014680,
+          "cache_eligible_calls": 480,
+          "cache_initializations": 480,
+          "cached_rows_evaluated": 804230,
+          "cached_scans": 877,
+          "capsule_builds": 480,
+          "corrections": 877,
+          "hot_array_reads": 0,
+          "iteration_limit_hits": 0,
+          "max_usec": 12610,
+          "maximum_active_rows": 28,
+          "minimum_gap": 0.0,
+          "narrow_tests": 41988,
+          "refreshes": 480,
+          "remaining_pairs": 0,
+          "total_usec": 3483576,
+          "vertices": 989
+        }
+      },
+      "closure": {
+        "exit": 0,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "desktop_switch_requested": false
+      }
+    }
+  ],
+  "original": {
+    "file": "verification.json",
+    "bytes": 15203,
+    "sha256": "ab73d609ed971888763c4be90ca81d116a07ea0d9eee87b886e0b138954b3bd9"
+  },
+  "projection": "Only explicitly whitelisted top-level scalar case metrics; flowinitial/final andallarrays/profiles/paths/commands omitted."
+}

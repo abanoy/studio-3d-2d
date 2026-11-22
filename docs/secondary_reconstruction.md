@@ -111,3 +111,10 @@ does not distribute or download that asset.
 The standalone `tools/secondary_reconstruction.py` accepts a source, explicit recipe and **new** output folder. A recipe uses `studio_secondary_reconstruction_1`, a matching source checksum, `reviewed: true`, `segments` and a list of `{node, primitive, component}` regions; optional vertex masks and reviewed controls remain explicit. Multi-region recipes can share guides, but only the one-section native result above is qualified here. Next work: review the other colored back-hair groups, pair outline masks without crossing into bangs, and reduce the multi-chain contact cost.
 
 See [the compact benchmark](benchmarks/secondary_reconstruction_20261121.json). The prior existing-chain 13/14 settling failure is retained and is not relabelled by this result.
+
+
+## Contact work reduction
+
+The typed lazy contact cache now has current-source numerical and saved-Miku
+qualification. It preserves collision results and limits; it does not clear the
+Junko residual contacts or finish outlines. See [contact-cache scope and checks](secondary_contact_cache.md).

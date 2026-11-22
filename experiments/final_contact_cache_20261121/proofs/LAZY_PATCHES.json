@@ -1,0 +1,23 @@
+{
+  "predecessor_sha256": "be8673e19c35bb09c69bdfb64e61169c7f954ea5b95e27c99f91aa3e3569faef",
+  "candidate_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
+  "reverse_byte_exact": true,
+  "patches": [
+    {
+      "old": "var caps: CapsuleFrame=null;var summaries: Dictionary={};var dirty: Dictionary={};var cache_initialized:=false",
+      "new": "var caps: CapsuleFrame=null;var summaries: Variant=null;var dirty: Variant=null;var cache_initialized:=false;var cache_started:=false"
+    },
+    {
+      "old": "var scan: Dictionary=_scan_cached(current_points,caps,skipped,summaries,dirty,cache_initialized) if use_cache else _scan_original(current_points,caps,skipped)\n\t\tif use_cache:cache_initialized=true\n\t\tif use_cache and (verify_row_cache or scan.selected.is_empty() or iteration==MAX_CORRECTIONS):",
+      "new": "var use_cached_scan: bool=use_cache and cache_started\n\t\tif use_cached_scan and not cache_initialized:\n\t\t\tsummaries={};dirty={};_count(\"cache_initializations\")\n\t\tvar scan: Dictionary=_scan_cached(current_points,caps,skipped,summaries,dirty,cache_initialized) if use_cached_scan else _scan_original(current_points,caps,skipped)\n\t\tif use_cached_scan:cache_initialized=true\n\t\tif use_cached_scan and (verify_row_cache or scan.selected.is_empty() or iteration==MAX_CORRECTIONS):"
+    },
+    {
+      "old": "\t\t\t\tdirty[ri]=true",
+      "new": "\t\t\t\tif cache_initialized:dirty[ri]=true"
+    },
+    {
+      "old": "\t\tif not corrected:skipped[selected.index]=true;stats.blocked_points+=1",
+      "new": "\t\tif corrected and use_cache:cache_started=true\n\t\tif not corrected:skipped[selected.index]=true;stats.blocked_points+=1"
+    }
+  ]
+}

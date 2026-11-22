@@ -312,3 +312,47 @@ whole-hair, renderer/movie, human or Full acceptance is inferred from these test
 Formal52/54 implementation and55/62 acceptance remain unchanged. Next: reduce
 repeated contact scans without changing correction order, then address residual
 collision and explicit outline correspondence. Publish/retrieve before cleanup.
+
+
+## 2026-11-21 — Adopt typed lazy contact cache with current-source controls
+
+SRC secondary_skin_contact.gd is now89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87.
+Typed call-local capsules and sparse penetrating-row summaries preserve row/
+collider/tie order and skipped-point accounting. Only corrected driver rows are
+invalidated. Both capsule endpoints' full ancestry must be independent of ALL
+rotating guides; otherwise rebuild/original scan behavior remains. Clear and
+uncorrectable-only calls take original authority scans without row-cache
+allocation; cached empty/final termination uses the original full scan. All
+geometry/resource/morph guards,4096row cap,24correction cap and radii stay unchanged.
+
+Installed-source controls PASS:47 generated; complete47+15=62 public verifier,
+with actual ordinary runner.skin_contact as candidate and independent exact0bea
+reference instantiated separately. All720 complete pose/FK bytes and nine non-time
+metrics match; reference disposes before runner. These47 repeat, not109different
+requirements. Existing protectedMiku54 and helper208CPU pass on the same current
+functional source. Dependency manifests retain strict predicates/membership;
+both stale leaves refused before repin, exactWind60/Helper77 afterward. Allsource,
+runtime copies, original inputs and parent environments remain unchanged; owned
+headless processes/jobs/desktops/handles close. No GPU/Full result is inferred.
+
+Actual INSTALLED-source paired contact means47.218447ms baseline vs43.945851ms
+new (~6.93% lower). Candidate max128.277ms versus baseline100.521ms is retained;
+there is no worst-case improvement claim. Prototype observations31.7%typed and
+18.6%typed-lazy remain their own paired runs, not the installed-source result.
+Clock/scheduling/load varies. These are contact-call timings, not liveGUIFPS or
+fullSecondaryLive smoothing/feedback. The case still has123 final contact pairs,
+710 iteration-limit hits and about-4.45cm worst recorded gap. Do not call hair
+lag/body penetration fixed or fullhair complete. Off and native joints/anchors
+remain exact; the Miku54 arm case is distinct from this still-open Junko case.
+
+Public reusable tests: tests/verify_secondary_contact_cache.py defaults47, with
+all3explicit native paths+SHA pins optionally adding15. It uses zero overlays and
+filters private state from public results. Details in docs/secondary_contact_cache.md;
+actual/prototype evidence in experiments/contact_cache_production_20261121 and
+experiments/final_contact_cache_20261121. Old dense/sparse/phase experiments remain
+historical, adverse where recorded. Original art/specs/pose arrays stay local.
+Formal52/54 implementation and55/62 acceptance remain. CanonicalFull183/21movies
+remains exact5d37647c. Publish and independently retrieve this source/evidence.
+Next: investigate710 global solve-budget hits/residual weighted-surface contacts,
+then paired outline/physical-surface design and movement-driven live hair inertia.
+Owner remains busy; do not interrupt independent work for repeated manual checks.
