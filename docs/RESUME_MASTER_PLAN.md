@@ -1,6 +1,7 @@
 ## 2026-11-21 — Current collinear contact fix and isolated next work
 
-The contact rotation fallback is now source8aac05c4. Actual current-source20,
+The contact rotation fallback is published and independently retrieved at
+1128f50b15757cef6d9702ef6f7f4ec111a63b65 (source8aac05c4). Actual source20,
 existing generated cache47 and saved Miku54 pass, with source/input/environment
 preservation and owned-job closure. See docs/secondary_contact_cache.md and
 experiments/contact_rotation_fallback_20261121. The old actual-source20/6 failure

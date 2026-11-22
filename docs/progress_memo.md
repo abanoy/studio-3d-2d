@@ -18125,3 +18125,17 @@ that this degeneracy caused the sampled Junko residuals, which remain open.
 Movement-driven live hair and fair sharing of the same global solve budget are
 being investigated separately in isolated work. Formal52/54 implementation and
 55/62 acceptance remain; canonical Full183/21movies stays bound to5d37647c.
+
+
+## 2026-11-21 — Collinear-contact fix published and independently retrieved
+
+Owner explicitly approved1128f50b15757cef6d9702ef6f7f4ec111a63b65 to the
+feature branch and main after automatic review rejected two earlier attempts
+before process creation. The authorized atomic push succeeded. A fresh fetch
+into a separate bare Git store matches every tree blob/mode and1250 raw
+functional/changed files,13,082,963bytes; no alternates. Compact receipt:
+experiments/contact_rotation_publication_20261121/remote_readback.json.
+Raw inventorySHA6e1d19192880c6c1cfa9324a409c1b21035981be1fb5af09712874fb3a78b7c8.
+Rotation20/cache47/Miku54 remain scoped; no newFull or acceptance promotion.
+Independent fair-budget and moving-root hair work is still unmerged. Keep all
+private fixtures, failed experiments and protected review/checkouts intact.
