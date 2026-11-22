@@ -18074,3 +18074,28 @@ remains exact5d37647c. Publish and independently retrieve this source/evidence.
 Next: investigate710 global solve-budget hits/residual weighted-surface contacts,
 then paired outline/physical-surface design and movement-driven live hair inertia.
 Owner remains busy; do not interrupt independent work for repeated manual checks.
+
+
+## 2026-11-21 — Published cache source and current runnable review
+
+Mainff852f93c0bc048be527bfe8d6481f74eeefdf6d is pushed and independently fetched:
+1257 exact raw functional/changed-evidence files,12,705,615bytes, tree/blob/mode
+match and no alternates. Functional source equals qualifiedcbcab43b; only history
+append conflicts were reconciled, preserving all old lines and incoming notes.
+Current-source62(47+15), protectedMiku54 and helper208 CPU results remain scoped,
+not a new Full or human/device acceptance. Installed pairedmean6.93% does not
+replace distinct18.6/31.7 prototype observations or promise FPS/worst-case speed.
+
+Prepared source-pinned review HAS-Review-Reconstructed-Hair-ff852f93 includes1225
+immutable source files plus the private first-section four-frame packed project.
+Independent read-only audit confirms all10,180,928 source bytes, membership,
+payloads/portable references/nativeHead+guide keys, launcher/profile paths and
+unchanged source/original SHA+nsmtime. No owner app was launched. Previousb637
+review and installed Studio/tools are unchanged. Keep private artwork local.
+Compact publication/review proof: experiments/contact_cache_publication_20261121.
+
+Master pickup and finite ledger now identify this source and concrete next tasks:
+residual contacts/global solve budget, explicit outline/physical surfaces, then
+moving-model hair inertia. Formal52/54+55/62 and seven external prerequisites stay.
+No repeated owner/manual request. Automatic cleanup rejection remains pending
+direct approval for the two named old targets; no retry/workaround or deletion.

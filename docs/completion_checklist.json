@@ -1,4 +1,28 @@
 {
+  "latest_contact_cache_20261121": {
+    "status": "PUBLISHED_RETRIEVED_FOCUSED_CURRENT_SOURCE_QUALIFIED",
+    "source_commit": "cbcab43bbe452b8451d0ce0b629717813d5e71b7",
+    "main_commit": "ff852f93c0bc048be527bfe8d6481f74eeefdf6d",
+    "runtime_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
+    "evidence": "experiments/contact_cache_production_20261121/summary.json",
+    "publication": "experiments/contact_cache_publication_20261121/remote_readback.json",
+    "scoped_checks": {
+      "current_source_generated": 47,
+      "current_source_native": 15,
+      "saved_miku": 54,
+      "helper_cpu": 208
+    },
+    "mean_contact_call_ms": {
+      "baseline": 47.2184472222222,
+      "installed": 43.9458513888889
+    },
+    "timing_scope": "One alternating paired native run; about6.93% lower mean, no worst-case/FPS or generic speed claim. Prototype measurements remain separate.",
+    "quality_open": "Junko123 residual contacts/710 limit hits, outline/physical-surface design and movement-driven inertia remain. Miku arm54 does not close generic collision.",
+    "stable_review": "C:/a/Programming/cloudflare/HAS-Review-Reconstructed-Hair-ff852f93",
+    "review_scope": "1225 exact source files and private first-section four-key packed project; preparation/read-only audit only, no new owner appearance evidence.",
+    "formal_status_changed": false,
+    "canonical_Full_is_still": "5d37647c0004849247239817364e093c010eddd6"
+  },
   "latest_reconstruction_20261121": {
     "status": "INTEGRATED_REST_AND_PORTABLE_MOVIE_QUALIFIED_WHOLE_HAIR_OPEN",
     "runtime_source": "7d15daf3a8b4b3fac85fd5b79bf8339ce13607c0",

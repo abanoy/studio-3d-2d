@@ -2,28 +2,43 @@
 
 ## Current pickup — 2026-11-21
 
-Delivered runtime source: **b637fb10f8a78f1e03b137bfa8af4845296726bb**,
-published and independently retrieved. Rest rendering is exact for the scoped
-first-component test, portable four-frame movie/reopening checks pass, and the
-reviewed-attachment-reference translation is fixed. Later commits below add
-findings and documentation. Dense and sparse contact-cache experiments are
-**not adopted**; profiling the original solver is the next performance step.
+Delivered runtime source: **ff852f93c0bc048be527bfe8d6481f74eeefdf6d**,
+published and independently retrieved (1257 raw source/evidence files,12,705,615B).
+Exact resting mesh views, portable four-frame movie/reopening and reviewed-anchor
+translation are implemented. The final typed lazy contact cache is also integrated:
+current-source47+15, savedMiku54 and helper208 CPU pass. Dense and earlier sparse
+experiments remain unadopted; final production timing is about6.9% lower mean in
+one paired contact-call run, with no worst-case or viewportFPS claim.
 
-The source-pinned review is at
-`C:/a/Programming/cloudflare/HAS-Review-Reconstructed-Hair-b637fb10/Open Reconstructed hair.bat`.
-It is a private first-section keyed example, not a finished whole-hair setup.
-All five colored sections settle in a separate CPU trial, but123 contacts,
-simulation cost and explicit outline correspondence remain open. The outlines
-proposal quarantines ambiguous geometry and keeps front hair separate.
+Current private source-pinned review:
+`C:/a/Programming/cloudflare/HAS-Review-Reconstructed-Hair-ff852f93/Open Reconstructed hair.bat`.
+All1225 source files, packed payloads, four keys and isolated launcher paths pass
+independent read-only checks. No app was launched for preparation; the project
+shows one reconstructed colored hair section. Older reviews remain intact.
 
-Formal scores remain **52/54 implementation;55/62 acceptance**. The canonical
-Full183/21-movie pass belongs to exact5d37647c, not this later runtime. Remaining
-required observations: native appearance IMPORT-02/03+ACCEPT-B, noviceACCEPT-A,
-learnerACCEPT-E, physical tablet/audioACCEPT-TABLET, clean offlineACCEPT-INSTALL.
-Keep owner participation deferred while the owner is busy. The original19-layer
-hecatia fixture is already supplied/qualified; dead historical backups stay
-explicitly unavailable and must not be requested again. Preserve the two cleanup
-targets rejected by automatic approval review until the pending direct approval.
+Next independent work:
+
+1. Diagnose Junko's123 remaining weighted-surface contacts and710 iteration-limit
+   hits across720 steps; test whether the global24-correction budget or trapped
+   influence geometry limits convergence. Retain clearance targets and original
+   joints/attachments. Miku's passing arm case does not close generic collision.
+2. Design explicit paired outline masks and physical-surface correspondence.
+   One unmatched vertex/six unsupported triangles stay quarantined; do not flood
+   the mixed front/back component. Naive6650 contact rows exceed4096; preserve the
+   cap and disclose the physical sampling design instead of silently dropping rows.
+3. Implement movement-driven live hair inertia separately. Ordinary model pose
+   edits currently freeze simulations; preserve authored transforms/Undo/Off and
+   handle whole-model movement before expanding to joint editing or recording.
+
+Formal scores remain **52/54 implementation;55/62 acceptance**. Canonical
+Full183/21movies belongs to exact5d37647c, not this later source. Required remaining
+observations: native appearance IMPORT-02/03+ACCEPT-B, noviceACCEPT-A, learnerACCEPT-E,
+physical tablet/audioACCEPT-TABLET, clean offlineACCEPT-INSTALL. Defer repeated owner
+requests while the owner is busy. The original19-layer hecatia is supplied/qualified;
+dead historical backups remain explicitly unavailable and must not be requested again.
+Keep both cleanup targets rejected by automatic approval review intact pending
+the existing direct-approval question. Preserve original artwork, installed Studio,
+Steam content, tools and unique private failure/evidence files.
 
 ## Historical work log
 
