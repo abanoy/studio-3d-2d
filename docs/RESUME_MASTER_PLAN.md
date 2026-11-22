@@ -1,5 +1,36 @@
 # HAS — consolidated master reference for resuming work
 
+## Current pickup — 2026-11-21
+
+Delivered runtime source: **b637fb10f8a78f1e03b137bfa8af4845296726bb**,
+published and independently retrieved. Rest rendering is exact for the scoped
+first-component test, portable four-frame movie/reopening checks pass, and the
+reviewed-attachment-reference translation is fixed. Later commits below add
+findings and documentation. Dense and sparse contact-cache experiments are
+**not adopted**; profiling the original solver is the next performance step.
+
+The source-pinned review is at
+`C:/a/Programming/cloudflare/HAS-Review-Reconstructed-Hair-b637fb10/Open Reconstructed hair.bat`.
+It is a private first-section keyed example, not a finished whole-hair setup.
+All five colored sections settle in a separate CPU trial, but123 contacts,
+simulation cost and explicit outline correspondence remain open. The outlines
+proposal quarantines ambiguous geometry and keeps front hair separate.
+
+Formal scores remain **52/54 implementation;55/62 acceptance**. The canonical
+Full183/21-movie pass belongs to exact5d37647c, not this later runtime. Remaining
+required observations: native appearance IMPORT-02/03+ACCEPT-B, noviceACCEPT-A,
+learnerACCEPT-E, physical tablet/audioACCEPT-TABLET, clean offlineACCEPT-INSTALL.
+Keep owner participation deferred while the owner is busy. The original19-layer
+hecatia fixture is already supplied/qualified; dead historical backups stay
+explicitly unavailable and must not be requested again. Preserve the two cleanup
+targets rejected by automatic approval review until the pending direct approval.
+
+## Historical work log
+
+The earlier status paragraphs below are retained evidence. Later dated entries
+supersede their current-state wording; they are not fresh results on newer code.
+
+
 Current software checkpoint: the adopted portable Source normal/bone bridge and complete Windows verification now PASS at36044471151a6e561d6d3a404859e76ddd05738d. The4004.5350933second run completes170result groups and21movies with all1084functional files and revision unchanged. All220private jobs close (219normal/one expected owned cancellation);221receipt paths include one physical duplicate,1219archived copies and5035unchanged prior paths, with provenance verified. Root coordinator and verifier are reaped.
 
 The production path uses live VMT resources and fresh native IDs, preserves unknown-model legacy conversion, and binds final correctedb843/2478804bytes to its parameters/crosswalk. All9661normal rows have raw unnormalized Euclidean error0.0 under the unchanged2e-5 threshold;69bone bindings/49retained declarations and the existing five-owner preview remain distinct. Packaged conversion12.6117904s, portable25/target15controls and packaged-output102GUI/cold checks pass. The first1dc Full remains FAILED (two extracted-fixture NameErrors plus three newly archived receipt paths); its73-file failure packet is not relabelled. Fixture-only360 passes29 plus foundation167 before the successful full retry.
@@ -2896,3 +2927,29 @@ experiments/contact_cache_regression_20261121. No private model/spec/pose/weight
 arrays or artwork were copied. Original app source remains unchanged. Formal
 52/54 implementation and55/62 acceptance stay; movement-driven live hair inertia
 is separately open (ordinary pose edits still freeze live simulations).
+
+
+## 2026-11-21 — Sparse contact-cache experiment remains unadopted
+
+The separate8d7f95d3 sparse-active successor passes generated38 and native15:
+all720 same-input pose/FK bytes and nine constraint metrics match the unchanged
+baseline exactly. Only penetrating-row summaries are sorted/scanned; dirty rows
+are added/removed, skipped rows still count, and the final full scan remains
+authoritative. Original inputs, app/source/snapshots and parent environment stay
+exact; owned jobs/handles close. These repeat the same bounded requirements,
+not another53 independent acceptance conditions.
+
+One alternating paired native run measures44.7046ms baseline versus42.7261ms
+sparse per isolated contact call, a modest4.4257% reduction. It still has123 final
+contact pairs and710 correction-limit hits. This is not liveSecondaryLive/FPS,
+collision quality or general speed qualification, so production is unchanged.
+The earlier dense65.426ms regression stays separate and unadopted. Next diagnostic
+adds only coarse phase clocks to a copy of the ORIGINAL baseline; source peer
+review reverses its12 patches byte-exact to0bea5b26. That profiling result is not
+yet claimed here and must retain exact native720 equivalence/input/job guards.
+
+Safe executed-code/scalar packet and independent16-payload/provenance/privacy
+audit: experiments/contact_cache_sparse_20261121. No original-index masks, native
+geometry/pose/weight arrays, requests/environment values or artwork were copied.
+Formal52/54 implementation and55/62 acceptance remain. Current delivered runtime
+source is stillb637fb10; the prepared first-section portable review stays available.

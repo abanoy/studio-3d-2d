@@ -8743,3 +8743,29 @@ experiments/contact_cache_regression_20261121. No private model/spec/pose/weight
 arrays or artwork were copied. Original app source remains unchanged. Formal
 52/54 implementation and55/62 acceptance stay; movement-driven live hair inertia
 is separately open (ordinary pose edits still freeze live simulations).
+
+
+## 2026-11-21 — Sparse contact-cache experiment remains unadopted
+
+The separate8d7f95d3 sparse-active successor passes generated38 and native15:
+all720 same-input pose/FK bytes and nine constraint metrics match the unchanged
+baseline exactly. Only penetrating-row summaries are sorted/scanned; dirty rows
+are added/removed, skipped rows still count, and the final full scan remains
+authoritative. Original inputs, app/source/snapshots and parent environment stay
+exact; owned jobs/handles close. These repeat the same bounded requirements,
+not another53 independent acceptance conditions.
+
+One alternating paired native run measures44.7046ms baseline versus42.7261ms
+sparse per isolated contact call, a modest4.4257% reduction. It still has123 final
+contact pairs and710 correction-limit hits. This is not liveSecondaryLive/FPS,
+collision quality or general speed qualification, so production is unchanged.
+The earlier dense65.426ms regression stays separate and unadopted. Next diagnostic
+adds only coarse phase clocks to a copy of the ORIGINAL baseline; source peer
+review reverses its12 patches byte-exact to0bea5b26. That profiling result is not
+yet claimed here and must retain exact native720 equivalence/input/job guards.
+
+Safe executed-code/scalar packet and independent16-payload/provenance/privacy
+audit: experiments/contact_cache_sparse_20261121. No original-index masks, native
+geometry/pose/weight arrays, requests/environment values or artwork were copied.
+Formal52/54 implementation and55/62 acceptance remain. Current delivered runtime
+source is stillb637fb10; the prepared first-section portable review stays available.

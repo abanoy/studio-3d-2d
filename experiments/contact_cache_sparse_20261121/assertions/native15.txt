@@ -1,0 +1,15 @@
+PASS ordinary Add model loads the owned reconstructed candidate
+PASS selected original source surface maps uniquely into the imported candidate
+PASS all reviewed vertex IDs retain exact source geometry correspondence
+PASS generated multi-anchor guides construct through the ordinary simulation path
+PASS all expected guide chains and new skin bones are present
+PASS ordinary body colliders and weighted-surface contact are actually active
+PASS all guide groups simulate with ordinary contacts enabled
+PASS entire reviewed section centroid settles downward by more than one centimeter
+PASS every guide attachment and original native body/hair joint stays fixed
+PASS Off restores every reviewed vertex to authored geometry
+PASS simulation preserves authored keys and imported rig declarations
+PASS original native asset and new owned candidate remain read-only
+PASS every native tick preserves exact complete pose/FK dictionaries and bytes without mutating raw input
+PASS every native tick preserves exact corrections blocked residual minimum-gap and iteration-hit metrics
+PASS staged cache actually executes all720 independently timed calls under ordinary flexible lease

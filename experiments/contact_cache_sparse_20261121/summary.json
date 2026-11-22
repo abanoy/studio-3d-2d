@@ -1,0 +1,49 @@
+{
+  "format": "public_sparse_contact_cache_experiment_1",
+  "status": "SCOPED_QUALIFICATION_NOT_ADOPTED",
+  "baseline_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13",
+  "candidate_sha256": "8d7f95d388a2874a966c6098c6621e334784b65cf79782f91bd8344e9e597279",
+  "synthetic_checks": 38,
+  "native_checks": 15,
+  "native_ticks": 720,
+  "scope": "Five colored back-hair components only; outlines bangs ribbons excluded",
+  "selected_vertices": 3629,
+  "skin_vertices": 3241,
+  "chains": 40,
+  "collider_instances": 160,
+  "exact_pose_full_fk_and_nine_constraint_metrics": true,
+  "mean_contact_call_ms": {
+    "baseline": 44.7045944444444,
+    "sparse": 42.726118055555595
+  },
+  "measured_one_paired_run_percent_reduction": 4.42566678766656,
+  "maximum_contact_call_ms": {
+    "baseline": 120.312,
+    "sparse": 73.268
+  },
+  "comparison_order_alternated": true,
+  "whole_tick_includes_both_solvers_and_comparisons": true,
+  "secondary_live_or_fps_qualified": false,
+  "remaining_contacts": {
+    "final_pairs": 123,
+    "maximum_pairs": 130,
+    "recorded_minimum_gap_m": -0.044478848572551,
+    "iteration_limit_hits": 710
+  },
+  "prior_dense_f1b": {
+    "archived_separately": true,
+    "result_sha256": "0674249a873693bbe1f20e6d762a03fca0931ecbffd4b758d047dc73fbca64a3",
+    "status": "PASS",
+    "mean_baseline_ms": 44.8580402777778,
+    "mean_candidate_ms": 65.42607777777779,
+    "performance_regression": true,
+    "adopted": false
+  },
+  "requirement_counts_or_full_suite_reinterpreted": false,
+  "adopted": false,
+  "no_adoption_reason": "Unresolved123 contacts and high42.7ms contact-call cost; one modest timing result is not a completed performance feature",
+  "production_modified": false,
+  "graphics_used": false,
+  "private_inputs_used_only_in_closed_original_run": true,
+  "private_payload_in_public_packet": false
+}
