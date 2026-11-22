@@ -1,0 +1,11 @@
+{
+  "format": "contact_rotation_fallback_exact_patch_1",
+  "baseline_bytes": 22344,
+  "baseline_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
+  "candidate_bytes": 22698,
+  "candidate_sha256": "8aac05c4b3bbb132ff104a71bdc448b9b800f29c55496a53d78929384d568f65",
+  "old": "\tif away.length_squared()<.0000000001:return closest",
+  "new": "\tif away.length_squared()<.0000000001:\n\t\t# Collinear pole supplies no capsule-normal direction. Pick a stable\n\t\t# perpendicular axis without moving the pivot or changing its orbit.\n\t\tvar normal_axis: Vector3=axis.normalized()\n\t\taway=normal_axis.cross(Vector3.UP if absf(normal_axis.y)<.9 else Vector3.RIGHT) if axis.length_squared()>0 else Vector3.RIGHT\n\tif away.length_squared()<.0000000001:return closest",
+  "reverses_byte_exact": true,
+  "production_unchanged": true
+}

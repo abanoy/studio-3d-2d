@@ -1,0 +1,33 @@
+{
+  "format": "contact_rotation_degeneracy_actual_source_1",
+  "status": "EXPECTED_FAILURE_REPRODUCED",
+  "expected_failure_count": 6,
+  "fallback_used": false,
+  "graphics_used": false,
+  "private_assets_read": false,
+  "production_source_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
+  "fixture_sha256": "038554aa8744847e59645eeb2c2c2d0a7d08b39553c217e7cfc60e2abe58e205",
+  "fallback_sha256": null,
+  "checks": 20,
+  "failures": 6,
+  "passing_assertions": 14,
+  "ordinary_unit_passed": false,
+  "source_preservation_failures": [],
+  "source_membership_preserved": true,
+  "runtime_preserved": true,
+  "authored_inputs_preserved": true,
+  "environment_preserved": true,
+  "all_jobs_closed": true,
+  "cases": [
+    {
+      "name": "generated",
+      "launcher_reaped": true,
+      "private_resources_closed": true,
+      "launcher_exit": 1,
+      "launcher_handle_closed": true,
+      "private_receipt_sha256": "280050d4fb1e0b27240192155086e6facd43f0e48bd209a1caebd6da0fdc50a3",
+      "private_receipt_mode": "headless_lifecycle_only",
+      "graphical_placement_proven": false
+    }
+  ]
+}

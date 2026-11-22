@@ -1,0 +1,62 @@
+"""Root-authorized output-only pure rotation counterexample; actual SRC unchanged."""
+from pathlib import Path
+import hashlib,json,os,sys,time
+sys.dont_write_bytecode=True
+HERE=Path(__file__).resolve().parent
+ROOT=HERE.parents[1]
+sys.path[:0]=[str(ROOT/'tests'),str(ROOT)]
+import verify_import_capability as V
+
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+def main():
+    fallback='--fallback' in sys.argv[1:]
+    before,blobs=V.source_blobs();environment=dict(os.environ)
+    V.need(sha(blobs['src/secondary_skin_contact.gd'])=='89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87','Actual source differs')
+    unit=V.read(HERE/'contact_rotation_degeneracy.gd')
+    extra={'tests/owned/contact_rotation_degeneracy.gd':unit}
+    if fallback:extra['tests/owned/contact_rotation_fallback.gd']=V.read(HERE/'contact_rotation_fallback.gd')
+    pins={p:(V.identity(p.lstat()),sha(V.read(p))) for p in [Path(__file__).resolve(),HERE/'contact_rotation_degeneracy.gd',*([HERE/'contact_rotation_fallback.gd'] if fallback else [])]}
+    folder=ROOT/'output'/('contact-rotation-degeneracy-'+str(time.time_ns()));folder.mkdir();(folder/'Cases').mkdir()
+    V.need(not set(extra)&set(blobs),'Owned names collide with source')
+    staged={**blobs,**extra};runtime=V.studio(folder,'Studio',staged)
+    result={'format':'contact_rotation_degeneracy_actual_source_1','status':'FAIL','cases':[],'expected_failure_count':0 if fallback else 6,'fallback_used':fallback,'graphics_used':False,'private_assets_read':False,'production_source_sha256':sha(blobs['src/secondary_skin_contact.gd']),'fixture_sha256':sha(unit),'fallback_sha256':sha(extra['tests/owned/contact_rotation_fallback.gd']) if fallback else None}
+    caught=None
+    try:
+        try:V.run_case(folder,'generated',runtime,'tests/owned/contact_rotation_degeneracy.gd','CONTACT_ROTATION_DEGENERACY ',20,['--fallback'] if fallback else [],True,result,None)
+        except Exception as error:caught=error
+        row=result['cases'][0];case=folder/'Cases/generated'
+        text=V.read(case/'stdout.log').decode('utf-8','replace');err=V.read(case/'stderr.log').decode('utf-8','replace');engine=V.read(case/'engine.log').decode('utf-8','replace')
+        V.need(row.get('private_resources_closed') is True and row.get('launcher_reaped') is True and row.get('launcher_handle_closed') is True,'Owned resources not closed')
+        expected_labels={'vertical orbit parallel positive pole','vertical orbit antiparallel positive pole','vertical orbit parallel negative pole','vertical orbit antiparallel negative pole','vertical orbit zero pole','horizontal orbit parallel pole'}
+        def assertion_filtered(value):
+            return '\n'.join(line for line in value.splitlines() if fallback or line not in {'FAIL '+label for label in expected_labels})
+        # Original engine errors remain strict; only the six named expected
+        # synthetic counterexample assertions may be removed from this scan.
+        V.need(not V.BAD.search(assertion_filtered(text)+'\n'+err+'\n'+assertion_filtered(engine)),'Engine errors or parse failure')
+        marker='CONTACT_ROTATION_DEGENERACY ';hits=[x[len(marker):] for x in text.splitlines() if x.startswith(marker)]
+        V.need(len(hits)==1,'One actual result required');report=json.loads(hits[0])
+        expected=0 if fallback else 6
+        V.need(type(report.get('checks')) is int and report['checks']==20 and type(report.get('failures')) is int and report['failures']==expected,'Exact expected counterexample outcome required')
+        V.need(sum(x.startswith('FAIL ') for x in text.splitlines())==expected and sum(x.startswith('PASS ') for x in text.splitlines())==20-expected,'Exact raw assertions required')
+        V.need(row.get('launcher_exit')==(0 if fallback else 1),'Exact child exit differs')
+        V.need(report.get('synthetic_only') is True and report.get('private_assets_read') is False,'Pure generated scope differs')
+        V.need(Path(report['user_profile']).is_relative_to(case/'User/Roaming'),'Unique actual user profile required')
+        result.update(status='PASS' if fallback else 'EXPECTED_FAILURE_REPRODUCED',checks=20,failures=expected,passing_assertions=20-expected,ordinary_unit_passed=fallback)
+    except BaseException as error:
+        result['error_type']=type(error).__name__;result['error']=str(error);caught=error
+    finally:
+        result['source_preservation_failures']=V.sources_unchanged(before)
+        now,_=V.source_blobs();result['source_membership_preserved']=set(now)==set(before)
+        result['runtime_preserved']=all(V.read(runtime/name)==raw for name,raw in staged.items())
+        result['authored_inputs_preserved']=all((V.identity(p.lstat()),sha(V.read(p)))==pin for p,pin in pins.items())
+        result['environment_preserved']=dict(os.environ)==environment
+        result['all_jobs_closed']=bool(result['cases']) and all(x.get('private_resources_closed') is True and x.get('launcher_reaped') is True and x.get('launcher_handle_closed') is True for x in result['cases'])
+        if result['source_preservation_failures'] or not all(result[k] is True for k in ('source_membership_preserved','runtime_preserved','authored_inputs_preserved','environment_preserved','all_jobs_closed')):result['status']='FAIL'
+        V.new(folder/'PRIVATE_RESULT.json',(json.dumps(result,indent=2)+'\n').encode())
+        public={k:v for k,v in result.items() if k not in ('cases','error')}
+        public['cases']=[{k:v for k,v in x.items() if k in ('name','launcher_exit','launcher_reaped','launcher_handle_closed','private_resources_closed','private_receipt_sha256','private_receipt_mode','graphical_placement_proven')} for x in result['cases']]
+        V.new(folder/'SAFE_RESULT.json',(json.dumps(public,indent=2)+'\n').encode())
+        print(json.dumps({'status':result['status'],'result':str(folder/'SAFE_RESULT.json')}),flush=True)
+    V.need(result['status']!='FAIL','Generated reproduction or preservation failed')
+    return 0
+if __name__=='__main__':raise SystemExit(main())

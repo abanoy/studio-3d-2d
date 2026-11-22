@@ -48,3 +48,27 @@ inertia remains separate work. The canonical Full result remains bound to 5d3764
 
 See the [production evidence](../experiments/contact_cache_production_20261121/summary.json)
 and [prototype observations](../experiments/final_contact_cache_20261121/summary.json).
+
+
+## Collinear rotation fallback, 2026-11-21
+
+When a penetrating point and its pivot lie on the capsule axis, the preferred
+pole can also lie on that axis. Both old search directions then become zero,
+even when rotating sideways would clear the capsule. The solver now chooses a
+deterministic perpendicular direction only for that degenerate fallback. It
+preserves the pivot, orbit radius, collision radius and correction budget.
+
+`python -B tests/verify_secondary_contact_rotation.py` runs 20 generated controls
+against the actual installed source, including independent engine-geometry
+clearance checks, finite unit rotations, preserved orbit radius, blocked orbits
+and deterministic results. The retained pre-fix source failed six of these
+20 controls; the installed fix passes all 20. The existing generated cache
+regression passes 47 and the protected saved Miku case passes 54. All owned jobs
+closed and source, original inputs and parent environments were preserved.
+The optional `--reference` route deliberately remains a failing red test.
+
+These results establish a mathematical edge-case repair, not the cause of the
+remaining Junko contacts. Junko's residual-contact scheduling and outline
+coverage remain separate work; no new Full or human/device acceptance is claimed.
+The evidence preserves the initial prelaunch denial separately from executed
+product failures. See experiments/contact_rotation_fallback_20261121/summary.json.

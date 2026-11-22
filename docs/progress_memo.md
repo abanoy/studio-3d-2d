@@ -18099,3 +18099,29 @@ residual contacts/global solve budget, explicit outline/physical surfaces, then
 moving-model hair inertia. Formal52/54+55/62 and seven external prerequisites stay.
 No repeated owner/manual request. Automatic cleanup rejection remains pending
 direct approval for the two named old targets; no retry/workaround or deletion.
+
+
+## 2026-11-21 — Repair a feasible collinear hair-contact rotation
+
+Reproduced a contact-search defect independently: with pivot and point on a
+capsule axis and a parallel/zero pole, the old direction collapses to zero even
+though a perpendicular rotation can clear the unchanged capsule. Old actual
+source89 failed6/20 generated assertions; the initial desktop-creation denial
+created no engine and is retained separately, not counted as product failures.
+The five-line fallback8aac05c4 selects a deterministic perpendicular only at the
+degenerate branch. It changes no weights, anchors, collision radii or24 budget.
+
+Installed-source rotation20, existing cache47 and protected saved Miku54 PASS;
+owned jobs/desktops close, source/runtime/original/environment checks pass.
+Wind60 and Helper77 port memberships/guards are unchanged; only the exact
+contact-source leaf hashes and provenance are refreshed, with old stale pins
+explicitly refused. These focused overlapping controls are not new acceptance
+conditions or another canonical Full. The optional reference mode stays FAIL.
+
+Private-free code/hash/assertion/closure evidence is published under
+experiments/contact_rotation_fallback_20261121. Original models, weights, poses,
+private input commands and generated artwork remain local. There is no evidence
+that this degeneracy caused the sampled Junko residuals, which remain open.
+Movement-driven live hair and fair sharing of the same global solve budget are
+being investigated separately in isolated work. Formal52/54 implementation and
+55/62 acceptance remain; canonical Full183/21movies stays bound to5d37647c.

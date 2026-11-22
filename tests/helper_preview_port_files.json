@@ -415,8 +415,8 @@
     {
       "path": "src/secondary_skin_contact.gd",
       "category": "runtime",
-      "sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
-      "lf_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87"
+      "sha256": "8aac05c4b3bbb132ff104a71bdc448b9b800f29c55496a53d78929384d568f65",
+      "lf_sha256": "8aac05c4b3bbb132ff104a71bdc448b9b800f29c55496a53d78929384d568f65"
     },
     {
       "path": "src/secondary_live.gd",
@@ -589,5 +589,14 @@
       "lf_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
     },
     "scope": "Typed call-local sparse cache with conservative ancestry fallback, lazy initial authority scan and unchanged contact math/order/budget. Exact leaf pin only; no inherited CPU/GPU/Full execution credit."
+  },
+  "contact_rotation_fallback_20261121": {
+    "previous_row": {
+      "path": "src/secondary_skin_contact.gd",
+      "category": "runtime",
+      "sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
+      "lf_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87"
+    },
+    "scope": "Deterministic capsule-normal direction when the supplied pole is collinear. Exact source leaf refresh only; no inherited execution claim."
   }
 }

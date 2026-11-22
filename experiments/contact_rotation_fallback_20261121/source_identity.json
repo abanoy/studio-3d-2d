@@ -1,0 +1,34 @@
+{
+  "scope": "current_PRIMARY_source_identity_not_whole_full",
+  "files": [
+    {
+      "path": "src/secondary_skin_contact.gd",
+      "bytes": 22698,
+      "sha256": "8aac05c4b3bbb132ff104a71bdc448b9b800f29c55496a53d78929384d568f65"
+    },
+    {
+      "path": "tests/secondary_contact_rotation_unit.gd",
+      "bytes": 4600,
+      "sha256": "a22ce55350706357cf79c89b8056ac584b479b2cbe99dc9c7222cd21ac2bc0d7"
+    },
+    {
+      "path": "tests/verify_secondary_contact_rotation.py",
+      "bytes": 4822,
+      "sha256": "dfd6602cd9ce57fe17e5198fb458c8f719406a61d6638939bed0c0fdea0b0dcb"
+    },
+    {
+      "path": "tests/wind_review_port_files.json",
+      "bytes": 23193,
+      "sha256": "91afbc46d90776f6eb19c05d8f2007d10d88fdc945b9637e113d013f8d54005a"
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "bytes": 27900,
+      "sha256": "1e353bdf3eae5a9a383cbe40dfebc8f997aeeb46dbd33dda1e888e254170acde"
+    }
+  ],
+  "target_function": "secondary_skin_contact.rotation",
+  "old_src89_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
+  "exact_patch_reversed": true,
+  "production_rotational_math_thresholds_and_radii_unchanged_except_missing_direction_fallback": true
+}

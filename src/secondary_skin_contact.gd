@@ -175,6 +175,11 @@ static func rotation(center: Vector3,point: Vector3,a: Vector3,b: Vector3,radius
 	var axis:=b-a;var nearest: Vector3=a+axis*clampf((center-a).dot(axis)/axis.length_squared(),0.,1.) if axis.length_squared()>0 else a
 	var away:=center-nearest
 	if away.length_squared()<.0000000001:away=pole-axis.normalized()*pole.dot(axis.normalized()) if axis.length_squared()>0 else pole
+	if away.length_squared()<.0000000001:
+		# Collinear pole supplies no capsule-normal direction. Pick a stable
+		# perpendicular axis without moving the pivot or changing its orbit.
+		var normal_axis: Vector3=axis.normalized()
+		away=normal_axis.cross(Vector3.UP if absf(normal_axis.y)<.9 else Vector3.RIGHT) if axis.length_squared()>0 else Vector3.RIGHT
 	if away.length_squared()<.0000000001:return closest
 	away=away.normalized();var direction:=lever/length
 	if point_distance(center+away*length,a,b)<radius:return closest

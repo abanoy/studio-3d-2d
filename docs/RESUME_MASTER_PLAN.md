@@ -1,3 +1,25 @@
+## 2026-11-21 — Current collinear contact fix and isolated next work
+
+The contact rotation fallback is now source8aac05c4. Actual current-source20,
+existing generated cache47 and saved Miku54 pass, with source/input/environment
+preservation and owned-job closure. See docs/secondary_contact_cache.md and
+experiments/contact_rotation_fallback_20261121. The old actual-source20/6 failure
+and zero-assertion prelaunch denial remain separately recorded. This is not
+evidence that the sampled Junko residuals are caused by this edge case.
+
+Next work is isolated: test fair sharing of the SAME global24 corrections across
+the8 actual independent rotating-driver islands, and finish moving-model live
+hair controls plus recording/replay/preview/movie qualification. Do not promote
+output-only prototypes or baseline-normalization differences to completed
+features. Colored/outline physical-surface design still needs explicit coverage.
+
+The prepared ff852f93 first-section review remains pinned to its original source.
+Formal52/54 implementation and55/62 acceptance remain; the canonical Full is
+still5d37647c. Seven external conditions require native appearance comparisons,
+novice and learner exercises, physical tablet/audio evidence and clean offline
+Windows setup. Owner remains busy; continue independent work without repeated
+manual questions. Preserve the two cleanup targets rejected by automatic review.
+
 # HAS — consolidated master reference for resuming work
 
 ## Current pickup — 2026-11-21
