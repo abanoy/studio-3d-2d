@@ -1,0 +1,55 @@
+{
+  "scope": "Aggregate phase timers only; reversing12exactpatches recovers baseline byte-exact. No new timers inside row/vertex/collider/driver loops except coarse correction phase boundaries. Driver-search timer brackets entire search, update timer brackets accepted correction.",
+  "baseline_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13",
+  "profile_sha256": "9951f12e1820c20d0cee483fca19be70551f07e6965229cfd529d5befb12bda5",
+  "patches": [
+    {
+      "old": "func changed() -> void:invalidated=true",
+      "new": "var phase_totals: Dictionary={\"calls\":0,\"validation_origins_usec\":0,\"input_fk_skinpoints_usec\":0,\"capsule_builds_usec\":0,\"full_row_scans_usec\":0,\"driver_search_rotation_usec\":0,\"corrected_slot_row_updates_usec\":0}\nfunc changed() -> void:invalidated=true"
+    },
+    {
+      "old": "\tvar started:=Time.get_ticks_usec()\n\tif invalidated:",
+      "new": "\tvar started:=Time.get_ticks_usec()\n\tvar prof_capsules_usec: int=0;var prof_scans_usec: int=0;var prof_drivers_usec: int=0;var prof_updates_usec: int=0\n\tif invalidated:"
+    },
+    {
+      "old": "\tvar result: Dictionary=pose.duplicate(true);var skipped: Dictionary={};stats.refreshes+=1",
+      "new": "\tvar prof_after_validation: int=Time.get_ticks_usec()\n\tvar result: Dictionary=pose.duplicate(true);var skipped: Dictionary={};stats.refreshes+=1"
+    },
+    {
+      "old": "\t# The last scan is read-only and records unresolved constraints if a bounded",
+      "new": "\tvar prof_after_input: int=Time.get_ticks_usec()\n\t# The last scan is read-only and records unresolved constraints if a bounded"
+    },
+    {
+      "old": "\tfor iteration in range(MAX_CORRECTIONS+1):\n\t\tvar starts:=",
+      "new": "\tfor iteration in range(MAX_CORRECTIONS+1):\n\t\tvar prof_capsule_start: int=Time.get_ticks_usec()\n\t\tvar starts:="
+    },
+    {
+      "old": "\t\tif not context.error.is_empty():return {\"error\":context.error}\n\t\tvar worst:=",
+      "new": "\t\tif not context.error.is_empty():return {\"error\":context.error}\n\t\tvar prof_capsule_end: int=Time.get_ticks_usec();prof_capsules_usec+=prof_capsule_end-prof_capsule_start\n\t\tvar worst:="
+    },
+    {
+      "old": "\t\tstats.remaining_pairs=remaining;stats.minimum_gap=minimum",
+      "new": "\t\tprof_scans_usec+=Time.get_ticks_usec()-prof_capsule_end\n\t\tstats.remaining_pairs=remaining;stats.minimum_gap=minimum"
+    },
+    {
+      "old": "\t\tvar corrected:=false\n\t\tfor driver in selected.row.drivers:",
+      "new": "\t\tvar corrected:=false\n\t\tvar prof_driver_start: int=Time.get_ticks_usec();var prof_driver_timed: bool=false\n\t\tfor driver in selected.row.drivers:"
+    },
+    {
+      "old": "\t\t\tvar basis:=Basis(correction.rotation);var delta:=Transform3D(basis,joint.origin-basis*joint.origin)",
+      "new": "\t\t\tvar prof_update_start: int=Time.get_ticks_usec();prof_drivers_usec+=prof_update_start-prof_driver_start;prof_driver_timed=true\n\t\t\tvar basis:=Basis(correction.rotation);var delta:=Transform3D(basis,joint.origin-basis*joint.origin)"
+    },
+    {
+      "old": "\t\t\tcontext={\"cache\":{},\"visiting\":{},\"error\":\"\"};stats.corrections+=1;corrected=true;break",
+      "new": "\t\t\tcontext={\"cache\":{},\"visiting\":{},\"error\":\"\"};stats.corrections+=1;corrected=true\n\t\t\tprof_updates_usec+=Time.get_ticks_usec()-prof_update_start\n\t\t\tbreak"
+    },
+    {
+      "old": "\t\tif not corrected:skipped[selected.index]=true;stats.blocked_points+=1",
+      "new": "\t\tif not prof_driver_timed:prof_drivers_usec+=Time.get_ticks_usec()-prof_driver_start\n\t\tif not corrected:skipped[selected.index]=true;stats.blocked_points+=1"
+    },
+    {
+      "old": "\tvar elapsed:=Time.get_ticks_usec()-started\n\tstats.total_usec+=elapsed;",
+      "new": "\tphase_totals.calls+=1\n\tphase_totals.validation_origins_usec+=prof_after_validation-started\n\tphase_totals.input_fk_skinpoints_usec+=prof_after_input-prof_after_validation\n\tphase_totals.capsule_builds_usec+=prof_capsules_usec\n\tphase_totals.full_row_scans_usec+=prof_scans_usec\n\tphase_totals.driver_search_rotation_usec+=prof_drivers_usec\n\tphase_totals.corrected_slot_row_updates_usec+=prof_updates_usec\n\tvar elapsed:=Time.get_ticks_usec()-started\n\tstats.total_usec+=elapsed;"
+    }
+  ]
+}

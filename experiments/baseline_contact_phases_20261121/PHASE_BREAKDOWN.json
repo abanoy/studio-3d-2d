@@ -1,0 +1,44 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "profiled_calls": 720,
+  "accounted_instrumented_phase_total_usec": 52623240,
+  "share_denominator": "Sum of six recorded instrumented-baseline phase totals; not whole simulation or editor frame time.",
+  "phases": {
+    "capsule_builds_usec": {
+      "aggregate_usec": 1349470,
+      "mean_ms_per_profiled_call": 1.874263888888889,
+      "percent_of_accounted_instrumented_phase_time": 2.5643993034256347
+    },
+    "corrected_slot_row_updates_usec": {
+      "aggregate_usec": 5336242,
+      "mean_ms_per_profiled_call": 7.411447222222222,
+      "percent_of_accounted_instrumented_phase_time": 10.14046645550521
+    },
+    "driver_search_rotation_usec": {
+      "aggregate_usec": 1707805,
+      "mean_ms_per_profiled_call": 2.371951388888889,
+      "percent_of_accounted_instrumented_phase_time": 3.245343692254601
+    },
+    "full_row_scans_usec": {
+      "aggregate_usec": 40573099,
+      "mean_ms_per_profiled_call": 56.351526388888885,
+      "percent_of_accounted_instrumented_phase_time": 77.10110399891758
+    },
+    "input_fk_skinpoints_usec": {
+      "aggregate_usec": 3637046,
+      "mean_ms_per_profiled_call": 5.051452777777778,
+      "percent_of_accounted_instrumented_phase_time": 6.911482455280214
+    },
+    "validation_origins_usec": {
+      "aggregate_usec": 19578,
+      "mean_ms_per_profiled_call": 0.027191666666666666,
+      "percent_of_accounted_instrumented_phase_time": 0.03720409461675108
+    }
+  },
+  "unmodified_paired_solver_mean_ms": 72.39944166666669,
+  "instrumented_paired_solver_mean_ms": 73.2198888888889,
+  "observation_overhead_and_scheduler_load_apply": true,
+  "cross_run_comparison_to_prior_45ms_runs_qualified": false,
+  "measured_per_pair_counts": false,
+  "viewport_fps_or_realtime_claim": false
+}

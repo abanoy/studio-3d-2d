@@ -1,0 +1,71 @@
+{
+  "format": "has_native_baseline_phase_profile_observation_1",
+  "status": "EXACT_EQUIVALENCE_PASS_DIAGNOSTIC_PHASE_PROFILE",
+  "baseline_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13",
+  "instrumented_baseline_sha256": "9951f12e1820c20d0cee483fca19be70551f07e6965229cfd529d5befb12bda5",
+  "native_checks": 15,
+  "compared_ticks": 720,
+  "exact_pose_full_fk_bytes_and_nontime_metrics": true,
+  "phase_call_count": 720,
+  "paired_original_solver_mean_ms": 72.39944166666669,
+  "paired_instrumented_solver_mean_ms": 73.2198888888889,
+  "phase_scope": "Elapsed coarsephase totals only. Addedclock/bookkeeping overhead and scheduler/load apply; no perpair/pervertexclock, no perphasepaircount measurement, no realtime/FPS/adoption claim.",
+  "phases": {
+    "capsule_builds_usec": {
+      "total_usec": 1349470,
+      "mean_ms_per_call": 1.874263888888889,
+      "percent_of_accounted_phase_time": 2.5643993034256347
+    },
+    "corrected_slot_row_updates_usec": {
+      "total_usec": 5336242,
+      "mean_ms_per_call": 7.411447222222222,
+      "percent_of_accounted_phase_time": 10.14046645550521
+    },
+    "driver_search_rotation_usec": {
+      "total_usec": 1707805,
+      "mean_ms_per_call": 2.371951388888889,
+      "percent_of_accounted_phase_time": 3.245343692254601
+    },
+    "full_row_scans_usec": {
+      "total_usec": 40573099,
+      "mean_ms_per_call": 56.351526388888885,
+      "percent_of_accounted_phase_time": 77.10110399891758
+    },
+    "input_fk_skinpoints_usec": {
+      "total_usec": 3637046,
+      "mean_ms_per_call": 5.051452777777778,
+      "percent_of_accounted_phase_time": 6.911482455280214
+    },
+    "validation_origins_usec": {
+      "total_usec": 19578,
+      "mean_ms_per_call": 0.027191666666666666,
+      "percent_of_accounted_phase_time": 0.03720409461675108
+    }
+  },
+  "accounted_phase_total_usec": 52623240,
+  "residual_quality_unchanged": {
+    "final_pairs": 123,
+    "maximum_pairs": 130,
+    "minimum_recorded_gap_m": -0.044478848572551,
+    "iteration_limit_hits": 710,
+    "off_vertex_error": 0.0
+  },
+  "source_inputs_proposal_runtime_environment_preserved": true,
+  "launcher_reaped": true,
+  "launcher_handle_closed": true,
+  "private_resources_closed": true,
+  "headless_closure": {
+    "exit": 0,
+    "job_closed": true,
+    "desktop_closed": true,
+    "foreground_child_observed": false,
+    "desktop_switch_requested": false
+  },
+  "safe_result": {
+    "stage": "native-baseline-phase-profile-1795305452608304800",
+    "bytes": 2630,
+    "sha256": "d8dd3dd30d8da2ed1ce0eb0ce517f8582c0145848bd00cf2105e8e9134dcb2f2"
+  },
+  "production_modified": false,
+  "cpu_slot_released": true
+}

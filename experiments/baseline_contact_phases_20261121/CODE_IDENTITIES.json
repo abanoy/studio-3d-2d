@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "archive_path": "sources/secondary_skin_contact_original.gd.txt",
+      "bytes": 17056,
+      "sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+    },
+    {
+      "archive_path": "sources/secondary_skin_contact_instrumented.gd.txt",
+      "bytes": 18473,
+      "sha256": "9951f12e1820c20d0cee483fca19be70551f07e6965229cfd529d5befb12bda5"
+    },
+    {
+      "archive_path": "sources/native_baseline_profile_compare.gd.txt",
+      "bytes": 14909,
+      "sha256": "1af8a2e19c9e03cd37c2174f0d9f7dae92d3df443bebb4ea00c80d7cbe80fb49"
+    },
+    {
+      "archive_path": "sources/run_native_profile.py.txt",
+      "bytes": 6761,
+      "sha256": "3e83065a266a6d00bad692db5ddccc2cce7d30a30da0d2c57a6f7da3faf60af0"
+    }
+  ],
+  "stage_overlay_names": [
+    "src/secondary_skin_contact_profile_candidate.gd",
+    "tests/native_baseline_profile_compare.gd"
+  ],
+  "reproduction_scope": "Restore generic source only in a fresh owned equivalent original source/runtime/fixture layout. Private original/derivedGLBs andsealedPRIVATE_SPEC remain local and are not included. No production baseline replacement or optional cache38 requirement.",
+  "source_pin_false_engine_flag": "Authorship SOURCE_PIN preceded theactual15 run; retainedexact, superseded in scope byACTUAL_RESULT andSAFE_RESULT."
+}

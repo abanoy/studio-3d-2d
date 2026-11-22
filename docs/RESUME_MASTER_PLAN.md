@@ -2953,3 +2953,29 @@ audit: experiments/contact_cache_sparse_20261121. No original-index masks, nativ
 geometry/pose/weight arrays, requests/environment values or artwork were copied.
 Formal52/54 implementation and55/62 acceptance remain. Current delivered runtime
 source is stillb637fb10; the prepared first-section portable review stays available.
+
+
+## 2026-11-21 — Original contact-solver phase diagnosis
+
+A timing-only copy9951f12e of ORIGINAL0bea5b26 passes native15/720 exact pose/FK
+bytes and all nine non-time metrics against unchanged production. Twelve literal
+instrumentation patches reverse byte-exact to the17056-byte baseline. No math,
+source arrays, contact radii, iteration budget or ordering changes; only coarse
+phase clocks/bookkeeping: none per vertex, collision pair or rejected driver;
+the accepted-driver update boundary is measured once per correction.
+
+Full-row scans account for77.101% of summed instrumented phase time (56.352ms per
+call), corrected-slot/row updates10.140% (7.411ms), inputFK+points6.911% (5.051ms),
+driver search/rotation3.245% (2.372ms), capsule builds2.564% (1.874ms), validation
+0.037% (0.027ms). Shares use the sum of six accounted instrumented phases, not
+uninstrumented wall time. Paired original72.399ms/instrumented73.220ms means are
+diagnostic observations with clock/scheduling overhead; do not compare directly
+with earlier45ms experiments or infer FPS/general speed. All123 final contacts,
+710 iteration-limit hits and exact Off restoration stay unchanged.
+
+Owned headless engine/Job/desktop/launcher close and all original inputs, source,
+runtime/proposal/environment pins remain exact. No production adoption. The safe
+code/reverse-patch/phase/scalar/closure archive is
+experiments/baseline_contact_phases_20261121. Next prototype restores typed
+capsule arrays inside the sparse scan; that result remains unclaimed here.
+Formal52/54 implementation and55/62 acceptance remain unchanged.
