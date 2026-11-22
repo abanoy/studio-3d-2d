@@ -132,3 +132,10 @@ outline/whole-hair result. Five paired color/mask operations could reuse40 guide
 chains/200 nodes, but naive colored3241+outline3409 contact rows can exceed4096.
 Do not raise that limit or silently omit rows: design explicit physical-surface
 and visual-shell correspondence before adoption. Formal52/54+55/62 stay unchanged.
+
+
+## Contact work reduction
+
+The typed lazy contact cache now has current-source numerical and saved-Miku
+qualification. It preserves collision results and limits; it does not clear the
+Junko residual contacts or finish outlines. See [contact-cache scope and checks](secondary_contact_cache.md).

@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "checks": 208,
+  "source_context": "main_working_source_snapshot",
+  "source_state": {
+    "revision": "5d9676647f34b5142b960b3a712cf81ad1d3d527",
+    "working_status": [
+      {
+        "status": " M",
+        "paths": [
+          "src/secondary_skin_contact.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/helper_preview_port_files.json"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/wind_review_port_files.json"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/reference/secondary_skin_contact_baseline.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/secondary_contact_cache_native_smoke.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/secondary_contact_cache_unit.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/verify_secondary_contact_cache.py"
+        ]
+      }
+    ],
+    "ignored_generated_status": [
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/secondary_helpers.cpython-313.pyc"
+        ]
+      }
+    ],
+    "source_context": "main_working_source_snapshot"
+  },
+  "overlay_files": 0,
+  "mode": "cpu",
+  "graphics_used": false,
+  "native_requested": false,
+  "native_fidelity": false,
+  "preservation": {
+    "main_sources": true,
+    "runtimes": true,
+    "head": true,
+    "native_originals": true,
+    "staged_native_inputs": true,
+    "published_requests": true,
+    "snapshot_sources": true,
+    "snapshot_extras": true,
+    "fixtures": true
+  },
+  "results": [
+    {
+      "label": "transport",
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "checks": 11,
+      "expected_checks": 11,
+      "result_source_context_bound": true,
+      "passed": true,
+      "private_receipt_present": false
+    },
+    {
+      "label": "adapter",
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "checks": 128,
+      "expected_checks": 128,
+      "result_source_context_bound": true,
+      "passed": true,
+      "private_receipt_present": false
+    },
+    {
+      "label": "host",
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "checks": 69,
+      "expected_checks": 69,
+      "result_source_context_bound": true,
+      "passed": true,
+      "private_receipt_present": false
+    }
+  ],
+  "original": {
+    "file": "verification.json",
+    "bytes": 3362,
+    "sha256": "f44018e5f6d1196491927075b08e72e9b46ad5bd827d10cce29b3ad6f00f1d8f"
+  },
+  "headless_boundary": "CPU retainedPopen exits are reaped; no private receipt/window/desktop placement is asserted when those fields are null.",
+  "source_inventory_hashrefs": [
+    {
+      "file": "main-source-before.json",
+      "bytes": 224280,
+      "sha256": "2b8674c444cc23fdf8fb300211d2055b36d9c34829feed1d93325634687bcf44"
+    },
+    {
+      "file": "main-source-after.json",
+      "bytes": 224280,
+      "sha256": "2b8674c444cc23fdf8fb300211d2055b36d9c34829feed1d93325634687bcf44"
+    },
+    {
+      "file": "snapshot-source-before.json",
+      "bytes": 224280,
+      "sha256": "2b8674c444cc23fdf8fb300211d2055b36d9c34829feed1d93325634687bcf44"
+    },
+    {
+      "file": "reviewed-main-bindings.json",
+      "bytes": 20046,
+      "sha256": "e01370deec84489ba8e0d17f734683a104573653e1a3fff2fb30ab83c434ee60"
+    }
+  ]
+}

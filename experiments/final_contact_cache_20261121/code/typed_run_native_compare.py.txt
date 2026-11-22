@@ -1,0 +1,76 @@
+"""Root-owned output-only native720 cache comparator; no production overlay replacement."""
+from pathlib import Path
+import hashlib,json,os,sys,time
+sys.dont_write_bytecode=True
+HERE=Path(__file__).resolve().parent
+ROOT=HERE.parents[1]
+sys.path[:0]=[str(ROOT/'tests'),str(ROOT)]
+import verify_import_capability as V
+BASELINE_SHA='0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13'
+CANDIDATE_SHA='be8673e19c35bb09c69bdfb64e61169c7f954ea5b95e27c99f91aa3e3569faef'
+PROPOSAL=ROOT/'output/whole-backhair-review/contact-cache-sparse-typed-proposal'
+ORIGINAL=ROOT.parent/'has-backhair-reconstruction-20261121/output/backhair-map-1795295823960543900/source.glb'
+MODEL=ROOT/'output/whole-backhair-review/independent-five/candidate/scene.glb'
+SPEC=ROOT/'output/independent-backhair-assessment-1795303311099331500/PRIVATE_SPEC.json'
+
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+def remember(path):
+    raw=V.read(path);return (V.identity(path.lstat()),sha(raw))
+def same(path,pin):return remember(path)==pin
+
+def main():
+    V.need(os.name=='nt','Existing owned Windows private-headless launcher required')
+    pin=json.loads(V.read(HERE/'SOURCE_PIN.json'))
+    V.need(sha(V.read(ROOT/'src/secondary_skin_contact.gd'))==BASELINE_SHA==pin['baseline_skin']['sha256'],'Production baseline changed')
+    V.need(sha(V.read(PROPOSAL/'secondary_skin_contact.gd'))==CANDIDATE_SHA==pin['candidate_skin']['sha256'],'Frozen staged candidate changed')
+    proposal=json.loads(V.read(PROPOSAL/'SOURCE.json'))
+    V.need(proposal['candidate']['sha256']==CANDIDATE_SHA and proposal['baseline']['sha256']==BASELINE_SHA,'Proposal identities changed')
+    qualified=json.loads(V.read(PROPOSAL/'ACTUAL_CPU.json'))
+    V.need(qualified['status']=='PASS' and qualified['checks']==38 and qualified['candidate_sha256']==CANDIDATE_SHA,'Exact candidate synthetic38 qualification required')
+    V.need(sha(V.read(HERE/'native_cache_compare.gd'))==pin['native_comparator']['sha256'],'Authored native fixture changed')
+    V.need(sha(V.read(ROOT/'tests/secondary_reconstruction_native_smoke.gd'))==pin['native_predecessor']['sha256'],'Original12 native fixture changed')
+    V.need(sha(V.read(ORIGINAL))=='a329cd47bd74b05278a6e501b9503d8e0b9231bf6adc647307d573170166a3ec','Protected original differs')
+    V.need(sha(V.read(MODEL))=='7767426e2dd58e93b6da28f74274935c800923adf2f6ee83bb8fa620e0079711','Independently guided five-section candidate differs')
+    protected={path:remember(path) for path in (ORIGINAL,MODEL,SPEC)}
+    own_paths=(HERE/'native_cache_compare.gd',HERE/'SOURCE_PIN.json',Path(__file__),PROPOSAL/'secondary_skin_contact.gd',PROPOSAL/'SOURCE.json',PROPOSAL/'ACTUAL_CPU.json')
+    owned={path:V.read(path) for path in own_paths}
+    frozen,blobs=V.source_blobs();environment=dict(os.environ)
+    composite=dict(blobs)
+    extra={'src/secondary_skin_contact_native_candidate.gd':owned[PROPOSAL/'secondary_skin_contact.gd'],'tests/native_cache_compare.gd':owned[HERE/'native_cache_compare.gd']}
+    V.need(not set(extra).intersection(composite),'Distinct owned staged names already exist')
+    composite.update(extra)
+    folder=ROOT/'output'/('native-contact-cache-sparse-typed-compare-'+str(time.time_ns()));folder.mkdir();(folder/'Cases').mkdir()
+    runtime=V.studio(folder,'CPUStudio',composite)
+    result={'format':'has_native_contact_cache_compare_1','status':'FAIL','checks':0,'cases':[],'graphics_used':False,'whole_hair_complete':False,'production_modified':False,'baseline_sha256':BASELINE_SHA,'candidate_sha256':CANDIDATE_SHA,'overlays':list(extra),'private_inputs':{str(path):{'identity':pin[0],'sha256':pin[1]} for path,pin in protected.items()}}
+    problem=None
+    try:
+        row=V.run_case(folder,'native',runtime,'tests/native_cache_compare.gd','NATIVE_CONTACT_CACHE_COMPARE ',15,[str(MODEL),str(SPEC),str(ORIGINAL),CANDIDATE_SHA],True,result,None)
+        metrics=row['report']
+        V.need(metrics.get('compared_ticks')==720 and metrics.get('first_mismatch_tick')==-1,'All720 exact comparisons must complete')
+        V.need(all(metrics.get(k) is True for k in ('exact_pose','exact_full_fk','exact_solver_metrics','raw_input_preserved','comparison_order_alternated')),'Native exact equivalence/input/order required')
+        V.need(metrics.get('cache_candidate_sha256')==CANDIDATE_SHA,'Actual engine staged cache pin differs')
+        V.need(metrics['baseline_solver_stats']['remaining_pairs']==metrics['candidate_solver_stats']['remaining_pairs'],'Residual contact metrics differ')
+        result['checks']=row['checks'];result['status']='PASS'
+    except BaseException as error:
+        problem=error;result['error']=str(error);result['error_type']=type(error).__name__
+    finally:
+        result['source_preservation_failures']=V.sources_unchanged(frozen)
+        current,_=V.source_blobs();result['source_membership_preserved']=set(current)==set(frozen)
+        result['proposal_and_host_preserved']=all(V.read(path)==raw for path,raw in owned.items())
+        result['runtime_preserved']=all(V.read(runtime/name)==raw for name,raw in composite.items())
+        result['protected_inputs_preserved']=all(same(path,pin) for path,pin in protected.items())
+        result['environment_preserved']=dict(os.environ)==environment
+        result['all_jobs_closed']=bool(result['cases']) and all(row.get('private_resources_closed') is True and row.get('launcher_reaped') is True and row.get('launcher_handle_closed') is True for row in result['cases'])
+        if result['source_preservation_failures'] or not all(result[key] is True for key in ('source_membership_preserved','proposal_and_host_preserved','runtime_preserved','protected_inputs_preserved','environment_preserved','all_jobs_closed')):result['status']='FAIL'
+        V.new(folder/'verification.json',(json.dumps(result,indent=2)+'\n').encode())
+        # Safe projection is public-eligible scalars only; raw requests/input
+        # identities, engine commands, profiles, matrices and poses stay local.
+        safe={k:result[k] for k in ('format','status','checks','graphics_used','whole_hair_complete','production_modified','baseline_sha256','candidate_sha256','source_preservation_failures','source_membership_preserved','proposal_and_host_preserved','runtime_preserved','protected_inputs_preserved','environment_preserved','all_jobs_closed')}
+        if result['cases'] and 'report' in result['cases'][0]:safe['metrics']={k:v for k,v in result['cases'][0]['report'].items() if k!='user_profile'}
+        if 'error' in result:safe['error']='Owned comparator did not qualify; consult retained local raw logs'
+        V.new(folder/'SAFE_RESULT.json',(json.dumps(safe,indent=2)+'\n').encode())
+        print(json.dumps({'status':result['status'],'checks':result['checks'],'result':str(folder/'verification.json'),'safe':str(folder/'SAFE_RESULT.json')}),flush=True)
+    if problem is not None:raise problem
+    V.need(result['status']=='PASS','Native equivalence/source/process gate failed')
+
+if __name__=='__main__':main()

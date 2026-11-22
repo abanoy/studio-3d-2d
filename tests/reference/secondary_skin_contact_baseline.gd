@@ -1,0 +1,261 @@
+extends RefCounted
+# Cached actual helper-weighted skin points. Rotational correction only; no
+# source vertex/weight, attachment, joint-position or spring-setting writes.
+const Bounds=preload("res://src/pose_bounds.gd")
+const Shape=preload("res://src/source_shape.gd")
+const FK=preload("res://src/secondary_segment_contact.gd")
+const Timeline=preload("res://src/timeline.gd")
+const IK=preload("res://src/limb_ik.gd")
+const MAX_VERTICES:=200000
+const MAX_HAIR_VERTICES:=4096
+const MAX_CORRECTIONS:=24
+var rows: Array=[]
+var sources: Array=[]
+var watches: Array=[]
+var local_points:=PackedVector3Array()
+var weights:=PackedFloat32Array()
+var bone_slots:=PackedInt32Array()
+var bindings: Array=[]
+var driver_slots: Dictionary={}
+var driver_rows: Dictionary={}
+var collider_defs: Array=[]
+var invalidated:=false
+var stats:={"vertices":0,"array_reads":0,"refreshes":0,"corrections":0,"blocked_points":0,"hot_array_reads":0,"total_usec":0,"max_usec":0,"remaining_pairs":0,"minimum_gap":0.,"iteration_limit_hits":0}
+func changed() -> void:invalidated=true
+static func create(actor: RefCounted,chains: Array) -> Dictionary:
+	var result=new();var drivers: Dictionary={};var depths: Dictionary={};var skeletons: Dictionary={}
+	for chain in chains:
+		for id in chain.ids:drivers[id]=true
+	for id in actor.order:
+		skeletons[actor.bones[id].skeleton]=true
+		var depth:=0;var at: String=id
+		while at!="@root":depth+=1;at=actor.parent_id(at)
+		depths[id]=depth
+	var ordered: Array=drivers.keys();ordered.sort_custom(func(a,b):return depths[a]>depths[b])
+	var ancestors: Dictionary={}
+	for id in actor.order:
+		var values: Dictionary={};var at: String=id
+		while at!="@root":
+			if drivers.has(at):values[at]=true
+			at=actor.parent_id(at)
+		ancestors[id]=values
+	var count:=0;var context:={"palettes":{},"updated":{},"error":""}
+	var meshes: Array=actor.root.find_children("*","MeshInstance3D",true,false)
+	for item in meshes:
+		var mesh: MeshInstance3D=item;var sk=mesh.get_node_or_null(mesh.skeleton)
+		if not sk is Skeleton3D or not skeletons.has(sk) or mesh.mesh==null or mesh.skin==null:continue
+		if not mesh.global_transform.is_equal_approx(sk.global_transform):return {"error":"Generated skin contact needs matching mesh and skeleton frames."}
+		var first_row: int=result.rows.size()
+		var palette: Array=Bounds.palette(mesh,context)
+		if not context.error.is_empty():return {"error":context.error}
+		var ids: Array=[];var inverse: Array=[]
+		for bind in range(mesh.skin.get_bind_count()):
+			var name: String=mesh.skin.get_bind_name(bind);var index: int=sk.find_bone(name) if not name.is_empty() else mesh.skin.get_bind_bone(bind)
+			if index<0 or index>=sk.get_bone_count():return {"error":"Skin contact lost a registered bind."}
+			var id: String=str(actor.root.get_path_to(sk))+"::"+str(sk.get_bone_name(index))
+			if not actor.bones.has(id):return {"error":"Skin contact needs an owned bone inventory."}
+			ids.append(id);inverse.append(actor.bone_transform(id).affine_inverse()*mesh.global_transform*palette[bind])
+		for surface in range(mesh.mesh.get_surface_count()):
+			var arrays: Array=mesh.mesh.surface_get_arrays(surface);result.stats.array_reads+=1
+			if arrays.size()!=Mesh.ARRAY_MAX or not arrays[Mesh.ARRAY_VERTEX] is PackedVector3Array:continue
+			var vertices: PackedVector3Array=Shape.vertices(mesh,surface,arrays[Mesh.ARRAY_VERTEX]);count+=vertices.size()
+			if count>MAX_VERTICES:return {"error":"Skin contact exceeds its bounded inventory."}
+			var bones=arrays[Mesh.ARRAY_BONES];var weights=arrays[Mesh.ARRAY_WEIGHTS]
+			if not bones is PackedInt32Array or bones.is_empty() or vertices.is_empty():continue
+			var stride: int=bones.size()/vertices.size()
+			if stride not in [4,8] or bones.size()!=vertices.size()*stride or not weights is PackedFloat32Array or weights.size()!=bones.size():return {"error":"Unsupported skin contact weight layout."}
+			for vertex in range(vertices.size()):
+				var influences: Array=[];var eligible: Dictionary={}
+				for slot in range(stride):
+					var bind: int=bones[vertex*stride+slot];var weight: float=weights[vertex*stride+slot]
+					if weight==0:continue
+					if not is_finite(weight) or weight<0 or bind<0 or bind>=ids.size():return {"error":"Invalid cached skin contact influence."}
+					var id: String=ids[bind];influences.append({"id":id,"point":inverse[bind]*vertices[vertex],"weight":weight})
+					for driver in ancestors[id]:eligible[driver]=true
+				if eligible.is_empty():continue
+				var candidates: Array=[]
+				for driver in ordered:
+					if not eligible.has(driver):continue
+					var slots: Array=[]
+					for i in range(influences.size()):
+						if ancestors[influences[i].id].has(driver):slots.append(i)
+					candidates.append({"id":driver,"slots":slots})
+				var weight_sum:=0.
+				for influence in influences:weight_sum+=influence.weight
+				result.rows.append({"influences":influences,"drivers":candidates,"origin_source":result.sources.size(),"origin_weight":1.-weight_sum})
+				if result.rows.size()>MAX_HAIR_VERTICES:return {"error":"Generated hair skin contact exceeds4096 affected vertices."}
+		if result.rows.size()>first_row:
+			var amounts: Array=[]
+			for i in range(mesh.mesh.get_blend_shape_count()):amounts.append(mesh.get_blend_shape_value(i))
+			result.sources.append({"mesh":weakref(mesh),"resource":mesh.mesh,"skin":mesh.skin,"skeleton":mesh.skeleton,"amounts":amounts})
+	for source in result.sources:
+		for resource in [source.resource,source.skin]:
+			var found:=false
+			for watch in result.watches:
+				if watch.resource==resource:found=true;break
+			if not found:resource.changed.connect(result.changed);result.watches.append({"resource":resource})
+	# Flatten immutable influence geometry once. Hot ticks transform each unique
+	# bone once and update only the influences affected by a correction.
+	var bind_slots: Dictionary={};var owner: Dictionary={}
+	for ci in range(chains.size()):
+		for id in chains[ci].ids:owner[id]=ci
+	for ri in range(result.rows.size()):
+		var row: Dictionary=result.rows[ri];var slots:=PackedInt32Array();var allowed:=PackedInt32Array()
+		for influence in row.influences:
+			if not bind_slots.has(influence.id):bind_slots[influence.id]=result.bindings.size();result.bindings.append(influence.id)
+			slots.append(result.local_points.size());result.local_points.append(influence.point);result.weights.append(influence.weight);result.bone_slots.append(bind_slots[influence.id])
+		for driver in row.drivers:
+			if not result.driver_slots.has(driver.id):result.driver_slots[driver.id]=PackedInt32Array();result.driver_rows[driver.id]=PackedInt32Array()
+			var affected:=PackedInt32Array()
+			for slot in driver.slots:affected.append(slots[slot]);result.driver_slots[driver.id].append(slots[slot])
+			driver.slots=affected;result.driver_rows[driver.id].append(ri)
+			var driver_colliders:=PackedInt32Array()
+			for collider in chains[owner[driver.id]].colliders:
+				var index: int=result.collider_defs.find(collider.definition)
+				if index<0:index=result.collider_defs.size();result.collider_defs.append(collider.definition)
+				if not index in allowed:allowed.append(index)
+				driver_colliders.append(index)
+			driver.colliders=driver_colliders
+		row.slots=slots;row.colliders=allowed;row.erase("influences")
+	result.stats.vertices=result.rows.size();return {"control":result}
+static func point_distance(point: Vector3,a: Vector3,b: Vector3) -> float:
+	var axis:=b-a;return point.distance_to(a+axis*clampf((point-a).dot(axis)/axis.length_squared(),0.,1.)) if axis.length_squared()>0 else point.distance_to(a)
+static func downward_rotation(center: Vector3,point: Vector3,a: Vector3,b: Vector3,radius: float) -> Dictionary:
+	# Natural settling prefers a clear downward route around an arm. The old
+	# nearest-away route can lift long hair even while its spring pulls down.
+	# Search only as far as the lowest point on this exact weighted orbit;
+	# every accepted endpoint still clears the original, unchanged capsule.
+	var lever:=point-center;var length:=lever.length()
+	if length<.000001:return {}
+	var axis:=lever.cross(Vector3.DOWN)
+	if axis.length_squared()<.0000000001:return {}
+	axis=axis.normalized();var limit:=acos(clampf(lever.normalized().dot(Vector3.DOWN),-1.,1.))
+	var lo:=0.;var hi:=minf(.01,limit)
+	while hi>lo:
+		if point_distance(center+Quaternion(axis,hi)*lever,a,b)>=radius:
+			for i in range(16):
+				var middle: float=(lo+hi)*.5
+				if point_distance(center+Quaternion(axis,middle)*lever,a,b)>=radius:hi=middle
+				else:lo=middle
+			return {"rotation":Quaternion(axis,hi)}
+		lo=hi;hi=minf(limit,hi*2.)
+	return {}
+static func rotation(center: Vector3,point: Vector3,a: Vector3,b: Vector3,radius: float,pole: Vector3,gentle: bool=true) -> Dictionary:
+	var lever:=point-center;var length:=lever.length()
+	if length<.000001:return {}
+	var capsule_axis:=b-a
+	var at_point: Vector3=a+capsule_axis*clampf((point-a).dot(capsule_axis)/capsule_axis.length_squared(),0.,1.) if capsule_axis.length_squared()>0 else a
+	var normal:=point-at_point
+	var closest: Dictionary={}
+	# Use the distance gradient at the penetrating skin point first. Moving
+	# toward the capsule-away direction at its pivot can create a large bend
+	# even when a small rotation around the arm would clear the actual point.
+	var gradient:=lever.cross(normal)
+	if gentle and gradient.length_squared()>.0000000001:
+		gradient=gradient.normalized();var hi:=.01;var lo:=0.
+		while hi<PI:
+			if point_distance(center+Quaternion(gradient,hi)*lever,a,b)>=radius:
+				for i in range(16):
+					var middle: float=(lo+hi)*.5
+					if point_distance(center+Quaternion(gradient,middle)*lever,a,b)>=radius:hi=middle
+					else:lo=middle
+				closest={"rotation":Quaternion(gradient,hi)};break
+			lo=hi;hi=minf(PI,hi*2.)
+	var axis:=b-a;var nearest: Vector3=a+axis*clampf((center-a).dot(axis)/axis.length_squared(),0.,1.) if axis.length_squared()>0 else a
+	var away:=center-nearest
+	if away.length_squared()<.0000000001:away=pole-axis.normalized()*pole.dot(axis.normalized()) if axis.length_squared()>0 else pole
+	if away.length_squared()<.0000000001:return closest
+	away=away.normalized();var direction:=lever/length
+	if point_distance(center+away*length,a,b)<radius:return closest
+	var turn:=direction.cross(away);var angle:=acos(clampf(direction.dot(away),-1.,1.))
+	if turn.length_squared()<.0000000001:turn=direction.cross(Vector3.UP if absf(direction.y)<.9 else Vector3.RIGHT)
+	turn=turn.normalized();var lo:=0.;var hi:=angle
+	for i in range(16):
+		var middle: float=(lo+hi)*.5
+		if point_distance(center+Quaternion(turn,middle)*lever,a,b)>=radius:hi=middle
+		else:lo=middle
+	if not closest.is_empty() and closest.rotation.get_angle()<hi:return closest
+	return {"rotation":Quaternion(turn,hi)}
+func constrain(actor: RefCounted,_chains: Array,pose: Dictionary) -> Dictionary:
+	var started:=Time.get_ticks_usec()
+	if invalidated:return {"error":"Generated skin geometry changed; restart Hair & clothes."}
+	var origins:=PackedVector3Array()
+	for source in sources:
+		var mesh=source.mesh.get_ref()
+		if not is_instance_valid(mesh) or mesh.mesh!=source.resource or mesh.skin!=source.skin or mesh.skeleton!=source.skeleton:return {"error":"Generated skin binding changed; restart Hair & clothes."}
+		var skeleton=mesh.get_node_or_null(mesh.skeleton)
+		if not skeleton is Skeleton3D or not mesh.global_transform.is_equal_approx(skeleton.global_transform):return {"error":"Generated skin contact left its supported mesh/skeleton frame."}
+		for i in range(source.amounts.size()):
+			if mesh.get_blend_shape_value(i)!=source.amounts[i]:return {"error":"Hair geometry changed; restart Hair & clothes to update its contact surface."}
+		origins.append(mesh.global_position)
+	var result: Dictionary=pose.duplicate(true);var skipped: Dictionary={};stats.refreshes+=1
+	var settling: Dictionary={}
+	for chain in _chains:
+		if chain.get("natural_gravity",false):
+			for id in chain.ids:settling[id]=true
+	var context:={"cache":{},"visiting":{},"error":""};var frames: Array[Transform3D]=[]
+	for id in bindings:frames.append(FK.world(actor,id,result,context))
+	if not context.error.is_empty():return {"error":context.error}
+	var positions:=PackedVector3Array();positions.resize(local_points.size())
+	for i in range(local_points.size()):positions[i]=frames[bone_slots[i]]*local_points[i]
+	var current_points:=PackedVector3Array();current_points.resize(rows.size())
+	for ri in range(rows.size()):
+		var point: Vector3=origins[rows[ri].origin_source]*rows[ri].origin_weight
+		for slot in rows[ri].slots:point+=positions[slot]*weights[slot]
+		current_points[ri]=point
+	# The last scan is read-only and records unresolved constraints if a bounded
+	# solve reaches its limit. A finite budget is not a completeness guarantee.
+	for iteration in range(MAX_CORRECTIONS+1):
+		var starts:=PackedVector3Array();var finishes:=PackedVector3Array();var axes:=PackedVector3Array();var inverse_lengths:=PackedFloat64Array();var radii:=PackedFloat64Array();var radius_squared:=PackedFloat64Array();var broad: Array[AABB]=[]
+		for c in collider_defs:
+			var a: Transform3D=FK.binding(actor,c.binding,result,context);var b: Vector3=FK.binding(actor,c.tail_binding,result,context).origin
+			var axis: Vector3=b-a.origin;var radius: float=c.radius*a.basis.get_scale().x
+			starts.append(a.origin);finishes.append(b);axes.append(axis);inverse_lengths.append(1./axis.length_squared() if axis.length_squared()>0 else 0.);radii.append(radius);radius_squared.append(radius*radius);broad.append(AABB(a.origin,Vector3.ZERO).expand(b).grow(radius))
+		if not context.error.is_empty():return {"error":context.error}
+		var worst:=0.;var minimum:=0.;var remaining:=0;var selected: Dictionary={}
+		for ri in range(rows.size()):
+			var row: Dictionary=rows[ri];var point: Vector3=current_points[ri]
+			for ci in row.colliders:
+				if not broad[ci].has_point(point):continue
+				var from_start: Vector3=point-starts[ci]
+				var distance_squared: float=(from_start-axes[ci]*clampf(from_start.dot(axes[ci])*inverse_lengths[ci],0.,1.)).length_squared()
+				if distance_squared>=radius_squared[ci]:continue
+				var gap: float=sqrt(distance_squared)-radii[ci]
+				minimum=minf(minimum,gap);remaining+=1
+				if gap<worst and not skipped.has(ri):worst=gap;selected={"index":ri,"row":row,"point":point,"start":starts[ci],"finish":finishes[ci],"radius":radii[ci],"collider":ci}
+		stats.remaining_pairs=remaining;stats.minimum_gap=minimum
+		if selected.is_empty():break
+		if iteration==MAX_CORRECTIONS:stats.iteration_limit_hits+=1;break
+		var corrected:=false
+		for driver in selected.row.drivers:
+			if not selected.collider in driver.colliders:continue
+			var joint: Transform3D=FK.world(actor,driver.id,result,context);var lever:=Vector3.ZERO
+			for slot in driver.slots:lever+=(positions[slot]-joint.origin)*weights[slot]
+			var correction: Dictionary=downward_rotation(selected.point-lever,selected.point,selected.start,selected.finish,selected.radius) if settling.has(driver.id) else {}
+			if correction.is_empty():correction=rotation(selected.point-lever,selected.point,selected.start,selected.finish,selected.radius,joint.basis.x,iteration<2)
+			if correction.is_empty():continue
+			var info: Dictionary=actor.bones[driver.id];var parent: String=actor.parent_id(driver.id)
+			var frame: Transform3D=info.skeleton.global_transform if parent=="@root" else FK.world(actor,parent,result,context)
+			if not IK.regular(frame.basis):return {"error":"Generated skin contact needs uniform joint-parent frames."}
+			var wanted: Quaternion=correction.rotation*joint.basis.get_rotation_quaternion()
+			var q: Quaternion=(info.base.basis.get_rotation_quaternion().inverse()*frame.basis.get_rotation_quaternion().inverse()*wanted).normalized()
+			var old: Transform3D=info.skeleton.get_bone_pose(info.index)
+			var offset: Vector3=old.origin-info.base.origin
+			var value: Dictionary=result.get(driver.id,{"position":[offset.x,offset.y,offset.z],"rotation_xyzw":[0,0,0,1]}).duplicate(true)
+			value.rotation_xyzw=[q.x,q.y,q.z,q.w];result[driver.id]=value
+			var basis:=Basis(correction.rotation);var delta:=Transform3D(basis,joint.origin-basis*joint.origin)
+			for slot in driver_slots[driver.id]:positions[slot]=delta*positions[slot]
+			for ri in driver_rows[driver.id]:
+				var point: Vector3=origins[rows[ri].origin_source]*rows[ri].origin_weight
+				for slot in rows[ri].slots:point+=positions[slot]*weights[slot]
+				current_points[ri]=point
+			context={"cache":{},"visiting":{},"error":""};stats.corrections+=1;corrected=true;break
+		if not corrected:skipped[selected.index]=true;stats.blocked_points+=1
+	var elapsed:=Time.get_ticks_usec()-started
+	stats.total_usec+=elapsed;stats.max_usec=maxi(stats.max_usec,elapsed)
+	return {"pose":result,"stats":stats.duplicate(true)}
+func dispose() -> void:
+	for watch in watches:
+		if is_instance_valid(watch.resource) and watch.resource.changed.is_connected(changed):watch.resource.changed.disconnect(changed)
+	watches.clear();rows.clear();sources.clear()
+	local_points.clear();weights.clear();bone_slots.clear();bindings.clear();driver_slots.clear();driver_rows.clear();collider_defs.clear()

@@ -1,0 +1,41 @@
+{
+  "format": "has_contact_cache_production_evidence_1",
+  "status": "CURRENT_SOURCE_QUALIFIED_SCOPED_CHECKS",
+  "production_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
+  "current_public_checks": 62,
+  "components": {
+    "generated": 47,
+    "optional_native": 15
+  },
+  "separate_earlier47": "Pass repeatedagaininside62; notadditive uniquecoverage.",
+  "native_production_object": "ACTUALSpring.runner.skin_contact verifiedagainstactualSRCsha/scriptpath; separatelycreatedreferencebaseline0bea, notoldrunnerasbaseline.",
+  "exact_native_same_input_ticks": 720,
+  "exact_pose_and_full_fk_bytes": true,
+  "exact_nontime_solver_metrics": true,
+  "paired_baseline_mean_ms": 47.2184472222222,
+  "paired_production_mean_ms": 43.9458513888889,
+  "paired_mean_reduction_percent": 6.930756994044351,
+  "paired_baseline_max_ms": 100.521,
+  "paired_production_max_ms": 128.277,
+  "comparison_scope": "One sameinputalternating-order720fixedtickprivatefixture. Meanreduction6.93%, notprototype18.6/31.7%, notUIFPS oruniversalperformance. WholecomparisonTickcontainsbothsolvers/FK.",
+  "unchanged_quality": {
+    "remaining_pairs": 123,
+    "maximum_pairs": 130,
+    "worst_recorded_gap_m": -0.044478848572551,
+    "iteration_limit_hits": 710,
+    "off_vertex_error": 0.0
+  },
+  "separate_regressions": {
+    "protected_miku": 54,
+    "helper_cpu": 208,
+    "port_bindings": {
+      "wind": 60,
+      "helper": 77
+    },
+    "stale_source_drift_refusals": 2
+  },
+  "source_snapshots": "Exactcurrent-sourcezerooverlays; preservedsources/membership/runtime/privateinputs/environment andownedheadlessclosure flags.",
+  "whole_full_or_hair_collision_complete_claimed": false,
+  "native_graphical_appearance_or_device_acceptance_claimed": false,
+  "private_payloads_published": false
+}

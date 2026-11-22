@@ -415,8 +415,8 @@
     {
       "path": "src/secondary_skin_contact.gd",
       "category": "runtime",
-      "sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13",
-      "lf_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+      "sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87",
+      "lf_sha256": "89a07c661b023dab88b06e6fa21910364463a9270dfb5d1baf1b9b63a3101b87"
     },
     {
       "path": "src/secondary_live.gd",
@@ -578,5 +578,16 @@
       "lf_sha256": "4c761e6b635aef3b59790117c5107a410f99e027ada0f8c51ec23b0808e10278"
     },
     "scope": "Preserve explicit attachment reference during editor recipe translation. Exact leaf pin only; no inherited native or GPU execution claim."
+  },
+  "secondary_contact_cache_20261121": {
+    "base": "5d9676647f34b5142b960b3a712cf81ad1d3d527",
+    "changed_row": "src/secondary_skin_contact.gd",
+    "previous_row": {
+      "path": "src/secondary_skin_contact.gd",
+      "category": "runtime",
+      "sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13",
+      "lf_sha256": "0bea5b2633866301cae9eef958f48a02a7db13da6d67967083954458b9debb13"
+    },
+    "scope": "Typed call-local sparse cache with conservative ancestry fallback, lazy initial authority scan and unchanged contact math/order/budget. Exact leaf pin only; no inherited CPU/GPU/Full execution credit."
   }
 }
